@@ -33,7 +33,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isMetadataOnly: deploymentBackupIsMetadataOnly,
+ *     isMetadataOnly: deploymentBackupIsMetadataOnly === "true",
  *     locks: [{
  *         type: deploymentBackupLocksType,
  *         message: deploymentBackupLocksMessage,
@@ -269,60 +269,60 @@ export interface DeploymentBackupState {
     /**
      * Possible deployment backup source types.
      */
-    backupSourceType?: pulumi.Input<string>;
+    backupSourceType?: pulumi.Input<string | undefined>;
     /**
      * Possible Deployment backup types.
      */
-    backupType?: pulumi.Input<string>;
+    backupType?: pulumi.Input<string | undefined>;
     /**
      * Name of the bucket where the object is to be uploaded in the object storage
      */
-    bucket?: pulumi.Input<string>;
+    bucket?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      */
-    deploymentId?: pulumi.Input<string>;
+    deploymentId?: pulumi.Input<string | undefined>;
     /**
      * The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
      */
-    deploymentType?: pulumi.Input<string>;
+    deploymentType?: pulumi.Input<string | undefined>;
     /**
      * An object's Display Name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * True if this object is automatically created
      */
-    isAutomatic?: pulumi.Input<boolean>;
-    isLockOverride?: pulumi.Input<boolean>;
+    isAutomatic?: pulumi.Input<boolean | undefined>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * Parameter to allow users to create backup without trails
      */
-    isMetadataOnly?: pulumi.Input<boolean>;
+    isMetadataOnly?: pulumi.Input<boolean | undefined>;
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.GoldenGate.DeploymentBackupLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.GoldenGate.DeploymentBackupLock>[] | undefined>;
     /**
      * Name of namespace that serves as a container for all of your buckets
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * Name of the object to be uploaded to object storage
      *
@@ -330,39 +330,39 @@ export interface DeploymentBackupState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    object?: pulumi.Input<string>;
+    object?: pulumi.Input<string | undefined>;
     /**
      * Version of OGG
      */
-    oggVersion?: pulumi.Input<string>;
+    oggVersion?: pulumi.Input<string | undefined>;
     /**
      * The size of the backup stored in object storage (in bytes)
      */
-    sizeInBytes?: pulumi.Input<number>;
+    sizeInBytes?: pulumi.Input<number | undefined>;
     /**
      * Possible lifecycle states for a Deployment Backup.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    timeBackupFinished?: pulumi.Input<string>;
+    timeBackupFinished?: pulumi.Input<string | undefined>;
     /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    timeOfBackup?: pulumi.Input<string>;
+    timeOfBackup?: pulumi.Input<string | undefined>;
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -380,7 +380,7 @@ export interface DeploymentBackupArgs {
     /**
      * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      */
@@ -392,16 +392,16 @@ export interface DeploymentBackupArgs {
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    isLockOverride?: pulumi.Input<boolean>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * Parameter to allow users to create backup without trails
      */
-    isMetadataOnly?: pulumi.Input<boolean>;
+    isMetadataOnly?: pulumi.Input<boolean | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.GoldenGate.DeploymentBackupLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.GoldenGate.DeploymentBackupLock>[] | undefined>;
     /**
      * Name of namespace that serves as a container for all of your buckets
      */

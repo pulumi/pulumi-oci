@@ -96,7 +96,7 @@ def get_managed_database_table_statistics(filters: Optional[Sequence[Union['GetM
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_table_statistics = oci.DatabaseManagement.get_managed_database_table_statistics(managed_database_id=test_managed_database["id"])
+    test_managed_database_table_statistics = oci.databasemanagement.get_managed_database_table_statistics(managed_database_id=test_managed_database["id"])
     ```
 
 
@@ -113,8 +113,8 @@ def get_managed_database_table_statistics(filters: Optional[Sequence[Union['GetM
         id=pulumi.get(__ret__, 'id'),
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         table_statistics_collections=pulumi.get(__ret__, 'table_statistics_collections'))
-def get_managed_database_table_statistics_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseTableStatisticsFilterArgs', 'GetManagedDatabaseTableStatisticsFilterArgsDict']]]]] = None,
-                                                 managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_managed_database_table_statistics_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseTableStatisticsFilterArgs', 'GetManagedDatabaseTableStatisticsFilterArgsDict']]]]] = None,
+                                                 managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseTableStatisticsResult]:
     """
     This data source provides the list of Managed Database Table Statistics in Oracle Cloud Infrastructure Database Management service.
@@ -128,7 +128,7 @@ def get_managed_database_table_statistics_output(filters: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_table_statistics = oci.DatabaseManagement.get_managed_database_table_statistics(managed_database_id=test_managed_database["id"])
+    test_managed_database_table_statistics = oci.databasemanagement.get_managed_database_table_statistics(managed_database_id=test_managed_database["id"])
     ```
 
 

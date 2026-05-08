@@ -25,30 +25,30 @@ import * as utilities from "../utilities";
  *     items: [{
  *         action: ruleSetItemsAction,
  *         allowedMethods: ruleSetItemsAllowedMethods,
- *         areInvalidCharactersAllowed: ruleSetItemsAreInvalidCharactersAllowed,
+ *         areInvalidCharactersAllowed: ruleSetItemsAreInvalidCharactersAllowed === "true",
  *         conditions: [{
  *             attributeName: ruleSetItemsConditionsAttributeName,
  *             attributeValue: ruleSetItemsConditionsAttributeValue,
  *             operator: ruleSetItemsConditionsOperator,
  *         }],
- *         defaultMaxConnections: ruleSetItemsDefaultMaxConnections,
+ *         defaultMaxConnections: Number(ruleSetItemsDefaultMaxConnections),
  *         description: ruleSetItemsDescription,
  *         header: ruleSetItemsHeader,
- *         httpLargeHeaderSizeInKb: ruleSetItemsHttpLargeHeaderSizeInKb,
+ *         httpLargeHeaderSizeInKb: Number(ruleSetItemsHttpLargeHeaderSizeInKb),
  *         ipMaxConnections: [{
  *             ipAddresses: ruleSetItemsIpMaxConnectionsIpAddresses,
- *             maxConnections: ruleSetItemsIpMaxConnectionsMaxConnections,
+ *             maxConnections: Number(ruleSetItemsIpMaxConnectionsMaxConnections),
  *         }],
  *         prefix: ruleSetItemsPrefix,
  *         redirectUri: {
  *             host: ruleSetItemsRedirectUriHost,
  *             path: ruleSetItemsRedirectUriPath,
- *             port: ruleSetItemsRedirectUriPort,
+ *             port: Number(ruleSetItemsRedirectUriPort),
  *             protocol: ruleSetItemsRedirectUriProtocol,
  *             query: ruleSetItemsRedirectUriQuery,
  *         },
- *         responseCode: ruleSetItemsResponseCode,
- *         statusCode: ruleSetItemsStatusCode,
+ *         responseCode: Number(ruleSetItemsResponseCode),
+ *         statusCode: Number(ruleSetItemsStatusCode),
  *         suffix: ruleSetItemsSuffix,
  *         value: ruleSetItemsValue,
  *     }],
@@ -153,11 +153,11 @@ export interface RuleSetState {
     /**
      * (Updatable) An array of rules that compose the rule set. For more information, see [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm)
      */
-    items?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.RuleSetItem>[]>;
+    items?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.RuleSetItem>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
      */
-    loadBalancerId?: pulumi.Input<string>;
+    loadBalancerId?: pulumi.Input<string | undefined>;
     /**
      * The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet` 
      *
@@ -165,8 +165,8 @@ export interface RuleSetState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    name?: pulumi.Input<string>;
-    state?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -188,5 +188,5 @@ export interface RuleSetArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

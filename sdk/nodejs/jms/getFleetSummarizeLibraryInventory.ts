@@ -63,9 +63,9 @@ export function getFleetSummarizeLibraryInventoryOutput(args?: GetFleetSummarize
  * A collection of arguments for invoking getFleetSummarizeLibraryInventory.
  */
 export interface GetFleetSummarizeLibraryInventoryOutputArgs {
-    applicationId?: pulumi.Input<string>;
-    fleetId?: pulumi.Input<string>;
-    managedInstanceId?: pulumi.Input<string>;
-    timeEnd?: pulumi.Input<string>;
-    timeStart?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
+    fleetId?: pulumi.Input<string | undefined>;
+    managedInstanceId?: pulumi.Input<string | undefined>;
+    timeEnd?: pulumi.Input<string | undefined>;
+    timeStart?: pulumi.Input<string | undefined>;
 }

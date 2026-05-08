@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  *     name: maintenanceWindowName,
  *     resources: [{
  *         resourceId: testResource.id,
- *         areMembersIncluded: maintenanceWindowResourcesAreMembersIncluded,
+ *         areMembersIncluded: maintenanceWindowResourcesAreMembersIncluded === "true",
  *     }],
  *     schedule: {
  *         scheduleType: maintenanceWindowScheduleScheduleType,
@@ -197,55 +197,55 @@ export interface MaintenanceWindowState {
     /**
      * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Maintenance Window description.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Lifecycle Details of the Maintenance Window.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Maintenance Window name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of resource Ids which are part of the Maintenance Window
      */
-    resources?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MaintenanceWindowResource>[]>;
+    resources?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MaintenanceWindowResource>[] | undefined>;
     /**
      * List of resource details that are part of the Maintenance Window.
      */
-    resourcesDetails?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MaintenanceWindowResourcesDetail>[]>;
+    resourcesDetails?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MaintenanceWindowResourcesDetail>[] | undefined>;
     /**
      * (Updatable) Schedule information of the Maintenance Window
      */
-    schedule?: pulumi.Input<inputs.StackMonitoring.MaintenanceWindowSchedule>;
+    schedule?: pulumi.Input<inputs.StackMonitoring.MaintenanceWindowSchedule | undefined>;
     /**
      * Lifecycle state of the monitored resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the the maintenance window was created. An RFC3339 formatted datetime string
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the the mainteance window was updated. An RFC3339 formatted datetime string
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -259,19 +259,19 @@ export interface MaintenanceWindowArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Maintenance Window description.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Maintenance Window name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of resource Ids which are part of the Maintenance Window
      */

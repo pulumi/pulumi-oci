@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     repositoryId: testRepository.id,
  *     approvalRules: {
  *         items: [{
- *             minApprovalsCount: repositorySettingApprovalRulesItemsMinApprovalsCount,
+ *             minApprovalsCount: Number(repositorySettingApprovalRulesItemsMinApprovalsCount),
  *             name: repositorySettingApprovalRulesItemsName,
  *             destinationBranch: repositorySettingApprovalRulesItemsDestinationBranch,
  *             reviewers: [{
@@ -138,15 +138,15 @@ export interface RepositorySettingState {
     /**
      * (Updatable) List of approval rules which must be statisfied before pull requests which match the rules can be merged
      */
-    approvalRules?: pulumi.Input<inputs.DevOps.RepositorySettingApprovalRules>;
+    approvalRules?: pulumi.Input<inputs.DevOps.RepositorySettingApprovalRules | undefined>;
     /**
      * (Updatable) Criteria which must be satisfied to merge a pull request.
      */
-    mergeChecks?: pulumi.Input<inputs.DevOps.RepositorySettingMergeChecks>;
+    mergeChecks?: pulumi.Input<inputs.DevOps.RepositorySettingMergeChecks | undefined>;
     /**
      * (Updatable) Enabled and disabled merge strategies for a project or repository, also contains a default strategy.
      */
-    mergeSettings?: pulumi.Input<inputs.DevOps.RepositorySettingMergeSettings>;
+    mergeSettings?: pulumi.Input<inputs.DevOps.RepositorySettingMergeSettings | undefined>;
     /**
      * Unique repository identifier.
      *
@@ -154,7 +154,7 @@ export interface RepositorySettingState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    repositoryId?: pulumi.Input<string>;
+    repositoryId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -164,15 +164,15 @@ export interface RepositorySettingArgs {
     /**
      * (Updatable) List of approval rules which must be statisfied before pull requests which match the rules can be merged
      */
-    approvalRules?: pulumi.Input<inputs.DevOps.RepositorySettingApprovalRules>;
+    approvalRules?: pulumi.Input<inputs.DevOps.RepositorySettingApprovalRules | undefined>;
     /**
      * (Updatable) Criteria which must be satisfied to merge a pull request.
      */
-    mergeChecks?: pulumi.Input<inputs.DevOps.RepositorySettingMergeChecks>;
+    mergeChecks?: pulumi.Input<inputs.DevOps.RepositorySettingMergeChecks | undefined>;
     /**
      * (Updatable) Enabled and disabled merge strategies for a project or repository, also contains a default strategy.
      */
-    mergeSettings?: pulumi.Input<inputs.DevOps.RepositorySettingMergeSettings>;
+    mergeSettings?: pulumi.Input<inputs.DevOps.RepositorySettingMergeSettings | undefined>;
     /**
      * Unique repository identifier.
      *

@@ -18,13 +18,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProfiles = oci.OsManagementHub.getProfiles({
+ * const testProfiles = oci.osmanagementhub.getProfiles({
  *     archType: profileArchType,
  *     compartmentId: compartmentId,
  *     displayNames: profileDisplayName,
  *     displayNameContains: profileDisplayNameContains,
- *     isDefaultProfile: profileIsDefaultProfile,
- *     isServiceProvidedProfile: profileIsServiceProvidedProfile,
+ *     isDefaultProfile: profileIsDefaultProfile === "true",
+ *     isServiceProvidedProfile: profileIsServiceProvidedProfile === "true",
  *     managementStations: profileManagementStation,
  *     managementStationNotEqualTos: profileManagementStationNotEqualTo,
  *     osFamily: profileOsFamily,
@@ -201,13 +201,13 @@ export interface GetProfilesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProfiles = oci.OsManagementHub.getProfiles({
+ * const testProfiles = oci.osmanagementhub.getProfiles({
  *     archType: profileArchType,
  *     compartmentId: compartmentId,
  *     displayNames: profileDisplayName,
  *     displayNameContains: profileDisplayNameContains,
- *     isDefaultProfile: profileIsDefaultProfile,
- *     isServiceProvidedProfile: profileIsServiceProvidedProfile,
+ *     isDefaultProfile: profileIsDefaultProfile === "true",
+ *     isServiceProvidedProfile: profileIsServiceProvidedProfile === "true",
  *     managementStations: profileManagementStation,
  *     managementStationNotEqualTos: profileManagementStationNotEqualTo,
  *     osFamily: profileOsFamily,
@@ -250,62 +250,62 @@ export interface GetProfilesOutputArgs {
     /**
      * A filter to return only profiles that match the given archType.
      */
-    archType?: pulumi.Input<string>;
+    archType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that may partially match the given display name.
      */
-    displayNameContains?: pulumi.Input<string>;
+    displayNameContains?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that match the given display names.
      */
-    displayNames?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetProfilesFilterArgs>[]>;
+    displayNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetProfilesFilterArgs>[] | undefined>;
     /**
      * A filter to return only default profiles.
      */
-    isDefaultProfile?: pulumi.Input<boolean>;
+    isDefaultProfile?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only service-provided profiles.
      */
-    isServiceProvidedProfile?: pulumi.Input<boolean>;
+    isServiceProvidedProfile?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return resources that aren't associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    managementStationNotEqualTos?: pulumi.Input<pulumi.Input<string>[]>;
+    managementStationNotEqualTos?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return resources that are associated with the specified management  station [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    managementStations?: pulumi.Input<pulumi.Input<string>[]>;
+    managementStations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only resources that match the given operating system family.
      */
-    osFamily?: pulumi.Input<string>;
+    osFamily?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile. A filter used to return the specified profile.
      */
-    profileId?: pulumi.Input<string>;
+    profileId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return registration profiles that match the given profile type.
      */
-    profileTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    profileTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The version of the registration profile.
      */
-    profileVersion?: pulumi.Input<string>;
+    profileVersion?: pulumi.Input<string | undefined>;
     /**
      * A filter to return profiles that match the given instance type.
      */
-    registrationTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    registrationTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only registration profiles in the given state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given vendor name.
      */
-    vendorName?: pulumi.Input<string>;
+    vendorName?: pulumi.Input<string | undefined>;
 }

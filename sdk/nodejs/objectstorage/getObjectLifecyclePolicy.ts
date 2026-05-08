@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testObjectLifecyclePolicy = oci.ObjectStorage.getObjectLifecyclePolicy({
+ * const testObjectLifecyclePolicy = oci.objectstorage.getObjectLifecyclePolicy({
  *     bucket: objectLifecyclePolicyBucket,
  *     namespace: objectLifecyclePolicyNamespace,
  * });
@@ -72,7 +72,7 @@ export interface GetObjectLifecyclePolicyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testObjectLifecyclePolicy = oci.ObjectStorage.getObjectLifecyclePolicy({
+ * const testObjectLifecyclePolicy = oci.objectstorage.getObjectLifecyclePolicy({
  *     bucket: objectLifecyclePolicyBucket,
  *     namespace: objectLifecyclePolicyNamespace,
  * });

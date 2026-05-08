@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutoScalingConfigurations = oci.Autoscaling.getAutoScalingConfigurations({
+ * const testAutoScalingConfigurations = oci.autoscaling.getAutoScalingConfigurations({
  *     compartmentId: compartmentId,
  *     displayName: autoScalingConfigurationDisplayName,
  * });
@@ -80,7 +80,7 @@ export interface GetAutoScalingConfigurationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutoScalingConfigurations = oci.Autoscaling.getAutoScalingConfigurations({
+ * const testAutoScalingConfigurations = oci.autoscaling.getAutoScalingConfigurations({
  *     compartmentId: compartmentId,
  *     displayName: autoScalingConfigurationDisplayName,
  * });
@@ -106,6 +106,6 @@ export interface GetAutoScalingConfigurationsOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Autoscaling.GetAutoScalingConfigurationsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Autoscaling.GetAutoScalingConfigurationsFilterArgs>[] | undefined>;
 }

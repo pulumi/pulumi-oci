@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptionRedeemableUser = oci.UsageProxy.getSubscriptionRedeemableUser({
+ * const testSubscriptionRedeemableUser = oci.usageproxy.getSubscriptionRedeemableUser({
  *     subscriptionId: testSubscription.id,
  *     tenancyId: testTenancy.id,
  * });
@@ -69,7 +69,7 @@ export interface GetSubscriptionRedeemableUserResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptionRedeemableUser = oci.UsageProxy.getSubscriptionRedeemableUser({
+ * const testSubscriptionRedeemableUser = oci.usageproxy.getSubscriptionRedeemableUser({
  *     subscriptionId: testSubscription.id,
  *     tenancyId: testTenancy.id,
  * });

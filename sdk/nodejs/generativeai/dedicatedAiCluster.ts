@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * const testDedicatedAiCluster = new oci.generativeai.DedicatedAiCluster("test_dedicated_ai_cluster", {
  *     compartmentId: compartmentId,
  *     type: dedicatedAiClusterType,
- *     unitCount: dedicatedAiClusterUnitCount,
+ *     unitCount: Number(dedicatedAiClusterUnitCount),
  *     unitShape: dedicatedAiClusterUnitShape,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -261,47 +261,47 @@ export interface DedicatedAiClusterState {
     /**
      * The total capacity for a dedicated AI cluster.
      */
-    capacities?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.DedicatedAiClusterCapacity>[]>;
+    capacities?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.DedicatedAiClusterCapacity>[] | undefined>;
     /**
      * (Updatable) The compartment OCID to create the dedicated AI cluster in.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional description of the dedicated AI cluster.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A message describing the current state with detail that can provide actionable information.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The current state of the dedicated AI cluster.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the dedicated AI cluster was created, in the format defined by RFC 3339
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the dedicated AI cluster was updated, in the format defined by RFC 3339
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The dedicated AI cluster type indicating whether this is a fine-tuning/training processor or hosting/inference processor.
      *
@@ -309,11 +309,11 @@ export interface DedicatedAiClusterState {
      * * HOSTING
      * * FINE_TUNING
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of dedicated units in this AI cluster.
      */
-    unitCount?: pulumi.Input<number>;
+    unitCount?: pulumi.Input<number | undefined>;
     /**
      * The shape of dedicated unit in this AI cluster. The underlying hardware configuration is hidden from customers.
      *
@@ -377,7 +377,7 @@ export interface DedicatedAiClusterState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    unitShape?: pulumi.Input<string>;
+    unitShape?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -391,19 +391,19 @@ export interface DedicatedAiClusterArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional description of the dedicated AI cluster.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The dedicated AI cluster type indicating whether this is a fine-tuning/training processor or hosting/inference processor.
      *

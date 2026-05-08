@@ -204,7 +204,7 @@ def get_fast_connect_provider_service(provider_service_id: Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_fast_connect_provider_service = oci.Core.get_fast_connect_provider_service(provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"])
+    test_fast_connect_provider_service = oci.core.get_fast_connect_provider_service(provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"])
     ```
 
 
@@ -229,7 +229,7 @@ def get_fast_connect_provider_service(provider_service_id: Optional[_builtins.st
         required_total_cross_connects=pulumi.get(__ret__, 'required_total_cross_connects'),
         supported_virtual_circuit_types=pulumi.get(__ret__, 'supported_virtual_circuit_types'),
         type=pulumi.get(__ret__, 'type'))
-def get_fast_connect_provider_service_output(provider_service_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fast_connect_provider_service_output(provider_service_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFastConnectProviderServiceResult]:
     """
     This data source provides details about a specific Fast Connect Provider Service resource in Oracle Cloud Infrastructure Core service.
@@ -243,7 +243,7 @@ def get_fast_connect_provider_service_output(provider_service_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_fast_connect_provider_service = oci.Core.get_fast_connect_provider_service(provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"])
+    test_fast_connect_provider_service = oci.core.get_fast_connect_provider_service(provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"])
     ```
 
 

@@ -25,86 +25,86 @@ import * as utilities from "../utilities";
  *     idcsEndpoint: testDomain.url,
  *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:Settings"],
  *     settingId: "Settings",
- *     accountAlwaysTrustScope: settingAccountAlwaysTrustScope,
+ *     accountAlwaysTrustScope: settingAccountAlwaysTrustScope === "true",
  *     allowedDomains: ["test.com"],
  *     allowedForgotPasswordFlowReturnUrls: settingAllowedForgotPasswordFlowReturnUrls,
  *     allowedNotificationRedirectUrls: settingAllowedNotificationRedirectUrls,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     auditEventRetentionPeriod: settingAuditEventRetentionPeriod,
+ *     auditEventRetentionPeriod: Number(settingAuditEventRetentionPeriod),
  *     authorization: settingAuthorization,
  *     certificateValidation: {
- *         crlCheckOnOcspFailureEnabled: settingCertificateValidationCrlCheckOnOcspFailureEnabled,
- *         crlEnabled: settingCertificateValidationCrlEnabled,
+ *         crlCheckOnOcspFailureEnabled: settingCertificateValidationCrlCheckOnOcspFailureEnabled === "true",
+ *         crlEnabled: settingCertificateValidationCrlEnabled === "true",
  *         crlLocation: settingCertificateValidationCrlLocation,
- *         crlRefreshInterval: settingCertificateValidationCrlRefreshInterval,
- *         ocspEnabled: settingCertificateValidationOcspEnabled,
+ *         crlRefreshInterval: Number(settingCertificateValidationCrlRefreshInterval),
+ *         ocspEnabled: settingCertificateValidationOcspEnabled === "true",
  *         ocspResponderUrl: settingCertificateValidationOcspResponderUrl,
- *         ocspSettingsResponderUrlPreferred: settingCertificateValidationOcspSettingsResponderUrlPreferred,
+ *         ocspSettingsResponderUrlPreferred: settingCertificateValidationOcspSettingsResponderUrlPreferred === "true",
  *         ocspSigningCertificateAlias: settingCertificateValidationOcspSigningCertificateAlias,
- *         ocspTimeoutDuration: settingCertificateValidationOcspTimeoutDuration,
- *         ocspUnknownResponseStatusAllowed: settingCertificateValidationOcspUnknownResponseStatusAllowed,
+ *         ocspTimeoutDuration: Number(settingCertificateValidationOcspTimeoutDuration),
+ *         ocspUnknownResponseStatusAllowed: settingCertificateValidationOcspUnknownResponseStatusAllowed === "true",
  *     },
  *     cloudGateCorsSettings: {
- *         cloudGateCorsAllowNullOrigin: settingCloudGateCorsSettingsCloudGateCorsAllowNullOrigin,
+ *         cloudGateCorsAllowNullOrigin: settingCloudGateCorsSettingsCloudGateCorsAllowNullOrigin === "true",
  *         cloudGateCorsAllowedOrigins: ["https://test.com"],
- *         cloudGateCorsEnabled: settingCloudGateCorsSettingsCloudGateCorsEnabled,
+ *         cloudGateCorsEnabled: settingCloudGateCorsSettingsCloudGateCorsEnabled === "true",
  *         cloudGateCorsExposedHeaders: settingCloudGateCorsSettingsCloudGateCorsExposedHeaders,
- *         cloudGateCorsMaxAge: settingCloudGateCorsSettingsCloudGateCorsMaxAge,
+ *         cloudGateCorsMaxAge: Number(settingCloudGateCorsSettingsCloudGateCorsMaxAge),
  *     },
  *     cloudMigrationCustomUrl: settingCloudMigrationCustomUrl,
- *     cloudMigrationUrlEnabled: settingCloudMigrationUrlEnabled,
+ *     cloudMigrationUrlEnabled: settingCloudMigrationUrlEnabled === "true",
  *     companyNames: [{
  *         locale: settingCompanyNamesLocale,
  *         value: settingCompanyNamesValue,
  *     }],
  *     contactEmails: ["contactEmails@test.com"],
- *     customBranding: settingCustomBranding,
+ *     customBranding: settingCustomBranding === "true",
  *     customCssLocation: settingCustomCssLocation,
  *     customHtmlLocation: settingCustomHtmlLocation,
  *     customTranslation: settingCustomTranslation,
  *     defaultTrustScope: settingDefaultTrustScope,
- *     diagnosticLevel: settingDiagnosticLevel,
- *     diagnosticRecordForSearchIdentifiesReturnedResources: settingDiagnosticRecordForSearchIdentifiesReturnedResources,
- *     enableTermsOfUse: settingEnableTermsOfUse,
+ *     diagnosticLevel: Number(settingDiagnosticLevel),
+ *     diagnosticRecordForSearchIdentifiesReturnedResources: settingDiagnosticRecordForSearchIdentifiesReturnedResources === "true",
+ *     enableTermsOfUse: settingEnableTermsOfUse === "true",
  *     externalId: "externalId",
- *     iamUpstSessionExpiry: settingIamUpstSessionExpiry,
+ *     iamUpstSessionExpiry: Number(settingIamUpstSessionExpiry),
  *     identityDomainsSettingId: settingId,
  *     images: [{
  *         type: settingImagesType,
  *         value: settingImagesValue,
  *         display: settingImagesDisplay,
  *     }],
- *     isHostedPage: settingIsHostedPage,
+ *     isHostedPage: settingIsHostedPage === "true",
  *     issuer: settingIssuer,
  *     locale: settingLocale,
  *     loginTexts: [{
  *         locale: settingLoginTextsLocale,
  *         value: settingLoginTextsValue,
  *     }],
- *     maxNoOfAppCmvaToReturn: settingMaxNoOfAppCmvaToReturn,
- *     maxNoOfAppRoleMembersToReturn: settingMaxNoOfAppRoleMembersToReturn,
+ *     maxNoOfAppCmvaToReturn: Number(settingMaxNoOfAppCmvaToReturn),
+ *     maxNoOfAppRoleMembersToReturn: Number(settingMaxNoOfAppRoleMembersToReturn),
  *     ocid: settingOcid,
  *     preferredLanguage: settingPreferredLanguage,
  *     prevIssuer: settingPrevIssuer,
  *     privacyPolicyUrl: settingPrivacyPolicyUrl,
  *     purgeConfigs: [{
  *         resourceName: "resourceName",
- *         retentionPeriod: settingPurgeConfigsRetentionPeriod,
+ *         retentionPeriod: Number(settingPurgeConfigsRetentionPeriod),
  *     }],
  *     reAuthFactors: ["password"],
- *     reAuthWhenChangingMyAuthenticationFactors: settingReAuthWhenChangingMyAuthenticationFactors,
+ *     reAuthWhenChangingMyAuthenticationFactors: settingReAuthWhenChangingMyAuthenticationFactors === "true",
  *     resourceTypeSchemaVersion: settingResourceTypeSchemaVersion,
- *     serviceAdminCannotListOtherUsers: settingServiceAdminCannotListOtherUsers,
- *     signingCertPublicAccess: settingSigningCertPublicAccess,
+ *     serviceAdminCannotListOtherUsers: settingServiceAdminCannotListOtherUsers === "true",
+ *     signingCertPublicAccess: settingSigningCertPublicAccess === "true",
  *     subMappingAttr: settingSubMappingAttr,
  *     tags: [{
  *         key: settingTagsKey,
  *         value: settingTagsValue,
  *     }],
  *     tenantCustomClaims: [{
- *         allScopes: settingTenantCustomClaimsAllScopes,
- *         expression: settingTenantCustomClaimsExpression,
+ *         allScopes: settingTenantCustomClaimsAllScopes === "true",
+ *         expression: settingTenantCustomClaimsExpression === "true",
  *         mode: settingTenantCustomClaimsMode,
  *         name: settingTenantCustomClaimsName,
  *         tokenType: settingTenantCustomClaimsTokenType,
@@ -1220,7 +1220,7 @@ export interface DomainsSettingState {
      * * returned: default
      * * type: boolean
      */
-    accountAlwaysTrustScope?: pulumi.Input<boolean>;
+    accountAlwaysTrustScope?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) One or more email domains allowed in a user's email field. If unassigned, any domain is allowed.
      *
@@ -1233,7 +1233,7 @@ export interface DomainsSettingState {
      * * type: string
      * * uniqueness: none
      */
-    allowedDomains?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedDomains?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) If specified, indicates the set of Urls which can be returned to after successful forgot password flow
      *
@@ -1248,7 +1248,7 @@ export interface DomainsSettingState {
      * * uniqueness: none
      * * caseExact: false
      */
-    allowedForgotPasswordFlowReturnUrls?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedForgotPasswordFlowReturnUrls?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) If specified, indicates the set of allowed notification redirect Urls which can be specified as the value of \"notificationRedirectUrl\" in the POST .../admin/v1/MePasswordResetRequestor request payload, which will then be included in the reset password email notification sent to a user as part of the forgot password / password reset flow.
      *
@@ -1263,15 +1263,15 @@ export interface DomainsSettingState {
      * * uniqueness: none
      * * caseExact: false
      */
-    allowedNotificationRedirectUrls?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedNotificationRedirectUrls?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Audit Event retention period. If set, overrides default of 30 days after which Audit Events will be purged
      *
@@ -1284,11 +1284,11 @@ export interface DomainsSettingState {
      * * returned: default
      * * type: integer
      */
-    auditEventRetentionPeriod?: pulumi.Input<number>;
+    auditEventRetentionPeriod?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Certificate Validation Config
      *
@@ -1303,7 +1303,7 @@ export interface DomainsSettingState {
      * * type: complex
      * * uniqueness: none
      */
-    certificateValidation?: pulumi.Input<inputs.Identity.DomainsSettingCertificateValidation>;
+    certificateValidation?: pulumi.Input<inputs.Identity.DomainsSettingCertificateValidation | undefined>;
     /**
      * (Updatable) The attribute to store the cloud account name
      *
@@ -1318,7 +1318,7 @@ export interface DomainsSettingState {
      * * type: string
      * * uniqueness: none
      */
-    cloudAccountName?: pulumi.Input<string>;
+    cloudAccountName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A complex attribute that specifies the Cloud Gate cross origin resource sharing settings.
      *
@@ -1334,7 +1334,7 @@ export interface DomainsSettingState {
      * * type: complex
      * * uniqueness: none
      */
-    cloudGateCorsSettings?: pulumi.Input<inputs.Identity.DomainsSettingCloudGateCorsSettings>;
+    cloudGateCorsSettings?: pulumi.Input<inputs.Identity.DomainsSettingCloudGateCorsSettings | undefined>;
     /**
      * (Updatable) If specified, indicates the custom SIM Migrator Url which can be used while SIM to Oracle Identity Cloud Service CloudAccount Migration.
      *
@@ -1349,7 +1349,7 @@ export interface DomainsSettingState {
      * * uniqueness: none
      * * caseExact: false
      */
-    cloudMigrationCustomUrl?: pulumi.Input<string>;
+    cloudMigrationCustomUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) CloudAccountMigration: Enable Custom SIM Migrator Url.
      *
@@ -1364,7 +1364,7 @@ export interface DomainsSettingState {
      * * type: boolean
      * * uniqueness: none
      */
-    cloudMigrationUrlEnabled?: pulumi.Input<boolean>;
+    cloudMigrationUrlEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Name of the company in different locales
      *
@@ -1376,7 +1376,7 @@ export interface DomainsSettingState {
      * * returned: default
      * * type: complex
      */
-    companyNames?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingCompanyName>[]>;
+    companyNames?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingCompanyName>[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -1390,7 +1390,7 @@ export interface DomainsSettingState {
      * * type: string
      * * uniqueness: none
      */
-    compartmentOcid?: pulumi.Input<string>;
+    compartmentOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Contact emails used to notify tenants. Can be one or more user or group alias emails.
      *
@@ -1403,7 +1403,7 @@ export interface DomainsSettingState {
      * * type: string
      * * uniqueness: none
      */
-    contactEmails?: pulumi.Input<pulumi.Input<string>[]>;
+    contactEmails?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) This value indicates whether Customer Service Representatives can login and have readOnly or readWrite access.  A value of 'none' means CSR cannot login to the services.
      *
@@ -1414,7 +1414,7 @@ export interface DomainsSettingState {
      * * returned: default
      * * type: string
      */
-    csrAccess?: pulumi.Input<string>;
+    csrAccess?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Indicates if the branding is default or custom
      *
@@ -1425,7 +1425,7 @@ export interface DomainsSettingState {
      * * returned: default
      * * type: boolean
      */
-    customBranding?: pulumi.Input<boolean>;
+    customBranding?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Storage URL location where the sanitized custom css is located
      *
@@ -1440,7 +1440,7 @@ export interface DomainsSettingState {
      * * type: string
      * * uniqueness: none
      */
-    customCssLocation?: pulumi.Input<string>;
+    customCssLocation?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Storage URL location where the sanitized custom html is located
      *
@@ -1455,7 +1455,7 @@ export interface DomainsSettingState {
      * * type: string
      * * uniqueness: none
      */
-    customHtmlLocation?: pulumi.Input<string>;
+    customHtmlLocation?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Custom translations (JSON String)
      *
@@ -1470,7 +1470,7 @@ export interface DomainsSettingState {
      * * type: string
      * * uniqueness: none
      */
-    customTranslation?: pulumi.Input<string>;
+    customTranslation?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Default name of the Company in different locales
      *
@@ -1484,7 +1484,7 @@ export interface DomainsSettingState {
      * * returned: default
      * * type: complex
      */
-    defaultCompanyNames?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingDefaultCompanyName>[]>;
+    defaultCompanyNames?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingDefaultCompanyName>[] | undefined>;
     /**
      * (Updatable) References to various images
      *
@@ -1498,7 +1498,7 @@ export interface DomainsSettingState {
      * * returned: default
      * * type: complex
      */
-    defaultImages?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingDefaultImage>[]>;
+    defaultImages?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingDefaultImage>[] | undefined>;
     /**
      * (Updatable) Default Login text in different locales
      *
@@ -1512,7 +1512,7 @@ export interface DomainsSettingState {
      * * returned: default
      * * type: complex
      */
-    defaultLoginTexts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingDefaultLoginText>[]>;
+    defaultLoginTexts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingDefaultLoginText>[] | undefined>;
     /**
      * (Updatable) **Deprecated Since: 18.3.6**
      *
@@ -1523,7 +1523,7 @@ export interface DomainsSettingState {
      * * returned: default
      * * type: string Indicates the default trust scope for all apps
      */
-    defaultTrustScope?: pulumi.Input<string>;
+    defaultTrustScope?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -1537,7 +1537,7 @@ export interface DomainsSettingState {
      * * type: boolean
      * * uniqueness: none
      */
-    deleteInProgress?: pulumi.Input<boolean>;
+    deleteInProgress?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The level of diagnostic logging that is currently in effect. A level of 0 (zero) indicates that diagnostic logging is disabled. A level of 1 (one) indicates that diagnostic logging is enabled.
      *
@@ -1551,7 +1551,7 @@ export interface DomainsSettingState {
      * * type: integer
      * * uniqueness: none
      */
-    diagnosticLevel?: pulumi.Input<number>;
+    diagnosticLevel?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Controls whether DiagnosticRecords for external search-operations (against SCIM resource-types in the Admin service) identify returned resources.  If true, indicates that for each successful external search-operation at least one DiagnosticRecord will include at least one identifier for each matching resource that is returned in that search-response.  If false, no DiagnosticRecord should be expected to identify returned resources for a search-operation.  The default value is false.
      *
@@ -1566,7 +1566,7 @@ export interface DomainsSettingState {
      * * type: boolean
      * * uniqueness: none
      */
-    diagnosticRecordForSearchIdentifiesReturnedResources?: pulumi.Input<boolean>;
+    diagnosticRecordForSearchIdentifiesReturnedResources?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The end time up to which diagnostic recording is switched on
      *
@@ -1580,7 +1580,7 @@ export interface DomainsSettingState {
      * * type: dateTime
      * * uniqueness: none
      */
-    diagnosticTracingUpto?: pulumi.Input<string>;
+    diagnosticTracingUpto?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -1594,7 +1594,7 @@ export interface DomainsSettingState {
      * * type: string
      * * uniqueness: none
      */
-    domainOcid?: pulumi.Input<string>;
+    domainOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Indicates if Terms of Use is enabled in UI
      *
@@ -1609,7 +1609,7 @@ export interface DomainsSettingState {
      * * type: boolean
      * * uniqueness: none
      */
-    enableTermsOfUse?: pulumi.Input<boolean>;
+    enableTermsOfUse?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -1622,7 +1622,7 @@ export interface DomainsSettingState {
      * * type: string
      * * uniqueness: none
      */
-    externalId?: pulumi.Input<string>;
+    externalId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Maximum duration for IAM User Principal Session Token expiry
      *
@@ -1637,7 +1637,7 @@ export interface DomainsSettingState {
      * * type: integer
      * * uniqueness: none
      */
-    iamUpstSessionExpiry?: pulumi.Input<number>;
+    iamUpstSessionExpiry?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -1649,11 +1649,11 @@ export interface DomainsSettingState {
      * * returned: default
      * * type: complex
      */
-    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingIdcsCreatedBy>[]>;
+    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingIdcsCreatedBy>[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
-    idcsEndpoint?: pulumi.Input<string>;
+    idcsEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -1665,7 +1665,7 @@ export interface DomainsSettingState {
      * * returned: default
      * * type: complex
      */
-    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingIdcsLastModifiedBy>[]>;
+    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingIdcsLastModifiedBy>[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -1679,7 +1679,7 @@ export interface DomainsSettingState {
      * * type: string
      * * uniqueness: none
      */
-    idcsLastUpgradedInRelease?: pulumi.Input<string>;
+    idcsLastUpgradedInRelease?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -1692,7 +1692,7 @@ export interface DomainsSettingState {
      * * type: string
      * * uniqueness: none
      */
-    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[]>;
+    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      *
@@ -1706,7 +1706,7 @@ export interface DomainsSettingState {
      * * type: string
      * * uniqueness: global
      */
-    identityDomainsSettingId?: pulumi.Input<string>;
+    identityDomainsSettingId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) References to various images
      *
@@ -1718,7 +1718,7 @@ export interface DomainsSettingState {
      * * returned: default
      * * type: complex
      */
-    images?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingImage>[]>;
+    images?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingImage>[] | undefined>;
     /**
      * (Updatable) Indicates if 'hosted' option was selected
      *
@@ -1733,7 +1733,7 @@ export interface DomainsSettingState {
      * * type: boolean
      * * uniqueness: none
      */
-    isHostedPage?: pulumi.Input<boolean>;
+    isHostedPage?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Tenant issuer.
      *
@@ -1748,7 +1748,7 @@ export interface DomainsSettingState {
      * * type: string
      * * uniqueness: none
      */
-    issuer?: pulumi.Input<string>;
+    issuer?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
      *
@@ -1763,7 +1763,7 @@ export interface DomainsSettingState {
      * * type: string
      * * uniqueness: none
      */
-    locale?: pulumi.Input<string>;
+    locale?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Login text in different locales
      *
@@ -1775,7 +1775,7 @@ export interface DomainsSettingState {
      * * returned: default
      * * type: complex
      */
-    loginTexts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingLoginText>[]>;
+    loginTexts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingLoginText>[] | undefined>;
     /**
      * (Updatable) Limit the maximum return of CMVA for an App
      *
@@ -1790,7 +1790,7 @@ export interface DomainsSettingState {
      * * type: integer
      * * uniqueness: none
      */
-    maxNoOfAppCmvaToReturn?: pulumi.Input<number>;
+    maxNoOfAppCmvaToReturn?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Limit the maximum return of members for an AppRole
      *
@@ -1805,7 +1805,7 @@ export interface DomainsSettingState {
      * * type: integer
      * * uniqueness: none
      */
-    maxNoOfAppRoleMembersToReturn?: pulumi.Input<number>;
+    maxNoOfAppRoleMembersToReturn?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -1819,7 +1819,7 @@ export interface DomainsSettingState {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingMeta>[]>;
+    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingMeta>[] | undefined>;
     /**
      * (Updatable) Database Migration Status
      *
@@ -1834,7 +1834,7 @@ export interface DomainsSettingState {
      * * type: string
      * * uniqueness: none
      */
-    migrationStatus?: pulumi.Input<string>;
+    migrationStatus?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -1848,7 +1848,7 @@ export interface DomainsSettingState {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) On-Premises provisioning feature toggle.
      *
@@ -1863,7 +1863,7 @@ export interface DomainsSettingState {
      * * type: boolean
      * * uniqueness: none
      */
-    onPremisesProvisioning?: pulumi.Input<boolean>;
+    onPremisesProvisioning?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Preferred written or spoken language used for localized user interfaces
      *
@@ -1878,7 +1878,7 @@ export interface DomainsSettingState {
      * * type: string
      * * uniqueness: none
      */
-    preferredLanguage?: pulumi.Input<string>;
+    preferredLanguage?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Previous Tenant issuer. This is an Oracle Identity Cloud Service internal attribute which is not meant to be directly modified by ID Admin. Even if the request body (Settings) contains this attribute, the actual value will be set according to the Oracle Identity Cloud Service internal logic rather than solely based on the value provided in the request payload.
      *
@@ -1893,7 +1893,7 @@ export interface DomainsSettingState {
      * * type: string
      * * uniqueness: none
      */
-    prevIssuer?: pulumi.Input<string>;
+    prevIssuer?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Privacy Policy URL
      *
@@ -1908,7 +1908,7 @@ export interface DomainsSettingState {
      * * type: string
      * * uniqueness: none
      */
-    privacyPolicyUrl?: pulumi.Input<string>;
+    privacyPolicyUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Purge Configs for different Resource Types
      *
@@ -1922,7 +1922,7 @@ export interface DomainsSettingState {
      * * returned: default
      * * type: complex
      */
-    purgeConfigs?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingPurgeConfig>[]>;
+    purgeConfigs?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingPurgeConfig>[] | undefined>;
     /**
      * (Updatable) If reAuthWhenChangingMyAuthenticationFactors is true (default), this attribute specifies which re-authentication factor to use. Allowed value is \"password\".
      *
@@ -1935,7 +1935,7 @@ export interface DomainsSettingState {
      * * returned: default
      * * type: string
      */
-    reAuthFactors?: pulumi.Input<pulumi.Input<string>[]>;
+    reAuthFactors?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Specifies whether re-authentication is required or not when a user changes one of their security factors such as password or email. Default is true to ensure more secure behavior.
      *
@@ -1950,11 +1950,11 @@ export interface DomainsSettingState {
      * * type: boolean
      * * uniqueness: none
      */
-    reAuthWhenChangingMyAuthenticationFactors?: pulumi.Input<boolean>;
+    reAuthWhenChangingMyAuthenticationFactors?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -1968,7 +1968,7 @@ export interface DomainsSettingState {
      * * type: string
      * * uniqueness: none
      */
-    schemas?: pulumi.Input<pulumi.Input<string>[]>;
+    schemas?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) By default, a service admin can list all users in stripe. If true, a service admin cannot list other users.
      *
@@ -1982,11 +1982,11 @@ export interface DomainsSettingState {
      * * returned: default
      * * type: boolean
      */
-    serviceAdminCannotListOtherUsers?: pulumi.Input<boolean>;
+    serviceAdminCannotListOtherUsers?: pulumi.Input<boolean | undefined>;
     /**
      * ID of the resource
      */
-    settingId?: pulumi.Input<string>;
+    settingId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Indicates if access on SigningCert is allowed to public or not
      *
@@ -1999,7 +1999,7 @@ export interface DomainsSettingState {
      * * returned: default
      * * type: boolean
      */
-    signingCertPublicAccess?: pulumi.Input<boolean>;
+    signingCertPublicAccess?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) **Added In:** 20.1.3
      *
@@ -2012,7 +2012,7 @@ export interface DomainsSettingState {
      * * type: string
      * * uniqueness: none Subject mapping user profile attribute. The input format should be SCIM compliant. This attribute should be of type String and multivalued to false.
      */
-    subMappingAttr?: pulumi.Input<string>;
+    subMappingAttr?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -2026,7 +2026,7 @@ export interface DomainsSettingState {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingTag>[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -2040,7 +2040,7 @@ export interface DomainsSettingState {
      * * type: string
      * * uniqueness: none
      */
-    tenancyOcid?: pulumi.Input<string>;
+    tenancyOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Custom claims associated with the specific tenant
      *
@@ -2055,7 +2055,7 @@ export interface DomainsSettingState {
      * * type: complex
      * * uniqueness: none
      */
-    tenantCustomClaims?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingTenantCustomClaim>[]>;
+    tenantCustomClaims?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingTenantCustomClaim>[] | undefined>;
     /**
      * (Updatable) Terms of Use URL
      *
@@ -2070,7 +2070,7 @@ export interface DomainsSettingState {
      * * type: string
      * * uniqueness: none
      */
-    termsOfUseUrl?: pulumi.Input<string>;
+    termsOfUseUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) User's timezone
      *
@@ -2089,7 +2089,7 @@ export interface DomainsSettingState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timezone?: pulumi.Input<string>;
+    timezone?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -2108,7 +2108,7 @@ export interface DomainsSettingArgs {
      * * returned: default
      * * type: boolean
      */
-    accountAlwaysTrustScope?: pulumi.Input<boolean>;
+    accountAlwaysTrustScope?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) One or more email domains allowed in a user's email field. If unassigned, any domain is allowed.
      *
@@ -2121,7 +2121,7 @@ export interface DomainsSettingArgs {
      * * type: string
      * * uniqueness: none
      */
-    allowedDomains?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedDomains?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) If specified, indicates the set of Urls which can be returned to after successful forgot password flow
      *
@@ -2136,7 +2136,7 @@ export interface DomainsSettingArgs {
      * * uniqueness: none
      * * caseExact: false
      */
-    allowedForgotPasswordFlowReturnUrls?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedForgotPasswordFlowReturnUrls?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) If specified, indicates the set of allowed notification redirect Urls which can be specified as the value of \"notificationRedirectUrl\" in the POST .../admin/v1/MePasswordResetRequestor request payload, which will then be included in the reset password email notification sent to a user as part of the forgot password / password reset flow.
      *
@@ -2151,15 +2151,15 @@ export interface DomainsSettingArgs {
      * * uniqueness: none
      * * caseExact: false
      */
-    allowedNotificationRedirectUrls?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedNotificationRedirectUrls?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Audit Event retention period. If set, overrides default of 30 days after which Audit Events will be purged
      *
@@ -2172,11 +2172,11 @@ export interface DomainsSettingArgs {
      * * returned: default
      * * type: integer
      */
-    auditEventRetentionPeriod?: pulumi.Input<number>;
+    auditEventRetentionPeriod?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Certificate Validation Config
      *
@@ -2191,7 +2191,7 @@ export interface DomainsSettingArgs {
      * * type: complex
      * * uniqueness: none
      */
-    certificateValidation?: pulumi.Input<inputs.Identity.DomainsSettingCertificateValidation>;
+    certificateValidation?: pulumi.Input<inputs.Identity.DomainsSettingCertificateValidation | undefined>;
     /**
      * (Updatable) A complex attribute that specifies the Cloud Gate cross origin resource sharing settings.
      *
@@ -2207,7 +2207,7 @@ export interface DomainsSettingArgs {
      * * type: complex
      * * uniqueness: none
      */
-    cloudGateCorsSettings?: pulumi.Input<inputs.Identity.DomainsSettingCloudGateCorsSettings>;
+    cloudGateCorsSettings?: pulumi.Input<inputs.Identity.DomainsSettingCloudGateCorsSettings | undefined>;
     /**
      * (Updatable) If specified, indicates the custom SIM Migrator Url which can be used while SIM to Oracle Identity Cloud Service CloudAccount Migration.
      *
@@ -2222,7 +2222,7 @@ export interface DomainsSettingArgs {
      * * uniqueness: none
      * * caseExact: false
      */
-    cloudMigrationCustomUrl?: pulumi.Input<string>;
+    cloudMigrationCustomUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) CloudAccountMigration: Enable Custom SIM Migrator Url.
      *
@@ -2237,7 +2237,7 @@ export interface DomainsSettingArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    cloudMigrationUrlEnabled?: pulumi.Input<boolean>;
+    cloudMigrationUrlEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Name of the company in different locales
      *
@@ -2249,7 +2249,7 @@ export interface DomainsSettingArgs {
      * * returned: default
      * * type: complex
      */
-    companyNames?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingCompanyName>[]>;
+    companyNames?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingCompanyName>[] | undefined>;
     /**
      * (Updatable) Contact emails used to notify tenants. Can be one or more user or group alias emails.
      *
@@ -2262,7 +2262,7 @@ export interface DomainsSettingArgs {
      * * type: string
      * * uniqueness: none
      */
-    contactEmails?: pulumi.Input<pulumi.Input<string>[]>;
+    contactEmails?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) This value indicates whether Customer Service Representatives can login and have readOnly or readWrite access.  A value of 'none' means CSR cannot login to the services.
      *
@@ -2284,7 +2284,7 @@ export interface DomainsSettingArgs {
      * * returned: default
      * * type: boolean
      */
-    customBranding?: pulumi.Input<boolean>;
+    customBranding?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Storage URL location where the sanitized custom css is located
      *
@@ -2299,7 +2299,7 @@ export interface DomainsSettingArgs {
      * * type: string
      * * uniqueness: none
      */
-    customCssLocation?: pulumi.Input<string>;
+    customCssLocation?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Storage URL location where the sanitized custom html is located
      *
@@ -2314,7 +2314,7 @@ export interface DomainsSettingArgs {
      * * type: string
      * * uniqueness: none
      */
-    customHtmlLocation?: pulumi.Input<string>;
+    customHtmlLocation?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Custom translations (JSON String)
      *
@@ -2329,7 +2329,7 @@ export interface DomainsSettingArgs {
      * * type: string
      * * uniqueness: none
      */
-    customTranslation?: pulumi.Input<string>;
+    customTranslation?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) **Deprecated Since: 18.3.6**
      *
@@ -2340,7 +2340,7 @@ export interface DomainsSettingArgs {
      * * returned: default
      * * type: string Indicates the default trust scope for all apps
      */
-    defaultTrustScope?: pulumi.Input<string>;
+    defaultTrustScope?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The level of diagnostic logging that is currently in effect. A level of 0 (zero) indicates that diagnostic logging is disabled. A level of 1 (one) indicates that diagnostic logging is enabled.
      *
@@ -2354,7 +2354,7 @@ export interface DomainsSettingArgs {
      * * type: integer
      * * uniqueness: none
      */
-    diagnosticLevel?: pulumi.Input<number>;
+    diagnosticLevel?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Controls whether DiagnosticRecords for external search-operations (against SCIM resource-types in the Admin service) identify returned resources.  If true, indicates that for each successful external search-operation at least one DiagnosticRecord will include at least one identifier for each matching resource that is returned in that search-response.  If false, no DiagnosticRecord should be expected to identify returned resources for a search-operation.  The default value is false.
      *
@@ -2369,7 +2369,7 @@ export interface DomainsSettingArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    diagnosticRecordForSearchIdentifiesReturnedResources?: pulumi.Input<boolean>;
+    diagnosticRecordForSearchIdentifiesReturnedResources?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Indicates if Terms of Use is enabled in UI
      *
@@ -2384,7 +2384,7 @@ export interface DomainsSettingArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    enableTermsOfUse?: pulumi.Input<boolean>;
+    enableTermsOfUse?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -2397,7 +2397,7 @@ export interface DomainsSettingArgs {
      * * type: string
      * * uniqueness: none
      */
-    externalId?: pulumi.Input<string>;
+    externalId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Maximum duration for IAM User Principal Session Token expiry
      *
@@ -2412,7 +2412,7 @@ export interface DomainsSettingArgs {
      * * type: integer
      * * uniqueness: none
      */
-    iamUpstSessionExpiry?: pulumi.Input<number>;
+    iamUpstSessionExpiry?: pulumi.Input<number | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -2430,7 +2430,7 @@ export interface DomainsSettingArgs {
      * * type: string
      * * uniqueness: global
      */
-    identityDomainsSettingId?: pulumi.Input<string>;
+    identityDomainsSettingId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) References to various images
      *
@@ -2442,7 +2442,7 @@ export interface DomainsSettingArgs {
      * * returned: default
      * * type: complex
      */
-    images?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingImage>[]>;
+    images?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingImage>[] | undefined>;
     /**
      * (Updatable) Indicates if 'hosted' option was selected
      *
@@ -2457,7 +2457,7 @@ export interface DomainsSettingArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    isHostedPage?: pulumi.Input<boolean>;
+    isHostedPage?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Tenant issuer.
      *
@@ -2472,7 +2472,7 @@ export interface DomainsSettingArgs {
      * * type: string
      * * uniqueness: none
      */
-    issuer?: pulumi.Input<string>;
+    issuer?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
      *
@@ -2487,7 +2487,7 @@ export interface DomainsSettingArgs {
      * * type: string
      * * uniqueness: none
      */
-    locale?: pulumi.Input<string>;
+    locale?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Login text in different locales
      *
@@ -2499,7 +2499,7 @@ export interface DomainsSettingArgs {
      * * returned: default
      * * type: complex
      */
-    loginTexts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingLoginText>[]>;
+    loginTexts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingLoginText>[] | undefined>;
     /**
      * (Updatable) Limit the maximum return of CMVA for an App
      *
@@ -2514,7 +2514,7 @@ export interface DomainsSettingArgs {
      * * type: integer
      * * uniqueness: none
      */
-    maxNoOfAppCmvaToReturn?: pulumi.Input<number>;
+    maxNoOfAppCmvaToReturn?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Limit the maximum return of members for an AppRole
      *
@@ -2529,7 +2529,7 @@ export interface DomainsSettingArgs {
      * * type: integer
      * * uniqueness: none
      */
-    maxNoOfAppRoleMembersToReturn?: pulumi.Input<number>;
+    maxNoOfAppRoleMembersToReturn?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -2543,7 +2543,7 @@ export interface DomainsSettingArgs {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Preferred written or spoken language used for localized user interfaces
      *
@@ -2558,7 +2558,7 @@ export interface DomainsSettingArgs {
      * * type: string
      * * uniqueness: none
      */
-    preferredLanguage?: pulumi.Input<string>;
+    preferredLanguage?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Previous Tenant issuer. This is an Oracle Identity Cloud Service internal attribute which is not meant to be directly modified by ID Admin. Even if the request body (Settings) contains this attribute, the actual value will be set according to the Oracle Identity Cloud Service internal logic rather than solely based on the value provided in the request payload.
      *
@@ -2573,7 +2573,7 @@ export interface DomainsSettingArgs {
      * * type: string
      * * uniqueness: none
      */
-    prevIssuer?: pulumi.Input<string>;
+    prevIssuer?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Privacy Policy URL
      *
@@ -2588,7 +2588,7 @@ export interface DomainsSettingArgs {
      * * type: string
      * * uniqueness: none
      */
-    privacyPolicyUrl?: pulumi.Input<string>;
+    privacyPolicyUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Purge Configs for different Resource Types
      *
@@ -2602,7 +2602,7 @@ export interface DomainsSettingArgs {
      * * returned: default
      * * type: complex
      */
-    purgeConfigs?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingPurgeConfig>[]>;
+    purgeConfigs?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingPurgeConfig>[] | undefined>;
     /**
      * (Updatable) If reAuthWhenChangingMyAuthenticationFactors is true (default), this attribute specifies which re-authentication factor to use. Allowed value is \"password\".
      *
@@ -2615,7 +2615,7 @@ export interface DomainsSettingArgs {
      * * returned: default
      * * type: string
      */
-    reAuthFactors?: pulumi.Input<pulumi.Input<string>[]>;
+    reAuthFactors?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Specifies whether re-authentication is required or not when a user changes one of their security factors such as password or email. Default is true to ensure more secure behavior.
      *
@@ -2630,11 +2630,11 @@ export interface DomainsSettingArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    reAuthWhenChangingMyAuthenticationFactors?: pulumi.Input<boolean>;
+    reAuthWhenChangingMyAuthenticationFactors?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -2662,7 +2662,7 @@ export interface DomainsSettingArgs {
      * * returned: default
      * * type: boolean
      */
-    serviceAdminCannotListOtherUsers?: pulumi.Input<boolean>;
+    serviceAdminCannotListOtherUsers?: pulumi.Input<boolean | undefined>;
     /**
      * ID of the resource
      */
@@ -2679,7 +2679,7 @@ export interface DomainsSettingArgs {
      * * returned: default
      * * type: boolean
      */
-    signingCertPublicAccess?: pulumi.Input<boolean>;
+    signingCertPublicAccess?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) **Added In:** 20.1.3
      *
@@ -2692,7 +2692,7 @@ export interface DomainsSettingArgs {
      * * type: string
      * * uniqueness: none Subject mapping user profile attribute. The input format should be SCIM compliant. This attribute should be of type String and multivalued to false.
      */
-    subMappingAttr?: pulumi.Input<string>;
+    subMappingAttr?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -2706,7 +2706,7 @@ export interface DomainsSettingArgs {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingTag>[] | undefined>;
     /**
      * (Updatable) Custom claims associated with the specific tenant
      *
@@ -2721,7 +2721,7 @@ export interface DomainsSettingArgs {
      * * type: complex
      * * uniqueness: none
      */
-    tenantCustomClaims?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingTenantCustomClaim>[]>;
+    tenantCustomClaims?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSettingTenantCustomClaim>[] | undefined>;
     /**
      * (Updatable) Terms of Use URL
      *
@@ -2736,7 +2736,7 @@ export interface DomainsSettingArgs {
      * * type: string
      * * uniqueness: none
      */
-    termsOfUseUrl?: pulumi.Input<string>;
+    termsOfUseUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) User's timezone
      *
@@ -2755,5 +2755,5 @@ export interface DomainsSettingArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timezone?: pulumi.Input<string>;
+    timezone?: pulumi.Input<string | undefined>;
 }

@@ -244,87 +244,87 @@ export interface AwrHubSourceState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database id.
      */
-    associatedOpsiId?: pulumi.Input<string>;
+    associatedOpsiId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database id.
      */
-    associatedResourceId?: pulumi.Input<string>;
+    associatedResourceId?: pulumi.Input<string | undefined>;
     /**
      * AWR Hub OCID
      */
-    awrHubId?: pulumi.Input<string>;
+    awrHubId?: pulumi.Input<string | undefined>;
     /**
      * The shorted string of the Awr Hub source database identifier.
      */
-    awrHubOpsiSourceId?: pulumi.Input<string>;
+    awrHubOpsiSourceId?: pulumi.Input<string | undefined>;
     /**
      * DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
      */
-    awrSourceDatabaseId?: pulumi.Input<string>;
+    awrSourceDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Number of hours since last AWR snapshots import happened from the Source database.
      */
-    hoursSinceLastImport?: pulumi.Input<number>;
+    hoursSinceLastImport?: pulumi.Input<number | undefined>;
     /**
      * This is `true` if the source databse is registered with a Awr Hub, otherwise `false`
      */
-    isRegisteredWithAwrHub?: pulumi.Input<boolean>;
+    isRegisteredWithAwrHub?: pulumi.Input<boolean | undefined>;
     /**
      * The maximum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
      */
-    maxSnapshotIdentifier?: pulumi.Input<number>;
+    maxSnapshotIdentifier?: pulumi.Input<number | undefined>;
     /**
      * The minimum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
      */
-    minSnapshotIdentifier?: pulumi.Input<number>;
+    minSnapshotIdentifier?: pulumi.Input<number | undefined>;
     /**
      * The name of the Awr Hub source database.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Opsi Mailbox URL based on the Awr Hub and Awr Hub source.
      */
-    sourceMailBoxUrl?: pulumi.Input<string>;
+    sourceMailBoxUrl?: pulumi.Input<string | undefined>;
     /**
      * the current state of the source database
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Indicates the status of a source database in Operations Insights
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time at which the resource was first created. An RFC3339 formatted datetime string
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time at which the earliest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
      */
-    timeFirstSnapshotGenerated?: pulumi.Input<string>;
+    timeFirstSnapshotGenerated?: pulumi.Input<string | undefined>;
     /**
      * The time at which the latest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
      */
-    timeLastSnapshotGenerated?: pulumi.Input<string>;
+    timeLastSnapshotGenerated?: pulumi.Input<string | undefined>;
     /**
      * The time at which the resource was last updated. An RFC3339 formatted datetime string
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) source type of the database
      *
@@ -332,7 +332,7 @@ export interface AwrHubSourceState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -342,11 +342,11 @@ export interface AwrHubSourceArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database id.
      */
-    associatedOpsiId?: pulumi.Input<string>;
+    associatedOpsiId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database id.
      */
-    associatedResourceId?: pulumi.Input<string>;
+    associatedResourceId?: pulumi.Input<string | undefined>;
     /**
      * AWR Hub OCID
      */
@@ -358,15 +358,15 @@ export interface AwrHubSourceArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The name of the Awr Hub source database.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) source type of the database
      *

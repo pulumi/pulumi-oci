@@ -260,7 +260,7 @@ def get_private_endpoint(data_science_private_endpoint_id: Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_data_science_private_endpoint = oci.DataScience.get_private_endpoint(data_science_private_endpoint_id=test_data_science_private_endpoint_oci_datascience_private_endpoint["id"])
+    test_data_science_private_endpoint = oci.datascience.get_private_endpoint(data_science_private_endpoint_id=test_data_science_private_endpoint_oci_datascience_private_endpoint["id"])
     ```
 
 
@@ -290,7 +290,7 @@ def get_private_endpoint(data_science_private_endpoint_id: Optional[_builtins.st
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_private_endpoint_output(data_science_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_private_endpoint_output(data_science_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateEndpointResult]:
     """
     This data source provides details about a specific Data Science Private Endpoint resource in Oracle Cloud Infrastructure Data Science service.
@@ -303,7 +303,7 @@ def get_private_endpoint_output(data_science_private_endpoint_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_data_science_private_endpoint = oci.DataScience.get_private_endpoint(data_science_private_endpoint_id=test_data_science_private_endpoint_oci_datascience_private_endpoint["id"])
+    test_data_science_private_endpoint = oci.datascience.get_private_endpoint(data_science_private_endpoint_id=test_data_science_private_endpoint_oci_datascience_private_endpoint["id"])
     ```
 
 

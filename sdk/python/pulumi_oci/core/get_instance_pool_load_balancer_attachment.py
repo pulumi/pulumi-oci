@@ -144,7 +144,7 @@ def get_instance_pool_load_balancer_attachment(instance_pool_id: Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_pool_load_balancer_attachment = oci.Core.get_instance_pool_load_balancer_attachment(instance_pool_id=test_instance_pool["id"],
+    test_instance_pool_load_balancer_attachment = oci.core.get_instance_pool_load_balancer_attachment(instance_pool_id=test_instance_pool["id"],
         instance_pool_load_balancer_attachment_id=test_instance_pool_load_balancer_attachment_oci_core_instance_pool_load_balancer_attachment["id"])
     ```
 
@@ -167,8 +167,8 @@ def get_instance_pool_load_balancer_attachment(instance_pool_id: Optional[_built
         port=pulumi.get(__ret__, 'port'),
         state=pulumi.get(__ret__, 'state'),
         vnic_selection=pulumi.get(__ret__, 'vnic_selection'))
-def get_instance_pool_load_balancer_attachment_output(instance_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                      instance_pool_load_balancer_attachment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_instance_pool_load_balancer_attachment_output(instance_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                      instance_pool_load_balancer_attachment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstancePoolLoadBalancerAttachmentResult]:
     """
     This data source provides details about a specific Instance Pool Load Balancer Attachment resource in Oracle Cloud Infrastructure Core service.
@@ -181,7 +181,7 @@ def get_instance_pool_load_balancer_attachment_output(instance_pool_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_pool_load_balancer_attachment = oci.Core.get_instance_pool_load_balancer_attachment(instance_pool_id=test_instance_pool["id"],
+    test_instance_pool_load_balancer_attachment = oci.core.get_instance_pool_load_balancer_attachment(instance_pool_id=test_instance_pool["id"],
         instance_pool_load_balancer_attachment_id=test_instance_pool_load_balancer_attachment_oci_core_instance_pool_load_balancer_attachment["id"])
     ```
 

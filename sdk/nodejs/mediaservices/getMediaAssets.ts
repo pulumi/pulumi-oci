@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMediaAssets = oci.MediaServices.getMediaAssets({
+ * const testMediaAssets = oci.mediaservices.getMediaAssets({
  *     bucket: mediaAssetBucket,
  *     compartmentId: compartmentId,
  *     displayName: mediaAssetDisplayName,
@@ -178,7 +178,7 @@ export interface GetMediaAssetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMediaAssets = oci.MediaServices.getMediaAssets({
+ * const testMediaAssets = oci.mediaservices.getMediaAssets({
  *     bucket: mediaAssetBucket,
  *     compartmentId: compartmentId,
  *     displayName: mediaAssetDisplayName,
@@ -221,50 +221,50 @@ export interface GetMediaAssetsOutputArgs {
     /**
      * Filter MediaAsset by the bucket where the object is stored.
      */
-    bucket?: pulumi.Input<string>;
+    bucket?: pulumi.Input<string | undefined>;
     /**
      * The ID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Unique DistributionChannel identifier.
      */
-    distributionChannelId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.MediaServices.GetMediaAssetsFilterArgs>[]>;
+    distributionChannelId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.MediaServices.GetMediaAssetsFilterArgs>[] | undefined>;
     /**
      * Unique MediaAsset identifier of the first asset upload.
      */
-    masterMediaAssetId?: pulumi.Input<string>;
+    masterMediaAssetId?: pulumi.Input<string | undefined>;
     /**
      * The ID of the MediaWorkflowJob used to produce this asset, if this parameter is supplied then the workflow ID must also be supplied.
      */
-    mediaWorkflowJobId?: pulumi.Input<string>;
+    mediaWorkflowJobId?: pulumi.Input<string | undefined>;
     /**
      * Filter MediaAsset by the name of the object in object storage.
      */
-    object?: pulumi.Input<string>;
+    object?: pulumi.Input<string | undefined>;
     /**
      * Unique MediaAsset identifier of the asset from which this asset is derived.
      */
-    parentMediaAssetId?: pulumi.Input<string>;
+    parentMediaAssetId?: pulumi.Input<string | undefined>;
     /**
      * The ID of the MediaWorkflow used to produce this asset.
      */
-    sourceMediaWorkflowId?: pulumi.Input<string>;
+    sourceMediaWorkflowId?: pulumi.Input<string | undefined>;
     /**
      * The version of the MediaWorkflow used to produce this asset.
      */
-    sourceMediaWorkflowVersion?: pulumi.Input<string>;
+    sourceMediaWorkflowVersion?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources with lifecycleState matching the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Filter MediaAsset by the asset type.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

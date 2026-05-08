@@ -44,11 +44,11 @@ __all__ = [
 ]
 
 class BlockchainPlatformComponentDetailArgsDict(TypedDict):
-    osns: NotRequired[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnArgsDict']]]]
+    osns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnArgs']]]]]
     """
     List of OSNs
     """
-    peers: NotRequired[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerArgsDict']]]]
+    peers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerArgs']]]]]
     """
     List of Peers
     """
@@ -56,8 +56,8 @@ class BlockchainPlatformComponentDetailArgsDict(TypedDict):
 @pulumi.input_type
 class BlockchainPlatformComponentDetailArgs:
     def __init__(__self__, *,
-                 osns: Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnArgs']]]] = None,
-                 peers: Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerArgs']]]] = None):
+                 osns: pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnArgs']]]] = None,
+                 peers: pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnArgs']]] osns: List of OSNs
         :param pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerArgs']]] peers: List of Peers
@@ -69,43 +69,43 @@ class BlockchainPlatformComponentDetailArgs:
 
     @_builtins.property
     @pulumi.getter
-    def osns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnArgs']]]]:
+    def osns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnArgs']]]]:
         """
         List of OSNs
         """
         return pulumi.get(self, "osns")
 
     @osns.setter
-    def osns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnArgs']]]]):
+    def osns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnArgs']]]]):
         pulumi.set(self, "osns", value)
 
     @_builtins.property
     @pulumi.getter
-    def peers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerArgs']]]]:
+    def peers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerArgs']]]]:
         """
         List of Peers
         """
         return pulumi.get(self, "peers")
 
     @peers.setter
-    def peers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerArgs']]]]):
+    def peers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerArgs']]]]):
         pulumi.set(self, "peers", value)
 
 
 class BlockchainPlatformComponentDetailOsnArgsDict(TypedDict):
-    ad: NotRequired[pulumi.Input[_builtins.str]]
+    ad: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Availability Domain of peer
     """
-    ocpu_allocation_params: NotRequired[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgsDict']]]]
+    ocpu_allocation_params: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs']]]]]
     """
     OCPU allocation parameter
     """
-    osn_key: NotRequired[pulumi.Input[_builtins.str]]
+    osn_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     OSN identifier
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current state of the Platform Instance.
     """
@@ -113,10 +113,10 @@ class BlockchainPlatformComponentDetailOsnArgsDict(TypedDict):
 @pulumi.input_type
 class BlockchainPlatformComponentDetailOsnArgs:
     def __init__(__self__, *,
-                 ad: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocpu_allocation_params: Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs']]]] = None,
-                 osn_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 ad: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocpu_allocation_params: pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs']]]] = None,
+                 osn_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] ad: Availability Domain of peer
         :param pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs']]] ocpu_allocation_params: OCPU allocation parameter
@@ -134,55 +134,55 @@ class BlockchainPlatformComponentDetailOsnArgs:
 
     @_builtins.property
     @pulumi.getter
-    def ad(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ad(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Availability Domain of peer
         """
         return pulumi.get(self, "ad")
 
     @ad.setter
-    def ad(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ad(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ad", value)
 
     @_builtins.property
     @pulumi.getter(name="ocpuAllocationParams")
-    def ocpu_allocation_params(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs']]]]:
+    def ocpu_allocation_params(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs']]]]:
         """
         OCPU allocation parameter
         """
         return pulumi.get(self, "ocpu_allocation_params")
 
     @ocpu_allocation_params.setter
-    def ocpu_allocation_params(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs']]]]):
+    def ocpu_allocation_params(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs']]]]):
         pulumi.set(self, "ocpu_allocation_params", value)
 
     @_builtins.property
     @pulumi.getter(name="osnKey")
-    def osn_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def osn_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OSN identifier
         """
         return pulumi.get(self, "osn_key")
 
     @osn_key.setter
-    def osn_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def osn_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "osn_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Platform Instance.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
 class BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgsDict(TypedDict):
-    ocpu_allocation_number: NotRequired[pulumi.Input[_builtins.float]]
+    ocpu_allocation_number: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Number of OCPU allocation
     """
@@ -190,7 +190,7 @@ class BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgsDict(TypedDict)
 @pulumi.input_type
 class BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs:
     def __init__(__self__, *,
-                 ocpu_allocation_number: Optional[pulumi.Input[_builtins.float]] = None):
+                 ocpu_allocation_number: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[_builtins.float] ocpu_allocation_number: Number of OCPU allocation
         """
@@ -199,43 +199,43 @@ class BlockchainPlatformComponentDetailOsnOcpuAllocationParamArgs:
 
     @_builtins.property
     @pulumi.getter(name="ocpuAllocationNumber")
-    def ocpu_allocation_number(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def ocpu_allocation_number(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Number of OCPU allocation
         """
         return pulumi.get(self, "ocpu_allocation_number")
 
     @ocpu_allocation_number.setter
-    def ocpu_allocation_number(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def ocpu_allocation_number(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "ocpu_allocation_number", value)
 
 
 class BlockchainPlatformComponentDetailPeerArgsDict(TypedDict):
-    ad: NotRequired[pulumi.Input[_builtins.str]]
+    ad: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Availability Domain of peer
     """
-    alias: NotRequired[pulumi.Input[_builtins.str]]
+    alias: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     peer alias
     """
-    host: NotRequired[pulumi.Input[_builtins.str]]
+    host: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Host name of VM
     """
-    ocpu_allocation_params: NotRequired[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgsDict']]]]
+    ocpu_allocation_params: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs']]]]]
     """
     OCPU allocation parameter
     """
-    peer_key: NotRequired[pulumi.Input[_builtins.str]]
+    peer_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     peer identifier
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Peer role
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current state of the Platform Instance.
     """
@@ -243,13 +243,13 @@ class BlockchainPlatformComponentDetailPeerArgsDict(TypedDict):
 @pulumi.input_type
 class BlockchainPlatformComponentDetailPeerArgs:
     def __init__(__self__, *,
-                 ad: Optional[pulumi.Input[_builtins.str]] = None,
-                 alias: Optional[pulumi.Input[_builtins.str]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocpu_allocation_params: Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs']]]] = None,
-                 peer_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 ad: pulumi.Input[Optional[_builtins.str]] = None,
+                 alias: pulumi.Input[Optional[_builtins.str]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocpu_allocation_params: pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs']]]] = None,
+                 peer_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] ad: Availability Domain of peer
         :param pulumi.Input[_builtins.str] alias: peer alias
@@ -276,91 +276,91 @@ class BlockchainPlatformComponentDetailPeerArgs:
 
     @_builtins.property
     @pulumi.getter
-    def ad(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ad(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Availability Domain of peer
         """
         return pulumi.get(self, "ad")
 
     @ad.setter
-    def ad(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ad(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ad", value)
 
     @_builtins.property
     @pulumi.getter
-    def alias(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alias(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         peer alias
         """
         return pulumi.get(self, "alias")
 
     @alias.setter
-    def alias(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alias(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alias", value)
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Host name of VM
         """
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter(name="ocpuAllocationParams")
-    def ocpu_allocation_params(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs']]]]:
+    def ocpu_allocation_params(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs']]]]:
         """
         OCPU allocation parameter
         """
         return pulumi.get(self, "ocpu_allocation_params")
 
     @ocpu_allocation_params.setter
-    def ocpu_allocation_params(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs']]]]):
+    def ocpu_allocation_params(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs']]]]):
         pulumi.set(self, "ocpu_allocation_params", value)
 
     @_builtins.property
     @pulumi.getter(name="peerKey")
-    def peer_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         peer identifier
         """
         return pulumi.get(self, "peer_key")
 
     @peer_key.setter
-    def peer_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Peer role
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Platform Instance.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
 class BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgsDict(TypedDict):
-    ocpu_allocation_number: NotRequired[pulumi.Input[_builtins.float]]
+    ocpu_allocation_number: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Number of OCPU allocation
     """
@@ -368,7 +368,7 @@ class BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgsDict(TypedDict
 @pulumi.input_type
 class BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs:
     def __init__(__self__, *,
-                 ocpu_allocation_number: Optional[pulumi.Input[_builtins.float]] = None):
+                 ocpu_allocation_number: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[_builtins.float] ocpu_allocation_number: Number of OCPU allocation
         """
@@ -377,27 +377,27 @@ class BlockchainPlatformComponentDetailPeerOcpuAllocationParamArgs:
 
     @_builtins.property
     @pulumi.getter(name="ocpuAllocationNumber")
-    def ocpu_allocation_number(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def ocpu_allocation_number(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Number of OCPU allocation
         """
         return pulumi.get(self, "ocpu_allocation_number")
 
     @ocpu_allocation_number.setter
-    def ocpu_allocation_number(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def ocpu_allocation_number(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "ocpu_allocation_number", value)
 
 
 class BlockchainPlatformHostOcpuUtilizationInfoArgsDict(TypedDict):
-    host: NotRequired[pulumi.Input[_builtins.str]]
+    host: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Host name of VM
     """
-    ocpu_capacity_number: NotRequired[pulumi.Input[_builtins.float]]
+    ocpu_capacity_number: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Number of total OCPU capacity on the host
     """
-    ocpu_utilization_number: NotRequired[pulumi.Input[_builtins.float]]
+    ocpu_utilization_number: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Number of OCPU utilized
     """
@@ -405,9 +405,9 @@ class BlockchainPlatformHostOcpuUtilizationInfoArgsDict(TypedDict):
 @pulumi.input_type
 class BlockchainPlatformHostOcpuUtilizationInfoArgs:
     def __init__(__self__, *,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocpu_capacity_number: Optional[pulumi.Input[_builtins.float]] = None,
-                 ocpu_utilization_number: Optional[pulumi.Input[_builtins.float]] = None):
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocpu_capacity_number: pulumi.Input[Optional[_builtins.float]] = None,
+                 ocpu_utilization_number: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[_builtins.str] host: Host name of VM
         :param pulumi.Input[_builtins.float] ocpu_capacity_number: Number of total OCPU capacity on the host
@@ -422,51 +422,51 @@ class BlockchainPlatformHostOcpuUtilizationInfoArgs:
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Host name of VM
         """
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter(name="ocpuCapacityNumber")
-    def ocpu_capacity_number(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def ocpu_capacity_number(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Number of total OCPU capacity on the host
         """
         return pulumi.get(self, "ocpu_capacity_number")
 
     @ocpu_capacity_number.setter
-    def ocpu_capacity_number(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def ocpu_capacity_number(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "ocpu_capacity_number", value)
 
     @_builtins.property
     @pulumi.getter(name="ocpuUtilizationNumber")
-    def ocpu_utilization_number(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def ocpu_utilization_number(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Number of OCPU utilized
         """
         return pulumi.get(self, "ocpu_utilization_number")
 
     @ocpu_utilization_number.setter
-    def ocpu_utilization_number(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def ocpu_utilization_number(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "ocpu_utilization_number", value)
 
 
 class BlockchainPlatformReplicasArgsDict(TypedDict):
-    ca_count: NotRequired[pulumi.Input[_builtins.int]]
+    ca_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Number of CA replicas
     """
-    console_count: NotRequired[pulumi.Input[_builtins.int]]
+    console_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Number of console replicas
     """
-    proxy_count: NotRequired[pulumi.Input[_builtins.int]]
+    proxy_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Number of REST proxy replicas
     """
@@ -474,9 +474,9 @@ class BlockchainPlatformReplicasArgsDict(TypedDict):
 @pulumi.input_type
 class BlockchainPlatformReplicasArgs:
     def __init__(__self__, *,
-                 ca_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 console_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 proxy_count: Optional[pulumi.Input[_builtins.int]] = None):
+                 ca_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 console_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 proxy_count: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] ca_count: Number of CA replicas
         :param pulumi.Input[_builtins.int] console_count: Number of console replicas
@@ -491,38 +491,38 @@ class BlockchainPlatformReplicasArgs:
 
     @_builtins.property
     @pulumi.getter(name="caCount")
-    def ca_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ca_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of CA replicas
         """
         return pulumi.get(self, "ca_count")
 
     @ca_count.setter
-    def ca_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ca_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ca_count", value)
 
     @_builtins.property
     @pulumi.getter(name="consoleCount")
-    def console_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def console_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of console replicas
         """
         return pulumi.get(self, "console_count")
 
     @console_count.setter
-    def console_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def console_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "console_count", value)
 
     @_builtins.property
     @pulumi.getter(name="proxyCount")
-    def proxy_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def proxy_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of REST proxy replicas
         """
         return pulumi.get(self, "proxy_count")
 
     @proxy_count.setter
-    def proxy_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def proxy_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "proxy_count", value)
 
 

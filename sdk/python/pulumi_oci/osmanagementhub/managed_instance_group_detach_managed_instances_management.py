@@ -66,8 +66,8 @@ class ManagedInstanceGroupDetachManagedInstancesManagementArgs:
 @pulumi.input_type
 class _ManagedInstanceGroupDetachManagedInstancesManagementState:
     def __init__(__self__, *,
-                 managed_instance_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 managed_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering ManagedInstanceGroupDetachManagedInstancesManagement resources.
 
@@ -85,19 +85,19 @@ class _ManagedInstanceGroupDetachManagedInstancesManagementState:
 
     @_builtins.property
     @pulumi.getter(name="managedInstanceGroupId")
-    def managed_instance_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def managed_instance_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         """
         return pulumi.get(self, "managed_instance_group_id")
 
     @managed_instance_group_id.setter
-    def managed_instance_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def managed_instance_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "managed_instance_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="managedInstances")
-    def managed_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def managed_instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from the group.
 
@@ -108,7 +108,7 @@ class _ManagedInstanceGroupDetachManagedInstancesManagementState:
         return pulumi.get(self, "managed_instances")
 
     @managed_instances.setter
-    def managed_instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def managed_instances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "managed_instances", value)
 
 
@@ -118,8 +118,8 @@ class ManagedInstanceGroupDetachManagedInstancesManagement(pulumi.CustomResource
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 managed_instance_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 managed_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         This resource provides the Managed Instance Group Detach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -207,8 +207,8 @@ class ManagedInstanceGroupDetachManagedInstancesManagement(pulumi.CustomResource
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 managed_instance_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 managed_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -234,8 +234,8 @@ class ManagedInstanceGroupDetachManagedInstancesManagement(pulumi.CustomResource
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            managed_instance_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            managed_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'ManagedInstanceGroupDetachManagedInstancesManagement':
+            managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            managed_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'ManagedInstanceGroupDetachManagedInstancesManagement':
         """
         Get an existing ManagedInstanceGroupDetachManagedInstancesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

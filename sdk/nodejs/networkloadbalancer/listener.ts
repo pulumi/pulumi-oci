@@ -22,13 +22,13 @@ import * as utilities from "../utilities";
  *     defaultBackendSetName: testBackendSet.name,
  *     name: listenerName,
  *     networkLoadBalancerId: testNetworkLoadBalancer.id,
- *     port: listenerPort,
+ *     port: Number(listenerPort),
  *     protocol: listenerProtocol,
  *     ipVersion: listenerIpVersion,
- *     isPpv2enabled: listenerIsPpv2enabled,
- *     l3ipIdleTimeout: listenerL3ipIdleTimeout,
- *     tcpIdleTimeout: listenerTcpIdleTimeout,
- *     udpIdleTimeout: listenerUdpIdleTimeout,
+ *     isPpv2enabled: listenerIsPpv2enabled === "true",
+ *     l3ipIdleTimeout: Number(listenerL3ipIdleTimeout),
+ *     tcpIdleTimeout: Number(listenerTcpIdleTimeout),
+ *     udpIdleTimeout: Number(listenerUdpIdleTimeout),
  * });
  * ```
  *
@@ -173,39 +173,39 @@ export interface ListenerState {
     /**
      * (Updatable) The name of the associated backend set.  Example: `exampleBackendSet`
      */
-    defaultBackendSetName?: pulumi.Input<string>;
+    defaultBackendSetName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) IP version associated with the listener.
      */
-    ipVersion?: pulumi.Input<string>;
+    ipVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Property to enable/disable PPv2 feature for this listener.
      */
-    isPpv2enabled?: pulumi.Input<boolean>;
+    isPpv2enabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The duration for L3IP idle timeout in seconds. Example: `200`
      */
-    l3ipIdleTimeout?: pulumi.Input<number>;
+    l3ipIdleTimeout?: pulumi.Input<number | undefined>;
     /**
      * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
      */
-    networkLoadBalancerId?: pulumi.Input<string>;
+    networkLoadBalancerId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The communication port for the listener.  Example: `80`
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The protocol on which the listener accepts connection requests. For public network load balancers, ANY protocol refers to TCP/UDP with the wildcard port. For private network load balancers, ANY protocol refers to TCP/UDP/ICMP (note that ICMP requires isPreserveSourceDestination to be set to true). "ListNetworkLoadBalancersProtocols" API is deprecated and it will not return the updated values. Use the allowed values for the protocol instead.  Example: `TCP`
      */
-    protocol?: pulumi.Input<string>;
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
      */
-    tcpIdleTimeout?: pulumi.Input<number>;
+    tcpIdleTimeout?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
      *
@@ -213,7 +213,7 @@ export interface ListenerState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    udpIdleTimeout?: pulumi.Input<number>;
+    udpIdleTimeout?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -227,19 +227,19 @@ export interface ListenerArgs {
     /**
      * (Updatable) IP version associated with the listener.
      */
-    ipVersion?: pulumi.Input<string>;
+    ipVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Property to enable/disable PPv2 feature for this listener.
      */
-    isPpv2enabled?: pulumi.Input<boolean>;
+    isPpv2enabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The duration for L3IP idle timeout in seconds. Example: `200`
      */
-    l3ipIdleTimeout?: pulumi.Input<number>;
+    l3ipIdleTimeout?: pulumi.Input<number | undefined>;
     /**
      * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
      */
@@ -255,7 +255,7 @@ export interface ListenerArgs {
     /**
      * (Updatable) The duration for TCP idle timeout in seconds. Example: `300`
      */
-    tcpIdleTimeout?: pulumi.Input<number>;
+    tcpIdleTimeout?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The duration for UDP idle timeout in seconds. Example: `120` 
      *
@@ -263,5 +263,5 @@ export interface ListenerArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    udpIdleTimeout?: pulumi.Input<number>;
+    udpIdleTimeout?: pulumi.Input<number | undefined>;
 }

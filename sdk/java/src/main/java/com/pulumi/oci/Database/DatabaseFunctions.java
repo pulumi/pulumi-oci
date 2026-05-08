@@ -513,8 +513,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAdvancedClusterFileSystemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -555,8 +555,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAdvancedClusterFileSystemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -597,8 +597,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAdvancedClusterFileSystemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -639,8 +639,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAdvancedClusterFileSystemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -681,8 +681,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAdvancedClusterFileSystemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -723,8 +723,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAdvancedClusterFileSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -769,8 +769,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAdvancedClusterFileSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -815,8 +815,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAdvancedClusterFileSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -861,8 +861,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAdvancedClusterFileSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -907,8 +907,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAdvancedClusterFileSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -953,8 +953,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetApplicationVipArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -995,8 +995,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetApplicationVipArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1037,8 +1037,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetApplicationVipArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1079,8 +1079,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetApplicationVipArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1121,8 +1121,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetApplicationVipArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1163,8 +1163,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetApplicationVipsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1207,8 +1207,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetApplicationVipsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1251,8 +1251,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetApplicationVipsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1295,8 +1295,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetApplicationVipsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1339,8 +1339,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetApplicationVipsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1383,8 +1383,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousCharacterSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1427,8 +1427,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousCharacterSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1471,8 +1471,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousCharacterSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1515,8 +1515,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousCharacterSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1559,8 +1559,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousCharacterSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1603,8 +1603,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousCharacterSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1647,8 +1647,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousCharacterSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1691,8 +1691,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1733,8 +1733,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1775,8 +1775,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1817,8 +1817,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1859,8 +1859,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1901,8 +1901,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1948,8 +1948,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1995,8 +1995,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2042,8 +2042,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2089,8 +2089,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2136,8 +2136,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2183,8 +2183,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2230,8 +2230,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2273,8 +2273,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2316,8 +2316,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2359,8 +2359,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2402,8 +2402,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2445,8 +2445,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2487,8 +2487,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2529,8 +2529,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2571,8 +2571,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2613,8 +2613,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2655,8 +2655,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseResourceUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2697,8 +2697,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseResourceUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2739,8 +2739,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseResourceUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2781,8 +2781,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseResourceUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2823,8 +2823,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseResourceUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2865,8 +2865,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2908,8 +2908,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2951,8 +2951,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2994,8 +2994,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3037,8 +3037,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3080,8 +3080,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3130,8 +3130,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3180,8 +3180,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3230,8 +3230,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3280,8 +3280,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3330,8 +3330,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3374,8 +3374,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3418,8 +3418,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3462,8 +3462,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3506,8 +3506,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousContainerPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3550,8 +3550,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3592,8 +3592,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3634,8 +3634,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3676,8 +3676,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3718,8 +3718,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3760,8 +3760,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3802,8 +3802,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3844,8 +3844,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3886,8 +3886,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3928,8 +3928,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3970,8 +3970,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4019,8 +4019,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4068,8 +4068,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4117,8 +4117,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4166,8 +4166,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4215,8 +4215,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4264,8 +4264,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4313,8 +4313,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseDataguardAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4356,8 +4356,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseDataguardAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4399,8 +4399,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseDataguardAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4442,8 +4442,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseDataguardAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4485,8 +4485,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseDataguardAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4528,8 +4528,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseDataguardAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4570,8 +4570,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseDataguardAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4612,8 +4612,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseDataguardAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4654,8 +4654,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseDataguardAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4696,8 +4696,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseDataguardAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4738,8 +4738,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseInstanceWalletManagementArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4780,8 +4780,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseInstanceWalletManagementArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4822,8 +4822,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseInstanceWalletManagementArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4864,8 +4864,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseInstanceWalletManagementArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4906,8 +4906,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseInstanceWalletManagementArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4948,8 +4948,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasePeersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4990,8 +4990,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasePeersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5032,8 +5032,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasePeersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5074,8 +5074,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasePeersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5116,8 +5116,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasePeersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5158,8 +5158,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseRefreshableClonesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5200,8 +5200,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseRefreshableClonesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5242,8 +5242,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseRefreshableClonesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5284,8 +5284,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseRefreshableClonesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5326,8 +5326,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseRefreshableClonesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5367,8 +5367,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5406,8 +5406,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5445,8 +5445,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5484,8 +5484,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5523,8 +5523,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5562,8 +5562,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5601,8 +5601,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5641,8 +5641,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseResourcePoolMembersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5683,8 +5683,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseResourcePoolMembersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5725,8 +5725,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseResourcePoolMembersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5767,8 +5767,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseResourcePoolMembersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5809,8 +5809,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseResourcePoolMembersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5851,8 +5851,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5893,8 +5893,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5935,8 +5935,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5977,8 +5977,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6019,8 +6019,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6061,8 +6061,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6106,8 +6106,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6151,8 +6151,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6196,8 +6196,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6241,8 +6241,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6364,8 +6364,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6431,8 +6431,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6498,8 +6498,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6565,8 +6565,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6632,8 +6632,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6686,8 +6686,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesClonesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6732,8 +6732,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesClonesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6778,8 +6778,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesClonesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6824,8 +6824,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesClonesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6870,8 +6870,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesClonesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6916,8 +6916,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesEstimateCostSavingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6959,8 +6959,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesEstimateCostSavingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7002,8 +7002,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesEstimateCostSavingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7045,8 +7045,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesEstimateCostSavingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7088,8 +7088,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasesEstimateCostSavingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7132,8 +7132,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDbPreviewVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7175,8 +7175,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDbPreviewVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7218,8 +7218,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDbPreviewVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7261,8 +7261,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDbPreviewVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7304,8 +7304,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDbPreviewVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7346,8 +7346,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDbVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7389,8 +7389,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDbVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7432,8 +7432,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDbVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7475,8 +7475,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDbVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7518,8 +7518,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousDbVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7561,8 +7561,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7603,8 +7603,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7645,8 +7645,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7687,8 +7687,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7729,8 +7729,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7771,8 +7771,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureOcpuArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7813,8 +7813,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureOcpuArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7855,8 +7855,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureOcpuArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7897,8 +7897,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureOcpuArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7939,8 +7939,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureOcpuArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7981,8 +7981,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8024,8 +8024,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8067,8 +8067,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8110,8 +8110,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8153,8 +8153,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructureShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8196,8 +8196,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructuresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8241,8 +8241,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructuresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8286,8 +8286,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructuresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8331,8 +8331,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructuresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8376,8 +8376,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousExadataInfrastructuresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8421,8 +8421,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8463,8 +8463,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8505,8 +8505,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8547,8 +8547,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8589,8 +8589,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8631,8 +8631,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVirtualMachineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8673,8 +8673,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVirtualMachineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8715,8 +8715,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVirtualMachineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8757,8 +8757,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVirtualMachineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8799,8 +8799,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVirtualMachineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8841,8 +8841,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVirtualMachinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8885,8 +8885,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVirtualMachinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8929,8 +8929,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVirtualMachinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8973,8 +8973,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVirtualMachinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9017,8 +9017,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVirtualMachinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9061,8 +9061,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVmClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9103,8 +9103,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVmClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9145,8 +9145,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVmClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9187,8 +9187,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVmClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9229,8 +9229,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVmClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9271,8 +9271,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVmClusterAcdResourceUsagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9314,8 +9314,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVmClusterAcdResourceUsagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9357,8 +9357,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVmClusterAcdResourceUsagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9400,8 +9400,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVmClusterAcdResourceUsagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9443,8 +9443,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVmClusterAcdResourceUsagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9486,8 +9486,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVmClusterResourceUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9528,8 +9528,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVmClusterResourceUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9570,8 +9570,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVmClusterResourceUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9612,8 +9612,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVmClusterResourceUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9654,8 +9654,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVmClusterResourceUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9696,8 +9696,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVmClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9741,8 +9741,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVmClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9786,8 +9786,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVmClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9831,8 +9831,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVmClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9876,8 +9876,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetAutonomousVmClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9921,8 +9921,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetBackupDestinationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9963,8 +9963,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetBackupDestinationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10005,8 +10005,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetBackupDestinationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10047,8 +10047,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetBackupDestinationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10089,8 +10089,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetBackupDestinationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10131,8 +10131,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetBackupDestinationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10174,8 +10174,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetBackupDestinationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10217,8 +10217,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetBackupDestinationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10260,8 +10260,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetBackupDestinationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10303,8 +10303,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetBackupDestinationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10346,8 +10346,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10396,8 +10396,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10446,8 +10446,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10496,8 +10496,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10546,8 +10546,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10596,8 +10596,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10646,8 +10646,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10696,8 +10696,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10738,8 +10738,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10780,8 +10780,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10822,8 +10822,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10864,8 +10864,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10907,8 +10907,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterAcdResourceUsagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10951,8 +10951,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterAcdResourceUsagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10995,8 +10995,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterAcdResourceUsagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11039,8 +11039,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterAcdResourceUsagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11083,8 +11083,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterAcdResourceUsagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11126,8 +11126,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterResourceUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11168,8 +11168,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterResourceUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11210,8 +11210,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterResourceUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11252,8 +11252,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterResourceUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11294,8 +11294,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClusterResourceUsageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11336,8 +11336,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11382,8 +11382,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11428,8 +11428,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11474,8 +11474,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11520,8 +11520,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudAutonomousVmClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11566,8 +11566,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructureArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11608,8 +11608,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructureArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11650,8 +11650,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructureArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11692,8 +11692,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructureArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11734,8 +11734,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructureArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11776,8 +11776,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructureUnAllocatedResourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11819,8 +11819,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructureUnAllocatedResourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11862,8 +11862,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructureUnAllocatedResourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11905,8 +11905,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructureUnAllocatedResourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11948,8 +11948,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructureUnAllocatedResourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11991,8 +11991,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructuresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12036,8 +12036,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructuresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12081,8 +12081,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructuresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12126,8 +12126,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructuresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12171,8 +12171,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudExadataInfrastructuresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12216,8 +12216,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudVmClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12258,8 +12258,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudVmClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12300,8 +12300,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudVmClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12342,8 +12342,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudVmClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12384,8 +12384,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudVmClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12429,8 +12429,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudVmClusterIormConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12474,8 +12474,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudVmClusterIormConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12519,8 +12519,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudVmClusterIormConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12564,8 +12564,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudVmClusterIormConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12609,8 +12609,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudVmClusterIormConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12651,8 +12651,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudVmClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12697,8 +12697,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudVmClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12743,8 +12743,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudVmClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12789,8 +12789,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudVmClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12835,8 +12835,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetCloudVmClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12881,8 +12881,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDataGuardAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12924,8 +12924,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDataGuardAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12967,8 +12967,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDataGuardAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13010,8 +13010,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDataGuardAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13053,8 +13053,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDataGuardAssociationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13096,8 +13096,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDataGuardAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13138,8 +13138,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDataGuardAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13180,8 +13180,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDataGuardAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13222,8 +13222,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDataGuardAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13264,8 +13264,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDataGuardAssociationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13306,8 +13306,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13348,8 +13348,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13390,8 +13390,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13432,8 +13432,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13474,8 +13474,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13516,8 +13516,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseMaintenanceRunHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13563,8 +13563,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseMaintenanceRunHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13610,8 +13610,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseMaintenanceRunHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13657,8 +13657,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseMaintenanceRunHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13704,8 +13704,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseMaintenanceRunHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13751,8 +13751,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseMaintenanceRunHistoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13793,8 +13793,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseMaintenanceRunHistoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13835,8 +13835,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseMaintenanceRunHistoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13877,8 +13877,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseMaintenanceRunHistoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13919,8 +13919,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseMaintenanceRunHistoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13961,8 +13961,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14005,8 +14005,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14049,8 +14049,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14093,8 +14093,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14137,8 +14137,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14181,8 +14181,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14224,8 +14224,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14267,8 +14267,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14310,8 +14310,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14353,8 +14353,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14396,8 +14396,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseSoftwareImageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14438,8 +14438,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseSoftwareImageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14480,8 +14480,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseSoftwareImageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14522,8 +14522,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseSoftwareImageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14564,8 +14564,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseSoftwareImageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14606,8 +14606,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseSoftwareImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14654,8 +14654,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseSoftwareImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14702,8 +14702,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseSoftwareImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14750,8 +14750,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseSoftwareImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14798,8 +14798,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseSoftwareImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14846,8 +14846,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseUpgradeHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14890,8 +14890,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseUpgradeHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14934,8 +14934,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseUpgradeHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14978,8 +14978,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseUpgradeHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15022,8 +15022,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseUpgradeHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15066,8 +15066,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseUpgradeHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15109,8 +15109,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseUpgradeHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15152,8 +15152,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseUpgradeHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15195,8 +15195,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseUpgradeHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15238,8 +15238,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabaseUpgradeHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15281,8 +15281,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15327,8 +15327,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15373,8 +15373,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15419,8 +15419,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15465,8 +15465,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15511,8 +15511,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbConnectionBundleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15553,8 +15553,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbConnectionBundleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15595,8 +15595,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbConnectionBundleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15637,8 +15637,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbConnectionBundleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15679,8 +15679,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbConnectionBundleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15721,8 +15721,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbConnectionBundlesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15767,8 +15767,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbConnectionBundlesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15813,8 +15813,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbConnectionBundlesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15859,8 +15859,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbConnectionBundlesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15905,8 +15905,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbConnectionBundlesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15951,8 +15951,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbHomeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15993,8 +15993,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbHomeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16035,8 +16035,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbHomeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16077,8 +16077,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbHomeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16119,8 +16119,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbHomeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16161,8 +16161,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbHomePatchHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16203,8 +16203,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbHomePatchHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16245,8 +16245,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbHomePatchHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16287,8 +16287,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbHomePatchHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16329,8 +16329,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbHomePatchHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16371,8 +16371,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbHomePatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16413,8 +16413,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbHomePatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16455,8 +16455,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbHomePatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16497,8 +16497,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbHomePatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16539,8 +16539,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbHomePatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16626,8 +16626,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16668,8 +16668,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16710,8 +16710,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16752,8 +16752,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16794,8 +16794,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16836,8 +16836,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleConnectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16879,8 +16879,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleConnectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16922,8 +16922,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleConnectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16965,8 +16965,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleConnectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17008,8 +17008,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleConnectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17051,8 +17051,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17093,8 +17093,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17135,8 +17135,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17177,8 +17177,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17219,8 +17219,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17261,8 +17261,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17305,8 +17305,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17349,8 +17349,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17393,8 +17393,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17437,8 +17437,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17481,8 +17481,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17524,8 +17524,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17567,8 +17567,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17610,8 +17610,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17653,8 +17653,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17696,8 +17696,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoryContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17739,8 +17739,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoryContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17782,8 +17782,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoryContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17825,8 +17825,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoryContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17868,8 +17868,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoryContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17911,8 +17911,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeSnapshotArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17953,8 +17953,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeSnapshotArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17995,8 +17995,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeSnapshotArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18037,8 +18037,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeSnapshotArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18079,8 +18079,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeSnapshotArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18121,8 +18121,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeSnapshotsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18167,8 +18167,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeSnapshotsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18213,8 +18213,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeSnapshotsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18259,8 +18259,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeSnapshotsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18305,8 +18305,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodeSnapshotsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18351,8 +18351,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18397,8 +18397,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18443,8 +18443,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18489,8 +18489,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18535,8 +18535,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbNodesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18581,8 +18581,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbServerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18624,8 +18624,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbServerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18667,8 +18667,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbServerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18710,8 +18710,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbServerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18753,8 +18753,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbServerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18796,8 +18796,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbServersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18841,8 +18841,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbServersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18886,8 +18886,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbServersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18931,8 +18931,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbServersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18976,8 +18976,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbServersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19021,8 +19021,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemComputePerformancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19063,8 +19063,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemComputePerformancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19105,8 +19105,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemComputePerformancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19147,8 +19147,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemComputePerformancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19189,8 +19189,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemComputePerformancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19231,8 +19231,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemComputePerformancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19273,8 +19273,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemComputePerformancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19315,8 +19315,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19357,8 +19357,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19399,8 +19399,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19441,8 +19441,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19483,8 +19483,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19525,8 +19525,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemOsPatchHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19569,8 +19569,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemOsPatchHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19613,8 +19613,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemOsPatchHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19657,8 +19657,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemOsPatchHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19701,8 +19701,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemOsPatchHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19745,8 +19745,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemOsPatchHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19788,8 +19788,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemOsPatchHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19831,8 +19831,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemOsPatchHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19874,8 +19874,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemOsPatchHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19917,8 +19917,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemOsPatchHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19960,8 +19960,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20002,8 +20002,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20044,8 +20044,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20086,8 +20086,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20128,8 +20128,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20170,8 +20170,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20214,8 +20214,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20258,8 +20258,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20302,8 +20302,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20346,8 +20346,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20390,8 +20390,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemStoragePerformancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20435,8 +20435,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemStoragePerformancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20480,8 +20480,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemStoragePerformancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20525,8 +20525,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemStoragePerformancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20570,8 +20570,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemStoragePerformancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20619,8 +20619,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20669,8 +20669,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20719,8 +20719,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20769,8 +20769,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20819,8 +20819,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20865,8 +20865,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemsUpgradeHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20909,8 +20909,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemsUpgradeHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20953,8 +20953,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemsUpgradeHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20997,8 +20997,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemsUpgradeHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21041,8 +21041,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemsUpgradeHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21085,8 +21085,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemsUpgradeHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21128,8 +21128,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemsUpgradeHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21171,8 +21171,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemsUpgradeHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21214,8 +21214,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemsUpgradeHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21257,8 +21257,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbSystemsUpgradeHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21300,8 +21300,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21348,8 +21348,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21396,8 +21396,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21444,8 +21444,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21492,8 +21492,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetDbVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21600,8 +21600,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureDownloadConfigFileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21643,8 +21643,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureDownloadConfigFileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21686,8 +21686,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureDownloadConfigFileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21729,8 +21729,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureDownloadConfigFileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21772,8 +21772,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureDownloadConfigFileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21815,8 +21815,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureUnAllocatedResourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21858,8 +21858,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureUnAllocatedResourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21901,8 +21901,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureUnAllocatedResourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21944,8 +21944,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureUnAllocatedResourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21987,8 +21987,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureUnAllocatedResourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22098,8 +22098,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadataIormConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22148,8 +22148,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadataIormConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22198,8 +22198,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadataIormConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22248,8 +22248,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadataIormConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22298,8 +22298,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadataIormConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22340,8 +22340,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22382,8 +22382,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22424,8 +22424,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22466,8 +22466,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22508,8 +22508,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22550,8 +22550,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22593,8 +22593,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22636,8 +22636,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22679,8 +22679,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22722,8 +22722,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22765,8 +22765,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22808,8 +22808,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22851,8 +22851,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22894,8 +22894,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22937,8 +22937,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22980,8 +22980,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23023,8 +23023,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23066,8 +23066,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23109,8 +23109,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23152,8 +23152,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23195,8 +23195,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23239,8 +23239,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23283,8 +23283,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23327,8 +23327,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23371,8 +23371,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23415,8 +23415,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23461,8 +23461,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23507,8 +23507,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23553,8 +23553,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23599,8 +23599,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExadbVmClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23645,8 +23645,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23687,8 +23687,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23729,8 +23729,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23771,8 +23771,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23813,8 +23813,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23855,8 +23855,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23905,8 +23905,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23955,8 +23955,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24005,8 +24005,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24055,8 +24055,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24105,8 +24105,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExecutionActionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24147,8 +24147,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExecutionActionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24189,8 +24189,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExecutionActionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24231,8 +24231,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExecutionActionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24273,8 +24273,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExecutionActionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24315,8 +24315,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExecutionActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24360,8 +24360,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExecutionActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24405,8 +24405,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExecutionActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24450,8 +24450,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExecutionActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24495,8 +24495,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExecutionActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24540,8 +24540,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExecutionWindowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24582,8 +24582,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExecutionWindowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24624,8 +24624,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExecutionWindowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24666,8 +24666,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExecutionWindowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24708,8 +24708,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExecutionWindowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24750,8 +24750,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExecutionWindowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24795,8 +24795,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExecutionWindowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24840,8 +24840,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExecutionWindowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24885,8 +24885,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExecutionWindowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24930,8 +24930,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExecutionWindowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24975,8 +24975,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalContainerDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25017,8 +25017,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalContainerDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25059,8 +25059,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalContainerDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25101,8 +25101,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalContainerDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25143,8 +25143,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalContainerDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25185,8 +25185,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalContainerDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25229,8 +25229,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalContainerDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25273,8 +25273,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalContainerDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25317,8 +25317,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalContainerDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25361,8 +25361,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalContainerDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25405,8 +25405,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalDatabaseConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25447,8 +25447,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalDatabaseConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25489,8 +25489,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalDatabaseConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25531,8 +25531,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalDatabaseConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25573,8 +25573,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalDatabaseConnectorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25615,8 +25615,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalDatabaseConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25660,8 +25660,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalDatabaseConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25705,8 +25705,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalDatabaseConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25750,8 +25750,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalDatabaseConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25795,8 +25795,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalDatabaseConnectorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25840,8 +25840,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalNonContainerDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25882,8 +25882,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalNonContainerDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25924,8 +25924,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalNonContainerDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25966,8 +25966,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalNonContainerDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26008,8 +26008,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalNonContainerDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26050,8 +26050,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalNonContainerDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26094,8 +26094,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalNonContainerDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26138,8 +26138,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalNonContainerDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26182,8 +26182,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalNonContainerDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26226,8 +26226,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalNonContainerDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26271,8 +26271,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalPluggableDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26314,8 +26314,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalPluggableDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26357,8 +26357,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalPluggableDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26400,8 +26400,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalPluggableDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26443,8 +26443,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalPluggableDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26486,8 +26486,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalPluggableDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26532,8 +26532,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalPluggableDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26578,8 +26578,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalPluggableDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26624,8 +26624,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalPluggableDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26670,8 +26670,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetExternalPluggableDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26715,8 +26715,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetFlexComponentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26759,8 +26759,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetFlexComponentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26803,8 +26803,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetFlexComponentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26847,8 +26847,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetFlexComponentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26891,8 +26891,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetFlexComponentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26935,8 +26935,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetGiVersionMinorVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26982,8 +26982,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetGiVersionMinorVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27029,8 +27029,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetGiVersionMinorVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27076,8 +27076,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetGiVersionMinorVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27123,8 +27123,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetGiVersionMinorVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27170,8 +27170,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetGiVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27216,8 +27216,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetGiVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27262,8 +27262,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetGiVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27308,8 +27308,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetGiVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27354,8 +27354,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetGiVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27401,8 +27401,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetInfrastructureTargetVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27446,8 +27446,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetInfrastructureTargetVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27491,8 +27491,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetInfrastructureTargetVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27536,8 +27536,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetInfrastructureTargetVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27581,8 +27581,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetInfrastructureTargetVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27625,8 +27625,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetKeyStoreArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27667,8 +27667,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetKeyStoreArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27709,8 +27709,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetKeyStoreArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27751,8 +27751,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetKeyStoreArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27793,8 +27793,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetKeyStoreArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27835,8 +27835,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetKeyStoresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27877,8 +27877,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetKeyStoresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27919,8 +27919,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetKeyStoresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27961,8 +27961,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetKeyStoresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28003,8 +28003,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetKeyStoresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28045,8 +28045,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetMaintenanceRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28087,8 +28087,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetMaintenanceRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28129,8 +28129,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetMaintenanceRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28171,8 +28171,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetMaintenanceRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28213,8 +28213,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetMaintenanceRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28255,8 +28255,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetMaintenanceRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28304,8 +28304,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetMaintenanceRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28353,8 +28353,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetMaintenanceRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28402,8 +28402,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetMaintenanceRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28451,8 +28451,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetMaintenanceRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28500,8 +28500,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetManagedPreferredCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28543,8 +28543,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetManagedPreferredCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28586,8 +28586,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetManagedPreferredCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28629,8 +28629,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetManagedPreferredCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28672,8 +28672,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetManagedPreferredCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28715,8 +28715,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetManagedPreferredCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28757,8 +28757,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetManagedPreferredCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28799,8 +28799,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetManagedPreferredCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28841,8 +28841,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetManagedPreferredCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28883,8 +28883,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetManagedPreferredCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28925,8 +28925,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetOneoffPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28967,8 +28967,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetOneoffPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29009,8 +29009,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetOneoffPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29051,8 +29051,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetOneoffPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29093,8 +29093,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetOneoffPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29135,8 +29135,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetOneoffPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29179,8 +29179,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetOneoffPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29223,8 +29223,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetOneoffPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29267,8 +29267,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetOneoffPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29311,8 +29311,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetOneoffPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29355,8 +29355,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29397,8 +29397,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29439,8 +29439,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29481,8 +29481,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29523,8 +29523,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29565,8 +29565,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29607,8 +29607,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29649,8 +29649,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29691,8 +29691,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29733,8 +29733,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29775,8 +29775,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29821,8 +29821,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29867,8 +29867,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29913,8 +29913,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29959,8 +29959,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30005,8 +30005,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30051,8 +30051,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetPluggableDatabaseSnapshotsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30097,8 +30097,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetPluggableDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30142,8 +30142,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetPluggableDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30187,8 +30187,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetPluggableDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30232,8 +30232,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetPluggableDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30277,8 +30277,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetPluggableDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30322,8 +30322,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetPluggableDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30367,8 +30367,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetPluggableDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30412,8 +30412,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetScheduledActionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30454,8 +30454,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetScheduledActionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30496,8 +30496,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetScheduledActionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30538,8 +30538,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetScheduledActionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30580,8 +30580,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetScheduledActionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30622,8 +30622,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetScheduledActionParamsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30664,8 +30664,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetScheduledActionParamsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30706,8 +30706,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetScheduledActionParamsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30748,8 +30748,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetScheduledActionParamsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30790,8 +30790,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetScheduledActionParamsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30832,8 +30832,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetScheduledActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30879,8 +30879,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetScheduledActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30926,8 +30926,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetScheduledActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30973,8 +30973,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetScheduledActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31020,8 +31020,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetScheduledActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31067,8 +31067,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPlanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31109,8 +31109,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPlanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31151,8 +31151,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPlanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31193,8 +31193,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPlanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31235,8 +31235,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPlanArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31277,8 +31277,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31324,8 +31324,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31371,8 +31371,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31418,8 +31418,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31465,8 +31465,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPlansArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31512,8 +31512,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31556,8 +31556,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31600,8 +31600,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31644,8 +31644,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31688,8 +31688,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31732,8 +31732,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31774,8 +31774,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31816,8 +31816,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31858,8 +31858,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31900,8 +31900,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31942,8 +31942,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPolicyRecommendedScheduledActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31986,8 +31986,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPolicyRecommendedScheduledActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32030,8 +32030,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPolicyRecommendedScheduledActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32074,8 +32074,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPolicyRecommendedScheduledActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32118,8 +32118,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPolicyRecommendedScheduledActionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32162,8 +32162,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32205,8 +32205,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32248,8 +32248,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32291,8 +32291,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32334,8 +32334,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32377,8 +32377,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32422,8 +32422,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32467,8 +32467,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32512,8 +32512,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32557,8 +32557,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSchedulingPolicySchedulingWindowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32602,8 +32602,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSystemVersionMinorVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32649,8 +32649,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSystemVersionMinorVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32696,8 +32696,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSystemVersionMinorVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32743,8 +32743,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSystemVersionMinorVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32790,8 +32790,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSystemVersionMinorVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32837,8 +32837,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSystemVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32883,8 +32883,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSystemVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32929,8 +32929,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSystemVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32975,8 +32975,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSystemVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33021,8 +33021,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetSystemVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33067,8 +33067,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33109,8 +33109,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33151,8 +33151,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33193,8 +33193,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33235,8 +33235,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33278,8 +33278,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterNetworkArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33322,8 +33322,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterNetworkArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33366,8 +33366,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterNetworkArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33410,8 +33410,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterNetworkArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33454,8 +33454,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterNetworkArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33497,8 +33497,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterNetworkDownloadConfigFileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33541,8 +33541,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterNetworkDownloadConfigFileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33585,8 +33585,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterNetworkDownloadConfigFileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33629,8 +33629,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterNetworkDownloadConfigFileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33673,8 +33673,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterNetworkDownloadConfigFileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33717,8 +33717,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterNetworksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33762,8 +33762,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterNetworksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33807,8 +33807,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterNetworksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33852,8 +33852,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterNetworksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33897,8 +33897,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterNetworksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33942,8 +33942,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33985,8 +33985,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34028,8 +34028,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34071,8 +34071,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34114,8 +34114,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34157,8 +34157,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterPatchHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34199,8 +34199,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterPatchHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34241,8 +34241,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterPatchHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34283,8 +34283,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterPatchHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34325,8 +34325,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterPatchHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34367,8 +34367,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterPatchHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34410,8 +34410,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterPatchHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34453,8 +34453,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterPatchHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34496,8 +34496,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterPatchHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34539,8 +34539,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterPatchHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34582,8 +34582,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34624,8 +34624,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34666,8 +34666,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34708,8 +34708,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34750,8 +34750,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34837,8 +34837,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34880,8 +34880,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34923,8 +34923,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34966,8 +34966,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35009,8 +35009,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35052,8 +35052,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35096,8 +35096,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35140,8 +35140,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35184,8 +35184,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35228,8 +35228,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateHistoryEntriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35272,8 +35272,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35315,8 +35315,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35358,8 +35358,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35401,8 +35401,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35444,8 +35444,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterUpdateHistoryEntryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35487,8 +35487,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35531,8 +35531,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35575,8 +35575,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35619,8 +35619,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35663,8 +35663,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClusterUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35708,8 +35708,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35755,8 +35755,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35802,8 +35802,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35849,8 +35849,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35896,8 +35896,8 @@ public final class DatabaseFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Database.DatabaseFunctions;
      * import com.pulumi.oci.Database.inputs.GetVmClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

@@ -81,19 +81,19 @@ export class ResourceAnalyticsResourceAnalyticsInstanceOacManagement extends pul
  * Input properties used for looking up and filtering ResourceAnalyticsResourceAnalyticsInstanceOacManagement resources.
  */
 export interface ResourceAnalyticsResourceAnalyticsInstanceOacManagementState {
-    attachmentDetails?: pulumi.Input<inputs.oci.ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails>;
-    attachmentType?: pulumi.Input<string>;
-    enableOac?: pulumi.Input<boolean>;
-    resourceAnalyticsInstanceId?: pulumi.Input<string>;
-    state?: pulumi.Input<string>;
+    attachmentDetails?: pulumi.Input<inputs.oci.ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails | undefined>;
+    attachmentType?: pulumi.Input<string | undefined>;
+    enableOac?: pulumi.Input<boolean | undefined>;
+    resourceAnalyticsInstanceId?: pulumi.Input<string | undefined>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a ResourceAnalyticsResourceAnalyticsInstanceOacManagement resource.
  */
 export interface ResourceAnalyticsResourceAnalyticsInstanceOacManagementArgs {
-    attachmentDetails?: pulumi.Input<inputs.oci.ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails>;
-    attachmentType?: pulumi.Input<string>;
+    attachmentDetails?: pulumi.Input<inputs.oci.ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails | undefined>;
+    attachmentType?: pulumi.Input<string | undefined>;
     enableOac: pulumi.Input<boolean>;
     resourceAnalyticsInstanceId: pulumi.Input<string>;
 }

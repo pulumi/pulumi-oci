@@ -25,7 +25,7 @@ import * as utilities from "../utilities";
  *     snapDetails: [{
  *         name: managedInstanceInstallSnapsManagementSnapDetailsName,
  *         channel: managedInstanceInstallSnapsManagementSnapDetailsChannel,
- *         isSigned: managedInstanceInstallSnapsManagementSnapDetailsIsSigned,
+ *         isSigned: managedInstanceInstallSnapsManagementSnapDetailsIsSigned === "true",
  *         mode: managedInstanceInstallSnapsManagementSnapDetailsMode,
  *         revision: managedInstanceInstallSnapsManagementSnapDetailsRevision,
  *     }],
@@ -122,15 +122,15 @@ export interface ManagedInstanceInstallSnapsManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
-    managedInstanceId?: pulumi.Input<string>;
+    managedInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The array of snaps to install.
      */
-    snapDetails?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceInstallSnapsManagementSnapDetail>[]>;
+    snapDetails?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceInstallSnapsManagementSnapDetail>[] | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceInstallSnapsManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceInstallSnapsManagementWorkRequestDetails | undefined>;
 }
 
 /**
@@ -144,9 +144,9 @@ export interface ManagedInstanceInstallSnapsManagementArgs {
     /**
      * The array of snaps to install.
      */
-    snapDetails?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceInstallSnapsManagementSnapDetail>[]>;
+    snapDetails?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceInstallSnapsManagementSnapDetail>[] | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceInstallSnapsManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceInstallSnapsManagementWorkRequestDetails | undefined>;
 }

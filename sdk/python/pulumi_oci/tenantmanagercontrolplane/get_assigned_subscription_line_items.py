@@ -95,7 +95,7 @@ def get_assigned_subscription_line_items(assigned_subscription_id: Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_assigned_subscription_line_items = oci.Tenantmanagercontrolplane.get_assigned_subscription_line_items(assigned_subscription_id=test_assigned_subscription["id"])
+    test_assigned_subscription_line_items = oci.tenantmanagercontrolplane.get_assigned_subscription_line_items(assigned_subscription_id=test_assigned_subscription["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_assigned_subscription_line_items(assigned_subscription_id: Optional[_bui
         assigned_subscription_line_item_collections=pulumi.get(__ret__, 'assigned_subscription_line_item_collections'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_assigned_subscription_line_items_output(assigned_subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAssignedSubscriptionLineItemsFilterArgs', 'GetAssignedSubscriptionLineItemsFilterArgsDict']]]]] = None,
+def get_assigned_subscription_line_items_output(assigned_subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAssignedSubscriptionLineItemsFilterArgs', 'GetAssignedSubscriptionLineItemsFilterArgsDict']]]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAssignedSubscriptionLineItemsResult]:
     """
     This data source provides the list of Assigned Subscription Line Items in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
@@ -126,7 +126,7 @@ def get_assigned_subscription_line_items_output(assigned_subscription_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_assigned_subscription_line_items = oci.Tenantmanagercontrolplane.get_assigned_subscription_line_items(assigned_subscription_id=test_assigned_subscription["id"])
+    test_assigned_subscription_line_items = oci.tenantmanagercontrolplane.get_assigned_subscription_line_items(assigned_subscription_id=test_assigned_subscription["id"])
     ```
 
 

@@ -99,7 +99,7 @@ def get_backend_sets(filters: Optional[Sequence[Union['GetBackendSetsFilterArgs'
     import pulumi
     import pulumi_oci as oci
 
-    test_backend_sets = oci.LoadBalancer.get_backend_sets(load_balancer_id=test_load_balancer["id"])
+    test_backend_sets = oci.loadbalancer.get_backend_sets(load_balancer_id=test_load_balancer["id"])
     ```
 
 
@@ -116,8 +116,8 @@ def get_backend_sets(filters: Optional[Sequence[Union['GetBackendSetsFilterArgs'
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'))
-def get_backend_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBackendSetsFilterArgs', 'GetBackendSetsFilterArgsDict']]]]] = None,
-                            load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_backend_sets_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBackendSetsFilterArgs', 'GetBackendSetsFilterArgsDict']]]]] = None,
+                            load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBackendSetsResult]:
     """
     This data source provides the list of Backend Sets in Oracle Cloud Infrastructure Load Balancer service.
@@ -134,7 +134,7 @@ def get_backend_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[Uni
     import pulumi
     import pulumi_oci as oci
 
-    test_backend_sets = oci.LoadBalancer.get_backend_sets(load_balancer_id=test_load_balancer["id"])
+    test_backend_sets = oci.loadbalancer.get_backend_sets(load_balancer_id=test_load_balancer["id"])
     ```
 
 

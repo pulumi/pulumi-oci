@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPodShapes = oci.ContainerEngine.getPodShapes({
+ * const testPodShapes = oci.containerengine.getPodShapes({
  *     compartmentId: compartmentId,
  *     availabilityDomain: podShapeAvailabilityDomain,
  *     name: podShapeName,
@@ -84,7 +84,7 @@ export interface GetPodShapesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPodShapes = oci.ContainerEngine.getPodShapes({
+ * const testPodShapes = oci.containerengine.getPodShapes({
  *     compartmentId: compartmentId,
  *     availabilityDomain: podShapeAvailabilityDomain,
  *     name: podShapeName,
@@ -108,14 +108,14 @@ export interface GetPodShapesOutputArgs {
     /**
      * The availability domain of the pod shape.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.GetPodShapesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.GetPodShapesFilterArgs>[] | undefined>;
     /**
      * The name to filter on.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

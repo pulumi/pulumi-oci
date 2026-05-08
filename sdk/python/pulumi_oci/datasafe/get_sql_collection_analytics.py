@@ -194,9 +194,9 @@ def get_sql_collection_analytics(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_collection_analytics = oci.DataSafe.get_sql_collection_analytics(compartment_id=compartment_id,
+    test_sql_collection_analytics = oci.datasafe.get_sql_collection_analytics(compartment_id=compartment_id,
         access_level=sql_collection_analytic_access_level,
-        compartment_id_in_subtree=sql_collection_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=sql_collection_analytic_compartment_id_in_subtree == "true",
         group_bies=sql_collection_analytic_group_by,
         state=sql_collection_analytic_state,
         target_database_group_id=test_target_database_group["id"],
@@ -243,16 +243,16 @@ def get_sql_collection_analytics(access_level: Optional[_builtins.str] = None,
         target_id=pulumi.get(__ret__, 'target_id'),
         time_ended=pulumi.get(__ret__, 'time_ended'),
         time_started=pulumi.get(__ret__, 'time_started'))
-def get_sql_collection_analytics_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                        compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSqlCollectionAnalyticsFilterArgs', 'GetSqlCollectionAnalyticsFilterArgsDict']]]]] = None,
-                                        group_bies: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        target_database_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        time_ended: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        time_started: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_sql_collection_analytics_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                        compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSqlCollectionAnalyticsFilterArgs', 'GetSqlCollectionAnalyticsFilterArgsDict']]]]] = None,
+                                        group_bies: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        target_database_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        time_ended: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        time_started: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSqlCollectionAnalyticsResult]:
     """
     This data source provides the list of Sql Collection Analytics in Oracle Cloud Infrastructure Data Safe service.
@@ -278,9 +278,9 @@ def get_sql_collection_analytics_output(access_level: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_collection_analytics = oci.DataSafe.get_sql_collection_analytics(compartment_id=compartment_id,
+    test_sql_collection_analytics = oci.datasafe.get_sql_collection_analytics(compartment_id=compartment_id,
         access_level=sql_collection_analytic_access_level,
-        compartment_id_in_subtree=sql_collection_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=sql_collection_analytic_compartment_id_in_subtree == "true",
         group_bies=sql_collection_analytic_group_by,
         state=sql_collection_analytic_state,
         target_database_group_id=test_target_database_group["id"],

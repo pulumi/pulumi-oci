@@ -110,15 +110,15 @@ export interface AutonomousContainerDatabaseDataguardAssociationOperationState {
     /**
      * The Autonomous Container Database Dataguard Association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
      */
-    autonomousContainerDatabaseDataguardAssociationId?: pulumi.Input<string>;
+    autonomousContainerDatabaseDataguardAssociationId?: pulumi.Input<string | undefined>;
     /**
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
      */
-    autonomousContainerDatabaseId?: pulumi.Input<string>;
+    autonomousContainerDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * There are three type of supported operations `switchover`, `failover`, `reinstate`. `switchover` can only be used for primary database while `failover` and `reinstate` can only be used for standby database. This attribute is a forcenew attribute.
      */
-    operation?: pulumi.Input<string>;
+    operation?: pulumi.Input<string | undefined>;
 }
 
 /**

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testKafkaClusterSuperusersManagement = new oci.oci.ManagedKafkaKafkaClusterSuperusersManagement("test_kafka_cluster_superusers_management", {
  *     kafkaClusterId: testKafkaCluster.id,
- *     enableSuperuser: enableSuperuser,
+ *     enableSuperuser: enableSuperuser === "true",
  *     compartmentId: compartmentId,
  *     secretId: testSecret.id,
  * });
@@ -116,7 +116,7 @@ export interface ManagedKafkaKafkaClusterSuperusersManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the superuser secret.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
@@ -124,15 +124,15 @@ export interface ManagedKafkaKafkaClusterSuperusersManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    enableSuperuser?: pulumi.Input<boolean>;
+    enableSuperuser?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaCluster.
      */
-    kafkaClusterId?: pulumi.Input<string>;
+    kafkaClusterId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret that will be populated with the generated superuser password.
      */
-    secretId?: pulumi.Input<string>;
+    secretId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -142,7 +142,7 @@ export interface ManagedKafkaKafkaClusterSuperusersManagementArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the superuser secret.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
@@ -158,5 +158,5 @@ export interface ManagedKafkaKafkaClusterSuperusersManagementArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret that will be populated with the generated superuser password.
      */
-    secretId?: pulumi.Input<string>;
+    secretId?: pulumi.Input<string | undefined>;
 }

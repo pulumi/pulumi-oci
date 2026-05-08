@@ -83,7 +83,7 @@ def get_fusion_environment_status(fusion_environment_id: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_status = oci.Functions.get_fusion_environment_status(fusion_environment_id=test_fusion_environment["id"])
+    test_fusion_environment_status = oci.functions.get_fusion_environment_status(fusion_environment_id=test_fusion_environment["id"])
     ```
 
 
@@ -98,7 +98,7 @@ def get_fusion_environment_status(fusion_environment_id: Optional[_builtins.str]
         fusion_environment_id=pulumi.get(__ret__, 'fusion_environment_id'),
         id=pulumi.get(__ret__, 'id'),
         status=pulumi.get(__ret__, 'status'))
-def get_fusion_environment_status_output(fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fusion_environment_status_output(fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentStatusResult]:
     """
     This data source provides details about a specific Fusion Environment Status resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -111,7 +111,7 @@ def get_fusion_environment_status_output(fusion_environment_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_status = oci.Functions.get_fusion_environment_status(fusion_environment_id=test_fusion_environment["id"])
+    test_fusion_environment_status = oci.functions.get_fusion_environment_status(fusion_environment_id=test_fusion_environment["id"])
     ```
 
 

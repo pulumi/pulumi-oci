@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBaselineableMetrics = oci.StackMonitoring.getBaselineableMetrics({
+ * const testBaselineableMetrics = oci.stackmonitoring.getBaselineableMetrics({
  *     baselineableMetricId: testBaselineableMetric.id,
  *     compartmentId: compartmentId,
- *     isOutOfBox: baselineableMetricIsOutOfBox,
+ *     isOutOfBox: baselineableMetricIsOutOfBox === "true",
  *     metricNamespace: baselineableMetricMetricNamespace,
  *     name: baselineableMetricName,
  *     resourceGroup: baselineableMetricResourceGroup,
@@ -125,10 +125,10 @@ export interface GetBaselineableMetricsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBaselineableMetrics = oci.StackMonitoring.getBaselineableMetrics({
+ * const testBaselineableMetrics = oci.stackmonitoring.getBaselineableMetrics({
  *     baselineableMetricId: testBaselineableMetric.id,
  *     compartmentId: compartmentId,
- *     isOutOfBox: baselineableMetricIsOutOfBox,
+ *     isOutOfBox: baselineableMetricIsOutOfBox === "true",
  *     metricNamespace: baselineableMetricMetricNamespace,
  *     name: baselineableMetricName,
  *     resourceGroup: baselineableMetricResourceGroup,
@@ -158,30 +158,30 @@ export interface GetBaselineableMetricsOutputArgs {
     /**
      * Identifier for the metric
      */
-    baselineableMetricId?: pulumi.Input<string>;
+    baselineableMetricId?: pulumi.Input<string | undefined>;
     /**
      * The ID of the compartment in which data is listed.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetBaselineableMetricsFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetBaselineableMetricsFilterArgs>[] | undefined>;
     /**
      * Is the baseline enabled metric defined out of box by Oracle or by end-user
      */
-    isOutOfBox?: pulumi.Input<boolean>;
+    isOutOfBox?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return monitored resource types that has the matching namespace.
      */
-    metricNamespace?: pulumi.Input<string>;
+    metricNamespace?: pulumi.Input<string | undefined>;
     /**
      * Metric Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Resource Group
      */
-    resourceGroup?: pulumi.Input<string>;
+    resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * Resource Type
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }

@@ -264,91 +264,91 @@ export interface LogAnalyticsEntityState {
     /**
      * The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
      */
-    areLogsCollected?: pulumi.Input<boolean>;
+    areLogsCollected?: pulumi.Input<boolean | undefined>;
     /**
      * The count of associated log sources for a given log analytics entity.
      */
-    associatedSourcesCount?: pulumi.Input<number>;
+    associatedSourcesCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
      */
-    cloudResourceId?: pulumi.Input<string>;
+    cloudResourceId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Internal name for the log analytics entity type.
      */
-    entityTypeInternalName?: pulumi.Input<string>;
+    entityTypeInternalName?: pulumi.Input<string | undefined>;
     /**
      * Log analytics entity type name.
      */
-    entityTypeName?: pulumi.Input<string>;
+    entityTypeName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
      */
-    hostname?: pulumi.Input<string>;
+    hostname?: pulumi.Input<string | undefined>;
     /**
      * lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Management agent (management-agents resource kind) compartment OCID
      */
-    managementAgentCompartmentId?: pulumi.Input<string>;
+    managementAgentCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * Management agent (management-agents resource kind) display name
      */
-    managementAgentDisplayName?: pulumi.Input<string>;
+    managementAgentDisplayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the Management Agent.
      */
-    managementAgentId?: pulumi.Input<string>;
+    managementAgentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Details of Entity Metadata.
      */
-    metadata?: pulumi.Input<inputs.LogAnalytics.LogAnalyticsEntityMetadata>;
+    metadata?: pulumi.Input<inputs.LogAnalytics.LogAnalyticsEntityMetadata | undefined>;
     /**
      * (Updatable) Log analytics entity name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
      */
-    properties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    properties?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
      */
-    sourceId?: pulumi.Input<string>;
+    sourceId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the log analytics entity.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource was created, in the format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
      */
-    timeLastDiscovered?: pulumi.Input<string>;
+    timeLastDiscovered?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource was last updated, in the format defined by RFC3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The timezone region of the log analytics entity. 
      *
@@ -356,7 +356,7 @@ export interface LogAnalyticsEntityState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timezoneRegion?: pulumi.Input<string>;
+    timezoneRegion?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -366,7 +366,7 @@ export interface LogAnalyticsEntityArgs {
     /**
      * (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
      */
-    cloudResourceId?: pulumi.Input<string>;
+    cloudResourceId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -374,7 +374,7 @@ export interface LogAnalyticsEntityArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Log analytics entity type name.
      */
@@ -382,23 +382,23 @@ export interface LogAnalyticsEntityArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
      */
-    hostname?: pulumi.Input<string>;
+    hostname?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the Management Agent.
      */
-    managementAgentId?: pulumi.Input<string>;
+    managementAgentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Details of Entity Metadata.
      */
-    metadata?: pulumi.Input<inputs.LogAnalytics.LogAnalyticsEntityMetadata>;
+    metadata?: pulumi.Input<inputs.LogAnalytics.LogAnalyticsEntityMetadata | undefined>;
     /**
      * (Updatable) Log analytics entity name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
@@ -406,15 +406,15 @@ export interface LogAnalyticsEntityArgs {
     /**
      * (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
      */
-    properties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    properties?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
      */
-    sourceId?: pulumi.Input<string>;
+    sourceId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
      */
-    timeLastDiscovered?: pulumi.Input<string>;
+    timeLastDiscovered?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The timezone region of the log analytics entity. 
      *
@@ -422,5 +422,5 @@ export interface LogAnalyticsEntityArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timezoneRegion?: pulumi.Input<string>;
+    timezoneRegion?: pulumi.Input<string | undefined>;
 }

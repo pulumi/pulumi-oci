@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApmDomains = oci.Apm.getApmDomains({
+ * const testApmDomains = oci.apm.getApmDomains({
  *     compartmentId: compartmentId,
  *     displayName: apmDomainDisplayName,
  *     state: apmDomainState,
@@ -90,7 +90,7 @@ export interface GetApmDomainsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApmDomains = oci.Apm.getApmDomains({
+ * const testApmDomains = oci.apm.getApmDomains({
  *     compartmentId: compartmentId,
  *     displayName: apmDomainDisplayName,
  *     state: apmDomainState,
@@ -118,10 +118,10 @@ export interface GetApmDomainsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Apm.GetApmDomainsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Apm.GetApmDomainsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given life-cycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

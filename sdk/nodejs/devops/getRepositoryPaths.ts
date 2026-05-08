@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryPaths = oci.DevOps.getRepositoryPaths({
+ * const testRepositoryPaths = oci.devops.getRepositoryPaths({
  *     repositoryId: testRepository.id,
  *     displayName: repositoryPathDisplayName,
  *     folderPath: repositoryPathFolderPath,
- *     pathsInSubtree: repositoryPathPathsInSubtree,
+ *     pathsInSubtree: repositoryPathPathsInSubtree === "true",
  *     ref: repositoryPathRef,
  * });
  * ```
@@ -95,11 +95,11 @@ export interface GetRepositoryPathsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryPaths = oci.DevOps.getRepositoryPaths({
+ * const testRepositoryPaths = oci.devops.getRepositoryPaths({
  *     repositoryId: testRepository.id,
  *     displayName: repositoryPathDisplayName,
  *     folderPath: repositoryPathFolderPath,
- *     pathsInSubtree: repositoryPathPathsInSubtree,
+ *     pathsInSubtree: repositoryPathPathsInSubtree === "true",
  *     ref: repositoryPathRef,
  * });
  * ```
@@ -123,20 +123,20 @@ export interface GetRepositoryPathsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DevOps.GetRepositoryPathsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DevOps.GetRepositoryPathsFilterArgs>[] | undefined>;
     /**
      * The fully qualified path to the folder whose contents are returned, including the folder name. For example, /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of a repository.
      */
-    folderPath?: pulumi.Input<string>;
+    folderPath?: pulumi.Input<string | undefined>;
     /**
      * Flag to determine if files must be retrived recursively. Flag is False by default.
      */
-    pathsInSubtree?: pulumi.Input<boolean>;
+    pathsInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * The name of branch/tag or commit hash it points to. If names conflict, order of preference is commit > branch > tag. You can disambiguate with "heads/foobar" and "tags/foobar". If left blank repository's default branch will be used.
      */
-    ref?: pulumi.Input<string>;
+    ref?: pulumi.Input<string | undefined>;
     /**
      * Unique repository identifier.
      */

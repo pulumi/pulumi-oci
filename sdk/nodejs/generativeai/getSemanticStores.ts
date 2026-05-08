@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSemanticStores = oci.GenerativeAi.getSemanticStores({
+ * const testSemanticStores = oci.generativeai.getSemanticStores({
  *     compartmentId: compartmentId,
  *     dataSourceQueryingConnectionId: testConnection.id,
  *     displayName: semanticStoreDisplayName,
@@ -104,7 +104,7 @@ export interface GetSemanticStoresResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSemanticStores = oci.GenerativeAi.getSemanticStores({
+ * const testSemanticStores = oci.generativeai.getSemanticStores({
  *     compartmentId: compartmentId,
  *     dataSourceQueryingConnectionId: testConnection.id,
  *     displayName: semanticStoreDisplayName,
@@ -133,22 +133,22 @@ export interface GetSemanticStoresOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose queryingConnectionId matches with this id.
      */
-    dataSourceQueryingConnectionId?: pulumi.Input<string>;
+    dataSourceQueryingConnectionId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.GetSemanticStoresFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.GetSemanticStoresFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SemanticStore.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose lifecycle state matches the given array.
      */
-    states?: pulumi.Input<pulumi.Input<string>[]>;
+    states?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

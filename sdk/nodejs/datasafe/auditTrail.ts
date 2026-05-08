@@ -240,63 +240,63 @@ export interface AuditTrailState {
     /**
      * The date from which the audit trail must start collecting data, in the format defined by RFC3339.
      */
-    auditCollectionStartTime?: pulumi.Input<string>;
+    auditCollectionStartTime?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the  parent audit.
      */
-    auditProfileId?: pulumi.Input<string>;
+    auditProfileId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the audit trail.
      */
-    auditTrailId?: pulumi.Input<string>;
+    auditTrailId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
      */
-    canUpdateLastArchiveTimeOnTarget?: pulumi.Input<boolean>;
+    canUpdateLastArchiveTimeOnTarget?: pulumi.Input<boolean | undefined>;
     /**
      * The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the audit trail.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the audit trail. The name does not have to be unique, and it's updatable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
      */
-    isAutoPurgeEnabled?: pulumi.Input<boolean>;
+    isAutoPurgeEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Details about the current state of the audit trail in Data Safe.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The secondary id assigned for the peer database registered with Data Safe.
      */
-    peerTargetDatabaseKey?: pulumi.Input<number>;
+    peerTargetDatabaseKey?: pulumi.Input<number | undefined>;
     /**
      * The details of the audit trail purge job that ran on the "purgeJobTime".
      */
-    purgeJobDetails?: pulumi.Input<string>;
+    purgeJobDetails?: pulumi.Input<string | undefined>;
     /**
      * The current status of the audit trail purge job.
      */
-    purgeJobStatus?: pulumi.Input<string>;
+    purgeJobStatus?: pulumi.Input<string | undefined>;
     /**
      * The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
      */
-    purgeJobTime?: pulumi.Input<string>;
+    purgeJobTime?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
      *
@@ -304,47 +304,47 @@ export interface AuditTrailState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    resumeTrigger?: pulumi.Input<number>;
+    resumeTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The target state for the Audit Trail. Could be set to `ACTIVE` or `INACTIVE`.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The current sub-state of the audit trail.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of the Data Safe target for which the audit trail is created.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * The date and time the audit trail was created, in the format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
      */
-    timeLastCollected?: pulumi.Input<string>;
+    timeLastCollected?: pulumi.Input<string | undefined>;
     /**
      * The date and time the audit trail was updated, in the format defined by RFC3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
      */
-    trailLocation?: pulumi.Input<string>;
+    trailLocation?: pulumi.Input<string | undefined>;
     /**
      * The underlying source of unified audit trail.
      */
-    trailSource?: pulumi.Input<string>;
+    trailSource?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the workrequest for audit trail which collects audit records.
      */
-    workRequestId?: pulumi.Input<string>;
+    workRequestId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -358,27 +358,27 @@ export interface AuditTrailArgs {
     /**
      * (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
      */
-    canUpdateLastArchiveTimeOnTarget?: pulumi.Input<boolean>;
+    canUpdateLastArchiveTimeOnTarget?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the audit trail.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the audit trail. The name does not have to be unique, and it's updatable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
      */
-    isAutoPurgeEnabled?: pulumi.Input<boolean>;
+    isAutoPurgeEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
      *
@@ -386,9 +386,9 @@ export interface AuditTrailArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    resumeTrigger?: pulumi.Input<number>;
+    resumeTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The target state for the Audit Trail. Could be set to `ACTIVE` or `INACTIVE`.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

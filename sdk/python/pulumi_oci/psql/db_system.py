@@ -27,20 +27,20 @@ class DbSystemArgs:
                  network_details: pulumi.Input['DbSystemNetworkDetailsArgs'],
                  shape: pulumi.Input[_builtins.str],
                  storage_details: pulumi.Input['DbSystemStorageDetailsArgs'],
-                 apply_config: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 credentials: Optional[pulumi.Input['DbSystemCredentialsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 instance_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 instance_memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 instance_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 instances_details: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemInstancesDetailArgs']]]] = None,
-                 management_policy: Optional[pulumi.Input['DbSystemManagementPolicyArgs']] = None,
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemPatchOperationArgs']]]] = None,
-                 source: Optional[pulumi.Input['DbSystemSourceArgs']] = None,
-                 system_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 apply_config: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 credentials: pulumi.Input[Optional['DbSystemCredentialsArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 instance_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 instance_memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 instance_ocpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 instances_details: pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemInstancesDetailArgs']]]] = None,
+                 management_policy: pulumi.Input[Optional['DbSystemManagementPolicyArgs']] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemPatchOperationArgs']]]] = None,
+                 source: pulumi.Input[Optional['DbSystemSourceArgs']] = None,
+                 system_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a DbSystem resource.
 
@@ -178,163 +178,163 @@ class DbSystemArgs:
 
     @_builtins.property
     @pulumi.getter(name="applyConfig")
-    def apply_config(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def apply_config(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
         """
         return pulumi.get(self, "apply_config")
 
     @apply_config.setter
-    def apply_config(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def apply_config(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "apply_config", value)
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def credentials(self) -> Optional[pulumi.Input['DbSystemCredentialsArgs']]:
+    def credentials(self) -> pulumi.Input[Optional['DbSystemCredentialsArgs']]:
         """
         Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
         """
         return pulumi.get(self, "credentials")
 
     @credentials.setter
-    def credentials(self, value: Optional[pulumi.Input['DbSystemCredentialsArgs']]):
+    def credentials(self, value: pulumi.Input[Optional['DbSystemCredentialsArgs']]):
         pulumi.set(self, "credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-provided description of a database system.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceCount")
-    def instance_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def instance_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Count of database instances nodes to be created in the database system.
         """
         return pulumi.get(self, "instance_count")
 
     @instance_count.setter
-    def instance_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def instance_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "instance_count", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceMemorySizeInGbs")
-    def instance_memory_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def instance_memory_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The total amount of memory available to each database instance node, in gigabytes.
         """
         return pulumi.get(self, "instance_memory_size_in_gbs")
 
     @instance_memory_size_in_gbs.setter
-    def instance_memory_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def instance_memory_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "instance_memory_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceOcpuCount")
-    def instance_ocpu_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def instance_ocpu_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The total number of OCPUs available to each database instance node.
         """
         return pulumi.get(self, "instance_ocpu_count")
 
     @instance_ocpu_count.setter
-    def instance_ocpu_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def instance_ocpu_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "instance_ocpu_count", value)
 
     @_builtins.property
     @pulumi.getter(name="instancesDetails")
-    def instances_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemInstancesDetailArgs']]]]:
+    def instances_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemInstancesDetailArgs']]]]:
         """
         Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
         """
         return pulumi.get(self, "instances_details")
 
     @instances_details.setter
-    def instances_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemInstancesDetailArgs']]]]):
+    def instances_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemInstancesDetailArgs']]]]):
         pulumi.set(self, "instances_details", value)
 
     @_builtins.property
     @pulumi.getter(name="managementPolicy")
-    def management_policy(self) -> Optional[pulumi.Input['DbSystemManagementPolicyArgs']]:
+    def management_policy(self) -> pulumi.Input[Optional['DbSystemManagementPolicyArgs']]:
         """
         (Updatable) PostgreSQL database system management policy update details.
         """
         return pulumi.get(self, "management_policy")
 
     @management_policy.setter
-    def management_policy(self, value: Optional[pulumi.Input['DbSystemManagementPolicyArgs']]):
+    def management_policy(self, value: pulumi.Input[Optional['DbSystemManagementPolicyArgs']]):
         pulumi.set(self, "management_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="patchOperations")
-    def patch_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemPatchOperationArgs']]]]:
+    def patch_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemPatchOperationArgs']]]]:
         """
         (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
         """
         return pulumi.get(self, "patch_operations")
 
     @patch_operations.setter
-    def patch_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemPatchOperationArgs']]]]):
+    def patch_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemPatchOperationArgs']]]]):
         pulumi.set(self, "patch_operations", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input['DbSystemSourceArgs']]:
+    def source(self) -> pulumi.Input[Optional['DbSystemSourceArgs']]:
         """
         The source of the database system.
         """
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input['DbSystemSourceArgs']]):
+    def source(self, value: pulumi.Input[Optional['DbSystemSourceArgs']]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter(name="systemType")
-    def system_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def system_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of the database system.
 
@@ -345,40 +345,40 @@ class DbSystemArgs:
         return pulumi.get(self, "system_type")
 
     @system_type.setter
-    def system_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def system_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "system_type", value)
 
 
 @pulumi.input_type
 class _DbSystemState:
     def __init__(__self__, *,
-                 admin_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 apply_config: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 credentials: Optional[pulumi.Input['DbSystemCredentialsArgs']] = None,
-                 db_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 instance_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 instance_memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 instance_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 instances: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemInstanceArgs']]]] = None,
-                 instances_details: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemInstancesDetailArgs']]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_policy: Optional[pulumi.Input['DbSystemManagementPolicyArgs']] = None,
-                 network_details: Optional[pulumi.Input['DbSystemNetworkDetailsArgs']] = None,
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemPatchOperationArgs']]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input['DbSystemSourceArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_details: Optional[pulumi.Input['DbSystemStorageDetailsArgs']] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 system_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 admin_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 apply_config: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 credentials: pulumi.Input[Optional['DbSystemCredentialsArgs']] = None,
+                 db_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 instance_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 instance_memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 instance_ocpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 instances: pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemInstanceArgs']]]] = None,
+                 instances_details: pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemInstancesDetailArgs']]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_policy: pulumi.Input[Optional['DbSystemManagementPolicyArgs']] = None,
+                 network_details: pulumi.Input[Optional['DbSystemNetworkDetailsArgs']] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemPatchOperationArgs']]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional['DbSystemSourceArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_details: pulumi.Input[Optional['DbSystemStorageDetailsArgs']] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 system_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DbSystem resources.
 
@@ -471,295 +471,295 @@ class _DbSystemState:
 
     @_builtins.property
     @pulumi.getter(name="adminUsername")
-    def admin_username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def admin_username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database system administrator username.
         """
         return pulumi.get(self, "admin_username")
 
     @admin_username.setter
-    def admin_username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def admin_username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "admin_username", value)
 
     @_builtins.property
     @pulumi.getter(name="applyConfig")
-    def apply_config(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def apply_config(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
         """
         return pulumi.get(self, "apply_config")
 
     @apply_config.setter
-    def apply_config(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def apply_config(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "apply_config", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def credentials(self) -> Optional[pulumi.Input['DbSystemCredentialsArgs']]:
+    def credentials(self) -> pulumi.Input[Optional['DbSystemCredentialsArgs']]:
         """
         Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
         """
         return pulumi.get(self, "credentials")
 
     @credentials.setter
-    def credentials(self, value: Optional[pulumi.Input['DbSystemCredentialsArgs']]):
+    def credentials(self, value: pulumi.Input[Optional['DbSystemCredentialsArgs']]):
         pulumi.set(self, "credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="dbVersion")
-    def db_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Version of database system software.
         """
         return pulumi.get(self, "db_version")
 
     @db_version.setter
-    def db_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_version", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-provided description of a database system.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceCount")
-    def instance_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def instance_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Count of database instances nodes to be created in the database system.
         """
         return pulumi.get(self, "instance_count")
 
     @instance_count.setter
-    def instance_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def instance_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "instance_count", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceMemorySizeInGbs")
-    def instance_memory_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def instance_memory_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The total amount of memory available to each database instance node, in gigabytes.
         """
         return pulumi.get(self, "instance_memory_size_in_gbs")
 
     @instance_memory_size_in_gbs.setter
-    def instance_memory_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def instance_memory_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "instance_memory_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceOcpuCount")
-    def instance_ocpu_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def instance_ocpu_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The total number of OCPUs available to each database instance node.
         """
         return pulumi.get(self, "instance_ocpu_count")
 
     @instance_ocpu_count.setter
-    def instance_ocpu_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def instance_ocpu_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "instance_ocpu_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemInstanceArgs']]]]:
+    def instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemInstanceArgs']]]]:
         """
         The list of instances, or nodes, in the database system.
         """
         return pulumi.get(self, "instances")
 
     @instances.setter
-    def instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemInstanceArgs']]]]):
+    def instances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemInstanceArgs']]]]):
         pulumi.set(self, "instances", value)
 
     @_builtins.property
     @pulumi.getter(name="instancesDetails")
-    def instances_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemInstancesDetailArgs']]]]:
+    def instances_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemInstancesDetailArgs']]]]:
         """
         Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
         """
         return pulumi.get(self, "instances_details")
 
     @instances_details.setter
-    def instances_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemInstancesDetailArgs']]]]):
+    def instances_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemInstancesDetailArgs']]]]):
         pulumi.set(self, "instances_details", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="managementPolicy")
-    def management_policy(self) -> Optional[pulumi.Input['DbSystemManagementPolicyArgs']]:
+    def management_policy(self) -> pulumi.Input[Optional['DbSystemManagementPolicyArgs']]:
         """
         (Updatable) PostgreSQL database system management policy update details.
         """
         return pulumi.get(self, "management_policy")
 
     @management_policy.setter
-    def management_policy(self, value: Optional[pulumi.Input['DbSystemManagementPolicyArgs']]):
+    def management_policy(self, value: pulumi.Input[Optional['DbSystemManagementPolicyArgs']]):
         pulumi.set(self, "management_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="networkDetails")
-    def network_details(self) -> Optional[pulumi.Input['DbSystemNetworkDetailsArgs']]:
+    def network_details(self) -> pulumi.Input[Optional['DbSystemNetworkDetailsArgs']]:
         """
         (Updatable) Network details for the database system.
         """
         return pulumi.get(self, "network_details")
 
     @network_details.setter
-    def network_details(self, value: Optional[pulumi.Input['DbSystemNetworkDetailsArgs']]):
+    def network_details(self, value: pulumi.Input[Optional['DbSystemNetworkDetailsArgs']]):
         pulumi.set(self, "network_details", value)
 
     @_builtins.property
     @pulumi.getter(name="patchOperations")
-    def patch_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemPatchOperationArgs']]]]:
+    def patch_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemPatchOperationArgs']]]]:
         """
         (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
         """
         return pulumi.get(self, "patch_operations")
 
     @patch_operations.setter
-    def patch_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemPatchOperationArgs']]]]):
+    def patch_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DbSystemPatchOperationArgs']]]]):
         pulumi.set(self, "patch_operations", value)
 
     @_builtins.property
     @pulumi.getter
-    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
         """
         return pulumi.get(self, "shape")
 
     @shape.setter
-    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input['DbSystemSourceArgs']]:
+    def source(self) -> pulumi.Input[Optional['DbSystemSourceArgs']]:
         """
         The source of the database system.
         """
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input['DbSystemSourceArgs']]):
+    def source(self, value: pulumi.Input[Optional['DbSystemSourceArgs']]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the database system.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="storageDetails")
-    def storage_details(self) -> Optional[pulumi.Input['DbSystemStorageDetailsArgs']]:
+    def storage_details(self) -> pulumi.Input[Optional['DbSystemStorageDetailsArgs']]:
         """
         (Updatable) Storage details of the database system.
         """
         return pulumi.get(self, "storage_details")
 
     @storage_details.setter
-    def storage_details(self, value: Optional[pulumi.Input['DbSystemStorageDetailsArgs']]):
+    def storage_details(self, value: pulumi.Input[Optional['DbSystemStorageDetailsArgs']]):
         pulumi.set(self, "storage_details", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="systemType")
-    def system_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def system_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of the database system.
 
@@ -770,31 +770,31 @@ class _DbSystemState:
         return pulumi.get(self, "system_type")
 
     @system_type.setter
-    def system_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def system_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "system_type", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -804,26 +804,26 @@ class DbSystem(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 apply_config: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 credentials: Optional[pulumi.Input[Union['DbSystemCredentialsArgs', 'DbSystemCredentialsArgsDict']]] = None,
-                 db_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 instance_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 instance_memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 instance_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 instances_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbSystemInstancesDetailArgs', 'DbSystemInstancesDetailArgsDict']]]]] = None,
-                 management_policy: Optional[pulumi.Input[Union['DbSystemManagementPolicyArgs', 'DbSystemManagementPolicyArgsDict']]] = None,
-                 network_details: Optional[pulumi.Input[Union['DbSystemNetworkDetailsArgs', 'DbSystemNetworkDetailsArgsDict']]] = None,
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbSystemPatchOperationArgs', 'DbSystemPatchOperationArgsDict']]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[Union['DbSystemSourceArgs', 'DbSystemSourceArgsDict']]] = None,
-                 storage_details: Optional[pulumi.Input[Union['DbSystemStorageDetailsArgs', 'DbSystemStorageDetailsArgsDict']]] = None,
-                 system_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 apply_config: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 credentials: pulumi.Input[Optional[Union['DbSystemCredentialsArgs', 'DbSystemCredentialsArgsDict']]] = None,
+                 db_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 instance_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 instance_memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 instance_ocpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 instances_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbSystemInstancesDetailArgs', 'DbSystemInstancesDetailArgsDict']]]]] = None,
+                 management_policy: pulumi.Input[Optional[Union['DbSystemManagementPolicyArgs', 'DbSystemManagementPolicyArgsDict']]] = None,
+                 network_details: pulumi.Input[Optional[Union['DbSystemNetworkDetailsArgs', 'DbSystemNetworkDetailsArgsDict']]] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbSystemPatchOperationArgs', 'DbSystemPatchOperationArgsDict']]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[Union['DbSystemSourceArgs', 'DbSystemSourceArgsDict']]] = None,
+                 storage_details: pulumi.Input[Optional[Union['DbSystemStorageDetailsArgs', 'DbSystemStorageDetailsArgsDict']]] = None,
+                 system_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Db System resource in Oracle Cloud Infrastructure Psql service.
@@ -854,13 +854,13 @@ class DbSystem(pulumi.CustomResource):
             display_name=db_system_display_name,
             network_details={
                 "subnet_id": test_subnet["id"],
-                "is_reader_endpoint_enabled": db_system_network_details_is_reader_endpoint_enabled,
+                "is_reader_endpoint_enabled": db_system_network_details_is_reader_endpoint_enabled == "true",
                 "nsg_ids": db_system_network_details_nsg_ids,
                 "primary_db_endpoint_private_ip": db_system_network_details_primary_db_endpoint_private_ip,
             },
             shape=db_system_shape,
             storage_details={
-                "is_regionally_durable": db_system_storage_details_is_regionally_durable,
+                "is_regionally_durable": db_system_storage_details_is_regionally_durable == "true",
                 "system_type": db_system_storage_details_system_type,
                 "availability_domain": db_system_storage_details_availability_domain,
                 "iops": db_system_storage_details_iops,
@@ -873,9 +873,9 @@ class DbSystem(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            instance_count=db_system_instance_count,
-            instance_memory_size_in_gbs=db_system_instance_memory_size_in_gbs,
-            instance_ocpu_count=db_system_instance_ocpu_count,
+            instance_count=int(db_system_instance_count),
+            instance_memory_size_in_gbs=int(db_system_instance_memory_size_in_gbs),
+            instance_ocpu_count=int(db_system_instance_ocpu_count),
             instances_details=[{
                 "description": db_system_instances_details_description,
                 "display_name": db_system_instances_details_display_name,
@@ -887,19 +887,19 @@ class DbSystem(pulumi.CustomResource):
                     "copy_policy": {
                         "compartment_id": compartment_id,
                         "regions": db_system_management_policy_backup_policy_copy_policy_regions,
-                        "retention_period": db_system_management_policy_backup_policy_copy_policy_retention_period,
+                        "retention_period": int(db_system_management_policy_backup_policy_copy_policy_retention_period),
                     },
                     "days_of_the_months": db_system_management_policy_backup_policy_days_of_the_month,
                     "days_of_the_weeks": db_system_management_policy_backup_policy_days_of_the_week,
                     "kind": db_system_management_policy_backup_policy_kind,
-                    "retention_days": db_system_management_policy_backup_policy_retention_days,
+                    "retention_days": int(db_system_management_policy_backup_policy_retention_days),
                 },
                 "maintenance_window_start": db_system_management_policy_maintenance_window_start,
             },
             source={
                 "source_type": db_system_source_source_type,
                 "backup_id": test_backup["id"],
-                "is_having_restore_config_overrides": db_system_source_is_having_restore_config_overrides,
+                "is_having_restore_config_overrides": db_system_source_is_having_restore_config_overrides == "true",
             },
             system_type=db_system_system_type,
             patch_operations=[{
@@ -980,13 +980,13 @@ class DbSystem(pulumi.CustomResource):
             display_name=db_system_display_name,
             network_details={
                 "subnet_id": test_subnet["id"],
-                "is_reader_endpoint_enabled": db_system_network_details_is_reader_endpoint_enabled,
+                "is_reader_endpoint_enabled": db_system_network_details_is_reader_endpoint_enabled == "true",
                 "nsg_ids": db_system_network_details_nsg_ids,
                 "primary_db_endpoint_private_ip": db_system_network_details_primary_db_endpoint_private_ip,
             },
             shape=db_system_shape,
             storage_details={
-                "is_regionally_durable": db_system_storage_details_is_regionally_durable,
+                "is_regionally_durable": db_system_storage_details_is_regionally_durable == "true",
                 "system_type": db_system_storage_details_system_type,
                 "availability_domain": db_system_storage_details_availability_domain,
                 "iops": db_system_storage_details_iops,
@@ -999,9 +999,9 @@ class DbSystem(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            instance_count=db_system_instance_count,
-            instance_memory_size_in_gbs=db_system_instance_memory_size_in_gbs,
-            instance_ocpu_count=db_system_instance_ocpu_count,
+            instance_count=int(db_system_instance_count),
+            instance_memory_size_in_gbs=int(db_system_instance_memory_size_in_gbs),
+            instance_ocpu_count=int(db_system_instance_ocpu_count),
             instances_details=[{
                 "description": db_system_instances_details_description,
                 "display_name": db_system_instances_details_display_name,
@@ -1013,19 +1013,19 @@ class DbSystem(pulumi.CustomResource):
                     "copy_policy": {
                         "compartment_id": compartment_id,
                         "regions": db_system_management_policy_backup_policy_copy_policy_regions,
-                        "retention_period": db_system_management_policy_backup_policy_copy_policy_retention_period,
+                        "retention_period": int(db_system_management_policy_backup_policy_copy_policy_retention_period),
                     },
                     "days_of_the_months": db_system_management_policy_backup_policy_days_of_the_month,
                     "days_of_the_weeks": db_system_management_policy_backup_policy_days_of_the_week,
                     "kind": db_system_management_policy_backup_policy_kind,
-                    "retention_days": db_system_management_policy_backup_policy_retention_days,
+                    "retention_days": int(db_system_management_policy_backup_policy_retention_days),
                 },
                 "maintenance_window_start": db_system_management_policy_maintenance_window_start,
             },
             source={
                 "source_type": db_system_source_source_type,
                 "backup_id": test_backup["id"],
-                "is_having_restore_config_overrides": db_system_source_is_having_restore_config_overrides,
+                "is_having_restore_config_overrides": db_system_source_is_having_restore_config_overrides == "true",
             },
             system_type=db_system_system_type,
             patch_operations=[{
@@ -1059,26 +1059,26 @@ class DbSystem(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 apply_config: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 credentials: Optional[pulumi.Input[Union['DbSystemCredentialsArgs', 'DbSystemCredentialsArgsDict']]] = None,
-                 db_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 instance_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 instance_memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 instance_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 instances_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbSystemInstancesDetailArgs', 'DbSystemInstancesDetailArgsDict']]]]] = None,
-                 management_policy: Optional[pulumi.Input[Union['DbSystemManagementPolicyArgs', 'DbSystemManagementPolicyArgsDict']]] = None,
-                 network_details: Optional[pulumi.Input[Union['DbSystemNetworkDetailsArgs', 'DbSystemNetworkDetailsArgsDict']]] = None,
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbSystemPatchOperationArgs', 'DbSystemPatchOperationArgsDict']]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[Union['DbSystemSourceArgs', 'DbSystemSourceArgsDict']]] = None,
-                 storage_details: Optional[pulumi.Input[Union['DbSystemStorageDetailsArgs', 'DbSystemStorageDetailsArgsDict']]] = None,
-                 system_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 apply_config: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 credentials: pulumi.Input[Optional[Union['DbSystemCredentialsArgs', 'DbSystemCredentialsArgsDict']]] = None,
+                 db_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 instance_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 instance_memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 instance_ocpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 instances_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbSystemInstancesDetailArgs', 'DbSystemInstancesDetailArgsDict']]]]] = None,
+                 management_policy: pulumi.Input[Optional[Union['DbSystemManagementPolicyArgs', 'DbSystemManagementPolicyArgsDict']]] = None,
+                 network_details: pulumi.Input[Optional[Union['DbSystemNetworkDetailsArgs', 'DbSystemNetworkDetailsArgsDict']]] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbSystemPatchOperationArgs', 'DbSystemPatchOperationArgsDict']]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[Union['DbSystemSourceArgs', 'DbSystemSourceArgsDict']]] = None,
+                 storage_details: pulumi.Input[Optional[Union['DbSystemStorageDetailsArgs', 'DbSystemStorageDetailsArgsDict']]] = None,
+                 system_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1137,33 +1137,33 @@ class DbSystem(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            admin_username: Optional[pulumi.Input[_builtins.str]] = None,
-            apply_config: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            config_id: Optional[pulumi.Input[_builtins.str]] = None,
-            credentials: Optional[pulumi.Input[Union['DbSystemCredentialsArgs', 'DbSystemCredentialsArgsDict']]] = None,
-            db_version: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            instance_count: Optional[pulumi.Input[_builtins.int]] = None,
-            instance_memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-            instance_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
-            instances: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbSystemInstanceArgs', 'DbSystemInstanceArgsDict']]]]] = None,
-            instances_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbSystemInstancesDetailArgs', 'DbSystemInstancesDetailArgsDict']]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            management_policy: Optional[pulumi.Input[Union['DbSystemManagementPolicyArgs', 'DbSystemManagementPolicyArgsDict']]] = None,
-            network_details: Optional[pulumi.Input[Union['DbSystemNetworkDetailsArgs', 'DbSystemNetworkDetailsArgsDict']]] = None,
-            patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbSystemPatchOperationArgs', 'DbSystemPatchOperationArgsDict']]]]] = None,
-            shape: Optional[pulumi.Input[_builtins.str]] = None,
-            source: Optional[pulumi.Input[Union['DbSystemSourceArgs', 'DbSystemSourceArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            storage_details: Optional[pulumi.Input[Union['DbSystemStorageDetailsArgs', 'DbSystemStorageDetailsArgsDict']]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            system_type: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'DbSystem':
+            admin_username: pulumi.Input[Optional[_builtins.str]] = None,
+            apply_config: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config_id: pulumi.Input[Optional[_builtins.str]] = None,
+            credentials: pulumi.Input[Optional[Union['DbSystemCredentialsArgs', 'DbSystemCredentialsArgsDict']]] = None,
+            db_version: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            instance_count: pulumi.Input[Optional[_builtins.int]] = None,
+            instance_memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            instance_ocpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+            instances: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbSystemInstanceArgs', 'DbSystemInstanceArgsDict']]]]] = None,
+            instances_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbSystemInstancesDetailArgs', 'DbSystemInstancesDetailArgsDict']]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            management_policy: pulumi.Input[Optional[Union['DbSystemManagementPolicyArgs', 'DbSystemManagementPolicyArgsDict']]] = None,
+            network_details: pulumi.Input[Optional[Union['DbSystemNetworkDetailsArgs', 'DbSystemNetworkDetailsArgsDict']]] = None,
+            patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbSystemPatchOperationArgs', 'DbSystemPatchOperationArgsDict']]]]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            source: pulumi.Input[Optional[Union['DbSystemSourceArgs', 'DbSystemSourceArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_details: pulumi.Input[Optional[Union['DbSystemStorageDetailsArgs', 'DbSystemStorageDetailsArgsDict']]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            system_type: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'DbSystem':
         """
         Get an existing DbSystem resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

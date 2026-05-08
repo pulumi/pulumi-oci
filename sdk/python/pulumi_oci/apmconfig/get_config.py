@@ -436,7 +436,7 @@ def get_config(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_config = oci.ApmConfig.get_config(apm_domain_id=test_apm_domain["id"],
+    test_config = oci.apmconfig.get_config(apm_domain_id=test_apm_domain["id"],
         config_id=test_config_oci_apm_config_config["id"])
     ```
 
@@ -484,8 +484,8 @@ def get_config(apm_domain_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         updated_by=pulumi.get(__ret__, 'updated_by'))
-def get_config_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                      config_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_config_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                      config_id: pulumi.Input[Optional[_builtins.str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConfigResult]:
     """
     This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Apm Config service.
@@ -498,7 +498,7 @@ def get_config_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_config = oci.ApmConfig.get_config(apm_domain_id=test_apm_domain["id"],
+    test_config = oci.apmconfig.get_config(apm_domain_id=test_apm_domain["id"],
         config_id=test_config_oci_apm_config_config["id"])
     ```
 

@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  *     password: autonomousDatabaseWalletPassword,
  *     base64EncodeContent: false,
  *     generateType: autonomousDatabaseWalletGenerateType,
- *     isRegional: autonomousDatabaseWalletIsRegional,
+ *     isRegional: autonomousDatabaseWalletIsRegional === "true",
  * });
  * ```
  *
@@ -147,15 +147,15 @@ export interface AutonomousDatabaseWalletState {
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    autonomousDatabaseId?: pulumi.Input<string>;
+    autonomousDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * Encodes the downloaded zipped wallet in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
      */
-    base64EncodeContent?: pulumi.Input<boolean>;
+    base64EncodeContent?: pulumi.Input<boolean | undefined>;
     /**
      * content of the downloaded zipped wallet for the Autonomous Database. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
      */
-    content?: pulumi.Input<string>;
+    content?: pulumi.Input<string | undefined>;
     /**
      * The type of wallet to generate.
      *
@@ -165,11 +165,11 @@ export interface AutonomousDatabaseWalletState {
      *
      * **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
      */
-    generateType?: pulumi.Input<string>;
+    generateType?: pulumi.Input<string | undefined>;
     /**
      * True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
      */
-    isRegional?: pulumi.Input<boolean>;
+    isRegional?: pulumi.Input<boolean | undefined>;
     /**
      * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
      *
@@ -177,7 +177,7 @@ export interface AutonomousDatabaseWalletState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -191,7 +191,7 @@ export interface AutonomousDatabaseWalletArgs {
     /**
      * Encodes the downloaded zipped wallet in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
      */
-    base64EncodeContent?: pulumi.Input<boolean>;
+    base64EncodeContent?: pulumi.Input<boolean | undefined>;
     /**
      * The type of wallet to generate.
      *
@@ -201,11 +201,11 @@ export interface AutonomousDatabaseWalletArgs {
      *
      * **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
      */
-    generateType?: pulumi.Input<string>;
+    generateType?: pulumi.Input<string | undefined>;
     /**
      * True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
      */
-    isRegional?: pulumi.Input<boolean>;
+    isRegional?: pulumi.Input<boolean | undefined>;
     /**
      * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
      *

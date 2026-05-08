@@ -171,7 +171,7 @@ def get_deployments(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployments = oci.DevOps.get_deployments(compartment_id=compartment_id,
+    test_deployments = oci.devops.get_deployments(compartment_id=compartment_id,
         deploy_pipeline_id=test_deploy_pipeline["id"],
         display_name=deployment_display_name,
         id=deployment_id,
@@ -215,15 +215,15 @@ def get_deployments(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
-def get_deployments_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           deploy_pipeline_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDeploymentsFilterArgs', 'GetDeploymentsFilterArgsDict']]]]] = None,
-                           id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           project_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           time_created_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_deployments_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           deploy_pipeline_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDeploymentsFilterArgs', 'GetDeploymentsFilterArgsDict']]]]] = None,
+                           id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           project_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           time_created_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           time_created_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentsResult]:
     """
     This data source provides the list of Deployments in Oracle Cloud Infrastructure Devops service.
@@ -236,7 +236,7 @@ def get_deployments_output(compartment_id: Optional[pulumi.Input[Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_deployments = oci.DevOps.get_deployments(compartment_id=compartment_id,
+    test_deployments = oci.devops.get_deployments(compartment_id=compartment_id,
         deploy_pipeline_id=test_deploy_pipeline["id"],
         display_name=deployment_display_name,
         id=deployment_id,

@@ -142,9 +142,9 @@ def get_supported_host_shapes(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_supported_host_shapes = oci.Ocvp.get_supported_host_shapes(compartment_id=compartment_id,
+    test_supported_host_shapes = oci.ocvp.get_supported_host_shapes(compartment_id=compartment_id,
         initial_host_shape_name=test_shape["name"],
-        is_single_host_sddc_supported=supported_host_shape_is_single_host_sddc_supported,
+        is_single_host_sddc_supported=supported_host_shape_is_single_host_sddc_supported == "true",
         name=supported_host_shape_name)
     ```
 
@@ -174,12 +174,12 @@ def get_supported_host_shapes(compartment_id: Optional[_builtins.str] = None,
         items=pulumi.get(__ret__, 'items'),
         name=pulumi.get(__ret__, 'name'),
         sddc_type=pulumi.get(__ret__, 'sddc_type'))
-def get_supported_host_shapes_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSupportedHostShapesFilterArgs', 'GetSupportedHostShapesFilterArgsDict']]]]] = None,
-                                     initial_host_shape_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     is_single_host_sddc_supported: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                     name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     sddc_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_supported_host_shapes_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSupportedHostShapesFilterArgs', 'GetSupportedHostShapesFilterArgsDict']]]]] = None,
+                                     initial_host_shape_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     is_single_host_sddc_supported: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                     name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     sddc_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSupportedHostShapesResult]:
     """
     This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -192,9 +192,9 @@ def get_supported_host_shapes_output(compartment_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_supported_host_shapes = oci.Ocvp.get_supported_host_shapes(compartment_id=compartment_id,
+    test_supported_host_shapes = oci.ocvp.get_supported_host_shapes(compartment_id=compartment_id,
         initial_host_shape_name=test_shape["name"],
-        is_single_host_sddc_supported=supported_host_shape_is_single_host_sddc_supported,
+        is_single_host_sddc_supported=supported_host_shape_is_single_host_sddc_supported == "true",
         name=supported_host_shape_name)
     ```
 

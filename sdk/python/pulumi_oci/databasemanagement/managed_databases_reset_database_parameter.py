@@ -24,8 +24,8 @@ class ManagedDatabasesResetDatabaseParameterArgs:
                  managed_database_id: pulumi.Input[_builtins.str],
                  parameters: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  scope: pulumi.Input[_builtins.str],
-                 credentials: Optional[pulumi.Input['ManagedDatabasesResetDatabaseParameterCredentialsArgs']] = None,
-                 database_credential: Optional[pulumi.Input['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs']] = None):
+                 credentials: pulumi.Input[Optional['ManagedDatabasesResetDatabaseParameterCredentialsArgs']] = None,
+                 database_credential: pulumi.Input[Optional['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs']] = None):
         """
         The set of arguments for constructing a ManagedDatabasesResetDatabaseParameter resource.
 
@@ -93,37 +93,37 @@ class ManagedDatabasesResetDatabaseParameterArgs:
 
     @_builtins.property
     @pulumi.getter
-    def credentials(self) -> Optional[pulumi.Input['ManagedDatabasesResetDatabaseParameterCredentialsArgs']]:
+    def credentials(self) -> pulumi.Input[Optional['ManagedDatabasesResetDatabaseParameterCredentialsArgs']]:
         """
         The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
         """
         return pulumi.get(self, "credentials")
 
     @credentials.setter
-    def credentials(self, value: Optional[pulumi.Input['ManagedDatabasesResetDatabaseParameterCredentialsArgs']]):
+    def credentials(self, value: pulumi.Input[Optional['ManagedDatabasesResetDatabaseParameterCredentialsArgs']]):
         pulumi.set(self, "credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseCredential")
-    def database_credential(self) -> Optional[pulumi.Input['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs']]:
+    def database_credential(self) -> pulumi.Input[Optional['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs']]:
         """
         The credential to connect to the database to perform tablespace administration tasks.
         """
         return pulumi.get(self, "database_credential")
 
     @database_credential.setter
-    def database_credential(self, value: Optional[pulumi.Input['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs']]):
+    def database_credential(self, value: pulumi.Input[Optional['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs']]):
         pulumi.set(self, "database_credential", value)
 
 
 @pulumi.input_type
 class _ManagedDatabasesResetDatabaseParameterState:
     def __init__(__self__, *,
-                 credentials: Optional[pulumi.Input['ManagedDatabasesResetDatabaseParameterCredentialsArgs']] = None,
-                 database_credential: Optional[pulumi.Input['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs']] = None,
-                 managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 parameters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 credentials: pulumi.Input[Optional['ManagedDatabasesResetDatabaseParameterCredentialsArgs']] = None,
+                 database_credential: pulumi.Input[Optional['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs']] = None,
+                 managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 parameters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagedDatabasesResetDatabaseParameter resources.
 
@@ -152,55 +152,55 @@ class _ManagedDatabasesResetDatabaseParameterState:
 
     @_builtins.property
     @pulumi.getter
-    def credentials(self) -> Optional[pulumi.Input['ManagedDatabasesResetDatabaseParameterCredentialsArgs']]:
+    def credentials(self) -> pulumi.Input[Optional['ManagedDatabasesResetDatabaseParameterCredentialsArgs']]:
         """
         The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
         """
         return pulumi.get(self, "credentials")
 
     @credentials.setter
-    def credentials(self, value: Optional[pulumi.Input['ManagedDatabasesResetDatabaseParameterCredentialsArgs']]):
+    def credentials(self, value: pulumi.Input[Optional['ManagedDatabasesResetDatabaseParameterCredentialsArgs']]):
         pulumi.set(self, "credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseCredential")
-    def database_credential(self) -> Optional[pulumi.Input['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs']]:
+    def database_credential(self) -> pulumi.Input[Optional['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs']]:
         """
         The credential to connect to the database to perform tablespace administration tasks.
         """
         return pulumi.get(self, "database_credential")
 
     @database_credential.setter
-    def database_credential(self, value: Optional[pulumi.Input['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs']]):
+    def database_credential(self, value: pulumi.Input[Optional['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs']]):
         pulumi.set(self, "database_credential", value)
 
     @_builtins.property
     @pulumi.getter(name="managedDatabaseId")
-    def managed_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def managed_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
         """
         return pulumi.get(self, "managed_database_id")
 
     @managed_database_id.setter
-    def managed_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def managed_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "managed_database_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def parameters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of database parameter names.
         """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
-    def parameters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def parameters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "parameters", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The clause used to specify when the parameter change takes effect.
 
@@ -213,7 +213,7 @@ class _ManagedDatabasesResetDatabaseParameterState:
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
@@ -223,11 +223,11 @@ class ManagedDatabasesResetDatabaseParameter(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 credentials: Optional[pulumi.Input[Union['ManagedDatabasesResetDatabaseParameterCredentialsArgs', 'ManagedDatabasesResetDatabaseParameterCredentialsArgsDict']]] = None,
-                 database_credential: Optional[pulumi.Input[Union['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs', 'ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgsDict']]] = None,
-                 managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 parameters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 credentials: pulumi.Input[Optional[Union['ManagedDatabasesResetDatabaseParameterCredentialsArgs', 'ManagedDatabasesResetDatabaseParameterCredentialsArgsDict']]] = None,
+                 database_credential: pulumi.Input[Optional[Union['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs', 'ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgsDict']]] = None,
+                 managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 parameters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Managed Databases Reset Database Parameter resource in Oracle Cloud Infrastructure Database Management service.
@@ -342,11 +342,11 @@ class ManagedDatabasesResetDatabaseParameter(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 credentials: Optional[pulumi.Input[Union['ManagedDatabasesResetDatabaseParameterCredentialsArgs', 'ManagedDatabasesResetDatabaseParameterCredentialsArgsDict']]] = None,
-                 database_credential: Optional[pulumi.Input[Union['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs', 'ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgsDict']]] = None,
-                 managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 parameters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
+                 credentials: pulumi.Input[Optional[Union['ManagedDatabasesResetDatabaseParameterCredentialsArgs', 'ManagedDatabasesResetDatabaseParameterCredentialsArgsDict']]] = None,
+                 database_credential: pulumi.Input[Optional[Union['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs', 'ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgsDict']]] = None,
+                 managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 parameters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -377,11 +377,11 @@ class ManagedDatabasesResetDatabaseParameter(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            credentials: Optional[pulumi.Input[Union['ManagedDatabasesResetDatabaseParameterCredentialsArgs', 'ManagedDatabasesResetDatabaseParameterCredentialsArgsDict']]] = None,
-            database_credential: Optional[pulumi.Input[Union['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs', 'ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgsDict']]] = None,
-            managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            parameters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None) -> 'ManagedDatabasesResetDatabaseParameter':
+            credentials: pulumi.Input[Optional[Union['ManagedDatabasesResetDatabaseParameterCredentialsArgs', 'ManagedDatabasesResetDatabaseParameterCredentialsArgsDict']]] = None,
+            database_credential: pulumi.Input[Optional[Union['ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs', 'ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgsDict']]] = None,
+            managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parameters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> 'ManagedDatabasesResetDatabaseParameter':
         """
         Get an existing ManagedDatabasesResetDatabaseParameter resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

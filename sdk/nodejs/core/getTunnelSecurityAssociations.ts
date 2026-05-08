@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTunnelSecurityAssociations = oci.Core.getTunnelSecurityAssociations({
+ * const testTunnelSecurityAssociations = oci.core.getTunnelSecurityAssociations({
  *     ipsecId: testIpsec.id,
  *     tunnelId: testTunnel.id,
  * });
@@ -74,7 +74,7 @@ export interface GetTunnelSecurityAssociationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTunnelSecurityAssociations = oci.Core.getTunnelSecurityAssociations({
+ * const testTunnelSecurityAssociations = oci.core.getTunnelSecurityAssociations({
  *     ipsecId: testIpsec.id,
  *     tunnelId: testTunnel.id,
  * });
@@ -93,7 +93,7 @@ export function getTunnelSecurityAssociationsOutput(args: GetTunnelSecurityAssoc
  * A collection of arguments for invoking getTunnelSecurityAssociations.
  */
 export interface GetTunnelSecurityAssociationsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetTunnelSecurityAssociationsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetTunnelSecurityAssociationsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
      */

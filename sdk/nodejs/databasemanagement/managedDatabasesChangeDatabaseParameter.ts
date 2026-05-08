@@ -163,19 +163,19 @@ export interface ManagedDatabasesChangeDatabaseParameterState {
     /**
      * The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
      */
-    credentials?: pulumi.Input<inputs.DatabaseManagement.ManagedDatabasesChangeDatabaseParameterCredentials>;
+    credentials?: pulumi.Input<inputs.DatabaseManagement.ManagedDatabasesChangeDatabaseParameterCredentials | undefined>;
     /**
      * The credential to connect to the database to perform tablespace administration tasks.
      */
-    databaseCredential?: pulumi.Input<inputs.DatabaseManagement.ManagedDatabasesChangeDatabaseParameterDatabaseCredential>;
+    databaseCredential?: pulumi.Input<inputs.DatabaseManagement.ManagedDatabasesChangeDatabaseParameterDatabaseCredential | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
-    managedDatabaseId?: pulumi.Input<string>;
+    managedDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * A list of database parameters and their values.
      */
-    parameters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.ManagedDatabasesChangeDatabaseParameterParameter>[]>;
+    parameters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.ManagedDatabasesChangeDatabaseParameterParameter>[] | undefined>;
     /**
      * The clause used to specify when the parameter change takes effect.
      *
@@ -185,7 +185,7 @@ export interface ManagedDatabasesChangeDatabaseParameterState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -195,11 +195,11 @@ export interface ManagedDatabasesChangeDatabaseParameterArgs {
     /**
      * The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
      */
-    credentials?: pulumi.Input<inputs.DatabaseManagement.ManagedDatabasesChangeDatabaseParameterCredentials>;
+    credentials?: pulumi.Input<inputs.DatabaseManagement.ManagedDatabasesChangeDatabaseParameterCredentials | undefined>;
     /**
      * The credential to connect to the database to perform tablespace administration tasks.
      */
-    databaseCredential?: pulumi.Input<inputs.DatabaseManagement.ManagedDatabasesChangeDatabaseParameterDatabaseCredential>;
+    databaseCredential?: pulumi.Input<inputs.DatabaseManagement.ManagedDatabasesChangeDatabaseParameterDatabaseCredential | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */

@@ -141,9 +141,9 @@ def get_system_versions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_system_versions = oci.Database.get_system_versions(compartment_id=compartment_id,
+    test_system_versions = oci.database.get_system_versions(compartment_id=compartment_id,
         gi_version=system_version_gi_version,
-        is_latest=system_version_is_latest,
+        is_latest=system_version_is_latest == "true",
         resource_id=test_resource["id"],
         shape=system_version_shape)
     ```
@@ -174,12 +174,12 @@ def get_system_versions(compartment_id: Optional[_builtins.str] = None,
         resource_id=pulumi.get(__ret__, 'resource_id'),
         shape=pulumi.get(__ret__, 'shape'),
         system_version_collections=pulumi.get(__ret__, 'system_version_collections'))
-def get_system_versions_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSystemVersionsFilterArgs', 'GetSystemVersionsFilterArgsDict']]]]] = None,
-                               gi_version: Optional[pulumi.Input[_builtins.str]] = None,
-                               is_latest: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                               resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               shape: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_system_versions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSystemVersionsFilterArgs', 'GetSystemVersionsFilterArgsDict']]]]] = None,
+                               gi_version: pulumi.Input[Optional[_builtins.str]] = None,
+                               is_latest: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                               resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               shape: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSystemVersionsResult]:
     """
     This data source provides the list of System Versions in Oracle Cloud Infrastructure Database service.
@@ -192,9 +192,9 @@ def get_system_versions_output(compartment_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_system_versions = oci.Database.get_system_versions(compartment_id=compartment_id,
+    test_system_versions = oci.database.get_system_versions(compartment_id=compartment_id,
         gi_version=system_version_gi_version,
-        is_latest=system_version_is_latest,
+        is_latest=system_version_is_latest == "true",
         resource_id=test_resource["id"],
         shape=system_version_shape)
     ```

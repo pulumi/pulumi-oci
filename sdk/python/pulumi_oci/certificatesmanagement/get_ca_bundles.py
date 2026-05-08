@@ -135,7 +135,7 @@ def get_ca_bundles(ca_bundle_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ca_bundles = oci.CertificatesManagement.get_ca_bundles(ca_bundle_id=test_ca_bundle["id"],
+    test_ca_bundles = oci.certificatesmanagement.get_ca_bundles(ca_bundle_id=test_ca_bundle["id"],
         compartment_id=compartment_id,
         name=ca_bundle_name,
         state=ca_bundle_state)
@@ -164,11 +164,11 @@ def get_ca_bundles(ca_bundle_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-def get_ca_bundles_output(ca_bundle_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCaBundlesFilterArgs', 'GetCaBundlesFilterArgsDict']]]]] = None,
-                          name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_ca_bundles_output(ca_bundle_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCaBundlesFilterArgs', 'GetCaBundlesFilterArgsDict']]]]] = None,
+                          name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCaBundlesResult]:
     """
     This data source provides the list of Ca Bundles in Oracle Cloud Infrastructure Certificates Management service.
@@ -182,7 +182,7 @@ def get_ca_bundles_output(ca_bundle_id: Optional[pulumi.Input[Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_ca_bundles = oci.CertificatesManagement.get_ca_bundles(ca_bundle_id=test_ca_bundle["id"],
+    test_ca_bundles = oci.certificatesmanagement.get_ca_bundles(ca_bundle_id=test_ca_bundle["id"],
         compartment_id=compartment_id,
         name=ca_bundle_name,
         state=ca_bundle_state)

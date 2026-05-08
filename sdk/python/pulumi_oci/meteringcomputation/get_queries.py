@@ -101,7 +101,7 @@ def get_queries(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_queries = oci.MeteringComputation.get_queries(compartment_id=compartment_id)
+    test_queries = oci.meteringcomputation.get_queries(compartment_id=compartment_id)
     ```
 
 
@@ -119,8 +119,8 @@ def get_queries(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         query_collections=pulumi.get(__ret__, 'query_collections'))
-def get_queries_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetQueriesFilterArgs', 'GetQueriesFilterArgsDict']]]]] = None,
+def get_queries_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetQueriesFilterArgs', 'GetQueriesFilterArgsDict']]]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetQueriesResult]:
     """
     This data source provides the list of Queries in Oracle Cloud Infrastructure Metering Computation service.
@@ -133,7 +133,7 @@ def get_queries_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_queries = oci.MeteringComputation.get_queries(compartment_id=compartment_id)
+    test_queries = oci.meteringcomputation.get_queries(compartment_id=compartment_id)
     ```
 
 

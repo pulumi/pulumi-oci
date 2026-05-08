@@ -25,9 +25,9 @@ class AutoScalingConfigurationArgs:
                  cluster_admin_password: pulumi.Input[_builtins.str],
                  is_enabled: pulumi.Input[_builtins.bool],
                  node_type: pulumi.Input[_builtins.str],
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy: Optional[pulumi.Input['AutoScalingConfigurationPolicyArgs']] = None,
-                 policy_details: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs']] = None):
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy: pulumi.Input[Optional['AutoScalingConfigurationPolicyArgs']] = None,
+                 policy_details: pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsArgs']] = None):
         """
         The set of arguments for constructing a AutoScalingConfiguration resource.
 
@@ -110,31 +110,31 @@ class AutoScalingConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def policy(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyArgs']]:
+    def policy(self) -> pulumi.Input[Optional['AutoScalingConfigurationPolicyArgs']]:
         """
         (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
         """
         return pulumi.get(self, "policy")
 
     @policy.setter
-    def policy(self, value: Optional[pulumi.Input['AutoScalingConfigurationPolicyArgs']]):
+    def policy(self, value: pulumi.Input[Optional['AutoScalingConfigurationPolicyArgs']]):
         pulumi.set(self, "policy", value)
 
     @_builtins.property
     @pulumi.getter(name="policyDetails")
-    def policy_details(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs']]:
+    def policy_details(self) -> pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsArgs']]:
         """
         (Updatable) Policy definition for the autoscale configuration.
 
@@ -151,23 +151,23 @@ class AutoScalingConfigurationArgs:
         return pulumi.get(self, "policy_details")
 
     @policy_details.setter
-    def policy_details(self, value: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs']]):
+    def policy_details(self, value: pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsArgs']]):
         pulumi.set(self, "policy_details", value)
 
 
 @pulumi.input_type
 class _AutoScalingConfigurationState:
     def __init__(__self__, *,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 node_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy: Optional[pulumi.Input['AutoScalingConfigurationPolicyArgs']] = None,
-                 policy_details: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 node_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy: pulumi.Input[Optional['AutoScalingConfigurationPolicyArgs']] = None,
+                 policy_details: pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutoScalingConfiguration resources.
 
@@ -215,79 +215,79 @@ class _AutoScalingConfigurationState:
 
     @_builtins.property
     @pulumi.getter(name="bdsInstanceId")
-    def bds_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bds_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the cluster.
         """
         return pulumi.get(self, "bds_instance_id")
 
     @bds_instance_id.setter
-    def bds_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bds_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bds_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterAdminPassword")
-    def cluster_admin_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
         """
         return pulumi.get(self, "cluster_admin_password")
 
     @cluster_admin_password.setter
-    def cluster_admin_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_admin_password", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the autoscale configuration is enabled.
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeType")
-    def node_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def node_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
         """
         return pulumi.get(self, "node_type")
 
     @node_type.setter
-    def node_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def node_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "node_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def policy(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyArgs']]:
+    def policy(self) -> pulumi.Input[Optional['AutoScalingConfigurationPolicyArgs']]:
         """
         (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
         """
         return pulumi.get(self, "policy")
 
     @policy.setter
-    def policy(self, value: Optional[pulumi.Input['AutoScalingConfigurationPolicyArgs']]):
+    def policy(self, value: pulumi.Input[Optional['AutoScalingConfigurationPolicyArgs']]):
         pulumi.set(self, "policy", value)
 
     @_builtins.property
     @pulumi.getter(name="policyDetails")
-    def policy_details(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs']]:
+    def policy_details(self) -> pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsArgs']]:
         """
         (Updatable) Policy definition for the autoscale configuration.
 
@@ -304,43 +304,43 @@ class _AutoScalingConfigurationState:
         return pulumi.get(self, "policy_details")
 
     @policy_details.setter
-    def policy_details(self, value: Optional[pulumi.Input['AutoScalingConfigurationPolicyDetailsArgs']]):
+    def policy_details(self, value: pulumi.Input[Optional['AutoScalingConfigurationPolicyDetailsArgs']]):
         pulumi.set(self, "policy_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The state of the autoscale configuration.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -350,13 +350,13 @@ class AutoScalingConfiguration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 node_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy: Optional[pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]] = None,
-                 policy_details: Optional[pulumi.Input[Union['AutoScalingConfigurationPolicyDetailsArgs', 'AutoScalingConfigurationPolicyDetailsArgsDict']]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 node_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy: pulumi.Input[Optional[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]] = None,
+                 policy_details: pulumi.Input[Optional[Union['AutoScalingConfigurationPolicyDetailsArgs', 'AutoScalingConfigurationPolicyDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Auto Scaling Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -375,38 +375,38 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         test_auto_scaling_configuration = oci.bigdataservice.AutoScalingConfiguration("test_auto_scaling_configuration",
             bds_instance_id=test_bds_instance["id"],
             cluster_admin_password=auto_scaling_configuration_cluster_admin_password,
-            is_enabled=auto_scaling_configuration_is_enabled,
+            is_enabled=auto_scaling_configuration_is_enabled == "true",
             node_type=auto_scaling_configuration_node_type,
             display_name=auto_scaling_configuration_display_name,
             policy_details={
                 "policy_type": auto_scaling_configuration_policy_details_policy_type,
                 "scale_down_config": {
-                    "memory_step_size": auto_scaling_configuration_policy_details_scale_down_config_memory_step_size,
+                    "memory_step_size": int(auto_scaling_configuration_policy_details_scale_down_config_memory_step_size),
                     "metric": {
                         "metric_type": auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type,
                         "threshold": {
-                            "duration_in_minutes": auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes,
+                            "duration_in_minutes": int(auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes),
                             "operator": auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator,
-                            "value": auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value,
+                            "value": int(auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value),
                         },
                     },
-                    "min_memory_per_node": auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node,
-                    "min_ocpus_per_node": auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node,
-                    "ocpu_step_size": auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size,
+                    "min_memory_per_node": int(auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node),
+                    "min_ocpus_per_node": int(auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node),
+                    "ocpu_step_size": int(auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size),
                 },
                 "scale_up_config": {
-                    "max_memory_per_node": auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node,
-                    "max_ocpus_per_node": auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node,
-                    "memory_step_size": auto_scaling_configuration_policy_details_scale_up_config_memory_step_size,
+                    "max_memory_per_node": int(auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node),
+                    "max_ocpus_per_node": int(auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node),
+                    "memory_step_size": int(auto_scaling_configuration_policy_details_scale_up_config_memory_step_size),
                     "metric": {
                         "metric_type": auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type,
                         "threshold": {
-                            "duration_in_minutes": auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes,
+                            "duration_in_minutes": int(auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes),
                             "operator": auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator,
-                            "value": auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value,
+                            "value": int(auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value),
                         },
                     },
-                    "ocpu_step_size": auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size,
+                    "ocpu_step_size": int(auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size),
                 },
             })
         ```
@@ -463,38 +463,38 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         test_auto_scaling_configuration = oci.bigdataservice.AutoScalingConfiguration("test_auto_scaling_configuration",
             bds_instance_id=test_bds_instance["id"],
             cluster_admin_password=auto_scaling_configuration_cluster_admin_password,
-            is_enabled=auto_scaling_configuration_is_enabled,
+            is_enabled=auto_scaling_configuration_is_enabled == "true",
             node_type=auto_scaling_configuration_node_type,
             display_name=auto_scaling_configuration_display_name,
             policy_details={
                 "policy_type": auto_scaling_configuration_policy_details_policy_type,
                 "scale_down_config": {
-                    "memory_step_size": auto_scaling_configuration_policy_details_scale_down_config_memory_step_size,
+                    "memory_step_size": int(auto_scaling_configuration_policy_details_scale_down_config_memory_step_size),
                     "metric": {
                         "metric_type": auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type,
                         "threshold": {
-                            "duration_in_minutes": auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes,
+                            "duration_in_minutes": int(auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes),
                             "operator": auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator,
-                            "value": auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value,
+                            "value": int(auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value),
                         },
                     },
-                    "min_memory_per_node": auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node,
-                    "min_ocpus_per_node": auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node,
-                    "ocpu_step_size": auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size,
+                    "min_memory_per_node": int(auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node),
+                    "min_ocpus_per_node": int(auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node),
+                    "ocpu_step_size": int(auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size),
                 },
                 "scale_up_config": {
-                    "max_memory_per_node": auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node,
-                    "max_ocpus_per_node": auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node,
-                    "memory_step_size": auto_scaling_configuration_policy_details_scale_up_config_memory_step_size,
+                    "max_memory_per_node": int(auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node),
+                    "max_ocpus_per_node": int(auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node),
+                    "memory_step_size": int(auto_scaling_configuration_policy_details_scale_up_config_memory_step_size),
                     "metric": {
                         "metric_type": auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type,
                         "threshold": {
-                            "duration_in_minutes": auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes,
+                            "duration_in_minutes": int(auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes),
                             "operator": auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator,
-                            "value": auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value,
+                            "value": int(auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value),
                         },
                     },
-                    "ocpu_step_size": auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size,
+                    "ocpu_step_size": int(auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size),
                 },
             })
         ```
@@ -523,13 +523,13 @@ class AutoScalingConfiguration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 node_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy: Optional[pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]] = None,
-                 policy_details: Optional[pulumi.Input[Union['AutoScalingConfigurationPolicyDetailsArgs', 'AutoScalingConfigurationPolicyDetailsArgsDict']]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 node_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy: pulumi.Input[Optional[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]] = None,
+                 policy_details: pulumi.Input[Optional[Union['AutoScalingConfigurationPolicyDetailsArgs', 'AutoScalingConfigurationPolicyDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -569,16 +569,16 @@ class AutoScalingConfiguration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            node_type: Optional[pulumi.Input[_builtins.str]] = None,
-            policy: Optional[pulumi.Input[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]] = None,
-            policy_details: Optional[pulumi.Input[Union['AutoScalingConfigurationPolicyDetailsArgs', 'AutoScalingConfigurationPolicyDetailsArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'AutoScalingConfiguration':
+            bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            node_type: pulumi.Input[Optional[_builtins.str]] = None,
+            policy: pulumi.Input[Optional[Union['AutoScalingConfigurationPolicyArgs', 'AutoScalingConfigurationPolicyArgsDict']]] = None,
+            policy_details: pulumi.Input[Optional[Union['AutoScalingConfigurationPolicyDetailsArgs', 'AutoScalingConfigurationPolicyDetailsArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'AutoScalingConfiguration':
         """
         Get an existing AutoScalingConfiguration resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

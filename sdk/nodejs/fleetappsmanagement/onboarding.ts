@@ -171,29 +171,29 @@ export interface OnboardingState {
     /**
      * Summary of the Fleet Application Management Onboard Policy.
      */
-    appliedPolicies?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.OnboardingAppliedPolicy>[]>;
+    appliedPolicies?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.OnboardingAppliedPolicy>[] | undefined>;
     /**
      * Tenancy OCID
      * <<<<<<< ours
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Provide discovery frequency.
      */
-    discoveryFrequency?: pulumi.Input<string>;
+    discoveryFrequency?: pulumi.Input<string | undefined>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A value determining if the cost tracking tag is enabled or not. Allow
      * Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
      */
-    isCostTrackingTagEnabled?: pulumi.Input<boolean>;
+    isCostTrackingTagEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * A value determining if the Fleet Application Management tagging is enabled or not.
      * Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
@@ -203,32 +203,32 @@ export interface OnboardingState {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the
      * new property values
      */
-    isFamsTagEnabled?: pulumi.Input<boolean>;
+    isFamsTagEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Associated region
      */
-    resourceRegion?: pulumi.Input<string>;
+    resourceRegion?: pulumi.Input<string | undefined>;
     /**
      * The current state of the Onboarding.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
      * `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The version of Fleet Application Management that the tenant is onboarded to.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -243,16 +243,16 @@ export interface OnboardingArgs {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A value determining if the cost tracking tag is enabled or not. Allow
      * Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
      */
-    isCostTrackingTagEnabled?: pulumi.Input<boolean>;
+    isCostTrackingTagEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * A value determining if the Fleet Application Management tagging is enabled or not.
      * Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
@@ -262,5 +262,5 @@ export interface OnboardingArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the
      * new property values
      */
-    isFamsTagEnabled?: pulumi.Input<boolean>;
+    isFamsTagEnabled?: pulumi.Input<boolean | undefined>;
 }

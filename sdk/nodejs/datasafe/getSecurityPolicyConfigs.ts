@@ -30,10 +30,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityPolicyConfigs = oci.DataSafe.getSecurityPolicyConfigs({
+ * const testSecurityPolicyConfigs = oci.datasafe.getSecurityPolicyConfigs({
  *     compartmentId: compartmentId,
  *     accessLevel: securityPolicyConfigAccessLevel,
- *     compartmentIdInSubtree: securityPolicyConfigCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityPolicyConfigCompartmentIdInSubtree === "true",
  *     displayName: securityPolicyConfigDisplayName,
  *     securityPolicyConfigId: testSecurityPolicyConfig.id,
  *     securityPolicyId: testSecurityPolicy.id,
@@ -165,10 +165,10 @@ export interface GetSecurityPolicyConfigsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityPolicyConfigs = oci.DataSafe.getSecurityPolicyConfigs({
+ * const testSecurityPolicyConfigs = oci.datasafe.getSecurityPolicyConfigs({
  *     compartmentId: compartmentId,
  *     accessLevel: securityPolicyConfigAccessLevel,
- *     compartmentIdInSubtree: securityPolicyConfigCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityPolicyConfigCompartmentIdInSubtree === "true",
  *     displayName: securityPolicyConfigDisplayName,
  *     securityPolicyConfigId: testSecurityPolicyConfig.id,
  *     securityPolicyId: testSecurityPolicy.id,
@@ -201,7 +201,7 @@ export interface GetSecurityPolicyConfigsOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -209,34 +209,34 @@ export interface GetSecurityPolicyConfigsOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the specified display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityPolicyConfigsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityPolicyConfigsFilterArgs>[] | undefined>;
     /**
      * An optional filter to return only resources that match the specified OCID of the security policy configuration resource.
      */
-    securityPolicyConfigId?: pulumi.Input<string>;
+    securityPolicyConfigId?: pulumi.Input<string | undefined>;
     /**
      * An optional filter to return only resources that match the specified OCID of the security policy resource.
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the security policy configuration resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeCreatedLessThan?: pulumi.Input<string>;
+    timeCreatedLessThan?: pulumi.Input<string | undefined>;
 }

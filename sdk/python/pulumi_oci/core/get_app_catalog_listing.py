@@ -158,7 +158,7 @@ def get_app_catalog_listing(listing_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_app_catalog_listing = oci.Core.get_app_catalog_listing(listing_id=test_listing["id"])
+    test_app_catalog_listing = oci.core.get_app_catalog_listing(listing_id=test_listing["id"])
     ```
 
 
@@ -179,7 +179,7 @@ def get_app_catalog_listing(listing_id: Optional[_builtins.str] = None,
         publisher_name=pulumi.get(__ret__, 'publisher_name'),
         summary=pulumi.get(__ret__, 'summary'),
         time_published=pulumi.get(__ret__, 'time_published'))
-def get_app_catalog_listing_output(listing_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_app_catalog_listing_output(listing_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppCatalogListingResult]:
     """
     This data source provides details about a specific App Catalog Listing resource in Oracle Cloud Infrastructure Core service.
@@ -192,7 +192,7 @@ def get_app_catalog_listing_output(listing_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_app_catalog_listing = oci.Core.get_app_catalog_listing(listing_id=test_listing["id"])
+    test_app_catalog_listing = oci.core.get_app_catalog_listing(listing_id=test_listing["id"])
     ```
 
 

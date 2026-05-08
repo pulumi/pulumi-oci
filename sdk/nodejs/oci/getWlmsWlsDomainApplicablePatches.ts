@@ -84,7 +84,7 @@ export function getWlmsWlsDomainApplicablePatchesOutput(args: GetWlmsWlsDomainAp
  * A collection of arguments for invoking getWlmsWlsDomainApplicablePatches.
  */
 export interface GetWlmsWlsDomainApplicablePatchesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetWlmsWlsDomainApplicablePatchesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetWlmsWlsDomainApplicablePatchesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.
      */

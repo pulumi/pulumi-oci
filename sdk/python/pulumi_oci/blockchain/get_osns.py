@@ -105,7 +105,7 @@ def get_osns(blockchain_platform_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_osns = oci.Blockchain.get_osns(blockchain_platform_id=test_blockchain_platform["id"],
+    test_osns = oci.blockchain.get_osns(blockchain_platform_id=test_blockchain_platform["id"],
         display_name=osn_display_name)
     ```
 
@@ -126,9 +126,9 @@ def get_osns(blockchain_platform_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         osn_collections=pulumi.get(__ret__, 'osn_collections'))
-def get_osns_output(blockchain_platform_id: Optional[pulumi.Input[_builtins.str]] = None,
-                    display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOsnsFilterArgs', 'GetOsnsFilterArgsDict']]]]] = None,
+def get_osns_output(blockchain_platform_id: pulumi.Input[Optional[_builtins.str]] = None,
+                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOsnsFilterArgs', 'GetOsnsFilterArgsDict']]]]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOsnsResult]:
     """
     This data source provides the list of Osns in Oracle Cloud Infrastructure Blockchain service.
@@ -141,7 +141,7 @@ def get_osns_output(blockchain_platform_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_osns = oci.Blockchain.get_osns(blockchain_platform_id=test_blockchain_platform["id"],
+    test_osns = oci.blockchain.get_osns(blockchain_platform_id=test_blockchain_platform["id"],
         display_name=osn_display_name)
     ```
 

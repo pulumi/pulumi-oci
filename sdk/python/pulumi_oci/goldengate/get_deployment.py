@@ -742,7 +742,7 @@ def get_deployment(deployment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment = oci.GoldenGate.get_deployment(deployment_id=test_deployment_oci_golden_gate_deployment["id"])
+    test_deployment = oci.goldengate.get_deployment(deployment_id=test_deployment_oci_golden_gate_deployment["id"])
     ```
 
 
@@ -812,7 +812,7 @@ def get_deployment(deployment_id: Optional[_builtins.str] = None,
         time_ogg_version_supported_until=pulumi.get(__ret__, 'time_ogg_version_supported_until'),
         time_role_changed=pulumi.get(__ret__, 'time_role_changed'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_deployment_output(deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_deployment_output(deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentResult]:
     """
     This data source provides details about a specific Deployment resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -825,7 +825,7 @@ def get_deployment_output(deployment_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment = oci.GoldenGate.get_deployment(deployment_id=test_deployment_oci_golden_gate_deployment["id"])
+    test_deployment = oci.goldengate.get_deployment(deployment_id=test_deployment_oci_golden_gate_deployment["id"])
     ```
 
 

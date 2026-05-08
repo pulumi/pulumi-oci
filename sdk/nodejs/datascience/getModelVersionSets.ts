@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelVersionSets = oci.DataScience.getModelVersionSets({
+ * const testModelVersionSets = oci.datascience.getModelVersionSets({
  *     compartmentId: compartmentId,
  *     category: modelVersionSetCategory,
  *     createdBy: modelVersionSetCreatedBy,
@@ -126,7 +126,7 @@ export interface GetModelVersionSetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelVersionSets = oci.DataScience.getModelVersionSets({
+ * const testModelVersionSets = oci.datascience.getModelVersionSets({
  *     compartmentId: compartmentId,
  *     category: modelVersionSetCategory,
  *     createdBy: modelVersionSetCreatedBy,
@@ -158,7 +158,7 @@ export interface GetModelVersionSetsOutputArgs {
     /**
      * Specifies the type of model version sets to list. By default, user model version sets are listed.
      */
-    category?: pulumi.Input<string>;
+    category?: pulumi.Input<string | undefined>;
     /**
      * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -166,22 +166,22 @@ export interface GetModelVersionSetsOutputArgs {
     /**
      * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
      */
-    createdBy?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetModelVersionSetsFilterArgs>[]>;
+    createdBy?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetModelVersionSetsFilterArgs>[] | undefined>;
     /**
      * <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire name given.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      */
-    projectId?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
     /**
      * <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

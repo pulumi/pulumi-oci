@@ -141,7 +141,7 @@ def get_volume_attachments(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_attachments = oci.Core.get_volume_attachments(compartment_id=compartment_id,
+    test_volume_attachments = oci.core.get_volume_attachments(compartment_id=compartment_id,
         availability_domain=volume_attachment_availability_domain,
         instance_id=test_instance["id"],
         volume_id=test_volume["id"])
@@ -170,11 +170,11 @@ def get_volume_attachments(availability_domain: Optional[_builtins.str] = None,
         instance_id=pulumi.get(__ret__, 'instance_id'),
         volume_attachments=pulumi.get(__ret__, 'volume_attachments'),
         volume_id=pulumi.get(__ret__, 'volume_id'))
-def get_volume_attachments_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVolumeAttachmentsFilterArgs', 'GetVolumeAttachmentsFilterArgsDict']]]]] = None,
-                                  instance_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  volume_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_volume_attachments_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVolumeAttachmentsFilterArgs', 'GetVolumeAttachmentsFilterArgsDict']]]]] = None,
+                                  instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  volume_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumeAttachmentsResult]:
     """
     This data source provides the list of Volume Attachments in Oracle Cloud Infrastructure Core service.
@@ -191,7 +191,7 @@ def get_volume_attachments_output(availability_domain: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_attachments = oci.Core.get_volume_attachments(compartment_id=compartment_id,
+    test_volume_attachments = oci.core.get_volume_attachments(compartment_id=compartment_id,
         availability_domain=volume_attachment_availability_domain,
         instance_id=test_instance["id"],
         volume_id=test_volume["id"])

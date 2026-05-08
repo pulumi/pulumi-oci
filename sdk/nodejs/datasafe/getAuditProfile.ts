@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditProfile = oci.DataSafe.getAuditProfile({
+ * const testAuditProfile = oci.datasafe.getAuditProfile({
  *     auditProfileId: testAuditProfileOciDataSafeAuditProfile.id,
  * });
  * ```
@@ -152,7 +152,7 @@ export interface GetAuditProfileResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditProfile = oci.DataSafe.getAuditProfile({
+ * const testAuditProfile = oci.datasafe.getAuditProfile({
  *     auditProfileId: testAuditProfileOciDataSafeAuditProfile.id,
  * });
  * ```

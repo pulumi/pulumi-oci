@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJob = oci.DataScience.getJob({
+ * const testJob = oci.datascience.getJob({
  *     jobId: testJobOciDatascienceJob.id,
  * });
  * ```
@@ -131,7 +131,7 @@ export interface GetJobResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJob = oci.DataScience.getJob({
+ * const testJob = oci.datascience.getJob({
  *     jobId: testJobOciDatascienceJob.id,
  * });
  * ```

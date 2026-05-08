@@ -105,7 +105,7 @@ def get_attribute_auto_activate_status(apm_domain_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_attribute_auto_activate_status = oci.ApmTraces.get_attribute_auto_activate_status(apm_domain_id=test_apm_domain["id"],
+    test_attribute_auto_activate_status = oci.apmtraces.get_attribute_auto_activate_status(apm_domain_id=test_apm_domain["id"],
         data_key_type=attribute_auto_activate_status_data_key_type)
     ```
 
@@ -125,8 +125,8 @@ def get_attribute_auto_activate_status(apm_domain_id: Optional[_builtins.str] = 
         data_key_type=pulumi.get(__ret__, 'data_key_type'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_attribute_auto_activate_status_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                              data_key_type: Optional[pulumi.Input[_builtins.str]] = None,
+def get_attribute_auto_activate_status_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                              data_key_type: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAttributeAutoActivateStatusResult]:
     """
     This data source provides details about a specific Attribute Auto Activate Status resource in Oracle Cloud Infrastructure Apm Traces service.
@@ -139,7 +139,7 @@ def get_attribute_auto_activate_status_output(apm_domain_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_attribute_auto_activate_status = oci.ApmTraces.get_attribute_auto_activate_status(apm_domain_id=test_apm_domain["id"],
+    test_attribute_auto_activate_status = oci.apmtraces.get_attribute_auto_activate_status(apm_domain_id=test_apm_domain["id"],
         data_key_type=attribute_auto_activate_status_data_key_type)
     ```
 

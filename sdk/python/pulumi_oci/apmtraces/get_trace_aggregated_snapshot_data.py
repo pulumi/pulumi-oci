@@ -134,7 +134,7 @@ def get_trace_aggregated_snapshot_data(apm_domain_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_trace_aggregated_snapshot_data = oci.ApmTraces.get_trace_aggregated_snapshot_data(apm_domain_id=test_apm_domain["id"],
+    test_trace_aggregated_snapshot_data = oci.apmtraces.get_trace_aggregated_snapshot_data(apm_domain_id=test_apm_domain["id"],
         trace_key=trace_aggregated_snapshot_data_trace_key,
         server_name=trace_aggregated_snapshot_data_server_name,
         service_name=test_service["name"],
@@ -169,12 +169,12 @@ def get_trace_aggregated_snapshot_data(apm_domain_id: Optional[_builtins.str] = 
         span_key=pulumi.get(__ret__, 'span_key'),
         span_name=pulumi.get(__ret__, 'span_name'),
         trace_key=pulumi.get(__ret__, 'trace_key'))
-def get_trace_aggregated_snapshot_data_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                              server_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              service_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              span_key: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              span_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              trace_key: Optional[pulumi.Input[_builtins.str]] = None,
+def get_trace_aggregated_snapshot_data_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                              server_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              service_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              span_key: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              span_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              trace_key: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTraceAggregatedSnapshotDataResult]:
     """
     This data source provides details about a specific Trace Aggregated Snapshot Data resource in Oracle Cloud Infrastructure Apm Traces service.
@@ -187,7 +187,7 @@ def get_trace_aggregated_snapshot_data_output(apm_domain_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_trace_aggregated_snapshot_data = oci.ApmTraces.get_trace_aggregated_snapshot_data(apm_domain_id=test_apm_domain["id"],
+    test_trace_aggregated_snapshot_data = oci.apmtraces.get_trace_aggregated_snapshot_data(apm_domain_id=test_apm_domain["id"],
         trace_key=trace_aggregated_snapshot_data_trace_key,
         server_name=trace_aggregated_snapshot_data_server_name,
         service_name=test_service["name"],

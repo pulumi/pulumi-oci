@@ -20,12 +20,12 @@ __all__ = ['ModelProvenanceArgs', 'ModelProvenance']
 class ModelProvenanceArgs:
     def __init__(__self__, *,
                  model_id: pulumi.Input[_builtins.str],
-                 git_branch: Optional[pulumi.Input[_builtins.str]] = None,
-                 git_commit: Optional[pulumi.Input[_builtins.str]] = None,
-                 repository_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 script_dir: Optional[pulumi.Input[_builtins.str]] = None,
-                 training_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 training_script: Optional[pulumi.Input[_builtins.str]] = None):
+                 git_branch: pulumi.Input[Optional[_builtins.str]] = None,
+                 git_commit: pulumi.Input[Optional[_builtins.str]] = None,
+                 repository_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 script_dir: pulumi.Input[Optional[_builtins.str]] = None,
+                 training_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 training_script: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ModelProvenance resource.
 
@@ -69,67 +69,67 @@ class ModelProvenanceArgs:
 
     @_builtins.property
     @pulumi.getter(name="gitBranch")
-    def git_branch(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def git_branch(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
         """
         return pulumi.get(self, "git_branch")
 
     @git_branch.setter
-    def git_branch(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def git_branch(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "git_branch", value)
 
     @_builtins.property
     @pulumi.getter(name="gitCommit")
-    def git_commit(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def git_commit(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) For model reproducibility purposes. Commit ID of the git repository associated with model training.
         """
         return pulumi.get(self, "git_commit")
 
     @git_commit.setter
-    def git_commit(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def git_commit(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "git_commit", value)
 
     @_builtins.property
     @pulumi.getter(name="repositoryUrl")
-    def repository_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def repository_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) For model reproducibility purposes. URL of the git repository associated with model training.
         """
         return pulumi.get(self, "repository_url")
 
     @repository_url.setter
-    def repository_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def repository_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "repository_url", value)
 
     @_builtins.property
     @pulumi.getter(name="scriptDir")
-    def script_dir(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def script_dir(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) For model reproducibility purposes. Path to model artifacts.
         """
         return pulumi.get(self, "script_dir")
 
     @script_dir.setter
-    def script_dir(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def script_dir(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "script_dir", value)
 
     @_builtins.property
     @pulumi.getter(name="trainingId")
-    def training_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def training_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
         """
         return pulumi.get(self, "training_id")
 
     @training_id.setter
-    def training_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def training_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "training_id", value)
 
     @_builtins.property
     @pulumi.getter(name="trainingScript")
-    def training_script(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def training_script(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
 
@@ -140,20 +140,20 @@ class ModelProvenanceArgs:
         return pulumi.get(self, "training_script")
 
     @training_script.setter
-    def training_script(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def training_script(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "training_script", value)
 
 
 @pulumi.input_type
 class _ModelProvenanceState:
     def __init__(__self__, *,
-                 git_branch: Optional[pulumi.Input[_builtins.str]] = None,
-                 git_commit: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 repository_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 script_dir: Optional[pulumi.Input[_builtins.str]] = None,
-                 training_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 training_script: Optional[pulumi.Input[_builtins.str]] = None):
+                 git_branch: pulumi.Input[Optional[_builtins.str]] = None,
+                 git_commit: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 repository_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 script_dir: pulumi.Input[Optional[_builtins.str]] = None,
+                 training_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 training_script: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ModelProvenance resources.
 
@@ -186,79 +186,79 @@ class _ModelProvenanceState:
 
     @_builtins.property
     @pulumi.getter(name="gitBranch")
-    def git_branch(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def git_branch(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
         """
         return pulumi.get(self, "git_branch")
 
     @git_branch.setter
-    def git_branch(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def git_branch(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "git_branch", value)
 
     @_builtins.property
     @pulumi.getter(name="gitCommit")
-    def git_commit(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def git_commit(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) For model reproducibility purposes. Commit ID of the git repository associated with model training.
         """
         return pulumi.get(self, "git_commit")
 
     @git_commit.setter
-    def git_commit(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def git_commit(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "git_commit", value)
 
     @_builtins.property
     @pulumi.getter(name="modelId")
-    def model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
         """
         return pulumi.get(self, "model_id")
 
     @model_id.setter
-    def model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_id", value)
 
     @_builtins.property
     @pulumi.getter(name="repositoryUrl")
-    def repository_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def repository_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) For model reproducibility purposes. URL of the git repository associated with model training.
         """
         return pulumi.get(self, "repository_url")
 
     @repository_url.setter
-    def repository_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def repository_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "repository_url", value)
 
     @_builtins.property
     @pulumi.getter(name="scriptDir")
-    def script_dir(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def script_dir(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) For model reproducibility purposes. Path to model artifacts.
         """
         return pulumi.get(self, "script_dir")
 
     @script_dir.setter
-    def script_dir(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def script_dir(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "script_dir", value)
 
     @_builtins.property
     @pulumi.getter(name="trainingId")
-    def training_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def training_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
         """
         return pulumi.get(self, "training_id")
 
     @training_id.setter
-    def training_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def training_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "training_id", value)
 
     @_builtins.property
     @pulumi.getter(name="trainingScript")
-    def training_script(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def training_script(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
 
@@ -269,7 +269,7 @@ class _ModelProvenanceState:
         return pulumi.get(self, "training_script")
 
     @training_script.setter
-    def training_script(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def training_script(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "training_script", value)
 
 
@@ -279,13 +279,13 @@ class ModelProvenance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 git_branch: Optional[pulumi.Input[_builtins.str]] = None,
-                 git_commit: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 repository_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 script_dir: Optional[pulumi.Input[_builtins.str]] = None,
-                 training_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 training_script: Optional[pulumi.Input[_builtins.str]] = None,
+                 git_branch: pulumi.Input[Optional[_builtins.str]] = None,
+                 git_commit: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 repository_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 script_dir: pulumi.Input[Optional[_builtins.str]] = None,
+                 training_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 training_script: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Model Provenance resource in Oracle Cloud Infrastructure Data Science service.
@@ -388,13 +388,13 @@ class ModelProvenance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 git_branch: Optional[pulumi.Input[_builtins.str]] = None,
-                 git_commit: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 repository_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 script_dir: Optional[pulumi.Input[_builtins.str]] = None,
-                 training_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 training_script: Optional[pulumi.Input[_builtins.str]] = None,
+                 git_branch: pulumi.Input[Optional[_builtins.str]] = None,
+                 git_commit: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 repository_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 script_dir: pulumi.Input[Optional[_builtins.str]] = None,
+                 training_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 training_script: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -423,13 +423,13 @@ class ModelProvenance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            git_branch: Optional[pulumi.Input[_builtins.str]] = None,
-            git_commit: Optional[pulumi.Input[_builtins.str]] = None,
-            model_id: Optional[pulumi.Input[_builtins.str]] = None,
-            repository_url: Optional[pulumi.Input[_builtins.str]] = None,
-            script_dir: Optional[pulumi.Input[_builtins.str]] = None,
-            training_id: Optional[pulumi.Input[_builtins.str]] = None,
-            training_script: Optional[pulumi.Input[_builtins.str]] = None) -> 'ModelProvenance':
+            git_branch: pulumi.Input[Optional[_builtins.str]] = None,
+            git_commit: pulumi.Input[Optional[_builtins.str]] = None,
+            model_id: pulumi.Input[Optional[_builtins.str]] = None,
+            repository_url: pulumi.Input[Optional[_builtins.str]] = None,
+            script_dir: pulumi.Input[Optional[_builtins.str]] = None,
+            training_id: pulumi.Input[Optional[_builtins.str]] = None,
+            training_script: pulumi.Input[Optional[_builtins.str]] = None) -> 'ModelProvenance':
         """
         Get an existing ModelProvenance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

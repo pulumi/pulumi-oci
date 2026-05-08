@@ -155,27 +155,27 @@ export interface SignState {
     /**
      * The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,', 'GenerateDataEncryptionKey', 'Sign' and 'Verify' operations. see Vault Crypto endpoint.
      */
-    cryptoEndpoint?: pulumi.Input<string>;
+    cryptoEndpoint?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the key used to sign the message.
      */
-    keyId?: pulumi.Input<string>;
+    keyId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the key version used to sign the message.
      */
-    keyVersionId?: pulumi.Input<string>;
+    keyVersionId?: pulumi.Input<string | undefined>;
     /**
      * The base64-encoded binary data object denoting the message or message digest to sign. You can have a message up to 4096 bytes in size. To sign a larger message, provide the message digest.
      */
-    message?: pulumi.Input<string>;
+    message?: pulumi.Input<string | undefined>;
     /**
      * Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
      */
-    messageType?: pulumi.Input<string>;
+    messageType?: pulumi.Input<string | undefined>;
     /**
      * The base64-encoded binary data object denoting the cryptographic signature generated for the message or message digest.
      */
-    signature?: pulumi.Input<string>;
+    signature?: pulumi.Input<string | undefined>;
     /**
      * The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm as used when creating the message digest. 
      *
@@ -183,7 +183,7 @@ export interface SignState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    signingAlgorithm?: pulumi.Input<string>;
+    signingAlgorithm?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -201,7 +201,7 @@ export interface SignArgs {
     /**
      * The OCID of the key version used to sign the message.
      */
-    keyVersionId?: pulumi.Input<string>;
+    keyVersionId?: pulumi.Input<string | undefined>;
     /**
      * The base64-encoded binary data object denoting the message or message digest to sign. You can have a message up to 4096 bytes in size. To sign a larger message, provide the message digest.
      */
@@ -209,7 +209,7 @@ export interface SignArgs {
     /**
      * Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
      */
-    messageType?: pulumi.Input<string>;
+    messageType?: pulumi.Input<string | undefined>;
     /**
      * The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm as used when creating the message digest. 
      *

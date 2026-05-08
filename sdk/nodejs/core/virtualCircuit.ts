@@ -52,10 +52,10 @@ import * as utilities from "../utilities";
  *         customerBgpPeeringIpv6: virtualCircuitCrossConnectMappingsCustomerBgpPeeringIpv6,
  *         oracleBgpPeeringIp: virtualCircuitCrossConnectMappingsOracleBgpPeeringIp,
  *         oracleBgpPeeringIpv6: virtualCircuitCrossConnectMappingsOracleBgpPeeringIpv6,
- *         vlan: virtualCircuitCrossConnectMappingsVlan,
+ *         vlan: Number(virtualCircuitCrossConnectMappingsVlan),
  *     }],
  *     customerAsn: virtualCircuitCustomerAsn,
- *     customerBgpAsn: virtualCircuitCustomerBgpAsn,
+ *     customerBgpAsn: Number(virtualCircuitCustomerBgpAsn),
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -64,8 +64,8 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     ipMtu: virtualCircuitIpMtu,
- *     isBfdEnabled: virtualCircuitIsBfdEnabled,
- *     isTransportMode: virtualCircuitIsTransportMode,
+ *     isBfdEnabled: virtualCircuitIsBfdEnabled === "true",
+ *     isTransportMode: virtualCircuitIsTransportMode === "true",
  *     gatewayId: testGateway.id,
  *     providerServiceId: testFastConnectProviderServices.fastConnectProviderServices[0].id,
  *     providerServiceKeyName: virtualCircuitProviderServiceKeyName,
@@ -330,115 +330,115 @@ export interface VirtualCircuitState {
     /**
      * (Updatable) The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
      */
-    bandwidthShapeName?: pulumi.Input<string>;
+    bandwidthShapeName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
      */
-    bgpAdminState?: pulumi.Input<string>;
+    bgpAdminState?: pulumi.Input<string | undefined>;
     /**
      * The state of the Ipv6 BGP session associated with the virtual circuit.
      */
-    bgpIpv6sessionState?: pulumi.Input<string>;
+    bgpIpv6sessionState?: pulumi.Input<string | undefined>;
     /**
      * Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
      *
      * @deprecated The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead.
      */
-    bgpManagement?: pulumi.Input<string>;
+    bgpManagement?: pulumi.Input<string | undefined>;
     /**
      * The state of the Ipv4 BGP session associated with the virtual circuit.
      */
-    bgpSessionState?: pulumi.Input<string>;
+    bgpSessionState?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the virtual circuit.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Create a `CrossConnectMapping` for each cross-connect or cross-connect group this virtual circuit will run on.
      */
-    crossConnectMappings?: pulumi.Input<pulumi.Input<inputs.Core.VirtualCircuitCrossConnectMapping>[]>;
+    crossConnectMappings?: pulumi.Input<pulumi.Input<inputs.Core.VirtualCircuitCrossConnectMapping>[] | undefined>;
     /**
      * (Updatable) Your BGP ASN (either public or private). Provide this value only if there's a BGP session that goes from your edge router to Oracle. Otherwise, leave this empty or null. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.  Example: `12345` (2-byte) or `1587232876` (4-byte)
      */
-    customerAsn?: pulumi.Input<string>;
+    customerAsn?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
      *
      * @deprecated The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.
      */
-    customerBgpAsn?: pulumi.Input<number>;
+    customerBgpAsn?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) For private virtual circuits only. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses.
      */
-    gatewayId?: pulumi.Input<string>;
+    gatewayId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The layer 3 IP MTU to use with this virtual circuit.
      */
-    ipMtu?: pulumi.Input<string>;
+    ipMtu?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
      */
-    isBfdEnabled?: pulumi.Input<boolean>;
+    isBfdEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
      */
-    isTransportMode?: pulumi.Input<boolean>;
+    isTransportMode?: pulumi.Input<boolean | undefined>;
     /**
      * The Oracle BGP ASN.
      */
-    oracleBgpAsn?: pulumi.Input<number>;
+    oracleBgpAsn?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
      */
-    providerServiceId?: pulumi.Input<string>;
+    providerServiceId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
      */
-    providerServiceKeyName?: pulumi.Input<string>;
+    providerServiceKeyName?: pulumi.Input<string | undefined>;
     /**
      * The provider's state in relation to this virtual circuit (if the customer is connecting via a provider). ACTIVE means the provider has provisioned the virtual circuit from their end. INACTIVE means the provider has not yet provisioned the virtual circuit, or has de-provisioned it.
      */
-    providerState?: pulumi.Input<string>;
+    providerState?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
      */
-    publicPrefixes?: pulumi.Input<pulumi.Input<inputs.Core.VirtualCircuitPublicPrefix>[]>;
+    publicPrefixes?: pulumi.Input<pulumi.Input<inputs.Core.VirtualCircuitPublicPrefix>[] | undefined>;
     /**
      * Provider-supplied reference information about this virtual circuit (if the customer is connecting via a provider).
      */
-    referenceComment?: pulumi.Input<string>;
+    referenceComment?: pulumi.Input<string | undefined>;
     /**
      * The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
      */
-    routingPolicies?: pulumi.Input<pulumi.Input<string>[]>;
+    routingPolicies?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Provider service type.
      */
-    serviceType?: pulumi.Input<string>;
+    serviceType?: pulumi.Input<string | undefined>;
     /**
      * The virtual circuit's current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16). 
      *
@@ -446,11 +446,11 @@ export interface VirtualCircuitState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
      */
-    virtualCircuitRedundancyMetadatas?: pulumi.Input<pulumi.Input<inputs.Core.VirtualCircuitVirtualCircuitRedundancyMetadata>[]>;
+    virtualCircuitRedundancyMetadatas?: pulumi.Input<pulumi.Input<inputs.Core.VirtualCircuitVirtualCircuitRedundancyMetadata>[] | undefined>;
 }
 
 /**
@@ -460,11 +460,11 @@ export interface VirtualCircuitArgs {
     /**
      * (Updatable) The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
      */
-    bandwidthShapeName?: pulumi.Input<string>;
+    bandwidthShapeName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
      */
-    bgpAdminState?: pulumi.Input<string>;
+    bgpAdminState?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the virtual circuit.
      */
@@ -472,65 +472,65 @@ export interface VirtualCircuitArgs {
     /**
      * (Updatable) Create a `CrossConnectMapping` for each cross-connect or cross-connect group this virtual circuit will run on.
      */
-    crossConnectMappings?: pulumi.Input<pulumi.Input<inputs.Core.VirtualCircuitCrossConnectMapping>[]>;
+    crossConnectMappings?: pulumi.Input<pulumi.Input<inputs.Core.VirtualCircuitCrossConnectMapping>[] | undefined>;
     /**
      * (Updatable) Your BGP ASN (either public or private). Provide this value only if there's a BGP session that goes from your edge router to Oracle. Otherwise, leave this empty or null. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.  Example: `12345` (2-byte) or `1587232876` (4-byte)
      */
-    customerAsn?: pulumi.Input<string>;
+    customerAsn?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
      *
      * @deprecated The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.
      */
-    customerBgpAsn?: pulumi.Input<number>;
+    customerBgpAsn?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) For private virtual circuits only. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses.
      */
-    gatewayId?: pulumi.Input<string>;
+    gatewayId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The layer 3 IP MTU to use with this virtual circuit.
      */
-    ipMtu?: pulumi.Input<string>;
+    ipMtu?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
      */
-    isBfdEnabled?: pulumi.Input<boolean>;
+    isBfdEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
      */
-    isTransportMode?: pulumi.Input<boolean>;
+    isTransportMode?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
      */
-    providerServiceId?: pulumi.Input<string>;
+    providerServiceId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
      */
-    providerServiceKeyName?: pulumi.Input<string>;
+    providerServiceKeyName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
      */
-    publicPrefixes?: pulumi.Input<pulumi.Input<inputs.Core.VirtualCircuitPublicPrefix>[]>;
+    publicPrefixes?: pulumi.Input<pulumi.Input<inputs.Core.VirtualCircuitPublicPrefix>[] | undefined>;
     /**
      * The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
      */
-    routingPolicies?: pulumi.Input<pulumi.Input<string>[]>;
+    routingPolicies?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16). 
      *

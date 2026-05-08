@@ -23,11 +23,11 @@ class TableArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  ddl_statement: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_auto_reclaimable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 table_limits: Optional[pulumi.Input['TableTableLimitsArgs']] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_reclaimable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 table_limits: pulumi.Input[Optional['TableTableLimitsArgs']] = None):
         """
         The set of arguments for constructing a Table resource.
 
@@ -78,86 +78,86 @@ class TableArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoReclaimable")
-    def is_auto_reclaimable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_reclaimable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         True if table can be reclaimed after an idle period.
         """
         return pulumi.get(self, "is_auto_reclaimable")
 
     @is_auto_reclaimable.setter
-    def is_auto_reclaimable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_reclaimable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_reclaimable", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Table name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="tableLimits")
-    def table_limits(self) -> Optional[pulumi.Input['TableTableLimitsArgs']]:
+    def table_limits(self) -> pulumi.Input[Optional['TableTableLimitsArgs']]:
         """
         (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
         """
         return pulumi.get(self, "table_limits")
 
     @table_limits.setter
-    def table_limits(self, value: Optional[pulumi.Input['TableTableLimitsArgs']]):
+    def table_limits(self, value: pulumi.Input[Optional['TableTableLimitsArgs']]):
         pulumi.set(self, "table_limits", value)
 
 
 @pulumi.input_type
 class _TableState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ddl_statement: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_auto_reclaimable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_multi_region: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 local_replica_initialization_in_percent: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 replicas: Optional[pulumi.Input[Sequence[pulumi.Input['TableReplicaArgs']]]] = None,
-                 schema_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input['TableSchemaArgs']]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 table_limits: Optional[pulumi.Input['TableTableLimitsArgs']] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_expiration: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ddl_statement: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_reclaimable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_multi_region: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 local_replica_initialization_in_percent: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 replicas: pulumi.Input[Optional[Sequence[pulumi.Input['TableReplicaArgs']]]] = None,
+                 schema_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input['TableSchemaArgs']]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 table_limits: pulumi.Input[Optional['TableTableLimitsArgs']] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_expiration: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Table resources.
 
@@ -219,218 +219,218 @@ class _TableState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Compartment Identifier.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ddlStatement")
-    def ddl_statement(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ddl_statement(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) CREATE TABLE DDL statement. While updating an existing table, note that the column order should not be changed, and new columns can only be appended at the end of the table.
         """
         return pulumi.get(self, "ddl_statement")
 
     @ddl_statement.setter
-    def ddl_statement(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ddl_statement(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ddl_statement", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoReclaimable")
-    def is_auto_reclaimable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_reclaimable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         True if table can be reclaimed after an idle period.
         """
         return pulumi.get(self, "is_auto_reclaimable")
 
     @is_auto_reclaimable.setter
-    def is_auto_reclaimable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_reclaimable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_reclaimable", value)
 
     @_builtins.property
     @pulumi.getter(name="isMultiRegion")
-    def is_multi_region(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_multi_region(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         True if this table is currently a member of a replication set.
         """
         return pulumi.get(self, "is_multi_region")
 
     @is_multi_region.setter
-    def is_multi_region(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_multi_region(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_multi_region", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="localReplicaInitializationInPercent")
-    def local_replica_initialization_in_percent(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def local_replica_initialization_in_percent(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         If this table is in a replication set, this value represents the progress of the initialization of the replica's data.  A value of 100 indicates that initialization has completed.
         """
         return pulumi.get(self, "local_replica_initialization_in_percent")
 
     @local_replica_initialization_in_percent.setter
-    def local_replica_initialization_in_percent(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def local_replica_initialization_in_percent(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "local_replica_initialization_in_percent", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Table name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def replicas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TableReplicaArgs']]]]:
+    def replicas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TableReplicaArgs']]]]:
         """
         An array of Replica listing this table's replicas, if any
         """
         return pulumi.get(self, "replicas")
 
     @replicas.setter
-    def replicas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TableReplicaArgs']]]]):
+    def replicas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TableReplicaArgs']]]]):
         pulumi.set(self, "replicas", value)
 
     @_builtins.property
     @pulumi.getter(name="schemaState")
-    def schema_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def schema_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
         """
         return pulumi.get(self, "schema_state")
 
     @schema_state.setter
-    def schema_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def schema_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "schema_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def schemas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TableSchemaArgs']]]]:
+    def schemas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TableSchemaArgs']]]]:
         """
         The table schema information as a JSON object.
         """
         return pulumi.get(self, "schemas")
 
     @schemas.setter
-    def schemas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TableSchemaArgs']]]]):
+    def schemas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TableSchemaArgs']]]]):
         pulumi.set(self, "schemas", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The state of a table.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="tableLimits")
-    def table_limits(self) -> Optional[pulumi.Input['TableTableLimitsArgs']]:
+    def table_limits(self) -> pulumi.Input[Optional['TableTableLimitsArgs']]:
         """
         (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
         """
         return pulumi.get(self, "table_limits")
 
     @table_limits.setter
-    def table_limits(self, value: Optional[pulumi.Input['TableTableLimitsArgs']]):
+    def table_limits(self, value: pulumi.Input[Optional['TableTableLimitsArgs']]):
         pulumi.set(self, "table_limits", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the the table was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfExpiration")
-    def time_of_expiration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_expiration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_of_expiration")
 
     @time_of_expiration.setter
-    def time_of_expiration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_expiration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_expiration", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the the table's metadata was last updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -440,13 +440,13 @@ class Table(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ddl_statement: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_auto_reclaimable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 table_limits: Optional[pulumi.Input[Union['TableTableLimitsArgs', 'TableTableLimitsArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ddl_statement: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_reclaimable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 table_limits: pulumi.Input[Optional[Union['TableTableLimitsArgs', 'TableTableLimitsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Table resource in Oracle Cloud Infrastructure NoSQL Database service.
@@ -470,11 +470,11 @@ class Table(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_auto_reclaimable=table_is_auto_reclaimable,
+            is_auto_reclaimable=table_is_auto_reclaimable == "true",
             table_limits={
-                "max_read_units": table_table_limits_max_read_units,
-                "max_storage_in_gbs": table_table_limits_max_storage_in_gbs,
-                "max_write_units": table_table_limits_max_write_units,
+                "max_read_units": int(table_table_limits_max_read_units),
+                "max_storage_in_gbs": int(table_table_limits_max_storage_in_gbs),
+                "max_write_units": int(table_table_limits_max_write_units),
                 "capacity_mode": table_table_limits_capacity_mode,
             })
         ```
@@ -526,11 +526,11 @@ class Table(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_auto_reclaimable=table_is_auto_reclaimable,
+            is_auto_reclaimable=table_is_auto_reclaimable == "true",
             table_limits={
-                "max_read_units": table_table_limits_max_read_units,
-                "max_storage_in_gbs": table_table_limits_max_storage_in_gbs,
-                "max_write_units": table_table_limits_max_write_units,
+                "max_read_units": int(table_table_limits_max_read_units),
+                "max_storage_in_gbs": int(table_table_limits_max_storage_in_gbs),
+                "max_write_units": int(table_table_limits_max_write_units),
                 "capacity_mode": table_table_limits_capacity_mode,
             })
         ```
@@ -559,13 +559,13 @@ class Table(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ddl_statement: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_auto_reclaimable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 table_limits: Optional[pulumi.Input[Union['TableTableLimitsArgs', 'TableTableLimitsArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ddl_statement: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_reclaimable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 table_limits: pulumi.Input[Optional[Union['TableTableLimitsArgs', 'TableTableLimitsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -607,24 +607,24 @@ class Table(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            ddl_statement: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_auto_reclaimable: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_multi_region: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            local_replica_initialization_in_percent: Optional[pulumi.Input[_builtins.int]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            replicas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TableReplicaArgs', 'TableReplicaArgsDict']]]]] = None,
-            schema_state: Optional[pulumi.Input[_builtins.str]] = None,
-            schemas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TableSchemaArgs', 'TableSchemaArgsDict']]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            table_limits: Optional[pulumi.Input[Union['TableTableLimitsArgs', 'TableTableLimitsArgsDict']]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_of_expiration: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'Table':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ddl_statement: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_auto_reclaimable: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_multi_region: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            local_replica_initialization_in_percent: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            replicas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TableReplicaArgs', 'TableReplicaArgsDict']]]]] = None,
+            schema_state: pulumi.Input[Optional[_builtins.str]] = None,
+            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TableSchemaArgs', 'TableSchemaArgsDict']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            table_limits: pulumi.Input[Optional[Union['TableTableLimitsArgs', 'TableTableLimitsArgsDict']]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_expiration: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'Table':
         """
         Get an existing Table resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

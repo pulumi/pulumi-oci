@@ -33,10 +33,10 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     kafkaSettings: {
- *         autoCreateTopicsEnable: streamPoolKafkaSettingsAutoCreateTopicsEnable,
+ *         autoCreateTopicsEnable: streamPoolKafkaSettingsAutoCreateTopicsEnable === "true",
  *         bootstrapServers: streamPoolKafkaSettingsBootstrapServers,
- *         logRetentionHours: streamPoolKafkaSettingsLogRetentionHours,
- *         numPartitions: streamPoolKafkaSettingsNumPartitions,
+ *         logRetentionHours: Number(streamPoolKafkaSettingsLogRetentionHours),
+ *         numPartitions: Number(streamPoolKafkaSettingsNumPartitions),
  *     },
  *     privateEndpointSettings: {
  *         nsgIds: streamPoolPrivateEndpointSettingsNsgIds,
@@ -197,43 +197,43 @@ export interface StreamPoolState {
     /**
      * (Updatable) The OCID of the compartment that contains the stream.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the custom encryption key to be used or deleted if currently being used.
      */
-    customEncryptionKey?: pulumi.Input<inputs.Streaming.StreamPoolCustomEncryptionKey>;
+    customEncryptionKey?: pulumi.Input<inputs.Streaming.StreamPoolCustomEncryptionKey | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream) object). If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable. Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
      */
-    endpointFqdn?: pulumi.Input<string>;
+    endpointFqdn?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * True if the stream pool is private, false otherwise. The associated endpoint and subnetId of a private stream pool can be retrieved through the [GetStreamPool](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool) API.
      */
-    isPrivate?: pulumi.Input<boolean>;
+    isPrivate?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Settings for the Kafka compatibility layer.
      */
-    kafkaSettings?: pulumi.Input<inputs.Streaming.StreamPoolKafkaSettings>;
+    kafkaSettings?: pulumi.Input<inputs.Streaming.StreamPoolKafkaSettings | undefined>;
     /**
      * Any additional details about the current state of the stream.
      */
-    lifecycleStateDetails?: pulumi.Input<string>;
+    lifecycleStateDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Optional parameters if a private stream pool is requested.
      */
-    privateEndpointSettings?: pulumi.Input<inputs.Streaming.StreamPoolPrivateEndpointSettings>;
+    privateEndpointSettings?: pulumi.Input<inputs.Streaming.StreamPoolPrivateEndpointSettings | undefined>;
     /**
      * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}` 
      *
@@ -241,15 +241,15 @@ export interface StreamPoolState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The current state of the stream pool.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the stream pool was created, expressed in in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -263,27 +263,27 @@ export interface StreamPoolArgs {
     /**
      * (Updatable) The OCID of the custom encryption key to be used or deleted if currently being used.
      */
-    customEncryptionKey?: pulumi.Input<inputs.Streaming.StreamPoolCustomEncryptionKey>;
+    customEncryptionKey?: pulumi.Input<inputs.Streaming.StreamPoolCustomEncryptionKey | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Settings for the Kafka compatibility layer.
      */
-    kafkaSettings?: pulumi.Input<inputs.Streaming.StreamPoolKafkaSettings>;
+    kafkaSettings?: pulumi.Input<inputs.Streaming.StreamPoolKafkaSettings | undefined>;
     /**
      * (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Optional parameters if a private stream pool is requested.
      */
-    privateEndpointSettings?: pulumi.Input<inputs.Streaming.StreamPoolPrivateEndpointSettings>;
+    privateEndpointSettings?: pulumi.Input<inputs.Streaming.StreamPoolPrivateEndpointSettings | undefined>;
     /**
      * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}` 
      *
@@ -291,5 +291,5 @@ export interface StreamPoolArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

@@ -124,7 +124,7 @@ def get_usage_plans(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_usage_plans = oci.ApiGateway.get_usage_plans(compartment_id=compartment_id,
+    test_usage_plans = oci.apigateway.get_usage_plans(compartment_id=compartment_id,
         display_name=usage_plan_display_name,
         state=usage_plan_state)
     ```
@@ -149,10 +149,10 @@ def get_usage_plans(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         usage_plan_collections=pulumi.get(__ret__, 'usage_plan_collections'))
-def get_usage_plans_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                           display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetUsagePlansFilterArgs', 'GetUsagePlansFilterArgsDict']]]]] = None,
-                           state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_usage_plans_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUsagePlansFilterArgs', 'GetUsagePlansFilterArgsDict']]]]] = None,
+                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUsagePlansResult]:
     """
     This data source provides the list of Usage Plans in Oracle Cloud Infrastructure API Gateway service.
@@ -165,7 +165,7 @@ def get_usage_plans_output(compartment_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_usage_plans = oci.ApiGateway.get_usage_plans(compartment_id=compartment_id,
+    test_usage_plans = oci.apigateway.get_usage_plans(compartment_id=compartment_id,
         display_name=usage_plan_display_name,
         state=usage_plan_state)
     ```

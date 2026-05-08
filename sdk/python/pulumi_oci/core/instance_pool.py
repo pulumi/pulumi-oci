@@ -25,14 +25,14 @@ class InstancePoolArgs:
                  instance_configuration_id: pulumi.Input[_builtins.str],
                  placement_configurations: pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationArgs']]],
                  size: pulumi.Input[_builtins.int],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 instance_display_name_formatter: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_hostname_formatter: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_management: Optional[pulumi.Input['InstancePoolLifecycleManagementArgs']] = None,
-                 load_balancers: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 instance_display_name_formatter: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_hostname_formatter: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_management: pulumi.Input[Optional['InstancePoolLifecycleManagementArgs']] = None,
+                 load_balancers: pulumi.Input[Optional[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a InstancePool resource.
 
@@ -128,91 +128,91 @@ class InstancePoolArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceDisplayNameFormatter")
-    def instance_display_name_formatter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_display_name_formatter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
         """
         return pulumi.get(self, "instance_display_name_formatter")
 
     @instance_display_name_formatter.setter
-    def instance_display_name_formatter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_display_name_formatter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_display_name_formatter", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceHostnameFormatter")
-    def instance_hostname_formatter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_hostname_formatter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
         """
         return pulumi.get(self, "instance_hostname_formatter")
 
     @instance_hostname_formatter.setter
-    def instance_hostname_formatter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_hostname_formatter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_hostname_formatter", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleManagement")
-    def lifecycle_management(self) -> Optional[pulumi.Input['InstancePoolLifecycleManagementArgs']]:
+    def lifecycle_management(self) -> pulumi.Input[Optional['InstancePoolLifecycleManagementArgs']]:
         """
         (Updatable) The lifecycle management options for the instance pool.
         """
         return pulumi.get(self, "lifecycle_management")
 
     @lifecycle_management.setter
-    def lifecycle_management(self, value: Optional[pulumi.Input['InstancePoolLifecycleManagementArgs']]):
+    def lifecycle_management(self, value: pulumi.Input[Optional['InstancePoolLifecycleManagementArgs']]):
         pulumi.set(self, "lifecycle_management", value)
 
     @_builtins.property
     @pulumi.getter(name="loadBalancers")
-    def load_balancers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]]:
+    def load_balancers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]]:
         """
         The load balancers to attach to the instance pool. (Note: From 6.16.0 load_balancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
         """
         return pulumi.get(self, "load_balancers")
 
     @load_balancers.setter
-    def load_balancers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]]):
+    def load_balancers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]]):
         pulumi.set(self, "load_balancers", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
 
@@ -223,28 +223,28 @@ class InstancePoolArgs:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
 @pulumi.input_type
 class _InstancePoolState:
     def __init__(__self__, *,
-                 actual_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 current_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 instance_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_display_name_formatter: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_hostname_formatter: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_management: Optional[pulumi.Input['InstancePoolLifecycleManagementArgs']] = None,
-                 load_balancers: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]] = None,
-                 placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationArgs']]]] = None,
-                 size: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 actual_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_display_name_formatter: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_hostname_formatter: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_management: pulumi.Input[Optional['InstancePoolLifecycleManagementArgs']] = None,
+                 load_balancers: pulumi.Input[Optional[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]] = None,
+                 placement_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['InstancePoolPlacementConfigurationArgs']]]] = None,
+                 size: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InstancePool resources.
 
@@ -303,139 +303,139 @@ class _InstancePoolState:
 
     @_builtins.property
     @pulumi.getter(name="actualSize")
-    def actual_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def actual_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
         """
         return pulumi.get(self, "actual_size")
 
     @actual_size.setter
-    def actual_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def actual_size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "actual_size", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="currentSize")
-    def current_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def current_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Count of instance in running state associated to the Instance Pool.
         """
         return pulumi.get(self, "current_size")
 
     @current_size.setter
-    def current_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def current_size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "current_size", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceConfigurationId")
-    def instance_configuration_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_configuration_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         """
         return pulumi.get(self, "instance_configuration_id")
 
     @instance_configuration_id.setter
-    def instance_configuration_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_configuration_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_configuration_id", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceDisplayNameFormatter")
-    def instance_display_name_formatter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_display_name_formatter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
         """
         return pulumi.get(self, "instance_display_name_formatter")
 
     @instance_display_name_formatter.setter
-    def instance_display_name_formatter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_display_name_formatter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_display_name_formatter", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceHostnameFormatter")
-    def instance_hostname_formatter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_hostname_formatter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly formatter for the instance pool's instances. Instance hostnames follow the format. The formatter does not retroactively change instance's hostnames, only instance hostnames in the future follow the format
         """
         return pulumi.get(self, "instance_hostname_formatter")
 
     @instance_hostname_formatter.setter
-    def instance_hostname_formatter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_hostname_formatter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_hostname_formatter", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleManagement")
-    def lifecycle_management(self) -> Optional[pulumi.Input['InstancePoolLifecycleManagementArgs']]:
+    def lifecycle_management(self) -> pulumi.Input[Optional['InstancePoolLifecycleManagementArgs']]:
         """
         (Updatable) The lifecycle management options for the instance pool.
         """
         return pulumi.get(self, "lifecycle_management")
 
     @lifecycle_management.setter
-    def lifecycle_management(self, value: Optional[pulumi.Input['InstancePoolLifecycleManagementArgs']]):
+    def lifecycle_management(self, value: pulumi.Input[Optional['InstancePoolLifecycleManagementArgs']]):
         pulumi.set(self, "lifecycle_management", value)
 
     @_builtins.property
     @pulumi.getter(name="loadBalancers")
-    def load_balancers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]]:
+    def load_balancers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]]:
         """
         The load balancers to attach to the instance pool. (Note: From 6.16.0 load_balancers field in Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
         """
         return pulumi.get(self, "load_balancers")
 
     @load_balancers.setter
-    def load_balancers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]]):
+    def load_balancers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['InstancePoolLoadBalancerArgs']]]]):
         pulumi.set(self, "load_balancers", value)
 
     @_builtins.property
     @pulumi.getter(name="placementConfigurations")
-    def placement_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationArgs']]]]:
+    def placement_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['InstancePoolPlacementConfigurationArgs']]]]:
         """
         (Updatable) The placement configurations for the instance pool. Provide one placement configuration for each availability domain.
 
@@ -444,24 +444,24 @@ class _InstancePoolState:
         return pulumi.get(self, "placement_configurations")
 
     @placement_configurations.setter
-    def placement_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationArgs']]]]):
+    def placement_configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['InstancePoolPlacementConfigurationArgs']]]]):
         pulumi.set(self, "placement_configurations", value)
 
     @_builtins.property
     @pulumi.getter
-    def size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
         """
         return pulumi.get(self, "size")
 
     @size.setter
-    def size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "size", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
 
@@ -472,19 +472,19 @@ class _InstancePoolState:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the instance pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -494,18 +494,18 @@ class InstancePool(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 instance_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_display_name_formatter: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_hostname_formatter: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_management: Optional[pulumi.Input[Union['InstancePoolLifecycleManagementArgs', 'InstancePoolLifecycleManagementArgsDict']]] = None,
-                 load_balancers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict']]]]] = None,
-                 placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolPlacementConfigurationArgs', 'InstancePoolPlacementConfigurationArgsDict']]]]] = None,
-                 size: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_display_name_formatter: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_hostname_formatter: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_management: pulumi.Input[Optional[Union['InstancePoolLifecycleManagementArgs', 'InstancePoolLifecycleManagementArgsDict']]] = None,
+                 load_balancers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict']]]]] = None,
+                 placement_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstancePoolPlacementConfigurationArgs', 'InstancePoolPlacementConfigurationArgsDict']]]]] = None,
+                 size: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Instance Pool resource in Oracle Cloud Infrastructure Core service.
@@ -538,7 +538,7 @@ class InstancePool(pulumi.CustomResource):
                     "ipv6address_ipv6subnet_cidr_pair_details": [{
                         "ipv6subnet_cidr": instance_pool_placement_configurations_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     }],
-                    "is_assign_ipv6ip": instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip,
+                    "is_assign_ipv6ip": instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip == "true",
                 },
                 "secondary_vnic_subnets": [{
                     "subnet_id": test_subnet["id"],
@@ -546,10 +546,10 @@ class InstancePool(pulumi.CustomResource):
                     "ipv6address_ipv6subnet_cidr_pair_details": [{
                         "ipv6subnet_cidr": instance_pool_placement_configurations_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     }],
-                    "is_assign_ipv6ip": instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip,
+                    "is_assign_ipv6ip": instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip == "true",
                 }],
             }],
-            size=instance_pool_size,
+            size=int(instance_pool_size),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -562,19 +562,19 @@ class InstancePool(pulumi.CustomResource):
             lifecycle_management={
                 "lifecycle_actions": {
                     "pre_termination": {
-                        "is_enabled": instance_pool_lifecycle_management_lifecycle_actions_pre_termination_is_enabled,
+                        "is_enabled": instance_pool_lifecycle_management_lifecycle_actions_pre_termination_is_enabled == "true",
                         "on_timeout": {
                             "preserve_block_volume_mode": instance_pool_lifecycle_management_lifecycle_actions_pre_termination_on_timeout_preserve_block_volume_mode,
                             "preserve_boot_volume_mode": instance_pool_lifecycle_management_lifecycle_actions_pre_termination_on_timeout_preserve_boot_volume_mode,
                         },
-                        "timeout": instance_pool_lifecycle_management_lifecycle_actions_pre_termination_timeout,
+                        "timeout": int(instance_pool_lifecycle_management_lifecycle_actions_pre_termination_timeout),
                     },
                 },
             },
             load_balancers=[{
                 "backend_set_name": test_backend_set["name"],
                 "load_balancer_id": test_load_balancer["id"],
-                "port": instance_pool_load_balancers_port,
+                "port": int(instance_pool_load_balancers_port),
                 "vnic_selection": instance_pool_load_balancers_vnic_selection,
             }])
         ```
@@ -646,7 +646,7 @@ class InstancePool(pulumi.CustomResource):
                     "ipv6address_ipv6subnet_cidr_pair_details": [{
                         "ipv6subnet_cidr": instance_pool_placement_configurations_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     }],
-                    "is_assign_ipv6ip": instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip,
+                    "is_assign_ipv6ip": instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip == "true",
                 },
                 "secondary_vnic_subnets": [{
                     "subnet_id": test_subnet["id"],
@@ -654,10 +654,10 @@ class InstancePool(pulumi.CustomResource):
                     "ipv6address_ipv6subnet_cidr_pair_details": [{
                         "ipv6subnet_cidr": instance_pool_placement_configurations_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     }],
-                    "is_assign_ipv6ip": instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip,
+                    "is_assign_ipv6ip": instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip == "true",
                 }],
             }],
-            size=instance_pool_size,
+            size=int(instance_pool_size),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -670,19 +670,19 @@ class InstancePool(pulumi.CustomResource):
             lifecycle_management={
                 "lifecycle_actions": {
                     "pre_termination": {
-                        "is_enabled": instance_pool_lifecycle_management_lifecycle_actions_pre_termination_is_enabled,
+                        "is_enabled": instance_pool_lifecycle_management_lifecycle_actions_pre_termination_is_enabled == "true",
                         "on_timeout": {
                             "preserve_block_volume_mode": instance_pool_lifecycle_management_lifecycle_actions_pre_termination_on_timeout_preserve_block_volume_mode,
                             "preserve_boot_volume_mode": instance_pool_lifecycle_management_lifecycle_actions_pre_termination_on_timeout_preserve_boot_volume_mode,
                         },
-                        "timeout": instance_pool_lifecycle_management_lifecycle_actions_pre_termination_timeout,
+                        "timeout": int(instance_pool_lifecycle_management_lifecycle_actions_pre_termination_timeout),
                     },
                 },
             },
             load_balancers=[{
                 "backend_set_name": test_backend_set["name"],
                 "load_balancer_id": test_load_balancer["id"],
-                "port": instance_pool_load_balancers_port,
+                "port": int(instance_pool_load_balancers_port),
                 "vnic_selection": instance_pool_load_balancers_vnic_selection,
             }])
         ```
@@ -711,18 +711,18 @@ class InstancePool(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 instance_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_display_name_formatter: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_hostname_formatter: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_management: Optional[pulumi.Input[Union['InstancePoolLifecycleManagementArgs', 'InstancePoolLifecycleManagementArgsDict']]] = None,
-                 load_balancers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict']]]]] = None,
-                 placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolPlacementConfigurationArgs', 'InstancePoolPlacementConfigurationArgsDict']]]]] = None,
-                 size: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_display_name_formatter: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_hostname_formatter: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_management: pulumi.Input[Optional[Union['InstancePoolLifecycleManagementArgs', 'InstancePoolLifecycleManagementArgsDict']]] = None,
+                 load_balancers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict']]]]] = None,
+                 placement_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstancePoolPlacementConfigurationArgs', 'InstancePoolPlacementConfigurationArgsDict']]]]] = None,
+                 size: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -765,21 +765,21 @@ class InstancePool(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            actual_size: Optional[pulumi.Input[_builtins.int]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            current_size: Optional[pulumi.Input[_builtins.int]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            instance_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_display_name_formatter: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_hostname_formatter: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_management: Optional[pulumi.Input[Union['InstancePoolLifecycleManagementArgs', 'InstancePoolLifecycleManagementArgsDict']]] = None,
-            load_balancers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict']]]]] = None,
-            placement_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolPlacementConfigurationArgs', 'InstancePoolPlacementConfigurationArgsDict']]]]] = None,
-            size: Optional[pulumi.Input[_builtins.int]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'InstancePool':
+            actual_size: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            current_size: pulumi.Input[Optional[_builtins.int]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_display_name_formatter: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_hostname_formatter: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_management: pulumi.Input[Optional[Union['InstancePoolLifecycleManagementArgs', 'InstancePoolLifecycleManagementArgsDict']]] = None,
+            load_balancers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstancePoolLoadBalancerArgs', 'InstancePoolLoadBalancerArgsDict']]]]] = None,
+            placement_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstancePoolPlacementConfigurationArgs', 'InstancePoolPlacementConfigurationArgsDict']]]]] = None,
+            size: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'InstancePool':
         """
         Get an existing InstancePool resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

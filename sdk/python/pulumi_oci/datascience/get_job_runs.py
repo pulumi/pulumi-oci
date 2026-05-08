@@ -151,7 +151,7 @@ def get_job_runs(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_job_runs = oci.DataScience.get_job_runs(compartment_id=compartment_id,
+    test_job_runs = oci.datascience.get_job_runs(compartment_id=compartment_id,
         created_by=job_run_created_by,
         display_name=job_run_display_name,
         id=job_run_id,
@@ -187,13 +187,13 @@ def get_job_runs(compartment_id: Optional[_builtins.str] = None,
         job_id=pulumi.get(__ret__, 'job_id'),
         job_runs=pulumi.get(__ret__, 'job_runs'),
         state=pulumi.get(__ret__, 'state'))
-def get_job_runs_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                        created_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetJobRunsFilterArgs', 'GetJobRunsFilterArgsDict']]]]] = None,
-                        id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        job_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_job_runs_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                        created_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJobRunsFilterArgs', 'GetJobRunsFilterArgsDict']]]]] = None,
+                        id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        job_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJobRunsResult]:
     """
     This data source provides the list of Job Runs in Oracle Cloud Infrastructure Data Science service.
@@ -206,7 +206,7 @@ def get_job_runs_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_job_runs = oci.DataScience.get_job_runs(compartment_id=compartment_id,
+    test_job_runs = oci.datascience.get_job_runs(compartment_id=compartment_id,
         created_by=job_run_created_by,
         display_name=job_run_display_name,
         id=job_run_id,

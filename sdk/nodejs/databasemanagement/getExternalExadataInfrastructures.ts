@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalExadataInfrastructures = oci.DatabaseManagement.getExternalExadataInfrastructures({
+ * const testExternalExadataInfrastructures = oci.databasemanagement.getExternalExadataInfrastructures({
  *     compartmentId: compartmentId,
  *     displayName: externalExadataInfrastructureDisplayName,
  * });
@@ -80,7 +80,7 @@ export interface GetExternalExadataInfrastructuresResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalExadataInfrastructures = oci.DatabaseManagement.getExternalExadataInfrastructures({
+ * const testExternalExadataInfrastructures = oci.databasemanagement.getExternalExadataInfrastructures({
  *     compartmentId: compartmentId,
  *     displayName: externalExadataInfrastructureDisplayName,
  * });
@@ -106,6 +106,6 @@ export interface GetExternalExadataInfrastructuresOutputArgs {
     /**
      * The optional single value query filter parameter on the entity display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetExternalExadataInfrastructuresFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetExternalExadataInfrastructuresFilterArgs>[] | undefined>;
 }

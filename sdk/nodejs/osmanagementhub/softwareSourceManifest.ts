@@ -102,7 +102,7 @@ export class SoftwareSourceManifest extends pulumi.CustomResource {
  * Input properties used for looking up and filtering SoftwareSourceManifest resources.
  */
 export interface SoftwareSourceManifestState {
-    content?: pulumi.Input<string>;
+    content?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      *
@@ -110,14 +110,14 @@ export interface SoftwareSourceManifestState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    softwareSourceId?: pulumi.Input<string>;
+    softwareSourceId?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a SoftwareSourceManifest resource.
  */
 export interface SoftwareSourceManifestArgs {
-    content?: pulumi.Input<string>;
+    content?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      *

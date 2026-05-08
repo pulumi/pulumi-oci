@@ -263,7 +263,7 @@ def get_audit_archive_retrieval(audit_archive_retrieval_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_archive_retrieval = oci.DataSafe.get_audit_archive_retrieval(audit_archive_retrieval_id=test_audit_archive_retrieval_oci_data_safe_audit_archive_retrieval["id"])
+    test_audit_archive_retrieval = oci.datasafe.get_audit_archive_retrieval(audit_archive_retrieval_id=test_audit_archive_retrieval_oci_data_safe_audit_archive_retrieval["id"])
     ```
 
 
@@ -293,7 +293,7 @@ def get_audit_archive_retrieval(audit_archive_retrieval_id: Optional[_builtins.s
         time_completed=pulumi.get(__ret__, 'time_completed'),
         time_of_expiry=pulumi.get(__ret__, 'time_of_expiry'),
         time_requested=pulumi.get(__ret__, 'time_requested'))
-def get_audit_archive_retrieval_output(audit_archive_retrieval_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_audit_archive_retrieval_output(audit_archive_retrieval_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuditArchiveRetrievalResult]:
     """
     This data source provides details about a specific Audit Archive Retrieval resource in Oracle Cloud Infrastructure Data Safe service.
@@ -306,7 +306,7 @@ def get_audit_archive_retrieval_output(audit_archive_retrieval_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_archive_retrieval = oci.DataSafe.get_audit_archive_retrieval(audit_archive_retrieval_id=test_audit_archive_retrieval_oci_data_safe_audit_archive_retrieval["id"])
+    test_audit_archive_retrieval = oci.datasafe.get_audit_archive_retrieval(audit_archive_retrieval_id=test_audit_archive_retrieval_oci_data_safe_audit_archive_retrieval["id"])
     ```
 
 

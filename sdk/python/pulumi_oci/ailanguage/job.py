@@ -25,9 +25,9 @@ class JobArgs:
                  input_location: pulumi.Input['JobInputLocationArgs'],
                  model_metadata_details: pulumi.Input[Sequence[pulumi.Input['JobModelMetadataDetailArgs']]],
                  output_location: pulumi.Input['JobOutputLocationArgs'],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 input_configuration: Optional[pulumi.Input['JobInputConfigurationArgs']] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 input_configuration: pulumi.Input[Optional['JobInputConfigurationArgs']] = None):
         """
         The set of arguments for constructing a Job resource.
 
@@ -100,64 +100,64 @@ class JobArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A short description of the job.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly display name for the job.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="inputConfiguration")
-    def input_configuration(self) -> Optional[pulumi.Input['JobInputConfigurationArgs']]:
+    def input_configuration(self) -> pulumi.Input[Optional['JobInputConfigurationArgs']]:
         """
         input documents configuration by default TXT files will be processed and this behaviour will not change in future after adding new types
         """
         return pulumi.get(self, "input_configuration")
 
     @input_configuration.setter
-    def input_configuration(self, value: Optional[pulumi.Input['JobInputConfigurationArgs']]):
+    def input_configuration(self, value: pulumi.Input[Optional['JobInputConfigurationArgs']]):
         pulumi.set(self, "input_configuration", value)
 
 
 @pulumi.input_type
 class _JobState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 completed_documents: Optional[pulumi.Input[_builtins.int]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 failed_documents: Optional[pulumi.Input[_builtins.int]] = None,
-                 input_configuration: Optional[pulumi.Input['JobInputConfigurationArgs']] = None,
-                 input_location: Optional[pulumi.Input['JobInputLocationArgs']] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_metadata_details: Optional[pulumi.Input[Sequence[pulumi.Input['JobModelMetadataDetailArgs']]]] = None,
-                 output_location: Optional[pulumi.Input['JobOutputLocationArgs']] = None,
-                 pending_documents: Optional[pulumi.Input[_builtins.int]] = None,
-                 percent_complete: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_accepted: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_completed: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_started: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_documents: Optional[pulumi.Input[_builtins.int]] = None,
-                 ttl_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 warnings_count: Optional[pulumi.Input[_builtins.int]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 completed_documents: pulumi.Input[Optional[_builtins.int]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 failed_documents: pulumi.Input[Optional[_builtins.int]] = None,
+                 input_configuration: pulumi.Input[Optional['JobInputConfigurationArgs']] = None,
+                 input_location: pulumi.Input[Optional['JobInputLocationArgs']] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_metadata_details: pulumi.Input[Optional[Sequence[pulumi.Input['JobModelMetadataDetailArgs']]]] = None,
+                 output_location: pulumi.Input[Optional['JobOutputLocationArgs']] = None,
+                 pending_documents: pulumi.Input[Optional[_builtins.int]] = None,
+                 percent_complete: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_accepted: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_completed: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_started: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_documents: pulumi.Input[Optional[_builtins.int]] = None,
+                 ttl_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 warnings_count: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering Job resources.
 
@@ -225,242 +225,242 @@ class _JobState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="completedDocuments")
-    def completed_documents(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def completed_documents(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of documents processed for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
         """
         return pulumi.get(self, "completed_documents")
 
     @completed_documents.setter
-    def completed_documents(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def completed_documents(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "completed_documents", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the job.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A short description of the job.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly display name for the job.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="failedDocuments")
-    def failed_documents(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def failed_documents(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of documents failed for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
         """
         return pulumi.get(self, "failed_documents")
 
     @failed_documents.setter
-    def failed_documents(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def failed_documents(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "failed_documents", value)
 
     @_builtins.property
     @pulumi.getter(name="inputConfiguration")
-    def input_configuration(self) -> Optional[pulumi.Input['JobInputConfigurationArgs']]:
+    def input_configuration(self) -> pulumi.Input[Optional['JobInputConfigurationArgs']]:
         """
         input documents configuration by default TXT files will be processed and this behaviour will not change in future after adding new types
         """
         return pulumi.get(self, "input_configuration")
 
     @input_configuration.setter
-    def input_configuration(self, value: Optional[pulumi.Input['JobInputConfigurationArgs']]):
+    def input_configuration(self, value: pulumi.Input[Optional['JobInputConfigurationArgs']]):
         pulumi.set(self, "input_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="inputLocation")
-    def input_location(self) -> Optional[pulumi.Input['JobInputLocationArgs']]:
+    def input_location(self) -> pulumi.Input[Optional['JobInputLocationArgs']]:
         """
         document location and other meta data about documents For TXT only ObjectStoragePrefixLocation supported For CSV only ObjectStorageFileNameLocation is supported For this release only one file is supported for ObjectStorageFileNameLocation i.e CSV file type
         """
         return pulumi.get(self, "input_location")
 
     @input_location.setter
-    def input_location(self, value: Optional[pulumi.Input['JobInputLocationArgs']]):
+    def input_location(self, value: pulumi.Input[Optional['JobInputLocationArgs']]):
         pulumi.set(self, "input_location", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="modelMetadataDetails")
-    def model_metadata_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JobModelMetadataDetailArgs']]]]:
+    def model_metadata_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['JobModelMetadataDetailArgs']]]]:
         """
         training model details For this release only one model is allowed to be input here. One of the three modelType, ModelId, endpointId should be given other wise error will be thrown from API
         """
         return pulumi.get(self, "model_metadata_details")
 
     @model_metadata_details.setter
-    def model_metadata_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['JobModelMetadataDetailArgs']]]]):
+    def model_metadata_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['JobModelMetadataDetailArgs']]]]):
         pulumi.set(self, "model_metadata_details", value)
 
     @_builtins.property
     @pulumi.getter(name="outputLocation")
-    def output_location(self) -> Optional[pulumi.Input['JobOutputLocationArgs']]:
+    def output_location(self) -> pulumi.Input[Optional['JobOutputLocationArgs']]:
         """
         Object storage output location to write inference results
         """
         return pulumi.get(self, "output_location")
 
     @output_location.setter
-    def output_location(self, value: Optional[pulumi.Input['JobOutputLocationArgs']]):
+    def output_location(self, value: pulumi.Input[Optional['JobOutputLocationArgs']]):
         pulumi.set(self, "output_location", value)
 
     @_builtins.property
     @pulumi.getter(name="pendingDocuments")
-    def pending_documents(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pending_documents(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of documents still to process. For CSV this signifies number of rows and for TXT this signifies number of files.
         """
         return pulumi.get(self, "pending_documents")
 
     @pending_documents.setter
-    def pending_documents(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pending_documents(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pending_documents", value)
 
     @_builtins.property
     @pulumi.getter(name="percentComplete")
-    def percent_complete(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def percent_complete(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         How much progress the operation has made, vs the total amount of work that must be performed.
         """
         return pulumi.get(self, "percent_complete")
 
     @percent_complete.setter
-    def percent_complete(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def percent_complete(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "percent_complete", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Job.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeAccepted")
-    def time_accepted(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_accepted(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Job accepted time.
         """
         return pulumi.get(self, "time_accepted")
 
     @time_accepted.setter
-    def time_accepted(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_accepted(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_accepted", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCompleted")
-    def time_completed(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_completed(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Job finished time.
         """
         return pulumi.get(self, "time_completed")
 
     @time_completed.setter
-    def time_completed(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_completed(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_completed", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_started(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Job started time.
         """
         return pulumi.get(self, "time_started")
 
     @time_started.setter
-    def time_started(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_started(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_started", value)
 
     @_builtins.property
     @pulumi.getter(name="totalDocuments")
-    def total_documents(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def total_documents(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Total number of documents given as input for prediction. For CSV this signifies number of rows and for TXT this signifies number of files.
         """
         return pulumi.get(self, "total_documents")
 
     @total_documents.setter
-    def total_documents(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def total_documents(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "total_documents", value)
 
     @_builtins.property
     @pulumi.getter(name="ttlInDays")
-    def ttl_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ttl_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Time to live duration in days for Job. Job will be available till max 90 days.
         """
         return pulumi.get(self, "ttl_in_days")
 
     @ttl_in_days.setter
-    def ttl_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ttl_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ttl_in_days", value)
 
     @_builtins.property
     @pulumi.getter(name="warningsCount")
-    def warnings_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def warnings_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         warnings count
         """
         return pulumi.get(self, "warnings_count")
 
     @warnings_count.setter
-    def warnings_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def warnings_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "warnings_count", value)
 
 
@@ -470,13 +470,13 @@ class Job(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 input_configuration: Optional[pulumi.Input[Union['JobInputConfigurationArgs', 'JobInputConfigurationArgsDict']]] = None,
-                 input_location: Optional[pulumi.Input[Union['JobInputLocationArgs', 'JobInputLocationArgsDict']]] = None,
-                 model_metadata_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['JobModelMetadataDetailArgs', 'JobModelMetadataDetailArgsDict']]]]] = None,
-                 output_location: Optional[pulumi.Input[Union['JobOutputLocationArgs', 'JobOutputLocationArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 input_configuration: pulumi.Input[Optional[Union['JobInputConfigurationArgs', 'JobInputConfigurationArgsDict']]] = None,
+                 input_location: pulumi.Input[Optional[Union['JobInputLocationArgs', 'JobInputLocationArgsDict']]] = None,
+                 model_metadata_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobModelMetadataDetailArgs', 'JobModelMetadataDetailArgsDict']]]]] = None,
+                 output_location: pulumi.Input[Optional[Union['JobOutputLocationArgs', 'JobOutputLocationArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Job resource in Oracle Cloud Infrastructure Ai Language service.
@@ -615,13 +615,13 @@ class Job(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 input_configuration: Optional[pulumi.Input[Union['JobInputConfigurationArgs', 'JobInputConfigurationArgsDict']]] = None,
-                 input_location: Optional[pulumi.Input[Union['JobInputLocationArgs', 'JobInputLocationArgsDict']]] = None,
-                 model_metadata_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['JobModelMetadataDetailArgs', 'JobModelMetadataDetailArgsDict']]]]] = None,
-                 output_location: Optional[pulumi.Input[Union['JobOutputLocationArgs', 'JobOutputLocationArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 input_configuration: pulumi.Input[Optional[Union['JobInputConfigurationArgs', 'JobInputConfigurationArgsDict']]] = None,
+                 input_location: pulumi.Input[Optional[Union['JobInputLocationArgs', 'JobInputLocationArgsDict']]] = None,
+                 model_metadata_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobModelMetadataDetailArgs', 'JobModelMetadataDetailArgsDict']]]]] = None,
+                 output_location: pulumi.Input[Optional[Union['JobOutputLocationArgs', 'JobOutputLocationArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -669,26 +669,26 @@ class Job(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            completed_documents: Optional[pulumi.Input[_builtins.int]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            failed_documents: Optional[pulumi.Input[_builtins.int]] = None,
-            input_configuration: Optional[pulumi.Input[Union['JobInputConfigurationArgs', 'JobInputConfigurationArgsDict']]] = None,
-            input_location: Optional[pulumi.Input[Union['JobInputLocationArgs', 'JobInputLocationArgsDict']]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            model_metadata_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['JobModelMetadataDetailArgs', 'JobModelMetadataDetailArgsDict']]]]] = None,
-            output_location: Optional[pulumi.Input[Union['JobOutputLocationArgs', 'JobOutputLocationArgsDict']]] = None,
-            pending_documents: Optional[pulumi.Input[_builtins.int]] = None,
-            percent_complete: Optional[pulumi.Input[_builtins.int]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_accepted: Optional[pulumi.Input[_builtins.str]] = None,
-            time_completed: Optional[pulumi.Input[_builtins.str]] = None,
-            time_started: Optional[pulumi.Input[_builtins.str]] = None,
-            total_documents: Optional[pulumi.Input[_builtins.int]] = None,
-            ttl_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-            warnings_count: Optional[pulumi.Input[_builtins.int]] = None) -> 'Job':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            completed_documents: pulumi.Input[Optional[_builtins.int]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            failed_documents: pulumi.Input[Optional[_builtins.int]] = None,
+            input_configuration: pulumi.Input[Optional[Union['JobInputConfigurationArgs', 'JobInputConfigurationArgsDict']]] = None,
+            input_location: pulumi.Input[Optional[Union['JobInputLocationArgs', 'JobInputLocationArgsDict']]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            model_metadata_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobModelMetadataDetailArgs', 'JobModelMetadataDetailArgsDict']]]]] = None,
+            output_location: pulumi.Input[Optional[Union['JobOutputLocationArgs', 'JobOutputLocationArgsDict']]] = None,
+            pending_documents: pulumi.Input[Optional[_builtins.int]] = None,
+            percent_complete: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_accepted: pulumi.Input[Optional[_builtins.str]] = None,
+            time_completed: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started: pulumi.Input[Optional[_builtins.str]] = None,
+            total_documents: pulumi.Input[Optional[_builtins.int]] = None,
+            ttl_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+            warnings_count: pulumi.Input[Optional[_builtins.int]] = None) -> 'Job':
         """
         Get an existing Job resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

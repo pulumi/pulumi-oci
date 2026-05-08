@@ -53,8 +53,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobLogConfigurationOverrideDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobNodeConfigurationOverrideDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -156,7 +156,7 @@ import javax.annotation.Nullable;
  *                 .maximumRuntimeInMinutes(jobRunJobNodeConfigurationOverrideDetailsMaximumRuntimeInMinutes)
  *                 .startupOrder(jobRunJobNodeConfigurationOverrideDetailsStartupOrder)
  *                 .build())
- *             .jobStorageMountConfigurationOverrideDetailsList(List.of(Map.ofEntries(
+ *             .jobStorageMountConfigurationOverrideDetailsList(Arrays.asList(Map.ofEntries(
  *                 Map.entry("destinationDirectoryName", jobRunJobStorageMountConfigurationOverrideDetailsListDestinationDirectoryName),
  *                 Map.entry("storageType", jobRunJobStorageMountConfigurationOverrideDetailsListStorageType),
  *                 Map.entry("bucket", jobRunJobStorageMountConfigurationOverrideDetailsListBucket),

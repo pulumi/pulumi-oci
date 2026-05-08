@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatastore = oci.Ocvp.getDatastore({
+ * const testDatastore = oci.ocvp.getDatastore({
  *     datastoreId: testDatastoreOciOcvpDatastore.id,
  * });
  * ```
@@ -116,7 +116,7 @@ export interface GetDatastoreResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatastore = oci.Ocvp.getDatastore({
+ * const testDatastore = oci.ocvp.getDatastore({
  *     datastoreId: testDatastoreOciOcvpDatastore.id,
  * });
  * ```

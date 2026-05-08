@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProvision = oci.FleetAppsManagement.getProvision({
+ * const testProvision = oci.fleetappsmanagement.getProvision({
  *     provisionId: testProvisionOciFleetAppsManagementProvision.id,
  * });
  * ```
@@ -168,7 +168,7 @@ export interface GetProvisionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProvision = oci.FleetAppsManagement.getProvision({
+ * const testProvision = oci.fleetappsmanagement.getProvision({
  *     provisionId: testProvisionOciFleetAppsManagementProvision.id,
  * });
  * ```

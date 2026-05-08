@@ -38,7 +38,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     instancePools: [{
  *         instanceConfigurationId: testInstanceConfiguration.id,
- *         size: clusterNetworkInstancePoolsSize,
+ *         size: Number(clusterNetworkInstancePoolsSize),
  *         definedTags: {
  *             "Operations.CostCenter": "42",
  *         },
@@ -54,7 +54,7 @@ import * as utilities from "../utilities";
  *             ipv6addressIpv6subnetCidrPairDetails: [{
  *                 ipv6subnetCidr: clusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
  *             }],
- *             isAssignIpv6ip: clusterNetworkPlacementConfigurationPrimaryVnicSubnetsIsAssignIpv6ip,
+ *             isAssignIpv6ip: clusterNetworkPlacementConfigurationPrimaryVnicSubnetsIsAssignIpv6ip === "true",
  *         },
  *         secondaryVnicSubnets: [{
  *             subnetId: testSubnet.id,
@@ -62,7 +62,7 @@ import * as utilities from "../utilities";
  *             ipv6addressIpv6subnetCidrPairDetails: [{
  *                 ipv6subnetCidr: clusterNetworkPlacementConfigurationSecondaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
  *             }],
- *             isAssignIpv6ip: clusterNetworkPlacementConfigurationSecondaryVnicSubnetsIsAssignIpv6ip,
+ *             isAssignIpv6ip: clusterNetworkPlacementConfigurationSecondaryVnicSubnetsIsAssignIpv6ip === "true",
  *         }],
  *     },
  *     clusterConfiguration: {
@@ -231,53 +231,53 @@ export interface ClusterNetworkState {
      *
      * If the parameter is provided, instances will only be placed within the HPC island and list of network blocks that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are not valid, an error is returned.
      */
-    clusterConfiguration?: pulumi.Input<inputs.Core.ClusterNetworkClusterConfiguration>;
+    clusterConfiguration?: pulumi.Input<inputs.Core.ClusterNetworkClusterConfiguration | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
      */
-    hpcIslandId?: pulumi.Input<string>;
+    hpcIslandId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The data to create the instance pools in the cluster network.
      *
      * Each cluster network can have one instance pool.
      */
-    instancePools?: pulumi.Input<pulumi.Input<inputs.Core.ClusterNetworkInstancePool>[]>;
+    instancePools?: pulumi.Input<pulumi.Input<inputs.Core.ClusterNetworkInstancePool>[] | undefined>;
     /**
      * The list of network block OCIDs of the HPC island.
      */
-    networkBlockIds?: pulumi.Input<pulumi.Input<string>[]>;
+    networkBlockIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The location for where the instance pools in a cluster network will place instances.
      */
-    placementConfiguration?: pulumi.Input<inputs.Core.ClusterNetworkPlacementConfiguration>;
+    placementConfiguration?: pulumi.Input<inputs.Core.ClusterNetworkPlacementConfiguration | undefined>;
     /**
      * The current state of the cluster network.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -289,7 +289,7 @@ export interface ClusterNetworkArgs {
      *
      * If the parameter is provided, instances will only be placed within the HPC island and list of network blocks that you specify. If a list of network blocks are missing or not provided, the instances will be placed in any HPC blocks in the HPC island that you specify. If the values of HPC island or network block that you provide are not valid, an error is returned.
      */
-    clusterConfiguration?: pulumi.Input<inputs.Core.ClusterNetworkClusterConfiguration>;
+    clusterConfiguration?: pulumi.Input<inputs.Core.ClusterNetworkClusterConfiguration | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
      */
@@ -297,15 +297,15 @@ export interface ClusterNetworkArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The data to create the instance pools in the cluster network.
      *

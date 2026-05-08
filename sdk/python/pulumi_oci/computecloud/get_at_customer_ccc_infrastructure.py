@@ -313,7 +313,7 @@ def get_at_customer_ccc_infrastructure(ccc_infrastructure_id: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_ccc_infrastructure = oci.ComputeCloud.get_at_customer_ccc_infrastructure(ccc_infrastructure_id=test_ccc_infrastructure_oci_compute_cloud_at_customer_ccc_infrastructure["id"])
+    test_ccc_infrastructure = oci.computecloud.get_at_customer_ccc_infrastructure(ccc_infrastructure_id=test_ccc_infrastructure_oci_compute_cloud_at_customer_ccc_infrastructure["id"])
     ```
 
 
@@ -347,7 +347,7 @@ def get_at_customer_ccc_infrastructure(ccc_infrastructure_id: Optional[_builtins
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         upgrade_informations=pulumi.get(__ret__, 'upgrade_informations'))
-def get_at_customer_ccc_infrastructure_output(ccc_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_at_customer_ccc_infrastructure_output(ccc_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAtCustomerCccInfrastructureResult]:
     """
     This data source provides details about a specific Ccc Infrastructure resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
@@ -361,7 +361,7 @@ def get_at_customer_ccc_infrastructure_output(ccc_infrastructure_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_ccc_infrastructure = oci.ComputeCloud.get_at_customer_ccc_infrastructure(ccc_infrastructure_id=test_ccc_infrastructure_oci_compute_cloud_at_customer_ccc_infrastructure["id"])
+    test_ccc_infrastructure = oci.computecloud.get_at_customer_ccc_infrastructure(ccc_infrastructure_id=test_ccc_infrastructure_oci_compute_cloud_at_customer_ccc_infrastructure["id"])
     ```
 
 

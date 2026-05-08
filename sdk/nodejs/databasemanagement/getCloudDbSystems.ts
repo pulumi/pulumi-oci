@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudDbSystems = oci.DatabaseManagement.getCloudDbSystems({
+ * const testCloudDbSystems = oci.databasemanagement.getCloudDbSystems({
  *     compartmentId: compartmentId,
  *     dbaasParentInfrastructureId: testDbaasParentInfrastructure.id,
  *     deploymentType: cloudDbSystemDeploymentType,
@@ -110,7 +110,7 @@ export interface GetCloudDbSystemsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudDbSystems = oci.DatabaseManagement.getCloudDbSystems({
+ * const testCloudDbSystems = oci.databasemanagement.getCloudDbSystems({
  *     compartmentId: compartmentId,
  *     dbaasParentInfrastructureId: testDbaasParentInfrastructure.id,
  *     deploymentType: cloudDbSystemDeploymentType,
@@ -142,18 +142,18 @@ export interface GetCloudDbSystemsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dbaas parent infrastructure of the cloud DB system.
      */
-    dbaasParentInfrastructureId?: pulumi.Input<string>;
+    dbaasParentInfrastructureId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return cloud DB systems of the specified deployment type.
      */
-    deploymentType?: pulumi.Input<string>;
+    deploymentType?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return the resources that match the entire display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetCloudDbSystemsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetCloudDbSystemsFilterArgs>[] | undefined>;
     /**
      * The lifecycle state of a resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

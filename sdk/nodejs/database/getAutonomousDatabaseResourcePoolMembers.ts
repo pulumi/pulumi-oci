@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseResourcePoolMembers = oci.Database.getAutonomousDatabaseResourcePoolMembers({
+ * const testAutonomousDatabaseResourcePoolMembers = oci.database.getAutonomousDatabaseResourcePoolMembers({
  *     autonomousDatabaseId: testAutonomousDatabase.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetAutonomousDatabaseResourcePoolMembersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseResourcePoolMembers = oci.Database.getAutonomousDatabaseResourcePoolMembers({
+ * const testAutonomousDatabaseResourcePoolMembers = oci.database.getAutonomousDatabaseResourcePoolMembers({
  *     autonomousDatabaseId: testAutonomousDatabase.id,
  * });
  * ```
@@ -88,5 +88,5 @@ export interface GetAutonomousDatabaseResourcePoolMembersOutputArgs {
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     autonomousDatabaseId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousDatabaseResourcePoolMembersFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousDatabaseResourcePoolMembersFilterArgs>[] | undefined>;
 }

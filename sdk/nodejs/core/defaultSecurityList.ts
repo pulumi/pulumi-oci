@@ -90,26 +90,26 @@ export class DefaultSecurityList extends pulumi.CustomResource {
  * Input properties used for looking up and filtering DefaultSecurityList resources.
  */
 export interface DefaultSecurityListState {
-    compartmentId?: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    displayName?: pulumi.Input<string>;
-    egressSecurityRules?: pulumi.Input<pulumi.Input<inputs.Core.DefaultSecurityListEgressSecurityRule>[]>;
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    ingressSecurityRules?: pulumi.Input<pulumi.Input<inputs.Core.DefaultSecurityListIngressSecurityRule>[]>;
-    manageDefaultResourceId?: pulumi.Input<string>;
-    state?: pulumi.Input<string>;
-    timeCreated?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    displayName?: pulumi.Input<string | undefined>;
+    egressSecurityRules?: pulumi.Input<pulumi.Input<inputs.Core.DefaultSecurityListEgressSecurityRule>[] | undefined>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    ingressSecurityRules?: pulumi.Input<pulumi.Input<inputs.Core.DefaultSecurityListIngressSecurityRule>[] | undefined>;
+    manageDefaultResourceId?: pulumi.Input<string | undefined>;
+    state?: pulumi.Input<string | undefined>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a DefaultSecurityList resource.
  */
 export interface DefaultSecurityListArgs {
-    compartmentId?: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    displayName?: pulumi.Input<string>;
-    egressSecurityRules?: pulumi.Input<pulumi.Input<inputs.Core.DefaultSecurityListEgressSecurityRule>[]>;
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    ingressSecurityRules?: pulumi.Input<pulumi.Input<inputs.Core.DefaultSecurityListIngressSecurityRule>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    displayName?: pulumi.Input<string | undefined>;
+    egressSecurityRules?: pulumi.Input<pulumi.Input<inputs.Core.DefaultSecurityListEgressSecurityRule>[] | undefined>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    ingressSecurityRules?: pulumi.Input<pulumi.Input<inputs.Core.DefaultSecurityListIngressSecurityRule>[] | undefined>;
     manageDefaultResourceId: pulumi.Input<string>;
 }

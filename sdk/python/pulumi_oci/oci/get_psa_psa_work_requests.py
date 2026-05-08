@@ -160,11 +160,11 @@ def get_psa_psa_work_requests(compartment_id: Optional[_builtins.str] = None,
         status=pulumi.get(__ret__, 'status'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'),
         work_request_summary_collections=pulumi.get(__ret__, 'work_request_summary_collections'))
-def get_psa_psa_work_requests_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPsaPsaWorkRequestsFilterArgs', 'GetPsaPsaWorkRequestsFilterArgsDict']]]]] = None,
-                                     resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     work_request_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_psa_psa_work_requests_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPsaPsaWorkRequestsFilterArgs', 'GetPsaPsaWorkRequestsFilterArgsDict']]]]] = None,
+                                     resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     work_request_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPsaPsaWorkRequestsResult]:
     """
     This data source provides the list of Psa Work Requests in Oracle Cloud Infrastructure Psa service.

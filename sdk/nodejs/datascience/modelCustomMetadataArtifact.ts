@@ -135,19 +135,19 @@ export interface ModelCustomMetadataArtifactState {
     /**
      * (Updatable) This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. If this optional field is not populated in the request, then the OCID of the model is used for the file name when downloading. Example: `{"Content-Disposition": "attachment" "filename"="model.tar.gz" "Content-Length": "2347" "Content-Type": "application/gzip"}`
      */
-    contentDisposition?: pulumi.Input<string>;
+    contentDisposition?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The content length of the body.
      */
-    contentLength?: pulumi.Input<string>;
+    contentLength?: pulumi.Input<string | undefined>;
     /**
      * The name of the model metadatum in the metadata.
      */
-    metadatumKeyName?: pulumi.Input<string>;
+    metadatumKeyName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The model custom metadata artifact to upload.
      */
-    modelCustomMetadatumArtifact?: pulumi.Input<string>;
+    modelCustomMetadatumArtifact?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
      *
@@ -155,7 +155,7 @@ export interface ModelCustomMetadataArtifactState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    modelId?: pulumi.Input<string>;
+    modelId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -165,7 +165,7 @@ export interface ModelCustomMetadataArtifactArgs {
     /**
      * (Updatable) This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. If this optional field is not populated in the request, then the OCID of the model is used for the file name when downloading. Example: `{"Content-Disposition": "attachment" "filename"="model.tar.gz" "Content-Length": "2347" "Content-Type": "application/gzip"}`
      */
-    contentDisposition?: pulumi.Input<string>;
+    contentDisposition?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The content length of the body.
      */

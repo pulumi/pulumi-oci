@@ -253,7 +253,7 @@ def get_erratum(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_erratum = oci.OsManagementHub.get_erratum(compartment_id=compartment_id,
+    test_erratum = oci.osmanagementhub.get_erratum(compartment_id=compartment_id,
         name=erratum_name)
     ```
 
@@ -285,8 +285,8 @@ def get_erratum(compartment_id: Optional[_builtins.str] = None,
         synopsis=pulumi.get(__ret__, 'synopsis'),
         time_issued=pulumi.get(__ret__, 'time_issued'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_erratum_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_erratum_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       name: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetErratumResult]:
     """
     This data source provides details about a specific Erratum resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -299,7 +299,7 @@ def get_erratum_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_erratum = oci.OsManagementHub.get_erratum(compartment_id=compartment_id,
+    test_erratum = oci.osmanagementhub.get_erratum(compartment_id=compartment_id,
         name=erratum_name)
     ```
 

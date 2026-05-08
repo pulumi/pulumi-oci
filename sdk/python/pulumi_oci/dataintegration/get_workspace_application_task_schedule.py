@@ -404,7 +404,7 @@ def get_workspace_application_task_schedule(application_key: Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application_task_schedule = oci.DataIntegration.get_workspace_application_task_schedule(application_key=workspace_application_task_schedule_application_key,
+    test_workspace_application_task_schedule = oci.dataintegration.get_workspace_application_task_schedule(application_key=workspace_application_task_schedule_application_key,
         task_schedule_key=workspace_application_task_schedule_task_schedule_key,
         workspace_id=test_workspace["id"])
     ```
@@ -453,9 +453,9 @@ def get_workspace_application_task_schedule(application_key: Optional[_builtins.
         start_time_millis=pulumi.get(__ret__, 'start_time_millis'),
         task_schedule_key=pulumi.get(__ret__, 'task_schedule_key'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-def get_workspace_application_task_schedule_output(application_key: Optional[pulumi.Input[_builtins.str]] = None,
-                                                   task_schedule_key: Optional[pulumi.Input[_builtins.str]] = None,
-                                                   workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_workspace_application_task_schedule_output(application_key: pulumi.Input[Optional[_builtins.str]] = None,
+                                                   task_schedule_key: pulumi.Input[Optional[_builtins.str]] = None,
+                                                   workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceApplicationTaskScheduleResult]:
     """
     This data source provides details about a specific Workspace Application Task Schedule resource in Oracle Cloud Infrastructure Data Integration service.
@@ -468,7 +468,7 @@ def get_workspace_application_task_schedule_output(application_key: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application_task_schedule = oci.DataIntegration.get_workspace_application_task_schedule(application_key=workspace_application_task_schedule_application_key,
+    test_workspace_application_task_schedule = oci.dataintegration.get_workspace_application_task_schedule(application_key=workspace_application_task_schedule_application_key,
         task_schedule_key=workspace_application_task_schedule_task_schedule_key,
         workspace_id=test_workspace["id"])
     ```

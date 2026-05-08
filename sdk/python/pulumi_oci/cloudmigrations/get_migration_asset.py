@@ -330,7 +330,7 @@ def get_migration_asset(migration_asset_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_asset = oci.CloudMigrations.get_migration_asset(migration_asset_id=test_migration_asset_oci_cloud_migrations_migration_asset["id"])
+    test_migration_asset = oci.cloudmigrations.get_migration_asset(migration_asset_id=test_migration_asset_oci_cloud_migrations_migration_asset["id"])
     ```
 
 
@@ -366,7 +366,7 @@ def get_migration_asset(migration_asset_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
-def get_migration_asset_output(migration_asset_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_migration_asset_output(migration_asset_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMigrationAssetResult]:
     """
     This data source provides details about a specific Migration Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -379,7 +379,7 @@ def get_migration_asset_output(migration_asset_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_asset = oci.CloudMigrations.get_migration_asset(migration_asset_id=test_migration_asset_oci_cloud_migrations_migration_asset["id"])
+    test_migration_asset = oci.cloudmigrations.get_migration_asset(migration_asset_id=test_migration_asset_oci_cloud_migrations_migration_asset["id"])
     ```
 
 

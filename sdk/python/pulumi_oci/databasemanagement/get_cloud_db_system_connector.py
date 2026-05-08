@@ -264,7 +264,7 @@ def get_cloud_db_system_connector(cloud_db_system_connector_id: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_db_system_connector = oci.DatabaseManagement.get_cloud_db_system_connector(cloud_db_system_connector_id=test_cloud_db_system_connector_oci_database_management_cloud_db_system_connector["id"])
+    test_cloud_db_system_connector = oci.databasemanagement.get_cloud_db_system_connector(cloud_db_system_connector_id=test_cloud_db_system_connector_oci_database_management_cloud_db_system_connector["id"])
     ```
 
 
@@ -294,7 +294,7 @@ def get_cloud_db_system_connector(cloud_db_system_connector_id: Optional[_builti
         time_connection_status_last_updated=pulumi.get(__ret__, 'time_connection_status_last_updated'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_cloud_db_system_connector_output(cloud_db_system_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cloud_db_system_connector_output(cloud_db_system_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudDbSystemConnectorResult]:
     """
     This data source provides details about a specific Cloud Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
@@ -307,7 +307,7 @@ def get_cloud_db_system_connector_output(cloud_db_system_connector_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_db_system_connector = oci.DatabaseManagement.get_cloud_db_system_connector(cloud_db_system_connector_id=test_cloud_db_system_connector_oci_database_management_cloud_db_system_connector["id"])
+    test_cloud_db_system_connector = oci.databasemanagement.get_cloud_db_system_connector(cloud_db_system_connector_id=test_cloud_db_system_connector_oci_database_management_cloud_db_system_connector["id"])
     ```
 
 

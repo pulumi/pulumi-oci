@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  *
  * const testManagedInstanceRebootManagement = new oci.osmanagementhub.ManagedInstanceRebootManagement("test_managed_instance_reboot_management", {
  *     managedInstanceId: testManagedInstance.id,
- *     rebootTimeoutInMins: managedInstanceRebootManagementRebootTimeoutInMins,
+ *     rebootTimeoutInMins: Number(managedInstanceRebootManagementRebootTimeoutInMins),
  *     workRequestDetails: {
  *         description: managedInstanceRebootManagementWorkRequestDetailsDescription,
  *         displayName: managedInstanceRebootManagementWorkRequestDetailsDisplayName,
@@ -117,15 +117,15 @@ export interface ManagedInstanceRebootManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
-    managedInstanceId?: pulumi.Input<string>;
+    managedInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within this  time, the reboot job status is set to failed.
      */
-    rebootTimeoutInMins?: pulumi.Input<number>;
+    rebootTimeoutInMins?: pulumi.Input<number | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceRebootManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceRebootManagementWorkRequestDetails | undefined>;
 }
 
 /**
@@ -139,9 +139,9 @@ export interface ManagedInstanceRebootManagementArgs {
     /**
      * The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within this  time, the reboot job status is set to failed.
      */
-    rebootTimeoutInMins?: pulumi.Input<number>;
+    rebootTimeoutInMins?: pulumi.Input<number | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceRebootManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceRebootManagementWorkRequestDetails | undefined>;
 }

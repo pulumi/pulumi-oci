@@ -105,7 +105,7 @@ def get_tunnel_security_associations(filters: Optional[Sequence[Union['GetTunnel
     import pulumi
     import pulumi_oci as oci
 
-    test_tunnel_security_associations = oci.Core.get_tunnel_security_associations(ipsec_id=test_ipsec["id"],
+    test_tunnel_security_associations = oci.core.get_tunnel_security_associations(ipsec_id=test_ipsec["id"],
         tunnel_id=test_tunnel["id"])
     ```
 
@@ -126,9 +126,9 @@ def get_tunnel_security_associations(filters: Optional[Sequence[Union['GetTunnel
         ipsec_id=pulumi.get(__ret__, 'ipsec_id'),
         tunnel_id=pulumi.get(__ret__, 'tunnel_id'),
         tunnel_security_associations=pulumi.get(__ret__, 'tunnel_security_associations'))
-def get_tunnel_security_associations_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTunnelSecurityAssociationsFilterArgs', 'GetTunnelSecurityAssociationsFilterArgsDict']]]]] = None,
-                                            ipsec_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            tunnel_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_tunnel_security_associations_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTunnelSecurityAssociationsFilterArgs', 'GetTunnelSecurityAssociationsFilterArgsDict']]]]] = None,
+                                            ipsec_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            tunnel_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTunnelSecurityAssociationsResult]:
     """
     This data source provides the list of Tunnel Security Associations in Oracle Cloud Infrastructure Core service.
@@ -141,7 +141,7 @@ def get_tunnel_security_associations_output(filters: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_tunnel_security_associations = oci.Core.get_tunnel_security_associations(ipsec_id=test_ipsec["id"],
+    test_tunnel_security_associations = oci.core.get_tunnel_security_associations(ipsec_id=test_ipsec["id"],
         tunnel_id=test_tunnel["id"])
     ```
 

@@ -95,7 +95,7 @@ def get_policies(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_load_balancer_policies = oci.LoadBalancer.get_policies(compartment_id=compartment_id)
+    test_load_balancer_policies = oci.loadbalancer.get_policies(compartment_id=compartment_id)
     ```
 
 
@@ -112,8 +112,8 @@ def get_policies(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         policies=pulumi.get(__ret__, 'policies'))
-def get_policies_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPoliciesFilterArgs', 'GetPoliciesFilterArgsDict']]]]] = None,
+def get_policies_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPoliciesFilterArgs', 'GetPoliciesFilterArgsDict']]]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPoliciesResult]:
     """
     This data source provides the list of Load Balancer Policies in Oracle Cloud Infrastructure Load Balancer service.
@@ -126,7 +126,7 @@ def get_policies_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_load_balancer_policies = oci.LoadBalancer.get_policies(compartment_id=compartment_id)
+    test_load_balancer_policies = oci.loadbalancer.get_policies(compartment_id=compartment_id)
     ```
 
 

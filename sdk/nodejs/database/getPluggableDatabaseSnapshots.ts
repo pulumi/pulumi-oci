@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPluggableDatabaseSnapshots = oci.Database.getPluggableDatabaseSnapshots({
+ * const testPluggableDatabaseSnapshots = oci.database.getPluggableDatabaseSnapshots({
  *     clusterId: testCluster.id,
  *     compartmentId: compartmentId,
  *     name: pluggableDatabaseSnapshotName,
@@ -111,7 +111,7 @@ export interface GetPluggableDatabaseSnapshotsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPluggableDatabaseSnapshots = oci.Database.getPluggableDatabaseSnapshots({
+ * const testPluggableDatabaseSnapshots = oci.database.getPluggableDatabaseSnapshots({
  *     clusterId: testCluster.id,
  *     compartmentId: compartmentId,
  *     name: pluggableDatabaseSnapshotName,
@@ -140,22 +140,22 @@ export interface GetPluggableDatabaseSnapshotsOutputArgs {
     /**
      * A filter to return only Exadata Database Node Snapshots that match the given VM cluster.
      */
-    clusterId?: pulumi.Input<string>;
+    clusterId?: pulumi.Input<string | undefined>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetPluggableDatabaseSnapshotsFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetPluggableDatabaseSnapshotsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the entire name given. The match is not case sensitive.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only Exadata Pluggable Database Snapshots that match the given database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    pluggableDatabaseId?: pulumi.Input<string>;
+    pluggableDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only Exadata Pluggable Database Snapshots that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -28,7 +28,7 @@ class SecurityAttributeValidatorArgsDict(TypedDict):
     """
     (Updatable) Specifies the type of validation: a static value (no validation) or a list.
     """
-    values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The list of allowed values for a security attribute value. 
 
@@ -41,7 +41,7 @@ class SecurityAttributeValidatorArgsDict(TypedDict):
 class SecurityAttributeValidatorArgs:
     def __init__(__self__, *,
                  validator_type: pulumi.Input[_builtins.str],
-                 values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] validator_type: (Updatable) Specifies the type of validation: a static value (no validation) or a list.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] values: (Updatable) The list of allowed values for a security attribute value. 
@@ -68,7 +68,7 @@ class SecurityAttributeValidatorArgs:
 
     @_builtins.property
     @pulumi.getter
-    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of allowed values for a security attribute value. 
 
@@ -79,7 +79,7 @@ class SecurityAttributeValidatorArgs:
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "values", value)
 
 

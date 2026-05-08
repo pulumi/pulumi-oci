@@ -181,19 +181,19 @@ class AssessmentExcludeObjectArgsDict(TypedDict):
     """
     Name of the object (regular expression is allowed)
     """
-    is_omit_excluded_table_from_replication: NotRequired[pulumi.Input[_builtins.bool]]
+    is_omit_excluded_table_from_replication: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
     """
-    owner: NotRequired[pulumi.Input[_builtins.str]]
+    owner: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Owner of the object (regular expression is allowed)
     """
-    schema: NotRequired[pulumi.Input[_builtins.str]]
+    schema: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Schema of the object (regular expression is allowed)
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
     """
@@ -202,10 +202,10 @@ class AssessmentExcludeObjectArgsDict(TypedDict):
 class AssessmentExcludeObjectArgs:
     def __init__(__self__, *,
                  object: pulumi.Input[_builtins.str],
-                 is_omit_excluded_table_from_replication: Optional[pulumi.Input[_builtins.bool]] = None,
-                 owner: Optional[pulumi.Input[_builtins.str]] = None,
-                 schema: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 is_omit_excluded_table_from_replication: pulumi.Input[Optional[_builtins.bool]] = None,
+                 owner: pulumi.Input[Optional[_builtins.str]] = None,
+                 schema: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] object: Name of the object (regular expression is allowed)
         :param pulumi.Input[_builtins.bool] is_omit_excluded_table_from_replication: Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
@@ -237,50 +237,50 @@ class AssessmentExcludeObjectArgs:
 
     @_builtins.property
     @pulumi.getter(name="isOmitExcludedTableFromReplication")
-    def is_omit_excluded_table_from_replication(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_omit_excluded_table_from_replication(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
         """
         return pulumi.get(self, "is_omit_excluded_table_from_replication")
 
     @is_omit_excluded_table_from_replication.setter
-    def is_omit_excluded_table_from_replication(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_omit_excluded_table_from_replication(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_omit_excluded_table_from_replication", value)
 
     @_builtins.property
     @pulumi.getter
-    def owner(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Owner of the object (regular expression is allowed)
         """
         return pulumi.get(self, "owner")
 
     @owner.setter
-    def owner(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner", value)
 
     @_builtins.property
     @pulumi.getter
-    def schema(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def schema(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Schema of the object (regular expression is allowed)
         """
         return pulumi.get(self, "schema")
 
     @schema.setter
-    def schema(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def schema(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "schema", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -289,19 +289,19 @@ class AssessmentIncludeObjectArgsDict(TypedDict):
     """
     Name of the object (regular expression is allowed)
     """
-    is_omit_excluded_table_from_replication: NotRequired[pulumi.Input[_builtins.bool]]
+    is_omit_excluded_table_from_replication: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
     """
-    owner: NotRequired[pulumi.Input[_builtins.str]]
+    owner: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Owner of the object (regular expression is allowed)
     """
-    schema: NotRequired[pulumi.Input[_builtins.str]]
+    schema: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Schema of the object (regular expression is allowed)
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
     """
@@ -310,10 +310,10 @@ class AssessmentIncludeObjectArgsDict(TypedDict):
 class AssessmentIncludeObjectArgs:
     def __init__(__self__, *,
                  object: pulumi.Input[_builtins.str],
-                 is_omit_excluded_table_from_replication: Optional[pulumi.Input[_builtins.bool]] = None,
-                 owner: Optional[pulumi.Input[_builtins.str]] = None,
-                 schema: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 is_omit_excluded_table_from_replication: pulumi.Input[Optional[_builtins.bool]] = None,
+                 owner: pulumi.Input[Optional[_builtins.str]] = None,
+                 schema: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] object: Name of the object (regular expression is allowed)
         :param pulumi.Input[_builtins.bool] is_omit_excluded_table_from_replication: Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
@@ -345,50 +345,50 @@ class AssessmentIncludeObjectArgs:
 
     @_builtins.property
     @pulumi.getter(name="isOmitExcludedTableFromReplication")
-    def is_omit_excluded_table_from_replication(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_omit_excluded_table_from_replication(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
         """
         return pulumi.get(self, "is_omit_excluded_table_from_replication")
 
     @is_omit_excluded_table_from_replication.setter
-    def is_omit_excluded_table_from_replication(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_omit_excluded_table_from_replication(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_omit_excluded_table_from_replication", value)
 
     @_builtins.property
     @pulumi.getter
-    def owner(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Owner of the object (regular expression is allowed)
         """
         return pulumi.get(self, "owner")
 
     @owner.setter
-    def owner(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner", value)
 
     @_builtins.property
     @pulumi.getter
-    def schema(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def schema(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Schema of the object (regular expression is allowed)
         """
         return pulumi.get(self, "schema")
 
     @schema.setter
-    def schema(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def schema(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "schema", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -421,23 +421,23 @@ class AssessmentSourceDatabaseConnectionArgs:
 
 
 class AssessmentTargetDatabaseConnectionArgsDict(TypedDict):
-    connection_type: NotRequired[pulumi.Input[_builtins.str]]
+    connection_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Defines the type of connection. For example, ORACLE.
     """
-    database_version: NotRequired[pulumi.Input[_builtins.str]]
+    database_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The database version
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the resource being referenced.
     """
-    technology_sub_type: NotRequired[pulumi.Input[_builtins.str]]
+    technology_sub_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Technology sub-type e.g. ADW_SHARED, ADW_DEDICATED, ATP_SHARED, ATP_DEDICATED
     """
-    technology_type: NotRequired[pulumi.Input[_builtins.str]]
+    technology_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The technology type.
 
@@ -449,11 +449,11 @@ class AssessmentTargetDatabaseConnectionArgsDict(TypedDict):
 @pulumi.input_type
 class AssessmentTargetDatabaseConnectionArgs:
     def __init__(__self__, *,
-                 connection_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 technology_sub_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 technology_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 connection_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 technology_sub_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 technology_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] connection_type: (Updatable) Defines the type of connection. For example, ORACLE.
         :param pulumi.Input[_builtins.str] database_version: (Updatable) The database version
@@ -478,55 +478,55 @@ class AssessmentTargetDatabaseConnectionArgs:
 
     @_builtins.property
     @pulumi.getter(name="connectionType")
-    def connection_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Defines the type of connection. For example, ORACLE.
         """
         return pulumi.get(self, "connection_type")
 
     @connection_type.setter
-    def connection_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_type", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseVersion")
-    def database_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The database version
         """
         return pulumi.get(self, "database_version")
 
     @database_version.setter
-    def database_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the resource being referenced.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter(name="technologySubType")
-    def technology_sub_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def technology_sub_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Technology sub-type e.g. ADW_SHARED, ADW_DEDICATED, ATP_SHARED, ATP_DEDICATED
         """
         return pulumi.get(self, "technology_sub_type")
 
     @technology_sub_type.setter
-    def technology_sub_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def technology_sub_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "technology_sub_type", value)
 
     @_builtins.property
     @pulumi.getter(name="technologyType")
-    def technology_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def technology_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The technology type.
 
@@ -537,16 +537,16 @@ class AssessmentTargetDatabaseConnectionArgs:
         return pulumi.get(self, "technology_type")
 
     @technology_type.setter
-    def technology_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def technology_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "technology_type", value)
 
 
 class ConnectionAdditionalAttributeArgsDict(TypedDict):
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the property entry.
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The value of the property entry.
     """
@@ -554,8 +554,8 @@ class ConnectionAdditionalAttributeArgsDict(TypedDict):
 @pulumi.input_type
 class ConnectionAdditionalAttributeArgs:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the property entry.
         :param pulumi.Input[_builtins.str] value: (Updatable) The value of the property entry.
@@ -567,31 +567,31 @@ class ConnectionAdditionalAttributeArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the property entry.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The value of the property entry.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
 class ConnectionIngressIpArgsDict(TypedDict):
-    ingress_ip: NotRequired[pulumi.Input[_builtins.str]]
+    ingress_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
     """
@@ -599,7 +599,7 @@ class ConnectionIngressIpArgsDict(TypedDict):
 @pulumi.input_type
 class ConnectionIngressIpArgs:
     def __init__(__self__, *,
-                 ingress_ip: Optional[pulumi.Input[_builtins.str]] = None):
+                 ingress_ip: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
         """
@@ -608,63 +608,63 @@ class ConnectionIngressIpArgs:
 
     @_builtins.property
     @pulumi.getter(name="ingressIp")
-    def ingress_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ingress_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
         """
         return pulumi.get(self, "ingress_ip")
 
     @ingress_ip.setter
-    def ingress_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ingress_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ingress_ip", value)
 
 
 class JobAdvisorReportCheckItemArgsDict(TypedDict):
-    action: NotRequired[pulumi.Input[_builtins.str]]
+    action: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Fixing the issue.
     """
-    columns: NotRequired[pulumi.Input[Sequence[pulumi.Input['JobAdvisorReportCheckItemColumnArgsDict']]]]
+    columns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobAdvisorReportCheckItemColumnArgs']]]]]
     """
     Array of the column of the objects table.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Pre-Migration сheck display name.
     """
-    fixup_script_location: NotRequired[pulumi.Input[_builtins.str]]
+    fixup_script_location: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The path to the fixup script for this check.
     """
-    impact: NotRequired[pulumi.Input[_builtins.str]]
+    impact: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Impact of the issue on data migration.
     """
-    is_exclusion_allowed: NotRequired[pulumi.Input[_builtins.bool]]
+    is_exclusion_allowed: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     If false, objects cannot be excluded from migration.
     """
-    is_reviewed: NotRequired[pulumi.Input[_builtins.bool]]
+    is_reviewed: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) User flag for advisor report check.
     """
-    issue: NotRequired[pulumi.Input[_builtins.str]]
+    issue: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Description of the issue.
     """
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Pre-Migration сheck id.
     """
-    metadatas: NotRequired[pulumi.Input[Sequence[pulumi.Input['JobAdvisorReportCheckItemMetadataArgsDict']]]]
+    metadatas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobAdvisorReportCheckItemMetadataArgs']]]]]
     """
     Metadata of object.
     """
-    object_count: NotRequired[pulumi.Input[_builtins.int]]
+    object_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Number of database objects to migrate.
     """
-    result_type: NotRequired[pulumi.Input[_builtins.str]]
+    result_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Pre-Migration advisor result.
     """
@@ -672,18 +672,18 @@ class JobAdvisorReportCheckItemArgsDict(TypedDict):
 @pulumi.input_type
 class JobAdvisorReportCheckItemArgs:
     def __init__(__self__, *,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 columns: Optional[pulumi.Input[Sequence[pulumi.Input['JobAdvisorReportCheckItemColumnArgs']]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 fixup_script_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 impact: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_exclusion_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_reviewed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 issue: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['JobAdvisorReportCheckItemMetadataArgs']]]] = None,
-                 object_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 result_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 columns: pulumi.Input[Optional[Sequence[pulumi.Input['JobAdvisorReportCheckItemColumnArgs']]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 fixup_script_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 impact: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_exclusion_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_reviewed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 issue: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['JobAdvisorReportCheckItemMetadataArgs']]]] = None,
+                 object_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 result_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] action: Fixing the issue.
         :param pulumi.Input[Sequence[pulumi.Input['JobAdvisorReportCheckItemColumnArgs']]] columns: Array of the column of the objects table.
@@ -725,155 +725,155 @@ class JobAdvisorReportCheckItemArgs:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Fixing the issue.
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter
-    def columns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JobAdvisorReportCheckItemColumnArgs']]]]:
+    def columns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['JobAdvisorReportCheckItemColumnArgs']]]]:
         """
         Array of the column of the objects table.
         """
         return pulumi.get(self, "columns")
 
     @columns.setter
-    def columns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['JobAdvisorReportCheckItemColumnArgs']]]]):
+    def columns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['JobAdvisorReportCheckItemColumnArgs']]]]):
         pulumi.set(self, "columns", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Pre-Migration сheck display name.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="fixupScriptLocation")
-    def fixup_script_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fixup_script_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The path to the fixup script for this check.
         """
         return pulumi.get(self, "fixup_script_location")
 
     @fixup_script_location.setter
-    def fixup_script_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fixup_script_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fixup_script_location", value)
 
     @_builtins.property
     @pulumi.getter
-    def impact(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def impact(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Impact of the issue on data migration.
         """
         return pulumi.get(self, "impact")
 
     @impact.setter
-    def impact(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def impact(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "impact", value)
 
     @_builtins.property
     @pulumi.getter(name="isExclusionAllowed")
-    def is_exclusion_allowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_exclusion_allowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If false, objects cannot be excluded from migration.
         """
         return pulumi.get(self, "is_exclusion_allowed")
 
     @is_exclusion_allowed.setter
-    def is_exclusion_allowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_exclusion_allowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_exclusion_allowed", value)
 
     @_builtins.property
     @pulumi.getter(name="isReviewed")
-    def is_reviewed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_reviewed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) User flag for advisor report check.
         """
         return pulumi.get(self, "is_reviewed")
 
     @is_reviewed.setter
-    def is_reviewed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_reviewed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_reviewed", value)
 
     @_builtins.property
     @pulumi.getter
-    def issue(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def issue(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the issue.
         """
         return pulumi.get(self, "issue")
 
     @issue.setter
-    def issue(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def issue(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "issue", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Pre-Migration сheck id.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JobAdvisorReportCheckItemMetadataArgs']]]]:
+    def metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['JobAdvisorReportCheckItemMetadataArgs']]]]:
         """
         Metadata of object.
         """
         return pulumi.get(self, "metadatas")
 
     @metadatas.setter
-    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['JobAdvisorReportCheckItemMetadataArgs']]]]):
+    def metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['JobAdvisorReportCheckItemMetadataArgs']]]]):
         pulumi.set(self, "metadatas", value)
 
     @_builtins.property
     @pulumi.getter(name="objectCount")
-    def object_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def object_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of database objects to migrate.
         """
         return pulumi.get(self, "object_count")
 
     @object_count.setter
-    def object_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def object_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "object_count", value)
 
     @_builtins.property
     @pulumi.getter(name="resultType")
-    def result_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def result_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Pre-Migration advisor result.
         """
         return pulumi.get(self, "result_type")
 
     @result_type.setter
-    def result_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def result_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "result_type", value)
 
 
 class JobAdvisorReportCheckItemColumnArgsDict(TypedDict):
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Pre-Migration сheck display name.
     """
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Pre-Migration сheck id.
     """
@@ -881,8 +881,8 @@ class JobAdvisorReportCheckItemColumnArgsDict(TypedDict):
 @pulumi.input_type
 class JobAdvisorReportCheckItemColumnArgs:
     def __init__(__self__, *,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None):
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] display_name: Pre-Migration сheck display name.
         :param pulumi.Input[_builtins.str] key: Pre-Migration сheck id.
@@ -894,43 +894,43 @@ class JobAdvisorReportCheckItemColumnArgs:
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Pre-Migration сheck display name.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Pre-Migration сheck id.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
 
 class JobAdvisorReportCheckItemMetadataArgsDict(TypedDict):
-    object_name_column: NotRequired[pulumi.Input[_builtins.str]]
+    object_name_column: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The field that stores the name of the object.
     """
-    object_type_column: NotRequired[pulumi.Input[_builtins.str]]
+    object_type_column: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The field that stores the type of the object.
     """
-    object_type_fixed: NotRequired[pulumi.Input[_builtins.str]]
+    object_type_fixed: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The field that stores the fixed type of the object.
     """
-    schema_owner_column: NotRequired[pulumi.Input[_builtins.str]]
+    schema_owner_column: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The field that stores the owner of the object.
     """
@@ -938,10 +938,10 @@ class JobAdvisorReportCheckItemMetadataArgsDict(TypedDict):
 @pulumi.input_type
 class JobAdvisorReportCheckItemMetadataArgs:
     def __init__(__self__, *,
-                 object_name_column: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_type_column: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_type_fixed: Optional[pulumi.Input[_builtins.str]] = None,
-                 schema_owner_column: Optional[pulumi.Input[_builtins.str]] = None):
+                 object_name_column: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_type_column: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_type_fixed: pulumi.Input[Optional[_builtins.str]] = None,
+                 schema_owner_column: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] object_name_column: The field that stores the name of the object.
         :param pulumi.Input[_builtins.str] object_type_column: The field that stores the type of the object.
@@ -959,71 +959,71 @@ class JobAdvisorReportCheckItemMetadataArgs:
 
     @_builtins.property
     @pulumi.getter(name="objectNameColumn")
-    def object_name_column(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_name_column(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The field that stores the name of the object.
         """
         return pulumi.get(self, "object_name_column")
 
     @object_name_column.setter
-    def object_name_column(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_name_column(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_name_column", value)
 
     @_builtins.property
     @pulumi.getter(name="objectTypeColumn")
-    def object_type_column(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_type_column(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The field that stores the type of the object.
         """
         return pulumi.get(self, "object_type_column")
 
     @object_type_column.setter
-    def object_type_column(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_type_column(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_type_column", value)
 
     @_builtins.property
     @pulumi.getter(name="objectTypeFixed")
-    def object_type_fixed(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_type_fixed(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The field that stores the fixed type of the object.
         """
         return pulumi.get(self, "object_type_fixed")
 
     @object_type_fixed.setter
-    def object_type_fixed(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_type_fixed(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_type_fixed", value)
 
     @_builtins.property
     @pulumi.getter(name="schemaOwnerColumn")
-    def schema_owner_column(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def schema_owner_column(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The field that stores the owner of the object.
         """
         return pulumi.get(self, "schema_owner_column")
 
     @schema_owner_column.setter
-    def schema_owner_column(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def schema_owner_column(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "schema_owner_column", value)
 
 
 class JobAdvisorReportCheckSummaryArgsDict(TypedDict):
-    blocker_results_total_count: NotRequired[pulumi.Input[_builtins.int]]
+    blocker_results_total_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Number of BLOCKER results in the extended advisor report.
     """
-    fatal_results_total_count: NotRequired[pulumi.Input[_builtins.int]]
+    fatal_results_total_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Number of FATAL results in the extended advisor report.
     """
-    informational_results_total_count: NotRequired[pulumi.Input[_builtins.int]]
+    informational_results_total_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Number of INFORMATIONAL results in the extended advisor report.
     """
-    pass_results_total_count: NotRequired[pulumi.Input[_builtins.int]]
+    pass_results_total_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Number of PASS results in the extended advisor report.
     """
-    warning_results_total_count: NotRequired[pulumi.Input[_builtins.int]]
+    warning_results_total_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Number of WARNING results in the extended advisor report.
     """
@@ -1031,11 +1031,11 @@ class JobAdvisorReportCheckSummaryArgsDict(TypedDict):
 @pulumi.input_type
 class JobAdvisorReportCheckSummaryArgs:
     def __init__(__self__, *,
-                 blocker_results_total_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 fatal_results_total_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 informational_results_total_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 pass_results_total_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 warning_results_total_count: Optional[pulumi.Input[_builtins.int]] = None):
+                 blocker_results_total_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 fatal_results_total_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 informational_results_total_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 pass_results_total_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 warning_results_total_count: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] blocker_results_total_count: Number of BLOCKER results in the extended advisor report.
         :param pulumi.Input[_builtins.int] fatal_results_total_count: Number of FATAL results in the extended advisor report.
@@ -1056,79 +1056,79 @@ class JobAdvisorReportCheckSummaryArgs:
 
     @_builtins.property
     @pulumi.getter(name="blockerResultsTotalCount")
-    def blocker_results_total_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def blocker_results_total_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of BLOCKER results in the extended advisor report.
         """
         return pulumi.get(self, "blocker_results_total_count")
 
     @blocker_results_total_count.setter
-    def blocker_results_total_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def blocker_results_total_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "blocker_results_total_count", value)
 
     @_builtins.property
     @pulumi.getter(name="fatalResultsTotalCount")
-    def fatal_results_total_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def fatal_results_total_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of FATAL results in the extended advisor report.
         """
         return pulumi.get(self, "fatal_results_total_count")
 
     @fatal_results_total_count.setter
-    def fatal_results_total_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def fatal_results_total_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "fatal_results_total_count", value)
 
     @_builtins.property
     @pulumi.getter(name="informationalResultsTotalCount")
-    def informational_results_total_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def informational_results_total_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of INFORMATIONAL results in the extended advisor report.
         """
         return pulumi.get(self, "informational_results_total_count")
 
     @informational_results_total_count.setter
-    def informational_results_total_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def informational_results_total_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "informational_results_total_count", value)
 
     @_builtins.property
     @pulumi.getter(name="passResultsTotalCount")
-    def pass_results_total_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def pass_results_total_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of PASS results in the extended advisor report.
         """
         return pulumi.get(self, "pass_results_total_count")
 
     @pass_results_total_count.setter
-    def pass_results_total_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def pass_results_total_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "pass_results_total_count", value)
 
     @_builtins.property
     @pulumi.getter(name="warningResultsTotalCount")
-    def warning_results_total_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def warning_results_total_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of WARNING results in the extended advisor report.
         """
         return pulumi.get(self, "warning_results_total_count")
 
     @warning_results_total_count.setter
-    def warning_results_total_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def warning_results_total_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "warning_results_total_count", value)
 
 
 class JobCollectTracesDataArgsDict(TypedDict):
-    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the bucket containing the log file.
     """
-    collect_traces_state: NotRequired[pulumi.Input[_builtins.str]]
+    collect_traces_state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Status of trace collection process.
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Object Storage namespace.
     """
-    object: NotRequired[pulumi.Input[_builtins.str]]
+    object: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the object (regular expression is allowed)
     """
@@ -1136,10 +1136,10 @@ class JobCollectTracesDataArgsDict(TypedDict):
 @pulumi.input_type
 class JobCollectTracesDataArgs:
     def __init__(__self__, *,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 collect_traces_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None):
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 collect_traces_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] bucket: Name of the bucket containing the log file.
         :param pulumi.Input[_builtins.str] collect_traces_state: Status of trace collection process.
@@ -1157,87 +1157,87 @@ class JobCollectTracesDataArgs:
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the bucket containing the log file.
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter(name="collectTracesState")
-    def collect_traces_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def collect_traces_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Status of trace collection process.
         """
         return pulumi.get(self, "collect_traces_state")
 
     @collect_traces_state.setter
-    def collect_traces_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def collect_traces_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "collect_traces_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Object Storage namespace.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def object(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the object (regular expression is allowed)
         """
         return pulumi.get(self, "object")
 
     @object.setter
-    def object(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object", value)
 
 
 class JobParameterFileVersionArgsDict(TypedDict):
-    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    defined_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A description to discribe the current parameter file version
     """
-    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    freeform_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
     """
-    is_current: NotRequired[pulumi.Input[_builtins.bool]]
+    is_current: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Return boolean true/false for the currently in-use parameter file (factory or a versioned file)
     """
-    is_factory: NotRequired[pulumi.Input[_builtins.bool]]
+    is_factory: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Return true/false for whether the parameter file is oracle provided (Factory)
     """
-    kind: NotRequired[pulumi.Input[_builtins.str]]
+    kind: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Indicator of Parameter File 'kind' (for an EXTRACT or a REPLICAT)
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Phase name
     """
-    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    system_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The time the Migration Job was created. An RFC3339 formatted datetime string
     """
@@ -1245,15 +1245,15 @@ class JobParameterFileVersionArgsDict(TypedDict):
 @pulumi.input_type
 class JobParameterFileVersionArgs:
     def __init__(__self__, *,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_current: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_factory: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kind: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_current: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_factory: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kind: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: A description to discribe the current parameter file version
@@ -1286,123 +1286,123 @@ class JobParameterFileVersionArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A description to discribe the current parameter file version
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isCurrent")
-    def is_current(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_current(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Return boolean true/false for the currently in-use parameter file (factory or a versioned file)
         """
         return pulumi.get(self, "is_current")
 
     @is_current.setter
-    def is_current(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_current(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_current", value)
 
     @_builtins.property
     @pulumi.getter(name="isFactory")
-    def is_factory(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_factory(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Return true/false for whether the parameter file is oracle provided (Factory)
         """
         return pulumi.get(self, "is_factory")
 
     @is_factory.setter
-    def is_factory(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_factory(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_factory", value)
 
     @_builtins.property
     @pulumi.getter
-    def kind(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kind(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicator of Parameter File 'kind' (for an EXTRACT or a REPLICAT)
         """
         return pulumi.get(self, "kind")
 
     @kind.setter
-    def kind(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kind(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kind", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Phase name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the Migration Job was created. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
 class JobProgressArgsDict(TypedDict):
-    current_phase: NotRequired[pulumi.Input[_builtins.str]]
+    current_phase: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Current phase of the job.
     """
-    current_status: NotRequired[pulumi.Input[_builtins.str]]
+    current_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Current status of the job.
     """
-    phases: NotRequired[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseArgsDict']]]]
+    phases: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobProgressPhaseArgs']]]]]
     """
     List of phase status for the job.
     """
@@ -1410,9 +1410,9 @@ class JobProgressArgsDict(TypedDict):
 @pulumi.input_type
 class JobProgressArgs:
     def __init__(__self__, *,
-                 current_phase: Optional[pulumi.Input[_builtins.str]] = None,
-                 current_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 phases: Optional[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseArgs']]]] = None):
+                 current_phase: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 phases: pulumi.Input[Optional[Sequence[pulumi.Input['JobProgressPhaseArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] current_phase: Current phase of the job.
         :param pulumi.Input[_builtins.str] current_status: Current status of the job.
@@ -1427,87 +1427,87 @@ class JobProgressArgs:
 
     @_builtins.property
     @pulumi.getter(name="currentPhase")
-    def current_phase(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def current_phase(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Current phase of the job.
         """
         return pulumi.get(self, "current_phase")
 
     @current_phase.setter
-    def current_phase(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def current_phase(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_phase", value)
 
     @_builtins.property
     @pulumi.getter(name="currentStatus")
-    def current_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def current_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Current status of the job.
         """
         return pulumi.get(self, "current_status")
 
     @current_status.setter
-    def current_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def current_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_status", value)
 
     @_builtins.property
     @pulumi.getter
-    def phases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseArgs']]]]:
+    def phases(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['JobProgressPhaseArgs']]]]:
         """
         List of phase status for the job.
         """
         return pulumi.get(self, "phases")
 
     @phases.setter
-    def phases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseArgs']]]]):
+    def phases(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['JobProgressPhaseArgs']]]]):
         pulumi.set(self, "phases", value)
 
 
 class JobProgressPhaseArgsDict(TypedDict):
-    action: NotRequired[pulumi.Input[_builtins.str]]
+    action: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The text describing the action required to fix the issue
     """
-    duration_in_ms: NotRequired[pulumi.Input[_builtins.int]]
+    duration_in_ms: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Duration of the phase in milliseconds
     """
-    editable_parameter_files: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    editable_parameter_files: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
     """
-    extracts: NotRequired[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseExtractArgsDict']]]]
+    extracts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobProgressPhaseExtractArgs']]]]]
     """
     Summary of phase status results.
     """
-    group_display_name: NotRequired[pulumi.Input[_builtins.str]]
+    group_display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Job Phase group display name e.g. 'Step 1: Migration'
     """
-    is_advisor_report_available: NotRequired[pulumi.Input[_builtins.bool]]
+    is_advisor_report_available: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
     """
-    is_suspend_available: NotRequired[pulumi.Input[_builtins.bool]]
+    is_suspend_available: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     This is returned as true if the current phase can be suspended.
     """
-    issue: NotRequired[pulumi.Input[_builtins.str]]
+    issue: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The text describing the root cause of the reported issue
     """
-    log_locations: NotRequired[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseLogLocationArgsDict']]]]
+    log_locations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobProgressPhaseLogLocationArgs']]]]]
     """
     Details to access log file in the specified Object Storage bucket, if any.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Phase name
     """
-    progress: NotRequired[pulumi.Input[_builtins.int]]
+    progress: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Percent progress of job phase.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Phase status
     """
@@ -1515,18 +1515,18 @@ class JobProgressPhaseArgsDict(TypedDict):
 @pulumi.input_type
 class JobProgressPhaseArgs:
     def __init__(__self__, *,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 duration_in_ms: Optional[pulumi.Input[_builtins.int]] = None,
-                 editable_parameter_files: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 extracts: Optional[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseExtractArgs']]]] = None,
-                 group_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_advisor_report_available: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_suspend_available: Optional[pulumi.Input[_builtins.bool]] = None,
-                 issue: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_locations: Optional[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseLogLocationArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 progress: Optional[pulumi.Input[_builtins.int]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 duration_in_ms: pulumi.Input[Optional[_builtins.int]] = None,
+                 editable_parameter_files: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 extracts: pulumi.Input[Optional[Sequence[pulumi.Input['JobProgressPhaseExtractArgs']]]] = None,
+                 group_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_advisor_report_available: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_suspend_available: pulumi.Input[Optional[_builtins.bool]] = None,
+                 issue: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_locations: pulumi.Input[Optional[Sequence[pulumi.Input['JobProgressPhaseLogLocationArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 progress: pulumi.Input[Optional[_builtins.int]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] action: The text describing the action required to fix the issue
         :param pulumi.Input[_builtins.int] duration_in_ms: Duration of the phase in milliseconds
@@ -1568,155 +1568,155 @@ class JobProgressPhaseArgs:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The text describing the action required to fix the issue
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter(name="durationInMs")
-    def duration_in_ms(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def duration_in_ms(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Duration of the phase in milliseconds
         """
         return pulumi.get(self, "duration_in_ms")
 
     @duration_in_ms.setter
-    def duration_in_ms(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def duration_in_ms(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "duration_in_ms", value)
 
     @_builtins.property
     @pulumi.getter(name="editableParameterFiles")
-    def editable_parameter_files(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def editable_parameter_files(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Attribute that returns an array of names and types of GoldenGate configuration files that are available for read or update.
         """
         return pulumi.get(self, "editable_parameter_files")
 
     @editable_parameter_files.setter
-    def editable_parameter_files(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def editable_parameter_files(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "editable_parameter_files", value)
 
     @_builtins.property
     @pulumi.getter
-    def extracts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseExtractArgs']]]]:
+    def extracts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['JobProgressPhaseExtractArgs']]]]:
         """
         Summary of phase status results.
         """
         return pulumi.get(self, "extracts")
 
     @extracts.setter
-    def extracts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseExtractArgs']]]]):
+    def extracts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['JobProgressPhaseExtractArgs']]]]):
         pulumi.set(self, "extracts", value)
 
     @_builtins.property
     @pulumi.getter(name="groupDisplayName")
-    def group_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group_display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Job Phase group display name e.g. 'Step 1: Migration'
         """
         return pulumi.get(self, "group_display_name")
 
     @group_display_name.setter
-    def group_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group_display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group_display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="isAdvisorReportAvailable")
-    def is_advisor_report_available(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_advisor_report_available(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
         """
         return pulumi.get(self, "is_advisor_report_available")
 
     @is_advisor_report_available.setter
-    def is_advisor_report_available(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_advisor_report_available(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_advisor_report_available", value)
 
     @_builtins.property
     @pulumi.getter(name="isSuspendAvailable")
-    def is_suspend_available(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_suspend_available(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This is returned as true if the current phase can be suspended.
         """
         return pulumi.get(self, "is_suspend_available")
 
     @is_suspend_available.setter
-    def is_suspend_available(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_suspend_available(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_suspend_available", value)
 
     @_builtins.property
     @pulumi.getter
-    def issue(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def issue(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The text describing the root cause of the reported issue
         """
         return pulumi.get(self, "issue")
 
     @issue.setter
-    def issue(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def issue(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "issue", value)
 
     @_builtins.property
     @pulumi.getter(name="logLocations")
-    def log_locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseLogLocationArgs']]]]:
+    def log_locations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['JobProgressPhaseLogLocationArgs']]]]:
         """
         Details to access log file in the specified Object Storage bucket, if any.
         """
         return pulumi.get(self, "log_locations")
 
     @log_locations.setter
-    def log_locations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['JobProgressPhaseLogLocationArgs']]]]):
+    def log_locations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['JobProgressPhaseLogLocationArgs']]]]):
         pulumi.set(self, "log_locations", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Phase name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def progress(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def progress(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Percent progress of job phase.
         """
         return pulumi.get(self, "progress")
 
     @progress.setter
-    def progress(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def progress(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "progress", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Phase status
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
 
 class JobProgressPhaseExtractArgsDict(TypedDict):
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Message in entry.
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of unsupported object
     """
@@ -1724,8 +1724,8 @@ class JobProgressPhaseExtractArgsDict(TypedDict):
 @pulumi.input_type
 class JobProgressPhaseExtractArgs:
     def __init__(__self__, *,
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] message: Message in entry.
         :param pulumi.Input[_builtins.str] type: Type of unsupported object
@@ -1737,39 +1737,39 @@ class JobProgressPhaseExtractArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Message in entry.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of unsupported object
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
 class JobProgressPhaseLogLocationArgsDict(TypedDict):
-    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the bucket containing the log file.
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Object Storage namespace.
     """
-    object: NotRequired[pulumi.Input[_builtins.str]]
+    object: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the object (regular expression is allowed)
     """
@@ -1777,9 +1777,9 @@ class JobProgressPhaseLogLocationArgsDict(TypedDict):
 @pulumi.input_type
 class JobProgressPhaseLogLocationArgs:
     def __init__(__self__, *,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None):
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] bucket: Name of the bucket containing the log file.
         :param pulumi.Input[_builtins.str] namespace: Object Storage namespace.
@@ -1794,51 +1794,51 @@ class JobProgressPhaseLogLocationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the bucket containing the log file.
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Object Storage namespace.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def object(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the object (regular expression is allowed)
         """
         return pulumi.get(self, "object")
 
     @object.setter
-    def object(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object", value)
 
 
 class JobUnsupportedObjectArgsDict(TypedDict):
-    object: NotRequired[pulumi.Input[_builtins.str]]
+    object: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the object (regular expression is allowed)
     """
-    owner: NotRequired[pulumi.Input[_builtins.str]]
+    owner: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Owner of the object (regular expression is allowed)
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of unsupported object
     """
@@ -1846,9 +1846,9 @@ class JobUnsupportedObjectArgsDict(TypedDict):
 @pulumi.input_type
 class JobUnsupportedObjectArgs:
     def __init__(__self__, *,
-                 object: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 object: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] object: Name of the object (regular expression is allowed)
         :param pulumi.Input[_builtins.str] owner: Owner of the object (regular expression is allowed)
@@ -1863,51 +1863,51 @@ class JobUnsupportedObjectArgs:
 
     @_builtins.property
     @pulumi.getter
-    def object(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the object (regular expression is allowed)
         """
         return pulumi.get(self, "object")
 
     @object.setter
-    def object(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object", value)
 
     @_builtins.property
     @pulumi.getter
-    def owner(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Owner of the object (regular expression is allowed)
         """
         return pulumi.get(self, "owner")
 
     @owner.setter
-    def owner(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of unsupported object
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
 class MigrationAdvancedParameterArgsDict(TypedDict):
-    data_type: NotRequired[pulumi.Input[_builtins.str]]
+    data_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Parameter data type.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Parameter name.
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) If a STRING data type then the value should be an array of characters,  if a INTEGER data type then the value should be an integer value,  if a FLOAT data type then the value should be an float value, if a BOOLEAN data type then the value should be TRUE or FALSE.
     """
@@ -1915,9 +1915,9 @@ class MigrationAdvancedParameterArgsDict(TypedDict):
 @pulumi.input_type
 class MigrationAdvancedParameterArgs:
     def __init__(__self__, *,
-                 data_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 data_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] data_type: (Updatable) Parameter data type.
         :param pulumi.Input[_builtins.str] name: (Updatable) Parameter name.
@@ -1932,47 +1932,47 @@ class MigrationAdvancedParameterArgs:
 
     @_builtins.property
     @pulumi.getter(name="dataType")
-    def data_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Parameter data type.
         """
         return pulumi.get(self, "data_type")
 
     @data_type.setter
-    def data_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Parameter name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) If a STRING data type then the value should be an array of characters,  if a INTEGER data type then the value should be an integer value,  if a FLOAT data type then the value should be an float value, if a BOOLEAN data type then the value should be TRUE or FALSE.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
 class MigrationAdvisorSettingsArgsDict(TypedDict):
-    is_ignore_errors: NotRequired[pulumi.Input[_builtins.bool]]
+    is_ignore_errors: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
     """
-    is_skip_advisor: NotRequired[pulumi.Input[_builtins.bool]]
+    is_skip_advisor: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) True to skip the Pre-Migration Advisor execution. Default is false.
     """
@@ -1980,8 +1980,8 @@ class MigrationAdvisorSettingsArgsDict(TypedDict):
 @pulumi.input_type
 class MigrationAdvisorSettingsArgs:
     def __init__(__self__, *,
-                 is_ignore_errors: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_skip_advisor: Optional[pulumi.Input[_builtins.bool]] = None):
+                 is_ignore_errors: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_skip_advisor: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_ignore_errors: (Updatable) True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
         :param pulumi.Input[_builtins.bool] is_skip_advisor: (Updatable) True to skip the Pre-Migration Advisor execution. Default is false.
@@ -1993,26 +1993,26 @@ class MigrationAdvisorSettingsArgs:
 
     @_builtins.property
     @pulumi.getter(name="isIgnoreErrors")
-    def is_ignore_errors(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_ignore_errors(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
         """
         return pulumi.get(self, "is_ignore_errors")
 
     @is_ignore_errors.setter
-    def is_ignore_errors(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_ignore_errors(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_ignore_errors", value)
 
     @_builtins.property
     @pulumi.getter(name="isSkipAdvisor")
-    def is_skip_advisor(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_skip_advisor(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) True to skip the Pre-Migration Advisor execution. Default is false.
         """
         return pulumi.get(self, "is_skip_advisor")
 
     @is_skip_advisor.setter
-    def is_skip_advisor(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_skip_advisor(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_skip_advisor", value)
 
 
@@ -2021,35 +2021,35 @@ class MigrationDataTransferMediumDetailsArgsDict(TypedDict):
     """
     (Updatable) Type of the data transfer medium to use.
     """
-    access_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    access_key_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link,  if the link does not already exist.
     """
-    object_storage_bucket: NotRequired[pulumi.Input['MigrationDataTransferMediumDetailsObjectStorageBucketArgsDict']]
+    object_storage_bucket: NotRequired[pulumi.Input[Optional['MigrationDataTransferMediumDetailsObjectStorageBucketArgs']]]
     """
     (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
     """
-    region: NotRequired[pulumi.Input[_builtins.str]]
+    region: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
     """
-    secret_access_key: NotRequired[pulumi.Input[_builtins.str]]
+    secret_access_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
     """
-    shared_storage_mount_target_id: NotRequired[pulumi.Input[_builtins.str]]
+    shared_storage_mount_target_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) OCID of the shared storage mount target
     """
-    source: NotRequired[pulumi.Input['MigrationDataTransferMediumDetailsSourceArgsDict']]
+    source: NotRequired[pulumi.Input[Optional['MigrationDataTransferMediumDetailsSourceArgs']]]
     """
     (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL.
     """
-    target: NotRequired[pulumi.Input['MigrationDataTransferMediumDetailsTargetArgsDict']]
+    target: NotRequired[pulumi.Input[Optional['MigrationDataTransferMediumDetailsTargetArgs']]]
     """
     (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL.
     """
@@ -2058,14 +2058,14 @@ class MigrationDataTransferMediumDetailsArgsDict(TypedDict):
 class MigrationDataTransferMediumDetailsArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 access_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_storage_bucket: Optional[pulumi.Input['MigrationDataTransferMediumDetailsObjectStorageBucketArgs']] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 shared_storage_mount_target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input['MigrationDataTransferMediumDetailsSourceArgs']] = None,
-                 target: Optional[pulumi.Input['MigrationDataTransferMediumDetailsTargetArgs']] = None):
+                 access_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_storage_bucket: pulumi.Input[Optional['MigrationDataTransferMediumDetailsObjectStorageBucketArgs']] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 shared_storage_mount_target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional['MigrationDataTransferMediumDetailsSourceArgs']] = None,
+                 target: pulumi.Input[Optional['MigrationDataTransferMediumDetailsTargetArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] type: (Updatable) Type of the data transfer medium to use.
         :param pulumi.Input[_builtins.str] access_key_id: (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
@@ -2109,107 +2109,107 @@ class MigrationDataTransferMediumDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessKeyId")
-    def access_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
         """
         return pulumi.get(self, "access_key_id")
 
     @access_key_id.setter
-    def access_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_key_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link,  if the link does not already exist.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="objectStorageBucket")
-    def object_storage_bucket(self) -> Optional[pulumi.Input['MigrationDataTransferMediumDetailsObjectStorageBucketArgs']]:
+    def object_storage_bucket(self) -> pulumi.Input[Optional['MigrationDataTransferMediumDetailsObjectStorageBucketArgs']]:
         """
         (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
         """
         return pulumi.get(self, "object_storage_bucket")
 
     @object_storage_bucket.setter
-    def object_storage_bucket(self, value: Optional[pulumi.Input['MigrationDataTransferMediumDetailsObjectStorageBucketArgs']]):
+    def object_storage_bucket(self, value: pulumi.Input[Optional['MigrationDataTransferMediumDetailsObjectStorageBucketArgs']]):
         pulumi.set(self, "object_storage_bucket", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter(name="secretAccessKey")
-    def secret_access_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_access_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
         """
         return pulumi.get(self, "secret_access_key")
 
     @secret_access_key.setter
-    def secret_access_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_access_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_access_key", value)
 
     @_builtins.property
     @pulumi.getter(name="sharedStorageMountTargetId")
-    def shared_storage_mount_target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shared_storage_mount_target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) OCID of the shared storage mount target
         """
         return pulumi.get(self, "shared_storage_mount_target_id")
 
     @shared_storage_mount_target_id.setter
-    def shared_storage_mount_target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shared_storage_mount_target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shared_storage_mount_target_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input['MigrationDataTransferMediumDetailsSourceArgs']]:
+    def source(self) -> pulumi.Input[Optional['MigrationDataTransferMediumDetailsSourceArgs']]:
         """
         (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL.
         """
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input['MigrationDataTransferMediumDetailsSourceArgs']]):
+    def source(self, value: pulumi.Input[Optional['MigrationDataTransferMediumDetailsSourceArgs']]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter
-    def target(self) -> Optional[pulumi.Input['MigrationDataTransferMediumDetailsTargetArgs']]:
+    def target(self) -> pulumi.Input[Optional['MigrationDataTransferMediumDetailsTargetArgs']]:
         """
         (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL.
         """
         return pulumi.get(self, "target")
 
     @target.setter
-    def target(self, value: Optional[pulumi.Input['MigrationDataTransferMediumDetailsTargetArgs']]):
+    def target(self, value: pulumi.Input[Optional['MigrationDataTransferMediumDetailsTargetArgs']]):
         pulumi.set(self, "target", value)
 
 
 class MigrationDataTransferMediumDetailsObjectStorageBucketArgsDict(TypedDict):
-    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Bucket name.
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Namespace name of the object store bucket.
     """
@@ -2217,8 +2217,8 @@ class MigrationDataTransferMediumDetailsObjectStorageBucketArgsDict(TypedDict):
 @pulumi.input_type
 class MigrationDataTransferMediumDetailsObjectStorageBucketArgs:
     def __init__(__self__, *,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None):
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] bucket: (Updatable) Bucket name.
         :param pulumi.Input[_builtins.str] namespace: (Updatable) Namespace name of the object store bucket.
@@ -2230,26 +2230,26 @@ class MigrationDataTransferMediumDetailsObjectStorageBucketArgs:
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Bucket name.
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Namespace name of the object store bucket.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
 
@@ -2258,11 +2258,11 @@ class MigrationDataTransferMediumDetailsSourceArgsDict(TypedDict):
     """
     (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
     """
-    oci_home: NotRequired[pulumi.Input[_builtins.str]]
+    oci_home: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
     """
-    wallet_location: NotRequired[pulumi.Input[_builtins.str]]
+    wallet_location: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
     """
@@ -2271,8 +2271,8 @@ class MigrationDataTransferMediumDetailsSourceArgsDict(TypedDict):
 class MigrationDataTransferMediumDetailsSourceArgs:
     def __init__(__self__, *,
                  kind: pulumi.Input[_builtins.str],
-                 oci_home: Optional[pulumi.Input[_builtins.str]] = None,
-                 wallet_location: Optional[pulumi.Input[_builtins.str]] = None):
+                 oci_home: pulumi.Input[Optional[_builtins.str]] = None,
+                 wallet_location: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] kind: (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
         :param pulumi.Input[_builtins.str] oci_home: (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
@@ -2298,26 +2298,26 @@ class MigrationDataTransferMediumDetailsSourceArgs:
 
     @_builtins.property
     @pulumi.getter(name="ociHome")
-    def oci_home(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oci_home(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
         """
         return pulumi.get(self, "oci_home")
 
     @oci_home.setter
-    def oci_home(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oci_home(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oci_home", value)
 
     @_builtins.property
     @pulumi.getter(name="walletLocation")
-    def wallet_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def wallet_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
         """
         return pulumi.get(self, "wallet_location")
 
     @wallet_location.setter
-    def wallet_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def wallet_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "wallet_location", value)
 
 
@@ -2326,11 +2326,11 @@ class MigrationDataTransferMediumDetailsTargetArgsDict(TypedDict):
     """
     (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
     """
-    oci_home: NotRequired[pulumi.Input[_builtins.str]]
+    oci_home: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
     """
-    wallet_location: NotRequired[pulumi.Input[_builtins.str]]
+    wallet_location: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
     """
@@ -2339,8 +2339,8 @@ class MigrationDataTransferMediumDetailsTargetArgsDict(TypedDict):
 class MigrationDataTransferMediumDetailsTargetArgs:
     def __init__(__self__, *,
                  kind: pulumi.Input[_builtins.str],
-                 oci_home: Optional[pulumi.Input[_builtins.str]] = None,
-                 wallet_location: Optional[pulumi.Input[_builtins.str]] = None):
+                 oci_home: pulumi.Input[Optional[_builtins.str]] = None,
+                 wallet_location: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] kind: (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
         :param pulumi.Input[_builtins.str] oci_home: (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
@@ -2366,26 +2366,26 @@ class MigrationDataTransferMediumDetailsTargetArgs:
 
     @_builtins.property
     @pulumi.getter(name="ociHome")
-    def oci_home(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oci_home(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
         """
         return pulumi.get(self, "oci_home")
 
     @oci_home.setter
-    def oci_home(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oci_home(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oci_home", value)
 
     @_builtins.property
     @pulumi.getter(name="walletLocation")
-    def wallet_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def wallet_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
         """
         return pulumi.get(self, "wallet_location")
 
     @wallet_location.setter
-    def wallet_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def wallet_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "wallet_location", value)
 
 
@@ -2394,19 +2394,19 @@ class MigrationExcludeObjectArgsDict(TypedDict):
     """
     Name of the object (regular expression is allowed)
     """
-    is_omit_excluded_table_from_replication: NotRequired[pulumi.Input[_builtins.bool]]
+    is_omit_excluded_table_from_replication: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
     """
-    owner: NotRequired[pulumi.Input[_builtins.str]]
+    owner: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Owner of the object (regular expression is allowed)
     """
-    schema: NotRequired[pulumi.Input[_builtins.str]]
+    schema: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Schema of the object (regular expression is allowed)
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
     """
@@ -2415,10 +2415,10 @@ class MigrationExcludeObjectArgsDict(TypedDict):
 class MigrationExcludeObjectArgs:
     def __init__(__self__, *,
                  object: pulumi.Input[_builtins.str],
-                 is_omit_excluded_table_from_replication: Optional[pulumi.Input[_builtins.bool]] = None,
-                 owner: Optional[pulumi.Input[_builtins.str]] = None,
-                 schema: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 is_omit_excluded_table_from_replication: pulumi.Input[Optional[_builtins.bool]] = None,
+                 owner: pulumi.Input[Optional[_builtins.str]] = None,
+                 schema: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] object: Name of the object (regular expression is allowed)
         :param pulumi.Input[_builtins.bool] is_omit_excluded_table_from_replication: Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
@@ -2450,67 +2450,67 @@ class MigrationExcludeObjectArgs:
 
     @_builtins.property
     @pulumi.getter(name="isOmitExcludedTableFromReplication")
-    def is_omit_excluded_table_from_replication(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_omit_excluded_table_from_replication(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
         """
         return pulumi.get(self, "is_omit_excluded_table_from_replication")
 
     @is_omit_excluded_table_from_replication.setter
-    def is_omit_excluded_table_from_replication(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_omit_excluded_table_from_replication(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_omit_excluded_table_from_replication", value)
 
     @_builtins.property
     @pulumi.getter
-    def owner(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Owner of the object (regular expression is allowed)
         """
         return pulumi.get(self, "owner")
 
     @owner.setter
-    def owner(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner", value)
 
     @_builtins.property
     @pulumi.getter
-    def schema(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def schema(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Schema of the object (regular expression is allowed)
         """
         return pulumi.get(self, "schema")
 
     @schema.setter
-    def schema(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def schema(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "schema", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
 class MigrationGgsDetailsArgsDict(TypedDict):
-    acceptable_lag: NotRequired[pulumi.Input[_builtins.int]]
+    acceptable_lag: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
     """
-    extract: NotRequired[pulumi.Input['MigrationGgsDetailsExtractArgsDict']]
+    extract: NotRequired[pulumi.Input[Optional['MigrationGgsDetailsExtractArgs']]]
     """
     (Updatable) Parameters for GoldenGate Extract processes.
     """
-    ggs_deployments: NotRequired[pulumi.Input[Sequence[pulumi.Input['MigrationGgsDetailsGgsDeploymentArgsDict']]]]
+    ggs_deployments: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MigrationGgsDetailsGgsDeploymentArgs']]]]]
     """
     Details about Oracle GoldenGate GGS Deployment.
     """
-    replicat: NotRequired[pulumi.Input['MigrationGgsDetailsReplicatArgsDict']]
+    replicat: NotRequired[pulumi.Input[Optional['MigrationGgsDetailsReplicatArgs']]]
     """
     (Updatable) Parameters for GoldenGate Replicat processes.
     """
@@ -2518,10 +2518,10 @@ class MigrationGgsDetailsArgsDict(TypedDict):
 @pulumi.input_type
 class MigrationGgsDetailsArgs:
     def __init__(__self__, *,
-                 acceptable_lag: Optional[pulumi.Input[_builtins.int]] = None,
-                 extract: Optional[pulumi.Input['MigrationGgsDetailsExtractArgs']] = None,
-                 ggs_deployments: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationGgsDetailsGgsDeploymentArgs']]]] = None,
-                 replicat: Optional[pulumi.Input['MigrationGgsDetailsReplicatArgs']] = None):
+                 acceptable_lag: pulumi.Input[Optional[_builtins.int]] = None,
+                 extract: pulumi.Input[Optional['MigrationGgsDetailsExtractArgs']] = None,
+                 ggs_deployments: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationGgsDetailsGgsDeploymentArgs']]]] = None,
+                 replicat: pulumi.Input[Optional['MigrationGgsDetailsReplicatArgs']] = None):
         """
         :param pulumi.Input[_builtins.int] acceptable_lag: (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
         :param pulumi.Input['MigrationGgsDetailsExtractArgs'] extract: (Updatable) Parameters for GoldenGate Extract processes.
@@ -2539,59 +2539,59 @@ class MigrationGgsDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="acceptableLag")
-    def acceptable_lag(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def acceptable_lag(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
         """
         return pulumi.get(self, "acceptable_lag")
 
     @acceptable_lag.setter
-    def acceptable_lag(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def acceptable_lag(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "acceptable_lag", value)
 
     @_builtins.property
     @pulumi.getter
-    def extract(self) -> Optional[pulumi.Input['MigrationGgsDetailsExtractArgs']]:
+    def extract(self) -> pulumi.Input[Optional['MigrationGgsDetailsExtractArgs']]:
         """
         (Updatable) Parameters for GoldenGate Extract processes.
         """
         return pulumi.get(self, "extract")
 
     @extract.setter
-    def extract(self, value: Optional[pulumi.Input['MigrationGgsDetailsExtractArgs']]):
+    def extract(self, value: pulumi.Input[Optional['MigrationGgsDetailsExtractArgs']]):
         pulumi.set(self, "extract", value)
 
     @_builtins.property
     @pulumi.getter(name="ggsDeployments")
-    def ggs_deployments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MigrationGgsDetailsGgsDeploymentArgs']]]]:
+    def ggs_deployments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MigrationGgsDetailsGgsDeploymentArgs']]]]:
         """
         Details about Oracle GoldenGate GGS Deployment.
         """
         return pulumi.get(self, "ggs_deployments")
 
     @ggs_deployments.setter
-    def ggs_deployments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationGgsDetailsGgsDeploymentArgs']]]]):
+    def ggs_deployments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationGgsDetailsGgsDeploymentArgs']]]]):
         pulumi.set(self, "ggs_deployments", value)
 
     @_builtins.property
     @pulumi.getter
-    def replicat(self) -> Optional[pulumi.Input['MigrationGgsDetailsReplicatArgs']]:
+    def replicat(self) -> pulumi.Input[Optional['MigrationGgsDetailsReplicatArgs']]:
         """
         (Updatable) Parameters for GoldenGate Replicat processes.
         """
         return pulumi.get(self, "replicat")
 
     @replicat.setter
-    def replicat(self, value: Optional[pulumi.Input['MigrationGgsDetailsReplicatArgs']]):
+    def replicat(self, value: pulumi.Input[Optional['MigrationGgsDetailsReplicatArgs']]):
         pulumi.set(self, "replicat", value)
 
 
 class MigrationGgsDetailsExtractArgsDict(TypedDict):
-    long_trans_duration: NotRequired[pulumi.Input[_builtins.int]]
+    long_trans_duration: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
     """
-    performance_profile: NotRequired[pulumi.Input[_builtins.str]]
+    performance_profile: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Extract performance.
     """
@@ -2599,8 +2599,8 @@ class MigrationGgsDetailsExtractArgsDict(TypedDict):
 @pulumi.input_type
 class MigrationGgsDetailsExtractArgs:
     def __init__(__self__, *,
-                 long_trans_duration: Optional[pulumi.Input[_builtins.int]] = None,
-                 performance_profile: Optional[pulumi.Input[_builtins.str]] = None):
+                 long_trans_duration: pulumi.Input[Optional[_builtins.int]] = None,
+                 performance_profile: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.int] long_trans_duration: (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
         :param pulumi.Input[_builtins.str] performance_profile: (Updatable) Extract performance.
@@ -2612,35 +2612,35 @@ class MigrationGgsDetailsExtractArgs:
 
     @_builtins.property
     @pulumi.getter(name="longTransDuration")
-    def long_trans_duration(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def long_trans_duration(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
         """
         return pulumi.get(self, "long_trans_duration")
 
     @long_trans_duration.setter
-    def long_trans_duration(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def long_trans_duration(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "long_trans_duration", value)
 
     @_builtins.property
     @pulumi.getter(name="performanceProfile")
-    def performance_profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def performance_profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Extract performance.
         """
         return pulumi.get(self, "performance_profile")
 
     @performance_profile.setter
-    def performance_profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def performance_profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "performance_profile", value)
 
 
 class MigrationGgsDetailsGgsDeploymentArgsDict(TypedDict):
-    deployment_id: NotRequired[pulumi.Input[_builtins.str]]
+    deployment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the resource being referenced.
     """
-    ggs_admin_credentials_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    ggs_admin_credentials_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the resource being referenced.
     """
@@ -2648,8 +2648,8 @@ class MigrationGgsDetailsGgsDeploymentArgsDict(TypedDict):
 @pulumi.input_type
 class MigrationGgsDetailsGgsDeploymentArgs:
     def __init__(__self__, *,
-                 deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ggs_admin_credentials_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ggs_admin_credentials_secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] deployment_id: The OCID of the resource being referenced.
         :param pulumi.Input[_builtins.str] ggs_admin_credentials_secret_id: The OCID of the resource being referenced.
@@ -2661,31 +2661,31 @@ class MigrationGgsDetailsGgsDeploymentArgs:
 
     @_builtins.property
     @pulumi.getter(name="deploymentId")
-    def deployment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deployment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the resource being referenced.
         """
         return pulumi.get(self, "deployment_id")
 
     @deployment_id.setter
-    def deployment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deployment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deployment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ggsAdminCredentialsSecretId")
-    def ggs_admin_credentials_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ggs_admin_credentials_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the resource being referenced.
         """
         return pulumi.get(self, "ggs_admin_credentials_secret_id")
 
     @ggs_admin_credentials_secret_id.setter
-    def ggs_admin_credentials_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ggs_admin_credentials_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ggs_admin_credentials_secret_id", value)
 
 
 class MigrationGgsDetailsReplicatArgsDict(TypedDict):
-    performance_profile: NotRequired[pulumi.Input[_builtins.str]]
+    performance_profile: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Replicat performance.
     """
@@ -2693,7 +2693,7 @@ class MigrationGgsDetailsReplicatArgsDict(TypedDict):
 @pulumi.input_type
 class MigrationGgsDetailsReplicatArgs:
     def __init__(__self__, *,
-                 performance_profile: Optional[pulumi.Input[_builtins.str]] = None):
+                 performance_profile: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] performance_profile: (Updatable) Replicat performance.
         """
@@ -2702,14 +2702,14 @@ class MigrationGgsDetailsReplicatArgs:
 
     @_builtins.property
     @pulumi.getter(name="performanceProfile")
-    def performance_profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def performance_profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Replicat performance.
         """
         return pulumi.get(self, "performance_profile")
 
     @performance_profile.setter
-    def performance_profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def performance_profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "performance_profile", value)
 
 
@@ -2730,19 +2730,19 @@ class MigrationHubDetailsArgsDict(TypedDict):
     """
     (Updatable) The OCID of the resource being referenced.
     """
-    acceptable_lag: NotRequired[pulumi.Input[_builtins.int]]
+    acceptable_lag: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
     """
-    compute_id: NotRequired[pulumi.Input[_builtins.str]]
+    compute_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the resource being referenced.
     """
-    extract: NotRequired[pulumi.Input['MigrationHubDetailsExtractArgsDict']]
+    extract: NotRequired[pulumi.Input[Optional['MigrationHubDetailsExtractArgs']]]
     """
     (Updatable) Parameters for GoldenGate Extract processes.
     """
-    replicat: NotRequired[pulumi.Input['MigrationHubDetailsReplicatArgsDict']]
+    replicat: NotRequired[pulumi.Input[Optional['MigrationHubDetailsReplicatArgs']]]
     """
     (Updatable) Parameters for GoldenGate Replicat processes.
     """
@@ -2754,10 +2754,10 @@ class MigrationHubDetailsArgs:
                  rest_admin_credentials: pulumi.Input['MigrationHubDetailsRestAdminCredentialsArgs'],
                  url: pulumi.Input[_builtins.str],
                  vault_id: pulumi.Input[_builtins.str],
-                 acceptable_lag: Optional[pulumi.Input[_builtins.int]] = None,
-                 compute_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 extract: Optional[pulumi.Input['MigrationHubDetailsExtractArgs']] = None,
-                 replicat: Optional[pulumi.Input['MigrationHubDetailsReplicatArgs']] = None):
+                 acceptable_lag: pulumi.Input[Optional[_builtins.int]] = None,
+                 compute_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 extract: pulumi.Input[Optional['MigrationHubDetailsExtractArgs']] = None,
+                 replicat: pulumi.Input[Optional['MigrationHubDetailsReplicatArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] key_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input['MigrationHubDetailsRestAdminCredentialsArgs'] rest_admin_credentials: (Updatable) Database Administrator Credentials details.
@@ -2831,59 +2831,59 @@ class MigrationHubDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="acceptableLag")
-    def acceptable_lag(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def acceptable_lag(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
         """
         return pulumi.get(self, "acceptable_lag")
 
     @acceptable_lag.setter
-    def acceptable_lag(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def acceptable_lag(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "acceptable_lag", value)
 
     @_builtins.property
     @pulumi.getter(name="computeId")
-    def compute_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the resource being referenced.
         """
         return pulumi.get(self, "compute_id")
 
     @compute_id.setter
-    def compute_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def extract(self) -> Optional[pulumi.Input['MigrationHubDetailsExtractArgs']]:
+    def extract(self) -> pulumi.Input[Optional['MigrationHubDetailsExtractArgs']]:
         """
         (Updatable) Parameters for GoldenGate Extract processes.
         """
         return pulumi.get(self, "extract")
 
     @extract.setter
-    def extract(self, value: Optional[pulumi.Input['MigrationHubDetailsExtractArgs']]):
+    def extract(self, value: pulumi.Input[Optional['MigrationHubDetailsExtractArgs']]):
         pulumi.set(self, "extract", value)
 
     @_builtins.property
     @pulumi.getter
-    def replicat(self) -> Optional[pulumi.Input['MigrationHubDetailsReplicatArgs']]:
+    def replicat(self) -> pulumi.Input[Optional['MigrationHubDetailsReplicatArgs']]:
         """
         (Updatable) Parameters for GoldenGate Replicat processes.
         """
         return pulumi.get(self, "replicat")
 
     @replicat.setter
-    def replicat(self, value: Optional[pulumi.Input['MigrationHubDetailsReplicatArgs']]):
+    def replicat(self, value: pulumi.Input[Optional['MigrationHubDetailsReplicatArgs']]):
         pulumi.set(self, "replicat", value)
 
 
 class MigrationHubDetailsExtractArgsDict(TypedDict):
-    long_trans_duration: NotRequired[pulumi.Input[_builtins.int]]
+    long_trans_duration: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
     """
-    performance_profile: NotRequired[pulumi.Input[_builtins.str]]
+    performance_profile: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Extract performance.
     """
@@ -2891,8 +2891,8 @@ class MigrationHubDetailsExtractArgsDict(TypedDict):
 @pulumi.input_type
 class MigrationHubDetailsExtractArgs:
     def __init__(__self__, *,
-                 long_trans_duration: Optional[pulumi.Input[_builtins.int]] = None,
-                 performance_profile: Optional[pulumi.Input[_builtins.str]] = None):
+                 long_trans_duration: pulumi.Input[Optional[_builtins.int]] = None,
+                 performance_profile: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.int] long_trans_duration: (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
         :param pulumi.Input[_builtins.str] performance_profile: (Updatable) Extract performance.
@@ -2904,31 +2904,31 @@ class MigrationHubDetailsExtractArgs:
 
     @_builtins.property
     @pulumi.getter(name="longTransDuration")
-    def long_trans_duration(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def long_trans_duration(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
         """
         return pulumi.get(self, "long_trans_duration")
 
     @long_trans_duration.setter
-    def long_trans_duration(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def long_trans_duration(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "long_trans_duration", value)
 
     @_builtins.property
     @pulumi.getter(name="performanceProfile")
-    def performance_profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def performance_profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Extract performance.
         """
         return pulumi.get(self, "performance_profile")
 
     @performance_profile.setter
-    def performance_profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def performance_profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "performance_profile", value)
 
 
 class MigrationHubDetailsReplicatArgsDict(TypedDict):
-    performance_profile: NotRequired[pulumi.Input[_builtins.str]]
+    performance_profile: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Replicat performance.
     """
@@ -2936,7 +2936,7 @@ class MigrationHubDetailsReplicatArgsDict(TypedDict):
 @pulumi.input_type
 class MigrationHubDetailsReplicatArgs:
     def __init__(__self__, *,
-                 performance_profile: Optional[pulumi.Input[_builtins.str]] = None):
+                 performance_profile: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] performance_profile: (Updatable) Replicat performance.
         """
@@ -2945,14 +2945,14 @@ class MigrationHubDetailsReplicatArgs:
 
     @_builtins.property
     @pulumi.getter(name="performanceProfile")
-    def performance_profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def performance_profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Replicat performance.
         """
         return pulumi.get(self, "performance_profile")
 
     @performance_profile.setter
-    def performance_profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def performance_profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "performance_profile", value)
 
 
@@ -3008,19 +3008,19 @@ class MigrationIncludeObjectArgsDict(TypedDict):
     """
     Name of the object (regular expression is allowed)
     """
-    is_omit_excluded_table_from_replication: NotRequired[pulumi.Input[_builtins.bool]]
+    is_omit_excluded_table_from_replication: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
     """
-    owner: NotRequired[pulumi.Input[_builtins.str]]
+    owner: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Owner of the object (regular expression is allowed)
     """
-    schema: NotRequired[pulumi.Input[_builtins.str]]
+    schema: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Schema of the object (regular expression is allowed)
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
     """
@@ -3029,10 +3029,10 @@ class MigrationIncludeObjectArgsDict(TypedDict):
 class MigrationIncludeObjectArgs:
     def __init__(__self__, *,
                  object: pulumi.Input[_builtins.str],
-                 is_omit_excluded_table_from_replication: Optional[pulumi.Input[_builtins.bool]] = None,
-                 owner: Optional[pulumi.Input[_builtins.str]] = None,
-                 schema: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 is_omit_excluded_table_from_replication: pulumi.Input[Optional[_builtins.bool]] = None,
+                 owner: pulumi.Input[Optional[_builtins.str]] = None,
+                 schema: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] object: Name of the object (regular expression is allowed)
         :param pulumi.Input[_builtins.bool] is_omit_excluded_table_from_replication: Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
@@ -3064,50 +3064,50 @@ class MigrationIncludeObjectArgs:
 
     @_builtins.property
     @pulumi.getter(name="isOmitExcludedTableFromReplication")
-    def is_omit_excluded_table_from_replication(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_omit_excluded_table_from_replication(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
         """
         return pulumi.get(self, "is_omit_excluded_table_from_replication")
 
     @is_omit_excluded_table_from_replication.setter
-    def is_omit_excluded_table_from_replication(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_omit_excluded_table_from_replication(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_omit_excluded_table_from_replication", value)
 
     @_builtins.property
     @pulumi.getter
-    def owner(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Owner of the object (regular expression is allowed)
         """
         return pulumi.get(self, "owner")
 
     @owner.setter
-    def owner(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner", value)
 
     @_builtins.property
     @pulumi.getter
-    def schema(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def schema(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Schema of the object (regular expression is allowed)
         """
         return pulumi.get(self, "schema")
 
     @schema.setter
-    def schema(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def schema(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "schema", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -3116,47 +3116,47 @@ class MigrationInitialLoadSettingsArgsDict(TypedDict):
     """
     (Updatable) Oracle Job Mode
     """
-    compatibilities: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    compatibilities: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Apply the specified requirements for compatibility with MySQL Database Service for all tables in the dump  output, altering the dump files as necessary.
     """
-    data_pump_parameters: NotRequired[pulumi.Input['MigrationInitialLoadSettingsDataPumpParametersArgsDict']]
+    data_pump_parameters: NotRequired[pulumi.Input[Optional['MigrationInitialLoadSettingsDataPumpParametersArgs']]]
     """
     (Updatable) Optional parameters for Data Pump Export and Import.
     """
-    export_directory_object: NotRequired[pulumi.Input['MigrationInitialLoadSettingsExportDirectoryObjectArgsDict']]
+    export_directory_object: NotRequired[pulumi.Input[Optional['MigrationInitialLoadSettingsExportDirectoryObjectArgs']]]
     """
     (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
     """
-    handle_grant_errors: NotRequired[pulumi.Input[_builtins.str]]
+    handle_grant_errors: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The action taken in the event of errors related to GRANT or REVOKE errors.
     """
-    import_directory_object: NotRequired[pulumi.Input['MigrationInitialLoadSettingsImportDirectoryObjectArgsDict']]
+    import_directory_object: NotRequired[pulumi.Input[Optional['MigrationInitialLoadSettingsImportDirectoryObjectArgs']]]
     """
     (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
     """
-    is_consistent: NotRequired[pulumi.Input[_builtins.bool]]
+    is_consistent: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Enable (true) or disable (false) consistent data dumps by locking the instance for backup during the dump.
     """
-    is_ignore_existing_objects: NotRequired[pulumi.Input[_builtins.bool]]
+    is_ignore_existing_objects: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Import the dump even if it contains objects that already exist in the target schema in the MySQL instance.
     """
-    is_tz_utc: NotRequired[pulumi.Input[_builtins.bool]]
+    is_tz_utc: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Include a statement at the start of the dump to set the time zone to UTC.
     """
-    metadata_remaps: NotRequired[pulumi.Input[Sequence[pulumi.Input['MigrationInitialLoadSettingsMetadataRemapArgsDict']]]]
+    metadata_remaps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['MigrationInitialLoadSettingsMetadataRemapArgs']]]]]
     """
     (Updatable) Defines remapping to be applied to objects as they are processed.
     """
-    primary_key_compatibility: NotRequired[pulumi.Input[_builtins.str]]
+    primary_key_compatibility: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Primary key compatibility option
     """
-    tablespace_details: NotRequired[pulumi.Input['MigrationInitialLoadSettingsTablespaceDetailsArgsDict']]
+    tablespace_details: NotRequired[pulumi.Input[Optional['MigrationInitialLoadSettingsTablespaceDetailsArgs']]]
     """
     (Updatable) Migration tablespace settings.
     """
@@ -3165,17 +3165,17 @@ class MigrationInitialLoadSettingsArgsDict(TypedDict):
 class MigrationInitialLoadSettingsArgs:
     def __init__(__self__, *,
                  job_mode: pulumi.Input[_builtins.str],
-                 compatibilities: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 data_pump_parameters: Optional[pulumi.Input['MigrationInitialLoadSettingsDataPumpParametersArgs']] = None,
-                 export_directory_object: Optional[pulumi.Input['MigrationInitialLoadSettingsExportDirectoryObjectArgs']] = None,
-                 handle_grant_errors: Optional[pulumi.Input[_builtins.str]] = None,
-                 import_directory_object: Optional[pulumi.Input['MigrationInitialLoadSettingsImportDirectoryObjectArgs']] = None,
-                 is_consistent: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_ignore_existing_objects: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_tz_utc: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metadata_remaps: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationInitialLoadSettingsMetadataRemapArgs']]]] = None,
-                 primary_key_compatibility: Optional[pulumi.Input[_builtins.str]] = None,
-                 tablespace_details: Optional[pulumi.Input['MigrationInitialLoadSettingsTablespaceDetailsArgs']] = None):
+                 compatibilities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 data_pump_parameters: pulumi.Input[Optional['MigrationInitialLoadSettingsDataPumpParametersArgs']] = None,
+                 export_directory_object: pulumi.Input[Optional['MigrationInitialLoadSettingsExportDirectoryObjectArgs']] = None,
+                 handle_grant_errors: pulumi.Input[Optional[_builtins.str]] = None,
+                 import_directory_object: pulumi.Input[Optional['MigrationInitialLoadSettingsImportDirectoryObjectArgs']] = None,
+                 is_consistent: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_ignore_existing_objects: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_tz_utc: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metadata_remaps: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationInitialLoadSettingsMetadataRemapArgs']]]] = None,
+                 primary_key_compatibility: pulumi.Input[Optional[_builtins.str]] = None,
+                 tablespace_details: pulumi.Input[Optional['MigrationInitialLoadSettingsTablespaceDetailsArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] job_mode: (Updatable) Oracle Job Mode
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] compatibilities: (Updatable) Apply the specified requirements for compatibility with MySQL Database Service for all tables in the dump  output, altering the dump files as necessary.
@@ -3228,159 +3228,159 @@ class MigrationInitialLoadSettingsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def compatibilities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def compatibilities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Apply the specified requirements for compatibility with MySQL Database Service for all tables in the dump  output, altering the dump files as necessary.
         """
         return pulumi.get(self, "compatibilities")
 
     @compatibilities.setter
-    def compatibilities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def compatibilities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "compatibilities", value)
 
     @_builtins.property
     @pulumi.getter(name="dataPumpParameters")
-    def data_pump_parameters(self) -> Optional[pulumi.Input['MigrationInitialLoadSettingsDataPumpParametersArgs']]:
+    def data_pump_parameters(self) -> pulumi.Input[Optional['MigrationInitialLoadSettingsDataPumpParametersArgs']]:
         """
         (Updatable) Optional parameters for Data Pump Export and Import.
         """
         return pulumi.get(self, "data_pump_parameters")
 
     @data_pump_parameters.setter
-    def data_pump_parameters(self, value: Optional[pulumi.Input['MigrationInitialLoadSettingsDataPumpParametersArgs']]):
+    def data_pump_parameters(self, value: pulumi.Input[Optional['MigrationInitialLoadSettingsDataPumpParametersArgs']]):
         pulumi.set(self, "data_pump_parameters", value)
 
     @_builtins.property
     @pulumi.getter(name="exportDirectoryObject")
-    def export_directory_object(self) -> Optional[pulumi.Input['MigrationInitialLoadSettingsExportDirectoryObjectArgs']]:
+    def export_directory_object(self) -> pulumi.Input[Optional['MigrationInitialLoadSettingsExportDirectoryObjectArgs']]:
         """
         (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
         """
         return pulumi.get(self, "export_directory_object")
 
     @export_directory_object.setter
-    def export_directory_object(self, value: Optional[pulumi.Input['MigrationInitialLoadSettingsExportDirectoryObjectArgs']]):
+    def export_directory_object(self, value: pulumi.Input[Optional['MigrationInitialLoadSettingsExportDirectoryObjectArgs']]):
         pulumi.set(self, "export_directory_object", value)
 
     @_builtins.property
     @pulumi.getter(name="handleGrantErrors")
-    def handle_grant_errors(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def handle_grant_errors(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The action taken in the event of errors related to GRANT or REVOKE errors.
         """
         return pulumi.get(self, "handle_grant_errors")
 
     @handle_grant_errors.setter
-    def handle_grant_errors(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def handle_grant_errors(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "handle_grant_errors", value)
 
     @_builtins.property
     @pulumi.getter(name="importDirectoryObject")
-    def import_directory_object(self) -> Optional[pulumi.Input['MigrationInitialLoadSettingsImportDirectoryObjectArgs']]:
+    def import_directory_object(self) -> pulumi.Input[Optional['MigrationInitialLoadSettingsImportDirectoryObjectArgs']]:
         """
         (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
         """
         return pulumi.get(self, "import_directory_object")
 
     @import_directory_object.setter
-    def import_directory_object(self, value: Optional[pulumi.Input['MigrationInitialLoadSettingsImportDirectoryObjectArgs']]):
+    def import_directory_object(self, value: pulumi.Input[Optional['MigrationInitialLoadSettingsImportDirectoryObjectArgs']]):
         pulumi.set(self, "import_directory_object", value)
 
     @_builtins.property
     @pulumi.getter(name="isConsistent")
-    def is_consistent(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_consistent(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enable (true) or disable (false) consistent data dumps by locking the instance for backup during the dump.
         """
         return pulumi.get(self, "is_consistent")
 
     @is_consistent.setter
-    def is_consistent(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_consistent(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_consistent", value)
 
     @_builtins.property
     @pulumi.getter(name="isIgnoreExistingObjects")
-    def is_ignore_existing_objects(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_ignore_existing_objects(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Import the dump even if it contains objects that already exist in the target schema in the MySQL instance.
         """
         return pulumi.get(self, "is_ignore_existing_objects")
 
     @is_ignore_existing_objects.setter
-    def is_ignore_existing_objects(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_ignore_existing_objects(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_ignore_existing_objects", value)
 
     @_builtins.property
     @pulumi.getter(name="isTzUtc")
-    def is_tz_utc(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_tz_utc(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Include a statement at the start of the dump to set the time zone to UTC.
         """
         return pulumi.get(self, "is_tz_utc")
 
     @is_tz_utc.setter
-    def is_tz_utc(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_tz_utc(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_tz_utc", value)
 
     @_builtins.property
     @pulumi.getter(name="metadataRemaps")
-    def metadata_remaps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MigrationInitialLoadSettingsMetadataRemapArgs']]]]:
+    def metadata_remaps(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MigrationInitialLoadSettingsMetadataRemapArgs']]]]:
         """
         (Updatable) Defines remapping to be applied to objects as they are processed.
         """
         return pulumi.get(self, "metadata_remaps")
 
     @metadata_remaps.setter
-    def metadata_remaps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationInitialLoadSettingsMetadataRemapArgs']]]]):
+    def metadata_remaps(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MigrationInitialLoadSettingsMetadataRemapArgs']]]]):
         pulumi.set(self, "metadata_remaps", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryKeyCompatibility")
-    def primary_key_compatibility(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def primary_key_compatibility(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Primary key compatibility option
         """
         return pulumi.get(self, "primary_key_compatibility")
 
     @primary_key_compatibility.setter
-    def primary_key_compatibility(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def primary_key_compatibility(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "primary_key_compatibility", value)
 
     @_builtins.property
     @pulumi.getter(name="tablespaceDetails")
-    def tablespace_details(self) -> Optional[pulumi.Input['MigrationInitialLoadSettingsTablespaceDetailsArgs']]:
+    def tablespace_details(self) -> pulumi.Input[Optional['MigrationInitialLoadSettingsTablespaceDetailsArgs']]:
         """
         (Updatable) Migration tablespace settings.
         """
         return pulumi.get(self, "tablespace_details")
 
     @tablespace_details.setter
-    def tablespace_details(self, value: Optional[pulumi.Input['MigrationInitialLoadSettingsTablespaceDetailsArgs']]):
+    def tablespace_details(self, value: pulumi.Input[Optional['MigrationInitialLoadSettingsTablespaceDetailsArgs']]):
         pulumi.set(self, "tablespace_details", value)
 
 
 class MigrationInitialLoadSettingsDataPumpParametersArgsDict(TypedDict):
-    estimate: NotRequired[pulumi.Input[_builtins.str]]
+    estimate: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Estimate size of dumps that will be generated.
     """
-    exclude_parameters: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    exclude_parameters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Exclude paratemers for Export and Import.
     """
-    export_parallelism_degree: NotRequired[pulumi.Input[_builtins.int]]
+    export_parallelism_degree: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Maximum number of worker processes that can be used for a Data Pump Export job.
     """
-    import_parallelism_degree: NotRequired[pulumi.Input[_builtins.int]]
+    import_parallelism_degree: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Maximum number of worker processes that can be used for a Data Pump Import job. For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
     """
-    is_cluster: NotRequired[pulumi.Input[_builtins.bool]]
+    is_cluster: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Set to false to force Data Pump worker process to run on one instance.
     """
-    table_exists_action: NotRequired[pulumi.Input[_builtins.str]]
+    table_exists_action: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
     """
@@ -3388,12 +3388,12 @@ class MigrationInitialLoadSettingsDataPumpParametersArgsDict(TypedDict):
 @pulumi.input_type
 class MigrationInitialLoadSettingsDataPumpParametersArgs:
     def __init__(__self__, *,
-                 estimate: Optional[pulumi.Input[_builtins.str]] = None,
-                 exclude_parameters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 export_parallelism_degree: Optional[pulumi.Input[_builtins.int]] = None,
-                 import_parallelism_degree: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_cluster: Optional[pulumi.Input[_builtins.bool]] = None,
-                 table_exists_action: Optional[pulumi.Input[_builtins.str]] = None):
+                 estimate: pulumi.Input[Optional[_builtins.str]] = None,
+                 exclude_parameters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 export_parallelism_degree: pulumi.Input[Optional[_builtins.int]] = None,
+                 import_parallelism_degree: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
+                 table_exists_action: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] estimate: (Updatable) Estimate size of dumps that will be generated.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] exclude_parameters: (Updatable) Exclude paratemers for Export and Import.
@@ -3417,83 +3417,83 @@ class MigrationInitialLoadSettingsDataPumpParametersArgs:
 
     @_builtins.property
     @pulumi.getter
-    def estimate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def estimate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Estimate size of dumps that will be generated.
         """
         return pulumi.get(self, "estimate")
 
     @estimate.setter
-    def estimate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def estimate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "estimate", value)
 
     @_builtins.property
     @pulumi.getter(name="excludeParameters")
-    def exclude_parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def exclude_parameters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Exclude paratemers for Export and Import.
         """
         return pulumi.get(self, "exclude_parameters")
 
     @exclude_parameters.setter
-    def exclude_parameters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def exclude_parameters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "exclude_parameters", value)
 
     @_builtins.property
     @pulumi.getter(name="exportParallelismDegree")
-    def export_parallelism_degree(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def export_parallelism_degree(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Maximum number of worker processes that can be used for a Data Pump Export job.
         """
         return pulumi.get(self, "export_parallelism_degree")
 
     @export_parallelism_degree.setter
-    def export_parallelism_degree(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def export_parallelism_degree(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "export_parallelism_degree", value)
 
     @_builtins.property
     @pulumi.getter(name="importParallelismDegree")
-    def import_parallelism_degree(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def import_parallelism_degree(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Maximum number of worker processes that can be used for a Data Pump Import job. For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
         """
         return pulumi.get(self, "import_parallelism_degree")
 
     @import_parallelism_degree.setter
-    def import_parallelism_degree(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def import_parallelism_degree(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "import_parallelism_degree", value)
 
     @_builtins.property
     @pulumi.getter(name="isCluster")
-    def is_cluster(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cluster(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Set to false to force Data Pump worker process to run on one instance.
         """
         return pulumi.get(self, "is_cluster")
 
     @is_cluster.setter
-    def is_cluster(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cluster(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cluster", value)
 
     @_builtins.property
     @pulumi.getter(name="tableExistsAction")
-    def table_exists_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def table_exists_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
         """
         return pulumi.get(self, "table_exists_action")
 
     @table_exists_action.setter
-    def table_exists_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def table_exists_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "table_exists_action", value)
 
 
 class MigrationInitialLoadSettingsExportDirectoryObjectArgsDict(TypedDict):
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Name of directory object in database
     """
-    path: NotRequired[pulumi.Input[_builtins.str]]
+    path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Absolute path of directory on database server
     """
@@ -3501,8 +3501,8 @@ class MigrationInitialLoadSettingsExportDirectoryObjectArgsDict(TypedDict):
 @pulumi.input_type
 class MigrationInitialLoadSettingsExportDirectoryObjectArgs:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 path: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 path: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] name: (Updatable) Name of directory object in database
         :param pulumi.Input[_builtins.str] path: (Updatable) Absolute path of directory on database server
@@ -3514,35 +3514,35 @@ class MigrationInitialLoadSettingsExportDirectoryObjectArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of directory object in database
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Absolute path of directory on database server
         """
         return pulumi.get(self, "path")
 
     @path.setter
-    def path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "path", value)
 
 
 class MigrationInitialLoadSettingsImportDirectoryObjectArgsDict(TypedDict):
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Name of directory object in database
     """
-    path: NotRequired[pulumi.Input[_builtins.str]]
+    path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Absolute path of directory on database server
     """
@@ -3550,8 +3550,8 @@ class MigrationInitialLoadSettingsImportDirectoryObjectArgsDict(TypedDict):
 @pulumi.input_type
 class MigrationInitialLoadSettingsImportDirectoryObjectArgs:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 path: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 path: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] name: (Updatable) Name of directory object in database
         :param pulumi.Input[_builtins.str] path: (Updatable) Absolute path of directory on database server
@@ -3563,39 +3563,39 @@ class MigrationInitialLoadSettingsImportDirectoryObjectArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of directory object in database
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Absolute path of directory on database server
         """
         return pulumi.get(self, "path")
 
     @path.setter
-    def path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "path", value)
 
 
 class MigrationInitialLoadSettingsMetadataRemapArgsDict(TypedDict):
-    new_value: NotRequired[pulumi.Input[_builtins.str]]
+    new_value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies the new value that oldValue should be translated into.
     """
-    old_value: NotRequired[pulumi.Input[_builtins.str]]
+    old_value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies the value which needs to be reset.
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Type of remap. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
     """
@@ -3603,9 +3603,9 @@ class MigrationInitialLoadSettingsMetadataRemapArgsDict(TypedDict):
 @pulumi.input_type
 class MigrationInitialLoadSettingsMetadataRemapArgs:
     def __init__(__self__, *,
-                 new_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 old_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 new_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 old_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] new_value: (Updatable) Specifies the new value that oldValue should be translated into.
         :param pulumi.Input[_builtins.str] old_value: (Updatable) Specifies the value which needs to be reset.
@@ -3620,38 +3620,38 @@ class MigrationInitialLoadSettingsMetadataRemapArgs:
 
     @_builtins.property
     @pulumi.getter(name="newValue")
-    def new_value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def new_value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies the new value that oldValue should be translated into.
         """
         return pulumi.get(self, "new_value")
 
     @new_value.setter
-    def new_value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def new_value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "new_value", value)
 
     @_builtins.property
     @pulumi.getter(name="oldValue")
-    def old_value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def old_value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies the value which needs to be reset.
         """
         return pulumi.get(self, "old_value")
 
     @old_value.setter
-    def old_value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def old_value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "old_value", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Type of remap. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -3660,23 +3660,23 @@ class MigrationInitialLoadSettingsTablespaceDetailsArgsDict(TypedDict):
     """
     (Updatable) Type of Database Base Migration Target.
     """
-    block_size_in_kbs: NotRequired[pulumi.Input[_builtins.str]]
+    block_size_in_kbs: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Size of Oracle database blocks in KB.
     """
-    extend_size_in_mbs: NotRequired[pulumi.Input[_builtins.int]]
+    extend_size_in_mbs: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Size to extend the tablespace in MB.  Note: Only applicable if 'isBigFile' property is set to true.
     """
-    is_auto_create: NotRequired[pulumi.Input[_builtins.bool]]
+    is_auto_create: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Set this property to true to auto-create tablespaces in the target Database. Note: This is not applicable for Autonomous Database Serverless databases.
     """
-    is_big_file: NotRequired[pulumi.Input[_builtins.bool]]
+    is_big_file: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Set this property to true to enable tablespace of the type big file.
     """
-    remap_target: NotRequired[pulumi.Input[_builtins.str]]
+    remap_target: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Name of the tablespace on the target database to which the source database tablespace is to be remapped.
     """
@@ -3685,11 +3685,11 @@ class MigrationInitialLoadSettingsTablespaceDetailsArgsDict(TypedDict):
 class MigrationInitialLoadSettingsTablespaceDetailsArgs:
     def __init__(__self__, *,
                  target_type: pulumi.Input[_builtins.str],
-                 block_size_in_kbs: Optional[pulumi.Input[_builtins.str]] = None,
-                 extend_size_in_mbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_auto_create: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_big_file: Optional[pulumi.Input[_builtins.bool]] = None,
-                 remap_target: Optional[pulumi.Input[_builtins.str]] = None):
+                 block_size_in_kbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 extend_size_in_mbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_auto_create: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_big_file: pulumi.Input[Optional[_builtins.bool]] = None,
+                 remap_target: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] target_type: (Updatable) Type of Database Base Migration Target.
         :param pulumi.Input[_builtins.str] block_size_in_kbs: (Updatable) Size of Oracle database blocks in KB.
@@ -3724,62 +3724,62 @@ class MigrationInitialLoadSettingsTablespaceDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="blockSizeInKbs")
-    def block_size_in_kbs(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def block_size_in_kbs(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Size of Oracle database blocks in KB.
         """
         return pulumi.get(self, "block_size_in_kbs")
 
     @block_size_in_kbs.setter
-    def block_size_in_kbs(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def block_size_in_kbs(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "block_size_in_kbs", value)
 
     @_builtins.property
     @pulumi.getter(name="extendSizeInMbs")
-    def extend_size_in_mbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def extend_size_in_mbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Size to extend the tablespace in MB.  Note: Only applicable if 'isBigFile' property is set to true.
         """
         return pulumi.get(self, "extend_size_in_mbs")
 
     @extend_size_in_mbs.setter
-    def extend_size_in_mbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def extend_size_in_mbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "extend_size_in_mbs", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoCreate")
-    def is_auto_create(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_create(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Set this property to true to auto-create tablespaces in the target Database. Note: This is not applicable for Autonomous Database Serverless databases.
         """
         return pulumi.get(self, "is_auto_create")
 
     @is_auto_create.setter
-    def is_auto_create(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_create(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_create", value)
 
     @_builtins.property
     @pulumi.getter(name="isBigFile")
-    def is_big_file(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_big_file(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Set this property to true to enable tablespace of the type big file.
         """
         return pulumi.get(self, "is_big_file")
 
     @is_big_file.setter
-    def is_big_file(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_big_file(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_big_file", value)
 
     @_builtins.property
     @pulumi.getter(name="remapTarget")
-    def remap_target(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def remap_target(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of the tablespace on the target database to which the source database tablespace is to be remapped.
         """
         return pulumi.get(self, "remap_target")
 
     @remap_target.setter
-    def remap_target(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def remap_target(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "remap_target", value)
 
 

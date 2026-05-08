@@ -105,7 +105,7 @@ def get_job_advisor_report_check_objects(advisor_report_check_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_job_advisor_report_check_objects = oci.DatabaseMigration.get_job_advisor_report_check_objects(advisor_report_check_id=test_advisor_report_check["id"],
+    test_job_advisor_report_check_objects = oci.databasemigration.get_job_advisor_report_check_objects(advisor_report_check_id=test_advisor_report_check["id"],
         job_id=test_job["id"])
     ```
 
@@ -126,9 +126,9 @@ def get_job_advisor_report_check_objects(advisor_report_check_id: Optional[_buil
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         job_id=pulumi.get(__ret__, 'job_id'))
-def get_job_advisor_report_check_objects_output(advisor_report_check_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetJobAdvisorReportCheckObjectsFilterArgs', 'GetJobAdvisorReportCheckObjectsFilterArgsDict']]]]] = None,
-                                                job_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_job_advisor_report_check_objects_output(advisor_report_check_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJobAdvisorReportCheckObjectsFilterArgs', 'GetJobAdvisorReportCheckObjectsFilterArgsDict']]]]] = None,
+                                                job_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJobAdvisorReportCheckObjectsResult]:
     """
     This data source provides the list of Job Advisor Report Check Objects in Oracle Cloud Infrastructure Database Migration service.
@@ -141,7 +141,7 @@ def get_job_advisor_report_check_objects_output(advisor_report_check_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_job_advisor_report_check_objects = oci.DatabaseMigration.get_job_advisor_report_check_objects(advisor_report_check_id=test_advisor_report_check["id"],
+    test_job_advisor_report_check_objects = oci.databasemigration.get_job_advisor_report_check_objects(advisor_report_check_id=test_advisor_report_check["id"],
         job_id=test_job["id"])
     ```
 

@@ -138,10 +138,10 @@ def get_inventory_records(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_inventory_records = oci.FleetAppsManagement.get_inventory_records(compartment_id=compartment_id,
-        compartment_id_in_subtree=inventory_record_compartment_id_in_subtree,
+    test_inventory_records = oci.fleetappsmanagement.get_inventory_records(compartment_id=compartment_id,
+        compartment_id_in_subtree=inventory_record_compartment_id_in_subtree == "true",
         fleet_id=test_fleet["id"],
-        is_details_required=inventory_record_is_details_required,
+        is_details_required=inventory_record_is_details_required == "true",
         resource_id=test_resource["id"])
     ```
 
@@ -171,12 +171,12 @@ def get_inventory_records(compartment_id: Optional[_builtins.str] = None,
         inventory_record_collections=pulumi.get(__ret__, 'inventory_record_collections'),
         is_details_required=pulumi.get(__ret__, 'is_details_required'),
         resource_id=pulumi.get(__ret__, 'resource_id'))
-def get_inventory_records_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInventoryRecordsFilterArgs', 'GetInventoryRecordsFilterArgsDict']]]]] = None,
-                                 fleet_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 is_details_required: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                 resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_inventory_records_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInventoryRecordsFilterArgs', 'GetInventoryRecordsFilterArgsDict']]]]] = None,
+                                 fleet_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 is_details_required: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                 resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInventoryRecordsResult]:
     """
     This data source provides the list of Inventory Records in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -189,10 +189,10 @@ def get_inventory_records_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_inventory_records = oci.FleetAppsManagement.get_inventory_records(compartment_id=compartment_id,
-        compartment_id_in_subtree=inventory_record_compartment_id_in_subtree,
+    test_inventory_records = oci.fleetappsmanagement.get_inventory_records(compartment_id=compartment_id,
+        compartment_id_in_subtree=inventory_record_compartment_id_in_subtree == "true",
         fleet_id=test_fleet["id"],
-        is_details_required=inventory_record_is_details_required,
+        is_details_required=inventory_record_is_details_required == "true",
         resource_id=test_resource["id"])
     ```
 

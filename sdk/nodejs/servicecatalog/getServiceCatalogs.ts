@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceCatalogs = oci.ServiceCatalog.getServiceCatalogs({
+ * const testServiceCatalogs = oci.servicecatalog.getServiceCatalogs({
  *     compartmentId: compartmentId,
  *     displayName: serviceCatalogDisplayName,
  *     serviceCatalogId: testServiceCatalog.id,
@@ -97,7 +97,7 @@ export interface GetServiceCatalogsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceCatalogs = oci.ServiceCatalog.getServiceCatalogs({
+ * const testServiceCatalogs = oci.servicecatalog.getServiceCatalogs({
  *     compartmentId: compartmentId,
  *     displayName: serviceCatalogDisplayName,
  *     serviceCatalogId: testServiceCatalog.id,
@@ -127,14 +127,14 @@ export interface GetServiceCatalogsOutputArgs {
     /**
      * Exact match name filter.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ServiceCatalog.GetServiceCatalogsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ServiceCatalog.GetServiceCatalogsFilterArgs>[] | undefined>;
     /**
      * The unique identifier for the service catalog.
      */
-    serviceCatalogId?: pulumi.Input<string>;
+    serviceCatalogId?: pulumi.Input<string | undefined>;
     /**
      * Status of the service catalog, use as a filter to filter out all active catalogs.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

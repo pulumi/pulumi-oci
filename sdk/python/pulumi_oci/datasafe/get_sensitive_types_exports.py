@@ -175,9 +175,9 @@ def get_sensitive_types_exports(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_types_exports = oci.DataSafe.get_sensitive_types_exports(compartment_id=compartment_id,
+    test_sensitive_types_exports = oci.datasafe.get_sensitive_types_exports(compartment_id=compartment_id,
         access_level=sensitive_types_export_access_level,
-        compartment_id_in_subtree=sensitive_types_export_compartment_id_in_subtree,
+        compartment_id_in_subtree=sensitive_types_export_compartment_id_in_subtree == "true",
         display_name=sensitive_types_export_display_name,
         sensitive_types_export_id=test_sensitive_types_export["id"],
         state=sensitive_types_export_state,
@@ -224,15 +224,15 @@ def get_sensitive_types_exports(access_level: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
-def get_sensitive_types_exports_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                       display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSensitiveTypesExportsFilterArgs', 'GetSensitiveTypesExportsFilterArgsDict']]]]] = None,
-                                       sensitive_types_export_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       time_created_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_sensitive_types_exports_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSensitiveTypesExportsFilterArgs', 'GetSensitiveTypesExportsFilterArgsDict']]]]] = None,
+                                       sensitive_types_export_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       time_created_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       time_created_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSensitiveTypesExportsResult]:
     """
     This data source provides the list of Sensitive Types Exports in Oracle Cloud Infrastructure Data Safe service.
@@ -246,9 +246,9 @@ def get_sensitive_types_exports_output(access_level: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_types_exports = oci.DataSafe.get_sensitive_types_exports(compartment_id=compartment_id,
+    test_sensitive_types_exports = oci.datasafe.get_sensitive_types_exports(compartment_id=compartment_id,
         access_level=sensitive_types_export_access_level,
-        compartment_id_in_subtree=sensitive_types_export_compartment_id_in_subtree,
+        compartment_id_in_subtree=sensitive_types_export_compartment_id_in_subtree == "true",
         display_name=sensitive_types_export_display_name,
         sensitive_types_export_id=test_sensitive_types_export["id"],
         state=sensitive_types_export_state,

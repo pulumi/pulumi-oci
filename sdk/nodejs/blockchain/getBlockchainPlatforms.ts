@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBlockchainPlatforms = oci.Blockchain.getBlockchainPlatforms({
+ * const testBlockchainPlatforms = oci.blockchain.getBlockchainPlatforms({
  *     compartmentId: compartmentId,
  *     displayName: blockchainPlatformDisplayName,
  *     state: blockchainPlatformState,
@@ -90,7 +90,7 @@ export interface GetBlockchainPlatformsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBlockchainPlatforms = oci.Blockchain.getBlockchainPlatforms({
+ * const testBlockchainPlatforms = oci.blockchain.getBlockchainPlatforms({
  *     compartmentId: compartmentId,
  *     displayName: blockchainPlatformDisplayName,
  *     state: blockchainPlatformState,
@@ -118,10 +118,10 @@ export interface GetBlockchainPlatformsOutputArgs {
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Example: `My new resource`
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Blockchain.GetBlockchainPlatformsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Blockchain.GetBlockchainPlatformsFilterArgs>[] | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

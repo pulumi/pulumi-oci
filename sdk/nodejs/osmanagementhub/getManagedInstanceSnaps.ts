@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceSnaps = oci.OsManagementHub.getManagedInstanceSnaps({
+ * const testManagedInstanceSnaps = oci.osmanagementhub.getManagedInstanceSnaps({
  *     managedInstanceId: testManagedInstance.id,
  *     compartmentId: compartmentId,
  *     name: managedInstanceSnapName,
@@ -91,7 +91,7 @@ export interface GetManagedInstanceSnapsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceSnaps = oci.OsManagementHub.getManagedInstanceSnaps({
+ * const testManagedInstanceSnaps = oci.osmanagementhub.getManagedInstanceSnaps({
  *     managedInstanceId: testManagedInstance.id,
  *     compartmentId: compartmentId,
  *     name: managedInstanceSnapName,
@@ -117,8 +117,8 @@ export interface GetManagedInstanceSnapsOutputArgs {
     /**
      * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagedInstanceSnapsFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagedInstanceSnapsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
@@ -126,9 +126,9 @@ export interface GetManagedInstanceSnapsOutputArgs {
     /**
      * The resource name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that may partially match the name given.
      */
-    nameContains?: pulumi.Input<string>;
+    nameContains?: pulumi.Input<string | undefined>;
 }

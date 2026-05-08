@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSuppressions = oci.Email.getSuppressions({
+ * const testSuppressions = oci.email.getSuppressions({
  *     compartmentId: tenancyOcid,
  *     emailAddress: suppressionEmailAddress,
  *     timeCreatedGreaterThanOrEqualTo: suppressionTimeCreatedGreaterThanOrEqualTo,
@@ -102,7 +102,7 @@ export interface GetSuppressionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSuppressions = oci.Email.getSuppressions({
+ * const testSuppressions = oci.email.getSuppressions({
  *     compartmentId: tenancyOcid,
  *     emailAddress: suppressionEmailAddress,
  *     timeCreatedGreaterThanOrEqualTo: suppressionTimeCreatedGreaterThanOrEqualTo,
@@ -132,18 +132,18 @@ export interface GetSuppressionsOutputArgs {
     /**
      * The email address of the suppression.
      */
-    emailAddress?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Email.GetSuppressionsFilterArgs>[]>;
+    emailAddress?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Email.GetSuppressionsFilterArgs>[] | undefined>;
     /**
      * Search for suppressions that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve suppressions created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * Search for suppressions that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all suppressions created before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeCreatedLessThan?: pulumi.Input<string>;
+    timeCreatedLessThan?: pulumi.Input<string | undefined>;
 }

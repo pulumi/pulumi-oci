@@ -24,13 +24,13 @@ class DedicatedVmHostArgs:
                  availability_domain: pulumi.Input[_builtins.str],
                  compartment_id: pulumi.Input[_builtins.str],
                  dedicated_vm_host_shape: pulumi.Input[_builtins.str],
-                 capacity_config: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_memory_encryption_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 placement_constraint_details: Optional[pulumi.Input['DedicatedVmHostPlacementConstraintDetailsArgs']] = None):
+                 capacity_config: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_memory_encryption_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 placement_constraint_details: pulumi.Input[Optional['DedicatedVmHostPlacementConstraintDetailsArgs']] = None):
         """
         The set of arguments for constructing a DedicatedVmHost resource.
 
@@ -105,43 +105,43 @@ class DedicatedVmHostArgs:
 
     @_builtins.property
     @pulumi.getter(name="capacityConfig")
-    def capacity_config(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def capacity_config(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
         """
         return pulumi.get(self, "capacity_config")
 
     @capacity_config.setter
-    def capacity_config(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def capacity_config(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "capacity_config", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="faultDomain")
-    def fault_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fault_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The fault domain for the dedicated virtual machine host's assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host, delete it and create a new dedicated virtual machine host in the preferred fault domain.
 
@@ -152,67 +152,67 @@ class DedicatedVmHostArgs:
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
-    def fault_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fault_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fault_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isMemoryEncryptionEnabled")
-    def is_memory_encryption_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_memory_encryption_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
         """
         return pulumi.get(self, "is_memory_encryption_enabled")
 
     @is_memory_encryption_enabled.setter
-    def is_memory_encryption_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_memory_encryption_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_memory_encryption_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="placementConstraintDetails")
-    def placement_constraint_details(self) -> Optional[pulumi.Input['DedicatedVmHostPlacementConstraintDetailsArgs']]:
+    def placement_constraint_details(self) -> pulumi.Input[Optional['DedicatedVmHostPlacementConstraintDetailsArgs']]:
         """
         The details for providing placement constraints.
         """
         return pulumi.get(self, "placement_constraint_details")
 
     @placement_constraint_details.setter
-    def placement_constraint_details(self, value: Optional[pulumi.Input['DedicatedVmHostPlacementConstraintDetailsArgs']]):
+    def placement_constraint_details(self, value: pulumi.Input[Optional['DedicatedVmHostPlacementConstraintDetailsArgs']]):
         pulumi.set(self, "placement_constraint_details", value)
 
 
 @pulumi.input_type
 class _DedicatedVmHostState:
     def __init__(__self__, *,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 capacity_bins: Optional[pulumi.Input[Sequence[pulumi.Input['DedicatedVmHostCapacityBinArgs']]]] = None,
-                 capacity_config: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_bare_metal_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 dedicated_vm_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_memory_encryption_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 placement_constraint_details: Optional[pulumi.Input['DedicatedVmHostPlacementConstraintDetailsArgs']] = None,
-                 remaining_memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 remaining_ocpus: Optional[pulumi.Input[_builtins.float]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 total_ocpus: Optional[pulumi.Input[_builtins.float]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 capacity_bins: pulumi.Input[Optional[Sequence[pulumi.Input['DedicatedVmHostCapacityBinArgs']]]] = None,
+                 capacity_config: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_bare_metal_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 dedicated_vm_host_shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_memory_encryption_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 placement_constraint_details: pulumi.Input[Optional['DedicatedVmHostPlacementConstraintDetailsArgs']] = None,
+                 remaining_memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 remaining_ocpus: pulumi.Input[Optional[_builtins.float]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 total_ocpus: pulumi.Input[Optional[_builtins.float]] = None):
         """
         Input properties used for looking up and filtering DedicatedVmHost resources.
 
@@ -277,100 +277,100 @@ class _DedicatedVmHostState:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="capacityBins")
-    def capacity_bins(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DedicatedVmHostCapacityBinArgs']]]]:
+    def capacity_bins(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DedicatedVmHostCapacityBinArgs']]]]:
         return pulumi.get(self, "capacity_bins")
 
     @capacity_bins.setter
-    def capacity_bins(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DedicatedVmHostCapacityBinArgs']]]]):
+    def capacity_bins(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DedicatedVmHostCapacityBinArgs']]]]):
         pulumi.set(self, "capacity_bins", value)
 
     @_builtins.property
     @pulumi.getter(name="capacityConfig")
-    def capacity_config(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def capacity_config(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The capacity configuration selected to be configured for the Dedicated Virtual Machine host.  Run [ListDedicatedVmHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes) API first to see the capacity configuration options.
         """
         return pulumi.get(self, "capacity_config")
 
     @capacity_config.setter
-    def capacity_config(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def capacity_config(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "capacity_config", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeBareMetalHostId")
-    def compute_bare_metal_host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_bare_metal_host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compute bare metal host. This is only available for dedicated capacity customers.
         """
         return pulumi.get(self, "compute_bare_metal_host_id")
 
     @compute_bare_metal_host_id.setter
-    def compute_bare_metal_host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_bare_metal_host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_bare_metal_host_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dedicatedVmHostShape")
-    def dedicated_vm_host_shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dedicated_vm_host_shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
         """
         return pulumi.get(self, "dedicated_vm_host_shape")
 
     @dedicated_vm_host_shape.setter
-    def dedicated_vm_host_shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dedicated_vm_host_shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dedicated_vm_host_shape", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="faultDomain")
-    def fault_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fault_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The fault domain for the dedicated virtual machine host's assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host, delete it and create a new dedicated virtual machine host in the preferred fault domain.
 
@@ -381,115 +381,115 @@ class _DedicatedVmHostState:
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
-    def fault_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fault_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fault_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isMemoryEncryptionEnabled")
-    def is_memory_encryption_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_memory_encryption_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies if the Dedicated Virtual Machine Host (DVMH) is restricted to running only Confidential VMs. If `true`, only Confidential VMs can be launched. If `false`, Confidential VMs cannot be launched.
         """
         return pulumi.get(self, "is_memory_encryption_enabled")
 
     @is_memory_encryption_enabled.setter
-    def is_memory_encryption_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_memory_encryption_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_memory_encryption_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="placementConstraintDetails")
-    def placement_constraint_details(self) -> Optional[pulumi.Input['DedicatedVmHostPlacementConstraintDetailsArgs']]:
+    def placement_constraint_details(self) -> pulumi.Input[Optional['DedicatedVmHostPlacementConstraintDetailsArgs']]:
         """
         The details for providing placement constraints.
         """
         return pulumi.get(self, "placement_constraint_details")
 
     @placement_constraint_details.setter
-    def placement_constraint_details(self, value: Optional[pulumi.Input['DedicatedVmHostPlacementConstraintDetailsArgs']]):
+    def placement_constraint_details(self, value: pulumi.Input[Optional['DedicatedVmHostPlacementConstraintDetailsArgs']]):
         pulumi.set(self, "placement_constraint_details", value)
 
     @_builtins.property
     @pulumi.getter(name="remainingMemoryInGbs")
-    def remaining_memory_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def remaining_memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The current available memory of the dedicated VM host, in GBs.
         """
         return pulumi.get(self, "remaining_memory_in_gbs")
 
     @remaining_memory_in_gbs.setter
-    def remaining_memory_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def remaining_memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "remaining_memory_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="remainingOcpus")
-    def remaining_ocpus(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def remaining_ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The current available OCPUs of the dedicated VM host.
         """
         return pulumi.get(self, "remaining_ocpus")
 
     @remaining_ocpus.setter
-    def remaining_ocpus(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def remaining_ocpus(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "remaining_ocpus", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the dedicated VM host.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="totalMemoryInGbs")
-    def total_memory_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def total_memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The current total memory of the dedicated VM host, in GBs.
         """
         return pulumi.get(self, "total_memory_in_gbs")
 
     @total_memory_in_gbs.setter
-    def total_memory_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def total_memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "total_memory_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="totalOcpus")
-    def total_ocpus(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def total_ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The current total OCPUs of the dedicated VM host.
         """
         return pulumi.get(self, "total_ocpus")
 
     @total_ocpus.setter
-    def total_ocpus(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def total_ocpus(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "total_ocpus", value)
 
 
@@ -499,16 +499,16 @@ class DedicatedVmHost(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 capacity_config: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 dedicated_vm_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_memory_encryption_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 placement_constraint_details: Optional[pulumi.Input[Union['DedicatedVmHostPlacementConstraintDetailsArgs', 'DedicatedVmHostPlacementConstraintDetailsArgsDict']]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 capacity_config: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 dedicated_vm_host_shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_memory_encryption_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 placement_constraint_details: pulumi.Input[Optional[Union['DedicatedVmHostPlacementConstraintDetailsArgs', 'DedicatedVmHostPlacementConstraintDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Dedicated Vm Host resource in Oracle Cloud Infrastructure Core service.
@@ -540,7 +540,7 @@ class DedicatedVmHost(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_memory_encryption_enabled=dedicated_vm_host_is_memory_encryption_enabled,
+            is_memory_encryption_enabled=dedicated_vm_host_is_memory_encryption_enabled == "true",
             placement_constraint_details={
                 "type": dedicated_vm_host_placement_constraint_details_type,
                 "compute_bare_metal_host_id": test_compute_bare_metal_host["id"],
@@ -609,7 +609,7 @@ class DedicatedVmHost(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_memory_encryption_enabled=dedicated_vm_host_is_memory_encryption_enabled,
+            is_memory_encryption_enabled=dedicated_vm_host_is_memory_encryption_enabled == "true",
             placement_constraint_details={
                 "type": dedicated_vm_host_placement_constraint_details_type,
                 "compute_bare_metal_host_id": test_compute_bare_metal_host["id"],
@@ -640,16 +640,16 @@ class DedicatedVmHost(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 capacity_config: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 dedicated_vm_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_memory_encryption_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 placement_constraint_details: Optional[pulumi.Input[Union['DedicatedVmHostPlacementConstraintDetailsArgs', 'DedicatedVmHostPlacementConstraintDetailsArgsDict']]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 capacity_config: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 dedicated_vm_host_shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_memory_encryption_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 placement_constraint_details: pulumi.Input[Optional[Union['DedicatedVmHostPlacementConstraintDetailsArgs', 'DedicatedVmHostPlacementConstraintDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -693,24 +693,24 @@ class DedicatedVmHost(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            capacity_bins: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DedicatedVmHostCapacityBinArgs', 'DedicatedVmHostCapacityBinArgsDict']]]]] = None,
-            capacity_config: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compute_bare_metal_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-            dedicated_vm_host_shape: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_memory_encryption_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            placement_constraint_details: Optional[pulumi.Input[Union['DedicatedVmHostPlacementConstraintDetailsArgs', 'DedicatedVmHostPlacementConstraintDetailsArgsDict']]] = None,
-            remaining_memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-            remaining_ocpus: Optional[pulumi.Input[_builtins.float]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            total_memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-            total_ocpus: Optional[pulumi.Input[_builtins.float]] = None) -> 'DedicatedVmHost':
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            capacity_bins: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DedicatedVmHostCapacityBinArgs', 'DedicatedVmHostCapacityBinArgsDict']]]]] = None,
+            capacity_config: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_bare_metal_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            dedicated_vm_host_shape: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_memory_encryption_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            placement_constraint_details: pulumi.Input[Optional[Union['DedicatedVmHostPlacementConstraintDetailsArgs', 'DedicatedVmHostPlacementConstraintDetailsArgsDict']]] = None,
+            remaining_memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+            remaining_ocpus: pulumi.Input[Optional[_builtins.float]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            total_memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+            total_ocpus: pulumi.Input[Optional[_builtins.float]] = None) -> 'DedicatedVmHost':
         """
         Get an existing DedicatedVmHost resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

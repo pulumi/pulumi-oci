@@ -296,7 +296,7 @@ def get_multicloud_network_anchor(external_location: Optional[_builtins.str] = N
         subscription_id=subscription_id,
         subscription_service_name=subscription_service_name,
         external_location=network_anchor_external_location,
-        should_fetch_vcn_name=should_fetch_vcn_name)
+        should_fetch_vcn_name=should_fetch_vcn_name == "true")
     ```
 
 
@@ -337,11 +337,11 @@ def get_multicloud_network_anchor(external_location: Optional[_builtins.str] = N
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_multicloud_network_anchor_output(external_location: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         network_anchor_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         should_fetch_vcn_name: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                         subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         subscription_service_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_multicloud_network_anchor_output(external_location: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         network_anchor_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         should_fetch_vcn_name: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                         subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         subscription_service_name: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMulticloudNetworkAnchorResult]:
     """
     This data source provides details about a specific Network Anchor resource in Oracle Cloud Infrastructure Multicloud service.
@@ -358,7 +358,7 @@ def get_multicloud_network_anchor_output(external_location: Optional[pulumi.Inpu
         subscription_id=subscription_id,
         subscription_service_name=subscription_service_name,
         external_location=network_anchor_external_location,
-        should_fetch_vcn_name=should_fetch_vcn_name)
+        should_fetch_vcn_name=should_fetch_vcn_name == "true")
     ```
 
 

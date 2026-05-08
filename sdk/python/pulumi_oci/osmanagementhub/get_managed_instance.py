@@ -564,7 +564,7 @@ def get_managed_instance(managed_instance_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance = oci.OsManagementHub.get_managed_instance(managed_instance_id=test_managed_instance_oci_os_management_hub_managed_instance["id"])
+    test_managed_instance = oci.osmanagementhub.get_managed_instance(managed_instance_id=test_managed_instance_oci_os_management_hub_managed_instance["id"])
     ```
 
 
@@ -619,7 +619,7 @@ def get_managed_instance(managed_instance_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         updates_available=pulumi.get(__ret__, 'updates_available'),
         work_request_count=pulumi.get(__ret__, 'work_request_count'))
-def get_managed_instance_output(managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_managed_instance_output(managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceResult]:
     """
     This data source provides details about a specific Managed Instance resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -632,7 +632,7 @@ def get_managed_instance_output(managed_instance_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance = oci.OsManagementHub.get_managed_instance(managed_instance_id=test_managed_instance_oci_os_management_hub_managed_instance["id"])
+    test_managed_instance = oci.osmanagementhub.get_managed_instance(managed_instance_id=test_managed_instance_oci_os_management_hub_managed_instance["id"])
     ```
 
 

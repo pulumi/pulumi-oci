@@ -203,55 +203,55 @@ export interface SemanticStoreState {
     /**
      * (Updatable) Owning compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a SemanticStore.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Defines the data source that the semantic model connects to.
      */
-    dataSource?: pulumi.Input<inputs.GenerativeAi.SemanticStoreDataSource>;
+    dataSource?: pulumi.Input<inputs.GenerativeAi.SemanticStoreDataSource | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional description of the SemanticStore.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A message describing the current state in more detail that can provide actionable information.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specifies a refresh schedule. Null represents no automated synchronization schedule.
      */
-    refreshSchedule?: pulumi.Input<inputs.GenerativeAi.SemanticStoreRefreshSchedule>;
+    refreshSchedule?: pulumi.Input<inputs.GenerativeAi.SemanticStoreRefreshSchedule | undefined>;
     /**
      * (Updatable) Array of database schemas or other database objects to include in enrichment pipeline.
      */
-    schemas?: pulumi.Input<inputs.GenerativeAi.SemanticStoreSchemas>;
+    schemas?: pulumi.Input<inputs.GenerativeAi.SemanticStoreSchemas | undefined>;
     /**
      * The lifecycle state of a SemanticStore.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time that the SemanticStore was created in the format of an RFC3339 datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the SemanticStore was updated in the format of an RFC3339 datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -269,11 +269,11 @@ export interface SemanticStoreArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional description of the SemanticStore.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name.
      */
@@ -281,11 +281,11 @@ export interface SemanticStoreArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Specifies a refresh schedule. Null represents no automated synchronization schedule.
      */
-    refreshSchedule?: pulumi.Input<inputs.GenerativeAi.SemanticStoreRefreshSchedule>;
+    refreshSchedule?: pulumi.Input<inputs.GenerativeAi.SemanticStoreRefreshSchedule | undefined>;
     /**
      * (Updatable) Array of database schemas or other database objects to include in enrichment pipeline.
      */

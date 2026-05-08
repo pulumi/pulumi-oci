@@ -40,7 +40,7 @@ import * as utilities from "../utilities";
  * const testConfiguration = new oci.nosql.Configuration("test_configuration", {
  *     compartmentId: compartmentId,
  *     environment: "HOSTED",
- *     isOpcDryRun: configurationIsOpcDryRun,
+ *     isOpcDryRun: configurationIsOpcDryRun === "true",
  *     kmsKey: {
  *         id: configurationKmsKeyId,
  *         kmsVaultId: testVault.id,
@@ -143,19 +143,19 @@ export interface ConfigurationState {
     /**
      * (Updatable) The tenancy's OCID
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The service environment type.
      */
-    environment?: pulumi.Input<string>;
+    environment?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) If true, indicates that the request is a dry run. A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
      */
-    isOpcDryRun?: pulumi.Input<boolean>;
+    isOpcDryRun?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Information about the state of the service's encryption key management. The following properties are read-only and ignored when this object is used in UpdateConfiguration: kmsKeyState, timeCreated, timeUpdated.
      */
-    kmsKey?: pulumi.Input<inputs.Nosql.ConfigurationKmsKey>;
+    kmsKey?: pulumi.Input<inputs.Nosql.ConfigurationKmsKey | undefined>;
 }
 
 /**
@@ -173,9 +173,9 @@ export interface ConfigurationArgs {
     /**
      * (Updatable) If true, indicates that the request is a dry run. A dry run request does not modify the configuration item details and is used only to perform validation on the submitted data.
      */
-    isOpcDryRun?: pulumi.Input<boolean>;
+    isOpcDryRun?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Information about the state of the service's encryption key management. The following properties are read-only and ignored when this object is used in UpdateConfiguration: kmsKeyState, timeCreated, timeUpdated.
      */
-    kmsKey?: pulumi.Input<inputs.Nosql.ConfigurationKmsKey>;
+    kmsKey?: pulumi.Input<inputs.Nosql.ConfigurationKmsKey | undefined>;
 }

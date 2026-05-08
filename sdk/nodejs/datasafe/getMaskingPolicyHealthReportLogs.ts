@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingPolicyHealthReportLogs = oci.DataSafe.getMaskingPolicyHealthReportLogs({
+ * const testMaskingPolicyHealthReportLogs = oci.datasafe.getMaskingPolicyHealthReportLogs({
  *     maskingPolicyHealthReportId: testMaskingPolicyHealthReport.id,
  *     messageType: maskingPolicyHealthReportLogMessageType,
  * });
@@ -77,7 +77,7 @@ export interface GetMaskingPolicyHealthReportLogsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingPolicyHealthReportLogs = oci.DataSafe.getMaskingPolicyHealthReportLogs({
+ * const testMaskingPolicyHealthReportLogs = oci.datasafe.getMaskingPolicyHealthReportLogs({
  *     maskingPolicyHealthReportId: testMaskingPolicyHealthReport.id,
  *     messageType: maskingPolicyHealthReportLogMessageType,
  * });
@@ -96,7 +96,7 @@ export function getMaskingPolicyHealthReportLogsOutput(args: GetMaskingPolicyHea
  * A collection of arguments for invoking getMaskingPolicyHealthReportLogs.
  */
 export interface GetMaskingPolicyHealthReportLogsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetMaskingPolicyHealthReportLogsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetMaskingPolicyHealthReportLogsFilterArgs>[] | undefined>;
     /**
      * The OCID of the masking health report.
      */
@@ -104,5 +104,5 @@ export interface GetMaskingPolicyHealthReportLogsOutputArgs {
     /**
      * A filter to return only the resources that match the specified log message type.
      */
-    messageType?: pulumi.Input<string>;
+    messageType?: pulumi.Input<string | undefined>;
 }

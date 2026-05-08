@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInternalOccmDemandSignals = oci.CapacityManagement.getInternalOccmDemandSignals({
+ * const testInternalOccmDemandSignals = oci.capacitymanagement.getInternalOccmDemandSignals({
  *     compartmentId: compartmentId,
  *     occCustomerGroupId: testOccCustomerGroup.id,
  *     displayName: internalOccmDemandSignalDisplayName,
@@ -106,7 +106,7 @@ export interface GetInternalOccmDemandSignalsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInternalOccmDemandSignals = oci.CapacityManagement.getInternalOccmDemandSignals({
+ * const testInternalOccmDemandSignals = oci.capacitymanagement.getInternalOccmDemandSignals({
  *     compartmentId: compartmentId,
  *     occCustomerGroupId: testOccCustomerGroup.id,
  *     displayName: internalOccmDemandSignalDisplayName,
@@ -138,16 +138,16 @@ export interface GetInternalOccmDemandSignalsOutputArgs {
     /**
      * A filter to return only the resources that match the entire display name. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetInternalOccmDemandSignalsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetInternalOccmDemandSignalsFilterArgs>[] | undefined>;
     /**
      * A query parameter to filter the list of demand signals based on it's OCID.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A query parameter to filter the list of demand signals based on its state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The customer group ocid by which we would filter the list.
      */

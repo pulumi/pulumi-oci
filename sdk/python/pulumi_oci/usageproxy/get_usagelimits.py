@@ -138,7 +138,7 @@ def get_usagelimits(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_usagelimits = oci.UsageProxy.get_usagelimits(compartment_id=compartment_id,
+    test_usagelimits = oci.usageproxy.get_usagelimits(compartment_id=compartment_id,
         subscription_id=test_subscription["id"],
         limit_type=usagelimit_limit_type,
         resource_type=usagelimit_resource_type,
@@ -171,12 +171,12 @@ def get_usagelimits(compartment_id: Optional[_builtins.str] = None,
         service_type=pulumi.get(__ret__, 'service_type'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         usage_limit_collections=pulumi.get(__ret__, 'usage_limit_collections'))
-def get_usagelimits_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetUsagelimitsFilterArgs', 'GetUsagelimitsFilterArgsDict']]]]] = None,
-                           limit_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           resource_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           service_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_usagelimits_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUsagelimitsFilterArgs', 'GetUsagelimitsFilterArgsDict']]]]] = None,
+                           limit_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           service_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUsagelimitsResult]:
     """
     This data source provides the list of Usagelimits in Oracle Cloud Infrastructure Usage Proxy service.
@@ -189,7 +189,7 @@ def get_usagelimits_output(compartment_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_usagelimits = oci.UsageProxy.get_usagelimits(compartment_id=compartment_id,
+    test_usagelimits = oci.usageproxy.get_usagelimits(compartment_id=compartment_id,
         subscription_id=test_subscription["id"],
         limit_type=usagelimit_limit_type,
         resource_type=usagelimit_resource_type,

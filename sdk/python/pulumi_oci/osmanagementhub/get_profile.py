@@ -363,7 +363,7 @@ def get_profile(profile_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_profile = oci.OsManagementHub.get_profile(profile_id=test_profile_oci_os_management_hub_profile["id"])
+    test_profile = oci.osmanagementhub.get_profile(profile_id=test_profile_oci_os_management_hub_profile["id"])
     ```
 
 
@@ -402,7 +402,7 @@ def get_profile(profile_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_modified=pulumi.get(__ret__, 'time_modified'),
         vendor_name=pulumi.get(__ret__, 'vendor_name'))
-def get_profile_output(profile_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_profile_output(profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProfileResult]:
     """
     This data source provides details about a specific Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -415,7 +415,7 @@ def get_profile_output(profile_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_profile = oci.OsManagementHub.get_profile(profile_id=test_profile_oci_os_management_hub_profile["id"])
+    test_profile = oci.osmanagementhub.get_profile(profile_id=test_profile_oci_os_management_hub_profile["id"])
     ```
 
 

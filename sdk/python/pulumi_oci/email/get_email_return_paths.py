@@ -138,7 +138,7 @@ def get_email_return_paths(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_email_return_paths = oci.Email.get_email_return_paths(compartment_id=compartment_id,
+    test_email_return_paths = oci.email.get_email_return_paths(compartment_id=compartment_id,
         id=email_return_path_id,
         name=email_return_path_name,
         parent_resource_id=test_resource["id"],
@@ -170,12 +170,12 @@ def get_email_return_paths(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         parent_resource_id=pulumi.get(__ret__, 'parent_resource_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_email_return_paths_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetEmailReturnPathsFilterArgs', 'GetEmailReturnPathsFilterArgsDict']]]]] = None,
-                                  id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  parent_resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_email_return_paths_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetEmailReturnPathsFilterArgs', 'GetEmailReturnPathsFilterArgsDict']]]]] = None,
+                                  id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  parent_resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEmailReturnPathsResult]:
     """
     This data source provides the list of Email Return Paths in Oracle Cloud Infrastructure Email service.
@@ -188,7 +188,7 @@ def get_email_return_paths_output(compartment_id: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_email_return_paths = oci.Email.get_email_return_paths(compartment_id=compartment_id,
+    test_email_return_paths = oci.email.get_email_return_paths(compartment_id=compartment_id,
         id=email_return_path_id,
         name=email_return_path_name,
         parent_resource_id=test_resource["id"],

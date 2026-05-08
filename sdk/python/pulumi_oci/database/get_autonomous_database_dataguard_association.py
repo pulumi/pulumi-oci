@@ -216,7 +216,7 @@ def get_autonomous_database_dataguard_association(autonomous_database_dataguard_
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_dataguard_association = oci.Database.get_autonomous_database_dataguard_association(autonomous_database_dataguard_association_id=test_autonomous_database_dataguard_association_oci_database_autonomous_database_dataguard_association["id"],
+    test_autonomous_database_dataguard_association = oci.database.get_autonomous_database_dataguard_association(autonomous_database_dataguard_association_id=test_autonomous_database_dataguard_association_oci_database_autonomous_database_dataguard_association["id"],
         autonomous_database_id=test_autonomous_database["id"])
     ```
 
@@ -245,8 +245,8 @@ def get_autonomous_database_dataguard_association(autonomous_database_dataguard_
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_role_changed=pulumi.get(__ret__, 'time_last_role_changed'))
-def get_autonomous_database_dataguard_association_output(autonomous_database_dataguard_association_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                         autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_autonomous_database_dataguard_association_output(autonomous_database_dataguard_association_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                         autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabaseDataguardAssociationResult]:
     """
     This data source provides details about a specific Autonomous Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
@@ -259,7 +259,7 @@ def get_autonomous_database_dataguard_association_output(autonomous_database_dat
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_dataguard_association = oci.Database.get_autonomous_database_dataguard_association(autonomous_database_dataguard_association_id=test_autonomous_database_dataguard_association_oci_database_autonomous_database_dataguard_association["id"],
+    test_autonomous_database_dataguard_association = oci.database.get_autonomous_database_dataguard_association(autonomous_database_dataguard_association_id=test_autonomous_database_dataguard_association_oci_database_autonomous_database_dataguard_association["id"],
         autonomous_database_id=test_autonomous_database["id"])
     ```
 

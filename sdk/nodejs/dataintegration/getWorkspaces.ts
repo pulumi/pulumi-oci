@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaces = oci.DataIntegration.getWorkspaces({
+ * const testWorkspaces = oci.dataintegration.getWorkspaces({
  *     compartmentId: compartmentId,
  *     name: workspaceName,
  *     state: workspaceState,
@@ -87,7 +87,7 @@ export interface GetWorkspacesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaces = oci.DataIntegration.getWorkspaces({
+ * const testWorkspaces = oci.dataintegration.getWorkspaces({
  *     compartmentId: compartmentId,
  *     name: workspaceName,
  *     state: workspaceState,
@@ -112,13 +112,13 @@ export interface GetWorkspacesOutputArgs {
      * The OCID of the compartment containing the resources you want to list.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataIntegration.GetWorkspacesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataIntegration.GetWorkspacesFilterArgs>[] | undefined>;
     /**
      * Used to filter by the name of the object.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of a resource. When specified, the operation only returns resources that match the given lifecycle state. When not specified, all lifecycle states are processed as a match.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

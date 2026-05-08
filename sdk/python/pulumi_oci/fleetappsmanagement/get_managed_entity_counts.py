@@ -105,8 +105,8 @@ def get_managed_entity_counts(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_entity_counts = oci.FleetAppsManagement.get_managed_entity_counts(compartment_id=compartment_id,
-        compartment_id_in_subtree=managed_entity_count_compartment_id_in_subtree)
+    test_managed_entity_counts = oci.fleetappsmanagement.get_managed_entity_counts(compartment_id=compartment_id,
+        compartment_id_in_subtree=managed_entity_count_compartment_id_in_subtree == "true")
     ```
 
 
@@ -126,9 +126,9 @@ def get_managed_entity_counts(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         managed_entity_aggregation_collections=pulumi.get(__ret__, 'managed_entity_aggregation_collections'))
-def get_managed_entity_counts_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedEntityCountsFilterArgs', 'GetManagedEntityCountsFilterArgsDict']]]]] = None,
+def get_managed_entity_counts_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedEntityCountsFilterArgs', 'GetManagedEntityCountsFilterArgsDict']]]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedEntityCountsResult]:
     """
     This data source provides the list of Managed Entity Counts in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -141,8 +141,8 @@ def get_managed_entity_counts_output(compartment_id: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_entity_counts = oci.FleetAppsManagement.get_managed_entity_counts(compartment_id=compartment_id,
-        compartment_id_in_subtree=managed_entity_count_compartment_id_in_subtree)
+    test_managed_entity_counts = oci.fleetappsmanagement.get_managed_entity_counts(compartment_id=compartment_id,
+        compartment_id_in_subtree=managed_entity_count_compartment_id_in_subtree == "true")
     ```
 
 

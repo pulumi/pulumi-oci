@@ -160,11 +160,11 @@ def get_apiaccesscontrol_api_metadata_by_entity_types(compartment_id: Optional[_
         id=pulumi.get(__ret__, 'id'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
         state=pulumi.get(__ret__, 'state'))
-def get_apiaccesscontrol_api_metadata_by_entity_types_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetApiaccesscontrolApiMetadataByEntityTypesFilterArgs', 'GetApiaccesscontrolApiMetadataByEntityTypesFilterArgsDict']]]]] = None,
-                                                             resource_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                             state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_apiaccesscontrol_api_metadata_by_entity_types_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetApiaccesscontrolApiMetadataByEntityTypesFilterArgs', 'GetApiaccesscontrolApiMetadataByEntityTypesFilterArgsDict']]]]] = None,
+                                                             resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApiaccesscontrolApiMetadataByEntityTypesResult]:
     """
     This data source provides the list of Api Metadata By Entity Types in Oracle Cloud Infrastructure Apiaccesscontrol service.

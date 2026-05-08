@@ -125,7 +125,7 @@ def get_vision_private_endpoints(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vision_private_endpoints = oci.AiVision.get_vision_private_endpoints(compartment_id=compartment_id,
+    test_vision_private_endpoints = oci.aivision.get_vision_private_endpoints(compartment_id=compartment_id,
         display_name=vision_private_endpoint_display_name,
         id=vision_private_endpoint_id,
         state=vision_private_endpoint_state)
@@ -153,11 +153,11 @@ def get_vision_private_endpoints(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         vision_private_endpoint_collections=pulumi.get(__ret__, 'vision_private_endpoint_collections'))
-def get_vision_private_endpoints_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVisionPrivateEndpointsFilterArgs', 'GetVisionPrivateEndpointsFilterArgsDict']]]]] = None,
-                                        id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_vision_private_endpoints_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVisionPrivateEndpointsFilterArgs', 'GetVisionPrivateEndpointsFilterArgsDict']]]]] = None,
+                                        id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVisionPrivateEndpointsResult]:
     """
     This data source provides the list of Vision Private Endpoints in Oracle Cloud Infrastructure Ai Vision service.
@@ -170,7 +170,7 @@ def get_vision_private_endpoints_output(compartment_id: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_vision_private_endpoints = oci.AiVision.get_vision_private_endpoints(compartment_id=compartment_id,
+    test_vision_private_endpoints = oci.aivision.get_vision_private_endpoints(compartment_id=compartment_id,
         display_name=vision_private_endpoint_display_name,
         id=vision_private_endpoint_id,
         state=vision_private_endpoint_state)

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleets = oci.FleetAppsManagement.getFleets({
+ * const testFleets = oci.fleetappsmanagement.getFleets({
  *     applicationType: fleetApplicationType,
  *     compartmentId: compartmentId,
  *     displayName: fleetDisplayName,
@@ -133,7 +133,7 @@ export interface GetFleetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleets = oci.FleetAppsManagement.getFleets({
+ * const testFleets = oci.fleetappsmanagement.getFleets({
  *     applicationType: fleetApplicationType,
  *     compartmentId: compartmentId,
  *     displayName: fleetDisplayName,
@@ -168,34 +168,34 @@ export interface GetFleetsOutputArgs {
     /**
      * A filter to return resources that match the Application Type/Product Stack given..
      */
-    applicationType?: pulumi.Input<string>;
+    applicationType?: pulumi.Input<string | undefined>;
     /**
      * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that match the Environment Type given.
      */
-    environmentType?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetFleetsFilterArgs>[]>;
+    environmentType?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetFleetsFilterArgs>[] | undefined>;
     /**
      * A filter to return fleets whose fleetType matches the given fleetType.
      */
-    fleetType?: pulumi.Input<string>;
+    fleetType?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier or OCID for listing a single fleet by id. Either compartmentId or id must be provided.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that match the Product/Product Stack given.
      */
-    product?: pulumi.Input<string>;
+    product?: pulumi.Input<string | undefined>;
     /**
      * A filter to return fleets whose lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

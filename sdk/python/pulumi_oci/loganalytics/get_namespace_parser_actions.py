@@ -118,7 +118,7 @@ def get_namespace_parser_actions(action_display_text: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_parser_actions = oci.LogAnalytics.get_namespace_parser_actions(namespace=namespace_parser_action_namespace,
+    test_namespace_parser_actions = oci.loganalytics.get_namespace_parser_actions(namespace=namespace_parser_action_namespace,
         action_display_text=namespace_parser_action_action_display_text,
         name=namespace_parser_action_name)
     ```
@@ -143,10 +143,10 @@ def get_namespace_parser_actions(action_display_text: Optional[_builtins.str] = 
         name=pulumi.get(__ret__, 'name'),
         namespace=pulumi.get(__ret__, 'namespace'),
         parser_action_summary_collections=pulumi.get(__ret__, 'parser_action_summary_collections'))
-def get_namespace_parser_actions_output(action_display_text: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamespaceParserActionsFilterArgs', 'GetNamespaceParserActionsFilterArgsDict']]]]] = None,
-                                        name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_namespace_parser_actions_output(action_display_text: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespaceParserActionsFilterArgs', 'GetNamespaceParserActionsFilterArgsDict']]]]] = None,
+                                        name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceParserActionsResult]:
     """
     This data source provides the list of Namespace Parser Actions in Oracle Cloud Infrastructure Log Analytics service.
@@ -159,7 +159,7 @@ def get_namespace_parser_actions_output(action_display_text: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_parser_actions = oci.LogAnalytics.get_namespace_parser_actions(namespace=namespace_parser_action_namespace,
+    test_namespace_parser_actions = oci.loganalytics.get_namespace_parser_actions(namespace=namespace_parser_action_namespace,
         action_display_text=namespace_parser_action_action_display_text,
         name=namespace_parser_action_name)
     ```

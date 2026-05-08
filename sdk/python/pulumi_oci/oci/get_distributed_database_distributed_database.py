@@ -702,8 +702,8 @@ def get_distributed_database_distributed_database(distributed_database_id: Optio
         upload_signed_certificate_and_generate_wallet_trigger=pulumi.get(__ret__, 'upload_signed_certificate_and_generate_wallet_trigger'),
         validate_network_details=pulumi.get(__ret__, 'validate_network_details'),
         validate_network_trigger=pulumi.get(__ret__, 'validate_network_trigger'))
-def get_distributed_database_distributed_database_output(distributed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                         metadata: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_distributed_database_distributed_database_output(distributed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                         metadata: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDistributedDatabaseDistributedDatabaseResult]:
     """
     This data source provides details about a specific Distributed Database resource in Oracle Cloud Infrastructure Distributed Database service.

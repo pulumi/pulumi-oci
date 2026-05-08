@@ -128,7 +128,7 @@ def get_managed_database_cursor_cache_statements(filters: Optional[Sequence[Unio
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_cursor_cache_statements = oci.DatabaseManagement.get_managed_database_cursor_cache_statements(managed_database_id=test_managed_database["id"],
+    test_managed_database_cursor_cache_statements = oci.databasemanagement.get_managed_database_cursor_cache_statements(managed_database_id=test_managed_database["id"],
         opc_named_credential_id=managed_database_cursor_cache_statement_opc_named_credential_id,
         sql_text=managed_database_cursor_cache_statement_sql_text)
     ```
@@ -155,11 +155,11 @@ def get_managed_database_cursor_cache_statements(filters: Optional[Sequence[Unio
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'),
         sql_text=pulumi.get(__ret__, 'sql_text'))
-def get_managed_database_cursor_cache_statements_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseCursorCacheStatementsFilterArgs', 'GetManagedDatabaseCursorCacheStatementsFilterArgsDict']]]]] = None,
-                                                        limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                                        managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                        opc_named_credential_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                        sql_text: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_managed_database_cursor_cache_statements_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseCursorCacheStatementsFilterArgs', 'GetManagedDatabaseCursorCacheStatementsFilterArgsDict']]]]] = None,
+                                                        limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                                        managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                        opc_named_credential_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                        sql_text: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseCursorCacheStatementsResult]:
     """
     This data source provides the list of Managed Database Cursor Cache Statements in Oracle Cloud Infrastructure Database Management service.
@@ -172,7 +172,7 @@ def get_managed_database_cursor_cache_statements_output(filters: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_cursor_cache_statements = oci.DatabaseManagement.get_managed_database_cursor_cache_statements(managed_database_id=test_managed_database["id"],
+    test_managed_database_cursor_cache_statements = oci.databasemanagement.get_managed_database_cursor_cache_statements(managed_database_id=test_managed_database["id"],
         opc_named_credential_id=managed_database_cursor_cache_statement_opc_named_credential_id,
         sql_text=managed_database_cursor_cache_statement_sql_text)
     ```

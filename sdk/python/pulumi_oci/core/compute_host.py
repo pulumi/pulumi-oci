@@ -22,8 +22,8 @@ __all__ = ['ComputeHostArgs', 'ComputeHost']
 class ComputeHostArgs:
     def __init__(__self__, *,
                  compute_host_id: pulumi.Input[_builtins.str],
-                 compute_host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configuration_action_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 compute_host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configuration_action_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ComputeHost resource.
 
@@ -51,61 +51,61 @@ class ComputeHostArgs:
 
     @_builtins.property
     @pulumi.getter(name="computeHostGroupId")
-    def compute_host_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_host_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
         """
         return pulumi.get(self, "compute_host_group_id")
 
     @compute_host_group_id.setter
-    def compute_host_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_host_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_host_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="configurationActionType")
-    def configuration_action_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def configuration_action_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
         """
         return pulumi.get(self, "configuration_action_type")
 
     @configuration_action_type.setter
-    def configuration_action_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def configuration_action_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "configuration_action_type", value)
 
 
 @pulumi.input_type
 class _ComputeHostState:
     def __init__(__self__, *,
-                 additional_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configuration_action_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 configuration_datas: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeHostConfigurationDataArgs']]]] = None,
-                 configuration_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 firmware_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 gpu_memory_fabric_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 health: Optional[pulumi.Input[_builtins.str]] = None,
-                 hpc_island_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 impacted_component_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 local_block_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_block_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 platform: Optional[pulumi.Input[_builtins.str]] = None,
-                 recycle_details: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeHostRecycleDetailArgs']]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_configuration_check: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 additional_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configuration_action_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 configuration_datas: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeHostConfigurationDataArgs']]]] = None,
+                 configuration_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 firmware_bundle_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gpu_memory_fabric_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 health: pulumi.Input[Optional[_builtins.str]] = None,
+                 hpc_island_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 impacted_component_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 local_block_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_block_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 platform: pulumi.Input[Optional[_builtins.str]] = None,
+                 recycle_details: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeHostRecycleDetailArgs']]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_configuration_check: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ComputeHost resources.
 
@@ -200,350 +200,350 @@ class _ComputeHostState:
 
     @_builtins.property
     @pulumi.getter(name="additionalData")
-    def additional_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def additional_data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional data that can be exposed to the customer.  Will include raw fault codes for strategic customers
         """
         return pulumi.get(self, "additional_data")
 
     @additional_data.setter
-    def additional_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def additional_data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "additional_data", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability domain of the compute host.  Example: `Uocm:US-CHICAGO-1-AD-2`
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="capacityReservationId")
-    def capacity_reservation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def capacity_reservation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Capacity Reserver that is currently on host
         """
         return pulumi.get(self, "capacity_reservation_id")
 
     @capacity_reservation_id.setter
-    def capacity_reservation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def capacity_reservation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "capacity_reservation_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeHostGroupId")
-    def compute_host_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_host_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
         """
         return pulumi.get(self, "compute_host_group_id")
 
     @compute_host_group_id.setter
-    def compute_host_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_host_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_host_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeHostId")
-    def compute_host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_host_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host.
         """
         return pulumi.get(self, "compute_host_id")
 
     @compute_host_id.setter
-    def compute_host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_host_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_host_id", value)
 
     @_builtins.property
     @pulumi.getter(name="configurationActionType")
-    def configuration_action_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def configuration_action_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
         """
         return pulumi.get(self, "configuration_action_type")
 
     @configuration_action_type.setter
-    def configuration_action_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def configuration_action_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "configuration_action_type", value)
 
     @_builtins.property
     @pulumi.getter(name="configurationDatas")
-    def configuration_datas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ComputeHostConfigurationDataArgs']]]]:
+    def configuration_datas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ComputeHostConfigurationDataArgs']]]]:
         """
         Compute Host Configuration Data
         """
         return pulumi.get(self, "configuration_datas")
 
     @configuration_datas.setter
-    def configuration_datas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeHostConfigurationDataArgs']]]]):
+    def configuration_datas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeHostConfigurationDataArgs']]]]):
         pulumi.set(self, "configuration_datas", value)
 
     @_builtins.property
     @pulumi.getter(name="configurationState")
-    def configuration_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def configuration_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Configuration state of the Compute Bare Metal Host.
         """
         return pulumi.get(self, "configuration_state")
 
     @configuration_state.setter
-    def configuration_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def configuration_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "configuration_state", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="faultDomain")
-    def fault_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fault_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
         """
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
-    def fault_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fault_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fault_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="firmwareBundleId")
-    def firmware_bundle_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def firmware_bundle_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
         """
         return pulumi.get(self, "firmware_bundle_id")
 
     @firmware_bundle_id.setter
-    def firmware_bundle_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def firmware_bundle_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "firmware_bundle_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="gpuMemoryFabricId")
-    def gpu_memory_fabric_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def gpu_memory_fabric_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique GPU Memory Fabric
         """
         return pulumi.get(self, "gpu_memory_fabric_id")
 
     @gpu_memory_fabric_id.setter
-    def gpu_memory_fabric_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def gpu_memory_fabric_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "gpu_memory_fabric_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def health(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def health(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The heathy state of the host
         """
         return pulumi.get(self, "health")
 
     @health.setter
-    def health(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def health(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "health", value)
 
     @_builtins.property
     @pulumi.getter(name="hpcIslandId")
-    def hpc_island_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hpc_island_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island
         """
         return pulumi.get(self, "hpc_island_id")
 
     @hpc_island_id.setter
-    def hpc_island_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hpc_island_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hpc_island_id", value)
 
     @_builtins.property
     @pulumi.getter(name="impactedComponentDetails")
-    def impacted_component_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def impacted_component_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A list that contains impacted components related to an unhealthy host. An impacted component will be a  free-form structure of key values pairs that will provide more or less details based on data tiering
         """
         return pulumi.get(self, "impacted_component_details")
 
     @impacted_component_details.setter
-    def impacted_component_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def impacted_component_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "impacted_component_details", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceId")
-    def instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The public [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Virtual Machine or Bare Metal instance
         """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
-    def instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         A free-form description detailing why the host is in its current state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="localBlockId")
-    def local_block_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def local_block_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Local Block
         """
         return pulumi.get(self, "local_block_id")
 
     @local_block_id.setter
-    def local_block_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def local_block_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "local_block_id", value)
 
     @_builtins.property
     @pulumi.getter(name="networkBlockId")
-    def network_block_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_block_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
         """
         return pulumi.get(self, "network_block_id")
 
     @network_block_id.setter
-    def network_block_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_block_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_block_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def platform(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def platform(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The platform of the host
         """
         return pulumi.get(self, "platform")
 
     @platform.setter
-    def platform(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def platform(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "platform", value)
 
     @_builtins.property
     @pulumi.getter(name="recycleDetails")
-    def recycle_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ComputeHostRecycleDetailArgs']]]]:
+    def recycle_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ComputeHostRecycleDetailArgs']]]]:
         """
         Shows details about the last recycle performed on this host.
         """
         return pulumi.get(self, "recycle_details")
 
     @recycle_details.setter
-    def recycle_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeHostRecycleDetailArgs']]]]):
+    def recycle_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeHostRecycleDetailArgs']]]]):
         pulumi.set(self, "recycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The shape of host
         """
         return pulumi.get(self, "shape")
 
     @shape.setter
-    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of the host
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeConfigurationCheck")
-    def time_configuration_check(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_configuration_check(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the compute bare metal host configuration check was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_configuration_check")
 
     @time_configuration_check.setter
-    def time_configuration_check(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_configuration_check(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_configuration_check", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the compute host record was created, in the format defined by [RFC3339](https://tools .ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the compute host record was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -553,9 +553,9 @@ class ComputeHost(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compute_host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configuration_action_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 compute_host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configuration_action_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Compute Host resource in Oracle Cloud Infrastructure Core service.
@@ -618,9 +618,9 @@ class ComputeHost(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compute_host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configuration_action_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 compute_host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configuration_action_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -671,35 +671,35 @@ class ComputeHost(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            additional_data: Optional[pulumi.Input[_builtins.str]] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compute_host_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compute_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-            configuration_action_type: Optional[pulumi.Input[_builtins.str]] = None,
-            configuration_datas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ComputeHostConfigurationDataArgs', 'ComputeHostConfigurationDataArgsDict']]]]] = None,
-            configuration_state: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            firmware_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            gpu_memory_fabric_id: Optional[pulumi.Input[_builtins.str]] = None,
-            health: Optional[pulumi.Input[_builtins.str]] = None,
-            hpc_island_id: Optional[pulumi.Input[_builtins.str]] = None,
-            impacted_component_details: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            local_block_id: Optional[pulumi.Input[_builtins.str]] = None,
-            network_block_id: Optional[pulumi.Input[_builtins.str]] = None,
-            platform: Optional[pulumi.Input[_builtins.str]] = None,
-            recycle_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ComputeHostRecycleDetailArgs', 'ComputeHostRecycleDetailArgsDict']]]]] = None,
-            shape: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_configuration_check: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'ComputeHost':
+            additional_data: pulumi.Input[Optional[_builtins.str]] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            configuration_action_type: pulumi.Input[Optional[_builtins.str]] = None,
+            configuration_datas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeHostConfigurationDataArgs', 'ComputeHostConfigurationDataArgsDict']]]]] = None,
+            configuration_state: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            firmware_bundle_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            gpu_memory_fabric_id: pulumi.Input[Optional[_builtins.str]] = None,
+            health: pulumi.Input[Optional[_builtins.str]] = None,
+            hpc_island_id: pulumi.Input[Optional[_builtins.str]] = None,
+            impacted_component_details: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            local_block_id: pulumi.Input[Optional[_builtins.str]] = None,
+            network_block_id: pulumi.Input[Optional[_builtins.str]] = None,
+            platform: pulumi.Input[Optional[_builtins.str]] = None,
+            recycle_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeHostRecycleDetailArgs', 'ComputeHostRecycleDetailArgsDict']]]]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_configuration_check: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'ComputeHost':
         """
         Get an existing ComputeHost resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

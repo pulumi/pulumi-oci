@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaintenanceWindows = oci.FleetAppsManagement.getMaintenanceWindows({
+ * const testMaintenanceWindows = oci.fleetappsmanagement.getMaintenanceWindows({
  *     compartmentId: compartmentId,
  *     displayName: maintenanceWindowDisplayName,
  *     id: maintenanceWindowId,
@@ -106,7 +106,7 @@ export interface GetMaintenanceWindowsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaintenanceWindows = oci.FleetAppsManagement.getMaintenanceWindows({
+ * const testMaintenanceWindows = oci.fleetappsmanagement.getMaintenanceWindows({
  *     compartmentId: compartmentId,
  *     displayName: maintenanceWindowDisplayName,
  *     id: maintenanceWindowId,
@@ -135,22 +135,22 @@ export interface GetMaintenanceWindowsOutputArgs {
     /**
      * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetMaintenanceWindowsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetMaintenanceWindowsFilterArgs>[] | undefined>;
     /**
      * Unique identifier or OCID for listing a single maintenance window by id. Either compartmentId or id must be provided.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose timeScheduleStart is greater than or equal to the provided date and time.
      */
-    timeScheduleStartGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeScheduleStartGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
 }

@@ -162,7 +162,7 @@ def get_byols(available_units_greater_than_or_equal_to: Optional[_builtins.float
     import pulumi
     import pulumi_oci as oci
 
-    test_byols = oci.Ocvp.get_byols(compartment_id=compartment_id,
+    test_byols = oci.ocvp.get_byols(compartment_id=compartment_id,
         available_units_greater_than_or_equal_to=byol_available_units_greater_than_or_equal_to,
         byol_id=test_byol["id"],
         display_name=byol_display_name,
@@ -199,13 +199,13 @@ def get_byols(available_units_greater_than_or_equal_to: Optional[_builtins.float
         id=pulumi.get(__ret__, 'id'),
         software_type=pulumi.get(__ret__, 'software_type'),
         state=pulumi.get(__ret__, 'state'))
-def get_byols_output(available_units_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.float]]] = None,
-                     byol_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                     display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetByolsFilterArgs', 'GetByolsFilterArgsDict']]]]] = None,
-                     software_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_byols_output(available_units_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.float]]] = None,
+                     byol_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetByolsFilterArgs', 'GetByolsFilterArgsDict']]]]] = None,
+                     software_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetByolsResult]:
     """
     This data source provides the list of Byols in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -219,7 +219,7 @@ def get_byols_output(available_units_greater_than_or_equal_to: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_byols = oci.Ocvp.get_byols(compartment_id=compartment_id,
+    test_byols = oci.ocvp.get_byols(compartment_id=compartment_id,
         available_units_greater_than_or_equal_to=byol_available_units_greater_than_or_equal_to,
         byol_id=test_byol["id"],
         display_name=byol_display_name,

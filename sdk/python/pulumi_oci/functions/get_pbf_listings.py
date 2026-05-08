@@ -152,7 +152,7 @@ def get_pbf_listings(filters: Optional[Sequence[Union['GetPbfListingsFilterArgs'
     import pulumi
     import pulumi_oci as oci
 
-    test_pbf_listings = oci.Functions.get_pbf_listings(name=pbf_listing_name,
+    test_pbf_listings = oci.functions.get_pbf_listings(name=pbf_listing_name,
         name_contains=pbf_listing_name_contains,
         name_starts_with=pbf_listing_name_starts_with,
         pbf_listing_id=test_pbf_listing["id"],
@@ -189,13 +189,13 @@ def get_pbf_listings(filters: Optional[Sequence[Union['GetPbfListingsFilterArgs'
         pbf_listings_collections=pulumi.get(__ret__, 'pbf_listings_collections'),
         state=pulumi.get(__ret__, 'state'),
         triggers=pulumi.get(__ret__, 'triggers'))
-def get_pbf_listings_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPbfListingsFilterArgs', 'GetPbfListingsFilterArgsDict']]]]] = None,
-                            name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            name_starts_with: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            pbf_listing_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            triggers: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_pbf_listings_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPbfListingsFilterArgs', 'GetPbfListingsFilterArgsDict']]]]] = None,
+                            name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            name_starts_with: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            pbf_listing_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            triggers: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPbfListingsResult]:
     """
     This data source provides the list of Pbf Listings in Oracle Cloud Infrastructure Functions service.
@@ -209,7 +209,7 @@ def get_pbf_listings_output(filters: Optional[pulumi.Input[Optional[Sequence[Uni
     import pulumi
     import pulumi_oci as oci
 
-    test_pbf_listings = oci.Functions.get_pbf_listings(name=pbf_listing_name,
+    test_pbf_listings = oci.functions.get_pbf_listings(name=pbf_listing_name,
         name_contains=pbf_listing_name_contains,
         name_starts_with=pbf_listing_name_starts_with,
         pbf_listing_id=test_pbf_listing["id"],

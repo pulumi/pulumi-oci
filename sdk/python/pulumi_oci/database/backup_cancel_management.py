@@ -20,7 +20,7 @@ __all__ = ['BackupCancelManagementArgs', 'BackupCancelManagement']
 class BackupCancelManagementArgs:
     def __init__(__self__, *,
                  backup_id: pulumi.Input[_builtins.str],
-                 cancel_backup_trigger: Optional[pulumi.Input[_builtins.int]] = None):
+                 cancel_backup_trigger: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a BackupCancelManagement resource.
 
@@ -49,7 +49,7 @@ class BackupCancelManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="cancelBackupTrigger")
-    def cancel_backup_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cancel_backup_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
 
@@ -60,15 +60,15 @@ class BackupCancelManagementArgs:
         return pulumi.get(self, "cancel_backup_trigger")
 
     @cancel_backup_trigger.setter
-    def cancel_backup_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cancel_backup_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cancel_backup_trigger", value)
 
 
 @pulumi.input_type
 class _BackupCancelManagementState:
     def __init__(__self__, *,
-                 backup_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cancel_backup_trigger: Optional[pulumi.Input[_builtins.int]] = None):
+                 backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cancel_backup_trigger: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering BackupCancelManagement resources.
 
@@ -86,19 +86,19 @@ class _BackupCancelManagementState:
 
     @_builtins.property
     @pulumi.getter(name="backupId")
-    def backup_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "backup_id")
 
     @backup_id.setter
-    def backup_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_id", value)
 
     @_builtins.property
     @pulumi.getter(name="cancelBackupTrigger")
-    def cancel_backup_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cancel_backup_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
 
@@ -109,7 +109,7 @@ class _BackupCancelManagementState:
         return pulumi.get(self, "cancel_backup_trigger")
 
     @cancel_backup_trigger.setter
-    def cancel_backup_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cancel_backup_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cancel_backup_trigger", value)
 
 
@@ -119,8 +119,8 @@ class BackupCancelManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 backup_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cancel_backup_trigger: Optional[pulumi.Input[_builtins.int]] = None,
+                 backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cancel_backup_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         This resource provides the Backup Cancel Management resource in Oracle Cloud Infrastructure Database service.
@@ -200,8 +200,8 @@ class BackupCancelManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 backup_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cancel_backup_trigger: Optional[pulumi.Input[_builtins.int]] = None,
+                 backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cancel_backup_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -225,8 +225,8 @@ class BackupCancelManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            backup_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cancel_backup_trigger: Optional[pulumi.Input[_builtins.int]] = None) -> 'BackupCancelManagement':
+            backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cancel_backup_trigger: pulumi.Input[Optional[_builtins.int]] = None) -> 'BackupCancelManagement':
         """
         Get an existing BackupCancelManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

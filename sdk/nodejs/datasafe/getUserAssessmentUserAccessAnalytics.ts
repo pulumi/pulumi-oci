@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserAssessmentUserAccessAnalytics = oci.DataSafe.getUserAssessmentUserAccessAnalytics({
+ * const testUserAssessmentUserAccessAnalytics = oci.datasafe.getUserAssessmentUserAccessAnalytics({
  *     userAssessmentId: testUserAssessment.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetUserAssessmentUserAccessAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserAssessmentUserAccessAnalytics = oci.DataSafe.getUserAssessmentUserAccessAnalytics({
+ * const testUserAssessmentUserAccessAnalytics = oci.datasafe.getUserAssessmentUserAccessAnalytics({
  *     userAssessmentId: testUserAssessment.id,
  * });
  * ```
@@ -84,7 +84,7 @@ export function getUserAssessmentUserAccessAnalyticsOutput(args: GetUserAssessme
  * A collection of arguments for invoking getUserAssessmentUserAccessAnalytics.
  */
 export interface GetUserAssessmentUserAccessAnalyticsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetUserAssessmentUserAccessAnalyticsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetUserAssessmentUserAccessAnalyticsFilterArgs>[] | undefined>;
     /**
      * The OCID of the user assessment.
      */

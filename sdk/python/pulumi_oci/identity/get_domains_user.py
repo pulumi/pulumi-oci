@@ -794,7 +794,7 @@ def get_domains_user(attribute_sets: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_user = oci.Identity.get_domains_user(idcs_endpoint=test_domain["url"],
+    test_user = oci.identity.get_domains_user(idcs_endpoint=test_domain["url"],
         user_id=test_user_oci_identity_user["id"],
         attribute_sets=[],
         attributes="",
@@ -884,12 +884,12 @@ def get_domains_user(attribute_sets: Optional[Sequence[_builtins.str]] = None,
         user_name=pulumi.get(__ret__, 'user_name'),
         user_type=pulumi.get(__ret__, 'user_type'),
         x509certificates=pulumi.get(__ret__, 'x509certificates'))
-def get_domains_user_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                            attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                            resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            user_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_domains_user_output(attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                            attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                            resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            user_id: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsUserResult]:
     """
     This data source provides details about a specific User resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -902,7 +902,7 @@ def get_domains_user_output(attribute_sets: Optional[pulumi.Input[Optional[Seque
     import pulumi
     import pulumi_oci as oci
 
-    test_user = oci.Identity.get_domains_user(idcs_endpoint=test_domain["url"],
+    test_user = oci.identity.get_domains_user(idcs_endpoint=test_domain["url"],
         user_id=test_user_oci_identity_user["id"],
         attribute_sets=[],
         attributes="",

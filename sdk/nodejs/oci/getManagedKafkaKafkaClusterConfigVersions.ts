@@ -84,7 +84,7 @@ export function getManagedKafkaKafkaClusterConfigVersionsOutput(args: GetManaged
  * A collection of arguments for invoking getManagedKafkaKafkaClusterConfigVersions.
  */
 export interface GetManagedKafkaKafkaClusterConfigVersionsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetManagedKafkaKafkaClusterConfigVersionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetManagedKafkaKafkaClusterConfigVersionsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaClusterConfig.
      */

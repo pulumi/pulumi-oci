@@ -182,55 +182,55 @@ export interface ModelDeploymentState {
     /**
      * (Updatable) The log details for each category.
      */
-    categoryLogDetails?: pulumi.Input<inputs.DataScience.ModelDeploymentCategoryLogDetails>;
+    categoryLogDetails?: pulumi.Input<inputs.DataScience.ModelDeploymentCategoryLogDetails | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the model deployment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model deployment.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A short description of the model deployment.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Details about the state of the model deployment.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The model deployment configuration details.
      */
-    modelDeploymentConfigurationDetails?: pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetails>;
+    modelDeploymentConfigurationDetails?: pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetails | undefined>;
     /**
      * Model deployment system data.
      */
-    modelDeploymentSystemDatas?: pulumi.Input<pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentSystemData>[]>;
+    modelDeploymentSystemDatas?: pulumi.Input<pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentSystemData>[] | undefined>;
     /**
      * The URL to interact with the model deployment.
      */
-    modelDeploymentUrl?: pulumi.Input<string>;
+    modelDeploymentUrl?: pulumi.Input<string | undefined>;
     /**
      * URL to fetch the Resource Principal Token from the parent resource.
      */
-    opcParentRptUrl?: pulumi.Input<string>;
+    opcParentRptUrl?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
      */
-    projectId?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -238,11 +238,11 @@ export interface ModelDeploymentState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -252,7 +252,7 @@ export interface ModelDeploymentArgs {
     /**
      * (Updatable) The log details for each category.
      */
-    categoryLogDetails?: pulumi.Input<inputs.DataScience.ModelDeploymentCategoryLogDetails>;
+    categoryLogDetails?: pulumi.Input<inputs.DataScience.ModelDeploymentCategoryLogDetails | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the model deployment.
      */
@@ -260,19 +260,19 @@ export interface ModelDeploymentArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A short description of the model deployment.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The model deployment configuration details.
      */
@@ -280,7 +280,7 @@ export interface ModelDeploymentArgs {
     /**
      * URL to fetch the Resource Principal Token from the parent resource.
      */
-    opcParentRptUrl?: pulumi.Input<string>;
+    opcParentRptUrl?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
      */
@@ -292,5 +292,5 @@ export interface ModelDeploymentArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

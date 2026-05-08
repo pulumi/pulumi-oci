@@ -193,7 +193,7 @@ def get_task_schedule(fleet_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_task_schedule = oci.Jms.get_task_schedule(task_schedule_id=test_task_schedule_oci_jms_task_schedule["id"],
+    test_task_schedule = oci.jms.get_task_schedule(task_schedule_id=test_task_schedule_oci_jms_task_schedule["id"],
         fleet_id=test_fleet["id"])
     ```
 
@@ -220,8 +220,8 @@ def get_task_schedule(fleet_id: Optional[_builtins.str] = None,
         time_last_run=pulumi.get(__ret__, 'time_last_run'),
         time_last_updated=pulumi.get(__ret__, 'time_last_updated'),
         time_next_run=pulumi.get(__ret__, 'time_next_run'))
-def get_task_schedule_output(fleet_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             task_schedule_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_task_schedule_output(fleet_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             task_schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTaskScheduleResult]:
     """
     This data source provides details about a specific Task Schedule resource in Oracle Cloud Infrastructure Jms service.
@@ -234,7 +234,7 @@ def get_task_schedule_output(fleet_id: Optional[pulumi.Input[Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_task_schedule = oci.Jms.get_task_schedule(task_schedule_id=test_task_schedule_oci_jms_task_schedule["id"],
+    test_task_schedule = oci.jms.get_task_schedule(task_schedule_id=test_task_schedule_oci_jms_task_schedule["id"],
         fleet_id=test_fleet["id"])
     ```
 

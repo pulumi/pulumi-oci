@@ -276,7 +276,7 @@ def get_cloud_db_system(cloud_db_system_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_db_system = oci.DatabaseManagement.get_cloud_db_system(cloud_db_system_id=test_cloud_db_system_oci_database_management_cloud_db_system["id"])
+    test_cloud_db_system = oci.databasemanagement.get_cloud_db_system(cloud_db_system_id=test_cloud_db_system_oci_database_management_cloud_db_system["id"])
     ```
 
 
@@ -307,7 +307,7 @@ def get_cloud_db_system(cloud_db_system_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_cloud_db_system_output(cloud_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cloud_db_system_output(cloud_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudDbSystemResult]:
     """
     This data source provides details about a specific Cloud Db System resource in Oracle Cloud Infrastructure Database Management service.
@@ -320,7 +320,7 @@ def get_cloud_db_system_output(cloud_db_system_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_db_system = oci.DatabaseManagement.get_cloud_db_system(cloud_db_system_id=test_cloud_db_system_oci_database_management_cloud_db_system["id"])
+    test_cloud_db_system = oci.databasemanagement.get_cloud_db_system(cloud_db_system_id=test_cloud_db_system_oci_database_management_cloud_db_system["id"])
     ```
 
 

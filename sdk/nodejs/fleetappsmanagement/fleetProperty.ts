@@ -174,43 +174,43 @@ export interface FleetPropertyState {
     /**
      * Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
      */
-    allowedValues?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedValues?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Compartment OCID
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Unique Fleet identifier.
      */
-    fleetId?: pulumi.Input<string>;
+    fleetId?: pulumi.Input<string | undefined>;
     /**
      * OCID referring to global level metadata property.
      */
-    propertyId?: pulumi.Input<string>;
+    propertyId?: pulumi.Input<string | undefined>;
     /**
      * Text selection of the property.
      */
-    selectionType?: pulumi.Input<string>;
+    selectionType?: pulumi.Input<string | undefined>;
     /**
      * The current state of the FleetProperty.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Value of the Property.
      *
@@ -218,11 +218,11 @@ export interface FleetPropertyState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    value?: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
     /**
      * Format of the value.
      */
-    valueType?: pulumi.Input<string>;
+    valueType?: pulumi.Input<string | undefined>;
 }
 
 /**

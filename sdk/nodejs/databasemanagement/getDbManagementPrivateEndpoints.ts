@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbManagementPrivateEndpoints = oci.DatabaseManagement.getDbManagementPrivateEndpoints({
+ * const testDbManagementPrivateEndpoints = oci.databasemanagement.getDbManagementPrivateEndpoints({
  *     compartmentId: compartmentId,
- *     isCluster: dbManagementPrivateEndpointIsCluster,
- *     isDnsResolutionEnabled: dbManagementPrivateEndpointIsDnsResolutionEnabled,
+ *     isCluster: dbManagementPrivateEndpointIsCluster === "true",
+ *     isDnsResolutionEnabled: dbManagementPrivateEndpointIsDnsResolutionEnabled === "true",
  *     name: dbManagementPrivateEndpointName,
  *     state: dbManagementPrivateEndpointState,
  *     vcnId: testVcn.id,
@@ -120,10 +120,10 @@ export interface GetDbManagementPrivateEndpointsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbManagementPrivateEndpoints = oci.DatabaseManagement.getDbManagementPrivateEndpoints({
+ * const testDbManagementPrivateEndpoints = oci.databasemanagement.getDbManagementPrivateEndpoints({
  *     compartmentId: compartmentId,
- *     isCluster: dbManagementPrivateEndpointIsCluster,
- *     isDnsResolutionEnabled: dbManagementPrivateEndpointIsDnsResolutionEnabled,
+ *     isCluster: dbManagementPrivateEndpointIsCluster === "true",
+ *     isDnsResolutionEnabled: dbManagementPrivateEndpointIsDnsResolutionEnabled === "true",
  *     name: dbManagementPrivateEndpointName,
  *     state: dbManagementPrivateEndpointState,
  *     vcnId: testVcn.id,
@@ -151,25 +151,25 @@ export interface GetDbManagementPrivateEndpointsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetDbManagementPrivateEndpointsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetDbManagementPrivateEndpointsFilterArgs>[] | undefined>;
     /**
      * The option to filter Database Management private endpoints that can used for Oracle Databases in a cluster. This should be used along with the vcnId query parameter.
      */
-    isCluster?: pulumi.Input<boolean>;
+    isCluster?: pulumi.Input<boolean | undefined>;
     /**
      * The option to filter Database Management private endpoints which are endbled with DNS proxy server. This should be used along with the vcnId query parameter. Only one of this parameter and IsClusterDbManagementPrivateEndpointQueryParam should be set to true at one time.
      */
-    isDnsResolutionEnabled?: pulumi.Input<boolean>;
+    isDnsResolutionEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the entire name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of a resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      */
-    vcnId?: pulumi.Input<string>;
+    vcnId?: pulumi.Input<string | undefined>;
 }

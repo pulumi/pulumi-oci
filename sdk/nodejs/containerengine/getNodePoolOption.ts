@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNodePoolOption = oci.ContainerEngine.getNodePoolOption({
+ * const testNodePoolOption = oci.containerengine.getNodePoolOption({
  *     nodePoolOptionId: testNodePoolOptionOciContainerengineNodePoolOption.id,
  *     compartmentId: compartmentId,
  *     nodePoolK8sVersion: nodePoolOptionNodePoolK8sVersion,
  *     nodePoolOsArch: nodePoolOptionNodePoolOsArch,
  *     nodePoolOsType: nodePoolOptionNodePoolOsType,
- *     shouldListAllPatchVersions: nodePoolOptionShouldListAllPatchVersions,
+ *     shouldListAllPatchVersions: nodePoolOptionShouldListAllPatchVersions === "true",
  * });
  * ```
  */
@@ -111,13 +111,13 @@ export interface GetNodePoolOptionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNodePoolOption = oci.ContainerEngine.getNodePoolOption({
+ * const testNodePoolOption = oci.containerengine.getNodePoolOption({
  *     nodePoolOptionId: testNodePoolOptionOciContainerengineNodePoolOption.id,
  *     compartmentId: compartmentId,
  *     nodePoolK8sVersion: nodePoolOptionNodePoolK8sVersion,
  *     nodePoolOsArch: nodePoolOptionNodePoolOsArch,
  *     nodePoolOsType: nodePoolOptionNodePoolOsType,
- *     shouldListAllPatchVersions: nodePoolOptionShouldListAllPatchVersions,
+ *     shouldListAllPatchVersions: nodePoolOptionShouldListAllPatchVersions === "true",
  * });
  * ```
  */
@@ -140,11 +140,11 @@ export interface GetNodePoolOptionOutputArgs {
     /**
      * The OCID of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Filter node pool options by Kubernetes version.
      */
-    nodePoolK8sVersion?: pulumi.Input<string>;
+    nodePoolK8sVersion?: pulumi.Input<string | undefined>;
     /**
      * The id of the option set to retrieve. Use "all" get all options, or use a cluster ID to get options specific to the provided cluster.
      */
@@ -152,13 +152,13 @@ export interface GetNodePoolOptionOutputArgs {
     /**
      * Filter node pool options by OS architecture.
      */
-    nodePoolOsArch?: pulumi.Input<string>;
+    nodePoolOsArch?: pulumi.Input<string | undefined>;
     /**
      * Filter node pool options by OS type.
      */
-    nodePoolOsType?: pulumi.Input<string>;
+    nodePoolOsType?: pulumi.Input<string | undefined>;
     /**
      * Option to show all kubernetes patch versions
      */
-    shouldListAllPatchVersions?: pulumi.Input<boolean>;
+    shouldListAllPatchVersions?: pulumi.Input<boolean | undefined>;
 }

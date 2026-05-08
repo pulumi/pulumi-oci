@@ -146,7 +146,7 @@ def get_rrset(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_rrset = oci.Dns.get_rrset(domain=rrset_domain,
+    test_rrset = oci.dns.get_rrset(domain=rrset_domain,
         rtype=rrset_rtype,
         zone_name_or_id=test_zone["id"],
         view_id=test_view["id"])
@@ -180,13 +180,13 @@ def get_rrset(compartment_id: Optional[_builtins.str] = None,
         view_id=pulumi.get(__ret__, 'view_id'),
         zone_name_or_id=pulumi.get(__ret__, 'zone_name_or_id'),
         zone_version=pulumi.get(__ret__, 'zone_version'))
-def get_rrset_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     domain: Optional[pulumi.Input[_builtins.str]] = None,
-                     rtype: Optional[pulumi.Input[_builtins.str]] = None,
-                     scope: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     view_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     zone_name_or_id: Optional[pulumi.Input[_builtins.str]] = None,
-                     zone_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_rrset_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     domain: pulumi.Input[Optional[_builtins.str]] = None,
+                     rtype: pulumi.Input[Optional[_builtins.str]] = None,
+                     scope: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     view_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     zone_name_or_id: pulumi.Input[Optional[_builtins.str]] = None,
+                     zone_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRrsetResult]:
     """
     This data source provides details about a specific Rrset resource in Oracle Cloud Infrastructure DNS service.
@@ -201,7 +201,7 @@ def get_rrset_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_rrset = oci.Dns.get_rrset(domain=rrset_domain,
+    test_rrset = oci.dns.get_rrset(domain=rrset_domain,
         rtype=rrset_rtype,
         zone_name_or_id=test_zone["id"],
         view_id=test_view["id"])

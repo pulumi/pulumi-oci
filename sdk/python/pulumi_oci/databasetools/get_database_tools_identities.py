@@ -150,7 +150,7 @@ def get_database_tools_identities(compartment_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_identities = oci.DatabaseTools.get_database_tools_identities(compartment_id=compartment_id,
+    test_database_tools_identities = oci.databasetools.get_database_tools_identities(compartment_id=compartment_id,
         database_tools_connection_id=test_database_tools_connection["id"],
         display_name=database_tools_identity_display_name,
         state=database_tools_identity_state,
@@ -183,12 +183,12 @@ def get_database_tools_identities(compartment_id: Optional[_builtins.str] = None
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         types=pulumi.get(__ret__, 'types'))
-def get_database_tools_identities_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         database_tools_connection_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatabaseToolsIdentitiesFilterArgs', 'GetDatabaseToolsIdentitiesFilterArgsDict']]]]] = None,
-                                         state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_database_tools_identities_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         database_tools_connection_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabaseToolsIdentitiesFilterArgs', 'GetDatabaseToolsIdentitiesFilterArgsDict']]]]] = None,
+                                         state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseToolsIdentitiesResult]:
     """
     This data source provides the list of Database Tools Identities in Oracle Cloud Infrastructure Database Tools service.
@@ -201,7 +201,7 @@ def get_database_tools_identities_output(compartment_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_identities = oci.DatabaseTools.get_database_tools_identities(compartment_id=compartment_id,
+    test_database_tools_identities = oci.databasetools.get_database_tools_identities(compartment_id=compartment_id,
         database_tools_connection_id=test_database_tools_connection["id"],
         display_name=database_tools_identity_display_name,
         state=database_tools_identity_state,

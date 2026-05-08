@@ -108,7 +108,7 @@ def get_sensitive_type_group_grouped_sensitive_types(filters: Optional[Sequence[
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_type_group_grouped_sensitive_types = oci.DataSafe.get_sensitive_type_group_grouped_sensitive_types(sensitive_type_group_id=test_sensitive_type_group["id"],
+    test_sensitive_type_group_grouped_sensitive_types = oci.datasafe.get_sensitive_type_group_grouped_sensitive_types(sensitive_type_group_id=test_sensitive_type_group["id"],
         sensitive_type_id=test_sensitive_type["id"])
     ```
 
@@ -129,9 +129,9 @@ def get_sensitive_type_group_grouped_sensitive_types(filters: Optional[Sequence[
         id=pulumi.get(__ret__, 'id'),
         sensitive_type_group_id=pulumi.get(__ret__, 'sensitive_type_group_id'),
         sensitive_type_id=pulumi.get(__ret__, 'sensitive_type_id'))
-def get_sensitive_type_group_grouped_sensitive_types_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgs', 'GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgsDict']]]]] = None,
-                                                            sensitive_type_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                            sensitive_type_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_sensitive_type_group_grouped_sensitive_types_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgs', 'GetSensitiveTypeGroupGroupedSensitiveTypesFilterArgsDict']]]]] = None,
+                                                            sensitive_type_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                            sensitive_type_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSensitiveTypeGroupGroupedSensitiveTypesResult]:
     """
     This data source provides the list of Sensitive Type Group Grouped Sensitive Types in Oracle Cloud Infrastructure Data Safe service.
@@ -144,7 +144,7 @@ def get_sensitive_type_group_grouped_sensitive_types_output(filters: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_type_group_grouped_sensitive_types = oci.DataSafe.get_sensitive_type_group_grouped_sensitive_types(sensitive_type_group_id=test_sensitive_type_group["id"],
+    test_sensitive_type_group_grouped_sensitive_types = oci.datasafe.get_sensitive_type_group_grouped_sensitive_types(sensitive_type_group_id=test_sensitive_type_group["id"],
         sensitive_type_id=test_sensitive_type["id"])
     ```
 

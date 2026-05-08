@@ -84,7 +84,7 @@ def get_instance_maintenance_reboot(instance_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_maintenance_reboot = oci.Core.get_instance_maintenance_reboot(instance_id=test_instance["id"])
+    test_instance_maintenance_reboot = oci.core.get_instance_maintenance_reboot(instance_id=test_instance["id"])
     ```
 
 
@@ -99,7 +99,7 @@ def get_instance_maintenance_reboot(instance_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         instance_id=pulumi.get(__ret__, 'instance_id'),
         time_maintenance_reboot_due_max=pulumi.get(__ret__, 'time_maintenance_reboot_due_max'))
-def get_instance_maintenance_reboot_output(instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_instance_maintenance_reboot_output(instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstanceMaintenanceRebootResult]:
     """
     This data source provides details about a specific Instance Maintenance Reboot resource in Oracle Cloud Infrastructure Core service.
@@ -113,7 +113,7 @@ def get_instance_maintenance_reboot_output(instance_id: Optional[pulumi.Input[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_maintenance_reboot = oci.Core.get_instance_maintenance_reboot(instance_id=test_instance["id"])
+    test_instance_maintenance_reboot = oci.core.get_instance_maintenance_reboot(instance_id=test_instance["id"])
     ```
 
 

@@ -143,15 +143,15 @@ export interface AlertPolicyRuleState {
     /**
      * The OCID of the alert policy.
      */
-    alertPolicyId?: pulumi.Input<string>;
+    alertPolicyId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Describes the alert policy rule.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the alert policy rule.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The conditional expression of the alert policy rule which evaluates to boolean value.
      *
@@ -159,19 +159,19 @@ export interface AlertPolicyRuleState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    expression?: pulumi.Input<string>;
+    expression?: pulumi.Input<string | undefined>;
     /**
      * The unique key of the alert policy rule.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * The current state of the alert policy rule.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Creation date and time of the alert policy rule, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -185,11 +185,11 @@ export interface AlertPolicyRuleArgs {
     /**
      * (Updatable) Describes the alert policy rule.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the alert policy rule.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The conditional expression of the alert policy rule which evaluates to boolean value.
      *

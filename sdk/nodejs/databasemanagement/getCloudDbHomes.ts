@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudDbHomes = oci.DatabaseManagement.getCloudDbHomes({
+ * const testCloudDbHomes = oci.databasemanagement.getCloudDbHomes({
  *     cloudDbSystemId: testCloudDbSystem.id,
  *     compartmentId: compartmentId,
  *     displayName: cloudDbHomeDisplayName,
@@ -91,7 +91,7 @@ export interface GetCloudDbHomesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudDbHomes = oci.DatabaseManagement.getCloudDbHomes({
+ * const testCloudDbHomes = oci.databasemanagement.getCloudDbHomes({
  *     cloudDbSystemId: testCloudDbSystem.id,
  *     compartmentId: compartmentId,
  *     displayName: cloudDbHomeDisplayName,
@@ -116,14 +116,14 @@ export interface GetCloudDbHomesOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
      */
-    cloudDbSystemId?: pulumi.Input<string>;
+    cloudDbSystemId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return the resources that match the entire display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetCloudDbHomesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetCloudDbHomesFilterArgs>[] | undefined>;
 }

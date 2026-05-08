@@ -184,11 +184,11 @@ def get_patch_management_databases(compartment_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_patch_management_databases = oci.Dblm.get_patch_management_databases(compartment_id=compartment_id,
+    test_patch_management_databases = oci.dblm.get_patch_management_databases(compartment_id=compartment_id,
         database_release=patch_management_database_database_release,
         database_type=patch_management_database_database_type,
         display_name=patch_management_database_display_name,
-        drifter_patch_id=test_patch["id"],
+        drifter_patch_id=int(test_patch["id"]),
         image_compliance=patch_management_database_image_compliance,
         image_id=test_image["id"],
         severity_types=patch_management_database_severity_type,
@@ -233,16 +233,16 @@ def get_patch_management_databases(compartment_id: Optional[_builtins.str] = Non
         patch_databases_collections=pulumi.get(__ret__, 'patch_databases_collections'),
         severity_types=pulumi.get(__ret__, 'severity_types'),
         state=pulumi.get(__ret__, 'state'))
-def get_patch_management_databases_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          database_release: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          database_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          drifter_patch_id: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPatchManagementDatabasesFilterArgs', 'GetPatchManagementDatabasesFilterArgsDict']]]]] = None,
-                                          image_compliance: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          image_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          severity_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                          state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_patch_management_databases_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          database_release: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          database_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          drifter_patch_id: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPatchManagementDatabasesFilterArgs', 'GetPatchManagementDatabasesFilterArgsDict']]]]] = None,
+                                          image_compliance: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          image_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          severity_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPatchManagementDatabasesResult]:
     """
     This data source provides the list of Patch Management Databases in Oracle Cloud Infrastructure Dblm service.
@@ -255,11 +255,11 @@ def get_patch_management_databases_output(compartment_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_patch_management_databases = oci.Dblm.get_patch_management_databases(compartment_id=compartment_id,
+    test_patch_management_databases = oci.dblm.get_patch_management_databases(compartment_id=compartment_id,
         database_release=patch_management_database_database_release,
         database_type=patch_management_database_database_type,
         display_name=patch_management_database_display_name,
-        drifter_patch_id=test_patch["id"],
+        drifter_patch_id=int(test_patch["id"]),
         image_compliance=patch_management_database_image_compliance,
         image_id=test_image["id"],
         severity_types=patch_management_database_severity_type,

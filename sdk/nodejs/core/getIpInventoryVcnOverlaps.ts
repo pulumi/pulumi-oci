@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpInventoryVcnOverlaps = oci.Core.getIpInventoryVcnOverlaps({
+ * const testIpInventoryVcnOverlaps = oci.core.getIpInventoryVcnOverlaps({
  *     compartmentLists: ipInventoryVcnOverlapCompartmentList,
  *     regionLists: ipInventoryVcnOverlapRegionList,
  *     vcnId: testVcn.id,
@@ -93,7 +93,7 @@ export interface GetIpInventoryVcnOverlapsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpInventoryVcnOverlaps = oci.Core.getIpInventoryVcnOverlaps({
+ * const testIpInventoryVcnOverlaps = oci.core.getIpInventoryVcnOverlaps({
  *     compartmentLists: ipInventoryVcnOverlapCompartmentList,
  *     regionLists: ipInventoryVcnOverlapRegionList,
  *     vcnId: testVcn.id,
@@ -118,7 +118,7 @@ export interface GetIpInventoryVcnOverlapsOutputArgs {
      * The list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
      */
     compartmentLists: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetIpInventoryVcnOverlapsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetIpInventoryVcnOverlapsFilterArgs>[] | undefined>;
     /**
      * Lists the selected regions.
      */

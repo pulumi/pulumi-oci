@@ -288,7 +288,7 @@ def get_config(config_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_config = oci.StackMonitoring.get_config(config_id=test_config_oci_stack_monitoring_config["id"])
+    test_config = oci.stackmonitoring.get_config(config_id=test_config_oci_stack_monitoring_config["id"])
     ```
 
 
@@ -320,7 +320,7 @@ def get_config(config_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         user_groups=pulumi.get(__ret__, 'user_groups'),
         version=pulumi.get(__ret__, 'version'))
-def get_config_output(config_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_config_output(config_id: pulumi.Input[Optional[_builtins.str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConfigResult]:
     """
     This data source provides details about a specific Config resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -333,7 +333,7 @@ def get_config_output(config_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_config = oci.StackMonitoring.get_config(config_id=test_config_oci_stack_monitoring_config["id"])
+    test_config = oci.stackmonitoring.get_config(config_id=test_config_oci_stack_monitoring_config["id"])
     ```
 
 

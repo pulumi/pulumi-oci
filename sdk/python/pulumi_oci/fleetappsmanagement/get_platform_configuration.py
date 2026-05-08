@@ -228,7 +228,7 @@ def get_platform_configuration(platform_configuration_id: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_platform_configuration = oci.FleetAppsManagement.get_platform_configuration(platform_configuration_id=test_platform_configuration_oci_fleet_apps_management_platform_configuration["id"])
+    test_platform_configuration = oci.fleetappsmanagement.get_platform_configuration(platform_configuration_id=test_platform_configuration_oci_fleet_apps_management_platform_configuration["id"])
     ```
 
 
@@ -255,7 +255,7 @@ def get_platform_configuration(platform_configuration_id: Optional[_builtins.str
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
-def get_platform_configuration_output(platform_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_platform_configuration_output(platform_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPlatformConfigurationResult]:
     """
     This data source provides details about a specific Platform Configuration resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -268,7 +268,7 @@ def get_platform_configuration_output(platform_configuration_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_platform_configuration = oci.FleetAppsManagement.get_platform_configuration(platform_configuration_id=test_platform_configuration_oci_fleet_apps_management_platform_configuration["id"])
+    test_platform_configuration = oci.fleetappsmanagement.get_platform_configuration(platform_configuration_id=test_platform_configuration_oci_fleet_apps_management_platform_configuration["id"])
     ```
 
 

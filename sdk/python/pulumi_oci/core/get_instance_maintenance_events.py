@@ -170,7 +170,7 @@ def get_instance_maintenance_events(compartment_id: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_maintenance_events = oci.Core.get_instance_maintenance_events(compartment_id=compartment_id,
+    test_instance_maintenance_events = oci.core.get_instance_maintenance_events(compartment_id=compartment_id,
         correlation_token=instance_maintenance_event_correlation_token,
         instance_action=instance_maintenance_event_instance_action,
         instance_id=test_instance["id"],
@@ -211,14 +211,14 @@ def get_instance_maintenance_events(compartment_id: Optional[_builtins.str] = No
         state=pulumi.get(__ret__, 'state'),
         time_window_start_greater_than_or_equal_to=pulumi.get(__ret__, 'time_window_start_greater_than_or_equal_to'),
         time_window_start_less_than_or_equal_to=pulumi.get(__ret__, 'time_window_start_less_than_or_equal_to'))
-def get_instance_maintenance_events_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                           correlation_token: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInstanceMaintenanceEventsFilterArgs', 'GetInstanceMaintenanceEventsFilterArgsDict']]]]] = None,
-                                           instance_action: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           instance_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           time_window_start_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           time_window_start_less_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_instance_maintenance_events_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                           correlation_token: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInstanceMaintenanceEventsFilterArgs', 'GetInstanceMaintenanceEventsFilterArgsDict']]]]] = None,
+                                           instance_action: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           time_window_start_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           time_window_start_less_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstanceMaintenanceEventsResult]:
     """
     This data source provides the list of Instance Maintenance Events in Oracle Cloud Infrastructure Core service.
@@ -231,7 +231,7 @@ def get_instance_maintenance_events_output(compartment_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_maintenance_events = oci.Core.get_instance_maintenance_events(compartment_id=compartment_id,
+    test_instance_maintenance_events = oci.core.get_instance_maintenance_events(compartment_id=compartment_id,
         correlation_token=instance_maintenance_event_correlation_token,
         instance_action=instance_maintenance_event_instance_action,
         instance_id=test_instance["id"],

@@ -91,7 +91,7 @@ def get_model_defined_metadata_artifact_content(metadatum_key_name: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_model_defined_metadata_artifact_content = oci.DataScience.get_model_defined_metadata_artifact_content(metadatum_key_name=test_key["name"],
+    test_model_defined_metadata_artifact_content = oci.datascience.get_model_defined_metadata_artifact_content(metadatum_key_name=test_key["name"],
         model_id=test_model["id"],
         range=model_defined_metadata_artifact_content_range)
     ```
@@ -113,9 +113,9 @@ def get_model_defined_metadata_artifact_content(metadatum_key_name: Optional[_bu
         metadatum_key_name=pulumi.get(__ret__, 'metadatum_key_name'),
         model_id=pulumi.get(__ret__, 'model_id'),
         range=pulumi.get(__ret__, 'range'))
-def get_model_defined_metadata_artifact_content_output(metadatum_key_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                                       model_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                       range: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_model_defined_metadata_artifact_content_output(metadatum_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                                       model_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                       range: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetModelDefinedMetadataArtifactContentResult]:
     """
     This data source provides details about a specific Model Defined Metadata Artifact Content resource in Oracle Cloud Infrastructure Data Science service.
@@ -128,7 +128,7 @@ def get_model_defined_metadata_artifact_content_output(metadatum_key_name: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_model_defined_metadata_artifact_content = oci.DataScience.get_model_defined_metadata_artifact_content(metadatum_key_name=test_key["name"],
+    test_model_defined_metadata_artifact_content = oci.datascience.get_model_defined_metadata_artifact_content(metadatum_key_name=test_key["name"],
         model_id=test_model["id"],
         range=model_defined_metadata_artifact_content_range)
     ```

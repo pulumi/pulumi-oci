@@ -153,11 +153,11 @@ def get_dif_stacks(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         stack_collections=pulumi.get(__ret__, 'stack_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_dif_stacks_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDifStacksFilterArgs', 'GetDifStacksFilterArgsDict']]]]] = None,
-                          id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_dif_stacks_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDifStacksFilterArgs', 'GetDifStacksFilterArgsDict']]]]] = None,
+                          id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDifStacksResult]:
     """
     This data source provides the list of Stacks in Oracle Cloud Infrastructure Dif service.

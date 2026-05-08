@@ -105,7 +105,7 @@ def get_container_instance_shapes(availability_domain: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_container_instance_shapes = oci.ContainerInstances.get_container_instance_shapes(compartment_id=compartment_id,
+    test_container_instance_shapes = oci.containerinstances.get_container_instance_shapes(compartment_id=compartment_id,
         availability_domain=container_instance_shape_availability_domain)
     ```
 
@@ -126,9 +126,9 @@ def get_container_instance_shapes(availability_domain: Optional[_builtins.str] =
         container_instance_shape_collections=pulumi.get(__ret__, 'container_instance_shape_collections'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_container_instance_shapes_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetContainerInstanceShapesFilterArgs', 'GetContainerInstanceShapesFilterArgsDict']]]]] = None,
+def get_container_instance_shapes_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetContainerInstanceShapesFilterArgs', 'GetContainerInstanceShapesFilterArgsDict']]]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetContainerInstanceShapesResult]:
     """
     This data source provides the list of Container Instance Shapes in Oracle Cloud Infrastructure Container Instances service.
@@ -141,7 +141,7 @@ def get_container_instance_shapes_output(availability_domain: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_container_instance_shapes = oci.ContainerInstances.get_container_instance_shapes(compartment_id=compartment_id,
+    test_container_instance_shapes = oci.containerinstances.get_container_instance_shapes(compartment_id=compartment_id,
         availability_domain=container_instance_shape_availability_domain)
     ```
 

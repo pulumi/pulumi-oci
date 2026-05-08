@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecommendation = oci.Optimizer.getRecommendation({
+ * const testRecommendation = oci.optimizer.getRecommendation({
  *     recommendationId: testRecommendationOciOptimizerRecommendation.id,
  * });
  * ```
@@ -120,7 +120,7 @@ export interface GetRecommendationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecommendation = oci.Optimizer.getRecommendation({
+ * const testRecommendation = oci.optimizer.getRecommendation({
  *     recommendationId: testRecommendationOciOptimizerRecommendation.id,
  * });
  * ```

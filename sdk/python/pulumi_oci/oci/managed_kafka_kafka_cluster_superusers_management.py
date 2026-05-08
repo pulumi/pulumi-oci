@@ -21,8 +21,8 @@ class ManagedKafkaKafkaClusterSuperusersManagementArgs:
     def __init__(__self__, *,
                  enable_superuser: pulumi.Input[_builtins.bool],
                  kafka_cluster_id: pulumi.Input[_builtins.str],
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ManagedKafkaKafkaClusterSuperusersManagement resource.
 
@@ -72,36 +72,36 @@ class ManagedKafkaKafkaClusterSuperusersManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the superuser secret.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret that will be populated with the generated superuser password.
         """
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
-    def secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_id", value)
 
 
 @pulumi.input_type
 class _ManagedKafkaKafkaClusterSuperusersManagementState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_superuser: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kafka_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_superuser: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kafka_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagedKafkaKafkaClusterSuperusersManagement resources.
 
@@ -125,19 +125,19 @@ class _ManagedKafkaKafkaClusterSuperusersManagementState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the superuser secret.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="enableSuperuser")
-    def enable_superuser(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_superuser(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 
@@ -148,31 +148,31 @@ class _ManagedKafkaKafkaClusterSuperusersManagementState:
         return pulumi.get(self, "enable_superuser")
 
     @enable_superuser.setter
-    def enable_superuser(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_superuser(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_superuser", value)
 
     @_builtins.property
     @pulumi.getter(name="kafkaClusterId")
-    def kafka_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kafka_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaCluster.
         """
         return pulumi.get(self, "kafka_cluster_id")
 
     @kafka_cluster_id.setter
-    def kafka_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kafka_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kafka_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret that will be populated with the generated superuser password.
         """
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
-    def secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_id", value)
 
 
@@ -182,10 +182,10 @@ class ManagedKafkaKafkaClusterSuperusersManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_superuser: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kafka_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_superuser: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kafka_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Kafka Cluster Superusers Management resource in Oracle Cloud Infrastructure Managed Kafka service.
@@ -202,7 +202,7 @@ class ManagedKafkaKafkaClusterSuperusersManagement(pulumi.CustomResource):
 
         test_kafka_cluster_superusers_management = oci.oci.ManagedKafkaKafkaClusterSuperusersManagement("test_kafka_cluster_superusers_management",
             kafka_cluster_id=test_kafka_cluster["id"],
-            enable_superuser=enable_superuser,
+            enable_superuser=enable_superuser == "true",
             compartment_id=compartment_id,
             secret_id=test_secret["id"])
         ```
@@ -240,7 +240,7 @@ class ManagedKafkaKafkaClusterSuperusersManagement(pulumi.CustomResource):
 
         test_kafka_cluster_superusers_management = oci.oci.ManagedKafkaKafkaClusterSuperusersManagement("test_kafka_cluster_superusers_management",
             kafka_cluster_id=test_kafka_cluster["id"],
-            enable_superuser=enable_superuser,
+            enable_superuser=enable_superuser == "true",
             compartment_id=compartment_id,
             secret_id=test_secret["id"])
         ```
@@ -261,10 +261,10 @@ class ManagedKafkaKafkaClusterSuperusersManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_superuser: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kafka_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_superuser: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kafka_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -292,10 +292,10 @@ class ManagedKafkaKafkaClusterSuperusersManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            enable_superuser: Optional[pulumi.Input[_builtins.bool]] = None,
-            kafka_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-            secret_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ManagedKafkaKafkaClusterSuperusersManagement':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_superuser: pulumi.Input[Optional[_builtins.bool]] = None,
+            kafka_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ManagedKafkaKafkaClusterSuperusersManagement':
         """
         Get an existing ManagedKafkaKafkaClusterSuperusersManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

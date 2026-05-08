@@ -113,7 +113,7 @@ def get_onboardings(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_onboardings = oci.FleetAppsManagement.get_onboardings(compartment_id=compartment_id,
+    test_onboardings = oci.fleetappsmanagement.get_onboardings(compartment_id=compartment_id,
         id=onboarding_id,
         state=onboarding_state)
     ```
@@ -137,10 +137,10 @@ def get_onboardings(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         onboarding_collections=pulumi.get(__ret__, 'onboarding_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_onboardings_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOnboardingsFilterArgs', 'GetOnboardingsFilterArgsDict']]]]] = None,
-                           id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_onboardings_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOnboardingsFilterArgs', 'GetOnboardingsFilterArgsDict']]]]] = None,
+                           id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOnboardingsResult]:
     """
     This data source provides the list of Onboardings in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -154,7 +154,7 @@ def get_onboardings_output(compartment_id: Optional[pulumi.Input[Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_onboardings = oci.FleetAppsManagement.get_onboardings(compartment_id=compartment_id,
+    test_onboardings = oci.fleetappsmanagement.get_onboardings(compartment_id=compartment_id,
         id=onboarding_id,
         state=onboarding_state)
     ```

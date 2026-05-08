@@ -288,83 +288,83 @@ export interface ModelGroupState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the modelGroup in.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The type of the model group create operation.
      */
-    createType?: pulumi.Input<string>;
+    createType?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the modelGroup.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A short description of the modelGroup.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My ModelGroup`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Details about the lifecycle state of the model group.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * List of member models (inferenceKey & modelId) to be associated with the model group.
      */
-    memberModelEntries?: pulumi.Input<inputs.DataScience.ModelGroupMemberModelEntries>;
+    memberModelEntries?: pulumi.Input<inputs.DataScience.ModelGroupMemberModelEntries | undefined>;
     /**
      * Model Group clone source details.
      */
-    modelGroupCloneSourceDetails?: pulumi.Input<inputs.DataScience.ModelGroupModelGroupCloneSourceDetails>;
+    modelGroupCloneSourceDetails?: pulumi.Input<inputs.DataScience.ModelGroupModelGroupCloneSourceDetails | undefined>;
     /**
      * The model group details.
      */
-    modelGroupDetails?: pulumi.Input<inputs.DataScience.ModelGroupModelGroupDetails>;
+    modelGroupDetails?: pulumi.Input<inputs.DataScience.ModelGroupModelGroupDetails | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group version history to which the modelGroup is associated.
      */
-    modelGroupVersionHistoryId?: pulumi.Input<string>;
+    modelGroupVersionHistoryId?: pulumi.Input<string | undefined>;
     /**
      * The name of the model group version history to which the model group is associated.
      */
-    modelGroupVersionHistoryName?: pulumi.Input<string>;
+    modelGroupVersionHistoryName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the modelGroup.
      */
-    projectId?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group used for the clone operation.
      */
-    sourceModelGroupId?: pulumi.Input<string>;
+    sourceModelGroupId?: pulumi.Input<string | undefined>;
     /**
      * The state of the modelGroup.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource was last updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * Unique identifier assigned to each version of the model group. It would be auto-incremented number generated by service.
      */
-    versionId?: pulumi.Input<string>;
+    versionId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An additional description of the lifecycle state of the model group.
      *
@@ -372,7 +372,7 @@ export interface ModelGroupState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    versionLabel?: pulumi.Input<string>;
+    versionLabel?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -390,35 +390,35 @@ export interface ModelGroupArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A short description of the modelGroup.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My ModelGroup`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * List of member models (inferenceKey & modelId) to be associated with the model group.
      */
-    memberModelEntries?: pulumi.Input<inputs.DataScience.ModelGroupMemberModelEntries>;
+    memberModelEntries?: pulumi.Input<inputs.DataScience.ModelGroupMemberModelEntries | undefined>;
     /**
      * Model Group clone source details.
      */
-    modelGroupCloneSourceDetails?: pulumi.Input<inputs.DataScience.ModelGroupModelGroupCloneSourceDetails>;
+    modelGroupCloneSourceDetails?: pulumi.Input<inputs.DataScience.ModelGroupModelGroupCloneSourceDetails | undefined>;
     /**
      * The model group details.
      */
-    modelGroupDetails?: pulumi.Input<inputs.DataScience.ModelGroupModelGroupDetails>;
+    modelGroupDetails?: pulumi.Input<inputs.DataScience.ModelGroupModelGroupDetails | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group version history to which the modelGroup is associated.
      */
-    modelGroupVersionHistoryId?: pulumi.Input<string>;
+    modelGroupVersionHistoryId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the modelGroup.
      */
@@ -430,5 +430,5 @@ export interface ModelGroupArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    versionLabel?: pulumi.Input<string>;
+    versionLabel?: pulumi.Input<string | undefined>;
 }

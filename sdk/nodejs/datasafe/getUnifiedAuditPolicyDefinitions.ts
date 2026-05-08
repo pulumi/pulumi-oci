@@ -30,12 +30,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUnifiedAuditPolicyDefinitions = oci.DataSafe.getUnifiedAuditPolicyDefinitions({
+ * const testUnifiedAuditPolicyDefinitions = oci.datasafe.getUnifiedAuditPolicyDefinitions({
  *     compartmentId: compartmentId,
  *     accessLevel: unifiedAuditPolicyDefinitionAccessLevel,
- *     compartmentIdInSubtree: unifiedAuditPolicyDefinitionCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: unifiedAuditPolicyDefinitionCompartmentIdInSubtree === "true",
  *     displayName: unifiedAuditPolicyDefinitionDisplayName,
- *     isSeeded: unifiedAuditPolicyDefinitionIsSeeded,
+ *     isSeeded: unifiedAuditPolicyDefinitionIsSeeded === "true",
  *     state: unifiedAuditPolicyDefinitionState,
  *     unifiedAuditPolicyCategory: unifiedAuditPolicyDefinitionUnifiedAuditPolicyCategory,
  *     unifiedAuditPolicyDefinitionId: testUnifiedAuditPolicyDefinition.id,
@@ -161,12 +161,12 @@ export interface GetUnifiedAuditPolicyDefinitionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUnifiedAuditPolicyDefinitions = oci.DataSafe.getUnifiedAuditPolicyDefinitions({
+ * const testUnifiedAuditPolicyDefinitions = oci.datasafe.getUnifiedAuditPolicyDefinitions({
  *     compartmentId: compartmentId,
  *     accessLevel: unifiedAuditPolicyDefinitionAccessLevel,
- *     compartmentIdInSubtree: unifiedAuditPolicyDefinitionCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: unifiedAuditPolicyDefinitionCompartmentIdInSubtree === "true",
  *     displayName: unifiedAuditPolicyDefinitionDisplayName,
- *     isSeeded: unifiedAuditPolicyDefinitionIsSeeded,
+ *     isSeeded: unifiedAuditPolicyDefinitionIsSeeded === "true",
  *     state: unifiedAuditPolicyDefinitionState,
  *     unifiedAuditPolicyCategory: unifiedAuditPolicyDefinitionUnifiedAuditPolicyCategory,
  *     unifiedAuditPolicyDefinitionId: testUnifiedAuditPolicyDefinition.id,
@@ -197,7 +197,7 @@ export interface GetUnifiedAuditPolicyDefinitionsOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -205,30 +205,30 @@ export interface GetUnifiedAuditPolicyDefinitionsOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the specified display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetUnifiedAuditPolicyDefinitionsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetUnifiedAuditPolicyDefinitionsFilterArgs>[] | undefined>;
     /**
      * A boolean flag indicating to list seeded unified audit policy definitions. Set this parameter to get list of seeded unified audit policy definitions.
      */
-    isSeeded?: pulumi.Input<boolean>;
+    isSeeded?: pulumi.Input<boolean | undefined>;
     /**
      * The current state of the unified audit policy definition.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The category to which the unified audit policy definition belongs to.
      */
-    unifiedAuditPolicyCategory?: pulumi.Input<string>;
+    unifiedAuditPolicyCategory?: pulumi.Input<string | undefined>;
     /**
      * An optional filter to return only resources that match the specified OCID of the unified audit policy definition resource.
      */
-    unifiedAuditPolicyDefinitionId?: pulumi.Input<string>;
+    unifiedAuditPolicyDefinitionId?: pulumi.Input<string | undefined>;
     /**
      * The name of the unified audit policy.
      */
-    unifiedAuditPolicyName?: pulumi.Input<string>;
+    unifiedAuditPolicyName?: pulumi.Input<string | undefined>;
 }

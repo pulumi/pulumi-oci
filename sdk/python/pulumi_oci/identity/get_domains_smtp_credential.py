@@ -350,7 +350,7 @@ def get_domains_smtp_credential(attribute_sets: Optional[Sequence[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_smtp_credential = oci.Identity.get_domains_smtp_credential(idcs_endpoint=test_domain["url"],
+    test_smtp_credential = oci.identity.get_domains_smtp_credential(idcs_endpoint=test_domain["url"],
         smtp_credential_id=test_smtp_credential_oci_identity_smtp_credential["id"],
         attribute_sets=[],
         attributes="",
@@ -403,12 +403,12 @@ def get_domains_smtp_credential(attribute_sets: Optional[Sequence[_builtins.str]
         urnietfparamsscimschemasoracleidcsextensionself_change_users=pulumi.get(__ret__, 'urnietfparamsscimschemasoracleidcsextensionself_change_users'),
         user_name=pulumi.get(__ret__, 'user_name'),
         users=pulumi.get(__ret__, 'users'))
-def get_domains_smtp_credential_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                       attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                       resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       smtp_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_domains_smtp_credential_output(attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                       attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                       resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       smtp_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsSmtpCredentialResult]:
     """
     This data source provides details about a specific Smtp Credential resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -421,7 +421,7 @@ def get_domains_smtp_credential_output(attribute_sets: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_smtp_credential = oci.Identity.get_domains_smtp_credential(idcs_endpoint=test_domain["url"],
+    test_smtp_credential = oci.identity.get_domains_smtp_credential(idcs_endpoint=test_domain["url"],
         smtp_credential_id=test_smtp_credential_oci_identity_smtp_credential["id"],
         attribute_sets=[],
         attributes="",

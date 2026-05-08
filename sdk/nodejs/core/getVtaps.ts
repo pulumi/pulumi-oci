@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVtaps = oci.Core.getVtaps({
+ * const testVtaps = oci.core.getVtaps({
  *     compartmentId: compartmentId,
  *     displayName: vtapDisplayName,
- *     isVtapEnabled: vtapIsVtapEnabled,
+ *     isVtapEnabled: vtapIsVtapEnabled === "true",
  *     source: vtapSource,
  *     state: vtapState,
  *     targetId: testTarget.id,
@@ -141,10 +141,10 @@ export interface GetVtapsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVtaps = oci.Core.getVtaps({
+ * const testVtaps = oci.core.getVtaps({
  *     compartmentId: compartmentId,
  *     displayName: vtapDisplayName,
- *     isVtapEnabled: vtapIsVtapEnabled,
+ *     isVtapEnabled: vtapIsVtapEnabled === "true",
  *     source: vtapSource,
  *     state: vtapState,
  *     targetId: testTarget.id,
@@ -179,32 +179,32 @@ export interface GetVtapsOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVtapsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVtapsFilterArgs>[] | undefined>;
     /**
      * Indicates whether to list all VTAPs or only running VTAPs.
      * * When `FALSE`, lists ALL running and stopped VTAPs.
      * * When `TRUE`, lists only running VTAPs (VTAPs where isVtapEnabled = `TRUE`).
      */
-    isVtapEnabled?: pulumi.Input<boolean>;
+    isVtapEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VTAP source.
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given VTAP administrative lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VTAP target.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * The IP address of the VTAP target.
      */
-    targetIp?: pulumi.Input<string>;
+    targetIp?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      */
-    vcnId?: pulumi.Input<string>;
+    vcnId?: pulumi.Input<string | undefined>;
 }

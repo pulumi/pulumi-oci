@@ -32,7 +32,7 @@ import (
 //			_, err := stackmonitoring.GetDefinedMonitoringTemplates(ctx, &stackmonitoring.GetDefinedMonitoringTemplatesArgs{
 //				CompartmentId: compartmentId,
 //				DisplayName:   pulumi.StringRef(definedMonitoringTemplateDisplayName),
-//				ResourceTypes: definedMonitoringTemplateResourceTypes,
+//				ResourceTypes: pulumi.ToArray(definedMonitoringTemplateResourceTypes),
 //			}, nil)
 //			if err != nil {
 //				return err

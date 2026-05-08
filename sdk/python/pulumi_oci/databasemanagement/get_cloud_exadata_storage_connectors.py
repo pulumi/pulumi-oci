@@ -118,7 +118,7 @@ def get_cloud_exadata_storage_connectors(cloud_exadata_infrastructure_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_storage_connectors = oci.DatabaseManagement.get_cloud_exadata_storage_connectors(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
+    test_cloud_exadata_storage_connectors = oci.databasemanagement.get_cloud_exadata_storage_connectors(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
         compartment_id=compartment_id,
         display_name=cloud_exadata_storage_connector_display_name)
     ```
@@ -143,10 +143,10 @@ def get_cloud_exadata_storage_connectors(cloud_exadata_infrastructure_id: Option
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_cloud_exadata_storage_connectors_output(cloud_exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudExadataStorageConnectorsFilterArgs', 'GetCloudExadataStorageConnectorsFilterArgsDict']]]]] = None,
+def get_cloud_exadata_storage_connectors_output(cloud_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudExadataStorageConnectorsFilterArgs', 'GetCloudExadataStorageConnectorsFilterArgsDict']]]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudExadataStorageConnectorsResult]:
     """
     This data source provides the list of Cloud Exadata Storage Connectors in Oracle Cloud Infrastructure Database Management service.
@@ -159,7 +159,7 @@ def get_cloud_exadata_storage_connectors_output(cloud_exadata_infrastructure_id:
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_storage_connectors = oci.DatabaseManagement.get_cloud_exadata_storage_connectors(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
+    test_cloud_exadata_storage_connectors = oci.databasemanagement.get_cloud_exadata_storage_connectors(cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
         compartment_id=compartment_id,
         display_name=cloud_exadata_storage_connector_display_name)
     ```

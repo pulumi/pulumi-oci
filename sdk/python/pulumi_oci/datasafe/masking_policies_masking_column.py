@@ -25,11 +25,11 @@ class MaskingPoliciesMaskingColumnArgs:
                  masking_policy_id: pulumi.Input[_builtins.str],
                  object: pulumi.Input[_builtins.str],
                  schema_name: pulumi.Input[_builtins.str],
-                 is_masking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 masking_column_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 masking_formats: Optional[pulumi.Input[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatArgs']]]] = None,
-                 object_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 sensitive_type_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 is_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 masking_column_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 masking_formats: pulumi.Input[Optional[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatArgs']]]] = None,
+                 object_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 sensitive_type_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a MaskingPoliciesMaskingColumn resource.
 
@@ -112,55 +112,55 @@ class MaskingPoliciesMaskingColumnArgs:
 
     @_builtins.property
     @pulumi.getter(name="isMaskingEnabled")
-    def is_masking_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_masking_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
         """
         return pulumi.get(self, "is_masking_enabled")
 
     @is_masking_enabled.setter
-    def is_masking_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_masking_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_masking_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="maskingColumnGroup")
-    def masking_column_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def masking_column_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The group of the masking column. It's a masking group identifier and can be any string  of acceptable length. All the columns in a group are masked together to ensure that  the masked data across these columns continue to retain the same logical relationship.  For more details, check  <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
         """
         return pulumi.get(self, "masking_column_group")
 
     @masking_column_group.setter
-    def masking_column_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def masking_column_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "masking_column_group", value)
 
     @_builtins.property
     @pulumi.getter(name="maskingFormats")
-    def masking_formats(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatArgs']]]]:
+    def masking_formats(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatArgs']]]]:
         """
         (Updatable) The masking formats to be assigned to the masking column. You can specify a condition  as part of each masking format. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions. A masking format can have one or more format  entries. The combined output of all the format entries is used for masking. It  provides the flexibility to define a masking format that can generate different parts  of a data value separately and then combine them to get the final data value for masking.
         """
         return pulumi.get(self, "masking_formats")
 
     @masking_formats.setter
-    def masking_formats(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatArgs']]]]):
+    def masking_formats(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatArgs']]]]):
         pulumi.set(self, "masking_formats", value)
 
     @_builtins.property
     @pulumi.getter(name="objectType")
-    def object_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of the object that contains the database column.
         """
         return pulumi.get(self, "object_type")
 
     @object_type.setter
-    def object_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_type", value)
 
     @_builtins.property
     @pulumi.getter(name="sensitiveTypeId")
-    def sensitive_type_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sensitive_type_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.  
 
@@ -171,29 +171,29 @@ class MaskingPoliciesMaskingColumnArgs:
         return pulumi.get(self, "sensitive_type_id")
 
     @sensitive_type_id.setter
-    def sensitive_type_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sensitive_type_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sensitive_type_id", value)
 
 
 @pulumi.input_type
 class _MaskingPoliciesMaskingColumnState:
     def __init__(__self__, *,
-                 child_columns: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 column_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_masking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 masking_column_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 masking_formats: Optional[pulumi.Input[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatArgs']]]] = None,
-                 masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 schema_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 sensitive_type_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 child_columns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 column_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 masking_column_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 masking_formats: pulumi.Input[Optional[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatArgs']]]] = None,
+                 masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 schema_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 sensitive_type_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MaskingPoliciesMaskingColumn resources.
 
@@ -253,151 +253,151 @@ class _MaskingPoliciesMaskingColumnState:
 
     @_builtins.property
     @pulumi.getter(name="childColumns")
-    def child_columns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def child_columns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         An array of child columns that are in referential relationship with the masking column.
         """
         return pulumi.get(self, "child_columns")
 
     @child_columns.setter
-    def child_columns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def child_columns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "child_columns", value)
 
     @_builtins.property
     @pulumi.getter(name="columnName")
-    def column_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def column_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
         """
         return pulumi.get(self, "column_name")
 
     @column_name.setter
-    def column_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def column_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "column_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dataType")
-    def data_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The data type of the masking column.
         """
         return pulumi.get(self, "data_type")
 
     @data_type.setter
-    def data_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_type", value)
 
     @_builtins.property
     @pulumi.getter(name="isMaskingEnabled")
-    def is_masking_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_masking_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
         """
         return pulumi.get(self, "is_masking_enabled")
 
     @is_masking_enabled.setter
-    def is_masking_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_masking_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_masking_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique key that identifies the masking column. It's numeric and unique within a masking policy.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Details about the current state of the masking column.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="maskingColumnGroup")
-    def masking_column_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def masking_column_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The group of the masking column. It's a masking group identifier and can be any string  of acceptable length. All the columns in a group are masked together to ensure that  the masked data across these columns continue to retain the same logical relationship.  For more details, check  <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
         """
         return pulumi.get(self, "masking_column_group")
 
     @masking_column_group.setter
-    def masking_column_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def masking_column_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "masking_column_group", value)
 
     @_builtins.property
     @pulumi.getter(name="maskingFormats")
-    def masking_formats(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatArgs']]]]:
+    def masking_formats(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatArgs']]]]:
         """
         (Updatable) The masking formats to be assigned to the masking column. You can specify a condition  as part of each masking format. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions. A masking format can have one or more format  entries. The combined output of all the format entries is used for masking. It  provides the flexibility to define a masking format that can generate different parts  of a data value separately and then combine them to get the final data value for masking.
         """
         return pulumi.get(self, "masking_formats")
 
     @masking_formats.setter
-    def masking_formats(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatArgs']]]]):
+    def masking_formats(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MaskingPoliciesMaskingColumnMaskingFormatArgs']]]]):
         pulumi.set(self, "masking_formats", value)
 
     @_builtins.property
     @pulumi.getter(name="maskingPolicyId")
-    def masking_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def masking_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the masking policy.
         """
         return pulumi.get(self, "masking_policy_id")
 
     @masking_policy_id.setter
-    def masking_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def masking_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "masking_policy_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def object(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the object (table or editioning view) that contains the database column. This attribute cannot be updated for an existing masking column.
         """
         return pulumi.get(self, "object")
 
     @object.setter
-    def object(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object", value)
 
     @_builtins.property
     @pulumi.getter(name="objectType")
-    def object_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of the object that contains the database column.
         """
         return pulumi.get(self, "object_type")
 
     @object_type.setter
-    def object_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_type", value)
 
     @_builtins.property
     @pulumi.getter(name="schemaName")
-    def schema_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def schema_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
         """
         return pulumi.get(self, "schema_name")
 
     @schema_name.setter
-    def schema_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def schema_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "schema_name", value)
 
     @_builtins.property
     @pulumi.getter(name="sensitiveTypeId")
-    def sensitive_type_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sensitive_type_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.  
 
@@ -408,43 +408,43 @@ class _MaskingPoliciesMaskingColumnState:
         return pulumi.get(self, "sensitive_type_id")
 
     @sensitive_type_id.setter
-    def sensitive_type_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sensitive_type_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sensitive_type_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the masking column.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -454,15 +454,15 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 column_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_masking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 masking_column_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 masking_formats: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MaskingPoliciesMaskingColumnMaskingFormatArgs', 'MaskingPoliciesMaskingColumnMaskingFormatArgsDict']]]]] = None,
-                 masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 schema_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 sensitive_type_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 column_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 masking_column_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 masking_formats: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MaskingPoliciesMaskingColumnMaskingFormatArgs', 'MaskingPoliciesMaskingColumnMaskingFormatArgsDict']]]]] = None,
+                 masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 schema_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 sensitive_type_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Masking Policies Masking Column resource in Oracle Cloud Infrastructure Data Safe service.
@@ -502,7 +502,7 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
             masking_policy_id=test_masking_policy["id"],
             object=masking_policies_masking_column_object,
             schema_name=masking_policies_masking_column_schema_name,
-            is_masking_enabled=masking_policies_masking_column_is_masking_enabled,
+            is_masking_enabled=masking_policies_masking_column_is_masking_enabled == "true",
             masking_column_group=masking_policies_masking_column_masking_column_group,
             masking_formats=[{
                 "format_entries": [{
@@ -510,12 +510,12 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
                     "column_name": masking_policies_masking_column_masking_formats_format_entries_column_name,
                     "description": masking_policies_masking_column_masking_formats_format_entries_description,
                     "end_date": masking_policies_masking_column_masking_formats_format_entries_end_date,
-                    "end_length": masking_policies_masking_column_masking_formats_format_entries_end_length,
+                    "end_length": int(masking_policies_masking_column_masking_formats_format_entries_end_length),
                     "end_value": masking_policies_masking_column_masking_formats_format_entries_end_value,
                     "fixed_number": masking_policies_masking_column_masking_formats_format_entries_fixed_number,
                     "fixed_string": masking_policies_masking_column_masking_formats_format_entries_fixed_string,
                     "grouping_columns": masking_policies_masking_column_masking_formats_format_entries_grouping_columns,
-                    "length": masking_policies_masking_column_masking_formats_format_entries_length,
+                    "length": int(masking_policies_masking_column_masking_formats_format_entries_length),
                     "library_masking_format_id": test_library_masking_format["id"],
                     "pattern": masking_policies_masking_column_masking_formats_format_entries_pattern,
                     "post_processing_function": masking_policies_masking_column_masking_formats_format_entries_post_processing_function,
@@ -525,8 +525,8 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
                     "schema_name": masking_policies_masking_column_masking_formats_format_entries_schema_name,
                     "sql_expression": masking_policies_masking_column_masking_formats_format_entries_sql_expression,
                     "start_date": masking_policies_masking_column_masking_formats_format_entries_start_date,
-                    "start_length": masking_policies_masking_column_masking_formats_format_entries_start_length,
-                    "start_position": masking_policies_masking_column_masking_formats_format_entries_start_position,
+                    "start_length": int(masking_policies_masking_column_masking_formats_format_entries_start_length),
+                    "start_position": int(masking_policies_masking_column_masking_formats_format_entries_start_position),
                     "start_value": masking_policies_masking_column_masking_formats_format_entries_start_value,
                     "table_name": test_table["name"],
                     "user_defined_function": masking_policies_masking_column_masking_formats_format_entries_user_defined_function,
@@ -607,7 +607,7 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
             masking_policy_id=test_masking_policy["id"],
             object=masking_policies_masking_column_object,
             schema_name=masking_policies_masking_column_schema_name,
-            is_masking_enabled=masking_policies_masking_column_is_masking_enabled,
+            is_masking_enabled=masking_policies_masking_column_is_masking_enabled == "true",
             masking_column_group=masking_policies_masking_column_masking_column_group,
             masking_formats=[{
                 "format_entries": [{
@@ -615,12 +615,12 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
                     "column_name": masking_policies_masking_column_masking_formats_format_entries_column_name,
                     "description": masking_policies_masking_column_masking_formats_format_entries_description,
                     "end_date": masking_policies_masking_column_masking_formats_format_entries_end_date,
-                    "end_length": masking_policies_masking_column_masking_formats_format_entries_end_length,
+                    "end_length": int(masking_policies_masking_column_masking_formats_format_entries_end_length),
                     "end_value": masking_policies_masking_column_masking_formats_format_entries_end_value,
                     "fixed_number": masking_policies_masking_column_masking_formats_format_entries_fixed_number,
                     "fixed_string": masking_policies_masking_column_masking_formats_format_entries_fixed_string,
                     "grouping_columns": masking_policies_masking_column_masking_formats_format_entries_grouping_columns,
-                    "length": masking_policies_masking_column_masking_formats_format_entries_length,
+                    "length": int(masking_policies_masking_column_masking_formats_format_entries_length),
                     "library_masking_format_id": test_library_masking_format["id"],
                     "pattern": masking_policies_masking_column_masking_formats_format_entries_pattern,
                     "post_processing_function": masking_policies_masking_column_masking_formats_format_entries_post_processing_function,
@@ -630,8 +630,8 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
                     "schema_name": masking_policies_masking_column_masking_formats_format_entries_schema_name,
                     "sql_expression": masking_policies_masking_column_masking_formats_format_entries_sql_expression,
                     "start_date": masking_policies_masking_column_masking_formats_format_entries_start_date,
-                    "start_length": masking_policies_masking_column_masking_formats_format_entries_start_length,
-                    "start_position": masking_policies_masking_column_masking_formats_format_entries_start_position,
+                    "start_length": int(masking_policies_masking_column_masking_formats_format_entries_start_length),
+                    "start_position": int(masking_policies_masking_column_masking_formats_format_entries_start_position),
                     "start_value": masking_policies_masking_column_masking_formats_format_entries_start_value,
                     "table_name": test_table["name"],
                     "user_defined_function": masking_policies_masking_column_masking_formats_format_entries_user_defined_function,
@@ -667,15 +667,15 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 column_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_masking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 masking_column_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 masking_formats: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MaskingPoliciesMaskingColumnMaskingFormatArgs', 'MaskingPoliciesMaskingColumnMaskingFormatArgsDict']]]]] = None,
-                 masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 schema_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 sensitive_type_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 column_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 masking_column_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 masking_formats: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MaskingPoliciesMaskingColumnMaskingFormatArgs', 'MaskingPoliciesMaskingColumnMaskingFormatArgsDict']]]]] = None,
+                 masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 schema_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 sensitive_type_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -719,22 +719,22 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            child_columns: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            column_name: Optional[pulumi.Input[_builtins.str]] = None,
-            data_type: Optional[pulumi.Input[_builtins.str]] = None,
-            is_masking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            key: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            masking_column_group: Optional[pulumi.Input[_builtins.str]] = None,
-            masking_formats: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MaskingPoliciesMaskingColumnMaskingFormatArgs', 'MaskingPoliciesMaskingColumnMaskingFormatArgsDict']]]]] = None,
-            masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            object: Optional[pulumi.Input[_builtins.str]] = None,
-            object_type: Optional[pulumi.Input[_builtins.str]] = None,
-            schema_name: Optional[pulumi.Input[_builtins.str]] = None,
-            sensitive_type_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'MaskingPoliciesMaskingColumn':
+            child_columns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            column_name: pulumi.Input[Optional[_builtins.str]] = None,
+            data_type: pulumi.Input[Optional[_builtins.str]] = None,
+            is_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            masking_column_group: pulumi.Input[Optional[_builtins.str]] = None,
+            masking_formats: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MaskingPoliciesMaskingColumnMaskingFormatArgs', 'MaskingPoliciesMaskingColumnMaskingFormatArgsDict']]]]] = None,
+            masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            object: pulumi.Input[Optional[_builtins.str]] = None,
+            object_type: pulumi.Input[Optional[_builtins.str]] = None,
+            schema_name: pulumi.Input[Optional[_builtins.str]] = None,
+            sensitive_type_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'MaskingPoliciesMaskingColumn':
         """
         Get an existing MaskingPoliciesMaskingColumn resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

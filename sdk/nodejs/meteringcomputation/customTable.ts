@@ -134,11 +134,11 @@ export interface CustomTableState {
     /**
      * The compartment OCID.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The custom table for Cost Analysis UI rendering.
      */
-    savedCustomTable?: pulumi.Input<inputs.MeteringComputation.CustomTableSavedCustomTable>;
+    savedCustomTable?: pulumi.Input<inputs.MeteringComputation.CustomTableSavedCustomTable | undefined>;
     /**
      * The associated saved report OCID.
      *
@@ -146,7 +146,7 @@ export interface CustomTableState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    savedReportId?: pulumi.Input<string>;
+    savedReportId?: pulumi.Input<string | undefined>;
 }
 
 /**

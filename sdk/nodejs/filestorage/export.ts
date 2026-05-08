@@ -32,10 +32,10 @@ import * as utilities from "../utilities";
  *         anonymousGid: exportExportOptionsAnonymousGid,
  *         anonymousUid: exportExportOptionsAnonymousUid,
  *         identitySquash: exportExportOptionsIdentitySquash,
- *         isAnonymousAccessAllowed: exportExportOptionsIsAnonymousAccessAllowed,
- *         requirePrivilegedSourcePort: exportExportOptionsRequirePrivilegedSourcePort,
+ *         isAnonymousAccessAllowed: exportExportOptionsIsAnonymousAccessAllowed === "true",
+ *         requirePrivilegedSourcePort: exportExportOptionsRequirePrivilegedSourcePort === "true",
  *     }],
- *     isIdmapGroupsForSysAuth: exportIsIdmapGroupsForSysAuth,
+ *     isIdmapGroupsForSysAuth: exportIsIdmapGroupsForSysAuth === "true",
  *     locks: [{
  *         type: exportLocksType,
  *         message: exportLocksMessage,
@@ -198,24 +198,24 @@ export interface ExportState {
      *
      * The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
      */
-    exportOptions?: pulumi.Input<pulumi.Input<inputs.FileStorage.ExportExportOption>[]>;
+    exportOptions?: pulumi.Input<pulumi.Input<inputs.FileStorage.ExportExportOption>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
      */
-    exportSetId?: pulumi.Input<string>;
+    exportSetId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
      */
-    fileSystemId?: pulumi.Input<string>;
+    fileSystemId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
      */
-    isIdmapGroupsForSysAuth?: pulumi.Input<boolean>;
-    isLockOverride?: pulumi.Input<boolean>;
+    isIdmapGroupsForSysAuth?: pulumi.Input<boolean | undefined>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.ExportLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.ExportLock>[] | undefined>;
     /**
      * Path used to access the associated file system.
      *
@@ -227,15 +227,15 @@ export interface ExportState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    path?: pulumi.Input<string>;
+    path?: pulumi.Input<string | undefined>;
     /**
      * The current state of this export.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the export was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -255,7 +255,7 @@ export interface ExportArgs {
      *
      * The export's `exportOptions` can be changed after creation using the `UpdateExport` operation.
      */
-    exportOptions?: pulumi.Input<pulumi.Input<inputs.FileStorage.ExportExportOption>[]>;
+    exportOptions?: pulumi.Input<pulumi.Input<inputs.FileStorage.ExportExportOption>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
      */
@@ -267,12 +267,12 @@ export interface ExportArgs {
     /**
      * (Updatable) Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
      */
-    isIdmapGroupsForSysAuth?: pulumi.Input<boolean>;
-    isLockOverride?: pulumi.Input<boolean>;
+    isIdmapGroupsForSysAuth?: pulumi.Input<boolean | undefined>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.ExportLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.ExportLock>[] | undefined>;
     /**
      * Path used to access the associated file system.
      *

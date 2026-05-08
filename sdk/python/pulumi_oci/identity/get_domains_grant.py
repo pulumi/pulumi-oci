@@ -377,7 +377,7 @@ def get_domains_grant(attribute_sets: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_grant = oci.Identity.get_domains_grant(grant_id=test_grant_oci_identity_domains_grant["id"],
+    test_grant = oci.identity.get_domains_grant(grant_id=test_grant_oci_identity_domains_grant["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
@@ -432,12 +432,12 @@ def get_domains_grant(attribute_sets: Optional[Sequence[_builtins.str]] = None,
         schemas=pulumi.get(__ret__, 'schemas'),
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'))
-def get_domains_grant_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                             attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             grant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                             idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                             resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_grant_output(attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                             attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             grant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                             resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsGrantResult]:
     """
     This data source provides details about a specific Grant resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -450,7 +450,7 @@ def get_domains_grant_output(attribute_sets: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_grant = oci.Identity.get_domains_grant(grant_id=test_grant_oci_identity_domains_grant["id"],
+    test_grant = oci.identity.get_domains_grant(grant_id=test_grant_oci_identity_domains_grant["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",

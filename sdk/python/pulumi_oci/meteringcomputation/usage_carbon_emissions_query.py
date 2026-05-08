@@ -60,8 +60,8 @@ class UsageCarbonEmissionsQueryArgs:
 @pulumi.input_type
 class _UsageCarbonEmissionsQueryState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 query_definition: Optional[pulumi.Input['UsageCarbonEmissionsQueryQueryDefinitionArgs']] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 query_definition: pulumi.Input[Optional['UsageCarbonEmissionsQueryQueryDefinitionArgs']] = None):
         """
         Input properties used for looking up and filtering UsageCarbonEmissionsQuery resources.
 
@@ -75,26 +75,26 @@ class _UsageCarbonEmissionsQueryState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The compartment OCID.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="queryDefinition")
-    def query_definition(self) -> Optional[pulumi.Input['UsageCarbonEmissionsQueryQueryDefinitionArgs']]:
+    def query_definition(self) -> pulumi.Input[Optional['UsageCarbonEmissionsQueryQueryDefinitionArgs']]:
         """
         (Updatable) The common fields for queries.
         """
         return pulumi.get(self, "query_definition")
 
     @query_definition.setter
-    def query_definition(self, value: Optional[pulumi.Input['UsageCarbonEmissionsQueryQueryDefinitionArgs']]):
+    def query_definition(self, value: pulumi.Input[Optional['UsageCarbonEmissionsQueryQueryDefinitionArgs']]):
         pulumi.set(self, "query_definition", value)
 
 
@@ -104,8 +104,8 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 query_definition: Optional[pulumi.Input[Union['UsageCarbonEmissionsQueryQueryDefinitionArgs', 'UsageCarbonEmissionsQueryQueryDefinitionArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 query_definition: pulumi.Input[Optional[Union['UsageCarbonEmissionsQueryQueryDefinitionArgs', 'UsageCarbonEmissionsQueryQueryDefinitionArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Usage Carbon Emissions Query resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -126,12 +126,12 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
             query_definition={
                 "cost_analysis_ui": {
                     "graph": usage_carbon_emissions_query_query_definition_cost_analysis_ui_graph,
-                    "is_cumulative_graph": usage_carbon_emissions_query_query_definition_cost_analysis_ui_is_cumulative_graph,
+                    "is_cumulative_graph": usage_carbon_emissions_query_query_definition_cost_analysis_ui_is_cumulative_graph == "true",
                 },
                 "display_name": usage_carbon_emissions_query_query_definition_display_name,
                 "report_query": {
                     "tenant_id": test_tenant["id"],
-                    "compartment_depth": usage_carbon_emissions_query_query_definition_report_query_compartment_depth,
+                    "compartment_depth": int(usage_carbon_emissions_query_query_definition_report_query_compartment_depth),
                     "date_range_name": usage_carbon_emissions_query_query_definition_report_query_date_range_name,
                     "emission_calculation_method": usage_carbon_emissions_query_query_definition_report_query_emission_calculation_method,
                     "emission_type": usage_carbon_emissions_query_query_definition_report_query_emission_type,
@@ -142,12 +142,12 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
                         "namespace": usage_carbon_emissions_query_query_definition_report_query_group_by_tag_namespace,
                         "value": usage_carbon_emissions_query_query_definition_report_query_group_by_tag_value,
                     }],
-                    "is_aggregate_by_time": usage_carbon_emissions_query_query_definition_report_query_is_aggregate_by_time,
+                    "is_aggregate_by_time": usage_carbon_emissions_query_query_definition_report_query_is_aggregate_by_time == "true",
                     "time_usage_ended": usage_carbon_emissions_query_query_definition_report_query_time_usage_ended,
                     "time_usage_started": usage_carbon_emissions_query_query_definition_report_query_time_usage_started,
                     "usage_carbon_emissions_query_filter": usage_carbon_emissions_query_query_definition_report_query_usage_carbon_emissions_query_filter,
                 },
-                "version": usage_carbon_emissions_query_query_definition_version,
+                "version": int(usage_carbon_emissions_query_query_definition_version),
             })
         ```
 
@@ -190,12 +190,12 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
             query_definition={
                 "cost_analysis_ui": {
                     "graph": usage_carbon_emissions_query_query_definition_cost_analysis_ui_graph,
-                    "is_cumulative_graph": usage_carbon_emissions_query_query_definition_cost_analysis_ui_is_cumulative_graph,
+                    "is_cumulative_graph": usage_carbon_emissions_query_query_definition_cost_analysis_ui_is_cumulative_graph == "true",
                 },
                 "display_name": usage_carbon_emissions_query_query_definition_display_name,
                 "report_query": {
                     "tenant_id": test_tenant["id"],
-                    "compartment_depth": usage_carbon_emissions_query_query_definition_report_query_compartment_depth,
+                    "compartment_depth": int(usage_carbon_emissions_query_query_definition_report_query_compartment_depth),
                     "date_range_name": usage_carbon_emissions_query_query_definition_report_query_date_range_name,
                     "emission_calculation_method": usage_carbon_emissions_query_query_definition_report_query_emission_calculation_method,
                     "emission_type": usage_carbon_emissions_query_query_definition_report_query_emission_type,
@@ -206,12 +206,12 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
                         "namespace": usage_carbon_emissions_query_query_definition_report_query_group_by_tag_namespace,
                         "value": usage_carbon_emissions_query_query_definition_report_query_group_by_tag_value,
                     }],
-                    "is_aggregate_by_time": usage_carbon_emissions_query_query_definition_report_query_is_aggregate_by_time,
+                    "is_aggregate_by_time": usage_carbon_emissions_query_query_definition_report_query_is_aggregate_by_time == "true",
                     "time_usage_ended": usage_carbon_emissions_query_query_definition_report_query_time_usage_ended,
                     "time_usage_started": usage_carbon_emissions_query_query_definition_report_query_time_usage_started,
                     "usage_carbon_emissions_query_filter": usage_carbon_emissions_query_query_definition_report_query_usage_carbon_emissions_query_filter,
                 },
-                "version": usage_carbon_emissions_query_query_definition_version,
+                "version": int(usage_carbon_emissions_query_query_definition_version),
             })
         ```
 
@@ -239,8 +239,8 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 query_definition: Optional[pulumi.Input[Union['UsageCarbonEmissionsQueryQueryDefinitionArgs', 'UsageCarbonEmissionsQueryQueryDefinitionArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 query_definition: pulumi.Input[Optional[Union['UsageCarbonEmissionsQueryQueryDefinitionArgs', 'UsageCarbonEmissionsQueryQueryDefinitionArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -266,8 +266,8 @@ class UsageCarbonEmissionsQuery(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            query_definition: Optional[pulumi.Input[Union['UsageCarbonEmissionsQueryQueryDefinitionArgs', 'UsageCarbonEmissionsQueryQueryDefinitionArgsDict']]] = None) -> 'UsageCarbonEmissionsQuery':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            query_definition: pulumi.Input[Optional[Union['UsageCarbonEmissionsQueryQueryDefinitionArgs', 'UsageCarbonEmissionsQueryQueryDefinitionArgsDict']]] = None) -> 'UsageCarbonEmissionsQuery':
         """
         Get an existing UsageCarbonEmissionsQuery resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

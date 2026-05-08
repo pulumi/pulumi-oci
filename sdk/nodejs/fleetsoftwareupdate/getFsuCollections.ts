@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFsuCollections = oci.FleetSoftwareUpdate.getFsuCollections({
+ * const testFsuCollections = oci.fleetsoftwareupdate.getFsuCollections({
  *     compartmentId: compartmentId,
  *     displayName: fsuCollectionDisplayName,
  *     state: fsuCollectionState,
@@ -100,7 +100,7 @@ export interface GetFsuCollectionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFsuCollections = oci.FleetSoftwareUpdate.getFsuCollections({
+ * const testFsuCollections = oci.fleetsoftwareupdate.getFsuCollections({
  *     compartmentId: compartmentId,
  *     displayName: fsuCollectionDisplayName,
  *     state: fsuCollectionState,
@@ -130,14 +130,14 @@ export interface GetFsuCollectionsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.GetFsuCollectionsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.GetFsuCollectionsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose type matches the given type.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

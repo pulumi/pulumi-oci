@@ -141,7 +141,7 @@ def get_namespace_properties_metadata(constraints: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_properties_metadata = oci.LogAnalytics.get_namespace_properties_metadata(namespace=namespace_properties_metadata_namespace,
+    test_namespace_properties_metadata = oci.loganalytics.get_namespace_properties_metadata(namespace=namespace_properties_metadata_namespace,
         constraints=namespace_properties_metadata_constraints,
         display_text=namespace_properties_metadata_display_text,
         level=namespace_properties_metadata_level,
@@ -174,12 +174,12 @@ def get_namespace_properties_metadata(constraints: Optional[_builtins.str] = Non
         name=pulumi.get(__ret__, 'name'),
         namespace=pulumi.get(__ret__, 'namespace'),
         property_metadata_summary_collections=pulumi.get(__ret__, 'property_metadata_summary_collections'))
-def get_namespace_properties_metadata_output(constraints: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             display_text: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamespacePropertiesMetadataFilterArgs', 'GetNamespacePropertiesMetadataFilterArgsDict']]]]] = None,
-                                             level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_namespace_properties_metadata_output(constraints: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             display_text: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespacePropertiesMetadataFilterArgs', 'GetNamespacePropertiesMetadataFilterArgsDict']]]]] = None,
+                                             level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespacePropertiesMetadataResult]:
     """
     This data source provides the list of Namespace Properties Metadata in Oracle Cloud Infrastructure Log Analytics service.
@@ -192,7 +192,7 @@ def get_namespace_properties_metadata_output(constraints: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_properties_metadata = oci.LogAnalytics.get_namespace_properties_metadata(namespace=namespace_properties_metadata_namespace,
+    test_namespace_properties_metadata = oci.loganalytics.get_namespace_properties_metadata(namespace=namespace_properties_metadata_namespace,
         constraints=namespace_properties_metadata_constraints,
         display_text=namespace_properties_metadata_display_text,
         level=namespace_properties_metadata_level,

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testMonitoringTemplateMonitoringTemplateOnGivenResourcesManagement = new oci.stackmonitoring.MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement("test_monitoring_template_monitoring_template_on_given_resources_management", {
  *     monitoringTemplateId: testMonitoringTemplate.id,
- *     enableMonitoringTemplateOnGivenResources: enableMonitoringTemplateOnGivenResources,
+ *     enableMonitoringTemplateOnGivenResources: enableMonitoringTemplateOnGivenResources === "true",
  * });
  * ```
  */
@@ -106,11 +106,11 @@ export interface MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementS
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    enableMonitoringTemplateOnGivenResources?: pulumi.Input<boolean>;
+    enableMonitoringTemplateOnGivenResources?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitoring template.
      */
-    monitoringTemplateId?: pulumi.Input<string>;
+    monitoringTemplateId?: pulumi.Input<string | undefined>;
 }
 
 /**

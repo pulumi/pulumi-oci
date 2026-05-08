@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulingPolicySchedulingWindows = oci.Database.getSchedulingPolicySchedulingWindows({
+ * const testSchedulingPolicySchedulingWindows = oci.database.getSchedulingPolicySchedulingWindows({
  *     schedulingPolicyId: testSchedulingPolicy.id,
  *     compartmentId: compartmentId,
  *     displayName: schedulingPolicySchedulingWindowDisplayName,
@@ -100,7 +100,7 @@ export interface GetSchedulingPolicySchedulingWindowsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulingPolicySchedulingWindows = oci.Database.getSchedulingPolicySchedulingWindows({
+ * const testSchedulingPolicySchedulingWindows = oci.database.getSchedulingPolicySchedulingWindows({
  *     schedulingPolicyId: testSchedulingPolicy.id,
  *     compartmentId: compartmentId,
  *     displayName: schedulingPolicySchedulingWindowDisplayName,
@@ -126,12 +126,12 @@ export interface GetSchedulingPolicySchedulingWindowsOutputArgs {
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetSchedulingPolicySchedulingWindowsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetSchedulingPolicySchedulingWindowsFilterArgs>[] | undefined>;
     /**
      * The Scheduling Policy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -139,5 +139,5 @@ export interface GetSchedulingPolicySchedulingWindowsOutputArgs {
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -28,8 +28,8 @@ import * as utilities from "../utilities";
  *     headers: httpProbeHeaders,
  *     method: httpProbeMethod,
  *     path: httpProbePath,
- *     port: httpProbePort,
- *     timeoutInSeconds: httpProbeTimeoutInSeconds,
+ *     port: Number(httpProbePort),
+ *     timeoutInSeconds: Number(httpProbeTimeoutInSeconds),
  *     vantagePointNames: httpProbeVantagePointNames,
  * });
  * ```
@@ -186,49 +186,49 @@ export interface HttpProbeState {
     /**
      * The OCID of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A dictionary of HTTP request headers.
      *
      * *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
      */
-    headers?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    headers?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The region where updates must be made and where results must be fetched from.
      */
-    homeRegion?: pulumi.Input<string>;
+    homeRegion?: pulumi.Input<string | undefined>;
     /**
      * The supported HTTP methods available for probes.
      */
-    method?: pulumi.Input<string>;
+    method?: pulumi.Input<string | undefined>;
     /**
      * The optional URL path to probe, including query parameters.
      */
-    path?: pulumi.Input<string>;
+    path?: pulumi.Input<string | undefined>;
     /**
      * The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * The supported protocols available for HTTP probes.
      */
-    protocol?: pulumi.Input<string>;
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * A URL for fetching the probe results.
      */
-    resultsUrl?: pulumi.Input<string>;
+    resultsUrl?: pulumi.Input<string | undefined>;
     /**
      * A list of targets (hostnames or IP addresses) of the probe.
      */
-    targets?: pulumi.Input<pulumi.Input<string>[]>;
+    targets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The RFC 3339-formatted creation date and time of the probe.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
      */
-    timeoutInSeconds?: pulumi.Input<number>;
+    timeoutInSeconds?: pulumi.Input<number | undefined>;
     /**
      * A list of names of vantage points from which to execute the probe.
      *
@@ -236,7 +236,7 @@ export interface HttpProbeState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vantagePointNames?: pulumi.Input<pulumi.Input<string>[]>;
+    vantagePointNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -252,19 +252,19 @@ export interface HttpProbeArgs {
      *
      * *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
      */
-    headers?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    headers?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The supported HTTP methods available for probes.
      */
-    method?: pulumi.Input<string>;
+    method?: pulumi.Input<string | undefined>;
     /**
      * The optional URL path to probe, including query parameters.
      */
-    path?: pulumi.Input<string>;
+    path?: pulumi.Input<string | undefined>;
     /**
      * The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * The supported protocols available for HTTP probes.
      */
@@ -276,7 +276,7 @@ export interface HttpProbeArgs {
     /**
      * The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
      */
-    timeoutInSeconds?: pulumi.Input<number>;
+    timeoutInSeconds?: pulumi.Input<number | undefined>;
     /**
      * A list of names of vantage points from which to execute the probe.
      *
@@ -284,5 +284,5 @@ export interface HttpProbeArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vantagePointNames?: pulumi.Input<pulumi.Input<string>[]>;
+    vantagePointNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

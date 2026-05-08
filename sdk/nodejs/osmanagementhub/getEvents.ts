@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEvents = oci.OsManagementHub.getEvents({
+ * const testEvents = oci.osmanagementhub.getEvents({
  *     compartmentId: compartmentId,
  *     eventFingerprint: eventEventFingerprint,
  *     eventSummary: eventEventSummary,
  *     eventSummaryContains: eventEventSummaryContains,
  *     id: eventId,
- *     isManagedByAutonomousLinux: eventIsManagedByAutonomousLinux,
+ *     isManagedByAutonomousLinux: eventIsManagedByAutonomousLinux === "true",
  *     resourceId: testResource.id,
  *     state: eventState,
  *     timeCreatedGreaterThanOrEqualTo: eventTimeCreatedGreaterThanOrEqualTo,
@@ -168,13 +168,13 @@ export interface GetEventsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEvents = oci.OsManagementHub.getEvents({
+ * const testEvents = oci.osmanagementhub.getEvents({
  *     compartmentId: compartmentId,
  *     eventFingerprint: eventEventFingerprint,
  *     eventSummary: eventEventSummary,
  *     eventSummaryContains: eventEventSummaryContains,
  *     id: eventId,
- *     isManagedByAutonomousLinux: eventIsManagedByAutonomousLinux,
+ *     isManagedByAutonomousLinux: eventIsManagedByAutonomousLinux === "true",
  *     resourceId: testResource.id,
  *     state: eventState,
  *     timeCreatedGreaterThanOrEqualTo: eventTimeCreatedGreaterThanOrEqualTo,
@@ -209,46 +209,46 @@ export interface GetEventsOutputArgs {
     /**
      * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The eventFingerprint of the KernelEventData.
      */
-    eventFingerprint?: pulumi.Input<string>;
+    eventFingerprint?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only events whose summary matches the given value.
      */
-    eventSummary?: pulumi.Input<string>;
+    eventSummary?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only events with a summary that contains the value provided.
      */
-    eventSummaryContains?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetEventsFilterArgs>[]>;
+    eventSummaryContains?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetEventsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the event.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether to list only resources managed by the Autonomous Linux service.
      */
-    isManagedByAutonomousLinux?: pulumi.Input<boolean>;
+    isManagedByAutonomousLinux?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource. This filter returns resources associated with the specified resource.
      */
-    resourceId?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only events that match the state provided. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns events that occurred on or after the date provided.       Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns events that occurred on or before the date provided.       Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreatedLessThan?: pulumi.Input<string>;
+    timeCreatedLessThan?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose type matches the given value.
      */
-    types?: pulumi.Input<pulumi.Input<string>[]>;
+    types?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

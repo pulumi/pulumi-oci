@@ -98,7 +98,7 @@ def get_organizations(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_organizations = oci.Tenantmanagercontrolplane.get_organizations(compartment_id=compartment_id)
+    test_organizations = oci.tenantmanagercontrolplane.get_organizations(compartment_id=compartment_id)
     ```
 
 
@@ -115,8 +115,8 @@ def get_organizations(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         organization_collections=pulumi.get(__ret__, 'organization_collections'))
-def get_organizations_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOrganizationsFilterArgs', 'GetOrganizationsFilterArgsDict']]]]] = None,
+def get_organizations_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOrganizationsFilterArgs', 'GetOrganizationsFilterArgsDict']]]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOrganizationsResult]:
     """
     This data source provides the list of Organizations in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
@@ -129,7 +129,7 @@ def get_organizations_output(compartment_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_organizations = oci.Tenantmanagercontrolplane.get_organizations(compartment_id=compartment_id)
+    test_organizations = oci.tenantmanagercontrolplane.get_organizations(compartment_id=compartment_id)
     ```
 
 

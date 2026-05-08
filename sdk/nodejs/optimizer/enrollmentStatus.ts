@@ -129,15 +129,15 @@ export interface EnrollmentStatusState {
     /**
      * The OCID of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The unique OCID associated with the enrollment status.
      */
-    enrollmentStatusId?: pulumi.Input<string>;
+    enrollmentStatusId?: pulumi.Input<string | undefined>;
     /**
      * The enrollment status' current state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Cloud Advisor enrollment status.
      *
@@ -145,19 +145,19 @@ export interface EnrollmentStatusState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The reason for the enrollment status of the tenancy.
      */
-    statusReason?: pulumi.Input<string>;
+    statusReason?: pulumi.Input<string | undefined>;
     /**
      * The date and time the enrollment status was created, in the format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the enrollment status was last updated, in the format defined by RFC3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**

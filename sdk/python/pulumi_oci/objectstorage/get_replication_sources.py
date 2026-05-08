@@ -105,7 +105,7 @@ def get_replication_sources(bucket: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_sources = oci.ObjectStorage.get_replication_sources(bucket=replication_source_bucket,
+    test_replication_sources = oci.objectstorage.get_replication_sources(bucket=replication_source_bucket,
         namespace=replication_source_namespace)
     ```
 
@@ -126,9 +126,9 @@ def get_replication_sources(bucket: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         namespace=pulumi.get(__ret__, 'namespace'),
         replication_sources=pulumi.get(__ret__, 'replication_sources'))
-def get_replication_sources_output(bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetReplicationSourcesFilterArgs', 'GetReplicationSourcesFilterArgsDict']]]]] = None,
-                                   namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_replication_sources_output(bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetReplicationSourcesFilterArgs', 'GetReplicationSourcesFilterArgsDict']]]]] = None,
+                                   namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReplicationSourcesResult]:
     """
     This data source provides the list of Replication Sources in Oracle Cloud Infrastructure Object Storage service.
@@ -141,7 +141,7 @@ def get_replication_sources_output(bucket: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_sources = oci.ObjectStorage.get_replication_sources(bucket=replication_source_bucket,
+    test_replication_sources = oci.objectstorage.get_replication_sources(bucket=replication_source_bucket,
         namespace=replication_source_namespace)
     ```
 

@@ -96,7 +96,7 @@ def get_query_quick_picks(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_query_quick_picks = oci.ApmTraces.get_query_quick_picks(apm_domain_id=test_apm_domain["id"])
+    test_query_quick_picks = oci.apmtraces.get_query_quick_picks(apm_domain_id=test_apm_domain["id"])
     ```
 
 
@@ -113,8 +113,8 @@ def get_query_quick_picks(apm_domain_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         quick_picks=pulumi.get(__ret__, 'quick_picks'))
-def get_query_quick_picks_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetQueryQuickPicksFilterArgs', 'GetQueryQuickPicksFilterArgsDict']]]]] = None,
+def get_query_quick_picks_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetQueryQuickPicksFilterArgs', 'GetQueryQuickPicksFilterArgsDict']]]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetQueryQuickPicksResult]:
     """
     This data source provides the list of Query Quick Picks in Oracle Cloud Infrastructure Apm Traces service.
@@ -128,7 +128,7 @@ def get_query_quick_picks_output(apm_domain_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_query_quick_picks = oci.ApmTraces.get_query_quick_picks(apm_domain_id=test_apm_domain["id"])
+    test_query_quick_picks = oci.apmtraces.get_query_quick_picks(apm_domain_id=test_apm_domain["id"])
     ```
 
 

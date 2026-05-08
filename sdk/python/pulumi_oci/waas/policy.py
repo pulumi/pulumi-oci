@@ -23,14 +23,14 @@ class PolicyArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  domain: pulumi.Input[_builtins.str],
-                 additional_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 origin_groups: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginGroupArgs']]]] = None,
-                 origins: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginArgs']]]] = None,
-                 policy_config: Optional[pulumi.Input['PolicyPolicyConfigArgs']] = None,
-                 waf_config: Optional[pulumi.Input['PolicyWafConfigArgs']] = None):
+                 additional_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 origin_groups: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyOriginGroupArgs']]]] = None,
+                 origins: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyOriginArgs']]]] = None,
+                 policy_config: pulumi.Input[Optional['PolicyPolicyConfigArgs']] = None,
+                 waf_config: pulumi.Input[Optional['PolicyWafConfigArgs']] = None):
         """
         The set of arguments for constructing a Policy resource.
 
@@ -90,117 +90,117 @@ class PolicyArgs:
 
     @_builtins.property
     @pulumi.getter(name="additionalDomains")
-    def additional_domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def additional_domains(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of additional domains for the specified web application.
         """
         return pulumi.get(self, "additional_domains")
 
     @additional_domains.setter
-    def additional_domains(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def additional_domains(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "additional_domains", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="originGroups")
-    def origin_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginGroupArgs']]]]:
+    def origin_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PolicyOriginGroupArgs']]]]:
         """
         (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
         """
         return pulumi.get(self, "origin_groups")
 
     @origin_groups.setter
-    def origin_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginGroupArgs']]]]):
+    def origin_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyOriginGroupArgs']]]]):
         pulumi.set(self, "origin_groups", value)
 
     @_builtins.property
     @pulumi.getter
-    def origins(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginArgs']]]]:
+    def origins(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PolicyOriginArgs']]]]:
         """
         (Updatable) A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
         """
         return pulumi.get(self, "origins")
 
     @origins.setter
-    def origins(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginArgs']]]]):
+    def origins(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyOriginArgs']]]]):
         pulumi.set(self, "origins", value)
 
     @_builtins.property
     @pulumi.getter(name="policyConfig")
-    def policy_config(self) -> Optional[pulumi.Input['PolicyPolicyConfigArgs']]:
+    def policy_config(self) -> pulumi.Input[Optional['PolicyPolicyConfigArgs']]:
         """
         (Updatable) The configuration details for the WAAS policy.
         """
         return pulumi.get(self, "policy_config")
 
     @policy_config.setter
-    def policy_config(self, value: Optional[pulumi.Input['PolicyPolicyConfigArgs']]):
+    def policy_config(self, value: pulumi.Input[Optional['PolicyPolicyConfigArgs']]):
         pulumi.set(self, "policy_config", value)
 
     @_builtins.property
     @pulumi.getter(name="wafConfig")
-    def waf_config(self) -> Optional[pulumi.Input['PolicyWafConfigArgs']]:
+    def waf_config(self) -> pulumi.Input[Optional['PolicyWafConfigArgs']]:
         """
         (Updatable) The Web Application Firewall configuration for the WAAS policy creation.
         """
         return pulumi.get(self, "waf_config")
 
     @waf_config.setter
-    def waf_config(self, value: Optional[pulumi.Input['PolicyWafConfigArgs']]):
+    def waf_config(self, value: pulumi.Input[Optional['PolicyWafConfigArgs']]):
         pulumi.set(self, "waf_config", value)
 
 
 @pulumi.input_type
 class _PolicyState:
     def __init__(__self__, *,
-                 additional_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 cname: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 origin_groups: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginGroupArgs']]]] = None,
-                 origins: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginArgs']]]] = None,
-                 policy_config: Optional[pulumi.Input['PolicyPolicyConfigArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 waf_config: Optional[pulumi.Input['PolicyWafConfigArgs']] = None):
+                 additional_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cname: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 origin_groups: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyOriginGroupArgs']]]] = None,
+                 origins: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyOriginArgs']]]] = None,
+                 policy_config: pulumi.Input[Optional['PolicyPolicyConfigArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 waf_config: pulumi.Input[Optional['PolicyWafConfigArgs']] = None):
         """
         Input properties used for looking up and filtering Policy resources.
 
@@ -247,158 +247,158 @@ class _PolicyState:
 
     @_builtins.property
     @pulumi.getter(name="additionalDomains")
-    def additional_domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def additional_domains(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of additional domains for the specified web application.
         """
         return pulumi.get(self, "additional_domains")
 
     @additional_domains.setter
-    def additional_domains(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def additional_domains(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "additional_domains", value)
 
     @_builtins.property
     @pulumi.getter
-    def cname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CNAME record to add to your DNS configuration to route traffic for the domain, and all additional domains, through the WAF.
         """
         return pulumi.get(self, "cname")
 
     @cname.setter
-    def cname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cname", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the WAAS policy.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The web application domain that the WAAS policy protects.
         """
         return pulumi.get(self, "domain")
 
     @domain.setter
-    def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="originGroups")
-    def origin_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginGroupArgs']]]]:
+    def origin_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PolicyOriginGroupArgs']]]]:
         """
         (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
         """
         return pulumi.get(self, "origin_groups")
 
     @origin_groups.setter
-    def origin_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginGroupArgs']]]]):
+    def origin_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyOriginGroupArgs']]]]):
         pulumi.set(self, "origin_groups", value)
 
     @_builtins.property
     @pulumi.getter
-    def origins(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginArgs']]]]:
+    def origins(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PolicyOriginArgs']]]]:
         """
         (Updatable) A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
         """
         return pulumi.get(self, "origins")
 
     @origins.setter
-    def origins(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PolicyOriginArgs']]]]):
+    def origins(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PolicyOriginArgs']]]]):
         pulumi.set(self, "origins", value)
 
     @_builtins.property
     @pulumi.getter(name="policyConfig")
-    def policy_config(self) -> Optional[pulumi.Input['PolicyPolicyConfigArgs']]:
+    def policy_config(self) -> pulumi.Input[Optional['PolicyPolicyConfigArgs']]:
         """
         (Updatable) The configuration details for the WAAS policy.
         """
         return pulumi.get(self, "policy_config")
 
     @policy_config.setter
-    def policy_config(self, value: Optional[pulumi.Input['PolicyPolicyConfigArgs']]):
+    def policy_config(self, value: pulumi.Input[Optional['PolicyPolicyConfigArgs']]):
         pulumi.set(self, "policy_config", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the WAAS policy.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the policy was created, expressed in RFC 3339 timestamp format.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="wafConfig")
-    def waf_config(self) -> Optional[pulumi.Input['PolicyWafConfigArgs']]:
+    def waf_config(self) -> pulumi.Input[Optional['PolicyWafConfigArgs']]:
         """
         (Updatable) The Web Application Firewall configuration for the WAAS policy creation.
         """
         return pulumi.get(self, "waf_config")
 
     @waf_config.setter
-    def waf_config(self, value: Optional[pulumi.Input['PolicyWafConfigArgs']]):
+    def waf_config(self, value: pulumi.Input[Optional['PolicyWafConfigArgs']]):
         pulumi.set(self, "waf_config", value)
 
 
@@ -408,16 +408,16 @@ class Policy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 origin_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PolicyOriginGroupArgs', 'PolicyOriginGroupArgsDict']]]]] = None,
-                 origins: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PolicyOriginArgs', 'PolicyOriginArgsDict']]]]] = None,
-                 policy_config: Optional[pulumi.Input[Union['PolicyPolicyConfigArgs', 'PolicyPolicyConfigArgsDict']]] = None,
-                 waf_config: Optional[pulumi.Input[Union['PolicyWafConfigArgs', 'PolicyWafConfigArgsDict']]] = None,
+                 additional_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 origin_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PolicyOriginGroupArgs', 'PolicyOriginGroupArgsDict']]]]] = None,
+                 origins: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PolicyOriginArgs', 'PolicyOriginArgsDict']]]]] = None,
+                 policy_config: pulumi.Input[Optional[Union['PolicyPolicyConfigArgs', 'PolicyPolicyConfigArgsDict']]] = None,
+                 waf_config: pulumi.Input[Optional[Union['PolicyWafConfigArgs', 'PolicyWafConfigArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Waas Policy resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -465,8 +465,8 @@ class Policy(pulumi.CustomResource):
                     "name": waas_policy_origins_custom_headers_name,
                     "value": waas_policy_origins_custom_headers_value,
                 }],
-                "http_port": waas_policy_origins_http_port,
-                "https_port": waas_policy_origins_https_port,
+                "http_port": int(waas_policy_origins_http_port),
+                "https_port": int(waas_policy_origins_https_port),
             }],
             policy_config={
                 "certificate_id": test_certificate["id"],
@@ -476,26 +476,26 @@ class Policy(pulumi.CustomResource):
                     "expected_response_code_groups": waas_policy_policy_config_health_checks_expected_response_code_group,
                     "expected_response_text": waas_policy_policy_config_health_checks_expected_response_text,
                     "headers": waas_policy_policy_config_health_checks_headers,
-                    "healthy_threshold": waas_policy_policy_config_health_checks_healthy_threshold,
-                    "interval_in_seconds": waas_policy_policy_config_health_checks_interval_in_seconds,
-                    "is_enabled": waas_policy_policy_config_health_checks_is_enabled,
-                    "is_response_text_check_enabled": waas_policy_policy_config_health_checks_is_response_text_check_enabled,
+                    "healthy_threshold": int(waas_policy_policy_config_health_checks_healthy_threshold),
+                    "interval_in_seconds": int(waas_policy_policy_config_health_checks_interval_in_seconds),
+                    "is_enabled": waas_policy_policy_config_health_checks_is_enabled == "true",
+                    "is_response_text_check_enabled": waas_policy_policy_config_health_checks_is_response_text_check_enabled == "true",
                     "method": waas_policy_policy_config_health_checks_method,
                     "path": waas_policy_policy_config_health_checks_path,
-                    "timeout_in_seconds": waas_policy_policy_config_health_checks_timeout_in_seconds,
-                    "unhealthy_threshold": waas_policy_policy_config_health_checks_unhealthy_threshold,
+                    "timeout_in_seconds": int(waas_policy_policy_config_health_checks_timeout_in_seconds),
+                    "unhealthy_threshold": int(waas_policy_policy_config_health_checks_unhealthy_threshold),
                 },
-                "is_behind_cdn": waas_policy_policy_config_is_behind_cdn,
-                "is_cache_control_respected": waas_policy_policy_config_is_cache_control_respected,
-                "is_https_enabled": waas_policy_policy_config_is_https_enabled,
-                "is_https_forced": waas_policy_policy_config_is_https_forced,
-                "is_origin_compression_enabled": waas_policy_policy_config_is_origin_compression_enabled,
-                "is_response_buffering_enabled": waas_policy_policy_config_is_response_buffering_enabled,
-                "is_sni_enabled": waas_policy_policy_config_is_sni_enabled,
+                "is_behind_cdn": waas_policy_policy_config_is_behind_cdn == "true",
+                "is_cache_control_respected": waas_policy_policy_config_is_cache_control_respected == "true",
+                "is_https_enabled": waas_policy_policy_config_is_https_enabled == "true",
+                "is_https_forced": waas_policy_policy_config_is_https_forced == "true",
+                "is_origin_compression_enabled": waas_policy_policy_config_is_origin_compression_enabled == "true",
+                "is_response_buffering_enabled": waas_policy_policy_config_is_response_buffering_enabled == "true",
+                "is_sni_enabled": waas_policy_policy_config_is_sni_enabled == "true",
                 "load_balancing_method": {
                     "method": waas_policy_policy_config_load_balancing_method_method,
                     "domain": waas_policy_policy_config_load_balancing_method_domain,
-                    "expiration_time_in_seconds": waas_policy_policy_config_load_balancing_method_expiration_time_in_seconds,
+                    "expiration_time_in_seconds": int(waas_policy_policy_config_load_balancing_method_expiration_time_in_seconds),
                     "name": waas_policy_policy_config_load_balancing_method_name,
                 },
                 "tls_protocols": waas_policy_policy_config_tls_protocols,
@@ -507,14 +507,14 @@ class Policy(pulumi.CustomResource):
                     "criterias": [{
                         "condition": waas_policy_waf_config_access_rules_criteria_condition,
                         "value": waas_policy_waf_config_access_rules_criteria_value,
-                        "is_case_sensitive": waas_policy_waf_config_access_rules_criteria_is_case_sensitive,
+                        "is_case_sensitive": waas_policy_waf_config_access_rules_criteria_is_case_sensitive == "true",
                     }],
                     "name": waas_policy_waf_config_access_rules_name,
                     "block_action": waas_policy_waf_config_access_rules_block_action,
                     "block_error_page_code": waas_policy_waf_config_access_rules_block_error_page_code,
                     "block_error_page_description": waas_policy_waf_config_access_rules_block_error_page_description,
                     "block_error_page_message": waas_policy_waf_config_access_rules_block_error_page_message,
-                    "block_response_code": waas_policy_waf_config_access_rules_block_response_code,
+                    "block_response_code": int(waas_policy_waf_config_access_rules_block_response_code),
                     "bypass_challenges": waas_policy_waf_config_access_rules_bypass_challenges,
                     "captcha_footer": waas_policy_waf_config_access_rules_captcha_footer,
                     "captcha_header": waas_policy_waf_config_access_rules_captcha_header,
@@ -529,10 +529,10 @@ class Policy(pulumi.CustomResource):
                     }],
                 }],
                 "address_rate_limiting": {
-                    "is_enabled": waas_policy_waf_config_address_rate_limiting_is_enabled,
-                    "allowed_rate_per_address": waas_policy_waf_config_address_rate_limiting_allowed_rate_per_address,
-                    "block_response_code": waas_policy_waf_config_address_rate_limiting_block_response_code,
-                    "max_delayed_count_per_address": waas_policy_waf_config_address_rate_limiting_max_delayed_count_per_address,
+                    "is_enabled": waas_policy_waf_config_address_rate_limiting_is_enabled == "true",
+                    "allowed_rate_per_address": int(waas_policy_waf_config_address_rate_limiting_allowed_rate_per_address),
+                    "block_response_code": int(waas_policy_waf_config_address_rate_limiting_block_response_code),
+                    "max_delayed_count_per_address": int(waas_policy_waf_config_address_rate_limiting_max_delayed_count_per_address),
                 },
                 "caching_rules": [{
                     "action": waas_policy_waf_config_caching_rules_action,
@@ -543,12 +543,12 @@ class Policy(pulumi.CustomResource):
                     "name": waas_policy_waf_config_caching_rules_name,
                     "caching_duration": waas_policy_waf_config_caching_rules_caching_duration,
                     "client_caching_duration": waas_policy_waf_config_caching_rules_client_caching_duration,
-                    "is_client_caching_enabled": waas_policy_waf_config_caching_rules_is_client_caching_enabled,
+                    "is_client_caching_enabled": waas_policy_waf_config_caching_rules_is_client_caching_enabled == "true",
                     "key": waas_policy_waf_config_caching_rules_key,
                 }],
                 "captchas": [{
                     "failure_message": waas_policy_waf_config_captchas_failure_message,
-                    "session_expiration_in_seconds": waas_policy_waf_config_captchas_session_expiration_in_seconds,
+                    "session_expiration_in_seconds": int(waas_policy_waf_config_captchas_session_expiration_in_seconds),
                     "submit_label": waas_policy_waf_config_captchas_submit_label,
                     "title": waas_policy_waf_config_captchas_title,
                     "url": waas_policy_waf_config_captchas_url,
@@ -564,61 +564,61 @@ class Policy(pulumi.CustomResource):
                     "id": waas_policy_waf_config_custom_protection_rules_id,
                 }],
                 "device_fingerprint_challenge": {
-                    "is_enabled": waas_policy_waf_config_device_fingerprint_challenge_is_enabled,
+                    "is_enabled": waas_policy_waf_config_device_fingerprint_challenge_is_enabled == "true",
                     "action": waas_policy_waf_config_device_fingerprint_challenge_action,
-                    "action_expiration_in_seconds": waas_policy_waf_config_device_fingerprint_challenge_action_expiration_in_seconds,
+                    "action_expiration_in_seconds": int(waas_policy_waf_config_device_fingerprint_challenge_action_expiration_in_seconds),
                     "challenge_settings": {
                         "block_action": waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_block_action,
                         "block_error_page_code": waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_block_error_page_code,
                         "block_error_page_description": waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_block_error_page_description,
                         "block_error_page_message": waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_block_error_page_message,
-                        "block_response_code": waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_block_response_code,
+                        "block_response_code": int(waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_block_response_code),
                         "captcha_footer": waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_captcha_footer,
                         "captcha_header": waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_captcha_header,
                         "captcha_submit_label": waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_captcha_submit_label,
                         "captcha_title": waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_captcha_title,
                     },
-                    "failure_threshold": waas_policy_waf_config_device_fingerprint_challenge_failure_threshold,
-                    "failure_threshold_expiration_in_seconds": waas_policy_waf_config_device_fingerprint_challenge_failure_threshold_expiration_in_seconds,
-                    "max_address_count": waas_policy_waf_config_device_fingerprint_challenge_max_address_count,
-                    "max_address_count_expiration_in_seconds": waas_policy_waf_config_device_fingerprint_challenge_max_address_count_expiration_in_seconds,
+                    "failure_threshold": int(waas_policy_waf_config_device_fingerprint_challenge_failure_threshold),
+                    "failure_threshold_expiration_in_seconds": int(waas_policy_waf_config_device_fingerprint_challenge_failure_threshold_expiration_in_seconds),
+                    "max_address_count": int(waas_policy_waf_config_device_fingerprint_challenge_max_address_count),
+                    "max_address_count_expiration_in_seconds": int(waas_policy_waf_config_device_fingerprint_challenge_max_address_count_expiration_in_seconds),
                 },
                 "human_interaction_challenge": {
-                    "is_enabled": waas_policy_waf_config_human_interaction_challenge_is_enabled,
+                    "is_enabled": waas_policy_waf_config_human_interaction_challenge_is_enabled == "true",
                     "action": waas_policy_waf_config_human_interaction_challenge_action,
-                    "action_expiration_in_seconds": waas_policy_waf_config_human_interaction_challenge_action_expiration_in_seconds,
+                    "action_expiration_in_seconds": int(waas_policy_waf_config_human_interaction_challenge_action_expiration_in_seconds),
                     "challenge_settings": {
                         "block_action": waas_policy_waf_config_human_interaction_challenge_challenge_settings_block_action,
                         "block_error_page_code": waas_policy_waf_config_human_interaction_challenge_challenge_settings_block_error_page_code,
                         "block_error_page_description": waas_policy_waf_config_human_interaction_challenge_challenge_settings_block_error_page_description,
                         "block_error_page_message": waas_policy_waf_config_human_interaction_challenge_challenge_settings_block_error_page_message,
-                        "block_response_code": waas_policy_waf_config_human_interaction_challenge_challenge_settings_block_response_code,
+                        "block_response_code": int(waas_policy_waf_config_human_interaction_challenge_challenge_settings_block_response_code),
                         "captcha_footer": waas_policy_waf_config_human_interaction_challenge_challenge_settings_captcha_footer,
                         "captcha_header": waas_policy_waf_config_human_interaction_challenge_challenge_settings_captcha_header,
                         "captcha_submit_label": waas_policy_waf_config_human_interaction_challenge_challenge_settings_captcha_submit_label,
                         "captcha_title": waas_policy_waf_config_human_interaction_challenge_challenge_settings_captcha_title,
                     },
-                    "failure_threshold": waas_policy_waf_config_human_interaction_challenge_failure_threshold,
-                    "failure_threshold_expiration_in_seconds": waas_policy_waf_config_human_interaction_challenge_failure_threshold_expiration_in_seconds,
-                    "interaction_threshold": waas_policy_waf_config_human_interaction_challenge_interaction_threshold,
-                    "is_nat_enabled": waas_policy_waf_config_human_interaction_challenge_is_nat_enabled,
-                    "recording_period_in_seconds": waas_policy_waf_config_human_interaction_challenge_recording_period_in_seconds,
+                    "failure_threshold": int(waas_policy_waf_config_human_interaction_challenge_failure_threshold),
+                    "failure_threshold_expiration_in_seconds": int(waas_policy_waf_config_human_interaction_challenge_failure_threshold_expiration_in_seconds),
+                    "interaction_threshold": int(waas_policy_waf_config_human_interaction_challenge_interaction_threshold),
+                    "is_nat_enabled": waas_policy_waf_config_human_interaction_challenge_is_nat_enabled == "true",
+                    "recording_period_in_seconds": int(waas_policy_waf_config_human_interaction_challenge_recording_period_in_seconds),
                     "set_http_header": {
                         "name": waas_policy_waf_config_human_interaction_challenge_set_http_header_name,
                         "value": waas_policy_waf_config_human_interaction_challenge_set_http_header_value,
                     },
                 },
                 "js_challenge": {
-                    "is_enabled": waas_policy_waf_config_js_challenge_is_enabled,
+                    "is_enabled": waas_policy_waf_config_js_challenge_is_enabled == "true",
                     "action": waas_policy_waf_config_js_challenge_action,
-                    "action_expiration_in_seconds": waas_policy_waf_config_js_challenge_action_expiration_in_seconds,
-                    "are_redirects_challenged": waas_policy_waf_config_js_challenge_are_redirects_challenged,
+                    "action_expiration_in_seconds": int(waas_policy_waf_config_js_challenge_action_expiration_in_seconds),
+                    "are_redirects_challenged": waas_policy_waf_config_js_challenge_are_redirects_challenged == "true",
                     "challenge_settings": {
                         "block_action": waas_policy_waf_config_js_challenge_challenge_settings_block_action,
                         "block_error_page_code": waas_policy_waf_config_js_challenge_challenge_settings_block_error_page_code,
                         "block_error_page_description": waas_policy_waf_config_js_challenge_challenge_settings_block_error_page_description,
                         "block_error_page_message": waas_policy_waf_config_js_challenge_challenge_settings_block_error_page_message,
-                        "block_response_code": waas_policy_waf_config_js_challenge_challenge_settings_block_response_code,
+                        "block_response_code": int(waas_policy_waf_config_js_challenge_challenge_settings_block_response_code),
                         "captcha_footer": waas_policy_waf_config_js_challenge_challenge_settings_captcha_footer,
                         "captcha_header": waas_policy_waf_config_js_challenge_challenge_settings_captcha_header,
                         "captcha_submit_label": waas_policy_waf_config_js_challenge_challenge_settings_captcha_submit_label,
@@ -627,10 +627,10 @@ class Policy(pulumi.CustomResource):
                     "criterias": [{
                         "condition": waas_policy_waf_config_js_challenge_criteria_condition,
                         "value": waas_policy_waf_config_js_challenge_criteria_value,
-                        "is_case_sensitive": waas_policy_waf_config_js_challenge_criteria_is_case_sensitive,
+                        "is_case_sensitive": waas_policy_waf_config_js_challenge_criteria_is_case_sensitive == "true",
                     }],
-                    "failure_threshold": waas_policy_waf_config_js_challenge_failure_threshold,
-                    "is_nat_enabled": waas_policy_waf_config_js_challenge_is_nat_enabled,
+                    "failure_threshold": int(waas_policy_waf_config_js_challenge_failure_threshold),
+                    "is_nat_enabled": waas_policy_waf_config_js_challenge_is_nat_enabled == "true",
                     "set_http_header": {
                         "name": waas_policy_waf_config_js_challenge_set_http_header_name,
                         "value": waas_policy_waf_config_js_challenge_set_http_header_value,
@@ -644,14 +644,14 @@ class Policy(pulumi.CustomResource):
                     "block_error_page_code": waas_policy_waf_config_protection_settings_block_error_page_code,
                     "block_error_page_description": waas_policy_waf_config_protection_settings_block_error_page_description,
                     "block_error_page_message": waas_policy_waf_config_protection_settings_block_error_page_message,
-                    "block_response_code": waas_policy_waf_config_protection_settings_block_response_code,
-                    "is_response_inspected": waas_policy_waf_config_protection_settings_is_response_inspected,
-                    "max_argument_count": waas_policy_waf_config_protection_settings_max_argument_count,
-                    "max_name_length_per_argument": waas_policy_waf_config_protection_settings_max_name_length_per_argument,
-                    "max_response_size_in_ki_b": waas_policy_waf_config_protection_settings_max_response_size_in_ki_b,
-                    "max_total_name_length_of_arguments": waas_policy_waf_config_protection_settings_max_total_name_length_of_arguments,
+                    "block_response_code": int(waas_policy_waf_config_protection_settings_block_response_code),
+                    "is_response_inspected": waas_policy_waf_config_protection_settings_is_response_inspected == "true",
+                    "max_argument_count": int(waas_policy_waf_config_protection_settings_max_argument_count),
+                    "max_name_length_per_argument": int(waas_policy_waf_config_protection_settings_max_name_length_per_argument),
+                    "max_response_size_in_ki_b": int(waas_policy_waf_config_protection_settings_max_response_size_in_ki_b),
+                    "max_total_name_length_of_arguments": int(waas_policy_waf_config_protection_settings_max_total_name_length_of_arguments),
                     "media_types": waas_policy_waf_config_protection_settings_media_types,
-                    "recommendations_period_in_days": waas_policy_waf_config_protection_settings_recommendations_period_in_days,
+                    "recommendations_period_in_days": int(waas_policy_waf_config_protection_settings_recommendations_period_in_days),
                 },
                 "whitelists": [{
                     "name": waas_policy_waf_config_whitelists_name,
@@ -735,8 +735,8 @@ class Policy(pulumi.CustomResource):
                     "name": waas_policy_origins_custom_headers_name,
                     "value": waas_policy_origins_custom_headers_value,
                 }],
-                "http_port": waas_policy_origins_http_port,
-                "https_port": waas_policy_origins_https_port,
+                "http_port": int(waas_policy_origins_http_port),
+                "https_port": int(waas_policy_origins_https_port),
             }],
             policy_config={
                 "certificate_id": test_certificate["id"],
@@ -746,26 +746,26 @@ class Policy(pulumi.CustomResource):
                     "expected_response_code_groups": waas_policy_policy_config_health_checks_expected_response_code_group,
                     "expected_response_text": waas_policy_policy_config_health_checks_expected_response_text,
                     "headers": waas_policy_policy_config_health_checks_headers,
-                    "healthy_threshold": waas_policy_policy_config_health_checks_healthy_threshold,
-                    "interval_in_seconds": waas_policy_policy_config_health_checks_interval_in_seconds,
-                    "is_enabled": waas_policy_policy_config_health_checks_is_enabled,
-                    "is_response_text_check_enabled": waas_policy_policy_config_health_checks_is_response_text_check_enabled,
+                    "healthy_threshold": int(waas_policy_policy_config_health_checks_healthy_threshold),
+                    "interval_in_seconds": int(waas_policy_policy_config_health_checks_interval_in_seconds),
+                    "is_enabled": waas_policy_policy_config_health_checks_is_enabled == "true",
+                    "is_response_text_check_enabled": waas_policy_policy_config_health_checks_is_response_text_check_enabled == "true",
                     "method": waas_policy_policy_config_health_checks_method,
                     "path": waas_policy_policy_config_health_checks_path,
-                    "timeout_in_seconds": waas_policy_policy_config_health_checks_timeout_in_seconds,
-                    "unhealthy_threshold": waas_policy_policy_config_health_checks_unhealthy_threshold,
+                    "timeout_in_seconds": int(waas_policy_policy_config_health_checks_timeout_in_seconds),
+                    "unhealthy_threshold": int(waas_policy_policy_config_health_checks_unhealthy_threshold),
                 },
-                "is_behind_cdn": waas_policy_policy_config_is_behind_cdn,
-                "is_cache_control_respected": waas_policy_policy_config_is_cache_control_respected,
-                "is_https_enabled": waas_policy_policy_config_is_https_enabled,
-                "is_https_forced": waas_policy_policy_config_is_https_forced,
-                "is_origin_compression_enabled": waas_policy_policy_config_is_origin_compression_enabled,
-                "is_response_buffering_enabled": waas_policy_policy_config_is_response_buffering_enabled,
-                "is_sni_enabled": waas_policy_policy_config_is_sni_enabled,
+                "is_behind_cdn": waas_policy_policy_config_is_behind_cdn == "true",
+                "is_cache_control_respected": waas_policy_policy_config_is_cache_control_respected == "true",
+                "is_https_enabled": waas_policy_policy_config_is_https_enabled == "true",
+                "is_https_forced": waas_policy_policy_config_is_https_forced == "true",
+                "is_origin_compression_enabled": waas_policy_policy_config_is_origin_compression_enabled == "true",
+                "is_response_buffering_enabled": waas_policy_policy_config_is_response_buffering_enabled == "true",
+                "is_sni_enabled": waas_policy_policy_config_is_sni_enabled == "true",
                 "load_balancing_method": {
                     "method": waas_policy_policy_config_load_balancing_method_method,
                     "domain": waas_policy_policy_config_load_balancing_method_domain,
-                    "expiration_time_in_seconds": waas_policy_policy_config_load_balancing_method_expiration_time_in_seconds,
+                    "expiration_time_in_seconds": int(waas_policy_policy_config_load_balancing_method_expiration_time_in_seconds),
                     "name": waas_policy_policy_config_load_balancing_method_name,
                 },
                 "tls_protocols": waas_policy_policy_config_tls_protocols,
@@ -777,14 +777,14 @@ class Policy(pulumi.CustomResource):
                     "criterias": [{
                         "condition": waas_policy_waf_config_access_rules_criteria_condition,
                         "value": waas_policy_waf_config_access_rules_criteria_value,
-                        "is_case_sensitive": waas_policy_waf_config_access_rules_criteria_is_case_sensitive,
+                        "is_case_sensitive": waas_policy_waf_config_access_rules_criteria_is_case_sensitive == "true",
                     }],
                     "name": waas_policy_waf_config_access_rules_name,
                     "block_action": waas_policy_waf_config_access_rules_block_action,
                     "block_error_page_code": waas_policy_waf_config_access_rules_block_error_page_code,
                     "block_error_page_description": waas_policy_waf_config_access_rules_block_error_page_description,
                     "block_error_page_message": waas_policy_waf_config_access_rules_block_error_page_message,
-                    "block_response_code": waas_policy_waf_config_access_rules_block_response_code,
+                    "block_response_code": int(waas_policy_waf_config_access_rules_block_response_code),
                     "bypass_challenges": waas_policy_waf_config_access_rules_bypass_challenges,
                     "captcha_footer": waas_policy_waf_config_access_rules_captcha_footer,
                     "captcha_header": waas_policy_waf_config_access_rules_captcha_header,
@@ -799,10 +799,10 @@ class Policy(pulumi.CustomResource):
                     }],
                 }],
                 "address_rate_limiting": {
-                    "is_enabled": waas_policy_waf_config_address_rate_limiting_is_enabled,
-                    "allowed_rate_per_address": waas_policy_waf_config_address_rate_limiting_allowed_rate_per_address,
-                    "block_response_code": waas_policy_waf_config_address_rate_limiting_block_response_code,
-                    "max_delayed_count_per_address": waas_policy_waf_config_address_rate_limiting_max_delayed_count_per_address,
+                    "is_enabled": waas_policy_waf_config_address_rate_limiting_is_enabled == "true",
+                    "allowed_rate_per_address": int(waas_policy_waf_config_address_rate_limiting_allowed_rate_per_address),
+                    "block_response_code": int(waas_policy_waf_config_address_rate_limiting_block_response_code),
+                    "max_delayed_count_per_address": int(waas_policy_waf_config_address_rate_limiting_max_delayed_count_per_address),
                 },
                 "caching_rules": [{
                     "action": waas_policy_waf_config_caching_rules_action,
@@ -813,12 +813,12 @@ class Policy(pulumi.CustomResource):
                     "name": waas_policy_waf_config_caching_rules_name,
                     "caching_duration": waas_policy_waf_config_caching_rules_caching_duration,
                     "client_caching_duration": waas_policy_waf_config_caching_rules_client_caching_duration,
-                    "is_client_caching_enabled": waas_policy_waf_config_caching_rules_is_client_caching_enabled,
+                    "is_client_caching_enabled": waas_policy_waf_config_caching_rules_is_client_caching_enabled == "true",
                     "key": waas_policy_waf_config_caching_rules_key,
                 }],
                 "captchas": [{
                     "failure_message": waas_policy_waf_config_captchas_failure_message,
-                    "session_expiration_in_seconds": waas_policy_waf_config_captchas_session_expiration_in_seconds,
+                    "session_expiration_in_seconds": int(waas_policy_waf_config_captchas_session_expiration_in_seconds),
                     "submit_label": waas_policy_waf_config_captchas_submit_label,
                     "title": waas_policy_waf_config_captchas_title,
                     "url": waas_policy_waf_config_captchas_url,
@@ -834,61 +834,61 @@ class Policy(pulumi.CustomResource):
                     "id": waas_policy_waf_config_custom_protection_rules_id,
                 }],
                 "device_fingerprint_challenge": {
-                    "is_enabled": waas_policy_waf_config_device_fingerprint_challenge_is_enabled,
+                    "is_enabled": waas_policy_waf_config_device_fingerprint_challenge_is_enabled == "true",
                     "action": waas_policy_waf_config_device_fingerprint_challenge_action,
-                    "action_expiration_in_seconds": waas_policy_waf_config_device_fingerprint_challenge_action_expiration_in_seconds,
+                    "action_expiration_in_seconds": int(waas_policy_waf_config_device_fingerprint_challenge_action_expiration_in_seconds),
                     "challenge_settings": {
                         "block_action": waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_block_action,
                         "block_error_page_code": waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_block_error_page_code,
                         "block_error_page_description": waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_block_error_page_description,
                         "block_error_page_message": waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_block_error_page_message,
-                        "block_response_code": waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_block_response_code,
+                        "block_response_code": int(waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_block_response_code),
                         "captcha_footer": waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_captcha_footer,
                         "captcha_header": waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_captcha_header,
                         "captcha_submit_label": waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_captcha_submit_label,
                         "captcha_title": waas_policy_waf_config_device_fingerprint_challenge_challenge_settings_captcha_title,
                     },
-                    "failure_threshold": waas_policy_waf_config_device_fingerprint_challenge_failure_threshold,
-                    "failure_threshold_expiration_in_seconds": waas_policy_waf_config_device_fingerprint_challenge_failure_threshold_expiration_in_seconds,
-                    "max_address_count": waas_policy_waf_config_device_fingerprint_challenge_max_address_count,
-                    "max_address_count_expiration_in_seconds": waas_policy_waf_config_device_fingerprint_challenge_max_address_count_expiration_in_seconds,
+                    "failure_threshold": int(waas_policy_waf_config_device_fingerprint_challenge_failure_threshold),
+                    "failure_threshold_expiration_in_seconds": int(waas_policy_waf_config_device_fingerprint_challenge_failure_threshold_expiration_in_seconds),
+                    "max_address_count": int(waas_policy_waf_config_device_fingerprint_challenge_max_address_count),
+                    "max_address_count_expiration_in_seconds": int(waas_policy_waf_config_device_fingerprint_challenge_max_address_count_expiration_in_seconds),
                 },
                 "human_interaction_challenge": {
-                    "is_enabled": waas_policy_waf_config_human_interaction_challenge_is_enabled,
+                    "is_enabled": waas_policy_waf_config_human_interaction_challenge_is_enabled == "true",
                     "action": waas_policy_waf_config_human_interaction_challenge_action,
-                    "action_expiration_in_seconds": waas_policy_waf_config_human_interaction_challenge_action_expiration_in_seconds,
+                    "action_expiration_in_seconds": int(waas_policy_waf_config_human_interaction_challenge_action_expiration_in_seconds),
                     "challenge_settings": {
                         "block_action": waas_policy_waf_config_human_interaction_challenge_challenge_settings_block_action,
                         "block_error_page_code": waas_policy_waf_config_human_interaction_challenge_challenge_settings_block_error_page_code,
                         "block_error_page_description": waas_policy_waf_config_human_interaction_challenge_challenge_settings_block_error_page_description,
                         "block_error_page_message": waas_policy_waf_config_human_interaction_challenge_challenge_settings_block_error_page_message,
-                        "block_response_code": waas_policy_waf_config_human_interaction_challenge_challenge_settings_block_response_code,
+                        "block_response_code": int(waas_policy_waf_config_human_interaction_challenge_challenge_settings_block_response_code),
                         "captcha_footer": waas_policy_waf_config_human_interaction_challenge_challenge_settings_captcha_footer,
                         "captcha_header": waas_policy_waf_config_human_interaction_challenge_challenge_settings_captcha_header,
                         "captcha_submit_label": waas_policy_waf_config_human_interaction_challenge_challenge_settings_captcha_submit_label,
                         "captcha_title": waas_policy_waf_config_human_interaction_challenge_challenge_settings_captcha_title,
                     },
-                    "failure_threshold": waas_policy_waf_config_human_interaction_challenge_failure_threshold,
-                    "failure_threshold_expiration_in_seconds": waas_policy_waf_config_human_interaction_challenge_failure_threshold_expiration_in_seconds,
-                    "interaction_threshold": waas_policy_waf_config_human_interaction_challenge_interaction_threshold,
-                    "is_nat_enabled": waas_policy_waf_config_human_interaction_challenge_is_nat_enabled,
-                    "recording_period_in_seconds": waas_policy_waf_config_human_interaction_challenge_recording_period_in_seconds,
+                    "failure_threshold": int(waas_policy_waf_config_human_interaction_challenge_failure_threshold),
+                    "failure_threshold_expiration_in_seconds": int(waas_policy_waf_config_human_interaction_challenge_failure_threshold_expiration_in_seconds),
+                    "interaction_threshold": int(waas_policy_waf_config_human_interaction_challenge_interaction_threshold),
+                    "is_nat_enabled": waas_policy_waf_config_human_interaction_challenge_is_nat_enabled == "true",
+                    "recording_period_in_seconds": int(waas_policy_waf_config_human_interaction_challenge_recording_period_in_seconds),
                     "set_http_header": {
                         "name": waas_policy_waf_config_human_interaction_challenge_set_http_header_name,
                         "value": waas_policy_waf_config_human_interaction_challenge_set_http_header_value,
                     },
                 },
                 "js_challenge": {
-                    "is_enabled": waas_policy_waf_config_js_challenge_is_enabled,
+                    "is_enabled": waas_policy_waf_config_js_challenge_is_enabled == "true",
                     "action": waas_policy_waf_config_js_challenge_action,
-                    "action_expiration_in_seconds": waas_policy_waf_config_js_challenge_action_expiration_in_seconds,
-                    "are_redirects_challenged": waas_policy_waf_config_js_challenge_are_redirects_challenged,
+                    "action_expiration_in_seconds": int(waas_policy_waf_config_js_challenge_action_expiration_in_seconds),
+                    "are_redirects_challenged": waas_policy_waf_config_js_challenge_are_redirects_challenged == "true",
                     "challenge_settings": {
                         "block_action": waas_policy_waf_config_js_challenge_challenge_settings_block_action,
                         "block_error_page_code": waas_policy_waf_config_js_challenge_challenge_settings_block_error_page_code,
                         "block_error_page_description": waas_policy_waf_config_js_challenge_challenge_settings_block_error_page_description,
                         "block_error_page_message": waas_policy_waf_config_js_challenge_challenge_settings_block_error_page_message,
-                        "block_response_code": waas_policy_waf_config_js_challenge_challenge_settings_block_response_code,
+                        "block_response_code": int(waas_policy_waf_config_js_challenge_challenge_settings_block_response_code),
                         "captcha_footer": waas_policy_waf_config_js_challenge_challenge_settings_captcha_footer,
                         "captcha_header": waas_policy_waf_config_js_challenge_challenge_settings_captcha_header,
                         "captcha_submit_label": waas_policy_waf_config_js_challenge_challenge_settings_captcha_submit_label,
@@ -897,10 +897,10 @@ class Policy(pulumi.CustomResource):
                     "criterias": [{
                         "condition": waas_policy_waf_config_js_challenge_criteria_condition,
                         "value": waas_policy_waf_config_js_challenge_criteria_value,
-                        "is_case_sensitive": waas_policy_waf_config_js_challenge_criteria_is_case_sensitive,
+                        "is_case_sensitive": waas_policy_waf_config_js_challenge_criteria_is_case_sensitive == "true",
                     }],
-                    "failure_threshold": waas_policy_waf_config_js_challenge_failure_threshold,
-                    "is_nat_enabled": waas_policy_waf_config_js_challenge_is_nat_enabled,
+                    "failure_threshold": int(waas_policy_waf_config_js_challenge_failure_threshold),
+                    "is_nat_enabled": waas_policy_waf_config_js_challenge_is_nat_enabled == "true",
                     "set_http_header": {
                         "name": waas_policy_waf_config_js_challenge_set_http_header_name,
                         "value": waas_policy_waf_config_js_challenge_set_http_header_value,
@@ -914,14 +914,14 @@ class Policy(pulumi.CustomResource):
                     "block_error_page_code": waas_policy_waf_config_protection_settings_block_error_page_code,
                     "block_error_page_description": waas_policy_waf_config_protection_settings_block_error_page_description,
                     "block_error_page_message": waas_policy_waf_config_protection_settings_block_error_page_message,
-                    "block_response_code": waas_policy_waf_config_protection_settings_block_response_code,
-                    "is_response_inspected": waas_policy_waf_config_protection_settings_is_response_inspected,
-                    "max_argument_count": waas_policy_waf_config_protection_settings_max_argument_count,
-                    "max_name_length_per_argument": waas_policy_waf_config_protection_settings_max_name_length_per_argument,
-                    "max_response_size_in_ki_b": waas_policy_waf_config_protection_settings_max_response_size_in_ki_b,
-                    "max_total_name_length_of_arguments": waas_policy_waf_config_protection_settings_max_total_name_length_of_arguments,
+                    "block_response_code": int(waas_policy_waf_config_protection_settings_block_response_code),
+                    "is_response_inspected": waas_policy_waf_config_protection_settings_is_response_inspected == "true",
+                    "max_argument_count": int(waas_policy_waf_config_protection_settings_max_argument_count),
+                    "max_name_length_per_argument": int(waas_policy_waf_config_protection_settings_max_name_length_per_argument),
+                    "max_response_size_in_ki_b": int(waas_policy_waf_config_protection_settings_max_response_size_in_ki_b),
+                    "max_total_name_length_of_arguments": int(waas_policy_waf_config_protection_settings_max_total_name_length_of_arguments),
                     "media_types": waas_policy_waf_config_protection_settings_media_types,
-                    "recommendations_period_in_days": waas_policy_waf_config_protection_settings_recommendations_period_in_days,
+                    "recommendations_period_in_days": int(waas_policy_waf_config_protection_settings_recommendations_period_in_days),
                 },
                 "whitelists": [{
                     "name": waas_policy_waf_config_whitelists_name,
@@ -955,16 +955,16 @@ class Policy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 origin_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PolicyOriginGroupArgs', 'PolicyOriginGroupArgsDict']]]]] = None,
-                 origins: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PolicyOriginArgs', 'PolicyOriginArgsDict']]]]] = None,
-                 policy_config: Optional[pulumi.Input[Union['PolicyPolicyConfigArgs', 'PolicyPolicyConfigArgsDict']]] = None,
-                 waf_config: Optional[pulumi.Input[Union['PolicyWafConfigArgs', 'PolicyWafConfigArgsDict']]] = None,
+                 additional_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 origin_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PolicyOriginGroupArgs', 'PolicyOriginGroupArgsDict']]]]] = None,
+                 origins: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PolicyOriginArgs', 'PolicyOriginArgsDict']]]]] = None,
+                 policy_config: pulumi.Input[Optional[Union['PolicyPolicyConfigArgs', 'PolicyPolicyConfigArgsDict']]] = None,
+                 waf_config: pulumi.Input[Optional[Union['PolicyWafConfigArgs', 'PolicyWafConfigArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1001,19 +1001,19 @@ class Policy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            additional_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            cname: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            domain: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            origin_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PolicyOriginGroupArgs', 'PolicyOriginGroupArgsDict']]]]] = None,
-            origins: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PolicyOriginArgs', 'PolicyOriginArgsDict']]]]] = None,
-            policy_config: Optional[pulumi.Input[Union['PolicyPolicyConfigArgs', 'PolicyPolicyConfigArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            waf_config: Optional[pulumi.Input[Union['PolicyWafConfigArgs', 'PolicyWafConfigArgsDict']]] = None) -> 'Policy':
+            additional_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            cname: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            domain: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            origin_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PolicyOriginGroupArgs', 'PolicyOriginGroupArgsDict']]]]] = None,
+            origins: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PolicyOriginArgs', 'PolicyOriginArgsDict']]]]] = None,
+            policy_config: pulumi.Input[Optional[Union['PolicyPolicyConfigArgs', 'PolicyPolicyConfigArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            waf_config: pulumi.Input[Optional[Union['PolicyWafConfigArgs', 'PolicyWafConfigArgsDict']]] = None) -> 'Policy':
         """
         Get an existing Policy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

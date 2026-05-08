@@ -360,7 +360,7 @@ def get_pipeline(pipeline_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pipeline = oci.GoldenGate.get_pipeline(pipeline_id=test_pipeline_oci_golden_gate_pipeline["id"])
+    test_pipeline = oci.goldengate.get_pipeline(pipeline_id=test_pipeline_oci_golden_gate_pipeline["id"])
     ```
 
 
@@ -398,7 +398,7 @@ def get_pipeline(pipeline_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_recorded=pulumi.get(__ret__, 'time_last_recorded'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_pipeline_output(pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pipeline_output(pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPipelineResult]:
     """
     This data source provides details about a specific Pipeline resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -411,7 +411,7 @@ def get_pipeline_output(pipeline_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_pipeline = oci.GoldenGate.get_pipeline(pipeline_id=test_pipeline_oci_golden_gate_pipeline["id"])
+    test_pipeline = oci.goldengate.get_pipeline(pipeline_id=test_pipeline_oci_golden_gate_pipeline["id"])
     ```
 
 

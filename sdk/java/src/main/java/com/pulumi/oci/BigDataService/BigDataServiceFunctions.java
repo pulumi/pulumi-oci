@@ -103,8 +103,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetAutoScalingConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -146,8 +146,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetAutoScalingConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -189,8 +189,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetAutoScalingConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -232,8 +232,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetAutoScalingConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -275,8 +275,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetAutoScalingConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -333,8 +333,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsClusterVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -374,8 +374,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsClusterVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -415,8 +415,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsClusterVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -456,8 +456,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsClusterVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -497,8 +497,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsClusterVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -538,8 +538,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsClusterVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -579,8 +579,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsClusterVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -620,8 +620,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -662,8 +662,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -704,8 +704,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -746,8 +746,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -788,8 +788,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -830,8 +830,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -873,8 +873,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -916,8 +916,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -959,8 +959,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1002,8 +1002,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1045,8 +1045,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1088,8 +1088,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1131,8 +1131,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1174,8 +1174,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1217,8 +1217,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceApiKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1260,8 +1260,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceGetOsPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1303,8 +1303,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceGetOsPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1346,8 +1346,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceGetOsPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1389,8 +1389,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceGetOsPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1432,8 +1432,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceGetOsPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1475,8 +1475,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceIdentityConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1518,8 +1518,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceIdentityConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1561,8 +1561,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceIdentityConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1604,8 +1604,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceIdentityConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1647,8 +1647,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceIdentityConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1690,8 +1690,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceIdentityConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1735,8 +1735,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceIdentityConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1780,8 +1780,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceIdentityConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1825,8 +1825,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceIdentityConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1870,8 +1870,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceIdentityConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1915,8 +1915,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceListOsPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1957,8 +1957,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceListOsPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1999,8 +1999,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceListOsPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2041,8 +2041,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceListOsPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2083,8 +2083,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceListOsPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2125,8 +2125,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2168,8 +2168,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2211,8 +2211,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2254,8 +2254,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2297,8 +2297,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2340,8 +2340,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2387,8 +2387,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2434,8 +2434,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2481,8 +2481,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2528,8 +2528,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2575,8 +2575,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2618,8 +2618,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2661,8 +2661,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2704,8 +2704,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2747,8 +2747,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2790,8 +2790,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2833,8 +2833,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2876,8 +2876,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2919,8 +2919,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2962,8 +2962,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3005,8 +3005,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3049,8 +3049,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3093,8 +3093,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3137,8 +3137,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3181,8 +3181,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3225,8 +3225,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3270,8 +3270,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3315,8 +3315,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3360,8 +3360,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3405,8 +3405,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3450,8 +3450,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeReplaceConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3493,8 +3493,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeReplaceConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3536,8 +3536,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeReplaceConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3579,8 +3579,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeReplaceConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3622,8 +3622,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeReplaceConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3665,8 +3665,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeReplaceConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3709,8 +3709,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeReplaceConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3753,8 +3753,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeReplaceConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3797,8 +3797,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeReplaceConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3841,8 +3841,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeReplaceConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3885,8 +3885,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3930,8 +3930,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3975,8 +3975,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4020,8 +4020,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4065,8 +4065,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4110,8 +4110,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4152,8 +4152,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4194,8 +4194,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4236,8 +4236,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4278,8 +4278,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4320,8 +4320,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4363,8 +4363,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4406,8 +4406,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4449,8 +4449,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4492,8 +4492,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4535,8 +4535,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4579,8 +4579,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4623,8 +4623,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4667,8 +4667,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4711,8 +4711,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceResourcePrincipalConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4755,8 +4755,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceSoftwareUpdateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4798,8 +4798,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceSoftwareUpdateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4841,8 +4841,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceSoftwareUpdateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4884,8 +4884,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceSoftwareUpdateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4927,8 +4927,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceSoftwareUpdateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4970,8 +4970,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceSoftwareUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5012,8 +5012,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceSoftwareUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5054,8 +5054,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceSoftwareUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5096,8 +5096,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceSoftwareUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5138,8 +5138,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceSoftwareUpdatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5180,8 +5180,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5224,8 +5224,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5268,8 +5268,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5312,8 +5312,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5356,8 +5356,8 @@ public final class BigDataServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
      * import com.pulumi.oci.BigDataService.inputs.GetBdsInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatastoreCluster = oci.Ocvp.getDatastoreCluster({
+ * const testDatastoreCluster = oci.ocvp.getDatastoreCluster({
  *     datastoreClusterId: testDatastoreClusterOciOcvpDatastoreCluster.id,
  * });
  * ```
@@ -118,7 +118,7 @@ export interface GetDatastoreClusterResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatastoreCluster = oci.Ocvp.getDatastoreCluster({
+ * const testDatastoreCluster = oci.ocvp.getDatastoreCluster({
  *     datastoreClusterId: testDatastoreClusterOciOcvpDatastoreCluster.id,
  * });
  * ```

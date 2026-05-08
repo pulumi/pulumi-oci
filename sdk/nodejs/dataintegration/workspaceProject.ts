@@ -27,13 +27,13 @@ import * as utilities from "../utilities";
  *     description: workspaceProjectDescription,
  *     key: workspaceProjectKey,
  *     modelVersion: workspaceProjectModelVersion,
- *     objectStatus: workspaceProjectObjectStatus,
+ *     objectStatus: Number(workspaceProjectObjectStatus),
  *     registryMetadata: {
  *         aggregatorKey: workspaceProjectRegistryMetadataAggregatorKey,
- *         isFavorite: workspaceProjectRegistryMetadataIsFavorite,
+ *         isFavorite: workspaceProjectRegistryMetadataIsFavorite === "true",
  *         key: workspaceProjectRegistryMetadataKey,
  *         labels: workspaceProjectRegistryMetadataLabels,
- *         registryVersion: workspaceProjectRegistryMetadataRegistryVersion,
+ *         registryVersion: Number(workspaceProjectRegistryMetadataRegistryVersion),
  *     },
  * });
  * ```
@@ -194,52 +194,52 @@ export interface WorkspaceProjectState {
     /**
      * (Updatable) A user defined description for the project.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
-    identifier?: pulumi.Input<string>;
+    identifier?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Generated key that can be used in API calls to identify project.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      */
-    keyMap?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    keyMap?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceProjectMetadata>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceProjectMetadata>[] | undefined>;
     /**
      * The type of the object.
      */
-    modelType?: pulumi.Input<string>;
+    modelType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The model version of an object.
      */
-    modelVersion?: pulumi.Input<string>;
+    modelVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      */
-    objectStatus?: pulumi.Input<number>;
+    objectStatus?: pulumi.Input<number | undefined>;
     /**
      * The version of the object that is used to track changes in the object instance.
      */
-    objectVersion?: pulumi.Input<number>;
+    objectVersion?: pulumi.Input<number | undefined>;
     /**
      * A reference to the object's parent.
      */
-    parentReves?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceProjectParentRef>[]>;
-    projectKey?: pulumi.Input<string>;
+    parentReves?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceProjectParentRef>[] | undefined>;
+    projectKey?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Information about the object and its parent.
      */
-    registryMetadata?: pulumi.Input<inputs.DataIntegration.WorkspaceProjectRegistryMetadata>;
+    registryMetadata?: pulumi.Input<inputs.DataIntegration.WorkspaceProjectRegistryMetadata | undefined>;
     /**
      * The workspace ID.
      *
@@ -247,7 +247,7 @@ export interface WorkspaceProjectState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    workspaceId?: pulumi.Input<string>;
+    workspaceId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -257,7 +257,7 @@ export interface WorkspaceProjectArgs {
     /**
      * (Updatable) A user defined description for the project.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
@@ -265,24 +265,24 @@ export interface WorkspaceProjectArgs {
     /**
      * (Updatable) Generated key that can be used in API calls to identify project.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The model version of an object.
      */
-    modelVersion?: pulumi.Input<string>;
+    modelVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      */
-    objectStatus?: pulumi.Input<number>;
-    projectKey?: pulumi.Input<string>;
+    objectStatus?: pulumi.Input<number | undefined>;
+    projectKey?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Information about the object and its parent.
      */
-    registryMetadata?: pulumi.Input<inputs.DataIntegration.WorkspaceProjectRegistryMetadata>;
+    registryMetadata?: pulumi.Input<inputs.DataIntegration.WorkspaceProjectRegistryMetadata | undefined>;
     /**
      * The workspace ID.
      *

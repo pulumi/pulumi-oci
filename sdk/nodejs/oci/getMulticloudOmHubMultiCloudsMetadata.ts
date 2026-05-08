@@ -93,5 +93,5 @@ export interface GetMulticloudOmHubMultiCloudsMetadataOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the root compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
-    limit?: pulumi.Input<number>;
+    limit?: pulumi.Input<number | undefined>;
 }

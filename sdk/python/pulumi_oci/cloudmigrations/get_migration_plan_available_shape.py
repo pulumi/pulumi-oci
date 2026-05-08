@@ -127,7 +127,7 @@ def get_migration_plan_available_shape(availability_domain: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_plan_available_shape = oci.CloudMigrations.get_migration_plan_available_shape(migration_plan_id=test_migration_plan["id"],
+    test_migration_plan_available_shape = oci.cloudmigrations.get_migration_plan_available_shape(migration_plan_id=test_migration_plan["id"],
         availability_domain=migration_plan_available_shape_availability_domain,
         compartment_id=compartment_id,
         dvh_host_id=test_dvh_host["id"],
@@ -158,11 +158,11 @@ def get_migration_plan_available_shape(availability_domain: Optional[_builtins.s
         items=pulumi.get(__ret__, 'items'),
         migration_plan_id=pulumi.get(__ret__, 'migration_plan_id'),
         reserved_capacity_id=pulumi.get(__ret__, 'reserved_capacity_id'))
-def get_migration_plan_available_shape_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              dvh_host_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              migration_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                              reserved_capacity_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_migration_plan_available_shape_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              dvh_host_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              migration_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                              reserved_capacity_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMigrationPlanAvailableShapeResult]:
     """
     This data source provides details about a specific Migration Plan Available Shape resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -175,7 +175,7 @@ def get_migration_plan_available_shape_output(availability_domain: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_plan_available_shape = oci.CloudMigrations.get_migration_plan_available_shape(migration_plan_id=test_migration_plan["id"],
+    test_migration_plan_available_shape = oci.cloudmigrations.get_migration_plan_available_shape(migration_plan_id=test_migration_plan["id"],
         availability_domain=migration_plan_available_shape_availability_domain,
         compartment_id=compartment_id,
         dvh_host_id=test_dvh_host["id"],

@@ -118,27 +118,27 @@ export interface ListingResourceVersionAgreementState {
     /**
      * EULA link
      */
-    eulaLink?: pulumi.Input<string>;
+    eulaLink?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the listing.
      */
-    listingId?: pulumi.Input<string>;
+    listingId?: pulumi.Input<string | undefined>;
     /**
      * Listing Resource Version.
      */
-    listingResourceVersion?: pulumi.Input<string>;
+    listingResourceVersion?: pulumi.Input<string | undefined>;
     /**
      * Oracle TOU link
      */
-    oracleTermsOfUseLink?: pulumi.Input<string>;
+    oracleTermsOfUseLink?: pulumi.Input<string | undefined>;
     /**
      * A generated signature for this agreement retrieval operation which should be used in the create subscription call.
      */
-    signature?: pulumi.Input<string>;
+    signature?: pulumi.Input<string | undefined>;
     /**
      * Date and time the agreements were retrieved, in RFC3339 format. Example: `2018-03-20T12:32:53.532Z`
      */
-    timeRetrieved?: pulumi.Input<string>;
+    timeRetrieved?: pulumi.Input<string | undefined>;
 }
 
 /**

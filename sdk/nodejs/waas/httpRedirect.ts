@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  *         path: httpRedirectTargetPath,
  *         protocol: httpRedirectTargetProtocol,
  *         query: httpRedirectTargetQuery,
- *         port: httpRedirectTargetPort,
+ *         port: Number(httpRedirectTargetPort),
  *     },
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     responseCode: httpRedirectResponseCode,
+ *     responseCode: Number(httpRedirectResponseCode),
  * });
  * ```
  *
@@ -169,39 +169,39 @@ export interface HttpRedirectState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirects compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The domain from which traffic will be redirected.
      */
-    domain?: pulumi.Input<string>;
+    domain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
      */
-    responseCode?: pulumi.Input<number>;
+    responseCode?: pulumi.Input<number | undefined>;
     /**
      * The current lifecycle state of the HTTP Redirect.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The redirect target object including all the redirect data.
      */
-    target?: pulumi.Input<inputs.Waas.HttpRedirectTarget>;
+    target?: pulumi.Input<inputs.Waas.HttpRedirectTarget | undefined>;
     /**
      * The date and time the policy was created, expressed in RFC 3339 timestamp format.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -215,11 +215,11 @@ export interface HttpRedirectArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The domain from which traffic will be redirected.
      */
@@ -227,11 +227,11 @@ export interface HttpRedirectArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
      */
-    responseCode?: pulumi.Input<number>;
+    responseCode?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The redirect target object including all the redirect data.
      */

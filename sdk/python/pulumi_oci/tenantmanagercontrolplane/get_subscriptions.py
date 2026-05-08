@@ -121,7 +121,7 @@ def get_subscriptions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscriptions = oci.Tenantmanagercontrolplane.get_subscriptions(compartment_id=compartment_id,
+    test_subscriptions = oci.tenantmanagercontrolplane.get_subscriptions(compartment_id=compartment_id,
         entity_version=subscription_entity_version,
         subscription_id=test_subscription["id"])
     ```
@@ -146,10 +146,10 @@ def get_subscriptions(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         subscription_collections=pulumi.get(__ret__, 'subscription_collections'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'))
-def get_subscriptions_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             entity_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSubscriptionsFilterArgs', 'GetSubscriptionsFilterArgsDict']]]]] = None,
-                             subscription_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_subscriptions_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             entity_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionsFilterArgs', 'GetSubscriptionsFilterArgsDict']]]]] = None,
+                             subscription_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionsResult]:
     """
     This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
@@ -162,7 +162,7 @@ def get_subscriptions_output(compartment_id: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_subscriptions = oci.Tenantmanagercontrolplane.get_subscriptions(compartment_id=compartment_id,
+    test_subscriptions = oci.tenantmanagercontrolplane.get_subscriptions(compartment_id=compartment_id,
         entity_version=subscription_entity_version,
         subscription_id=test_subscription["id"])
     ```

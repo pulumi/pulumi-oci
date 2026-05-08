@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAdhocQuery = oci.CloudGuard.getAdhocQuery({
+ * const testAdhocQuery = oci.cloudguard.getAdhocQuery({
  *     adhocQueryId: testAdhocQueryOciCloudGuardAdhocQuery.id,
  * });
  * ```
@@ -104,7 +104,7 @@ export interface GetAdhocQueryResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAdhocQuery = oci.CloudGuard.getAdhocQuery({
+ * const testAdhocQuery = oci.cloudguard.getAdhocQuery({
  *     adhocQueryId: testAdhocQueryOciCloudGuardAdhocQuery.id,
  * });
  * ```

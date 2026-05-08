@@ -107,9 +107,9 @@ def get_supported_cloud_regions(asset_source_type: Optional[_builtins.str] = Non
         id=pulumi.get(__ret__, 'id'),
         name_contains=pulumi.get(__ret__, 'name_contains'),
         supported_cloud_region_collections=pulumi.get(__ret__, 'supported_cloud_region_collections'))
-def get_supported_cloud_regions_output(asset_source_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSupportedCloudRegionsFilterArgs', 'GetSupportedCloudRegionsFilterArgsDict']]]]] = None,
-                                       name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_supported_cloud_regions_output(asset_source_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSupportedCloudRegionsFilterArgs', 'GetSupportedCloudRegionsFilterArgsDict']]]]] = None,
+                                       name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSupportedCloudRegionsResult]:
     """
     Use this data source to access information about an existing resource.

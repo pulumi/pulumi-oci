@@ -337,7 +337,7 @@ def get_db_server(db_server_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_server = oci.Database.get_db_server(db_server_id=test_db_server_oci_database_db_server["id"],
+    test_db_server = oci.database.get_db_server(db_server_id=test_db_server_oci_database_db_server["id"],
         exadata_infrastructure_id=test_exadata_infrastructure["id"])
     ```
 
@@ -376,8 +376,8 @@ def get_db_server(db_server_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         vm_cluster_ids=pulumi.get(__ret__, 'vm_cluster_ids'))
-def get_db_server_output(db_server_id: Optional[pulumi.Input[_builtins.str]] = None,
-                         exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_db_server_output(db_server_id: pulumi.Input[Optional[_builtins.str]] = None,
+                         exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbServerResult]:
     """
     This data source provides details about a specific Db Server resource in Oracle Cloud Infrastructure Database service.
@@ -390,7 +390,7 @@ def get_db_server_output(db_server_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_db_server = oci.Database.get_db_server(db_server_id=test_db_server_oci_database_db_server["id"],
+    test_db_server = oci.database.get_db_server(db_server_id=test_db_server_oci_database_db_server["id"],
         exadata_infrastructure_id=test_exadata_infrastructure["id"])
     ```
 

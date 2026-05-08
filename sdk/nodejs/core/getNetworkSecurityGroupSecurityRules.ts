@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkSecurityGroupSecurityRules = oci.Core.getNetworkSecurityGroupSecurityRules({
+ * const testNetworkSecurityGroupSecurityRules = oci.core.getNetworkSecurityGroupSecurityRules({
  *     networkSecurityGroupId: testNetworkSecurityGroup.id,
  *     direction: networkSecurityGroupSecurityRuleDirection,
  * });
@@ -77,7 +77,7 @@ export interface GetNetworkSecurityGroupSecurityRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkSecurityGroupSecurityRules = oci.Core.getNetworkSecurityGroupSecurityRules({
+ * const testNetworkSecurityGroupSecurityRules = oci.core.getNetworkSecurityGroupSecurityRules({
  *     networkSecurityGroupId: testNetworkSecurityGroup.id,
  *     direction: networkSecurityGroupSecurityRuleDirection,
  * });
@@ -99,8 +99,8 @@ export interface GetNetworkSecurityGroupSecurityRulesOutputArgs {
     /**
      * Direction of the security rule. Set to `EGRESS` for rules that allow outbound IP packets, or `INGRESS` for rules that allow inbound IP packets.
      */
-    direction?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetNetworkSecurityGroupSecurityRulesFilterArgs>[]>;
+    direction?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetNetworkSecurityGroupSecurityRulesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
      */

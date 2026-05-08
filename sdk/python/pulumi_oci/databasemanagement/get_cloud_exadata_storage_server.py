@@ -360,7 +360,7 @@ def get_cloud_exadata_storage_server(cloud_exadata_storage_server_id: Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_storage_server = oci.DatabaseManagement.get_cloud_exadata_storage_server(cloud_exadata_storage_server_id=test_cloud_exadata_storage_server_oci_database_management_cloud_exadata_storage_server["id"])
+    test_cloud_exadata_storage_server = oci.databasemanagement.get_cloud_exadata_storage_server(cloud_exadata_storage_server_id=test_cloud_exadata_storage_server_oci_database_management_cloud_exadata_storage_server["id"])
     ```
 
 
@@ -398,7 +398,7 @@ def get_cloud_exadata_storage_server(cloud_exadata_storage_server_id: Optional[_
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
-def get_cloud_exadata_storage_server_output(cloud_exadata_storage_server_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cloud_exadata_storage_server_output(cloud_exadata_storage_server_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudExadataStorageServerResult]:
     """
     This data source provides details about a specific Cloud Exadata Storage Server resource in Oracle Cloud Infrastructure Database Management service.
@@ -411,7 +411,7 @@ def get_cloud_exadata_storage_server_output(cloud_exadata_storage_server_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_storage_server = oci.DatabaseManagement.get_cloud_exadata_storage_server(cloud_exadata_storage_server_id=test_cloud_exadata_storage_server_oci_database_management_cloud_exadata_storage_server["id"])
+    test_cloud_exadata_storage_server = oci.databasemanagement.get_cloud_exadata_storage_server(cloud_exadata_storage_server_id=test_cloud_exadata_storage_server_oci_database_management_cloud_exadata_storage_server["id"])
     ```
 
 

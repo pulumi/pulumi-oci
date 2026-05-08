@@ -147,7 +147,7 @@ def get_databases(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_databases = oci.Database.get_databases(compartment_id=compartment_id,
+    test_databases = oci.database.get_databases(compartment_id=compartment_id,
         db_home_id=test_db_home["id"],
         db_name=database_db_name,
         state=database_state,
@@ -180,12 +180,12 @@ def get_databases(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         system_id=pulumi.get(__ret__, 'system_id'))
-def get_databases_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                         db_home_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         db_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatabasesFilterArgs', 'GetDatabasesFilterArgsDict']]]]] = None,
-                         state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         system_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_databases_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                         db_home_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         db_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabasesFilterArgs', 'GetDatabasesFilterArgsDict']]]]] = None,
+                         state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabasesResult]:
     """
     This data source provides the list of Databases in Oracle Cloud Infrastructure Database service.
@@ -198,7 +198,7 @@ def get_databases_output(compartment_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_databases = oci.Database.get_databases(compartment_id=compartment_id,
+    test_databases = oci.database.get_databases(compartment_id=compartment_id,
         db_home_id=test_db_home["id"],
         db_name=database_db_name,
         state=database_state,

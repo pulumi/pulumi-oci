@@ -26,17 +26,17 @@ import * as utilities from "../utilities";
  *     name: workspaceFolderName,
  *     registryMetadata: {
  *         aggregatorKey: workspaceFolderRegistryMetadataAggregatorKey,
- *         isFavorite: workspaceFolderRegistryMetadataIsFavorite,
+ *         isFavorite: workspaceFolderRegistryMetadataIsFavorite === "true",
  *         key: workspaceFolderRegistryMetadataKey,
  *         labels: workspaceFolderRegistryMetadataLabels,
- *         registryVersion: workspaceFolderRegistryMetadataRegistryVersion,
+ *         registryVersion: Number(workspaceFolderRegistryMetadataRegistryVersion),
  *     },
  *     workspaceId: testWorkspace.id,
  *     categoryName: testCategory.name,
  *     description: workspaceFolderDescription,
  *     key: workspaceFolderKey,
  *     modelVersion: workspaceFolderModelVersion,
- *     objectStatus: workspaceFolderObjectStatus,
+ *     objectStatus: Number(workspaceFolderObjectStatus),
  * });
  * ```
  *
@@ -205,56 +205,56 @@ export interface WorkspaceFolderState {
     /**
      * (Updatable) The category name.
      */
-    categoryName?: pulumi.Input<string>;
+    categoryName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user defined description for the folder.
      */
-    description?: pulumi.Input<string>;
-    folderKey?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
+    folderKey?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
-    identifier?: pulumi.Input<string>;
+    identifier?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Currently not used on folder creation. Reserved for future.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      */
-    keyMap?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    keyMap?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceFolderMetadata>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceFolderMetadata>[] | undefined>;
     /**
      * The type of the object.
      */
-    modelType?: pulumi.Input<string>;
+    modelType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The model version of an object.
      */
-    modelVersion?: pulumi.Input<string>;
+    modelVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      */
-    objectStatus?: pulumi.Input<number>;
+    objectStatus?: pulumi.Input<number | undefined>;
     /**
      * The version of the object that is used to track changes in the object instance.
      */
-    objectVersion?: pulumi.Input<number>;
+    objectVersion?: pulumi.Input<number | undefined>;
     /**
      * A reference to the object's parent.
      */
-    parentReves?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceFolderParentRef>[]>;
+    parentReves?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceFolderParentRef>[] | undefined>;
     /**
      * (Updatable) Information about the object and its parent.
      */
-    registryMetadata?: pulumi.Input<inputs.DataIntegration.WorkspaceFolderRegistryMetadata>;
+    registryMetadata?: pulumi.Input<inputs.DataIntegration.WorkspaceFolderRegistryMetadata | undefined>;
     /**
      * The workspace ID.
      *
@@ -262,7 +262,7 @@ export interface WorkspaceFolderState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    workspaceId?: pulumi.Input<string>;
+    workspaceId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -272,12 +272,12 @@ export interface WorkspaceFolderArgs {
     /**
      * (Updatable) The category name.
      */
-    categoryName?: pulumi.Input<string>;
+    categoryName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user defined description for the folder.
      */
-    description?: pulumi.Input<string>;
-    folderKey?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
+    folderKey?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
@@ -285,19 +285,19 @@ export interface WorkspaceFolderArgs {
     /**
      * (Updatable) Currently not used on folder creation. Reserved for future.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The model version of an object.
      */
-    modelVersion?: pulumi.Input<string>;
+    modelVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      */
-    objectStatus?: pulumi.Input<number>;
+    objectStatus?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Information about the object and its parent.
      */

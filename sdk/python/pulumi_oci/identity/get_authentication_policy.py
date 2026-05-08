@@ -97,7 +97,7 @@ def get_authentication_policy(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_authentication_policy = oci.Identity.get_authentication_policy(compartment_id=tenancy_ocid)
+    test_authentication_policy = oci.identity.get_authentication_policy(compartment_id=tenancy_ocid)
     ```
 
 
@@ -113,7 +113,7 @@ def get_authentication_policy(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         network_policies=pulumi.get(__ret__, 'network_policies'),
         password_policies=pulumi.get(__ret__, 'password_policies'))
-def get_authentication_policy_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_authentication_policy_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuthenticationPolicyResult]:
     """
     This data source provides details about a specific Authentication Policy resource in Oracle Cloud Infrastructure Identity service.
@@ -127,7 +127,7 @@ def get_authentication_policy_output(compartment_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_authentication_policy = oci.Identity.get_authentication_policy(compartment_id=tenancy_ocid)
+    test_authentication_policy = oci.identity.get_authentication_policy(compartment_id=tenancy_ocid)
     ```
 
 

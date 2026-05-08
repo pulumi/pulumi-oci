@@ -198,7 +198,7 @@ def get_bds_instance_api_key(api_key_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_api_key = oci.BigDataService.get_bds_instance_api_key(api_key_id=test_api_key["id"],
+    test_bds_instance_api_key = oci.bigdataservice.get_bds_instance_api_key(api_key_id=test_api_key["id"],
         bds_instance_id=test_bds_instance["id"])
     ```
 
@@ -226,8 +226,8 @@ def get_bds_instance_api_key(api_key_id: Optional[_builtins.str] = None,
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         user_id=pulumi.get(__ret__, 'user_id'))
-def get_bds_instance_api_key_output(api_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_bds_instance_api_key_output(api_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceApiKeyResult]:
     """
     This data source provides details about a specific Bds Instance Api Key resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -240,7 +240,7 @@ def get_bds_instance_api_key_output(api_key_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_api_key = oci.BigDataService.get_bds_instance_api_key(api_key_id=test_api_key["id"],
+    test_bds_instance_api_key = oci.bigdataservice.get_bds_instance_api_key(api_key_id=test_api_key["id"],
         bds_instance_id=test_bds_instance["id"])
     ```
 

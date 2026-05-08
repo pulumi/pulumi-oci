@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpSecConnectionTunnels = oci.Core.getIpsecConnectionTunnels({
+ * const testIpSecConnectionTunnels = oci.core.getIpsecConnectionTunnels({
  *     ipsecId: testIpsec.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetIpsecConnectionTunnelsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpSecConnectionTunnels = oci.Core.getIpsecConnectionTunnels({
+ * const testIpSecConnectionTunnels = oci.core.getIpsecConnectionTunnels({
  *     ipsecId: testIpsec.id,
  * });
  * ```
@@ -84,7 +84,7 @@ export function getIpsecConnectionTunnelsOutput(args: GetIpsecConnectionTunnelsO
  * A collection of arguments for invoking getIpsecConnectionTunnels.
  */
 export interface GetIpsecConnectionTunnelsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetIpsecConnectionTunnelsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetIpsecConnectionTunnelsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
      */

@@ -180,12 +180,12 @@ def get_managed_lists(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_lists = oci.CloudGuard.get_managed_lists(compartment_id=compartment_id,
+    test_managed_lists = oci.cloudguard.get_managed_lists(compartment_id=compartment_id,
         access_level=managed_list_access_level,
-        compartment_id_in_subtree=managed_list_compartment_id_in_subtree,
+        compartment_id_in_subtree=managed_list_compartment_id_in_subtree == "true",
         display_name=managed_list_display_name,
         list_type=managed_list_list_type,
-        resource_metadata_only=managed_list_resource_metadata_only,
+        resource_metadata_only=managed_list_resource_metadata_only == "true",
         state=managed_list_state)
     ```
 
@@ -221,14 +221,14 @@ def get_managed_lists(access_level: Optional[_builtins.str] = None,
         managed_list_collections=pulumi.get(__ret__, 'managed_list_collections'),
         resource_metadata_only=pulumi.get(__ret__, 'resource_metadata_only'),
         state=pulumi.get(__ret__, 'state'))
-def get_managed_lists_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                             compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedListsFilterArgs', 'GetManagedListsFilterArgsDict']]]]] = None,
-                             list_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             resource_metadata_only: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                             state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_managed_lists_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                             compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedListsFilterArgs', 'GetManagedListsFilterArgsDict']]]]] = None,
+                             list_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             resource_metadata_only: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedListsResult]:
     """
     This data source provides the list of Managed Lists in Oracle Cloud Infrastructure Cloud Guard service.
@@ -254,12 +254,12 @@ def get_managed_lists_output(access_level: Optional[pulumi.Input[Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_lists = oci.CloudGuard.get_managed_lists(compartment_id=compartment_id,
+    test_managed_lists = oci.cloudguard.get_managed_lists(compartment_id=compartment_id,
         access_level=managed_list_access_level,
-        compartment_id_in_subtree=managed_list_compartment_id_in_subtree,
+        compartment_id_in_subtree=managed_list_compartment_id_in_subtree == "true",
         display_name=managed_list_display_name,
         list_type=managed_list_list_type,
-        resource_metadata_only=managed_list_resource_metadata_only,
+        resource_metadata_only=managed_list_resource_metadata_only == "true",
         state=managed_list_state)
     ```
 

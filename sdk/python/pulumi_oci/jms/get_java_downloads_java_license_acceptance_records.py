@@ -132,7 +132,7 @@ def get_java_downloads_java_license_acceptance_records(compartment_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_java_license_acceptance_records = oci.Jms.get_java_downloads_java_license_acceptance_records(compartment_id=tenancy_ocid,
+    test_java_license_acceptance_records = oci.jms.get_java_downloads_java_license_acceptance_records(compartment_id=tenancy_ocid,
         id=java_license_acceptance_record_id,
         license_type=java_license_acceptance_record_license_type,
         search_by_user=java_license_acceptance_record_search_by_user,
@@ -164,12 +164,12 @@ def get_java_downloads_java_license_acceptance_records(compartment_id: Optional[
         license_type=pulumi.get(__ret__, 'license_type'),
         search_by_user=pulumi.get(__ret__, 'search_by_user'),
         status=pulumi.get(__ret__, 'status'))
-def get_java_downloads_java_license_acceptance_records_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs', 'GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgsDict']]]]] = None,
-                                                              id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                              license_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                              search_by_user: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                              status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_java_downloads_java_license_acceptance_records_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs', 'GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgsDict']]]]] = None,
+                                                              id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                              license_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                              search_by_user: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                              status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJavaDownloadsJavaLicenseAcceptanceRecordsResult]:
     """
     This data source provides the list of Java License Acceptance Records in Oracle Cloud Infrastructure Jms Java Downloads service.
@@ -182,7 +182,7 @@ def get_java_downloads_java_license_acceptance_records_output(compartment_id: Op
     import pulumi
     import pulumi_oci as oci
 
-    test_java_license_acceptance_records = oci.Jms.get_java_downloads_java_license_acceptance_records(compartment_id=tenancy_ocid,
+    test_java_license_acceptance_records = oci.jms.get_java_downloads_java_license_acceptance_records(compartment_id=tenancy_ocid,
         id=java_license_acceptance_record_id,
         license_type=java_license_acceptance_record_license_type,
         search_by_user=java_license_acceptance_record_search_by_user,

@@ -162,8 +162,8 @@ def get_platform_configurations(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_platform_configurations = oci.FleetAppsManagement.get_platform_configurations(compartment_id=compartment_id,
-        compartment_id_in_subtree=platform_configuration_compartment_id_in_subtree,
+    test_platform_configurations = oci.fleetappsmanagement.get_platform_configurations(compartment_id=compartment_id,
+        compartment_id_in_subtree=platform_configuration_compartment_id_in_subtree == "true",
         config_category=platform_configuration_config_category,
         display_name=platform_configuration_display_name,
         id=platform_configuration_id,
@@ -202,14 +202,14 @@ def get_platform_configurations(compartment_id: Optional[_builtins.str] = None,
         platform_configuration_collections=pulumi.get(__ret__, 'platform_configuration_collections'),
         state=pulumi.get(__ret__, 'state'),
         type=pulumi.get(__ret__, 'type'))
-def get_platform_configurations_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                       config_category: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPlatformConfigurationsFilterArgs', 'GetPlatformConfigurationsFilterArgsDict']]]]] = None,
-                                       id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_platform_configurations_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                       config_category: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPlatformConfigurationsFilterArgs', 'GetPlatformConfigurationsFilterArgsDict']]]]] = None,
+                                       id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPlatformConfigurationsResult]:
     """
     This data source provides the list of Platform Configurations in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -223,8 +223,8 @@ def get_platform_configurations_output(compartment_id: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_platform_configurations = oci.FleetAppsManagement.get_platform_configurations(compartment_id=compartment_id,
-        compartment_id_in_subtree=platform_configuration_compartment_id_in_subtree,
+    test_platform_configurations = oci.fleetappsmanagement.get_platform_configurations(compartment_id=compartment_id,
+        compartment_id_in_subtree=platform_configuration_compartment_id_in_subtree == "true",
         config_category=platform_configuration_config_category,
         display_name=platform_configuration_display_name,
         id=platform_configuration_id,

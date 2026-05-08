@@ -112,7 +112,7 @@ export interface CompareUserAssessmentState {
     /**
      * The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
      */
-    comparisonUserAssessmentId?: pulumi.Input<string>;
+    comparisonUserAssessmentId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the user assessment.
      *
@@ -120,7 +120,7 @@ export interface CompareUserAssessmentState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    userAssessmentId?: pulumi.Input<string>;
+    userAssessmentId?: pulumi.Input<string | undefined>;
 }
 
 /**

@@ -131,7 +131,7 @@ def get_actions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_actions = oci.OperatorAccessControl.get_actions(compartment_id=compartment_id,
+    test_operator_actions = oci.operatoraccesscontrol.get_actions(compartment_id=compartment_id,
         name=operator_action_name,
         resource_type=operator_action_resource_type,
         state=operator_action_state)
@@ -160,11 +160,11 @@ def get_actions(compartment_id: Optional[_builtins.str] = None,
         operator_action_collections=pulumi.get(__ret__, 'operator_action_collections'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
         state=pulumi.get(__ret__, 'state'))
-def get_actions_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetActionsFilterArgs', 'GetActionsFilterArgsDict']]]]] = None,
-                       name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       resource_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_actions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetActionsFilterArgs', 'GetActionsFilterArgsDict']]]]] = None,
+                       name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetActionsResult]:
     """
     This data source provides the list of Operator Actions in Oracle Cloud Infrastructure Operator Access Control service.
@@ -177,7 +177,7 @@ def get_actions_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_actions = oci.OperatorAccessControl.get_actions(compartment_id=compartment_id,
+    test_operator_actions = oci.operatoraccesscontrol.get_actions(compartment_id=compartment_id,
         name=operator_action_name,
         resource_type=operator_action_resource_type,
         state=operator_action_state)

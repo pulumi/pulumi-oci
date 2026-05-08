@@ -271,7 +271,7 @@ def get_workspace_import_request(import_request_key: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_import_request = oci.DataIntegration.get_workspace_import_request(import_request_key=workspace_import_request_import_request_key,
+    test_workspace_import_request = oci.dataintegration.get_workspace_import_request(import_request_key=workspace_import_request_import_request_key,
         workspace_id=test_workspace["id"])
     ```
 
@@ -305,8 +305,8 @@ def get_workspace_import_request(import_request_key: Optional[_builtins.str] = N
         time_started_in_millis=pulumi.get(__ret__, 'time_started_in_millis'),
         total_imported_object_count=pulumi.get(__ret__, 'total_imported_object_count'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-def get_workspace_import_request_output(import_request_key: Optional[pulumi.Input[_builtins.str]] = None,
-                                        workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_workspace_import_request_output(import_request_key: pulumi.Input[Optional[_builtins.str]] = None,
+                                        workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceImportRequestResult]:
     """
     This data source provides details about a specific Workspace Import Request resource in Oracle Cloud Infrastructure Data Integration service.
@@ -319,7 +319,7 @@ def get_workspace_import_request_output(import_request_key: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_import_request = oci.DataIntegration.get_workspace_import_request(import_request_key=workspace_import_request_import_request_key,
+    test_workspace_import_request = oci.dataintegration.get_workspace_import_request(import_request_key=workspace_import_request_import_request_key,
         workspace_id=test_workspace["id"])
     ```
 

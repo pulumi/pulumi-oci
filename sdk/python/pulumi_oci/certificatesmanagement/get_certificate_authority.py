@@ -300,7 +300,7 @@ def get_certificate_authority(certificate_authority_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate_authority = oci.CertificatesManagement.get_certificate_authority(certificate_authority_id=test_certificate_authority_oci_certificates_management_certificate_authority["id"])
+    test_certificate_authority = oci.certificatesmanagement.get_certificate_authority(certificate_authority_id=test_certificate_authority_oci_certificates_management_certificate_authority["id"])
     ```
 
 
@@ -333,7 +333,7 @@ def get_certificate_authority(certificate_authority_id: Optional[_builtins.str] 
         subjects=pulumi.get(__ret__, 'subjects'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'))
-def get_certificate_authority_output(certificate_authority_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_certificate_authority_output(certificate_authority_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCertificateAuthorityResult]:
     """
     This data source provides details about a specific Certificate Authority resource in Oracle Cloud Infrastructure Certificates Management service.
@@ -346,7 +346,7 @@ def get_certificate_authority_output(certificate_authority_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate_authority = oci.CertificatesManagement.get_certificate_authority(certificate_authority_id=test_certificate_authority_oci_certificates_management_certificate_authority["id"])
+    test_certificate_authority = oci.certificatesmanagement.get_certificate_authority(certificate_authority_id=test_certificate_authority_oci_certificates_management_certificate_authority["id"])
     ```
 
 

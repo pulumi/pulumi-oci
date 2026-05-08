@@ -160,27 +160,27 @@ export interface PeerState {
     /**
      * Availability Domain to place new peer
      */
-    ad?: pulumi.Input<string>;
+    ad?: pulumi.Input<string | undefined>;
     /**
      * peer alias
      */
-    alias?: pulumi.Input<string>;
+    alias?: pulumi.Input<string | undefined>;
     /**
      * Unique service identifier.
      */
-    blockchainPlatformId?: pulumi.Input<string>;
+    blockchainPlatformId?: pulumi.Input<string | undefined>;
     /**
      * Host on which the Peer exists
      */
-    host?: pulumi.Input<string>;
+    host?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) OCPU allocation parameter
      */
-    ocpuAllocationParam?: pulumi.Input<inputs.Blockchain.PeerOcpuAllocationParam>;
+    ocpuAllocationParam?: pulumi.Input<inputs.Blockchain.PeerOcpuAllocationParam | undefined>;
     /**
      * peer identifier
      */
-    peerKey?: pulumi.Input<string>;
+    peerKey?: pulumi.Input<string | undefined>;
     /**
      * Peer role
      *
@@ -188,11 +188,11 @@ export interface PeerState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    role?: pulumi.Input<string>;
+    role?: pulumi.Input<string | undefined>;
     /**
      * The current state of the peer.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -206,7 +206,7 @@ export interface PeerArgs {
     /**
      * peer alias
      */
-    alias?: pulumi.Input<string>;
+    alias?: pulumi.Input<string | undefined>;
     /**
      * Unique service identifier.
      */

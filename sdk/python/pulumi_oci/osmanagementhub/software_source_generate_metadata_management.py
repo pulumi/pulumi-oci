@@ -51,7 +51,7 @@ class SoftwareSourceGenerateMetadataManagementArgs:
 @pulumi.input_type
 class _SoftwareSourceGenerateMetadataManagementState:
     def __init__(__self__, *,
-                 software_source_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 software_source_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SoftwareSourceGenerateMetadataManagement resources.
 
@@ -66,7 +66,7 @@ class _SoftwareSourceGenerateMetadataManagementState:
 
     @_builtins.property
     @pulumi.getter(name="softwareSourceId")
-    def software_source_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def software_source_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 
@@ -77,7 +77,7 @@ class _SoftwareSourceGenerateMetadataManagementState:
         return pulumi.get(self, "software_source_id")
 
     @software_source_id.setter
-    def software_source_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def software_source_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "software_source_id", value)
 
 
@@ -87,7 +87,7 @@ class SoftwareSourceGenerateMetadataManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 software_source_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Software Source Generate Metadata Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -170,7 +170,7 @@ class SoftwareSourceGenerateMetadataManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 software_source_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -193,7 +193,7 @@ class SoftwareSourceGenerateMetadataManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            software_source_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'SoftwareSourceGenerateMetadataManagement':
+            software_source_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'SoftwareSourceGenerateMetadataManagement':
         """
         Get an existing SoftwareSourceGenerateMetadataManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

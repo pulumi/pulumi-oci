@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVbInstanceApplications = oci.VisualBuilder.getVbInstanceApplications({
+ * const testVbInstanceApplications = oci.visualbuilder.getVbInstanceApplications({
  *     vbInstanceId: testVbInstance.id,
  *     idcsOpenId: "idcs_open_id_value",
  * });
@@ -71,7 +71,7 @@ export interface GetVbInstanceApplicationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVbInstanceApplications = oci.VisualBuilder.getVbInstanceApplications({
+ * const testVbInstanceApplications = oci.visualbuilder.getVbInstanceApplications({
  *     vbInstanceId: testVbInstance.id,
  *     idcsOpenId: "idcs_open_id_value",
  * });
@@ -92,7 +92,7 @@ export interface GetVbInstanceApplicationsOutputArgs {
     /**
      * Encrypted IDCS Open ID token which allows access to Visual Builder REST apis
      */
-    idcsOpenId?: pulumi.Input<string>;
+    idcsOpenId?: pulumi.Input<string | undefined>;
     /**
      * Unique Vb Instance identifier.
      */

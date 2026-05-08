@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDedicatedVantagePoint = oci.ApmSynthetics.getDedicatedVantagePoint({
+ * const testDedicatedVantagePoint = oci.apmsynthetics.getDedicatedVantagePoint({
  *     apmDomainId: testApmDomain.id,
  *     dedicatedVantagePointId: testDedicatedVantagePointOciApmSyntheticsDedicatedVantagePoint.id,
  * });
@@ -107,7 +107,7 @@ export interface GetDedicatedVantagePointResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDedicatedVantagePoint = oci.ApmSynthetics.getDedicatedVantagePoint({
+ * const testDedicatedVantagePoint = oci.apmsynthetics.getDedicatedVantagePoint({
  *     apmDomainId: testApmDomain.id,
  *     dedicatedVantagePointId: testDedicatedVantagePointOciApmSyntheticsDedicatedVantagePoint.id,
  * });

@@ -30,25 +30,25 @@ import * as utilities from "../utilities";
  *             rcodes: backendSetHealthCheckerDnsRcodes,
  *             transportProtocol: backendSetHealthCheckerDnsTransportProtocol,
  *         },
- *         intervalInMillis: backendSetHealthCheckerIntervalInMillis,
- *         port: backendSetHealthCheckerPort,
+ *         intervalInMillis: Number(backendSetHealthCheckerIntervalInMillis),
+ *         port: Number(backendSetHealthCheckerPort),
  *         requestData: backendSetHealthCheckerRequestData,
  *         responseBodyRegex: backendSetHealthCheckerResponseBodyRegex,
  *         responseData: backendSetHealthCheckerResponseData,
- *         retries: backendSetHealthCheckerRetries,
- *         returnCode: backendSetHealthCheckerReturnCode,
- *         timeoutInMillis: backendSetHealthCheckerTimeoutInMillis,
+ *         retries: Number(backendSetHealthCheckerRetries),
+ *         returnCode: Number(backendSetHealthCheckerReturnCode),
+ *         timeoutInMillis: Number(backendSetHealthCheckerTimeoutInMillis),
  *         urlPath: backendSetHealthCheckerUrlPath,
  *     },
  *     name: backendSetName,
  *     networkLoadBalancerId: testNetworkLoadBalancer.id,
  *     policy: backendSetPolicy,
- *     areOperationallyActiveBackendsPreferred: backendSetAreOperationallyActiveBackendsPreferred,
+ *     areOperationallyActiveBackendsPreferred: backendSetAreOperationallyActiveBackendsPreferred === "true",
  *     ipVersion: backendSetIpVersion,
- *     isFailOpen: backendSetIsFailOpen,
- *     isInstantFailoverEnabled: backendSetIsInstantFailoverEnabled,
- *     isInstantFailoverTcpResetEnabled: backendSetIsInstantFailoverTcpResetEnabled,
- *     isPreserveSource: backendSetIsPreserveSource,
+ *     isFailOpen: backendSetIsFailOpen === "true",
+ *     isInstantFailoverEnabled: backendSetIsInstantFailoverEnabled === "true",
+ *     isInstantFailoverTcpResetEnabled: backendSetIsInstantFailoverTcpResetEnabled === "true",
+ *     isPreserveSource: backendSetIsPreserveSource === "true",
  * });
  * ```
  *
@@ -200,35 +200,35 @@ export interface BackendSetState {
     /**
      * (Updatable) If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.   The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
      */
-    areOperationallyActiveBackendsPreferred?: pulumi.Input<boolean>;
+    areOperationallyActiveBackendsPreferred?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An array of backends to be associated with the backend set.
      */
-    backends?: pulumi.Input<pulumi.Input<inputs.NetworkLoadBalancer.BackendSetBackend>[]>;
+    backends?: pulumi.Input<pulumi.Input<inputs.NetworkLoadBalancer.BackendSetBackend>[] | undefined>;
     /**
      * (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
      */
-    healthChecker?: pulumi.Input<inputs.NetworkLoadBalancer.BackendSetHealthChecker>;
+    healthChecker?: pulumi.Input<inputs.NetworkLoadBalancer.BackendSetHealthChecker | undefined>;
     /**
      * (Updatable) IP version associated with the backend set.
      */
-    ipVersion?: pulumi.Input<string>;
+    ipVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
      */
-    isFailOpen?: pulumi.Input<boolean>;
+    isFailOpen?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
      */
-    isInstantFailoverEnabled?: pulumi.Input<boolean>;
+    isInstantFailoverEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.  If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
      */
-    isInstantFailoverTcpResetEnabled?: pulumi.Input<boolean>;
+    isInstantFailoverTcpResetEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
      */
-    isPreserveSource?: pulumi.Input<boolean>;
+    isPreserveSource?: pulumi.Input<boolean | undefined>;
     /**
      * A user-friendly name for the backend set that must be unique and cannot be changed.
      *
@@ -236,11 +236,11 @@ export interface BackendSetState {
      *
      * Example: `exampleBackendSet`
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
      */
-    networkLoadBalancerId?: pulumi.Input<string>;
+    networkLoadBalancerId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The network load balancer policy for the backend set.  Example: `FIVE_TUPLE`` 
      *
@@ -248,7 +248,7 @@ export interface BackendSetState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    policy?: pulumi.Input<string>;
+    policy?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -258,7 +258,7 @@ export interface BackendSetArgs {
     /**
      * (Updatable) If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.   The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
      */
-    areOperationallyActiveBackendsPreferred?: pulumi.Input<boolean>;
+    areOperationallyActiveBackendsPreferred?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The health check policy configuration. For more information, see [Editing Network Load Balancer Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/HealthCheckPolicies/update-health-check-policy.htm).
      */
@@ -266,23 +266,23 @@ export interface BackendSetArgs {
     /**
      * (Updatable) IP version associated with the backend set.
      */
-    ipVersion?: pulumi.Input<string>;
+    ipVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) If enabled, the network load balancer will continue to distribute traffic in the configured distribution in the event all backends are unhealthy. The value is false by default.
      */
-    isFailOpen?: pulumi.Input<boolean>;
+    isFailOpen?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If enabled existing connections will be forwarded to an alternative healthy backend as soon as current backend becomes unhealthy.
      */
-    isInstantFailoverEnabled?: pulumi.Input<boolean>;
+    isInstantFailoverEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) This only applies when using instant failover. If enabled, the network load balancer will send TCP RST to clients when a backend becomes unhealthy and the traffic is moved to a healthy backend.  If disabled, the network load balancer will not send TCP RST before moving traffic to a healthy backend.  By default, TCP RST is enabled.
      */
-    isInstantFailoverTcpResetEnabled?: pulumi.Input<boolean>;
+    isInstantFailoverTcpResetEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends. Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled. The value is true by default.
      */
-    isPreserveSource?: pulumi.Input<boolean>;
+    isPreserveSource?: pulumi.Input<boolean | undefined>;
     /**
      * A user-friendly name for the backend set that must be unique and cannot be changed.
      *
@@ -290,7 +290,7 @@ export interface BackendSetArgs {
      *
      * Example: `exampleBackendSet`
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
      */

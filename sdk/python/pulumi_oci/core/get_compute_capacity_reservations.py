@@ -140,7 +140,7 @@ def get_compute_capacity_reservations(availability_domain: Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_reservations = oci.Core.get_compute_capacity_reservations(compartment_id=compartment_id,
+    test_compute_capacity_reservations = oci.core.get_compute_capacity_reservations(compartment_id=compartment_id,
         availability_domain=compute_capacity_reservation_availability_domain,
         display_name=compute_capacity_reservation_display_name,
         state=compute_capacity_reservation_state)
@@ -169,11 +169,11 @@ def get_compute_capacity_reservations(availability_domain: Optional[_builtins.st
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_compute_capacity_reservations_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeCapacityReservationsFilterArgs', 'GetComputeCapacityReservationsFilterArgsDict']]]]] = None,
-                                             state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_compute_capacity_reservations_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeCapacityReservationsFilterArgs', 'GetComputeCapacityReservationsFilterArgsDict']]]]] = None,
+                                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeCapacityReservationsResult]:
     """
     This data source provides the list of Compute Capacity Reservations in Oracle Cloud Infrastructure Core service.
@@ -189,7 +189,7 @@ def get_compute_capacity_reservations_output(availability_domain: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_reservations = oci.Core.get_compute_capacity_reservations(compartment_id=compartment_id,
+    test_compute_capacity_reservations = oci.core.get_compute_capacity_reservations(compartment_id=compartment_id,
         availability_domain=compute_capacity_reservation_availability_domain,
         display_name=compute_capacity_reservation_display_name,
         state=compute_capacity_reservation_state)

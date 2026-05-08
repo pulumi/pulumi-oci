@@ -213,7 +213,7 @@ def get_fleet_agent_configuration(fleet_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_agent_configuration = oci.Jms.get_fleet_agent_configuration(fleet_id=test_fleet["id"])
+    test_fleet_agent_configuration = oci.jms.get_fleet_agent_configuration(fleet_id=test_fleet["id"])
     ```
 
 
@@ -239,7 +239,7 @@ def get_fleet_agent_configuration(fleet_id: Optional[_builtins.str] = None,
         time_last_modified=pulumi.get(__ret__, 'time_last_modified'),
         windows_configurations=pulumi.get(__ret__, 'windows_configurations'),
         work_request_validity_period_in_days=pulumi.get(__ret__, 'work_request_validity_period_in_days'))
-def get_fleet_agent_configuration_output(fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fleet_agent_configuration_output(fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetAgentConfigurationResult]:
     """
     This data source provides details about a specific Fleet Agent Configuration resource in Oracle Cloud Infrastructure Jms service.
@@ -252,7 +252,7 @@ def get_fleet_agent_configuration_output(fleet_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_agent_configuration = oci.Jms.get_fleet_agent_configuration(fleet_id=test_fleet["id"])
+    test_fleet_agent_configuration = oci.jms.get_fleet_agent_configuration(fleet_id=test_fleet["id"])
     ```
 
 

@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositories = oci.Artifacts.getRepositories({
+ * const testRepositories = oci.artifacts.getRepositories({
  *     compartmentId: compartmentId,
  *     displayName: repositoryDisplayName,
  *     id: repositoryId,
- *     isImmutable: repositoryIsImmutable,
+ *     isImmutable: repositoryIsImmutable === "true",
  *     state: repositoryState,
  * });
  * ```
@@ -106,11 +106,11 @@ export interface GetRepositoriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositories = oci.Artifacts.getRepositories({
+ * const testRepositories = oci.artifacts.getRepositories({
  *     compartmentId: compartmentId,
  *     displayName: repositoryDisplayName,
  *     id: repositoryId,
- *     isImmutable: repositoryIsImmutable,
+ *     isImmutable: repositoryIsImmutable === "true",
  *     state: repositoryState,
  * });
  * ```
@@ -138,18 +138,18 @@ export interface GetRepositoriesOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Artifacts.GetRepositoriesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Artifacts.GetRepositoriesFilterArgs>[] | undefined>;
     /**
      * A filter to return the resources for the specified OCID.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that match the isImmutable value.
      */
-    isImmutable?: pulumi.Input<boolean>;
+    isImmutable?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state name exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

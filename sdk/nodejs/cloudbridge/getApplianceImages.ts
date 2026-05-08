@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApplianceImages = oci.CloudBridge.getApplianceImages({
+ * const testApplianceImages = oci.cloudbridge.getApplianceImages({
  *     compartmentId: compartmentId,
  *     displayName: applianceImageDisplayName,
  * });
@@ -77,7 +77,7 @@ export interface GetApplianceImagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApplianceImages = oci.CloudBridge.getApplianceImages({
+ * const testApplianceImages = oci.cloudbridge.getApplianceImages({
  *     compartmentId: compartmentId,
  *     displayName: applianceImageDisplayName,
  * });
@@ -103,6 +103,6 @@ export interface GetApplianceImagesOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CloudBridge.GetApplianceImagesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CloudBridge.GetApplianceImagesFilterArgs>[] | undefined>;
 }

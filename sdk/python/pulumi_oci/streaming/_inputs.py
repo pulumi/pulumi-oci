@@ -34,7 +34,7 @@ class StreamPoolCustomEncryptionKeyArgsDict(TypedDict):
     """
     (Updatable) Custom Encryption Key (Master Key) ocid.
     """
-    key_state: NotRequired[pulumi.Input[_builtins.str]]
+    key_state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Life cycle State of the custom key
     """
@@ -43,7 +43,7 @@ class StreamPoolCustomEncryptionKeyArgsDict(TypedDict):
 class StreamPoolCustomEncryptionKeyArgs:
     def __init__(__self__, *,
                  kms_key_id: pulumi.Input[_builtins.str],
-                 key_state: Optional[pulumi.Input[_builtins.str]] = None):
+                 key_state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) Custom Encryption Key (Master Key) ocid.
         :param pulumi.Input[_builtins.str] key_state: Life cycle State of the custom key
@@ -66,31 +66,31 @@ class StreamPoolCustomEncryptionKeyArgs:
 
     @_builtins.property
     @pulumi.getter(name="keyState")
-    def key_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Life cycle State of the custom key
         """
         return pulumi.get(self, "key_state")
 
     @key_state.setter
-    def key_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_state", value)
 
 
 class StreamPoolKafkaSettingsArgsDict(TypedDict):
-    auto_create_topics_enable: NotRequired[pulumi.Input[_builtins.bool]]
+    auto_create_topics_enable: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Enable auto creation of topic on the server.
     """
-    bootstrap_servers: NotRequired[pulumi.Input[_builtins.str]]
+    bootstrap_servers: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Bootstrap servers.
     """
-    log_retention_hours: NotRequired[pulumi.Input[_builtins.int]]
+    log_retention_hours: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The number of hours to keep a log file before deleting it (in hours).
     """
-    num_partitions: NotRequired[pulumi.Input[_builtins.int]]
+    num_partitions: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The default number of log partitions per topic.
     """
@@ -98,10 +98,10 @@ class StreamPoolKafkaSettingsArgsDict(TypedDict):
 @pulumi.input_type
 class StreamPoolKafkaSettingsArgs:
     def __init__(__self__, *,
-                 auto_create_topics_enable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 bootstrap_servers: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_retention_hours: Optional[pulumi.Input[_builtins.int]] = None,
-                 num_partitions: Optional[pulumi.Input[_builtins.int]] = None):
+                 auto_create_topics_enable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 bootstrap_servers: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_retention_hours: pulumi.Input[Optional[_builtins.int]] = None,
+                 num_partitions: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.bool] auto_create_topics_enable: (Updatable) Enable auto creation of topic on the server.
         :param pulumi.Input[_builtins.str] bootstrap_servers: (Updatable) Bootstrap servers.
@@ -119,63 +119,63 @@ class StreamPoolKafkaSettingsArgs:
 
     @_builtins.property
     @pulumi.getter(name="autoCreateTopicsEnable")
-    def auto_create_topics_enable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_create_topics_enable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enable auto creation of topic on the server.
         """
         return pulumi.get(self, "auto_create_topics_enable")
 
     @auto_create_topics_enable.setter
-    def auto_create_topics_enable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_create_topics_enable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_create_topics_enable", value)
 
     @_builtins.property
     @pulumi.getter(name="bootstrapServers")
-    def bootstrap_servers(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bootstrap_servers(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Bootstrap servers.
         """
         return pulumi.get(self, "bootstrap_servers")
 
     @bootstrap_servers.setter
-    def bootstrap_servers(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bootstrap_servers(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bootstrap_servers", value)
 
     @_builtins.property
     @pulumi.getter(name="logRetentionHours")
-    def log_retention_hours(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def log_retention_hours(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of hours to keep a log file before deleting it (in hours).
         """
         return pulumi.get(self, "log_retention_hours")
 
     @log_retention_hours.setter
-    def log_retention_hours(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def log_retention_hours(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "log_retention_hours", value)
 
     @_builtins.property
     @pulumi.getter(name="numPartitions")
-    def num_partitions(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def num_partitions(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The default number of log partitions per topic.
         """
         return pulumi.get(self, "num_partitions")
 
     @num_partitions.setter
-    def num_partitions(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def num_partitions(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "num_partitions", value)
 
 
 class StreamPoolPrivateEndpointSettingsArgsDict(TypedDict):
-    nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    nsg_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The optional list of network security groups to be used with the private endpoint of the stream pool. That value cannot be changed.
     """
-    private_endpoint_ip: NotRequired[pulumi.Input[_builtins.str]]
+    private_endpoint_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The optional private IP you want to be associated with your private stream pool. That parameter can only be specified when the subnetId parameter is set. It cannot be changed. The private IP needs to be part of the CIDR range of the specified subnetId or the creation will fail. If not specified a random IP inside the subnet will be chosen. After the stream pool is created, a custom FQDN, pointing to this private IP, is created. The FQDN is then used to access the service instead of the private IP.
     """
-    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    subnet_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed.
     """
@@ -183,9 +183,9 @@ class StreamPoolPrivateEndpointSettingsArgsDict(TypedDict):
 @pulumi.input_type
 class StreamPoolPrivateEndpointSettingsArgs:
     def __init__(__self__, *,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 private_endpoint_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: The optional list of network security groups to be used with the private endpoint of the stream pool. That value cannot be changed.
         :param pulumi.Input[_builtins.str] private_endpoint_ip: The optional private IP you want to be associated with your private stream pool. That parameter can only be specified when the subnetId parameter is set. It cannot be changed. The private IP needs to be part of the CIDR range of the specified subnetId or the creation will fail. If not specified a random IP inside the subnet will be chosen. After the stream pool is created, a custom FQDN, pointing to this private IP, is created. The FQDN is then used to access the service instead of the private IP.
@@ -200,38 +200,38 @@ class StreamPoolPrivateEndpointSettingsArgs:
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The optional list of network security groups to be used with the private endpoint of the stream pool. That value cannot be changed.
         """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointIp")
-    def private_endpoint_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_endpoint_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The optional private IP you want to be associated with your private stream pool. That parameter can only be specified when the subnetId parameter is set. It cannot be changed. The private IP needs to be part of the CIDR range of the specified subnetId or the creation will fail. If not specified a random IP inside the subnet will be chosen. After the stream pool is created, a custom FQDN, pointing to this private IP, is created. The FQDN is then used to access the service instead of the private IP.
         """
         return pulumi.get(self, "private_endpoint_ip")
 
     @private_endpoint_ip.setter
-    def private_endpoint_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_endpoint_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_endpoint_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         If specified, the stream pool will be private and only accessible from inside that subnet. Producing-to and consuming-from a stream inside a private stream pool can also only be done from inside the subnet. That value cannot be changed.
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
 

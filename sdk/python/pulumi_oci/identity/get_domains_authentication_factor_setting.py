@@ -566,7 +566,7 @@ def get_domains_authentication_factor_setting(attribute_sets: Optional[Sequence[
     import pulumi
     import pulumi_oci as oci
 
-    test_authentication_factor_setting = oci.Identity.get_domains_authentication_factor_setting(authentication_factor_setting_id=test_authentication_factor_setting_oci_identity_domains_authentication_factor_setting["id"],
+    test_authentication_factor_setting = oci.identity.get_domains_authentication_factor_setting(authentication_factor_setting_id=test_authentication_factor_setting_oci_identity_domains_authentication_factor_setting["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=[],
         attributes="",
@@ -637,12 +637,12 @@ def get_domains_authentication_factor_setting(attribute_sets: Optional[Sequence[
         urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings=pulumi.get(__ret__, 'urnietfparamsscimschemasoracleidcsextensionthird_party_authentication_factor_settings'),
         user_enrollment_disabled_factors=pulumi.get(__ret__, 'user_enrollment_disabled_factors'),
         yubico_otp_enabled=pulumi.get(__ret__, 'yubico_otp_enabled'))
-def get_domains_authentication_factor_setting_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                     attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     authentication_factor_setting_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_authentication_factor_setting_output(attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                     attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     authentication_factor_setting_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsAuthenticationFactorSettingResult]:
     """
     This data source provides details about a specific Authentication Factor Setting resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -655,7 +655,7 @@ def get_domains_authentication_factor_setting_output(attribute_sets: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_authentication_factor_setting = oci.Identity.get_domains_authentication_factor_setting(authentication_factor_setting_id=test_authentication_factor_setting_oci_identity_domains_authentication_factor_setting["id"],
+    test_authentication_factor_setting = oci.identity.get_domains_authentication_factor_setting(authentication_factor_setting_id=test_authentication_factor_setting_oci_identity_domains_authentication_factor_setting["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=[],
         attributes="",

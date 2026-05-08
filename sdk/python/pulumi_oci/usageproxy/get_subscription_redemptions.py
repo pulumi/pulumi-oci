@@ -125,7 +125,7 @@ def get_subscription_redemptions(filters: Optional[Sequence[Union['GetSubscripti
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_redemptions = oci.UsageProxy.get_subscription_redemptions(subscription_id=test_subscription["id"],
+    test_subscription_redemptions = oci.usageproxy.get_subscription_redemptions(subscription_id=test_subscription["id"],
         tenancy_id=test_tenancy["id"],
         time_redeemed_greater_than_or_equal_to=subscription_redemption_time_redeemed_greater_than_or_equal_to,
         time_redeemed_less_than=subscription_redemption_time_redeemed_less_than)
@@ -154,11 +154,11 @@ def get_subscription_redemptions(filters: Optional[Sequence[Union['GetSubscripti
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
         time_redeemed_greater_than_or_equal_to=pulumi.get(__ret__, 'time_redeemed_greater_than_or_equal_to'),
         time_redeemed_less_than=pulumi.get(__ret__, 'time_redeemed_less_than'))
-def get_subscription_redemptions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSubscriptionRedemptionsFilterArgs', 'GetSubscriptionRedemptionsFilterArgsDict']]]]] = None,
-                                        subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                        tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                        time_redeemed_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        time_redeemed_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_subscription_redemptions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionRedemptionsFilterArgs', 'GetSubscriptionRedemptionsFilterArgsDict']]]]] = None,
+                                        subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                        tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                        time_redeemed_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        time_redeemed_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionRedemptionsResult]:
     """
     This data source provides the list of Subscription Redemptions in Oracle Cloud Infrastructure Usage Proxy service.
@@ -171,7 +171,7 @@ def get_subscription_redemptions_output(filters: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_redemptions = oci.UsageProxy.get_subscription_redemptions(subscription_id=test_subscription["id"],
+    test_subscription_redemptions = oci.usageproxy.get_subscription_redemptions(subscription_id=test_subscription["id"],
         tenancy_id=test_tenancy["id"],
         time_redeemed_greater_than_or_equal_to=subscription_redemption_time_redeemed_greater_than_or_equal_to,
         time_redeemed_less_than=subscription_redemption_time_redeemed_less_than)

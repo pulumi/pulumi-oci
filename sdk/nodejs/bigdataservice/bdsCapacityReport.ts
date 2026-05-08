@@ -25,9 +25,9 @@ import * as utilities from "../utilities";
  *     shapeAvailabilities: [{
  *         shape: bdsCapacityReportShapeAvailabilitiesShape,
  *         shapeConfig: {
- *             memoryInGbs: bdsCapacityReportShapeAvailabilitiesShapeConfigMemoryInGbs,
- *             nvmes: bdsCapacityReportShapeAvailabilitiesShapeConfigNvmes,
- *             ocpus: bdsCapacityReportShapeAvailabilitiesShapeConfigOcpus,
+ *             memoryInGbs: Number(bdsCapacityReportShapeAvailabilitiesShapeConfigMemoryInGbs),
+ *             nvmes: Number(bdsCapacityReportShapeAvailabilitiesShapeConfigNvmes),
+ *             ocpus: Number(bdsCapacityReportShapeAvailabilitiesShapeConfigOcpus),
  *         },
  *     }],
  * });
@@ -122,15 +122,15 @@ export interface BdsCapacityReportState {
     /**
      * The OCID for the compartment. This should always be the root compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Information about the shapes in the capacity report.
      */
-    shapeAvailabilities?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsCapacityReportShapeAvailability>[]>;
+    shapeAvailabilities?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsCapacityReportShapeAvailability>[] | undefined>;
     /**
      * The time the report was created, shown as an RFC 3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**

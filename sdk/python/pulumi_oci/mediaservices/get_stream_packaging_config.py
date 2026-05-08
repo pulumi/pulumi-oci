@@ -237,7 +237,7 @@ def get_stream_packaging_config(stream_packaging_config_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_packaging_config = oci.MediaServices.get_stream_packaging_config(stream_packaging_config_id=test_stream_packaging_config_oci_media_services_stream_packaging_config["id"])
+    test_stream_packaging_config = oci.mediaservices.get_stream_packaging_config(stream_packaging_config_id=test_stream_packaging_config_oci_media_services_stream_packaging_config["id"])
     ```
 
 
@@ -265,7 +265,7 @@ def get_stream_packaging_config(stream_packaging_config_id: Optional[_builtins.s
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_stream_packaging_config_output(stream_packaging_config_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_stream_packaging_config_output(stream_packaging_config_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStreamPackagingConfigResult]:
     """
     This data source provides details about a specific Stream Packaging Config resource in Oracle Cloud Infrastructure Media Services service.
@@ -278,7 +278,7 @@ def get_stream_packaging_config_output(stream_packaging_config_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_packaging_config = oci.MediaServices.get_stream_packaging_config(stream_packaging_config_id=test_stream_packaging_config_oci_media_services_stream_packaging_config["id"])
+    test_stream_packaging_config = oci.mediaservices.get_stream_packaging_config(stream_packaging_config_id=test_stream_packaging_config_oci_media_services_stream_packaging_config["id"])
     ```
 
 

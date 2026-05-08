@@ -23,9 +23,9 @@ class SecurityAttributeArgs:
     def __init__(__self__, *,
                  description: pulumi.Input[_builtins.str],
                  security_attribute_namespace_id: pulumi.Input[_builtins.str],
-                 is_retired: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 validator: Optional[pulumi.Input['SecurityAttributeValidatorArgs']] = None):
+                 is_retired: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 validator: pulumi.Input[Optional['SecurityAttributeValidatorArgs']] = None):
         """
         The set of arguments for constructing a SecurityAttribute resource.
 
@@ -74,31 +74,31 @@ class SecurityAttributeArgs:
 
     @_builtins.property
     @pulumi.getter(name="isRetired")
-    def is_retired(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_retired(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the security attribute is retired. See [Managing Security Attribute Namespaces](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
         """
         return pulumi.get(self, "is_retired")
 
     @is_retired.setter
-    def is_retired(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_retired(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_retired", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name you assign to the security attribute during creation. This is the security attribute key. The name must be unique within the namespace and cannot be changed.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def validator(self) -> Optional[pulumi.Input['SecurityAttributeValidatorArgs']]:
+    def validator(self) -> pulumi.Input[Optional['SecurityAttributeValidatorArgs']]:
         """
         (Updatable) Validates a security attribute value. Each validator performs validation steps in addition to the standard validation for security attribute values. For more information, see [Limits on Security Attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm).
 
@@ -109,23 +109,23 @@ class SecurityAttributeArgs:
         return pulumi.get(self, "validator")
 
     @validator.setter
-    def validator(self, value: Optional[pulumi.Input['SecurityAttributeValidatorArgs']]):
+    def validator(self, value: pulumi.Input[Optional['SecurityAttributeValidatorArgs']]):
         pulumi.set(self, "validator", value)
 
 
 @pulumi.input_type
 class _SecurityAttributeState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_retired: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_attribute_namespace_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_attribute_namespace_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 validator: Optional[pulumi.Input['SecurityAttributeValidatorArgs']] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_retired: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attribute_namespace_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attribute_namespace_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 validator: pulumi.Input[Optional['SecurityAttributeValidatorArgs']] = None):
         """
         Input properties used for looking up and filtering SecurityAttribute resources.
 
@@ -167,115 +167,115 @@ class _SecurityAttributeState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment that contains the security attribute definition.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description you assign to the security attribute during creation.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="isRetired")
-    def is_retired(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_retired(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the security attribute is retired. See [Managing Security Attribute Namespaces](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
         """
         return pulumi.get(self, "is_retired")
 
     @is_retired.setter
-    def is_retired(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_retired(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_retired", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name you assign to the security attribute during creation. This is the security attribute key. The name must be unique within the namespace and cannot be changed.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributeNamespaceId")
-    def security_attribute_namespace_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_attribute_namespace_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the security attribute namespace.
         """
         return pulumi.get(self, "security_attribute_namespace_id")
 
     @security_attribute_namespace_id.setter
-    def security_attribute_namespace_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_attribute_namespace_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_attribute_namespace_id", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributeNamespaceName")
-    def security_attribute_namespace_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_attribute_namespace_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the security attribute namespace that contains the security attribute.
         """
         return pulumi.get(self, "security_attribute_namespace_name")
 
     @security_attribute_namespace_name.setter
-    def security_attribute_namespace_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_attribute_namespace_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_attribute_namespace_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The security attribute's current state. After creating a security attribute, make sure its `lifecycleState` is ACTIVE before using it. After retiring a security attribute, make sure its `lifecycleState` is INACTIVE before using it. If you delete a security attribute, you cannot delete another security attribute until the deleted security attribute's `lifecycleState` changes from DELETING to DELETED.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Date and time the security attribute was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The data type of the security attribute.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter
-    def validator(self) -> Optional[pulumi.Input['SecurityAttributeValidatorArgs']]:
+    def validator(self) -> pulumi.Input[Optional['SecurityAttributeValidatorArgs']]:
         """
         (Updatable) Validates a security attribute value. Each validator performs validation steps in addition to the standard validation for security attribute values. For more information, see [Limits on Security Attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm).
 
@@ -286,7 +286,7 @@ class _SecurityAttributeState:
         return pulumi.get(self, "validator")
 
     @validator.setter
-    def validator(self, value: Optional[pulumi.Input['SecurityAttributeValidatorArgs']]):
+    def validator(self, value: pulumi.Input[Optional['SecurityAttributeValidatorArgs']]):
         pulumi.set(self, "validator", value)
 
 
@@ -296,11 +296,11 @@ class SecurityAttribute(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_retired: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_attribute_namespace_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 validator: Optional[pulumi.Input[Union['SecurityAttributeValidatorArgs', 'SecurityAttributeValidatorArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_retired: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attribute_namespace_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 validator: pulumi.Input[Optional[Union['SecurityAttributeValidatorArgs', 'SecurityAttributeValidatorArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Security Attribute resource in Oracle Cloud Infrastructure Security Attribute service.
@@ -427,11 +427,11 @@ class SecurityAttribute(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_retired: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_attribute_namespace_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 validator: Optional[pulumi.Input[Union['SecurityAttributeValidatorArgs', 'SecurityAttributeValidatorArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_retired: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attribute_namespace_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 validator: pulumi.Input[Optional[Union['SecurityAttributeValidatorArgs', 'SecurityAttributeValidatorArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -465,16 +465,16 @@ class SecurityAttribute(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            is_retired: Optional[pulumi.Input[_builtins.bool]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            security_attribute_namespace_id: Optional[pulumi.Input[_builtins.str]] = None,
-            security_attribute_namespace_name: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            validator: Optional[pulumi.Input[Union['SecurityAttributeValidatorArgs', 'SecurityAttributeValidatorArgsDict']]] = None) -> 'SecurityAttribute':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            is_retired: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            security_attribute_namespace_id: pulumi.Input[Optional[_builtins.str]] = None,
+            security_attribute_namespace_name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            validator: pulumi.Input[Optional[Union['SecurityAttributeValidatorArgs', 'SecurityAttributeValidatorArgsDict']]] = None) -> 'SecurityAttribute':
         """
         Get an existing SecurityAttribute resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

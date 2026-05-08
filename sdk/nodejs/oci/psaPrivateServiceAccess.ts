@@ -118,23 +118,23 @@ export class PsaPrivateServiceAccess extends pulumi.CustomResource {
  * Input properties used for looking up and filtering PsaPrivateServiceAccess resources.
  */
 export interface PsaPrivateServiceAccessState {
-    compartmentId?: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    description?: pulumi.Input<string>;
-    displayName?: pulumi.Input<string>;
-    fqdns?: pulumi.Input<pulumi.Input<string>[]>;
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    ipv4ip?: pulumi.Input<string>;
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    serviceId?: pulumi.Input<string>;
-    state?: pulumi.Input<string>;
-    subnetId?: pulumi.Input<string>;
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    timeCreated?: pulumi.Input<string>;
-    timeUpdated?: pulumi.Input<string>;
-    vcnId?: pulumi.Input<string>;
-    vnicId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    description?: pulumi.Input<string | undefined>;
+    displayName?: pulumi.Input<string | undefined>;
+    fqdns?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    ipv4ip?: pulumi.Input<string | undefined>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    serviceId?: pulumi.Input<string | undefined>;
+    state?: pulumi.Input<string | undefined>;
+    subnetId?: pulumi.Input<string | undefined>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    timeCreated?: pulumi.Input<string | undefined>;
+    timeUpdated?: pulumi.Input<string | undefined>;
+    vcnId?: pulumi.Input<string | undefined>;
+    vnicId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -142,13 +142,13 @@ export interface PsaPrivateServiceAccessState {
  */
 export interface PsaPrivateServiceAccessArgs {
     compartmentId: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    description?: pulumi.Input<string>;
-    displayName?: pulumi.Input<string>;
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    ipv4ip?: pulumi.Input<string>;
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    description?: pulumi.Input<string | undefined>;
+    displayName?: pulumi.Input<string | undefined>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    ipv4ip?: pulumi.Input<string | undefined>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     serviceId: pulumi.Input<string>;
     subnetId: pulumi.Input<string>;
 }

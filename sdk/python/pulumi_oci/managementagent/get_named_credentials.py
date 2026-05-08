@@ -138,7 +138,7 @@ def get_named_credentials(filters: Optional[Sequence[Union['GetNamedCredentialsF
     import pulumi
     import pulumi_oci as oci
 
-    test_named_credentials = oci.ManagementAgent.get_named_credentials(management_agent_id=test_management_agent["id"],
+    test_named_credentials = oci.managementagent.get_named_credentials(management_agent_id=test_management_agent["id"],
         ids=[named_credential_id],
         names=[named_credential_name],
         states=[named_credential_state],
@@ -170,12 +170,12 @@ def get_named_credentials(filters: Optional[Sequence[Union['GetNamedCredentialsF
         names=pulumi.get(__ret__, 'names'),
         states=pulumi.get(__ret__, 'states'),
         types=pulumi.get(__ret__, 'types'))
-def get_named_credentials_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamedCredentialsFilterArgs', 'GetNamedCredentialsFilterArgsDict']]]]] = None,
-                                 ids: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                 states: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                 types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_named_credentials_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamedCredentialsFilterArgs', 'GetNamedCredentialsFilterArgsDict']]]]] = None,
+                                 ids: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                 states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                 types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamedCredentialsResult]:
     """
     This data source provides the list of Named Credentials in Oracle Cloud Infrastructure Management Agent service.
@@ -188,7 +188,7 @@ def get_named_credentials_output(filters: Optional[pulumi.Input[Optional[Sequenc
     import pulumi
     import pulumi_oci as oci
 
-    test_named_credentials = oci.ManagementAgent.get_named_credentials(management_agent_id=test_management_agent["id"],
+    test_named_credentials = oci.managementagent.get_named_credentials(management_agent_id=test_management_agent["id"],
         ids=[named_credential_id],
         names=[named_credential_name],
         states=[named_credential_state],

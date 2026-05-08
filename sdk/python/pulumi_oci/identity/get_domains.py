@@ -200,10 +200,10 @@ def get_domains(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_domains = oci.Identity.get_domains(compartment_id=compartment_id,
+    test_domains = oci.identity.get_domains(compartment_id=compartment_id,
         display_name=domain_display_name,
         home_region_url=domain_home_region_url,
-        is_hidden_on_login=domain_is_hidden_on_login,
+        is_hidden_on_login=domain_is_hidden_on_login == "true",
         license_type=domain_license_type,
         name=domain_name,
         state=domain_state,
@@ -249,16 +249,16 @@ def get_domains(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         type=pulumi.get(__ret__, 'type'),
         url=pulumi.get(__ret__, 'url'))
-def get_domains_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDomainsFilterArgs', 'GetDomainsFilterArgsDict']]]]] = None,
-                       home_region_url: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       is_hidden_on_login: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                       license_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       url: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDomainsFilterArgs', 'GetDomainsFilterArgsDict']]]]] = None,
+                       home_region_url: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       is_hidden_on_login: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                       license_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       url: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsResult]:
     """
     This data source provides the list of Domains in Oracle Cloud Infrastructure Identity service.
@@ -272,10 +272,10 @@ def get_domains_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_domains = oci.Identity.get_domains(compartment_id=compartment_id,
+    test_domains = oci.identity.get_domains(compartment_id=compartment_id,
         display_name=domain_display_name,
         home_region_url=domain_home_region_url,
-        is_hidden_on_login=domain_is_hidden_on_login,
+        is_hidden_on_login=domain_is_hidden_on_login == "true",
         license_type=domain_license_type,
         name=domain_name,
         state=domain_state,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbNodeSnapshot = oci.Database.getDbNodeSnapshot({
+ * const testDbNodeSnapshot = oci.database.getDbNodeSnapshot({
  *     dbnodeSnapshotId: testSnapshot.id,
  * });
  * ```
@@ -112,7 +112,7 @@ export interface GetDbNodeSnapshotResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbNodeSnapshot = oci.Database.getDbNodeSnapshot({
+ * const testDbNodeSnapshot = oci.database.getDbNodeSnapshot({
  *     dbnodeSnapshotId: testSnapshot.id,
  * });
  * ```

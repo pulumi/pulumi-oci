@@ -159,10 +159,10 @@ def get_user_assessment_profile_analytics(access_level: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_profile_analytics = oci.DataSafe.get_user_assessment_profile_analytics(compartment_id=compartment_id,
+    test_user_assessment_profile_analytics = oci.datasafe.get_user_assessment_profile_analytics(compartment_id=compartment_id,
         user_assessment_id=test_user_assessment["id"],
         access_level=user_assessment_profile_analytic_access_level,
-        compartment_id_in_subtree=user_assessment_profile_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=user_assessment_profile_analytic_compartment_id_in_subtree == "true",
         profile_name=test_profile["name"],
         target_id=test_target["id"])
     ```
@@ -196,13 +196,13 @@ def get_user_assessment_profile_analytics(access_level: Optional[_builtins.str] 
         profile_name=pulumi.get(__ret__, 'profile_name'),
         target_id=pulumi.get(__ret__, 'target_id'),
         user_assessment_id=pulumi.get(__ret__, 'user_assessment_id'))
-def get_user_assessment_profile_analytics_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                 compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetUserAssessmentProfileAnalyticsFilterArgs', 'GetUserAssessmentProfileAnalyticsFilterArgsDict']]]]] = None,
-                                                 profile_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 user_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_user_assessment_profile_analytics_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                 compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUserAssessmentProfileAnalyticsFilterArgs', 'GetUserAssessmentProfileAnalyticsFilterArgsDict']]]]] = None,
+                                                 profile_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 user_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserAssessmentProfileAnalyticsResult]:
     """
     This data source provides the list of User Assessment Profile Analytics in Oracle Cloud Infrastructure Data Safe service.
@@ -229,10 +229,10 @@ def get_user_assessment_profile_analytics_output(access_level: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_profile_analytics = oci.DataSafe.get_user_assessment_profile_analytics(compartment_id=compartment_id,
+    test_user_assessment_profile_analytics = oci.datasafe.get_user_assessment_profile_analytics(compartment_id=compartment_id,
         user_assessment_id=test_user_assessment["id"],
         access_level=user_assessment_profile_analytic_access_level,
-        compartment_id_in_subtree=user_assessment_profile_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=user_assessment_profile_analytic_compartment_id_in_subtree == "true",
         profile_name=test_profile["name"],
         target_id=test_target["id"])
     ```

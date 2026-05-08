@@ -138,7 +138,7 @@ def get_namespace_occ_overviews(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_occ_overviews = oci.CapacityManagement.get_namespace_occ_overviews(compartment_id=compartment_id,
+    test_namespace_occ_overviews = oci.capacitymanagement.get_namespace_occ_overviews(compartment_id=compartment_id,
         namespace=namespace_occ_overview_namespace,
         from_=namespace_occ_overview_from,
         to=namespace_occ_overview_to,
@@ -171,12 +171,12 @@ def get_namespace_occ_overviews(compartment_id: Optional[_builtins.str] = None,
         occ_overview_collections=pulumi.get(__ret__, 'occ_overview_collections'),
         to=pulumi.get(__ret__, 'to'),
         workload_type=pulumi.get(__ret__, 'workload_type'))
-def get_namespace_occ_overviews_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamespaceOccOverviewsFilterArgs', 'GetNamespaceOccOverviewsFilterArgsDict']]]]] = None,
-                                       from_: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                                       to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       workload_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_namespace_occ_overviews_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespaceOccOverviewsFilterArgs', 'GetNamespaceOccOverviewsFilterArgsDict']]]]] = None,
+                                       from_: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                                       to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       workload_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceOccOverviewsResult]:
     """
     This data source provides the list of Namespace Occ Overviews in Oracle Cloud Infrastructure Capacity Management service.
@@ -189,7 +189,7 @@ def get_namespace_occ_overviews_output(compartment_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_occ_overviews = oci.CapacityManagement.get_namespace_occ_overviews(compartment_id=compartment_id,
+    test_namespace_occ_overviews = oci.capacitymanagement.get_namespace_occ_overviews(compartment_id=compartment_id,
         namespace=namespace_occ_overview_namespace,
         from_=namespace_occ_overview_from,
         to=namespace_occ_overview_to,

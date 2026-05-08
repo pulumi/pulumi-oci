@@ -117,18 +117,18 @@ export interface GetDistributedDatabaseDistributedAutonomousDatabasesOutputArgs 
     /**
      * A filter to return only resources their dbDeploymentType matches the given dbDeploymentType.
      */
-    dbDeploymentType?: pulumi.Input<string>;
+    dbDeploymentType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only Globally distributed autonomous databases that match the entire name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDistributedDatabaseDistributedAutonomousDatabasesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDistributedDatabaseDistributedAutonomousDatabasesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that are associated with the given privateEndpointId.
      */
-    privateEndpointId?: pulumi.Input<string>;
+    privateEndpointId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

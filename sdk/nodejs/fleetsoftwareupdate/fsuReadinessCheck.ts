@@ -196,55 +196,55 @@ export interface FsuReadinessCheckState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The user-friendly name for the Exadata Fleet Update Readiness Check resource.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Number of issues found during the Exadata Fleet Update Readiness Check run.
      */
-    issueCount?: pulumi.Input<number>;
+    issueCount?: pulumi.Input<number | undefined>;
     /**
      * Issues found during the Exadata Fleet Update Readiness Check run.
      */
-    issues?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuReadinessCheckIssue>[]>;
+    issues?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuReadinessCheckIssue>[] | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Possible lifecycle states for the Exadata Fleet Update Readiness Check resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * List of targets that will run the Exadata Fleet Update Readiness Check. The targets have to be of the same entity type.
      */
-    targets?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuReadinessCheckTarget>[]>;
+    targets?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuReadinessCheckTarget>[] | undefined>;
     /**
      * The date and time the Exadata Fleet Update Readiness Check was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the Exadata Fleet Update Readiness Check was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    timeFinished?: pulumi.Input<string>;
+    timeFinished?: pulumi.Input<string | undefined>;
     /**
      * The date and time the Exadata Fleet Update Readiness Check was updated, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * Type of Exadata Fleet Update Readiness Check. 
      *
@@ -252,7 +252,7 @@ export interface FsuReadinessCheckState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -266,19 +266,19 @@ export interface FsuReadinessCheckArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The user-friendly name for the Exadata Fleet Update Readiness Check resource.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * List of targets that will run the Exadata Fleet Update Readiness Check. The targets have to be of the same entity type.
      */
-    targets?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuReadinessCheckTarget>[]>;
+    targets?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuReadinessCheckTarget>[] | undefined>;
     /**
      * Type of Exadata Fleet Update Readiness Check. 
      *

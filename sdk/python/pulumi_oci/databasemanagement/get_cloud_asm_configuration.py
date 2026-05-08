@@ -94,7 +94,7 @@ def get_cloud_asm_configuration(cloud_asm_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_asm_configuration = oci.DatabaseManagement.get_cloud_asm_configuration(cloud_asm_id=test_cloud_asm["id"],
+    test_cloud_asm_configuration = oci.databasemanagement.get_cloud_asm_configuration(cloud_asm_id=test_cloud_asm["id"],
         opc_named_credential_id=cloud_asm_configuration_opc_named_credential_id)
     ```
 
@@ -113,8 +113,8 @@ def get_cloud_asm_configuration(cloud_asm_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         init_parameters=pulumi.get(__ret__, 'init_parameters'),
         opc_named_credential_id=pulumi.get(__ret__, 'opc_named_credential_id'))
-def get_cloud_asm_configuration_output(cloud_asm_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       opc_named_credential_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_cloud_asm_configuration_output(cloud_asm_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       opc_named_credential_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudAsmConfigurationResult]:
     """
     This data source provides details about a specific Cloud Asm Configuration resource in Oracle Cloud Infrastructure Database Management service.
@@ -127,7 +127,7 @@ def get_cloud_asm_configuration_output(cloud_asm_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_asm_configuration = oci.DatabaseManagement.get_cloud_asm_configuration(cloud_asm_id=test_cloud_asm["id"],
+    test_cloud_asm_configuration = oci.databasemanagement.get_cloud_asm_configuration(cloud_asm_id=test_cloud_asm["id"],
         opc_named_credential_id=cloud_asm_configuration_opc_named_credential_id)
     ```
 

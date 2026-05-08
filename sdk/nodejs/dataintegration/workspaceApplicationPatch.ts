@@ -30,13 +30,13 @@ import * as utilities from "../utilities";
  *     description: workspaceApplicationPatchDescription,
  *     key: workspaceApplicationPatchKey,
  *     modelVersion: workspaceApplicationPatchModelVersion,
- *     objectStatus: workspaceApplicationPatchObjectStatus,
+ *     objectStatus: Number(workspaceApplicationPatchObjectStatus),
  *     registryMetadata: {
  *         aggregatorKey: workspaceApplicationPatchRegistryMetadataAggregatorKey,
- *         isFavorite: workspaceApplicationPatchRegistryMetadataIsFavorite,
+ *         isFavorite: workspaceApplicationPatchRegistryMetadataIsFavorite === "true",
  *         key: workspaceApplicationPatchRegistryMetadataKey,
  *         labels: workspaceApplicationPatchRegistryMetadataLabels,
- *         registryVersion: workspaceApplicationPatchRegistryMetadataRegistryVersion,
+ *         registryVersion: Number(workspaceApplicationPatchRegistryMetadataRegistryVersion),
  *     },
  * });
  * ```
@@ -251,87 +251,87 @@ export interface WorkspaceApplicationPatchState {
     /**
      * The application key.
      */
-    applicationKey?: pulumi.Input<string>;
+    applicationKey?: pulumi.Input<string | undefined>;
     /**
      * The application version of the patch.
      */
-    applicationVersion?: pulumi.Input<number>;
+    applicationVersion?: pulumi.Input<number | undefined>;
     /**
      * List of dependent objects in this patch.
      */
-    dependentObjectMetadatas?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationPatchDependentObjectMetadata>[]>;
+    dependentObjectMetadatas?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationPatchDependentObjectMetadata>[] | undefined>;
     /**
      * Detailed description for the object.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The errors encountered while applying the patch, if any.
      */
-    errorMessages?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    errorMessages?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
-    identifier?: pulumi.Input<string>;
+    identifier?: pulumi.Input<string | undefined>;
     /**
      * The object's key.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      */
-    keyMap?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    keyMap?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationPatchMetadata>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationPatchMetadata>[] | undefined>;
     /**
      * The object type.
      */
-    modelType?: pulumi.Input<string>;
+    modelType?: pulumi.Input<string | undefined>;
     /**
      * The object's model version.
      */
-    modelVersion?: pulumi.Input<string>;
+    modelVersion?: pulumi.Input<string | undefined>;
     /**
      * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The array of object keys to publish into application.
      */
-    objectKeys?: pulumi.Input<pulumi.Input<string>[]>;
+    objectKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      */
-    objectStatus?: pulumi.Input<number>;
+    objectStatus?: pulumi.Input<number | undefined>;
     /**
      * The object version.
      */
-    objectVersion?: pulumi.Input<number>;
+    objectVersion?: pulumi.Input<number | undefined>;
     /**
      * A reference to the object's parent.
      */
-    parentReves?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationPatchParentRef>[]>;
+    parentReves?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationPatchParentRef>[] | undefined>;
     /**
      * List of objects that are published or unpublished in this patch.
      */
-    patchObjectMetadatas?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationPatchPatchObjectMetadata>[]>;
+    patchObjectMetadatas?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationPatchPatchObjectMetadata>[] | undefined>;
     /**
      * Status of the patch applied or being applied on the application
      */
-    patchStatus?: pulumi.Input<string>;
+    patchStatus?: pulumi.Input<string | undefined>;
     /**
      * The type of the patch applied or being applied on the application.
      */
-    patchType?: pulumi.Input<string>;
+    patchType?: pulumi.Input<string | undefined>;
     /**
      * Information about the object and its parent.
      */
-    registryMetadata?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationPatchRegistryMetadata>;
+    registryMetadata?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationPatchRegistryMetadata | undefined>;
     /**
      * The date and time the patch was applied, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timePatched?: pulumi.Input<string>;
+    timePatched?: pulumi.Input<string | undefined>;
     /**
      * The workspace ID.
      *
@@ -339,7 +339,7 @@ export interface WorkspaceApplicationPatchState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    workspaceId?: pulumi.Input<string>;
+    workspaceId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -353,31 +353,31 @@ export interface WorkspaceApplicationPatchArgs {
     /**
      * Detailed description for the object.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
-    identifier?: pulumi.Input<string>;
+    identifier?: pulumi.Input<string | undefined>;
     /**
      * The object's key.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * The object's model version.
      */
-    modelVersion?: pulumi.Input<string>;
+    modelVersion?: pulumi.Input<string | undefined>;
     /**
      * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The array of object keys to publish into application.
      */
-    objectKeys?: pulumi.Input<pulumi.Input<string>[]>;
+    objectKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      */
-    objectStatus?: pulumi.Input<number>;
+    objectStatus?: pulumi.Input<number | undefined>;
     /**
      * The type of the patch applied or being applied on the application.
      */
@@ -385,7 +385,7 @@ export interface WorkspaceApplicationPatchArgs {
     /**
      * Information about the object and its parent.
      */
-    registryMetadata?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationPatchRegistryMetadata>;
+    registryMetadata?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationPatchRegistryMetadata | undefined>;
     /**
      * The workspace ID.
      *

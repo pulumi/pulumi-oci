@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAttributes = oci.SecurityAttribute.getSecurityAttributes({
+ * const testSecurityAttributes = oci.securityattribute.getSecurityAttributes({
  *     securityAttributeNamespaceId: testSecurityAttributeNamespace.id,
  *     state: securityAttributeState,
  * });
@@ -80,7 +80,7 @@ export interface GetSecurityAttributesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAttributes = oci.SecurityAttribute.getSecurityAttributes({
+ * const testSecurityAttributes = oci.securityattribute.getSecurityAttributes({
  *     securityAttributeNamespaceId: testSecurityAttributeNamespace.id,
  *     state: securityAttributeState,
  * });
@@ -99,7 +99,7 @@ export function getSecurityAttributesOutput(args: GetSecurityAttributesOutputArg
  * A collection of arguments for invoking getSecurityAttributes.
  */
 export interface GetSecurityAttributesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.SecurityAttribute.GetSecurityAttributesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.SecurityAttribute.GetSecurityAttributesFilterArgs>[] | undefined>;
     /**
      * The OCID of the security attribute namespace.
      */
@@ -107,5 +107,5 @@ export interface GetSecurityAttributesOutputArgs {
     /**
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

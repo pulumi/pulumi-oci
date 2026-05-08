@@ -91,8 +91,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetByolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -133,8 +133,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetByolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -175,8 +175,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetByolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -217,8 +217,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetByolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -259,8 +259,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetByolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -301,8 +301,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetByolAllocationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -343,8 +343,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetByolAllocationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -385,8 +385,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetByolAllocationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -427,8 +427,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetByolAllocationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -469,8 +469,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetByolAllocationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -512,8 +512,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetByolAllocationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -561,8 +561,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetByolAllocationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -610,8 +610,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetByolAllocationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -659,8 +659,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetByolAllocationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -708,8 +708,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetByolAllocationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -757,8 +757,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetByolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -805,8 +805,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetByolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -853,8 +853,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetByolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -901,8 +901,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetByolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -949,8 +949,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetByolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -996,8 +996,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1038,8 +1038,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1080,8 +1080,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1122,8 +1122,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1164,8 +1164,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1206,8 +1206,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1251,8 +1251,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1296,8 +1296,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1341,8 +1341,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1386,8 +1386,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1431,8 +1431,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1476,8 +1476,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1521,8 +1521,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetDatastoreArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1563,8 +1563,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetDatastoreArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1605,8 +1605,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetDatastoreArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1647,8 +1647,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetDatastoreArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1689,8 +1689,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetDatastoreArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1731,8 +1731,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetDatastoreClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1773,8 +1773,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetDatastoreClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1815,8 +1815,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetDatastoreClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1857,8 +1857,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetDatastoreClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1899,8 +1899,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetDatastoreClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1942,8 +1942,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetDatastoreClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1989,8 +1989,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetDatastoreClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2036,8 +2036,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetDatastoreClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2083,8 +2083,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetDatastoreClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2130,8 +2130,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetDatastoreClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2177,8 +2177,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetDatastoresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2224,8 +2224,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetDatastoresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2271,8 +2271,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetDatastoresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2318,8 +2318,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetDatastoresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2365,8 +2365,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetDatastoresArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2411,8 +2411,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetExsiHostArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2453,8 +2453,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetExsiHostArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2495,8 +2495,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetExsiHostArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2537,8 +2537,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetExsiHostArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2579,8 +2579,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetExsiHostArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2629,8 +2629,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetExsiHostsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2686,8 +2686,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetExsiHostsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2743,8 +2743,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetExsiHostsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2800,8 +2800,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetExsiHostsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2857,8 +2857,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetExsiHostsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2914,8 +2914,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetExsiHostsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2971,8 +2971,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetExsiHostsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3020,8 +3020,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetManagementApplianceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3062,8 +3062,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetManagementApplianceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3104,8 +3104,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetManagementApplianceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3146,8 +3146,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetManagementApplianceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3188,8 +3188,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetManagementApplianceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3230,8 +3230,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetManagementAppliancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3276,8 +3276,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetManagementAppliancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3322,8 +3322,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetManagementAppliancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3368,8 +3368,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetManagementAppliancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3414,8 +3414,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetManagementAppliancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3458,8 +3458,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetRetrievePasswordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3499,8 +3499,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetRetrievePasswordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3540,8 +3540,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetRetrievePasswordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3581,8 +3581,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetRetrievePasswordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3622,8 +3622,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetRetrievePasswordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3665,8 +3665,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSddcArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3707,8 +3707,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSddcArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3749,8 +3749,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSddcArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3791,8 +3791,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSddcArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3833,8 +3833,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSddcArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3876,8 +3876,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSddcsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3922,8 +3922,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSddcsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3968,8 +3968,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSddcsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4014,8 +4014,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSddcsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4060,8 +4060,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSddcsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4105,8 +4105,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSupportedCommitmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4148,8 +4148,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSupportedCommitmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4191,8 +4191,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSupportedCommitmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4234,8 +4234,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSupportedCommitmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4277,8 +4277,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSupportedCommitmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4320,8 +4320,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSupportedHostShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4365,8 +4365,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSupportedHostShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4410,8 +4410,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSupportedHostShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4455,8 +4455,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSupportedHostShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4500,8 +4500,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSupportedHostShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4546,8 +4546,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSupportedSkusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4590,8 +4590,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSupportedSkusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4634,8 +4634,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSupportedSkusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4678,8 +4678,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSupportedSkusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4722,8 +4722,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSupportedSkusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4766,8 +4766,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSupportedVmwareSoftwareVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4812,8 +4812,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSupportedVmwareSoftwareVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4858,8 +4858,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSupportedVmwareSoftwareVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4904,8 +4904,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSupportedVmwareSoftwareVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4950,8 +4950,8 @@ public final class OcvpFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ocvp.OcvpFunctions;
      * import com.pulumi.oci.Ocvp.inputs.GetSupportedVmwareSoftwareVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

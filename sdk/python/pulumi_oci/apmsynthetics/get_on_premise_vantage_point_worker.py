@@ -329,7 +329,7 @@ def get_on_premise_vantage_point_worker(apm_domain_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_on_premise_vantage_point_worker = oci.ApmSynthetics.get_on_premise_vantage_point_worker(apm_domain_id=test_apm_domain["id"],
+    test_on_premise_vantage_point_worker = oci.apmsynthetics.get_on_premise_vantage_point_worker(apm_domain_id=test_apm_domain["id"],
         on_premise_vantage_point_id=test_on_premise_vantage_point["id"],
         worker_id=test_worker["id"])
     ```
@@ -371,9 +371,9 @@ def get_on_premise_vantage_point_worker(apm_domain_id: Optional[_builtins.str] =
         version_details=pulumi.get(__ret__, 'version_details'),
         worker_id=pulumi.get(__ret__, 'worker_id'),
         worker_type=pulumi.get(__ret__, 'worker_type'))
-def get_on_premise_vantage_point_worker_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                               on_premise_vantage_point_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                               worker_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_on_premise_vantage_point_worker_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                               on_premise_vantage_point_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                               worker_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOnPremiseVantagePointWorkerResult]:
     """
     This data source provides details about a specific On Premise Vantage Point Worker resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
@@ -386,7 +386,7 @@ def get_on_premise_vantage_point_worker_output(apm_domain_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_on_premise_vantage_point_worker = oci.ApmSynthetics.get_on_premise_vantage_point_worker(apm_domain_id=test_apm_domain["id"],
+    test_on_premise_vantage_point_worker = oci.apmsynthetics.get_on_premise_vantage_point_worker(apm_domain_id=test_apm_domain["id"],
         on_premise_vantage_point_id=test_on_premise_vantage_point["id"],
         worker_id=test_worker["id"])
     ```

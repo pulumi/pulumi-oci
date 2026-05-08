@@ -22,8 +22,8 @@ __all__ = ['ProjectRepositorySettingArgs', 'ProjectRepositorySetting']
 class ProjectRepositorySettingArgs:
     def __init__(__self__, *,
                  project_id: pulumi.Input[_builtins.str],
-                 approval_rules: Optional[pulumi.Input['ProjectRepositorySettingApprovalRulesArgs']] = None,
-                 merge_settings: Optional[pulumi.Input['ProjectRepositorySettingMergeSettingsArgs']] = None):
+                 approval_rules: pulumi.Input[Optional['ProjectRepositorySettingApprovalRulesArgs']] = None,
+                 merge_settings: pulumi.Input[Optional['ProjectRepositorySettingMergeSettingsArgs']] = None):
         """
         The set of arguments for constructing a ProjectRepositorySetting resource.
 
@@ -59,35 +59,35 @@ class ProjectRepositorySettingArgs:
 
     @_builtins.property
     @pulumi.getter(name="approvalRules")
-    def approval_rules(self) -> Optional[pulumi.Input['ProjectRepositorySettingApprovalRulesArgs']]:
+    def approval_rules(self) -> pulumi.Input[Optional['ProjectRepositorySettingApprovalRulesArgs']]:
         """
         (Updatable) List of approval rules which must be statisfied before pull requests which match the rules can be merged
         """
         return pulumi.get(self, "approval_rules")
 
     @approval_rules.setter
-    def approval_rules(self, value: Optional[pulumi.Input['ProjectRepositorySettingApprovalRulesArgs']]):
+    def approval_rules(self, value: pulumi.Input[Optional['ProjectRepositorySettingApprovalRulesArgs']]):
         pulumi.set(self, "approval_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="mergeSettings")
-    def merge_settings(self) -> Optional[pulumi.Input['ProjectRepositorySettingMergeSettingsArgs']]:
+    def merge_settings(self) -> pulumi.Input[Optional['ProjectRepositorySettingMergeSettingsArgs']]:
         """
         (Updatable) Enabled and disabled merge strategies for a project or repository, also contains a default strategy.
         """
         return pulumi.get(self, "merge_settings")
 
     @merge_settings.setter
-    def merge_settings(self, value: Optional[pulumi.Input['ProjectRepositorySettingMergeSettingsArgs']]):
+    def merge_settings(self, value: pulumi.Input[Optional['ProjectRepositorySettingMergeSettingsArgs']]):
         pulumi.set(self, "merge_settings", value)
 
 
 @pulumi.input_type
 class _ProjectRepositorySettingState:
     def __init__(__self__, *,
-                 approval_rules: Optional[pulumi.Input['ProjectRepositorySettingApprovalRulesArgs']] = None,
-                 merge_settings: Optional[pulumi.Input['ProjectRepositorySettingMergeSettingsArgs']] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 approval_rules: pulumi.Input[Optional['ProjectRepositorySettingApprovalRulesArgs']] = None,
+                 merge_settings: pulumi.Input[Optional['ProjectRepositorySettingMergeSettingsArgs']] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProjectRepositorySetting resources.
 
@@ -108,31 +108,31 @@ class _ProjectRepositorySettingState:
 
     @_builtins.property
     @pulumi.getter(name="approvalRules")
-    def approval_rules(self) -> Optional[pulumi.Input['ProjectRepositorySettingApprovalRulesArgs']]:
+    def approval_rules(self) -> pulumi.Input[Optional['ProjectRepositorySettingApprovalRulesArgs']]:
         """
         (Updatable) List of approval rules which must be statisfied before pull requests which match the rules can be merged
         """
         return pulumi.get(self, "approval_rules")
 
     @approval_rules.setter
-    def approval_rules(self, value: Optional[pulumi.Input['ProjectRepositorySettingApprovalRulesArgs']]):
+    def approval_rules(self, value: pulumi.Input[Optional['ProjectRepositorySettingApprovalRulesArgs']]):
         pulumi.set(self, "approval_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="mergeSettings")
-    def merge_settings(self) -> Optional[pulumi.Input['ProjectRepositorySettingMergeSettingsArgs']]:
+    def merge_settings(self) -> pulumi.Input[Optional['ProjectRepositorySettingMergeSettingsArgs']]:
         """
         (Updatable) Enabled and disabled merge strategies for a project or repository, also contains a default strategy.
         """
         return pulumi.get(self, "merge_settings")
 
     @merge_settings.setter
-    def merge_settings(self, value: Optional[pulumi.Input['ProjectRepositorySettingMergeSettingsArgs']]):
+    def merge_settings(self, value: pulumi.Input[Optional['ProjectRepositorySettingMergeSettingsArgs']]):
         pulumi.set(self, "merge_settings", value)
 
     @_builtins.property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def project_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique project identifier.
 
@@ -143,7 +143,7 @@ class _ProjectRepositorySettingState:
         return pulumi.get(self, "project_id")
 
     @project_id.setter
-    def project_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def project_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "project_id", value)
 
 
@@ -153,9 +153,9 @@ class ProjectRepositorySetting(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 approval_rules: Optional[pulumi.Input[Union['ProjectRepositorySettingApprovalRulesArgs', 'ProjectRepositorySettingApprovalRulesArgsDict']]] = None,
-                 merge_settings: Optional[pulumi.Input[Union['ProjectRepositorySettingMergeSettingsArgs', 'ProjectRepositorySettingMergeSettingsArgsDict']]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 approval_rules: pulumi.Input[Optional[Union['ProjectRepositorySettingApprovalRulesArgs', 'ProjectRepositorySettingApprovalRulesArgsDict']]] = None,
+                 merge_settings: pulumi.Input[Optional[Union['ProjectRepositorySettingMergeSettingsArgs', 'ProjectRepositorySettingMergeSettingsArgsDict']]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Project Repository Setting resource in Oracle Cloud Infrastructure Devops service.
@@ -175,7 +175,7 @@ class ProjectRepositorySetting(pulumi.CustomResource):
             project_id=test_project["id"],
             approval_rules={
                 "items": [{
-                    "min_approvals_count": project_repository_setting_approval_rules_items_min_approvals_count,
+                    "min_approvals_count": int(project_repository_setting_approval_rules_items_min_approvals_count),
                     "name": project_repository_setting_approval_rules_items_name,
                     "destination_branch": project_repository_setting_approval_rules_items_destination_branch,
                     "reviewers": [{
@@ -232,7 +232,7 @@ class ProjectRepositorySetting(pulumi.CustomResource):
             project_id=test_project["id"],
             approval_rules={
                 "items": [{
-                    "min_approvals_count": project_repository_setting_approval_rules_items_min_approvals_count,
+                    "min_approvals_count": int(project_repository_setting_approval_rules_items_min_approvals_count),
                     "name": project_repository_setting_approval_rules_items_name,
                     "destination_branch": project_repository_setting_approval_rules_items_destination_branch,
                     "reviewers": [{
@@ -270,9 +270,9 @@ class ProjectRepositorySetting(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 approval_rules: Optional[pulumi.Input[Union['ProjectRepositorySettingApprovalRulesArgs', 'ProjectRepositorySettingApprovalRulesArgsDict']]] = None,
-                 merge_settings: Optional[pulumi.Input[Union['ProjectRepositorySettingMergeSettingsArgs', 'ProjectRepositorySettingMergeSettingsArgsDict']]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 approval_rules: pulumi.Input[Optional[Union['ProjectRepositorySettingApprovalRulesArgs', 'ProjectRepositorySettingApprovalRulesArgsDict']]] = None,
+                 merge_settings: pulumi.Input[Optional[Union['ProjectRepositorySettingMergeSettingsArgs', 'ProjectRepositorySettingMergeSettingsArgsDict']]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -297,9 +297,9 @@ class ProjectRepositorySetting(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            approval_rules: Optional[pulumi.Input[Union['ProjectRepositorySettingApprovalRulesArgs', 'ProjectRepositorySettingApprovalRulesArgsDict']]] = None,
-            merge_settings: Optional[pulumi.Input[Union['ProjectRepositorySettingMergeSettingsArgs', 'ProjectRepositorySettingMergeSettingsArgsDict']]] = None,
-            project_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ProjectRepositorySetting':
+            approval_rules: pulumi.Input[Optional[Union['ProjectRepositorySettingApprovalRulesArgs', 'ProjectRepositorySettingApprovalRulesArgsDict']]] = None,
+            merge_settings: pulumi.Input[Optional[Union['ProjectRepositorySettingMergeSettingsArgs', 'ProjectRepositorySettingMergeSettingsArgsDict']]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ProjectRepositorySetting':
         """
         Get an existing ProjectRepositorySetting resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

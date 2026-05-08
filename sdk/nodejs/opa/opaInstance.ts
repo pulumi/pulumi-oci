@@ -33,7 +33,7 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     idcsAt: opaInstanceIdcsAt,
- *     isBreakglassEnabled: opaInstanceIsBreakglassEnabled,
+ *     isBreakglassEnabled: opaInstanceIsBreakglassEnabled === "true",
  *     meteringType: opaInstanceMeteringType,
  * });
  * ```
@@ -236,67 +236,67 @@ export interface OpaInstanceState {
     /**
      * A list of associated attachments to other services
      */
-    attachments?: pulumi.Input<pulumi.Input<inputs.Opa.OpaInstanceAttachment>[]>;
+    attachments?: pulumi.Input<pulumi.Input<inputs.Opa.OpaInstanceAttachment>[] | undefined>;
     /**
      * (Updatable) Compartment Identifier
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Parameter specifying which entitlement to use for billing purposes
      */
-    consumptionModel?: pulumi.Input<string>;
+    consumptionModel?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Description of the Oracle Process Automation instance.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) OpaInstance Identifier. User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * IDCS Authentication token. This is required for all realms with IDCS. This property is optional, as it is not required for non-IDCS realms.
      */
-    idcsAt?: pulumi.Input<string>;
+    idcsAt?: pulumi.Input<string | undefined>;
     /**
      * This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      */
-    identityAppDisplayName?: pulumi.Input<string>;
+    identityAppDisplayName?: pulumi.Input<string | undefined>;
     /**
      * This property specifies the GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user role mappings to grant access to this OPA instance for users within the identity domain.
      */
-    identityAppGuid?: pulumi.Input<string>;
+    identityAppGuid?: pulumi.Input<string | undefined>;
     /**
      * This property specifies the OPC Service Instance GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      */
-    identityAppOpcServiceInstanceGuid?: pulumi.Input<string>;
+    identityAppOpcServiceInstanceGuid?: pulumi.Input<string | undefined>;
     /**
      * This property specifies the domain url of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      */
-    identityDomainUrl?: pulumi.Input<string>;
+    identityDomainUrl?: pulumi.Input<string | undefined>;
     /**
      * OPA Instance URL
      */
-    instanceUrl?: pulumi.Input<string>;
+    instanceUrl?: pulumi.Input<string | undefined>;
     /**
      * indicates if breakGlass is enabled for the opa instance.
      */
-    isBreakglassEnabled?: pulumi.Input<boolean>;
+    isBreakglassEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * MeteringType Identifier
      */
-    meteringType?: pulumi.Input<string>;
+    meteringType?: pulumi.Input<string | undefined>;
     /**
      * Shape of the instance.
      */
-    shapeName?: pulumi.Input<string>;
+    shapeName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -304,19 +304,19 @@ export interface OpaInstanceState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time when OpaInstance was created. An RFC3339 formatted datetime string
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the OpaInstance was updated. An RFC3339 formatted datetime string
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -330,15 +330,15 @@ export interface OpaInstanceArgs {
     /**
      * Parameter specifying which entitlement to use for billing purposes
      */
-    consumptionModel?: pulumi.Input<string>;
+    consumptionModel?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Description of the Oracle Process Automation instance.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) OpaInstance Identifier. User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
      */
@@ -346,19 +346,19 @@ export interface OpaInstanceArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * IDCS Authentication token. This is required for all realms with IDCS. This property is optional, as it is not required for non-IDCS realms.
      */
-    idcsAt?: pulumi.Input<string>;
+    idcsAt?: pulumi.Input<string | undefined>;
     /**
      * indicates if breakGlass is enabled for the opa instance.
      */
-    isBreakglassEnabled?: pulumi.Input<boolean>;
+    isBreakglassEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * MeteringType Identifier
      */
-    meteringType?: pulumi.Input<string>;
+    meteringType?: pulumi.Input<string | undefined>;
     /**
      * Shape of the instance.
      */
@@ -370,5 +370,5 @@ export interface OpaInstanceArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

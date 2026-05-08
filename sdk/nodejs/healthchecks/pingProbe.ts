@@ -25,8 +25,8 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     protocol: pingProbeProtocol,
  *     targets: pingProbeTargets,
- *     port: pingProbePort,
- *     timeoutInSeconds: pingProbeTimeoutInSeconds,
+ *     port: Number(pingProbePort),
+ *     timeoutInSeconds: Number(pingProbeTimeoutInSeconds),
  *     vantagePointNames: pingProbeVantagePointNames,
  * });
  * ```
@@ -163,35 +163,35 @@ export interface PingProbeState {
     /**
      * The OCID of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The region where updates must be made and where results must be fetched from.
      */
-    homeRegion?: pulumi.Input<string>;
+    homeRegion?: pulumi.Input<string | undefined>;
     /**
      * The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * The protocols for ping probes.
      */
-    protocol?: pulumi.Input<string>;
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * A URL for fetching the probe results.
      */
-    resultsUrl?: pulumi.Input<string>;
+    resultsUrl?: pulumi.Input<string | undefined>;
     /**
      * A list of targets (hostnames or IP addresses) of the probe.
      */
-    targets?: pulumi.Input<pulumi.Input<string>[]>;
+    targets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The RFC 3339-formatted creation date and time of the probe.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
      */
-    timeoutInSeconds?: pulumi.Input<number>;
+    timeoutInSeconds?: pulumi.Input<number | undefined>;
     /**
      * A list of names of vantage points from which to execute the probe.
      *
@@ -199,7 +199,7 @@ export interface PingProbeState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vantagePointNames?: pulumi.Input<pulumi.Input<string>[]>;
+    vantagePointNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -213,7 +213,7 @@ export interface PingProbeArgs {
     /**
      * The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * The protocols for ping probes.
      */
@@ -225,7 +225,7 @@ export interface PingProbeArgs {
     /**
      * The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
      */
-    timeoutInSeconds?: pulumi.Input<number>;
+    timeoutInSeconds?: pulumi.Input<number | undefined>;
     /**
      * A list of names of vantage points from which to execute the probe.
      *
@@ -233,5 +233,5 @@ export interface PingProbeArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vantagePointNames?: pulumi.Input<pulumi.Input<string>[]>;
+    vantagePointNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

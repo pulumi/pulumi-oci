@@ -228,7 +228,7 @@ def get_data_source(data_source_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_source = oci.CloudGuard.get_data_source(data_source_id=test_data_source_oci_cloud_guard_data_source["id"])
+    test_data_source = oci.cloudguard.get_data_source(data_source_id=test_data_source_oci_cloud_guard_data_source["id"])
     ```
 
 
@@ -255,7 +255,7 @@ def get_data_source(data_source_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_data_source_output(data_source_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_data_source_output(data_source_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataSourceResult]:
     """
     This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -268,7 +268,7 @@ def get_data_source_output(data_source_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_data_source = oci.CloudGuard.get_data_source(data_source_id=test_data_source_oci_cloud_guard_data_source["id"])
+    test_data_source = oci.cloudguard.get_data_source(data_source_id=test_data_source_oci_cloud_guard_data_source["id"])
     ```
 
 

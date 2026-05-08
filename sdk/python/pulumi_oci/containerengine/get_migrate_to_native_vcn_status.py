@@ -91,7 +91,7 @@ def get_migrate_to_native_vcn_status(cluster_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         time_decommission_scheduled=pulumi.get(__ret__, 'time_decommission_scheduled'))
-def get_migrate_to_native_vcn_status_output(cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_migrate_to_native_vcn_status_output(cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMigrateToNativeVcnStatusResult]:
     """
     Use this data source to access information about an existing resource.

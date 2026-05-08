@@ -128,9 +128,9 @@ def get_wlms_managed_instance_server_installed_patches(filters: Optional[Sequenc
         installed_patch_collections=pulumi.get(__ret__, 'installed_patch_collections'),
         managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
         server_id=pulumi.get(__ret__, 'server_id'))
-def get_wlms_managed_instance_server_installed_patches_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWlmsManagedInstanceServerInstalledPatchesFilterArgs', 'GetWlmsManagedInstanceServerInstalledPatchesFilterArgsDict']]]]] = None,
-                                                              managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                              server_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_wlms_managed_instance_server_installed_patches_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWlmsManagedInstanceServerInstalledPatchesFilterArgs', 'GetWlmsManagedInstanceServerInstalledPatchesFilterArgsDict']]]]] = None,
+                                                              managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                              server_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWlmsManagedInstanceServerInstalledPatchesResult]:
     """
     This data source provides the list of Managed Instance Server Installed Patches in Oracle Cloud Infrastructure Wlms service.

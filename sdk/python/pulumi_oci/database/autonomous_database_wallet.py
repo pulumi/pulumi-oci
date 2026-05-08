@@ -21,9 +21,9 @@ class AutonomousDatabaseWalletArgs:
     def __init__(__self__, *,
                  autonomous_database_id: pulumi.Input[_builtins.str],
                  password: pulumi.Input[_builtins.str],
-                 base64_encode_content: Optional[pulumi.Input[_builtins.bool]] = None,
-                 generate_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_regional: Optional[pulumi.Input[_builtins.bool]] = None):
+                 base64_encode_content: pulumi.Input[Optional[_builtins.bool]] = None,
+                 generate_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_regional: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a AutonomousDatabaseWallet resource.
 
@@ -82,19 +82,19 @@ class AutonomousDatabaseWalletArgs:
 
     @_builtins.property
     @pulumi.getter(name="base64EncodeContent")
-    def base64_encode_content(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def base64_encode_content(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Encodes the downloaded zipped wallet in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
         """
         return pulumi.get(self, "base64_encode_content")
 
     @base64_encode_content.setter
-    def base64_encode_content(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def base64_encode_content(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "base64_encode_content", value)
 
     @_builtins.property
     @pulumi.getter(name="generateType")
-    def generate_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def generate_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of wallet to generate.
 
@@ -107,31 +107,31 @@ class AutonomousDatabaseWalletArgs:
         return pulumi.get(self, "generate_type")
 
     @generate_type.setter
-    def generate_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def generate_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "generate_type", value)
 
     @_builtins.property
     @pulumi.getter(name="isRegional")
-    def is_regional(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_regional(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
         """
         return pulumi.get(self, "is_regional")
 
     @is_regional.setter
-    def is_regional(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_regional(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_regional", value)
 
 
 @pulumi.input_type
 class _AutonomousDatabaseWalletState:
     def __init__(__self__, *,
-                 autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 base64_encode_content: Optional[pulumi.Input[_builtins.bool]] = None,
-                 content: Optional[pulumi.Input[_builtins.str]] = None,
-                 generate_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_regional: Optional[pulumi.Input[_builtins.bool]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None):
+                 autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 base64_encode_content: pulumi.Input[Optional[_builtins.bool]] = None,
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 generate_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_regional: pulumi.Input[Optional[_builtins.bool]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutonomousDatabaseWallet resources.
 
@@ -167,43 +167,43 @@ class _AutonomousDatabaseWalletState:
 
     @_builtins.property
     @pulumi.getter(name="autonomousDatabaseId")
-    def autonomous_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "autonomous_database_id")
 
     @autonomous_database_id.setter
-    def autonomous_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="base64EncodeContent")
-    def base64_encode_content(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def base64_encode_content(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Encodes the downloaded zipped wallet in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
         """
         return pulumi.get(self, "base64_encode_content")
 
     @base64_encode_content.setter
-    def base64_encode_content(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def base64_encode_content(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "base64_encode_content", value)
 
     @_builtins.property
     @pulumi.getter
-    def content(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
         """
         return pulumi.get(self, "content")
 
     @content.setter
-    def content(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content", value)
 
     @_builtins.property
     @pulumi.getter(name="generateType")
-    def generate_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def generate_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of wallet to generate.
 
@@ -216,24 +216,24 @@ class _AutonomousDatabaseWalletState:
         return pulumi.get(self, "generate_type")
 
     @generate_type.setter
-    def generate_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def generate_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "generate_type", value)
 
     @_builtins.property
     @pulumi.getter(name="isRegional")
-    def is_regional(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_regional(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
         """
         return pulumi.get(self, "is_regional")
 
     @is_regional.setter
-    def is_regional(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_regional(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_regional", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
 
@@ -244,7 +244,7 @@ class _AutonomousDatabaseWalletState:
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
 
@@ -254,11 +254,11 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 base64_encode_content: Optional[pulumi.Input[_builtins.bool]] = None,
-                 generate_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_regional: Optional[pulumi.Input[_builtins.bool]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
+                 autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 base64_encode_content: pulumi.Input[Optional[_builtins.bool]] = None,
+                 generate_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_regional: pulumi.Input[Optional[_builtins.bool]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
@@ -284,7 +284,7 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
             password=autonomous_database_wallet_password,
             base64_encode_content=False,
             generate_type=autonomous_database_wallet_generate_type,
-            is_regional=autonomous_database_wallet_is_regional)
+            is_regional=autonomous_database_wallet_is_regional == "true")
         ```
 
         ## Import
@@ -340,7 +340,7 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
             password=autonomous_database_wallet_password,
             base64_encode_content=False,
             generate_type=autonomous_database_wallet_generate_type,
-            is_regional=autonomous_database_wallet_is_regional)
+            is_regional=autonomous_database_wallet_is_regional == "true")
         ```
 
         ## Import
@@ -363,11 +363,11 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 base64_encode_content: Optional[pulumi.Input[_builtins.bool]] = None,
-                 generate_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_regional: Optional[pulumi.Input[_builtins.bool]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
+                 autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 base64_encode_content: pulumi.Input[Optional[_builtins.bool]] = None,
+                 generate_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_regional: pulumi.Input[Optional[_builtins.bool]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -399,12 +399,12 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            base64_encode_content: Optional[pulumi.Input[_builtins.bool]] = None,
-            content: Optional[pulumi.Input[_builtins.str]] = None,
-            generate_type: Optional[pulumi.Input[_builtins.str]] = None,
-            is_regional: Optional[pulumi.Input[_builtins.bool]] = None,
-            password: Optional[pulumi.Input[_builtins.str]] = None) -> 'AutonomousDatabaseWallet':
+            autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            base64_encode_content: pulumi.Input[Optional[_builtins.bool]] = None,
+            content: pulumi.Input[Optional[_builtins.str]] = None,
+            generate_type: pulumi.Input[Optional[_builtins.str]] = None,
+            is_regional: pulumi.Input[Optional[_builtins.bool]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None) -> 'AutonomousDatabaseWallet':
         """
         Get an existing AutonomousDatabaseWallet resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

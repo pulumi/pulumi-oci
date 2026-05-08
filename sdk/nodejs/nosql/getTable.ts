@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTable = oci.Nosql.getTable({
+ * const testTable = oci.nosql.getTable({
  *     tableNameOrId: testTableNameOr.id,
  *     compartmentId: compartmentId,
  * });
@@ -138,7 +138,7 @@ export interface GetTableResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTable = oci.Nosql.getTable({
+ * const testTable = oci.nosql.getTable({
  *     tableNameOrId: testTableNameOr.id,
  *     compartmentId: compartmentId,
  * });

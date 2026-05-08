@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCluster = oci.Ocvp.getCluster({
+ * const testCluster = oci.ocvp.getCluster({
  *     clusterId: testClusterOciOcvpCluster.id,
  * });
  * ```
@@ -175,7 +175,7 @@ export interface GetClusterResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCluster = oci.Ocvp.getCluster({
+ * const testCluster = oci.ocvp.getCluster({
  *     clusterId: testClusterOciOcvpCluster.id,
  * });
  * ```

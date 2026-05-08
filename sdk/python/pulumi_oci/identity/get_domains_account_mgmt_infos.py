@@ -214,14 +214,14 @@ def get_domains_account_mgmt_infos(account_mgmt_info_count: Optional[_builtins.i
     import pulumi
     import pulumi_oci as oci
 
-    test_account_mgmt_infos = oci.Identity.get_domains_account_mgmt_infos(idcs_endpoint=test_domain["url"],
-        account_mgmt_info_count=account_mgmt_info_account_mgmt_info_count,
+    test_account_mgmt_infos = oci.identity.get_domains_account_mgmt_infos(idcs_endpoint=test_domain["url"],
+        account_mgmt_info_count=int(account_mgmt_info_account_mgmt_info_count),
         account_mgmt_info_filter=account_mgmt_info_account_mgmt_info_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=account_mgmt_info_authorization,
         resource_type_schema_version=account_mgmt_info_resource_type_schema_version,
-        start_index=account_mgmt_info_start_index)
+        start_index=int(account_mgmt_info_start_index))
     ```
 
 
@@ -266,17 +266,17 @@ def get_domains_account_mgmt_infos(account_mgmt_info_count: Optional[_builtins.i
         sort_order=pulumi.get(__ret__, 'sort_order'),
         start_index=pulumi.get(__ret__, 'start_index'),
         total_results=pulumi.get(__ret__, 'total_results'))
-def get_domains_account_mgmt_infos_output(account_mgmt_info_count: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                          account_mgmt_info_filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                          attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                          resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          sort_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          sort_order: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          start_index: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_domains_account_mgmt_infos_output(account_mgmt_info_count: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                          account_mgmt_info_filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                          attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                          resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          sort_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          sort_order: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          start_index: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsAccountMgmtInfosResult]:
     """
     This data source provides the list of Account Mgmt Infos in Oracle Cloud Infrastructure Identity Domains service.
@@ -289,14 +289,14 @@ def get_domains_account_mgmt_infos_output(account_mgmt_info_count: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_account_mgmt_infos = oci.Identity.get_domains_account_mgmt_infos(idcs_endpoint=test_domain["url"],
-        account_mgmt_info_count=account_mgmt_info_account_mgmt_info_count,
+    test_account_mgmt_infos = oci.identity.get_domains_account_mgmt_infos(idcs_endpoint=test_domain["url"],
+        account_mgmt_info_count=int(account_mgmt_info_account_mgmt_info_count),
         account_mgmt_info_filter=account_mgmt_info_account_mgmt_info_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=account_mgmt_info_authorization,
         resource_type_schema_version=account_mgmt_info_resource_type_schema_version,
-        start_index=account_mgmt_info_start_index)
+        start_index=int(account_mgmt_info_start_index))
     ```
 
 

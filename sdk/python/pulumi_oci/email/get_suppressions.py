@@ -133,7 +133,7 @@ def get_suppressions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_suppressions = oci.Email.get_suppressions(compartment_id=tenancy_ocid,
+    test_suppressions = oci.email.get_suppressions(compartment_id=tenancy_ocid,
         email_address=suppression_email_address,
         time_created_greater_than_or_equal_to=suppression_time_created_greater_than_or_equal_to,
         time_created_less_than=suppression_time_created_less_than)
@@ -166,11 +166,11 @@ def get_suppressions(compartment_id: Optional[_builtins.str] = None,
         suppressions=pulumi.get(__ret__, 'suppressions'),
         time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
-def get_suppressions_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                            email_address: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSuppressionsFilterArgs', 'GetSuppressionsFilterArgsDict']]]]] = None,
-                            time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            time_created_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_suppressions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                            email_address: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSuppressionsFilterArgs', 'GetSuppressionsFilterArgsDict']]]]] = None,
+                            time_created_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            time_created_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSuppressionsResult]:
     """
     This data source provides the list of Suppressions in Oracle Cloud Infrastructure Email service.
@@ -185,7 +185,7 @@ def get_suppressions_output(compartment_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_suppressions = oci.Email.get_suppressions(compartment_id=tenancy_ocid,
+    test_suppressions = oci.email.get_suppressions(compartment_id=tenancy_ocid,
         email_address=suppression_email_address,
         time_created_greater_than_or_equal_to=suppression_time_created_greater_than_or_equal_to,
         time_created_less_than=suppression_time_created_less_than)

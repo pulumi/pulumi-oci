@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwareSourceModuleStreamProfiles = oci.OsManagementHub.getSoftwareSourceModuleStreamProfiles({
+ * const testSoftwareSourceModuleStreamProfiles = oci.osmanagementhub.getSoftwareSourceModuleStreamProfiles({
  *     softwareSourceId: testSoftwareSource.id,
  *     moduleName: softwareSourceModuleStreamProfileModuleName,
  *     name: softwareSourceModuleStreamProfileName,
@@ -99,7 +99,7 @@ export interface GetSoftwareSourceModuleStreamProfilesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwareSourceModuleStreamProfiles = oci.OsManagementHub.getSoftwareSourceModuleStreamProfiles({
+ * const testSoftwareSourceModuleStreamProfiles = oci.osmanagementhub.getSoftwareSourceModuleStreamProfiles({
  *     softwareSourceId: testSoftwareSource.id,
  *     moduleName: softwareSourceModuleStreamProfileModuleName,
  *     name: softwareSourceModuleStreamProfileName,
@@ -122,15 +122,15 @@ export function getSoftwareSourceModuleStreamProfilesOutput(args: GetSoftwareSou
  * A collection of arguments for invoking getSoftwareSourceModuleStreamProfiles.
  */
 export interface GetSoftwareSourceModuleStreamProfilesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetSoftwareSourceModuleStreamProfilesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetSoftwareSourceModuleStreamProfilesFilterArgs>[] | undefined>;
     /**
      * The name of a module. This parameter is required if a streamName is specified.
      */
-    moduleName?: pulumi.Input<string>;
+    moduleName?: pulumi.Input<string | undefined>;
     /**
      * The name of the entity to be queried.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      */
@@ -138,5 +138,5 @@ export interface GetSoftwareSourceModuleStreamProfilesOutputArgs {
     /**
      * The name of the module stream. This parameter is required if a profile name is specified.
      */
-    streamName?: pulumi.Input<string>;
+    streamName?: pulumi.Input<string | undefined>;
 }

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeGpuMemoryClusterInstances = oci.Core.getComputeGpuMemoryClusterInstances({
+ * const testComputeGpuMemoryClusterInstances = oci.core.getComputeGpuMemoryClusterInstances({
  *     computeGpuMemoryClusterId: testComputeGpuMemoryCluster.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetComputeGpuMemoryClusterInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeGpuMemoryClusterInstances = oci.Core.getComputeGpuMemoryClusterInstances({
+ * const testComputeGpuMemoryClusterInstances = oci.core.getComputeGpuMemoryClusterInstances({
  *     computeGpuMemoryClusterId: testComputeGpuMemoryCluster.id,
  * });
  * ```
@@ -88,5 +88,5 @@ export interface GetComputeGpuMemoryClusterInstancesOutputArgs {
      * The OCID of the compute GPU memory cluster.
      */
     computeGpuMemoryClusterId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetComputeGpuMemoryClusterInstancesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetComputeGpuMemoryClusterInstancesFilterArgs>[] | undefined>;
 }

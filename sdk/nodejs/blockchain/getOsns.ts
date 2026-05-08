@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOsns = oci.Blockchain.getOsns({
+ * const testOsns = oci.blockchain.getOsns({
  *     blockchainPlatformId: testBlockchainPlatform.id,
  *     displayName: osnDisplayName,
  * });
@@ -74,7 +74,7 @@ export interface GetOsnsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOsns = oci.Blockchain.getOsns({
+ * const testOsns = oci.blockchain.getOsns({
  *     blockchainPlatformId: testBlockchainPlatform.id,
  *     displayName: osnDisplayName,
  * });
@@ -100,6 +100,6 @@ export interface GetOsnsOutputArgs {
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Example: `My new resource`
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Blockchain.GetOsnsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Blockchain.GetOsnsFilterArgs>[] | undefined>;
 }

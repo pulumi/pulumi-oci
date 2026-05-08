@@ -129,13 +129,13 @@ export interface GetPatchManagementOutputArgs {
     /**
      * A filter to return only database that match the given release version.
      */
-    databaseRelease?: pulumi.Input<string>;
+    databaseRelease?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose timeStarted is greater than or equal to the given date-time.
      */
-    timeStartedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeStartedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose timeStarted is less than the given date-time.
      */
-    timeStartedLessThan?: pulumi.Input<string>;
+    timeStartedLessThan?: pulumi.Input<string | undefined>;
 }

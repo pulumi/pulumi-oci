@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTags = oci.Identity.getTags({
+ * const testTags = oci.identity.getTags({
  *     tagNamespaceId: testTagNamespace.id,
  *     state: tagState,
  * });
@@ -80,7 +80,7 @@ export interface GetTagsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTags = oci.Identity.getTags({
+ * const testTags = oci.identity.getTags({
  *     tagNamespaceId: testTagNamespace.id,
  *     state: tagState,
  * });
@@ -99,11 +99,11 @@ export function getTagsOutput(args: GetTagsOutputArgs, opts?: pulumi.InvokeOutpu
  * A collection of arguments for invoking getTags.
  */
 export interface GetTagsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetTagsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetTagsFilterArgs>[] | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the tag namespace.
      */

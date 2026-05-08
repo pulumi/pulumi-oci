@@ -126,7 +126,7 @@ def get_service_connectors(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_service_connectors = oci.Sch.get_service_connectors(compartment_id=compartment_id,
+    test_service_connectors = oci.sch.get_service_connectors(compartment_id=compartment_id,
         display_name=service_connector_display_name,
         state=service_connector_state)
     ```
@@ -151,10 +151,10 @@ def get_service_connectors(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         service_connector_collections=pulumi.get(__ret__, 'service_connector_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_service_connectors_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                  display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServiceConnectorsFilterArgs', 'GetServiceConnectorsFilterArgsDict']]]]] = None,
-                                  state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_service_connectors_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetServiceConnectorsFilterArgs', 'GetServiceConnectorsFilterArgsDict']]]]] = None,
+                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceConnectorsResult]:
     """
     This data source provides the list of Service Connectors in Oracle Cloud Infrastructure Service Connector Hub service.
@@ -169,7 +169,7 @@ def get_service_connectors_output(compartment_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_service_connectors = oci.Sch.get_service_connectors(compartment_id=compartment_id,
+    test_service_connectors = oci.sch.get_service_connectors(compartment_id=compartment_id,
         display_name=service_connector_display_name,
         state=service_connector_state)
     ```

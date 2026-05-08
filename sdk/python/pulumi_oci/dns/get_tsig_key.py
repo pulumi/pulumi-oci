@@ -191,7 +191,7 @@ def get_tsig_key(tsig_key_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tsig_key = oci.Dns.get_tsig_key(tsig_key_id=test_tsig_key_oci_dns_tsig_key["id"])
+    test_tsig_key = oci.dns.get_tsig_key(tsig_key_id=test_tsig_key_oci_dns_tsig_key["id"])
     ```
 
 
@@ -215,7 +215,7 @@ def get_tsig_key(tsig_key_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         tsig_key_id=pulumi.get(__ret__, 'tsig_key_id'))
-def get_tsig_key_output(tsig_key_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_tsig_key_output(tsig_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTsigKeyResult]:
     """
     This data source provides details about a specific Tsig Key resource in Oracle Cloud Infrastructure DNS service.
@@ -228,7 +228,7 @@ def get_tsig_key_output(tsig_key_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_tsig_key = oci.Dns.get_tsig_key(tsig_key_id=test_tsig_key_oci_dns_tsig_key["id"])
+    test_tsig_key = oci.dns.get_tsig_key(tsig_key_id=test_tsig_key_oci_dns_tsig_key["id"])
     ```
 
 

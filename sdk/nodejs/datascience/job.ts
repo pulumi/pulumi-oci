@@ -40,11 +40,11 @@ import * as utilities from "../utilities";
  *             commands: jobJobConfigurationDetailsStartupProbeDetailsCommand,
  *             jobProbeCheckType: jobJobConfigurationDetailsStartupProbeDetailsJobProbeCheckType,
  *             cpuBaseline: jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsCpuBaseline,
- *             failureThreshold: jobJobConfigurationDetailsStartupProbeDetailsFailureThreshold,
- *             initialDelayInSeconds: jobJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds,
+ *             failureThreshold: Number(jobJobConfigurationDetailsStartupProbeDetailsFailureThreshold),
+ *             initialDelayInSeconds: Number(jobJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds),
  *             memoryInGbs: jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
  *             ocpus: jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
- *             periodInSeconds: jobJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds,
+ *             periodInSeconds: Number(jobJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds),
  *         },
  *     },
  *     jobEnvironmentConfigurationDetails: {
@@ -57,7 +57,7 @@ import * as utilities from "../utilities";
  *     },
  *     jobInfrastructureConfigurationDetails: {
  *         jobInfrastructureType: jobJobInfrastructureConfigurationDetailsJobInfrastructureType,
- *         blockStorageSizeInGbs: jobJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
+ *         blockStorageSizeInGbs: Number(jobJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
  *         jobShapeConfigDetails: {
  *             memoryInGbs: jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
  *             ocpus: jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
@@ -66,8 +66,8 @@ import * as utilities from "../utilities";
  *         subnetId: testSubnet.id,
  *     },
  *     jobLogConfigurationDetails: {
- *         enableAutoLogCreation: jobJobLogConfigurationDetailsEnableAutoLogCreation,
- *         enableLogging: jobJobLogConfigurationDetailsEnableLogging,
+ *         enableAutoLogCreation: jobJobLogConfigurationDetailsEnableAutoLogCreation === "true",
+ *         enableLogging: jobJobLogConfigurationDetailsEnableLogging === "true",
  *         logGroupId: testLogGroup.id,
  *         logId: testLog.id,
  *     },
@@ -87,9 +87,9 @@ import * as utilities from "../utilities";
  *                 startupProbeDetails: {
  *                     commands: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsCommand,
  *                     jobProbeCheckType: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsJobProbeCheckType,
- *                     failureThreshold: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsFailureThreshold,
- *                     initialDelayInSeconds: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds,
- *                     periodInSeconds: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds,
+ *                     failureThreshold: Number(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsFailureThreshold),
+ *                     initialDelayInSeconds: Number(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds),
+ *                     periodInSeconds: Number(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds),
  *                 },
  *             },
  *             jobEnvironmentConfigurationDetails: {
@@ -102,7 +102,7 @@ import * as utilities from "../utilities";
  *             },
  *             jobInfrastructureConfigurationDetails: {
  *                 jobInfrastructureType: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobInfrastructureType,
- *                 blockStorageSizeInGbs: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
+ *                 blockStorageSizeInGbs: Number(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
  *                 jobShapeConfigDetails: {
  *                     memoryInGbs: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
  *                     ocpus: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
@@ -110,8 +110,8 @@ import * as utilities from "../utilities";
  *                 shapeName: testShape.name,
  *                 subnetId: testSubnet.id,
  *             },
- *             minimumSuccessReplicas: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListMinimumSuccessReplicas,
- *             replicas: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListReplicas,
+ *             minimumSuccessReplicas: Number(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListMinimumSuccessReplicas),
+ *             replicas: Number(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListReplicas),
  *         }],
  *         maximumRuntimeInMinutes: jobJobNodeConfigurationDetailsMaximumRuntimeInMinutes,
  *         startupOrder: jobJobNodeConfigurationDetailsStartupOrder,
@@ -333,7 +333,7 @@ export interface JobState {
     /**
      * This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
      */
-    artifactContentDisposition?: pulumi.Input<string>;
+    artifactContentDisposition?: pulumi.Input<string | undefined>;
     /**
      * The content length of the body.
      *
@@ -341,82 +341,82 @@ export interface JobState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    artifactContentLength?: pulumi.Input<string>;
-    artifactContentMd5?: pulumi.Input<string>;
-    artifactLastModified?: pulumi.Input<string>;
+    artifactContentLength?: pulumi.Input<string | undefined>;
+    artifactContentMd5?: pulumi.Input<string | undefined>;
+    artifactLastModified?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the project.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Delete all related JobRuns upon deletion of the Job.
      */
-    deleteRelatedJobRuns?: pulumi.Input<boolean>;
+    deleteRelatedJobRuns?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A short description of the job.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly display name for the resource.
      */
-    displayName?: pulumi.Input<string>;
-    emptyArtifact?: pulumi.Input<boolean>;
+    displayName?: pulumi.Input<string | undefined>;
+    emptyArtifact?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
      */
-    jobArtifact?: pulumi.Input<string>;
+    jobArtifact?: pulumi.Input<string | undefined>;
     /**
      * The job configuration details
      */
-    jobConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobConfigurationDetails>;
+    jobConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobConfigurationDetails | undefined>;
     /**
      * Environment configuration to capture job runtime dependencies.
      */
-    jobEnvironmentConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobEnvironmentConfigurationDetails>;
+    jobEnvironmentConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobEnvironmentConfigurationDetails | undefined>;
     /**
      * (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
      */
-    jobInfrastructureConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobInfrastructureConfigurationDetails>;
+    jobInfrastructureConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobInfrastructureConfigurationDetails | undefined>;
     /**
      * Logging configuration for resource.
      */
-    jobLogConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobLogConfigurationDetails>;
+    jobLogConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobLogConfigurationDetails | undefined>;
     /**
      * The job node configuration details
      */
-    jobNodeConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobNodeConfigurationDetails>;
+    jobNodeConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobNodeConfigurationDetails | undefined>;
     /**
      * (Updatable) Collection of JobStorageMountConfigurationDetails.
      */
-    jobStorageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.JobJobStorageMountConfigurationDetailsList>[]>;
+    jobStorageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.JobJobStorageMountConfigurationDetailsList>[] | undefined>;
     /**
      * The state of the job.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
      */
-    projectId?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
     /**
      * The state of the job.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -426,7 +426,7 @@ export interface JobArgs {
     /**
      * This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=job-artifact.py`
      */
-    artifactContentDisposition?: pulumi.Input<string>;
+    artifactContentDisposition?: pulumi.Input<string | undefined>;
     /**
      * The content length of the body.
      *
@@ -434,7 +434,7 @@ export interface JobArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    artifactContentLength?: pulumi.Input<string>;
+    artifactContentLength?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
      */
@@ -442,51 +442,51 @@ export interface JobArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Delete all related JobRuns upon deletion of the Job.
      */
-    deleteRelatedJobRuns?: pulumi.Input<boolean>;
+    deleteRelatedJobRuns?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A short description of the job.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly display name for the resource.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
      */
-    jobArtifact?: pulumi.Input<string>;
+    jobArtifact?: pulumi.Input<string | undefined>;
     /**
      * The job configuration details
      */
-    jobConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobConfigurationDetails>;
+    jobConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobConfigurationDetails | undefined>;
     /**
      * Environment configuration to capture job runtime dependencies.
      */
-    jobEnvironmentConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobEnvironmentConfigurationDetails>;
+    jobEnvironmentConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobEnvironmentConfigurationDetails | undefined>;
     /**
      * (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
      */
-    jobInfrastructureConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobInfrastructureConfigurationDetails>;
+    jobInfrastructureConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobInfrastructureConfigurationDetails | undefined>;
     /**
      * Logging configuration for resource.
      */
-    jobLogConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobLogConfigurationDetails>;
+    jobLogConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobLogConfigurationDetails | undefined>;
     /**
      * The job node configuration details
      */
-    jobNodeConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobNodeConfigurationDetails>;
+    jobNodeConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobNodeConfigurationDetails | undefined>;
     /**
      * (Updatable) Collection of JobStorageMountConfigurationDetails.
      */
-    jobStorageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.JobJobStorageMountConfigurationDetailsList>[]>;
+    jobStorageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.JobJobStorageMountConfigurationDetailsList>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
      */

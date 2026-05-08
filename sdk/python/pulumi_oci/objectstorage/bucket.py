@@ -23,18 +23,18 @@ class BucketArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  namespace: pulumi.Input[_builtins.str],
-                 access_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_tiering: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket_scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_events_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 retention_rules: Optional[pulumi.Input[Sequence[pulumi.Input['BucketRetentionRuleArgs']]]] = None,
-                 storage_tier: Optional[pulumi.Input[_builtins.str]] = None,
-                 versioning: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_tiering: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket_scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_events_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 retention_rules: pulumi.Input[Optional[Sequence[pulumi.Input['BucketRetentionRuleArgs']]]] = None,
+                 storage_tier: pulumi.Input[Optional[_builtins.str]] = None,
+                 versioning: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Bucket resource.
 
@@ -110,139 +110,139 @@ class BucketArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessType")
-    def access_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
         """
         return pulumi.get(self, "access_type")
 
     @access_type.setter
-    def access_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_type", value)
 
     @_builtins.property
     @pulumi.getter(name="autoTiering")
-    def auto_tiering(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auto_tiering(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Set the auto tiering status on the bucket. By default, a bucket is created with auto tiering `Disabled`. Use this option to enable auto tiering during bucket creation. Objects in a bucket with auto tiering set to `InfrequentAccess` are transitioned automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
         """
         return pulumi.get(self, "auto_tiering")
 
     @auto_tiering.setter
-    def auto_tiering(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auto_tiering(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auto_tiering", value)
 
     @_builtins.property
     @pulumi.getter(name="bucketScope")
-    def bucket_scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket_scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
         """
         return pulumi.get(self, "bucket_scope")
 
     @bucket_scope.setter
-    def bucket_scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket_scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket_scope", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
         """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
-    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods. Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-new-bucket1
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="objectEventsEnabled")
-    def object_events_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def object_events_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
         """
         return pulumi.get(self, "object_events_enabled")
 
     @object_events_enabled.setter
-    def object_events_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def object_events_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "object_events_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionRules")
-    def retention_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BucketRetentionRuleArgs']]]]:
+    def retention_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BucketRetentionRuleArgs']]]]:
         """
         (Updatable) Creates a new retention rule in the specified bucket. The new rule will take effect typically within 30 seconds. Note that a maximum of 100 rules are supported on a bucket.
         """
         return pulumi.get(self, "retention_rules")
 
     @retention_rules.setter
-    def retention_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BucketRetentionRuleArgs']]]]):
+    def retention_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BucketRetentionRuleArgs']]]]):
         pulumi.set(self, "retention_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="storageTier")
-    def storage_tier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_tier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of storage tier of this bucket. A bucket is set to 'Standard' tier by default, which means the bucket will be put in the standard storage tier. When 'Archive' tier type is set explicitly, the bucket is put in the Archive Storage tier. The 'storageTier' property is immutable after bucket is created.
         """
         return pulumi.get(self, "storage_tier")
 
     @storage_tier.setter
-    def storage_tier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_tier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_tier", value)
 
     @_builtins.property
     @pulumi.getter
-    def versioning(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def versioning(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Set the versioning status on the bucket. By default, a bucket is created with versioning `Disabled`. Use this option to enable versioning during bucket creation. Objects in a version enabled bucket are protected from overwrites and deletions. Previous versions of the same object will be available in the bucket. Allowed Create values: Enabled, Disabled. Allowed Update values: Enabled, Suspended.
 
@@ -253,36 +253,36 @@ class BucketArgs:
         return pulumi.get(self, "versioning")
 
     @versioning.setter
-    def versioning(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def versioning(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "versioning", value)
 
 
 @pulumi.input_type
 class _BucketState:
     def __init__(__self__, *,
-                 access_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 approximate_count: Optional[pulumi.Input[_builtins.str]] = None,
-                 approximate_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_tiering: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket_scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 etag: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_read_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_events_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 object_lifecycle_policy_etag: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 retention_rules: Optional[pulumi.Input[Sequence[pulumi.Input['BucketRetentionRuleArgs']]]] = None,
-                 storage_tier: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 versioning: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 approximate_count: pulumi.Input[Optional[_builtins.str]] = None,
+                 approximate_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_tiering: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket_scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 etag: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_read_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_events_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 object_lifecycle_policy_etag: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 retention_rules: pulumi.Input[Optional[Sequence[pulumi.Input['BucketRetentionRuleArgs']]]] = None,
+                 storage_tier: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 versioning: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Bucket resources.
 
@@ -363,271 +363,271 @@ class _BucketState:
 
     @_builtins.property
     @pulumi.getter(name="accessType")
-    def access_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of public access enabled on this bucket. A bucket is set to `NoPublicAccess` by default, which only allows an authenticated caller to access the bucket and its contents. When `ObjectRead` is enabled on the bucket, public access is allowed for the `GetObject`, `HeadObject`, and `ListObjects` operations. When `ObjectReadWithoutList` is enabled on the bucket, public access is allowed for the `GetObject` and `HeadObject` operations.
         """
         return pulumi.get(self, "access_type")
 
     @access_type.setter
-    def access_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_type", value)
 
     @_builtins.property
     @pulumi.getter(name="approximateCount")
-    def approximate_count(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def approximate_count(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The approximate number of objects in the bucket. Count statistics are reported periodically. You will see a lag between what is displayed and the actual object count.
         """
         return pulumi.get(self, "approximate_count")
 
     @approximate_count.setter
-    def approximate_count(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def approximate_count(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "approximate_count", value)
 
     @_builtins.property
     @pulumi.getter(name="approximateSize")
-    def approximate_size(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def approximate_size(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The approximate total size in bytes of all objects in the bucket. Size statistics are reported periodically. You will see a lag between what is displayed and the actual size of the bucket.
         """
         return pulumi.get(self, "approximate_size")
 
     @approximate_size.setter
-    def approximate_size(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def approximate_size(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "approximate_size", value)
 
     @_builtins.property
     @pulumi.getter(name="autoTiering")
-    def auto_tiering(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auto_tiering(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Set the auto tiering status on the bucket. By default, a bucket is created with auto tiering `Disabled`. Use this option to enable auto tiering during bucket creation. Objects in a bucket with auto tiering set to `InfrequentAccess` are transitioned automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
         """
         return pulumi.get(self, "auto_tiering")
 
     @auto_tiering.setter
-    def auto_tiering(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auto_tiering(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auto_tiering", value)
 
     @_builtins.property
     @pulumi.getter(name="bucketId")
-    def bucket_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucket_id` cannot be used for bucket lookup.
         """
         return pulumi.get(self, "bucket_id")
 
     @bucket_id.setter
-    def bucket_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket_id", value)
 
     @_builtins.property
     @pulumi.getter(name="bucketScope")
-    def bucket_scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket_scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
         """
         return pulumi.get(self, "bucket_scope")
 
     @bucket_scope.setter
-    def bucket_scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket_scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket_scope", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ID of the compartment in which to create the bucket.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def etag(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def etag(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The entity tag (ETag) for the bucket.
         """
         return pulumi.get(self, "etag")
 
     @etag.setter
-    def etag(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def etag(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "etag", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isReadOnly")
-    def is_read_only(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_read_only(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
         """
         return pulumi.get(self, "is_read_only")
 
     @is_read_only.setter
-    def is_read_only(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_read_only(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_read_only", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
         """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
-    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metadata", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods. Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-new-bucket1
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Object Storage namespace used for the request.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="objectEventsEnabled")
-    def object_events_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def object_events_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
         """
         return pulumi.get(self, "object_events_enabled")
 
     @object_events_enabled.setter
-    def object_events_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def object_events_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "object_events_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="objectLifecyclePolicyEtag")
-    def object_lifecycle_policy_etag(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_lifecycle_policy_etag(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The entity tag (ETag) for the live object lifecycle policy on the bucket.
         """
         return pulumi.get(self, "object_lifecycle_policy_etag")
 
     @object_lifecycle_policy_etag.setter
-    def object_lifecycle_policy_etag(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_lifecycle_policy_etag(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_lifecycle_policy_etag", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationEnabled")
-    def replication_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def replication_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether or not this bucket is a replication source. By default, `replicationEnabled` is set to `false`. This will be set to 'true' when you create a replication policy for the bucket.
         """
         return pulumi.get(self, "replication_enabled")
 
     @replication_enabled.setter
-    def replication_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def replication_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "replication_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionRules")
-    def retention_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BucketRetentionRuleArgs']]]]:
+    def retention_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BucketRetentionRuleArgs']]]]:
         """
         (Updatable) Creates a new retention rule in the specified bucket. The new rule will take effect typically within 30 seconds. Note that a maximum of 100 rules are supported on a bucket.
         """
         return pulumi.get(self, "retention_rules")
 
     @retention_rules.setter
-    def retention_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BucketRetentionRuleArgs']]]]):
+    def retention_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BucketRetentionRuleArgs']]]]):
         pulumi.set(self, "retention_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="storageTier")
-    def storage_tier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_tier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of storage tier of this bucket. A bucket is set to 'Standard' tier by default, which means the bucket will be put in the standard storage tier. When 'Archive' tier type is set explicitly, the bucket is put in the Archive Storage tier. The 'storageTier' property is immutable after bucket is created.
         """
         return pulumi.get(self, "storage_tier")
 
     @storage_tier.setter
-    def storage_tier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_tier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_tier", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter
-    def versioning(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def versioning(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Set the versioning status on the bucket. By default, a bucket is created with versioning `Disabled`. Use this option to enable versioning during bucket creation. Objects in a version enabled bucket are protected from overwrites and deletions. Previous versions of the same object will be available in the bucket. Allowed Create values: Enabled, Disabled. Allowed Update values: Enabled, Suspended.
 
@@ -638,7 +638,7 @@ class _BucketState:
         return pulumi.get(self, "versioning")
 
     @versioning.setter
-    def versioning(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def versioning(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "versioning", value)
 
 
@@ -648,20 +648,20 @@ class Bucket(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_tiering: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket_scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_events_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 retention_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BucketRetentionRuleArgs', 'BucketRetentionRuleArgsDict']]]]] = None,
-                 storage_tier: Optional[pulumi.Input[_builtins.str]] = None,
-                 versioning: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_tiering: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket_scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_events_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 retention_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BucketRetentionRuleArgs', 'BucketRetentionRuleArgsDict']]]]] = None,
+                 storage_tier: pulumi.Input[Optional[_builtins.str]] = None,
+                 versioning: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Bucket resource in Oracle Cloud Infrastructure Object Storage service.
@@ -693,7 +693,7 @@ class Bucket(pulumi.CustomResource):
             },
             kms_key_id=test_key["id"],
             metadata=bucket_metadata,
-            object_events_enabled=bucket_object_events_enabled,
+            object_events_enabled=bucket_object_events_enabled == "true",
             storage_tier=bucket_storage_tier,
             retention_rules=[{
                 "display_name": retention_rule_display_name,
@@ -772,7 +772,7 @@ class Bucket(pulumi.CustomResource):
             },
             kms_key_id=test_key["id"],
             metadata=bucket_metadata,
-            object_events_enabled=bucket_object_events_enabled,
+            object_events_enabled=bucket_object_events_enabled == "true",
             storage_tier=bucket_storage_tier,
             retention_rules=[{
                 "display_name": retention_rule_display_name,
@@ -809,20 +809,20 @@ class Bucket(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 access_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 auto_tiering: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket_scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_events_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 retention_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BucketRetentionRuleArgs', 'BucketRetentionRuleArgsDict']]]]] = None,
-                 storage_tier: Optional[pulumi.Input[_builtins.str]] = None,
-                 versioning: Optional[pulumi.Input[_builtins.str]] = None,
+                 access_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_tiering: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket_scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_events_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 retention_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BucketRetentionRuleArgs', 'BucketRetentionRuleArgsDict']]]]] = None,
+                 storage_tier: pulumi.Input[Optional[_builtins.str]] = None,
+                 versioning: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -869,29 +869,29 @@ class Bucket(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            access_type: Optional[pulumi.Input[_builtins.str]] = None,
-            approximate_count: Optional[pulumi.Input[_builtins.str]] = None,
-            approximate_size: Optional[pulumi.Input[_builtins.str]] = None,
-            auto_tiering: Optional[pulumi.Input[_builtins.str]] = None,
-            bucket_id: Optional[pulumi.Input[_builtins.str]] = None,
-            bucket_scope: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            etag: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_read_only: Optional[pulumi.Input[_builtins.bool]] = None,
-            kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None,
-            object_events_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            object_lifecycle_policy_etag: Optional[pulumi.Input[_builtins.str]] = None,
-            replication_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            retention_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BucketRetentionRuleArgs', 'BucketRetentionRuleArgsDict']]]]] = None,
-            storage_tier: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            versioning: Optional[pulumi.Input[_builtins.str]] = None) -> 'Bucket':
+            access_type: pulumi.Input[Optional[_builtins.str]] = None,
+            approximate_count: pulumi.Input[Optional[_builtins.str]] = None,
+            approximate_size: pulumi.Input[Optional[_builtins.str]] = None,
+            auto_tiering: pulumi.Input[Optional[_builtins.str]] = None,
+            bucket_id: pulumi.Input[Optional[_builtins.str]] = None,
+            bucket_scope: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            etag: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_read_only: pulumi.Input[Optional[_builtins.bool]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            object_events_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            object_lifecycle_policy_etag: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            retention_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BucketRetentionRuleArgs', 'BucketRetentionRuleArgsDict']]]]] = None,
+            storage_tier: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            versioning: pulumi.Input[Optional[_builtins.str]] = None) -> 'Bucket':
         """
         Get an existing Bucket resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

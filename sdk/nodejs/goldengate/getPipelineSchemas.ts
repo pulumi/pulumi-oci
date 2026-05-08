@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPipelineSchemas = oci.GoldenGate.getPipelineSchemas({
+ * const testPipelineSchemas = oci.goldengate.getPipelineSchemas({
  *     pipelineId: testPipeline.id,
  *     displayName: pipelineSchemaDisplayName,
  * });
@@ -74,7 +74,7 @@ export interface GetPipelineSchemasResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPipelineSchemas = oci.GoldenGate.getPipelineSchemas({
+ * const testPipelineSchemas = oci.goldengate.getPipelineSchemas({
  *     pipelineId: testPipeline.id,
  *     displayName: pipelineSchemaDisplayName,
  * });
@@ -96,8 +96,8 @@ export interface GetPipelineSchemasOutputArgs {
     /**
      * A filter to return only the resources that match the entire 'displayName' given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetPipelineSchemasFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetPipelineSchemasFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline created.
      */

@@ -124,18 +124,18 @@ export interface GetWlmsManagedInstancesOutputArgs {
     /**
      * The OCID of the compartment that contains the resources to list. This filter returns  only resources contained within the specified compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetWlmsManagedInstancesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetWlmsManagedInstancesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The plugin status of the managed instance.
      */
-    pluginStatus?: pulumi.Input<string>;
+    pluginStatus?: pulumi.Input<string | undefined>;
 }

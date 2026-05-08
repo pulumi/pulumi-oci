@@ -683,7 +683,7 @@ def get_autonomous_vm_cluster(autonomous_vm_cluster_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_vm_cluster = oci.Database.get_autonomous_vm_cluster(autonomous_vm_cluster_id=test_autonomous_vm_cluster_oci_database_autonomous_vm_cluster["id"])
+    test_autonomous_vm_cluster = oci.database.get_autonomous_vm_cluster(autonomous_vm_cluster_id=test_autonomous_vm_cluster_oci_database_autonomous_vm_cluster["id"])
     ```
 
 
@@ -749,7 +749,7 @@ def get_autonomous_vm_cluster(autonomous_vm_cluster_id: Optional[_builtins.str] 
         total_autonomous_data_storage_in_tbs=pulumi.get(__ret__, 'total_autonomous_data_storage_in_tbs'),
         total_container_databases=pulumi.get(__ret__, 'total_container_databases'),
         vm_cluster_network_id=pulumi.get(__ret__, 'vm_cluster_network_id'))
-def get_autonomous_vm_cluster_output(autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_autonomous_vm_cluster_output(autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousVmClusterResult]:
     """
     This data source provides details about a specific Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.
@@ -762,7 +762,7 @@ def get_autonomous_vm_cluster_output(autonomous_vm_cluster_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_vm_cluster = oci.Database.get_autonomous_vm_cluster(autonomous_vm_cluster_id=test_autonomous_vm_cluster_oci_database_autonomous_vm_cluster["id"])
+    test_autonomous_vm_cluster = oci.database.get_autonomous_vm_cluster(autonomous_vm_cluster_id=test_autonomous_vm_cluster_oci_database_autonomous_vm_cluster["id"])
     ```
 
 

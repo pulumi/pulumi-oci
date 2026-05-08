@@ -20,10 +20,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptions = oci.OneSubsription.getSubscriptions({
+ * const testSubscriptions = oci.onesubsription.getSubscriptions({
  *     compartmentId: compartmentId,
  *     buyerEmail: subscriptionBuyerEmail,
- *     isCommitInfoRequired: subscriptionIsCommitInfoRequired,
+ *     isCommitInfoRequired: subscriptionIsCommitInfoRequired === "true",
  *     planNumber: subscriptionPlanNumber,
  *     subscriptionId: testSubscription.id,
  * });
@@ -101,10 +101,10 @@ export interface GetSubscriptionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptions = oci.OneSubsription.getSubscriptions({
+ * const testSubscriptions = oci.onesubsription.getSubscriptions({
  *     compartmentId: compartmentId,
  *     buyerEmail: subscriptionBuyerEmail,
- *     isCommitInfoRequired: subscriptionIsCommitInfoRequired,
+ *     isCommitInfoRequired: subscriptionIsCommitInfoRequired === "true",
  *     planNumber: subscriptionPlanNumber,
  *     subscriptionId: testSubscription.id,
  * });
@@ -129,22 +129,22 @@ export interface GetSubscriptionsOutputArgs {
     /**
      * Buyer Email Id
      */
-    buyerEmail?: pulumi.Input<string>;
+    buyerEmail?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the root compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OneSubsription.GetSubscriptionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OneSubsription.GetSubscriptionsFilterArgs>[] | undefined>;
     /**
      * Boolean value to decide whether commitment services will be shown
      */
-    isCommitInfoRequired?: pulumi.Input<boolean>;
+    isCommitInfoRequired?: pulumi.Input<boolean | undefined>;
     /**
      * The Plan Number
      */
-    planNumber?: pulumi.Input<string>;
+    planNumber?: pulumi.Input<string | undefined>;
     /**
      * Line level Subscription Id
      */
-    subscriptionId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string | undefined>;
 }

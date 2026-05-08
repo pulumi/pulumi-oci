@@ -22,17 +22,17 @@ __all__ = ['FleetAgentConfigurationArgs', 'FleetAgentConfiguration']
 class FleetAgentConfigurationArgs:
     def __init__(__self__, *,
                  fleet_id: pulumi.Input[_builtins.str],
-                 agent_polling_interval_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_capturing_ip_address_and_fqdn_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_collecting_managed_instance_metrics_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_collecting_usernames_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_libraries_scan_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 java_usage_tracker_processing_frequency_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
-                 jre_scan_frequency_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
-                 linux_configuration: Optional[pulumi.Input['FleetAgentConfigurationLinuxConfigurationArgs']] = None,
-                 mac_os_configuration: Optional[pulumi.Input['FleetAgentConfigurationMacOsConfigurationArgs']] = None,
-                 windows_configuration: Optional[pulumi.Input['FleetAgentConfigurationWindowsConfigurationArgs']] = None,
-                 work_request_validity_period_in_days: Optional[pulumi.Input[_builtins.int]] = None):
+                 agent_polling_interval_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_capturing_ip_address_and_fqdn_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_collecting_managed_instance_metrics_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_collecting_usernames_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_libraries_scan_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 java_usage_tracker_processing_frequency_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+                 jre_scan_frequency_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+                 linux_configuration: pulumi.Input[Optional['FleetAgentConfigurationLinuxConfigurationArgs']] = None,
+                 mac_os_configuration: pulumi.Input[Optional['FleetAgentConfigurationMacOsConfigurationArgs']] = None,
+                 windows_configuration: pulumi.Input[Optional['FleetAgentConfigurationWindowsConfigurationArgs']] = None,
+                 work_request_validity_period_in_days: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a FleetAgentConfiguration resource.
 
@@ -91,127 +91,127 @@ class FleetAgentConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="agentPollingIntervalInMinutes")
-    def agent_polling_interval_in_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def agent_polling_interval_in_minutes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Agent polling interval in minutes
         """
         return pulumi.get(self, "agent_polling_interval_in_minutes")
 
     @agent_polling_interval_in_minutes.setter
-    def agent_polling_interval_in_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def agent_polling_interval_in_minutes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "agent_polling_interval_in_minutes", value)
 
     @_builtins.property
     @pulumi.getter(name="isCapturingIpAddressAndFqdnEnabled")
-    def is_capturing_ip_address_and_fqdn_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_capturing_ip_address_and_fqdn_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Collect network addresses of managed instances in the fleet.
         """
         return pulumi.get(self, "is_capturing_ip_address_and_fqdn_enabled")
 
     @is_capturing_ip_address_and_fqdn_enabled.setter
-    def is_capturing_ip_address_and_fqdn_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_capturing_ip_address_and_fqdn_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_capturing_ip_address_and_fqdn_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isCollectingManagedInstanceMetricsEnabled")
-    def is_collecting_managed_instance_metrics_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_collecting_managed_instance_metrics_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Collect JMS agent metrics on all managed instances in the fleet.
         """
         return pulumi.get(self, "is_collecting_managed_instance_metrics_enabled")
 
     @is_collecting_managed_instance_metrics_enabled.setter
-    def is_collecting_managed_instance_metrics_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_collecting_managed_instance_metrics_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_collecting_managed_instance_metrics_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isCollectingUsernamesEnabled")
-    def is_collecting_usernames_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_collecting_usernames_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Collect username for application invocations for all managed instances in the fleet.
         """
         return pulumi.get(self, "is_collecting_usernames_enabled")
 
     @is_collecting_usernames_enabled.setter
-    def is_collecting_usernames_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_collecting_usernames_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_collecting_usernames_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isLibrariesScanEnabled")
-    def is_libraries_scan_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_libraries_scan_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enable libraries scan on all managed instances in the fleet.
         """
         return pulumi.get(self, "is_libraries_scan_enabled")
 
     @is_libraries_scan_enabled.setter
-    def is_libraries_scan_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_libraries_scan_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_libraries_scan_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="javaUsageTrackerProcessingFrequencyInMinutes")
-    def java_usage_tracker_processing_frequency_in_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def java_usage_tracker_processing_frequency_in_minutes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The frequency (in minutes) of Java Usage Tracker processing. (That is, how often should JMS process data from the Java Usage Tracker.)
         """
         return pulumi.get(self, "java_usage_tracker_processing_frequency_in_minutes")
 
     @java_usage_tracker_processing_frequency_in_minutes.setter
-    def java_usage_tracker_processing_frequency_in_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def java_usage_tracker_processing_frequency_in_minutes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "java_usage_tracker_processing_frequency_in_minutes", value)
 
     @_builtins.property
     @pulumi.getter(name="jreScanFrequencyInMinutes")
-    def jre_scan_frequency_in_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def jre_scan_frequency_in_minutes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The frequency (in minutes) of JRE scanning. (That is, how often should JMS scan for JRE installations.)
         """
         return pulumi.get(self, "jre_scan_frequency_in_minutes")
 
     @jre_scan_frequency_in_minutes.setter
-    def jre_scan_frequency_in_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def jre_scan_frequency_in_minutes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "jre_scan_frequency_in_minutes", value)
 
     @_builtins.property
     @pulumi.getter(name="linuxConfiguration")
-    def linux_configuration(self) -> Optional[pulumi.Input['FleetAgentConfigurationLinuxConfigurationArgs']]:
+    def linux_configuration(self) -> pulumi.Input[Optional['FleetAgentConfigurationLinuxConfigurationArgs']]:
         """
         (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
         """
         return pulumi.get(self, "linux_configuration")
 
     @linux_configuration.setter
-    def linux_configuration(self, value: Optional[pulumi.Input['FleetAgentConfigurationLinuxConfigurationArgs']]):
+    def linux_configuration(self, value: pulumi.Input[Optional['FleetAgentConfigurationLinuxConfigurationArgs']]):
         pulumi.set(self, "linux_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="macOsConfiguration")
-    def mac_os_configuration(self) -> Optional[pulumi.Input['FleetAgentConfigurationMacOsConfigurationArgs']]:
+    def mac_os_configuration(self) -> pulumi.Input[Optional['FleetAgentConfigurationMacOsConfigurationArgs']]:
         """
         (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
         """
         return pulumi.get(self, "mac_os_configuration")
 
     @mac_os_configuration.setter
-    def mac_os_configuration(self, value: Optional[pulumi.Input['FleetAgentConfigurationMacOsConfigurationArgs']]):
+    def mac_os_configuration(self, value: pulumi.Input[Optional['FleetAgentConfigurationMacOsConfigurationArgs']]):
         pulumi.set(self, "mac_os_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="windowsConfiguration")
-    def windows_configuration(self) -> Optional[pulumi.Input['FleetAgentConfigurationWindowsConfigurationArgs']]:
+    def windows_configuration(self) -> pulumi.Input[Optional['FleetAgentConfigurationWindowsConfigurationArgs']]:
         """
         (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
         """
         return pulumi.get(self, "windows_configuration")
 
     @windows_configuration.setter
-    def windows_configuration(self, value: Optional[pulumi.Input['FleetAgentConfigurationWindowsConfigurationArgs']]):
+    def windows_configuration(self, value: pulumi.Input[Optional['FleetAgentConfigurationWindowsConfigurationArgs']]):
         pulumi.set(self, "windows_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestValidityPeriodInDays")
-    def work_request_validity_period_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def work_request_validity_period_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The validity period in days for work requests. 
 
@@ -222,26 +222,26 @@ class FleetAgentConfigurationArgs:
         return pulumi.get(self, "work_request_validity_period_in_days")
 
     @work_request_validity_period_in_days.setter
-    def work_request_validity_period_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def work_request_validity_period_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "work_request_validity_period_in_days", value)
 
 
 @pulumi.input_type
 class _FleetAgentConfigurationState:
     def __init__(__self__, *,
-                 agent_polling_interval_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
-                 fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_capturing_ip_address_and_fqdn_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_collecting_managed_instance_metrics_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_collecting_usernames_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_libraries_scan_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 java_usage_tracker_processing_frequency_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
-                 jre_scan_frequency_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
-                 linux_configuration: Optional[pulumi.Input['FleetAgentConfigurationLinuxConfigurationArgs']] = None,
-                 mac_os_configuration: Optional[pulumi.Input['FleetAgentConfigurationMacOsConfigurationArgs']] = None,
-                 time_last_modified: Optional[pulumi.Input[_builtins.str]] = None,
-                 windows_configuration: Optional[pulumi.Input['FleetAgentConfigurationWindowsConfigurationArgs']] = None,
-                 work_request_validity_period_in_days: Optional[pulumi.Input[_builtins.int]] = None):
+                 agent_polling_interval_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+                 fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_capturing_ip_address_and_fqdn_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_collecting_managed_instance_metrics_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_collecting_usernames_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_libraries_scan_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 java_usage_tracker_processing_frequency_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+                 jre_scan_frequency_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+                 linux_configuration: pulumi.Input[Optional['FleetAgentConfigurationLinuxConfigurationArgs']] = None,
+                 mac_os_configuration: pulumi.Input[Optional['FleetAgentConfigurationMacOsConfigurationArgs']] = None,
+                 time_last_modified: pulumi.Input[Optional[_builtins.str]] = None,
+                 windows_configuration: pulumi.Input[Optional['FleetAgentConfigurationWindowsConfigurationArgs']] = None,
+                 work_request_validity_period_in_days: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering FleetAgentConfiguration resources.
 
@@ -292,151 +292,151 @@ class _FleetAgentConfigurationState:
 
     @_builtins.property
     @pulumi.getter(name="agentPollingIntervalInMinutes")
-    def agent_polling_interval_in_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def agent_polling_interval_in_minutes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Agent polling interval in minutes
         """
         return pulumi.get(self, "agent_polling_interval_in_minutes")
 
     @agent_polling_interval_in_minutes.setter
-    def agent_polling_interval_in_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def agent_polling_interval_in_minutes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "agent_polling_interval_in_minutes", value)
 
     @_builtins.property
     @pulumi.getter(name="fleetId")
-    def fleet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fleet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
         """
         return pulumi.get(self, "fleet_id")
 
     @fleet_id.setter
-    def fleet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fleet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fleet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isCapturingIpAddressAndFqdnEnabled")
-    def is_capturing_ip_address_and_fqdn_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_capturing_ip_address_and_fqdn_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Collect network addresses of managed instances in the fleet.
         """
         return pulumi.get(self, "is_capturing_ip_address_and_fqdn_enabled")
 
     @is_capturing_ip_address_and_fqdn_enabled.setter
-    def is_capturing_ip_address_and_fqdn_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_capturing_ip_address_and_fqdn_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_capturing_ip_address_and_fqdn_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isCollectingManagedInstanceMetricsEnabled")
-    def is_collecting_managed_instance_metrics_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_collecting_managed_instance_metrics_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Collect JMS agent metrics on all managed instances in the fleet.
         """
         return pulumi.get(self, "is_collecting_managed_instance_metrics_enabled")
 
     @is_collecting_managed_instance_metrics_enabled.setter
-    def is_collecting_managed_instance_metrics_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_collecting_managed_instance_metrics_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_collecting_managed_instance_metrics_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isCollectingUsernamesEnabled")
-    def is_collecting_usernames_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_collecting_usernames_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Collect username for application invocations for all managed instances in the fleet.
         """
         return pulumi.get(self, "is_collecting_usernames_enabled")
 
     @is_collecting_usernames_enabled.setter
-    def is_collecting_usernames_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_collecting_usernames_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_collecting_usernames_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isLibrariesScanEnabled")
-    def is_libraries_scan_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_libraries_scan_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enable libraries scan on all managed instances in the fleet.
         """
         return pulumi.get(self, "is_libraries_scan_enabled")
 
     @is_libraries_scan_enabled.setter
-    def is_libraries_scan_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_libraries_scan_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_libraries_scan_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="javaUsageTrackerProcessingFrequencyInMinutes")
-    def java_usage_tracker_processing_frequency_in_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def java_usage_tracker_processing_frequency_in_minutes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The frequency (in minutes) of Java Usage Tracker processing. (That is, how often should JMS process data from the Java Usage Tracker.)
         """
         return pulumi.get(self, "java_usage_tracker_processing_frequency_in_minutes")
 
     @java_usage_tracker_processing_frequency_in_minutes.setter
-    def java_usage_tracker_processing_frequency_in_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def java_usage_tracker_processing_frequency_in_minutes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "java_usage_tracker_processing_frequency_in_minutes", value)
 
     @_builtins.property
     @pulumi.getter(name="jreScanFrequencyInMinutes")
-    def jre_scan_frequency_in_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def jre_scan_frequency_in_minutes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The frequency (in minutes) of JRE scanning. (That is, how often should JMS scan for JRE installations.)
         """
         return pulumi.get(self, "jre_scan_frequency_in_minutes")
 
     @jre_scan_frequency_in_minutes.setter
-    def jre_scan_frequency_in_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def jre_scan_frequency_in_minutes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "jre_scan_frequency_in_minutes", value)
 
     @_builtins.property
     @pulumi.getter(name="linuxConfiguration")
-    def linux_configuration(self) -> Optional[pulumi.Input['FleetAgentConfigurationLinuxConfigurationArgs']]:
+    def linux_configuration(self) -> pulumi.Input[Optional['FleetAgentConfigurationLinuxConfigurationArgs']]:
         """
         (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
         """
         return pulumi.get(self, "linux_configuration")
 
     @linux_configuration.setter
-    def linux_configuration(self, value: Optional[pulumi.Input['FleetAgentConfigurationLinuxConfigurationArgs']]):
+    def linux_configuration(self, value: pulumi.Input[Optional['FleetAgentConfigurationLinuxConfigurationArgs']]):
         pulumi.set(self, "linux_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="macOsConfiguration")
-    def mac_os_configuration(self) -> Optional[pulumi.Input['FleetAgentConfigurationMacOsConfigurationArgs']]:
+    def mac_os_configuration(self) -> pulumi.Input[Optional['FleetAgentConfigurationMacOsConfigurationArgs']]:
         """
         (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
         """
         return pulumi.get(self, "mac_os_configuration")
 
     @mac_os_configuration.setter
-    def mac_os_configuration(self, value: Optional[pulumi.Input['FleetAgentConfigurationMacOsConfigurationArgs']]):
+    def mac_os_configuration(self, value: pulumi.Input[Optional['FleetAgentConfigurationMacOsConfigurationArgs']]):
         pulumi.set(self, "mac_os_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastModified")
-    def time_last_modified(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_modified(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         return pulumi.get(self, "time_last_modified")
 
     @time_last_modified.setter
-    def time_last_modified(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_modified(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_modified", value)
 
     @_builtins.property
     @pulumi.getter(name="windowsConfiguration")
-    def windows_configuration(self) -> Optional[pulumi.Input['FleetAgentConfigurationWindowsConfigurationArgs']]:
+    def windows_configuration(self) -> pulumi.Input[Optional['FleetAgentConfigurationWindowsConfigurationArgs']]:
         """
         (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
         """
         return pulumi.get(self, "windows_configuration")
 
     @windows_configuration.setter
-    def windows_configuration(self, value: Optional[pulumi.Input['FleetAgentConfigurationWindowsConfigurationArgs']]):
+    def windows_configuration(self, value: pulumi.Input[Optional['FleetAgentConfigurationWindowsConfigurationArgs']]):
         pulumi.set(self, "windows_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestValidityPeriodInDays")
-    def work_request_validity_period_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def work_request_validity_period_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The validity period in days for work requests. 
 
@@ -447,7 +447,7 @@ class _FleetAgentConfigurationState:
         return pulumi.get(self, "work_request_validity_period_in_days")
 
     @work_request_validity_period_in_days.setter
-    def work_request_validity_period_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def work_request_validity_period_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "work_request_validity_period_in_days", value)
 
 
@@ -457,18 +457,18 @@ class FleetAgentConfiguration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 agent_polling_interval_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
-                 fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_capturing_ip_address_and_fqdn_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_collecting_managed_instance_metrics_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_collecting_usernames_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_libraries_scan_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 java_usage_tracker_processing_frequency_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
-                 jre_scan_frequency_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
-                 linux_configuration: Optional[pulumi.Input[Union['FleetAgentConfigurationLinuxConfigurationArgs', 'FleetAgentConfigurationLinuxConfigurationArgsDict']]] = None,
-                 mac_os_configuration: Optional[pulumi.Input[Union['FleetAgentConfigurationMacOsConfigurationArgs', 'FleetAgentConfigurationMacOsConfigurationArgsDict']]] = None,
-                 windows_configuration: Optional[pulumi.Input[Union['FleetAgentConfigurationWindowsConfigurationArgs', 'FleetAgentConfigurationWindowsConfigurationArgsDict']]] = None,
-                 work_request_validity_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
+                 agent_polling_interval_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+                 fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_capturing_ip_address_and_fqdn_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_collecting_managed_instance_metrics_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_collecting_usernames_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_libraries_scan_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 java_usage_tracker_processing_frequency_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+                 jre_scan_frequency_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+                 linux_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationLinuxConfigurationArgs', 'FleetAgentConfigurationLinuxConfigurationArgsDict']]] = None,
+                 mac_os_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationMacOsConfigurationArgs', 'FleetAgentConfigurationMacOsConfigurationArgsDict']]] = None,
+                 windows_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationWindowsConfigurationArgs', 'FleetAgentConfigurationWindowsConfigurationArgsDict']]] = None,
+                 work_request_validity_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         This resource provides the Fleet Agent Configuration resource in Oracle Cloud Infrastructure Jms service.
@@ -622,18 +622,18 @@ class FleetAgentConfiguration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 agent_polling_interval_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
-                 fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_capturing_ip_address_and_fqdn_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_collecting_managed_instance_metrics_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_collecting_usernames_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_libraries_scan_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 java_usage_tracker_processing_frequency_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
-                 jre_scan_frequency_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
-                 linux_configuration: Optional[pulumi.Input[Union['FleetAgentConfigurationLinuxConfigurationArgs', 'FleetAgentConfigurationLinuxConfigurationArgsDict']]] = None,
-                 mac_os_configuration: Optional[pulumi.Input[Union['FleetAgentConfigurationMacOsConfigurationArgs', 'FleetAgentConfigurationMacOsConfigurationArgsDict']]] = None,
-                 windows_configuration: Optional[pulumi.Input[Union['FleetAgentConfigurationWindowsConfigurationArgs', 'FleetAgentConfigurationWindowsConfigurationArgsDict']]] = None,
-                 work_request_validity_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
+                 agent_polling_interval_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+                 fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_capturing_ip_address_and_fqdn_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_collecting_managed_instance_metrics_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_collecting_usernames_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_libraries_scan_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 java_usage_tracker_processing_frequency_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+                 jre_scan_frequency_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+                 linux_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationLinuxConfigurationArgs', 'FleetAgentConfigurationLinuxConfigurationArgsDict']]] = None,
+                 mac_os_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationMacOsConfigurationArgs', 'FleetAgentConfigurationMacOsConfigurationArgsDict']]] = None,
+                 windows_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationWindowsConfigurationArgs', 'FleetAgentConfigurationWindowsConfigurationArgsDict']]] = None,
+                 work_request_validity_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -668,19 +668,19 @@ class FleetAgentConfiguration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            agent_polling_interval_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
-            fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_capturing_ip_address_and_fqdn_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_collecting_managed_instance_metrics_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_collecting_usernames_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_libraries_scan_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            java_usage_tracker_processing_frequency_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
-            jre_scan_frequency_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
-            linux_configuration: Optional[pulumi.Input[Union['FleetAgentConfigurationLinuxConfigurationArgs', 'FleetAgentConfigurationLinuxConfigurationArgsDict']]] = None,
-            mac_os_configuration: Optional[pulumi.Input[Union['FleetAgentConfigurationMacOsConfigurationArgs', 'FleetAgentConfigurationMacOsConfigurationArgsDict']]] = None,
-            time_last_modified: Optional[pulumi.Input[_builtins.str]] = None,
-            windows_configuration: Optional[pulumi.Input[Union['FleetAgentConfigurationWindowsConfigurationArgs', 'FleetAgentConfigurationWindowsConfigurationArgsDict']]] = None,
-            work_request_validity_period_in_days: Optional[pulumi.Input[_builtins.int]] = None) -> 'FleetAgentConfiguration':
+            agent_polling_interval_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+            fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_capturing_ip_address_and_fqdn_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_collecting_managed_instance_metrics_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_collecting_usernames_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_libraries_scan_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            java_usage_tracker_processing_frequency_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+            jre_scan_frequency_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+            linux_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationLinuxConfigurationArgs', 'FleetAgentConfigurationLinuxConfigurationArgsDict']]] = None,
+            mac_os_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationMacOsConfigurationArgs', 'FleetAgentConfigurationMacOsConfigurationArgsDict']]] = None,
+            time_last_modified: pulumi.Input[Optional[_builtins.str]] = None,
+            windows_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationWindowsConfigurationArgs', 'FleetAgentConfigurationWindowsConfigurationArgsDict']]] = None,
+            work_request_validity_period_in_days: pulumi.Input[Optional[_builtins.int]] = None) -> 'FleetAgentConfiguration':
         """
         Get an existing FleetAgentConfiguration resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

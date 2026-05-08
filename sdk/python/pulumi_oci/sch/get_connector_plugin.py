@@ -167,7 +167,7 @@ def get_connector_plugin(connector_plugin_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connector_plugin = oci.Sch.get_connector_plugin(connector_plugin_name=test_connector_plugin_oci_sch_connector_plugin["name"])
+    test_connector_plugin = oci.sch.get_connector_plugin(connector_plugin_name=test_connector_plugin_oci_sch_connector_plugin["name"])
     ```
 
 
@@ -189,7 +189,7 @@ def get_connector_plugin(connector_plugin_name: Optional[_builtins.str] = None,
         schema=pulumi.get(__ret__, 'schema'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_connector_plugin_output(connector_plugin_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_connector_plugin_output(connector_plugin_name: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConnectorPluginResult]:
     """
     This data source provides details about a specific Connector Plugin resource in Oracle Cloud Infrastructure Service Connector Hub service.
@@ -202,7 +202,7 @@ def get_connector_plugin_output(connector_plugin_name: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_connector_plugin = oci.Sch.get_connector_plugin(connector_plugin_name=test_connector_plugin_oci_sch_connector_plugin["name"])
+    test_connector_plugin = oci.sch.get_connector_plugin(connector_plugin_name=test_connector_plugin_oci_sch_connector_plugin["name"])
     ```
 
 

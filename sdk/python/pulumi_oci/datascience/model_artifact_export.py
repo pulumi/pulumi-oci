@@ -93,12 +93,12 @@ class ModelArtifactExportArgs:
 @pulumi.input_type
 class _ModelArtifactExportState:
     def __init__(__self__, *,
-                 artifact_source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_object_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_region: Optional[pulumi.Input[_builtins.str]] = None):
+                 artifact_source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_object_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_region: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ModelArtifactExport resources.
         """
@@ -117,56 +117,56 @@ class _ModelArtifactExportState:
 
     @_builtins.property
     @pulumi.getter(name="artifactSourceType")
-    def artifact_source_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def artifact_source_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "artifact_source_type")
 
     @artifact_source_type.setter
-    def artifact_source_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def artifact_source_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "artifact_source_type", value)
 
     @_builtins.property
     @pulumi.getter(name="modelId")
-    def model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "model_id")
 
     @model_id.setter
-    def model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceBucket")
-    def source_bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "source_bucket")
 
     @source_bucket.setter
-    def source_bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_bucket", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceObjectName")
-    def source_object_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_object_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "source_object_name")
 
     @source_object_name.setter
-    def source_object_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_object_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_object_name", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceRegion")
-    def source_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "source_region")
 
     @source_region.setter
-    def source_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_region", value)
 
 
@@ -176,12 +176,12 @@ class ModelArtifactExport(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 artifact_source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_object_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_region: Optional[pulumi.Input[_builtins.str]] = None,
+                 artifact_source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_object_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_region: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a ModelArtifactExport resource with the given unique name, props, and options.
@@ -213,12 +213,12 @@ class ModelArtifactExport(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 artifact_source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_object_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_region: Optional[pulumi.Input[_builtins.str]] = None,
+                 artifact_source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_object_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_region: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -256,12 +256,12 @@ class ModelArtifactExport(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            artifact_source_type: Optional[pulumi.Input[_builtins.str]] = None,
-            model_id: Optional[pulumi.Input[_builtins.str]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None,
-            source_bucket: Optional[pulumi.Input[_builtins.str]] = None,
-            source_object_name: Optional[pulumi.Input[_builtins.str]] = None,
-            source_region: Optional[pulumi.Input[_builtins.str]] = None) -> 'ModelArtifactExport':
+            artifact_source_type: pulumi.Input[Optional[_builtins.str]] = None,
+            model_id: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            source_bucket: pulumi.Input[Optional[_builtins.str]] = None,
+            source_object_name: pulumi.Input[Optional[_builtins.str]] = None,
+            source_region: pulumi.Input[Optional[_builtins.str]] = None) -> 'ModelArtifactExport':
         """
         Get an existing ModelArtifactExport resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -26,18 +26,18 @@ class OperatorControlAssignmentArgs:
                  resource_id: pulumi.Input[_builtins.str],
                  resource_name: pulumi.Input[_builtins.str],
                  resource_type: pulumi.Input[_builtins.str],
-                 comment: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_auto_approve_during_maintenance: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_hypervisor_log_forwarded: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_log_forwarded: Optional[pulumi.Input[_builtins.bool]] = None,
-                 remote_syslog_server_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_syslog_server_ca_cert: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_syslog_server_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 time_assignment_from: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_assignment_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 validate_assignment_trigger: Optional[pulumi.Input[_builtins.int]] = None):
+                 comment: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_approve_during_maintenance: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_hypervisor_log_forwarded: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_log_forwarded: pulumi.Input[Optional[_builtins.bool]] = None,
+                 remote_syslog_server_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_syslog_server_ca_cert: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_syslog_server_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 time_assignment_from: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_assignment_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 validate_assignment_trigger: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a OperatorControlAssignment resource.
 
@@ -183,139 +183,139 @@ class OperatorControlAssignmentArgs:
 
     @_builtins.property
     @pulumi.getter
-    def comment(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def comment(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Comment about the assignment of the operator control to this target resource.
         """
         return pulumi.get(self, "comment")
 
     @comment.setter
-    def comment(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def comment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "comment", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoApproveDuringMaintenance")
-    def is_auto_approve_during_maintenance(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_approve_during_maintenance(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) The boolean if true would autoApprove during maintenance.
         """
         return pulumi.get(self, "is_auto_approve_during_maintenance")
 
     @is_auto_approve_during_maintenance.setter
-    def is_auto_approve_during_maintenance(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_approve_during_maintenance(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_approve_during_maintenance", value)
 
     @_builtins.property
     @pulumi.getter(name="isHypervisorLogForwarded")
-    def is_hypervisor_log_forwarded(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_hypervisor_log_forwarded(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
         """
         return pulumi.get(self, "is_hypervisor_log_forwarded")
 
     @is_hypervisor_log_forwarded.setter
-    def is_hypervisor_log_forwarded(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_hypervisor_log_forwarded(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_hypervisor_log_forwarded", value)
 
     @_builtins.property
     @pulumi.getter(name="isLogForwarded")
-    def is_log_forwarded(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_log_forwarded(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
         """
         return pulumi.get(self, "is_log_forwarded")
 
     @is_log_forwarded.setter
-    def is_log_forwarded(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_log_forwarded(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_log_forwarded", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteSyslogServerAddress")
-    def remote_syslog_server_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def remote_syslog_server_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
         """
         return pulumi.get(self, "remote_syslog_server_address")
 
     @remote_syslog_server_address.setter
-    def remote_syslog_server_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def remote_syslog_server_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "remote_syslog_server_address", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteSyslogServerCaCert")
-    def remote_syslog_server_ca_cert(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def remote_syslog_server_ca_cert(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The CA certificate of the remote syslog server. Identity of the remote syslog server will be asserted based on this certificate.
         """
         return pulumi.get(self, "remote_syslog_server_ca_cert")
 
     @remote_syslog_server_ca_cert.setter
-    def remote_syslog_server_ca_cert(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def remote_syslog_server_ca_cert(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "remote_syslog_server_ca_cert", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteSyslogServerPort")
-    def remote_syslog_server_port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def remote_syslog_server_port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
         """
         return pulumi.get(self, "remote_syslog_server_port")
 
     @remote_syslog_server_port.setter
-    def remote_syslog_server_port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def remote_syslog_server_port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "remote_syslog_server_port", value)
 
     @_builtins.property
     @pulumi.getter(name="timeAssignmentFrom")
-    def time_assignment_from(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_assignment_from(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_assignment_from")
 
     @time_assignment_from.setter
-    def time_assignment_from(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_assignment_from(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_assignment_from", value)
 
     @_builtins.property
     @pulumi.getter(name="timeAssignmentTo")
-    def time_assignment_to(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_assignment_to(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_assignment_to")
 
     @time_assignment_to.setter
-    def time_assignment_to(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_assignment_to(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_assignment_to", value)
 
     @_builtins.property
     @pulumi.getter(name="validateAssignmentTrigger")
-    def validate_assignment_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def validate_assignment_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
 
@@ -326,43 +326,43 @@ class OperatorControlAssignmentArgs:
         return pulumi.get(self, "validate_assignment_trigger")
 
     @validate_assignment_trigger.setter
-    def validate_assignment_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def validate_assignment_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "validate_assignment_trigger", value)
 
 
 @pulumi.input_type
 class _OperatorControlAssignmentState:
     def __init__(__self__, *,
-                 assigner_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 comment: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 detachment_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 error_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 error_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_auto_approve_during_maintenance: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_default_assignment: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_enforced_always: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_hypervisor_log_forwarded: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_log_forwarded: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 op_control_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 operator_control_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_syslog_server_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_syslog_server_ca_cert: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_syslog_server_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 resource_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_assignment_from: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_assignment_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_assignment: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None,
-                 unassigner_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 validate_assignment_trigger: Optional[pulumi.Input[_builtins.int]] = None):
+                 assigner_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 comment: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 detachment_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 error_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 error_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_approve_during_maintenance: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_default_assignment: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_enforced_always: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_hypervisor_log_forwarded: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_log_forwarded: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 op_control_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 operator_control_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_syslog_server_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_syslog_server_ca_cert: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_syslog_server_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 resource_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_assignment_from: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_assignment_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_assignment: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
+                 unassigner_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 validate_assignment_trigger: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering OperatorControlAssignment resources.
 
@@ -464,355 +464,355 @@ class _OperatorControlAssignmentState:
 
     @_builtins.property
     @pulumi.getter(name="assignerId")
-    def assigner_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def assigner_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the user who created this operator control assignment.
         """
         return pulumi.get(self, "assigner_id")
 
     @assigner_id.setter
-    def assigner_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def assigner_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "assigner_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def comment(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def comment(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Comment about the assignment of the operator control to this target resource.
         """
         return pulumi.get(self, "comment")
 
     @comment.setter
-    def comment(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def comment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "comment", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment that contains the operator control assignment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="detachmentDescription")
-    def detachment_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def detachment_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         description containing reason for releasing of OperatorControl.
         """
         return pulumi.get(self, "detachment_description")
 
     @detachment_description.setter
-    def detachment_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def detachment_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "detachment_description", value)
 
     @_builtins.property
     @pulumi.getter(name="errorCode")
-    def error_code(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def error_code(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The code identifying the error occurred during Assignment operation.
         """
         return pulumi.get(self, "error_code")
 
     @error_code.setter
-    def error_code(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def error_code(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "error_code", value)
 
     @_builtins.property
     @pulumi.getter(name="errorMessage")
-    def error_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def error_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The message describing the error occurred during Assignment operation.
         """
         return pulumi.get(self, "error_message")
 
     @error_message.setter
-    def error_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def error_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "error_message", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoApproveDuringMaintenance")
-    def is_auto_approve_during_maintenance(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_approve_during_maintenance(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) The boolean if true would autoApprove during maintenance.
         """
         return pulumi.get(self, "is_auto_approve_during_maintenance")
 
     @is_auto_approve_during_maintenance.setter
-    def is_auto_approve_during_maintenance(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_approve_during_maintenance(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_approve_during_maintenance", value)
 
     @_builtins.property
     @pulumi.getter(name="isDefaultAssignment")
-    def is_default_assignment(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_default_assignment(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the assignment is a default assignment.
         """
         return pulumi.get(self, "is_default_assignment")
 
     @is_default_assignment.setter
-    def is_default_assignment(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_default_assignment(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_default_assignment", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnforcedAlways")
-    def is_enforced_always(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enforced_always(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If set, then the target resource is always governed by the operator control.
         """
         return pulumi.get(self, "is_enforced_always")
 
     @is_enforced_always.setter
-    def is_enforced_always(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enforced_always(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enforced_always", value)
 
     @_builtins.property
     @pulumi.getter(name="isHypervisorLogForwarded")
-    def is_hypervisor_log_forwarded(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_hypervisor_log_forwarded(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
         """
         return pulumi.get(self, "is_hypervisor_log_forwarded")
 
     @is_hypervisor_log_forwarded.setter
-    def is_hypervisor_log_forwarded(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_hypervisor_log_forwarded(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_hypervisor_log_forwarded", value)
 
     @_builtins.property
     @pulumi.getter(name="isLogForwarded")
-    def is_log_forwarded(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_log_forwarded(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
         """
         return pulumi.get(self, "is_log_forwarded")
 
     @is_log_forwarded.setter
-    def is_log_forwarded(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_log_forwarded(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_log_forwarded", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         More in detail about the lifeCycleState.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="opControlName")
-    def op_control_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def op_control_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the operator control name associated.
         """
         return pulumi.get(self, "op_control_name")
 
     @op_control_name.setter
-    def op_control_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def op_control_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "op_control_name", value)
 
     @_builtins.property
     @pulumi.getter(name="operatorControlId")
-    def operator_control_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operator_control_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the operator control that is being assigned to a target resource.
         """
         return pulumi.get(self, "operator_control_id")
 
     @operator_control_id.setter
-    def operator_control_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operator_control_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operator_control_id", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteSyslogServerAddress")
-    def remote_syslog_server_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def remote_syslog_server_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
         """
         return pulumi.get(self, "remote_syslog_server_address")
 
     @remote_syslog_server_address.setter
-    def remote_syslog_server_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def remote_syslog_server_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "remote_syslog_server_address", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteSyslogServerCaCert")
-    def remote_syslog_server_ca_cert(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def remote_syslog_server_ca_cert(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The CA certificate of the remote syslog server. Identity of the remote syslog server will be asserted based on this certificate.
         """
         return pulumi.get(self, "remote_syslog_server_ca_cert")
 
     @remote_syslog_server_ca_cert.setter
-    def remote_syslog_server_ca_cert(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def remote_syslog_server_ca_cert(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "remote_syslog_server_ca_cert", value)
 
     @_builtins.property
     @pulumi.getter(name="remoteSyslogServerPort")
-    def remote_syslog_server_port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def remote_syslog_server_port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
         """
         return pulumi.get(self, "remote_syslog_server_port")
 
     @remote_syslog_server_port.setter
-    def remote_syslog_server_port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def remote_syslog_server_port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "remote_syslog_server_port", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceCompartmentId")
-    def resource_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment that contains the target resource.
         """
         return pulumi.get(self, "resource_compartment_id")
 
     @resource_compartment_id.setter
-    def resource_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceId")
-    def resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the target resource being brought under the governance of the operator control.
         """
         return pulumi.get(self, "resource_id")
 
     @resource_id.setter
-    def resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceName")
-    def resource_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the target resource.
         """
         return pulumi.get(self, "resource_name")
 
     @resource_name.setter
-    def resource_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of the target resource.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifcycle state of the OperatorControl.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeAssignmentFrom")
-    def time_assignment_from(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_assignment_from(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The time at which the target resource will be brought under the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_assignment_from")
 
     @time_assignment_from.setter
-    def time_assignment_from(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_assignment_from(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_assignment_from", value)
 
     @_builtins.property
     @pulumi.getter(name="timeAssignmentTo")
-    def time_assignment_to(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_assignment_to(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The time at which the target resource will leave the governance of the operator control in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_assignment_to")
 
     @time_assignment_to.setter
-    def time_assignment_to(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_assignment_to(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_assignment_to", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfAssignment")
-    def time_of_assignment(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_assignment(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time when the operator control assignment is created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_of_assignment")
 
     @time_of_assignment.setter
-    def time_of_assignment(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_assignment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_assignment", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_deletion(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time on which the operator control assignment was deleted in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format.Example: '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_of_deletion")
 
     @time_of_deletion.setter
-    def time_of_deletion(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_deletion(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_deletion", value)
 
     @_builtins.property
     @pulumi.getter(name="unassignerId")
-    def unassigner_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unassigner_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User id who released the operatorControl.
         """
         return pulumi.get(self, "unassigner_id")
 
     @unassigner_id.setter
-    def unassigner_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unassigner_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unassigner_id", value)
 
     @_builtins.property
     @pulumi.getter(name="validateAssignmentTrigger")
-    def validate_assignment_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def validate_assignment_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Validate Assignment. Could be set to any integer value.
 
@@ -823,7 +823,7 @@ class _OperatorControlAssignmentState:
         return pulumi.get(self, "validate_assignment_trigger")
 
     @validate_assignment_trigger.setter
-    def validate_assignment_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def validate_assignment_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "validate_assignment_trigger", value)
 
 
@@ -833,25 +833,25 @@ class OperatorControlAssignment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 comment: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_auto_approve_during_maintenance: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_enforced_always: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_hypervisor_log_forwarded: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_log_forwarded: Optional[pulumi.Input[_builtins.bool]] = None,
-                 operator_control_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_syslog_server_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_syslog_server_ca_cert: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_syslog_server_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 resource_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_name_: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_assignment_from: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_assignment_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 validate_assignment_trigger: Optional[pulumi.Input[_builtins.int]] = None,
+                 comment: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_approve_during_maintenance: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_enforced_always: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_hypervisor_log_forwarded: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_log_forwarded: pulumi.Input[Optional[_builtins.bool]] = None,
+                 operator_control_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_syslog_server_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_syslog_server_ca_cert: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_syslog_server_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 resource_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_name_: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_assignment_from: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_assignment_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 validate_assignment_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         This resource provides the Operator Control Assignment resource in Oracle Cloud Infrastructure Operator Access Control service.
@@ -869,7 +869,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
 
         test_operator_control_assignment = oci.operatoraccesscontrol.OperatorControlAssignment("test_operator_control_assignment",
             compartment_id=compartment_id,
-            is_enforced_always=operator_control_assignment_is_enforced_always,
+            is_enforced_always=operator_control_assignment_is_enforced_always == "true",
             operator_control_id=test_operator_control["id"],
             resource_compartment_id=test_compartment["id"],
             resource_id=test_resource["id"],
@@ -878,12 +878,12 @@ class OperatorControlAssignment(pulumi.CustomResource):
             comment=operator_control_assignment_comment,
             defined_tags=operator_control_assignment_defined_tags,
             freeform_tags=operator_control_assignment_freeform_tags,
-            is_auto_approve_during_maintenance=operator_control_assignment_is_auto_approve_during_maintenance,
-            is_hypervisor_log_forwarded=operator_control_assignment_is_hypervisor_log_forwarded,
-            is_log_forwarded=operator_control_assignment_is_log_forwarded,
+            is_auto_approve_during_maintenance=operator_control_assignment_is_auto_approve_during_maintenance == "true",
+            is_hypervisor_log_forwarded=operator_control_assignment_is_hypervisor_log_forwarded == "true",
+            is_log_forwarded=operator_control_assignment_is_log_forwarded == "true",
             remote_syslog_server_address=operator_control_assignment_remote_syslog_server_address,
             remote_syslog_server_ca_cert=operator_control_assignment_remote_syslog_server_ca_cert,
-            remote_syslog_server_port=operator_control_assignment_remote_syslog_server_port,
+            remote_syslog_server_port=int(operator_control_assignment_remote_syslog_server_port),
             time_assignment_from=operator_control_assignment_time_assignment_from,
             time_assignment_to=operator_control_assignment_time_assignment_to)
         ```
@@ -945,7 +945,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
 
         test_operator_control_assignment = oci.operatoraccesscontrol.OperatorControlAssignment("test_operator_control_assignment",
             compartment_id=compartment_id,
-            is_enforced_always=operator_control_assignment_is_enforced_always,
+            is_enforced_always=operator_control_assignment_is_enforced_always == "true",
             operator_control_id=test_operator_control["id"],
             resource_compartment_id=test_compartment["id"],
             resource_id=test_resource["id"],
@@ -954,12 +954,12 @@ class OperatorControlAssignment(pulumi.CustomResource):
             comment=operator_control_assignment_comment,
             defined_tags=operator_control_assignment_defined_tags,
             freeform_tags=operator_control_assignment_freeform_tags,
-            is_auto_approve_during_maintenance=operator_control_assignment_is_auto_approve_during_maintenance,
-            is_hypervisor_log_forwarded=operator_control_assignment_is_hypervisor_log_forwarded,
-            is_log_forwarded=operator_control_assignment_is_log_forwarded,
+            is_auto_approve_during_maintenance=operator_control_assignment_is_auto_approve_during_maintenance == "true",
+            is_hypervisor_log_forwarded=operator_control_assignment_is_hypervisor_log_forwarded == "true",
+            is_log_forwarded=operator_control_assignment_is_log_forwarded == "true",
             remote_syslog_server_address=operator_control_assignment_remote_syslog_server_address,
             remote_syslog_server_ca_cert=operator_control_assignment_remote_syslog_server_ca_cert,
-            remote_syslog_server_port=operator_control_assignment_remote_syslog_server_port,
+            remote_syslog_server_port=int(operator_control_assignment_remote_syslog_server_port),
             time_assignment_from=operator_control_assignment_time_assignment_from,
             time_assignment_to=operator_control_assignment_time_assignment_to)
         ```
@@ -988,25 +988,25 @@ class OperatorControlAssignment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 comment: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_auto_approve_during_maintenance: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_enforced_always: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_hypervisor_log_forwarded: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_log_forwarded: Optional[pulumi.Input[_builtins.bool]] = None,
-                 operator_control_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_syslog_server_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_syslog_server_ca_cert: Optional[pulumi.Input[_builtins.str]] = None,
-                 remote_syslog_server_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 resource_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_name_: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_assignment_from: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_assignment_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 validate_assignment_trigger: Optional[pulumi.Input[_builtins.int]] = None,
+                 comment: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_auto_approve_during_maintenance: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_enforced_always: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_hypervisor_log_forwarded: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_log_forwarded: pulumi.Input[Optional[_builtins.bool]] = None,
+                 operator_control_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_syslog_server_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_syslog_server_ca_cert: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_syslog_server_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 resource_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_name_: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_assignment_from: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_assignment_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 validate_assignment_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1070,36 +1070,36 @@ class OperatorControlAssignment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            assigner_id: Optional[pulumi.Input[_builtins.str]] = None,
-            comment: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            detachment_description: Optional[pulumi.Input[_builtins.str]] = None,
-            error_code: Optional[pulumi.Input[_builtins.int]] = None,
-            error_message: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_auto_approve_during_maintenance: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_default_assignment: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_enforced_always: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_hypervisor_log_forwarded: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_log_forwarded: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            op_control_name: Optional[pulumi.Input[_builtins.str]] = None,
-            operator_control_id: Optional[pulumi.Input[_builtins.str]] = None,
-            remote_syslog_server_address: Optional[pulumi.Input[_builtins.str]] = None,
-            remote_syslog_server_ca_cert: Optional[pulumi.Input[_builtins.str]] = None,
-            remote_syslog_server_port: Optional[pulumi.Input[_builtins.int]] = None,
-            resource_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_name_: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_assignment_from: Optional[pulumi.Input[_builtins.str]] = None,
-            time_assignment_to: Optional[pulumi.Input[_builtins.str]] = None,
-            time_of_assignment: Optional[pulumi.Input[_builtins.str]] = None,
-            time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None,
-            unassigner_id: Optional[pulumi.Input[_builtins.str]] = None,
-            validate_assignment_trigger: Optional[pulumi.Input[_builtins.int]] = None) -> 'OperatorControlAssignment':
+            assigner_id: pulumi.Input[Optional[_builtins.str]] = None,
+            comment: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            detachment_description: pulumi.Input[Optional[_builtins.str]] = None,
+            error_code: pulumi.Input[Optional[_builtins.int]] = None,
+            error_message: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_auto_approve_during_maintenance: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_default_assignment: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_enforced_always: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_hypervisor_log_forwarded: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_log_forwarded: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            op_control_name: pulumi.Input[Optional[_builtins.str]] = None,
+            operator_control_id: pulumi.Input[Optional[_builtins.str]] = None,
+            remote_syslog_server_address: pulumi.Input[Optional[_builtins.str]] = None,
+            remote_syslog_server_ca_cert: pulumi.Input[Optional[_builtins.str]] = None,
+            remote_syslog_server_port: pulumi.Input[Optional[_builtins.int]] = None,
+            resource_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_name_: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_assignment_from: pulumi.Input[Optional[_builtins.str]] = None,
+            time_assignment_to: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_assignment: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
+            unassigner_id: pulumi.Input[Optional[_builtins.str]] = None,
+            validate_assignment_trigger: pulumi.Input[Optional[_builtins.int]] = None) -> 'OperatorControlAssignment':
         """
         Get an existing OperatorControlAssignment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

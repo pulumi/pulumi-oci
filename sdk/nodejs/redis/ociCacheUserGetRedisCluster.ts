@@ -116,12 +116,12 @@ export interface OciCacheUserGetRedisClusterState {
     /**
      * The ID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    ociCacheClusters?: pulumi.Input<pulumi.Input<inputs.Redis.OciCacheUserGetRedisClusterOciCacheCluster>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    ociCacheClusters?: pulumi.Input<pulumi.Input<inputs.Redis.OciCacheUserGetRedisClusterOciCacheCluster>[] | undefined>;
     /**
      * A filter to return only resources, that match with the given Oracle Cloud Infrastructure cache user ID (OCID).
      *
@@ -129,7 +129,7 @@ export interface OciCacheUserGetRedisClusterState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    ociCacheUserId?: pulumi.Input<string>;
+    ociCacheUserId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -139,11 +139,11 @@ export interface OciCacheUserGetRedisClusterArgs {
     /**
      * The ID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources, that match with the given Oracle Cloud Infrastructure cache user ID (OCID).
      *

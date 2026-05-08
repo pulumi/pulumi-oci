@@ -111,7 +111,7 @@ def get_security_attributes(filters: Optional[Sequence[Union['GetSecurityAttribu
     import pulumi
     import pulumi_oci as oci
 
-    test_security_attributes = oci.SecurityAttribute.get_security_attributes(security_attribute_namespace_id=test_security_attribute_namespace["id"],
+    test_security_attributes = oci.securityattribute.get_security_attributes(security_attribute_namespace_id=test_security_attribute_namespace["id"],
         state=security_attribute_state)
     ```
 
@@ -132,9 +132,9 @@ def get_security_attributes(filters: Optional[Sequence[Union['GetSecurityAttribu
         security_attribute_namespace_id=pulumi.get(__ret__, 'security_attribute_namespace_id'),
         security_attributes=pulumi.get(__ret__, 'security_attributes'),
         state=pulumi.get(__ret__, 'state'))
-def get_security_attributes_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityAttributesFilterArgs', 'GetSecurityAttributesFilterArgsDict']]]]] = None,
-                                   security_attribute_namespace_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_security_attributes_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityAttributesFilterArgs', 'GetSecurityAttributesFilterArgsDict']]]]] = None,
+                                   security_attribute_namespace_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAttributesResult]:
     """
     This data source provides the list of Security Attributes in Oracle Cloud Infrastructure Security Attribute service.
@@ -147,7 +147,7 @@ def get_security_attributes_output(filters: Optional[pulumi.Input[Optional[Seque
     import pulumi
     import pulumi_oci as oci
 
-    test_security_attributes = oci.SecurityAttribute.get_security_attributes(security_attribute_namespace_id=test_security_attribute_namespace["id"],
+    test_security_attributes = oci.securityattribute.get_security_attributes(security_attribute_namespace_id=test_security_attribute_namespace["id"],
         state=security_attribute_state)
     ```
 

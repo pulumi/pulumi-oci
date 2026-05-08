@@ -21,7 +21,7 @@ class ZonePromoteDnssecKeyVersionArgs:
     def __init__(__self__, *,
                  dnssec_key_version_uuid: pulumi.Input[_builtins.str],
                  zone_id: pulumi.Input[_builtins.str],
-                 scope: Optional[pulumi.Input[_builtins.str]] = None):
+                 scope: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ZonePromoteDnssecKeyVersion resource.
 
@@ -68,23 +68,23 @@ class ZonePromoteDnssecKeyVersionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies to operate only on resources that have a matching DNS scope.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
 
 @pulumi.input_type
 class _ZonePromoteDnssecKeyVersionState:
     def __init__(__self__, *,
-                 dnssec_key_version_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 dnssec_key_version_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ZonePromoteDnssecKeyVersion resources.
 
@@ -105,31 +105,31 @@ class _ZonePromoteDnssecKeyVersionState:
 
     @_builtins.property
     @pulumi.getter(name="dnssecKeyVersionUuid")
-    def dnssec_key_version_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dnssec_key_version_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The UUID of the `DnssecKeyVersion` that is being promoted.
         """
         return pulumi.get(self, "dnssec_key_version_uuid")
 
     @dnssec_key_version_uuid.setter
-    def dnssec_key_version_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dnssec_key_version_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dnssec_key_version_uuid", value)
 
     @_builtins.property
     @pulumi.getter
-    def scope(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies to operate only on resources that have a matching DNS scope.
         """
         return pulumi.get(self, "scope")
 
     @scope.setter
-    def scope(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scope", value)
 
     @_builtins.property
     @pulumi.getter(name="zoneId")
-    def zone_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def zone_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the target zone.
 
@@ -140,7 +140,7 @@ class _ZonePromoteDnssecKeyVersionState:
         return pulumi.get(self, "zone_id")
 
     @zone_id.setter
-    def zone_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def zone_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "zone_id", value)
 
 
@@ -150,9 +150,9 @@ class ZonePromoteDnssecKeyVersion(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dnssec_key_version_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 dnssec_key_version_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Zone Promote Dnssec Key Version resource in Oracle Cloud Infrastructure DNS service.
@@ -253,9 +253,9 @@ class ZonePromoteDnssecKeyVersion(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dnssec_key_version_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 scope: Optional[pulumi.Input[_builtins.str]] = None,
-                 zone_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 dnssec_key_version_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 zone_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -282,9 +282,9 @@ class ZonePromoteDnssecKeyVersion(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            dnssec_key_version_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-            scope: Optional[pulumi.Input[_builtins.str]] = None,
-            zone_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ZonePromoteDnssecKeyVersion':
+            dnssec_key_version_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            zone_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ZonePromoteDnssecKeyVersion':
         """
         Get an existing ZonePromoteDnssecKeyVersion resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

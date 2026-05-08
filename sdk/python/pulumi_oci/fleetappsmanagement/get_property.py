@@ -251,7 +251,7 @@ def get_property(property_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_property = oci.FleetAppsManagement.get_property(property_id=test_property_oci_fleet_apps_management_property["id"])
+    test_property = oci.fleetappsmanagement.get_property(property_id=test_property_oci_fleet_apps_management_property["id"])
     ```
 
 
@@ -280,7 +280,7 @@ def get_property(property_id: Optional[_builtins.str] = None,
         type=pulumi.get(__ret__, 'type'),
         value_type=pulumi.get(__ret__, 'value_type'),
         values=pulumi.get(__ret__, 'values'))
-def get_property_output(property_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_property_output(property_id: pulumi.Input[Optional[_builtins.str]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertyResult]:
     """
     This data source provides details about a specific Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -293,7 +293,7 @@ def get_property_output(property_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_property = oci.FleetAppsManagement.get_property(property_id=test_property_oci_fleet_apps_management_property["id"])
+    test_property = oci.fleetappsmanagement.get_property(property_id=test_property_oci_fleet_apps_management_property["id"])
     ```
 
 

@@ -129,7 +129,7 @@ def get_oda_private_endpoints(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_private_endpoints = oci.Oda.get_oda_private_endpoints(compartment_id=compartment_id,
+    test_oda_private_endpoints = oci.oda.get_oda_private_endpoints(compartment_id=compartment_id,
         display_name=oda_private_endpoint_display_name,
         state=oda_private_endpoint_state)
     ```
@@ -154,10 +154,10 @@ def get_oda_private_endpoints(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         oda_private_endpoint_collections=pulumi.get(__ret__, 'oda_private_endpoint_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_oda_private_endpoints_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                     display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOdaPrivateEndpointsFilterArgs', 'GetOdaPrivateEndpointsFilterArgsDict']]]]] = None,
-                                     state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_oda_private_endpoints_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOdaPrivateEndpointsFilterArgs', 'GetOdaPrivateEndpointsFilterArgsDict']]]]] = None,
+                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOdaPrivateEndpointsResult]:
     """
     This data source provides the list of Oda Private Endpoints in Oracle Cloud Infrastructure Digital Assistant service.
@@ -175,7 +175,7 @@ def get_oda_private_endpoints_output(compartment_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_private_endpoints = oci.Oda.get_oda_private_endpoints(compartment_id=compartment_id,
+    test_oda_private_endpoints = oci.oda.get_oda_private_endpoints(compartment_id=compartment_id,
         display_name=oda_private_endpoint_display_name,
         state=oda_private_endpoint_state)
     ```

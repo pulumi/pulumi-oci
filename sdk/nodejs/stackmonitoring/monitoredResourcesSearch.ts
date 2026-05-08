@@ -264,99 +264,99 @@ export interface MonitoredResourcesSearchState {
     /**
      * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    compartmentIds?: pulumi.Input<pulumi.Input<string>[]>;
+    compartmentIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
      */
-    excludeFields?: pulumi.Input<pulumi.Input<string>[]>;
+    excludeFields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
      */
-    externalId?: pulumi.Input<string>;
+    externalId?: pulumi.Input<string | undefined>;
     /**
      * Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
      */
-    fields?: pulumi.Input<pulumi.Input<string>[]>;
+    fields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return resources with host name match.
      */
-    hostName?: pulumi.Input<string>;
+    hostName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources with host name pattern.
      */
-    hostNameContains?: pulumi.Input<string>;
+    hostNameContains?: pulumi.Input<string | undefined>;
     /**
      * List of monitored resources.
      */
-    items?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourcesSearchItem>[]>;
+    items?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourcesSearchItem>[] | undefined>;
     /**
      * License edition of the monitored resource.
      */
-    license?: pulumi.Input<string>;
+    license?: pulumi.Input<string | undefined>;
     /**
      * Multiple lifecycle states filter.
      */
-    lifecycleStates?: pulumi.Input<pulumi.Input<string>[]>;
+    lifecycleStates?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return resources with matching management agent id.
      */
-    managementAgentId?: pulumi.Input<string>;
+    managementAgentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that match exact resource name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that match resource name pattern given. The match is not case sensitive.
      */
-    nameContains?: pulumi.Input<string>;
+    nameContains?: pulumi.Input<string | undefined>;
     /**
      * Criteria based on resource property.
      */
-    propertyEquals?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    propertyEquals?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Resource category filter.
      */
-    resourceCategory?: pulumi.Input<string>;
+    resourceCategory?: pulumi.Input<string | undefined>;
     /**
      * Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      */
-    resourceTimeZone?: pulumi.Input<string>;
+    resourceTimeZone?: pulumi.Input<string | undefined>;
     /**
      * Source type filter.
      */
-    sourceType?: pulumi.Input<string>;
+    sourceType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources with matching lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeCreatedLessThan?: pulumi.Input<string>;
+    timeCreatedLessThan?: pulumi.Input<string | undefined>;
     /**
      * Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeUpdatedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeUpdatedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeUpdatedLessThan?: pulumi.Input<string>;
+    timeUpdatedLessThan?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that match resource type. 
      *
@@ -364,7 +364,7 @@ export interface MonitoredResourcesSearchState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -378,91 +378,91 @@ export interface MonitoredResourcesSearchArgs {
     /**
      * Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    compartmentIds?: pulumi.Input<pulumi.Input<string>[]>;
+    compartmentIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
      */
-    excludeFields?: pulumi.Input<pulumi.Input<string>[]>;
+    excludeFields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
      */
-    externalId?: pulumi.Input<string>;
+    externalId?: pulumi.Input<string | undefined>;
     /**
      * Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
      */
-    fields?: pulumi.Input<pulumi.Input<string>[]>;
+    fields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return resources with host name match.
      */
-    hostName?: pulumi.Input<string>;
+    hostName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources with host name pattern.
      */
-    hostNameContains?: pulumi.Input<string>;
+    hostNameContains?: pulumi.Input<string | undefined>;
     /**
      * License edition of the monitored resource.
      */
-    license?: pulumi.Input<string>;
+    license?: pulumi.Input<string | undefined>;
     /**
      * Multiple lifecycle states filter.
      */
-    lifecycleStates?: pulumi.Input<pulumi.Input<string>[]>;
+    lifecycleStates?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return resources with matching management agent id.
      */
-    managementAgentId?: pulumi.Input<string>;
+    managementAgentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that match exact resource name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that match resource name pattern given. The match is not case sensitive.
      */
-    nameContains?: pulumi.Input<string>;
+    nameContains?: pulumi.Input<string | undefined>;
     /**
      * Criteria based on resource property.
      */
-    propertyEquals?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    propertyEquals?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Resource category filter.
      */
-    resourceCategory?: pulumi.Input<string>;
+    resourceCategory?: pulumi.Input<string | undefined>;
     /**
      * Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      */
-    resourceTimeZone?: pulumi.Input<string>;
+    resourceTimeZone?: pulumi.Input<string | undefined>;
     /**
      * Source type filter.
      */
-    sourceType?: pulumi.Input<string>;
+    sourceType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources with matching lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Search for resources that were created within a specific date range, using this parameter to specify the earliest creation date for the returned list (inclusive). Specifying this parameter without the corresponding `timeCreatedLessThan` parameter will retrieve resources created from the given `timeCreatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * Search for resources that were created within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeCreatedGreaterThanOrEqualTo` parameter will retrieve all resources created before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeCreatedLessThan?: pulumi.Input<string>;
+    timeCreatedLessThan?: pulumi.Input<string | undefined>;
     /**
      * Search for resources that were updated within a specific date range, using this parameter to specify the earliest update date for the returned list (inclusive). Specifying this parameter without the corresponding `timeUpdatedLessThan` parameter will retrieve resources updated from the given `timeUpdatedGreaterThanOrEqualTo` to the current time, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeUpdatedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeUpdatedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeUpdatedLessThan?: pulumi.Input<string>;
+    timeUpdatedLessThan?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that match resource type. 
      *
@@ -470,5 +470,5 @@ export interface MonitoredResourcesSearchArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

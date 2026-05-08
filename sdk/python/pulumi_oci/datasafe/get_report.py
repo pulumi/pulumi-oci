@@ -251,7 +251,7 @@ def get_report(report_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_report = oci.DataSafe.get_report(report_id=test_report_oci_data_safe_report["id"])
+    test_report = oci.datasafe.get_report(report_id=test_report_oci_data_safe_report["id"])
     ```
 
 
@@ -280,7 +280,7 @@ def get_report(report_id: Optional[_builtins.str] = None,
         time_generated=pulumi.get(__ret__, 'time_generated'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
-def get_report_output(report_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_report_output(report_id: pulumi.Input[Optional[_builtins.str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReportResult]:
     """
     This data source provides details about a specific Report resource in Oracle Cloud Infrastructure Data Safe service.
@@ -293,7 +293,7 @@ def get_report_output(report_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_report = oci.DataSafe.get_report(report_id=test_report_oci_data_safe_report["id"])
+    test_report = oci.datasafe.get_report(report_id=test_report_oci_data_safe_report["id"])
     ```
 
 

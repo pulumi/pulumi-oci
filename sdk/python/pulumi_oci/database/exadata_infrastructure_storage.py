@@ -33,15 +33,15 @@ class ExadataInfrastructureStorageArgs:
                  ntp_servers: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  shape: pulumi.Input[_builtins.str],
                  time_zone: pulumi.Input[_builtins.str],
-                 activation_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 contacts: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureStorageContactArgs']]]] = None,
-                 corporate_proxy: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 maintenance_window: Optional[pulumi.Input['ExadataInfrastructureStorageMaintenanceWindowArgs']] = None,
-                 storage_count: Optional[pulumi.Input[_builtins.int]] = None):
+                 activation_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 contacts: pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInfrastructureStorageContactArgs']]]] = None,
+                 corporate_proxy: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 maintenance_window: pulumi.Input[Optional['ExadataInfrastructureStorageMaintenanceWindowArgs']] = None,
+                 storage_count: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a ExadataInfrastructureStorage resource.
         """
@@ -186,125 +186,125 @@ class ExadataInfrastructureStorageArgs:
 
     @_builtins.property
     @pulumi.getter(name="activationFile")
-    def activation_file(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def activation_file(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "activation_file")
 
     @activation_file.setter
-    def activation_file(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def activation_file(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "activation_file", value)
 
     @_builtins.property
     @pulumi.getter(name="computeCount")
-    def compute_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def compute_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "compute_count")
 
     @compute_count.setter
-    def compute_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def compute_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "compute_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureStorageContactArgs']]]]:
+    def contacts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInfrastructureStorageContactArgs']]]]:
         return pulumi.get(self, "contacts")
 
     @contacts.setter
-    def contacts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureStorageContactArgs']]]]):
+    def contacts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInfrastructureStorageContactArgs']]]]):
         pulumi.set(self, "contacts", value)
 
     @_builtins.property
     @pulumi.getter(name="corporateProxy")
-    def corporate_proxy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def corporate_proxy(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "corporate_proxy")
 
     @corporate_proxy.setter
-    def corporate_proxy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def corporate_proxy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "corporate_proxy", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="exadataInfrastructureId")
-    def exadata_infrastructure_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def exadata_infrastructure_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "exadata_infrastructure_id")
 
     @exadata_infrastructure_id.setter
-    def exadata_infrastructure_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def exadata_infrastructure_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "exadata_infrastructure_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenanceWindow")
-    def maintenance_window(self) -> Optional[pulumi.Input['ExadataInfrastructureStorageMaintenanceWindowArgs']]:
+    def maintenance_window(self) -> pulumi.Input[Optional['ExadataInfrastructureStorageMaintenanceWindowArgs']]:
         return pulumi.get(self, "maintenance_window")
 
     @maintenance_window.setter
-    def maintenance_window(self, value: Optional[pulumi.Input['ExadataInfrastructureStorageMaintenanceWindowArgs']]):
+    def maintenance_window(self, value: pulumi.Input[Optional['ExadataInfrastructureStorageMaintenanceWindowArgs']]):
         pulumi.set(self, "maintenance_window", value)
 
     @_builtins.property
     @pulumi.getter(name="storageCount")
-    def storage_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def storage_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "storage_count")
 
     @storage_count.setter
-    def storage_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def storage_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "storage_count", value)
 
 
 @pulumi.input_type
 class _ExadataInfrastructureStorageState:
     def __init__(__self__, *,
-                 activated_storage_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 activation_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 additional_storage_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 admin_network_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 cloud_control_plane_server1: Optional[pulumi.Input[_builtins.str]] = None,
-                 cloud_control_plane_server2: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 contacts: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureStorageContactArgs']]]] = None,
-                 corporate_proxy: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpus_enabled: Optional[pulumi.Input[_builtins.int]] = None,
-                 csi_number: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_storage_size_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 db_node_storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 infini_band_network_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 maintenance_slo_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 maintenance_window: Optional[pulumi.Input['ExadataInfrastructureStorageMaintenanceWindowArgs']] = None,
-                 max_cpu_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_data_storage_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 max_db_node_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_memory_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 netmask: Optional[pulumi.Input[_builtins.str]] = None,
-                 ntp_servers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None):
+                 activated_storage_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 activation_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 additional_storage_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 admin_network_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 cloud_control_plane_server1: pulumi.Input[Optional[_builtins.str]] = None,
+                 cloud_control_plane_server2: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 contacts: pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInfrastructureStorageContactArgs']]]] = None,
+                 corporate_proxy: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpus_enabled: pulumi.Input[Optional[_builtins.int]] = None,
+                 csi_number: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 db_node_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 infini_band_network_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 maintenance_slo_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 maintenance_window: pulumi.Input[Optional['ExadataInfrastructureStorageMaintenanceWindowArgs']] = None,
+                 max_cpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_data_storage_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 max_db_node_storage_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_memory_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 netmask: pulumi.Input[Optional[_builtins.str]] = None,
+                 ntp_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExadataInfrastructureStorage resources.
         """
@@ -383,326 +383,326 @@ class _ExadataInfrastructureStorageState:
 
     @_builtins.property
     @pulumi.getter(name="activatedStorageCount")
-    def activated_storage_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def activated_storage_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "activated_storage_count")
 
     @activated_storage_count.setter
-    def activated_storage_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def activated_storage_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "activated_storage_count", value)
 
     @_builtins.property
     @pulumi.getter(name="activationFile")
-    def activation_file(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def activation_file(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "activation_file")
 
     @activation_file.setter
-    def activation_file(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def activation_file(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "activation_file", value)
 
     @_builtins.property
     @pulumi.getter(name="additionalStorageCount")
-    def additional_storage_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def additional_storage_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "additional_storage_count")
 
     @additional_storage_count.setter
-    def additional_storage_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def additional_storage_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "additional_storage_count", value)
 
     @_builtins.property
     @pulumi.getter(name="adminNetworkCidr")
-    def admin_network_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def admin_network_cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "admin_network_cidr")
 
     @admin_network_cidr.setter
-    def admin_network_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def admin_network_cidr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "admin_network_cidr", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudControlPlaneServer1")
-    def cloud_control_plane_server1(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cloud_control_plane_server1(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "cloud_control_plane_server1")
 
     @cloud_control_plane_server1.setter
-    def cloud_control_plane_server1(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cloud_control_plane_server1(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cloud_control_plane_server1", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudControlPlaneServer2")
-    def cloud_control_plane_server2(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cloud_control_plane_server2(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "cloud_control_plane_server2")
 
     @cloud_control_plane_server2.setter
-    def cloud_control_plane_server2(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cloud_control_plane_server2(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cloud_control_plane_server2", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeCount")
-    def compute_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def compute_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "compute_count")
 
     @compute_count.setter
-    def compute_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def compute_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "compute_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureStorageContactArgs']]]]:
+    def contacts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInfrastructureStorageContactArgs']]]]:
         return pulumi.get(self, "contacts")
 
     @contacts.setter
-    def contacts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureStorageContactArgs']]]]):
+    def contacts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInfrastructureStorageContactArgs']]]]):
         pulumi.set(self, "contacts", value)
 
     @_builtins.property
     @pulumi.getter(name="corporateProxy")
-    def corporate_proxy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def corporate_proxy(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "corporate_proxy")
 
     @corporate_proxy.setter
-    def corporate_proxy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def corporate_proxy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "corporate_proxy", value)
 
     @_builtins.property
     @pulumi.getter(name="cpusEnabled")
-    def cpus_enabled(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cpus_enabled(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "cpus_enabled")
 
     @cpus_enabled.setter
-    def cpus_enabled(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cpus_enabled(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cpus_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="csiNumber")
-    def csi_number(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def csi_number(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "csi_number")
 
     @csi_number.setter
-    def csi_number(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def csi_number(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "csi_number", value)
 
     @_builtins.property
     @pulumi.getter(name="dataStorageSizeInTbs")
-    def data_storage_size_in_tbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def data_storage_size_in_tbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "data_storage_size_in_tbs")
 
     @data_storage_size_in_tbs.setter
-    def data_storage_size_in_tbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def data_storage_size_in_tbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "data_storage_size_in_tbs", value)
 
     @_builtins.property
     @pulumi.getter(name="dbNodeStorageSizeInGbs")
-    def db_node_storage_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def db_node_storage_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "db_node_storage_size_in_gbs")
 
     @db_node_storage_size_in_gbs.setter
-    def db_node_storage_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def db_node_storage_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "db_node_storage_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dnsServers")
-    def dns_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def dns_servers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "dns_servers")
 
     @dns_servers.setter
-    def dns_servers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def dns_servers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dns_servers", value)
 
     @_builtins.property
     @pulumi.getter(name="exadataInfrastructureId")
-    def exadata_infrastructure_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def exadata_infrastructure_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "exadata_infrastructure_id")
 
     @exadata_infrastructure_id.setter
-    def exadata_infrastructure_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def exadata_infrastructure_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "exadata_infrastructure_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def gateway(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def gateway(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "gateway")
 
     @gateway.setter
-    def gateway(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def gateway(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "gateway", value)
 
     @_builtins.property
     @pulumi.getter(name="infiniBandNetworkCidr")
-    def infini_band_network_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def infini_band_network_cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "infini_band_network_cidr")
 
     @infini_band_network_cidr.setter
-    def infini_band_network_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def infini_band_network_cidr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "infini_band_network_cidr", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenanceSloStatus")
-    def maintenance_slo_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def maintenance_slo_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "maintenance_slo_status")
 
     @maintenance_slo_status.setter
-    def maintenance_slo_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def maintenance_slo_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "maintenance_slo_status", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenanceWindow")
-    def maintenance_window(self) -> Optional[pulumi.Input['ExadataInfrastructureStorageMaintenanceWindowArgs']]:
+    def maintenance_window(self) -> pulumi.Input[Optional['ExadataInfrastructureStorageMaintenanceWindowArgs']]:
         return pulumi.get(self, "maintenance_window")
 
     @maintenance_window.setter
-    def maintenance_window(self, value: Optional[pulumi.Input['ExadataInfrastructureStorageMaintenanceWindowArgs']]):
+    def maintenance_window(self, value: pulumi.Input[Optional['ExadataInfrastructureStorageMaintenanceWindowArgs']]):
         pulumi.set(self, "maintenance_window", value)
 
     @_builtins.property
     @pulumi.getter(name="maxCpuCount")
-    def max_cpu_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_cpu_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "max_cpu_count")
 
     @max_cpu_count.setter
-    def max_cpu_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_cpu_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_cpu_count", value)
 
     @_builtins.property
     @pulumi.getter(name="maxDataStorageInTbs")
-    def max_data_storage_in_tbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def max_data_storage_in_tbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         return pulumi.get(self, "max_data_storage_in_tbs")
 
     @max_data_storage_in_tbs.setter
-    def max_data_storage_in_tbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def max_data_storage_in_tbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "max_data_storage_in_tbs", value)
 
     @_builtins.property
     @pulumi.getter(name="maxDbNodeStorageInGbs")
-    def max_db_node_storage_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_db_node_storage_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "max_db_node_storage_in_gbs")
 
     @max_db_node_storage_in_gbs.setter
-    def max_db_node_storage_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_db_node_storage_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_db_node_storage_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="maxMemoryInGbs")
-    def max_memory_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "max_memory_in_gbs")
 
     @max_memory_in_gbs.setter
-    def max_memory_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_memory_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="memorySizeInGbs")
-    def memory_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def memory_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "memory_size_in_gbs")
 
     @memory_size_in_gbs.setter
-    def memory_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def memory_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "memory_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter
-    def netmask(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def netmask(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "netmask")
 
     @netmask.setter
-    def netmask(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def netmask(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "netmask", value)
 
     @_builtins.property
     @pulumi.getter(name="ntpServers")
-    def ntp_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ntp_servers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "ntp_servers")
 
     @ntp_servers.setter
-    def ntp_servers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ntp_servers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ntp_servers", value)
 
     @_builtins.property
     @pulumi.getter
-    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "shape")
 
     @shape.setter
-    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="storageCount")
-    def storage_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def storage_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "storage_count")
 
     @storage_count.setter
-    def storage_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def storage_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "storage_count", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
-    def time_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_zone", value)
 
 
@@ -712,27 +712,27 @@ class ExadataInfrastructureStorage(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 activation_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 admin_network_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 cloud_control_plane_server1: Optional[pulumi.Input[_builtins.str]] = None,
-                 cloud_control_plane_server2: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadataInfrastructureStorageContactArgs', 'ExadataInfrastructureStorageContactArgsDict']]]]] = None,
-                 corporate_proxy: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 infini_band_network_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 maintenance_window: Optional[pulumi.Input[Union['ExadataInfrastructureStorageMaintenanceWindowArgs', 'ExadataInfrastructureStorageMaintenanceWindowArgsDict']]] = None,
-                 netmask: Optional[pulumi.Input[_builtins.str]] = None,
-                 ntp_servers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 activation_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 admin_network_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 cloud_control_plane_server1: pulumi.Input[Optional[_builtins.str]] = None,
+                 cloud_control_plane_server2: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInfrastructureStorageContactArgs', 'ExadataInfrastructureStorageContactArgsDict']]]]] = None,
+                 corporate_proxy: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 infini_band_network_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 maintenance_window: pulumi.Input[Optional[Union['ExadataInfrastructureStorageMaintenanceWindowArgs', 'ExadataInfrastructureStorageMaintenanceWindowArgsDict']]] = None,
+                 netmask: pulumi.Input[Optional[_builtins.str]] = None,
+                 ntp_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a ExadataInfrastructureStorage resource with the given unique name, props, and options.
@@ -764,27 +764,27 @@ class ExadataInfrastructureStorage(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 activation_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 admin_network_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 cloud_control_plane_server1: Optional[pulumi.Input[_builtins.str]] = None,
-                 cloud_control_plane_server2: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadataInfrastructureStorageContactArgs', 'ExadataInfrastructureStorageContactArgsDict']]]]] = None,
-                 corporate_proxy: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 gateway: Optional[pulumi.Input[_builtins.str]] = None,
-                 infini_band_network_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 maintenance_window: Optional[pulumi.Input[Union['ExadataInfrastructureStorageMaintenanceWindowArgs', 'ExadataInfrastructureStorageMaintenanceWindowArgsDict']]] = None,
-                 netmask: Optional[pulumi.Input[_builtins.str]] = None,
-                 ntp_servers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None,
+                 activation_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 admin_network_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 cloud_control_plane_server1: pulumi.Input[Optional[_builtins.str]] = None,
+                 cloud_control_plane_server2: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInfrastructureStorageContactArgs', 'ExadataInfrastructureStorageContactArgsDict']]]]] = None,
+                 corporate_proxy: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gateway: pulumi.Input[Optional[_builtins.str]] = None,
+                 infini_band_network_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 maintenance_window: pulumi.Input[Optional[Union['ExadataInfrastructureStorageMaintenanceWindowArgs', 'ExadataInfrastructureStorageMaintenanceWindowArgsDict']]] = None,
+                 netmask: pulumi.Input[Optional[_builtins.str]] = None,
+                 ntp_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -864,42 +864,42 @@ class ExadataInfrastructureStorage(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            activated_storage_count: Optional[pulumi.Input[_builtins.int]] = None,
-            activation_file: Optional[pulumi.Input[_builtins.str]] = None,
-            additional_storage_count: Optional[pulumi.Input[_builtins.int]] = None,
-            admin_network_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-            cloud_control_plane_server1: Optional[pulumi.Input[_builtins.str]] = None,
-            cloud_control_plane_server2: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compute_count: Optional[pulumi.Input[_builtins.int]] = None,
-            contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadataInfrastructureStorageContactArgs', 'ExadataInfrastructureStorageContactArgsDict']]]]] = None,
-            corporate_proxy: Optional[pulumi.Input[_builtins.str]] = None,
-            cpus_enabled: Optional[pulumi.Input[_builtins.int]] = None,
-            csi_number: Optional[pulumi.Input[_builtins.str]] = None,
-            data_storage_size_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
-            db_node_storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            gateway: Optional[pulumi.Input[_builtins.str]] = None,
-            infini_band_network_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            maintenance_slo_status: Optional[pulumi.Input[_builtins.str]] = None,
-            maintenance_window: Optional[pulumi.Input[Union['ExadataInfrastructureStorageMaintenanceWindowArgs', 'ExadataInfrastructureStorageMaintenanceWindowArgsDict']]] = None,
-            max_cpu_count: Optional[pulumi.Input[_builtins.int]] = None,
-            max_data_storage_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
-            max_db_node_storage_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-            max_memory_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-            memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-            netmask: Optional[pulumi.Input[_builtins.str]] = None,
-            ntp_servers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            shape: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            storage_count: Optional[pulumi.Input[_builtins.int]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_zone: Optional[pulumi.Input[_builtins.str]] = None) -> 'ExadataInfrastructureStorage':
+            activated_storage_count: pulumi.Input[Optional[_builtins.int]] = None,
+            activation_file: pulumi.Input[Optional[_builtins.str]] = None,
+            additional_storage_count: pulumi.Input[Optional[_builtins.int]] = None,
+            admin_network_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+            cloud_control_plane_server1: pulumi.Input[Optional[_builtins.str]] = None,
+            cloud_control_plane_server2: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_count: pulumi.Input[Optional[_builtins.int]] = None,
+            contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInfrastructureStorageContactArgs', 'ExadataInfrastructureStorageContactArgsDict']]]]] = None,
+            corporate_proxy: pulumi.Input[Optional[_builtins.str]] = None,
+            cpus_enabled: pulumi.Input[Optional[_builtins.int]] = None,
+            csi_number: pulumi.Input[Optional[_builtins.str]] = None,
+            data_storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+            db_node_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dns_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            gateway: pulumi.Input[Optional[_builtins.str]] = None,
+            infini_band_network_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            maintenance_slo_status: pulumi.Input[Optional[_builtins.str]] = None,
+            maintenance_window: pulumi.Input[Optional[Union['ExadataInfrastructureStorageMaintenanceWindowArgs', 'ExadataInfrastructureStorageMaintenanceWindowArgsDict']]] = None,
+            max_cpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+            max_data_storage_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+            max_db_node_storage_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            max_memory_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            netmask: pulumi.Input[Optional[_builtins.str]] = None,
+            ntp_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_count: pulumi.Input[Optional[_builtins.int]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_zone: pulumi.Input[Optional[_builtins.str]] = None) -> 'ExadataInfrastructureStorage':
         """
         Get an existing ExadataInfrastructureStorage resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

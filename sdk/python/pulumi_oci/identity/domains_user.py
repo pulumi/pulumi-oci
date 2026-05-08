@@ -24,51 +24,51 @@ class DomainsUserArgs:
                  idcs_endpoint: pulumi.Input[_builtins.str],
                  schemas: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  user_name: pulumi.Input[_builtins.str],
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 addresses: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserAddressArgs']]]] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 emails: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserEmailArgs']]]] = None,
-                 entitlements: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserEntitlementArgs']]]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 force_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 ims: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserImArgs']]]] = None,
-                 locale: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input['DomainsUserNameArgs']] = None,
-                 nick_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone_numbers: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserPhoneNumberArgs']]]] = None,
-                 photos: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserPhotoArgs']]]] = None,
-                 preferred_language: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 roles: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserRoleArgs']]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserTagArgs']]]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
-                 title: Optional[pulumi.Input[_builtins.str]] = None,
-                 urnietfparamsscimschemasextensionenterprise20user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionadaptive_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensioncapabilities_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionkerberos_user_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionmfa_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionpasswordless_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionposix_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionself_change_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionself_registration_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionsff_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionsocial_account_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionterms_of_use_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionuser_state_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionuser_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']] = None,
-                 user_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 x509certificates: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]]] = None):
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 addresses: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserAddressArgs']]]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 emails: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserEmailArgs']]]] = None,
+                 entitlements: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserEntitlementArgs']]]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 force_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ims: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserImArgs']]]] = None,
+                 locale: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional['DomainsUserNameArgs']] = None,
+                 nick_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone_numbers: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserPhoneNumberArgs']]]] = None,
+                 photos: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserPhotoArgs']]]] = None,
+                 preferred_language: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 roles: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserRoleArgs']]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserTagArgs']]]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
+                 title: pulumi.Input[Optional[_builtins.str]] = None,
+                 urnietfparamsscimschemasextensionenterprise20user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionadaptive_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensioncapabilities_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionkerberos_user_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionmfa_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionpasswordless_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionposix_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionself_change_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionself_registration_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionsff_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionsocial_account_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionterms_of_use_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionuser_state_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionuser_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']] = None,
+                 user_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 x509certificates: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]]] = None):
         """
         The set of arguments for constructing a DomainsUser resource.
 
@@ -562,7 +562,7 @@ class DomainsUserArgs:
 
     @_builtins.property
     @pulumi.getter
-    def active(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def active(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) User status
 
@@ -581,12 +581,12 @@ class DomainsUserArgs:
         return pulumi.get(self, "active")
 
     @active.setter
-    def active(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def active(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "active", value)
 
     @_builtins.property
     @pulumi.getter
-    def addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserAddressArgs']]]]:
+    def addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserAddressArgs']]]]:
         """
         (Updatable) A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
 
@@ -604,48 +604,48 @@ class DomainsUserArgs:
         return pulumi.get(self, "addresses")
 
     @addresses.setter
-    def addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserAddressArgs']]]]):
+    def addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserAddressArgs']]]]):
         pulumi.set(self, "addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="attributeSets")
-    def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def attribute_sets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
-    def attribute_sets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def attribute_sets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "attribute_sets", value)
 
     @_builtins.property
     @pulumi.getter
-    def attributes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attributes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
-    def attributes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attributes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def authorization(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authorization(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
-    def authorization(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authorization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authorization", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description of the user
 
@@ -665,12 +665,12 @@ class DomainsUserArgs:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Display name
 
@@ -690,12 +690,12 @@ class DomainsUserArgs:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def emails(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserEmailArgs']]]]:
+    def emails(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserEmailArgs']]]]:
         """
         (Updatable) A complex attribute representing emails
 
@@ -713,12 +713,12 @@ class DomainsUserArgs:
         return pulumi.get(self, "emails")
 
     @emails.setter
-    def emails(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserEmailArgs']]]]):
+    def emails(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserEmailArgs']]]]):
         pulumi.set(self, "emails", value)
 
     @_builtins.property
     @pulumi.getter
-    def entitlements(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserEntitlementArgs']]]]:
+    def entitlements(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserEntitlementArgs']]]]:
         """
         (Updatable) A list of entitlements for the User that represent a thing the User has.
 
@@ -734,12 +734,12 @@ class DomainsUserArgs:
         return pulumi.get(self, "entitlements")
 
     @entitlements.setter
-    def entitlements(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserEntitlementArgs']]]]):
+    def entitlements(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserEntitlementArgs']]]]):
         pulumi.set(self, "entitlements", value)
 
     @_builtins.property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
 
@@ -758,24 +758,24 @@ class DomainsUserArgs:
         return pulumi.get(self, "external_id")
 
     @external_id.setter
-    def external_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_id", value)
 
     @_builtins.property
     @pulumi.getter(name="forceDelete")
-    def force_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def force_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
         """
         return pulumi.get(self, "force_delete")
 
     @force_delete.setter
-    def force_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def force_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "force_delete", value)
 
     @_builtins.property
     @pulumi.getter
-    def ims(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserImArgs']]]]:
+    def ims(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserImArgs']]]]:
         """
         (Updatable) User's instant messaging addresses
 
@@ -792,12 +792,12 @@ class DomainsUserArgs:
         return pulumi.get(self, "ims")
 
     @ims.setter
-    def ims(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserImArgs']]]]):
+    def ims(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserImArgs']]]]):
         pulumi.set(self, "ims", value)
 
     @_builtins.property
     @pulumi.getter
-    def locale(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def locale(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Used to indicate the User's default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
 
@@ -816,12 +816,12 @@ class DomainsUserArgs:
         return pulumi.get(self, "locale")
 
     @locale.setter
-    def locale(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def locale(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "locale", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input['DomainsUserNameArgs']]:
+    def name(self) -> pulumi.Input[Optional['DomainsUserNameArgs']]:
         """
         (Updatable) A complex attribute that contains attributes representing the name
 
@@ -838,12 +838,12 @@ class DomainsUserArgs:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input['DomainsUserNameArgs']]):
+    def name(self, value: pulumi.Input[Optional['DomainsUserNameArgs']]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nickName")
-    def nick_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nick_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Nick name
 
@@ -863,12 +863,12 @@ class DomainsUserArgs:
         return pulumi.get(self, "nick_name")
 
     @nick_name.setter
-    def nick_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nick_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nick_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
@@ -885,12 +885,12 @@ class DomainsUserArgs:
         return pulumi.get(self, "ocid")
 
     @ocid.setter
-    def ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ocid", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Password attribute. Max length for password is controlled via Password Policy.
 
@@ -910,12 +910,12 @@ class DomainsUserArgs:
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter(name="phoneNumbers")
-    def phone_numbers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserPhoneNumberArgs']]]]:
+    def phone_numbers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserPhoneNumberArgs']]]]:
         """
         (Updatable) Phone numbers
 
@@ -933,12 +933,12 @@ class DomainsUserArgs:
         return pulumi.get(self, "phone_numbers")
 
     @phone_numbers.setter
-    def phone_numbers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserPhoneNumberArgs']]]]):
+    def phone_numbers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserPhoneNumberArgs']]]]):
         pulumi.set(self, "phone_numbers", value)
 
     @_builtins.property
     @pulumi.getter
-    def photos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserPhotoArgs']]]]:
+    def photos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserPhotoArgs']]]]:
         """
         (Updatable) URLs of photos for the User
 
@@ -955,12 +955,12 @@ class DomainsUserArgs:
         return pulumi.get(self, "photos")
 
     @photos.setter
-    def photos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserPhotoArgs']]]]):
+    def photos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserPhotoArgs']]]]):
         pulumi.set(self, "photos", value)
 
     @_builtins.property
     @pulumi.getter(name="preferredLanguage")
-    def preferred_language(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def preferred_language(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User's preferred written or spoken language used for localized user interfaces
 
@@ -979,12 +979,12 @@ class DomainsUserArgs:
         return pulumi.get(self, "preferred_language")
 
     @preferred_language.setter
-    def preferred_language(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def preferred_language(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "preferred_language", value)
 
     @_builtins.property
     @pulumi.getter(name="profileUrl")
-    def profile_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A fully-qualified URL to a page representing the User's online profile
 
@@ -1004,24 +1004,24 @@ class DomainsUserArgs:
         return pulumi.get(self, "profile_url")
 
     @profile_url.setter
-    def profile_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile_url", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTypeSchemaVersion")
-    def resource_type_schema_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type_schema_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
-    def resource_type_schema_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type_schema_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type_schema_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserRoleArgs']]]]:
+    def roles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserRoleArgs']]]]:
         """
         (Updatable) A list of roles for the User that collectively represent who the User is; e.g., 'Student', 'Faculty'.
 
@@ -1037,12 +1037,12 @@ class DomainsUserArgs:
         return pulumi.get(self, "roles")
 
     @roles.setter
-    def roles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserRoleArgs']]]]):
+    def roles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserRoleArgs']]]]):
         pulumi.set(self, "roles", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserTagArgs']]]]:
         """
         (Updatable) A list of tags on this resource.
 
@@ -1059,12 +1059,12 @@ class DomainsUserArgs:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User's timezone
 
@@ -1085,12 +1085,12 @@ class DomainsUserArgs:
         return pulumi.get(self, "timezone")
 
     @timezone.setter
-    def timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "timezone", value)
 
     @_builtins.property
     @pulumi.getter
-    def title(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def title(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Title
 
@@ -1110,216 +1110,216 @@ class DomainsUserArgs:
         return pulumi.get(self, "title")
 
     @title.setter
-    def title(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def title(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "title", value)
 
     @_builtins.property
     @pulumi.getter
-    def urnietfparamsscimschemasextensionenterprise20user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs']]:
+    def urnietfparamsscimschemasextensionenterprise20user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs']]:
         """
         (Updatable) Enterprise User
         """
         return pulumi.get(self, "urnietfparamsscimschemasextensionenterprise20user")
 
     @urnietfparamsscimschemasextensionenterprise20user.setter
-    def urnietfparamsscimschemasextensionenterprise20user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs']]):
+    def urnietfparamsscimschemasextensionenterprise20user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasextensionenterprise20user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionOciTags")
-    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]:
+    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]:
         """
         (Updatable) Oracle Cloud Infrastructure Tags.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextension_oci_tags")
 
     @urnietfparamsscimschemasoracleidcsextension_oci_tags.setter
-    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]):
+    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextension_oci_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionadaptiveUser")
-    def urnietfparamsscimschemasoracleidcsextensionadaptive_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionadaptive_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs']]:
         """
         (Updatable) This extension defines attributes to manage user's risk score.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionadaptive_user")
 
     @urnietfparamsscimschemasoracleidcsextensionadaptive_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionadaptive_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionadaptive_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionadaptive_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser")
-    def urnietfparamsscimschemasoracleidcsextensioncapabilities_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensioncapabilities_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs']]:
         """
         (Updatable) User's Capabilities
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensioncapabilities_user")
 
     @urnietfparamsscimschemasoracleidcsextensioncapabilities_user.setter
-    def urnietfparamsscimschemasoracleidcsextensioncapabilities_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensioncapabilities_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensioncapabilities_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser")
-    def urnietfparamsscimschemasoracleidcsextensiondb_credentials_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensiondb_credentials_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs']]:
         """
         (Updatable) The database credentials user extension.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondb_credentials_user")
 
     @urnietfparamsscimschemasoracleidcsextensiondb_credentials_user.setter
-    def urnietfparamsscimschemasoracleidcsextensiondb_credentials_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensiondb_credentials_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensiondb_credentials_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionkerberosUserUser")
-    def urnietfparamsscimschemasoracleidcsextensionkerberos_user_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionkerberos_user_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs']]:
         """
         (Updatable) Kerberos User extension
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionkerberos_user_user")
 
     @urnietfparamsscimschemasoracleidcsextensionkerberos_user_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionkerberos_user_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionkerberos_user_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionkerberos_user_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionmfaUser")
-    def urnietfparamsscimschemasoracleidcsextensionmfa_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionmfa_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs']]:
         """
         (Updatable) This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionmfa_user")
 
     @urnietfparamsscimschemasoracleidcsextensionmfa_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionmfa_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionmfa_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionmfa_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionpasswordlessUser")
-    def urnietfparamsscimschemasoracleidcsextensionpasswordless_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionpasswordless_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs']]:
         """
         (Updatable) This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionpasswordless_user")
 
     @urnietfparamsscimschemasoracleidcsextensionpasswordless_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionpasswordless_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionpasswordless_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionpasswordless_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionposixUser")
-    def urnietfparamsscimschemasoracleidcsextensionposix_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionposix_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs']]:
         """
         (Updatable) POSIX User extension
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionposix_user")
 
     @urnietfparamsscimschemasoracleidcsextensionposix_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionposix_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionposix_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionposix_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser")
-    def urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs']]:
         """
         (Updatable) This extension defines the attributes used to store the security questions of a user.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user")
 
     @urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionselfChangeUser")
-    def urnietfparamsscimschemasoracleidcsextensionself_change_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionself_change_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']]:
         """
         (Updatable) Controls whether a user can update themselves or not via User related APIs
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionself_change_user")
 
     @urnietfparamsscimschemasoracleidcsextensionself_change_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionself_change_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionself_change_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionself_change_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser")
-    def urnietfparamsscimschemasoracleidcsextensionself_registration_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionself_registration_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs']]:
         """
         (Updatable) This extension defines attributes used to manage self registration profile linked to the user.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionself_registration_user")
 
     @urnietfparamsscimschemasoracleidcsextensionself_registration_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionself_registration_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionself_registration_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionself_registration_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsffUser")
-    def urnietfparamsscimschemasoracleidcsextensionsff_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionsff_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs']]:
         """
         (Updatable) SFF Auth Keys User extension
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsff_user")
 
     @urnietfparamsscimschemasoracleidcsextensionsff_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionsff_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionsff_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionsff_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsocialAccountUser")
-    def urnietfparamsscimschemasoracleidcsextensionsocial_account_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionsocial_account_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs']]:
         """
         (Updatable) Social User extension
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsocial_account_user")
 
     @urnietfparamsscimschemasoracleidcsextensionsocial_account_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionsocial_account_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionsocial_account_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionsocial_account_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser")
-    def urnietfparamsscimschemasoracleidcsextensionterms_of_use_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionterms_of_use_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs']]:
         """
         (Updatable) Terms Of Use extension
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionterms_of_use_user")
 
     @urnietfparamsscimschemasoracleidcsextensionterms_of_use_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionterms_of_use_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionterms_of_use_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionterms_of_use_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionuserStateUser")
-    def urnietfparamsscimschemasoracleidcsextensionuser_state_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionuser_state_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs']]:
         """
         (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionuser_state_user")
 
     @urnietfparamsscimschemasoracleidcsextensionuser_state_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionuser_state_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionuser_state_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionuser_state_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionuserUser")
-    def urnietfparamsscimschemasoracleidcsextensionuser_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionuser_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']]:
         """
         (Updatable) Oracle Identity Cloud Service User
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionuser_user")
 
     @urnietfparamsscimschemasoracleidcsextensionuser_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionuser_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionuser_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionuser_user", value)
 
     @_builtins.property
     @pulumi.getter(name="userType")
-    def user_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Used to identify the organization-to-user relationship
 
@@ -1339,12 +1339,12 @@ class DomainsUserArgs:
         return pulumi.get(self, "user_type")
 
     @user_type.setter
-    def user_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def x509certificates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]]]:
+    def x509certificates(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]]]:
         """
         (Updatable) A list of certificates issued to the User.
 
@@ -1360,74 +1360,74 @@ class DomainsUserArgs:
         return pulumi.get(self, "x509certificates")
 
     @x509certificates.setter
-    def x509certificates(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]]]):
+    def x509certificates(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]]]):
         pulumi.set(self, "x509certificates", value)
 
 
 @pulumi.input_type
 class _DomainsUserState:
     def __init__(__self__, *,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 addresses: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserAddressArgs']]]] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 delete_in_progress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 emails: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserEmailArgs']]]] = None,
-                 entitlements: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserEntitlementArgs']]]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 force_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 groups: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserGroupArgs']]]] = None,
-                 idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserIdcsCreatedByArgs']]]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserIdcsLastModifiedByArgs']]]] = None,
-                 idcs_last_upgraded_in_release: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ims: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserImArgs']]]] = None,
-                 locale: Optional[pulumi.Input[_builtins.str]] = None,
-                 metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserMetaArgs']]]] = None,
-                 name: Optional[pulumi.Input['DomainsUserNameArgs']] = None,
-                 nick_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone_numbers: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserPhoneNumberArgs']]]] = None,
-                 photos: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserPhotoArgs']]]] = None,
-                 preferred_language: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 roles: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserRoleArgs']]]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserTagArgs']]]] = None,
-                 tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
-                 title: Optional[pulumi.Input[_builtins.str]] = None,
-                 urnietfparamsscimschemasextensionenterprise20user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionadaptive_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensioncapabilities_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensiondb_user_users: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs']]]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionkerberos_user_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionmfa_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionpassword_state_users: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgs']]]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionpasswordless_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionposix_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionself_change_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionself_registration_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionsff_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionsocial_account_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionterms_of_use_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionuser_credentials_users: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs']]]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionuser_state_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs']] = None,
-                 urnietfparamsscimschemasoracleidcsextensionuser_user: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 x509certificates: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]]] = None):
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 addresses: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserAddressArgs']]]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 emails: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserEmailArgs']]]] = None,
+                 entitlements: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserEntitlementArgs']]]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 force_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 groups: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserGroupArgs']]]] = None,
+                 idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserIdcsCreatedByArgs']]]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserIdcsLastModifiedByArgs']]]] = None,
+                 idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ims: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserImArgs']]]] = None,
+                 locale: pulumi.Input[Optional[_builtins.str]] = None,
+                 metas: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserMetaArgs']]]] = None,
+                 name: pulumi.Input[Optional['DomainsUserNameArgs']] = None,
+                 nick_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone_numbers: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserPhoneNumberArgs']]]] = None,
+                 photos: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserPhotoArgs']]]] = None,
+                 preferred_language: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 roles: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserRoleArgs']]]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserTagArgs']]]] = None,
+                 tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
+                 title: pulumi.Input[Optional[_builtins.str]] = None,
+                 urnietfparamsscimschemasextensionenterprise20user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionadaptive_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensioncapabilities_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensiondb_user_users: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs']]]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionkerberos_user_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionmfa_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionpassword_state_users: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgs']]]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionpasswordless_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionposix_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionself_change_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionself_registration_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionsff_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionsocial_account_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionterms_of_use_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionuser_credentials_users: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs']]]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionuser_state_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs']] = None,
+                 urnietfparamsscimschemasoracleidcsextensionuser_user: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 x509certificates: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]]] = None):
         """
         Input properties used for looking up and filtering DomainsUser resources.
 
@@ -1999,7 +1999,7 @@ class _DomainsUserState:
 
     @_builtins.property
     @pulumi.getter
-    def active(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def active(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) User status
 
@@ -2018,12 +2018,12 @@ class _DomainsUserState:
         return pulumi.get(self, "active")
 
     @active.setter
-    def active(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def active(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "active", value)
 
     @_builtins.property
     @pulumi.getter
-    def addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserAddressArgs']]]]:
+    def addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserAddressArgs']]]]:
         """
         (Updatable) A physical mailing address for this User, as described in (address Element). Canonical Type Values of work, home, and other. The value attribute is a complex type with the following sub-attributes.
 
@@ -2041,48 +2041,48 @@ class _DomainsUserState:
         return pulumi.get(self, "addresses")
 
     @addresses.setter
-    def addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserAddressArgs']]]]):
+    def addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserAddressArgs']]]]):
         pulumi.set(self, "addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="attributeSets")
-    def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def attribute_sets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
-    def attribute_sets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def attribute_sets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "attribute_sets", value)
 
     @_builtins.property
     @pulumi.getter
-    def attributes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attributes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
-    def attributes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attributes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def authorization(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authorization(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
-    def authorization(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authorization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authorization", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
 
@@ -2099,12 +2099,12 @@ class _DomainsUserState:
         return pulumi.get(self, "compartment_ocid")
 
     @compartment_ocid.setter
-    def compartment_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_in_progress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 
@@ -2121,12 +2121,12 @@ class _DomainsUserState:
         return pulumi.get(self, "delete_in_progress")
 
     @delete_in_progress.setter
-    def delete_in_progress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_in_progress", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description of the user
 
@@ -2146,12 +2146,12 @@ class _DomainsUserState:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Display name
 
@@ -2171,12 +2171,12 @@ class _DomainsUserState:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 
@@ -2193,12 +2193,12 @@ class _DomainsUserState:
         return pulumi.get(self, "domain_ocid")
 
     @domain_ocid.setter
-    def domain_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain_ocid", value)
 
     @_builtins.property
     @pulumi.getter
-    def emails(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserEmailArgs']]]]:
+    def emails(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserEmailArgs']]]]:
         """
         (Updatable) A complex attribute representing emails
 
@@ -2216,12 +2216,12 @@ class _DomainsUserState:
         return pulumi.get(self, "emails")
 
     @emails.setter
-    def emails(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserEmailArgs']]]]):
+    def emails(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserEmailArgs']]]]):
         pulumi.set(self, "emails", value)
 
     @_builtins.property
     @pulumi.getter
-    def entitlements(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserEntitlementArgs']]]]:
+    def entitlements(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserEntitlementArgs']]]]:
         """
         (Updatable) A list of entitlements for the User that represent a thing the User has.
 
@@ -2237,12 +2237,12 @@ class _DomainsUserState:
         return pulumi.get(self, "entitlements")
 
     @entitlements.setter
-    def entitlements(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserEntitlementArgs']]]]):
+    def entitlements(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserEntitlementArgs']]]]):
         pulumi.set(self, "entitlements", value)
 
     @_builtins.property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
 
@@ -2261,24 +2261,24 @@ class _DomainsUserState:
         return pulumi.get(self, "external_id")
 
     @external_id.setter
-    def external_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_id", value)
 
     @_builtins.property
     @pulumi.getter(name="forceDelete")
-    def force_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def force_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
         """
         return pulumi.get(self, "force_delete")
 
     @force_delete.setter
-    def force_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def force_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "force_delete", value)
 
     @_builtins.property
     @pulumi.getter
-    def groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserGroupArgs']]]]:
+    def groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserGroupArgs']]]]:
         """
         (Updatable) A list of groups that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
 
@@ -2295,12 +2295,12 @@ class _DomainsUserState:
         return pulumi.get(self, "groups")
 
     @groups.setter
-    def groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserGroupArgs']]]]):
+    def groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserGroupArgs']]]]):
         pulumi.set(self, "groups", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserIdcsCreatedByArgs']]]]:
+    def idcs_created_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserIdcsCreatedByArgs']]]]:
         """
         (Updatable) The User or App who created the Resource
 
@@ -2315,24 +2315,24 @@ class _DomainsUserState:
         return pulumi.get(self, "idcs_created_bies")
 
     @idcs_created_bies.setter
-    def idcs_created_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserIdcsCreatedByArgs']]]]):
+    def idcs_created_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserIdcsCreatedByArgs']]]]):
         pulumi.set(self, "idcs_created_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsEndpoint")
-    def idcs_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The basic endpoint for the identity domain
         """
         return pulumi.get(self, "idcs_endpoint")
 
     @idcs_endpoint.setter
-    def idcs_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserIdcsLastModifiedByArgs']]]]:
+    def idcs_last_modified_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserIdcsLastModifiedByArgs']]]]:
         """
         (Updatable) The User or App who modified the Resource
 
@@ -2347,12 +2347,12 @@ class _DomainsUserState:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @idcs_last_modified_bies.setter
-    def idcs_last_modified_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserIdcsLastModifiedByArgs']]]]):
+    def idcs_last_modified_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserIdcsLastModifiedByArgs']]]]):
         pulumi.set(self, "idcs_last_modified_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_last_upgraded_in_release(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The release number when the resource was upgraded.
 
@@ -2369,12 +2369,12 @@ class _DomainsUserState:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @idcs_last_upgraded_in_release.setter
-    def idcs_last_upgraded_in_release(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_last_upgraded_in_release(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_last_upgraded_in_release", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def idcs_prevented_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 
@@ -2390,12 +2390,12 @@ class _DomainsUserState:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @idcs_prevented_operations.setter
-    def idcs_prevented_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def idcs_prevented_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "idcs_prevented_operations", value)
 
     @_builtins.property
     @pulumi.getter
-    def ims(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserImArgs']]]]:
+    def ims(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserImArgs']]]]:
         """
         (Updatable) User's instant messaging addresses
 
@@ -2412,12 +2412,12 @@ class _DomainsUserState:
         return pulumi.get(self, "ims")
 
     @ims.setter
-    def ims(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserImArgs']]]]):
+    def ims(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserImArgs']]]]):
         pulumi.set(self, "ims", value)
 
     @_builtins.property
     @pulumi.getter
-    def locale(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def locale(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Used to indicate the User's default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
 
@@ -2436,12 +2436,12 @@ class _DomainsUserState:
         return pulumi.get(self, "locale")
 
     @locale.setter
-    def locale(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def locale(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "locale", value)
 
     @_builtins.property
     @pulumi.getter
-    def metas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserMetaArgs']]]]:
+    def metas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserMetaArgs']]]]:
         """
         (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 
@@ -2458,12 +2458,12 @@ class _DomainsUserState:
         return pulumi.get(self, "metas")
 
     @metas.setter
-    def metas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserMetaArgs']]]]):
+    def metas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserMetaArgs']]]]):
         pulumi.set(self, "metas", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input['DomainsUserNameArgs']]:
+    def name(self) -> pulumi.Input[Optional['DomainsUserNameArgs']]:
         """
         (Updatable) A complex attribute that contains attributes representing the name
 
@@ -2480,12 +2480,12 @@ class _DomainsUserState:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input['DomainsUserNameArgs']]):
+    def name(self, value: pulumi.Input[Optional['DomainsUserNameArgs']]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nickName")
-    def nick_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def nick_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Nick name
 
@@ -2505,12 +2505,12 @@ class _DomainsUserState:
         return pulumi.get(self, "nick_name")
 
     @nick_name.setter
-    def nick_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def nick_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nick_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
@@ -2527,12 +2527,12 @@ class _DomainsUserState:
         return pulumi.get(self, "ocid")
 
     @ocid.setter
-    def ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ocid", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Password attribute. Max length for password is controlled via Password Policy.
 
@@ -2552,12 +2552,12 @@ class _DomainsUserState:
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter(name="phoneNumbers")
-    def phone_numbers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserPhoneNumberArgs']]]]:
+    def phone_numbers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserPhoneNumberArgs']]]]:
         """
         (Updatable) Phone numbers
 
@@ -2575,12 +2575,12 @@ class _DomainsUserState:
         return pulumi.get(self, "phone_numbers")
 
     @phone_numbers.setter
-    def phone_numbers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserPhoneNumberArgs']]]]):
+    def phone_numbers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserPhoneNumberArgs']]]]):
         pulumi.set(self, "phone_numbers", value)
 
     @_builtins.property
     @pulumi.getter
-    def photos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserPhotoArgs']]]]:
+    def photos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserPhotoArgs']]]]:
         """
         (Updatable) URLs of photos for the User
 
@@ -2597,12 +2597,12 @@ class _DomainsUserState:
         return pulumi.get(self, "photos")
 
     @photos.setter
-    def photos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserPhotoArgs']]]]):
+    def photos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserPhotoArgs']]]]):
         pulumi.set(self, "photos", value)
 
     @_builtins.property
     @pulumi.getter(name="preferredLanguage")
-    def preferred_language(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def preferred_language(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User's preferred written or spoken language used for localized user interfaces
 
@@ -2621,12 +2621,12 @@ class _DomainsUserState:
         return pulumi.get(self, "preferred_language")
 
     @preferred_language.setter
-    def preferred_language(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def preferred_language(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "preferred_language", value)
 
     @_builtins.property
     @pulumi.getter(name="profileUrl")
-    def profile_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A fully-qualified URL to a page representing the User's online profile
 
@@ -2646,24 +2646,24 @@ class _DomainsUserState:
         return pulumi.get(self, "profile_url")
 
     @profile_url.setter
-    def profile_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile_url", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTypeSchemaVersion")
-    def resource_type_schema_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type_schema_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
-    def resource_type_schema_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type_schema_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type_schema_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserRoleArgs']]]]:
+    def roles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserRoleArgs']]]]:
         """
         (Updatable) A list of roles for the User that collectively represent who the User is; e.g., 'Student', 'Faculty'.
 
@@ -2679,12 +2679,12 @@ class _DomainsUserState:
         return pulumi.get(self, "roles")
 
     @roles.setter
-    def roles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserRoleArgs']]]]):
+    def roles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserRoleArgs']]]]):
         pulumi.set(self, "roles", value)
 
     @_builtins.property
     @pulumi.getter
-    def schemas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def schemas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 
@@ -2701,12 +2701,12 @@ class _DomainsUserState:
         return pulumi.get(self, "schemas")
 
     @schemas.setter
-    def schemas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def schemas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "schemas", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserTagArgs']]]]:
         """
         (Updatable) A list of tags on this resource.
 
@@ -2723,12 +2723,12 @@ class _DomainsUserState:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
 
@@ -2745,12 +2745,12 @@ class _DomainsUserState:
         return pulumi.get(self, "tenancy_ocid")
 
     @tenancy_ocid.setter
-    def tenancy_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy_ocid", value)
 
     @_builtins.property
     @pulumi.getter
-    def timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User's timezone
 
@@ -2771,12 +2771,12 @@ class _DomainsUserState:
         return pulumi.get(self, "timezone")
 
     @timezone.setter
-    def timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "timezone", value)
 
     @_builtins.property
     @pulumi.getter
-    def title(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def title(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Title
 
@@ -2796,252 +2796,252 @@ class _DomainsUserState:
         return pulumi.get(self, "title")
 
     @title.setter
-    def title(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def title(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "title", value)
 
     @_builtins.property
     @pulumi.getter
-    def urnietfparamsscimschemasextensionenterprise20user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs']]:
+    def urnietfparamsscimschemasextensionenterprise20user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs']]:
         """
         (Updatable) Enterprise User
         """
         return pulumi.get(self, "urnietfparamsscimschemasextensionenterprise20user")
 
     @urnietfparamsscimschemasextensionenterprise20user.setter
-    def urnietfparamsscimschemasextensionenterprise20user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs']]):
+    def urnietfparamsscimschemasextensionenterprise20user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasextensionenterprise20user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionOciTags")
-    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]:
+    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]:
         """
         (Updatable) Oracle Cloud Infrastructure Tags.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextension_oci_tags")
 
     @urnietfparamsscimschemasoracleidcsextension_oci_tags.setter
-    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]):
+    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextension_oci_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionadaptiveUser")
-    def urnietfparamsscimschemasoracleidcsextensionadaptive_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionadaptive_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs']]:
         """
         (Updatable) This extension defines attributes to manage user's risk score.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionadaptive_user")
 
     @urnietfparamsscimschemasoracleidcsextensionadaptive_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionadaptive_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionadaptive_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionadaptive_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensioncapabilitiesUser")
-    def urnietfparamsscimschemasoracleidcsextensioncapabilities_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensioncapabilities_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs']]:
         """
         (Updatable) User's Capabilities
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensioncapabilities_user")
 
     @urnietfparamsscimschemasoracleidcsextensioncapabilities_user.setter
-    def urnietfparamsscimschemasoracleidcsextensioncapabilities_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensioncapabilities_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensioncapabilities_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondbCredentialsUser")
-    def urnietfparamsscimschemasoracleidcsextensiondb_credentials_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensiondb_credentials_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs']]:
         """
         (Updatable) The database credentials user extension.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondb_credentials_user")
 
     @urnietfparamsscimschemasoracleidcsextensiondb_credentials_user.setter
-    def urnietfparamsscimschemasoracleidcsextensiondb_credentials_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensiondb_credentials_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensiondb_credentials_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondbUserUsers")
-    def urnietfparamsscimschemasoracleidcsextensiondb_user_users(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs']]]]:
+    def urnietfparamsscimschemasoracleidcsextensiondb_user_users(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs']]]]:
         """
         (Updatable) DB User extension
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondb_user_users")
 
     @urnietfparamsscimschemasoracleidcsextensiondb_user_users.setter
-    def urnietfparamsscimschemasoracleidcsextensiondb_user_users(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs']]]]):
+    def urnietfparamsscimschemasoracleidcsextensiondb_user_users(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs']]]]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensiondb_user_users", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionkerberosUserUser")
-    def urnietfparamsscimschemasoracleidcsextensionkerberos_user_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionkerberos_user_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs']]:
         """
         (Updatable) Kerberos User extension
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionkerberos_user_user")
 
     @urnietfparamsscimschemasoracleidcsextensionkerberos_user_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionkerberos_user_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionkerberos_user_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionkerberos_user_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionmfaUser")
-    def urnietfparamsscimschemasoracleidcsextensionmfa_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionmfa_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs']]:
         """
         (Updatable) This extension defines attributes used to manage Multi-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionmfa_user")
 
     @urnietfparamsscimschemasoracleidcsextensionmfa_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionmfa_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionmfa_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionmfa_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionpasswordStateUsers")
-    def urnietfparamsscimschemasoracleidcsextensionpassword_state_users(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgs']]]]:
+    def urnietfparamsscimschemasoracleidcsextensionpassword_state_users(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgs']]]]:
         """
         (Updatable) This extension defines attributes used to manage account passwords within a Service Provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionpassword_state_users")
 
     @urnietfparamsscimschemasoracleidcsextensionpassword_state_users.setter
-    def urnietfparamsscimschemasoracleidcsextensionpassword_state_users(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgs']]]]):
+    def urnietfparamsscimschemasoracleidcsextensionpassword_state_users(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgs']]]]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionpassword_state_users", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionpasswordlessUser")
-    def urnietfparamsscimschemasoracleidcsextensionpasswordless_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionpasswordless_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs']]:
         """
         (Updatable) This extension defines attributes used to manage Passwordless-Factor Authentication within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use MFA.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionpasswordless_user")
 
     @urnietfparamsscimschemasoracleidcsextensionpasswordless_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionpasswordless_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionpasswordless_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionpasswordless_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionposixUser")
-    def urnietfparamsscimschemasoracleidcsextensionposix_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionposix_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs']]:
         """
         (Updatable) POSIX User extension
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionposix_user")
 
     @urnietfparamsscimschemasoracleidcsextensionposix_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionposix_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionposix_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionposix_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser")
-    def urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs']]:
         """
         (Updatable) This extension defines the attributes used to store the security questions of a user.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user")
 
     @urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionselfChangeUser")
-    def urnietfparamsscimschemasoracleidcsextensionself_change_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionself_change_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']]:
         """
         (Updatable) Controls whether a user can update themselves or not via User related APIs
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionself_change_user")
 
     @urnietfparamsscimschemasoracleidcsextensionself_change_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionself_change_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionself_change_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionself_change_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionselfRegistrationUser")
-    def urnietfparamsscimschemasoracleidcsextensionself_registration_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionself_registration_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs']]:
         """
         (Updatable) This extension defines attributes used to manage self registration profile linked to the user.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionself_registration_user")
 
     @urnietfparamsscimschemasoracleidcsextensionself_registration_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionself_registration_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionself_registration_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionself_registration_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsffUser")
-    def urnietfparamsscimschemasoracleidcsextensionsff_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionsff_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs']]:
         """
         (Updatable) SFF Auth Keys User extension
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsff_user")
 
     @urnietfparamsscimschemasoracleidcsextensionsff_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionsff_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionsff_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionsff_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsocialAccountUser")
-    def urnietfparamsscimschemasoracleidcsextensionsocial_account_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionsocial_account_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs']]:
         """
         (Updatable) Social User extension
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsocial_account_user")
 
     @urnietfparamsscimschemasoracleidcsextensionsocial_account_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionsocial_account_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionsocial_account_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionsocial_account_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiontermsOfUseUser")
-    def urnietfparamsscimschemasoracleidcsextensionterms_of_use_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionterms_of_use_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs']]:
         """
         (Updatable) Terms Of Use extension
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionterms_of_use_user")
 
     @urnietfparamsscimschemasoracleidcsextensionterms_of_use_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionterms_of_use_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionterms_of_use_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionterms_of_use_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionuserCredentialsUsers")
-    def urnietfparamsscimschemasoracleidcsextensionuser_credentials_users(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs']]]]:
+    def urnietfparamsscimschemasoracleidcsextensionuser_credentials_users(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs']]]]:
         """
         (Updatable) User's credentials
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionuser_credentials_users")
 
     @urnietfparamsscimschemasoracleidcsextensionuser_credentials_users.setter
-    def urnietfparamsscimschemasoracleidcsextensionuser_credentials_users(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs']]]]):
+    def urnietfparamsscimschemasoracleidcsextensionuser_credentials_users(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs']]]]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionuser_credentials_users", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionuserStateUser")
-    def urnietfparamsscimschemasoracleidcsextensionuser_state_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionuser_state_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs']]:
         """
         (Updatable) This extension defines the attributes used to manage account passwords within a service provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionuser_state_user")
 
     @urnietfparamsscimschemasoracleidcsextensionuser_state_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionuser_state_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionuser_state_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionuser_state_user", value)
 
     @_builtins.property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionuserUser")
-    def urnietfparamsscimschemasoracleidcsextensionuser_user(self) -> Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']]:
+    def urnietfparamsscimschemasoracleidcsextensionuser_user(self) -> pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']]:
         """
         (Updatable) Oracle Identity Cloud Service User
         """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionuser_user")
 
     @urnietfparamsscimschemasoracleidcsextensionuser_user.setter
-    def urnietfparamsscimschemasoracleidcsextensionuser_user(self, value: Optional[pulumi.Input['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']]):
+    def urnietfparamsscimschemasoracleidcsextensionuser_user(self, value: pulumi.Input[Optional['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs']]):
         pulumi.set(self, "urnietfparamsscimschemasoracleidcsextensionuser_user", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User name
 
@@ -3061,12 +3061,12 @@ class _DomainsUserState:
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
     @_builtins.property
     @pulumi.getter(name="userType")
-    def user_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Used to identify the organization-to-user relationship
 
@@ -3086,12 +3086,12 @@ class _DomainsUserState:
         return pulumi.get(self, "user_type")
 
     @user_type.setter
-    def user_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def x509certificates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]]]:
+    def x509certificates(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]]]:
         """
         (Updatable) A list of certificates issued to the User.
 
@@ -3107,7 +3107,7 @@ class _DomainsUserState:
         return pulumi.get(self, "x509certificates")
 
     @x509certificates.setter
-    def x509certificates(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]]]):
+    def x509certificates(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsUserX509certificateArgs']]]]):
         pulumi.set(self, "x509certificates", value)
 
 
@@ -3117,54 +3117,54 @@ class DomainsUser(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserAddressArgs', 'DomainsUserAddressArgsDict']]]]] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 emails: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserEmailArgs', 'DomainsUserEmailArgsDict']]]]] = None,
-                 entitlements: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserEntitlementArgs', 'DomainsUserEntitlementArgsDict']]]]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 force_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 ims: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserImArgs', 'DomainsUserImArgsDict']]]]] = None,
-                 locale: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[Union['DomainsUserNameArgs', 'DomainsUserNameArgsDict']]] = None,
-                 nick_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone_numbers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserPhoneNumberArgs', 'DomainsUserPhoneNumberArgsDict']]]]] = None,
-                 photos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserPhotoArgs', 'DomainsUserPhotoArgsDict']]]]] = None,
-                 preferred_language: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 roles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserRoleArgs', 'DomainsUserRoleArgsDict']]]]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserTagArgs', 'DomainsUserTagArgsDict']]]]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
-                 title: Optional[pulumi.Input[_builtins.str]] = None,
-                 urnietfparamsscimschemasextensionenterprise20user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs', 'DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionadaptive_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensioncapabilities_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionkerberos_user_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionmfa_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionpasswordless_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionposix_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionself_change_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionself_registration_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionsff_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionsocial_account_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionterms_of_use_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionuser_state_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionuser_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgsDict']]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 x509certificates: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserX509certificateArgs', 'DomainsUserX509certificateArgsDict']]]]] = None,
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserAddressArgs', 'DomainsUserAddressArgsDict']]]]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 emails: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserEmailArgs', 'DomainsUserEmailArgsDict']]]]] = None,
+                 entitlements: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserEntitlementArgs', 'DomainsUserEntitlementArgsDict']]]]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 force_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 ims: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserImArgs', 'DomainsUserImArgsDict']]]]] = None,
+                 locale: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[Union['DomainsUserNameArgs', 'DomainsUserNameArgsDict']]] = None,
+                 nick_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone_numbers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserPhoneNumberArgs', 'DomainsUserPhoneNumberArgsDict']]]]] = None,
+                 photos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserPhotoArgs', 'DomainsUserPhotoArgsDict']]]]] = None,
+                 preferred_language: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserRoleArgs', 'DomainsUserRoleArgsDict']]]]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserTagArgs', 'DomainsUserTagArgsDict']]]]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
+                 title: pulumi.Input[Optional[_builtins.str]] = None,
+                 urnietfparamsscimschemasextensionenterprise20user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs', 'DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionadaptive_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensioncapabilities_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionkerberos_user_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionmfa_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionpasswordless_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionposix_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionself_change_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionself_registration_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionsff_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionsocial_account_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionterms_of_use_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionuser_state_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionuser_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgsDict']]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 x509certificates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserX509certificateArgs', 'DomainsUserX509certificateArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the User resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -3184,14 +3184,14 @@ class DomainsUser(pulumi.CustomResource):
             idcs_endpoint=test_domain["url"],
             schemas=["urn:ietf:params:scim:schemas:core:2.0:User"],
             user_name="userName",
-            active=user_active,
+            active=user_active == "true",
             addresses=[{
                 "type": user_addresses_type,
                 "country": user_addresses_country,
                 "formatted": user_addresses_formatted,
                 "locality": user_addresses_locality,
                 "postal_code": user_addresses_postal_code,
-                "primary": user_addresses_primary,
+                "primary": user_addresses_primary == "true",
                 "region": user_addresses_region,
                 "street_address": user_addresses_street_address,
             }],
@@ -3205,8 +3205,8 @@ class DomainsUser(pulumi.CustomResource):
                     "type": user_emails_type,
                     "value": user_emails_value,
                     "primary": True,
-                    "secondary": user_emails_secondary,
-                    "verified": user_emails_verified,
+                    "secondary": user_emails_secondary == "true",
+                    "verified": user_emails_verified == "true",
                 },
                 {
                     "type": "recovery",
@@ -3217,16 +3217,16 @@ class DomainsUser(pulumi.CustomResource):
                 "type": user_entitlements_type,
                 "value": user_entitlements_value,
                 "display": user_entitlements_display,
-                "primary": user_entitlements_primary,
+                "primary": user_entitlements_primary == "true",
             }],
             external_id="externalId",
-            force_delete=user_force_delete,
+            force_delete=user_force_delete == "true",
             id=user_id,
             ims=[{
                 "type": user_ims_type,
                 "value": user_ims_value,
                 "display": user_ims_display,
-                "primary": user_ims_primary,
+                "primary": user_ims_primary == "true",
             }],
             locale=user_locale,
             name={
@@ -3243,13 +3243,13 @@ class DomainsUser(pulumi.CustomResource):
             phone_numbers=[{
                 "type": user_phone_numbers_type,
                 "value": user_phone_numbers_value,
-                "primary": user_phone_numbers_primary,
+                "primary": user_phone_numbers_primary == "true",
             }],
             photos=[{
                 "type": user_photos_type,
                 "value": user_photos_value,
                 "display": user_photos_display,
-                "primary": user_photos_primary,
+                "primary": user_photos_primary == "true",
             }],
             preferred_language=user_preferred_language,
             profile_url=user_profile_url,
@@ -3258,7 +3258,7 @@ class DomainsUser(pulumi.CustomResource):
                 "type": user_roles_type,
                 "value": user_roles_value,
                 "display": user_roles_display,
-                "primary": user_roles_primary,
+                "primary": user_roles_primary == "true",
             }],
             tags=[{
                 "key": user_tags_key,
@@ -3292,7 +3292,7 @@ class DomainsUser(pulumi.CustomResource):
                 "risk_scores": [{
                     "last_update_timestamp": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_last_update_timestamp,
                     "risk_level": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_risk_level,
-                    "score": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_score,
+                    "score": int(user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_score),
                     "value": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_value,
                     "source": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_source,
                     "status": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_status,
@@ -3331,7 +3331,7 @@ class DomainsUser(pulumi.CustomResource):
                     "status": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_devices_status,
                     "third_party_vendor_name": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_devices_third_party_vendor_name,
                 }],
-                "login_attempts": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_login_attempts,
+                "login_attempts": int(user_urnietfparamsscimschemasoracleidcsextensionmfa_user_login_attempts),
                 "mfa_enabled_on": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_mfa_enabled_on,
                 "mfa_ignored_apps": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_mfa_ignored_apps,
                 "mfa_status": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_mfa_status,
@@ -3357,10 +3357,10 @@ class DomainsUser(pulumi.CustomResource):
             },
             urnietfparamsscimschemasoracleidcsextensionposix_user={
                 "gecos": user_urnietfparamsscimschemasoracleidcsextensionposix_user_gecos,
-                "gid_number": user_urnietfparamsscimschemasoracleidcsextensionposix_user_gid_number,
+                "gid_number": int(user_urnietfparamsscimschemasoracleidcsextensionposix_user_gid_number),
                 "home_directory": user_urnietfparamsscimschemasoracleidcsextensionposix_user_home_directory,
                 "login_shell": user_urnietfparamsscimschemasoracleidcsextensionposix_user_login_shell,
-                "uid_number": user_urnietfparamsscimschemasoracleidcsextensionposix_user_uid_number,
+                "uid_number": int(user_urnietfparamsscimschemasoracleidcsextensionposix_user_uid_number),
             },
             urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user={
                 "sec_questions": [{
@@ -3370,14 +3370,14 @@ class DomainsUser(pulumi.CustomResource):
                 }],
             },
             urnietfparamsscimschemasoracleidcsextensionself_change_user={
-                "allow_self_change": user_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change,
+                "allow_self_change": user_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change == "true",
             },
             urnietfparamsscimschemasoracleidcsextensionself_registration_user={
                 "self_registration_profile": {
                     "value": user_urnietfparamsscimschemasoracleidcsextensionself_registration_user_self_registration_profile_value,
                     "display": user_urnietfparamsscimschemasoracleidcsextensionself_registration_user_self_registration_profile_display,
                 },
-                "consent_granted": user_urnietfparamsscimschemasoracleidcsextensionself_registration_user_consent_granted,
+                "consent_granted": user_urnietfparamsscimschemasoracleidcsextensionself_registration_user_consent_granted == "true",
                 "user_token": user_urnietfparamsscimschemasoracleidcsextensionself_registration_user_user_token,
             },
             urnietfparamsscimschemasoracleidcsextensionsff_user={
@@ -3396,47 +3396,47 @@ class DomainsUser(pulumi.CustomResource):
             },
             urnietfparamsscimschemasoracleidcsextensionuser_state_user={
                 "locked": {
-                    "expired": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_locked_expired,
+                    "expired": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_locked_expired == "true",
                     "lock_date": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_locked_lock_date,
-                    "on": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_locked_on,
-                    "reason": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_locked_reason,
+                    "on": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_locked_on == "true",
+                    "reason": int(user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_locked_reason),
                 },
-                "max_concurrent_sessions": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_max_concurrent_sessions,
+                "max_concurrent_sessions": int(user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_max_concurrent_sessions),
                 "recovery_locked": {
                     "lock_date": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_recovery_locked_lock_date,
-                    "on": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_recovery_locked_on,
+                    "on": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_recovery_locked_on == "true",
                 },
             },
             urnietfparamsscimschemasoracleidcsextensionuser_user={
                 "user_provider": user_urnietfparamsscimschemasoracleidcsextensionuser_user_user_provider,
-                "account_recovery_required": user_urnietfparamsscimschemasoracleidcsextensionuser_user_account_recovery_required,
-                "bypass_notification": user_urnietfparamsscimschemasoracleidcsextensionuser_user_bypass_notification,
+                "account_recovery_required": user_urnietfparamsscimschemasoracleidcsextensionuser_user_account_recovery_required == "true",
+                "bypass_notification": user_urnietfparamsscimschemasoracleidcsextensionuser_user_bypass_notification == "true",
                 "creation_mechanism": user_urnietfparamsscimschemasoracleidcsextensionuser_user_creation_mechanism,
                 "delegated_authentication_target_app": {
                     "type": user_urnietfparamsscimschemasoracleidcsextensionuser_user_delegated_authentication_target_app_type,
                     "value": user_urnietfparamsscimschemasoracleidcsextensionuser_user_delegated_authentication_target_app_value,
                     "display": user_urnietfparamsscimschemasoracleidcsextensionuser_user_delegated_authentication_target_app_display,
                 },
-                "do_not_show_getting_started": user_urnietfparamsscimschemasoracleidcsextensionuser_user_do_not_show_getting_started,
-                "is_authentication_delegated": user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_authentication_delegated,
-                "is_federated_user": user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_federated_user,
-                "is_group_membership_normalized": user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_group_membership_normalized,
-                "is_group_membership_synced_to_users_groups": user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_group_membership_synced_to_users_groups,
+                "do_not_show_getting_started": user_urnietfparamsscimschemasoracleidcsextensionuser_user_do_not_show_getting_started == "true",
+                "is_authentication_delegated": user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_authentication_delegated == "true",
+                "is_federated_user": user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_federated_user == "true",
+                "is_group_membership_normalized": user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_group_membership_normalized == "true",
+                "is_group_membership_synced_to_users_groups": user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_group_membership_synced_to_users_groups == "true",
                 "notification_email_template_id": test_notification_email_template["id"],
                 "preferred_ui_landing_page": user_urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user_preferred_ui_landing_page,
-                "service_user": user_urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user_service_user,
+                "service_user": user_urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user_service_user == "true",
                 "synced_from_app": {
                     "type": user_urnietfparamsscimschemasoracleidcsextensionuser_user_synced_from_app_type,
                     "value": user_urnietfparamsscimschemasoracleidcsextensionuser_user_synced_from_app_value,
                     "display": user_urnietfparamsscimschemasoracleidcsextensionuser_user_synced_from_app_display,
                 },
-                "user_flow_controlled_by_external_client": user_urnietfparamsscimschemasoracleidcsextensionuser_user_user_flow_controlled_by_external_client,
+                "user_flow_controlled_by_external_client": user_urnietfparamsscimschemasoracleidcsextensionuser_user_user_flow_controlled_by_external_client == "true",
             },
             user_type=user_user_type,
             x509certificates=[{
                 "value": user_x509certificates_value,
                 "display": user_x509certificates_display,
-                "primary": user_x509certificates_primary,
+                "primary": user_x509certificates_primary == "true",
                 "type": user_x509certificates_type,
             }])
         ```
@@ -3811,14 +3811,14 @@ class DomainsUser(pulumi.CustomResource):
             idcs_endpoint=test_domain["url"],
             schemas=["urn:ietf:params:scim:schemas:core:2.0:User"],
             user_name="userName",
-            active=user_active,
+            active=user_active == "true",
             addresses=[{
                 "type": user_addresses_type,
                 "country": user_addresses_country,
                 "formatted": user_addresses_formatted,
                 "locality": user_addresses_locality,
                 "postal_code": user_addresses_postal_code,
-                "primary": user_addresses_primary,
+                "primary": user_addresses_primary == "true",
                 "region": user_addresses_region,
                 "street_address": user_addresses_street_address,
             }],
@@ -3832,8 +3832,8 @@ class DomainsUser(pulumi.CustomResource):
                     "type": user_emails_type,
                     "value": user_emails_value,
                     "primary": True,
-                    "secondary": user_emails_secondary,
-                    "verified": user_emails_verified,
+                    "secondary": user_emails_secondary == "true",
+                    "verified": user_emails_verified == "true",
                 },
                 {
                     "type": "recovery",
@@ -3844,16 +3844,16 @@ class DomainsUser(pulumi.CustomResource):
                 "type": user_entitlements_type,
                 "value": user_entitlements_value,
                 "display": user_entitlements_display,
-                "primary": user_entitlements_primary,
+                "primary": user_entitlements_primary == "true",
             }],
             external_id="externalId",
-            force_delete=user_force_delete,
+            force_delete=user_force_delete == "true",
             id=user_id,
             ims=[{
                 "type": user_ims_type,
                 "value": user_ims_value,
                 "display": user_ims_display,
-                "primary": user_ims_primary,
+                "primary": user_ims_primary == "true",
             }],
             locale=user_locale,
             name={
@@ -3870,13 +3870,13 @@ class DomainsUser(pulumi.CustomResource):
             phone_numbers=[{
                 "type": user_phone_numbers_type,
                 "value": user_phone_numbers_value,
-                "primary": user_phone_numbers_primary,
+                "primary": user_phone_numbers_primary == "true",
             }],
             photos=[{
                 "type": user_photos_type,
                 "value": user_photos_value,
                 "display": user_photos_display,
-                "primary": user_photos_primary,
+                "primary": user_photos_primary == "true",
             }],
             preferred_language=user_preferred_language,
             profile_url=user_profile_url,
@@ -3885,7 +3885,7 @@ class DomainsUser(pulumi.CustomResource):
                 "type": user_roles_type,
                 "value": user_roles_value,
                 "display": user_roles_display,
-                "primary": user_roles_primary,
+                "primary": user_roles_primary == "true",
             }],
             tags=[{
                 "key": user_tags_key,
@@ -3919,7 +3919,7 @@ class DomainsUser(pulumi.CustomResource):
                 "risk_scores": [{
                     "last_update_timestamp": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_last_update_timestamp,
                     "risk_level": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_risk_level,
-                    "score": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_score,
+                    "score": int(user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_score),
                     "value": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_value,
                     "source": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_source,
                     "status": user_urnietfparamsscimschemasoracleidcsextensionadaptive_user_risk_scores_status,
@@ -3958,7 +3958,7 @@ class DomainsUser(pulumi.CustomResource):
                     "status": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_devices_status,
                     "third_party_vendor_name": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_devices_third_party_vendor_name,
                 }],
-                "login_attempts": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_login_attempts,
+                "login_attempts": int(user_urnietfparamsscimschemasoracleidcsextensionmfa_user_login_attempts),
                 "mfa_enabled_on": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_mfa_enabled_on,
                 "mfa_ignored_apps": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_mfa_ignored_apps,
                 "mfa_status": user_urnietfparamsscimschemasoracleidcsextensionmfa_user_mfa_status,
@@ -3984,10 +3984,10 @@ class DomainsUser(pulumi.CustomResource):
             },
             urnietfparamsscimschemasoracleidcsextensionposix_user={
                 "gecos": user_urnietfparamsscimschemasoracleidcsextensionposix_user_gecos,
-                "gid_number": user_urnietfparamsscimschemasoracleidcsextensionposix_user_gid_number,
+                "gid_number": int(user_urnietfparamsscimschemasoracleidcsextensionposix_user_gid_number),
                 "home_directory": user_urnietfparamsscimschemasoracleidcsextensionposix_user_home_directory,
                 "login_shell": user_urnietfparamsscimschemasoracleidcsextensionposix_user_login_shell,
-                "uid_number": user_urnietfparamsscimschemasoracleidcsextensionposix_user_uid_number,
+                "uid_number": int(user_urnietfparamsscimschemasoracleidcsextensionposix_user_uid_number),
             },
             urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user={
                 "sec_questions": [{
@@ -3997,14 +3997,14 @@ class DomainsUser(pulumi.CustomResource):
                 }],
             },
             urnietfparamsscimschemasoracleidcsextensionself_change_user={
-                "allow_self_change": user_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change,
+                "allow_self_change": user_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change == "true",
             },
             urnietfparamsscimschemasoracleidcsextensionself_registration_user={
                 "self_registration_profile": {
                     "value": user_urnietfparamsscimschemasoracleidcsextensionself_registration_user_self_registration_profile_value,
                     "display": user_urnietfparamsscimschemasoracleidcsextensionself_registration_user_self_registration_profile_display,
                 },
-                "consent_granted": user_urnietfparamsscimschemasoracleidcsextensionself_registration_user_consent_granted,
+                "consent_granted": user_urnietfparamsscimschemasoracleidcsextensionself_registration_user_consent_granted == "true",
                 "user_token": user_urnietfparamsscimschemasoracleidcsextensionself_registration_user_user_token,
             },
             urnietfparamsscimschemasoracleidcsextensionsff_user={
@@ -4023,47 +4023,47 @@ class DomainsUser(pulumi.CustomResource):
             },
             urnietfparamsscimschemasoracleidcsextensionuser_state_user={
                 "locked": {
-                    "expired": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_locked_expired,
+                    "expired": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_locked_expired == "true",
                     "lock_date": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_locked_lock_date,
-                    "on": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_locked_on,
-                    "reason": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_locked_reason,
+                    "on": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_locked_on == "true",
+                    "reason": int(user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_locked_reason),
                 },
-                "max_concurrent_sessions": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_max_concurrent_sessions,
+                "max_concurrent_sessions": int(user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_max_concurrent_sessions),
                 "recovery_locked": {
                     "lock_date": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_recovery_locked_lock_date,
-                    "on": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_recovery_locked_on,
+                    "on": user_urnietfparamsscimschemasoracleidcsextensionuser_state_user_recovery_locked_on == "true",
                 },
             },
             urnietfparamsscimschemasoracleidcsextensionuser_user={
                 "user_provider": user_urnietfparamsscimschemasoracleidcsextensionuser_user_user_provider,
-                "account_recovery_required": user_urnietfparamsscimschemasoracleidcsextensionuser_user_account_recovery_required,
-                "bypass_notification": user_urnietfparamsscimschemasoracleidcsextensionuser_user_bypass_notification,
+                "account_recovery_required": user_urnietfparamsscimschemasoracleidcsextensionuser_user_account_recovery_required == "true",
+                "bypass_notification": user_urnietfparamsscimschemasoracleidcsextensionuser_user_bypass_notification == "true",
                 "creation_mechanism": user_urnietfparamsscimschemasoracleidcsextensionuser_user_creation_mechanism,
                 "delegated_authentication_target_app": {
                     "type": user_urnietfparamsscimschemasoracleidcsextensionuser_user_delegated_authentication_target_app_type,
                     "value": user_urnietfparamsscimschemasoracleidcsextensionuser_user_delegated_authentication_target_app_value,
                     "display": user_urnietfparamsscimschemasoracleidcsextensionuser_user_delegated_authentication_target_app_display,
                 },
-                "do_not_show_getting_started": user_urnietfparamsscimschemasoracleidcsextensionuser_user_do_not_show_getting_started,
-                "is_authentication_delegated": user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_authentication_delegated,
-                "is_federated_user": user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_federated_user,
-                "is_group_membership_normalized": user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_group_membership_normalized,
-                "is_group_membership_synced_to_users_groups": user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_group_membership_synced_to_users_groups,
+                "do_not_show_getting_started": user_urnietfparamsscimschemasoracleidcsextensionuser_user_do_not_show_getting_started == "true",
+                "is_authentication_delegated": user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_authentication_delegated == "true",
+                "is_federated_user": user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_federated_user == "true",
+                "is_group_membership_normalized": user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_group_membership_normalized == "true",
+                "is_group_membership_synced_to_users_groups": user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_group_membership_synced_to_users_groups == "true",
                 "notification_email_template_id": test_notification_email_template["id"],
                 "preferred_ui_landing_page": user_urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user_preferred_ui_landing_page,
-                "service_user": user_urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user_service_user,
+                "service_user": user_urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user_service_user == "true",
                 "synced_from_app": {
                     "type": user_urnietfparamsscimschemasoracleidcsextensionuser_user_synced_from_app_type,
                     "value": user_urnietfparamsscimschemasoracleidcsextensionuser_user_synced_from_app_value,
                     "display": user_urnietfparamsscimschemasoracleidcsextensionuser_user_synced_from_app_display,
                 },
-                "user_flow_controlled_by_external_client": user_urnietfparamsscimschemasoracleidcsextensionuser_user_user_flow_controlled_by_external_client,
+                "user_flow_controlled_by_external_client": user_urnietfparamsscimschemasoracleidcsextensionuser_user_user_flow_controlled_by_external_client == "true",
             },
             user_type=user_user_type,
             x509certificates=[{
                 "value": user_x509certificates_value,
                 "display": user_x509certificates_display,
-                "primary": user_x509certificates_primary,
+                "primary": user_x509certificates_primary == "true",
                 "type": user_x509certificates_type,
             }])
         ```
@@ -4092,54 +4092,54 @@ class DomainsUser(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 active: Optional[pulumi.Input[_builtins.bool]] = None,
-                 addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserAddressArgs', 'DomainsUserAddressArgsDict']]]]] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 emails: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserEmailArgs', 'DomainsUserEmailArgsDict']]]]] = None,
-                 entitlements: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserEntitlementArgs', 'DomainsUserEntitlementArgsDict']]]]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 force_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 ims: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserImArgs', 'DomainsUserImArgsDict']]]]] = None,
-                 locale: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[Union['DomainsUserNameArgs', 'DomainsUserNameArgsDict']]] = None,
-                 nick_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone_numbers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserPhoneNumberArgs', 'DomainsUserPhoneNumberArgsDict']]]]] = None,
-                 photos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserPhotoArgs', 'DomainsUserPhotoArgsDict']]]]] = None,
-                 preferred_language: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 roles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserRoleArgs', 'DomainsUserRoleArgsDict']]]]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserTagArgs', 'DomainsUserTagArgsDict']]]]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
-                 title: Optional[pulumi.Input[_builtins.str]] = None,
-                 urnietfparamsscimschemasextensionenterprise20user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs', 'DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionadaptive_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensioncapabilities_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionkerberos_user_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionmfa_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionpasswordless_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionposix_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionself_change_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionself_registration_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionsff_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionsocial_account_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionterms_of_use_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionuser_state_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgsDict']]] = None,
-                 urnietfparamsscimschemasoracleidcsextensionuser_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgsDict']]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 x509certificates: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserX509certificateArgs', 'DomainsUserX509certificateArgsDict']]]]] = None,
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserAddressArgs', 'DomainsUserAddressArgsDict']]]]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 emails: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserEmailArgs', 'DomainsUserEmailArgsDict']]]]] = None,
+                 entitlements: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserEntitlementArgs', 'DomainsUserEntitlementArgsDict']]]]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 force_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 ims: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserImArgs', 'DomainsUserImArgsDict']]]]] = None,
+                 locale: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[Union['DomainsUserNameArgs', 'DomainsUserNameArgsDict']]] = None,
+                 nick_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone_numbers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserPhoneNumberArgs', 'DomainsUserPhoneNumberArgsDict']]]]] = None,
+                 photos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserPhotoArgs', 'DomainsUserPhotoArgsDict']]]]] = None,
+                 preferred_language: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserRoleArgs', 'DomainsUserRoleArgsDict']]]]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserTagArgs', 'DomainsUserTagArgsDict']]]]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
+                 title: pulumi.Input[Optional[_builtins.str]] = None,
+                 urnietfparamsscimschemasextensionenterprise20user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs', 'DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionadaptive_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensioncapabilities_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionkerberos_user_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionmfa_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionpasswordless_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionposix_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionself_change_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionself_registration_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionsff_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionsocial_account_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionterms_of_use_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionuser_state_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgsDict']]] = None,
+                 urnietfparamsscimschemasoracleidcsextensionuser_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgsDict']]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 x509certificates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserX509certificateArgs', 'DomainsUserX509certificateArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -4228,67 +4228,67 @@ class DomainsUser(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            active: Optional[pulumi.Input[_builtins.bool]] = None,
-            addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserAddressArgs', 'DomainsUserAddressArgsDict']]]]] = None,
-            attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            attributes: Optional[pulumi.Input[_builtins.str]] = None,
-            authorization: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            delete_in_progress: Optional[pulumi.Input[_builtins.bool]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            domain_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            emails: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserEmailArgs', 'DomainsUserEmailArgsDict']]]]] = None,
-            entitlements: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserEntitlementArgs', 'DomainsUserEntitlementArgsDict']]]]] = None,
-            external_id: Optional[pulumi.Input[_builtins.str]] = None,
-            force_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-            groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserGroupArgs', 'DomainsUserGroupArgsDict']]]]] = None,
-            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserIdcsCreatedByArgs', 'DomainsUserIdcsCreatedByArgsDict']]]]] = None,
-            idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserIdcsLastModifiedByArgs', 'DomainsUserIdcsLastModifiedByArgsDict']]]]] = None,
-            idcs_last_upgraded_in_release: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ims: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserImArgs', 'DomainsUserImArgsDict']]]]] = None,
-            locale: Optional[pulumi.Input[_builtins.str]] = None,
-            metas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserMetaArgs', 'DomainsUserMetaArgsDict']]]]] = None,
-            name: Optional[pulumi.Input[Union['DomainsUserNameArgs', 'DomainsUserNameArgsDict']]] = None,
-            nick_name: Optional[pulumi.Input[_builtins.str]] = None,
-            ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            password: Optional[pulumi.Input[_builtins.str]] = None,
-            phone_numbers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserPhoneNumberArgs', 'DomainsUserPhoneNumberArgsDict']]]]] = None,
-            photos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserPhotoArgs', 'DomainsUserPhotoArgsDict']]]]] = None,
-            preferred_language: Optional[pulumi.Input[_builtins.str]] = None,
-            profile_url: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-            roles: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserRoleArgs', 'DomainsUserRoleArgsDict']]]]] = None,
-            schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserTagArgs', 'DomainsUserTagArgsDict']]]]] = None,
-            tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            timezone: Optional[pulumi.Input[_builtins.str]] = None,
-            title: Optional[pulumi.Input[_builtins.str]] = None,
-            urnietfparamsscimschemasextensionenterprise20user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs', 'DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextension_oci_tags: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionadaptive_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensioncapabilities_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensiondb_user_users: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgsDict']]]]] = None,
-            urnietfparamsscimschemasoracleidcsextensionkerberos_user_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionmfa_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionpassword_state_users: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgsDict']]]]] = None,
-            urnietfparamsscimschemasoracleidcsextensionpasswordless_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionposix_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionself_change_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionself_registration_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionsff_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionsocial_account_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionterms_of_use_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionuser_credentials_users: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgsDict']]]]] = None,
-            urnietfparamsscimschemasoracleidcsextensionuser_state_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgsDict']]] = None,
-            urnietfparamsscimschemasoracleidcsextensionuser_user: Optional[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgsDict']]] = None,
-            user_name: Optional[pulumi.Input[_builtins.str]] = None,
-            user_type: Optional[pulumi.Input[_builtins.str]] = None,
-            x509certificates: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsUserX509certificateArgs', 'DomainsUserX509certificateArgsDict']]]]] = None) -> 'DomainsUser':
+            active: pulumi.Input[Optional[_builtins.bool]] = None,
+            addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserAddressArgs', 'DomainsUserAddressArgsDict']]]]] = None,
+            attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            attributes: pulumi.Input[Optional[_builtins.str]] = None,
+            authorization: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            emails: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserEmailArgs', 'DomainsUserEmailArgsDict']]]]] = None,
+            entitlements: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserEntitlementArgs', 'DomainsUserEntitlementArgsDict']]]]] = None,
+            external_id: pulumi.Input[Optional[_builtins.str]] = None,
+            force_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserGroupArgs', 'DomainsUserGroupArgsDict']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserIdcsCreatedByArgs', 'DomainsUserIdcsCreatedByArgsDict']]]]] = None,
+            idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserIdcsLastModifiedByArgs', 'DomainsUserIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ims: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserImArgs', 'DomainsUserImArgsDict']]]]] = None,
+            locale: pulumi.Input[Optional[_builtins.str]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserMetaArgs', 'DomainsUserMetaArgsDict']]]]] = None,
+            name: pulumi.Input[Optional[Union['DomainsUserNameArgs', 'DomainsUserNameArgsDict']]] = None,
+            nick_name: pulumi.Input[Optional[_builtins.str]] = None,
+            ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            phone_numbers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserPhoneNumberArgs', 'DomainsUserPhoneNumberArgsDict']]]]] = None,
+            photos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserPhotoArgs', 'DomainsUserPhotoArgsDict']]]]] = None,
+            preferred_language: pulumi.Input[Optional[_builtins.str]] = None,
+            profile_url: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+            roles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserRoleArgs', 'DomainsUserRoleArgsDict']]]]] = None,
+            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserTagArgs', 'DomainsUserTagArgsDict']]]]] = None,
+            tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            timezone: pulumi.Input[Optional[_builtins.str]] = None,
+            title: pulumi.Input[Optional[_builtins.str]] = None,
+            urnietfparamsscimschemasextensionenterprise20user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs', 'DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionadaptive_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensioncapabilities_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensiondb_credentials_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensiondb_user_users: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserArgsDict']]]]] = None,
+            urnietfparamsscimschemasoracleidcsextensionkerberos_user_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionmfa_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionpassword_state_users: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserArgsDict']]]]] = None,
+            urnietfparamsscimschemasoracleidcsextensionpasswordless_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionposix_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionsecurity_questions_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionself_change_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionself_registration_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionsff_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionsocial_account_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionterms_of_use_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionuser_credentials_users: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserArgsDict']]]]] = None,
+            urnietfparamsscimschemasoracleidcsextensionuser_state_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgsDict']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionuser_user: pulumi.Input[Optional[Union['DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs', 'DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgsDict']]] = None,
+            user_name: pulumi.Input[Optional[_builtins.str]] = None,
+            user_type: pulumi.Input[Optional[_builtins.str]] = None,
+            x509certificates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsUserX509certificateArgs', 'DomainsUserX509certificateArgsDict']]]]] = None) -> 'DomainsUser':
         """
         Get an existing DomainsUser resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

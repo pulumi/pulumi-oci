@@ -24,9 +24,9 @@ class BdsInstanceNodeBackupArgs:
                  backup_type: pulumi.Input[_builtins.str],
                  bds_instance_id: pulumi.Input[_builtins.str],
                  level_type_details: pulumi.Input['BdsInstanceNodeBackupLevelTypeDetailsArgs'],
-                 backup_config_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_instance_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 backup_config_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_instance_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a BdsInstanceNodeBackup resource.
 
@@ -82,44 +82,44 @@ class BdsInstanceNodeBackupArgs:
 
     @_builtins.property
     @pulumi.getter(name="backupConfigId")
-    def backup_config_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_config_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "backup_config_id")
 
     @backup_config_id.setter
-    def backup_config_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_config_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeInstanceId")
-    def node_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def node_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "node_instance_id")
 
     @node_instance_id.setter
-    def node_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def node_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "node_instance_id", value)
 
 
 @pulumi.input_type
 class _BdsInstanceNodeBackupState:
     def __init__(__self__, *,
-                 backup_config_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 level_type_details: Optional[pulumi.Input['BdsInstanceNodeBackupLevelTypeDetailsArgs']] = None,
-                 node_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 backup_config_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 level_type_details: pulumi.Input[Optional['BdsInstanceNodeBackupLevelTypeDetailsArgs']] = None,
+                 node_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BdsInstanceNodeBackup resources.
 
@@ -150,98 +150,98 @@ class _BdsInstanceNodeBackupState:
 
     @_builtins.property
     @pulumi.getter(name="backupConfigId")
-    def backup_config_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_config_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "backup_config_id")
 
     @backup_config_id.setter
-    def backup_config_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_config_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="backupType")
-    def backup_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
         """
         return pulumi.get(self, "backup_type")
 
     @backup_type.setter
-    def backup_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_type", value)
 
     @_builtins.property
     @pulumi.getter(name="bdsInstanceId")
-    def bds_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bds_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the cluster.
         """
         return pulumi.get(self, "bds_instance_id")
 
     @bds_instance_id.setter
-    def bds_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bds_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bds_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="levelTypeDetails")
-    def level_type_details(self) -> Optional[pulumi.Input['BdsInstanceNodeBackupLevelTypeDetailsArgs']]:
+    def level_type_details(self) -> pulumi.Input[Optional['BdsInstanceNodeBackupLevelTypeDetailsArgs']]:
         """
         Details of the type of level used to trigger the creation of a new node backup.
         """
         return pulumi.get(self, "level_type_details")
 
     @level_type_details.setter
-    def level_type_details(self, value: Optional[pulumi.Input['BdsInstanceNodeBackupLevelTypeDetailsArgs']]):
+    def level_type_details(self, value: pulumi.Input[Optional['BdsInstanceNodeBackupLevelTypeDetailsArgs']]):
         pulumi.set(self, "level_type_details", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeInstanceId")
-    def node_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def node_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "node_instance_id")
 
     @node_instance_id.setter
-    def node_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def node_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "node_instance_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The state of the NodeBackup.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the NodeBackup was created, shown as an RFC 3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -251,12 +251,12 @@ class BdsInstanceNodeBackup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 backup_config_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 level_type_details: Optional[pulumi.Input[Union['BdsInstanceNodeBackupLevelTypeDetailsArgs', 'BdsInstanceNodeBackupLevelTypeDetailsArgsDict']]] = None,
-                 node_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 backup_config_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeBackupLevelTypeDetailsArgs', 'BdsInstanceNodeBackupLevelTypeDetailsArgsDict']]] = None,
+                 node_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Bds Instance Node Backup resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -353,12 +353,12 @@ class BdsInstanceNodeBackup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 backup_config_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 level_type_details: Optional[pulumi.Input[Union['BdsInstanceNodeBackupLevelTypeDetailsArgs', 'BdsInstanceNodeBackupLevelTypeDetailsArgsDict']]] = None,
-                 node_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 backup_config_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeBackupLevelTypeDetailsArgs', 'BdsInstanceNodeBackupLevelTypeDetailsArgsDict']]] = None,
+                 node_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -393,15 +393,15 @@ class BdsInstanceNodeBackup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            backup_config_id: Optional[pulumi.Input[_builtins.str]] = None,
-            backup_type: Optional[pulumi.Input[_builtins.str]] = None,
-            bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            level_type_details: Optional[pulumi.Input[Union['BdsInstanceNodeBackupLevelTypeDetailsArgs', 'BdsInstanceNodeBackupLevelTypeDetailsArgsDict']]] = None,
-            node_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'BdsInstanceNodeBackup':
+            backup_config_id: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_type: pulumi.Input[Optional[_builtins.str]] = None,
+            bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeBackupLevelTypeDetailsArgs', 'BdsInstanceNodeBackupLevelTypeDetailsArgsDict']]] = None,
+            node_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'BdsInstanceNodeBackup':
         """
         Get an existing BdsInstanceNodeBackup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

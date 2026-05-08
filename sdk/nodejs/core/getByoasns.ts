@@ -75,5 +75,5 @@ export interface GetByoasnsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetByoasnsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetByoasnsFilterArgs>[] | undefined>;
 }

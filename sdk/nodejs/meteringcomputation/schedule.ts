@@ -55,7 +55,7 @@ import * as utilities from "../utilities";
  *             namespace: scheduleQueryPropertiesGroupByTagNamespace,
  *             value: scheduleQueryPropertiesGroupByTagValue,
  *         }],
- *         isAggregateByTime: scheduleQueryPropertiesIsAggregateByTime,
+ *         isAggregateByTime: scheduleQueryPropertiesIsAggregateByTime === "true",
  *         queryType: scheduleQueryPropertiesQueryType,
  *     },
  *     savedReportId: testReport.id,
@@ -233,59 +233,59 @@ export interface ScheduleState {
     /**
      * The customer tenancy.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the schedule.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The unique name of the user-created schedule.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specifies the supported output file format.
      */
-    outputFileFormat?: pulumi.Input<string>;
+    outputFileFormat?: pulumi.Input<string | undefined>;
     /**
      * The query properties.
      */
-    queryProperties?: pulumi.Input<inputs.MeteringComputation.ScheduleQueryProperties>;
+    queryProperties?: pulumi.Input<inputs.MeteringComputation.ScheduleQueryProperties | undefined>;
     /**
      * (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
      */
-    resultLocation?: pulumi.Input<inputs.MeteringComputation.ScheduleResultLocation>;
+    resultLocation?: pulumi.Input<inputs.MeteringComputation.ScheduleResultLocation | undefined>;
     /**
      * The saved report ID which can also be used to generate a query.
      */
-    savedReportId?: pulumi.Input<string>;
+    savedReportId?: pulumi.Input<string | undefined>;
     /**
      * Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      */
-    scheduleRecurrences?: pulumi.Input<string>;
+    scheduleRecurrences?: pulumi.Input<string | undefined>;
     /**
      * The schedule lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the schedule was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time of the next job execution.
      */
-    timeNextRun?: pulumi.Input<string>;
+    timeNextRun?: pulumi.Input<string | undefined>;
     /**
      * The date and time of the first time job execution.
      *
@@ -293,7 +293,7 @@ export interface ScheduleState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeScheduled?: pulumi.Input<string>;
+    timeScheduled?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -307,27 +307,27 @@ export interface ScheduleArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the schedule.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The unique name of the user-created schedule.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specifies the supported output file format.
      */
-    outputFileFormat?: pulumi.Input<string>;
+    outputFileFormat?: pulumi.Input<string | undefined>;
     /**
      * The query properties.
      */
-    queryProperties?: pulumi.Input<inputs.MeteringComputation.ScheduleQueryProperties>;
+    queryProperties?: pulumi.Input<inputs.MeteringComputation.ScheduleQueryProperties | undefined>;
     /**
      * (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
      */
@@ -335,7 +335,7 @@ export interface ScheduleArgs {
     /**
      * The saved report ID which can also be used to generate a query.
      */
-    savedReportId?: pulumi.Input<string>;
+    savedReportId?: pulumi.Input<string | undefined>;
     /**
      * Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      */

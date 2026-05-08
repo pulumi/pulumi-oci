@@ -203,7 +203,7 @@ def get_preauthrequest(bucket: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_preauthenticated_request = oci.ObjectStorage.get_preauthrequest(bucket=preauthenticated_request_bucket,
+    test_preauthenticated_request = oci.objectstorage.get_preauthrequest(bucket=preauthenticated_request_bucket,
         namespace=preauthenticated_request_namespace,
         par_id=test_par["id"])
     ```
@@ -234,9 +234,9 @@ def get_preauthrequest(bucket: Optional[_builtins.str] = None,
         par_id=pulumi.get(__ret__, 'par_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_expires=pulumi.get(__ret__, 'time_expires'))
-def get_preauthrequest_output(bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                              namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                              par_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_preauthrequest_output(bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                              namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                              par_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPreauthrequestResult]:
     """
     This data source provides details about a specific Preauthenticated Request resource in Oracle Cloud Infrastructure Object Storage service.
@@ -249,7 +249,7 @@ def get_preauthrequest_output(bucket: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_preauthenticated_request = oci.ObjectStorage.get_preauthrequest(bucket=preauthenticated_request_bucket,
+    test_preauthenticated_request = oci.objectstorage.get_preauthrequest(bucket=preauthenticated_request_bucket,
         namespace=preauthenticated_request_namespace,
         par_id=test_par["id"])
     ```

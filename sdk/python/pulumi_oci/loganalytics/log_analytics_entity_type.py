@@ -22,9 +22,9 @@ __all__ = ['LogAnalyticsEntityTypeArgs', 'LogAnalyticsEntityType']
 class LogAnalyticsEntityTypeArgs:
     def __init__(__self__, *,
                  namespace: pulumi.Input[_builtins.str],
-                 category: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 properties: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsEntityTypePropertyArgs']]]] = None):
+                 category: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsEntityTypePropertyArgs']]]] = None):
         """
         The set of arguments for constructing a LogAnalyticsEntityType resource.
 
@@ -55,54 +55,54 @@ class LogAnalyticsEntityTypeArgs:
 
     @_builtins.property
     @pulumi.getter
-    def category(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def category(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Log analytics entity type category. Category will be used for grouping and filtering.
         """
         return pulumi.get(self, "category")
 
     @category.setter
-    def category(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def category(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "category", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Log analytics entity type name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsEntityTypePropertyArgs']]]]:
+    def properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsEntityTypePropertyArgs']]]]:
         """
         Log analytics entity type property definition.
         """
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsEntityTypePropertyArgs']]]]):
+    def properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsEntityTypePropertyArgs']]]]):
         pulumi.set(self, "properties", value)
 
 
 @pulumi.input_type
 class _LogAnalyticsEntityTypeState:
     def __init__(__self__, *,
-                 category: Optional[pulumi.Input[_builtins.str]] = None,
-                 cloud_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 internal_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_agent_eligibility_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 properties: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsEntityTypePropertyArgs']]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 category: pulumi.Input[Optional[_builtins.str]] = None,
+                 cloud_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 internal_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_agent_eligibility_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsEntityTypePropertyArgs']]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LogAnalyticsEntityType resources.
 
@@ -139,119 +139,119 @@ class _LogAnalyticsEntityTypeState:
 
     @_builtins.property
     @pulumi.getter
-    def category(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def category(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Log analytics entity type category. Category will be used for grouping and filtering.
         """
         return pulumi.get(self, "category")
 
     @category.setter
-    def category(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def category(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "category", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudType")
-    def cloud_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cloud_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Log analytics entity type group. This can be CLOUD (OCI) or NON_CLOUD otherwise.
         """
         return pulumi.get(self, "cloud_type")
 
     @cloud_type.setter
-    def cloud_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cloud_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cloud_type", value)
 
     @_builtins.property
     @pulumi.getter(name="internalName")
-    def internal_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def internal_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Internal name for the log analytics entity type.
         """
         return pulumi.get(self, "internal_name")
 
     @internal_name.setter
-    def internal_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def internal_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "internal_name", value)
 
     @_builtins.property
     @pulumi.getter(name="managementAgentEligibilityStatus")
-    def management_agent_eligibility_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_agent_eligibility_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "management_agent_eligibility_status")
 
     @management_agent_eligibility_status.setter
-    def management_agent_eligibility_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_agent_eligibility_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_agent_eligibility_status", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Log analytics entity type name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsEntityTypePropertyArgs']]]]:
+    def properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsEntityTypePropertyArgs']]]]:
         """
         Log analytics entity type property definition.
         """
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsEntityTypePropertyArgs']]]]):
+    def properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsEntityTypePropertyArgs']]]]):
         pulumi.set(self, "properties", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the log analytics entity type.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time the log analytics entity type was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time the log analytics entity type was updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -261,10 +261,10 @@ class LogAnalyticsEntityType(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 category: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsEntityTypePropertyArgs', 'LogAnalyticsEntityTypePropertyArgsDict']]]]] = None,
+                 category: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsEntityTypePropertyArgs', 'LogAnalyticsEntityTypePropertyArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Log Analytics Entity Type resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -360,10 +360,10 @@ class LogAnalyticsEntityType(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 category: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsEntityTypePropertyArgs', 'LogAnalyticsEntityTypePropertyArgsDict']]]]] = None,
+                 category: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsEntityTypePropertyArgs', 'LogAnalyticsEntityTypePropertyArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -395,16 +395,16 @@ class LogAnalyticsEntityType(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            category: Optional[pulumi.Input[_builtins.str]] = None,
-            cloud_type: Optional[pulumi.Input[_builtins.str]] = None,
-            internal_name: Optional[pulumi.Input[_builtins.str]] = None,
-            management_agent_eligibility_status: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None,
-            properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsEntityTypePropertyArgs', 'LogAnalyticsEntityTypePropertyArgsDict']]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'LogAnalyticsEntityType':
+            category: pulumi.Input[Optional[_builtins.str]] = None,
+            cloud_type: pulumi.Input[Optional[_builtins.str]] = None,
+            internal_name: pulumi.Input[Optional[_builtins.str]] = None,
+            management_agent_eligibility_status: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsEntityTypePropertyArgs', 'LogAnalyticsEntityTypePropertyArgsDict']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'LogAnalyticsEntityType':
         """
         Get an existing LogAnalyticsEntityType resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

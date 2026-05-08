@@ -151,22 +151,22 @@ export interface GetDbmulticloudOracleDbAzureBlobMountsOutputArgs {
     /**
      * A filter to return Oracle DB Azure Blob Mount resources that match the specified display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDbmulticloudOracleDbAzureBlobMountsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDbmulticloudOracleDbAzureBlobMountsFilterArgs>[] | undefined>;
     /**
      * A filter to return Oracle DB Azure Blob Container resource.
      */
-    oracleDbAzureBlobContainerId?: pulumi.Input<string>;
+    oracleDbAzureBlobContainerId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
      */
-    oracleDbAzureBlobMountId?: pulumi.Input<string>;
+    oracleDbAzureBlobMountId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return Oracle DB Azure Azure Identity Connector resources.
      */
-    oracleDbAzureConnectorId?: pulumi.Input<string>;
+    oracleDbAzureConnectorId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

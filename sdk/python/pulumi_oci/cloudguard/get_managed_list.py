@@ -263,7 +263,7 @@ def get_managed_list(managed_list_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_list = oci.CloudGuard.get_managed_list(managed_list_id=test_managed_list_oci_cloud_guard_managed_list["id"])
+    test_managed_list = oci.cloudguard.get_managed_list(managed_list_id=test_managed_list_oci_cloud_guard_managed_list["id"])
     ```
 
 
@@ -293,7 +293,7 @@ def get_managed_list(managed_list_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_managed_list_output(managed_list_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_managed_list_output(managed_list_id: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedListResult]:
     """
     This data source provides details about a specific Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -306,7 +306,7 @@ def get_managed_list_output(managed_list_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_list = oci.CloudGuard.get_managed_list(managed_list_id=test_managed_list_oci_cloud_guard_managed_list["id"])
+    test_managed_list = oci.cloudguard.get_managed_list(managed_list_id=test_managed_list_oci_cloud_guard_managed_list["id"])
     ```
 
 

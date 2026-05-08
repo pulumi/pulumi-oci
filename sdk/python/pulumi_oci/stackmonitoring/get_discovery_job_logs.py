@@ -108,7 +108,7 @@ def get_discovery_job_logs(discovery_job_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_job_logs = oci.StackMonitoring.get_discovery_job_logs(discovery_job_id=test_discovery_job["id"],
+    test_discovery_job_logs = oci.stackmonitoring.get_discovery_job_logs(discovery_job_id=test_discovery_job["id"],
         log_type=discovery_job_log_log_type)
     ```
 
@@ -129,9 +129,9 @@ def get_discovery_job_logs(discovery_job_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         log_type=pulumi.get(__ret__, 'log_type'))
-def get_discovery_job_logs_output(discovery_job_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDiscoveryJobLogsFilterArgs', 'GetDiscoveryJobLogsFilterArgsDict']]]]] = None,
-                                  log_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_discovery_job_logs_output(discovery_job_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDiscoveryJobLogsFilterArgs', 'GetDiscoveryJobLogsFilterArgsDict']]]]] = None,
+                                  log_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDiscoveryJobLogsResult]:
     """
     This data source provides the list of Discovery Job Logs in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -144,7 +144,7 @@ def get_discovery_job_logs_output(discovery_job_id: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_job_logs = oci.StackMonitoring.get_discovery_job_logs(discovery_job_id=test_discovery_job["id"],
+    test_discovery_job_logs = oci.stackmonitoring.get_discovery_job_logs(discovery_job_id=test_discovery_job["id"],
         log_type=discovery_job_log_log_type)
     ```
 

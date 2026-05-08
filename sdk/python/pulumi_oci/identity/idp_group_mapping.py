@@ -81,13 +81,13 @@ class IdpGroupMappingArgs:
 @pulumi.input_type
 class _IdpGroupMappingState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 identity_provider_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 idp_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 inactive_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 identity_provider_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 idp_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 inactive_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IdpGroupMapping resources.
 
@@ -120,43 +120,43 @@ class _IdpGroupMappingState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the tenancy containing the `IdentityProvider`.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="groupId")
-    def group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the IAM Service [group](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Group/) you want to map to the IdP group.
         """
         return pulumi.get(self, "group_id")
 
     @group_id.setter
-    def group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="identityProviderId")
-    def identity_provider_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identity_provider_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the identity provider.
         """
         return pulumi.get(self, "identity_provider_id")
 
     @identity_provider_id.setter
-    def identity_provider_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identity_provider_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identity_provider_id", value)
 
     @_builtins.property
     @pulumi.getter(name="idpGroupName")
-    def idp_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idp_group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the IdP group you want to map.
 
@@ -167,43 +167,43 @@ class _IdpGroupMappingState:
         return pulumi.get(self, "idp_group_name")
 
     @idp_group_name.setter
-    def idp_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idp_group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idp_group_name", value)
 
     @_builtins.property
     @pulumi.getter(name="inactiveState")
-    def inactive_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def inactive_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The detailed status of INACTIVE lifecycleState.
         """
         return pulumi.get(self, "inactive_state")
 
     @inactive_state.setter
-    def inactive_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def inactive_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "inactive_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The mapping's current state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Date and time the mapping was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -213,9 +213,9 @@ class IdpGroupMapping(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 identity_provider_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 idp_group_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 identity_provider_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 idp_group_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Idp Group Mapping resource in Oracle Cloud Infrastructure Identity service.
@@ -312,9 +312,9 @@ class IdpGroupMapping(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 identity_provider_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 idp_group_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 identity_provider_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 idp_group_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -347,13 +347,13 @@ class IdpGroupMapping(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            identity_provider_id: Optional[pulumi.Input[_builtins.str]] = None,
-            idp_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-            inactive_state: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'IdpGroupMapping':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            identity_provider_id: pulumi.Input[Optional[_builtins.str]] = None,
+            idp_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+            inactive_state: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'IdpGroupMapping':
         """
         Get an existing IdpGroupMapping resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

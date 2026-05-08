@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *     subscriptionId: subscriptionId,
  *     subscriptionServiceName: subscriptionServiceName,
  *     externalLocation: networkAnchorExternalLocation,
- *     shouldFetchVcnName: shouldFetchVcnName,
+ *     shouldFetchVcnName: shouldFetchVcnName === "true",
  * });
  * ```
  */
@@ -153,7 +153,7 @@ export interface GetMulticloudNetworkAnchorResult {
  *     subscriptionId: subscriptionId,
  *     subscriptionServiceName: subscriptionServiceName,
  *     externalLocation: networkAnchorExternalLocation,
- *     shouldFetchVcnName: shouldFetchVcnName,
+ *     shouldFetchVcnName: shouldFetchVcnName === "true",
  * });
  * ```
  */
@@ -175,7 +175,7 @@ export interface GetMulticloudNetworkAnchorOutputArgs {
     /**
      * OMHub Control Plane must know underlying CSP CP Region External Location Name.
      */
-    externalLocation?: pulumi.Input<string>;
+    externalLocation?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAnchor.
      */
@@ -183,7 +183,7 @@ export interface GetMulticloudNetworkAnchorOutputArgs {
     /**
      * Whether to fetch and include the vcn display name, which may introduce additional latency.
      */
-    shouldFetchVcnName?: pulumi.Input<boolean>;
+    shouldFetchVcnName?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
      */

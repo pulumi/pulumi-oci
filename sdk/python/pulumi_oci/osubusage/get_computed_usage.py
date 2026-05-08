@@ -390,7 +390,7 @@ def get_computed_usage(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_computed_usage = oci.OsubUsage.get_computed_usage(compartment_id=compartment_id,
+    test_computed_usage = oci.osubusage.get_computed_usage(compartment_id=compartment_id,
         computed_usage_id=test_computed_usage_oci_osub_usage_computed_usage["id"],
         fields=computed_usage_fields,
         x_one_origin_region=computed_usage_x_one_origin_region)
@@ -440,10 +440,10 @@ def get_computed_usage(compartment_id: Optional[_builtins.str] = None,
         unit_of_measure=pulumi.get(__ret__, 'unit_of_measure'),
         usage_number=pulumi.get(__ret__, 'usage_number'),
         x_one_origin_region=pulumi.get(__ret__, 'x_one_origin_region'))
-def get_computed_usage_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                              computed_usage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                              fields: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                              x_one_origin_region: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_computed_usage_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                              computed_usage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                              fields: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                              x_one_origin_region: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputedUsageResult]:
     """
     This data source provides details about a specific Computed Usage resource in Oracle Cloud Infrastructure Osub Usage service.
@@ -456,7 +456,7 @@ def get_computed_usage_output(compartment_id: Optional[pulumi.Input[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_computed_usage = oci.OsubUsage.get_computed_usage(compartment_id=compartment_id,
+    test_computed_usage = oci.osubusage.get_computed_usage(compartment_id=compartment_id,
         computed_usage_id=test_computed_usage_oci_osub_usage_computed_usage["id"],
         fields=computed_usage_fields,
         x_one_origin_region=computed_usage_x_one_origin_region)

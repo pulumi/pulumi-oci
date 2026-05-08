@@ -504,8 +504,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAllowedDomainLicenseTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -551,8 +551,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAllowedDomainLicenseTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -598,8 +598,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAllowedDomainLicenseTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -645,8 +645,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAllowedDomainLicenseTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -692,8 +692,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAllowedDomainLicenseTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -739,8 +739,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAllowedDomainLicenseTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -786,8 +786,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAllowedDomainLicenseTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -831,8 +831,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetApiKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -876,8 +876,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetApiKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -921,8 +921,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetApiKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -966,8 +966,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetApiKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1011,8 +1011,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetApiKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1054,8 +1054,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAuthTokensArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1097,8 +1097,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAuthTokensArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1140,8 +1140,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAuthTokensArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1183,8 +1183,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAuthTokensArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1226,8 +1226,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAuthTokensArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1269,8 +1269,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAuthenticationPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1312,8 +1312,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAuthenticationPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1355,8 +1355,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAuthenticationPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1398,8 +1398,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAuthenticationPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1441,8 +1441,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAuthenticationPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1481,8 +1481,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAvailabilityDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1523,8 +1523,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAvailabilityDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1565,8 +1565,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAvailabilityDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1607,8 +1607,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAvailabilityDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1649,8 +1649,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAvailabilityDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1697,8 +1697,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAvailabilityDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1743,8 +1743,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAvailabilityDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1789,8 +1789,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAvailabilityDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1835,8 +1835,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAvailabilityDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1881,8 +1881,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetAvailabilityDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1930,8 +1930,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetCompartmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1979,8 +1979,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetCompartmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2028,8 +2028,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetCompartmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2077,8 +2077,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetCompartmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2126,8 +2126,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetCompartmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2185,8 +2185,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetCompartmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2248,8 +2248,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetCompartmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2311,8 +2311,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetCompartmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2374,8 +2374,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetCompartmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2437,8 +2437,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetCompartmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2484,8 +2484,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetCostTrackingTagsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2527,8 +2527,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetCostTrackingTagsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2570,8 +2570,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetCostTrackingTagsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2613,8 +2613,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetCostTrackingTagsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2656,8 +2656,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetCostTrackingTagsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2699,8 +2699,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetCustomerSecretKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2742,8 +2742,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetCustomerSecretKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2785,8 +2785,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetCustomerSecretKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2828,8 +2828,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetCustomerSecretKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2871,8 +2871,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetCustomerSecretKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2913,8 +2913,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDbCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2957,8 +2957,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDbCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3001,8 +3001,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDbCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3045,8 +3045,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDbCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3089,8 +3089,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDbCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3136,8 +3136,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3181,8 +3181,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3226,8 +3226,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3271,8 +3271,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3316,8 +3316,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3359,8 +3359,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3410,8 +3410,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3461,8 +3461,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3512,8 +3512,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3563,8 +3563,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3613,8 +3613,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAccountMgmtInfoArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3660,8 +3660,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAccountMgmtInfoArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3707,8 +3707,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAccountMgmtInfoArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3754,8 +3754,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAccountMgmtInfoArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3801,8 +3801,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAccountMgmtInfoArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3848,8 +3848,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAccountMgmtInfosArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3897,8 +3897,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAccountMgmtInfosArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3946,8 +3946,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAccountMgmtInfosArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3995,8 +3995,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAccountMgmtInfosArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4044,8 +4044,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAccountMgmtInfosArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4093,8 +4093,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAccountRecoverySettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4140,8 +4140,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAccountRecoverySettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4187,8 +4187,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAccountRecoverySettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4234,8 +4234,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAccountRecoverySettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4281,8 +4281,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAccountRecoverySettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4328,8 +4328,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAccountRecoverySettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4374,8 +4374,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAccountRecoverySettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4420,8 +4420,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAccountRecoverySettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4466,8 +4466,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAccountRecoverySettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4512,8 +4512,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAccountRecoverySettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4558,8 +4558,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApiKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4605,8 +4605,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApiKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4652,8 +4652,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApiKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4699,8 +4699,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApiKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4746,8 +4746,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApiKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4793,8 +4793,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApiKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4842,8 +4842,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApiKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4891,8 +4891,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApiKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4940,8 +4940,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApiKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4989,8 +4989,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApiKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5038,8 +5038,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAppArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5085,8 +5085,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAppArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5132,8 +5132,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAppArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5179,8 +5179,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAppArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5226,8 +5226,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAppArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5273,8 +5273,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAppRoleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5320,8 +5320,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAppRoleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5367,8 +5367,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAppRoleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5414,8 +5414,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAppRoleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5461,8 +5461,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAppRoleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5508,8 +5508,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAppRolesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5557,8 +5557,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAppRolesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5606,8 +5606,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAppRolesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5655,8 +5655,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAppRolesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5704,8 +5704,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAppRolesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5753,8 +5753,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5800,8 +5800,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5847,8 +5847,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5894,8 +5894,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5941,8 +5941,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5988,8 +5988,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowAssignmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6035,8 +6035,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowAssignmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6082,8 +6082,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowAssignmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6129,8 +6129,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowAssignmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6176,8 +6176,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowAssignmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6223,8 +6223,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowAssignmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6272,8 +6272,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowAssignmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6321,8 +6321,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowAssignmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6370,8 +6370,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowAssignmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6419,8 +6419,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowAssignmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6468,8 +6468,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowStepArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6515,8 +6515,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowStepArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6562,8 +6562,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowStepArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6609,8 +6609,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowStepArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6656,8 +6656,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowStepArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6703,8 +6703,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowStepsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6752,8 +6752,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowStepsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6801,8 +6801,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowStepsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6850,8 +6850,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowStepsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6899,8 +6899,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowStepsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6948,8 +6948,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6997,8 +6997,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7046,8 +7046,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7095,8 +7095,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7144,8 +7144,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7193,8 +7193,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAppsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7242,8 +7242,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAppsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7291,8 +7291,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAppsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7340,8 +7340,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAppsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7389,8 +7389,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAppsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7438,8 +7438,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAuthTokenArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7485,8 +7485,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAuthTokenArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7532,8 +7532,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAuthTokenArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7579,8 +7579,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAuthTokenArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7626,8 +7626,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAuthTokenArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7673,8 +7673,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAuthTokensArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7722,8 +7722,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAuthTokensArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7771,8 +7771,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAuthTokensArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7820,8 +7820,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAuthTokensArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7869,8 +7869,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAuthTokensArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7918,8 +7918,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAuthenticationFactorSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7965,8 +7965,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAuthenticationFactorSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8012,8 +8012,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAuthenticationFactorSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8059,8 +8059,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAuthenticationFactorSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8106,8 +8106,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAuthenticationFactorSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8153,8 +8153,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAuthenticationFactorSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8199,8 +8199,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAuthenticationFactorSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8245,8 +8245,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAuthenticationFactorSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8291,8 +8291,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAuthenticationFactorSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8337,8 +8337,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsAuthenticationFactorSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8383,8 +8383,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsBrandingSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8430,8 +8430,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsBrandingSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8477,8 +8477,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsBrandingSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8524,8 +8524,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsBrandingSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8571,8 +8571,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsBrandingSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8618,8 +8618,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsBrandingSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8664,8 +8664,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsBrandingSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8710,8 +8710,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsBrandingSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8756,8 +8756,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsBrandingSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8802,8 +8802,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsBrandingSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8848,8 +8848,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8895,8 +8895,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8942,8 +8942,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8989,8 +8989,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9036,8 +9036,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9083,8 +9083,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateMappingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9130,8 +9130,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateMappingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9177,8 +9177,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateMappingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9224,8 +9224,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateMappingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9271,8 +9271,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateMappingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9318,8 +9318,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateMappingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9367,8 +9367,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateMappingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9416,8 +9416,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateMappingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9465,8 +9465,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateMappingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9514,8 +9514,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateMappingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9563,8 +9563,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateServerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9610,8 +9610,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateServerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9657,8 +9657,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateServerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9704,8 +9704,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateServerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9751,8 +9751,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateServerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9798,8 +9798,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateServersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9847,8 +9847,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateServersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9896,8 +9896,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateServersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9945,8 +9945,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateServersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9994,8 +9994,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateServersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10043,8 +10043,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10092,8 +10092,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10141,8 +10141,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10190,8 +10190,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10239,8 +10239,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10288,8 +10288,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsConditionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10335,8 +10335,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsConditionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10382,8 +10382,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsConditionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10429,8 +10429,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsConditionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10476,8 +10476,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsConditionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10523,8 +10523,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsConditionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10572,8 +10572,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsConditionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10621,8 +10621,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsConditionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10670,8 +10670,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsConditionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10719,8 +10719,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsConditionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10768,8 +10768,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCustomerSecretKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10815,8 +10815,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCustomerSecretKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10862,8 +10862,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCustomerSecretKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10909,8 +10909,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCustomerSecretKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10956,8 +10956,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCustomerSecretKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11003,8 +11003,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCustomerSecretKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11052,8 +11052,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCustomerSecretKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11101,8 +11101,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCustomerSecretKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11150,8 +11150,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCustomerSecretKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11199,8 +11199,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsCustomerSecretKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11248,8 +11248,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsDynamicResourceGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11295,8 +11295,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsDynamicResourceGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11342,8 +11342,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsDynamicResourceGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11389,8 +11389,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsDynamicResourceGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11436,8 +11436,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsDynamicResourceGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11483,8 +11483,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsDynamicResourceGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11532,8 +11532,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsDynamicResourceGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11581,8 +11581,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsDynamicResourceGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11630,8 +11630,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsDynamicResourceGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11679,8 +11679,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsDynamicResourceGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11728,8 +11728,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsGrantArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11775,8 +11775,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsGrantArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11822,8 +11822,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsGrantArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11869,8 +11869,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsGrantArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11916,8 +11916,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsGrantArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11963,8 +11963,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsGrantsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12012,8 +12012,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsGrantsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12061,8 +12061,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsGrantsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12110,8 +12110,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsGrantsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12159,8 +12159,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsGrantsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12208,8 +12208,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12255,8 +12255,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12302,8 +12302,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12349,8 +12349,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12396,8 +12396,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12443,8 +12443,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12492,8 +12492,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12541,8 +12541,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12590,8 +12590,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12639,8 +12639,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12688,8 +12688,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12735,8 +12735,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12782,8 +12782,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12829,8 +12829,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12876,8 +12876,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12923,8 +12923,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderTemplateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -12970,8 +12970,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderTemplateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13017,8 +13017,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderTemplateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13064,8 +13064,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderTemplateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13111,8 +13111,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderTemplateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13158,8 +13158,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13207,8 +13207,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13256,8 +13256,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13305,8 +13305,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13354,8 +13354,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProviderTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13403,8 +13403,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProvidersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13452,8 +13452,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProvidersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13501,8 +13501,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProvidersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13550,8 +13550,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProvidersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13599,8 +13599,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProofingProvidersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13648,8 +13648,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityPropagationTrustArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13695,8 +13695,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityPropagationTrustArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13742,8 +13742,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityPropagationTrustArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13789,8 +13789,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityPropagationTrustArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13836,8 +13836,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityPropagationTrustArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13883,8 +13883,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityPropagationTrustsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13932,8 +13932,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityPropagationTrustsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -13981,8 +13981,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityPropagationTrustsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14030,8 +14030,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityPropagationTrustsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14079,8 +14079,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityPropagationTrustsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14128,8 +14128,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProviderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14175,8 +14175,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProviderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14222,8 +14222,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProviderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14269,8 +14269,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProviderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14316,8 +14316,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProviderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14363,8 +14363,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProvidersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14412,8 +14412,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProvidersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14461,8 +14461,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProvidersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14510,8 +14510,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProvidersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14559,8 +14559,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentityProvidersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14608,8 +14608,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentitySettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14655,8 +14655,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentitySettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14702,8 +14702,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentitySettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14749,8 +14749,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentitySettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14796,8 +14796,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentitySettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14843,8 +14843,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentitySettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14889,8 +14889,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentitySettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14935,8 +14935,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentitySettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -14981,8 +14981,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentitySettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15027,8 +15027,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsIdentitySettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15073,8 +15073,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsKmsiSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15120,8 +15120,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsKmsiSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15167,8 +15167,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsKmsiSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15214,8 +15214,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsKmsiSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15261,8 +15261,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsKmsiSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15308,8 +15308,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsKmsiSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15354,8 +15354,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsKmsiSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15400,8 +15400,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsKmsiSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15446,8 +15446,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsKmsiSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15492,8 +15492,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsKmsiSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15538,8 +15538,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMappedAttributeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15585,8 +15585,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMappedAttributeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15632,8 +15632,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMappedAttributeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15679,8 +15679,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMappedAttributeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15726,8 +15726,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMappedAttributeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15773,8 +15773,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMappedAttributesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15822,8 +15822,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMappedAttributesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15871,8 +15871,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMappedAttributesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15920,8 +15920,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMappedAttributesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -15969,8 +15969,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMappedAttributesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16018,8 +16018,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyApiKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16063,8 +16063,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyApiKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16108,8 +16108,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyApiKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16153,8 +16153,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyApiKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16198,8 +16198,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyApiKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16243,8 +16243,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyApiKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16290,8 +16290,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyApiKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16337,8 +16337,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyApiKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16384,8 +16384,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyApiKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16431,8 +16431,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyApiKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16478,8 +16478,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyAppsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16525,8 +16525,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyAppsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16572,8 +16572,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyAppsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16619,8 +16619,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyAppsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16666,8 +16666,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyAppsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16713,8 +16713,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyAuthTokenArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16758,8 +16758,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyAuthTokenArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16803,8 +16803,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyAuthTokenArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16848,8 +16848,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyAuthTokenArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16893,8 +16893,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyAuthTokenArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16938,8 +16938,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyAuthTokensArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -16985,8 +16985,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyAuthTokensArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17032,8 +17032,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyAuthTokensArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17079,8 +17079,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyAuthTokensArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17126,8 +17126,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyAuthTokensArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17173,8 +17173,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyCompletedApprovalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17218,8 +17218,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyCompletedApprovalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17263,8 +17263,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyCompletedApprovalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17308,8 +17308,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyCompletedApprovalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17353,8 +17353,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyCompletedApprovalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17398,8 +17398,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyCompletedApprovalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17445,8 +17445,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyCompletedApprovalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17492,8 +17492,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyCompletedApprovalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17539,8 +17539,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyCompletedApprovalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17586,8 +17586,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyCompletedApprovalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17633,8 +17633,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyCustomerSecretKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17678,8 +17678,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyCustomerSecretKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17723,8 +17723,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyCustomerSecretKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17768,8 +17768,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyCustomerSecretKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17813,8 +17813,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyCustomerSecretKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17858,8 +17858,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyCustomerSecretKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17905,8 +17905,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyCustomerSecretKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17952,8 +17952,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyCustomerSecretKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -17999,8 +17999,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyCustomerSecretKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18046,8 +18046,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyCustomerSecretKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18093,8 +18093,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyDeviceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18140,8 +18140,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyDeviceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18187,8 +18187,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyDeviceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18234,8 +18234,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyDeviceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18281,8 +18281,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyDeviceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18328,8 +18328,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyDevicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18377,8 +18377,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyDevicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18426,8 +18426,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyDevicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18475,8 +18475,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyDevicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18524,8 +18524,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyDevicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18573,8 +18573,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18622,8 +18622,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18671,8 +18671,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18720,8 +18720,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18769,8 +18769,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18818,8 +18818,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyOauth2clientCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18863,8 +18863,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyOauth2clientCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18908,8 +18908,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyOauth2clientCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18953,8 +18953,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyOauth2clientCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -18998,8 +18998,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyOauth2clientCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19043,8 +19043,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyOauth2clientCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19090,8 +19090,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyOauth2clientCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19137,8 +19137,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyOauth2clientCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19184,8 +19184,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyOauth2clientCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19231,8 +19231,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyOauth2clientCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19278,8 +19278,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyPendingApprovalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19323,8 +19323,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyPendingApprovalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19368,8 +19368,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyPendingApprovalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19413,8 +19413,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyPendingApprovalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19458,8 +19458,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyPendingApprovalArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19503,8 +19503,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyPendingApprovalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19550,8 +19550,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyPendingApprovalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19597,8 +19597,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyPendingApprovalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19644,8 +19644,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyPendingApprovalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19691,8 +19691,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyPendingApprovalsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19738,8 +19738,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyRequestableGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19785,8 +19785,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyRequestableGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19832,8 +19832,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyRequestableGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19879,8 +19879,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyRequestableGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19926,8 +19926,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyRequestableGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -19973,8 +19973,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20022,8 +20022,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20071,8 +20071,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20120,8 +20120,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20169,8 +20169,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20218,8 +20218,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMySmtpCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20263,8 +20263,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMySmtpCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20308,8 +20308,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMySmtpCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20353,8 +20353,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMySmtpCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20398,8 +20398,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMySmtpCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20443,8 +20443,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMySmtpCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20490,8 +20490,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMySmtpCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20537,8 +20537,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMySmtpCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20584,8 +20584,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMySmtpCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20631,8 +20631,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMySmtpCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20678,8 +20678,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMySupportAccountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20723,8 +20723,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMySupportAccountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20768,8 +20768,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMySupportAccountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20813,8 +20813,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMySupportAccountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20858,8 +20858,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMySupportAccountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20903,8 +20903,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMySupportAccountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20950,8 +20950,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMySupportAccountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -20997,8 +20997,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMySupportAccountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21044,8 +21044,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMySupportAccountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21091,8 +21091,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMySupportAccountsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21138,8 +21138,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyTrustedUserAgentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21185,8 +21185,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyTrustedUserAgentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21232,8 +21232,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyTrustedUserAgentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21279,8 +21279,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyTrustedUserAgentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21326,8 +21326,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyTrustedUserAgentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21373,8 +21373,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyTrustedUserAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21422,8 +21422,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyTrustedUserAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21471,8 +21471,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyTrustedUserAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21520,8 +21520,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyTrustedUserAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21569,8 +21569,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyTrustedUserAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21618,8 +21618,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyUserDbCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21663,8 +21663,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyUserDbCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21708,8 +21708,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyUserDbCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21753,8 +21753,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyUserDbCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21798,8 +21798,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyUserDbCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21843,8 +21843,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyUserDbCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21890,8 +21890,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyUserDbCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21937,8 +21937,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyUserDbCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -21984,8 +21984,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyUserDbCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22031,8 +22031,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsMyUserDbCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22078,8 +22078,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsNetworkPerimeterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22125,8 +22125,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsNetworkPerimeterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22172,8 +22172,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsNetworkPerimeterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22219,8 +22219,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsNetworkPerimeterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22266,8 +22266,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsNetworkPerimeterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22313,8 +22313,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsNetworkPerimetersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22362,8 +22362,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsNetworkPerimetersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22411,8 +22411,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsNetworkPerimetersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22460,8 +22460,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsNetworkPerimetersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22509,8 +22509,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsNetworkPerimetersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22558,8 +22558,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsNotificationSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22605,8 +22605,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsNotificationSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22652,8 +22652,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsNotificationSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22699,8 +22699,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsNotificationSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22746,8 +22746,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsNotificationSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22793,8 +22793,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsNotificationSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22839,8 +22839,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsNotificationSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22885,8 +22885,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsNotificationSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22931,8 +22931,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsNotificationSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -22977,8 +22977,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsNotificationSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23023,8 +23023,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauth2clientCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23070,8 +23070,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauth2clientCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23117,8 +23117,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauth2clientCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23164,8 +23164,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauth2clientCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23211,8 +23211,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauth2clientCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23258,8 +23258,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauth2clientCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23307,8 +23307,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauth2clientCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23356,8 +23356,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauth2clientCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23405,8 +23405,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauth2clientCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23454,8 +23454,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauth2clientCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23503,8 +23503,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauthClientCertificateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23548,8 +23548,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauthClientCertificateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23593,8 +23593,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauthClientCertificateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23638,8 +23638,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauthClientCertificateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23683,8 +23683,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauthClientCertificateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23728,8 +23728,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauthClientCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23775,8 +23775,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauthClientCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23822,8 +23822,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauthClientCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23869,8 +23869,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauthClientCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23916,8 +23916,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauthClientCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -23963,8 +23963,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24008,8 +24008,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24053,8 +24053,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24098,8 +24098,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24143,8 +24143,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24188,8 +24188,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24235,8 +24235,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24282,8 +24282,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24329,8 +24329,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24376,8 +24376,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24423,8 +24423,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOciConsoleSignOnPolicyConsentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24470,8 +24470,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOciConsoleSignOnPolicyConsentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24517,8 +24517,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOciConsoleSignOnPolicyConsentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24564,8 +24564,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOciConsoleSignOnPolicyConsentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24611,8 +24611,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOciConsoleSignOnPolicyConsentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24658,8 +24658,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOciConsoleSignOnPolicyConsentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24707,8 +24707,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOciConsoleSignOnPolicyConsentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24756,8 +24756,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOciConsoleSignOnPolicyConsentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24805,8 +24805,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOciConsoleSignOnPolicyConsentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24854,8 +24854,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsOciConsoleSignOnPolicyConsentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24903,8 +24903,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsPasswordPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -24952,8 +24952,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsPasswordPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25001,8 +25001,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsPasswordPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25050,8 +25050,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsPasswordPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25099,8 +25099,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsPasswordPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25148,8 +25148,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsPasswordPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25195,8 +25195,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsPasswordPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25242,8 +25242,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsPasswordPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25289,8 +25289,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsPasswordPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25336,8 +25336,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsPasswordPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25383,8 +25383,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25432,8 +25432,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25481,8 +25481,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25530,8 +25530,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25579,8 +25579,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25628,8 +25628,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25675,8 +25675,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25722,8 +25722,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25769,8 +25769,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25816,8 +25816,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25863,8 +25863,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsResourceTypeSchemaAttributesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25912,8 +25912,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsResourceTypeSchemaAttributesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -25961,8 +25961,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsResourceTypeSchemaAttributesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26010,8 +26010,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsResourceTypeSchemaAttributesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26059,8 +26059,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsResourceTypeSchemaAttributesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26108,8 +26108,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26155,8 +26155,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26202,8 +26202,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26249,8 +26249,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26296,8 +26296,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsRuleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26343,8 +26343,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26392,8 +26392,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26441,8 +26441,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26490,8 +26490,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26539,8 +26539,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsRulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26588,8 +26588,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26635,8 +26635,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26682,8 +26682,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26729,8 +26729,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26776,8 +26776,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26823,8 +26823,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26870,8 +26870,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26917,8 +26917,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -26964,8 +26964,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27011,8 +27011,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27058,8 +27058,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27104,8 +27104,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27150,8 +27150,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27196,8 +27196,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27242,8 +27242,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27288,8 +27288,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27337,8 +27337,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27386,8 +27386,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27435,8 +27435,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27484,8 +27484,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27533,8 +27533,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSelfRegistrationProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27580,8 +27580,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSelfRegistrationProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27627,8 +27627,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSelfRegistrationProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27674,8 +27674,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSelfRegistrationProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27721,8 +27721,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSelfRegistrationProfileArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27768,8 +27768,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSelfRegistrationProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27817,8 +27817,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSelfRegistrationProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27866,8 +27866,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSelfRegistrationProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27915,8 +27915,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSelfRegistrationProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -27964,8 +27964,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSelfRegistrationProfilesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28013,8 +28013,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28060,8 +28060,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28107,8 +28107,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28154,8 +28154,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28201,8 +28201,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28248,8 +28248,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28294,8 +28294,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28340,8 +28340,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28386,8 +28386,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28432,8 +28432,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSettingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28478,8 +28478,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSmtpCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28525,8 +28525,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSmtpCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28572,8 +28572,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSmtpCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28619,8 +28619,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSmtpCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28666,8 +28666,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSmtpCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28713,8 +28713,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSmtpCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28762,8 +28762,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSmtpCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28811,8 +28811,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSmtpCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28860,8 +28860,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSmtpCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28909,8 +28909,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSmtpCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -28958,8 +28958,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSocialIdentityProviderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29003,8 +29003,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSocialIdentityProviderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29048,8 +29048,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSocialIdentityProviderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29093,8 +29093,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSocialIdentityProviderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29138,8 +29138,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSocialIdentityProviderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29183,8 +29183,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSocialIdentityProvidersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29230,8 +29230,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSocialIdentityProvidersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29277,8 +29277,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSocialIdentityProvidersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29324,8 +29324,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSocialIdentityProvidersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29371,8 +29371,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsSocialIdentityProvidersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29418,8 +29418,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29465,8 +29465,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29512,8 +29512,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29559,8 +29559,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29606,8 +29606,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29653,8 +29653,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsUserAttributesSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29700,8 +29700,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsUserAttributesSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29747,8 +29747,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsUserAttributesSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29794,8 +29794,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsUserAttributesSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29841,8 +29841,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsUserAttributesSettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29943,8 +29943,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsUserDbCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -29990,8 +29990,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsUserDbCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30037,8 +30037,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsUserDbCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30084,8 +30084,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsUserDbCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30131,8 +30131,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsUserDbCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30178,8 +30178,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsUserDbCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30227,8 +30227,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsUserDbCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30276,8 +30276,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsUserDbCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30325,8 +30325,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsUserDbCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30374,8 +30374,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsUserDbCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30423,8 +30423,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30472,8 +30472,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30521,8 +30521,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30570,8 +30570,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30619,8 +30619,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDomainsUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30670,8 +30670,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDynamicGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30716,8 +30716,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDynamicGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30762,8 +30762,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDynamicGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30808,8 +30808,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDynamicGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30854,8 +30854,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetDynamicGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30900,8 +30900,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetFaultDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30945,8 +30945,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetFaultDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -30990,8 +30990,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetFaultDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31035,8 +31035,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetFaultDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31080,8 +31080,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetFaultDomainsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31127,8 +31127,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31173,8 +31173,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31219,8 +31219,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31265,8 +31265,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31311,8 +31311,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31355,8 +31355,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31401,8 +31401,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31447,8 +31447,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31493,8 +31493,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31539,8 +31539,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31587,8 +31587,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31633,8 +31633,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31679,8 +31679,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31725,8 +31725,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31771,8 +31771,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31817,8 +31817,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31863,8 +31863,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31909,8 +31909,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -31955,8 +31955,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32001,8 +32001,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestErrorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32047,8 +32047,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32093,8 +32093,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32139,8 +32139,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32185,8 +32185,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32231,8 +32231,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32276,8 +32276,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32322,8 +32322,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32368,8 +32368,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32414,8 +32414,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32460,8 +32460,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIamWorkRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32505,8 +32505,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIdentityProviderGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32551,8 +32551,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIdentityProviderGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32597,8 +32597,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIdentityProviderGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32643,8 +32643,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIdentityProviderGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32689,8 +32689,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIdentityProviderGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32738,8 +32738,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIdentityProvidersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32788,8 +32788,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIdentityProvidersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32838,8 +32838,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIdentityProvidersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32888,8 +32888,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIdentityProvidersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32938,8 +32938,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIdentityProvidersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -32985,8 +32985,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIdpGroupMappingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33029,8 +33029,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIdpGroupMappingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33073,8 +33073,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIdpGroupMappingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33117,8 +33117,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIdpGroupMappingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33161,8 +33161,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetIdpGroupMappingsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33203,8 +33203,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetNetworkSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33245,8 +33245,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetNetworkSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33287,8 +33287,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetNetworkSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33329,8 +33329,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetNetworkSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33371,8 +33371,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetNetworkSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33415,8 +33415,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetNetworkSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33461,8 +33461,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetNetworkSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33507,8 +33507,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetNetworkSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33553,8 +33553,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetNetworkSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33599,8 +33599,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetNetworkSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33647,8 +33647,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33695,8 +33695,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33743,8 +33743,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33791,8 +33791,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33839,8 +33839,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33883,8 +33883,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetRegionSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33925,8 +33925,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetRegionSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -33967,8 +33967,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetRegionSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34009,8 +34009,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetRegionSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34051,8 +34051,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetRegionSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34093,8 +34093,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetRegionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34134,8 +34134,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetRegionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34175,8 +34175,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetRegionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34216,8 +34216,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetRegionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34257,8 +34257,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetRegionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34298,8 +34298,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetRegionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34339,8 +34339,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetRegionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34381,8 +34381,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetSmtpCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34424,8 +34424,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetSmtpCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34467,8 +34467,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetSmtpCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34510,8 +34510,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetSmtpCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34553,8 +34553,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetSmtpCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34595,8 +34595,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34638,8 +34638,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34681,8 +34681,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34724,8 +34724,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34767,8 +34767,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34810,8 +34810,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagDefaultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34852,8 +34852,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagDefaultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34894,8 +34894,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagDefaultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34936,8 +34936,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagDefaultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -34978,8 +34978,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagDefaultArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35020,8 +35020,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagDefaultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35065,8 +35065,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagDefaultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35110,8 +35110,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagDefaultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35155,8 +35155,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagDefaultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35200,8 +35200,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagDefaultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35245,8 +35245,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagDefaultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35290,8 +35290,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagDefaultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35335,8 +35335,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagNamespacesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35379,8 +35379,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagNamespacesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35423,8 +35423,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagNamespacesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35467,8 +35467,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagNamespacesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35511,8 +35511,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagNamespacesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35555,8 +35555,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagStandardTagNamespaceTemplateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35598,8 +35598,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagStandardTagNamespaceTemplateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35641,8 +35641,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagStandardTagNamespaceTemplateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35684,8 +35684,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagStandardTagNamespaceTemplateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35727,8 +35727,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagStandardTagNamespaceTemplateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35770,8 +35770,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagStandardTagNamespaceTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35812,8 +35812,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagStandardTagNamespaceTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35854,8 +35854,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagStandardTagNamespaceTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35896,8 +35896,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagStandardTagNamespaceTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35938,8 +35938,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagStandardTagNamespaceTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -35980,8 +35980,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36023,8 +36023,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36066,8 +36066,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36109,8 +36109,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36152,8 +36152,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTagsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36195,8 +36195,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTenancyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36237,8 +36237,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTenancyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36279,8 +36279,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTenancyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36321,8 +36321,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTenancyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36363,8 +36363,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetTenancyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36406,8 +36406,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetUiPasswordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36449,8 +36449,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetUiPasswordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36492,8 +36492,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetUiPasswordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36535,8 +36535,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetUiPasswordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36578,8 +36578,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetUiPasswordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36620,8 +36620,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36662,8 +36662,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36704,8 +36704,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36746,8 +36746,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36788,8 +36788,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36839,8 +36839,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetUserGroupMembershipsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36892,8 +36892,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetUserGroupMembershipsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36945,8 +36945,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetUserGroupMembershipsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -36998,8 +36998,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetUserGroupMembershipsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37051,8 +37051,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetUserGroupMembershipsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37097,8 +37097,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37145,8 +37145,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37193,8 +37193,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37241,8 +37241,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -37289,8 +37289,8 @@ public final class IdentityFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Identity.IdentityFunctions;
      * import com.pulumi.oci.Identity.inputs.GetUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

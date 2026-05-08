@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCompliancePolicyRules = oci.FleetAppsManagement.getCompliancePolicyRules({
+ * const testCompliancePolicyRules = oci.fleetappsmanagement.getCompliancePolicyRules({
  *     compartmentId: compartmentId,
  *     compliancePolicyId: testCompliancePolicy.id,
  *     displayName: compliancePolicyRuleDisplayName,
@@ -117,7 +117,7 @@ export interface GetCompliancePolicyRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCompliancePolicyRules = oci.FleetAppsManagement.getCompliancePolicyRules({
+ * const testCompliancePolicyRules = oci.fleetappsmanagement.getCompliancePolicyRules({
  *     compartmentId: compartmentId,
  *     compliancePolicyId: testCompliancePolicy.id,
  *     displayName: compliancePolicyRuleDisplayName,
@@ -148,26 +148,26 @@ export interface GetCompliancePolicyRulesOutputArgs {
     /**
      * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * unique CompliancePolicy identifier.
      */
-    compliancePolicyId?: pulumi.Input<string>;
+    compliancePolicyId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetCompliancePolicyRulesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetCompliancePolicyRulesFilterArgs>[] | undefined>;
     /**
      * Unique identifier or OCID for listing a single Compliance Policy Rule by id. Either compartmentId or id must be provided.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the patch selection against the given patch name.
      */
-    patchName?: pulumi.Input<string>;
+    patchName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

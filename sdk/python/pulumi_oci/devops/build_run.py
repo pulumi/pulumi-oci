@@ -22,11 +22,11 @@ __all__ = ['BuildRunArgs', 'BuildRun']
 class BuildRunArgs:
     def __init__(__self__, *,
                  build_pipeline_id: pulumi.Input[_builtins.str],
-                 build_run_arguments: Optional[pulumi.Input['BuildRunBuildRunArgumentsArgs']] = None,
-                 commit_info: Optional[pulumi.Input['BuildRunCommitInfoArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 build_run_arguments: pulumi.Input[Optional['BuildRunBuildRunArgumentsArgs']] = None,
+                 commit_info: pulumi.Input[Optional['BuildRunCommitInfoArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a BuildRun resource.
 
@@ -67,55 +67,55 @@ class BuildRunArgs:
 
     @_builtins.property
     @pulumi.getter(name="buildRunArguments")
-    def build_run_arguments(self) -> Optional[pulumi.Input['BuildRunBuildRunArgumentsArgs']]:
+    def build_run_arguments(self) -> pulumi.Input[Optional['BuildRunBuildRunArgumentsArgs']]:
         """
         Specifies list of arguments passed along with the build run.
         """
         return pulumi.get(self, "build_run_arguments")
 
     @build_run_arguments.setter
-    def build_run_arguments(self, value: Optional[pulumi.Input['BuildRunBuildRunArgumentsArgs']]):
+    def build_run_arguments(self, value: pulumi.Input[Optional['BuildRunBuildRunArgumentsArgs']]):
         pulumi.set(self, "build_run_arguments", value)
 
     @_builtins.property
     @pulumi.getter(name="commitInfo")
-    def commit_info(self) -> Optional[pulumi.Input['BuildRunCommitInfoArgs']]:
+    def commit_info(self) -> pulumi.Input[Optional['BuildRunCommitInfoArgs']]:
         """
         Commit details that need to be used for the build run.
         """
         return pulumi.get(self, "commit_info")
 
     @commit_info.setter
-    def commit_info(self, value: Optional[pulumi.Input['BuildRunCommitInfoArgs']]):
+    def commit_info(self, value: pulumi.Input[Optional['BuildRunCommitInfoArgs']]):
         pulumi.set(self, "commit_info", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Build run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 
@@ -126,29 +126,29 @@ class BuildRunArgs:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
 
 @pulumi.input_type
 class _BuildRunState:
     def __init__(__self__, *,
-                 build_outputs: Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputArgs']]]] = None,
-                 build_pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 build_run_arguments: Optional[pulumi.Input['BuildRunBuildRunArgumentsArgs']] = None,
-                 build_run_progresses: Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunProgressArgs']]]] = None,
-                 build_run_sources: Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunSourceArgs']]]] = None,
-                 commit_info: Optional[pulumi.Input['BuildRunCommitInfoArgs']] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 build_outputs: pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildOutputArgs']]]] = None,
+                 build_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 build_run_arguments: pulumi.Input[Optional['BuildRunBuildRunArgumentsArgs']] = None,
+                 build_run_progresses: pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildRunProgressArgs']]]] = None,
+                 build_run_sources: pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildRunSourceArgs']]]] = None,
+                 commit_info: pulumi.Input[Optional['BuildRunCommitInfoArgs']] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BuildRun resources.
 
@@ -208,115 +208,115 @@ class _BuildRunState:
 
     @_builtins.property
     @pulumi.getter(name="buildOutputs")
-    def build_outputs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputArgs']]]]:
+    def build_outputs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildOutputArgs']]]]:
         """
         Outputs from the build.
         """
         return pulumi.get(self, "build_outputs")
 
     @build_outputs.setter
-    def build_outputs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildOutputArgs']]]]):
+    def build_outputs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildOutputArgs']]]]):
         pulumi.set(self, "build_outputs", value)
 
     @_builtins.property
     @pulumi.getter(name="buildPipelineId")
-    def build_pipeline_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def build_pipeline_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the build pipeline.
         """
         return pulumi.get(self, "build_pipeline_id")
 
     @build_pipeline_id.setter
-    def build_pipeline_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def build_pipeline_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "build_pipeline_id", value)
 
     @_builtins.property
     @pulumi.getter(name="buildRunArguments")
-    def build_run_arguments(self) -> Optional[pulumi.Input['BuildRunBuildRunArgumentsArgs']]:
+    def build_run_arguments(self) -> pulumi.Input[Optional['BuildRunBuildRunArgumentsArgs']]:
         """
         Specifies list of arguments passed along with the build run.
         """
         return pulumi.get(self, "build_run_arguments")
 
     @build_run_arguments.setter
-    def build_run_arguments(self, value: Optional[pulumi.Input['BuildRunBuildRunArgumentsArgs']]):
+    def build_run_arguments(self, value: pulumi.Input[Optional['BuildRunBuildRunArgumentsArgs']]):
         pulumi.set(self, "build_run_arguments", value)
 
     @_builtins.property
     @pulumi.getter(name="buildRunProgresses")
-    def build_run_progresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunProgressArgs']]]]:
+    def build_run_progresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildRunProgressArgs']]]]:
         """
         The run progress details of a build run.
         """
         return pulumi.get(self, "build_run_progresses")
 
     @build_run_progresses.setter
-    def build_run_progresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunProgressArgs']]]]):
+    def build_run_progresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildRunProgressArgs']]]]):
         pulumi.set(self, "build_run_progresses", value)
 
     @_builtins.property
     @pulumi.getter(name="buildRunSources")
-    def build_run_sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunSourceArgs']]]]:
+    def build_run_sources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildRunSourceArgs']]]]:
         """
         The source from which the build run is triggered.
         """
         return pulumi.get(self, "build_run_sources")
 
     @build_run_sources.setter
-    def build_run_sources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BuildRunBuildRunSourceArgs']]]]):
+    def build_run_sources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BuildRunBuildRunSourceArgs']]]]):
         pulumi.set(self, "build_run_sources", value)
 
     @_builtins.property
     @pulumi.getter(name="commitInfo")
-    def commit_info(self) -> Optional[pulumi.Input['BuildRunCommitInfoArgs']]:
+    def commit_info(self) -> pulumi.Input[Optional['BuildRunCommitInfoArgs']]:
         """
         Commit details that need to be used for the build run.
         """
         return pulumi.get(self, "commit_info")
 
     @commit_info.setter
-    def commit_info(self, value: Optional[pulumi.Input['BuildRunCommitInfoArgs']]):
+    def commit_info(self, value: pulumi.Input[Optional['BuildRunCommitInfoArgs']]):
         pulumi.set(self, "commit_info", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment where the build is running.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Build run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 
@@ -327,79 +327,79 @@ class _BuildRunState:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def project_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the DevOps project.
         """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
-    def project_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def project_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "project_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the build run.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the build run was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the build run was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -409,12 +409,12 @@ class BuildRun(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 build_pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 build_run_arguments: Optional[pulumi.Input[Union['BuildRunBuildRunArgumentsArgs', 'BuildRunBuildRunArgumentsArgsDict']]] = None,
-                 commit_info: Optional[pulumi.Input[Union['BuildRunCommitInfoArgs', 'BuildRunCommitInfoArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 build_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 build_run_arguments: pulumi.Input[Optional[Union['BuildRunBuildRunArgumentsArgs', 'BuildRunBuildRunArgumentsArgsDict']]] = None,
+                 commit_info: pulumi.Input[Optional[Union['BuildRunCommitInfoArgs', 'BuildRunCommitInfoArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         This resource provides the Build Run resource in Oracle Cloud Infrastructure Devops service.
@@ -540,12 +540,12 @@ class BuildRun(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 build_pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 build_run_arguments: Optional[pulumi.Input[Union['BuildRunBuildRunArgumentsArgs', 'BuildRunBuildRunArgumentsArgsDict']]] = None,
-                 commit_info: Optional[pulumi.Input[Union['BuildRunCommitInfoArgs', 'BuildRunCommitInfoArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 build_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 build_run_arguments: pulumi.Input[Optional[Union['BuildRunBuildRunArgumentsArgs', 'BuildRunBuildRunArgumentsArgsDict']]] = None,
+                 commit_info: pulumi.Input[Optional[Union['BuildRunCommitInfoArgs', 'BuildRunCommitInfoArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -583,22 +583,22 @@ class BuildRun(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            build_outputs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BuildRunBuildOutputArgs', 'BuildRunBuildOutputArgsDict']]]]] = None,
-            build_pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
-            build_run_arguments: Optional[pulumi.Input[Union['BuildRunBuildRunArgumentsArgs', 'BuildRunBuildRunArgumentsArgsDict']]] = None,
-            build_run_progresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BuildRunBuildRunProgressArgs', 'BuildRunBuildRunProgressArgsDict']]]]] = None,
-            build_run_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BuildRunBuildRunSourceArgs', 'BuildRunBuildRunSourceArgsDict']]]]] = None,
-            commit_info: Optional[pulumi.Input[Union['BuildRunCommitInfoArgs', 'BuildRunCommitInfoArgsDict']]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            project_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'BuildRun':
+            build_outputs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BuildRunBuildOutputArgs', 'BuildRunBuildOutputArgsDict']]]]] = None,
+            build_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+            build_run_arguments: pulumi.Input[Optional[Union['BuildRunBuildRunArgumentsArgs', 'BuildRunBuildRunArgumentsArgsDict']]] = None,
+            build_run_progresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BuildRunBuildRunProgressArgs', 'BuildRunBuildRunProgressArgsDict']]]]] = None,
+            build_run_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BuildRunBuildRunSourceArgs', 'BuildRunBuildRunSourceArgsDict']]]]] = None,
+            commit_info: pulumi.Input[Optional[Union['BuildRunCommitInfoArgs', 'BuildRunCommitInfoArgsDict']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'BuildRun':
         """
         Get an existing BuildRun resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

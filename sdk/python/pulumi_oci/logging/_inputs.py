@@ -96,7 +96,7 @@ class LogConfigurationArgsDict(TypedDict):
     """
     The source the log object comes from.
     """
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the compartment that the resource belongs to.
     """
@@ -105,7 +105,7 @@ class LogConfigurationArgsDict(TypedDict):
 class LogConfigurationArgs:
     def __init__(__self__, *,
                  source: pulumi.Input['LogConfigurationSourceArgs'],
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input['LogConfigurationSourceArgs'] source: The source the log object comes from.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment that the resource belongs to.
@@ -128,14 +128,14 @@ class LogConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment that the resource belongs to.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
 
@@ -157,7 +157,7 @@ class LogConfigurationSourceArgsDict(TypedDict):
     The log source.
     * **OCISERVICE:** Oracle Service.
     """
-    parameters: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    parameters: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Log category parameters are stored here. The resource for a service log can't be updated.
     """
@@ -169,7 +169,7 @@ class LogConfigurationSourceArgs:
                  resource: pulumi.Input[_builtins.str],
                  service: pulumi.Input[_builtins.str],
                  source_type: pulumi.Input[_builtins.str],
-                 parameters: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] category: Log object category.
         :param pulumi.Input[_builtins.str] resource: The unique identifier of the resource emitting the log. The resource can be updated, and the resource value can vary depending on the Oracle Cloud Infrastructure service to which the resource belongs to.
@@ -236,19 +236,19 @@ class LogConfigurationSourceArgs:
 
     @_builtins.property
     @pulumi.getter
-    def parameters(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def parameters(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Log category parameters are stored here. The resource for a service log can't be updated.
         """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
-    def parameters(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def parameters(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "parameters", value)
 
 
 class UnifiedAgentConfigurationGroupAssociationArgsDict(TypedDict):
-    group_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    group_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) list of group/dynamic group ids associated with this configuration.
     """
@@ -256,7 +256,7 @@ class UnifiedAgentConfigurationGroupAssociationArgsDict(TypedDict):
 @pulumi.input_type
 class UnifiedAgentConfigurationGroupAssociationArgs:
     def __init__(__self__, *,
-                 group_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 group_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] group_lists: (Updatable) list of group/dynamic group ids associated with this configuration.
         """
@@ -265,14 +265,14 @@ class UnifiedAgentConfigurationGroupAssociationArgs:
 
     @_builtins.property
     @pulumi.getter(name="groupLists")
-    def group_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def group_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) list of group/dynamic group ids associated with this configuration.
         """
         return pulumi.get(self, "group_lists")
 
     @group_lists.setter
-    def group_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def group_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "group_lists", value)
 
 
@@ -281,19 +281,19 @@ class UnifiedAgentConfigurationServiceConfigurationArgsDict(TypedDict):
     """
     (Updatable) Type of Unified Agent service configuration.
     """
-    application_configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgsDict']]]]
+    application_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs']]]]]
     """
     (Updatable) Unified Agent monitoring application configuration details.
     """
-    destination: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationArgsDict']]
+    destination: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationDestinationArgs']]]
     """
     (Updatable) Logging destination object.
     """
-    sources: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceArgsDict']]]]
+    sources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceArgs']]]]]
     """
     (Updatable) Logging source object.
     """
-    unified_agent_configuration_filters: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgsDict']]]]
+    unified_agent_configuration_filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs']]]]]
     """
     (Updatable) Logging filter object.
     """
@@ -302,10 +302,10 @@ class UnifiedAgentConfigurationServiceConfigurationArgsDict(TypedDict):
 class UnifiedAgentConfigurationServiceConfigurationArgs:
     def __init__(__self__, *,
                  configuration_type: pulumi.Input[_builtins.str],
-                 application_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs']]]] = None,
-                 destination: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationArgs']] = None,
-                 sources: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceArgs']]]] = None,
-                 unified_agent_configuration_filters: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs']]]] = None):
+                 application_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs']]]] = None,
+                 destination: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationDestinationArgs']] = None,
+                 sources: pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceArgs']]]] = None,
+                 unified_agent_configuration_filters: pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] configuration_type: (Updatable) Type of Unified Agent service configuration.
         :param pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs']]] application_configurations: (Updatable) Unified Agent monitoring application configuration details.
@@ -337,50 +337,50 @@ class UnifiedAgentConfigurationServiceConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="applicationConfigurations")
-    def application_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs']]]]:
+    def application_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs']]]]:
         """
         (Updatable) Unified Agent monitoring application configuration details.
         """
         return pulumi.get(self, "application_configurations")
 
     @application_configurations.setter
-    def application_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs']]]]):
+    def application_configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs']]]]):
         pulumi.set(self, "application_configurations", value)
 
     @_builtins.property
     @pulumi.getter
-    def destination(self) -> Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationArgs']]:
+    def destination(self) -> pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationDestinationArgs']]:
         """
         (Updatable) Logging destination object.
         """
         return pulumi.get(self, "destination")
 
     @destination.setter
-    def destination(self, value: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationArgs']]):
+    def destination(self, value: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationDestinationArgs']]):
         pulumi.set(self, "destination", value)
 
     @_builtins.property
     @pulumi.getter
-    def sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceArgs']]]]:
+    def sources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceArgs']]]]:
         """
         (Updatable) Logging source object.
         """
         return pulumi.get(self, "sources")
 
     @sources.setter
-    def sources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceArgs']]]]):
+    def sources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceArgs']]]]):
         pulumi.set(self, "sources", value)
 
     @_builtins.property
     @pulumi.getter(name="unifiedAgentConfigurationFilters")
-    def unified_agent_configuration_filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs']]]]:
+    def unified_agent_configuration_filters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs']]]]:
         """
         (Updatable) Logging filter object.
         """
         return pulumi.get(self, "unified_agent_configuration_filters")
 
     @unified_agent_configuration_filters.setter
-    def unified_agent_configuration_filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs']]]]):
+    def unified_agent_configuration_filters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs']]]]):
         pulumi.set(self, "unified_agent_configuration_filters", value)
 
 
@@ -393,15 +393,15 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgsD
     """
     (Updatable) Type of source of metrics
     """
-    source: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgsDict']]
+    source: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs']]]
     """
     (Updatable) Kubernetes source object.
     """
-    sources: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgsDict']]]]
+    sources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs']]]]]
     """
     (Updatable) Tail log source objects.
     """
-    unified_agent_configuration_filter: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgsDict']]
+    unified_agent_configuration_filter: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs']]]
     """
     (Updatable) Kubernetes filter object
     """
@@ -411,9 +411,9 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs:
     def __init__(__self__, *,
                  destination: pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgs'],
                  source_type: pulumi.Input[_builtins.str],
-                 source: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs']] = None,
-                 sources: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs']]]] = None,
-                 unified_agent_configuration_filter: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs']] = None):
+                 source: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs']] = None,
+                 sources: pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs']]]] = None,
+                 unified_agent_configuration_filter: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs']] = None):
         """
         :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgs'] destination: (Updatable) Kubernetes destination object.
         :param pulumi.Input[_builtins.str] source_type: (Updatable) Type of source of metrics
@@ -456,47 +456,47 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs']]:
+    def source(self) -> pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs']]:
         """
         (Updatable) Kubernetes source object.
         """
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs']]):
+    def source(self, value: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs']]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter
-    def sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs']]]]:
+    def sources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs']]]]:
         """
         (Updatable) Tail log source objects.
         """
         return pulumi.get(self, "sources")
 
     @sources.setter
-    def sources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs']]]]):
+    def sources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs']]]]):
         pulumi.set(self, "sources", value)
 
     @_builtins.property
     @pulumi.getter(name="unifiedAgentConfigurationFilter")
-    def unified_agent_configuration_filter(self) -> Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs']]:
+    def unified_agent_configuration_filter(self) -> pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs']]:
         """
         (Updatable) Kubernetes filter object
         """
         return pulumi.get(self, "unified_agent_configuration_filter")
 
     @unified_agent_configuration_filter.setter
-    def unified_agent_configuration_filter(self, value: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs']]):
+    def unified_agent_configuration_filter(self, value: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs']]):
         pulumi.set(self, "unified_agent_configuration_filter", value)
 
 
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgsDict(TypedDict):
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the compartment that the resource belongs to.
     """
-    metrics_namespace: NotRequired[pulumi.Input[_builtins.str]]
+    metrics_namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Namespace to which metrics will be emitted.
     """
@@ -504,8 +504,8 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDesti
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metrics_namespace: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metrics_namespace: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that the resource belongs to.
         :param pulumi.Input[_builtins.str] metrics_namespace: (Updatable) Namespace to which metrics will be emitted.
@@ -517,47 +517,47 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDesti
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment that the resource belongs to.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="metricsNamespace")
-    def metrics_namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metrics_namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Namespace to which metrics will be emitted.
         """
         return pulumi.get(self, "metrics_namespace")
 
     @metrics_namespace.setter
-    def metrics_namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metrics_namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metrics_namespace", value)
 
 
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgsDict(TypedDict):
-    advanced_options: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgsDict']]
+    advanced_options: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs']]]
     """
     (Updatable) Advanced options for logging configuration
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Unique name for the source.
     """
-    parser: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgsDict']]
+    parser: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs']]]
     """
     (Updatable) Source parser object.
     """
-    paths: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    paths: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Absolute paths for log source files. Wildcards can be used.
     """
-    source_type: NotRequired[pulumi.Input[_builtins.str]]
+    source_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Unified schema logging source type.
     """
@@ -565,11 +565,11 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs:
     def __init__(__self__, *,
-                 advanced_options: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs']] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 parser: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs']] = None,
-                 paths: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 advanced_options: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 parser: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs']] = None,
+                 paths: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs'] advanced_options: (Updatable) Advanced options for logging configuration
         :param pulumi.Input[_builtins.str] name: (Updatable) Unique name for the source.
@@ -590,67 +590,67 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
 
     @_builtins.property
     @pulumi.getter(name="advancedOptions")
-    def advanced_options(self) -> Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs']]:
+    def advanced_options(self) -> pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs']]:
         """
         (Updatable) Advanced options for logging configuration
         """
         return pulumi.get(self, "advanced_options")
 
     @advanced_options.setter
-    def advanced_options(self, value: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs']]):
+    def advanced_options(self, value: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs']]):
         pulumi.set(self, "advanced_options", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unique name for the source.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def parser(self) -> Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs']]:
+    def parser(self) -> pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs']]:
         """
         (Updatable) Source parser object.
         """
         return pulumi.get(self, "parser")
 
     @parser.setter
-    def parser(self, value: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs']]):
+    def parser(self, value: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs']]):
         pulumi.set(self, "parser", value)
 
     @_builtins.property
     @pulumi.getter
-    def paths(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def paths(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Absolute paths for log source files. Wildcards can be used.
         """
         return pulumi.get(self, "paths")
 
     @paths.setter
-    def paths(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def paths(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "paths", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceType")
-    def source_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unified schema logging source type.
         """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
-    def source_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_type", value)
 
 
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgsDict(TypedDict):
-    is_read_from_head: NotRequired[pulumi.Input[_builtins.bool]]
+    is_read_from_head: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
     """
@@ -658,7 +658,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs:
     def __init__(__self__, *,
-                 is_read_from_head: Optional[pulumi.Input[_builtins.bool]] = None):
+                 is_read_from_head: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_read_from_head: (Updatable) Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
         """
@@ -667,14 +667,14 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
 
     @_builtins.property
     @pulumi.getter(name="isReadFromHead")
-    def is_read_from_head(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_read_from_head(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
         """
         return pulumi.get(self, "is_read_from_head")
 
     @is_read_from_head.setter
-    def is_read_from_head(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_read_from_head(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_read_from_head", value)
 
 
@@ -683,119 +683,119 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
     """
     (Updatable) Type of fluent parser.
     """
-    delimiter: NotRequired[pulumi.Input[_builtins.str]]
+    delimiter: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) CSV delimiter.
     """
-    expression: NotRequired[pulumi.Input[_builtins.str]]
+    expression: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Regex pattern.
     """
-    field_time_key: NotRequired[pulumi.Input[_builtins.str]]
+    field_time_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies the time field for the event time. If the event doesn't have this field, the current time is used.
     """
-    format_firstline: NotRequired[pulumi.Input[_builtins.str]]
+    format_firstline: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) First line pattern format.
     """
-    formats: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    formats: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Mutiline pattern format.
     """
-    grok_failure_key: NotRequired[pulumi.Input[_builtins.str]]
+    grok_failure_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Grok failure key.
     """
-    grok_name_key: NotRequired[pulumi.Input[_builtins.str]]
+    grok_name_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Grok name key.
     """
-    is_estimate_current_event: NotRequired[pulumi.Input[_builtins.bool]]
+    is_estimate_current_event: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
     """
-    is_keep_time_key: NotRequired[pulumi.Input[_builtins.bool]]
+    is_keep_time_key: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If true, keep the time field in the record.
     """
-    is_merge_cri_fields: NotRequired[pulumi.Input[_builtins.bool]]
+    is_merge_cri_fields: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If you don't need stream or logtag fields, set this to false.
     """
-    is_null_empty_string: NotRequired[pulumi.Input[_builtins.bool]]
+    is_null_empty_string: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If true, an empty string field is replaced with a null value.
     """
-    is_support_colonless_ident: NotRequired[pulumi.Input[_builtins.bool]]
+    is_support_colonless_ident: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
     """
-    is_with_priority: NotRequired[pulumi.Input[_builtins.bool]]
+    is_with_priority: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
     """
-    keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    keys: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) CSV keys.
     """
-    message_format: NotRequired[pulumi.Input[_builtins.str]]
+    message_format: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Syslog message format.
     """
-    message_key: NotRequired[pulumi.Input[_builtins.str]]
+    message_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies the field name to contain logs.
     """
-    multi_line_start_regexp: NotRequired[pulumi.Input[_builtins.str]]
+    multi_line_start_regexp: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Multiline start regexp pattern.
     """
-    nested_parser: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgsDict']]
+    nested_parser: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs']]]
     """
     (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
     """
-    null_value_pattern: NotRequired[pulumi.Input[_builtins.str]]
+    null_value_pattern: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specify the null value pattern.
     """
-    parse_nested: NotRequired[pulumi.Input[_builtins.bool]]
+    parse_nested: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If true, a separator parameter can be further defined.
     """
-    patterns: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgsDict']]]]
+    patterns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs']]]]]
     """
     (Updatable) Grok pattern object.
     """
-    record_input: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgsDict']]
+    record_input: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs']]]
     """
     (Updatable) record section of openmetrics parser.
     """
-    rfc5424time_format: NotRequired[pulumi.Input[_builtins.str]]
+    rfc5424time_format: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) RFC 5424 time format.
     """
-    separator: NotRequired[pulumi.Input[_builtins.str]]
+    separator: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Keys of adjacent levels are joined by the separator.
     """
-    syslog_parser_type: NotRequired[pulumi.Input[_builtins.str]]
+    syslog_parser_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Syslog parser type.
     """
-    time_format: NotRequired[pulumi.Input[_builtins.str]]
+    time_format: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Process time value using the specified format.
     """
-    time_type: NotRequired[pulumi.Input[_builtins.str]]
+    time_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) JSON parser time type.
     """
-    timeout_in_milliseconds: NotRequired[pulumi.Input[_builtins.int]]
+    timeout_in_milliseconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
     """
-    types: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    types: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
 
@@ -810,35 +810,35 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs:
     def __init__(__self__, *,
                  parser_type: pulumi.Input[_builtins.str],
-                 delimiter: Optional[pulumi.Input[_builtins.str]] = None,
-                 expression: Optional[pulumi.Input[_builtins.str]] = None,
-                 field_time_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 format_firstline: Optional[pulumi.Input[_builtins.str]] = None,
-                 formats: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 grok_failure_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 grok_name_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_estimate_current_event: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_keep_time_key: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_merge_cri_fields: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_null_empty_string: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_support_colonless_ident: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_with_priority: Optional[pulumi.Input[_builtins.bool]] = None,
-                 keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 message_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 message_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 multi_line_start_regexp: Optional[pulumi.Input[_builtins.str]] = None,
-                 nested_parser: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs']] = None,
-                 null_value_pattern: Optional[pulumi.Input[_builtins.str]] = None,
-                 parse_nested: Optional[pulumi.Input[_builtins.bool]] = None,
-                 patterns: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs']]]] = None,
-                 record_input: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs']] = None,
-                 rfc5424time_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 separator: Optional[pulumi.Input[_builtins.str]] = None,
-                 syslog_parser_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeout_in_milliseconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 types: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 delimiter: pulumi.Input[Optional[_builtins.str]] = None,
+                 expression: pulumi.Input[Optional[_builtins.str]] = None,
+                 field_time_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 format_firstline: pulumi.Input[Optional[_builtins.str]] = None,
+                 formats: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 grok_failure_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 grok_name_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_estimate_current_event: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_keep_time_key: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_merge_cri_fields: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_null_empty_string: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_support_colonless_ident: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_with_priority: pulumi.Input[Optional[_builtins.bool]] = None,
+                 keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 message_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 message_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 multi_line_start_regexp: pulumi.Input[Optional[_builtins.str]] = None,
+                 nested_parser: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs']] = None,
+                 null_value_pattern: pulumi.Input[Optional[_builtins.str]] = None,
+                 parse_nested: pulumi.Input[Optional[_builtins.bool]] = None,
+                 patterns: pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs']]]] = None,
+                 record_input: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs']] = None,
+                 rfc5424time_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 separator: pulumi.Input[Optional[_builtins.str]] = None,
+                 syslog_parser_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeout_in_milliseconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 types: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] parser_type: (Updatable) Type of fluent parser.
         :param pulumi.Input[_builtins.str] delimiter: (Updatable) CSV delimiter.
@@ -951,343 +951,343 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
 
     @_builtins.property
     @pulumi.getter
-    def delimiter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def delimiter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) CSV delimiter.
         """
         return pulumi.get(self, "delimiter")
 
     @delimiter.setter
-    def delimiter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def delimiter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "delimiter", value)
 
     @_builtins.property
     @pulumi.getter
-    def expression(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expression(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Regex pattern.
         """
         return pulumi.get(self, "expression")
 
     @expression.setter
-    def expression(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expression(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expression", value)
 
     @_builtins.property
     @pulumi.getter(name="fieldTimeKey")
-    def field_time_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def field_time_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies the time field for the event time. If the event doesn't have this field, the current time is used.
         """
         return pulumi.get(self, "field_time_key")
 
     @field_time_key.setter
-    def field_time_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def field_time_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "field_time_key", value)
 
     @_builtins.property
     @pulumi.getter(name="formatFirstline")
-    def format_firstline(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def format_firstline(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) First line pattern format.
         """
         return pulumi.get(self, "format_firstline")
 
     @format_firstline.setter
-    def format_firstline(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def format_firstline(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "format_firstline", value)
 
     @_builtins.property
     @pulumi.getter
-    def formats(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def formats(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Mutiline pattern format.
         """
         return pulumi.get(self, "formats")
 
     @formats.setter
-    def formats(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def formats(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "formats", value)
 
     @_builtins.property
     @pulumi.getter(name="grokFailureKey")
-    def grok_failure_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def grok_failure_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Grok failure key.
         """
         return pulumi.get(self, "grok_failure_key")
 
     @grok_failure_key.setter
-    def grok_failure_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def grok_failure_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "grok_failure_key", value)
 
     @_builtins.property
     @pulumi.getter(name="grokNameKey")
-    def grok_name_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def grok_name_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Grok name key.
         """
         return pulumi.get(self, "grok_name_key")
 
     @grok_name_key.setter
-    def grok_name_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def grok_name_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "grok_name_key", value)
 
     @_builtins.property
     @pulumi.getter(name="isEstimateCurrentEvent")
-    def is_estimate_current_event(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_estimate_current_event(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
         """
         return pulumi.get(self, "is_estimate_current_event")
 
     @is_estimate_current_event.setter
-    def is_estimate_current_event(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_estimate_current_event(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_estimate_current_event", value)
 
     @_builtins.property
     @pulumi.getter(name="isKeepTimeKey")
-    def is_keep_time_key(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_keep_time_key(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, keep the time field in the record.
         """
         return pulumi.get(self, "is_keep_time_key")
 
     @is_keep_time_key.setter
-    def is_keep_time_key(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_keep_time_key(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_keep_time_key", value)
 
     @_builtins.property
     @pulumi.getter(name="isMergeCriFields")
-    def is_merge_cri_fields(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_merge_cri_fields(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If you don't need stream or logtag fields, set this to false.
         """
         return pulumi.get(self, "is_merge_cri_fields")
 
     @is_merge_cri_fields.setter
-    def is_merge_cri_fields(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_merge_cri_fields(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_merge_cri_fields", value)
 
     @_builtins.property
     @pulumi.getter(name="isNullEmptyString")
-    def is_null_empty_string(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_null_empty_string(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, an empty string field is replaced with a null value.
         """
         return pulumi.get(self, "is_null_empty_string")
 
     @is_null_empty_string.setter
-    def is_null_empty_string(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_null_empty_string(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_null_empty_string", value)
 
     @_builtins.property
     @pulumi.getter(name="isSupportColonlessIdent")
-    def is_support_colonless_ident(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_support_colonless_ident(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
         """
         return pulumi.get(self, "is_support_colonless_ident")
 
     @is_support_colonless_ident.setter
-    def is_support_colonless_ident(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_support_colonless_ident(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_support_colonless_ident", value)
 
     @_builtins.property
     @pulumi.getter(name="isWithPriority")
-    def is_with_priority(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_with_priority(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
         """
         return pulumi.get(self, "is_with_priority")
 
     @is_with_priority.setter
-    def is_with_priority(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_with_priority(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_with_priority", value)
 
     @_builtins.property
     @pulumi.getter
-    def keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) CSV keys.
         """
         return pulumi.get(self, "keys")
 
     @keys.setter
-    def keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "keys", value)
 
     @_builtins.property
     @pulumi.getter(name="messageFormat")
-    def message_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Syslog message format.
         """
         return pulumi.get(self, "message_format")
 
     @message_format.setter
-    def message_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message_format", value)
 
     @_builtins.property
     @pulumi.getter(name="messageKey")
-    def message_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies the field name to contain logs.
         """
         return pulumi.get(self, "message_key")
 
     @message_key.setter
-    def message_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message_key", value)
 
     @_builtins.property
     @pulumi.getter(name="multiLineStartRegexp")
-    def multi_line_start_regexp(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def multi_line_start_regexp(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Multiline start regexp pattern.
         """
         return pulumi.get(self, "multi_line_start_regexp")
 
     @multi_line_start_regexp.setter
-    def multi_line_start_regexp(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def multi_line_start_regexp(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "multi_line_start_regexp", value)
 
     @_builtins.property
     @pulumi.getter(name="nestedParser")
-    def nested_parser(self) -> Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs']]:
+    def nested_parser(self) -> pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs']]:
         """
         (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
         """
         return pulumi.get(self, "nested_parser")
 
     @nested_parser.setter
-    def nested_parser(self, value: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs']]):
+    def nested_parser(self, value: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs']]):
         pulumi.set(self, "nested_parser", value)
 
     @_builtins.property
     @pulumi.getter(name="nullValuePattern")
-    def null_value_pattern(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def null_value_pattern(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specify the null value pattern.
         """
         return pulumi.get(self, "null_value_pattern")
 
     @null_value_pattern.setter
-    def null_value_pattern(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def null_value_pattern(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "null_value_pattern", value)
 
     @_builtins.property
     @pulumi.getter(name="parseNested")
-    def parse_nested(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def parse_nested(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, a separator parameter can be further defined.
         """
         return pulumi.get(self, "parse_nested")
 
     @parse_nested.setter
-    def parse_nested(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def parse_nested(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "parse_nested", value)
 
     @_builtins.property
     @pulumi.getter
-    def patterns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs']]]]:
+    def patterns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs']]]]:
         """
         (Updatable) Grok pattern object.
         """
         return pulumi.get(self, "patterns")
 
     @patterns.setter
-    def patterns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs']]]]):
+    def patterns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs']]]]):
         pulumi.set(self, "patterns", value)
 
     @_builtins.property
     @pulumi.getter(name="recordInput")
-    def record_input(self) -> Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs']]:
+    def record_input(self) -> pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs']]:
         """
         (Updatable) record section of openmetrics parser.
         """
         return pulumi.get(self, "record_input")
 
     @record_input.setter
-    def record_input(self, value: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs']]):
+    def record_input(self, value: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs']]):
         pulumi.set(self, "record_input", value)
 
     @_builtins.property
     @pulumi.getter(name="rfc5424timeFormat")
-    def rfc5424time_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rfc5424time_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) RFC 5424 time format.
         """
         return pulumi.get(self, "rfc5424time_format")
 
     @rfc5424time_format.setter
-    def rfc5424time_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rfc5424time_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rfc5424time_format", value)
 
     @_builtins.property
     @pulumi.getter
-    def separator(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def separator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Keys of adjacent levels are joined by the separator.
         """
         return pulumi.get(self, "separator")
 
     @separator.setter
-    def separator(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def separator(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "separator", value)
 
     @_builtins.property
     @pulumi.getter(name="syslogParserType")
-    def syslog_parser_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def syslog_parser_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Syslog parser type.
         """
         return pulumi.get(self, "syslog_parser_type")
 
     @syslog_parser_type.setter
-    def syslog_parser_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def syslog_parser_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "syslog_parser_type", value)
 
     @_builtins.property
     @pulumi.getter(name="timeFormat")
-    def time_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Process time value using the specified format.
         """
         return pulumi.get(self, "time_format")
 
     @time_format.setter
-    def time_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_format", value)
 
     @_builtins.property
     @pulumi.getter(name="timeType")
-    def time_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) JSON parser time type.
         """
         return pulumi.get(self, "time_type")
 
     @time_type.setter
-    def time_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_type", value)
 
     @_builtins.property
     @pulumi.getter(name="timeoutInMilliseconds")
-    def timeout_in_milliseconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def timeout_in_milliseconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
         """
         return pulumi.get(self, "timeout_in_milliseconds")
 
     @timeout_in_milliseconds.setter
-    def timeout_in_milliseconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def timeout_in_milliseconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "timeout_in_milliseconds", value)
 
     @_builtins.property
     @pulumi.getter
-    def types(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def types(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
 
@@ -1300,32 +1300,32 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
         return pulumi.get(self, "types")
 
     @types.setter
-    def types(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def types(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "types", value)
 
 
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgsDict(TypedDict):
-    field_time_key: NotRequired[pulumi.Input[_builtins.str]]
+    field_time_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Specify the time field for the event time. If the event doesn't have this field, the current time is used.
     """
-    is_keep_time_key: NotRequired[pulumi.Input[_builtins.bool]]
+    is_keep_time_key: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     If true, keep the time field in the record.
     """
-    parse_nested: NotRequired[pulumi.Input[_builtins.bool]]
+    parse_nested: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If true, a separator parameter can be further defined.
     """
-    separator: NotRequired[pulumi.Input[_builtins.str]]
+    separator: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Keys of adjacent levels are joined by the separator.
     """
-    time_format: NotRequired[pulumi.Input[_builtins.str]]
+    time_format: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Process time value using the specified format.
     """
-    time_type: NotRequired[pulumi.Input[_builtins.str]]
+    time_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) JSON parser time type.
     """
@@ -1333,12 +1333,12 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParserArgs:
     def __init__(__self__, *,
-                 field_time_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_keep_time_key: Optional[pulumi.Input[_builtins.bool]] = None,
-                 parse_nested: Optional[pulumi.Input[_builtins.bool]] = None,
-                 separator: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 field_time_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_keep_time_key: pulumi.Input[Optional[_builtins.bool]] = None,
+                 parse_nested: pulumi.Input[Optional[_builtins.bool]] = None,
+                 separator: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] field_time_key: Specify the time field for the event time. If the event doesn't have this field, the current time is used.
         :param pulumi.Input[_builtins.bool] is_keep_time_key: If true, keep the time field in the record.
@@ -1362,95 +1362,95 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
 
     @_builtins.property
     @pulumi.getter(name="fieldTimeKey")
-    def field_time_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def field_time_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify the time field for the event time. If the event doesn't have this field, the current time is used.
         """
         return pulumi.get(self, "field_time_key")
 
     @field_time_key.setter
-    def field_time_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def field_time_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "field_time_key", value)
 
     @_builtins.property
     @pulumi.getter(name="isKeepTimeKey")
-    def is_keep_time_key(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_keep_time_key(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, keep the time field in the record.
         """
         return pulumi.get(self, "is_keep_time_key")
 
     @is_keep_time_key.setter
-    def is_keep_time_key(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_keep_time_key(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_keep_time_key", value)
 
     @_builtins.property
     @pulumi.getter(name="parseNested")
-    def parse_nested(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def parse_nested(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, a separator parameter can be further defined.
         """
         return pulumi.get(self, "parse_nested")
 
     @parse_nested.setter
-    def parse_nested(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def parse_nested(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "parse_nested", value)
 
     @_builtins.property
     @pulumi.getter
-    def separator(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def separator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Keys of adjacent levels are joined by the separator.
         """
         return pulumi.get(self, "separator")
 
     @separator.setter
-    def separator(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def separator(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "separator", value)
 
     @_builtins.property
     @pulumi.getter(name="timeFormat")
-    def time_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Process time value using the specified format.
         """
         return pulumi.get(self, "time_format")
 
     @time_format.setter
-    def time_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_format", value)
 
     @_builtins.property
     @pulumi.getter(name="timeType")
-    def time_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) JSON parser time type.
         """
         return pulumi.get(self, "time_type")
 
     @time_type.setter
-    def time_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_type", value)
 
 
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgsDict(TypedDict):
-    field_time_format: NotRequired[pulumi.Input[_builtins.str]]
+    field_time_format: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Process value using the specified format. This is available only when time_type is a string.
     """
-    field_time_key: NotRequired[pulumi.Input[_builtins.str]]
+    field_time_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
     """
-    field_time_zone: NotRequired[pulumi.Input[_builtins.str]]
+    field_time_zone: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name key to tag this Grok pattern.
     """
-    pattern: NotRequired[pulumi.Input[_builtins.str]]
+    pattern: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The Grok pattern.
     """
@@ -1458,11 +1458,11 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPatternArgs:
     def __init__(__self__, *,
-                 field_time_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 field_time_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 field_time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pattern: Optional[pulumi.Input[_builtins.str]] = None):
+                 field_time_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 field_time_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 field_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pattern: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] field_time_format: (Updatable) Process value using the specified format. This is available only when time_type is a string.
         :param pulumi.Input[_builtins.str] field_time_key: (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
@@ -1483,75 +1483,75 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
 
     @_builtins.property
     @pulumi.getter(name="fieldTimeFormat")
-    def field_time_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def field_time_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Process value using the specified format. This is available only when time_type is a string.
         """
         return pulumi.get(self, "field_time_format")
 
     @field_time_format.setter
-    def field_time_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def field_time_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "field_time_format", value)
 
     @_builtins.property
     @pulumi.getter(name="fieldTimeKey")
-    def field_time_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def field_time_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
         """
         return pulumi.get(self, "field_time_key")
 
     @field_time_key.setter
-    def field_time_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def field_time_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "field_time_key", value)
 
     @_builtins.property
     @pulumi.getter(name="fieldTimeZone")
-    def field_time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def field_time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
         """
         return pulumi.get(self, "field_time_zone")
 
     @field_time_zone.setter
-    def field_time_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def field_time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "field_time_zone", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name key to tag this Grok pattern.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def pattern(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pattern(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Grok pattern.
         """
         return pulumi.get(self, "pattern")
 
     @pattern.setter
-    def pattern(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pattern(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pattern", value)
 
 
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgsDict(TypedDict):
-    dimensions: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    dimensions: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Dimensions to be added for metrics.
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Namespace to emit metrics.
     """
-    resource_group: NotRequired[pulumi.Input[_builtins.str]]
+    resource_group: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Resource group to emit metrics.
     """
@@ -1559,9 +1559,9 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs:
     def __init__(__self__, *,
-                 dimensions: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None):
+                 dimensions: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] dimensions: (Updatable) Dimensions to be added for metrics.
         :param pulumi.Input[_builtins.str] namespace: (Updatable) Namespace to emit metrics.
@@ -1576,55 +1576,55 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
 
     @_builtins.property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def dimensions(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Dimensions to be added for metrics.
         """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def dimensions(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dimensions", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Namespace to emit metrics.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Resource group to emit metrics.
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
 
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgsDict(TypedDict):
-    allow_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    allow_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) List of metrics regex to be allowed.
     """
-    deny_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    deny_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) List of metrics regex to be denied.
     """
-    filter_type: NotRequired[pulumi.Input[_builtins.str]]
+    filter_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Unified schema logging filter type.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Unique name for the filter.
     """
@@ -1632,10 +1632,10 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifi
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs:
     def __init__(__self__, *,
-                 allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 deny_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 filter_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 allow_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 deny_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 filter_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allow_lists: (Updatable) List of metrics regex to be allowed.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] deny_lists: (Updatable) List of metrics regex to be denied.
@@ -1653,50 +1653,50 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifi
 
     @_builtins.property
     @pulumi.getter(name="allowLists")
-    def allow_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allow_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of metrics regex to be allowed.
         """
         return pulumi.get(self, "allow_lists")
 
     @allow_lists.setter
-    def allow_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allow_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allow_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="denyLists")
-    def deny_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def deny_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of metrics regex to be denied.
         """
         return pulumi.get(self, "deny_lists")
 
     @deny_lists.setter
-    def deny_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def deny_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "deny_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="filterType")
-    def filter_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def filter_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unified schema logging filter type.
         """
         return pulumi.get(self, "filter_type")
 
     @filter_type.setter
-    def filter_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def filter_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "filter_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unique name for the filter.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
@@ -1705,7 +1705,7 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationArgsDict(TypedDict
     """
     (Updatable) The OCID of the resource.
     """
-    operational_metrics_configuration: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgsDict']]
+    operational_metrics_configuration: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs']]]
     """
     (Updatable) Unified monitoring agent operational metrics configuration object.
     """
@@ -1714,7 +1714,7 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationArgsDict(TypedDict
 class UnifiedAgentConfigurationServiceConfigurationDestinationArgs:
     def __init__(__self__, *,
                  log_object_id: pulumi.Input[_builtins.str],
-                 operational_metrics_configuration: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs']] = None):
+                 operational_metrics_configuration: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] log_object_id: (Updatable) The OCID of the resource.
         :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs'] operational_metrics_configuration: (Updatable) Unified monitoring agent operational metrics configuration object.
@@ -1737,14 +1737,14 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationArgs:
 
     @_builtins.property
     @pulumi.getter(name="operationalMetricsConfiguration")
-    def operational_metrics_configuration(self) -> Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs']]:
+    def operational_metrics_configuration(self) -> pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs']]:
         """
         (Updatable) Unified monitoring agent operational metrics configuration object.
         """
         return pulumi.get(self, "operational_metrics_configuration")
 
     @operational_metrics_configuration.setter
-    def operational_metrics_configuration(self, value: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs']]):
+    def operational_metrics_configuration(self, value: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationArgs']]):
         pulumi.set(self, "operational_metrics_configuration", value)
 
 
@@ -1832,7 +1832,7 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetrics
     """
     (Updatable) Type of the unified monitoring agent operational metrics source object.
     """
-    metrics: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    metrics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) List of unified monitoring agent operational metrics.
     """
@@ -1842,7 +1842,7 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetrics
     def __init__(__self__, *,
                  record_input: pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs'],
                  type: pulumi.Input[_builtins.str],
-                 metrics: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 metrics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs'] record_input: (Updatable) Record section of OperationalMetricsSource object.
         :param pulumi.Input[_builtins.str] type: (Updatable) Type of the unified monitoring agent operational metrics source object.
@@ -1879,14 +1879,14 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetrics
 
     @_builtins.property
     @pulumi.getter
-    def metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def metrics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of unified monitoring agent operational metrics.
         """
         return pulumi.get(self, "metrics")
 
     @metrics.setter
-    def metrics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def metrics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metrics", value)
 
 
@@ -1895,7 +1895,7 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetrics
     """
     (Updatable) Namespace to emit the operational metrics.
     """
-    resource_group: NotRequired[pulumi.Input[_builtins.str]]
+    resource_group: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Resource group to emit the operational metrics.
     """
@@ -1904,7 +1904,7 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetrics
 class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs:
     def __init__(__self__, *,
                  namespace: pulumi.Input[_builtins.str],
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None):
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] namespace: (Updatable) Namespace to emit the operational metrics.
         :param pulumi.Input[_builtins.str] resource_group: (Updatable) Resource group to emit the operational metrics.
@@ -1927,14 +1927,14 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetrics
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Resource group to emit the operational metrics.
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
 
@@ -1943,27 +1943,27 @@ class UnifiedAgentConfigurationServiceConfigurationSourceArgsDict(TypedDict):
     """
     (Updatable) Unified schema logging source type.
     """
-    advanced_options: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgsDict']]
+    advanced_options: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs']]]
     """
     (Updatable) Advanced options for logging configuration
     """
-    channels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    channels: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Windows event log channels.
     """
-    custom_plugin: NotRequired[pulumi.Input[_builtins.str]]
+    custom_plugin: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) User customized source plugin.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Unique name for the source.
     """
-    parser: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserArgsDict']]
+    parser: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationSourceParserArgs']]]
     """
     (Updatable) Source parser object.
     """
-    paths: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    paths: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Absolute paths for log source files. Wildcards can be used.
     """
@@ -1972,12 +1972,12 @@ class UnifiedAgentConfigurationServiceConfigurationSourceArgsDict(TypedDict):
 class UnifiedAgentConfigurationServiceConfigurationSourceArgs:
     def __init__(__self__, *,
                  source_type: pulumi.Input[_builtins.str],
-                 advanced_options: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs']] = None,
-                 channels: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 custom_plugin: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 parser: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserArgs']] = None,
-                 paths: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 advanced_options: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs']] = None,
+                 channels: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 custom_plugin: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 parser: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationSourceParserArgs']] = None,
+                 paths: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] source_type: (Updatable) Unified schema logging source type.
         :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs'] advanced_options: (Updatable) Advanced options for logging configuration
@@ -2015,79 +2015,79 @@ class UnifiedAgentConfigurationServiceConfigurationSourceArgs:
 
     @_builtins.property
     @pulumi.getter(name="advancedOptions")
-    def advanced_options(self) -> Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs']]:
+    def advanced_options(self) -> pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs']]:
         """
         (Updatable) Advanced options for logging configuration
         """
         return pulumi.get(self, "advanced_options")
 
     @advanced_options.setter
-    def advanced_options(self, value: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs']]):
+    def advanced_options(self, value: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs']]):
         pulumi.set(self, "advanced_options", value)
 
     @_builtins.property
     @pulumi.getter
-    def channels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def channels(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Windows event log channels.
         """
         return pulumi.get(self, "channels")
 
     @channels.setter
-    def channels(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def channels(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "channels", value)
 
     @_builtins.property
     @pulumi.getter(name="customPlugin")
-    def custom_plugin(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def custom_plugin(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User customized source plugin.
         """
         return pulumi.get(self, "custom_plugin")
 
     @custom_plugin.setter
-    def custom_plugin(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def custom_plugin(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "custom_plugin", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unique name for the source.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def parser(self) -> Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserArgs']]:
+    def parser(self) -> pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationSourceParserArgs']]:
         """
         (Updatable) Source parser object.
         """
         return pulumi.get(self, "parser")
 
     @parser.setter
-    def parser(self, value: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserArgs']]):
+    def parser(self, value: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationSourceParserArgs']]):
         pulumi.set(self, "parser", value)
 
     @_builtins.property
     @pulumi.getter
-    def paths(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def paths(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Absolute paths for log source files. Wildcards can be used.
         """
         return pulumi.get(self, "paths")
 
     @paths.setter
-    def paths(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def paths(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "paths", value)
 
 
 class UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgsDict(TypedDict):
-    is_read_from_head: NotRequired[pulumi.Input[_builtins.bool]]
+    is_read_from_head: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
     """
@@ -2095,7 +2095,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgsDict
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs:
     def __init__(__self__, *,
-                 is_read_from_head: Optional[pulumi.Input[_builtins.bool]] = None):
+                 is_read_from_head: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_read_from_head: (Updatable) Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
         """
@@ -2104,14 +2104,14 @@ class UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs:
 
     @_builtins.property
     @pulumi.getter(name="isReadFromHead")
-    def is_read_from_head(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_read_from_head(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Starts to read the logs from the head of the file or the last read position recorded in pos_file, not tail.
         """
         return pulumi.get(self, "is_read_from_head")
 
     @is_read_from_head.setter
-    def is_read_from_head(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_read_from_head(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_read_from_head", value)
 
 
@@ -2120,119 +2120,119 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserArgsDict(TypedDic
     """
     (Updatable) Type of fluent parser.
     """
-    delimiter: NotRequired[pulumi.Input[_builtins.str]]
+    delimiter: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) CSV delimiter.
     """
-    expression: NotRequired[pulumi.Input[_builtins.str]]
+    expression: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Regex pattern.
     """
-    field_time_key: NotRequired[pulumi.Input[_builtins.str]]
+    field_time_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies the time field for the event time. If the event doesn't have this field, the current time is used.
     """
-    format_firstline: NotRequired[pulumi.Input[_builtins.str]]
+    format_firstline: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) First line pattern format.
     """
-    formats: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    formats: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Mutiline pattern format.
     """
-    grok_failure_key: NotRequired[pulumi.Input[_builtins.str]]
+    grok_failure_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Grok failure key.
     """
-    grok_name_key: NotRequired[pulumi.Input[_builtins.str]]
+    grok_name_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Grok name key.
     """
-    is_estimate_current_event: NotRequired[pulumi.Input[_builtins.bool]]
+    is_estimate_current_event: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
     """
-    is_keep_time_key: NotRequired[pulumi.Input[_builtins.bool]]
+    is_keep_time_key: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If true, keep the time field in the record.
     """
-    is_merge_cri_fields: NotRequired[pulumi.Input[_builtins.bool]]
+    is_merge_cri_fields: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If you don't need stream or logtag fields, set this to false.
     """
-    is_null_empty_string: NotRequired[pulumi.Input[_builtins.bool]]
+    is_null_empty_string: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If true, an empty string field is replaced with a null value.
     """
-    is_support_colonless_ident: NotRequired[pulumi.Input[_builtins.bool]]
+    is_support_colonless_ident: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
     """
-    is_with_priority: NotRequired[pulumi.Input[_builtins.bool]]
+    is_with_priority: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
     """
-    keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    keys: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) CSV keys.
     """
-    message_format: NotRequired[pulumi.Input[_builtins.str]]
+    message_format: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Syslog message format.
     """
-    message_key: NotRequired[pulumi.Input[_builtins.str]]
+    message_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies the field name to contain logs.
     """
-    multi_line_start_regexp: NotRequired[pulumi.Input[_builtins.str]]
+    multi_line_start_regexp: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Multiline start regexp pattern.
     """
-    nested_parser: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgsDict']]
+    nested_parser: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs']]]
     """
     (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
     """
-    null_value_pattern: NotRequired[pulumi.Input[_builtins.str]]
+    null_value_pattern: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specify the null value pattern.
     """
-    parse_nested: NotRequired[pulumi.Input[_builtins.bool]]
+    parse_nested: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If true, a separator parameter can be further defined.
     """
-    patterns: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgsDict']]]]
+    patterns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs']]]]]
     """
     (Updatable) Grok pattern object.
     """
-    record_input: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgsDict']]
+    record_input: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs']]]
     """
     (Updatable) record section of openmetrics parser.
     """
-    rfc5424time_format: NotRequired[pulumi.Input[_builtins.str]]
+    rfc5424time_format: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) RFC 5424 time format.
     """
-    separator: NotRequired[pulumi.Input[_builtins.str]]
+    separator: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Keys of adjacent levels are joined by the separator.
     """
-    syslog_parser_type: NotRequired[pulumi.Input[_builtins.str]]
+    syslog_parser_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Syslog parser type.
     """
-    time_format: NotRequired[pulumi.Input[_builtins.str]]
+    time_format: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Process time value using the specified format.
     """
-    time_type: NotRequired[pulumi.Input[_builtins.str]]
+    time_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) JSON parser time type.
     """
-    timeout_in_milliseconds: NotRequired[pulumi.Input[_builtins.int]]
+    timeout_in_milliseconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
     """
-    types: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    types: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
 
@@ -2247,35 +2247,35 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserArgsDict(TypedDic
 class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs:
     def __init__(__self__, *,
                  parser_type: pulumi.Input[_builtins.str],
-                 delimiter: Optional[pulumi.Input[_builtins.str]] = None,
-                 expression: Optional[pulumi.Input[_builtins.str]] = None,
-                 field_time_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 format_firstline: Optional[pulumi.Input[_builtins.str]] = None,
-                 formats: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 grok_failure_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 grok_name_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_estimate_current_event: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_keep_time_key: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_merge_cri_fields: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_null_empty_string: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_support_colonless_ident: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_with_priority: Optional[pulumi.Input[_builtins.bool]] = None,
-                 keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 message_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 message_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 multi_line_start_regexp: Optional[pulumi.Input[_builtins.str]] = None,
-                 nested_parser: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs']] = None,
-                 null_value_pattern: Optional[pulumi.Input[_builtins.str]] = None,
-                 parse_nested: Optional[pulumi.Input[_builtins.bool]] = None,
-                 patterns: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs']]]] = None,
-                 record_input: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs']] = None,
-                 rfc5424time_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 separator: Optional[pulumi.Input[_builtins.str]] = None,
-                 syslog_parser_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeout_in_milliseconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 types: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 delimiter: pulumi.Input[Optional[_builtins.str]] = None,
+                 expression: pulumi.Input[Optional[_builtins.str]] = None,
+                 field_time_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 format_firstline: pulumi.Input[Optional[_builtins.str]] = None,
+                 formats: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 grok_failure_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 grok_name_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_estimate_current_event: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_keep_time_key: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_merge_cri_fields: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_null_empty_string: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_support_colonless_ident: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_with_priority: pulumi.Input[Optional[_builtins.bool]] = None,
+                 keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 message_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 message_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 multi_line_start_regexp: pulumi.Input[Optional[_builtins.str]] = None,
+                 nested_parser: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs']] = None,
+                 null_value_pattern: pulumi.Input[Optional[_builtins.str]] = None,
+                 parse_nested: pulumi.Input[Optional[_builtins.bool]] = None,
+                 patterns: pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs']]]] = None,
+                 record_input: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs']] = None,
+                 rfc5424time_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 separator: pulumi.Input[Optional[_builtins.str]] = None,
+                 syslog_parser_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeout_in_milliseconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 types: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] parser_type: (Updatable) Type of fluent parser.
         :param pulumi.Input[_builtins.str] delimiter: (Updatable) CSV delimiter.
@@ -2388,343 +2388,343 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs:
 
     @_builtins.property
     @pulumi.getter
-    def delimiter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def delimiter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) CSV delimiter.
         """
         return pulumi.get(self, "delimiter")
 
     @delimiter.setter
-    def delimiter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def delimiter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "delimiter", value)
 
     @_builtins.property
     @pulumi.getter
-    def expression(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expression(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Regex pattern.
         """
         return pulumi.get(self, "expression")
 
     @expression.setter
-    def expression(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expression(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expression", value)
 
     @_builtins.property
     @pulumi.getter(name="fieldTimeKey")
-    def field_time_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def field_time_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies the time field for the event time. If the event doesn't have this field, the current time is used.
         """
         return pulumi.get(self, "field_time_key")
 
     @field_time_key.setter
-    def field_time_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def field_time_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "field_time_key", value)
 
     @_builtins.property
     @pulumi.getter(name="formatFirstline")
-    def format_firstline(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def format_firstline(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) First line pattern format.
         """
         return pulumi.get(self, "format_firstline")
 
     @format_firstline.setter
-    def format_firstline(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def format_firstline(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "format_firstline", value)
 
     @_builtins.property
     @pulumi.getter
-    def formats(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def formats(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Mutiline pattern format.
         """
         return pulumi.get(self, "formats")
 
     @formats.setter
-    def formats(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def formats(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "formats", value)
 
     @_builtins.property
     @pulumi.getter(name="grokFailureKey")
-    def grok_failure_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def grok_failure_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Grok failure key.
         """
         return pulumi.get(self, "grok_failure_key")
 
     @grok_failure_key.setter
-    def grok_failure_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def grok_failure_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "grok_failure_key", value)
 
     @_builtins.property
     @pulumi.getter(name="grokNameKey")
-    def grok_name_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def grok_name_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Grok name key.
         """
         return pulumi.get(self, "grok_name_key")
 
     @grok_name_key.setter
-    def grok_name_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def grok_name_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "grok_name_key", value)
 
     @_builtins.property
     @pulumi.getter(name="isEstimateCurrentEvent")
-    def is_estimate_current_event(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_estimate_current_event(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
         """
         return pulumi.get(self, "is_estimate_current_event")
 
     @is_estimate_current_event.setter
-    def is_estimate_current_event(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_estimate_current_event(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_estimate_current_event", value)
 
     @_builtins.property
     @pulumi.getter(name="isKeepTimeKey")
-    def is_keep_time_key(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_keep_time_key(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, keep the time field in the record.
         """
         return pulumi.get(self, "is_keep_time_key")
 
     @is_keep_time_key.setter
-    def is_keep_time_key(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_keep_time_key(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_keep_time_key", value)
 
     @_builtins.property
     @pulumi.getter(name="isMergeCriFields")
-    def is_merge_cri_fields(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_merge_cri_fields(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If you don't need stream or logtag fields, set this to false.
         """
         return pulumi.get(self, "is_merge_cri_fields")
 
     @is_merge_cri_fields.setter
-    def is_merge_cri_fields(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_merge_cri_fields(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_merge_cri_fields", value)
 
     @_builtins.property
     @pulumi.getter(name="isNullEmptyString")
-    def is_null_empty_string(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_null_empty_string(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, an empty string field is replaced with a null value.
         """
         return pulumi.get(self, "is_null_empty_string")
 
     @is_null_empty_string.setter
-    def is_null_empty_string(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_null_empty_string(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_null_empty_string", value)
 
     @_builtins.property
     @pulumi.getter(name="isSupportColonlessIdent")
-    def is_support_colonless_ident(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_support_colonless_ident(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
         """
         return pulumi.get(self, "is_support_colonless_ident")
 
     @is_support_colonless_ident.setter
-    def is_support_colonless_ident(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_support_colonless_ident(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_support_colonless_ident", value)
 
     @_builtins.property
     @pulumi.getter(name="isWithPriority")
-    def is_with_priority(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_with_priority(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
         """
         return pulumi.get(self, "is_with_priority")
 
     @is_with_priority.setter
-    def is_with_priority(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_with_priority(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_with_priority", value)
 
     @_builtins.property
     @pulumi.getter
-    def keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) CSV keys.
         """
         return pulumi.get(self, "keys")
 
     @keys.setter
-    def keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "keys", value)
 
     @_builtins.property
     @pulumi.getter(name="messageFormat")
-    def message_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Syslog message format.
         """
         return pulumi.get(self, "message_format")
 
     @message_format.setter
-    def message_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message_format", value)
 
     @_builtins.property
     @pulumi.getter(name="messageKey")
-    def message_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies the field name to contain logs.
         """
         return pulumi.get(self, "message_key")
 
     @message_key.setter
-    def message_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message_key", value)
 
     @_builtins.property
     @pulumi.getter(name="multiLineStartRegexp")
-    def multi_line_start_regexp(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def multi_line_start_regexp(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Multiline start regexp pattern.
         """
         return pulumi.get(self, "multi_line_start_regexp")
 
     @multi_line_start_regexp.setter
-    def multi_line_start_regexp(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def multi_line_start_regexp(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "multi_line_start_regexp", value)
 
     @_builtins.property
     @pulumi.getter(name="nestedParser")
-    def nested_parser(self) -> Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs']]:
+    def nested_parser(self) -> pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs']]:
         """
         (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
         """
         return pulumi.get(self, "nested_parser")
 
     @nested_parser.setter
-    def nested_parser(self, value: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs']]):
+    def nested_parser(self, value: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs']]):
         pulumi.set(self, "nested_parser", value)
 
     @_builtins.property
     @pulumi.getter(name="nullValuePattern")
-    def null_value_pattern(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def null_value_pattern(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specify the null value pattern.
         """
         return pulumi.get(self, "null_value_pattern")
 
     @null_value_pattern.setter
-    def null_value_pattern(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def null_value_pattern(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "null_value_pattern", value)
 
     @_builtins.property
     @pulumi.getter(name="parseNested")
-    def parse_nested(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def parse_nested(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, a separator parameter can be further defined.
         """
         return pulumi.get(self, "parse_nested")
 
     @parse_nested.setter
-    def parse_nested(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def parse_nested(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "parse_nested", value)
 
     @_builtins.property
     @pulumi.getter
-    def patterns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs']]]]:
+    def patterns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs']]]]:
         """
         (Updatable) Grok pattern object.
         """
         return pulumi.get(self, "patterns")
 
     @patterns.setter
-    def patterns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs']]]]):
+    def patterns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs']]]]):
         pulumi.set(self, "patterns", value)
 
     @_builtins.property
     @pulumi.getter(name="recordInput")
-    def record_input(self) -> Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs']]:
+    def record_input(self) -> pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs']]:
         """
         (Updatable) record section of openmetrics parser.
         """
         return pulumi.get(self, "record_input")
 
     @record_input.setter
-    def record_input(self, value: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs']]):
+    def record_input(self, value: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs']]):
         pulumi.set(self, "record_input", value)
 
     @_builtins.property
     @pulumi.getter(name="rfc5424timeFormat")
-    def rfc5424time_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rfc5424time_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) RFC 5424 time format.
         """
         return pulumi.get(self, "rfc5424time_format")
 
     @rfc5424time_format.setter
-    def rfc5424time_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rfc5424time_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rfc5424time_format", value)
 
     @_builtins.property
     @pulumi.getter
-    def separator(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def separator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Keys of adjacent levels are joined by the separator.
         """
         return pulumi.get(self, "separator")
 
     @separator.setter
-    def separator(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def separator(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "separator", value)
 
     @_builtins.property
     @pulumi.getter(name="syslogParserType")
-    def syslog_parser_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def syslog_parser_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Syslog parser type.
         """
         return pulumi.get(self, "syslog_parser_type")
 
     @syslog_parser_type.setter
-    def syslog_parser_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def syslog_parser_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "syslog_parser_type", value)
 
     @_builtins.property
     @pulumi.getter(name="timeFormat")
-    def time_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Process time value using the specified format.
         """
         return pulumi.get(self, "time_format")
 
     @time_format.setter
-    def time_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_format", value)
 
     @_builtins.property
     @pulumi.getter(name="timeType")
-    def time_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) JSON parser time type.
         """
         return pulumi.get(self, "time_type")
 
     @time_type.setter
-    def time_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_type", value)
 
     @_builtins.property
     @pulumi.getter(name="timeoutInMilliseconds")
-    def timeout_in_milliseconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def timeout_in_milliseconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
         """
         return pulumi.get(self, "timeout_in_milliseconds")
 
     @timeout_in_milliseconds.setter
-    def timeout_in_milliseconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def timeout_in_milliseconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "timeout_in_milliseconds", value)
 
     @_builtins.property
     @pulumi.getter
-    def types(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def types(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
 
@@ -2737,32 +2737,32 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs:
         return pulumi.get(self, "types")
 
     @types.setter
-    def types(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def types(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "types", value)
 
 
 class UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgsDict(TypedDict):
-    field_time_key: NotRequired[pulumi.Input[_builtins.str]]
+    field_time_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Specify the time field for the event time. If the event doesn't have this field, the current time is used.
     """
-    is_keep_time_key: NotRequired[pulumi.Input[_builtins.bool]]
+    is_keep_time_key: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     If true, keep the time field in the record.
     """
-    parse_nested: NotRequired[pulumi.Input[_builtins.bool]]
+    parse_nested: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If true, a separator parameter can be further defined.
     """
-    separator: NotRequired[pulumi.Input[_builtins.str]]
+    separator: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Keys of adjacent levels are joined by the separator.
     """
-    time_format: NotRequired[pulumi.Input[_builtins.str]]
+    time_format: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Process time value using the specified format.
     """
-    time_type: NotRequired[pulumi.Input[_builtins.str]]
+    time_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) JSON parser time type.
     """
@@ -2770,12 +2770,12 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgsD
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs:
     def __init__(__self__, *,
-                 field_time_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_keep_time_key: Optional[pulumi.Input[_builtins.bool]] = None,
-                 parse_nested: Optional[pulumi.Input[_builtins.bool]] = None,
-                 separator: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 field_time_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_keep_time_key: pulumi.Input[Optional[_builtins.bool]] = None,
+                 parse_nested: pulumi.Input[Optional[_builtins.bool]] = None,
+                 separator: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] field_time_key: Specify the time field for the event time. If the event doesn't have this field, the current time is used.
         :param pulumi.Input[_builtins.bool] is_keep_time_key: If true, keep the time field in the record.
@@ -2799,95 +2799,95 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs:
 
     @_builtins.property
     @pulumi.getter(name="fieldTimeKey")
-    def field_time_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def field_time_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify the time field for the event time. If the event doesn't have this field, the current time is used.
         """
         return pulumi.get(self, "field_time_key")
 
     @field_time_key.setter
-    def field_time_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def field_time_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "field_time_key", value)
 
     @_builtins.property
     @pulumi.getter(name="isKeepTimeKey")
-    def is_keep_time_key(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_keep_time_key(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, keep the time field in the record.
         """
         return pulumi.get(self, "is_keep_time_key")
 
     @is_keep_time_key.setter
-    def is_keep_time_key(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_keep_time_key(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_keep_time_key", value)
 
     @_builtins.property
     @pulumi.getter(name="parseNested")
-    def parse_nested(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def parse_nested(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, a separator parameter can be further defined.
         """
         return pulumi.get(self, "parse_nested")
 
     @parse_nested.setter
-    def parse_nested(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def parse_nested(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "parse_nested", value)
 
     @_builtins.property
     @pulumi.getter
-    def separator(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def separator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Keys of adjacent levels are joined by the separator.
         """
         return pulumi.get(self, "separator")
 
     @separator.setter
-    def separator(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def separator(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "separator", value)
 
     @_builtins.property
     @pulumi.getter(name="timeFormat")
-    def time_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Process time value using the specified format.
         """
         return pulumi.get(self, "time_format")
 
     @time_format.setter
-    def time_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_format", value)
 
     @_builtins.property
     @pulumi.getter(name="timeType")
-    def time_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) JSON parser time type.
         """
         return pulumi.get(self, "time_type")
 
     @time_type.setter
-    def time_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_type", value)
 
 
 class UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgsDict(TypedDict):
-    field_time_format: NotRequired[pulumi.Input[_builtins.str]]
+    field_time_format: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Process value using the specified format. This is available only when time_type is a string.
     """
-    field_time_key: NotRequired[pulumi.Input[_builtins.str]]
+    field_time_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
     """
-    field_time_zone: NotRequired[pulumi.Input[_builtins.str]]
+    field_time_zone: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name key to tag this Grok pattern.
     """
-    pattern: NotRequired[pulumi.Input[_builtins.str]]
+    pattern: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The Grok pattern.
     """
@@ -2895,11 +2895,11 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgsDict(T
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs:
     def __init__(__self__, *,
-                 field_time_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 field_time_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 field_time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pattern: Optional[pulumi.Input[_builtins.str]] = None):
+                 field_time_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 field_time_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 field_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pattern: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] field_time_format: (Updatable) Process value using the specified format. This is available only when time_type is a string.
         :param pulumi.Input[_builtins.str] field_time_key: (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
@@ -2920,75 +2920,75 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs:
 
     @_builtins.property
     @pulumi.getter(name="fieldTimeFormat")
-    def field_time_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def field_time_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Process value using the specified format. This is available only when time_type is a string.
         """
         return pulumi.get(self, "field_time_format")
 
     @field_time_format.setter
-    def field_time_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def field_time_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "field_time_format", value)
 
     @_builtins.property
     @pulumi.getter(name="fieldTimeKey")
-    def field_time_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def field_time_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
         """
         return pulumi.get(self, "field_time_key")
 
     @field_time_key.setter
-    def field_time_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def field_time_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "field_time_key", value)
 
     @_builtins.property
     @pulumi.getter(name="fieldTimeZone")
-    def field_time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def field_time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
         """
         return pulumi.get(self, "field_time_zone")
 
     @field_time_zone.setter
-    def field_time_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def field_time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "field_time_zone", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name key to tag this Grok pattern.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def pattern(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pattern(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Grok pattern.
         """
         return pulumi.get(self, "pattern")
 
     @pattern.setter
-    def pattern(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pattern(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pattern", value)
 
 
 class UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgsDict(TypedDict):
-    dimensions: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    dimensions: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Dimensions to be added for metrics.
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Namespace to emit metrics.
     """
-    resource_group: NotRequired[pulumi.Input[_builtins.str]]
+    resource_group: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Resource group to emit metrics.
     """
@@ -2996,9 +2996,9 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgsDi
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs:
     def __init__(__self__, *,
-                 dimensions: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None):
+                 dimensions: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] dimensions: (Updatable) Dimensions to be added for metrics.
         :param pulumi.Input[_builtins.str] namespace: (Updatable) Namespace to emit metrics.
@@ -3013,38 +3013,38 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs:
 
     @_builtins.property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def dimensions(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Dimensions to be added for metrics.
         """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def dimensions(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dimensions", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Namespace to emit metrics.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Resource group to emit metrics.
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
 
@@ -3057,87 +3057,87 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
     """
     (Updatable) Unique name for the filter.
     """
-    allow_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgsDict']]]]
+    allow_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs']]]]]
     """
     (Updatable) A list of filtering rules to include logs
     """
-    custom_filter_type: NotRequired[pulumi.Input[_builtins.str]]
+    custom_filter_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Type of the custom filter
     """
-    custom_sections: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgsDict']]]]
+    custom_sections: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs']]]]]
     """
     (Updatable) List of custom sections in custom filter
     """
-    deny_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgsDict']]]]
+    deny_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs']]]]]
     """
     (Updatable) A list of filtering rules to reject logs
     """
-    emit_invalid_record_to_error: NotRequired[pulumi.Input[_builtins.bool]]
+    emit_invalid_record_to_error: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If true, emit invalid record to @ERROR label. Invalid cases are: 1) key does not exist; 2) the format does not match; or 3) an unexpected error. You can rescue unexpected format logs in the @ERROR lable. If you want to ignore these errors, set this to false.
     """
-    hash_value_field: NotRequired[pulumi.Input[_builtins.str]]
+    hash_value_field: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Store the parsed values as a hash value in a field.
     """
-    inject_key_prefix: NotRequired[pulumi.Input[_builtins.str]]
+    inject_key_prefix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Store the parsed values with the specified key name prefix.
     """
-    is_auto_typecast_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_auto_typecast_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If true, automatically casts the field types.
     """
-    is_renew_record_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_renew_record_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If true, it modifies a new empty hash
     """
-    is_ruby_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_ruby_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) When set to true, the full Ruby syntax is enabled in the ${} expression.
     """
-    keep_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    keep_keys: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) A list of keys to keep. Only relevant if isRenewRecordEnabled is set to true
     """
-    key_name: NotRequired[pulumi.Input[_builtins.str]]
+    key_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The field name in the record to parse.
     """
-    params: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    params: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Parameters of the custom filter
     """
-    parser: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgsDict']]
+    parser: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs']]]
     """
     (Updatable) Source parser object.
     """
-    record_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgsDict']]]]
+    record_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs']]]]]
     """
     (Updatable) Add new key-value pairs in logs
     """
-    remove_key_name_field: NotRequired[pulumi.Input[_builtins.bool]]
+    remove_key_name_field: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If true, remove the keyName field when parsing is succeeded.
     """
-    remove_keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    remove_keys: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) A list of keys to delete
     """
-    renew_time_key: NotRequired[pulumi.Input[_builtins.str]]
+    renew_time_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Overwrites the time of logs with this value, this value must be a Unix timestamp.
     """
-    replace_invalid_sequence: NotRequired[pulumi.Input[_builtins.bool]]
+    replace_invalid_sequence: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If true, the invalid string is replaced with safe characters and is re-parsed.
     """
-    reserve_data: NotRequired[pulumi.Input[_builtins.bool]]
+    reserve_data: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If true, keep the original key-value pair in the parsed result.
     """
-    reserve_time: NotRequired[pulumi.Input[_builtins.bool]]
+    reserve_time: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If true, keep the original event time in the parsed result.
 
@@ -3151,27 +3151,27 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
     def __init__(__self__, *,
                  filter_type: pulumi.Input[_builtins.str],
                  name: pulumi.Input[_builtins.str],
-                 allow_lists: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs']]]] = None,
-                 custom_filter_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_sections: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs']]]] = None,
-                 deny_lists: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs']]]] = None,
-                 emit_invalid_record_to_error: Optional[pulumi.Input[_builtins.bool]] = None,
-                 hash_value_field: Optional[pulumi.Input[_builtins.str]] = None,
-                 inject_key_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_auto_typecast_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_renew_record_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_ruby_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 keep_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 key_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 params: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 parser: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs']] = None,
-                 record_lists: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs']]]] = None,
-                 remove_key_name_field: Optional[pulumi.Input[_builtins.bool]] = None,
-                 remove_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 renew_time_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 replace_invalid_sequence: Optional[pulumi.Input[_builtins.bool]] = None,
-                 reserve_data: Optional[pulumi.Input[_builtins.bool]] = None,
-                 reserve_time: Optional[pulumi.Input[_builtins.bool]] = None):
+                 allow_lists: pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs']]]] = None,
+                 custom_filter_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_sections: pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs']]]] = None,
+                 deny_lists: pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs']]]] = None,
+                 emit_invalid_record_to_error: pulumi.Input[Optional[_builtins.bool]] = None,
+                 hash_value_field: pulumi.Input[Optional[_builtins.str]] = None,
+                 inject_key_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_auto_typecast_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_renew_record_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_ruby_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 keep_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 key_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 params: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 parser: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs']] = None,
+                 record_lists: pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs']]]] = None,
+                 remove_key_name_field: pulumi.Input[Optional[_builtins.bool]] = None,
+                 remove_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 renew_time_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 replace_invalid_sequence: pulumi.Input[Optional[_builtins.bool]] = None,
+                 reserve_data: pulumi.Input[Optional[_builtins.bool]] = None,
+                 reserve_time: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] filter_type: (Updatable) Unified schema logging filter type.
         :param pulumi.Input[_builtins.str] name: (Updatable) Unique name for the filter.
@@ -3272,247 +3272,247 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 
     @_builtins.property
     @pulumi.getter(name="allowLists")
-    def allow_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs']]]]:
+    def allow_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs']]]]:
         """
         (Updatable) A list of filtering rules to include logs
         """
         return pulumi.get(self, "allow_lists")
 
     @allow_lists.setter
-    def allow_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs']]]]):
+    def allow_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs']]]]):
         pulumi.set(self, "allow_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="customFilterType")
-    def custom_filter_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def custom_filter_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Type of the custom filter
         """
         return pulumi.get(self, "custom_filter_type")
 
     @custom_filter_type.setter
-    def custom_filter_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def custom_filter_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "custom_filter_type", value)
 
     @_builtins.property
     @pulumi.getter(name="customSections")
-    def custom_sections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs']]]]:
+    def custom_sections(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs']]]]:
         """
         (Updatable) List of custom sections in custom filter
         """
         return pulumi.get(self, "custom_sections")
 
     @custom_sections.setter
-    def custom_sections(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs']]]]):
+    def custom_sections(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs']]]]):
         pulumi.set(self, "custom_sections", value)
 
     @_builtins.property
     @pulumi.getter(name="denyLists")
-    def deny_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs']]]]:
+    def deny_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs']]]]:
         """
         (Updatable) A list of filtering rules to reject logs
         """
         return pulumi.get(self, "deny_lists")
 
     @deny_lists.setter
-    def deny_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs']]]]):
+    def deny_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs']]]]):
         pulumi.set(self, "deny_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="emitInvalidRecordToError")
-    def emit_invalid_record_to_error(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def emit_invalid_record_to_error(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, emit invalid record to @ERROR label. Invalid cases are: 1) key does not exist; 2) the format does not match; or 3) an unexpected error. You can rescue unexpected format logs in the @ERROR lable. If you want to ignore these errors, set this to false.
         """
         return pulumi.get(self, "emit_invalid_record_to_error")
 
     @emit_invalid_record_to_error.setter
-    def emit_invalid_record_to_error(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def emit_invalid_record_to_error(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "emit_invalid_record_to_error", value)
 
     @_builtins.property
     @pulumi.getter(name="hashValueField")
-    def hash_value_field(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hash_value_field(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Store the parsed values as a hash value in a field.
         """
         return pulumi.get(self, "hash_value_field")
 
     @hash_value_field.setter
-    def hash_value_field(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hash_value_field(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hash_value_field", value)
 
     @_builtins.property
     @pulumi.getter(name="injectKeyPrefix")
-    def inject_key_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def inject_key_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Store the parsed values with the specified key name prefix.
         """
         return pulumi.get(self, "inject_key_prefix")
 
     @inject_key_prefix.setter
-    def inject_key_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def inject_key_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "inject_key_prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoTypecastEnabled")
-    def is_auto_typecast_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_typecast_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, automatically casts the field types.
         """
         return pulumi.get(self, "is_auto_typecast_enabled")
 
     @is_auto_typecast_enabled.setter
-    def is_auto_typecast_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_typecast_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_typecast_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isRenewRecordEnabled")
-    def is_renew_record_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_renew_record_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, it modifies a new empty hash
         """
         return pulumi.get(self, "is_renew_record_enabled")
 
     @is_renew_record_enabled.setter
-    def is_renew_record_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_renew_record_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_renew_record_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isRubyEnabled")
-    def is_ruby_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_ruby_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) When set to true, the full Ruby syntax is enabled in the ${} expression.
         """
         return pulumi.get(self, "is_ruby_enabled")
 
     @is_ruby_enabled.setter
-    def is_ruby_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_ruby_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_ruby_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="keepKeys")
-    def keep_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def keep_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A list of keys to keep. Only relevant if isRenewRecordEnabled is set to true
         """
         return pulumi.get(self, "keep_keys")
 
     @keep_keys.setter
-    def keep_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def keep_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "keep_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="keyName")
-    def key_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The field name in the record to parse.
         """
         return pulumi.get(self, "key_name")
 
     @key_name.setter
-    def key_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def params(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def params(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Parameters of the custom filter
         """
         return pulumi.get(self, "params")
 
     @params.setter
-    def params(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def params(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "params", value)
 
     @_builtins.property
     @pulumi.getter
-    def parser(self) -> Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs']]:
+    def parser(self) -> pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs']]:
         """
         (Updatable) Source parser object.
         """
         return pulumi.get(self, "parser")
 
     @parser.setter
-    def parser(self, value: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs']]):
+    def parser(self, value: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs']]):
         pulumi.set(self, "parser", value)
 
     @_builtins.property
     @pulumi.getter(name="recordLists")
-    def record_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs']]]]:
+    def record_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs']]]]:
         """
         (Updatable) Add new key-value pairs in logs
         """
         return pulumi.get(self, "record_lists")
 
     @record_lists.setter
-    def record_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs']]]]):
+    def record_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs']]]]):
         pulumi.set(self, "record_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="removeKeyNameField")
-    def remove_key_name_field(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def remove_key_name_field(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, remove the keyName field when parsing is succeeded.
         """
         return pulumi.get(self, "remove_key_name_field")
 
     @remove_key_name_field.setter
-    def remove_key_name_field(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def remove_key_name_field(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "remove_key_name_field", value)
 
     @_builtins.property
     @pulumi.getter(name="removeKeys")
-    def remove_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def remove_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A list of keys to delete
         """
         return pulumi.get(self, "remove_keys")
 
     @remove_keys.setter
-    def remove_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def remove_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "remove_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="renewTimeKey")
-    def renew_time_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def renew_time_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Overwrites the time of logs with this value, this value must be a Unix timestamp.
         """
         return pulumi.get(self, "renew_time_key")
 
     @renew_time_key.setter
-    def renew_time_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def renew_time_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "renew_time_key", value)
 
     @_builtins.property
     @pulumi.getter(name="replaceInvalidSequence")
-    def replace_invalid_sequence(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def replace_invalid_sequence(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, the invalid string is replaced with safe characters and is re-parsed.
         """
         return pulumi.get(self, "replace_invalid_sequence")
 
     @replace_invalid_sequence.setter
-    def replace_invalid_sequence(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def replace_invalid_sequence(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "replace_invalid_sequence", value)
 
     @_builtins.property
     @pulumi.getter(name="reserveData")
-    def reserve_data(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def reserve_data(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, keep the original key-value pair in the parsed result.
         """
         return pulumi.get(self, "reserve_data")
 
     @reserve_data.setter
-    def reserve_data(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def reserve_data(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "reserve_data", value)
 
     @_builtins.property
     @pulumi.getter(name="reserveTime")
-    def reserve_time(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def reserve_time(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, keep the original event time in the parsed result.
 
@@ -3523,16 +3523,16 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
         return pulumi.get(self, "reserve_time")
 
     @reserve_time.setter
-    def reserve_time(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def reserve_time(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "reserve_time", value)
 
 
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgsDict(TypedDict):
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The field name to which the regular expression is applied
     """
-    pattern: NotRequired[pulumi.Input[_builtins.str]]
+    pattern: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The regular expression
     """
@@ -3540,8 +3540,8 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 pattern: Optional[pulumi.Input[_builtins.str]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 pattern: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] key: (Updatable) The field name to which the regular expression is applied
         :param pulumi.Input[_builtins.str] pattern: (Updatable) The regular expression
@@ -3553,35 +3553,35 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The field name to which the regular expression is applied
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def pattern(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pattern(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The regular expression
         """
         return pulumi.get(self, "pattern")
 
     @pattern.setter
-    def pattern(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pattern(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pattern", value)
 
 
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgsDict(TypedDict):
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the custom section
     """
-    params: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    params: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Parameters in the custom section
     """
@@ -3589,8 +3589,8 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 params: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 params: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the custom section
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] params: (Updatable) Parameters in the custom section
@@ -3602,35 +3602,35 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the custom section
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def params(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def params(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Parameters in the custom section
         """
         return pulumi.get(self, "params")
 
     @params.setter
-    def params(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def params(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "params", value)
 
 
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgsDict(TypedDict):
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The field name to which the regular expression is applied
     """
-    pattern: NotRequired[pulumi.Input[_builtins.str]]
+    pattern: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The regular expression
     """
@@ -3638,8 +3638,8 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListArgs:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 pattern: Optional[pulumi.Input[_builtins.str]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 pattern: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] key: (Updatable) The field name to which the regular expression is applied
         :param pulumi.Input[_builtins.str] pattern: (Updatable) The regular expression
@@ -3651,26 +3651,26 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The field name to which the regular expression is applied
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def pattern(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pattern(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The regular expression
         """
         return pulumi.get(self, "pattern")
 
     @pattern.setter
-    def pattern(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pattern(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pattern", value)
 
 
@@ -3679,119 +3679,119 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
     """
     (Updatable) Type of fluent parser.
     """
-    delimiter: NotRequired[pulumi.Input[_builtins.str]]
+    delimiter: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) CSV delimiter.
     """
-    expression: NotRequired[pulumi.Input[_builtins.str]]
+    expression: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Regex pattern.
     """
-    field_time_key: NotRequired[pulumi.Input[_builtins.str]]
+    field_time_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies the time field for the event time. If the event doesn't have this field, the current time is used.
     """
-    format_firstline: NotRequired[pulumi.Input[_builtins.str]]
+    format_firstline: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) First line pattern format.
     """
-    formats: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    formats: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Mutiline pattern format.
     """
-    grok_failure_key: NotRequired[pulumi.Input[_builtins.str]]
+    grok_failure_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Grok failure key.
     """
-    grok_name_key: NotRequired[pulumi.Input[_builtins.str]]
+    grok_name_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Grok name key.
     """
-    is_estimate_current_event: NotRequired[pulumi.Input[_builtins.bool]]
+    is_estimate_current_event: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
     """
-    is_keep_time_key: NotRequired[pulumi.Input[_builtins.bool]]
+    is_keep_time_key: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If true, keep the time field in the record.
     """
-    is_merge_cri_fields: NotRequired[pulumi.Input[_builtins.bool]]
+    is_merge_cri_fields: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If you don't need stream or logtag fields, set this to false.
     """
-    is_null_empty_string: NotRequired[pulumi.Input[_builtins.bool]]
+    is_null_empty_string: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If true, an empty string field is replaced with a null value.
     """
-    is_support_colonless_ident: NotRequired[pulumi.Input[_builtins.bool]]
+    is_support_colonless_ident: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
     """
-    is_with_priority: NotRequired[pulumi.Input[_builtins.bool]]
+    is_with_priority: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
     """
-    keys: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    keys: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) CSV keys.
     """
-    message_format: NotRequired[pulumi.Input[_builtins.str]]
+    message_format: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Syslog message format.
     """
-    message_key: NotRequired[pulumi.Input[_builtins.str]]
+    message_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies the field name to contain logs.
     """
-    multi_line_start_regexp: NotRequired[pulumi.Input[_builtins.str]]
+    multi_line_start_regexp: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Multiline start regexp pattern.
     """
-    nested_parser: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgsDict']]
+    nested_parser: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs']]]
     """
     (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
     """
-    null_value_pattern: NotRequired[pulumi.Input[_builtins.str]]
+    null_value_pattern: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specify the null value pattern.
     """
-    parse_nested: NotRequired[pulumi.Input[_builtins.bool]]
+    parse_nested: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If true, a separator parameter can be further defined.
     """
-    patterns: NotRequired[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgsDict']]]]
+    patterns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs']]]]]
     """
     (Updatable) Grok pattern object.
     """
-    record_input: NotRequired[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgsDict']]
+    record_input: NotRequired[pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs']]]
     """
     (Updatable) record section of openmetrics parser.
     """
-    rfc5424time_format: NotRequired[pulumi.Input[_builtins.str]]
+    rfc5424time_format: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) RFC 5424 time format.
     """
-    separator: NotRequired[pulumi.Input[_builtins.str]]
+    separator: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Keys of adjacent levels are joined by the separator.
     """
-    syslog_parser_type: NotRequired[pulumi.Input[_builtins.str]]
+    syslog_parser_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Syslog parser type.
     """
-    time_format: NotRequired[pulumi.Input[_builtins.str]]
+    time_format: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Process time value using the specified format.
     """
-    time_type: NotRequired[pulumi.Input[_builtins.str]]
+    time_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) JSON parser time type.
     """
-    timeout_in_milliseconds: NotRequired[pulumi.Input[_builtins.int]]
+    timeout_in_milliseconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
     """
-    types: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    types: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
 
@@ -3806,35 +3806,35 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs:
     def __init__(__self__, *,
                  parser_type: pulumi.Input[_builtins.str],
-                 delimiter: Optional[pulumi.Input[_builtins.str]] = None,
-                 expression: Optional[pulumi.Input[_builtins.str]] = None,
-                 field_time_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 format_firstline: Optional[pulumi.Input[_builtins.str]] = None,
-                 formats: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 grok_failure_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 grok_name_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_estimate_current_event: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_keep_time_key: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_merge_cri_fields: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_null_empty_string: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_support_colonless_ident: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_with_priority: Optional[pulumi.Input[_builtins.bool]] = None,
-                 keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 message_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 message_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 multi_line_start_regexp: Optional[pulumi.Input[_builtins.str]] = None,
-                 nested_parser: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs']] = None,
-                 null_value_pattern: Optional[pulumi.Input[_builtins.str]] = None,
-                 parse_nested: Optional[pulumi.Input[_builtins.bool]] = None,
-                 patterns: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs']]]] = None,
-                 record_input: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs']] = None,
-                 rfc5424time_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 separator: Optional[pulumi.Input[_builtins.str]] = None,
-                 syslog_parser_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeout_in_milliseconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 types: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 delimiter: pulumi.Input[Optional[_builtins.str]] = None,
+                 expression: pulumi.Input[Optional[_builtins.str]] = None,
+                 field_time_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 format_firstline: pulumi.Input[Optional[_builtins.str]] = None,
+                 formats: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 grok_failure_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 grok_name_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_estimate_current_event: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_keep_time_key: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_merge_cri_fields: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_null_empty_string: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_support_colonless_ident: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_with_priority: pulumi.Input[Optional[_builtins.bool]] = None,
+                 keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 message_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 message_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 multi_line_start_regexp: pulumi.Input[Optional[_builtins.str]] = None,
+                 nested_parser: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs']] = None,
+                 null_value_pattern: pulumi.Input[Optional[_builtins.str]] = None,
+                 parse_nested: pulumi.Input[Optional[_builtins.bool]] = None,
+                 patterns: pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs']]]] = None,
+                 record_input: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs']] = None,
+                 rfc5424time_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 separator: pulumi.Input[Optional[_builtins.str]] = None,
+                 syslog_parser_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeout_in_milliseconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 types: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] parser_type: (Updatable) Type of fluent parser.
         :param pulumi.Input[_builtins.str] delimiter: (Updatable) CSV delimiter.
@@ -3947,343 +3947,343 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 
     @_builtins.property
     @pulumi.getter
-    def delimiter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def delimiter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) CSV delimiter.
         """
         return pulumi.get(self, "delimiter")
 
     @delimiter.setter
-    def delimiter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def delimiter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "delimiter", value)
 
     @_builtins.property
     @pulumi.getter
-    def expression(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expression(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Regex pattern.
         """
         return pulumi.get(self, "expression")
 
     @expression.setter
-    def expression(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expression(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expression", value)
 
     @_builtins.property
     @pulumi.getter(name="fieldTimeKey")
-    def field_time_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def field_time_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies the time field for the event time. If the event doesn't have this field, the current time is used.
         """
         return pulumi.get(self, "field_time_key")
 
     @field_time_key.setter
-    def field_time_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def field_time_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "field_time_key", value)
 
     @_builtins.property
     @pulumi.getter(name="formatFirstline")
-    def format_firstline(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def format_firstline(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) First line pattern format.
         """
         return pulumi.get(self, "format_firstline")
 
     @format_firstline.setter
-    def format_firstline(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def format_firstline(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "format_firstline", value)
 
     @_builtins.property
     @pulumi.getter
-    def formats(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def formats(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Mutiline pattern format.
         """
         return pulumi.get(self, "formats")
 
     @formats.setter
-    def formats(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def formats(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "formats", value)
 
     @_builtins.property
     @pulumi.getter(name="grokFailureKey")
-    def grok_failure_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def grok_failure_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Grok failure key.
         """
         return pulumi.get(self, "grok_failure_key")
 
     @grok_failure_key.setter
-    def grok_failure_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def grok_failure_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "grok_failure_key", value)
 
     @_builtins.property
     @pulumi.getter(name="grokNameKey")
-    def grok_name_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def grok_name_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Grok name key.
         """
         return pulumi.get(self, "grok_name_key")
 
     @grok_name_key.setter
-    def grok_name_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def grok_name_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "grok_name_key", value)
 
     @_builtins.property
     @pulumi.getter(name="isEstimateCurrentEvent")
-    def is_estimate_current_event(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_estimate_current_event(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
         """
         return pulumi.get(self, "is_estimate_current_event")
 
     @is_estimate_current_event.setter
-    def is_estimate_current_event(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_estimate_current_event(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_estimate_current_event", value)
 
     @_builtins.property
     @pulumi.getter(name="isKeepTimeKey")
-    def is_keep_time_key(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_keep_time_key(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, keep the time field in the record.
         """
         return pulumi.get(self, "is_keep_time_key")
 
     @is_keep_time_key.setter
-    def is_keep_time_key(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_keep_time_key(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_keep_time_key", value)
 
     @_builtins.property
     @pulumi.getter(name="isMergeCriFields")
-    def is_merge_cri_fields(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_merge_cri_fields(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If you don't need stream or logtag fields, set this to false.
         """
         return pulumi.get(self, "is_merge_cri_fields")
 
     @is_merge_cri_fields.setter
-    def is_merge_cri_fields(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_merge_cri_fields(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_merge_cri_fields", value)
 
     @_builtins.property
     @pulumi.getter(name="isNullEmptyString")
-    def is_null_empty_string(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_null_empty_string(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, an empty string field is replaced with a null value.
         """
         return pulumi.get(self, "is_null_empty_string")
 
     @is_null_empty_string.setter
-    def is_null_empty_string(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_null_empty_string(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_null_empty_string", value)
 
     @_builtins.property
     @pulumi.getter(name="isSupportColonlessIdent")
-    def is_support_colonless_ident(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_support_colonless_ident(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
         """
         return pulumi.get(self, "is_support_colonless_ident")
 
     @is_support_colonless_ident.setter
-    def is_support_colonless_ident(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_support_colonless_ident(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_support_colonless_ident", value)
 
     @_builtins.property
     @pulumi.getter(name="isWithPriority")
-    def is_with_priority(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_with_priority(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
         """
         return pulumi.get(self, "is_with_priority")
 
     @is_with_priority.setter
-    def is_with_priority(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_with_priority(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_with_priority", value)
 
     @_builtins.property
     @pulumi.getter
-    def keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) CSV keys.
         """
         return pulumi.get(self, "keys")
 
     @keys.setter
-    def keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "keys", value)
 
     @_builtins.property
     @pulumi.getter(name="messageFormat")
-    def message_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Syslog message format.
         """
         return pulumi.get(self, "message_format")
 
     @message_format.setter
-    def message_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message_format", value)
 
     @_builtins.property
     @pulumi.getter(name="messageKey")
-    def message_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies the field name to contain logs.
         """
         return pulumi.get(self, "message_key")
 
     @message_key.setter
-    def message_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message_key", value)
 
     @_builtins.property
     @pulumi.getter(name="multiLineStartRegexp")
-    def multi_line_start_regexp(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def multi_line_start_regexp(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Multiline start regexp pattern.
         """
         return pulumi.get(self, "multi_line_start_regexp")
 
     @multi_line_start_regexp.setter
-    def multi_line_start_regexp(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def multi_line_start_regexp(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "multi_line_start_regexp", value)
 
     @_builtins.property
     @pulumi.getter(name="nestedParser")
-    def nested_parser(self) -> Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs']]:
+    def nested_parser(self) -> pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs']]:
         """
         (Updatable) Optional nested JSON Parser for CRI. Supported fields are fieldTimeKey, timeFormat, and isKeepTimeKey.
         """
         return pulumi.get(self, "nested_parser")
 
     @nested_parser.setter
-    def nested_parser(self, value: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs']]):
+    def nested_parser(self, value: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs']]):
         pulumi.set(self, "nested_parser", value)
 
     @_builtins.property
     @pulumi.getter(name="nullValuePattern")
-    def null_value_pattern(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def null_value_pattern(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specify the null value pattern.
         """
         return pulumi.get(self, "null_value_pattern")
 
     @null_value_pattern.setter
-    def null_value_pattern(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def null_value_pattern(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "null_value_pattern", value)
 
     @_builtins.property
     @pulumi.getter(name="parseNested")
-    def parse_nested(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def parse_nested(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, a separator parameter can be further defined.
         """
         return pulumi.get(self, "parse_nested")
 
     @parse_nested.setter
-    def parse_nested(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def parse_nested(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "parse_nested", value)
 
     @_builtins.property
     @pulumi.getter
-    def patterns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs']]]]:
+    def patterns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs']]]]:
         """
         (Updatable) Grok pattern object.
         """
         return pulumi.get(self, "patterns")
 
     @patterns.setter
-    def patterns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs']]]]):
+    def patterns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs']]]]):
         pulumi.set(self, "patterns", value)
 
     @_builtins.property
     @pulumi.getter(name="recordInput")
-    def record_input(self) -> Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs']]:
+    def record_input(self) -> pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs']]:
         """
         (Updatable) record section of openmetrics parser.
         """
         return pulumi.get(self, "record_input")
 
     @record_input.setter
-    def record_input(self, value: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs']]):
+    def record_input(self, value: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs']]):
         pulumi.set(self, "record_input", value)
 
     @_builtins.property
     @pulumi.getter(name="rfc5424timeFormat")
-    def rfc5424time_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rfc5424time_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) RFC 5424 time format.
         """
         return pulumi.get(self, "rfc5424time_format")
 
     @rfc5424time_format.setter
-    def rfc5424time_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rfc5424time_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rfc5424time_format", value)
 
     @_builtins.property
     @pulumi.getter
-    def separator(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def separator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Keys of adjacent levels are joined by the separator.
         """
         return pulumi.get(self, "separator")
 
     @separator.setter
-    def separator(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def separator(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "separator", value)
 
     @_builtins.property
     @pulumi.getter(name="syslogParserType")
-    def syslog_parser_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def syslog_parser_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Syslog parser type.
         """
         return pulumi.get(self, "syslog_parser_type")
 
     @syslog_parser_type.setter
-    def syslog_parser_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def syslog_parser_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "syslog_parser_type", value)
 
     @_builtins.property
     @pulumi.getter(name="timeFormat")
-    def time_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Process time value using the specified format.
         """
         return pulumi.get(self, "time_format")
 
     @time_format.setter
-    def time_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_format", value)
 
     @_builtins.property
     @pulumi.getter(name="timeType")
-    def time_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) JSON parser time type.
         """
         return pulumi.get(self, "time_type")
 
     @time_type.setter
-    def time_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_type", value)
 
     @_builtins.property
     @pulumi.getter(name="timeoutInMilliseconds")
-    def timeout_in_milliseconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def timeout_in_milliseconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
         """
         return pulumi.get(self, "timeout_in_milliseconds")
 
     @timeout_in_milliseconds.setter
-    def timeout_in_milliseconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def timeout_in_milliseconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "timeout_in_milliseconds", value)
 
     @_builtins.property
     @pulumi.getter
-    def types(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def types(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
 
@@ -4296,32 +4296,32 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
         return pulumi.get(self, "types")
 
     @types.setter
-    def types(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def types(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "types", value)
 
 
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgsDict(TypedDict):
-    field_time_key: NotRequired[pulumi.Input[_builtins.str]]
+    field_time_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Specify the time field for the event time. If the event doesn't have this field, the current time is used.
     """
-    is_keep_time_key: NotRequired[pulumi.Input[_builtins.bool]]
+    is_keep_time_key: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     If true, keep the time field in the record.
     """
-    parse_nested: NotRequired[pulumi.Input[_builtins.bool]]
+    parse_nested: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If true, a separator parameter can be further defined.
     """
-    separator: NotRequired[pulumi.Input[_builtins.str]]
+    separator: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Keys of adjacent levels are joined by the separator.
     """
-    time_format: NotRequired[pulumi.Input[_builtins.str]]
+    time_format: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Process time value using the specified format.
     """
-    time_type: NotRequired[pulumi.Input[_builtins.str]]
+    time_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) JSON parser time type.
     """
@@ -4329,12 +4329,12 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserArgs:
     def __init__(__self__, *,
-                 field_time_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_keep_time_key: Optional[pulumi.Input[_builtins.bool]] = None,
-                 parse_nested: Optional[pulumi.Input[_builtins.bool]] = None,
-                 separator: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 field_time_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_keep_time_key: pulumi.Input[Optional[_builtins.bool]] = None,
+                 parse_nested: pulumi.Input[Optional[_builtins.bool]] = None,
+                 separator: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] field_time_key: Specify the time field for the event time. If the event doesn't have this field, the current time is used.
         :param pulumi.Input[_builtins.bool] is_keep_time_key: If true, keep the time field in the record.
@@ -4358,95 +4358,95 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 
     @_builtins.property
     @pulumi.getter(name="fieldTimeKey")
-    def field_time_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def field_time_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specify the time field for the event time. If the event doesn't have this field, the current time is used.
         """
         return pulumi.get(self, "field_time_key")
 
     @field_time_key.setter
-    def field_time_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def field_time_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "field_time_key", value)
 
     @_builtins.property
     @pulumi.getter(name="isKeepTimeKey")
-    def is_keep_time_key(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_keep_time_key(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, keep the time field in the record.
         """
         return pulumi.get(self, "is_keep_time_key")
 
     @is_keep_time_key.setter
-    def is_keep_time_key(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_keep_time_key(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_keep_time_key", value)
 
     @_builtins.property
     @pulumi.getter(name="parseNested")
-    def parse_nested(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def parse_nested(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, a separator parameter can be further defined.
         """
         return pulumi.get(self, "parse_nested")
 
     @parse_nested.setter
-    def parse_nested(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def parse_nested(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "parse_nested", value)
 
     @_builtins.property
     @pulumi.getter
-    def separator(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def separator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Keys of adjacent levels are joined by the separator.
         """
         return pulumi.get(self, "separator")
 
     @separator.setter
-    def separator(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def separator(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "separator", value)
 
     @_builtins.property
     @pulumi.getter(name="timeFormat")
-    def time_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Process time value using the specified format.
         """
         return pulumi.get(self, "time_format")
 
     @time_format.setter
-    def time_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_format", value)
 
     @_builtins.property
     @pulumi.getter(name="timeType")
-    def time_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) JSON parser time type.
         """
         return pulumi.get(self, "time_type")
 
     @time_type.setter
-    def time_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_type", value)
 
 
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgsDict(TypedDict):
-    field_time_format: NotRequired[pulumi.Input[_builtins.str]]
+    field_time_format: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Process value using the specified format. This is available only when time_type is a string.
     """
-    field_time_key: NotRequired[pulumi.Input[_builtins.str]]
+    field_time_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
     """
-    field_time_zone: NotRequired[pulumi.Input[_builtins.str]]
+    field_time_zone: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name key to tag this Grok pattern.
     """
-    pattern: NotRequired[pulumi.Input[_builtins.str]]
+    pattern: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The Grok pattern.
     """
@@ -4454,11 +4454,11 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternArgs:
     def __init__(__self__, *,
-                 field_time_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 field_time_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 field_time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pattern: Optional[pulumi.Input[_builtins.str]] = None):
+                 field_time_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 field_time_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 field_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pattern: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] field_time_format: (Updatable) Process value using the specified format. This is available only when time_type is a string.
         :param pulumi.Input[_builtins.str] field_time_key: (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
@@ -4479,75 +4479,75 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 
     @_builtins.property
     @pulumi.getter(name="fieldTimeFormat")
-    def field_time_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def field_time_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Process value using the specified format. This is available only when time_type is a string.
         """
         return pulumi.get(self, "field_time_format")
 
     @field_time_format.setter
-    def field_time_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def field_time_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "field_time_format", value)
 
     @_builtins.property
     @pulumi.getter(name="fieldTimeKey")
-    def field_time_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def field_time_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
         """
         return pulumi.get(self, "field_time_key")
 
     @field_time_key.setter
-    def field_time_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def field_time_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "field_time_key", value)
 
     @_builtins.property
     @pulumi.getter(name="fieldTimeZone")
-    def field_time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def field_time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
         """
         return pulumi.get(self, "field_time_zone")
 
     @field_time_zone.setter
-    def field_time_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def field_time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "field_time_zone", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name key to tag this Grok pattern.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def pattern(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pattern(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Grok pattern.
         """
         return pulumi.get(self, "pattern")
 
     @pattern.setter
-    def pattern(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pattern(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pattern", value)
 
 
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgsDict(TypedDict):
-    dimensions: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    dimensions: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Dimensions to be added for metrics.
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Namespace to emit metrics.
     """
-    resource_group: NotRequired[pulumi.Input[_builtins.str]]
+    resource_group: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Resource group to emit metrics.
     """
@@ -4555,9 +4555,9 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs:
     def __init__(__self__, *,
-                 dimensions: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None):
+                 dimensions: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] dimensions: (Updatable) Dimensions to be added for metrics.
         :param pulumi.Input[_builtins.str] namespace: (Updatable) Namespace to emit metrics.
@@ -4572,47 +4572,47 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 
     @_builtins.property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def dimensions(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Dimensions to be added for metrics.
         """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def dimensions(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "dimensions", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Namespace to emit metrics.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Resource group to emit metrics.
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
 
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgsDict(TypedDict):
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A new key
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A new value
     """
@@ -4620,8 +4620,8 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] key: (Updatable) A new key
         :param pulumi.Input[_builtins.str] value: (Updatable) A new value
@@ -4633,26 +4633,26 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A new key
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A new value
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 

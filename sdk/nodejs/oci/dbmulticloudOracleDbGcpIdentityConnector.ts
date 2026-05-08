@@ -243,55 +243,55 @@ export interface DbmulticloudOracleDbGcpIdentityConnectorState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Oracle DB GCP Identity Connector resource.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Oracle DB Google GCP Identity Connector resource name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The current Connectivity status of GCP Identity Connector resource.
      */
-    gcpIdentityConnectivityStatus?: pulumi.Input<string>;
+    gcpIdentityConnectivityStatus?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) GCP Location.
      */
-    gcpLocation?: pulumi.Input<string>;
+    gcpLocation?: pulumi.Input<string | undefined>;
     /**
      * List of All VMs where GCP Identity Connector is configured for this VMCluster.
      */
-    gcpNodes?: pulumi.Input<pulumi.Input<inputs.oci.DbmulticloudOracleDbGcpIdentityConnectorGcpNode>[]>;
+    gcpNodes?: pulumi.Input<pulumi.Input<inputs.oci.DbmulticloudOracleDbGcpIdentityConnectorGcpNode>[] | undefined>;
     /**
      * (Updatable) The ID of the GCP resource service agent.
      */
-    gcpResourceServiceAgentId?: pulumi.Input<string>;
+    gcpResourceServiceAgentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The ID of the cloud GCP Workload Identity Pool.
      */
-    gcpWorkloadIdentityPoolId?: pulumi.Input<string>;
+    gcpWorkloadIdentityPoolId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The ID of the GCP Workload Identity Provider.
      */
-    gcpWorkloadIdentityProviderId?: pulumi.Input<string>;
+    gcpWorkloadIdentityProviderId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) OIDC token issuer Url
      */
-    issuerUrl?: pulumi.Input<string>;
+    issuerUrl?: pulumi.Input<string | undefined>;
     /**
      * Description of the current lifecycle state in more detail.
      */
-    lifecycleStateDetails?: pulumi.Input<string>;
+    lifecycleStateDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Project id of the customer project.
      */
-    projectId?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GCP VM Cluster resource.
      *
@@ -299,23 +299,23 @@ export interface DbmulticloudOracleDbGcpIdentityConnectorState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    resourceId?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the GCP Identity Connector resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Time when the Oracle DB GCP Identity Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Time when the Oracle DB GCP Identity Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -329,7 +329,7 @@ export interface DbmulticloudOracleDbGcpIdentityConnectorArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Oracle DB Google GCP Identity Connector resource name.
      */
@@ -337,7 +337,7 @@ export interface DbmulticloudOracleDbGcpIdentityConnectorArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) GCP Location.
      */

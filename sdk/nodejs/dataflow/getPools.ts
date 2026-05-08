@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPools = oci.DataFlow.getPools({
+ * const testPools = oci.dataflow.getPools({
  *     compartmentId: compartmentId,
  *     displayName: poolDisplayName,
  *     displayNameStartsWith: poolDisplayNameStartsWith,
@@ -107,7 +107,7 @@ export interface GetPoolsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPools = oci.DataFlow.getPools({
+ * const testPools = oci.dataflow.getPools({
  *     compartmentId: compartmentId,
  *     displayName: poolDisplayName,
  *     displayNameStartsWith: poolDisplayNameStartsWith,
@@ -139,18 +139,18 @@ export interface GetPoolsOutputArgs {
     /**
      * The query parameter for the Spark application name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The displayName prefix.
      */
-    displayNameStartsWith?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataFlow.GetPoolsFilterArgs>[]>;
+    displayNameStartsWith?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataFlow.GetPoolsFilterArgs>[] | undefined>;
     /**
      * The OCID of the user who created the resource.
      */
-    ownerPrincipalId?: pulumi.Input<string>;
+    ownerPrincipalId?: pulumi.Input<string | undefined>;
     /**
      * The LifecycleState of the pool.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

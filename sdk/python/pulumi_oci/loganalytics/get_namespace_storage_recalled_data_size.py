@@ -121,7 +121,7 @@ def get_namespace_storage_recalled_data_size(namespace: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_storage_recalled_data_size = oci.LogAnalytics.get_namespace_storage_recalled_data_size(namespace=namespace_storage_recalled_data_size_namespace,
+    test_namespace_storage_recalled_data_size = oci.loganalytics.get_namespace_storage_recalled_data_size(namespace=namespace_storage_recalled_data_size_namespace,
         time_data_ended=namespace_storage_recalled_data_size_time_data_ended,
         time_data_started=namespace_storage_recalled_data_size_time_data_started)
     ```
@@ -145,9 +145,9 @@ def get_namespace_storage_recalled_data_size(namespace: Optional[_builtins.str] 
         recalled_data_in_bytes=pulumi.get(__ret__, 'recalled_data_in_bytes'),
         time_data_ended=pulumi.get(__ret__, 'time_data_ended'),
         time_data_started=pulumi.get(__ret__, 'time_data_started'))
-def get_namespace_storage_recalled_data_size_output(namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                                                    time_data_ended: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    time_data_started: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_namespace_storage_recalled_data_size_output(namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                                                    time_data_ended: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    time_data_started: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceStorageRecalledDataSizeResult]:
     """
     This data source provides details about a specific Namespace Storage Recalled Data Size resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -160,7 +160,7 @@ def get_namespace_storage_recalled_data_size_output(namespace: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_storage_recalled_data_size = oci.LogAnalytics.get_namespace_storage_recalled_data_size(namespace=namespace_storage_recalled_data_size_namespace,
+    test_namespace_storage_recalled_data_size = oci.loganalytics.get_namespace_storage_recalled_data_size(namespace=namespace_storage_recalled_data_size_namespace,
         time_data_ended=namespace_storage_recalled_data_size_time_data_ended,
         time_data_started=namespace_storage_recalled_data_size_time_data_started)
     ```

@@ -26,9 +26,9 @@ class BdsInstanceOperationCertificateManagementsManagementArgs:
                  enable_operation_certificate_management: pulumi.Input[_builtins.bool],
                  renew_operation_certificate_management: pulumi.Input[_builtins.bool],
                  services: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 host_cert_details: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs']]]] = None,
-                 root_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 server_key_password: Optional[pulumi.Input[_builtins.str]] = None):
+                 host_cert_details: pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs']]]] = None,
+                 root_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 server_key_password: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a BdsInstanceOperationCertificateManagementsManagement resource.
 
@@ -123,52 +123,52 @@ class BdsInstanceOperationCertificateManagementsManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="hostCertDetails")
-    def host_cert_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs']]]]:
+    def host_cert_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs']]]]:
         """
         List of leaf certificates to use for services on each host. If custom host certificate is provided the root certificate becomes required.
         """
         return pulumi.get(self, "host_cert_details")
 
     @host_cert_details.setter
-    def host_cert_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs']]]]):
+    def host_cert_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs']]]]):
         pulumi.set(self, "host_cert_details", value)
 
     @_builtins.property
     @pulumi.getter(name="rootCertificate")
-    def root_certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def root_certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Plain text certificate/s in order, separated by new line character. If not provided in request a self-signed root certificate is generated inside the cluster. In case hostCertDetails is provided, root certificate is mandatory.
         """
         return pulumi.get(self, "root_certificate")
 
     @root_certificate.setter
-    def root_certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def root_certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "root_certificate", value)
 
     @_builtins.property
     @pulumi.getter(name="serverKeyPassword")
-    def server_key_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def server_key_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Base-64 encoded password for CA certificate's private key. This value can be empty.
         """
         return pulumi.get(self, "server_key_password")
 
     @server_key_password.setter
-    def server_key_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def server_key_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "server_key_password", value)
 
 
 @pulumi.input_type
 class _BdsInstanceOperationCertificateManagementsManagementState:
     def __init__(__self__, *,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_operation_certificate_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_cert_details: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs']]]] = None,
-                 renew_operation_certificate_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 root_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 server_key_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 services: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_operation_certificate_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_cert_details: pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs']]]] = None,
+                 renew_operation_certificate_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 root_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 server_key_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 services: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering BdsInstanceOperationCertificateManagementsManagement resources.
 
@@ -204,55 +204,55 @@ class _BdsInstanceOperationCertificateManagementsManagementState:
 
     @_builtins.property
     @pulumi.getter(name="bdsInstanceId")
-    def bds_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bds_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the cluster.
         """
         return pulumi.get(self, "bds_instance_id")
 
     @bds_instance_id.setter
-    def bds_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bds_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bds_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterAdminPassword")
-    def cluster_admin_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Base-64 encoded password for the cluster admin user.
         """
         return pulumi.get(self, "cluster_admin_password")
 
     @cluster_admin_password.setter
-    def cluster_admin_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_admin_password", value)
 
     @_builtins.property
     @pulumi.getter(name="enableOperationCertificateManagement")
-    def enable_operation_certificate_management(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_operation_certificate_management(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
         """
         return pulumi.get(self, "enable_operation_certificate_management")
 
     @enable_operation_certificate_management.setter
-    def enable_operation_certificate_management(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_operation_certificate_management(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_operation_certificate_management", value)
 
     @_builtins.property
     @pulumi.getter(name="hostCertDetails")
-    def host_cert_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs']]]]:
+    def host_cert_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs']]]]:
         """
         List of leaf certificates to use for services on each host. If custom host certificate is provided the root certificate becomes required.
         """
         return pulumi.get(self, "host_cert_details")
 
     @host_cert_details.setter
-    def host_cert_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs']]]]):
+    def host_cert_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs']]]]):
         pulumi.set(self, "host_cert_details", value)
 
     @_builtins.property
     @pulumi.getter(name="renewOperationCertificateManagement")
-    def renew_operation_certificate_management(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def renew_operation_certificate_management(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls renew action and when set to `false` defaults to enable_operation_certificate_management's value action.
 
@@ -263,43 +263,43 @@ class _BdsInstanceOperationCertificateManagementsManagementState:
         return pulumi.get(self, "renew_operation_certificate_management")
 
     @renew_operation_certificate_management.setter
-    def renew_operation_certificate_management(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def renew_operation_certificate_management(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "renew_operation_certificate_management", value)
 
     @_builtins.property
     @pulumi.getter(name="rootCertificate")
-    def root_certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def root_certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Plain text certificate/s in order, separated by new line character. If not provided in request a self-signed root certificate is generated inside the cluster. In case hostCertDetails is provided, root certificate is mandatory.
         """
         return pulumi.get(self, "root_certificate")
 
     @root_certificate.setter
-    def root_certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def root_certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "root_certificate", value)
 
     @_builtins.property
     @pulumi.getter(name="serverKeyPassword")
-    def server_key_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def server_key_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Base-64 encoded password for CA certificate's private key. This value can be empty.
         """
         return pulumi.get(self, "server_key_password")
 
     @server_key_password.setter
-    def server_key_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def server_key_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "server_key_password", value)
 
     @_builtins.property
     @pulumi.getter
-    def services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of services for which certificate needs to be enabled.
         """
         return pulumi.get(self, "services")
 
     @services.setter
-    def services(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def services(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "services", value)
 
 
@@ -309,14 +309,14 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_operation_certificate_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_cert_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs', 'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgsDict']]]]] = None,
-                 renew_operation_certificate_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 root_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 server_key_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 services: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_operation_certificate_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_cert_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs', 'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgsDict']]]]] = None,
+                 renew_operation_certificate_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 root_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 server_key_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 services: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         This resource provides the Bds Instance Operation Certificate Managements Management resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -335,8 +335,8 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
             bds_instance_id=test_bds_instance["id"],
             cluster_admin_password=bds_instance_operation_certificate_managements_management_cluster_admin_password,
             services=bds_instance_operation_certificate_managements_management_services,
-            enable_operation_certificate_management=enable_operation_certificate_management,
-            renew_operation_certificate_management=renew_operation_certificate_management,
+            enable_operation_certificate_management=enable_operation_certificate_management == "true",
+            renew_operation_certificate_management=renew_operation_certificate_management == "true",
             host_cert_details=[{
                 "certificate": bds_instance_operation_certificate_managements_management_host_cert_details_certificate,
                 "host_name": bds_instance_operation_certificate_managements_management_host_cert_details_host_name,
@@ -385,8 +385,8 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
             bds_instance_id=test_bds_instance["id"],
             cluster_admin_password=bds_instance_operation_certificate_managements_management_cluster_admin_password,
             services=bds_instance_operation_certificate_managements_management_services,
-            enable_operation_certificate_management=enable_operation_certificate_management,
-            renew_operation_certificate_management=renew_operation_certificate_management,
+            enable_operation_certificate_management=enable_operation_certificate_management == "true",
+            renew_operation_certificate_management=renew_operation_certificate_management == "true",
             host_cert_details=[{
                 "certificate": bds_instance_operation_certificate_managements_management_host_cert_details_certificate,
                 "host_name": bds_instance_operation_certificate_managements_management_host_cert_details_host_name,
@@ -412,14 +412,14 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_operation_certificate_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 host_cert_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs', 'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgsDict']]]]] = None,
-                 renew_operation_certificate_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 root_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 server_key_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 services: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_operation_certificate_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 host_cert_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs', 'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgsDict']]]]] = None,
+                 renew_operation_certificate_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 root_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 server_key_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 services: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -459,14 +459,14 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-            enable_operation_certificate_management: Optional[pulumi.Input[_builtins.bool]] = None,
-            host_cert_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs', 'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgsDict']]]]] = None,
-            renew_operation_certificate_management: Optional[pulumi.Input[_builtins.bool]] = None,
-            root_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-            server_key_password: Optional[pulumi.Input[_builtins.str]] = None,
-            services: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'BdsInstanceOperationCertificateManagementsManagement':
+            bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_operation_certificate_management: pulumi.Input[Optional[_builtins.bool]] = None,
+            host_cert_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs', 'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgsDict']]]]] = None,
+            renew_operation_certificate_management: pulumi.Input[Optional[_builtins.bool]] = None,
+            root_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+            server_key_password: pulumi.Input[Optional[_builtins.str]] = None,
+            services: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'BdsInstanceOperationCertificateManagementsManagement':
         """
         Get an existing BdsInstanceOperationCertificateManagementsManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

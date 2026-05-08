@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentDataMaskingActivities = oci.Functions.getFusionEnvironmentDataMaskingActivities({
+ * const testFusionEnvironmentDataMaskingActivities = oci.functions.getFusionEnvironmentDataMaskingActivities({
  *     fusionEnvironmentId: testFusionEnvironment.id,
  *     state: fusionEnvironmentDataMaskingActivityState,
  * });
@@ -80,7 +80,7 @@ export interface GetFusionEnvironmentDataMaskingActivitiesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentDataMaskingActivities = oci.Functions.getFusionEnvironmentDataMaskingActivities({
+ * const testFusionEnvironmentDataMaskingActivities = oci.functions.getFusionEnvironmentDataMaskingActivities({
  *     fusionEnvironmentId: testFusionEnvironment.id,
  *     state: fusionEnvironmentDataMaskingActivityState,
  * });
@@ -99,7 +99,7 @@ export function getFusionEnvironmentDataMaskingActivitiesOutput(args: GetFusionE
  * A collection of arguments for invoking getFusionEnvironmentDataMaskingActivities.
  */
 export interface GetFusionEnvironmentDataMaskingActivitiesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Functions.GetFusionEnvironmentDataMaskingActivitiesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Functions.GetFusionEnvironmentDataMaskingActivitiesFilterArgs>[] | undefined>;
     /**
      * unique FusionEnvironment identifier
      */
@@ -107,5 +107,5 @@ export interface GetFusionEnvironmentDataMaskingActivitiesOutputArgs {
     /**
      * A filter that returns all resources that match the specified status
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

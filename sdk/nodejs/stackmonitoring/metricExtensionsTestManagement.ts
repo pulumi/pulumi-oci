@@ -131,7 +131,7 @@ export interface MetricExtensionsTestManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
      */
-    metricExtensionId?: pulumi.Input<string>;
+    metricExtensionId?: pulumi.Input<string | undefined>;
     /**
      * List of Resource IDs [OCID]. Currently, supports only one resource id per request.
      *
@@ -139,23 +139,23 @@ export interface MetricExtensionsTestManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    resourceIds?: pulumi.Input<string>;
+    resourceIds?: pulumi.Input<string | undefined>;
     /**
      * Test Run Id
      */
-    testRunId?: pulumi.Input<string>;
+    testRunId?: pulumi.Input<string | undefined>;
     /**
      * Test Run Metric Suffix
      */
-    testRunMetricSuffix?: pulumi.Input<string>;
+    testRunMetricSuffix?: pulumi.Input<string | undefined>;
     /**
      * Test Run Namespace name
      */
-    testRunNamespaceName?: pulumi.Input<string>;
+    testRunNamespaceName?: pulumi.Input<string | undefined>;
     /**
      * Test Run Resource Group name
      */
-    testRunResourceGroupName?: pulumi.Input<string>;
+    testRunResourceGroupName?: pulumi.Input<string | undefined>;
 }
 
 /**

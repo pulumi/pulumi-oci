@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitoredResources = oci.StackMonitoring.getMonitoredResources({
+ * const testMonitoredResources = oci.stackmonitoring.getMonitoredResources({
  *     compartmentId: compartmentId,
  *     name: monitoredResourceName,
  *     status: monitoredResourceStatus,
@@ -94,7 +94,7 @@ export interface GetMonitoredResourcesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitoredResources = oci.StackMonitoring.getMonitoredResources({
+ * const testMonitoredResources = oci.stackmonitoring.getMonitoredResources({
  *     compartmentId: compartmentId,
  *     name: monitoredResourceName,
  *     status: monitoredResourceStatus,
@@ -121,17 +121,17 @@ export interface GetMonitoredResourcesOutputArgs {
      * The ID of the compartment in which data is listed.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetMonitoredResourcesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetMonitoredResourcesFilterArgs>[] | undefined>;
     /**
      * A filter to return resources that match exact resource name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources with matching lifecycleState.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources which were impacted as part of this work request identifier.
      */
-    workRequestId?: pulumi.Input<string>;
+    workRequestId?: pulumi.Input<string | undefined>;
 }

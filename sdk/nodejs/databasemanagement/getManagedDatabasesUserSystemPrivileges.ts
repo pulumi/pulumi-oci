@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabasesUserSystemPrivileges = oci.DatabaseManagement.getManagedDatabasesUserSystemPrivileges({
+ * const testManagedDatabasesUserSystemPrivileges = oci.databasemanagement.getManagedDatabasesUserSystemPrivileges({
  *     managedDatabaseId: testManagedDatabase.id,
  *     userName: testUser.name,
  *     name: managedDatabasesUserSystemPrivilegeName,
@@ -91,7 +91,7 @@ export interface GetManagedDatabasesUserSystemPrivilegesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabasesUserSystemPrivileges = oci.DatabaseManagement.getManagedDatabasesUserSystemPrivileges({
+ * const testManagedDatabasesUserSystemPrivileges = oci.databasemanagement.getManagedDatabasesUserSystemPrivileges({
  *     managedDatabaseId: testManagedDatabase.id,
  *     userName: testUser.name,
  *     name: managedDatabasesUserSystemPrivilegeName,
@@ -114,7 +114,7 @@ export function getManagedDatabasesUserSystemPrivilegesOutput(args: GetManagedDa
  * A collection of arguments for invoking getManagedDatabasesUserSystemPrivileges.
  */
 export interface GetManagedDatabasesUserSystemPrivilegesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabasesUserSystemPrivilegesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabasesUserSystemPrivilegesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
@@ -122,11 +122,11 @@ export interface GetManagedDatabasesUserSystemPrivilegesOutputArgs {
     /**
      * A filter to return only resources that match the entire name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the Named Credential.
      */
-    opcNamedCredentialId?: pulumi.Input<string>;
+    opcNamedCredentialId?: pulumi.Input<string | undefined>;
     /**
      * The name of the user whose details are to be viewed.
      */

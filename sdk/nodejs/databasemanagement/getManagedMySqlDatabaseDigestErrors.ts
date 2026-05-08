@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedMySqlDatabaseDigestErrors = oci.DatabaseManagement.getManagedMySqlDatabaseDigestErrors({
+ * const testManagedMySqlDatabaseDigestErrors = oci.databasemanagement.getManagedMySqlDatabaseDigestErrors({
  *     digest: managedMySqlDatabaseDigestErrorDigest,
  *     managedMySqlDatabaseId: testManagedMySqlDatabase.id,
  * });
@@ -74,7 +74,7 @@ export interface GetManagedMySqlDatabaseDigestErrorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedMySqlDatabaseDigestErrors = oci.DatabaseManagement.getManagedMySqlDatabaseDigestErrors({
+ * const testManagedMySqlDatabaseDigestErrors = oci.databasemanagement.getManagedMySqlDatabaseDigestErrors({
  *     digest: managedMySqlDatabaseDigestErrorDigest,
  *     managedMySqlDatabaseId: testManagedMySqlDatabase.id,
  * });
@@ -97,7 +97,7 @@ export interface GetManagedMySqlDatabaseDigestErrorsOutputArgs {
      * The digest of a MySQL normalized query.
      */
     digest: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedMySqlDatabaseDigestErrorsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedMySqlDatabaseDigestErrorsFilterArgs>[] | undefined>;
     /**
      * The OCID of the Managed MySQL Database.
      */

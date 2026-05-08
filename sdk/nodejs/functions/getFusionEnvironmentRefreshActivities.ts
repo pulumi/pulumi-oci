@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentRefreshActivities = oci.Functions.getFusionEnvironmentRefreshActivities({
+ * const testFusionEnvironmentRefreshActivities = oci.functions.getFusionEnvironmentRefreshActivities({
  *     fusionEnvironmentId: testFusionEnvironment.id,
  *     displayName: fusionEnvironmentRefreshActivityDisplayName,
  *     state: fusionEnvironmentRefreshActivityState,
@@ -101,7 +101,7 @@ export interface GetFusionEnvironmentRefreshActivitiesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentRefreshActivities = oci.Functions.getFusionEnvironmentRefreshActivities({
+ * const testFusionEnvironmentRefreshActivities = oci.functions.getFusionEnvironmentRefreshActivities({
  *     fusionEnvironmentId: testFusionEnvironment.id,
  *     displayName: fusionEnvironmentRefreshActivityDisplayName,
  *     state: fusionEnvironmentRefreshActivityState,
@@ -129,8 +129,8 @@ export interface GetFusionEnvironmentRefreshActivitiesOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Functions.GetFusionEnvironmentRefreshActivitiesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Functions.GetFusionEnvironmentRefreshActivitiesFilterArgs>[] | undefined>;
     /**
      * unique FusionEnvironment identifier
      */
@@ -138,13 +138,13 @@ export interface GetFusionEnvironmentRefreshActivitiesOutputArgs {
     /**
      * A filter that returns all resources that match the specified status
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns all resources that end before this date
      */
-    timeExpectedFinishLessThanOrEqualTo?: pulumi.Input<string>;
+    timeExpectedFinishLessThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns all resources that are scheduled after this date
      */
-    timeScheduledStartGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeScheduledStartGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
 }

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabase = oci.DataSafe.getTargetDatabase({
+ * const testTargetDatabase = oci.datasafe.getTargetDatabase({
  *     targetDatabaseId: testTargetDatabaseOciDataSafeTargetDatabase.id,
  * });
  * ```
@@ -125,7 +125,7 @@ export interface GetTargetDatabaseResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabase = oci.DataSafe.getTargetDatabase({
+ * const testTargetDatabase = oci.datasafe.getTargetDatabase({
  *     targetDatabaseId: testTargetDatabaseOciDataSafeTargetDatabase.id,
  * });
  * ```

@@ -159,7 +159,7 @@ def get_exadata_infrastructure_fleet_metric(compare_baseline_time: Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_exadata_infrastructure_fleet_metric = oci.DatabaseManagement.get_exadata_infrastructure_fleet_metric(compare_baseline_time=exadata_infrastructure_fleet_metric_compare_baseline_time,
+    test_exadata_infrastructure_fleet_metric = oci.databasemanagement.get_exadata_infrastructure_fleet_metric(compare_baseline_time=exadata_infrastructure_fleet_metric_compare_baseline_time,
         compare_target_time=exadata_infrastructure_fleet_metric_compare_target_time,
         compartment_id=compartment_id,
         compare_type=exadata_infrastructure_fleet_metric_compare_type,
@@ -195,12 +195,12 @@ def get_exadata_infrastructure_fleet_metric(compare_baseline_time: Optional[_bui
         filter_by_exadata_infrastructure_lifecycle_state=pulumi.get(__ret__, 'filter_by_exadata_infrastructure_lifecycle_state'),
         fleet_exadata_infrastructures=pulumi.get(__ret__, 'fleet_exadata_infrastructures'),
         id=pulumi.get(__ret__, 'id'))
-def get_exadata_infrastructure_fleet_metric_output(compare_baseline_time: Optional[pulumi.Input[_builtins.str]] = None,
-                                                   compare_target_time: Optional[pulumi.Input[_builtins.str]] = None,
-                                                   compare_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                   compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                   filter_by_exadata_infrastructure_deployment_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                   filter_by_exadata_infrastructure_lifecycle_state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_exadata_infrastructure_fleet_metric_output(compare_baseline_time: pulumi.Input[Optional[_builtins.str]] = None,
+                                                   compare_target_time: pulumi.Input[Optional[_builtins.str]] = None,
+                                                   compare_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                   compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                   filter_by_exadata_infrastructure_deployment_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                   filter_by_exadata_infrastructure_lifecycle_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExadataInfrastructureFleetMetricResult]:
     """
     This data source provides details about a specific Exadata Infrastructure Fleet Metric resource in Oracle Cloud Infrastructure Database Management service.
@@ -214,7 +214,7 @@ def get_exadata_infrastructure_fleet_metric_output(compare_baseline_time: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_exadata_infrastructure_fleet_metric = oci.DatabaseManagement.get_exadata_infrastructure_fleet_metric(compare_baseline_time=exadata_infrastructure_fleet_metric_compare_baseline_time,
+    test_exadata_infrastructure_fleet_metric = oci.databasemanagement.get_exadata_infrastructure_fleet_metric(compare_baseline_time=exadata_infrastructure_fleet_metric_compare_baseline_time,
         compare_target_time=exadata_infrastructure_fleet_metric_compare_target_time,
         compartment_id=compartment_id,
         compare_type=exadata_infrastructure_fleet_metric_compare_type,

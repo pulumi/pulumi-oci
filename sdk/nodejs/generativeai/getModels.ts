@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModels = oci.GenerativeAi.getModels({
+ * const testModels = oci.generativeai.getModels({
  *     compartmentId: compartmentId,
  *     capabilities: modelCapability,
  *     displayName: modelDisplayName,
@@ -104,7 +104,7 @@ export interface GetModelsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModels = oci.GenerativeAi.getModels({
+ * const testModels = oci.generativeai.getModels({
  *     compartmentId: compartmentId,
  *     capabilities: modelCapability,
  *     displayName: modelDisplayName,
@@ -134,7 +134,7 @@ export interface GetModelsOutputArgs {
     /**
      * A filter to return only resources their capability matches the given capability.
      */
-    capabilities?: pulumi.Input<pulumi.Input<string>[]>;
+    capabilities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
@@ -142,18 +142,18 @@ export interface GetModelsOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.GetModelsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.GetModelsFilterArgs>[] | undefined>;
     /**
      * The ID of the model.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire vendor given.
      */
-    vendor?: pulumi.Input<string>;
+    vendor?: pulumi.Input<string | undefined>;
 }

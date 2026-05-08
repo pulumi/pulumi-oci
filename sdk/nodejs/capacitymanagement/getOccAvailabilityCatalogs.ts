@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccAvailabilityCatalogs = oci.CapacityManagement.getOccAvailabilityCatalogs({
+ * const testOccAvailabilityCatalogs = oci.capacitymanagement.getOccAvailabilityCatalogs({
  *     compartmentId: compartmentId,
  *     catalogState: occAvailabilityCatalogCatalogState,
  *     displayName: occAvailabilityCatalogDisplayName,
@@ -106,7 +106,7 @@ export interface GetOccAvailabilityCatalogsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccAvailabilityCatalogs = oci.CapacityManagement.getOccAvailabilityCatalogs({
+ * const testOccAvailabilityCatalogs = oci.capacitymanagement.getOccAvailabilityCatalogs({
  *     compartmentId: compartmentId,
  *     catalogState: occAvailabilityCatalogCatalogState,
  *     displayName: occAvailabilityCatalogDisplayName,
@@ -134,7 +134,7 @@ export interface GetOccAvailabilityCatalogsOutputArgs {
     /**
      * Filter the list of availability catalogs based on the catalog state.
      */
-    catalogState?: pulumi.Input<string>;
+    catalogState?: pulumi.Input<string | undefined>;
     /**
      * The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
      */
@@ -142,14 +142,14 @@ export interface GetOccAvailabilityCatalogsOutputArgs {
     /**
      * A filter to return only the resources that match the entire display name. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetOccAvailabilityCatalogsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetOccAvailabilityCatalogsFilterArgs>[] | undefined>;
     /**
      * The OCID of the availability catalog to filter the list of availability catalogs.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The namespace by which we would filter the list.
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
 }

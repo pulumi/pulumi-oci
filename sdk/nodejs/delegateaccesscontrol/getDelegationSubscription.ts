@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDelegationSubscription = oci.DelegateAccessControl.getDelegationSubscription({
+ * const testDelegationSubscription = oci.delegateaccesscontrol.getDelegationSubscription({
  *     delegationSubscriptionId: testDelegationSubscriptionOciDelegateAccessControlDelegationSubscription.id,
  * });
  * ```
@@ -106,7 +106,7 @@ export interface GetDelegationSubscriptionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDelegationSubscription = oci.DelegateAccessControl.getDelegationSubscription({
+ * const testDelegationSubscription = oci.delegateaccesscontrol.getDelegationSubscription({
  *     delegationSubscriptionId: testDelegationSubscriptionOciDelegateAccessControlDelegationSubscription.id,
  * });
  * ```

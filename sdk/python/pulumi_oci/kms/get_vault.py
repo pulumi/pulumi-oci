@@ -302,7 +302,7 @@ def get_vault(vault_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vault = oci.Kms.get_vault(vault_id=test_vault_oci_kms_vault["id"])
+    test_vault = oci.kms.get_vault(vault_id=test_vault_oci_kms_vault["id"])
     ```
 
 
@@ -335,7 +335,7 @@ def get_vault(vault_id: Optional[_builtins.str] = None,
         time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'),
         vault_id=pulumi.get(__ret__, 'vault_id'),
         vault_type=pulumi.get(__ret__, 'vault_type'))
-def get_vault_output(vault_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_vault_output(vault_id: pulumi.Input[Optional[_builtins.str]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVaultResult]:
     """
     This data source provides details about a specific Vault resource in Oracle Cloud Infrastructure Kms service.
@@ -353,7 +353,7 @@ def get_vault_output(vault_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vault = oci.Kms.get_vault(vault_id=test_vault_oci_kms_vault["id"])
+    test_vault = oci.kms.get_vault(vault_id=test_vault_oci_kms_vault["id"])
     ```
 
 

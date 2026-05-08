@@ -162,7 +162,7 @@ def get_masking_reports_masked_column(column_names: Optional[Sequence[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_reports_masked_column = oci.DataSafe.get_masking_reports_masked_column(masking_report_id=test_masking_report["id"],
+    test_masking_reports_masked_column = oci.datasafe.get_masking_reports_masked_column(masking_report_id=test_masking_report["id"],
         column_names=masking_reports_masked_column_column_name,
         masking_column_groups=masking_reports_masked_column_masking_column_group,
         objects=masking_reports_masked_column_object,
@@ -201,13 +201,13 @@ def get_masking_reports_masked_column(column_names: Optional[Sequence[_builtins.
         objects=pulumi.get(__ret__, 'objects'),
         schema_names=pulumi.get(__ret__, 'schema_names'),
         sensitive_type_id=pulumi.get(__ret__, 'sensitive_type_id'))
-def get_masking_reports_masked_column_output(column_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                             masking_column_groups: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                             masking_report_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             object_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                             objects: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                             schema_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                             sensitive_type_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_masking_reports_masked_column_output(column_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                             masking_column_groups: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                             masking_report_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             object_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                             objects: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                             schema_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                             sensitive_type_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingReportsMaskedColumnResult]:
     """
     This data source provides details about a specific Masking Reports Masked Column resource in Oracle Cloud Infrastructure Data Safe service.
@@ -220,7 +220,7 @@ def get_masking_reports_masked_column_output(column_names: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_reports_masked_column = oci.DataSafe.get_masking_reports_masked_column(masking_report_id=test_masking_report["id"],
+    test_masking_reports_masked_column = oci.datasafe.get_masking_reports_masked_column(masking_report_id=test_masking_report["id"],
         column_names=masking_reports_masked_column_column_name,
         masking_column_groups=masking_reports_masked_column_masking_column_group,
         objects=masking_reports_masked_column_object,

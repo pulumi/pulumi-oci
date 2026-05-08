@@ -26,15 +26,15 @@ class DomainsIdentityProofingProviderArgs:
                  idcs_endpoint: pulumi.Input[_builtins.str],
                  identity_proofing_provider_provider: pulumi.Input[_builtins.str],
                  schemas: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 runtime_datas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProofingProviderRuntimeDataArgs']]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None):
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 runtime_datas: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProofingProviderRuntimeDataArgs']]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a DomainsIdentityProofingProvider resource.
 
@@ -271,43 +271,43 @@ class DomainsIdentityProofingProviderArgs:
 
     @_builtins.property
     @pulumi.getter(name="attributeSets")
-    def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def attribute_sets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
-    def attribute_sets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def attribute_sets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "attribute_sets", value)
 
     @_builtins.property
     @pulumi.getter
-    def attributes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attributes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
-    def attributes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attributes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def authorization(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authorization(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
-    def authorization(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authorization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authorization", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description field to add comments and additional information about the Identity Proofing Provider.
 
@@ -323,12 +323,12 @@ class DomainsIdentityProofingProviderArgs:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of the Identity Proofing Provider.
 
@@ -344,12 +344,12 @@ class DomainsIdentityProofingProviderArgs:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unique Oracle Cloud Infrastructure identifier (OCID) for the SCIM Resource.
 
@@ -366,24 +366,24 @@ class DomainsIdentityProofingProviderArgs:
         return pulumi.get(self, "ocid")
 
     @ocid.setter
-    def ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTypeSchemaVersion")
-    def resource_type_schema_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type_schema_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
-    def resource_type_schema_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type_schema_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type_schema_version", value)
 
     @_builtins.property
     @pulumi.getter(name="runtimeDatas")
-    def runtime_datas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProofingProviderRuntimeDataArgs']]]]:
+    def runtime_datas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProofingProviderRuntimeDataArgs']]]]:
         """
         (Updatable) Identity Proofing runtime custom data.
 
@@ -400,12 +400,12 @@ class DomainsIdentityProofingProviderArgs:
         return pulumi.get(self, "runtime_datas")
 
     @runtime_datas.setter
-    def runtime_datas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProofingProviderRuntimeDataArgs']]]]):
+    def runtime_datas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProofingProviderRuntimeDataArgs']]]]):
         pulumi.set(self, "runtime_datas", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Status of the Identity Proofing Provider.
 
@@ -422,39 +422,39 @@ class DomainsIdentityProofingProviderArgs:
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
 
 @pulumi.input_type
 class _DomainsIdentityProofingProviderState:
     def __init__(__self__, *,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 claim_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProofingProviderClaimMappingArgs']]]] = None,
-                 compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProofingProviderConfigurationArgs']]]] = None,
-                 delete_in_progress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProofingProviderIdcsCreatedByArgs']]]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProofingProviderIdcsLastModifiedByArgs']]]] = None,
-                 idcs_last_upgraded_in_release: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_locked_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProofingProviderIdcsLockedByArgs']]]] = None,
-                 idcs_locked_on: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_locked_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 identity_proofing_provider_provider: Optional[pulumi.Input[_builtins.str]] = None,
-                 metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProofingProviderMetaArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 runtime_datas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProofingProviderRuntimeDataArgs']]]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None):
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 claim_mappings: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProofingProviderClaimMappingArgs']]]] = None,
+                 compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProofingProviderConfigurationArgs']]]] = None,
+                 delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProofingProviderIdcsCreatedByArgs']]]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProofingProviderIdcsLastModifiedByArgs']]]] = None,
+                 idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_locked_bies: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProofingProviderIdcsLockedByArgs']]]] = None,
+                 idcs_locked_on: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_locked_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 identity_proofing_provider_provider: pulumi.Input[Optional[_builtins.str]] = None,
+                 metas: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProofingProviderMetaArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 runtime_datas: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProofingProviderRuntimeDataArgs']]]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DomainsIdentityProofingProvider resources.
 
@@ -747,43 +747,43 @@ class _DomainsIdentityProofingProviderState:
 
     @_builtins.property
     @pulumi.getter(name="attributeSets")
-    def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def attribute_sets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
-    def attribute_sets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def attribute_sets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "attribute_sets", value)
 
     @_builtins.property
     @pulumi.getter
-    def attributes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attributes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
-    def attributes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attributes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def authorization(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authorization(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
-    def authorization(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authorization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authorization", value)
 
     @_builtins.property
     @pulumi.getter(name="claimMappings")
-    def claim_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProofingProviderClaimMappingArgs']]]]:
+    def claim_mappings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProofingProviderClaimMappingArgs']]]]:
         """
         (Updatable) Configure the verification claims and IAM Domain user attribute mapping.
 
@@ -800,12 +800,12 @@ class _DomainsIdentityProofingProviderState:
         return pulumi.get(self, "claim_mappings")
 
     @claim_mappings.setter
-    def claim_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProofingProviderClaimMappingArgs']]]]):
+    def claim_mappings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProofingProviderClaimMappingArgs']]]]):
         pulumi.set(self, "claim_mappings", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Compartment Id (OCID) in which the resource lives.
 
@@ -822,12 +822,12 @@ class _DomainsIdentityProofingProviderState:
         return pulumi.get(self, "compartment_ocid")
 
     @compartment_ocid.setter
-    def compartment_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_ocid", value)
 
     @_builtins.property
     @pulumi.getter
-    def configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProofingProviderConfigurationArgs']]]]:
+    def configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProofingProviderConfigurationArgs']]]]:
         """
         (Updatable) Configure the verification provider.
 
@@ -844,12 +844,12 @@ class _DomainsIdentityProofingProviderState:
         return pulumi.get(self, "configurations")
 
     @configurations.setter
-    def configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProofingProviderConfigurationArgs']]]]):
+    def configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProofingProviderConfigurationArgs']]]]):
         pulumi.set(self, "configurations", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_in_progress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 
@@ -866,12 +866,12 @@ class _DomainsIdentityProofingProviderState:
         return pulumi.get(self, "delete_in_progress")
 
     @delete_in_progress.setter
-    def delete_in_progress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_in_progress", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description field to add comments and additional information about the Identity Proofing Provider.
 
@@ -887,12 +887,12 @@ class _DomainsIdentityProofingProviderState:
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Domain Id (OCID) in which the resource lives.
 
@@ -909,12 +909,12 @@ class _DomainsIdentityProofingProviderState:
         return pulumi.get(self, "domain_ocid")
 
     @domain_ocid.setter
-    def domain_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain_ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProofingProviderIdcsCreatedByArgs']]]]:
+    def idcs_created_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProofingProviderIdcsCreatedByArgs']]]]:
         """
         (Updatable) The User or App who created the Resource
 
@@ -929,24 +929,24 @@ class _DomainsIdentityProofingProviderState:
         return pulumi.get(self, "idcs_created_bies")
 
     @idcs_created_bies.setter
-    def idcs_created_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProofingProviderIdcsCreatedByArgs']]]]):
+    def idcs_created_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProofingProviderIdcsCreatedByArgs']]]]):
         pulumi.set(self, "idcs_created_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsEndpoint")
-    def idcs_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The basic endpoint for the identity domain
         """
         return pulumi.get(self, "idcs_endpoint")
 
     @idcs_endpoint.setter
-    def idcs_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProofingProviderIdcsLastModifiedByArgs']]]]:
+    def idcs_last_modified_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProofingProviderIdcsLastModifiedByArgs']]]]:
         """
         (Updatable) The User or App who modified the Resource
 
@@ -961,12 +961,12 @@ class _DomainsIdentityProofingProviderState:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @idcs_last_modified_bies.setter
-    def idcs_last_modified_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProofingProviderIdcsLastModifiedByArgs']]]]):
+    def idcs_last_modified_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProofingProviderIdcsLastModifiedByArgs']]]]):
         pulumi.set(self, "idcs_last_modified_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_last_upgraded_in_release(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The release number when the resource was upgraded.
 
@@ -983,12 +983,12 @@ class _DomainsIdentityProofingProviderState:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @idcs_last_upgraded_in_release.setter
-    def idcs_last_upgraded_in_release(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_last_upgraded_in_release(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_last_upgraded_in_release", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsLockedBies")
-    def idcs_locked_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProofingProviderIdcsLockedByArgs']]]]:
+    def idcs_locked_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProofingProviderIdcsLockedByArgs']]]]:
         """
         (Updatable) The User or App who locked the Resource.
 
@@ -1003,12 +1003,12 @@ class _DomainsIdentityProofingProviderState:
         return pulumi.get(self, "idcs_locked_bies")
 
     @idcs_locked_bies.setter
-    def idcs_locked_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProofingProviderIdcsLockedByArgs']]]]):
+    def idcs_locked_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProofingProviderIdcsLockedByArgs']]]]):
         pulumi.set(self, "idcs_locked_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsLockedOn")
-    def idcs_locked_on(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_locked_on(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The most recent DateTime the resource was locked.
 
@@ -1025,12 +1025,12 @@ class _DomainsIdentityProofingProviderState:
         return pulumi.get(self, "idcs_locked_on")
 
     @idcs_locked_on.setter
-    def idcs_locked_on(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_locked_on(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_locked_on", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsLockedOperations")
-    def idcs_locked_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def idcs_locked_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Operations that are locked on the resource.
 
@@ -1047,12 +1047,12 @@ class _DomainsIdentityProofingProviderState:
         return pulumi.get(self, "idcs_locked_operations")
 
     @idcs_locked_operations.setter
-    def idcs_locked_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def idcs_locked_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "idcs_locked_operations", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def idcs_prevented_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 
@@ -1068,12 +1068,12 @@ class _DomainsIdentityProofingProviderState:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @idcs_prevented_operations.setter
-    def idcs_prevented_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def idcs_prevented_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "idcs_prevented_operations", value)
 
     @_builtins.property
     @pulumi.getter(name="identityProofingProviderProvider")
-    def identity_proofing_provider_provider(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identity_proofing_provider_provider(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Identity Proofing Provider.
 
@@ -1092,12 +1092,12 @@ class _DomainsIdentityProofingProviderState:
         return pulumi.get(self, "identity_proofing_provider_provider")
 
     @identity_proofing_provider_provider.setter
-    def identity_proofing_provider_provider(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identity_proofing_provider_provider(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identity_proofing_provider_provider", value)
 
     @_builtins.property
     @pulumi.getter
-    def metas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProofingProviderMetaArgs']]]]:
+    def metas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProofingProviderMetaArgs']]]]:
         """
         (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 
@@ -1114,12 +1114,12 @@ class _DomainsIdentityProofingProviderState:
         return pulumi.get(self, "metas")
 
     @metas.setter
-    def metas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProofingProviderMetaArgs']]]]):
+    def metas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProofingProviderMetaArgs']]]]):
         pulumi.set(self, "metas", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of the Identity Proofing Provider.
 
@@ -1135,12 +1135,12 @@ class _DomainsIdentityProofingProviderState:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unique Oracle Cloud Infrastructure identifier (OCID) for the SCIM Resource.
 
@@ -1157,24 +1157,24 @@ class _DomainsIdentityProofingProviderState:
         return pulumi.get(self, "ocid")
 
     @ocid.setter
-    def ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTypeSchemaVersion")
-    def resource_type_schema_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type_schema_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
-    def resource_type_schema_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type_schema_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type_schema_version", value)
 
     @_builtins.property
     @pulumi.getter(name="runtimeDatas")
-    def runtime_datas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProofingProviderRuntimeDataArgs']]]]:
+    def runtime_datas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProofingProviderRuntimeDataArgs']]]]:
         """
         (Updatable) Identity Proofing runtime custom data.
 
@@ -1191,12 +1191,12 @@ class _DomainsIdentityProofingProviderState:
         return pulumi.get(self, "runtime_datas")
 
     @runtime_datas.setter
-    def runtime_datas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsIdentityProofingProviderRuntimeDataArgs']]]]):
+    def runtime_datas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsIdentityProofingProviderRuntimeDataArgs']]]]):
         pulumi.set(self, "runtime_datas", value)
 
     @_builtins.property
     @pulumi.getter
-    def schemas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def schemas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 
@@ -1213,12 +1213,12 @@ class _DomainsIdentityProofingProviderState:
         return pulumi.get(self, "schemas")
 
     @schemas.setter
-    def schemas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def schemas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "schemas", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Status of the Identity Proofing Provider.
 
@@ -1235,12 +1235,12 @@ class _DomainsIdentityProofingProviderState:
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Tenant Id (OCID) in which the resource lives.
 
@@ -1261,7 +1261,7 @@ class _DomainsIdentityProofingProviderState:
         return pulumi.get(self, "tenancy_ocid")
 
     @tenancy_ocid.setter
-    def tenancy_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy_ocid", value)
 
 
@@ -1271,20 +1271,20 @@ class DomainsIdentityProofingProvider(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 claim_mappings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderClaimMappingArgs', 'DomainsIdentityProofingProviderClaimMappingArgsDict']]]]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderConfigurationArgs', 'DomainsIdentityProofingProviderConfigurationArgsDict']]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 identity_proofing_provider_provider: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 runtime_datas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderRuntimeDataArgs', 'DomainsIdentityProofingProviderRuntimeDataArgsDict']]]]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 claim_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderClaimMappingArgs', 'DomainsIdentityProofingProviderClaimMappingArgsDict']]]]] = None,
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderConfigurationArgs', 'DomainsIdentityProofingProviderConfigurationArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 identity_proofing_provider_provider: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 runtime_datas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderRuntimeDataArgs', 'DomainsIdentityProofingProviderRuntimeDataArgsDict']]]]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Identity Proofing Provider resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1512,20 +1512,20 @@ class DomainsIdentityProofingProvider(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 attributes: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 claim_mappings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderClaimMappingArgs', 'DomainsIdentityProofingProviderClaimMappingArgsDict']]]]] = None,
-                 configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderConfigurationArgs', 'DomainsIdentityProofingProviderConfigurationArgsDict']]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 identity_proofing_provider_provider: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 runtime_datas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderRuntimeDataArgs', 'DomainsIdentityProofingProviderRuntimeDataArgsDict']]]]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 attributes: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 claim_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderClaimMappingArgs', 'DomainsIdentityProofingProviderClaimMappingArgsDict']]]]] = None,
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderConfigurationArgs', 'DomainsIdentityProofingProviderConfigurationArgsDict']]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 identity_proofing_provider_provider: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 runtime_datas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderRuntimeDataArgs', 'DomainsIdentityProofingProviderRuntimeDataArgsDict']]]]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1581,32 +1581,32 @@ class DomainsIdentityProofingProvider(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            attributes: Optional[pulumi.Input[_builtins.str]] = None,
-            authorization: Optional[pulumi.Input[_builtins.str]] = None,
-            claim_mappings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderClaimMappingArgs', 'DomainsIdentityProofingProviderClaimMappingArgsDict']]]]] = None,
-            compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderConfigurationArgs', 'DomainsIdentityProofingProviderConfigurationArgsDict']]]]] = None,
-            delete_in_progress: Optional[pulumi.Input[_builtins.bool]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            domain_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderIdcsCreatedByArgs', 'DomainsIdentityProofingProviderIdcsCreatedByArgsDict']]]]] = None,
-            idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderIdcsLastModifiedByArgs', 'DomainsIdentityProofingProviderIdcsLastModifiedByArgsDict']]]]] = None,
-            idcs_last_upgraded_in_release: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_locked_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderIdcsLockedByArgs', 'DomainsIdentityProofingProviderIdcsLockedByArgsDict']]]]] = None,
-            idcs_locked_on: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_locked_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            identity_proofing_provider_provider: Optional[pulumi.Input[_builtins.str]] = None,
-            metas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderMetaArgs', 'DomainsIdentityProofingProviderMetaArgsDict']]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-            runtime_datas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderRuntimeDataArgs', 'DomainsIdentityProofingProviderRuntimeDataArgsDict']]]]] = None,
-            schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None) -> 'DomainsIdentityProofingProvider':
+            attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            attributes: pulumi.Input[Optional[_builtins.str]] = None,
+            authorization: pulumi.Input[Optional[_builtins.str]] = None,
+            claim_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderClaimMappingArgs', 'DomainsIdentityProofingProviderClaimMappingArgsDict']]]]] = None,
+            compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderConfigurationArgs', 'DomainsIdentityProofingProviderConfigurationArgsDict']]]]] = None,
+            delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderIdcsCreatedByArgs', 'DomainsIdentityProofingProviderIdcsCreatedByArgsDict']]]]] = None,
+            idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderIdcsLastModifiedByArgs', 'DomainsIdentityProofingProviderIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_locked_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderIdcsLockedByArgs', 'DomainsIdentityProofingProviderIdcsLockedByArgsDict']]]]] = None,
+            idcs_locked_on: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_locked_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            identity_proofing_provider_provider: pulumi.Input[Optional[_builtins.str]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderMetaArgs', 'DomainsIdentityProofingProviderMetaArgsDict']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+            runtime_datas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityProofingProviderRuntimeDataArgs', 'DomainsIdentityProofingProviderRuntimeDataArgsDict']]]]] = None,
+            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None) -> 'DomainsIdentityProofingProvider':
         """
         Get an existing DomainsIdentityProofingProvider resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

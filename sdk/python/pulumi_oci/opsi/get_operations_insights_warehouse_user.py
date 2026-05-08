@@ -239,7 +239,7 @@ def get_operations_insights_warehouse_user(operations_insights_warehouse_user_id
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_warehouse_user = oci.Opsi.get_operations_insights_warehouse_user(operations_insights_warehouse_user_id=test_operations_insights_warehouse_user_oci_opsi_operations_insights_warehouse_user["id"])
+    test_operations_insights_warehouse_user = oci.opsi.get_operations_insights_warehouse_user(operations_insights_warehouse_user_id=test_operations_insights_warehouse_user_oci_opsi_operations_insights_warehouse_user["id"])
     ```
 
 
@@ -267,7 +267,7 @@ def get_operations_insights_warehouse_user(operations_insights_warehouse_user_id
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_operations_insights_warehouse_user_output(operations_insights_warehouse_user_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_operations_insights_warehouse_user_output(operations_insights_warehouse_user_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOperationsInsightsWarehouseUserResult]:
     """
     This data source provides details about a specific Operations Insights Warehouse User resource in Oracle Cloud Infrastructure Opsi service.
@@ -280,7 +280,7 @@ def get_operations_insights_warehouse_user_output(operations_insights_warehouse_
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_warehouse_user = oci.Opsi.get_operations_insights_warehouse_user(operations_insights_warehouse_user_id=test_operations_insights_warehouse_user_oci_opsi_operations_insights_warehouse_user["id"])
+    test_operations_insights_warehouse_user = oci.opsi.get_operations_insights_warehouse_user(operations_insights_warehouse_user_id=test_operations_insights_warehouse_user_oci_opsi_operations_insights_warehouse_user["id"])
     ```
 
 

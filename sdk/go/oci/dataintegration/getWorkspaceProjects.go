@@ -31,8 +31,8 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := dataintegration.GetWorkspaceProjects(ctx, &dataintegration.GetWorkspaceProjectsArgs{
 //				WorkspaceId:  testWorkspace.Id,
-//				Fields:       workspaceProjectFields,
-//				Identifiers:  workspaceProjectIdentifier,
+//				Fields:       pulumi.ToArray(workspaceProjectFields),
+//				Identifiers:  pulumi.ToArray(workspaceProjectIdentifier),
 //				Name:         pulumi.StringRef(workspaceProjectName),
 //				NameContains: pulumi.StringRef(workspaceProjectNameContains),
 //			}, nil)

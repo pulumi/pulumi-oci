@@ -21,7 +21,7 @@ class ExternalDbSystemDatabaseManagementsManagementArgs:
     def __init__(__self__, *,
                  enable_database_management: pulumi.Input[_builtins.bool],
                  external_db_system_id: pulumi.Input[_builtins.str],
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None):
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ExternalDbSystemDatabaseManagementsManagement resource.
 
@@ -68,23 +68,23 @@ class ExternalDbSystemDatabaseManagementsManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle license model that applies to the external database.
         """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
-    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_model", value)
 
 
 @pulumi.input_type
 class _ExternalDbSystemDatabaseManagementsManagementState:
     def __init__(__self__, *,
-                 enable_database_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None):
+                 enable_database_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalDbSystemDatabaseManagementsManagement resources.
 
@@ -105,7 +105,7 @@ class _ExternalDbSystemDatabaseManagementsManagementState:
 
     @_builtins.property
     @pulumi.getter(name="enableDatabaseManagement")
-    def enable_database_management(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_database_management(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 
@@ -116,31 +116,31 @@ class _ExternalDbSystemDatabaseManagementsManagementState:
         return pulumi.get(self, "enable_database_management")
 
     @enable_database_management.setter
-    def enable_database_management(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_database_management(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_database_management", value)
 
     @_builtins.property
     @pulumi.getter(name="externalDbSystemId")
-    def external_db_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_db_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
         """
         return pulumi.get(self, "external_db_system_id")
 
     @external_db_system_id.setter
-    def external_db_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_db_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_db_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle license model that applies to the external database.
         """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
-    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_model", value)
 
 
@@ -150,9 +150,9 @@ class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_database_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_database_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the External Db System Database Managements Management resource in Oracle Cloud Infrastructure Database Management service.
@@ -170,7 +170,7 @@ class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
 
         test_external_db_system_database_managements_management = oci.databasemanagement.ExternalDbSystemDatabaseManagementsManagement("test_external_db_system_database_managements_management",
             external_db_system_id=test_external_db_system["id"],
-            enable_database_management=enable_database_management,
+            enable_database_management=enable_database_management == "true",
             license_model=external_db_system_database_managements_management_license_model)
         ```
 
@@ -207,7 +207,7 @@ class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
 
         test_external_db_system_database_managements_management = oci.databasemanagement.ExternalDbSystemDatabaseManagementsManagement("test_external_db_system_database_managements_management",
             external_db_system_id=test_external_db_system["id"],
-            enable_database_management=enable_database_management,
+            enable_database_management=enable_database_management == "true",
             license_model=external_db_system_database_managements_management_license_model)
         ```
 
@@ -227,9 +227,9 @@ class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_database_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_database_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -256,9 +256,9 @@ class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enable_database_management: Optional[pulumi.Input[_builtins.bool]] = None,
-            external_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-            license_model: Optional[pulumi.Input[_builtins.str]] = None) -> 'ExternalDbSystemDatabaseManagementsManagement':
+            enable_database_management: pulumi.Input[Optional[_builtins.bool]] = None,
+            external_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            license_model: pulumi.Input[Optional[_builtins.str]] = None) -> 'ExternalDbSystemDatabaseManagementsManagement':
         """
         Get an existing ExternalDbSystemDatabaseManagementsManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

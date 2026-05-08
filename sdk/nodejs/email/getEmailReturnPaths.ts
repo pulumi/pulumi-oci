@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEmailReturnPaths = oci.Email.getEmailReturnPaths({
+ * const testEmailReturnPaths = oci.email.getEmailReturnPaths({
  *     compartmentId: compartmentId,
  *     id: emailReturnPathId,
  *     name: emailReturnPathName,
@@ -107,7 +107,7 @@ export interface GetEmailReturnPathsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEmailReturnPaths = oci.Email.getEmailReturnPaths({
+ * const testEmailReturnPaths = oci.email.getEmailReturnPaths({
  *     compartmentId: compartmentId,
  *     id: emailReturnPathId,
  *     name: emailReturnPathName,
@@ -136,22 +136,22 @@ export interface GetEmailReturnPathsOutputArgs {
     /**
      * The OCID for the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Email.GetEmailReturnPathsFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Email.GetEmailReturnPathsFilterArgs>[] | undefined>;
     /**
      * A filter to only return resources that match the given id exactly.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return resources that match the given name exactly.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Email Domain to which this Email Return Path belongs.
      */
-    parentResourceId?: pulumi.Input<string>;
+    parentResourceId?: pulumi.Input<string | undefined>;
     /**
      * Filter returned list by specified lifecycle state. This parameter is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

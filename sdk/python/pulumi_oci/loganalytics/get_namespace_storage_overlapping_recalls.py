@@ -121,7 +121,7 @@ def get_namespace_storage_overlapping_recalls(filters: Optional[Sequence[Union['
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_storage_overlapping_recalls = oci.LogAnalytics.get_namespace_storage_overlapping_recalls(namespace=namespace_storage_overlapping_recall_namespace,
+    test_namespace_storage_overlapping_recalls = oci.loganalytics.get_namespace_storage_overlapping_recalls(namespace=namespace_storage_overlapping_recall_namespace,
         time_data_ended=namespace_storage_overlapping_recall_time_data_ended,
         time_data_started=namespace_storage_overlapping_recall_time_data_started)
     ```
@@ -146,10 +146,10 @@ def get_namespace_storage_overlapping_recalls(filters: Optional[Sequence[Union['
         overlapping_recall_collections=pulumi.get(__ret__, 'overlapping_recall_collections'),
         time_data_ended=pulumi.get(__ret__, 'time_data_ended'),
         time_data_started=pulumi.get(__ret__, 'time_data_started'))
-def get_namespace_storage_overlapping_recalls_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamespaceStorageOverlappingRecallsFilterArgs', 'GetNamespaceStorageOverlappingRecallsFilterArgsDict']]]]] = None,
-                                                     namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     time_data_ended: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     time_data_started: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_namespace_storage_overlapping_recalls_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespaceStorageOverlappingRecallsFilterArgs', 'GetNamespaceStorageOverlappingRecallsFilterArgsDict']]]]] = None,
+                                                     namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     time_data_ended: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     time_data_started: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceStorageOverlappingRecallsResult]:
     """
     This data source provides the list of Namespace Storage Overlapping Recalls in Oracle Cloud Infrastructure Log Analytics service.
@@ -162,7 +162,7 @@ def get_namespace_storage_overlapping_recalls_output(filters: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_storage_overlapping_recalls = oci.LogAnalytics.get_namespace_storage_overlapping_recalls(namespace=namespace_storage_overlapping_recall_namespace,
+    test_namespace_storage_overlapping_recalls = oci.loganalytics.get_namespace_storage_overlapping_recalls(namespace=namespace_storage_overlapping_recall_namespace,
         time_data_ended=namespace_storage_overlapping_recall_time_data_ended,
         time_data_started=namespace_storage_overlapping_recall_time_data_started)
     ```

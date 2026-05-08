@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousContainerDatabaseDataguardAssociations = oci.Database.getAutonomousContainerDatabaseDataguardAssociations({
+ * const testAutonomousContainerDatabaseDataguardAssociations = oci.database.getAutonomousContainerDatabaseDataguardAssociations({
  *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
  * });
  * ```
@@ -70,7 +70,7 @@ export interface GetAutonomousContainerDatabaseDataguardAssociationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousContainerDatabaseDataguardAssociations = oci.Database.getAutonomousContainerDatabaseDataguardAssociations({
+ * const testAutonomousContainerDatabaseDataguardAssociations = oci.database.getAutonomousContainerDatabaseDataguardAssociations({
  *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
  * });
  * ```
@@ -91,5 +91,5 @@ export interface GetAutonomousContainerDatabaseDataguardAssociationsOutputArgs {
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     autonomousContainerDatabaseId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousContainerDatabaseDataguardAssociationsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousContainerDatabaseDataguardAssociationsFilterArgs>[] | undefined>;
 }

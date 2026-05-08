@@ -264,7 +264,7 @@ def get_unified_audit_policy(unified_audit_policy_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_unified_audit_policy = oci.DataSafe.get_unified_audit_policy(unified_audit_policy_id=test_unified_audit_policy_oci_data_safe_unified_audit_policy["id"])
+    test_unified_audit_policy = oci.datasafe.get_unified_audit_policy(unified_audit_policy_id=test_unified_audit_policy_oci_data_safe_unified_audit_policy["id"])
     ```
 
 
@@ -294,7 +294,7 @@ def get_unified_audit_policy(unified_audit_policy_id: Optional[_builtins.str] = 
         time_updated=pulumi.get(__ret__, 'time_updated'),
         unified_audit_policy_definition_id=pulumi.get(__ret__, 'unified_audit_policy_definition_id'),
         unified_audit_policy_id=pulumi.get(__ret__, 'unified_audit_policy_id'))
-def get_unified_audit_policy_output(unified_audit_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_unified_audit_policy_output(unified_audit_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUnifiedAuditPolicyResult]:
     """
     This data source provides details about a specific Unified Audit Policy resource in Oracle Cloud Infrastructure Data Safe service.
@@ -307,7 +307,7 @@ def get_unified_audit_policy_output(unified_audit_policy_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_unified_audit_policy = oci.DataSafe.get_unified_audit_policy(unified_audit_policy_id=test_unified_audit_policy_oci_data_safe_unified_audit_policy["id"])
+    test_unified_audit_policy = oci.datasafe.get_unified_audit_policy(unified_audit_policy_id=test_unified_audit_policy_oci_data_safe_unified_audit_policy["id"])
     ```
 
 

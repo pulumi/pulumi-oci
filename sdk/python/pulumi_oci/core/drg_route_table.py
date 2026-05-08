@@ -20,12 +20,12 @@ __all__ = ['DrgRouteTableArgs', 'DrgRouteTable']
 class DrgRouteTableArgs:
     def __init__(__self__, *,
                  drg_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 import_drg_route_distribution_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_ecmp_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 remove_import_trigger: Optional[pulumi.Input[_builtins.bool]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 import_drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_ecmp_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 remove_import_trigger: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a DrgRouteTable resource.
 
@@ -69,67 +69,67 @@ class DrgRouteTableArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="importDrgRouteDistributionId")
-    def import_drg_route_distribution_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def import_drg_route_distribution_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements through referenced attachments are inserted into the DRG route table.
         """
         return pulumi.get(self, "import_drg_route_distribution_id")
 
     @import_drg_route_distribution_id.setter
-    def import_drg_route_distribution_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def import_drg_route_distribution_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "import_drg_route_distribution_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isEcmpEnabled")
-    def is_ecmp_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_ecmp_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If you want traffic to be routed using ECMP across your virtual circuits or IPSec tunnels to your on-premises networks, enable ECMP on the DRG route table.
         """
         return pulumi.get(self, "is_ecmp_enabled")
 
     @is_ecmp_enabled.setter
-    def is_ecmp_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_ecmp_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_ecmp_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="removeImportTrigger")
-    def remove_import_trigger(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def remove_import_trigger(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null. 
 
@@ -140,23 +140,23 @@ class DrgRouteTableArgs:
         return pulumi.get(self, "remove_import_trigger")
 
     @remove_import_trigger.setter
-    def remove_import_trigger(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def remove_import_trigger(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "remove_import_trigger", value)
 
 
 @pulumi.input_type
 class _DrgRouteTableState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 drg_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 import_drg_route_distribution_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_ecmp_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 remove_import_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 drg_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 import_drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_ecmp_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 remove_import_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DrgRouteTable resources.
 
@@ -198,91 +198,91 @@ class _DrgRouteTableState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DRG is in. The DRG route table is always in the same compartment as the DRG.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="drgId")
-    def drg_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def drg_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG route table belongs to.
         """
         return pulumi.get(self, "drg_id")
 
     @drg_id.setter
-    def drg_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def drg_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "drg_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="importDrgRouteDistributionId")
-    def import_drg_route_distribution_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def import_drg_route_distribution_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements through referenced attachments are inserted into the DRG route table.
         """
         return pulumi.get(self, "import_drg_route_distribution_id")
 
     @import_drg_route_distribution_id.setter
-    def import_drg_route_distribution_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def import_drg_route_distribution_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "import_drg_route_distribution_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isEcmpEnabled")
-    def is_ecmp_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_ecmp_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If you want traffic to be routed using ECMP across your virtual circuits or IPSec tunnels to your on-premises networks, enable ECMP on the DRG route table.
         """
         return pulumi.get(self, "is_ecmp_enabled")
 
     @is_ecmp_enabled.setter
-    def is_ecmp_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_ecmp_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_ecmp_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="removeImportTrigger")
-    def remove_import_trigger(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def remove_import_trigger(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null. 
 
@@ -293,31 +293,31 @@ class _DrgRouteTableState:
         return pulumi.get(self, "remove_import_trigger")
 
     @remove_import_trigger.setter
-    def remove_import_trigger(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def remove_import_trigger(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "remove_import_trigger", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The DRG route table's current state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the DRG route table was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -327,13 +327,13 @@ class DrgRouteTable(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 drg_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 import_drg_route_distribution_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_ecmp_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 remove_import_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 drg_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 import_drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_ecmp_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 remove_import_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         This resource provides the Drg Route Table resource in Oracle Cloud Infrastructure Core service.
@@ -360,7 +360,7 @@ class DrgRouteTable(pulumi.CustomResource):
                 "Department": "Finance",
             },
             import_drg_route_distribution_id=test_drg_route_distribution["id"],
-            is_ecmp_enabled=drg_route_table_is_ecmp_enabled)
+            is_ecmp_enabled=drg_route_table_is_ecmp_enabled == "true")
         ```
 
         ## Import
@@ -417,7 +417,7 @@ class DrgRouteTable(pulumi.CustomResource):
                 "Department": "Finance",
             },
             import_drg_route_distribution_id=test_drg_route_distribution["id"],
-            is_ecmp_enabled=drg_route_table_is_ecmp_enabled)
+            is_ecmp_enabled=drg_route_table_is_ecmp_enabled == "true")
         ```
 
         ## Import
@@ -444,13 +444,13 @@ class DrgRouteTable(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 drg_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 import_drg_route_distribution_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_ecmp_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 remove_import_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 drg_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 import_drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_ecmp_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 remove_import_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -482,16 +482,16 @@ class DrgRouteTable(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            drg_id: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            import_drg_route_distribution_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_ecmp_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            remove_import_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'DrgRouteTable':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            drg_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            import_drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_ecmp_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            remove_import_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'DrgRouteTable':
         """
         Get an existing DrgRouteTable resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

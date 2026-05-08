@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInfrastructureTargetVersion = oci.Database.getInfrastructureTargetVersion({
+ * const testInfrastructureTargetVersion = oci.database.getInfrastructureTargetVersion({
  *     compartmentId: compartmentId,
  *     targetResourceId: testTargetResource.id,
  *     targetResourceType: infrastructureTargetVersionTargetResourceType,
@@ -88,7 +88,7 @@ export interface GetInfrastructureTargetVersionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInfrastructureTargetVersion = oci.Database.getInfrastructureTargetVersion({
+ * const testInfrastructureTargetVersion = oci.database.getInfrastructureTargetVersion({
  *     compartmentId: compartmentId,
  *     targetResourceId: testTargetResource.id,
  *     targetResourceType: infrastructureTargetVersionTargetResourceType,
@@ -115,9 +115,9 @@ export interface GetInfrastructureTargetVersionOutputArgs {
     /**
      * The target resource ID.
      */
-    targetResourceId?: pulumi.Input<string>;
+    targetResourceId?: pulumi.Input<string | undefined>;
     /**
      * The type of the target resource.
      */
-    targetResourceType?: pulumi.Input<string>;
+    targetResourceType?: pulumi.Input<string | undefined>;
 }

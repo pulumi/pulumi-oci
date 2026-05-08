@@ -95,7 +95,7 @@ def get_network_security_group_vnics(filters: Optional[Sequence[Union['GetNetwor
     import pulumi
     import pulumi_oci as oci
 
-    test_network_security_group_vnics = oci.Core.get_network_security_group_vnics(network_security_group_id=test_network_security_group["id"])
+    test_network_security_group_vnics = oci.core.get_network_security_group_vnics(network_security_group_id=test_network_security_group["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_network_security_group_vnics(filters: Optional[Sequence[Union['GetNetwor
         id=pulumi.get(__ret__, 'id'),
         network_security_group_id=pulumi.get(__ret__, 'network_security_group_id'),
         network_security_group_vnics=pulumi.get(__ret__, 'network_security_group_vnics'))
-def get_network_security_group_vnics_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkSecurityGroupVnicsFilterArgs', 'GetNetworkSecurityGroupVnicsFilterArgsDict']]]]] = None,
-                                            network_security_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_network_security_group_vnics_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkSecurityGroupVnicsFilterArgs', 'GetNetworkSecurityGroupVnicsFilterArgsDict']]]]] = None,
+                                            network_security_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkSecurityGroupVnicsResult]:
     """
     This data source provides the list of Network Security Group Vnics in Oracle Cloud Infrastructure Core service.
@@ -126,7 +126,7 @@ def get_network_security_group_vnics_output(filters: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_network_security_group_vnics = oci.Core.get_network_security_group_vnics(network_security_group_id=test_network_security_group["id"])
+    test_network_security_group_vnics = oci.core.get_network_security_group_vnics(network_security_group_id=test_network_security_group["id"])
     ```
 
 

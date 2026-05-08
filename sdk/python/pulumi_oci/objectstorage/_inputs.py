@@ -48,23 +48,23 @@ class BucketRetentionRuleArgsDict(TypedDict):
     """
     A user-specified name for the retention rule. Names can be helpful in identifying retention rules. The name should be unique. This attribute is a forcenew attribute
     """
-    duration: NotRequired[pulumi.Input['BucketRetentionRuleDurationArgsDict']]
+    duration: NotRequired[pulumi.Input[Optional['BucketRetentionRuleDurationArgs']]]
     """
     (Updatable)
     """
-    retention_rule_id: NotRequired[pulumi.Input[_builtins.str]]
+    retention_rule_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Unique identifier for the retention rule.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
     """
-    time_modified: NotRequired[pulumi.Input[_builtins.str]]
+    time_modified: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time that the retention rule was modified as per [RFC3339](https://tools.ietf.org/html/rfc3339).
     """
-    time_rule_locked: NotRequired[pulumi.Input[_builtins.str]]
+    time_rule_locked: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this rule is locked and can only be deleted by deleting the bucket. Once a rule is locked, only increases in the duration are allowed and no other properties can be changed. This property cannot be updated for rules that are in a locked state. Specifying it when a duration is not specified is considered an error.
     """
@@ -73,11 +73,11 @@ class BucketRetentionRuleArgsDict(TypedDict):
 class BucketRetentionRuleArgs:
     def __init__(__self__, *,
                  display_name: pulumi.Input[_builtins.str],
-                 duration: Optional[pulumi.Input['BucketRetentionRuleDurationArgs']] = None,
-                 retention_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_modified: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_rule_locked: Optional[pulumi.Input[_builtins.str]] = None):
+                 duration: pulumi.Input[Optional['BucketRetentionRuleDurationArgs']] = None,
+                 retention_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_modified: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_rule_locked: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] display_name: A user-specified name for the retention rule. Names can be helpful in identifying retention rules. The name should be unique. This attribute is a forcenew attribute
         :param pulumi.Input['BucketRetentionRuleDurationArgs'] duration: (Updatable)
@@ -112,62 +112,62 @@ class BucketRetentionRuleArgs:
 
     @_builtins.property
     @pulumi.getter
-    def duration(self) -> Optional[pulumi.Input['BucketRetentionRuleDurationArgs']]:
+    def duration(self) -> pulumi.Input[Optional['BucketRetentionRuleDurationArgs']]:
         """
         (Updatable)
         """
         return pulumi.get(self, "duration")
 
     @duration.setter
-    def duration(self, value: Optional[pulumi.Input['BucketRetentionRuleDurationArgs']]):
+    def duration(self, value: pulumi.Input[Optional['BucketRetentionRuleDurationArgs']]):
         pulumi.set(self, "duration", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionRuleId")
-    def retention_rule_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def retention_rule_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier for the retention rule.
         """
         return pulumi.get(self, "retention_rule_id")
 
     @retention_rule_id.setter
-    def retention_rule_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def retention_rule_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "retention_rule_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the bucket was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeModified")
-    def time_modified(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_modified(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the retention rule was modified as per [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_modified")
 
     @time_modified.setter
-    def time_modified(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_modified(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_modified", value)
 
     @_builtins.property
     @pulumi.getter(name="timeRuleLocked")
-    def time_rule_locked(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_rule_locked(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) after which this rule is locked and can only be deleted by deleting the bucket. Once a rule is locked, only increases in the duration are allowed and no other properties can be changed. This property cannot be updated for rules that are in a locked state. Specifying it when a duration is not specified is considered an error.
         """
         return pulumi.get(self, "time_rule_locked")
 
     @time_rule_locked.setter
-    def time_rule_locked(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_rule_locked(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_rule_locked", value)
 
 
@@ -243,11 +243,11 @@ class ObjectLifecyclePolicyRuleArgsDict(TypedDict):
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
-    object_name_filter: NotRequired[pulumi.Input['ObjectLifecyclePolicyRuleObjectNameFilterArgsDict']]
+    object_name_filter: NotRequired[pulumi.Input[Optional['ObjectLifecyclePolicyRuleObjectNameFilterArgs']]]
     """
     (Updatable) A filter that compares object names to a set of prefixes or patterns to determine if a rule applies to a given object. The filter can contain include glob patterns, exclude glob patterns and inclusion prefixes. The inclusion prefixes property is kept for backward compatibility. It is recommended to use inclusion patterns instead of prefixes. Exclusions take precedence over inclusions.
     """
-    target: NotRequired[pulumi.Input[_builtins.str]]
+    target: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The target of the object lifecycle policy rule. The values of target can be either "objects", "multipart-uploads" or "previous-object-versions". This field when declared as "objects" is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for objects. This field when declared as "previous-object-versions" is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for previous versions of existing objects. This field when declared as "multipart-uploads" is used to specify the ABORT (only) rule for uncommitted multipart-uploads.
     """
@@ -260,8 +260,8 @@ class ObjectLifecyclePolicyRuleArgs:
                  name: pulumi.Input[_builtins.str],
                  time_amount: pulumi.Input[_builtins.str],
                  time_unit: pulumi.Input[_builtins.str],
-                 object_name_filter: Optional[pulumi.Input['ObjectLifecyclePolicyRuleObjectNameFilterArgs']] = None,
-                 target: Optional[pulumi.Input[_builtins.str]] = None):
+                 object_name_filter: pulumi.Input[Optional['ObjectLifecyclePolicyRuleObjectNameFilterArgs']] = None,
+                 target: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] action: (Updatable) The action of the object lifecycle policy rule. Rules using the action 'ARCHIVE' move objects from Standard and InfrequentAccess storage tiers into the [Archive storage tier](https://docs.cloud.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm). Rules using the action 'INFREQUENT_ACCESS' move objects from Standard storage tier into the Infrequent Access Storage tier. Objects that are already in InfrequentAccess tier or in Archive tier are left untouched. Rules using the action 'DELETE' permanently delete objects from buckets. Rules using 'ABORT' abort the uncommitted multipart-uploads and permanently delete their parts from buckets.
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) A Boolean that determines whether this rule is currently enabled.
@@ -351,31 +351,31 @@ class ObjectLifecyclePolicyRuleArgs:
 
     @_builtins.property
     @pulumi.getter(name="objectNameFilter")
-    def object_name_filter(self) -> Optional[pulumi.Input['ObjectLifecyclePolicyRuleObjectNameFilterArgs']]:
+    def object_name_filter(self) -> pulumi.Input[Optional['ObjectLifecyclePolicyRuleObjectNameFilterArgs']]:
         """
         (Updatable) A filter that compares object names to a set of prefixes or patterns to determine if a rule applies to a given object. The filter can contain include glob patterns, exclude glob patterns and inclusion prefixes. The inclusion prefixes property is kept for backward compatibility. It is recommended to use inclusion patterns instead of prefixes. Exclusions take precedence over inclusions.
         """
         return pulumi.get(self, "object_name_filter")
 
     @object_name_filter.setter
-    def object_name_filter(self, value: Optional[pulumi.Input['ObjectLifecyclePolicyRuleObjectNameFilterArgs']]):
+    def object_name_filter(self, value: pulumi.Input[Optional['ObjectLifecyclePolicyRuleObjectNameFilterArgs']]):
         pulumi.set(self, "object_name_filter", value)
 
     @_builtins.property
     @pulumi.getter
-    def target(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target of the object lifecycle policy rule. The values of target can be either "objects", "multipart-uploads" or "previous-object-versions". This field when declared as "objects" is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for objects. This field when declared as "previous-object-versions" is used to specify ARCHIVE, INFREQUENT_ACCESS or DELETE rule for previous versions of existing objects. This field when declared as "multipart-uploads" is used to specify the ABORT (only) rule for uncommitted multipart-uploads.
         """
         return pulumi.get(self, "target")
 
     @target.setter
-    def target(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target", value)
 
 
 class ObjectLifecyclePolicyRuleObjectNameFilterArgsDict(TypedDict):
-    exclusion_patterns: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    exclusion_patterns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) An array of glob patterns to match the object names to exclude. An empty array is ignored. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
 
@@ -384,7 +384,7 @@ class ObjectLifecyclePolicyRuleObjectNameFilterArgsDict(TypedDict):
     \\           Escapes the following character
     *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a '-' in the range, make it the first or last character.
     """
-    inclusion_patterns: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    inclusion_patterns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) An array of glob patterns to match the object names to include. An empty array includes all objects in the bucket. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
 
@@ -393,7 +393,7 @@ class ObjectLifecyclePolicyRuleObjectNameFilterArgsDict(TypedDict):
     \\           Escapes the following character
     *           Matches any string of characters. ?           Matches any single character . [...]       Matches a group of characters. A group of characters can be: A set of characters, for example: [Zafg9@]. This matches any character in the brackets. A range of characters, for example: [a-z]. This matches any character in the range. [a-f] is equivalent to [abcdef]. For character ranges only the CHARACTER-CHARACTER pattern is supported. [ab-yz] is not valid [a-mn-z] is not valid Character ranges can not start with ^ or : To include a '-' in the range, make it the first or last character.
     """
-    inclusion_prefixes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    inclusion_prefixes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) An array of object name prefixes that the rule will apply to. An empty array means to include all objects.
     """
@@ -401,9 +401,9 @@ class ObjectLifecyclePolicyRuleObjectNameFilterArgsDict(TypedDict):
 @pulumi.input_type
 class ObjectLifecyclePolicyRuleObjectNameFilterArgs:
     def __init__(__self__, *,
-                 exclusion_patterns: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 inclusion_patterns: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 inclusion_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 exclusion_patterns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 inclusion_patterns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 inclusion_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] exclusion_patterns: (Updatable) An array of glob patterns to match the object names to exclude. An empty array is ignored. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
                
@@ -428,7 +428,7 @@ class ObjectLifecyclePolicyRuleObjectNameFilterArgs:
 
     @_builtins.property
     @pulumi.getter(name="exclusionPatterns")
-    def exclusion_patterns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def exclusion_patterns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of glob patterns to match the object names to exclude. An empty array is ignored. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
 
@@ -440,12 +440,12 @@ class ObjectLifecyclePolicyRuleObjectNameFilterArgs:
         return pulumi.get(self, "exclusion_patterns")
 
     @exclusion_patterns.setter
-    def exclusion_patterns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def exclusion_patterns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "exclusion_patterns", value)
 
     @_builtins.property
     @pulumi.getter(name="inclusionPatterns")
-    def inclusion_patterns(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def inclusion_patterns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of glob patterns to match the object names to include. An empty array includes all objects in the bucket. Exclusion patterns take precedence over inclusion patterns. A Glob pattern is a sequence of characters to match text. Any character that appears in the pattern, other than the special pattern characters described below, matches itself. Glob patterns must be between 1 and 1024 characters.
 
@@ -457,19 +457,19 @@ class ObjectLifecyclePolicyRuleObjectNameFilterArgs:
         return pulumi.get(self, "inclusion_patterns")
 
     @inclusion_patterns.setter
-    def inclusion_patterns(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def inclusion_patterns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "inclusion_patterns", value)
 
     @_builtins.property
     @pulumi.getter(name="inclusionPrefixes")
-    def inclusion_prefixes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def inclusion_prefixes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An array of object name prefixes that the rule will apply to. An empty array means to include all objects.
         """
         return pulumi.get(self, "inclusion_prefixes")
 
     @inclusion_prefixes.setter
-    def inclusion_prefixes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def inclusion_prefixes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "inclusion_prefixes", value)
 
 
@@ -533,19 +533,19 @@ class StorageObjectSourceUriDetailsArgsDict(TypedDict):
     """
     The region of the source object.
     """
-    destination_object_if_match_etag: NotRequired[pulumi.Input[_builtins.str]]
+    destination_object_if_match_etag: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The entity tag to match the target object.
     """
-    destination_object_if_none_match_etag: NotRequired[pulumi.Input[_builtins.str]]
+    destination_object_if_none_match_etag: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The entity tag to not match the target object.
     """
-    source_object_if_match_etag: NotRequired[pulumi.Input[_builtins.str]]
+    source_object_if_match_etag: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The entity tag to match the source object.
     """
-    source_version_id: NotRequired[pulumi.Input[_builtins.str]]
+    source_version_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The version id of the object to be restored.
 
@@ -561,10 +561,10 @@ class StorageObjectSourceUriDetailsArgs:
                  namespace: pulumi.Input[_builtins.str],
                  object: pulumi.Input[_builtins.str],
                  region: pulumi.Input[_builtins.str],
-                 destination_object_if_match_etag: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination_object_if_none_match_etag: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_object_if_match_etag: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_version_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 destination_object_if_match_etag: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_object_if_none_match_etag: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_object_if_match_etag: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_version_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] bucket: The name of the bucket for the source object.
         :param pulumi.Input[_builtins.str] namespace: The top-level namespace of the source object.
@@ -642,43 +642,43 @@ class StorageObjectSourceUriDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="destinationObjectIfMatchEtag")
-    def destination_object_if_match_etag(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def destination_object_if_match_etag(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The entity tag to match the target object.
         """
         return pulumi.get(self, "destination_object_if_match_etag")
 
     @destination_object_if_match_etag.setter
-    def destination_object_if_match_etag(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def destination_object_if_match_etag(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "destination_object_if_match_etag", value)
 
     @_builtins.property
     @pulumi.getter(name="destinationObjectIfNoneMatchEtag")
-    def destination_object_if_none_match_etag(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def destination_object_if_none_match_etag(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The entity tag to not match the target object.
         """
         return pulumi.get(self, "destination_object_if_none_match_etag")
 
     @destination_object_if_none_match_etag.setter
-    def destination_object_if_none_match_etag(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def destination_object_if_none_match_etag(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "destination_object_if_none_match_etag", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceObjectIfMatchEtag")
-    def source_object_if_match_etag(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_object_if_match_etag(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The entity tag to match the source object.
         """
         return pulumi.get(self, "source_object_if_match_etag")
 
     @source_object_if_match_etag.setter
-    def source_object_if_match_etag(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_object_if_match_etag(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_object_if_match_etag", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceVersionId")
-    def source_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version id of the object to be restored.
 
@@ -689,7 +689,7 @@ class StorageObjectSourceUriDetailsArgs:
         return pulumi.get(self, "source_version_id")
 
     @source_version_id.setter
-    def source_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_version_id", value)
 
 

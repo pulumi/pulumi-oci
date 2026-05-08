@@ -121,7 +121,7 @@ def get_log_saved_searches(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_saved_searches = oci.Logging.get_log_saved_searches(compartment_id=compartment_id,
+    test_log_saved_searches = oci.logging.get_log_saved_searches(compartment_id=compartment_id,
         log_saved_search_id=test_log_saved_search["id"],
         name=log_saved_search_name)
     ```
@@ -146,10 +146,10 @@ def get_log_saved_searches(compartment_id: Optional[_builtins.str] = None,
         log_saved_search_id=pulumi.get(__ret__, 'log_saved_search_id'),
         log_saved_search_summary_collections=pulumi.get(__ret__, 'log_saved_search_summary_collections'),
         name=pulumi.get(__ret__, 'name'))
-def get_log_saved_searches_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLogSavedSearchesFilterArgs', 'GetLogSavedSearchesFilterArgsDict']]]]] = None,
-                                  log_saved_search_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_log_saved_searches_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLogSavedSearchesFilterArgs', 'GetLogSavedSearchesFilterArgsDict']]]]] = None,
+                                  log_saved_search_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogSavedSearchesResult]:
     """
     This data source provides the list of Log Saved Searches in Oracle Cloud Infrastructure Logging service.
@@ -162,7 +162,7 @@ def get_log_saved_searches_output(compartment_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_log_saved_searches = oci.Logging.get_log_saved_searches(compartment_id=compartment_id,
+    test_log_saved_searches = oci.logging.get_log_saved_searches(compartment_id=compartment_id,
         log_saved_search_id=test_log_saved_search["id"],
         name=log_saved_search_name)
     ```

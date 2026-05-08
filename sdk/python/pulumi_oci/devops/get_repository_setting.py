@@ -105,7 +105,7 @@ def get_repository_setting(repository_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_setting = oci.DevOps.get_repository_setting(repository_id=test_repository["id"])
+    test_repository_setting = oci.devops.get_repository_setting(repository_id=test_repository["id"])
     ```
 
 
@@ -122,7 +122,7 @@ def get_repository_setting(repository_id: Optional[_builtins.str] = None,
         merge_checks=pulumi.get(__ret__, 'merge_checks'),
         merge_settings=pulumi.get(__ret__, 'merge_settings'),
         repository_id=pulumi.get(__ret__, 'repository_id'))
-def get_repository_setting_output(repository_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_repository_setting_output(repository_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositorySettingResult]:
     """
     This data source provides details about a specific Repository Setting resource in Oracle Cloud Infrastructure Devops service.
@@ -135,7 +135,7 @@ def get_repository_setting_output(repository_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_setting = oci.DevOps.get_repository_setting(repository_id=test_repository["id"])
+    test_repository_setting = oci.devops.get_repository_setting(repository_id=test_repository["id"])
     ```
 
 

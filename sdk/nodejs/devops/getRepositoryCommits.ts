@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryCommits = oci.DevOps.getRepositoryCommits({
+ * const testRepositoryCommits = oci.devops.getRepositoryCommits({
  *     repositoryId: testRepository.id,
  *     authorName: repositoryCommitAuthorName,
  *     commitMessage: repositoryCommitCommitMessage,
@@ -122,7 +122,7 @@ export interface GetRepositoryCommitsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryCommits = oci.DevOps.getRepositoryCommits({
+ * const testRepositoryCommits = oci.devops.getRepositoryCommits({
  *     repositoryId: testRepository.id,
  *     authorName: repositoryCommitAuthorName,
  *     commitMessage: repositoryCommitCommitMessage,
@@ -156,24 +156,24 @@ export interface GetRepositoryCommitsOutputArgs {
     /**
      * A filter to return any commits that are pushed by the requested author.
      */
-    authorName?: pulumi.Input<string>;
+    authorName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return any commits that contains the given message.
      */
-    commitMessage?: pulumi.Input<string>;
+    commitMessage?: pulumi.Input<string | undefined>;
     /**
      * A filter to exclude commits that match the given reference name.
      */
-    excludeRefName?: pulumi.Input<string>;
+    excludeRefName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only commits that affect any of the specified paths.
      */
-    filePath?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DevOps.GetRepositoryCommitsFilterArgs>[]>;
+    filePath?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DevOps.GetRepositoryCommitsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given reference name.
      */
-    refName?: pulumi.Input<string>;
+    refName?: pulumi.Input<string | undefined>;
     /**
      * Unique repository identifier.
      */
@@ -181,9 +181,9 @@ export interface GetRepositoryCommitsOutputArgs {
     /**
      * A filter to return commits only created after the specified timestamp value.
      */
-    timestampGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timestampGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A filter to return commits only created before the specified timestamp value.
      */
-    timestampLessThanOrEqualTo?: pulumi.Input<string>;
+    timestampLessThanOrEqualTo?: pulumi.Input<string | undefined>;
 }

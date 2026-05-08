@@ -156,8 +156,8 @@ def get_network_firewall_policy_address_list(name: Optional[_builtins.str] = Non
         parent_resource_id=pulumi.get(__ret__, 'parent_resource_id'),
         total_addresses=pulumi.get(__ret__, 'total_addresses'),
         type=pulumi.get(__ret__, 'type'))
-def get_network_firewall_policy_address_list_output(name: Optional[pulumi.Input[_builtins.str]] = None,
-                                                    network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_network_firewall_policy_address_list_output(name: pulumi.Input[Optional[_builtins.str]] = None,
+                                                    network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyAddressListResult]:
     """
     This data source provides details about a specific Network Firewall Policy Address List resource in Oracle Cloud Infrastructure Network Firewall service.

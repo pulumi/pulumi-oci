@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAnalyticsInstance = oci.Analytics.getAnalyticsInstance({
+ * const testAnalyticsInstance = oci.analytics.getAnalyticsInstance({
  *     analyticsInstanceId: testAnalyticsInstanceOciAnalyticsAnalyticsInstance.id,
  * });
  * ```
@@ -138,7 +138,7 @@ export interface GetAnalyticsInstanceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAnalyticsInstance = oci.Analytics.getAnalyticsInstance({
+ * const testAnalyticsInstance = oci.analytics.getAnalyticsInstance({
  *     analyticsInstanceId: testAnalyticsInstanceOciAnalyticsAnalyticsInstance.id,
  * });
  * ```

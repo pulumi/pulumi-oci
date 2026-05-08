@@ -233,31 +233,31 @@ export interface CloudExadataStorageServerState {
     /**
      * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    additionalDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    additionalDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
      */
-    cloudExadataStorageServerId?: pulumi.Input<string>;
+    cloudExadataStorageServerId?: pulumi.Input<string | undefined>;
     /**
      * The connector of the Exadata storage server.
      */
-    connectors?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.CloudExadataStorageServerConnector>[]>;
+    connectors?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.CloudExadataStorageServerConnector>[] | undefined>;
     /**
      * The CPU count of the Exadata storage server.
      */
-    cpuCount?: pulumi.Input<number>;
+    cpuCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
-    exadataInfrastructureId?: pulumi.Input<string>;
+    exadataInfrastructureId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
      *
@@ -265,75 +265,75 @@ export interface CloudExadataStorageServerState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The internal ID of the Exadata resource.
      */
-    internalId?: pulumi.Input<string>;
+    internalId?: pulumi.Input<string | undefined>;
     /**
      * The IP address of the Exadata storage server.
      */
-    ipAddress?: pulumi.Input<string>;
+    ipAddress?: pulumi.Input<string | undefined>;
     /**
      * The details of the lifecycle state of the Exadata resource.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The make model of the Exadata storage server.
      */
-    makeModel?: pulumi.Input<string>;
+    makeModel?: pulumi.Input<string | undefined>;
     /**
      * The maximum flash disk IO operations per second of the Exadata storage server.
      */
-    maxFlashDiskIops?: pulumi.Input<number>;
+    maxFlashDiskIops?: pulumi.Input<number | undefined>;
     /**
      * The maximum flash disk IO throughput in MB/s of the Exadata storage server.
      */
-    maxFlashDiskThroughput?: pulumi.Input<number>;
+    maxFlashDiskThroughput?: pulumi.Input<number | undefined>;
     /**
      * The maximum hard disk IO operations per second of the Exadata storage server.
      */
-    maxHardDiskIops?: pulumi.Input<number>;
+    maxHardDiskIops?: pulumi.Input<number | undefined>;
     /**
      * The maximum hard disk IO throughput in MB/s of the Exadata storage server.
      */
-    maxHardDiskThroughput?: pulumi.Input<number>;
+    maxHardDiskThroughput?: pulumi.Input<number | undefined>;
     /**
      * The Exadata storage server memory size in GB.
      */
-    memoryGb?: pulumi.Input<number>;
+    memoryGb?: pulumi.Input<number | undefined>;
     /**
      * The type of Exadata resource.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the database resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The status of the Exadata resource.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server grid.
      */
-    storageGridId?: pulumi.Input<string>;
+    storageGridId?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The timestamp of the creation of the Exadata resource.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The timestamp of the last update of the Exadata resource.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The version of the Exadata resource.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -347,7 +347,7 @@ export interface CloudExadataStorageServerArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
      *
@@ -355,5 +355,5 @@ export interface CloudExadataStorageServerArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

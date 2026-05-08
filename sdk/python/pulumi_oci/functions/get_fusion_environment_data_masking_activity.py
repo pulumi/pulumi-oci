@@ -129,7 +129,7 @@ def get_fusion_environment_data_masking_activity(data_masking_activity_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_data_masking_activity = oci.Functions.get_fusion_environment_data_masking_activity(data_masking_activity_id=test_data_masking_activity["id"],
+    test_fusion_environment_data_masking_activity = oci.functions.get_fusion_environment_data_masking_activity(data_masking_activity_id=test_data_masking_activity["id"],
         fusion_environment_id=test_fusion_environment["id"])
     ```
 
@@ -151,8 +151,8 @@ def get_fusion_environment_data_masking_activity(data_masking_activity_id: Optio
         state=pulumi.get(__ret__, 'state'),
         time_masking_finish=pulumi.get(__ret__, 'time_masking_finish'),
         time_masking_start=pulumi.get(__ret__, 'time_masking_start'))
-def get_fusion_environment_data_masking_activity_output(data_masking_activity_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                        fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fusion_environment_data_masking_activity_output(data_masking_activity_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                        fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentDataMaskingActivityResult]:
     """
     This data source provides details about a specific Fusion Environment Data Masking Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -165,7 +165,7 @@ def get_fusion_environment_data_masking_activity_output(data_masking_activity_id
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_data_masking_activity = oci.Functions.get_fusion_environment_data_masking_activity(data_masking_activity_id=test_data_masking_activity["id"],
+    test_fusion_environment_data_masking_activity = oci.functions.get_fusion_environment_data_masking_activity(data_masking_activity_id=test_data_masking_activity["id"],
         fusion_environment_id=test_fusion_environment["id"])
     ```
 

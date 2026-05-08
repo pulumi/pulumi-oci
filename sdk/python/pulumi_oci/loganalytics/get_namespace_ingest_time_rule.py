@@ -217,7 +217,7 @@ def get_namespace_ingest_time_rule(ingest_time_rule_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_ingest_time_rule = oci.LogAnalytics.get_namespace_ingest_time_rule(ingest_time_rule_id=test_rule["id"],
+    test_namespace_ingest_time_rule = oci.loganalytics.get_namespace_ingest_time_rule(ingest_time_rule_id=test_rule["id"],
         namespace=namespace_ingest_time_rule_namespace)
     ```
 
@@ -246,8 +246,8 @@ def get_namespace_ingest_time_rule(ingest_time_rule_id: Optional[_builtins.str] 
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_namespace_ingest_time_rule_output(ingest_time_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                          namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_namespace_ingest_time_rule_output(ingest_time_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                          namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceIngestTimeRuleResult]:
     """
     This data source provides details about a specific Namespace Ingest Time Rule resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -260,7 +260,7 @@ def get_namespace_ingest_time_rule_output(ingest_time_rule_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_ingest_time_rule = oci.LogAnalytics.get_namespace_ingest_time_rule(ingest_time_rule_id=test_rule["id"],
+    test_namespace_ingest_time_rule = oci.loganalytics.get_namespace_ingest_time_rule(ingest_time_rule_id=test_rule["id"],
         namespace=namespace_ingest_time_rule_namespace)
     ```
 

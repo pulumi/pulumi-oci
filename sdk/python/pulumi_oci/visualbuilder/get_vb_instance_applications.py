@@ -94,7 +94,7 @@ def get_vb_instance_applications(idcs_open_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vb_instance_applications = oci.VisualBuilder.get_vb_instance_applications(vb_instance_id=test_vb_instance["id"],
+    test_vb_instance_applications = oci.visualbuilder.get_vb_instance_applications(vb_instance_id=test_vb_instance["id"],
         idcs_open_id="idcs_open_id_value")
     ```
 
@@ -113,8 +113,8 @@ def get_vb_instance_applications(idcs_open_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         idcs_open_id=pulumi.get(__ret__, 'idcs_open_id'),
         vb_instance_id=pulumi.get(__ret__, 'vb_instance_id'))
-def get_vb_instance_applications_output(idcs_open_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        vb_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_vb_instance_applications_output(idcs_open_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        vb_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVbInstanceApplicationsResult]:
     """
     This data source provides the list of published and staged applications of a Visual Builder Instance in Oracle Cloud Infrastructure Visual Builder service.
@@ -127,7 +127,7 @@ def get_vb_instance_applications_output(idcs_open_id: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_vb_instance_applications = oci.VisualBuilder.get_vb_instance_applications(vb_instance_id=test_vb_instance["id"],
+    test_vb_instance_applications = oci.visualbuilder.get_vb_instance_applications(vb_instance_id=test_vb_instance["id"],
         idcs_open_id="idcs_open_id_value")
     ```
 

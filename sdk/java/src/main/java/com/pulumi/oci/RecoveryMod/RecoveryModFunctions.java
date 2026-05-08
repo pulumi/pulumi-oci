@@ -49,8 +49,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetProtectedDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -91,8 +91,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetProtectedDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -133,8 +133,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetProtectedDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -175,8 +175,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetProtectedDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -217,8 +217,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetProtectedDatabaseArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -259,8 +259,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetProtectedDatabaseFetchConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -303,8 +303,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetProtectedDatabaseFetchConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -347,8 +347,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetProtectedDatabaseFetchConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -391,8 +391,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetProtectedDatabaseFetchConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -435,8 +435,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetProtectedDatabaseFetchConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -479,8 +479,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetProtectedDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -526,8 +526,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetProtectedDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -573,8 +573,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetProtectedDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -620,8 +620,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetProtectedDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -667,8 +667,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetProtectedDatabasesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -714,8 +714,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetProtectionPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -760,8 +760,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetProtectionPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -806,8 +806,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetProtectionPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -852,8 +852,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetProtectionPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -898,8 +898,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetProtectionPoliciesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -944,8 +944,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetProtectionPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -986,8 +986,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetProtectionPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1028,8 +1028,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetProtectionPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1070,8 +1070,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetProtectionPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1112,8 +1112,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetProtectionPolicyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1154,8 +1154,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetRecoveryServiceSubnetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1196,8 +1196,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetRecoveryServiceSubnetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1238,8 +1238,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetRecoveryServiceSubnetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1280,8 +1280,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetRecoveryServiceSubnetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1322,8 +1322,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetRecoveryServiceSubnetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1364,8 +1364,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetRecoveryServiceSubnetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1410,8 +1410,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetRecoveryServiceSubnetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1456,8 +1456,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetRecoveryServiceSubnetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1502,8 +1502,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetRecoveryServiceSubnetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1548,8 +1548,8 @@ public final class RecoveryModFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.RecoveryMod.RecoveryModFunctions;
      * import com.pulumi.oci.RecoveryMod.inputs.GetRecoveryServiceSubnetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

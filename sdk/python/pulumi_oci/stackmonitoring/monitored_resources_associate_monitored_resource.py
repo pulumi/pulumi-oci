@@ -98,15 +98,15 @@ class MonitoredResourcesAssociateMonitoredResourceArgs:
 @pulumi.input_type
 class _MonitoredResourcesAssociateMonitoredResourceState:
     def __init__(__self__, *,
-                 association_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 category: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination_resource_details: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs']]]] = None,
-                 destination_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_resource_details: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs']]]] = None,
-                 source_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 association_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 category: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_resource_details: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs']]]] = None,
+                 destination_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_resource_details: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs']]]] = None,
+                 source_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MonitoredResourcesAssociateMonitoredResource resources.
 
@@ -148,19 +148,19 @@ class _MonitoredResourcesAssociateMonitoredResourceState:
 
     @_builtins.property
     @pulumi.getter(name="associationType")
-    def association_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def association_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Association type to be created between source and destination resources.
         """
         return pulumi.get(self, "association_type")
 
     @association_type.setter
-    def association_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def association_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "association_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def category(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def category(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Association category. Possible values are:
         * System created (SYSTEM),
@@ -170,60 +170,60 @@ class _MonitoredResourcesAssociateMonitoredResourceState:
         return pulumi.get(self, "category")
 
     @category.setter
-    def category(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def category(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "category", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="destinationResourceDetails")
-    def destination_resource_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs']]]]:
+    def destination_resource_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs']]]]:
         """
         Association Resource Details.
         """
         return pulumi.get(self, "destination_resource_details")
 
     @destination_resource_details.setter
-    def destination_resource_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs']]]]):
+    def destination_resource_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs']]]]):
         pulumi.set(self, "destination_resource_details", value)
 
     @_builtins.property
     @pulumi.getter(name="destinationResourceId")
-    def destination_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def destination_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "destination_resource_id")
 
     @destination_resource_id.setter
-    def destination_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def destination_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "destination_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceResourceDetails")
-    def source_resource_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs']]]]:
+    def source_resource_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs']]]]:
         """
         Association Resource Details.
         """
         return pulumi.get(self, "source_resource_details")
 
     @source_resource_details.setter
-    def source_resource_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs']]]]):
+    def source_resource_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs']]]]):
         pulumi.set(self, "source_resource_details", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceResourceId")
-    def source_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). 
 
@@ -234,31 +234,31 @@ class _MonitoredResourcesAssociateMonitoredResourceState:
         return pulumi.get(self, "source_resource_id")
 
     @source_resource_id.setter
-    def source_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time when the association was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -268,10 +268,10 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 association_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 association_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Monitored Resources Associate Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -369,10 +369,10 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 association_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 association_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -409,15 +409,15 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            association_type: Optional[pulumi.Input[_builtins.str]] = None,
-            category: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            destination_resource_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs', 'MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgsDict']]]]] = None,
-            destination_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-            source_resource_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs', 'MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgsDict']]]]] = None,
-            source_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'MonitoredResourcesAssociateMonitoredResource':
+            association_type: pulumi.Input[Optional[_builtins.str]] = None,
+            category: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            destination_resource_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs', 'MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgsDict']]]]] = None,
+            destination_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source_resource_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs', 'MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgsDict']]]]] = None,
+            source_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'MonitoredResourcesAssociateMonitoredResource':
         """
         Get an existing MonitoredResourcesAssociateMonitoredResource resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

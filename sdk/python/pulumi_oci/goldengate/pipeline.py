@@ -27,12 +27,12 @@ class PipelineArgs:
                  recipe_type: pulumi.Input[_builtins.str],
                  source_connection_details: pulumi.Input['PipelineSourceConnectionDetailsArgs'],
                  target_connection_details: pulumi.Input['PipelineTargetConnectionDetailsArgs'],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineLockArgs']]]] = None,
-                 process_options: Optional[pulumi.Input['PipelineProcessOptionsArgs']] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineLockArgs']]]] = None,
+                 process_options: pulumi.Input[Optional['PipelineProcessOptionsArgs']] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Pipeline resource.
 
@@ -142,104 +142,104 @@ class PipelineArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Metadata about this specific object.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PipelineLockArgs']]]]:
+    def locks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PipelineLockArgs']]]]:
         """
         Locks associated with this resource.
         """
         return pulumi.get(self, "locks")
 
     @locks.setter
-    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineLockArgs']]]]):
+    def locks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineLockArgs']]]]):
         pulumi.set(self, "locks", value)
 
     @_builtins.property
     @pulumi.getter(name="processOptions")
-    def process_options(self) -> Optional[pulumi.Input['PipelineProcessOptionsArgs']]:
+    def process_options(self) -> pulumi.Input[Optional['PipelineProcessOptionsArgs']]:
         """
         (Updatable) Required pipeline options to configure the replication process (Extract or Replicat).
         """
         return pulumi.get(self, "process_options")
 
     @process_options.setter
-    def process_options(self, value: Optional[pulumi.Input['PipelineProcessOptionsArgs']]):
+    def process_options(self, value: pulumi.Input[Optional['PipelineProcessOptionsArgs']]):
         pulumi.set(self, "process_options", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
 
 @pulumi.input_type
 class _PipelineState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ingress_ips: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineIngressIpArgs']]]] = None,
-                 is_auto_scaling_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_sub_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineLockArgs']]]] = None,
-                 mapping_rules: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineMappingRuleArgs']]]] = None,
-                 pipeline_diagnostic_datas: Optional[pulumi.Input[Sequence[pulumi.Input['PipelinePipelineDiagnosticDataArgs']]]] = None,
-                 process_options: Optional[pulumi.Input['PipelineProcessOptionsArgs']] = None,
-                 recipe_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_connection_details: Optional[pulumi.Input['PipelineSourceConnectionDetailsArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 target_connection_details: Optional[pulumi.Input['PipelineTargetConnectionDetailsArgs']] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_recorded: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ingress_ips: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineIngressIpArgs']]]] = None,
+                 is_auto_scaling_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_sub_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineLockArgs']]]] = None,
+                 mapping_rules: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineMappingRuleArgs']]]] = None,
+                 pipeline_diagnostic_datas: pulumi.Input[Optional[Sequence[pulumi.Input['PipelinePipelineDiagnosticDataArgs']]]] = None,
+                 process_options: pulumi.Input[Optional['PipelineProcessOptionsArgs']] = None,
+                 recipe_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_connection_details: pulumi.Input[Optional['PipelineSourceConnectionDetailsArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_connection_details: pulumi.Input[Optional['PipelineTargetConnectionDetailsArgs']] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_recorded: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Pipeline resources.
 
@@ -319,290 +319,290 @@ class _PipelineState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="cpuCoreCount")
-    def cpu_core_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cpu_core_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The Minimum number of OCPUs to be made available for this Deployment.
         """
         return pulumi.get(self, "cpu_core_count")
 
     @cpu_core_count.setter
-    def cpu_core_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cpu_core_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cpu_core_count", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Metadata about this specific object.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An object's Display Name.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="ingressIps")
-    def ingress_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PipelineIngressIpArgs']]]]:
+    def ingress_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PipelineIngressIpArgs']]]]:
         """
         List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
         """
         return pulumi.get(self, "ingress_ips")
 
     @ingress_ips.setter
-    def ingress_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineIngressIpArgs']]]]):
+    def ingress_ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineIngressIpArgs']]]]):
         pulumi.set(self, "ingress_ips", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoScalingEnabled")
-    def is_auto_scaling_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_scaling_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if auto scaling is enabled for the Deployment's CPU core count.
         """
         return pulumi.get(self, "is_auto_scaling_enabled")
 
     @is_auto_scaling_enabled.setter
-    def is_auto_scaling_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_scaling_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_scaling_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Oracle license model that applies to a Deployment.
         """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
-    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_model", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleSubState")
-    def lifecycle_sub_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_sub_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible lifecycle substates when retrieving a pipeline.
         """
         return pulumi.get(self, "lifecycle_sub_state")
 
     @lifecycle_sub_state.setter
-    def lifecycle_sub_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_sub_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_sub_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PipelineLockArgs']]]]:
+    def locks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PipelineLockArgs']]]]:
         """
         Locks associated with this resource.
         """
         return pulumi.get(self, "locks")
 
     @locks.setter
-    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineLockArgs']]]]):
+    def locks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineLockArgs']]]]):
         pulumi.set(self, "locks", value)
 
     @_builtins.property
     @pulumi.getter(name="mappingRules")
-    def mapping_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PipelineMappingRuleArgs']]]]:
+    def mapping_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PipelineMappingRuleArgs']]]]:
         """
         Mapping for source/target schema/tables for the pipeline data replication.
         """
         return pulumi.get(self, "mapping_rules")
 
     @mapping_rules.setter
-    def mapping_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineMappingRuleArgs']]]]):
+    def mapping_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineMappingRuleArgs']]]]):
         pulumi.set(self, "mapping_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="pipelineDiagnosticDatas")
-    def pipeline_diagnostic_datas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PipelinePipelineDiagnosticDataArgs']]]]:
+    def pipeline_diagnostic_datas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PipelinePipelineDiagnosticDataArgs']]]]:
         """
         Information regarding the pipeline diagnostic collection
         """
         return pulumi.get(self, "pipeline_diagnostic_datas")
 
     @pipeline_diagnostic_datas.setter
-    def pipeline_diagnostic_datas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PipelinePipelineDiagnosticDataArgs']]]]):
+    def pipeline_diagnostic_datas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PipelinePipelineDiagnosticDataArgs']]]]):
         pulumi.set(self, "pipeline_diagnostic_datas", value)
 
     @_builtins.property
     @pulumi.getter(name="processOptions")
-    def process_options(self) -> Optional[pulumi.Input['PipelineProcessOptionsArgs']]:
+    def process_options(self) -> pulumi.Input[Optional['PipelineProcessOptionsArgs']]:
         """
         (Updatable) Required pipeline options to configure the replication process (Extract or Replicat).
         """
         return pulumi.get(self, "process_options")
 
     @process_options.setter
-    def process_options(self, value: Optional[pulumi.Input['PipelineProcessOptionsArgs']]):
+    def process_options(self, value: pulumi.Input[Optional['PipelineProcessOptionsArgs']]):
         pulumi.set(self, "process_options", value)
 
     @_builtins.property
     @pulumi.getter(name="recipeType")
-    def recipe_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def recipe_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of the recipe
         """
         return pulumi.get(self, "recipe_type")
 
     @recipe_type.setter
-    def recipe_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def recipe_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "recipe_type", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceConnectionDetails")
-    def source_connection_details(self) -> Optional[pulumi.Input['PipelineSourceConnectionDetailsArgs']]:
+    def source_connection_details(self) -> pulumi.Input[Optional['PipelineSourceConnectionDetailsArgs']]:
         """
         The source connection details for creating a pipeline.
         """
         return pulumi.get(self, "source_connection_details")
 
     @source_connection_details.setter
-    def source_connection_details(self, value: Optional[pulumi.Input['PipelineSourceConnectionDetailsArgs']]):
+    def source_connection_details(self, value: pulumi.Input[Optional['PipelineSourceConnectionDetailsArgs']]):
         pulumi.set(self, "source_connection_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Lifecycle state of the pipeline.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the pipeline's private endpoint. The subnet must be a private subnet.
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="targetConnectionDetails")
-    def target_connection_details(self) -> Optional[pulumi.Input['PipelineTargetConnectionDetailsArgs']]:
+    def target_connection_details(self) -> pulumi.Input[Optional['PipelineTargetConnectionDetailsArgs']]:
         """
         The target connection details for creating a pipeline.
         """
         return pulumi.get(self, "target_connection_details")
 
     @target_connection_details.setter
-    def target_connection_details(self, value: Optional[pulumi.Input['PipelineTargetConnectionDetailsArgs']]):
+    def target_connection_details(self, value: pulumi.Input[Optional['PipelineTargetConnectionDetailsArgs']]):
         pulumi.set(self, "target_connection_details", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastRecorded")
-    def time_last_recorded(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_recorded(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the resource was last updated. This option applies when retrieving a pipeline. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_last_recorded")
 
     @time_last_recorded.setter
-    def time_last_recorded(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_recorded(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_recorded", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -612,18 +612,18 @@ class Pipeline(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineLockArgs', 'PipelineLockArgsDict']]]]] = None,
-                 process_options: Optional[pulumi.Input[Union['PipelineProcessOptionsArgs', 'PipelineProcessOptionsArgsDict']]] = None,
-                 recipe_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_connection_details: Optional[pulumi.Input[Union['PipelineSourceConnectionDetailsArgs', 'PipelineSourceConnectionDetailsArgsDict']]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_connection_details: Optional[pulumi.Input[Union['PipelineTargetConnectionDetailsArgs', 'PipelineTargetConnectionDetailsArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineLockArgs', 'PipelineLockArgsDict']]]]] = None,
+                 process_options: pulumi.Input[Optional[Union['PipelineProcessOptionsArgs', 'PipelineProcessOptionsArgsDict']]] = None,
+                 recipe_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_connection_details: pulumi.Input[Optional[Union['PipelineSourceConnectionDetailsArgs', 'PipelineSourceConnectionDetailsArgsDict']]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_connection_details: pulumi.Input[Optional[Union['PipelineTargetConnectionDetailsArgs', 'PipelineTargetConnectionDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Pipeline resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -787,18 +787,18 @@ class Pipeline(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineLockArgs', 'PipelineLockArgsDict']]]]] = None,
-                 process_options: Optional[pulumi.Input[Union['PipelineProcessOptionsArgs', 'PipelineProcessOptionsArgsDict']]] = None,
-                 recipe_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_connection_details: Optional[pulumi.Input[Union['PipelineSourceConnectionDetailsArgs', 'PipelineSourceConnectionDetailsArgsDict']]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_connection_details: Optional[pulumi.Input[Union['PipelineTargetConnectionDetailsArgs', 'PipelineTargetConnectionDetailsArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineLockArgs', 'PipelineLockArgsDict']]]]] = None,
+                 process_options: pulumi.Input[Optional[Union['PipelineProcessOptionsArgs', 'PipelineProcessOptionsArgsDict']]] = None,
+                 recipe_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_connection_details: pulumi.Input[Optional[Union['PipelineSourceConnectionDetailsArgs', 'PipelineSourceConnectionDetailsArgsDict']]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_connection_details: pulumi.Input[Optional[Union['PipelineTargetConnectionDetailsArgs', 'PipelineTargetConnectionDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -854,30 +854,30 @@ class Pipeline(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            ingress_ips: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineIngressIpArgs', 'PipelineIngressIpArgsDict']]]]] = None,
-            is_auto_scaling_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            license_model: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_sub_state: Optional[pulumi.Input[_builtins.str]] = None,
-            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineLockArgs', 'PipelineLockArgsDict']]]]] = None,
-            mapping_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineMappingRuleArgs', 'PipelineMappingRuleArgsDict']]]]] = None,
-            pipeline_diagnostic_datas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelinePipelineDiagnosticDataArgs', 'PipelinePipelineDiagnosticDataArgsDict']]]]] = None,
-            process_options: Optional[pulumi.Input[Union['PipelineProcessOptionsArgs', 'PipelineProcessOptionsArgsDict']]] = None,
-            recipe_type: Optional[pulumi.Input[_builtins.str]] = None,
-            source_connection_details: Optional[pulumi.Input[Union['PipelineSourceConnectionDetailsArgs', 'PipelineSourceConnectionDetailsArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            target_connection_details: Optional[pulumi.Input[Union['PipelineTargetConnectionDetailsArgs', 'PipelineTargetConnectionDetailsArgsDict']]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_last_recorded: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'Pipeline':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ingress_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineIngressIpArgs', 'PipelineIngressIpArgsDict']]]]] = None,
+            is_auto_scaling_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            license_model: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_sub_state: pulumi.Input[Optional[_builtins.str]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineLockArgs', 'PipelineLockArgsDict']]]]] = None,
+            mapping_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineMappingRuleArgs', 'PipelineMappingRuleArgsDict']]]]] = None,
+            pipeline_diagnostic_datas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelinePipelineDiagnosticDataArgs', 'PipelinePipelineDiagnosticDataArgsDict']]]]] = None,
+            process_options: pulumi.Input[Optional[Union['PipelineProcessOptionsArgs', 'PipelineProcessOptionsArgsDict']]] = None,
+            recipe_type: pulumi.Input[Optional[_builtins.str]] = None,
+            source_connection_details: pulumi.Input[Optional[Union['PipelineSourceConnectionDetailsArgs', 'PipelineSourceConnectionDetailsArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_connection_details: pulumi.Input[Optional[Union['PipelineTargetConnectionDetailsArgs', 'PipelineTargetConnectionDetailsArgsDict']]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_recorded: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'Pipeline':
         """
         Get an existing Pipeline resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

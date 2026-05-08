@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  *     namespace: namespaceScheduledTaskNamespace,
  *     action: {
  *         type: namespaceScheduledTaskActionType,
- *         compartmentIdInSubtree: namespaceScheduledTaskActionCompartmentIdInSubtree,
+ *         compartmentIdInSubtree: namespaceScheduledTaskActionCompartmentIdInSubtree === "true",
  *         dataType: namespaceScheduledTaskActionDataType,
  *         metricExtraction: {
  *             compartmentId: compartmentId,
@@ -296,56 +296,56 @@ export interface NamespaceScheduledTaskState {
     /**
      * Action for scheduled task.
      */
-    action?: pulumi.Input<inputs.LogAnalytics.NamespaceScheduledTaskAction>;
+    action?: pulumi.Input<inputs.LogAnalytics.NamespaceScheduledTaskAction | undefined>;
     /**
      * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Description for this resource.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Discriminator.
      */
-    kind?: pulumi.Input<string>;
+    kind?: pulumi.Input<string | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * Number of execution occurrences.
      */
-    numOccurrences?: pulumi.Input<string>;
+    numOccurrences?: pulumi.Input<string | undefined>;
     /**
      * The ManagementSavedSearch id [OCID] to be accelerated.
      */
-    savedSearchId?: pulumi.Input<string>;
-    scheduledTaskId?: pulumi.Input<string>;
+    savedSearchId?: pulumi.Input<string | undefined>;
+    scheduledTaskId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Schedules, typically a single schedule. Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
      */
-    schedules?: pulumi.Input<inputs.LogAnalytics.NamespaceScheduledTaskSchedules>;
+    schedules?: pulumi.Input<inputs.LogAnalytics.NamespaceScheduledTaskSchedules | undefined>;
     /**
      * The current state of the scheduled task.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
      */
-    taskStatus?: pulumi.Input<string>;
+    taskStatus?: pulumi.Input<string | undefined>;
     /**
      * Task type.
      *
@@ -353,19 +353,19 @@ export interface NamespaceScheduledTaskState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    taskType?: pulumi.Input<string>;
+    taskType?: pulumi.Input<string | undefined>;
     /**
      * The date and time the scheduled task was created, in the format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the scheduled task was last updated, in the format defined by RFC3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * most recent Work Request Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the asynchronous request.
      */
-    workRequestId?: pulumi.Input<string>;
+    workRequestId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -383,19 +383,19 @@ export interface NamespaceScheduledTaskArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Description for this resource.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Discriminator.
      */
@@ -407,7 +407,7 @@ export interface NamespaceScheduledTaskArgs {
     /**
      * The ManagementSavedSearch id [OCID] to be accelerated.
      */
-    savedSearchId?: pulumi.Input<string>;
+    savedSearchId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Schedules, typically a single schedule. Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
      */

@@ -111,7 +111,7 @@ def get_monitored_instances(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_instances = oci.AppMgmtControl.get_monitored_instances(compartment_id=compartment_id,
+    test_monitored_instances = oci.appmgmtcontrol.get_monitored_instances(compartment_id=compartment_id,
         display_name=monitored_instance_display_name)
     ```
 
@@ -132,9 +132,9 @@ def get_monitored_instances(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         monitored_instance_collections=pulumi.get(__ret__, 'monitored_instance_collections'))
-def get_monitored_instances_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMonitoredInstancesFilterArgs', 'GetMonitoredInstancesFilterArgsDict']]]]] = None,
+def get_monitored_instances_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMonitoredInstancesFilterArgs', 'GetMonitoredInstancesFilterArgsDict']]]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMonitoredInstancesResult]:
     """
     This data source provides the list of Monitored Instances in Oracle Cloud Infrastructure Appmgmt Control service.
@@ -147,7 +147,7 @@ def get_monitored_instances_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_instances = oci.AppMgmtControl.get_monitored_instances(compartment_id=compartment_id,
+    test_monitored_instances = oci.appmgmtcontrol.get_monitored_instances(compartment_id=compartment_id,
         display_name=monitored_instance_display_name)
     ```
 

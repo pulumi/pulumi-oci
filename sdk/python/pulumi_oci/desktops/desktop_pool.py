@@ -36,18 +36,18 @@ class DesktopPoolArgs:
                  standby_size: pulumi.Input[_builtins.int],
                  storage_backup_policy_id: pulumi.Input[_builtins.str],
                  storage_size_in_gbs: pulumi.Input[_builtins.int],
-                 are_volumes_preserved: Optional[pulumi.Input[_builtins.bool]] = None,
-                 boot_volume_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 private_access_details: Optional[pulumi.Input['DesktopPoolPrivateAccessDetailsArgs']] = None,
-                 session_lifecycle_actions: Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsArgs']] = None,
-                 shape_config: Optional[pulumi.Input['DesktopPoolShapeConfigArgs']] = None,
-                 time_start_scheduled: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_stop_scheduled: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_dedicated_vm_host: Optional[pulumi.Input[_builtins.str]] = None):
+                 are_volumes_preserved: pulumi.Input[Optional[_builtins.bool]] = None,
+                 boot_volume_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 private_access_details: pulumi.Input[Optional['DesktopPoolPrivateAccessDetailsArgs']] = None,
+                 session_lifecycle_actions: pulumi.Input[Optional['DesktopPoolSessionLifecycleActionsArgs']] = None,
+                 shape_config: pulumi.Input[Optional['DesktopPoolShapeConfigArgs']] = None,
+                 time_start_scheduled: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_stop_scheduled: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_dedicated_vm_host: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a DesktopPool resource.
 
@@ -305,7 +305,7 @@ class DesktopPoolArgs:
 
     @_builtins.property
     @pulumi.getter(name="areVolumesPreserved")
-    def are_volumes_preserved(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def are_volumes_preserved(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
 
@@ -316,175 +316,175 @@ class DesktopPoolArgs:
         return pulumi.get(self, "are_volumes_preserved")
 
     @are_volumes_preserved.setter
-    def are_volumes_preserved(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def are_volumes_preserved(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "are_volumes_preserved", value)
 
     @_builtins.property
     @pulumi.getter(name="bootVolumeSizeInGbs")
-    def boot_volume_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def boot_volume_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The size in GBs of the boot volume for the desktop pool.
         """
         return pulumi.get(self, "boot_volume_size_in_gbs")
 
     @boot_volume_size_in_gbs.setter
-    def boot_volume_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def boot_volume_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "boot_volume_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user friendly description providing additional information about the resource. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of network security groups for the private access.
         """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="privateAccessDetails")
-    def private_access_details(self) -> Optional[pulumi.Input['DesktopPoolPrivateAccessDetailsArgs']]:
+    def private_access_details(self) -> pulumi.Input[Optional['DesktopPoolPrivateAccessDetailsArgs']]:
         """
         The details of the desktop's private access network connectivity to be set up for the desktop pool.
         """
         return pulumi.get(self, "private_access_details")
 
     @private_access_details.setter
-    def private_access_details(self, value: Optional[pulumi.Input['DesktopPoolPrivateAccessDetailsArgs']]):
+    def private_access_details(self, value: pulumi.Input[Optional['DesktopPoolPrivateAccessDetailsArgs']]):
         pulumi.set(self, "private_access_details", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionLifecycleActions")
-    def session_lifecycle_actions(self) -> Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsArgs']]:
+    def session_lifecycle_actions(self) -> pulumi.Input[Optional['DesktopPoolSessionLifecycleActionsArgs']]:
         """
         The details of action to be triggered in case of inactivity or disconnect
         """
         return pulumi.get(self, "session_lifecycle_actions")
 
     @session_lifecycle_actions.setter
-    def session_lifecycle_actions(self, value: Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsArgs']]):
+    def session_lifecycle_actions(self, value: pulumi.Input[Optional['DesktopPoolSessionLifecycleActionsArgs']]):
         pulumi.set(self, "session_lifecycle_actions", value)
 
     @_builtins.property
     @pulumi.getter(name="shapeConfig")
-    def shape_config(self) -> Optional[pulumi.Input['DesktopPoolShapeConfigArgs']]:
+    def shape_config(self) -> pulumi.Input[Optional['DesktopPoolShapeConfigArgs']]:
         """
         The compute instance shape configuration requested for each desktop in the desktop pool.
         """
         return pulumi.get(self, "shape_config")
 
     @shape_config.setter
-    def shape_config(self, value: Optional[pulumi.Input['DesktopPoolShapeConfigArgs']]):
+    def shape_config(self, value: pulumi.Input[Optional['DesktopPoolShapeConfigArgs']]):
         pulumi.set(self, "shape_config", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStartScheduled")
-    def time_start_scheduled(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_start_scheduled(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The start time of the desktop pool.
         """
         return pulumi.get(self, "time_start_scheduled")
 
     @time_start_scheduled.setter
-    def time_start_scheduled(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_start_scheduled(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_start_scheduled", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStopScheduled")
-    def time_stop_scheduled(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_stop_scheduled(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The stop time of the desktop pool.
         """
         return pulumi.get(self, "time_stop_scheduled")
 
     @time_stop_scheduled.setter
-    def time_stop_scheduled(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_stop_scheduled(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_stop_scheduled", value)
 
     @_builtins.property
     @pulumi.getter(name="useDedicatedVmHost")
-    def use_dedicated_vm_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def use_dedicated_vm_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates whether the desktop pool uses dedicated virtual machine hosts.
         """
         return pulumi.get(self, "use_dedicated_vm_host")
 
     @use_dedicated_vm_host.setter
-    def use_dedicated_vm_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def use_dedicated_vm_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "use_dedicated_vm_host", value)
 
 
 @pulumi.input_type
 class _DesktopPoolState:
     def __init__(__self__, *,
-                 active_desktops: Optional[pulumi.Input[_builtins.int]] = None,
-                 are_privileged_users: Optional[pulumi.Input[_builtins.bool]] = None,
-                 are_volumes_preserved: Optional[pulumi.Input[_builtins.bool]] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 availability_policy: Optional[pulumi.Input['DesktopPoolAvailabilityPolicyArgs']] = None,
-                 boot_volume_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 contact_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 device_policy: Optional[pulumi.Input['DesktopPoolDevicePolicyArgs']] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 image: Optional[pulumi.Input['DesktopPoolImageArgs']] = None,
-                 is_storage_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 maximum_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 network_configuration: Optional[pulumi.Input['DesktopPoolNetworkConfigurationArgs']] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 private_access_details: Optional[pulumi.Input['DesktopPoolPrivateAccessDetailsArgs']] = None,
-                 session_lifecycle_actions: Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsArgs']] = None,
-                 shape_config: Optional[pulumi.Input['DesktopPoolShapeConfigArgs']] = None,
-                 shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 standby_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_backup_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_start_scheduled: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_stop_scheduled: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_dedicated_vm_host: Optional[pulumi.Input[_builtins.str]] = None):
+                 active_desktops: pulumi.Input[Optional[_builtins.int]] = None,
+                 are_privileged_users: pulumi.Input[Optional[_builtins.bool]] = None,
+                 are_volumes_preserved: pulumi.Input[Optional[_builtins.bool]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_policy: pulumi.Input[Optional['DesktopPoolAvailabilityPolicyArgs']] = None,
+                 boot_volume_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 contact_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 device_policy: pulumi.Input[Optional['DesktopPoolDevicePolicyArgs']] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 image: pulumi.Input[Optional['DesktopPoolImageArgs']] = None,
+                 is_storage_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 maximum_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 network_configuration: pulumi.Input[Optional['DesktopPoolNetworkConfigurationArgs']] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 private_access_details: pulumi.Input[Optional['DesktopPoolPrivateAccessDetailsArgs']] = None,
+                 session_lifecycle_actions: pulumi.Input[Optional['DesktopPoolSessionLifecycleActionsArgs']] = None,
+                 shape_config: pulumi.Input[Optional['DesktopPoolShapeConfigArgs']] = None,
+                 shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 standby_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_start_scheduled: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_stop_scheduled: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_dedicated_vm_host: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DesktopPool resources.
 
@@ -586,31 +586,31 @@ class _DesktopPoolState:
 
     @_builtins.property
     @pulumi.getter(name="activeDesktops")
-    def active_desktops(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def active_desktops(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of active desktops in the desktop pool.
         """
         return pulumi.get(self, "active_desktops")
 
     @active_desktops.setter
-    def active_desktops(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def active_desktops(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "active_desktops", value)
 
     @_builtins.property
     @pulumi.getter(name="arePrivilegedUsers")
-    def are_privileged_users(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def are_privileged_users(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether desktop pool users have administrative privileges on their desktop.
         """
         return pulumi.get(self, "are_privileged_users")
 
     @are_privileged_users.setter
-    def are_privileged_users(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def are_privileged_users(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "are_privileged_users", value)
 
     @_builtins.property
     @pulumi.getter(name="areVolumesPreserved")
-    def are_volumes_preserved(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def are_volumes_preserved(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
 
@@ -621,331 +621,331 @@ class _DesktopPoolState:
         return pulumi.get(self, "are_volumes_preserved")
 
     @are_volumes_preserved.setter
-    def are_volumes_preserved(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def are_volumes_preserved(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "are_volumes_preserved", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability domain of the desktop pool.
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityPolicy")
-    def availability_policy(self) -> Optional[pulumi.Input['DesktopPoolAvailabilityPolicyArgs']]:
+    def availability_policy(self) -> pulumi.Input[Optional['DesktopPoolAvailabilityPolicyArgs']]:
         """
         (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
         """
         return pulumi.get(self, "availability_policy")
 
     @availability_policy.setter
-    def availability_policy(self, value: Optional[pulumi.Input['DesktopPoolAvailabilityPolicyArgs']]):
+    def availability_policy(self, value: pulumi.Input[Optional['DesktopPoolAvailabilityPolicyArgs']]):
         pulumi.set(self, "availability_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="bootVolumeSizeInGbs")
-    def boot_volume_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def boot_volume_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The size in GBs of the boot volume for the desktop pool.
         """
         return pulumi.get(self, "boot_volume_size_in_gbs")
 
     @boot_volume_size_in_gbs.setter
-    def boot_volume_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def boot_volume_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "boot_volume_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment which will contain the desktop pool.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="contactDetails")
-    def contact_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def contact_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Contact information of the desktop pool administrator. Avoid entering confidential information.
         """
         return pulumi.get(self, "contact_details")
 
     @contact_details.setter
-    def contact_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def contact_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "contact_details", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user friendly description providing additional information about the resource. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="devicePolicy")
-    def device_policy(self) -> Optional[pulumi.Input['DesktopPoolDevicePolicyArgs']]:
+    def device_policy(self) -> pulumi.Input[Optional['DesktopPoolDevicePolicyArgs']]:
         """
         (Updatable) Provides the settings for desktop and client device options, such as audio in and out, client drive mapping, and clipboard access.
         """
         return pulumi.get(self, "device_policy")
 
     @device_policy.setter
-    def device_policy(self, value: Optional[pulumi.Input['DesktopPoolDevicePolicyArgs']]):
+    def device_policy(self, value: pulumi.Input[Optional['DesktopPoolDevicePolicyArgs']]):
         pulumi.set(self, "device_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user friendly display name. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def image(self) -> Optional[pulumi.Input['DesktopPoolImageArgs']]:
+    def image(self) -> pulumi.Input[Optional['DesktopPoolImageArgs']]:
         """
         (Updatable) Provides information about the desktop image.
         """
         return pulumi.get(self, "image")
 
     @image.setter
-    def image(self, value: Optional[pulumi.Input['DesktopPoolImageArgs']]):
+    def image(self, value: pulumi.Input[Optional['DesktopPoolImageArgs']]):
         pulumi.set(self, "image", value)
 
     @_builtins.property
     @pulumi.getter(name="isStorageEnabled")
-    def is_storage_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_storage_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether storage is enabled for the desktop pool.
         """
         return pulumi.get(self, "is_storage_enabled")
 
     @is_storage_enabled.setter
-    def is_storage_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_storage_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_storage_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="maximumSize")
-    def maximum_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def maximum_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum number of desktops permitted in the desktop pool.
         """
         return pulumi.get(self, "maximum_size")
 
     @maximum_size.setter
-    def maximum_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def maximum_size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "maximum_size", value)
 
     @_builtins.property
     @pulumi.getter(name="networkConfiguration")
-    def network_configuration(self) -> Optional[pulumi.Input['DesktopPoolNetworkConfigurationArgs']]:
+    def network_configuration(self) -> pulumi.Input[Optional['DesktopPoolNetworkConfigurationArgs']]:
         """
         Provides information about the network configuration of the desktop pool.
         """
         return pulumi.get(self, "network_configuration")
 
     @network_configuration.setter
-    def network_configuration(self, value: Optional[pulumi.Input['DesktopPoolNetworkConfigurationArgs']]):
+    def network_configuration(self, value: pulumi.Input[Optional['DesktopPoolNetworkConfigurationArgs']]):
         pulumi.set(self, "network_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of network security groups for the private access.
         """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="privateAccessDetails")
-    def private_access_details(self) -> Optional[pulumi.Input['DesktopPoolPrivateAccessDetailsArgs']]:
+    def private_access_details(self) -> pulumi.Input[Optional['DesktopPoolPrivateAccessDetailsArgs']]:
         """
         The details of the desktop's private access network connectivity to be set up for the desktop pool.
         """
         return pulumi.get(self, "private_access_details")
 
     @private_access_details.setter
-    def private_access_details(self, value: Optional[pulumi.Input['DesktopPoolPrivateAccessDetailsArgs']]):
+    def private_access_details(self, value: pulumi.Input[Optional['DesktopPoolPrivateAccessDetailsArgs']]):
         pulumi.set(self, "private_access_details", value)
 
     @_builtins.property
     @pulumi.getter(name="sessionLifecycleActions")
-    def session_lifecycle_actions(self) -> Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsArgs']]:
+    def session_lifecycle_actions(self) -> pulumi.Input[Optional['DesktopPoolSessionLifecycleActionsArgs']]:
         """
         The details of action to be triggered in case of inactivity or disconnect
         """
         return pulumi.get(self, "session_lifecycle_actions")
 
     @session_lifecycle_actions.setter
-    def session_lifecycle_actions(self, value: Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsArgs']]):
+    def session_lifecycle_actions(self, value: pulumi.Input[Optional['DesktopPoolSessionLifecycleActionsArgs']]):
         pulumi.set(self, "session_lifecycle_actions", value)
 
     @_builtins.property
     @pulumi.getter(name="shapeConfig")
-    def shape_config(self) -> Optional[pulumi.Input['DesktopPoolShapeConfigArgs']]:
+    def shape_config(self) -> pulumi.Input[Optional['DesktopPoolShapeConfigArgs']]:
         """
         The compute instance shape configuration requested for each desktop in the desktop pool.
         """
         return pulumi.get(self, "shape_config")
 
     @shape_config.setter
-    def shape_config(self, value: Optional[pulumi.Input['DesktopPoolShapeConfigArgs']]):
+    def shape_config(self, value: pulumi.Input[Optional['DesktopPoolShapeConfigArgs']]):
         pulumi.set(self, "shape_config", value)
 
     @_builtins.property
     @pulumi.getter(name="shapeName")
-    def shape_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The shape of the desktop pool.
         """
         return pulumi.get(self, "shape_name")
 
     @shape_name.setter
-    def shape_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape_name", value)
 
     @_builtins.property
     @pulumi.getter(name="standbySize")
-    def standby_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def standby_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum number of standby desktops available in the desktop pool.
         """
         return pulumi.get(self, "standby_size")
 
     @standby_size.setter
-    def standby_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def standby_size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "standby_size", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the desktop pool.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="storageBackupPolicyId")
-    def storage_backup_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_backup_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The backup policy OCID of the storage.
         """
         return pulumi.get(self, "storage_backup_policy_id")
 
     @storage_backup_policy_id.setter
-    def storage_backup_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_backup_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_backup_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="storageSizeInGbs")
-    def storage_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def storage_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The size in GBs of the storage for the desktop pool.
         """
         return pulumi.get(self, "storage_size_in_gbs")
 
     @storage_size_in_gbs.setter
-    def storage_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def storage_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "storage_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the resource was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStartScheduled")
-    def time_start_scheduled(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_start_scheduled(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The start time of the desktop pool.
         """
         return pulumi.get(self, "time_start_scheduled")
 
     @time_start_scheduled.setter
-    def time_start_scheduled(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_start_scheduled(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_start_scheduled", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStopScheduled")
-    def time_stop_scheduled(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_stop_scheduled(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The stop time of the desktop pool.
         """
         return pulumi.get(self, "time_stop_scheduled")
 
     @time_stop_scheduled.setter
-    def time_stop_scheduled(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_stop_scheduled(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_stop_scheduled", value)
 
     @_builtins.property
     @pulumi.getter(name="useDedicatedVmHost")
-    def use_dedicated_vm_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def use_dedicated_vm_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates whether the desktop pool uses dedicated virtual machine hosts.
         """
         return pulumi.get(self, "use_dedicated_vm_host")
 
     @use_dedicated_vm_host.setter
-    def use_dedicated_vm_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def use_dedicated_vm_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "use_dedicated_vm_host", value)
 
 
@@ -955,33 +955,33 @@ class DesktopPool(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 are_privileged_users: Optional[pulumi.Input[_builtins.bool]] = None,
-                 are_volumes_preserved: Optional[pulumi.Input[_builtins.bool]] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 availability_policy: Optional[pulumi.Input[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict']]] = None,
-                 boot_volume_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 contact_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 device_policy: Optional[pulumi.Input[Union['DesktopPoolDevicePolicyArgs', 'DesktopPoolDevicePolicyArgsDict']]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 image: Optional[pulumi.Input[Union['DesktopPoolImageArgs', 'DesktopPoolImageArgsDict']]] = None,
-                 is_storage_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 maximum_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 network_configuration: Optional[pulumi.Input[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 private_access_details: Optional[pulumi.Input[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']]] = None,
-                 session_lifecycle_actions: Optional[pulumi.Input[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict']]] = None,
-                 shape_config: Optional[pulumi.Input[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']]] = None,
-                 shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 standby_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 storage_backup_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 time_start_scheduled: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_stop_scheduled: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_dedicated_vm_host: Optional[pulumi.Input[_builtins.str]] = None,
+                 are_privileged_users: pulumi.Input[Optional[_builtins.bool]] = None,
+                 are_volumes_preserved: pulumi.Input[Optional[_builtins.bool]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_policy: pulumi.Input[Optional[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict']]] = None,
+                 boot_volume_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 contact_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 device_policy: pulumi.Input[Optional[Union['DesktopPoolDevicePolicyArgs', 'DesktopPoolDevicePolicyArgsDict']]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 image: pulumi.Input[Optional[Union['DesktopPoolImageArgs', 'DesktopPoolImageArgsDict']]] = None,
+                 is_storage_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 maximum_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 network_configuration: pulumi.Input[Optional[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 private_access_details: pulumi.Input[Optional[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']]] = None,
+                 session_lifecycle_actions: pulumi.Input[Optional[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict']]] = None,
+                 shape_config: pulumi.Input[Optional[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']]] = None,
+                 shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 standby_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 storage_backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 time_start_scheduled: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_stop_scheduled: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_dedicated_vm_host: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Desktop Pool resource in Oracle Cloud Infrastructure Desktops service.
@@ -998,7 +998,7 @@ class DesktopPool(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_desktop_pool = oci.desktops.DesktopPool("test_desktop_pool",
-            are_privileged_users=desktop_pool_are_privileged_users,
+            are_privileged_users=desktop_pool_are_privileged_users == "true",
             availability_domain=desktop_pool_availability_domain,
             availability_policy={
                 "start_schedule": {
@@ -1016,11 +1016,11 @@ class DesktopPool(pulumi.CustomResource):
                 "audio_mode": desktop_pool_device_policy_audio_mode,
                 "cdm_mode": desktop_pool_device_policy_cdm_mode,
                 "clipboard_mode": desktop_pool_device_policy_clipboard_mode,
-                "is_display_enabled": desktop_pool_device_policy_is_display_enabled,
-                "is_keyboard_enabled": desktop_pool_device_policy_is_keyboard_enabled,
-                "is_pointer_enabled": desktop_pool_device_policy_is_pointer_enabled,
-                "is_printing_enabled": desktop_pool_device_policy_is_printing_enabled,
-                "is_video_input_enabled": desktop_pool_device_policy_is_video_input_enabled,
+                "is_display_enabled": desktop_pool_device_policy_is_display_enabled == "true",
+                "is_keyboard_enabled": desktop_pool_device_policy_is_keyboard_enabled == "true",
+                "is_pointer_enabled": desktop_pool_device_policy_is_pointer_enabled == "true",
+                "is_printing_enabled": desktop_pool_device_policy_is_printing_enabled == "true",
+                "is_video_input_enabled": desktop_pool_device_policy_is_video_input_enabled == "true",
             },
             display_name=desktop_pool_display_name,
             image={
@@ -1028,18 +1028,18 @@ class DesktopPool(pulumi.CustomResource):
                 "image_name": desktop_pool_image_image_name,
                 "operating_system": desktop_pool_image_operating_system,
             },
-            is_storage_enabled=desktop_pool_is_storage_enabled,
-            maximum_size=desktop_pool_maximum_size,
+            is_storage_enabled=desktop_pool_is_storage_enabled == "true",
+            maximum_size=int(desktop_pool_maximum_size),
             network_configuration={
                 "subnet_id": test_subnet["id"],
                 "vcn_id": test_vcn["id"],
             },
             shape_name="VM.Standard.E4.Flex",
-            standby_size=desktop_pool_standby_size,
+            standby_size=int(desktop_pool_standby_size),
             storage_backup_policy_id="ocid1.volumebackuppolicy.oc1.xxxxyyyyyzzzz",
-            storage_size_in_gbs=desktop_pool_storage_size_in_gbs,
-            boot_volume_size_in_gbs=desktop_pool_boot_volume_size_in_gbs,
-            are_volumes_preserved=desktop_pool_are_volumes_preserved,
+            storage_size_in_gbs=int(desktop_pool_storage_size_in_gbs),
+            boot_volume_size_in_gbs=int(desktop_pool_boot_volume_size_in_gbs),
+            are_volumes_preserved=desktop_pool_are_volumes_preserved == "true",
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -1061,11 +1061,11 @@ class DesktopPool(pulumi.CustomResource):
             session_lifecycle_actions={
                 "disconnect": {
                     "action": "STOP",
-                    "grace_period_in_minutes": desktop_pool_session_lifecycle_actions_disconnect_grace_period_in_minutes,
+                    "grace_period_in_minutes": int(desktop_pool_session_lifecycle_actions_disconnect_grace_period_in_minutes),
                 },
                 "inactivity": {
                     "action": "DISCONNECT",
-                    "grace_period_in_minutes": desktop_pool_session_lifecycle_actions_inactivity_grace_period_in_minutes,
+                    "grace_period_in_minutes": int(desktop_pool_session_lifecycle_actions_inactivity_grace_period_in_minutes),
                 },
             },
             time_start_scheduled=desktop_pool_time_start_scheduled,
@@ -1137,7 +1137,7 @@ class DesktopPool(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_desktop_pool = oci.desktops.DesktopPool("test_desktop_pool",
-            are_privileged_users=desktop_pool_are_privileged_users,
+            are_privileged_users=desktop_pool_are_privileged_users == "true",
             availability_domain=desktop_pool_availability_domain,
             availability_policy={
                 "start_schedule": {
@@ -1155,11 +1155,11 @@ class DesktopPool(pulumi.CustomResource):
                 "audio_mode": desktop_pool_device_policy_audio_mode,
                 "cdm_mode": desktop_pool_device_policy_cdm_mode,
                 "clipboard_mode": desktop_pool_device_policy_clipboard_mode,
-                "is_display_enabled": desktop_pool_device_policy_is_display_enabled,
-                "is_keyboard_enabled": desktop_pool_device_policy_is_keyboard_enabled,
-                "is_pointer_enabled": desktop_pool_device_policy_is_pointer_enabled,
-                "is_printing_enabled": desktop_pool_device_policy_is_printing_enabled,
-                "is_video_input_enabled": desktop_pool_device_policy_is_video_input_enabled,
+                "is_display_enabled": desktop_pool_device_policy_is_display_enabled == "true",
+                "is_keyboard_enabled": desktop_pool_device_policy_is_keyboard_enabled == "true",
+                "is_pointer_enabled": desktop_pool_device_policy_is_pointer_enabled == "true",
+                "is_printing_enabled": desktop_pool_device_policy_is_printing_enabled == "true",
+                "is_video_input_enabled": desktop_pool_device_policy_is_video_input_enabled == "true",
             },
             display_name=desktop_pool_display_name,
             image={
@@ -1167,18 +1167,18 @@ class DesktopPool(pulumi.CustomResource):
                 "image_name": desktop_pool_image_image_name,
                 "operating_system": desktop_pool_image_operating_system,
             },
-            is_storage_enabled=desktop_pool_is_storage_enabled,
-            maximum_size=desktop_pool_maximum_size,
+            is_storage_enabled=desktop_pool_is_storage_enabled == "true",
+            maximum_size=int(desktop_pool_maximum_size),
             network_configuration={
                 "subnet_id": test_subnet["id"],
                 "vcn_id": test_vcn["id"],
             },
             shape_name="VM.Standard.E4.Flex",
-            standby_size=desktop_pool_standby_size,
+            standby_size=int(desktop_pool_standby_size),
             storage_backup_policy_id="ocid1.volumebackuppolicy.oc1.xxxxyyyyyzzzz",
-            storage_size_in_gbs=desktop_pool_storage_size_in_gbs,
-            boot_volume_size_in_gbs=desktop_pool_boot_volume_size_in_gbs,
-            are_volumes_preserved=desktop_pool_are_volumes_preserved,
+            storage_size_in_gbs=int(desktop_pool_storage_size_in_gbs),
+            boot_volume_size_in_gbs=int(desktop_pool_boot_volume_size_in_gbs),
+            are_volumes_preserved=desktop_pool_are_volumes_preserved == "true",
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -1200,11 +1200,11 @@ class DesktopPool(pulumi.CustomResource):
             session_lifecycle_actions={
                 "disconnect": {
                     "action": "STOP",
-                    "grace_period_in_minutes": desktop_pool_session_lifecycle_actions_disconnect_grace_period_in_minutes,
+                    "grace_period_in_minutes": int(desktop_pool_session_lifecycle_actions_disconnect_grace_period_in_minutes),
                 },
                 "inactivity": {
                     "action": "DISCONNECT",
-                    "grace_period_in_minutes": desktop_pool_session_lifecycle_actions_inactivity_grace_period_in_minutes,
+                    "grace_period_in_minutes": int(desktop_pool_session_lifecycle_actions_inactivity_grace_period_in_minutes),
                 },
             },
             time_start_scheduled=desktop_pool_time_start_scheduled,
@@ -1236,33 +1236,33 @@ class DesktopPool(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 are_privileged_users: Optional[pulumi.Input[_builtins.bool]] = None,
-                 are_volumes_preserved: Optional[pulumi.Input[_builtins.bool]] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 availability_policy: Optional[pulumi.Input[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict']]] = None,
-                 boot_volume_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 contact_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 device_policy: Optional[pulumi.Input[Union['DesktopPoolDevicePolicyArgs', 'DesktopPoolDevicePolicyArgsDict']]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 image: Optional[pulumi.Input[Union['DesktopPoolImageArgs', 'DesktopPoolImageArgsDict']]] = None,
-                 is_storage_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 maximum_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 network_configuration: Optional[pulumi.Input[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 private_access_details: Optional[pulumi.Input[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']]] = None,
-                 session_lifecycle_actions: Optional[pulumi.Input[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict']]] = None,
-                 shape_config: Optional[pulumi.Input[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']]] = None,
-                 shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 standby_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 storage_backup_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 time_start_scheduled: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_stop_scheduled: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_dedicated_vm_host: Optional[pulumi.Input[_builtins.str]] = None,
+                 are_privileged_users: pulumi.Input[Optional[_builtins.bool]] = None,
+                 are_volumes_preserved: pulumi.Input[Optional[_builtins.bool]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_policy: pulumi.Input[Optional[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict']]] = None,
+                 boot_volume_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 contact_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 device_policy: pulumi.Input[Optional[Union['DesktopPoolDevicePolicyArgs', 'DesktopPoolDevicePolicyArgsDict']]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 image: pulumi.Input[Optional[Union['DesktopPoolImageArgs', 'DesktopPoolImageArgsDict']]] = None,
+                 is_storage_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 maximum_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 network_configuration: pulumi.Input[Optional[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 private_access_details: pulumi.Input[Optional[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']]] = None,
+                 session_lifecycle_actions: pulumi.Input[Optional[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict']]] = None,
+                 shape_config: pulumi.Input[Optional[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']]] = None,
+                 shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 standby_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 storage_backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 time_start_scheduled: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_stop_scheduled: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_dedicated_vm_host: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1342,36 +1342,36 @@ class DesktopPool(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            active_desktops: Optional[pulumi.Input[_builtins.int]] = None,
-            are_privileged_users: Optional[pulumi.Input[_builtins.bool]] = None,
-            are_volumes_preserved: Optional[pulumi.Input[_builtins.bool]] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            availability_policy: Optional[pulumi.Input[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict']]] = None,
-            boot_volume_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            contact_details: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            device_policy: Optional[pulumi.Input[Union['DesktopPoolDevicePolicyArgs', 'DesktopPoolDevicePolicyArgsDict']]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            image: Optional[pulumi.Input[Union['DesktopPoolImageArgs', 'DesktopPoolImageArgsDict']]] = None,
-            is_storage_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            maximum_size: Optional[pulumi.Input[_builtins.int]] = None,
-            network_configuration: Optional[pulumi.Input[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']]] = None,
-            nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            private_access_details: Optional[pulumi.Input[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']]] = None,
-            session_lifecycle_actions: Optional[pulumi.Input[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict']]] = None,
-            shape_config: Optional[pulumi.Input[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']]] = None,
-            shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-            standby_size: Optional[pulumi.Input[_builtins.int]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            storage_backup_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_start_scheduled: Optional[pulumi.Input[_builtins.str]] = None,
-            time_stop_scheduled: Optional[pulumi.Input[_builtins.str]] = None,
-            use_dedicated_vm_host: Optional[pulumi.Input[_builtins.str]] = None) -> 'DesktopPool':
+            active_desktops: pulumi.Input[Optional[_builtins.int]] = None,
+            are_privileged_users: pulumi.Input[Optional[_builtins.bool]] = None,
+            are_volumes_preserved: pulumi.Input[Optional[_builtins.bool]] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            availability_policy: pulumi.Input[Optional[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict']]] = None,
+            boot_volume_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            contact_details: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            device_policy: pulumi.Input[Optional[Union['DesktopPoolDevicePolicyArgs', 'DesktopPoolDevicePolicyArgsDict']]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            image: pulumi.Input[Optional[Union['DesktopPoolImageArgs', 'DesktopPoolImageArgsDict']]] = None,
+            is_storage_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            maximum_size: pulumi.Input[Optional[_builtins.int]] = None,
+            network_configuration: pulumi.Input[Optional[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict']]] = None,
+            nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            private_access_details: pulumi.Input[Optional[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict']]] = None,
+            session_lifecycle_actions: pulumi.Input[Optional[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict']]] = None,
+            shape_config: pulumi.Input[Optional[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict']]] = None,
+            shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+            standby_size: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_start_scheduled: pulumi.Input[Optional[_builtins.str]] = None,
+            time_stop_scheduled: pulumi.Input[Optional[_builtins.str]] = None,
+            use_dedicated_vm_host: pulumi.Input[Optional[_builtins.str]] = None) -> 'DesktopPool':
         """
         Get an existing DesktopPool resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

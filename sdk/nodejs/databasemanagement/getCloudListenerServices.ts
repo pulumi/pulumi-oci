@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudListenerServices = oci.DatabaseManagement.getCloudListenerServices({
+ * const testCloudListenerServices = oci.databasemanagement.getCloudListenerServices({
  *     cloudListenerId: testCloudListener.id,
  *     managedDatabaseId: testManagedDatabase.id,
  *     opcNamedCredentialId: cloudListenerServiceOpcNamedCredentialId,
@@ -86,7 +86,7 @@ export interface GetCloudListenerServicesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudListenerServices = oci.DatabaseManagement.getCloudListenerServices({
+ * const testCloudListenerServices = oci.databasemanagement.getCloudListenerServices({
  *     cloudListenerId: testCloudListener.id,
  *     managedDatabaseId: testManagedDatabase.id,
  *     opcNamedCredentialId: cloudListenerServiceOpcNamedCredentialId,
@@ -111,7 +111,7 @@ export interface GetCloudListenerServicesOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud listener.
      */
     cloudListenerId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetCloudListenerServicesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetCloudListenerServicesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
@@ -119,5 +119,5 @@ export interface GetCloudListenerServicesOutputArgs {
     /**
      * The OCID of the Named Credential.
      */
-    opcNamedCredentialId?: pulumi.Input<string>;
+    opcNamedCredentialId?: pulumi.Input<string | undefined>;
 }

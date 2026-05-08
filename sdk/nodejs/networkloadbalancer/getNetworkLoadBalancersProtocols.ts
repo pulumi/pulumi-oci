@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkLoadBalancersProtocols = oci.NetworkLoadBalancer.getNetworkLoadBalancersProtocols({});
+ * const testNetworkLoadBalancersProtocols = oci.networkloadbalancer.getNetworkLoadBalancersProtocols({});
  * ```
  */
 export function getNetworkLoadBalancersProtocols(args?: GetNetworkLoadBalancersProtocolsArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkLoadBalancersProtocolsResult> {
@@ -62,7 +62,7 @@ export interface GetNetworkLoadBalancersProtocolsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkLoadBalancersProtocols = oci.NetworkLoadBalancer.getNetworkLoadBalancersProtocols({});
+ * const testNetworkLoadBalancersProtocols = oci.networkloadbalancer.getNetworkLoadBalancersProtocols({});
  * ```
  */
 export function getNetworkLoadBalancersProtocolsOutput(args?: GetNetworkLoadBalancersProtocolsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkLoadBalancersProtocolsResult> {
@@ -77,5 +77,5 @@ export function getNetworkLoadBalancersProtocolsOutput(args?: GetNetworkLoadBala
  * A collection of arguments for invoking getNetworkLoadBalancersProtocols.
  */
 export interface GetNetworkLoadBalancersProtocolsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.NetworkLoadBalancer.GetNetworkLoadBalancersProtocolsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.NetworkLoadBalancer.GetNetworkLoadBalancersProtocolsFilterArgs>[] | undefined>;
 }

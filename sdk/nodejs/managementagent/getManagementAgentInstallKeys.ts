@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentInstallKeys = oci.ManagementAgent.getManagementAgentInstallKeys({
+ * const testManagementAgentInstallKeys = oci.managementagent.getManagementAgentInstallKeys({
  *     compartmentId: compartmentId,
  *     accessLevel: managementAgentInstallKeyAccessLevel,
- *     compartmentIdInSubtree: managementAgentInstallKeyCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: managementAgentInstallKeyCompartmentIdInSubtree === "true",
  *     displayName: managementAgentInstallKeyDisplayName,
  *     state: managementAgentInstallKeyState,
  * });
@@ -104,10 +104,10 @@ export interface GetManagementAgentInstallKeysResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentInstallKeys = oci.ManagementAgent.getManagementAgentInstallKeys({
+ * const testManagementAgentInstallKeys = oci.managementagent.getManagementAgentInstallKeys({
  *     compartmentId: compartmentId,
  *     accessLevel: managementAgentInstallKeyAccessLevel,
- *     compartmentIdInSubtree: managementAgentInstallKeyCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: managementAgentInstallKeyCompartmentIdInSubtree === "true",
  *     displayName: managementAgentInstallKeyDisplayName,
  *     state: managementAgentInstallKeyState,
  * });
@@ -132,7 +132,7 @@ export interface GetManagementAgentInstallKeysOutputArgs {
     /**
      * Value of this is always "ACCESSIBLE" and any other value is not supported.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment to which a request will be scoped.
      */
@@ -140,14 +140,14 @@ export interface GetManagementAgentInstallKeysOutputArgs {
     /**
      * if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * The display name for which the Key needs to be listed.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.GetManagementAgentInstallKeysFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.GetManagementAgentInstallKeysFilterArgs>[] | undefined>;
     /**
      * Filter to return only Management Agents in the particular lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -134,7 +134,7 @@ def get_secrets(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_secrets = oci.Vault.get_secrets(compartment_id=compartment_id,
+    test_secrets = oci.vault.get_secrets(compartment_id=compartment_id,
         name=secret_name,
         state=secret_state,
         vault_id=test_vault["id"])
@@ -163,11 +163,11 @@ def get_secrets(compartment_id: Optional[_builtins.str] = None,
         secrets=pulumi.get(__ret__, 'secrets'),
         state=pulumi.get(__ret__, 'state'),
         vault_id=pulumi.get(__ret__, 'vault_id'))
-def get_secrets_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecretsFilterArgs', 'GetSecretsFilterArgsDict']]]]] = None,
-                       name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       vault_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_secrets_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecretsFilterArgs', 'GetSecretsFilterArgsDict']]]]] = None,
+                       name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       vault_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecretsResult]:
     """
     This data source provides the list of Secrets in Oracle Cloud Infrastructure Vault service.
@@ -180,7 +180,7 @@ def get_secrets_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_secrets = oci.Vault.get_secrets(compartment_id=compartment_id,
+    test_secrets = oci.vault.get_secrets(compartment_id=compartment_id,
         name=secret_name,
         state=secret_state,
         vault_id=test_vault["id"])

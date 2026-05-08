@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbNodeConsoleConnection = oci.Database.getDbNodeConsoleConnection({
+ * const testDbNodeConsoleConnection = oci.database.getDbNodeConsoleConnection({
  *     dbNodeId: testDbNode.id,
  *     id: dbNodeConsoleConnectionId,
  * });
@@ -100,7 +100,7 @@ export interface GetDbNodeConsoleConnectionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbNodeConsoleConnection = oci.Database.getDbNodeConsoleConnection({
+ * const testDbNodeConsoleConnection = oci.database.getDbNodeConsoleConnection({
  *     dbNodeId: testDbNode.id,
  *     id: dbNodeConsoleConnectionId,
  * });

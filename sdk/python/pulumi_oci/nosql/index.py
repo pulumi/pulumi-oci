@@ -23,9 +23,9 @@ class IndexArgs:
     def __init__(__self__, *,
                  keys: pulumi.Input[Sequence[pulumi.Input['IndexKeyArgs']]],
                  table_name_or_id: pulumi.Input[_builtins.str],
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_if_not_exists: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_if_not_exists: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Index resource.
 
@@ -78,53 +78,53 @@ class IndexArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isIfNotExists")
-    def is_if_not_exists(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_if_not_exists(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
         """
         return pulumi.get(self, "is_if_not_exists")
 
     @is_if_not_exists.setter
-    def is_if_not_exists(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_if_not_exists(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_if_not_exists", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Index name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _IndexState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_if_not_exists: Optional[pulumi.Input[_builtins.bool]] = None,
-                 keys: Optional[pulumi.Input[Sequence[pulumi.Input['IndexKeyArgs']]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 table_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 table_name_or_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_if_not_exists: pulumi.Input[Optional[_builtins.bool]] = None,
+                 keys: pulumi.Input[Optional[Sequence[pulumi.Input['IndexKeyArgs']]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 table_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 table_name_or_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Index resources.
 
@@ -163,103 +163,103 @@ class _IndexState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isIfNotExists")
-    def is_if_not_exists(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_if_not_exists(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
         """
         return pulumi.get(self, "is_if_not_exists")
 
     @is_if_not_exists.setter
-    def is_if_not_exists(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_if_not_exists(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_if_not_exists", value)
 
     @_builtins.property
     @pulumi.getter
-    def keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IndexKeyArgs']]]]:
+    def keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IndexKeyArgs']]]]:
         """
         A set of keys for a secondary index.
         """
         return pulumi.get(self, "keys")
 
     @keys.setter
-    def keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IndexKeyArgs']]]]):
+    def keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IndexKeyArgs']]]]):
         pulumi.set(self, "keys", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Index name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The state of an index.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="tableId")
-    def table_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def table_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         the OCID of the table to which this index belongs.
         """
         return pulumi.get(self, "table_id")
 
     @table_id.setter
-    def table_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def table_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "table_id", value)
 
     @_builtins.property
     @pulumi.getter(name="tableName")
-    def table_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def table_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the table to which this index belongs.
         """
         return pulumi.get(self, "table_name")
 
     @table_name.setter
-    def table_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def table_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "table_name", value)
 
     @_builtins.property
     @pulumi.getter(name="tableNameOrId")
-    def table_name_or_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def table_name_or_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A table name within the compartment, or a table OCID.
 
@@ -270,7 +270,7 @@ class _IndexState:
         return pulumi.get(self, "table_name_or_id")
 
     @table_name_or_id.setter
-    def table_name_or_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def table_name_or_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "table_name_or_id", value)
 
 
@@ -280,11 +280,11 @@ class Index(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_if_not_exists: Optional[pulumi.Input[_builtins.bool]] = None,
-                 keys: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IndexKeyArgs', 'IndexKeyArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 table_name_or_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_if_not_exists: pulumi.Input[Optional[_builtins.bool]] = None,
+                 keys: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IndexKeyArgs', 'IndexKeyArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 table_name_or_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Index resource in Oracle Cloud Infrastructure NoSQL Database service.
@@ -309,7 +309,7 @@ class Index(pulumi.CustomResource):
             name=index_name,
             table_name_or_id=test_table_name_or["id"],
             compartment_id=compartment_id,
-            is_if_not_exists=index_is_if_not_exists)
+            is_if_not_exists=index_is_if_not_exists == "true")
         ```
 
         ## Import
@@ -362,7 +362,7 @@ class Index(pulumi.CustomResource):
             name=index_name,
             table_name_or_id=test_table_name_or["id"],
             compartment_id=compartment_id,
-            is_if_not_exists=index_is_if_not_exists)
+            is_if_not_exists=index_is_if_not_exists == "true")
         ```
 
         ## Import
@@ -389,11 +389,11 @@ class Index(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_if_not_exists: Optional[pulumi.Input[_builtins.bool]] = None,
-                 keys: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IndexKeyArgs', 'IndexKeyArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 table_name_or_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_if_not_exists: pulumi.Input[Optional[_builtins.bool]] = None,
+                 keys: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IndexKeyArgs', 'IndexKeyArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 table_name_or_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -426,15 +426,15 @@ class Index(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_if_not_exists: Optional[pulumi.Input[_builtins.bool]] = None,
-            keys: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IndexKeyArgs', 'IndexKeyArgsDict']]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            table_id: Optional[pulumi.Input[_builtins.str]] = None,
-            table_name: Optional[pulumi.Input[_builtins.str]] = None,
-            table_name_or_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'Index':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_if_not_exists: pulumi.Input[Optional[_builtins.bool]] = None,
+            keys: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IndexKeyArgs', 'IndexKeyArgsDict']]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            table_id: pulumi.Input[Optional[_builtins.str]] = None,
+            table_name: pulumi.Input[Optional[_builtins.str]] = None,
+            table_name_or_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'Index':
         """
         Get an existing Index resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

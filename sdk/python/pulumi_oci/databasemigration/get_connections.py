@@ -172,7 +172,7 @@ def get_connections(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connections = oci.DatabaseMigration.get_connections(compartment_id=compartment_id,
+    test_connections = oci.databasemigration.get_connections(compartment_id=compartment_id,
         connection_types=connection_connection_type,
         display_name=connection_display_name,
         source_connection_id=test_connection["id"],
@@ -213,14 +213,14 @@ def get_connections(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         technology_sub_type=pulumi.get(__ret__, 'technology_sub_type'),
         technology_types=pulumi.get(__ret__, 'technology_types'))
-def get_connections_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                           connection_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                           display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetConnectionsFilterArgs', 'GetConnectionsFilterArgsDict']]]]] = None,
-                           source_connection_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           technology_sub_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           technology_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_connections_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                           connection_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConnectionsFilterArgs', 'GetConnectionsFilterArgsDict']]]]] = None,
+                           source_connection_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           technology_sub_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           technology_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConnectionsResult]:
     """
     This data source provides the list of Connections in Oracle Cloud Infrastructure Database Migration service.
@@ -235,7 +235,7 @@ def get_connections_output(compartment_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_connections = oci.DatabaseMigration.get_connections(compartment_id=compartment_id,
+    test_connections = oci.databasemigration.get_connections(compartment_id=compartment_id,
         connection_types=connection_connection_type,
         display_name=connection_display_name,
         source_connection_id=test_connection["id"],

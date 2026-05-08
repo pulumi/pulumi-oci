@@ -395,7 +395,7 @@ def get_domains_group(attribute_sets: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_group = oci.Identity.get_domains_group(group_id=test_group_oci_identity_group["id"],
+    test_group = oci.identity.get_domains_group(group_id=test_group_oci_identity_group["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=[],
         attributes="",
@@ -452,12 +452,12 @@ def get_domains_group(attribute_sets: Optional[Sequence[_builtins.str]] = None,
         urnietfparamsscimschemasoracleidcsextensiongroup_groups=pulumi.get(__ret__, 'urnietfparamsscimschemasoracleidcsextensiongroup_groups'),
         urnietfparamsscimschemasoracleidcsextensionposix_groups=pulumi.get(__ret__, 'urnietfparamsscimschemasoracleidcsextensionposix_groups'),
         urnietfparamsscimschemasoracleidcsextensionrequestable_groups=pulumi.get(__ret__, 'urnietfparamsscimschemasoracleidcsextensionrequestable_groups'))
-def get_domains_group_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                             attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                             idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                             resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_group_output(attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                             attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                             idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                             resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsGroupResult]:
     """
     This data source provides details about a specific Group resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -470,7 +470,7 @@ def get_domains_group_output(attribute_sets: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_group = oci.Identity.get_domains_group(group_id=test_group_oci_identity_group["id"],
+    test_group = oci.identity.get_domains_group(group_id=test_group_oci_identity_group["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=[],
         attributes="",

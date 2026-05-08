@@ -122,7 +122,7 @@ def get_log_analytics_unprocessed_data_bucket(namespace: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_unprocessed_data_bucket = oci.LogAnalytics.get_log_analytics_unprocessed_data_bucket(namespace=log_analytics_unprocessed_data_bucket_namespace)
+    test_log_analytics_unprocessed_data_bucket = oci.loganalytics.get_log_analytics_unprocessed_data_bucket(namespace=log_analytics_unprocessed_data_bucket_namespace)
     ```
 
 
@@ -140,7 +140,7 @@ def get_log_analytics_unprocessed_data_bucket(namespace: Optional[_builtins.str]
         namespace=pulumi.get(__ret__, 'namespace'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_log_analytics_unprocessed_data_bucket_output(namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_log_analytics_unprocessed_data_bucket_output(namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsUnprocessedDataBucketResult]:
     """
     This data source provides details about a specific Log Analytics Unprocessed Data Bucket resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -153,7 +153,7 @@ def get_log_analytics_unprocessed_data_bucket_output(namespace: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_unprocessed_data_bucket = oci.LogAnalytics.get_log_analytics_unprocessed_data_bucket(namespace=log_analytics_unprocessed_data_bucket_namespace)
+    test_log_analytics_unprocessed_data_bucket = oci.loganalytics.get_log_analytics_unprocessed_data_bucket(namespace=log_analytics_unprocessed_data_bucket_namespace)
     ```
 
 

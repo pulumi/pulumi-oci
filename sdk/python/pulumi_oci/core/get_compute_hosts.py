@@ -201,11 +201,11 @@ def get_compute_hosts(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_hosts = oci.Core.get_compute_hosts(compartment_id=compartment_id,
+    test_compute_hosts = oci.core.get_compute_hosts(compartment_id=compartment_id,
         availability_domain=compute_host_availability_domain,
         compute_host_group_id=test_compute_host_group["id"],
         compute_host_health=compute_host_compute_host_health,
-        compute_host_in_subtree=compute_host_compute_host_in_subtree,
+        compute_host_in_subtree=compute_host_compute_host_in_subtree == "true",
         compute_host_lifecycle_state=compute_host_compute_host_lifecycle_state,
         display_name=compute_host_display_name,
         network_resource_id=test_resource["id"])
@@ -251,15 +251,15 @@ def get_compute_hosts(availability_domain: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         network_resource_id=pulumi.get(__ret__, 'network_resource_id'))
-def get_compute_hosts_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                             compute_host_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             compute_host_health: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             compute_host_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                             compute_host_lifecycle_state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeHostsFilterArgs', 'GetComputeHostsFilterArgsDict']]]]] = None,
-                             network_resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_compute_hosts_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                             compute_host_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             compute_host_health: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             compute_host_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                             compute_host_lifecycle_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeHostsFilterArgs', 'GetComputeHostsFilterArgsDict']]]]] = None,
+                             network_resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeHostsResult]:
     """
     This data source provides the list of Compute Hosts in Oracle Cloud Infrastructure Core service.
@@ -272,11 +272,11 @@ def get_compute_hosts_output(availability_domain: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_hosts = oci.Core.get_compute_hosts(compartment_id=compartment_id,
+    test_compute_hosts = oci.core.get_compute_hosts(compartment_id=compartment_id,
         availability_domain=compute_host_availability_domain,
         compute_host_group_id=test_compute_host_group["id"],
         compute_host_health=compute_host_compute_host_health,
-        compute_host_in_subtree=compute_host_compute_host_in_subtree,
+        compute_host_in_subtree=compute_host_compute_host_in_subtree == "true",
         compute_host_lifecycle_state=compute_host_compute_host_lifecycle_state,
         display_name=compute_host_display_name,
         network_resource_id=test_resource["id"])

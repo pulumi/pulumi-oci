@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeCapacityTopologyComputeBareMetalHosts = oci.Core.getComputeCapacityTopologyComputeBareMetalHosts({
+ * const testComputeCapacityTopologyComputeBareMetalHosts = oci.core.getComputeCapacityTopologyComputeBareMetalHosts({
  *     computeCapacityTopologyId: testComputeCapacityTopology.id,
  *     availabilityDomain: computeCapacityTopologyComputeBareMetalHostAvailabilityDomain,
  *     compartmentId: compartmentId,
@@ -114,7 +114,7 @@ export interface GetComputeCapacityTopologyComputeBareMetalHostsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeCapacityTopologyComputeBareMetalHosts = oci.Core.getComputeCapacityTopologyComputeBareMetalHosts({
+ * const testComputeCapacityTopologyComputeBareMetalHosts = oci.core.getComputeCapacityTopologyComputeBareMetalHosts({
  *     computeCapacityTopologyId: testComputeCapacityTopology.id,
  *     availabilityDomain: computeCapacityTopologyComputeBareMetalHostAvailabilityDomain,
  *     compartmentId: compartmentId,
@@ -144,11 +144,11 @@ export interface GetComputeCapacityTopologyComputeBareMetalHostsOutputArgs {
     /**
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity topology.
      */
@@ -156,14 +156,14 @@ export interface GetComputeCapacityTopologyComputeBareMetalHostsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute HPC island.
      */
-    computeHpcIslandId?: pulumi.Input<string>;
+    computeHpcIslandId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute local block.
      */
-    computeLocalBlockId?: pulumi.Input<string>;
+    computeLocalBlockId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute network block.
      */
-    computeNetworkBlockId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetComputeCapacityTopologyComputeBareMetalHostsFilterArgs>[]>;
+    computeNetworkBlockId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetComputeCapacityTopologyComputeBareMetalHostsFilterArgs>[] | undefined>;
 }

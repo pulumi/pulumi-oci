@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScript = oci.ApmSynthetics.getScript({
+ * const testScript = oci.apmsynthetics.getScript({
  *     apmDomainId: testApmDomain.id,
  *     scriptId: testScriptOciApmSyntheticsScript.id,
  * });
@@ -115,7 +115,7 @@ export interface GetScriptResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScript = oci.ApmSynthetics.getScript({
+ * const testScript = oci.apmsynthetics.getScript({
  *     apmDomainId: testApmDomain.id,
  *     scriptId: testScriptOciApmSyntheticsScript.id,
  * });

@@ -30,8 +30,8 @@ import * as utilities from "../utilities";
  *     buildPipelineStageType: buildPipelineStageBuildPipelineStageType,
  *     buildRunnerShapeConfig: {
  *         buildRunnerType: buildPipelineStageBuildRunnerShapeConfigBuildRunnerType,
- *         memoryInGbs: buildPipelineStageBuildRunnerShapeConfigMemoryInGbs,
- *         ocpus: buildPipelineStageBuildRunnerShapeConfigOcpus,
+ *         memoryInGbs: Number(buildPipelineStageBuildRunnerShapeConfigMemoryInGbs),
+ *         ocpus: Number(buildPipelineStageBuildRunnerShapeConfigOcpus),
  *     },
  *     buildSourceCollection: {
  *         items: [{
@@ -60,14 +60,14 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     image: buildPipelineStageImage,
- *     isPassAllParametersEnabled: buildPipelineStageIsPassAllParametersEnabled,
+ *     isPassAllParametersEnabled: buildPipelineStageIsPassAllParametersEnabled === "true",
  *     primaryBuildSource: buildPipelineStagePrimaryBuildSource,
  *     privateAccessConfig: {
  *         networkChannelType: buildPipelineStagePrivateAccessConfigNetworkChannelType,
  *         subnetId: testSubnet.id,
  *         nsgIds: buildPipelineStagePrivateAccessConfigNsgIds,
  *     },
- *     stageExecutionTimeoutInSeconds: buildPipelineStageStageExecutionTimeoutInSeconds,
+ *     stageExecutionTimeoutInSeconds: Number(buildPipelineStageStageExecutionTimeoutInSeconds),
  *     waitCriteria: {
  *         waitDuration: buildPipelineStageWaitCriteriaWaitDuration,
  *         waitType: buildPipelineStageWaitCriteriaWaitType,
@@ -299,103 +299,103 @@ export interface BuildPipelineStageState {
     /**
      * The OCID of the build pipeline.
      */
-    buildPipelineId?: pulumi.Input<string>;
+    buildPipelineId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The collection containing the predecessors of a stage.
      */
-    buildPipelineStagePredecessorCollection?: pulumi.Input<inputs.DevOps.BuildPipelineStageBuildPipelineStagePredecessorCollection>;
+    buildPipelineStagePredecessorCollection?: pulumi.Input<inputs.DevOps.BuildPipelineStageBuildPipelineStagePredecessorCollection | undefined>;
     /**
      * (Updatable) Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
      */
-    buildPipelineStageType?: pulumi.Input<string>;
+    buildPipelineStageType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The information about build runner.
      */
-    buildRunnerShapeConfig?: pulumi.Input<inputs.DevOps.BuildPipelineStageBuildRunnerShapeConfig>;
+    buildRunnerShapeConfig?: pulumi.Input<inputs.DevOps.BuildPipelineStageBuildRunnerShapeConfig | undefined>;
     /**
      * (Updatable) Collection of build sources.
      */
-    buildSourceCollection?: pulumi.Input<inputs.DevOps.BuildPipelineStageBuildSourceCollection>;
+    buildSourceCollection?: pulumi.Input<inputs.DevOps.BuildPipelineStageBuildSourceCollection | undefined>;
     /**
      * (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
      */
-    buildSpecFile?: pulumi.Input<string>;
+    buildSpecFile?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment where the pipeline is created.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Specifies an array of artifacts that need to be pushed to the artifactory stores.
      */
-    deliverArtifactCollection?: pulumi.Input<inputs.DevOps.BuildPipelineStageDeliverArtifactCollection>;
+    deliverArtifactCollection?: pulumi.Input<inputs.DevOps.BuildPipelineStageDeliverArtifactCollection | undefined>;
     /**
      * (Updatable) A target deployment pipeline OCID that will run in this stage.
      */
-    deployPipelineId?: pulumi.Input<string>;
+    deployPipelineId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Optional description about the stage.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Image name for the build environment
      */
-    image?: pulumi.Input<string>;
+    image?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
      */
-    isPassAllParametersEnabled?: pulumi.Input<boolean>;
+    isPassAllParametersEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
      */
-    primaryBuildSource?: pulumi.Input<string>;
+    primaryBuildSource?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
      */
-    privateAccessConfig?: pulumi.Input<inputs.DevOps.BuildPipelineStagePrivateAccessConfig>;
+    privateAccessConfig?: pulumi.Input<inputs.DevOps.BuildPipelineStagePrivateAccessConfig | undefined>;
     /**
      * The OCID of the DevOps project.
      */
-    projectId?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Timeout for the build stage execution. Specify value in seconds.
      */
-    stageExecutionTimeoutInSeconds?: pulumi.Input<number>;
+    stageExecutionTimeoutInSeconds?: pulumi.Input<number | undefined>;
     /**
      * The current state of the stage.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specifies wait criteria for the Wait stage.
      */
-    waitCriteria?: pulumi.Input<inputs.DevOps.BuildPipelineStageWaitCriteria>;
+    waitCriteria?: pulumi.Input<inputs.DevOps.BuildPipelineStageWaitCriteria | undefined>;
 }
 
 /**
@@ -417,61 +417,61 @@ export interface BuildPipelineStageArgs {
     /**
      * (Updatable) The information about build runner.
      */
-    buildRunnerShapeConfig?: pulumi.Input<inputs.DevOps.BuildPipelineStageBuildRunnerShapeConfig>;
+    buildRunnerShapeConfig?: pulumi.Input<inputs.DevOps.BuildPipelineStageBuildRunnerShapeConfig | undefined>;
     /**
      * (Updatable) Collection of build sources.
      */
-    buildSourceCollection?: pulumi.Input<inputs.DevOps.BuildPipelineStageBuildSourceCollection>;
+    buildSourceCollection?: pulumi.Input<inputs.DevOps.BuildPipelineStageBuildSourceCollection | undefined>;
     /**
      * (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
      */
-    buildSpecFile?: pulumi.Input<string>;
+    buildSpecFile?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Specifies an array of artifacts that need to be pushed to the artifactory stores.
      */
-    deliverArtifactCollection?: pulumi.Input<inputs.DevOps.BuildPipelineStageDeliverArtifactCollection>;
+    deliverArtifactCollection?: pulumi.Input<inputs.DevOps.BuildPipelineStageDeliverArtifactCollection | undefined>;
     /**
      * (Updatable) A target deployment pipeline OCID that will run in this stage.
      */
-    deployPipelineId?: pulumi.Input<string>;
+    deployPipelineId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Optional description about the stage.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Image name for the build environment
      */
-    image?: pulumi.Input<string>;
+    image?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
      */
-    isPassAllParametersEnabled?: pulumi.Input<boolean>;
+    isPassAllParametersEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
      */
-    primaryBuildSource?: pulumi.Input<string>;
+    primaryBuildSource?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
      */
-    privateAccessConfig?: pulumi.Input<inputs.DevOps.BuildPipelineStagePrivateAccessConfig>;
+    privateAccessConfig?: pulumi.Input<inputs.DevOps.BuildPipelineStagePrivateAccessConfig | undefined>;
     /**
      * (Updatable) Timeout for the build stage execution. Specify value in seconds.
      */
-    stageExecutionTimeoutInSeconds?: pulumi.Input<number>;
+    stageExecutionTimeoutInSeconds?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Specifies wait criteria for the Wait stage.
      */
-    waitCriteria?: pulumi.Input<inputs.DevOps.BuildPipelineStageWaitCriteria>;
+    waitCriteria?: pulumi.Input<inputs.DevOps.BuildPipelineStageWaitCriteria | undefined>;
 }

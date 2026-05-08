@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudClusterInstances = oci.DatabaseManagement.getCloudClusterInstances({
+ * const testCloudClusterInstances = oci.databasemanagement.getCloudClusterInstances({
  *     cloudClusterId: testCloudCluster.id,
  *     compartmentId: compartmentId,
  *     displayName: cloudClusterInstanceDisplayName,
@@ -91,7 +91,7 @@ export interface GetCloudClusterInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudClusterInstances = oci.DatabaseManagement.getCloudClusterInstances({
+ * const testCloudClusterInstances = oci.databasemanagement.getCloudClusterInstances({
  *     cloudClusterId: testCloudCluster.id,
  *     compartmentId: compartmentId,
  *     displayName: cloudClusterInstanceDisplayName,
@@ -116,14 +116,14 @@ export interface GetCloudClusterInstancesOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud cluster.
      */
-    cloudClusterId?: pulumi.Input<string>;
+    cloudClusterId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return the resources that match the entire display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetCloudClusterInstancesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetCloudClusterInstancesFilterArgs>[] | undefined>;
 }

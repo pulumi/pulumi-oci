@@ -173,11 +173,11 @@ def get_default_configurations(configuration_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_default_configurations = oci.Psql.get_default_configurations(configuration_id=test_configuration["id"],
+    test_default_configurations = oci.psql.get_default_configurations(configuration_id=test_configuration["id"],
         db_version=default_configuration_db_version,
         display_name=default_configuration_display_name,
-        instance_memory_size_in_gbs=default_configuration_instance_memory_size_in_gbs,
-        instance_ocpu_count=default_configuration_instance_ocpu_count,
+        instance_memory_size_in_gbs=int(default_configuration_instance_memory_size_in_gbs),
+        instance_ocpu_count=int(default_configuration_instance_ocpu_count),
         shape=default_configuration_shape,
         state=default_configuration_state)
     ```
@@ -214,14 +214,14 @@ def get_default_configurations(configuration_id: Optional[_builtins.str] = None,
         instance_ocpu_count=pulumi.get(__ret__, 'instance_ocpu_count'),
         shape=pulumi.get(__ret__, 'shape'),
         state=pulumi.get(__ret__, 'state'))
-def get_default_configurations_output(configuration_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      db_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDefaultConfigurationsFilterArgs', 'GetDefaultConfigurationsFilterArgsDict']]]]] = None,
-                                      instance_memory_size_in_gbs: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                      instance_ocpu_count: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                      shape: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_default_configurations_output(configuration_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      db_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDefaultConfigurationsFilterArgs', 'GetDefaultConfigurationsFilterArgsDict']]]]] = None,
+                                      instance_memory_size_in_gbs: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                      instance_ocpu_count: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                      shape: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDefaultConfigurationsResult]:
     """
     This data source provides the list of Default Configurations in Oracle Cloud Infrastructure Psql service.
@@ -234,11 +234,11 @@ def get_default_configurations_output(configuration_id: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_default_configurations = oci.Psql.get_default_configurations(configuration_id=test_configuration["id"],
+    test_default_configurations = oci.psql.get_default_configurations(configuration_id=test_configuration["id"],
         db_version=default_configuration_db_version,
         display_name=default_configuration_display_name,
-        instance_memory_size_in_gbs=default_configuration_instance_memory_size_in_gbs,
-        instance_ocpu_count=default_configuration_instance_ocpu_count,
+        instance_memory_size_in_gbs=int(default_configuration_instance_memory_size_in_gbs),
+        instance_ocpu_count=int(default_configuration_instance_ocpu_count),
         shape=default_configuration_shape,
         state=default_configuration_state)
     ```

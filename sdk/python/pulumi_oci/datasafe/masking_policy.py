@@ -23,19 +23,19 @@ class MaskingPolicyArgs:
     def __init__(__self__, *,
                  column_sources: pulumi.Input[Sequence[pulumi.Input['MaskingPolicyColumnSourceArgs']]],
                  compartment_id: pulumi.Input[_builtins.str],
-                 add_masking_columns_from_sdm_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 generate_health_report_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_drop_temp_tables_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_redo_logging_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_refresh_stats_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 parallel_degree: Optional[pulumi.Input[_builtins.str]] = None,
-                 post_masking_script: Optional[pulumi.Input[_builtins.str]] = None,
-                 pre_masking_script: Optional[pulumi.Input[_builtins.str]] = None,
-                 recompile: Optional[pulumi.Input[_builtins.str]] = None):
+                 add_masking_columns_from_sdm_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 generate_health_report_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_drop_temp_tables_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_redo_logging_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_refresh_stats_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 parallel_degree: pulumi.Input[Optional[_builtins.str]] = None,
+                 post_masking_script: pulumi.Input[Optional[_builtins.str]] = None,
+                 pre_masking_script: pulumi.Input[Optional[_builtins.str]] = None,
+                 recompile: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a MaskingPolicy resource.
 
@@ -114,67 +114,67 @@ class MaskingPolicyArgs:
 
     @_builtins.property
     @pulumi.getter(name="addMaskingColumnsFromSdmTrigger")
-    def add_masking_columns_from_sdm_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def add_masking_columns_from_sdm_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
         """
         return pulumi.get(self, "add_masking_columns_from_sdm_trigger")
 
     @add_masking_columns_from_sdm_trigger.setter
-    def add_masking_columns_from_sdm_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def add_masking_columns_from_sdm_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "add_masking_columns_from_sdm_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the masking policy.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="generateHealthReportTrigger")
-    def generate_health_report_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def generate_health_report_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
 
@@ -185,116 +185,116 @@ class MaskingPolicyArgs:
         return pulumi.get(self, "generate_health_report_trigger")
 
     @generate_health_report_trigger.setter
-    def generate_health_report_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def generate_health_report_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "generate_health_report_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="isDropTempTablesEnabled")
-    def is_drop_temp_tables_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_drop_temp_tables_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
         """
         return pulumi.get(self, "is_drop_temp_tables_enabled")
 
     @is_drop_temp_tables_enabled.setter
-    def is_drop_temp_tables_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_drop_temp_tables_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_drop_temp_tables_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isRedoLoggingEnabled")
-    def is_redo_logging_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_redo_logging_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
         """
         return pulumi.get(self, "is_redo_logging_enabled")
 
     @is_redo_logging_enabled.setter
-    def is_redo_logging_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_redo_logging_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_redo_logging_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isRefreshStatsEnabled")
-    def is_refresh_stats_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_refresh_stats_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
         """
         return pulumi.get(self, "is_refresh_stats_enabled")
 
     @is_refresh_stats_enabled.setter
-    def is_refresh_stats_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_refresh_stats_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_refresh_stats_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="parallelDegree")
-    def parallel_degree(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parallel_degree(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
         """
         return pulumi.get(self, "parallel_degree")
 
     @parallel_degree.setter
-    def parallel_degree(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parallel_degree(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parallel_degree", value)
 
     @_builtins.property
     @pulumi.getter(name="postMaskingScript")
-    def post_masking_script(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def post_masking_script(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A post-masking script, which can contain SQL and PL/SQL statements. It's executed after the core masking script generated using the masking policy. It's usually used to perform additional transformation or cleanup work after masking.
         """
         return pulumi.get(self, "post_masking_script")
 
     @post_masking_script.setter
-    def post_masking_script(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def post_masking_script(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "post_masking_script", value)
 
     @_builtins.property
     @pulumi.getter(name="preMaskingScript")
-    def pre_masking_script(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pre_masking_script(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before  the core masking script generated using the masking policy. It's usually used to perform any preparation or prerequisite work before masking data.
         """
         return pulumi.get(self, "pre_masking_script")
 
     @pre_masking_script.setter
-    def pre_masking_script(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pre_masking_script(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pre_masking_script", value)
 
     @_builtins.property
     @pulumi.getter
-    def recompile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def recompile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
         """
         return pulumi.get(self, "recompile")
 
     @recompile.setter
-    def recompile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def recompile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "recompile", value)
 
 
 @pulumi.input_type
 class _MaskingPolicyState:
     def __init__(__self__, *,
-                 add_masking_columns_from_sdm_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 are_target_credentials_required: Optional[pulumi.Input[_builtins.bool]] = None,
-                 column_sources: Optional[pulumi.Input[Sequence[pulumi.Input['MaskingPolicyColumnSourceArgs']]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 generate_health_report_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_drop_temp_tables_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_redo_logging_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_refresh_stats_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 parallel_degree: Optional[pulumi.Input[_builtins.str]] = None,
-                 post_masking_script: Optional[pulumi.Input[_builtins.str]] = None,
-                 pre_masking_script: Optional[pulumi.Input[_builtins.str]] = None,
-                 recompile: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 add_masking_columns_from_sdm_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 are_target_credentials_required: pulumi.Input[Optional[_builtins.bool]] = None,
+                 column_sources: pulumi.Input[Optional[Sequence[pulumi.Input['MaskingPolicyColumnSourceArgs']]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 generate_health_report_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_drop_temp_tables_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_redo_logging_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_refresh_stats_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 parallel_degree: pulumi.Input[Optional[_builtins.str]] = None,
+                 post_masking_script: pulumi.Input[Optional[_builtins.str]] = None,
+                 pre_masking_script: pulumi.Input[Optional[_builtins.str]] = None,
+                 recompile: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MaskingPolicy resources.
 
@@ -363,103 +363,103 @@ class _MaskingPolicyState:
 
     @_builtins.property
     @pulumi.getter(name="addMaskingColumnsFromSdmTrigger")
-    def add_masking_columns_from_sdm_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def add_masking_columns_from_sdm_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
         """
         return pulumi.get(self, "add_masking_columns_from_sdm_trigger")
 
     @add_masking_columns_from_sdm_trigger.setter
-    def add_masking_columns_from_sdm_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def add_masking_columns_from_sdm_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "add_masking_columns_from_sdm_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="areTargetCredentialsRequired")
-    def are_target_credentials_required(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def are_target_credentials_required(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether target database credentials are required to perform masking with this policy
         """
         return pulumi.get(self, "are_target_credentials_required")
 
     @are_target_credentials_required.setter
-    def are_target_credentials_required(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def are_target_credentials_required(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "are_target_credentials_required", value)
 
     @_builtins.property
     @pulumi.getter(name="columnSources")
-    def column_sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MaskingPolicyColumnSourceArgs']]]]:
+    def column_sources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MaskingPolicyColumnSourceArgs']]]]:
         """
         (Updatable) Details to associate a column source with a masking policy.
         """
         return pulumi.get(self, "column_sources")
 
     @column_sources.setter
-    def column_sources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MaskingPolicyColumnSourceArgs']]]]):
+    def column_sources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MaskingPolicyColumnSourceArgs']]]]):
         pulumi.set(self, "column_sources", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment where the masking policy should be created.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the masking policy.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="generateHealthReportTrigger")
-    def generate_health_report_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def generate_health_report_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
 
@@ -470,127 +470,127 @@ class _MaskingPolicyState:
         return pulumi.get(self, "generate_health_report_trigger")
 
     @generate_health_report_trigger.setter
-    def generate_health_report_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def generate_health_report_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "generate_health_report_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="isDropTempTablesEnabled")
-    def is_drop_temp_tables_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_drop_temp_tables_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
         """
         return pulumi.get(self, "is_drop_temp_tables_enabled")
 
     @is_drop_temp_tables_enabled.setter
-    def is_drop_temp_tables_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_drop_temp_tables_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_drop_temp_tables_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isRedoLoggingEnabled")
-    def is_redo_logging_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_redo_logging_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
         """
         return pulumi.get(self, "is_redo_logging_enabled")
 
     @is_redo_logging_enabled.setter
-    def is_redo_logging_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_redo_logging_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_redo_logging_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isRefreshStatsEnabled")
-    def is_refresh_stats_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_refresh_stats_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
         """
         return pulumi.get(self, "is_refresh_stats_enabled")
 
     @is_refresh_stats_enabled.setter
-    def is_refresh_stats_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_refresh_stats_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_refresh_stats_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="parallelDegree")
-    def parallel_degree(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parallel_degree(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
         """
         return pulumi.get(self, "parallel_degree")
 
     @parallel_degree.setter
-    def parallel_degree(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parallel_degree(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parallel_degree", value)
 
     @_builtins.property
     @pulumi.getter(name="postMaskingScript")
-    def post_masking_script(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def post_masking_script(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A post-masking script, which can contain SQL and PL/SQL statements. It's executed after the core masking script generated using the masking policy. It's usually used to perform additional transformation or cleanup work after masking.
         """
         return pulumi.get(self, "post_masking_script")
 
     @post_masking_script.setter
-    def post_masking_script(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def post_masking_script(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "post_masking_script", value)
 
     @_builtins.property
     @pulumi.getter(name="preMaskingScript")
-    def pre_masking_script(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pre_masking_script(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before  the core masking script generated using the masking policy. It's usually used to perform any preparation or prerequisite work before masking data.
         """
         return pulumi.get(self, "pre_masking_script")
 
     @pre_masking_script.setter
-    def pre_masking_script(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pre_masking_script(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pre_masking_script", value)
 
     @_builtins.property
     @pulumi.getter
-    def recompile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def recompile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
         """
         return pulumi.get(self, "recompile")
 
     @recompile.setter
-    def recompile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def recompile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "recompile", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the masking policy.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the masking policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the masking policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -600,21 +600,21 @@ class MaskingPolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 add_masking_columns_from_sdm_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 column_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MaskingPolicyColumnSourceArgs', 'MaskingPolicyColumnSourceArgsDict']]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 generate_health_report_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_drop_temp_tables_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_redo_logging_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_refresh_stats_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 parallel_degree: Optional[pulumi.Input[_builtins.str]] = None,
-                 post_masking_script: Optional[pulumi.Input[_builtins.str]] = None,
-                 pre_masking_script: Optional[pulumi.Input[_builtins.str]] = None,
-                 recompile: Optional[pulumi.Input[_builtins.str]] = None,
+                 add_masking_columns_from_sdm_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 column_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MaskingPolicyColumnSourceArgs', 'MaskingPolicyColumnSourceArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 generate_health_report_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_drop_temp_tables_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_redo_logging_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_refresh_stats_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 parallel_degree: pulumi.Input[Optional[_builtins.str]] = None,
+                 post_masking_script: pulumi.Input[Optional[_builtins.str]] = None,
+                 pre_masking_script: pulumi.Input[Optional[_builtins.str]] = None,
+                 recompile: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Masking Policy resource in Oracle Cloud Infrastructure Data Safe service.
@@ -661,9 +661,9 @@ class MaskingPolicy(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_drop_temp_tables_enabled=masking_policy_is_drop_temp_tables_enabled,
-            is_redo_logging_enabled=masking_policy_is_redo_logging_enabled,
-            is_refresh_stats_enabled=masking_policy_is_refresh_stats_enabled,
+            is_drop_temp_tables_enabled=masking_policy_is_drop_temp_tables_enabled == "true",
+            is_redo_logging_enabled=masking_policy_is_redo_logging_enabled == "true",
+            is_refresh_stats_enabled=masking_policy_is_refresh_stats_enabled == "true",
             parallel_degree=masking_policy_parallel_degree,
             post_masking_script=masking_policy_post_masking_script,
             pre_masking_script=masking_policy_pre_masking_script,
@@ -752,9 +752,9 @@ class MaskingPolicy(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_drop_temp_tables_enabled=masking_policy_is_drop_temp_tables_enabled,
-            is_redo_logging_enabled=masking_policy_is_redo_logging_enabled,
-            is_refresh_stats_enabled=masking_policy_is_refresh_stats_enabled,
+            is_drop_temp_tables_enabled=masking_policy_is_drop_temp_tables_enabled == "true",
+            is_redo_logging_enabled=masking_policy_is_redo_logging_enabled == "true",
+            is_refresh_stats_enabled=masking_policy_is_refresh_stats_enabled == "true",
             parallel_degree=masking_policy_parallel_degree,
             post_masking_script=masking_policy_post_masking_script,
             pre_masking_script=masking_policy_pre_masking_script,
@@ -785,21 +785,21 @@ class MaskingPolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 add_masking_columns_from_sdm_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 column_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MaskingPolicyColumnSourceArgs', 'MaskingPolicyColumnSourceArgsDict']]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 generate_health_report_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_drop_temp_tables_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_redo_logging_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_refresh_stats_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 parallel_degree: Optional[pulumi.Input[_builtins.str]] = None,
-                 post_masking_script: Optional[pulumi.Input[_builtins.str]] = None,
-                 pre_masking_script: Optional[pulumi.Input[_builtins.str]] = None,
-                 recompile: Optional[pulumi.Input[_builtins.str]] = None,
+                 add_masking_columns_from_sdm_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 column_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MaskingPolicyColumnSourceArgs', 'MaskingPolicyColumnSourceArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 generate_health_report_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_drop_temp_tables_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_redo_logging_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_refresh_stats_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 parallel_degree: pulumi.Input[Optional[_builtins.str]] = None,
+                 post_masking_script: pulumi.Input[Optional[_builtins.str]] = None,
+                 pre_masking_script: pulumi.Input[Optional[_builtins.str]] = None,
+                 recompile: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -842,25 +842,25 @@ class MaskingPolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            add_masking_columns_from_sdm_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            are_target_credentials_required: Optional[pulumi.Input[_builtins.bool]] = None,
-            column_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MaskingPolicyColumnSourceArgs', 'MaskingPolicyColumnSourceArgsDict']]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            generate_health_report_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            is_drop_temp_tables_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_redo_logging_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_refresh_stats_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            parallel_degree: Optional[pulumi.Input[_builtins.str]] = None,
-            post_masking_script: Optional[pulumi.Input[_builtins.str]] = None,
-            pre_masking_script: Optional[pulumi.Input[_builtins.str]] = None,
-            recompile: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'MaskingPolicy':
+            add_masking_columns_from_sdm_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            are_target_credentials_required: pulumi.Input[Optional[_builtins.bool]] = None,
+            column_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MaskingPolicyColumnSourceArgs', 'MaskingPolicyColumnSourceArgsDict']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            generate_health_report_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            is_drop_temp_tables_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_redo_logging_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_refresh_stats_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            parallel_degree: pulumi.Input[Optional[_builtins.str]] = None,
+            post_masking_script: pulumi.Input[Optional[_builtins.str]] = None,
+            pre_masking_script: pulumi.Input[Optional[_builtins.str]] = None,
+            recompile: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'MaskingPolicy':
         """
         Get an existing MaskingPolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

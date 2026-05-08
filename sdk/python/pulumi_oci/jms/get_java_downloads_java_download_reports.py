@@ -134,7 +134,7 @@ def get_java_downloads_java_download_reports(compartment_id: Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_java_download_reports = oci.Jms.get_java_downloads_java_download_reports(compartment_id=tenancy_ocid,
+    test_java_download_reports = oci.jms.get_java_downloads_java_download_reports(compartment_id=tenancy_ocid,
         display_name=java_download_report_display_name,
         java_download_report_id=test_java_download_report["id"],
         state=java_download_report_state)
@@ -163,11 +163,11 @@ def get_java_downloads_java_download_reports(compartment_id: Optional[_builtins.
         java_download_report_collections=pulumi.get(__ret__, 'java_download_report_collections'),
         java_download_report_id=pulumi.get(__ret__, 'java_download_report_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_java_downloads_java_download_reports_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                    display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetJavaDownloadsJavaDownloadReportsFilterArgs', 'GetJavaDownloadsJavaDownloadReportsFilterArgsDict']]]]] = None,
-                                                    java_download_report_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_java_downloads_java_download_reports_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJavaDownloadsJavaDownloadReportsFilterArgs', 'GetJavaDownloadsJavaDownloadReportsFilterArgsDict']]]]] = None,
+                                                    java_download_report_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJavaDownloadsJavaDownloadReportsResult]:
     """
     This data source provides the list of Java Download Reports in Oracle Cloud Infrastructure Jms Java Downloads service.
@@ -180,7 +180,7 @@ def get_java_downloads_java_download_reports_output(compartment_id: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_java_download_reports = oci.Jms.get_java_downloads_java_download_reports(compartment_id=tenancy_ocid,
+    test_java_download_reports = oci.jms.get_java_downloads_java_download_reports(compartment_id=tenancy_ocid,
         display_name=java_download_report_display_name,
         java_download_report_id=test_java_download_report["id"],
         state=java_download_report_state)

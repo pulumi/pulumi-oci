@@ -239,7 +239,7 @@ def get_agent_data_ingestion_job(data_ingestion_job_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_data_ingestion_job = oci.GenerativeAi.get_agent_data_ingestion_job(data_ingestion_job_id=test_data_ingestion_job_oci_generative_ai_agent_data_ingestion_job["id"])
+    test_data_ingestion_job = oci.generativeai.get_agent_data_ingestion_job(data_ingestion_job_id=test_data_ingestion_job_oci_generative_ai_agent_data_ingestion_job["id"])
     ```
 
 
@@ -267,7 +267,7 @@ def get_agent_data_ingestion_job(data_ingestion_job_id: Optional[_builtins.str] 
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_agent_data_ingestion_job_output(data_ingestion_job_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_agent_data_ingestion_job_output(data_ingestion_job_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentDataIngestionJobResult]:
     """
     This data source provides details about a specific Data Ingestion Job resource in Oracle Cloud Infrastructure Generative Ai Agent service.
@@ -282,7 +282,7 @@ def get_agent_data_ingestion_job_output(data_ingestion_job_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_data_ingestion_job = oci.GenerativeAi.get_agent_data_ingestion_job(data_ingestion_job_id=test_data_ingestion_job_oci_generative_ai_agent_data_ingestion_job["id"])
+    test_data_ingestion_job = oci.generativeai.get_agent_data_ingestion_job(data_ingestion_job_id=test_data_ingestion_job_oci_generative_ai_agent_data_ingestion_job["id"])
     ```
 
 

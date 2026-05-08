@@ -419,7 +419,7 @@ def get_alarm(alarm_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alarm = oci.Monitoring.get_alarm(alarm_id=test_alarm_oci_monitoring_alarm["id"])
+    test_alarm = oci.monitoring.get_alarm(alarm_id=test_alarm_oci_monitoring_alarm["id"])
     ```
 
 
@@ -461,7 +461,7 @@ def get_alarm(alarm_id: Optional[_builtins.str] = None,
         suppressions=pulumi.get(__ret__, 'suppressions'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_alarm_output(alarm_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_alarm_output(alarm_id: pulumi.Input[Optional[_builtins.str]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAlarmResult]:
     """
     This data source provides details about a specific Alarm resource in Oracle Cloud Infrastructure Monitoring service.
@@ -482,7 +482,7 @@ def get_alarm_output(alarm_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alarm = oci.Monitoring.get_alarm(alarm_id=test_alarm_oci_monitoring_alarm["id"])
+    test_alarm = oci.monitoring.get_alarm(alarm_id=test_alarm_oci_monitoring_alarm["id"])
     ```
 
 

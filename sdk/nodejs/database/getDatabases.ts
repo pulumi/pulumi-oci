@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabases = oci.Database.getDatabases({
+ * const testDatabases = oci.database.getDatabases({
  *     compartmentId: compartmentId,
  *     dbHomeId: testDbHome.id,
  *     dbName: databaseDbName,
@@ -107,7 +107,7 @@ export interface GetDatabasesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabases = oci.Database.getDatabases({
+ * const testDatabases = oci.database.getDatabases({
  *     compartmentId: compartmentId,
  *     dbHomeId: testDbHome.id,
  *     dbName: databaseDbName,
@@ -139,18 +139,18 @@ export interface GetDatabasesOutputArgs {
     /**
      * A Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). *Note: Either `dbHomeId` or `systemId` is required to make the LIST API call.
      */
-    dbHomeId?: pulumi.Input<string>;
+    dbHomeId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire database name given. The match is not case sensitive.
      */
-    dbName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDatabasesFilterArgs>[]>;
+    dbName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDatabasesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata DB system that you want to filter the database results by. Applies only to Exadata DB systems.
      */
-    systemId?: pulumi.Input<string>;
+    systemId?: pulumi.Input<string | undefined>;
 }

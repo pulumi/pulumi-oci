@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testImageShapes = oci.Core.getImageShapes({
+ * const testImageShapes = oci.core.getImageShapes({
  *     imageId: testImage.id,
  * });
  * ```
@@ -70,7 +70,7 @@ export interface GetImageShapesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testImageShapes = oci.Core.getImageShapes({
+ * const testImageShapes = oci.core.getImageShapes({
  *     imageId: testImage.id,
  * });
  * ```
@@ -87,7 +87,7 @@ export function getImageShapesOutput(args: GetImageShapesOutputArgs, opts?: pulu
  * A collection of arguments for invoking getImageShapes.
  */
 export interface GetImageShapesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetImageShapesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetImageShapesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image.
      */

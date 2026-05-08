@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOpensearchVersions = oci.Opensearch.getOpensearchVersions({
+ * const testOpensearchVersions = oci.opensearch.getOpensearchVersions({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -85,7 +85,7 @@ export interface GetOpensearchVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOpensearchVersions = oci.Opensearch.getOpensearchVersions({
+ * const testOpensearchVersions = oci.opensearch.getOpensearchVersions({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -106,5 +106,5 @@ export interface GetOpensearchVersionsOutputArgs {
      * The ID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Opensearch.GetOpensearchVersionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Opensearch.GetOpensearchVersionsFilterArgs>[] | undefined>;
 }

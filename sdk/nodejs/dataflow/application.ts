@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  *     driverShape: applicationDriverShape,
  *     executorShape: applicationExecutorShape,
  *     language: applicationLanguage,
- *     numExecutors: applicationNumExecutors,
+ *     numExecutors: Number(applicationNumExecutors),
  *     sparkVersion: applicationSparkVersion,
  *     applicationLogConfig: {
  *         logGroupId: testLogGroup.id,
@@ -362,142 +362,142 @@ export interface ApplicationState {
     /**
      * (Updatable) Logging details of Application logs for Data Flow Run.
      */
-    applicationLogConfig?: pulumi.Input<inputs.DataFlow.ApplicationApplicationLogConfig>;
+    applicationLogConfig?: pulumi.Input<inputs.DataFlow.ApplicationApplicationLogConfig | undefined>;
     /**
      * (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      */
-    archiveUri?: pulumi.Input<string>;
+    archiveUri?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "inputFile" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
      */
-    arguments?: pulumi.Input<pulumi.Input<string>[]>;
+    arguments?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The class for the application.
      */
-    className?: pulumi.Input<string>;
+    className?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of a compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      */
-    configuration?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    configuration?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly description. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The VM shape for the driver. Sets the driver cores and memory.
      */
-    driverShape?: pulumi.Input<string>;
+    driverShape?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
      */
-    driverShapeConfig?: pulumi.Input<inputs.DataFlow.ApplicationDriverShapeConfig>;
+    driverShapeConfig?: pulumi.Input<inputs.DataFlow.ApplicationDriverShapeConfig | undefined>;
     /**
      * (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
      */
-    execute?: pulumi.Input<string>;
+    execute?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The VM shape for the executors. Sets the executor cores and memory.
      */
-    executorShape?: pulumi.Input<string>;
+    executorShape?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
      */
-    executorShapeConfig?: pulumi.Input<inputs.DataFlow.ApplicationExecutorShapeConfig>;
+    executorShapeConfig?: pulumi.Input<inputs.DataFlow.ApplicationExecutorShapeConfig | undefined>;
     /**
      * (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      */
-    fileUri?: pulumi.Input<string>;
+    fileUri?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
      */
-    idleTimeoutInMinutes?: pulumi.Input<string>;
+    idleTimeoutInMinutes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Spark language.
      */
-    language?: pulumi.Input<string>;
+    language?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      */
-    logsBucketUri?: pulumi.Input<string>;
+    logsBucketUri?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
      */
-    maxDurationInMinutes?: pulumi.Input<string>;
+    maxDurationInMinutes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of Oracle Cloud Infrastructure Hive Metastore.
      */
-    metastoreId?: pulumi.Input<string>;
+    metastoreId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of executor VMs requested.
      */
-    numExecutors?: pulumi.Input<number>;
+    numExecutors?: pulumi.Input<number | undefined>;
     /**
      * The OCID of the user who created the resource.
      */
-    ownerPrincipalId?: pulumi.Input<string>;
+    ownerPrincipalId?: pulumi.Input<string | undefined>;
     /**
      * The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
      */
-    ownerUserName?: pulumi.Input<string>;
+    ownerUserName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "inputFile", value: "mydata.xml" }, { name: "variableX", value: "${x}"} ]
      */
-    parameters?: pulumi.Input<pulumi.Input<inputs.DataFlow.ApplicationParameter>[]>;
+    parameters?: pulumi.Input<pulumi.Input<inputs.DataFlow.ApplicationParameter>[] | undefined>;
     /**
      * (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
      */
-    poolId?: pulumi.Input<string>;
+    poolId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of a private endpoint.
      */
-    privateEndpointId?: pulumi.Input<string>;
+    privateEndpointId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Spark version utilized to run the application.
      */
-    sparkVersion?: pulumi.Input<string>;
+    sparkVersion?: pulumi.Input<string | undefined>;
     /**
      * The current state of this application.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A boolean flag which indicates whether related non-terminal Run(s) for the Application should be terminated along with Application deletion or not.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    terminateRunsOnDeletion?: pulumi.Input<boolean>;
+    terminateRunsOnDeletion?: pulumi.Input<boolean | undefined>;
     /**
      * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The Spark application processing type.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      */
-    warehouseBucketUri?: pulumi.Input<string>;
+    warehouseBucketUri?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -507,19 +507,19 @@ export interface ApplicationArgs {
     /**
      * (Updatable) Logging details of Application logs for Data Flow Run.
      */
-    applicationLogConfig?: pulumi.Input<inputs.DataFlow.ApplicationApplicationLogConfig>;
+    applicationLogConfig?: pulumi.Input<inputs.DataFlow.ApplicationApplicationLogConfig | undefined>;
     /**
      * (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      */
-    archiveUri?: pulumi.Input<string>;
+    archiveUri?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "inputFile" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
      */
-    arguments?: pulumi.Input<pulumi.Input<string>[]>;
+    arguments?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The class for the application.
      */
-    className?: pulumi.Input<string>;
+    className?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of a compartment.
      */
@@ -527,15 +527,15 @@ export interface ApplicationArgs {
     /**
      * (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      */
-    configuration?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    configuration?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly description. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
      */
@@ -547,11 +547,11 @@ export interface ApplicationArgs {
     /**
      * (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
      */
-    driverShapeConfig?: pulumi.Input<inputs.DataFlow.ApplicationDriverShapeConfig>;
+    driverShapeConfig?: pulumi.Input<inputs.DataFlow.ApplicationDriverShapeConfig | undefined>;
     /**
      * (Updatable) The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
      */
-    execute?: pulumi.Input<string>;
+    execute?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The VM shape for the executors. Sets the executor cores and memory.
      */
@@ -559,19 +559,19 @@ export interface ApplicationArgs {
     /**
      * (Updatable) This is used to configure the shape of the driver or executor if a flexible shape is used.
      */
-    executorShapeConfig?: pulumi.Input<inputs.DataFlow.ApplicationExecutorShapeConfig>;
+    executorShapeConfig?: pulumi.Input<inputs.DataFlow.ApplicationExecutorShapeConfig | undefined>;
     /**
      * (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      */
-    fileUri?: pulumi.Input<string>;
+    fileUri?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
      */
-    idleTimeoutInMinutes?: pulumi.Input<string>;
+    idleTimeoutInMinutes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Spark language.
      */
@@ -579,15 +579,15 @@ export interface ApplicationArgs {
     /**
      * (Updatable) An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      */
-    logsBucketUri?: pulumi.Input<string>;
+    logsBucketUri?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
      */
-    maxDurationInMinutes?: pulumi.Input<string>;
+    maxDurationInMinutes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of Oracle Cloud Infrastructure Hive Metastore.
      */
-    metastoreId?: pulumi.Input<string>;
+    metastoreId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of executor VMs requested.
      */
@@ -595,15 +595,15 @@ export interface ApplicationArgs {
     /**
      * (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "inputFile", value: "mydata.xml" }, { name: "variableX", value: "${x}"} ]
      */
-    parameters?: pulumi.Input<pulumi.Input<inputs.DataFlow.ApplicationParameter>[]>;
+    parameters?: pulumi.Input<pulumi.Input<inputs.DataFlow.ApplicationParameter>[] | undefined>;
     /**
      * (Updatable) The OCID of a pool. Unique Id to indentify a dataflow pool resource.
      */
-    poolId?: pulumi.Input<string>;
+    poolId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of a private endpoint.
      */
-    privateEndpointId?: pulumi.Input<string>;
+    privateEndpointId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Spark version utilized to run the application.
      */
@@ -614,13 +614,13 @@ export interface ApplicationArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    terminateRunsOnDeletion?: pulumi.Input<boolean>;
+    terminateRunsOnDeletion?: pulumi.Input<boolean | undefined>;
     /**
      * The Spark application processing type.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      */
-    warehouseBucketUri?: pulumi.Input<string>;
+    warehouseBucketUri?: pulumi.Input<string | undefined>;
 }

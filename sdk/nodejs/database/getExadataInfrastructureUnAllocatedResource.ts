@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadataInfrastructureUnAllocatedResource = oci.Database.getExadataInfrastructureUnAllocatedResource({
+ * const testExadataInfrastructureUnAllocatedResource = oci.database.getExadataInfrastructureUnAllocatedResource({
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     dbServers: exadataInfrastructureUnAllocatedResourceDbServers,
  * });
@@ -91,7 +91,7 @@ export interface GetExadataInfrastructureUnAllocatedResourceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadataInfrastructureUnAllocatedResource = oci.Database.getExadataInfrastructureUnAllocatedResource({
+ * const testExadataInfrastructureUnAllocatedResource = oci.database.getExadataInfrastructureUnAllocatedResource({
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     dbServers: exadataInfrastructureUnAllocatedResourceDbServers,
  * });
@@ -112,7 +112,7 @@ export interface GetExadataInfrastructureUnAllocatedResourceOutputArgs {
     /**
      * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
      */
-    dbServers?: pulumi.Input<pulumi.Input<string>[]>;
+    dbServers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

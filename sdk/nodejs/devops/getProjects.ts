@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProjects = oci.DevOps.getProjects({
+ * const testProjects = oci.devops.getProjects({
  *     compartmentId: compartmentId,
  *     id: projectId,
  *     name: projectName,
@@ -96,7 +96,7 @@ export interface GetProjectsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProjects = oci.DevOps.getProjects({
+ * const testProjects = oci.devops.getProjects({
  *     compartmentId: compartmentId,
  *     id: projectId,
  *     name: projectName,
@@ -123,17 +123,17 @@ export interface GetProjectsOutputArgs {
      * The OCID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DevOps.GetProjectsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DevOps.GetProjectsFilterArgs>[] | undefined>;
     /**
      * Unique identifier or OCID for listing a single resource by ID.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire name given.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only Projects that matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

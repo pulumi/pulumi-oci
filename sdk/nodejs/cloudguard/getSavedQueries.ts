@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSavedQueries = oci.CloudGuard.getSavedQueries({
+ * const testSavedQueries = oci.cloudguard.getSavedQueries({
  *     compartmentId: compartmentId,
  *     accessLevel: savedQueryAccessLevel,
- *     compartmentIdInSubtree: savedQueryCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: savedQueryCompartmentIdInSubtree === "true",
  *     displayName: savedQueryDisplayName,
  * });
  * ```
@@ -94,10 +94,10 @@ export interface GetSavedQueriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSavedQueries = oci.CloudGuard.getSavedQueries({
+ * const testSavedQueries = oci.cloudguard.getSavedQueries({
  *     compartmentId: compartmentId,
  *     accessLevel: savedQueryAccessLevel,
- *     compartmentIdInSubtree: savedQueryCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: savedQueryCompartmentIdInSubtree === "true",
  *     displayName: savedQueryDisplayName,
  * });
  * ```
@@ -120,7 +120,7 @@ export interface GetSavedQueriesOutputArgs {
     /**
      * Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment in which to list resources.
      */
@@ -128,10 +128,10 @@ export interface GetSavedQueriesOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CloudGuard.GetSavedQueriesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CloudGuard.GetSavedQueriesFilterArgs>[] | undefined>;
 }

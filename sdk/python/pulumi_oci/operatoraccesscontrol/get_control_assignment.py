@@ -428,7 +428,7 @@ def get_control_assignment(operator_control_assignment_id: Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_control_assignment = oci.OperatorAccessControl.get_control_assignment(operator_control_assignment_id=test_operator_control_assignment_oci_operator_access_control_operator_control_assignment["id"])
+    test_operator_control_assignment = oci.operatoraccesscontrol.get_control_assignment(operator_control_assignment_id=test_operator_control_assignment_oci_operator_access_control_operator_control_assignment["id"])
     ```
 
 
@@ -472,7 +472,7 @@ def get_control_assignment(operator_control_assignment_id: Optional[_builtins.st
         time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'),
         unassigner_id=pulumi.get(__ret__, 'unassigner_id'),
         validate_assignment_trigger=pulumi.get(__ret__, 'validate_assignment_trigger'))
-def get_control_assignment_output(operator_control_assignment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_control_assignment_output(operator_control_assignment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetControlAssignmentResult]:
     """
     This data source provides details about a specific Operator Control Assignment resource in Oracle Cloud Infrastructure Operator Access Control service.
@@ -485,7 +485,7 @@ def get_control_assignment_output(operator_control_assignment_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_control_assignment = oci.OperatorAccessControl.get_control_assignment(operator_control_assignment_id=test_operator_control_assignment_oci_operator_access_control_operator_control_assignment["id"])
+    test_operator_control_assignment = oci.operatoraccesscontrol.get_control_assignment(operator_control_assignment_id=test_operator_control_assignment_oci_operator_access_control_operator_control_assignment["id"])
     ```
 
 

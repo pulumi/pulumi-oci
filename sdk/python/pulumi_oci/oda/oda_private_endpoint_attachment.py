@@ -66,12 +66,12 @@ class OdaPrivateEndpointAttachmentArgs:
 @pulumi.input_type
 class _OdaPrivateEndpointAttachmentState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 oda_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 oda_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 oda_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 oda_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OdaPrivateEndpointAttachment resources.
 
@@ -101,31 +101,31 @@ class _OdaPrivateEndpointAttachmentState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint attachment belongs to.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="odaInstanceId")
-    def oda_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oda_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
         """
         return pulumi.get(self, "oda_instance_id")
 
     @oda_instance_id.setter
-    def oda_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oda_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oda_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="odaPrivateEndpointId")
-    def oda_private_endpoint_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oda_private_endpoint_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint.
 
@@ -136,43 +136,43 @@ class _OdaPrivateEndpointAttachmentState:
         return pulumi.get(self, "oda_private_endpoint_id")
 
     @oda_private_endpoint_id.setter
-    def oda_private_endpoint_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oda_private_endpoint_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oda_private_endpoint_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the ODA Private Endpoint attachment.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the resource was last updated. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -182,8 +182,8 @@ class OdaPrivateEndpointAttachment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 oda_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 oda_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 oda_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 oda_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Oda Private Endpoint Attachment resource in Oracle Cloud Infrastructure Digital Assistant service.
@@ -277,8 +277,8 @@ class OdaPrivateEndpointAttachment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 oda_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 oda_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 oda_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 oda_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -308,12 +308,12 @@ class OdaPrivateEndpointAttachment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            oda_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            oda_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'OdaPrivateEndpointAttachment':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            oda_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            oda_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'OdaPrivateEndpointAttachment':
         """
         Get an existing OdaPrivateEndpointAttachment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

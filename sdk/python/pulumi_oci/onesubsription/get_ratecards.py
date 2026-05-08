@@ -139,7 +139,7 @@ def get_ratecards(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ratecards = oci.OneSubsription.get_ratecards(compartment_id=compartment_id,
+    test_ratecards = oci.onesubsription.get_ratecards(compartment_id=compartment_id,
         subscription_id=test_subscription["id"],
         part_number=ratecard_part_number,
         time_from=ratecard_time_from,
@@ -172,12 +172,12 @@ def get_ratecards(compartment_id: Optional[_builtins.str] = None,
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         time_from=pulumi.get(__ret__, 'time_from'),
         time_to=pulumi.get(__ret__, 'time_to'))
-def get_ratecards_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRatecardsFilterArgs', 'GetRatecardsFilterArgsDict']]]]] = None,
-                         part_number: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                         time_from: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         time_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_ratecards_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRatecardsFilterArgs', 'GetRatecardsFilterArgsDict']]]]] = None,
+                         part_number: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                         time_from: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         time_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRatecardsResult]:
     """
     This data source provides the list of Ratecards in Oracle Cloud Infrastructure Onesubscription service.
@@ -191,7 +191,7 @@ def get_ratecards_output(compartment_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_ratecards = oci.OneSubsription.get_ratecards(compartment_id=compartment_id,
+    test_ratecards = oci.onesubsription.get_ratecards(compartment_id=compartment_id,
         subscription_id=test_subscription["id"],
         part_number=ratecard_part_number,
         time_from=ratecard_time_from,

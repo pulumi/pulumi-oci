@@ -131,7 +131,7 @@ def get_dynamic_sets(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dynamic_sets = oci.OsManagementHub.get_dynamic_sets(compartment_id=compartment_id,
+    test_dynamic_sets = oci.osmanagementhub.get_dynamic_sets(compartment_id=compartment_id,
         display_name=dynamic_set_display_name,
         display_name_contains=dynamic_set_display_name_contains,
         dynamic_set_id=test_dynamic_set["id"])
@@ -160,11 +160,11 @@ def get_dynamic_sets(compartment_id: Optional[_builtins.str] = None,
         dynamic_set_id=pulumi.get(__ret__, 'dynamic_set_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_dynamic_sets_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            display_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            dynamic_set_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDynamicSetsFilterArgs', 'GetDynamicSetsFilterArgsDict']]]]] = None,
+def get_dynamic_sets_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            dynamic_set_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDynamicSetsFilterArgs', 'GetDynamicSetsFilterArgsDict']]]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDynamicSetsResult]:
     """
     This data source provides the list of Dynamic Sets in Oracle Cloud Infrastructure Os Management Hub service.
@@ -177,7 +177,7 @@ def get_dynamic_sets_output(compartment_id: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_dynamic_sets = oci.OsManagementHub.get_dynamic_sets(compartment_id=compartment_id,
+    test_dynamic_sets = oci.osmanagementhub.get_dynamic_sets(compartment_id=compartment_id,
         display_name=dynamic_set_display_name,
         display_name_contains=dynamic_set_display_name_contains,
         dynamic_set_id=test_dynamic_set["id"])

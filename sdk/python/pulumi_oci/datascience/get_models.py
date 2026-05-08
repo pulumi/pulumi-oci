@@ -200,7 +200,7 @@ def get_models(category: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_models = oci.DataScience.get_models(compartment_id=compartment_id,
+    test_models = oci.datascience.get_models(compartment_id=compartment_id,
         category=model_category,
         created_by=model_created_by,
         display_name=model_display_name,
@@ -249,17 +249,17 @@ def get_models(category: Optional[_builtins.str] = None,
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'),
         version_label=pulumi.get(__ret__, 'version_label'))
-def get_models_output(category: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                      created_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetModelsFilterArgs', 'GetModelsFilterArgsDict']]]]] = None,
-                      id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      model_version_set_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      model_version_set_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      project_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      version_label: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_models_output(category: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                      created_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetModelsFilterArgs', 'GetModelsFilterArgsDict']]]]] = None,
+                      id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      model_version_set_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      model_version_set_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      project_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      version_label: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetModelsResult]:
     """
     This data source provides the list of Models in Oracle Cloud Infrastructure Data Science service.
@@ -272,7 +272,7 @@ def get_models_output(category: Optional[pulumi.Input[Optional[_builtins.str]]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_models = oci.DataScience.get_models(compartment_id=compartment_id,
+    test_models = oci.datascience.get_models(compartment_id=compartment_id,
         category=model_category,
         created_by=model_created_by,
         display_name=model_display_name,

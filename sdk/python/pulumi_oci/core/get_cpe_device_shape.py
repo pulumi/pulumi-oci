@@ -122,7 +122,7 @@ def get_cpe_device_shape(cpe_device_shape_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cpe_device_shape = oci.Core.get_cpe_device_shape(cpe_device_shape_id=test_cpe_device_shape_oci_core_cpe_device_shape["id"])
+    test_cpe_device_shape = oci.core.get_cpe_device_shape(cpe_device_shape_id=test_cpe_device_shape_oci_core_cpe_device_shape["id"])
     ```
 
 
@@ -139,7 +139,7 @@ def get_cpe_device_shape(cpe_device_shape_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         parameters=pulumi.get(__ret__, 'parameters'),
         template=pulumi.get(__ret__, 'template'))
-def get_cpe_device_shape_output(cpe_device_shape_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cpe_device_shape_output(cpe_device_shape_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCpeDeviceShapeResult]:
     """
     This data source provides details about a specific Cpe Device Shape resource in Oracle Cloud Infrastructure Core service.
@@ -160,7 +160,7 @@ def get_cpe_device_shape_output(cpe_device_shape_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_cpe_device_shape = oci.Core.get_cpe_device_shape(cpe_device_shape_id=test_cpe_device_shape_oci_core_cpe_device_shape["id"])
+    test_cpe_device_shape = oci.core.get_cpe_device_shape(cpe_device_shape_id=test_cpe_device_shape_oci_core_cpe_device_shape["id"])
     ```
 
 

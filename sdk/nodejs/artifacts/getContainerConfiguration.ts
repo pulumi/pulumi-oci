@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerConfiguration = oci.Artifacts.getContainerConfiguration({
+ * const testContainerConfiguration = oci.artifacts.getContainerConfiguration({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -63,7 +63,7 @@ export interface GetContainerConfigurationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerConfiguration = oci.Artifacts.getContainerConfiguration({
+ * const testContainerConfiguration = oci.artifacts.getContainerConfiguration({
  *     compartmentId: compartmentId,
  * });
  * ```

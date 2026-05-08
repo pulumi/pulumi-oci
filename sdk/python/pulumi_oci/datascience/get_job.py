@@ -327,7 +327,7 @@ def get_job(job_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_job = oci.DataScience.get_job(job_id=test_job_oci_datascience_job["id"])
+    test_job = oci.datascience.get_job(job_id=test_job_oci_datascience_job["id"])
     ```
 
 
@@ -364,7 +364,7 @@ def get_job(job_id: Optional[_builtins.str] = None,
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_job_output(job_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_job_output(job_id: pulumi.Input[Optional[_builtins.str]] = None,
                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJobResult]:
     """
     This data source provides details about a specific Job resource in Oracle Cloud Infrastructure Data Science service.
@@ -377,7 +377,7 @@ def get_job_output(job_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_job = oci.DataScience.get_job(job_id=test_job_oci_datascience_job["id"])
+    test_job = oci.datascience.get_job(job_id=test_job_oci_datascience_job["id"])
     ```
 
 

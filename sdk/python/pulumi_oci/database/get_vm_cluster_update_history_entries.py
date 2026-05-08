@@ -121,7 +121,7 @@ def get_vm_cluster_update_history_entries(filters: Optional[Sequence[Union['GetV
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_update_history_entries = oci.Database.get_vm_cluster_update_history_entries(vm_cluster_id=test_vm_cluster["id"],
+    test_vm_cluster_update_history_entries = oci.database.get_vm_cluster_update_history_entries(vm_cluster_id=test_vm_cluster["id"],
         state=vm_cluster_update_history_entry_state,
         update_type=vm_cluster_update_history_entry_update_type)
     ```
@@ -146,10 +146,10 @@ def get_vm_cluster_update_history_entries(filters: Optional[Sequence[Union['GetV
         update_type=pulumi.get(__ret__, 'update_type'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'),
         vm_cluster_update_history_entries=pulumi.get(__ret__, 'vm_cluster_update_history_entries'))
-def get_vm_cluster_update_history_entries_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVmClusterUpdateHistoryEntriesFilterArgs', 'GetVmClusterUpdateHistoryEntriesFilterArgsDict']]]]] = None,
-                                                 state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 update_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_vm_cluster_update_history_entries_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVmClusterUpdateHistoryEntriesFilterArgs', 'GetVmClusterUpdateHistoryEntriesFilterArgsDict']]]]] = None,
+                                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 update_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVmClusterUpdateHistoryEntriesResult]:
     """
     This data source provides the list of Vm Cluster Update History Entries in Oracle Cloud Infrastructure Database service.
@@ -162,7 +162,7 @@ def get_vm_cluster_update_history_entries_output(filters: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_update_history_entries = oci.Database.get_vm_cluster_update_history_entries(vm_cluster_id=test_vm_cluster["id"],
+    test_vm_cluster_update_history_entries = oci.database.get_vm_cluster_update_history_entries(vm_cluster_id=test_vm_cluster["id"],
         state=vm_cluster_update_history_entry_state,
         update_type=vm_cluster_update_history_entry_update_type)
     ```

@@ -25,7 +25,7 @@ import * as utilities from "../utilities";
  *     namespace: objectLifecyclePolicyNamespace,
  *     rules: [{
  *         action: objectLifecyclePolicyRulesAction,
- *         isEnabled: objectLifecyclePolicyRulesIsEnabled,
+ *         isEnabled: objectLifecyclePolicyRulesIsEnabled === "true",
  *         name: objectLifecyclePolicyRulesName,
  *         timeAmount: objectLifecyclePolicyRulesTimeAmount,
  *         timeUnit: objectLifecyclePolicyRulesTimeUnit,
@@ -134,19 +134,19 @@ export interface ObjectLifecyclePolicyState {
     /**
      * The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      */
-    bucket?: pulumi.Input<string>;
+    bucket?: pulumi.Input<string | undefined>;
     /**
      * The Object Storage namespace used for the request.
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The bucket's set of lifecycle policy rules.
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.ObjectLifecyclePolicyRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.ObjectLifecyclePolicyRule>[] | undefined>;
     /**
      * The date and time the object lifecycle policy was created, as described in [RFC 3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -164,5 +164,5 @@ export interface ObjectLifecyclePolicyArgs {
     /**
      * (Updatable) The bucket's set of lifecycle policy rules.
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.ObjectLifecyclePolicyRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.ObjectLifecyclePolicyRule>[] | undefined>;
 }

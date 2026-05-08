@@ -130,11 +130,11 @@ export class SslCipherSuite extends pulumi.CustomResource {
  * Input properties used for looking up and filtering SslCipherSuite resources.
  */
 export interface SslCipherSuiteState {
-    ciphers?: pulumi.Input<pulumi.Input<string>[]>;
+    ciphers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.
      */
-    loadBalancerId?: pulumi.Input<string>;
+    loadBalancerId?: pulumi.Input<string | undefined>;
     /**
      * A friendly name for the SSL cipher suite. It must be unique and it cannot be changed.
      *
@@ -157,8 +157,8 @@ export interface SslCipherSuiteState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    name?: pulumi.Input<string>;
-    state?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -192,5 +192,5 @@ export interface SslCipherSuiteArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

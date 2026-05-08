@@ -95,7 +95,7 @@ def get_db_home_patches(db_home_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_home_patches = oci.Database.get_db_home_patches(db_home_id=test_db_home["id"])
+    test_db_home_patches = oci.database.get_db_home_patches(db_home_id=test_db_home["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_db_home_patches(db_home_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         patches=pulumi.get(__ret__, 'patches'))
-def get_db_home_patches_output(db_home_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbHomePatchesFilterArgs', 'GetDbHomePatchesFilterArgsDict']]]]] = None,
+def get_db_home_patches_output(db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbHomePatchesFilterArgs', 'GetDbHomePatchesFilterArgsDict']]]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbHomePatchesResult]:
     """
     This data source provides the list of Db Home Patches in Oracle Cloud Infrastructure Database service.
@@ -126,7 +126,7 @@ def get_db_home_patches_output(db_home_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_db_home_patches = oci.Database.get_db_home_patches(db_home_id=test_db_home["id"])
+    test_db_home_patches = oci.database.get_db_home_patches(db_home_id=test_db_home["id"])
     ```
 
 

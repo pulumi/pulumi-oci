@@ -147,7 +147,7 @@ def get_fsu_readiness_checks(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fsu_readiness_checks = oci.FleetSoftwareUpdate.get_fsu_readiness_checks(compartment_id=compartment_id,
+    test_fsu_readiness_checks = oci.fleetsoftwareupdate.get_fsu_readiness_checks(compartment_id=compartment_id,
         display_name=fsu_readiness_check_display_name,
         resource_id=test_resource["id"],
         state=fsu_readiness_check_state,
@@ -180,12 +180,12 @@ def get_fsu_readiness_checks(compartment_id: Optional[_builtins.str] = None,
         resource_id=pulumi.get(__ret__, 'resource_id'),
         state=pulumi.get(__ret__, 'state'),
         type=pulumi.get(__ret__, 'type'))
-def get_fsu_readiness_checks_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFsuReadinessChecksFilterArgs', 'GetFsuReadinessChecksFilterArgsDict']]]]] = None,
-                                    resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_fsu_readiness_checks_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFsuReadinessChecksFilterArgs', 'GetFsuReadinessChecksFilterArgsDict']]]]] = None,
+                                    resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFsuReadinessChecksResult]:
     """
     This data source provides the list of Fsu Readiness Checks in Oracle Cloud Infrastructure Fleet Software Update service.
@@ -198,7 +198,7 @@ def get_fsu_readiness_checks_output(compartment_id: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_fsu_readiness_checks = oci.FleetSoftwareUpdate.get_fsu_readiness_checks(compartment_id=compartment_id,
+    test_fsu_readiness_checks = oci.fleetsoftwareupdate.get_fsu_readiness_checks(compartment_id=compartment_id,
         display_name=fsu_readiness_check_display_name,
         resource_id=test_resource["id"],
         state=fsu_readiness_check_state,

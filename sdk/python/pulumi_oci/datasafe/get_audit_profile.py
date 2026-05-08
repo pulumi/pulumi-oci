@@ -348,7 +348,7 @@ def get_audit_profile(audit_profile_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_profile = oci.DataSafe.get_audit_profile(audit_profile_id=test_audit_profile_oci_data_safe_audit_profile["id"])
+    test_audit_profile = oci.datasafe.get_audit_profile(audit_profile_id=test_audit_profile_oci_data_safe_audit_profile["id"])
     ```
 
 
@@ -385,7 +385,7 @@ def get_audit_profile(audit_profile_id: Optional[_builtins.str] = None,
         target_type=pulumi.get(__ret__, 'target_type'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_audit_profile_output(audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_audit_profile_output(audit_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuditProfileResult]:
     """
     This data source provides details about a specific Audit Profile resource in Oracle Cloud Infrastructure Data Safe service.
@@ -398,7 +398,7 @@ def get_audit_profile_output(audit_profile_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_profile = oci.DataSafe.get_audit_profile(audit_profile_id=test_audit_profile_oci_data_safe_audit_profile["id"])
+    test_audit_profile = oci.datasafe.get_audit_profile(audit_profile_id=test_audit_profile_oci_data_safe_audit_profile["id"])
     ```
 
 

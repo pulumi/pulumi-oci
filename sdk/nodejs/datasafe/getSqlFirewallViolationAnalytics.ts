@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSqlFirewallViolationAnalytics = oci.DataSafe.getSqlFirewallViolationAnalytics({
+ * const testSqlFirewallViolationAnalytics = oci.datasafe.getSqlFirewallViolationAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlFirewallViolationAnalyticAccessLevel,
- *     compartmentIdInSubtree: sqlFirewallViolationAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sqlFirewallViolationAnalyticCompartmentIdInSubtree === "true",
  *     groupBies: sqlFirewallViolationAnalyticGroupBy,
  *     queryTimeZone: sqlFirewallViolationAnalyticQueryTimeZone,
  *     scimQuery: sqlFirewallViolationAnalyticScimQuery,
@@ -131,10 +131,10 @@ export interface GetSqlFirewallViolationAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSqlFirewallViolationAnalytics = oci.DataSafe.getSqlFirewallViolationAnalytics({
+ * const testSqlFirewallViolationAnalytics = oci.datasafe.getSqlFirewallViolationAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlFirewallViolationAnalyticAccessLevel,
- *     compartmentIdInSubtree: sqlFirewallViolationAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sqlFirewallViolationAnalyticCompartmentIdInSubtree === "true",
  *     groupBies: sqlFirewallViolationAnalyticGroupBy,
  *     queryTimeZone: sqlFirewallViolationAnalyticQueryTimeZone,
  *     scimQuery: sqlFirewallViolationAnalyticScimQuery,
@@ -167,7 +167,7 @@ export interface GetSqlFirewallViolationAnalyticsOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -175,32 +175,32 @@ export interface GetSqlFirewallViolationAnalyticsOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSqlFirewallViolationAnalyticsFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSqlFirewallViolationAnalyticsFilterArgs>[] | undefined>;
     /**
      * A groupBy can only be used in combination with summaryField parameter. A groupBy value has to be a subset of the values mentioned in summaryField parameter.
      */
-    groupBies?: pulumi.Input<pulumi.Input<string>[]>;
+    groupBies?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Default time zone is UTC if no time zone provided. The date-time considerations of the resource will be in accordance with the specified time zone.
      */
-    queryTimeZone?: pulumi.Input<string>;
+    queryTimeZone?: pulumi.Input<string | undefined>;
     /**
      * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
      *
      * **Example:** query=(operationTime ge "2021-06-04T01:00:26.000Z") and (violationAction eq "BLOCKED")
      */
-    scimQuery?: pulumi.Input<string>;
+    scimQuery?: pulumi.Input<string | undefined>;
     /**
      * Specifies a subset of summarized fields to be returned in the response.
      */
-    summaryFields?: pulumi.Input<pulumi.Input<string>[]>;
+    summaryFields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeEnded?: pulumi.Input<string>;
+    timeEnded?: pulumi.Input<string | undefined>;
     /**
      * An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeStarted?: pulumi.Input<string>;
+    timeStarted?: pulumi.Input<string | undefined>;
 }

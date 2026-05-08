@@ -34,8 +34,8 @@ public final class AppMgmtControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AppMgmtControl.AppMgmtControlFunctions;
      * import com.pulumi.oci.AppMgmtControl.inputs.GetMonitoredInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -76,8 +76,8 @@ public final class AppMgmtControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AppMgmtControl.AppMgmtControlFunctions;
      * import com.pulumi.oci.AppMgmtControl.inputs.GetMonitoredInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -118,8 +118,8 @@ public final class AppMgmtControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AppMgmtControl.AppMgmtControlFunctions;
      * import com.pulumi.oci.AppMgmtControl.inputs.GetMonitoredInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -160,8 +160,8 @@ public final class AppMgmtControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AppMgmtControl.AppMgmtControlFunctions;
      * import com.pulumi.oci.AppMgmtControl.inputs.GetMonitoredInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -202,8 +202,8 @@ public final class AppMgmtControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AppMgmtControl.AppMgmtControlFunctions;
      * import com.pulumi.oci.AppMgmtControl.inputs.GetMonitoredInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -244,8 +244,8 @@ public final class AppMgmtControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AppMgmtControl.AppMgmtControlFunctions;
      * import com.pulumi.oci.AppMgmtControl.inputs.GetMonitoredInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -287,8 +287,8 @@ public final class AppMgmtControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AppMgmtControl.AppMgmtControlFunctions;
      * import com.pulumi.oci.AppMgmtControl.inputs.GetMonitoredInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -330,8 +330,8 @@ public final class AppMgmtControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AppMgmtControl.AppMgmtControlFunctions;
      * import com.pulumi.oci.AppMgmtControl.inputs.GetMonitoredInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -373,8 +373,8 @@ public final class AppMgmtControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AppMgmtControl.AppMgmtControlFunctions;
      * import com.pulumi.oci.AppMgmtControl.inputs.GetMonitoredInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -416,8 +416,8 @@ public final class AppMgmtControlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AppMgmtControl.AppMgmtControlFunctions;
      * import com.pulumi.oci.AppMgmtControl.inputs.GetMonitoredInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

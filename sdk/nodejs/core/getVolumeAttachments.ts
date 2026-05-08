@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeAttachments = oci.Core.getVolumeAttachments({
+ * const testVolumeAttachments = oci.core.getVolumeAttachments({
  *     compartmentId: compartmentId,
  *     availabilityDomain: volumeAttachmentAvailabilityDomain,
  *     instanceId: testInstance.id,
@@ -108,7 +108,7 @@ export interface GetVolumeAttachmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeAttachments = oci.Core.getVolumeAttachments({
+ * const testVolumeAttachments = oci.core.getVolumeAttachments({
  *     compartmentId: compartmentId,
  *     availabilityDomain: volumeAttachmentAvailabilityDomain,
  *     instanceId: testInstance.id,
@@ -134,18 +134,18 @@ export interface GetVolumeAttachmentsOutputArgs {
     /**
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVolumeAttachmentsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVolumeAttachmentsFilterArgs>[] | undefined>;
     /**
      * The OCID of the instance.
      */
-    instanceId?: pulumi.Input<string>;
+    instanceId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the volume.
      */
-    volumeId?: pulumi.Input<string>;
+    volumeId?: pulumi.Input<string | undefined>;
 }

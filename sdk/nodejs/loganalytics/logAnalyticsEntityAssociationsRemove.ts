@@ -121,11 +121,11 @@ export interface LogAnalyticsEntityAssociationsRemoveState {
     /**
      * Destination entities OCIDs with which associations are to be deleted
      */
-    associationEntities?: pulumi.Input<pulumi.Input<string>[]>;
+    associationEntities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The Log analytics entity OCID.
      */
-    logAnalyticsEntityId?: pulumi.Input<string>;
+    logAnalyticsEntityId?: pulumi.Input<string | undefined>;
     /**
      * The Log Analytics namespace used for the request. 
      *
@@ -133,7 +133,7 @@ export interface LogAnalyticsEntityAssociationsRemoveState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
 }
 
 /**

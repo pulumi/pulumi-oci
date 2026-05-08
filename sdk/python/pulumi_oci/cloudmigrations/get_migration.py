@@ -228,7 +228,7 @@ def get_migration(migration_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_migration = oci.CloudMigrations.get_migration(migration_id=test_migration_oci_cloud_migrations_migration["id"])
+    test_migration = oci.cloudmigrations.get_migration(migration_id=test_migration_oci_cloud_migrations_migration["id"])
     ```
 
 
@@ -255,7 +255,7 @@ def get_migration(migration_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_migration_output(migration_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_migration_output(migration_id: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMigrationResult]:
     """
     This data source provides details about a specific Migration resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -268,7 +268,7 @@ def get_migration_output(migration_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_migration = oci.CloudMigrations.get_migration(migration_id=test_migration_oci_cloud_migrations_migration["id"])
+    test_migration = oci.cloudmigrations.get_migration(migration_id=test_migration_oci_cloud_migrations_migration["id"])
     ```
 
 

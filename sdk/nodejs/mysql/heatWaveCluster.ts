@@ -22,8 +22,8 @@ import * as utilities from "../utilities";
  *
  * const testHeatWaveCluster = new oci.mysql.HeatWaveCluster("test_heat_wave_cluster", {
  *     dbSystemId: testDbSystem.id,
- *     clusterSize: heatWaveClusterClusterSize,
- *     isLakehouseEnabled: heatWaveClusterIsLakehouseEnabled,
+ *     clusterSize: Number(heatWaveClusterClusterSize),
+ *     isLakehouseEnabled: heatWaveClusterIsLakehouseEnabled === "true",
  *     shapeName: testShape.name,
  * });
  * ```
@@ -159,42 +159,42 @@ export interface HeatWaveClusterState {
     /**
      * A HeatWave node is a compute host that is part of a HeatWave cluster.
      */
-    clusterNodes?: pulumi.Input<pulumi.Input<inputs.Mysql.HeatWaveClusterClusterNode>[]>;
+    clusterNodes?: pulumi.Input<pulumi.Input<inputs.Mysql.HeatWaveClusterClusterNode>[] | undefined>;
     /**
      * (Updatable) A change to the number of nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with the new cluster of nodes. This may result in a significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
      */
-    clusterSize?: pulumi.Input<number>;
+    clusterSize?: pulumi.Input<number | undefined>;
     /**
      * The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    dbSystemId?: pulumi.Input<string>;
+    dbSystemId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
      */
-    isLakehouseEnabled?: pulumi.Input<boolean>;
+    isLakehouseEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Additional information about the current lifecycleState.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A change to the shape of the nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
      */
-    shapeName?: pulumi.Input<string>;
+    shapeName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The target state for the HeatWave cluster. Could be set to `ACTIVE` or `INACTIVE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the HeatWave cluster was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -212,7 +212,7 @@ export interface HeatWaveClusterArgs {
     /**
      * (Updatable) Enable/disable Lakehouse for the HeatWave cluster.
      */
-    isLakehouseEnabled?: pulumi.Input<boolean>;
+    isLakehouseEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A change to the shape of the nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with Compute instances of the new Shape. This may result in significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
      */
@@ -223,5 +223,5 @@ export interface HeatWaveClusterArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

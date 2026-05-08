@@ -131,7 +131,7 @@ def get_profile_available_software_sources(compartment_id: Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_profile_available_software_sources = oci.OsManagementHub.get_profile_available_software_sources(profile_id=test_profile["id"],
+    test_profile_available_software_sources = oci.osmanagementhub.get_profile_available_software_sources(profile_id=test_profile["id"],
         compartment_id=compartment_id,
         display_names=profile_available_software_source_display_name,
         display_name_contains=profile_available_software_source_display_name_contains)
@@ -160,11 +160,11 @@ def get_profile_available_software_sources(compartment_id: Optional[_builtins.st
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         profile_id=pulumi.get(__ret__, 'profile_id'))
-def get_profile_available_software_sources_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  display_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  display_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProfileAvailableSoftwareSourcesFilterArgs', 'GetProfileAvailableSoftwareSourcesFilterArgsDict']]]]] = None,
-                                                  profile_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_profile_available_software_sources_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  display_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProfileAvailableSoftwareSourcesFilterArgs', 'GetProfileAvailableSoftwareSourcesFilterArgsDict']]]]] = None,
+                                                  profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProfileAvailableSoftwareSourcesResult]:
     """
     This data source provides the list of Profile Available Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
@@ -177,7 +177,7 @@ def get_profile_available_software_sources_output(compartment_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_profile_available_software_sources = oci.OsManagementHub.get_profile_available_software_sources(profile_id=test_profile["id"],
+    test_profile_available_software_sources = oci.osmanagementhub.get_profile_available_software_sources(profile_id=test_profile["id"],
         compartment_id=compartment_id,
         display_names=profile_available_software_source_display_name,
         display_name_contains=profile_available_software_source_display_name_contains)

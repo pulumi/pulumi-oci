@@ -321,7 +321,7 @@ def get_security_policy_report_database_view_access_entry(database_view_access_e
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_report_database_view_access_entry = oci.DataSafe.get_security_policy_report_database_view_access_entry(database_view_access_entry_key=security_policy_report_database_view_access_entry_database_view_access_entry_key,
+    test_security_policy_report_database_view_access_entry = oci.datasafe.get_security_policy_report_database_view_access_entry(database_view_access_entry_key=security_policy_report_database_view_access_entry_database_view_access_entry_key,
         security_policy_report_id=test_security_policy_report["id"])
     ```
 
@@ -359,8 +359,8 @@ def get_security_policy_report_database_view_access_entry(database_view_access_e
         view_name=pulumi.get(__ret__, 'view_name'),
         view_schema=pulumi.get(__ret__, 'view_schema'),
         view_text=pulumi.get(__ret__, 'view_text'))
-def get_security_policy_report_database_view_access_entry_output(database_view_access_entry_key: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                 security_policy_report_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_security_policy_report_database_view_access_entry_output(database_view_access_entry_key: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                 security_policy_report_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityPolicyReportDatabaseViewAccessEntryResult]:
     """
     This data source provides details about a specific Security Policy Report Database View Access Entry resource in Oracle Cloud Infrastructure Data Safe service.
@@ -373,7 +373,7 @@ def get_security_policy_report_database_view_access_entry_output(database_view_a
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_report_database_view_access_entry = oci.DataSafe.get_security_policy_report_database_view_access_entry(database_view_access_entry_key=security_policy_report_database_view_access_entry_database_view_access_entry_key,
+    test_security_policy_report_database_view_access_entry = oci.datasafe.get_security_policy_report_database_view_access_entry(database_view_access_entry_key=security_policy_report_database_view_access_entry_database_view_access_entry_key,
         security_policy_report_id=test_security_policy_report["id"])
     ```
 

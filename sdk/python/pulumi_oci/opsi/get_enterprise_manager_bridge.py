@@ -227,7 +227,7 @@ def get_enterprise_manager_bridge(enterprise_manager_bridge_id: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_enterprise_manager_bridge = oci.Opsi.get_enterprise_manager_bridge(enterprise_manager_bridge_id=test_enterprise_manager_bridge_oci_opsi_enterprise_manager_bridge["id"])
+    test_enterprise_manager_bridge = oci.opsi.get_enterprise_manager_bridge(enterprise_manager_bridge_id=test_enterprise_manager_bridge_oci_opsi_enterprise_manager_bridge["id"])
     ```
 
 
@@ -254,7 +254,7 @@ def get_enterprise_manager_bridge(enterprise_manager_bridge_id: Optional[_builti
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_enterprise_manager_bridge_output(enterprise_manager_bridge_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_enterprise_manager_bridge_output(enterprise_manager_bridge_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEnterpriseManagerBridgeResult]:
     """
     This data source provides details about a specific Enterprise Manager Bridge resource in Oracle Cloud Infrastructure Opsi service.
@@ -267,7 +267,7 @@ def get_enterprise_manager_bridge_output(enterprise_manager_bridge_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_enterprise_manager_bridge = oci.Opsi.get_enterprise_manager_bridge(enterprise_manager_bridge_id=test_enterprise_manager_bridge_oci_opsi_enterprise_manager_bridge["id"])
+    test_enterprise_manager_bridge = oci.opsi.get_enterprise_manager_bridge(enterprise_manager_bridge_id=test_enterprise_manager_bridge_oci_opsi_enterprise_manager_bridge["id"])
     ```
 
 

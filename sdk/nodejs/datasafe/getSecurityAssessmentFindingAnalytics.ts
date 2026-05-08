@@ -26,13 +26,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentFindingAnalytics = oci.DataSafe.getSecurityAssessmentFindingAnalytics({
+ * const testSecurityAssessmentFindingAnalytics = oci.datasafe.getSecurityAssessmentFindingAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentFindingAnalyticAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentFindingAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAssessmentFindingAnalyticCompartmentIdInSubtree === "true",
  *     findingKey: securityAssessmentFindingAnalyticFindingKey,
  *     groupBy: securityAssessmentFindingAnalyticGroupBy,
- *     isTopFinding: securityAssessmentFindingAnalyticIsTopFinding,
+ *     isTopFinding: securityAssessmentFindingAnalyticIsTopFinding === "true",
  *     severity: securityAssessmentFindingAnalyticSeverity,
  *     topFindingStatus: securityAssessmentFindingAnalyticTopFindingStatus,
  * });
@@ -148,13 +148,13 @@ export interface GetSecurityAssessmentFindingAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentFindingAnalytics = oci.DataSafe.getSecurityAssessmentFindingAnalytics({
+ * const testSecurityAssessmentFindingAnalytics = oci.datasafe.getSecurityAssessmentFindingAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentFindingAnalyticAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentFindingAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAssessmentFindingAnalyticCompartmentIdInSubtree === "true",
  *     findingKey: securityAssessmentFindingAnalyticFindingKey,
  *     groupBy: securityAssessmentFindingAnalyticGroupBy,
- *     isTopFinding: securityAssessmentFindingAnalyticIsTopFinding,
+ *     isTopFinding: securityAssessmentFindingAnalyticIsTopFinding === "true",
  *     severity: securityAssessmentFindingAnalyticSeverity,
  *     topFindingStatus: securityAssessmentFindingAnalyticTopFindingStatus,
  * });
@@ -183,7 +183,7 @@ export interface GetSecurityAssessmentFindingAnalyticsOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -191,32 +191,32 @@ export interface GetSecurityAssessmentFindingAnalyticsOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityAssessmentFindingAnalyticsFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityAssessmentFindingAnalyticsFilterArgs>[] | undefined>;
     /**
      * The unique key that identifies the finding. It is a string and unique within a security assessment.
      */
-    findingKey?: pulumi.Input<string>;
+    findingKey?: pulumi.Input<string | undefined>;
     /**
      * Attribute by which the finding analytics data should be grouped.
      */
-    groupBy?: pulumi.Input<string>;
+    groupBy?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the findings that are marked as top findings.
      */
-    isTopFinding?: pulumi.Input<boolean>;
+    isTopFinding?: pulumi.Input<boolean | undefined>;
     /**
      * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
      * **Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1') scimQuery=(category eq "Users") and (targetId eq "target1") scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
      * Supported fields: severity reference title category targetId targetName
      */
-    scimQuery?: pulumi.Input<string>;
+    scimQuery?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only findings of a particular risk level.
      */
-    severity?: pulumi.Input<string>;
+    severity?: pulumi.Input<string | undefined>;
     /**
      * An optional filter to return only the top finding that match the specified status.
      */
-    topFindingStatus?: pulumi.Input<string>;
+    topFindingStatus?: pulumi.Input<string | undefined>;
 }

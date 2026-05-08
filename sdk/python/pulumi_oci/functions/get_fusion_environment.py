@@ -429,7 +429,7 @@ def get_fusion_environment(fusion_environment_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment = oci.Functions.get_fusion_environment(fusion_environment_id=test_fusion_environment_oci_fusion_apps_fusion_environment["id"])
+    test_fusion_environment = oci.functions.get_fusion_environment(fusion_environment_id=test_fusion_environment_oci_fusion_apps_fusion_environment["id"])
     ```
 
 
@@ -473,7 +473,7 @@ def get_fusion_environment(fusion_environment_id: Optional[_builtins.str] = None
         time_upcoming_maintenance=pulumi.get(__ret__, 'time_upcoming_maintenance'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
-def get_fusion_environment_output(fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fusion_environment_output(fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentResult]:
     """
     This data source provides details about a specific Fusion Environment resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -486,7 +486,7 @@ def get_fusion_environment_output(fusion_environment_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment = oci.Functions.get_fusion_environment(fusion_environment_id=test_fusion_environment_oci_fusion_apps_fusion_environment["id"])
+    test_fusion_environment = oci.functions.get_fusion_environment(fusion_environment_id=test_fusion_environment_oci_fusion_apps_fusion_environment["id"])
     ```
 
 

@@ -111,7 +111,7 @@ def get_compute_global_image_capability_schemas_versions(compute_global_image_ca
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_global_image_capability_schemas_versions = oci.Core.get_compute_global_image_capability_schemas_versions(compute_global_image_capability_schema_id=test_compute_global_image_capability_schema["id"],
+    test_compute_global_image_capability_schemas_versions = oci.core.get_compute_global_image_capability_schemas_versions(compute_global_image_capability_schema_id=test_compute_global_image_capability_schema["id"],
         display_name=compute_global_image_capability_schemas_version_display_name)
     ```
 
@@ -132,9 +132,9 @@ def get_compute_global_image_capability_schemas_versions(compute_global_image_ca
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_compute_global_image_capability_schemas_versions_output(compute_global_image_capability_schema_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeGlobalImageCapabilitySchemasVersionsFilterArgs', 'GetComputeGlobalImageCapabilitySchemasVersionsFilterArgsDict']]]]] = None,
+def get_compute_global_image_capability_schemas_versions_output(compute_global_image_capability_schema_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeGlobalImageCapabilitySchemasVersionsFilterArgs', 'GetComputeGlobalImageCapabilitySchemasVersionsFilterArgsDict']]]]] = None,
                                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeGlobalImageCapabilitySchemasVersionsResult]:
     """
     This data source provides the list of Compute Global Image Capability Schemas Versions in Oracle Cloud Infrastructure Core service.
@@ -147,7 +147,7 @@ def get_compute_global_image_capability_schemas_versions_output(compute_global_i
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_global_image_capability_schemas_versions = oci.Core.get_compute_global_image_capability_schemas_versions(compute_global_image_capability_schema_id=test_compute_global_image_capability_schema["id"],
+    test_compute_global_image_capability_schemas_versions = oci.core.get_compute_global_image_capability_schemas_versions(compute_global_image_capability_schema_id=test_compute_global_image_capability_schema["id"],
         display_name=compute_global_image_capability_schemas_version_display_name)
     ```
 

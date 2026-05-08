@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseToolsEndpointServices = oci.DatabaseTools.getDatabaseToolsEndpointServices({
+ * const testDatabaseToolsEndpointServices = oci.databasetools.getDatabaseToolsEndpointServices({
  *     compartmentId: compartmentId,
  *     displayName: databaseToolsEndpointServiceDisplayName,
  *     name: databaseToolsEndpointServiceName,
@@ -100,7 +100,7 @@ export interface GetDatabaseToolsEndpointServicesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseToolsEndpointServices = oci.DatabaseTools.getDatabaseToolsEndpointServices({
+ * const testDatabaseToolsEndpointServices = oci.databasetools.getDatabaseToolsEndpointServices({
  *     compartmentId: compartmentId,
  *     displayName: databaseToolsEndpointServiceDisplayName,
  *     name: databaseToolsEndpointServiceName,
@@ -130,14 +130,14 @@ export interface GetDatabaseToolsEndpointServicesOutputArgs {
     /**
      * A filter to return only resources that match the entire specified display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.GetDatabaseToolsEndpointServicesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.GetDatabaseToolsEndpointServicesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the entire specified name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

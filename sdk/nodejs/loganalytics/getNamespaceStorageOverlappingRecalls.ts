@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceStorageOverlappingRecalls = oci.LogAnalytics.getNamespaceStorageOverlappingRecalls({
+ * const testNamespaceStorageOverlappingRecalls = oci.loganalytics.getNamespaceStorageOverlappingRecalls({
  *     namespace: namespaceStorageOverlappingRecallNamespace,
  *     timeDataEnded: namespaceStorageOverlappingRecallTimeDataEnded,
  *     timeDataStarted: namespaceStorageOverlappingRecallTimeDataStarted,
@@ -87,7 +87,7 @@ export interface GetNamespaceStorageOverlappingRecallsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceStorageOverlappingRecalls = oci.LogAnalytics.getNamespaceStorageOverlappingRecalls({
+ * const testNamespaceStorageOverlappingRecalls = oci.loganalytics.getNamespaceStorageOverlappingRecalls({
  *     namespace: namespaceStorageOverlappingRecallNamespace,
  *     timeDataEnded: namespaceStorageOverlappingRecallTimeDataEnded,
  *     timeDataStarted: namespaceStorageOverlappingRecallTimeDataStarted,
@@ -108,7 +108,7 @@ export function getNamespaceStorageOverlappingRecallsOutput(args: GetNamespaceSt
  * A collection of arguments for invoking getNamespaceStorageOverlappingRecalls.
  */
 export interface GetNamespaceStorageOverlappingRecallsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetNamespaceStorageOverlappingRecallsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetNamespaceStorageOverlappingRecallsFilterArgs>[] | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
@@ -116,9 +116,9 @@ export interface GetNamespaceStorageOverlappingRecallsOutputArgs {
     /**
      * This is the end of the time range for recalled data
      */
-    timeDataEnded?: pulumi.Input<string>;
+    timeDataEnded?: pulumi.Input<string | undefined>;
     /**
      * This is the start of the time range for recalled data
      */
-    timeDataStarted?: pulumi.Input<string>;
+    timeDataStarted?: pulumi.Input<string | undefined>;
 }

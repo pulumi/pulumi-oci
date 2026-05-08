@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResourceAction = oci.Optimizer.getResourceAction({
+ * const testResourceAction = oci.optimizer.getResourceAction({
  *     resourceActionId: testResourceActionOciOptimizerResourceAction.id,
- *     includeResourceMetadata: resourceActionIncludeResourceMetadata,
+ *     includeResourceMetadata: resourceActionIncludeResourceMetadata === "true",
  * });
  * ```
  */
@@ -135,9 +135,9 @@ export interface GetResourceActionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResourceAction = oci.Optimizer.getResourceAction({
+ * const testResourceAction = oci.optimizer.getResourceAction({
  *     resourceActionId: testResourceActionOciOptimizerResourceAction.id,
- *     includeResourceMetadata: resourceActionIncludeResourceMetadata,
+ *     includeResourceMetadata: resourceActionIncludeResourceMetadata === "true",
  * });
  * ```
  */
@@ -156,7 +156,7 @@ export interface GetResourceActionOutputArgs {
     /**
      * Supplement additional resource information in extended metadata response.
      */
-    includeResourceMetadata?: pulumi.Input<boolean>;
+    includeResourceMetadata?: pulumi.Input<boolean | undefined>;
     /**
      * The unique OCID associated with the resource action.
      */

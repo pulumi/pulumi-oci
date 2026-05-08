@@ -249,7 +249,7 @@ def get_deployment(deployment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment = oci.ApiGateway.get_deployment(deployment_id=test_deployment_oci_apigateway_deployment["id"])
+    test_deployment = oci.apigateway.get_deployment(deployment_id=test_deployment_oci_apigateway_deployment["id"])
     ```
 
 
@@ -278,7 +278,7 @@ def get_deployment(deployment_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_deployment_output(deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_deployment_output(deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentResult]:
     """
     This data source provides details about a specific Deployment resource in Oracle Cloud Infrastructure API Gateway service.
@@ -291,7 +291,7 @@ def get_deployment_output(deployment_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment = oci.ApiGateway.get_deployment(deployment_id=test_deployment_oci_apigateway_deployment["id"])
+    test_deployment = oci.apigateway.get_deployment(deployment_id=test_deployment_oci_apigateway_deployment["id"])
     ```
 
 

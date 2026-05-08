@@ -64,19 +64,19 @@ __all__ = [
 ]
 
 class BackupCopyStatusArgsDict(TypedDict):
-    backup_id: NotRequired[pulumi.Input[_builtins.str]]
+    backup_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
     """
-    region: NotRequired[pulumi.Input[_builtins.str]]
+    region: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Region name of the remote region
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current state of the backup.
     """
-    state_details: NotRequired[pulumi.Input[_builtins.str]]
+    state_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message describing the current state of copy in more detail
     """
@@ -84,10 +84,10 @@ class BackupCopyStatusArgsDict(TypedDict):
 @pulumi.input_type
 class BackupCopyStatusArgs:
     def __init__(__self__, *,
-                 backup_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 state_details: Optional[pulumi.Input[_builtins.str]] = None):
+                 backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 state_details: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
         :param pulumi.Input[_builtins.str] region: Region name of the remote region
@@ -105,63 +105,63 @@ class BackupCopyStatusArgs:
 
     @_builtins.property
     @pulumi.getter(name="backupId")
-    def backup_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
         """
         return pulumi.get(self, "backup_id")
 
     @backup_id.setter
-    def backup_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Region name of the remote region
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the backup.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="stateDetails")
-    def state_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state of copy in more detail
         """
         return pulumi.get(self, "state_details")
 
     @state_details.setter
-    def state_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state_details", value)
 
 
 class BackupDbSystemDetailArgsDict(TypedDict):
-    config_id: NotRequired[pulumi.Input[_builtins.str]]
+    config_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
     """
-    db_version: NotRequired[pulumi.Input[_builtins.str]]
+    db_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The major and minor versions of the database system software.
     """
-    system_type: NotRequired[pulumi.Input[_builtins.str]]
+    system_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of the database system.
     """
@@ -169,9 +169,9 @@ class BackupDbSystemDetailArgsDict(TypedDict):
 @pulumi.input_type
 class BackupDbSystemDetailArgs:
     def __init__(__self__, *,
-                 config_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 config_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] config_id: OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
         :param pulumi.Input[_builtins.str] db_version: The major and minor versions of the database system software.
@@ -186,38 +186,38 @@ class BackupDbSystemDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="configId")
-    def config_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def config_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the configuration that was applied on the source dbSystem at the time when backup was taken.
         """
         return pulumi.get(self, "config_id")
 
     @config_id.setter
-    def config_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def config_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dbVersion")
-    def db_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The major and minor versions of the database system software.
         """
         return pulumi.get(self, "db_version")
 
     @db_version.setter
-    def db_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_version", value)
 
     @_builtins.property
     @pulumi.getter(name="systemType")
-    def system_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def system_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of the database system.
         """
         return pulumi.get(self, "system_type")
 
     @system_type.setter
-    def system_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def system_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "system_type", value)
 
 
@@ -269,7 +269,7 @@ class BackupSourceBackupDetailsArgs:
 
 
 class ConfigurationConfigurationDetailArgsDict(TypedDict):
-    items: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConfigurationConfigurationDetailItemArgsDict']]]]
+    items: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ConfigurationConfigurationDetailItemArgs']]]]]
     """
     List of ConfigParms object.
     """
@@ -277,7 +277,7 @@ class ConfigurationConfigurationDetailArgsDict(TypedDict):
 @pulumi.input_type
 class ConfigurationConfigurationDetailArgs:
     def __init__(__self__, *,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigurationConfigurationDetailItemArgs']]]] = None):
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigurationConfigurationDetailItemArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['ConfigurationConfigurationDetailItemArgs']]] items: List of ConfigParms object.
         """
@@ -286,47 +286,47 @@ class ConfigurationConfigurationDetailArgs:
 
     @_builtins.property
     @pulumi.getter
-    def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigurationConfigurationDetailItemArgs']]]]:
+    def items(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConfigurationConfigurationDetailItemArgs']]]]:
         """
         List of ConfigParms object.
         """
         return pulumi.get(self, "items")
 
     @items.setter
-    def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigurationConfigurationDetailItemArgs']]]]):
+    def items(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigurationConfigurationDetailItemArgs']]]]):
         pulumi.set(self, "items", value)
 
 
 class ConfigurationConfigurationDetailItemArgsDict(TypedDict):
-    allowed_values: NotRequired[pulumi.Input[_builtins.str]]
+    allowed_values: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Range or list of allowed values.
     """
-    config_key: NotRequired[pulumi.Input[_builtins.str]]
+    config_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The configuration variable name.
     """
-    data_type: NotRequired[pulumi.Input[_builtins.str]]
+    data_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Data type of the variable.
     """
-    default_config_value: NotRequired[pulumi.Input[_builtins.str]]
+    default_config_value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Default value for the configuration variable.
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Details about the configuration set.
     """
-    is_overridable: NotRequired[pulumi.Input[_builtins.bool]]
+    is_overridable: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Whether the value can be overridden or not.
     """
-    is_restart_required: NotRequired[pulumi.Input[_builtins.bool]]
+    is_restart_required: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     If true, modifying this configuration value will require a restart of the database.
     """
-    overriden_config_value: NotRequired[pulumi.Input[_builtins.str]]
+    overriden_config_value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     User-selected configuration variable value.
     """
@@ -334,14 +334,14 @@ class ConfigurationConfigurationDetailItemArgsDict(TypedDict):
 @pulumi.input_type
 class ConfigurationConfigurationDetailItemArgs:
     def __init__(__self__, *,
-                 allowed_values: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_config_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_overridable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_restart_required: Optional[pulumi.Input[_builtins.bool]] = None,
-                 overriden_config_value: Optional[pulumi.Input[_builtins.str]] = None):
+                 allowed_values: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_config_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_overridable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_restart_required: pulumi.Input[Optional[_builtins.bool]] = None,
+                 overriden_config_value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] allowed_values: Range or list of allowed values.
         :param pulumi.Input[_builtins.str] config_key: The configuration variable name.
@@ -371,98 +371,98 @@ class ConfigurationConfigurationDetailItemArgs:
 
     @_builtins.property
     @pulumi.getter(name="allowedValues")
-    def allowed_values(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def allowed_values(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Range or list of allowed values.
         """
         return pulumi.get(self, "allowed_values")
 
     @allowed_values.setter
-    def allowed_values(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def allowed_values(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "allowed_values", value)
 
     @_builtins.property
     @pulumi.getter(name="configKey")
-    def config_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def config_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The configuration variable name.
         """
         return pulumi.get(self, "config_key")
 
     @config_key.setter
-    def config_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def config_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_key", value)
 
     @_builtins.property
     @pulumi.getter(name="dataType")
-    def data_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Data type of the variable.
         """
         return pulumi.get(self, "data_type")
 
     @data_type.setter
-    def data_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_type", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultConfigValue")
-    def default_config_value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_config_value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Default value for the configuration variable.
         """
         return pulumi.get(self, "default_config_value")
 
     @default_config_value.setter
-    def default_config_value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_config_value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_config_value", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Details about the configuration set.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="isOverridable")
-    def is_overridable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_overridable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the value can be overridden or not.
         """
         return pulumi.get(self, "is_overridable")
 
     @is_overridable.setter
-    def is_overridable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_overridable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_overridable", value)
 
     @_builtins.property
     @pulumi.getter(name="isRestartRequired")
-    def is_restart_required(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_restart_required(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, modifying this configuration value will require a restart of the database.
         """
         return pulumi.get(self, "is_restart_required")
 
     @is_restart_required.setter
-    def is_restart_required(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_restart_required(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_restart_required", value)
 
     @_builtins.property
     @pulumi.getter(name="overridenConfigValue")
-    def overriden_config_value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def overriden_config_value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User-selected configuration variable value.
         """
         return pulumi.get(self, "overriden_config_value")
 
     @overriden_config_value.setter
-    def overriden_config_value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def overriden_config_value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "overriden_config_value", value)
 
 
@@ -593,15 +593,15 @@ class DbSystemCredentialsPasswordDetailsArgsDict(TypedDict):
     """
     The password type.
     """
-    password: NotRequired[pulumi.Input[_builtins.str]]
+    password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The database system password.
     """
-    secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret where the password is stored.
     """
-    secret_version: NotRequired[pulumi.Input[_builtins.str]]
+    secret_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The secret version of the stored password.
     """
@@ -610,9 +610,9 @@ class DbSystemCredentialsPasswordDetailsArgsDict(TypedDict):
 class DbSystemCredentialsPasswordDetailsArgs:
     def __init__(__self__, *,
                  password_type: pulumi.Input[_builtins.str],
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_version: Optional[pulumi.Input[_builtins.str]] = None):
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] password_type: The password type.
         :param pulumi.Input[_builtins.str] password: The database system password.
@@ -641,71 +641,71 @@ class DbSystemCredentialsPasswordDetailsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database system password.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret where the password is stored.
         """
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
-    def secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="secretVersion")
-    def secret_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The secret version of the stored password.
         """
         return pulumi.get(self, "secret_version")
 
     @secret_version.setter
-    def secret_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_version", value)
 
 
 class DbSystemInstanceArgsDict(TypedDict):
-    availability_domain: NotRequired[pulumi.Input[_builtins.str]]
+    availability_domain: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A user-provided description of a database system.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A unique identifier for the database instance node. Immutable on creation.
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current state of the database system.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
     """
@@ -713,14 +713,14 @@ class DbSystemInstanceArgsDict(TypedDict):
 @pulumi.input_type
 class DbSystemInstanceArgs:
     def __init__(__self__, *,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] availability_domain: Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-provided description of a database system.
@@ -750,111 +750,111 @@ class DbSystemInstanceArgs:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-provided description of a database system.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A unique identifier for the database instance node. Immutable on creation.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the database system.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
 class DbSystemInstancesDetailArgsDict(TypedDict):
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A user-provided description of the database instance node.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Display name of the database instance node. Avoid entering confidential information.
     """
-    private_ip: NotRequired[pulumi.Input[_builtins.str]]
+    private_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Private IP in customer subnet that will be assigned to the database instance node. This value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses in the specified subnet.
     """
@@ -862,9 +862,9 @@ class DbSystemInstancesDetailArgsDict(TypedDict):
 @pulumi.input_type
 class DbSystemInstancesDetailArgs:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] description: A user-provided description of the database instance node.
         :param pulumi.Input[_builtins.str] display_name: Display name of the database instance node. Avoid entering confidential information.
@@ -879,47 +879,47 @@ class DbSystemInstancesDetailArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-provided description of the database instance node.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Display name of the database instance node. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIp")
-    def private_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Private IP in customer subnet that will be assigned to the database instance node. This value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses in the specified subnet.
         """
         return pulumi.get(self, "private_ip")
 
     @private_ip.setter
-    def private_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_ip", value)
 
 
 class DbSystemManagementPolicyArgsDict(TypedDict):
-    backup_policy: NotRequired[pulumi.Input['DbSystemManagementPolicyBackupPolicyArgsDict']]
+    backup_policy: NotRequired[pulumi.Input[Optional['DbSystemManagementPolicyBackupPolicyArgs']]]
     """
     (Updatable) PostgreSQL database system backup policy.
     """
-    maintenance_window_start: NotRequired[pulumi.Input[_builtins.str]]
+    maintenance_window_start: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The start of the maintenance window in UTC.
 
@@ -929,8 +929,8 @@ class DbSystemManagementPolicyArgsDict(TypedDict):
 @pulumi.input_type
 class DbSystemManagementPolicyArgs:
     def __init__(__self__, *,
-                 backup_policy: Optional[pulumi.Input['DbSystemManagementPolicyBackupPolicyArgs']] = None,
-                 maintenance_window_start: Optional[pulumi.Input[_builtins.str]] = None):
+                 backup_policy: pulumi.Input[Optional['DbSystemManagementPolicyBackupPolicyArgs']] = None,
+                 maintenance_window_start: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input['DbSystemManagementPolicyBackupPolicyArgs'] backup_policy: (Updatable) PostgreSQL database system backup policy.
         :param pulumi.Input[_builtins.str] maintenance_window_start: (Updatable) The start of the maintenance window in UTC.
@@ -944,19 +944,19 @@ class DbSystemManagementPolicyArgs:
 
     @_builtins.property
     @pulumi.getter(name="backupPolicy")
-    def backup_policy(self) -> Optional[pulumi.Input['DbSystemManagementPolicyBackupPolicyArgs']]:
+    def backup_policy(self) -> pulumi.Input[Optional['DbSystemManagementPolicyBackupPolicyArgs']]:
         """
         (Updatable) PostgreSQL database system backup policy.
         """
         return pulumi.get(self, "backup_policy")
 
     @backup_policy.setter
-    def backup_policy(self, value: Optional[pulumi.Input['DbSystemManagementPolicyBackupPolicyArgs']]):
+    def backup_policy(self, value: pulumi.Input[Optional['DbSystemManagementPolicyBackupPolicyArgs']]):
         pulumi.set(self, "backup_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenanceWindowStart")
-    def maintenance_window_start(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def maintenance_window_start(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The start of the maintenance window in UTC.
 
@@ -965,32 +965,32 @@ class DbSystemManagementPolicyArgs:
         return pulumi.get(self, "maintenance_window_start")
 
     @maintenance_window_start.setter
-    def maintenance_window_start(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def maintenance_window_start(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "maintenance_window_start", value)
 
 
 class DbSystemManagementPolicyBackupPolicyArgsDict(TypedDict):
-    backup_start: NotRequired[pulumi.Input[_builtins.str]]
+    backup_start: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Hour of the day when the backup starts.
     """
-    copy_policy: NotRequired[pulumi.Input['DbSystemManagementPolicyBackupPolicyCopyPolicyArgsDict']]
+    copy_policy: NotRequired[pulumi.Input[Optional['DbSystemManagementPolicyBackupPolicyCopyPolicyArgs']]]
     """
     (Updatable) Backup copy details
     """
-    days_of_the_months: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]
+    days_of_the_months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]]
     """
     (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
     """
-    days_of_the_weeks: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    days_of_the_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The day of the week that the backup starts.
     """
-    kind: NotRequired[pulumi.Input[_builtins.str]]
+    kind: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The kind of backup policy.
     """
-    retention_days: NotRequired[pulumi.Input[_builtins.int]]
+    retention_days: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) How many days the data should be stored after the database system deletion.
     """
@@ -998,12 +998,12 @@ class DbSystemManagementPolicyBackupPolicyArgsDict(TypedDict):
 @pulumi.input_type
 class DbSystemManagementPolicyBackupPolicyArgs:
     def __init__(__self__, *,
-                 backup_start: Optional[pulumi.Input[_builtins.str]] = None,
-                 copy_policy: Optional[pulumi.Input['DbSystemManagementPolicyBackupPolicyCopyPolicyArgs']] = None,
-                 days_of_the_months: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]] = None,
-                 days_of_the_weeks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 kind: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_days: Optional[pulumi.Input[_builtins.int]] = None):
+                 backup_start: pulumi.Input[Optional[_builtins.str]] = None,
+                 copy_policy: pulumi.Input[Optional['DbSystemManagementPolicyBackupPolicyCopyPolicyArgs']] = None,
+                 days_of_the_months: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 days_of_the_weeks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 kind: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_days: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] backup_start: (Updatable) Hour of the day when the backup starts.
         :param pulumi.Input['DbSystemManagementPolicyBackupPolicyCopyPolicyArgs'] copy_policy: (Updatable) Backup copy details
@@ -1027,74 +1027,74 @@ class DbSystemManagementPolicyBackupPolicyArgs:
 
     @_builtins.property
     @pulumi.getter(name="backupStart")
-    def backup_start(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_start(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Hour of the day when the backup starts.
         """
         return pulumi.get(self, "backup_start")
 
     @backup_start.setter
-    def backup_start(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_start(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_start", value)
 
     @_builtins.property
     @pulumi.getter(name="copyPolicy")
-    def copy_policy(self) -> Optional[pulumi.Input['DbSystemManagementPolicyBackupPolicyCopyPolicyArgs']]:
+    def copy_policy(self) -> pulumi.Input[Optional['DbSystemManagementPolicyBackupPolicyCopyPolicyArgs']]:
         """
         (Updatable) Backup copy details
         """
         return pulumi.get(self, "copy_policy")
 
     @copy_policy.setter
-    def copy_policy(self, value: Optional[pulumi.Input['DbSystemManagementPolicyBackupPolicyCopyPolicyArgs']]):
+    def copy_policy(self, value: pulumi.Input[Optional['DbSystemManagementPolicyBackupPolicyCopyPolicyArgs']]):
         pulumi.set(self, "copy_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="daysOfTheMonths")
-    def days_of_the_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]:
+    def days_of_the_months(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
         """
         (Updatable) Day of the month when the backup should start. To ensure that the backup runs monthly, the latest day of the month that you can use to schedule a backup is the the 28th day.
         """
         return pulumi.get(self, "days_of_the_months")
 
     @days_of_the_months.setter
-    def days_of_the_months(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.int]]]]):
+    def days_of_the_months(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
         pulumi.set(self, "days_of_the_months", value)
 
     @_builtins.property
     @pulumi.getter(name="daysOfTheWeeks")
-    def days_of_the_weeks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def days_of_the_weeks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The day of the week that the backup starts.
         """
         return pulumi.get(self, "days_of_the_weeks")
 
     @days_of_the_weeks.setter
-    def days_of_the_weeks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def days_of_the_weeks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "days_of_the_weeks", value)
 
     @_builtins.property
     @pulumi.getter
-    def kind(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kind(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The kind of backup policy.
         """
         return pulumi.get(self, "kind")
 
     @kind.setter
-    def kind(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kind(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kind", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionDays")
-    def retention_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retention_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) How many days the data should be stored after the database system deletion.
         """
         return pulumi.get(self, "retention_days")
 
     @retention_days.setter
-    def retention_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retention_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retention_days", value)
 
 
@@ -1107,7 +1107,7 @@ class DbSystemManagementPolicyBackupPolicyCopyPolicyArgsDict(TypedDict):
     """
     (Updatable) List of region names of the remote region
     """
-    retention_period: NotRequired[pulumi.Input[_builtins.int]]
+    retention_period: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Retention period in days of the backup copy.
     """
@@ -1117,7 +1117,7 @@ class DbSystemManagementPolicyBackupPolicyCopyPolicyArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  regions: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 retention_period: Optional[pulumi.Input[_builtins.int]] = None):
+                 retention_period: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) target compartment to place a new backup
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] regions: (Updatable) List of region names of the remote region
@@ -1154,14 +1154,14 @@ class DbSystemManagementPolicyBackupPolicyCopyPolicyArgs:
 
     @_builtins.property
     @pulumi.getter(name="retentionPeriod")
-    def retention_period(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retention_period(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Retention period in days of the backup copy.
         """
         return pulumi.get(self, "retention_period")
 
     @retention_period.setter
-    def retention_period(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retention_period(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retention_period", value)
 
 
@@ -1170,15 +1170,15 @@ class DbSystemNetworkDetailsArgsDict(TypedDict):
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
     """
-    is_reader_endpoint_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_reader_endpoint_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Specifies if the reader endpoint is enabled on the dbSystem.
     """
-    nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    nsg_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
     """
-    primary_db_endpoint_private_ip: NotRequired[pulumi.Input[_builtins.str]]
+    primary_db_endpoint_private_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
     """
@@ -1187,9 +1187,9 @@ class DbSystemNetworkDetailsArgsDict(TypedDict):
 class DbSystemNetworkDetailsArgs:
     def __init__(__self__, *,
                  subnet_id: pulumi.Input[_builtins.str],
-                 is_reader_endpoint_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 primary_db_endpoint_private_ip: Optional[pulumi.Input[_builtins.str]] = None):
+                 is_reader_endpoint_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 primary_db_endpoint_private_ip: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer subnet associated with the database system.
         :param pulumi.Input[_builtins.bool] is_reader_endpoint_enabled: (Updatable) Specifies if the reader endpoint is enabled on the dbSystem.
@@ -1218,38 +1218,38 @@ class DbSystemNetworkDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="isReaderEndpointEnabled")
-    def is_reader_endpoint_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_reader_endpoint_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Specifies if the reader endpoint is enabled on the dbSystem.
         """
         return pulumi.get(self, "is_reader_endpoint_enabled")
 
     @is_reader_endpoint_enabled.setter
-    def is_reader_endpoint_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_reader_endpoint_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_reader_endpoint_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of customer Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
         """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryDbEndpointPrivateIp")
-    def primary_db_endpoint_private_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def primary_db_endpoint_private_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Private IP in customer subnet. The value is optional. If the IP is not provided, the IP will be chosen from the available IP addresses from the specified subnet.
         """
         return pulumi.get(self, "primary_db_endpoint_private_ip")
 
     @primary_db_endpoint_private_ip.setter
-    def primary_db_endpoint_private_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def primary_db_endpoint_private_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "primary_db_endpoint_private_ip", value)
 
 
@@ -1262,10 +1262,10 @@ class DbSystemPatchOperationArgsDict(TypedDict):
     """
     In case of `INSERT`, selection is `instances`. In case of `REMOVE`, selection is `instances[?id == '${var.instance_id}']`.
     """
-    from_: NotRequired[pulumi.Input[_builtins.str]]
-    position: NotRequired[pulumi.Input[_builtins.str]]
-    selected_item: NotRequired[pulumi.Input[_builtins.str]]
-    value: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    from_: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    position: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    selected_item: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    value: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     Specify instance details such as displayName, description or privateIp. Example: `{"displayName": "value"}`.
     """
@@ -1275,10 +1275,10 @@ class DbSystemPatchOperationArgs:
     def __init__(__self__, *,
                  operation: pulumi.Input[_builtins.str],
                  selection: pulumi.Input[_builtins.str],
-                 from_: Optional[pulumi.Input[_builtins.str]] = None,
-                 position: Optional[pulumi.Input[_builtins.str]] = None,
-                 selected_item: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 from_: pulumi.Input[Optional[_builtins.str]] = None,
+                 position: pulumi.Input[Optional[_builtins.str]] = None,
+                 selected_item: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] operation: The operation can be one of these values: `INSERT`, `REMOVE`.
         :param pulumi.Input[_builtins.str] selection: In case of `INSERT`, selection is `instances`. In case of `REMOVE`, selection is `instances[?id == '${var.instance_id}']`.
@@ -1321,41 +1321,41 @@ class DbSystemPatchOperationArgs:
 
     @_builtins.property
     @pulumi.getter(name="from")
-    def from_(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def from_(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "from_")
 
     @from_.setter
-    def from_(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def from_(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "from_", value)
 
     @_builtins.property
     @pulumi.getter
-    def position(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def position(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "position")
 
     @position.setter
-    def position(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def position(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "position", value)
 
     @_builtins.property
     @pulumi.getter(name="selectedItem")
-    def selected_item(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def selected_item(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "selected_item")
 
     @selected_item.setter
-    def selected_item(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def selected_item(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "selected_item", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def value(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Specify instance details such as displayName, description or privateIp. Example: `{"displayName": "value"}`.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def value(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "value", value)
 
 
@@ -1364,11 +1364,11 @@ class DbSystemSourceArgsDict(TypedDict):
     """
     The source descriminator. Example: `{"source_type": "BACKUP"}`.
     """
-    backup_id: NotRequired[pulumi.Input[_builtins.str]]
+    backup_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
     """
-    is_having_restore_config_overrides: NotRequired[pulumi.Input[_builtins.bool]]
+    is_having_restore_config_overrides: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Deprecated. Don't use.
     """
@@ -1377,8 +1377,8 @@ class DbSystemSourceArgsDict(TypedDict):
 class DbSystemSourceArgs:
     def __init__(__self__, *,
                  source_type: pulumi.Input[_builtins.str],
-                 backup_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_having_restore_config_overrides: Optional[pulumi.Input[_builtins.bool]] = None):
+                 backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_having_restore_config_overrides: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] source_type: The source descriminator. Example: `{"source_type": "BACKUP"}`.
         :param pulumi.Input[_builtins.str] backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
@@ -1404,26 +1404,26 @@ class DbSystemSourceArgs:
 
     @_builtins.property
     @pulumi.getter(name="backupId")
-    def backup_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
         """
         return pulumi.get(self, "backup_id")
 
     @backup_id.setter
-    def backup_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isHavingRestoreConfigOverrides")
-    def is_having_restore_config_overrides(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_having_restore_config_overrides(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Deprecated. Don't use.
         """
         return pulumi.get(self, "is_having_restore_config_overrides")
 
     @is_having_restore_config_overrides.setter
-    def is_having_restore_config_overrides(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_having_restore_config_overrides(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_having_restore_config_overrides", value)
 
 
@@ -1436,11 +1436,11 @@ class DbSystemStorageDetailsArgsDict(TypedDict):
     """
     Type of the database system.
     """
-    availability_domain: NotRequired[pulumi.Input[_builtins.str]]
+    availability_domain: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
     """
-    iops: NotRequired[pulumi.Input[_builtins.str]]
+    iops: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system. Find more about the supported Peformance Tiers [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/performance-tiers.htm).
     """
@@ -1450,8 +1450,8 @@ class DbSystemStorageDetailsArgs:
     def __init__(__self__, *,
                  is_regionally_durable: pulumi.Input[_builtins.bool],
                  system_type: pulumi.Input[_builtins.str],
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 iops: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 iops: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_regionally_durable: Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         :param pulumi.Input[_builtins.str] system_type: Type of the database system.
@@ -1491,26 +1491,26 @@ class DbSystemStorageDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter
-    def iops(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iops(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system. Find more about the supported Peformance Tiers [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/performance-tiers.htm).
         """
         return pulumi.get(self, "iops")
 
     @iops.setter
-    def iops(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iops(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iops", value)
 
 

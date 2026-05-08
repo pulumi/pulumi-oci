@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBackupDestinations = oci.Database.getBackupDestinations({
+ * const testBackupDestinations = oci.database.getBackupDestinations({
  *     compartmentId: compartmentId,
  *     type: backupDestinationType,
  * });
@@ -80,7 +80,7 @@ export interface GetBackupDestinationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBackupDestinations = oci.Database.getBackupDestinations({
+ * const testBackupDestinations = oci.database.getBackupDestinations({
  *     compartmentId: compartmentId,
  *     type: backupDestinationType,
  * });
@@ -103,9 +103,9 @@ export interface GetBackupDestinationsOutputArgs {
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetBackupDestinationsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetBackupDestinationsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given type of the Backup Destination.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

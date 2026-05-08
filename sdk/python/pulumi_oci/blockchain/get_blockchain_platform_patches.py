@@ -95,7 +95,7 @@ def get_blockchain_platform_patches(blockchain_platform_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_blockchain_platform_patches = oci.Blockchain.get_blockchain_platform_patches(blockchain_platform_id=test_blockchain_platform["id"])
+    test_blockchain_platform_patches = oci.blockchain.get_blockchain_platform_patches(blockchain_platform_id=test_blockchain_platform["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_blockchain_platform_patches(blockchain_platform_id: Optional[_builtins.s
         blockchain_platform_patch_collections=pulumi.get(__ret__, 'blockchain_platform_patch_collections'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_blockchain_platform_patches_output(blockchain_platform_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBlockchainPlatformPatchesFilterArgs', 'GetBlockchainPlatformPatchesFilterArgsDict']]]]] = None,
+def get_blockchain_platform_patches_output(blockchain_platform_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBlockchainPlatformPatchesFilterArgs', 'GetBlockchainPlatformPatchesFilterArgsDict']]]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBlockchainPlatformPatchesResult]:
     """
     This data source provides the list of Blockchain Platform Patches in Oracle Cloud Infrastructure Blockchain service.
@@ -126,7 +126,7 @@ def get_blockchain_platform_patches_output(blockchain_platform_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_blockchain_platform_patches = oci.Blockchain.get_blockchain_platform_patches(blockchain_platform_id=test_blockchain_platform["id"])
+    test_blockchain_platform_patches = oci.blockchain.get_blockchain_platform_patches(blockchain_platform_id=test_blockchain_platform["id"])
     ```
 
 

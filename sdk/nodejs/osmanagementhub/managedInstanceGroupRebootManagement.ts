@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *
  * const testManagedInstanceGroupRebootManagement = new oci.osmanagementhub.ManagedInstanceGroupRebootManagement("test_managed_instance_group_reboot_management", {
  *     managedInstanceGroupId: testManagedInstanceGroup.id,
- *     rebootTimeoutInMins: managedInstanceGroupRebootManagementRebootTimeoutInMins,
+ *     rebootTimeoutInMins: Number(managedInstanceGroupRebootManagementRebootTimeoutInMins),
  *     workRequestDetails: {
  *         description: managedInstanceGroupRebootManagementWorkRequestDetailsDescription,
  *         displayName: managedInstanceGroupRebootManagementWorkRequestDetailsDisplayName,
@@ -116,15 +116,15 @@ export interface ManagedInstanceGroupRebootManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
-    managedInstanceGroupId?: pulumi.Input<string>;
+    managedInstanceGroupId?: pulumi.Input<string | undefined>;
     /**
      * The number of minutes the service waits for the reboot to complete. If the instances in the group don't reboot  within this time, the reboot job status is set to failed.
      */
-    rebootTimeoutInMins?: pulumi.Input<number>;
+    rebootTimeoutInMins?: pulumi.Input<number | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupRebootManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupRebootManagementWorkRequestDetails | undefined>;
 }
 
 /**
@@ -138,9 +138,9 @@ export interface ManagedInstanceGroupRebootManagementArgs {
     /**
      * The number of minutes the service waits for the reboot to complete. If the instances in the group don't reboot  within this time, the reboot job status is set to failed.
      */
-    rebootTimeoutInMins?: pulumi.Input<number>;
+    rebootTimeoutInMins?: pulumi.Input<number | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupRebootManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupRebootManagementWorkRequestDetails | undefined>;
 }

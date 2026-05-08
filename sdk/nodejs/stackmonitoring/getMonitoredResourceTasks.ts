@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitoredResourceTasks = oci.StackMonitoring.getMonitoredResourceTasks({
+ * const testMonitoredResourceTasks = oci.stackmonitoring.getMonitoredResourceTasks({
  *     compartmentId: compartmentId,
  *     status: monitoredResourceTaskStatus,
  * });
@@ -77,7 +77,7 @@ export interface GetMonitoredResourceTasksResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitoredResourceTasks = oci.StackMonitoring.getMonitoredResourceTasks({
+ * const testMonitoredResourceTasks = oci.stackmonitoring.getMonitoredResourceTasks({
  *     compartmentId: compartmentId,
  *     status: monitoredResourceTaskStatus,
  * });
@@ -100,9 +100,9 @@ export interface GetMonitoredResourceTasksOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for which  stack monitoring resource tasks should be listed.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetMonitoredResourceTasksFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetMonitoredResourceTasksFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that matches with lifecycleState given.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

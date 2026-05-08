@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptions = oci.Ons.getSubscriptions({
+ * const testSubscriptions = oci.ons.getSubscriptions({
  *     compartmentId: compartmentId,
  *     topicId: testNotificationTopic.id,
  * });
@@ -84,7 +84,7 @@ export interface GetSubscriptionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptions = oci.Ons.getSubscriptions({
+ * const testSubscriptions = oci.ons.getSubscriptions({
  *     compartmentId: compartmentId,
  *     topicId: testNotificationTopic.id,
  * });
@@ -107,9 +107,9 @@ export interface GetSubscriptionsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Ons.GetSubscriptionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Ons.GetSubscriptionsFilterArgs>[] | undefined>;
     /**
      * Return all subscriptions that are subscribed to the given topic OCID. Either this query parameter or the compartmentId query parameter must be set.
      */
-    topicId?: pulumi.Input<string>;
+    topicId?: pulumi.Input<string | undefined>;
 }

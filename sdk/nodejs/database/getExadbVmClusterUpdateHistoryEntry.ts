@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadbVmClusterUpdateHistoryEntry = oci.Database.getExadbVmClusterUpdateHistoryEntry({
+ * const testExadbVmClusterUpdateHistoryEntry = oci.database.getExadbVmClusterUpdateHistoryEntry({
  *     exadbVmClusterId: testExadbVmCluster.id,
  *     updateHistoryEntryId: testUpdateHistoryEntry.id,
  * });
@@ -97,7 +97,7 @@ export interface GetExadbVmClusterUpdateHistoryEntryResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExadbVmClusterUpdateHistoryEntry = oci.Database.getExadbVmClusterUpdateHistoryEntry({
+ * const testExadbVmClusterUpdateHistoryEntry = oci.database.getExadbVmClusterUpdateHistoryEntry({
  *     exadbVmClusterId: testExadbVmCluster.id,
  *     updateHistoryEntryId: testUpdateHistoryEntry.id,
  * });

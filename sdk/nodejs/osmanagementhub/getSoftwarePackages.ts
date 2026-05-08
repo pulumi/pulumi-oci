@@ -18,11 +18,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwarePackages = oci.OsManagementHub.getSoftwarePackages({
+ * const testSoftwarePackages = oci.osmanagementhub.getSoftwarePackages({
  *     architecture: softwarePackageArchitecture,
  *     displayName: softwarePackageDisplayName,
  *     displayNameContains: softwarePackageDisplayNameContains,
- *     isLatest: softwarePackageIsLatest,
+ *     isLatest: softwarePackageIsLatest === "true",
  *     osFamily: softwarePackageOsFamily,
  *     version: softwarePackageVersion,
  * });
@@ -117,11 +117,11 @@ export interface GetSoftwarePackagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwarePackages = oci.OsManagementHub.getSoftwarePackages({
+ * const testSoftwarePackages = oci.osmanagementhub.getSoftwarePackages({
  *     architecture: softwarePackageArchitecture,
  *     displayName: softwarePackageDisplayName,
  *     displayNameContains: softwarePackageDisplayNameContains,
- *     isLatest: softwarePackageIsLatest,
+ *     isLatest: softwarePackageIsLatest === "true",
  *     osFamily: softwarePackageOsFamily,
  *     version: softwarePackageVersion,
  * });
@@ -148,26 +148,26 @@ export interface GetSoftwarePackagesOutputArgs {
     /**
      * A filter to return software packages that match the given architecture.
      */
-    architecture?: pulumi.Input<string>;
+    architecture?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that match the given user-friendly name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that may partially match the given display name.
      */
-    displayNameContains?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetSoftwarePackagesFilterArgs>[]>;
+    displayNameContains?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetSoftwarePackagesFilterArgs>[] | undefined>;
     /**
      * Indicates whether to list only the latest versions of packages, module streams, and stream profiles.
      */
-    isLatest?: pulumi.Input<boolean>;
+    isLatest?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the given operating system family.
      */
-    osFamily?: pulumi.Input<string>;
+    osFamily?: pulumi.Input<string | undefined>;
     /**
      * A filter to return software packages that match the given version.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }

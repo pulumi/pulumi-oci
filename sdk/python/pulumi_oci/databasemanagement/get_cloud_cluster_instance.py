@@ -299,7 +299,7 @@ def get_cloud_cluster_instance(cloud_cluster_instance_id: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_cluster_instance = oci.DatabaseManagement.get_cloud_cluster_instance(cloud_cluster_instance_id=test_cloud_cluster_instance_oci_database_management_cloud_cluster_instance["id"])
+    test_cloud_cluster_instance = oci.databasemanagement.get_cloud_cluster_instance(cloud_cluster_instance_id=test_cloud_cluster_instance_oci_database_management_cloud_cluster_instance["id"])
     ```
 
 
@@ -332,7 +332,7 @@ def get_cloud_cluster_instance(cloud_cluster_instance_id: Optional[_builtins.str
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_cloud_cluster_instance_output(cloud_cluster_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cloud_cluster_instance_output(cloud_cluster_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudClusterInstanceResult]:
     """
     This data source provides details about a specific Cloud Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
@@ -345,7 +345,7 @@ def get_cloud_cluster_instance_output(cloud_cluster_instance_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_cluster_instance = oci.DatabaseManagement.get_cloud_cluster_instance(cloud_cluster_instance_id=test_cloud_cluster_instance_oci_database_management_cloud_cluster_instance["id"])
+    test_cloud_cluster_instance = oci.databasemanagement.get_cloud_cluster_instance(cloud_cluster_instance_id=test_cloud_cluster_instance_oci_database_management_cloud_cluster_instance["id"])
     ```
 
 

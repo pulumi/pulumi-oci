@@ -20,8 +20,8 @@ import * as utilities from "../utilities";
  *
  * const testCloudDbSystemCloudDatabaseManagementsManagement = new oci.databasemanagement.CloudDbSystemCloudDatabaseManagementsManagement("test_cloud_db_system_cloud_database_managements_management", {
  *     cloudDbSystemId: testCloudDbSystem.id,
- *     enableCloudDatabaseManagement: enableCloudDatabaseManagement,
- *     isEnabled: cloudDbSystemCloudDatabaseManagementsManagementIsEnabled,
+ *     enableCloudDatabaseManagement: enableCloudDatabaseManagement === "true",
+ *     isEnabled: cloudDbSystemCloudDatabaseManagementsManagementIsEnabled === "true",
  *     metadata: cloudDbSystemCloudDatabaseManagementsManagementMetadata,
  * });
  * ```
@@ -117,7 +117,7 @@ export interface CloudDbSystemCloudDatabaseManagementsManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
      */
-    cloudDbSystemId?: pulumi.Input<string>;
+    cloudDbSystemId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
@@ -125,15 +125,15 @@ export interface CloudDbSystemCloudDatabaseManagementsManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    enableCloudDatabaseManagement?: pulumi.Input<boolean>;
+    enableCloudDatabaseManagement?: pulumi.Input<boolean | undefined>;
     /**
      * The status of the associated service.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The associated service-specific inputs in JSON string format, which Database Management can identify.
      */
-    metadata?: pulumi.Input<string>;
+    metadata?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -155,9 +155,9 @@ export interface CloudDbSystemCloudDatabaseManagementsManagementArgs {
     /**
      * The status of the associated service.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The associated service-specific inputs in JSON string format, which Database Management can identify.
      */
-    metadata?: pulumi.Input<string>;
+    metadata?: pulumi.Input<string | undefined>;
 }

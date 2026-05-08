@@ -137,19 +137,19 @@ export interface NetworkFirewallPolicyServiceListState {
     /**
      * (Updatable) The description of the service list. This field can be used to add additional info.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Name of the service Group.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */
-    networkFirewallPolicyId?: pulumi.Input<string>;
+    networkFirewallPolicyId?: pulumi.Input<string | undefined>;
     /**
      * OCID of the Network Firewall Policy this serviceList belongs to.
      */
-    parentResourceId?: pulumi.Input<string>;
+    parentResourceId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list. 
      *
@@ -157,11 +157,11 @@ export interface NetworkFirewallPolicyServiceListState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    services?: pulumi.Input<pulumi.Input<string>[]>;
+    services?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Count of total services in the given service List.
      */
-    totalServices?: pulumi.Input<number>;
+    totalServices?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -171,11 +171,11 @@ export interface NetworkFirewallPolicyServiceListArgs {
     /**
      * (Updatable) The description of the service list. This field can be used to add additional info.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Name of the service Group.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */

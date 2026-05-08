@@ -166,11 +166,11 @@ def get_dbmulticloud_oracle_db_aws_identity_connectors(compartment_id: Optional[
         oracle_db_aws_identity_connector_summary_collections=pulumi.get(__ret__, 'oracle_db_aws_identity_connector_summary_collections'),
         resource_id=pulumi.get(__ret__, 'resource_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_dbmulticloud_oracle_db_aws_identity_connectors_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                              display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgs', 'GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgsDict']]]]] = None,
-                                                              resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                              state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_dbmulticloud_oracle_db_aws_identity_connectors_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgs', 'GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgsDict']]]]] = None,
+                                                              resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbmulticloudOracleDbAwsIdentityConnectorsResult]:
     """
     This data source provides the list of Oracle Db Aws Identity Connectors in Oracle Cloud Infrastructure Dbmulticloud service.

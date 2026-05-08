@@ -18,12 +18,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAllApplications = oci.ServiceCatalog.getAllApplications({
+ * const testAllApplications = oci.servicecatalog.getAllApplications({
  *     compartmentId: compartmentId,
  *     displayName: allApplicationDisplayName,
  *     entityId: testEntity.id,
  *     entityType: allApplicationEntityType,
- *     isFeatured: allApplicationIsFeatured,
+ *     isFeatured: allApplicationIsFeatured === "true",
  *     packageTypes: allApplicationPackageType,
  *     pricings: allApplicationPricing,
  *     publisherIds: testPublisher.id,
@@ -134,12 +134,12 @@ export interface GetAllApplicationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAllApplications = oci.ServiceCatalog.getAllApplications({
+ * const testAllApplications = oci.servicecatalog.getAllApplications({
  *     compartmentId: compartmentId,
  *     displayName: allApplicationDisplayName,
  *     entityId: testEntity.id,
  *     entityType: allApplicationEntityType,
- *     isFeatured: allApplicationIsFeatured,
+ *     isFeatured: allApplicationIsFeatured === "true",
  *     packageTypes: allApplicationPackageType,
  *     pricings: allApplicationPricing,
  *     publisherIds: testPublisher.id,
@@ -169,34 +169,34 @@ export interface GetAllApplicationsOutputArgs {
     /**
      * The unique identifier for the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Exact match name filter.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier of the entity associated with service catalog.
      */
-    entityId?: pulumi.Input<string>;
+    entityId?: pulumi.Input<string | undefined>;
     /**
      * The type of the application in the service catalog.
      */
-    entityType?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ServiceCatalog.GetAllApplicationsFilterArgs>[]>;
+    entityType?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ServiceCatalog.GetAllApplicationsFilterArgs>[] | undefined>;
     /**
      * Indicates whether to show only featured resources. If this is set to `false` or is omitted, then all resources will be returned.
      */
-    isFeatured?: pulumi.Input<boolean>;
+    isFeatured?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the package type. If multiple package types are provided, then any resource with one or more matching package types will be returned.
      */
-    packageTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    packageTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Name of the pricing type. If multiple pricing types are provided, then any resource with one or more matching pricing models will be returned.
      */
-    pricings?: pulumi.Input<pulumi.Input<string>[]>;
+    pricings?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Limit results to just this publisher.
      */
-    publisherIds?: pulumi.Input<pulumi.Input<string>[]>;
+    publisherIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

@@ -95,7 +95,7 @@ def get_path_route_sets(filters: Optional[Sequence[Union['GetPathRouteSetsFilter
     import pulumi
     import pulumi_oci as oci
 
-    test_path_route_sets = oci.LoadBalancer.get_path_route_sets(load_balancer_id=test_load_balancer["id"])
+    test_path_route_sets = oci.loadbalancer.get_path_route_sets(load_balancer_id=test_load_balancer["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_path_route_sets(filters: Optional[Sequence[Union['GetPathRouteSetsFilter
         id=pulumi.get(__ret__, 'id'),
         load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'),
         path_route_sets=pulumi.get(__ret__, 'path_route_sets'))
-def get_path_route_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPathRouteSetsFilterArgs', 'GetPathRouteSetsFilterArgsDict']]]]] = None,
-                               load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_path_route_sets_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPathRouteSetsFilterArgs', 'GetPathRouteSetsFilterArgsDict']]]]] = None,
+                               load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPathRouteSetsResult]:
     """
     This data source provides the list of Path Route Sets in Oracle Cloud Infrastructure Load Balancer service.
@@ -126,7 +126,7 @@ def get_path_route_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[
     import pulumi
     import pulumi_oci as oci
 
-    test_path_route_sets = oci.LoadBalancer.get_path_route_sets(load_balancer_id=test_load_balancer["id"])
+    test_path_route_sets = oci.loadbalancer.get_path_route_sets(load_balancer_id=test_load_balancer["id"])
     ```
 
 

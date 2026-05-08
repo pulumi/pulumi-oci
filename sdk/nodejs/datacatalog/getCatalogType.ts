@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCatalogType = oci.DataCatalog.getCatalogType({
+ * const testCatalogType = oci.datacatalog.getCatalogType({
  *     catalogId: testCatalog.id,
  *     typeKey: catalogTypeTypeKey,
  *     fields: catalogTypeFields,
@@ -119,7 +119,7 @@ export interface GetCatalogTypeResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCatalogType = oci.DataCatalog.getCatalogType({
+ * const testCatalogType = oci.datacatalog.getCatalogType({
  *     catalogId: testCatalog.id,
  *     typeKey: catalogTypeTypeKey,
  *     fields: catalogTypeFields,
@@ -146,7 +146,7 @@ export interface GetCatalogTypeOutputArgs {
     /**
      * Specifies the fields to return in a type response.
      */
-    fields?: pulumi.Input<pulumi.Input<string>[]>;
+    fields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Unique type key.
      */

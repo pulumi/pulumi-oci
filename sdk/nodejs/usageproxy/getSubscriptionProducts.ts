@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptionProducts = oci.UsageProxy.getSubscriptionProducts({
+ * const testSubscriptionProducts = oci.usageproxy.getSubscriptionProducts({
  *     subscriptionId: testSubscription.id,
  *     tenancyId: testTenancy.id,
  *     usagePeriodKey: subscriptionProductUsagePeriodKey,
@@ -88,7 +88,7 @@ export interface GetSubscriptionProductsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptionProducts = oci.UsageProxy.getSubscriptionProducts({
+ * const testSubscriptionProducts = oci.usageproxy.getSubscriptionProducts({
  *     subscriptionId: testSubscription.id,
  *     tenancyId: testTenancy.id,
  *     usagePeriodKey: subscriptionProductUsagePeriodKey,
@@ -111,11 +111,11 @@ export function getSubscriptionProductsOutput(args: GetSubscriptionProductsOutpu
  * A collection of arguments for invoking getSubscriptionProducts.
  */
 export interface GetSubscriptionProductsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.UsageProxy.GetSubscriptionProductsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.UsageProxy.GetSubscriptionProductsFilterArgs>[] | undefined>;
     /**
      * The field to specify the type of product.
      */
-    producttype?: pulumi.Input<string>;
+    producttype?: pulumi.Input<string | undefined>;
     /**
      * The subscription ID for which rewards information is requested for.
      */

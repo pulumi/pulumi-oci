@@ -104,7 +104,7 @@ export interface BackupCancelManagementState {
     /**
      * The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    backupId?: pulumi.Input<string>;
+    backupId?: pulumi.Input<string | undefined>;
     /**
      * When changed to a different integer, re-triggers cancel backup on the backup specified by the backupId
      *
@@ -112,7 +112,7 @@ export interface BackupCancelManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    cancelBackupTrigger?: pulumi.Input<number>;
+    cancelBackupTrigger?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -130,5 +130,5 @@ export interface BackupCancelManagementArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    cancelBackupTrigger?: pulumi.Input<number>;
+    cancelBackupTrigger?: pulumi.Input<number | undefined>;
 }

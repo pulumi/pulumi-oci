@@ -264,7 +264,7 @@ def get_fleet_java_migration_analysis_result(fleet_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_java_migration_analysis_result = oci.Jms.get_fleet_java_migration_analysis_result(fleet_id=test_fleet["id"],
+    test_fleet_java_migration_analysis_result = oci.jms.get_fleet_java_migration_analysis_result(fleet_id=test_fleet["id"],
         java_migration_analysis_result_id=fleet_java_migration_analysis_result_id)
     ```
 
@@ -297,8 +297,8 @@ def get_fleet_java_migration_analysis_result(fleet_id: Optional[_builtins.str] =
         target_jdk_version=pulumi.get(__ret__, 'target_jdk_version'),
         time_created=pulumi.get(__ret__, 'time_created'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
-def get_fleet_java_migration_analysis_result_output(fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                    java_migration_analysis_result_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fleet_java_migration_analysis_result_output(fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                    java_migration_analysis_result_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetJavaMigrationAnalysisResultResult]:
     """
     This data source provides details about a specific Fleet Java Migration Analysis Result resource in Oracle Cloud Infrastructure Jms service.
@@ -311,7 +311,7 @@ def get_fleet_java_migration_analysis_result_output(fleet_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_java_migration_analysis_result = oci.Jms.get_fleet_java_migration_analysis_result(fleet_id=test_fleet["id"],
+    test_fleet_java_migration_analysis_result = oci.jms.get_fleet_java_migration_analysis_result(fleet_id=test_fleet["id"],
         java_migration_analysis_result_id=fleet_java_migration_analysis_result_id)
     ```
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceExportRequests = oci.DataIntegration.getWorkspaceExportRequests({
+ * const testWorkspaceExportRequests = oci.dataintegration.getWorkspaceExportRequests({
  *     workspaceId: testWorkspace.id,
  *     exportStatus: workspaceExportRequestExportStatus,
  *     name: workspaceExportRequestName,
@@ -111,7 +111,7 @@ export interface GetWorkspaceExportRequestsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceExportRequests = oci.DataIntegration.getWorkspaceExportRequests({
+ * const testWorkspaceExportRequests = oci.dataintegration.getWorkspaceExportRequests({
  *     workspaceId: testWorkspace.id,
  *     exportStatus: workspaceExportRequestExportStatus,
  *     name: workspaceExportRequestName,
@@ -141,24 +141,24 @@ export interface GetWorkspaceExportRequestsOutputArgs {
     /**
      * Specifies export status to use, either -  ALL, SUCCESSFUL, IN_PROGRESS, QUEUED, FAILED .
      */
-    exportStatus?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataIntegration.GetWorkspaceExportRequestsFilterArgs>[]>;
+    exportStatus?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataIntegration.GetWorkspaceExportRequestsFilterArgs>[] | undefined>;
     /**
      * Used to filter by the name of the object.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * This parameter allows users to specify which view of the export object response to return. SUMMARY - Summary of the export object request will be returned. This is the default option when no value is specified. DETAILS - Details of export object request will be returned. This will include details of all the objects to be exported.
      */
-    projection?: pulumi.Input<string>;
+    projection?: pulumi.Input<string | undefined>;
     /**
      * Specifies end time of a copy object request.
      */
-    timeEndedInMillis?: pulumi.Input<string>;
+    timeEndedInMillis?: pulumi.Input<string | undefined>;
     /**
      * Specifies start time of a copy object request.
      */
-    timeStartedInMillis?: pulumi.Input<string>;
+    timeStartedInMillis?: pulumi.Input<string | undefined>;
     /**
      * The workspace ID.
      */

@@ -227,63 +227,63 @@ export interface RepositoryState {
     /**
      * The count of the branches present in the repository.
      */
-    branchCount?: pulumi.Input<number>;
+    branchCount?: pulumi.Input<number | undefined>;
     /**
      * The count of the commits present in the repository.
      */
-    commitCount?: pulumi.Input<number>;
+    commitCount?: pulumi.Input<number | undefined>;
     /**
      * The OCID of the repository's compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The default branch of the repository.
      */
-    defaultBranch?: pulumi.Input<string>;
+    defaultBranch?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Details of the repository. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * HTTP URL that you use to git clone, pull and push.
      */
-    httpUrl?: pulumi.Input<string>;
+    httpUrl?: pulumi.Input<string | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecyleDetails?: pulumi.Input<string>;
+    lifecyleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Configuration information for mirroring the repository.
      */
-    mirrorRepositoryConfig?: pulumi.Input<inputs.DevOps.RepositoryMirrorRepositoryConfig>;
+    mirrorRepositoryConfig?: pulumi.Input<inputs.DevOps.RepositoryMirrorRepositoryConfig | undefined>;
     /**
      * (Updatable) Name of the repository. Should be unique within the project.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Tenancy unique namespace.
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the parent repository.
      */
-    parentRepositoryId?: pulumi.Input<string>;
+    parentRepositoryId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the DevOps project containing the repository.
      */
-    projectId?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
     /**
      * Unique project name in a namespace.
      */
-    projectName?: pulumi.Input<string>;
+    projectName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Type of repository. Allowed values:  `MIRRORED`  `HOSTED` `FORKED` 
      *
@@ -291,35 +291,35 @@ export interface RepositoryState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    repositoryType?: pulumi.Input<string>;
+    repositoryType?: pulumi.Input<string | undefined>;
     /**
      * The size of the repository in bytes.
      */
-    sizeInBytes?: pulumi.Input<string>;
+    sizeInBytes?: pulumi.Input<string | undefined>;
     /**
      * SSH URL that you use to git clone, pull and push.
      */
-    sshUrl?: pulumi.Input<string>;
+    sshUrl?: pulumi.Input<string | undefined>;
     /**
      * The current state of the repository.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
      */
-    triggerBuildEvents?: pulumi.Input<pulumi.Input<string>[]>;
+    triggerBuildEvents?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -329,31 +329,31 @@ export interface RepositoryArgs {
     /**
      * (Updatable) The default branch of the repository.
      */
-    defaultBranch?: pulumi.Input<string>;
+    defaultBranch?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Details of the repository. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Configuration information for mirroring the repository.
      */
-    mirrorRepositoryConfig?: pulumi.Input<inputs.DevOps.RepositoryMirrorRepositoryConfig>;
+    mirrorRepositoryConfig?: pulumi.Input<inputs.DevOps.RepositoryMirrorRepositoryConfig | undefined>;
     /**
      * (Updatable) Name of the repository. Should be unique within the project.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the parent repository.
      */
-    parentRepositoryId?: pulumi.Input<string>;
+    parentRepositoryId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the DevOps project containing the repository.
      */

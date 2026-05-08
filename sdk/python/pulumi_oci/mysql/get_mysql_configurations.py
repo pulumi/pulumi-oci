@@ -167,7 +167,7 @@ def get_mysql_configurations(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_configurations = oci.Mysql.get_mysql_configurations(compartment_id=compartment_id,
+    test_mysql_configurations = oci.mysql.get_mysql_configurations(compartment_id=compartment_id,
         configuration_id=mysql_configuration_id,
         display_name=mysql_configuration_display_name,
         shape_name=mysql_shape_name,
@@ -204,13 +204,13 @@ def get_mysql_configurations(compartment_id: Optional[_builtins.str] = None,
         shape_name=pulumi.get(__ret__, 'shape_name'),
         state=pulumi.get(__ret__, 'state'),
         types=pulumi.get(__ret__, 'types'))
-def get_mysql_configurations_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    configuration_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMysqlConfigurationsFilterArgs', 'GetMysqlConfigurationsFilterArgsDict']]]]] = None,
-                                    shape_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_mysql_configurations_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    configuration_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMysqlConfigurationsFilterArgs', 'GetMysqlConfigurationsFilterArgsDict']]]]] = None,
+                                    shape_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMysqlConfigurationsResult]:
     """
     This data source provides the list of Mysql Configurations in Oracle Cloud Infrastructure MySQL Database service.
@@ -230,7 +230,7 @@ def get_mysql_configurations_output(compartment_id: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_configurations = oci.Mysql.get_mysql_configurations(compartment_id=compartment_id,
+    test_mysql_configurations = oci.mysql.get_mysql_configurations(compartment_id=compartment_id,
         configuration_id=mysql_configuration_id,
         display_name=mysql_configuration_display_name,
         shape_name=mysql_shape_name,

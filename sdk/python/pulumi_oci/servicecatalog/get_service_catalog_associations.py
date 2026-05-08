@@ -134,7 +134,7 @@ def get_service_catalog_associations(entity_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_service_catalog_associations = oci.ServiceCatalog.get_service_catalog_associations(entity_id=test_entity["id"],
+    test_service_catalog_associations = oci.servicecatalog.get_service_catalog_associations(entity_id=test_entity["id"],
         entity_type=service_catalog_association_entity_type,
         service_catalog_association_id=test_service_catalog_association["id"],
         service_catalog_id=test_service_catalog["id"])
@@ -163,11 +163,11 @@ def get_service_catalog_associations(entity_id: Optional[_builtins.str] = None,
         service_catalog_association_collections=pulumi.get(__ret__, 'service_catalog_association_collections'),
         service_catalog_association_id=pulumi.get(__ret__, 'service_catalog_association_id'),
         service_catalog_id=pulumi.get(__ret__, 'service_catalog_id'))
-def get_service_catalog_associations_output(entity_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            entity_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServiceCatalogAssociationsFilterArgs', 'GetServiceCatalogAssociationsFilterArgsDict']]]]] = None,
-                                            service_catalog_association_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            service_catalog_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_service_catalog_associations_output(entity_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            entity_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetServiceCatalogAssociationsFilterArgs', 'GetServiceCatalogAssociationsFilterArgsDict']]]]] = None,
+                                            service_catalog_association_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            service_catalog_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceCatalogAssociationsResult]:
     """
     This data source provides the list of Service Catalog Associations in Oracle Cloud Infrastructure Service Catalog service.
@@ -180,7 +180,7 @@ def get_service_catalog_associations_output(entity_id: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_service_catalog_associations = oci.ServiceCatalog.get_service_catalog_associations(entity_id=test_entity["id"],
+    test_service_catalog_associations = oci.servicecatalog.get_service_catalog_associations(entity_id=test_entity["id"],
         entity_type=service_catalog_association_entity_type,
         service_catalog_association_id=test_service_catalog_association["id"],
         service_catalog_id=test_service_catalog["id"])

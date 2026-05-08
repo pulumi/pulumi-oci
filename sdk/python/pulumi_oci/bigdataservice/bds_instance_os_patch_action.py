@@ -24,8 +24,8 @@ class BdsInstanceOsPatchActionArgs:
                  bds_instance_id: pulumi.Input[_builtins.str],
                  cluster_admin_password: pulumi.Input[_builtins.str],
                  os_patch_version: pulumi.Input[_builtins.str],
-                 is_dry_run: Optional[pulumi.Input[_builtins.bool]] = None,
-                 patching_configs: Optional[pulumi.Input['BdsInstanceOsPatchActionPatchingConfigsArgs']] = None):
+                 is_dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
+                 patching_configs: pulumi.Input[Optional['BdsInstanceOsPatchActionPatchingConfigsArgs']] = None):
         """
         The set of arguments for constructing a BdsInstanceOsPatchAction resource.
 
@@ -90,34 +90,34 @@ class BdsInstanceOsPatchActionArgs:
 
     @_builtins.property
     @pulumi.getter(name="isDryRun")
-    def is_dry_run(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_dry_run(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_dry_run")
 
     @is_dry_run.setter
-    def is_dry_run(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_dry_run(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_dry_run", value)
 
     @_builtins.property
     @pulumi.getter(name="patchingConfigs")
-    def patching_configs(self) -> Optional[pulumi.Input['BdsInstanceOsPatchActionPatchingConfigsArgs']]:
+    def patching_configs(self) -> pulumi.Input[Optional['BdsInstanceOsPatchActionPatchingConfigsArgs']]:
         """
         Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
         """
         return pulumi.get(self, "patching_configs")
 
     @patching_configs.setter
-    def patching_configs(self, value: Optional[pulumi.Input['BdsInstanceOsPatchActionPatchingConfigsArgs']]):
+    def patching_configs(self, value: pulumi.Input[Optional['BdsInstanceOsPatchActionPatchingConfigsArgs']]):
         pulumi.set(self, "patching_configs", value)
 
 
 @pulumi.input_type
 class _BdsInstanceOsPatchActionState:
     def __init__(__self__, *,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_dry_run: Optional[pulumi.Input[_builtins.bool]] = None,
-                 os_patch_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 patching_configs: Optional[pulumi.Input['BdsInstanceOsPatchActionPatchingConfigsArgs']] = None):
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
+                 os_patch_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 patching_configs: pulumi.Input[Optional['BdsInstanceOsPatchActionPatchingConfigsArgs']] = None):
         """
         Input properties used for looking up and filtering BdsInstanceOsPatchAction resources.
 
@@ -144,19 +144,19 @@ class _BdsInstanceOsPatchActionState:
 
     @_builtins.property
     @pulumi.getter(name="bdsInstanceId")
-    def bds_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bds_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the cluster.
         """
         return pulumi.get(self, "bds_instance_id")
 
     @bds_instance_id.setter
-    def bds_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bds_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bds_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterAdminPassword")
-    def cluster_admin_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Base-64 encoded password for the cluster admin user.
         * `isDryRun` - (Optional) Perform dry run for the patch and stop without actually patching the cluster.
@@ -164,21 +164,21 @@ class _BdsInstanceOsPatchActionState:
         return pulumi.get(self, "cluster_admin_password")
 
     @cluster_admin_password.setter
-    def cluster_admin_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_admin_password", value)
 
     @_builtins.property
     @pulumi.getter(name="isDryRun")
-    def is_dry_run(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_dry_run(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_dry_run")
 
     @is_dry_run.setter
-    def is_dry_run(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_dry_run(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_dry_run", value)
 
     @_builtins.property
     @pulumi.getter(name="osPatchVersion")
-    def os_patch_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def os_patch_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the OS patch to be installed.
 
@@ -189,19 +189,19 @@ class _BdsInstanceOsPatchActionState:
         return pulumi.get(self, "os_patch_version")
 
     @os_patch_version.setter
-    def os_patch_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def os_patch_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "os_patch_version", value)
 
     @_builtins.property
     @pulumi.getter(name="patchingConfigs")
-    def patching_configs(self) -> Optional[pulumi.Input['BdsInstanceOsPatchActionPatchingConfigsArgs']]:
+    def patching_configs(self) -> pulumi.Input[Optional['BdsInstanceOsPatchActionPatchingConfigsArgs']]:
         """
         Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
         """
         return pulumi.get(self, "patching_configs")
 
     @patching_configs.setter
-    def patching_configs(self, value: Optional[pulumi.Input['BdsInstanceOsPatchActionPatchingConfigsArgs']]):
+    def patching_configs(self, value: pulumi.Input[Optional['BdsInstanceOsPatchActionPatchingConfigsArgs']]):
         pulumi.set(self, "patching_configs", value)
 
 
@@ -211,11 +211,11 @@ class BdsInstanceOsPatchAction(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_dry_run: Optional[pulumi.Input[_builtins.bool]] = None,
-                 os_patch_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 patching_configs: Optional[pulumi.Input[Union['BdsInstanceOsPatchActionPatchingConfigsArgs', 'BdsInstanceOsPatchActionPatchingConfigsArgsDict']]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
+                 os_patch_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 patching_configs: pulumi.Input[Optional[Union['BdsInstanceOsPatchActionPatchingConfigsArgs', 'BdsInstanceOsPatchActionPatchingConfigsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Bds Instance OS Patch Action resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -236,14 +236,14 @@ class BdsInstanceOsPatchAction(pulumi.CustomResource):
             bds_instance_id=test_bds_instance["id"],
             cluster_admin_password=bds_instance_os_patch_action_cluster_admin_password,
             os_patch_version=bds_instance_os_patch_action_os_patch_version,
-            is_dry_run=is_dry_run,
+            is_dry_run=is_dry_run == "true",
             patching_configs={
                 "patching_config_strategy": bds_instance_os_patch_action_patching_config_strategy,
-                "batch_size": bds_instance_os_patch_action_batch_size,
-                "wait_time_between_batch_in_seconds": bds_instance_os_patch_action_wait_time_between_batch_in_seconds,
-                "tolerance_threshold_per_batch": bds_instance_os_patch_action_tolerance_threshold_per_batch,
-                "wait_time_between_domain_in_seconds": bds_instance_os_patch_action_wait_time_between_domain_in_seconds,
-                "tolerance_threshold_per_domain": bds_instance_os_patch_action_tolerance_threshold_per_domain,
+                "batch_size": int(bds_instance_os_patch_action_batch_size),
+                "wait_time_between_batch_in_seconds": int(bds_instance_os_patch_action_wait_time_between_batch_in_seconds),
+                "tolerance_threshold_per_batch": int(bds_instance_os_patch_action_tolerance_threshold_per_batch),
+                "wait_time_between_domain_in_seconds": int(bds_instance_os_patch_action_wait_time_between_domain_in_seconds),
+                "tolerance_threshold_per_domain": int(bds_instance_os_patch_action_tolerance_threshold_per_domain),
             })
         ```
 
@@ -289,14 +289,14 @@ class BdsInstanceOsPatchAction(pulumi.CustomResource):
             bds_instance_id=test_bds_instance["id"],
             cluster_admin_password=bds_instance_os_patch_action_cluster_admin_password,
             os_patch_version=bds_instance_os_patch_action_os_patch_version,
-            is_dry_run=is_dry_run,
+            is_dry_run=is_dry_run == "true",
             patching_configs={
                 "patching_config_strategy": bds_instance_os_patch_action_patching_config_strategy,
-                "batch_size": bds_instance_os_patch_action_batch_size,
-                "wait_time_between_batch_in_seconds": bds_instance_os_patch_action_wait_time_between_batch_in_seconds,
-                "tolerance_threshold_per_batch": bds_instance_os_patch_action_tolerance_threshold_per_batch,
-                "wait_time_between_domain_in_seconds": bds_instance_os_patch_action_wait_time_between_domain_in_seconds,
-                "tolerance_threshold_per_domain": bds_instance_os_patch_action_tolerance_threshold_per_domain,
+                "batch_size": int(bds_instance_os_patch_action_batch_size),
+                "wait_time_between_batch_in_seconds": int(bds_instance_os_patch_action_wait_time_between_batch_in_seconds),
+                "tolerance_threshold_per_batch": int(bds_instance_os_patch_action_tolerance_threshold_per_batch),
+                "wait_time_between_domain_in_seconds": int(bds_instance_os_patch_action_wait_time_between_domain_in_seconds),
+                "tolerance_threshold_per_domain": int(bds_instance_os_patch_action_tolerance_threshold_per_domain),
             })
         ```
 
@@ -320,11 +320,11 @@ class BdsInstanceOsPatchAction(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_dry_run: Optional[pulumi.Input[_builtins.bool]] = None,
-                 os_patch_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 patching_configs: Optional[pulumi.Input[Union['BdsInstanceOsPatchActionPatchingConfigsArgs', 'BdsInstanceOsPatchActionPatchingConfigsArgsDict']]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
+                 os_patch_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 patching_configs: pulumi.Input[Optional[Union['BdsInstanceOsPatchActionPatchingConfigsArgs', 'BdsInstanceOsPatchActionPatchingConfigsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -357,11 +357,11 @@ class BdsInstanceOsPatchAction(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-            is_dry_run: Optional[pulumi.Input[_builtins.bool]] = None,
-            os_patch_version: Optional[pulumi.Input[_builtins.str]] = None,
-            patching_configs: Optional[pulumi.Input[Union['BdsInstanceOsPatchActionPatchingConfigsArgs', 'BdsInstanceOsPatchActionPatchingConfigsArgsDict']]] = None) -> 'BdsInstanceOsPatchAction':
+            bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+            is_dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
+            os_patch_version: pulumi.Input[Optional[_builtins.str]] = None,
+            patching_configs: pulumi.Input[Optional[Union['BdsInstanceOsPatchActionPatchingConfigsArgs', 'BdsInstanceOsPatchActionPatchingConfigsArgsDict']]] = None) -> 'BdsInstanceOsPatchAction':
         """
         Get an existing BdsInstanceOsPatchAction resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

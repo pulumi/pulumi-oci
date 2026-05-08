@@ -287,7 +287,7 @@ def get_cloud_db_node(cloud_db_node_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_db_node = oci.DatabaseManagement.get_cloud_db_node(cloud_db_node_id=test_cloud_db_node_oci_database_management_cloud_db_node["id"])
+    test_cloud_db_node = oci.databasemanagement.get_cloud_db_node(cloud_db_node_id=test_cloud_db_node_oci_database_management_cloud_db_node["id"])
     ```
 
 
@@ -319,7 +319,7 @@ def get_cloud_db_node(cloud_db_node_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_cloud_db_node_output(cloud_db_node_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cloud_db_node_output(cloud_db_node_id: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudDbNodeResult]:
     """
     This data source provides details about a specific Cloud Db Node resource in Oracle Cloud Infrastructure Database Management service.
@@ -332,7 +332,7 @@ def get_cloud_db_node_output(cloud_db_node_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_db_node = oci.DatabaseManagement.get_cloud_db_node(cloud_db_node_id=test_cloud_db_node_oci_database_management_cloud_db_node["id"])
+    test_cloud_db_node = oci.databasemanagement.get_cloud_db_node(cloud_db_node_id=test_cloud_db_node_oci_database_management_cloud_db_node["id"])
     ```
 
 

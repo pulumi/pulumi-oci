@@ -219,7 +219,7 @@ def get_fleet_export_setting(fleet_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_export_setting = oci.Jms.get_fleet_export_setting(fleet_id=test_fleet["id"])
+    test_fleet_export_setting = oci.jms.get_fleet_export_setting(fleet_id=test_fleet["id"])
     ```
 
 
@@ -245,7 +245,7 @@ def get_fleet_export_setting(fleet_id: Optional[_builtins.str] = None,
         target_bucket_region=pulumi.get(__ret__, 'target_bucket_region'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_modified=pulumi.get(__ret__, 'time_last_modified'))
-def get_fleet_export_setting_output(fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fleet_export_setting_output(fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetExportSettingResult]:
     """
     This data source provides details about a specific Fleet Export Setting resource in Oracle Cloud Infrastructure Jms service.
@@ -258,7 +258,7 @@ def get_fleet_export_setting_output(fleet_id: Optional[pulumi.Input[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_export_setting = oci.Jms.get_fleet_export_setting(fleet_id=test_fleet["id"])
+    test_fleet_export_setting = oci.jms.get_fleet_export_setting(fleet_id=test_fleet["id"])
     ```
 
 

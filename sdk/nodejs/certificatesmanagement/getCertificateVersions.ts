@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCertificateVersions = oci.CertificatesManagement.getCertificateVersions({
+ * const testCertificateVersions = oci.certificatesmanagement.getCertificateVersions({
  *     certificateId: testCertificate.id,
  *     versionNumber: certificateVersionVersionNumber,
  * });
@@ -82,7 +82,7 @@ export interface GetCertificateVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCertificateVersions = oci.CertificatesManagement.getCertificateVersions({
+ * const testCertificateVersions = oci.certificatesmanagement.getCertificateVersions({
  *     certificateId: testCertificate.id,
  *     versionNumber: certificateVersionVersionNumber,
  * });
@@ -105,9 +105,9 @@ export interface GetCertificateVersionsOutputArgs {
      * The OCID of the certificate.
      */
     certificateId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.GetCertificateVersionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.GetCertificateVersionsFilterArgs>[] | undefined>;
     /**
      * A filter that returns only resources that match the specified version number. The default value is 0, which means that this filter is not applied.
      */
-    versionNumber?: pulumi.Input<string>;
+    versionNumber?: pulumi.Input<string | undefined>;
 }

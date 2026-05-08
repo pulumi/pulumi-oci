@@ -124,7 +124,7 @@ def get_notification_topics(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_notification_topics = oci.Ons.get_notification_topics(compartment_id=compartment_id,
+    test_notification_topics = oci.ons.get_notification_topics(compartment_id=compartment_id,
         id=notification_topic_id,
         name=notification_topic_name,
         state=notification_topic_state)
@@ -152,11 +152,11 @@ def get_notification_topics(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         notification_topics=pulumi.get(__ret__, 'notification_topics'),
         state=pulumi.get(__ret__, 'state'))
-def get_notification_topics_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNotificationTopicsFilterArgs', 'GetNotificationTopicsFilterArgsDict']]]]] = None,
-                                   id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_notification_topics_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNotificationTopicsFilterArgs', 'GetNotificationTopicsFilterArgsDict']]]]] = None,
+                                   id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNotificationTopicsResult]:
     """
     This data source provides the list of Notification Topics in Oracle Cloud Infrastructure Notifications service.
@@ -171,7 +171,7 @@ def get_notification_topics_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_notification_topics = oci.Ons.get_notification_topics(compartment_id=compartment_id,
+    test_notification_topics = oci.ons.get_notification_topics(compartment_id=compartment_id,
         id=notification_topic_id,
         name=notification_topic_name,
         state=notification_topic_state)

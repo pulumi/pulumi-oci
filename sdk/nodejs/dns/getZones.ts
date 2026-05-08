@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testZones = oci.Dns.getZones({
+ * const testZones = oci.dns.getZones({
  *     compartmentId: compartmentId,
  *     dnssecState: zoneDnssecState,
  *     name: zoneName,
@@ -176,7 +176,7 @@ export interface GetZonesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testZones = oci.Dns.getZones({
+ * const testZones = oci.dns.getZones({
  *     compartmentId: compartmentId,
  *     dnssecState: zoneDnssecState,
  *     name: zoneName,
@@ -222,50 +222,50 @@ export interface GetZonesOutputArgs {
     /**
      * Search for zones that have the given `DnssecState`.
      */
-    dnssecState?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Dns.GetZonesFilterArgs>[]>;
+    dnssecState?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Dns.GetZonesFilterArgs>[] | undefined>;
     /**
      * A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Search by zone name. Will match any zone whose name (case-insensitive) contains the provided value.
      */
-    nameContains?: pulumi.Input<string>;
+    nameContains?: pulumi.Input<string | undefined>;
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * The field by which to sort zones. Allowed values are: name|zoneType|timeCreated
      */
-    sortBy?: pulumi.Input<string>;
+    sortBy?: pulumi.Input<string | undefined>;
     /**
      * The order to sort the resources. Allowed values are: ASC|DESC
      */
-    sortOrder?: pulumi.Input<string>;
+    sortOrder?: pulumi.Input<string | undefined>;
     /**
      * The state of a resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned resources were created on or after the indicated time.
      */
-    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned resources were created before the indicated time.
      */
-    timeCreatedLessThan?: pulumi.Input<string>;
+    timeCreatedLessThan?: pulumi.Input<string | undefined>;
     /**
      * Search for zones that are associated with a TSIG key.
      */
-    tsigKeyId?: pulumi.Input<string>;
+    tsigKeyId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the view the resource is associated with.
      */
-    viewId?: pulumi.Input<string>;
+    viewId?: pulumi.Input<string | undefined>;
     /**
      * Search by zone type, `PRIMARY` or `SECONDARY`. Will match any zone whose type equals the provided value.
      */
-    zoneType?: pulumi.Input<string>;
+    zoneType?: pulumi.Input<string | undefined>;
 }

@@ -137,16 +137,16 @@ export interface UsageStatementEmailRecipientsGroupState {
     /**
      * (Updatable) The customer tenancy.
      */
-    compartmentId?: pulumi.Input<string>;
-    emailRecipientsGroupId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    emailRecipientsGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The list of recipients that will receive usage statement emails.
      */
-    recipientsLists?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.UsageStatementEmailRecipientsGroupRecipientsList>[]>;
+    recipientsLists?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.UsageStatementEmailRecipientsGroupRecipientsList>[] | undefined>;
     /**
      * The email recipients group lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The usage statement subscription unique OCID.
      *
@@ -154,7 +154,7 @@ export interface UsageStatementEmailRecipientsGroupState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    subscriptionId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -165,7 +165,7 @@ export interface UsageStatementEmailRecipientsGroupArgs {
      * (Updatable) The customer tenancy.
      */
     compartmentId: pulumi.Input<string>;
-    emailRecipientsGroupId?: pulumi.Input<string>;
+    emailRecipientsGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The list of recipients that will receive usage statement emails.
      */

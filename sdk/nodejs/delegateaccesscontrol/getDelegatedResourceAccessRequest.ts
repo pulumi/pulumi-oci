@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDelegatedResourceAccessRequest = oci.DelegateAccessControl.getDelegatedResourceAccessRequest({
+ * const testDelegatedResourceAccessRequest = oci.delegateaccesscontrol.getDelegatedResourceAccessRequest({
  *     delegatedResourceAccessRequestId: testDelegatedResourceAccessRequestOciDelegateAccessControlDelegatedResourceAccessRequest.id,
  * });
  * ```
@@ -192,7 +192,7 @@ export interface GetDelegatedResourceAccessRequestResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDelegatedResourceAccessRequest = oci.DelegateAccessControl.getDelegatedResourceAccessRequest({
+ * const testDelegatedResourceAccessRequest = oci.delegateaccesscontrol.getDelegatedResourceAccessRequest({
  *     delegatedResourceAccessRequestId: testDelegatedResourceAccessRequestOciDelegateAccessControlDelegatedResourceAccessRequest.id,
  * });
  * ```

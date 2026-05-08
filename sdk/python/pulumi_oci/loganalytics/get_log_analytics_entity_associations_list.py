@@ -115,7 +115,7 @@ def get_log_analytics_entity_associations_list(direct_or_all_associations: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entity_associations_list = oci.LogAnalytics.get_log_analytics_entity_associations_list(log_analytics_entity_id=test_log_analytics_entity["id"],
+    test_log_analytics_entity_associations_list = oci.loganalytics.get_log_analytics_entity_associations_list(log_analytics_entity_id=test_log_analytics_entity["id"],
         namespace=log_analytics_entity_associations_list_namespace,
         direct_or_all_associations=log_analytics_entity_associations_list_direct_or_all_associations)
     ```
@@ -140,10 +140,10 @@ def get_log_analytics_entity_associations_list(direct_or_all_associations: Optio
         log_analytics_entity_collections=pulumi.get(__ret__, 'log_analytics_entity_collections'),
         log_analytics_entity_id=pulumi.get(__ret__, 'log_analytics_entity_id'),
         namespace=pulumi.get(__ret__, 'namespace'))
-def get_log_analytics_entity_associations_list_output(direct_or_all_associations: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLogAnalyticsEntityAssociationsListFilterArgs', 'GetLogAnalyticsEntityAssociationsListFilterArgsDict']]]]] = None,
-                                                      log_analytics_entity_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                      namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_log_analytics_entity_associations_list_output(direct_or_all_associations: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLogAnalyticsEntityAssociationsListFilterArgs', 'GetLogAnalyticsEntityAssociationsListFilterArgsDict']]]]] = None,
+                                                      log_analytics_entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                      namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsEntityAssociationsListResult]:
     """
     This data source provides the list of Log Analytics Entity Associations List in Oracle Cloud Infrastructure Log Analytics service.
@@ -156,7 +156,7 @@ def get_log_analytics_entity_associations_list_output(direct_or_all_associations
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entity_associations_list = oci.LogAnalytics.get_log_analytics_entity_associations_list(log_analytics_entity_id=test_log_analytics_entity["id"],
+    test_log_analytics_entity_associations_list = oci.loganalytics.get_log_analytics_entity_associations_list(log_analytics_entity_id=test_log_analytics_entity["id"],
         namespace=log_analytics_entity_associations_list_namespace,
         direct_or_all_associations=log_analytics_entity_associations_list_direct_or_all_associations)
     ```

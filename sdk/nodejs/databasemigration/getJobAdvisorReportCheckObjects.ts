@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJobAdvisorReportCheckObjects = oci.DatabaseMigration.getJobAdvisorReportCheckObjects({
+ * const testJobAdvisorReportCheckObjects = oci.databasemigration.getJobAdvisorReportCheckObjects({
  *     advisorReportCheckId: testAdvisorReportCheck.id,
  *     jobId: testJob.id,
  * });
@@ -74,7 +74,7 @@ export interface GetJobAdvisorReportCheckObjectsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJobAdvisorReportCheckObjects = oci.DatabaseMigration.getJobAdvisorReportCheckObjects({
+ * const testJobAdvisorReportCheckObjects = oci.databasemigration.getJobAdvisorReportCheckObjects({
  *     advisorReportCheckId: testAdvisorReportCheck.id,
  *     jobId: testJob.id,
  * });
@@ -97,7 +97,7 @@ export interface GetJobAdvisorReportCheckObjectsOutputArgs {
      * The ID of the advisor check
      */
     advisorReportCheckId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.GetJobAdvisorReportCheckObjectsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.GetJobAdvisorReportCheckObjectsFilterArgs>[] | undefined>;
     /**
      * The OCID of the job
      */

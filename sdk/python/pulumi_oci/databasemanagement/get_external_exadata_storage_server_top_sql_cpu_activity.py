@@ -84,7 +84,7 @@ def get_external_exadata_storage_server_top_sql_cpu_activity(external_exadata_st
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_storage_server_top_sql_cpu_activity = oci.DatabaseManagement.get_external_exadata_storage_server_top_sql_cpu_activity(external_exadata_storage_server_id=test_external_exadata_storage_server["id"])
+    test_external_exadata_storage_server_top_sql_cpu_activity = oci.databasemanagement.get_external_exadata_storage_server_top_sql_cpu_activity(external_exadata_storage_server_id=test_external_exadata_storage_server["id"])
     ```
 
 
@@ -99,7 +99,7 @@ def get_external_exadata_storage_server_top_sql_cpu_activity(external_exadata_st
         activities=pulumi.get(__ret__, 'activities'),
         external_exadata_storage_server_id=pulumi.get(__ret__, 'external_exadata_storage_server_id'),
         id=pulumi.get(__ret__, 'id'))
-def get_external_exadata_storage_server_top_sql_cpu_activity_output(external_exadata_storage_server_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_external_exadata_storage_server_top_sql_cpu_activity_output(external_exadata_storage_server_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalExadataStorageServerTopSqlCpuActivityResult]:
     """
     This data source provides details about a specific External Exadata Storage Server Top Sql Cpu Activity resource in Oracle Cloud Infrastructure Database Management service.
@@ -112,7 +112,7 @@ def get_external_exadata_storage_server_top_sql_cpu_activity_output(external_exa
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_storage_server_top_sql_cpu_activity = oci.DatabaseManagement.get_external_exadata_storage_server_top_sql_cpu_activity(external_exadata_storage_server_id=test_external_exadata_storage_server["id"])
+    test_external_exadata_storage_server_top_sql_cpu_activity = oci.databasemanagement.get_external_exadata_storage_server_top_sql_cpu_activity(external_exadata_storage_server_id=test_external_exadata_storage_server["id"])
     ```
 
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMetricExtensions = oci.StackMonitoring.getMetricExtensions({
+ * const testMetricExtensions = oci.stackmonitoring.getMetricExtensions({
  *     compartmentId: compartmentId,
  *     enabledOnResourceId: testResource.id,
  *     metricExtensionId: testMetricExtension.id,
@@ -125,7 +125,7 @@ export interface GetMetricExtensionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMetricExtensions = oci.StackMonitoring.getMetricExtensions({
+ * const testMetricExtensions = oci.stackmonitoring.getMetricExtensions({
  *     compartmentId: compartmentId,
  *     enabledOnResourceId: testResource.id,
  *     metricExtensionId: testMetricExtension.id,
@@ -158,30 +158,30 @@ export interface GetMetricExtensionsOutputArgs {
     /**
      * The ID of the compartment in which data is listed.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return metric extensions based on input resource Id on which metric extension is enabled
      */
-    enabledOnResourceId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetMetricExtensionsFilterArgs>[]>;
+    enabledOnResourceId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetMetricExtensionsFilterArgs>[] | undefined>;
     /**
      * Identifier for the metric extension
      */
-    metricExtensionId?: pulumi.Input<string>;
+    metricExtensionId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources based on name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources based on resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return metric extensions based on Lifecycle State
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources based on status e.g. Draft or Published
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

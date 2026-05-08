@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceProviderActions = oci.DelegateAccessControl.getServiceProviderActions({
+ * const testServiceProviderActions = oci.delegateaccesscontrol.getServiceProviderActions({
  *     compartmentId: compartmentId,
  *     name: serviceProviderActionName,
  *     resourceType: serviceProviderActionResourceType,
@@ -104,7 +104,7 @@ export interface GetServiceProviderActionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceProviderActions = oci.DelegateAccessControl.getServiceProviderActions({
+ * const testServiceProviderActions = oci.delegateaccesscontrol.getServiceProviderActions({
  *     compartmentId: compartmentId,
  *     name: serviceProviderActionName,
  *     resourceType: serviceProviderActionResourceType,
@@ -133,21 +133,21 @@ export interface GetServiceProviderActionsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DelegateAccessControl.GetServiceProviderActionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DelegateAccessControl.GetServiceProviderActionsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the entire name given.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given resource type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given Service Provider service type.
      */
-    serviceProviderServiceTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    serviceProviderServiceTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only resources whose lifecycleState matches the given Service Provider Action lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

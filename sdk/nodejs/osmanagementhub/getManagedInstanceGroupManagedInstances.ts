@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceGroupManagedInstances = oci.OsManagementHub.getManagedInstanceGroupManagedInstances({
+ * const testManagedInstanceGroupManagedInstances = oci.osmanagementhub.getManagedInstanceGroupManagedInstances({
  *     managedInstanceGroupId: testManagedInstanceGroup.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: managedInstanceGroupManagedInstanceCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: managedInstanceGroupManagedInstanceCompartmentIdInSubtree === "true",
  *     displayNames: managedInstanceGroupManagedInstanceDisplayName,
  *     displayNameContains: managedInstanceGroupManagedInstanceDisplayNameContains,
  *     managedInstanceId: testManagedInstance.id,
@@ -108,10 +108,10 @@ export interface GetManagedInstanceGroupManagedInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceGroupManagedInstances = oci.OsManagementHub.getManagedInstanceGroupManagedInstances({
+ * const testManagedInstanceGroupManagedInstances = oci.osmanagementhub.getManagedInstanceGroupManagedInstances({
  *     managedInstanceGroupId: testManagedInstanceGroup.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: managedInstanceGroupManagedInstanceCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: managedInstanceGroupManagedInstanceCompartmentIdInSubtree === "true",
  *     displayNames: managedInstanceGroupManagedInstanceDisplayName,
  *     displayNameContains: managedInstanceGroupManagedInstanceDisplayNameContains,
  *     managedInstanceId: testManagedInstance.id,
@@ -138,20 +138,20 @@ export interface GetManagedInstanceGroupManagedInstancesOutputArgs {
     /**
      * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether to include subcompartments in the returned results. Default is false.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return resources that may partially match the given display name.
      */
-    displayNameContains?: pulumi.Input<string>;
+    displayNameContains?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that match the given display names.
      */
-    displayNames?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagedInstanceGroupManagedInstancesFilterArgs>[]>;
+    displayNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagedInstanceGroupManagedInstancesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
@@ -159,5 +159,5 @@ export interface GetManagedInstanceGroupManagedInstancesOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
      */
-    managedInstanceId?: pulumi.Input<string>;
+    managedInstanceId?: pulumi.Input<string | undefined>;
 }

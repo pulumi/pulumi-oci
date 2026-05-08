@@ -111,7 +111,7 @@ def get_compute_global_image_capability_schemas(compartment_id: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_global_image_capability_schemas = oci.Core.get_compute_global_image_capability_schemas(compartment_id=compartment_id,
+    test_compute_global_image_capability_schemas = oci.core.get_compute_global_image_capability_schemas(compartment_id=compartment_id,
         display_name=compute_global_image_capability_schema_display_name)
     ```
 
@@ -132,9 +132,9 @@ def get_compute_global_image_capability_schemas(compartment_id: Optional[_builti
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_compute_global_image_capability_schemas_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                       display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeGlobalImageCapabilitySchemasFilterArgs', 'GetComputeGlobalImageCapabilitySchemasFilterArgsDict']]]]] = None,
+def get_compute_global_image_capability_schemas_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeGlobalImageCapabilitySchemasFilterArgs', 'GetComputeGlobalImageCapabilitySchemasFilterArgsDict']]]]] = None,
                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeGlobalImageCapabilitySchemasResult]:
     """
     This data source provides the list of Compute Global Image Capability Schemas in Oracle Cloud Infrastructure Core service.
@@ -147,7 +147,7 @@ def get_compute_global_image_capability_schemas_output(compartment_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_global_image_capability_schemas = oci.Core.get_compute_global_image_capability_schemas(compartment_id=compartment_id,
+    test_compute_global_image_capability_schemas = oci.core.get_compute_global_image_capability_schemas(compartment_id=compartment_id,
         display_name=compute_global_image_capability_schema_display_name)
     ```
 

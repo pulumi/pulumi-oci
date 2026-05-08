@@ -273,7 +273,7 @@ def get_outbound_connector(outbound_connector_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_outbound_connector = oci.FileStorage.get_outbound_connector(outbound_connector_id=test_outbound_connector_oci_file_storage_outbound_connector["id"])
+    test_outbound_connector = oci.filestorage.get_outbound_connector(outbound_connector_id=test_outbound_connector_oci_file_storage_outbound_connector["id"])
     ```
 
 
@@ -304,7 +304,7 @@ def get_outbound_connector(outbound_connector_id: Optional[_builtins.str] = None
         time_created=pulumi.get(__ret__, 'time_created'),
         trusted_certificate_secret_id=pulumi.get(__ret__, 'trusted_certificate_secret_id'),
         trusted_certificate_secret_version=pulumi.get(__ret__, 'trusted_certificate_secret_version'))
-def get_outbound_connector_output(outbound_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_outbound_connector_output(outbound_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOutboundConnectorResult]:
     """
     This data source provides details about a specific Outbound Connector resource in Oracle Cloud Infrastructure File Storage service.
@@ -317,7 +317,7 @@ def get_outbound_connector_output(outbound_connector_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_outbound_connector = oci.FileStorage.get_outbound_connector(outbound_connector_id=test_outbound_connector_oci_file_storage_outbound_connector["id"])
+    test_outbound_connector = oci.filestorage.get_outbound_connector(outbound_connector_id=test_outbound_connector_oci_file_storage_outbound_connector["id"])
     ```
 
 

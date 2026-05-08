@@ -61,8 +61,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -103,8 +103,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -145,8 +145,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -187,8 +187,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -229,8 +229,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -271,8 +271,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -319,8 +319,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -367,8 +367,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -415,8 +415,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -463,8 +463,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -511,8 +511,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -559,8 +559,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -607,8 +607,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -649,8 +649,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -691,8 +691,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -733,8 +733,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -775,8 +775,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -817,8 +817,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -867,8 +867,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -917,8 +917,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -967,8 +967,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1017,8 +1017,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1067,8 +1067,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1117,8 +1117,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1167,8 +1167,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDbSystemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1210,8 +1210,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDbSystemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1253,8 +1253,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDbSystemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1296,8 +1296,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDbSystemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1339,8 +1339,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDbSystemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1382,8 +1382,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDbSystemConnectionDetailArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1424,8 +1424,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDbSystemConnectionDetailArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1466,8 +1466,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDbSystemConnectionDetailArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1508,8 +1508,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDbSystemConnectionDetailArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1550,8 +1550,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDbSystemConnectionDetailArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1592,8 +1592,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDbSystemPrimaryDbInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1634,8 +1634,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDbSystemPrimaryDbInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1676,8 +1676,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDbSystemPrimaryDbInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1718,8 +1718,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDbSystemPrimaryDbInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1760,8 +1760,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDbSystemPrimaryDbInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1802,8 +1802,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDbSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1847,8 +1847,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDbSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1892,8 +1892,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDbSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1937,8 +1937,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDbSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1982,8 +1982,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDbSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2027,8 +2027,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDbSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2072,8 +2072,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDbSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2117,8 +2117,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDefaultConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2159,8 +2159,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDefaultConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2201,8 +2201,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDefaultConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2243,8 +2243,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDefaultConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2285,8 +2285,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDefaultConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2327,8 +2327,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDefaultConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2375,8 +2375,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDefaultConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2423,8 +2423,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDefaultConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2471,8 +2471,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDefaultConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2519,8 +2519,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDefaultConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2567,8 +2567,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDefaultConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2615,8 +2615,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetDefaultConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2663,8 +2663,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2706,8 +2706,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2749,8 +2749,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2792,8 +2792,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2835,8 +2835,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2878,8 +2878,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2921,8 +2921,8 @@ public final class PsqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Psql.PsqlFunctions;
      * import com.pulumi.oci.Psql.inputs.GetShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

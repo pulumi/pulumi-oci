@@ -318,7 +318,7 @@ def get_deployment_certificate(certificate_key: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_certificate = oci.GoldenGate.get_deployment_certificate(certificate_key=deployment_certificate_certificate_key,
+    test_deployment_certificate = oci.goldengate.get_deployment_certificate(certificate_key=deployment_certificate_certificate_key,
         deployment_id=test_deployment["id"])
     ```
 
@@ -356,8 +356,8 @@ def get_deployment_certificate(certificate_key: Optional[_builtins.str] = None,
         time_valid_from=pulumi.get(__ret__, 'time_valid_from'),
         time_valid_to=pulumi.get(__ret__, 'time_valid_to'),
         version=pulumi.get(__ret__, 'version'))
-def get_deployment_certificate_output(certificate_key: Optional[pulumi.Input[_builtins.str]] = None,
-                                      deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_deployment_certificate_output(certificate_key: pulumi.Input[Optional[_builtins.str]] = None,
+                                      deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentCertificateResult]:
     """
     This data source provides details about a specific Deployment Certificate resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -370,7 +370,7 @@ def get_deployment_certificate_output(certificate_key: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_certificate = oci.GoldenGate.get_deployment_certificate(certificate_key=deployment_certificate_certificate_key,
+    test_deployment_certificate = oci.goldengate.get_deployment_certificate(certificate_key=deployment_certificate_certificate_key,
         deployment_id=test_deployment["id"])
     ```
 

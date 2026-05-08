@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamSource = oci.AiVision.getStreamSource({
+ * const testStreamSource = oci.aivision.getStreamSource({
  *     streamSourceId: testStreamSourceOciAiVisionStreamSource.id,
  * });
  * ```
@@ -96,7 +96,7 @@ export interface GetStreamSourceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamSource = oci.AiVision.getStreamSource({
+ * const testStreamSource = oci.aivision.getStreamSource({
  *     streamSourceId: testStreamSourceOciAiVisionStreamSource.id,
  * });
  * ```

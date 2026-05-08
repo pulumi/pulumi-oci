@@ -31,7 +31,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     retentionPeriod: backupRetentionPeriod,
+ *     retentionPeriod: Number(backupRetentionPeriod),
  * });
  * ```
  *
@@ -227,51 +227,51 @@ export interface BackupState {
     /**
      * The size of the backup, in gigabytes.
      */
-    backupSize?: pulumi.Input<number>;
+    backupSize?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * List of status for Backup Copy
      */
-    copyStatuses?: pulumi.Input<pulumi.Input<inputs.Psql.BackupCopyStatus>[]>;
+    copyStatuses?: pulumi.Input<pulumi.Input<inputs.Psql.BackupCopyStatus>[] | undefined>;
     /**
      * Information about the database system associated with a backup.
      */
-    dbSystemDetails?: pulumi.Input<pulumi.Input<inputs.Psql.BackupDbSystemDetail>[]>;
+    dbSystemDetails?: pulumi.Input<pulumi.Input<inputs.Psql.BackupDbSystemDetail>[] | undefined>;
     /**
      * The ID of the database system.
      */
-    dbSystemId?: pulumi.Input<string>;
+    dbSystemId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A description for the backup.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * lastAcceptedRequestToken from MP.
      */
-    lastAcceptedRequestToken?: pulumi.Input<string>;
+    lastAcceptedRequestToken?: pulumi.Input<string | undefined>;
     /**
      * lastCompletedRequestToken from MP.
      */
-    lastCompletedRequestToken?: pulumi.Input<string>;
+    lastCompletedRequestToken?: pulumi.Input<string | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Backup retention period in days.
      *
@@ -279,35 +279,35 @@ export interface BackupState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    retentionPeriod?: pulumi.Input<number>;
+    retentionPeriod?: pulumi.Input<number | undefined>;
     /**
      * Information about the Source Backup associated with a backup.
      */
-    sourceBackupDetails?: pulumi.Input<inputs.Psql.BackupSourceBackupDetails>;
+    sourceBackupDetails?: pulumi.Input<inputs.Psql.BackupSourceBackupDetails | undefined>;
     /**
      * Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
      */
-    sourceType?: pulumi.Input<string>;
+    sourceType?: pulumi.Input<string | undefined>;
     /**
      * The current state of the backup.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the backup was created. This is the time the actual point-in-time data snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreatedPrecise?: pulumi.Input<string>;
+    timeCreatedPrecise?: pulumi.Input<string | undefined>;
     /**
      * The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -321,23 +321,23 @@ export interface BackupArgs {
     /**
      * The ID of the database system.
      */
-    dbSystemId?: pulumi.Input<string>;
+    dbSystemId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A description for the backup.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly display name for the backup. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Backup retention period in days.
      *
@@ -345,9 +345,9 @@ export interface BackupArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    retentionPeriod?: pulumi.Input<number>;
+    retentionPeriod?: pulumi.Input<number | undefined>;
     /**
      * Information about the Source Backup associated with a backup.
      */
-    sourceBackupDetails?: pulumi.Input<inputs.Psql.BackupSourceBackupDetails>;
+    sourceBackupDetails?: pulumi.Input<inputs.Psql.BackupSourceBackupDetails | undefined>;
 }

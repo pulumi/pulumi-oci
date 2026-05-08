@@ -17,12 +17,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJmsPlugins = oci.Jms.getJmsPlugins({
+ * const testJmsPlugins = oci.jms.getJmsPlugins({
  *     agentId: jmsPluginAgentId,
  *     agentType: jmsPluginAgentType,
  *     availabilityStatus: jmsPluginAvailabilityStatus,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: jmsPluginCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: jmsPluginCompartmentIdInSubtree === "true",
  *     fleetId: testFleet.id,
  *     hostnameContains: jmsPluginHostnameContains,
  *     id: jmsPluginId,
@@ -155,12 +155,12 @@ export interface GetJmsPluginsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJmsPlugins = oci.Jms.getJmsPlugins({
+ * const testJmsPlugins = oci.jms.getJmsPlugins({
  *     agentId: jmsPluginAgentId,
  *     agentType: jmsPluginAgentType,
  *     availabilityStatus: jmsPluginAvailabilityStatus,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: jmsPluginCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: jmsPluginCompartmentIdInSubtree === "true",
  *     fleetId: testFleet.id,
  *     hostnameContains: jmsPluginHostnameContains,
  *     id: jmsPluginId,
@@ -196,46 +196,46 @@ export interface GetJmsPluginsOutputArgs {
     /**
      * The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  that identifies the Agent.
      */
-    agentId?: pulumi.Input<string>;
+    agentId?: pulumi.Input<string | undefined>;
     /**
      * Filter JmsPlugin with agent type.
      */
-    agentType?: pulumi.Input<string>;
+    agentType?: pulumi.Input<string | undefined>;
     /**
      * Filter JmsPlugin with its availability status.
      */
-    availabilityStatus?: pulumi.Input<string>;
+    availabilityStatus?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetJmsPluginsFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetJmsPluginsFilterArgs>[] | undefined>;
     /**
      * The ID of the Fleet.
      */
-    fleetId?: pulumi.Input<string>;
+    fleetId?: pulumi.Input<string | undefined>;
     /**
      * Filter the list with hostname contains the given value.
      */
-    hostnameContains?: pulumi.Input<string>;
+    hostnameContains?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the JmsPlugin.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Filter JmsPlugin with its lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * If present, only plugins with a last seen time before this parameter are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeLastSeenLessThanOrEqualTo?: pulumi.Input<string>;
+    timeLastSeenLessThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * If present, only plugins with a registration time before this parameter are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeRegisteredLessThanOrEqualTo?: pulumi.Input<string>;
+    timeRegisteredLessThanOrEqualTo?: pulumi.Input<string | undefined>;
 }

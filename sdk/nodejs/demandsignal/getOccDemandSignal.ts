@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccDemandSignal = oci.DemandSignal.getOccDemandSignal({
+ * const testOccDemandSignal = oci.demandsignal.getOccDemandSignal({
  *     occDemandSignalId: testOccDemandSignalOciDemandSignalOccDemandSignal.id,
  * });
  * ```
@@ -105,7 +105,7 @@ export interface GetOccDemandSignalResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccDemandSignal = oci.DemandSignal.getOccDemandSignal({
+ * const testOccDemandSignal = oci.demandsignal.getOccDemandSignal({
  *     occDemandSignalId: testOccDemandSignalOciDemandSignalOccDemandSignal.id,
  * });
  * ```

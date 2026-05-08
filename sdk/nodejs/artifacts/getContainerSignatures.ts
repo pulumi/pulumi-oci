@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerImageSignatures = oci.Artifacts.getContainerSignatures({
+ * const testContainerImageSignatures = oci.artifacts.getContainerSignatures({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: containerImageSignatureCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: containerImageSignatureCompartmentIdInSubtree === "true",
  *     displayName: containerImageSignatureDisplayName,
  *     imageDigest: containerImageSignatureImageDigest,
  *     imageId: testImage.id,
@@ -148,9 +148,9 @@ export interface GetContainerSignaturesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerImageSignatures = oci.Artifacts.getContainerSignatures({
+ * const testContainerImageSignatures = oci.artifacts.getContainerSignatures({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: containerImageSignatureCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: containerImageSignatureCompartmentIdInSubtree === "true",
  *     displayName: containerImageSignatureDisplayName,
  *     imageDigest: containerImageSignatureImageDigest,
  *     imageId: testImage.id,
@@ -190,38 +190,38 @@ export interface GetContainerSignaturesOutputArgs {
     /**
      * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are inspected depending on the the setting of `accessLevel`. Default is false. Can only be set to true when calling the API on the tenancy (root compartment).
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Artifacts.GetContainerSignaturesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Artifacts.GetContainerSignaturesFilterArgs>[] | undefined>;
     /**
      * The digest of the container image.  Example: `sha256:e7d38b3517548a1c71e41bffe9c8ae6d6d29546ce46bf62159837aad072c90aa`
      */
-    imageDigest?: pulumi.Input<string>;
+    imageDigest?: pulumi.Input<string | undefined>;
     /**
      * A filter to return a container image summary only for the specified container image OCID.
      */
-    imageId?: pulumi.Input<string>;
+    imageId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
      */
-    kmsKeyVersionId?: pulumi.Input<string>;
+    kmsKeyVersionId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return container images only for the specified container repository OCID.
      */
-    repositoryId?: pulumi.Input<string>;
+    repositoryId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return container images or container image signatures that match the repository name.  Example: `foo` or `foo*`
      */
-    repositoryName?: pulumi.Input<string>;
+    repositoryName?: pulumi.Input<string | undefined>;
     /**
      * The algorithm to be used for signing. These are the only supported signing algorithms for container images.
      */
-    signingAlgorithm?: pulumi.Input<string>;
+    signingAlgorithm?: pulumi.Input<string | undefined>;
 }

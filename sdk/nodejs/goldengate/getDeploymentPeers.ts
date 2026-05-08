@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeploymentPeers = oci.GoldenGate.getDeploymentPeers({
+ * const testDeploymentPeers = oci.goldengate.getDeploymentPeers({
  *     deploymentId: testDeployment.id,
  *     displayName: deploymentPeerDisplayName,
  *     state: deploymentPeerState,
@@ -90,7 +90,7 @@ export interface GetDeploymentPeersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeploymentPeers = oci.GoldenGate.getDeploymentPeers({
+ * const testDeploymentPeers = oci.goldengate.getDeploymentPeers({
  *     deploymentId: testDeployment.id,
  *     displayName: deploymentPeerDisplayName,
  *     state: deploymentPeerState,
@@ -118,10 +118,10 @@ export interface GetDeploymentPeersOutputArgs {
     /**
      * A filter to return only the resources that match the entire 'displayName' given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetDeploymentPeersFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetDeploymentPeersFilterArgs>[] | undefined>;
     /**
      * A filter to return only the deployment peers having the 'lifecycleState' given.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

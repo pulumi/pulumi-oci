@@ -239,59 +239,59 @@ export interface SqlCollectionState {
     /**
      * (Updatable) The OCID of the compartment containing the SQL collection.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The database user name.
      */
-    dbUserName?: pulumi.Input<string>;
+    dbUserName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the SQL collection.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the SQL collection. The name does not have to be unique, and it is changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Generate Sql Firewall Policy. Could be set to any integer value.
      */
-    generateSqlFirewallPolicyTrigger?: pulumi.Input<boolean>;
+    generateSqlFirewallPolicyTrigger?: pulumi.Input<boolean | undefined>;
     /**
      * Details about the current state of the SQL collection in Data Safe.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Purge Logs. Could be set to any integer value.
      */
-    purgeLogsTrigger?: pulumi.Input<boolean>;
+    purgeLogsTrigger?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Refresh Log Insights. Could be set to any integer value.
      */
-    refreshLogInsightsTrigger?: pulumi.Input<boolean>;
+    refreshLogInsightsTrigger?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies the level of SQL that will be collected. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      */
-    sqlLevel?: pulumi.Input<string>;
+    sqlLevel?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Start. Could be set to any integer value.
      */
-    startTrigger?: pulumi.Input<boolean>;
+    startTrigger?: pulumi.Input<boolean | undefined>;
     /**
      * The current state of the SQL collection.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Specifies if the SqlCollection has to be started after creation. Enabled indicates that the SqlCollection will be started after creation.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Stop. Could be set to any integer value.
      *
@@ -299,31 +299,31 @@ export interface SqlCollectionState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    stopTrigger?: pulumi.Input<boolean>;
+    stopTrigger?: pulumi.Input<boolean | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of the target corresponding to the security policy deployment.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * The time that the SQL collection was created, in the format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The timestamp of the most recent SqlCollection start operation, in the format defined by RFC3339.
      */
-    timeLastStarted?: pulumi.Input<string>;
+    timeLastStarted?: pulumi.Input<string | undefined>;
     /**
      * The timestamp of the most recent SqlCollection stop operation, in the format defined by RFC3339.
      */
-    timeLastStopped?: pulumi.Input<string>;
+    timeLastStopped?: pulumi.Input<string | undefined>;
     /**
      * The last date and time the SQL collection was updated, in the format defined by RFC3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -341,43 +341,43 @@ export interface SqlCollectionArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the SQL collection.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the SQL collection. The name does not have to be unique, and it is changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Generate Sql Firewall Policy. Could be set to any integer value.
      */
-    generateSqlFirewallPolicyTrigger?: pulumi.Input<boolean>;
+    generateSqlFirewallPolicyTrigger?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Purge Logs. Could be set to any integer value.
      */
-    purgeLogsTrigger?: pulumi.Input<boolean>;
+    purgeLogsTrigger?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Refresh Log Insights. Could be set to any integer value.
      */
-    refreshLogInsightsTrigger?: pulumi.Input<boolean>;
+    refreshLogInsightsTrigger?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies the level of SQL that will be collected. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      */
-    sqlLevel?: pulumi.Input<string>;
+    sqlLevel?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Start. Could be set to any integer value.
      */
-    startTrigger?: pulumi.Input<boolean>;
+    startTrigger?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies if the SqlCollection has to be started after creation. Enabled indicates that the SqlCollection will be started after creation.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Stop. Could be set to any integer value.
      *
@@ -385,7 +385,7 @@ export interface SqlCollectionArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    stopTrigger?: pulumi.Input<boolean>;
+    stopTrigger?: pulumi.Input<boolean | undefined>;
     /**
      * The OCID of the target corresponding to the security policy deployment.
      */

@@ -144,9 +144,9 @@ def get_target_database_roles(authentication_type: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_target_database_roles = oci.DataSafe.get_target_database_roles(target_database_id=test_target_database["id"],
+    test_target_database_roles = oci.datasafe.get_target_database_roles(target_database_id=test_target_database["id"],
         authentication_type=target_database_role_authentication_type,
-        is_oracle_maintained=target_database_role_is_oracle_maintained,
+        is_oracle_maintained=target_database_role_is_oracle_maintained == "true",
         role_names=target_database_role_role_name,
         role_name_contains=target_database_role_role_name_contains)
     ```
@@ -177,12 +177,12 @@ def get_target_database_roles(authentication_type: Optional[_builtins.str] = Non
         role_names=pulumi.get(__ret__, 'role_names'),
         roles=pulumi.get(__ret__, 'roles'),
         target_database_id=pulumi.get(__ret__, 'target_database_id'))
-def get_target_database_roles_output(authentication_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTargetDatabaseRolesFilterArgs', 'GetTargetDatabaseRolesFilterArgsDict']]]]] = None,
-                                     is_oracle_maintained: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                     role_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     role_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                     target_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_target_database_roles_output(authentication_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTargetDatabaseRolesFilterArgs', 'GetTargetDatabaseRolesFilterArgsDict']]]]] = None,
+                                     is_oracle_maintained: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                     role_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     role_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                     target_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTargetDatabaseRolesResult]:
     """
     This data source provides the list of Target Database Roles in Oracle Cloud Infrastructure Data Safe service.
@@ -195,9 +195,9 @@ def get_target_database_roles_output(authentication_type: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_target_database_roles = oci.DataSafe.get_target_database_roles(target_database_id=test_target_database["id"],
+    test_target_database_roles = oci.datasafe.get_target_database_roles(target_database_id=test_target_database["id"],
         authentication_type=target_database_role_authentication_type,
-        is_oracle_maintained=target_database_role_is_oracle_maintained,
+        is_oracle_maintained=target_database_role_is_oracle_maintained == "true",
         role_names=target_database_role_role_name,
         role_name_contains=target_database_role_role_name_contains)
     ```

@@ -134,7 +134,7 @@ def get_environments(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_environments = oci.CloudBridge.get_environments(compartment_id=compartment_id,
+    test_environments = oci.cloudbridge.get_environments(compartment_id=compartment_id,
         display_name=environment_display_name,
         environment_id=test_environment["id"],
         state=environment_state)
@@ -163,11 +163,11 @@ def get_environments(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_environments_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                            display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            environment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetEnvironmentsFilterArgs', 'GetEnvironmentsFilterArgsDict']]]]] = None,
-                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_environments_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            environment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetEnvironmentsFilterArgs', 'GetEnvironmentsFilterArgsDict']]]]] = None,
+                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEnvironmentsResult]:
     """
     This data source provides the list of Environments in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -180,7 +180,7 @@ def get_environments_output(compartment_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_environments = oci.CloudBridge.get_environments(compartment_id=compartment_id,
+    test_environments = oci.cloudbridge.get_environments(compartment_id=compartment_id,
         display_name=environment_display_name,
         environment_id=test_environment["id"],
         state=environment_state)

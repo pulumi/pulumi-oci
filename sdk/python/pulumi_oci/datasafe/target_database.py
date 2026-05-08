@@ -23,14 +23,14 @@ class TargetDatabaseArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  database_details: pulumi.Input['TargetDatabaseDatabaseDetailsArgs'],
-                 connection_option: Optional[pulumi.Input['TargetDatabaseConnectionOptionArgs']] = None,
-                 credentials: Optional[pulumi.Input['TargetDatabaseCredentialsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 peer_target_database_details: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]]] = None,
-                 tls_config: Optional[pulumi.Input['TargetDatabaseTlsConfigArgs']] = None):
+                 connection_option: pulumi.Input[Optional['TargetDatabaseConnectionOptionArgs']] = None,
+                 credentials: pulumi.Input[Optional['TargetDatabaseCredentialsArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 peer_target_database_details: pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]]] = None,
+                 tls_config: pulumi.Input[Optional['TargetDatabaseTlsConfigArgs']] = None):
         """
         The set of arguments for constructing a TargetDatabase resource.
 
@@ -90,121 +90,121 @@ class TargetDatabaseArgs:
 
     @_builtins.property
     @pulumi.getter(name="connectionOption")
-    def connection_option(self) -> Optional[pulumi.Input['TargetDatabaseConnectionOptionArgs']]:
+    def connection_option(self) -> pulumi.Input[Optional['TargetDatabaseConnectionOptionArgs']]:
         """
         (Updatable) Types of connection supported by Data Safe.
         """
         return pulumi.get(self, "connection_option")
 
     @connection_option.setter
-    def connection_option(self, value: Optional[pulumi.Input['TargetDatabaseConnectionOptionArgs']]):
+    def connection_option(self, value: pulumi.Input[Optional['TargetDatabaseConnectionOptionArgs']]):
         pulumi.set(self, "connection_option", value)
 
     @_builtins.property
     @pulumi.getter
-    def credentials(self) -> Optional[pulumi.Input['TargetDatabaseCredentialsArgs']]:
+    def credentials(self) -> pulumi.Input[Optional['TargetDatabaseCredentialsArgs']]:
         """
         (Updatable) The database credentials required for Data Safe to connect to the database.
         """
         return pulumi.get(self, "credentials")
 
     @credentials.setter
-    def credentials(self, value: Optional[pulumi.Input['TargetDatabaseCredentialsArgs']]):
+    def credentials(self, value: pulumi.Input[Optional['TargetDatabaseCredentialsArgs']]):
         pulumi.set(self, "credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the target database in Data Safe.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="peerTargetDatabaseDetails")
-    def peer_target_database_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]]]:
+    def peer_target_database_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]]]:
         """
         The details of the database to be registered as a peer target database.
         """
         return pulumi.get(self, "peer_target_database_details")
 
     @peer_target_database_details.setter
-    def peer_target_database_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]]]):
+    def peer_target_database_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]]]):
         pulumi.set(self, "peer_target_database_details", value)
 
     @_builtins.property
     @pulumi.getter(name="tlsConfig")
-    def tls_config(self) -> Optional[pulumi.Input['TargetDatabaseTlsConfigArgs']]:
+    def tls_config(self) -> pulumi.Input[Optional['TargetDatabaseTlsConfigArgs']]:
         """
         (Updatable) The details required to establish a TLS enabled connection.
         """
         return pulumi.get(self, "tls_config")
 
     @tls_config.setter
-    def tls_config(self, value: Optional[pulumi.Input['TargetDatabaseTlsConfigArgs']]):
+    def tls_config(self, value: pulumi.Input[Optional['TargetDatabaseTlsConfigArgs']]):
         pulumi.set(self, "tls_config", value)
 
 
 @pulumi.input_type
 class _TargetDatabaseState:
     def __init__(__self__, *,
-                 associated_resource_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_option: Optional[pulumi.Input['TargetDatabaseConnectionOptionArgs']] = None,
-                 credentials: Optional[pulumi.Input['TargetDatabaseCredentialsArgs']] = None,
-                 database_details: Optional[pulumi.Input['TargetDatabaseDatabaseDetailsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_target_database_details: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]]] = None,
-                 peer_target_databases: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseArgs']]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 tls_config: Optional[pulumi.Input['TargetDatabaseTlsConfigArgs']] = None):
+                 associated_resource_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_option: pulumi.Input[Optional['TargetDatabaseConnectionOptionArgs']] = None,
+                 credentials: pulumi.Input[Optional['TargetDatabaseCredentialsArgs']] = None,
+                 database_details: pulumi.Input[Optional['TargetDatabaseDatabaseDetailsArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_target_database_details: pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]]] = None,
+                 peer_target_databases: pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseArgs']]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 tls_config: pulumi.Input[Optional['TargetDatabaseTlsConfigArgs']] = None):
         """
         Input properties used for looking up and filtering TargetDatabase resources.
 
@@ -263,206 +263,206 @@ class _TargetDatabaseState:
 
     @_builtins.property
     @pulumi.getter(name="associatedResourceIds")
-    def associated_resource_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def associated_resource_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The OCIDs of associated resources like database, Data Safe private endpoint etc.
         """
         return pulumi.get(self, "associated_resource_ids")
 
     @associated_resource_ids.setter
-    def associated_resource_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def associated_resource_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "associated_resource_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment in which to create the Data Safe target database.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionOption")
-    def connection_option(self) -> Optional[pulumi.Input['TargetDatabaseConnectionOptionArgs']]:
+    def connection_option(self) -> pulumi.Input[Optional['TargetDatabaseConnectionOptionArgs']]:
         """
         (Updatable) Types of connection supported by Data Safe.
         """
         return pulumi.get(self, "connection_option")
 
     @connection_option.setter
-    def connection_option(self, value: Optional[pulumi.Input['TargetDatabaseConnectionOptionArgs']]):
+    def connection_option(self, value: pulumi.Input[Optional['TargetDatabaseConnectionOptionArgs']]):
         pulumi.set(self, "connection_option", value)
 
     @_builtins.property
     @pulumi.getter
-    def credentials(self) -> Optional[pulumi.Input['TargetDatabaseCredentialsArgs']]:
+    def credentials(self) -> pulumi.Input[Optional['TargetDatabaseCredentialsArgs']]:
         """
         (Updatable) The database credentials required for Data Safe to connect to the database.
         """
         return pulumi.get(self, "credentials")
 
     @credentials.setter
-    def credentials(self, value: Optional[pulumi.Input['TargetDatabaseCredentialsArgs']]):
+    def credentials(self, value: pulumi.Input[Optional['TargetDatabaseCredentialsArgs']]):
         pulumi.set(self, "credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseDetails")
-    def database_details(self) -> Optional[pulumi.Input['TargetDatabaseDatabaseDetailsArgs']]:
+    def database_details(self) -> pulumi.Input[Optional['TargetDatabaseDatabaseDetailsArgs']]:
         """
         (Updatable) Details of the database for the registration in Data Safe.
         """
         return pulumi.get(self, "database_details")
 
     @database_details.setter
-    def database_details(self, value: Optional[pulumi.Input['TargetDatabaseDatabaseDetailsArgs']]):
+    def database_details(self, value: pulumi.Input[Optional['TargetDatabaseDatabaseDetailsArgs']]):
         pulumi.set(self, "database_details", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the target database in Data Safe.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Details about the current state of the peer target database in Data Safe.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="peerTargetDatabaseDetails")
-    def peer_target_database_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]]]:
+    def peer_target_database_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]]]:
         """
         The details of the database to be registered as a peer target database.
         """
         return pulumi.get(self, "peer_target_database_details")
 
     @peer_target_database_details.setter
-    def peer_target_database_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]]]):
+    def peer_target_database_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]]]):
         pulumi.set(self, "peer_target_database_details", value)
 
     @_builtins.property
     @pulumi.getter(name="peerTargetDatabases")
-    def peer_target_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseArgs']]]]:
+    def peer_target_databases(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseArgs']]]]:
         """
         The OCIDs of associated resources like Database, Data Safe private endpoint etc.
         """
         return pulumi.get(self, "peer_target_databases")
 
     @peer_target_databases.setter
-    def peer_target_databases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseArgs']]]]):
+    def peer_target_databases(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseArgs']]]]):
         pulumi.set(self, "peer_target_databases", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the target database in Data Safe.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the database was registered in Data Safe and created as a target database in Data Safe.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time of the target database update in Data Safe.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="tlsConfig")
-    def tls_config(self) -> Optional[pulumi.Input['TargetDatabaseTlsConfigArgs']]:
+    def tls_config(self) -> pulumi.Input[Optional['TargetDatabaseTlsConfigArgs']]:
         """
         (Updatable) The details required to establish a TLS enabled connection.
         """
         return pulumi.get(self, "tls_config")
 
     @tls_config.setter
-    def tls_config(self, value: Optional[pulumi.Input['TargetDatabaseTlsConfigArgs']]):
+    def tls_config(self, value: pulumi.Input[Optional['TargetDatabaseTlsConfigArgs']]):
         pulumi.set(self, "tls_config", value)
 
 
@@ -472,16 +472,16 @@ class TargetDatabase(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_option: Optional[pulumi.Input[Union['TargetDatabaseConnectionOptionArgs', 'TargetDatabaseConnectionOptionArgsDict']]] = None,
-                 credentials: Optional[pulumi.Input[Union['TargetDatabaseCredentialsArgs', 'TargetDatabaseCredentialsArgsDict']]] = None,
-                 database_details: Optional[pulumi.Input[Union['TargetDatabaseDatabaseDetailsArgs', 'TargetDatabaseDatabaseDetailsArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 peer_target_database_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseDetailArgs', 'TargetDatabasePeerTargetDatabaseDetailArgsDict']]]]] = None,
-                 tls_config: Optional[pulumi.Input[Union['TargetDatabaseTlsConfigArgs', 'TargetDatabaseTlsConfigArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_option: pulumi.Input[Optional[Union['TargetDatabaseConnectionOptionArgs', 'TargetDatabaseConnectionOptionArgsDict']]] = None,
+                 credentials: pulumi.Input[Optional[Union['TargetDatabaseCredentialsArgs', 'TargetDatabaseCredentialsArgsDict']]] = None,
+                 database_details: pulumi.Input[Optional[Union['TargetDatabaseDatabaseDetailsArgs', 'TargetDatabaseDatabaseDetailsArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 peer_target_database_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseDetailArgs', 'TargetDatabasePeerTargetDatabaseDetailArgsDict']]]]] = None,
+                 tls_config: pulumi.Input[Optional[Union['TargetDatabaseTlsConfigArgs', 'TargetDatabaseTlsConfigArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Target Database resource in Oracle Cloud Infrastructure Data Safe service.
@@ -506,7 +506,7 @@ class TargetDatabase(pulumi.CustomResource):
                 "db_system_id": test_db_system["id"],
                 "instance_id": test_instance["id"],
                 "ip_addresses": target_database_database_details_ip_addresses,
-                "listener_port": target_database_database_details_listener_port,
+                "listener_port": int(target_database_database_details_listener_port),
                 "pluggable_database_id": test_pluggable_database["id"],
                 "service_name": test_service["name"],
                 "vm_cluster_id": test_vm_cluster["id"],
@@ -536,7 +536,7 @@ class TargetDatabase(pulumi.CustomResource):
                     "db_system_id": test_db_system["id"],
                     "instance_id": test_instance["id"],
                     "ip_addresses": target_database_peer_target_database_details_database_details_ip_addresses,
-                    "listener_port": target_database_peer_target_database_details_database_details_listener_port,
+                    "listener_port": int(target_database_peer_target_database_details_database_details_listener_port),
                     "pluggable_database_id": test_pluggable_database["id"],
                     "service_name": test_service["name"],
                     "vm_cluster_id": test_vm_cluster["id"],
@@ -612,7 +612,7 @@ class TargetDatabase(pulumi.CustomResource):
                 "db_system_id": test_db_system["id"],
                 "instance_id": test_instance["id"],
                 "ip_addresses": target_database_database_details_ip_addresses,
-                "listener_port": target_database_database_details_listener_port,
+                "listener_port": int(target_database_database_details_listener_port),
                 "pluggable_database_id": test_pluggable_database["id"],
                 "service_name": test_service["name"],
                 "vm_cluster_id": test_vm_cluster["id"],
@@ -642,7 +642,7 @@ class TargetDatabase(pulumi.CustomResource):
                     "db_system_id": test_db_system["id"],
                     "instance_id": test_instance["id"],
                     "ip_addresses": target_database_peer_target_database_details_database_details_ip_addresses,
-                    "listener_port": target_database_peer_target_database_details_database_details_listener_port,
+                    "listener_port": int(target_database_peer_target_database_details_database_details_listener_port),
                     "pluggable_database_id": test_pluggable_database["id"],
                     "service_name": test_service["name"],
                     "vm_cluster_id": test_vm_cluster["id"],
@@ -691,16 +691,16 @@ class TargetDatabase(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_option: Optional[pulumi.Input[Union['TargetDatabaseConnectionOptionArgs', 'TargetDatabaseConnectionOptionArgsDict']]] = None,
-                 credentials: Optional[pulumi.Input[Union['TargetDatabaseCredentialsArgs', 'TargetDatabaseCredentialsArgsDict']]] = None,
-                 database_details: Optional[pulumi.Input[Union['TargetDatabaseDatabaseDetailsArgs', 'TargetDatabaseDatabaseDetailsArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 peer_target_database_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseDetailArgs', 'TargetDatabasePeerTargetDatabaseDetailArgsDict']]]]] = None,
-                 tls_config: Optional[pulumi.Input[Union['TargetDatabaseTlsConfigArgs', 'TargetDatabaseTlsConfigArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_option: pulumi.Input[Optional[Union['TargetDatabaseConnectionOptionArgs', 'TargetDatabaseConnectionOptionArgsDict']]] = None,
+                 credentials: pulumi.Input[Optional[Union['TargetDatabaseCredentialsArgs', 'TargetDatabaseCredentialsArgsDict']]] = None,
+                 database_details: pulumi.Input[Optional[Union['TargetDatabaseDatabaseDetailsArgs', 'TargetDatabaseDatabaseDetailsArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 peer_target_database_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseDetailArgs', 'TargetDatabasePeerTargetDatabaseDetailArgsDict']]]]] = None,
+                 tls_config: pulumi.Input[Optional[Union['TargetDatabaseTlsConfigArgs', 'TargetDatabaseTlsConfigArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -741,23 +741,23 @@ class TargetDatabase(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            associated_resource_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            connection_option: Optional[pulumi.Input[Union['TargetDatabaseConnectionOptionArgs', 'TargetDatabaseConnectionOptionArgsDict']]] = None,
-            credentials: Optional[pulumi.Input[Union['TargetDatabaseCredentialsArgs', 'TargetDatabaseCredentialsArgsDict']]] = None,
-            database_details: Optional[pulumi.Input[Union['TargetDatabaseDatabaseDetailsArgs', 'TargetDatabaseDatabaseDetailsArgsDict']]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            peer_target_database_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseDetailArgs', 'TargetDatabasePeerTargetDatabaseDetailArgsDict']]]]] = None,
-            peer_target_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseArgs', 'TargetDatabasePeerTargetDatabaseArgsDict']]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            tls_config: Optional[pulumi.Input[Union['TargetDatabaseTlsConfigArgs', 'TargetDatabaseTlsConfigArgsDict']]] = None) -> 'TargetDatabase':
+            associated_resource_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_option: pulumi.Input[Optional[Union['TargetDatabaseConnectionOptionArgs', 'TargetDatabaseConnectionOptionArgsDict']]] = None,
+            credentials: pulumi.Input[Optional[Union['TargetDatabaseCredentialsArgs', 'TargetDatabaseCredentialsArgsDict']]] = None,
+            database_details: pulumi.Input[Optional[Union['TargetDatabaseDatabaseDetailsArgs', 'TargetDatabaseDatabaseDetailsArgsDict']]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_target_database_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseDetailArgs', 'TargetDatabasePeerTargetDatabaseDetailArgsDict']]]]] = None,
+            peer_target_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseArgs', 'TargetDatabasePeerTargetDatabaseArgsDict']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            tls_config: pulumi.Input[Optional[Union['TargetDatabaseTlsConfigArgs', 'TargetDatabaseTlsConfigArgsDict']]] = None) -> 'TargetDatabase':
         """
         Get an existing TargetDatabase resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

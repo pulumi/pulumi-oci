@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveDataModelsSensitiveColumn = oci.DataSafe.getSensitiveDataModelsSensitiveColumn({
+ * const testSensitiveDataModelsSensitiveColumn = oci.datasafe.getSensitiveDataModelsSensitiveColumn({
  *     sensitiveColumnKey: sensitiveDataModelsSensitiveColumnSensitiveColumnKey,
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  * });
@@ -159,7 +159,7 @@ export interface GetSensitiveDataModelsSensitiveColumnResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveDataModelsSensitiveColumn = oci.DataSafe.getSensitiveDataModelsSensitiveColumn({
+ * const testSensitiveDataModelsSensitiveColumn = oci.datasafe.getSensitiveDataModelsSensitiveColumn({
  *     sensitiveColumnKey: sensitiveDataModelsSensitiveColumnSensitiveColumnKey,
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  * });

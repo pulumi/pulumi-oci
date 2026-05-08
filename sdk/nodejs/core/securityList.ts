@@ -48,24 +48,24 @@ import * as utilities from "../utilities";
  *         description: securityListEgressSecurityRulesDescription,
  *         destinationType: securityListEgressSecurityRulesDestinationType,
  *         icmpOptions: {
- *             type: securityListEgressSecurityRulesIcmpOptionsType,
- *             code: securityListEgressSecurityRulesIcmpOptionsCode,
+ *             type: Number(securityListEgressSecurityRulesIcmpOptionsType),
+ *             code: Number(securityListEgressSecurityRulesIcmpOptionsCode),
  *         },
- *         stateless: securityListEgressSecurityRulesStateless,
+ *         stateless: securityListEgressSecurityRulesStateless === "true",
  *         tcpOptions: {
- *             max: securityListEgressSecurityRulesTcpOptionsDestinationPortRangeMax,
- *             min: securityListEgressSecurityRulesTcpOptionsDestinationPortRangeMin,
+ *             max: Number(securityListEgressSecurityRulesTcpOptionsDestinationPortRangeMax),
+ *             min: Number(securityListEgressSecurityRulesTcpOptionsDestinationPortRangeMin),
  *             sourcePortRange: {
- *                 max: securityListEgressSecurityRulesTcpOptionsSourcePortRangeMax,
- *                 min: securityListEgressSecurityRulesTcpOptionsSourcePortRangeMin,
+ *                 max: Number(securityListEgressSecurityRulesTcpOptionsSourcePortRangeMax),
+ *                 min: Number(securityListEgressSecurityRulesTcpOptionsSourcePortRangeMin),
  *             },
  *         },
  *         udpOptions: {
- *             max: securityListEgressSecurityRulesUdpOptionsDestinationPortRangeMax,
- *             min: securityListEgressSecurityRulesUdpOptionsDestinationPortRangeMin,
+ *             max: Number(securityListEgressSecurityRulesUdpOptionsDestinationPortRangeMax),
+ *             min: Number(securityListEgressSecurityRulesUdpOptionsDestinationPortRangeMin),
  *             sourcePortRange: {
- *                 max: securityListEgressSecurityRulesUdpOptionsSourcePortRangeMax,
- *                 min: securityListEgressSecurityRulesUdpOptionsSourcePortRangeMin,
+ *                 max: Number(securityListEgressSecurityRulesUdpOptionsSourcePortRangeMax),
+ *                 min: Number(securityListEgressSecurityRulesUdpOptionsSourcePortRangeMin),
  *             },
  *         },
  *     }],
@@ -77,25 +77,25 @@ import * as utilities from "../utilities";
  *         source: securityListIngressSecurityRulesSource,
  *         description: securityListIngressSecurityRulesDescription,
  *         icmpOptions: {
- *             type: securityListIngressSecurityRulesIcmpOptionsType,
- *             code: securityListIngressSecurityRulesIcmpOptionsCode,
+ *             type: Number(securityListIngressSecurityRulesIcmpOptionsType),
+ *             code: Number(securityListIngressSecurityRulesIcmpOptionsCode),
  *         },
  *         sourceType: securityListIngressSecurityRulesSourceType,
- *         stateless: securityListIngressSecurityRulesStateless,
+ *         stateless: securityListIngressSecurityRulesStateless === "true",
  *         tcpOptions: {
- *             max: securityListIngressSecurityRulesTcpOptionsDestinationPortRangeMax,
- *             min: securityListIngressSecurityRulesTcpOptionsDestinationPortRangeMin,
+ *             max: Number(securityListIngressSecurityRulesTcpOptionsDestinationPortRangeMax),
+ *             min: Number(securityListIngressSecurityRulesTcpOptionsDestinationPortRangeMin),
  *             sourcePortRange: {
- *                 max: securityListIngressSecurityRulesTcpOptionsSourcePortRangeMax,
- *                 min: securityListIngressSecurityRulesTcpOptionsSourcePortRangeMin,
+ *                 max: Number(securityListIngressSecurityRulesTcpOptionsSourcePortRangeMax),
+ *                 min: Number(securityListIngressSecurityRulesTcpOptionsSourcePortRangeMin),
  *             },
  *         },
  *         udpOptions: {
- *             max: securityListIngressSecurityRulesUdpOptionsDestinationPortRangeMax,
- *             min: securityListIngressSecurityRulesUdpOptionsDestinationPortRangeMin,
+ *             max: Number(securityListIngressSecurityRulesUdpOptionsDestinationPortRangeMax),
+ *             min: Number(securityListIngressSecurityRulesUdpOptionsDestinationPortRangeMin),
  *             sourcePortRange: {
- *                 max: securityListIngressSecurityRulesUdpOptionsSourcePortRangeMax,
- *                 min: securityListIngressSecurityRulesUdpOptionsSourcePortRangeMin,
+ *                 max: Number(securityListIngressSecurityRulesUdpOptionsSourcePortRangeMax),
+ *                 min: Number(securityListIngressSecurityRulesUdpOptionsSourcePortRangeMin),
  *             },
  *         },
  *     }],
@@ -231,35 +231,35 @@ export interface SecurityListState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the security list.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Rules for allowing egress IP packets.
      */
-    egressSecurityRules?: pulumi.Input<pulumi.Input<inputs.Core.SecurityListEgressSecurityRule>[]>;
+    egressSecurityRules?: pulumi.Input<pulumi.Input<inputs.Core.SecurityListEgressSecurityRule>[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Rules for allowing ingress IP packets.
      */
-    ingressSecurityRules?: pulumi.Input<pulumi.Input<inputs.Core.SecurityListIngressSecurityRule>[]>;
+    ingressSecurityRules?: pulumi.Input<pulumi.Input<inputs.Core.SecurityListIngressSecurityRule>[] | undefined>;
     /**
      * The security list's current state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the security list was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the security list belongs to.
      *
@@ -267,7 +267,7 @@ export interface SecurityListState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vcnId?: pulumi.Input<string>;
+    vcnId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -281,23 +281,23 @@ export interface SecurityListArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Rules for allowing egress IP packets.
      */
-    egressSecurityRules?: pulumi.Input<pulumi.Input<inputs.Core.SecurityListEgressSecurityRule>[]>;
+    egressSecurityRules?: pulumi.Input<pulumi.Input<inputs.Core.SecurityListEgressSecurityRule>[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Rules for allowing ingress IP packets.
      */
-    ingressSecurityRules?: pulumi.Input<pulumi.Input<inputs.Core.SecurityListIngressSecurityRule>[]>;
+    ingressSecurityRules?: pulumi.Input<pulumi.Input<inputs.Core.SecurityListIngressSecurityRule>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the security list belongs to.
      *

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbNodeSnapshots = oci.Database.getDbNodeSnapshots({
+ * const testDbNodeSnapshots = oci.database.getDbNodeSnapshots({
  *     compartmentId: compartmentId,
  *     clusterId: testDbNodeSnapshotManagement.exadbVmClusterId,
  *     name: testDbNodeSnapshotManagement.snapshots[0].name,
@@ -110,7 +110,7 @@ export interface GetDbNodeSnapshotsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbNodeSnapshots = oci.Database.getDbNodeSnapshots({
+ * const testDbNodeSnapshots = oci.database.getDbNodeSnapshots({
  *     compartmentId: compartmentId,
  *     clusterId: testDbNodeSnapshotManagement.exadbVmClusterId,
  *     name: testDbNodeSnapshotManagement.snapshots[0].name,
@@ -138,22 +138,22 @@ export interface GetDbNodeSnapshotsOutputArgs {
     /**
      * A filter to return only Exadata Database Node Snapshots that match the given VM cluster.
      */
-    clusterId?: pulumi.Input<string>;
+    clusterId?: pulumi.Input<string | undefined>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbNodeSnapshotsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbNodeSnapshotsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the entire name given. The match is not case sensitive.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only Exadata Database Snapshots that match the given database node.
      */
-    sourceDbnodeId?: pulumi.Input<string>;
+    sourceDbnodeId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only Exadata Database Snapshots that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

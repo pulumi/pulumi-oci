@@ -201,7 +201,7 @@ def get_agent_plugin(agent_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_agent_plugin = oci.CloudBridge.get_agent_plugin(agent_id=test_agent["id"],
+    test_agent_plugin = oci.cloudbridge.get_agent_plugin(agent_id=test_agent["id"],
         plugin_name=agent_plugin_plugin_name)
     ```
 
@@ -229,8 +229,8 @@ def get_agent_plugin(agent_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_agent_plugin_output(agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                            plugin_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_agent_plugin_output(agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                            plugin_name: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentPluginResult]:
     """
     This data source provides details about a specific Agent Plugin resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -243,7 +243,7 @@ def get_agent_plugin_output(agent_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_agent_plugin = oci.CloudBridge.get_agent_plugin(agent_id=test_agent["id"],
+    test_agent_plugin = oci.cloudbridge.get_agent_plugin(agent_id=test_agent["id"],
         plugin_name=agent_plugin_plugin_name)
     ```
 

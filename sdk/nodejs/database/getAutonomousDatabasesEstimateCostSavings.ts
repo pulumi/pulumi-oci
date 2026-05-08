@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabasesEstimateCostSavings = oci.Database.getAutonomousDatabasesEstimateCostSavings({
+ * const testAutonomousDatabasesEstimateCostSavings = oci.database.getAutonomousDatabasesEstimateCostSavings({
  *     autonomousDatabaseId: testAutonomousDatabase.id,
- *     isCpuAutoscale: autonomousDatabasesEstimateCostSavingIsCpuAutoscale,
+ *     isCpuAutoscale: autonomousDatabasesEstimateCostSavingIsCpuAutoscale === "true",
  * });
  * ```
  */
@@ -77,9 +77,9 @@ export interface GetAutonomousDatabasesEstimateCostSavingsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabasesEstimateCostSavings = oci.Database.getAutonomousDatabasesEstimateCostSavings({
+ * const testAutonomousDatabasesEstimateCostSavings = oci.database.getAutonomousDatabasesEstimateCostSavings({
  *     autonomousDatabaseId: testAutonomousDatabase.id,
- *     isCpuAutoscale: autonomousDatabasesEstimateCostSavingIsCpuAutoscale,
+ *     isCpuAutoscale: autonomousDatabasesEstimateCostSavingIsCpuAutoscale === "true",
  * });
  * ```
  */
@@ -100,7 +100,7 @@ export interface GetAutonomousDatabasesEstimateCostSavingsOutputArgs {
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     autonomousDatabaseId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousDatabasesEstimateCostSavingsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousDatabasesEstimateCostSavingsFilterArgs>[] | undefined>;
     /**
      * If provided as true, cost estimate with cpu autoscaling.
      */

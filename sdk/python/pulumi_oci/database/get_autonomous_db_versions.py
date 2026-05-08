@@ -113,7 +113,7 @@ def get_autonomous_db_versions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_db_versions = oci.Database.get_autonomous_db_versions(compartment_id=compartment_id,
+    test_autonomous_db_versions = oci.database.get_autonomous_db_versions(compartment_id=compartment_id,
         db_workload=autonomous_db_version_db_workload)
     ```
 
@@ -134,9 +134,9 @@ def get_autonomous_db_versions(compartment_id: Optional[_builtins.str] = None,
         db_workload=pulumi.get(__ret__, 'db_workload'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_autonomous_db_versions_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      db_workload: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousDbVersionsFilterArgs', 'GetAutonomousDbVersionsFilterArgsDict']]]]] = None,
+def get_autonomous_db_versions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      db_workload: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousDbVersionsFilterArgs', 'GetAutonomousDbVersionsFilterArgsDict']]]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDbVersionsResult]:
     """
     This data source provides the list of Autonomous Db Versions in Oracle Cloud Infrastructure Database service.
@@ -149,7 +149,7 @@ def get_autonomous_db_versions_output(compartment_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_db_versions = oci.Database.get_autonomous_db_versions(compartment_id=compartment_id,
+    test_autonomous_db_versions = oci.database.get_autonomous_db_versions(compartment_id=compartment_id,
         db_workload=autonomous_db_version_db_workload)
     ```
 

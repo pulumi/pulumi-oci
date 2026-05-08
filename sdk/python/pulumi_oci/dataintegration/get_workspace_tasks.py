@@ -170,7 +170,7 @@ def get_workspace_tasks(fields: Optional[Sequence[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_tasks = oci.DataIntegration.get_workspace_tasks(workspace_id=test_workspace["id"],
+    test_workspace_tasks = oci.dataintegration.get_workspace_tasks(workspace_id=test_workspace["id"],
         fields=workspace_task_fields,
         folder_id=test_folder["id"],
         identifiers=workspace_task_identifier,
@@ -211,14 +211,14 @@ def get_workspace_tasks(fields: Optional[Sequence[_builtins.str]] = None,
         task_summary_collections=pulumi.get(__ret__, 'task_summary_collections'),
         types=pulumi.get(__ret__, 'types'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-def get_workspace_tasks_output(fields: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkspaceTasksFilterArgs', 'GetWorkspaceTasksFilterArgsDict']]]]] = None,
-                               folder_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               identifiers: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                               keys: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                               name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                               workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_workspace_tasks_output(fields: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWorkspaceTasksFilterArgs', 'GetWorkspaceTasksFilterArgsDict']]]]] = None,
+                               folder_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               identifiers: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                               keys: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                               name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                               workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceTasksResult]:
     """
     This data source provides the list of Workspace Tasks in Oracle Cloud Infrastructure Data Integration service.
@@ -231,7 +231,7 @@ def get_workspace_tasks_output(fields: Optional[pulumi.Input[Optional[Sequence[_
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_tasks = oci.DataIntegration.get_workspace_tasks(workspace_id=test_workspace["id"],
+    test_workspace_tasks = oci.dataintegration.get_workspace_tasks(workspace_id=test_workspace["id"],
         fields=workspace_task_fields,
         folder_id=test_folder["id"],
         identifiers=workspace_task_identifier,

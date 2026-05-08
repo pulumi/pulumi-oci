@@ -196,8 +196,8 @@ def get_multicloud_resource_anchors(compartment_id: Optional[_builtins.str] = No
         lifecycle_state=lifecycle_state,
         display_name=resource_anchor_display_name,
         id=resource_anchor_id,
-        is_compartment_id_in_subtree=is_compartment_id_in_subtree,
-        should_fetch_compartment_name=should_fetch_compartment_name,
+        is_compartment_id_in_subtree=is_compartment_id_in_subtree == "true",
+        should_fetch_compartment_name=should_fetch_compartment_name == "true",
         subscription_service_name=subscription_service_name,
         subscription_id=subscription_id)
     ```
@@ -241,17 +241,17 @@ def get_multicloud_resource_anchors(compartment_id: Optional[_builtins.str] = No
         should_fetch_compartment_name=pulumi.get(__ret__, 'should_fetch_compartment_name'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         subscription_service_name=pulumi.get(__ret__, 'subscription_service_name'))
-def get_multicloud_resource_anchors_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMulticloudResourceAnchorsFilterArgs', 'GetMulticloudResourceAnchorsFilterArgsDict']]]]] = None,
-                                           id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           is_compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                           lifecycle_state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                           linked_compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           should_fetch_compartment_name: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                           subscription_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           subscription_service_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_multicloud_resource_anchors_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMulticloudResourceAnchorsFilterArgs', 'GetMulticloudResourceAnchorsFilterArgsDict']]]]] = None,
+                                           id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           is_compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                           lifecycle_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                           linked_compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           should_fetch_compartment_name: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                           subscription_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           subscription_service_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMulticloudResourceAnchorsResult]:
     """
     This data source provides the list of Resource Anchors in Oracle Cloud Infrastructure Multicloud service.
@@ -269,8 +269,8 @@ def get_multicloud_resource_anchors_output(compartment_id: Optional[pulumi.Input
         lifecycle_state=lifecycle_state,
         display_name=resource_anchor_display_name,
         id=resource_anchor_id,
-        is_compartment_id_in_subtree=is_compartment_id_in_subtree,
-        should_fetch_compartment_name=should_fetch_compartment_name,
+        is_compartment_id_in_subtree=is_compartment_id_in_subtree == "true",
+        should_fetch_compartment_name=should_fetch_compartment_name == "true",
         subscription_service_name=subscription_service_name,
         subscription_id=subscription_id)
     ```

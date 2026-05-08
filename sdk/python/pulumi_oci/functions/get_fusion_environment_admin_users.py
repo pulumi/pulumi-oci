@@ -95,7 +95,7 @@ def get_fusion_environment_admin_users(filters: Optional[Sequence[Union['GetFusi
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_admin_users = oci.Functions.get_fusion_environment_admin_users(fusion_environment_id=test_fusion_environment["id"])
+    test_fusion_environment_admin_users = oci.functions.get_fusion_environment_admin_users(fusion_environment_id=test_fusion_environment["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_fusion_environment_admin_users(filters: Optional[Sequence[Union['GetFusi
         filters=pulumi.get(__ret__, 'filters'),
         fusion_environment_id=pulumi.get(__ret__, 'fusion_environment_id'),
         id=pulumi.get(__ret__, 'id'))
-def get_fusion_environment_admin_users_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFusionEnvironmentAdminUsersFilterArgs', 'GetFusionEnvironmentAdminUsersFilterArgsDict']]]]] = None,
-                                              fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fusion_environment_admin_users_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFusionEnvironmentAdminUsersFilterArgs', 'GetFusionEnvironmentAdminUsersFilterArgsDict']]]]] = None,
+                                              fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentAdminUsersResult]:
     """
     This data source provides the list of Fusion Environment Admin Users in Oracle Cloud Infrastructure Fusion Apps service.
@@ -126,7 +126,7 @@ def get_fusion_environment_admin_users_output(filters: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_admin_users = oci.Functions.get_fusion_environment_admin_users(fusion_environment_id=test_fusion_environment["id"])
+    test_fusion_environment_admin_users = oci.functions.get_fusion_environment_admin_users(fusion_environment_id=test_fusion_environment["id"])
     ```
 
 

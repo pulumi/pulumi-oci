@@ -148,7 +148,7 @@ def get_custom_protection_rules(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_custom_protection_rules = oci.Waas.get_custom_protection_rules(compartment_id=compartment_id,
+    test_custom_protection_rules = oci.waas.get_custom_protection_rules(compartment_id=compartment_id,
         display_names=custom_protection_rule_display_names,
         ids=custom_protection_rule_ids,
         states=custom_protection_rule_states,
@@ -185,13 +185,13 @@ def get_custom_protection_rules(compartment_id: Optional[_builtins.str] = None,
         states=pulumi.get(__ret__, 'states'),
         time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
-def get_custom_protection_rules_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       display_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCustomProtectionRulesFilterArgs', 'GetCustomProtectionRulesFilterArgsDict']]]]] = None,
-                                       ids: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                       states: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                       time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       time_created_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_custom_protection_rules_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       display_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCustomProtectionRulesFilterArgs', 'GetCustomProtectionRulesFilterArgsDict']]]]] = None,
+                                       ids: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                       states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                       time_created_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       time_created_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCustomProtectionRulesResult]:
     """
     This data source provides the list of Custom Protection Rules in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -204,7 +204,7 @@ def get_custom_protection_rules_output(compartment_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_custom_protection_rules = oci.Waas.get_custom_protection_rules(compartment_id=compartment_id,
+    test_custom_protection_rules = oci.waas.get_custom_protection_rules(compartment_id=compartment_id,
         display_names=custom_protection_rule_display_names,
         ids=custom_protection_rule_ids,
         states=custom_protection_rule_states,

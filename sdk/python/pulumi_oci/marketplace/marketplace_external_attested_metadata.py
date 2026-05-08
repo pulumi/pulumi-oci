@@ -66,9 +66,9 @@ class MarketplaceExternalAttestedMetadataArgs:
 @pulumi.input_type
 class _MarketplaceExternalAttestedMetadataState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 serialized_jwt: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 serialized_jwt: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MarketplaceExternalAttestedMetadata resources.
 
@@ -89,19 +89,19 @@ class _MarketplaceExternalAttestedMetadataState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         compartment that associated instance is in
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceId")
-    def instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         unique id that identifies the associated instance
 
@@ -112,19 +112,19 @@ class _MarketplaceExternalAttestedMetadataState:
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
-    def instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="serializedJwt")
-    def serialized_jwt(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def serialized_jwt(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The serialized JWT token, containing header, payload, signature
         """
         return pulumi.get(self, "serialized_jwt")
 
     @serialized_jwt.setter
-    def serialized_jwt(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def serialized_jwt(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "serialized_jwt", value)
 
 
@@ -134,8 +134,8 @@ class MarketplaceExternalAttestedMetadata(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Marketplace External Attested Metadata resource in Oracle Cloud Infrastructure Marketplace service.
@@ -223,8 +223,8 @@ class MarketplaceExternalAttestedMetadata(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -251,9 +251,9 @@ class MarketplaceExternalAttestedMetadata(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            serialized_jwt: Optional[pulumi.Input[_builtins.str]] = None) -> 'MarketplaceExternalAttestedMetadata':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            serialized_jwt: pulumi.Input[Optional[_builtins.str]] = None) -> 'MarketplaceExternalAttestedMetadata':
         """
         Get an existing MarketplaceExternalAttestedMetadata resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

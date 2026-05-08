@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseAlertLogCount = oci.DatabaseManagement.getManagedDatabaseAlertLogCount({
+ * const testManagedDatabaseAlertLogCount = oci.databasemanagement.getManagedDatabaseAlertLogCount({
  *     managedDatabaseId: testManagedDatabase.id,
  *     groupBy: managedDatabaseAlertLogCountGroupBy,
- *     isRegularExpression: managedDatabaseAlertLogCountIsRegularExpression,
+ *     isRegularExpression: managedDatabaseAlertLogCountIsRegularExpression === "true",
  *     levelFilter: managedDatabaseAlertLogCountLevelFilter,
  *     logSearchText: managedDatabaseAlertLogCountLogSearchText,
  *     timeGreaterThanOrEqualTo: managedDatabaseAlertLogCountTimeGreaterThanOrEqualTo,
@@ -116,10 +116,10 @@ export interface GetManagedDatabaseAlertLogCountResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseAlertLogCount = oci.DatabaseManagement.getManagedDatabaseAlertLogCount({
+ * const testManagedDatabaseAlertLogCount = oci.databasemanagement.getManagedDatabaseAlertLogCount({
  *     managedDatabaseId: testManagedDatabase.id,
  *     groupBy: managedDatabaseAlertLogCountGroupBy,
- *     isRegularExpression: managedDatabaseAlertLogCountIsRegularExpression,
+ *     isRegularExpression: managedDatabaseAlertLogCountIsRegularExpression === "true",
  *     levelFilter: managedDatabaseAlertLogCountLevelFilter,
  *     logSearchText: managedDatabaseAlertLogCountLogSearchText,
  *     timeGreaterThanOrEqualTo: managedDatabaseAlertLogCountTimeGreaterThanOrEqualTo,
@@ -149,19 +149,19 @@ export interface GetManagedDatabaseAlertLogCountOutputArgs {
     /**
      * The optional parameter used to group different alert logs.
      */
-    groupBy?: pulumi.Input<string>;
+    groupBy?: pulumi.Input<string | undefined>;
     /**
      * The flag to indicate whether the search text is regular expression or not.
      */
-    isRegularExpression?: pulumi.Input<boolean>;
+    isRegularExpression?: pulumi.Input<boolean | undefined>;
     /**
      * The optional parameter to filter the alert logs by log level.
      */
-    levelFilter?: pulumi.Input<string>;
+    levelFilter?: pulumi.Input<string | undefined>;
     /**
      * The optional query parameter to filter the attention or alert logs by search text.
      */
-    logSearchText?: pulumi.Input<string>;
+    logSearchText?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
@@ -169,13 +169,13 @@ export interface GetManagedDatabaseAlertLogCountOutputArgs {
     /**
      * The optional greater than or equal to timestamp to filter the logs.
      */
-    timeGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * The optional less than or equal to timestamp to filter the logs.
      */
-    timeLessThanOrEqualTo?: pulumi.Input<string>;
+    timeLessThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * The optional parameter to filter the attention or alert logs by type.
      */
-    typeFilter?: pulumi.Input<string>;
+    typeFilter?: pulumi.Input<string | undefined>;
 }

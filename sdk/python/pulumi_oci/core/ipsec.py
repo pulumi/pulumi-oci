@@ -25,12 +25,12 @@ class IpsecArgs:
                  cpe_id: pulumi.Input[_builtins.str],
                  drg_id: pulumi.Input[_builtins.str],
                  static_routes: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 cpe_local_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpe_local_identifier_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 tunnel_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecTunnelConfigurationArgs']]]] = None):
+                 cpe_local_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpe_local_identifier_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 tunnel_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['IpsecTunnelConfigurationArgs']]]] = None):
         """
         The set of arguments for constructing a Ipsec resource.
 
@@ -139,7 +139,7 @@ class IpsecArgs:
 
     @_builtins.property
     @pulumi.getter(name="cpeLocalIdentifier")
-    def cpe_local_identifier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cpe_local_identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the fully qualified domain name (FQDN)). The type of identifier you provide here must correspond to the value for `cpeLocalIdentifierType`.
 
@@ -154,60 +154,60 @@ class IpsecArgs:
         return pulumi.get(self, "cpe_local_identifier")
 
     @cpe_local_identifier.setter
-    def cpe_local_identifier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cpe_local_identifier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cpe_local_identifier", value)
 
     @_builtins.property
     @pulumi.getter(name="cpeLocalIdentifierType")
-    def cpe_local_identifier_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cpe_local_identifier_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of identifier for your CPE device. The value you provide here must correspond to the value for `cpeLocalIdentifier`.
         """
         return pulumi.get(self, "cpe_local_identifier_type")
 
     @cpe_local_identifier_type.setter
-    def cpe_local_identifier_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cpe_local_identifier_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cpe_local_identifier_type", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="tunnelConfigurations")
-    def tunnel_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IpsecTunnelConfigurationArgs']]]]:
+    def tunnel_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IpsecTunnelConfigurationArgs']]]]:
         """
         (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
 
@@ -225,26 +225,26 @@ class IpsecArgs:
         return pulumi.get(self, "tunnel_configurations")
 
     @tunnel_configurations.setter
-    def tunnel_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecTunnelConfigurationArgs']]]]):
+    def tunnel_configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IpsecTunnelConfigurationArgs']]]]):
         pulumi.set(self, "tunnel_configurations", value)
 
 
 @pulumi.input_type
 class _IpsecState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpe_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpe_local_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpe_local_identifier_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 drg_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 static_routes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 transport_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 tunnel_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecTunnelConfigurationArgs']]]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpe_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpe_local_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpe_local_identifier_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 drg_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 static_routes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 transport_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 tunnel_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['IpsecTunnelConfigurationArgs']]]] = None):
         """
         Input properties used for looking up and filtering Ipsec resources.
 
@@ -314,31 +314,31 @@ class _IpsecState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="cpeId")
-    def cpe_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cpe_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object.
         """
         return pulumi.get(self, "cpe_id")
 
     @cpe_id.setter
-    def cpe_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cpe_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cpe_id", value)
 
     @_builtins.property
     @pulumi.getter(name="cpeLocalIdentifier")
-    def cpe_local_identifier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cpe_local_identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the fully qualified domain name (FQDN)). The type of identifier you provide here must correspond to the value for `cpeLocalIdentifierType`.
 
@@ -353,84 +353,84 @@ class _IpsecState:
         return pulumi.get(self, "cpe_local_identifier")
 
     @cpe_local_identifier.setter
-    def cpe_local_identifier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cpe_local_identifier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cpe_local_identifier", value)
 
     @_builtins.property
     @pulumi.getter(name="cpeLocalIdentifierType")
-    def cpe_local_identifier_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cpe_local_identifier_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of identifier for your CPE device. The value you provide here must correspond to the value for `cpeLocalIdentifier`.
         """
         return pulumi.get(self, "cpe_local_identifier_type")
 
     @cpe_local_identifier_type.setter
-    def cpe_local_identifier_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cpe_local_identifier_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cpe_local_identifier_type", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="drgId")
-    def drg_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def drg_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
         """
         return pulumi.get(self, "drg_id")
 
     @drg_id.setter
-    def drg_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def drg_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "drg_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IPSec connection's current state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="staticRoutes")
-    def static_routes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def static_routes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address.
 
@@ -441,36 +441,36 @@ class _IpsecState:
         return pulumi.get(self, "static_routes")
 
     @static_routes.setter
-    def static_routes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def static_routes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "static_routes", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="transportType")
-    def transport_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def transport_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The transport type used for the IPSec connection.
         """
         return pulumi.get(self, "transport_type")
 
     @transport_type.setter
-    def transport_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def transport_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "transport_type", value)
 
     @_builtins.property
     @pulumi.getter(name="tunnelConfigurations")
-    def tunnel_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IpsecTunnelConfigurationArgs']]]]:
+    def tunnel_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['IpsecTunnelConfigurationArgs']]]]:
         """
         (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
 
@@ -488,7 +488,7 @@ class _IpsecState:
         return pulumi.get(self, "tunnel_configurations")
 
     @tunnel_configurations.setter
-    def tunnel_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecTunnelConfigurationArgs']]]]):
+    def tunnel_configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IpsecTunnelConfigurationArgs']]]]):
         pulumi.set(self, "tunnel_configurations", value)
 
 
@@ -498,16 +498,16 @@ class Ipsec(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpe_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpe_local_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpe_local_identifier_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 drg_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 static_routes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tunnel_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IpsecTunnelConfigurationArgs', 'IpsecTunnelConfigurationArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpe_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpe_local_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpe_local_identifier_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 drg_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 static_routes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tunnel_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IpsecTunnelConfigurationArgs', 'IpsecTunnelConfigurationArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Ip Sec Connection resource in Oracle Cloud Infrastructure Core service.
@@ -762,16 +762,16 @@ class Ipsec(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpe_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpe_local_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpe_local_identifier_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 drg_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 static_routes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tunnel_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IpsecTunnelConfigurationArgs', 'IpsecTunnelConfigurationArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpe_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpe_local_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpe_local_identifier_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 drg_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 static_routes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tunnel_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IpsecTunnelConfigurationArgs', 'IpsecTunnelConfigurationArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -812,19 +812,19 @@ class Ipsec(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cpe_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cpe_local_identifier: Optional[pulumi.Input[_builtins.str]] = None,
-            cpe_local_identifier_type: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            drg_id: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            static_routes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            transport_type: Optional[pulumi.Input[_builtins.str]] = None,
-            tunnel_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['IpsecTunnelConfigurationArgs', 'IpsecTunnelConfigurationArgsDict']]]]] = None) -> 'Ipsec':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cpe_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cpe_local_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            cpe_local_identifier_type: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            drg_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            static_routes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            transport_type: pulumi.Input[Optional[_builtins.str]] = None,
+            tunnel_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IpsecTunnelConfigurationArgs', 'IpsecTunnelConfigurationArgsDict']]]]] = None) -> 'Ipsec':
         """
         Get an existing Ipsec resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

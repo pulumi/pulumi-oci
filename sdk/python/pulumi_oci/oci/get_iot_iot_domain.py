@@ -268,7 +268,7 @@ def get_iot_iot_domain(iot_domain_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_iot_iot_domain_output(iot_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_iot_iot_domain_output(iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIotIotDomainResult]:
     """
     This data source provides details about a specific Iot Domain resource in Oracle Cloud Infrastructure Iot service.

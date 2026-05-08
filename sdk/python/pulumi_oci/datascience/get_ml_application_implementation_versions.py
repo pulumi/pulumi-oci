@@ -111,7 +111,7 @@ def get_ml_application_implementation_versions(filters: Optional[Sequence[Union[
     import pulumi
     import pulumi_oci as oci
 
-    test_ml_application_implementation_versions = oci.DataScience.get_ml_application_implementation_versions(ml_application_implementation_id=test_ml_application_implementation["id"],
+    test_ml_application_implementation_versions = oci.datascience.get_ml_application_implementation_versions(ml_application_implementation_id=test_ml_application_implementation["id"],
         state=ml_application_implementation_version_state)
     ```
 
@@ -132,9 +132,9 @@ def get_ml_application_implementation_versions(filters: Optional[Sequence[Union[
         ml_application_implementation_id=pulumi.get(__ret__, 'ml_application_implementation_id'),
         ml_application_implementation_version_collections=pulumi.get(__ret__, 'ml_application_implementation_version_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_ml_application_implementation_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMlApplicationImplementationVersionsFilterArgs', 'GetMlApplicationImplementationVersionsFilterArgsDict']]]]] = None,
-                                                      ml_application_implementation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                      state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_ml_application_implementation_versions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMlApplicationImplementationVersionsFilterArgs', 'GetMlApplicationImplementationVersionsFilterArgsDict']]]]] = None,
+                                                      ml_application_implementation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMlApplicationImplementationVersionsResult]:
     """
     This data source provides the list of Ml Application Implementation Versions in Oracle Cloud Infrastructure Data Science service.
@@ -147,7 +147,7 @@ def get_ml_application_implementation_versions_output(filters: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_ml_application_implementation_versions = oci.DataScience.get_ml_application_implementation_versions(ml_application_implementation_id=test_ml_application_implementation["id"],
+    test_ml_application_implementation_versions = oci.datascience.get_ml_application_implementation_versions(ml_application_implementation_id=test_ml_application_implementation["id"],
         state=ml_application_implementation_version_state)
     ```
 

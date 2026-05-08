@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOpensearchCluster = oci.Opensearch.getOpensearchCluster({
+ * const testOpensearchCluster = oci.opensearch.getOpensearchCluster({
  *     opensearchClusterId: testOpensearchClusterOciOpensearchOpensearchCluster.id,
  * });
  * ```
@@ -333,7 +333,7 @@ export interface GetOpensearchClusterResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOpensearchCluster = oci.Opensearch.getOpensearchCluster({
+ * const testOpensearchCluster = oci.opensearch.getOpensearchCluster({
  *     opensearchClusterId: testOpensearchClusterOciOpensearchOpensearchCluster.id,
  * });
  * ```

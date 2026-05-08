@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPipelineRunningProcesses = oci.GoldenGate.getPipelineRunningProcesses({
+ * const testPipelineRunningProcesses = oci.goldengate.getPipelineRunningProcesses({
  *     pipelineId: testPipeline.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetPipelineRunningProcessesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPipelineRunningProcesses = oci.GoldenGate.getPipelineRunningProcesses({
+ * const testPipelineRunningProcesses = oci.goldengate.getPipelineRunningProcesses({
  *     pipelineId: testPipeline.id,
  * });
  * ```
@@ -84,7 +84,7 @@ export function getPipelineRunningProcessesOutput(args: GetPipelineRunningProces
  * A collection of arguments for invoking getPipelineRunningProcesses.
  */
 export interface GetPipelineRunningProcessesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetPipelineRunningProcessesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetPipelineRunningProcessesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline created.
      */

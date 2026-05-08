@@ -134,7 +134,7 @@ def get_resolver_endpoints(filters: Optional[Sequence[Union['GetResolverEndpoint
     import pulumi
     import pulumi_oci as oci
 
-    test_resolver_endpoints = oci.Dns.get_resolver_endpoints(resolver_id=test_resolver["id"],
+    test_resolver_endpoints = oci.dns.get_resolver_endpoints(resolver_id=test_resolver["id"],
         scope="PRIVATE",
         name=resolver_endpoint_name,
         state=resolver_endpoint_state)
@@ -163,11 +163,11 @@ def get_resolver_endpoints(filters: Optional[Sequence[Union['GetResolverEndpoint
         resolver_id=pulumi.get(__ret__, 'resolver_id'),
         scope=pulumi.get(__ret__, 'scope'),
         state=pulumi.get(__ret__, 'state'))
-def get_resolver_endpoints_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetResolverEndpointsFilterArgs', 'GetResolverEndpointsFilterArgsDict']]]]] = None,
-                                  name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  resolver_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                  scope: Optional[pulumi.Input[_builtins.str]] = None,
-                                  state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_resolver_endpoints_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetResolverEndpointsFilterArgs', 'GetResolverEndpointsFilterArgsDict']]]]] = None,
+                                  name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  resolver_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  scope: pulumi.Input[Optional[_builtins.str]] = None,
+                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResolverEndpointsResult]:
     """
     This data source provides the list of Resolver Endpoints in Oracle Cloud Infrastructure DNS service.
@@ -183,7 +183,7 @@ def get_resolver_endpoints_output(filters: Optional[pulumi.Input[Optional[Sequen
     import pulumi
     import pulumi_oci as oci
 
-    test_resolver_endpoints = oci.Dns.get_resolver_endpoints(resolver_id=test_resolver["id"],
+    test_resolver_endpoints = oci.dns.get_resolver_endpoints(resolver_id=test_resolver["id"],
         scope="PRIVATE",
         name=resolver_endpoint_name,
         state=resolver_endpoint_state)

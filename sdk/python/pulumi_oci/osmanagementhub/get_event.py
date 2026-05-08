@@ -274,7 +274,7 @@ def get_event(event_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_event = oci.OsManagementHub.get_event(event_id=test_event_oci_os_management_hub_event["id"])
+    test_event = oci.osmanagementhub.get_event(event_id=test_event_oci_os_management_hub_event["id"])
     ```
 
 
@@ -304,7 +304,7 @@ def get_event(event_id: Optional[_builtins.str] = None,
         time_occurred=pulumi.get(__ret__, 'time_occurred'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
-def get_event_output(event_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_event_output(event_id: pulumi.Input[Optional[_builtins.str]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEventResult]:
     """
     This data source provides details about a specific Event resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -317,7 +317,7 @@ def get_event_output(event_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_event = oci.OsManagementHub.get_event(event_id=test_event_oci_os_management_hub_event["id"])
+    test_event = oci.osmanagementhub.get_event(event_id=test_event_oci_os_management_hub_event["id"])
     ```
 
 

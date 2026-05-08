@@ -320,7 +320,7 @@ def get_autonomous_exadata_infrastructure(autonomous_exadata_infrastructure_id: 
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_exadata_infrastructure = oci.Database.get_autonomous_exadata_infrastructure(autonomous_exadata_infrastructure_id=test_autonomous_exadata_infrastructure_oci_database_autonomous_exadata_infrastructure["id"])
+    test_autonomous_exadata_infrastructure = oci.database.get_autonomous_exadata_infrastructure(autonomous_exadata_infrastructure_id=test_autonomous_exadata_infrastructure_oci_database_autonomous_exadata_infrastructure["id"])
     ```
 
 
@@ -355,7 +355,7 @@ def get_autonomous_exadata_infrastructure(autonomous_exadata_infrastructure_id: 
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         zone_id=pulumi.get(__ret__, 'zone_id'))
-def get_autonomous_exadata_infrastructure_output(autonomous_exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_autonomous_exadata_infrastructure_output(autonomous_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousExadataInfrastructureResult]:
     """
     This data source provides details about a specific Autonomous Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
@@ -368,7 +368,7 @@ def get_autonomous_exadata_infrastructure_output(autonomous_exadata_infrastructu
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_exadata_infrastructure = oci.Database.get_autonomous_exadata_infrastructure(autonomous_exadata_infrastructure_id=test_autonomous_exadata_infrastructure_oci_database_autonomous_exadata_infrastructure["id"])
+    test_autonomous_exadata_infrastructure = oci.database.get_autonomous_exadata_infrastructure(autonomous_exadata_infrastructure_id=test_autonomous_exadata_infrastructure_oci_database_autonomous_exadata_infrastructure["id"])
     ```
 
 

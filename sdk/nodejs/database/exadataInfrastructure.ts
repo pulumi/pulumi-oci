@@ -35,12 +35,12 @@ import * as utilities from "../utilities";
  *     shape: exadataInfrastructureShape,
  *     timeZone: exadataInfrastructureTimeZone,
  *     activationFile: exadataInfrastructureActivationFile,
- *     computeCount: exadataInfrastructureComputeCount,
+ *     computeCount: Number(exadataInfrastructureComputeCount),
  *     contacts: [{
  *         email: exadataInfrastructureContactsEmail,
- *         isPrimary: exadataInfrastructureContactsIsPrimary,
+ *         isPrimary: exadataInfrastructureContactsIsPrimary === "true",
  *         name: exadataInfrastructureContactsName,
- *         isContactMosValidated: exadataInfrastructureContactsIsContactMosValidated,
+ *         isContactMosValidated: exadataInfrastructureContactsIsContactMosValidated === "true",
  *         phoneNumber: exadataInfrastructureContactsPhoneNumber,
  *     }],
  *     corporateProxy: exadataInfrastructureCorporateProxy,
@@ -49,17 +49,17 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isCpsOfflineReportEnabled: exadataInfrastructureIsCpsOfflineReportEnabled,
- *     isMultiRackDeployment: exadataInfrastructureIsMultiRackDeployment,
+ *     isCpsOfflineReportEnabled: exadataInfrastructureIsCpsOfflineReportEnabled === "true",
+ *     isMultiRackDeployment: exadataInfrastructureIsMultiRackDeployment === "true",
  *     maintenanceWindow: {
- *         customActionTimeoutInMins: exadataInfrastructureMaintenanceWindowCustomActionTimeoutInMins,
+ *         customActionTimeoutInMins: Number(exadataInfrastructureMaintenanceWindowCustomActionTimeoutInMins),
  *         daysOfWeeks: [{
  *             name: exadataInfrastructureMaintenanceWindowDaysOfWeekName,
  *         }],
  *         hoursOfDays: exadataInfrastructureMaintenanceWindowHoursOfDay,
- *         isCustomActionTimeoutEnabled: exadataInfrastructureMaintenanceWindowIsCustomActionTimeoutEnabled,
- *         isMonthlyPatchingEnabled: exadataInfrastructureMaintenanceWindowIsMonthlyPatchingEnabled,
- *         leadTimeInWeeks: exadataInfrastructureMaintenanceWindowLeadTimeInWeeks,
+ *         isCustomActionTimeoutEnabled: exadataInfrastructureMaintenanceWindowIsCustomActionTimeoutEnabled === "true",
+ *         isMonthlyPatchingEnabled: exadataInfrastructureMaintenanceWindowIsMonthlyPatchingEnabled === "true",
+ *         leadTimeInWeeks: Number(exadataInfrastructureMaintenanceWindowLeadTimeInWeeks),
  *         months: [{
  *             name: exadataInfrastructureMaintenanceWindowMonthsName,
  *         }],
@@ -73,7 +73,7 @@ import * as utilities from "../utilities";
  *         clientNetworkBondingMode: exadataInfrastructureNetworkBondingModeDetailsClientNetworkBondingMode,
  *         drNetworkBondingMode: exadataInfrastructureNetworkBondingModeDetailsDrNetworkBondingMode,
  *     },
- *     storageCount: exadataInfrastructureStorageCount,
+ *     storageCount: Number(exadataInfrastructureStorageCount),
  *     storageServerType: exadataInfrastructureStorageServerType,
  * });
  * ```
@@ -503,219 +503,219 @@ export interface ExadataInfrastructureState {
     /**
      * The requested number of additional storage servers activated for the Exadata infrastructure.
      */
-    activatedStorageCount?: pulumi.Input<number>;
+    activatedStorageCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
      */
-    activationFile?: pulumi.Input<string>;
+    activationFile?: pulumi.Input<string | undefined>;
     /**
      * The requested number of additional compute servers for the Exadata infrastructure.
      */
-    additionalComputeCount?: pulumi.Input<number>;
+    additionalComputeCount?: pulumi.Input<number | undefined>;
     /**
      * Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
      */
-    additionalComputeSystemModel?: pulumi.Input<string>;
+    additionalComputeSystemModel?: pulumi.Input<string | undefined>;
     /**
      * The requested number of additional storage servers for the Exadata infrastructure.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    additionalStorageCount?: pulumi.Input<number>;
+    additionalStorageCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The CIDR block for the Exadata administration network.
      */
-    adminNetworkCidr?: pulumi.Input<string>;
+    adminNetworkCidr?: pulumi.Input<string | undefined>;
     /**
      * The name of the availability domain that the Exadata infrastructure is located in.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The IP address for the first control plane server.
      */
-    cloudControlPlaneServer1?: pulumi.Input<string>;
+    cloudControlPlaneServer1?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The IP address for the second control plane server.
      */
-    cloudControlPlaneServer2?: pulumi.Input<string>;
+    cloudControlPlaneServer2?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The number of compute servers for the Exadata infrastructure.
      */
-    computeCount?: pulumi.Input<number>;
+    computeCount?: pulumi.Input<number | undefined>;
     /**
      * The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      */
-    computeModel?: pulumi.Input<string>;
+    computeModel?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The list of contacts for the Exadata infrastructure.
      */
-    contacts?: pulumi.Input<pulumi.Input<inputs.Database.ExadataInfrastructureContact>[]>;
+    contacts?: pulumi.Input<pulumi.Input<inputs.Database.ExadataInfrastructureContact>[] | undefined>;
     /**
      * (Updatable) The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible for enhanced security.
      */
-    corporateProxy?: pulumi.Input<string>;
+    corporateProxy?: pulumi.Input<string | undefined>;
     /**
      * The number of enabled CPU cores.
      */
-    cpusEnabled?: pulumi.Input<number>;
-    createAsync?: pulumi.Input<boolean>;
+    cpusEnabled?: pulumi.Input<number | undefined>;
+    createAsync?: pulumi.Input<boolean | undefined>;
     /**
      * The CSI Number of the Exadata infrastructure.
      */
-    csiNumber?: pulumi.Input<string>;
+    csiNumber?: pulumi.Input<string | undefined>;
     /**
      * Size, in terabytes, of the DATA disk group.
      */
-    dataStorageSizeInTbs?: pulumi.Input<number>;
+    dataStorageSizeInTbs?: pulumi.Input<number | undefined>;
     /**
      * The database server type of the Exadata infrastructure.
      */
-    databaseServerType?: pulumi.Input<string>;
+    databaseServerType?: pulumi.Input<string | undefined>;
     /**
      * The local node storage allocated in GBs.
      */
-    dbNodeStorageSizeInGbs?: pulumi.Input<number>;
+    dbNodeStorageSizeInGbs?: pulumi.Input<number | undefined>;
     /**
      * The software version of the database servers (dom0) in the Exadata infrastructure.
      */
-    dbServerVersion?: pulumi.Input<string>;
+    dbServerVersion?: pulumi.Input<string | undefined>;
     /**
      * Details of the file system configuration of the Exadata infrastructure.
      */
-    definedFileSystemConfigurations?: pulumi.Input<pulumi.Input<inputs.Database.ExadataInfrastructureDefinedFileSystemConfiguration>[]>;
+    definedFileSystemConfigurations?: pulumi.Input<pulumi.Input<inputs.Database.ExadataInfrastructureDefinedFileSystemConfiguration>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
      */
-    dnsServers?: pulumi.Input<pulumi.Input<string>[]>;
+    dnsServers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
      */
-    exascaleConfigs?: pulumi.Input<pulumi.Input<inputs.Database.ExadataInfrastructureExascaleConfig>[]>;
+    exascaleConfigs?: pulumi.Input<pulumi.Input<inputs.Database.ExadataInfrastructureExascaleConfig>[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The gateway for the control plane network.
      */
-    gateway?: pulumi.Input<string>;
+    gateway?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The CIDR block for the Exadata InfiniBand interconnect.
      */
-    infiniBandNetworkCidr?: pulumi.Input<string>;
+    infiniBandNetworkCidr?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
      */
-    isCpsOfflineReportEnabled?: pulumi.Input<boolean>;
+    isCpsOfflineReportEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Indicates if deployment is Multi-Rack or not.
      */
-    isMultiRackDeployment?: pulumi.Input<boolean>;
+    isMultiRackDeployment?: pulumi.Input<boolean | undefined>;
     /**
      * If true, the infrastructure is using granular maintenance scheduling preference.
      */
-    isSchedulingPolicyAssociated?: pulumi.Input<boolean>;
+    isSchedulingPolicyAssociated?: pulumi.Input<boolean | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
      */
-    maintenanceSloStatus?: pulumi.Input<string>;
+    maintenanceSloStatus?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    maintenanceWindow?: pulumi.Input<inputs.Database.ExadataInfrastructureMaintenanceWindow>;
+    maintenanceWindow?: pulumi.Input<inputs.Database.ExadataInfrastructureMaintenanceWindow | undefined>;
     /**
      * The total number of CPU cores available.
      */
-    maxCpuCount?: pulumi.Input<number>;
+    maxCpuCount?: pulumi.Input<number | undefined>;
     /**
      * The total available DATA disk group size.
      */
-    maxDataStorageInTbs?: pulumi.Input<number>;
+    maxDataStorageInTbs?: pulumi.Input<number | undefined>;
     /**
      * The total local node storage available in GBs.
      */
-    maxDbNodeStorageInGbs?: pulumi.Input<number>;
+    maxDbNodeStorageInGbs?: pulumi.Input<number | undefined>;
     /**
      * The total memory available in GBs.
      */
-    maxMemoryInGbs?: pulumi.Input<number>;
+    maxMemoryInGbs?: pulumi.Input<number | undefined>;
     /**
      * The memory allocated in GBs.
      */
-    memorySizeInGbs?: pulumi.Input<number>;
+    memorySizeInGbs?: pulumi.Input<number | undefined>;
     /**
      * The monthly software version of the database servers (dom0) in the Exadata infrastructure.
      */
-    monthlyDbServerVersion?: pulumi.Input<string>;
+    monthlyDbServerVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The base64 encoded Multi-Rack configuration json file.
      */
-    multiRackConfigurationFile?: pulumi.Input<string>;
+    multiRackConfigurationFile?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The netmask for the control plane network.
      */
-    netmask?: pulumi.Input<string>;
+    netmask?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
      */
-    networkBondingModeDetails?: pulumi.Input<inputs.Database.ExadataInfrastructureNetworkBondingModeDetails>;
+    networkBondingModeDetails?: pulumi.Input<inputs.Database.ExadataInfrastructureNetworkBondingModeDetails | undefined>;
     /**
      * (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
      */
-    ntpServers?: pulumi.Input<pulumi.Input<string>[]>;
+    ntpServers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The serial number for the Exadata infrastructure.
      */
-    rackSerialNumber?: pulumi.Input<string>;
+    rackSerialNumber?: pulumi.Input<string | undefined>;
     /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the Exadata infrastructure.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The number of storage servers for the Exadata infrastructure.
      */
-    storageCount?: pulumi.Input<number>;
+    storageCount?: pulumi.Input<number | undefined>;
     /**
      * The storage server type of the Exadata infrastructure.
      */
-    storageServerType?: pulumi.Input<string>;
+    storageServerType?: pulumi.Input<string | undefined>;
     /**
      * The software version of the storage servers (cells) in the Exadata infrastructure.
      */
-    storageServerVersion?: pulumi.Input<string>;
+    storageServerVersion?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the Exadata infrastructure was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
-    timeZone?: pulumi.Input<string>;
+    timeZone?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -725,14 +725,14 @@ export interface ExadataInfrastructureArgs {
     /**
      * (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
      */
-    activationFile?: pulumi.Input<string>;
+    activationFile?: pulumi.Input<string | undefined>;
     /**
      * The requested number of additional storage servers for the Exadata infrastructure.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    additionalStorageCount?: pulumi.Input<number>;
+    additionalStorageCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The CIDR block for the Exadata administration network.
      */
@@ -752,24 +752,24 @@ export interface ExadataInfrastructureArgs {
     /**
      * The number of compute servers for the Exadata infrastructure.
      */
-    computeCount?: pulumi.Input<number>;
+    computeCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The list of contacts for the Exadata infrastructure.
      */
-    contacts?: pulumi.Input<pulumi.Input<inputs.Database.ExadataInfrastructureContact>[]>;
+    contacts?: pulumi.Input<pulumi.Input<inputs.Database.ExadataInfrastructureContact>[] | undefined>;
     /**
      * (Updatable) The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible for enhanced security.
      */
-    corporateProxy?: pulumi.Input<string>;
-    createAsync?: pulumi.Input<boolean>;
+    corporateProxy?: pulumi.Input<string | undefined>;
+    createAsync?: pulumi.Input<boolean | undefined>;
     /**
      * The database server type of the Exadata infrastructure.
      */
-    databaseServerType?: pulumi.Input<string>;
+    databaseServerType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
      */
@@ -781,7 +781,7 @@ export interface ExadataInfrastructureArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The gateway for the control plane network.
      */
@@ -793,19 +793,19 @@ export interface ExadataInfrastructureArgs {
     /**
      * (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
      */
-    isCpsOfflineReportEnabled?: pulumi.Input<boolean>;
+    isCpsOfflineReportEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Indicates if deployment is Multi-Rack or not.
      */
-    isMultiRackDeployment?: pulumi.Input<boolean>;
+    isMultiRackDeployment?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    maintenanceWindow?: pulumi.Input<inputs.Database.ExadataInfrastructureMaintenanceWindow>;
+    maintenanceWindow?: pulumi.Input<inputs.Database.ExadataInfrastructureMaintenanceWindow | undefined>;
     /**
      * (Updatable) The base64 encoded Multi-Rack configuration json file.
      */
-    multiRackConfigurationFile?: pulumi.Input<string>;
+    multiRackConfigurationFile?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The netmask for the control plane network.
      */
@@ -813,7 +813,7 @@ export interface ExadataInfrastructureArgs {
     /**
      * (Updatable) Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
      */
-    networkBondingModeDetails?: pulumi.Input<inputs.Database.ExadataInfrastructureNetworkBondingModeDetails>;
+    networkBondingModeDetails?: pulumi.Input<inputs.Database.ExadataInfrastructureNetworkBondingModeDetails | undefined>;
     /**
      * (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
      */
@@ -825,11 +825,11 @@ export interface ExadataInfrastructureArgs {
     /**
      * The number of storage servers for the Exadata infrastructure.
      */
-    storageCount?: pulumi.Input<number>;
+    storageCount?: pulumi.Input<number | undefined>;
     /**
      * The storage server type of the Exadata infrastructure.
      */
-    storageServerType?: pulumi.Input<string>;
+    storageServerType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */

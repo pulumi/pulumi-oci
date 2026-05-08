@@ -204,7 +204,7 @@ def get_byoasn(byoasn_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_byoasn = oci.Core.get_byoasn(byoasn_id=test_byoasn_oci_core_byoasn["id"])
+    test_byoasn = oci.core.get_byoasn(byoasn_id=test_byoasn_oci_core_byoasn["id"])
     ```
 
 
@@ -229,7 +229,7 @@ def get_byoasn(byoasn_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         time_validated=pulumi.get(__ret__, 'time_validated'),
         validation_token=pulumi.get(__ret__, 'validation_token'))
-def get_byoasn_output(byoasn_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_byoasn_output(byoasn_id: pulumi.Input[Optional[_builtins.str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetByoasnResult]:
     """
     This data source provides details about a specific Byoasn resource in Oracle Cloud Infrastructure Core service.
@@ -242,7 +242,7 @@ def get_byoasn_output(byoasn_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_byoasn = oci.Core.get_byoasn(byoasn_id=test_byoasn_oci_core_byoasn["id"])
+    test_byoasn = oci.core.get_byoasn(byoasn_id=test_byoasn_oci_core_byoasn["id"])
     ```
 
 

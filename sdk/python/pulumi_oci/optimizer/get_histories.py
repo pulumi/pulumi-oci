@@ -197,9 +197,9 @@ def get_histories(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_histories = oci.Optimizer.get_histories(compartment_id=compartment_id,
-        compartment_id_in_subtree=history_compartment_id_in_subtree,
-        include_resource_metadata=history_include_resource_metadata,
+    test_histories = oci.optimizer.get_histories(compartment_id=compartment_id,
+        compartment_id_in_subtree=history_compartment_id_in_subtree == "true",
+        include_resource_metadata=history_include_resource_metadata == "true",
         name=history_name,
         recommendation_id=test_recommendation["id"],
         recommendation_name=test_recommendation["name"],
@@ -248,16 +248,16 @@ def get_histories(compartment_id: Optional[_builtins.str] = None,
         resource_type=pulumi.get(__ret__, 'resource_type'),
         state=pulumi.get(__ret__, 'state'),
         status=pulumi.get(__ret__, 'status'))
-def get_histories_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                         compartment_id_in_subtree: Optional[pulumi.Input[_builtins.bool]] = None,
-                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetHistoriesFilterArgs', 'GetHistoriesFilterArgsDict']]]]] = None,
-                         include_resource_metadata: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                         name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         recommendation_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         recommendation_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         resource_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_histories_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                         compartment_id_in_subtree: pulumi.Input[Optional[_builtins.bool]] = None,
+                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetHistoriesFilterArgs', 'GetHistoriesFilterArgsDict']]]]] = None,
+                         include_resource_metadata: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                         name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         recommendation_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         recommendation_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetHistoriesResult]:
     """
     This data source provides the list of Histories in Oracle Cloud Infrastructure Optimizer service.
@@ -271,9 +271,9 @@ def get_histories_output(compartment_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_histories = oci.Optimizer.get_histories(compartment_id=compartment_id,
-        compartment_id_in_subtree=history_compartment_id_in_subtree,
-        include_resource_metadata=history_include_resource_metadata,
+    test_histories = oci.optimizer.get_histories(compartment_id=compartment_id,
+        compartment_id_in_subtree=history_compartment_id_in_subtree == "true",
+        include_resource_metadata=history_include_resource_metadata == "true",
         name=history_name,
         recommendation_id=test_recommendation["id"],
         recommendation_name=test_recommendation["name"],

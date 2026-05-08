@@ -151,7 +151,7 @@ def get_scheduler_job_job_activity_resources(filters: Optional[Sequence[Union['G
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduler_job_job_activity_resources = oci.FleetAppsManagement.get_scheduler_job_job_activity_resources(job_activity_id=test_job_activity["id"],
+    test_scheduler_job_job_activity_resources = oci.fleetappsmanagement.get_scheduler_job_job_activity_resources(job_activity_id=test_job_activity["id"],
         scheduler_job_id=test_job["id"],
         resource_task_id=test_resource_task["id"],
         sequence=scheduler_job_job_activity_resource_sequence,
@@ -188,13 +188,13 @@ def get_scheduler_job_job_activity_resources(filters: Optional[Sequence[Union['G
         sequence=pulumi.get(__ret__, 'sequence'),
         step_name=pulumi.get(__ret__, 'step_name'),
         target_name=pulumi.get(__ret__, 'target_name'))
-def get_scheduler_job_job_activity_resources_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSchedulerJobJobActivityResourcesFilterArgs', 'GetSchedulerJobJobActivityResourcesFilterArgsDict']]]]] = None,
-                                                    job_activity_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                    resource_task_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    scheduler_job_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                    sequence: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    step_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    target_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_scheduler_job_job_activity_resources_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSchedulerJobJobActivityResourcesFilterArgs', 'GetSchedulerJobJobActivityResourcesFilterArgsDict']]]]] = None,
+                                                    job_activity_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                    resource_task_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    scheduler_job_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                    sequence: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    step_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    target_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSchedulerJobJobActivityResourcesResult]:
     """
     This data source provides the list of Scheduler Job Job Activity Resources in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -207,7 +207,7 @@ def get_scheduler_job_job_activity_resources_output(filters: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduler_job_job_activity_resources = oci.FleetAppsManagement.get_scheduler_job_job_activity_resources(job_activity_id=test_job_activity["id"],
+    test_scheduler_job_job_activity_resources = oci.fleetappsmanagement.get_scheduler_job_job_activity_resources(job_activity_id=test_job_activity["id"],
         scheduler_job_id=test_job["id"],
         resource_task_id=test_resource_task["id"],
         sequence=scheduler_job_job_activity_resource_sequence,

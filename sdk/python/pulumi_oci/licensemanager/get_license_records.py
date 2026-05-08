@@ -98,7 +98,7 @@ def get_license_records(filters: Optional[Sequence[Union['GetLicenseRecordsFilte
     import pulumi
     import pulumi_oci as oci
 
-    test_license_records = oci.LicenseManager.get_license_records(product_license_id=test_product_license["id"])
+    test_license_records = oci.licensemanager.get_license_records(product_license_id=test_product_license["id"])
     ```
 
 
@@ -115,8 +115,8 @@ def get_license_records(filters: Optional[Sequence[Union['GetLicenseRecordsFilte
         id=pulumi.get(__ret__, 'id'),
         license_record_collections=pulumi.get(__ret__, 'license_record_collections'),
         product_license_id=pulumi.get(__ret__, 'product_license_id'))
-def get_license_records_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLicenseRecordsFilterArgs', 'GetLicenseRecordsFilterArgsDict']]]]] = None,
-                               product_license_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_license_records_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLicenseRecordsFilterArgs', 'GetLicenseRecordsFilterArgsDict']]]]] = None,
+                               product_license_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLicenseRecordsResult]:
     """
     This data source provides the list of License Records in Oracle Cloud Infrastructure License Manager service.
@@ -129,7 +129,7 @@ def get_license_records_output(filters: Optional[pulumi.Input[Optional[Sequence[
     import pulumi
     import pulumi_oci as oci
 
-    test_license_records = oci.LicenseManager.get_license_records(product_license_id=test_product_license["id"])
+    test_license_records = oci.licensemanager.get_license_records(product_license_id=test_product_license["id"])
     ```
 
 

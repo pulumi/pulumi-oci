@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCertificates = oci.LoadBalancer.getCertificates({
+ * const testCertificates = oci.loadbalancer.getCertificates({
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetCertificatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCertificates = oci.LoadBalancer.getCertificates({
+ * const testCertificates = oci.loadbalancer.getCertificates({
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
@@ -84,7 +84,7 @@ export function getCertificatesOutput(args: GetCertificatesOutputArgs, opts?: pu
  * A collection of arguments for invoking getCertificates.
  */
 export interface GetCertificatesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.GetCertificatesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.GetCertificatesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the certificate bundles to be listed.
      */

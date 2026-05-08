@@ -100,7 +100,7 @@ def get_autonomous_database_regional_wallet_management(opts: Optional[pulumi.Inv
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_regional_wallet_management = oci.Database.get_autonomous_database_regional_wallet_management()
+    test_autonomous_database_regional_wallet_management = oci.database.get_autonomous_database_regional_wallet_management()
     ```
     """
     __args__ = dict()
@@ -125,7 +125,7 @@ def get_autonomous_database_regional_wallet_management_output(opts: Optional[Uni
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_regional_wallet_management = oci.Database.get_autonomous_database_regional_wallet_management()
+    test_autonomous_database_regional_wallet_management = oci.database.get_autonomous_database_regional_wallet_management()
     ```
     """
     __args__ = dict()

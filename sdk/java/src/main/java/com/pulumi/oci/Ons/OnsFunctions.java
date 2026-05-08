@@ -40,8 +40,8 @@ public final class OnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ons.OnsFunctions;
      * import com.pulumi.oci.Ons.inputs.GetNotificationTopicArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -82,8 +82,8 @@ public final class OnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ons.OnsFunctions;
      * import com.pulumi.oci.Ons.inputs.GetNotificationTopicArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -124,8 +124,8 @@ public final class OnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ons.OnsFunctions;
      * import com.pulumi.oci.Ons.inputs.GetNotificationTopicArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -166,8 +166,8 @@ public final class OnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ons.OnsFunctions;
      * import com.pulumi.oci.Ons.inputs.GetNotificationTopicArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -208,8 +208,8 @@ public final class OnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ons.OnsFunctions;
      * import com.pulumi.oci.Ons.inputs.GetNotificationTopicArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -252,8 +252,8 @@ public final class OnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ons.OnsFunctions;
      * import com.pulumi.oci.Ons.inputs.GetNotificationTopicsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -299,8 +299,8 @@ public final class OnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ons.OnsFunctions;
      * import com.pulumi.oci.Ons.inputs.GetNotificationTopicsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -346,8 +346,8 @@ public final class OnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ons.OnsFunctions;
      * import com.pulumi.oci.Ons.inputs.GetNotificationTopicsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -393,8 +393,8 @@ public final class OnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ons.OnsFunctions;
      * import com.pulumi.oci.Ons.inputs.GetNotificationTopicsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -440,8 +440,8 @@ public final class OnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ons.OnsFunctions;
      * import com.pulumi.oci.Ons.inputs.GetNotificationTopicsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -487,8 +487,8 @@ public final class OnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ons.OnsFunctions;
      * import com.pulumi.oci.Ons.inputs.GetSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -531,8 +531,8 @@ public final class OnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ons.OnsFunctions;
      * import com.pulumi.oci.Ons.inputs.GetSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -575,8 +575,8 @@ public final class OnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ons.OnsFunctions;
      * import com.pulumi.oci.Ons.inputs.GetSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -619,8 +619,8 @@ public final class OnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ons.OnsFunctions;
      * import com.pulumi.oci.Ons.inputs.GetSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -663,8 +663,8 @@ public final class OnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ons.OnsFunctions;
      * import com.pulumi.oci.Ons.inputs.GetSubscriptionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -707,8 +707,8 @@ public final class OnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ons.OnsFunctions;
      * import com.pulumi.oci.Ons.inputs.GetSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -752,8 +752,8 @@ public final class OnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ons.OnsFunctions;
      * import com.pulumi.oci.Ons.inputs.GetSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -797,8 +797,8 @@ public final class OnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ons.OnsFunctions;
      * import com.pulumi.oci.Ons.inputs.GetSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -842,8 +842,8 @@ public final class OnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ons.OnsFunctions;
      * import com.pulumi.oci.Ons.inputs.GetSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -887,8 +887,8 @@ public final class OnsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Ons.OnsFunctions;
      * import com.pulumi.oci.Ons.inputs.GetSubscriptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

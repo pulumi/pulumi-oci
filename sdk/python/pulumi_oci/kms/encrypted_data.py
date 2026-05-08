@@ -22,10 +22,10 @@ class EncryptedDataArgs:
                  crypto_endpoint: pulumi.Input[_builtins.str],
                  key_id: pulumi.Input[_builtins.str],
                  plaintext: pulumi.Input[_builtins.str],
-                 associated_data: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 encryption_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 logging_context: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 associated_data: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 encryption_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 logging_context: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a EncryptedData resource.
 
@@ -95,64 +95,64 @@ class EncryptedDataArgs:
 
     @_builtins.property
     @pulumi.getter(name="associatedData")
-    def associated_data(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def associated_data(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
         """
         return pulumi.get(self, "associated_data")
 
     @associated_data.setter
-    def associated_data(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def associated_data(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "associated_data", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptionAlgorithm")
-    def encryption_algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def encryption_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The encryption algorithm to use to encrypt and decrypt data with a customer-managed key. `AES_256_GCM` indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and that the mode of encryption is the Galois/Counter Mode (GCM). `RSA_OAEP_SHA_1` indicates that the key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP). `RSA_OAEP_SHA_256` indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash and uses OAEP.
         """
         return pulumi.get(self, "encryption_algorithm")
 
     @encryption_algorithm.setter
-    def encryption_algorithm(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def encryption_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encryption_algorithm", value)
 
     @_builtins.property
     @pulumi.getter(name="keyVersionId")
-    def key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key version used to encrypt the ciphertext.
         """
         return pulumi.get(self, "key_version_id")
 
     @key_version_id.setter
-    def key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_version_id", value)
 
     @_builtins.property
     @pulumi.getter(name="loggingContext")
-    def logging_context(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def logging_context(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
         """
         return pulumi.get(self, "logging_context")
 
     @logging_context.setter
-    def logging_context(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def logging_context(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "logging_context", value)
 
 
 @pulumi.input_type
 class _EncryptedDataState:
     def __init__(__self__, *,
-                 associated_data: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ciphertext: Optional[pulumi.Input[_builtins.str]] = None,
-                 crypto_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 logging_context: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 plaintext: Optional[pulumi.Input[_builtins.str]] = None):
+                 associated_data: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ciphertext: pulumi.Input[Optional[_builtins.str]] = None,
+                 crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 logging_context: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 plaintext: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering EncryptedData resources.
 
@@ -188,91 +188,91 @@ class _EncryptedDataState:
 
     @_builtins.property
     @pulumi.getter(name="associatedData")
-    def associated_data(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def associated_data(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
         """
         return pulumi.get(self, "associated_data")
 
     @associated_data.setter
-    def associated_data(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def associated_data(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "associated_data", value)
 
     @_builtins.property
     @pulumi.getter
-    def ciphertext(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ciphertext(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The encrypted data.
         """
         return pulumi.get(self, "ciphertext")
 
     @ciphertext.setter
-    def ciphertext(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ciphertext(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ciphertext", value)
 
     @_builtins.property
     @pulumi.getter(name="cryptoEndpoint")
-    def crypto_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crypto_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
         """
         return pulumi.get(self, "crypto_endpoint")
 
     @crypto_endpoint.setter
-    def crypto_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crypto_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crypto_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptionAlgorithm")
-    def encryption_algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def encryption_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The encryption algorithm to use to encrypt and decrypt data with a customer-managed key. `AES_256_GCM` indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and that the mode of encryption is the Galois/Counter Mode (GCM). `RSA_OAEP_SHA_1` indicates that the key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP). `RSA_OAEP_SHA_256` indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash and uses OAEP.
         """
         return pulumi.get(self, "encryption_algorithm")
 
     @encryption_algorithm.setter
-    def encryption_algorithm(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def encryption_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encryption_algorithm", value)
 
     @_builtins.property
     @pulumi.getter(name="keyId")
-    def key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key to encrypt with.
         """
         return pulumi.get(self, "key_id")
 
     @key_id.setter
-    def key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="keyVersionId")
-    def key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key version used to encrypt the ciphertext.
         """
         return pulumi.get(self, "key_version_id")
 
     @key_version_id.setter
-    def key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_version_id", value)
 
     @_builtins.property
     @pulumi.getter(name="loggingContext")
-    def logging_context(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def logging_context(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
         """
         return pulumi.get(self, "logging_context")
 
     @logging_context.setter
-    def logging_context(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def logging_context(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "logging_context", value)
 
     @_builtins.property
     @pulumi.getter
-    def plaintext(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def plaintext(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The plaintext data to encrypt.
 
@@ -283,7 +283,7 @@ class _EncryptedDataState:
         return pulumi.get(self, "plaintext")
 
     @plaintext.setter
-    def plaintext(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def plaintext(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "plaintext", value)
 
 
@@ -293,13 +293,13 @@ class EncryptedData(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 associated_data: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 crypto_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 logging_context: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 plaintext: Optional[pulumi.Input[_builtins.str]] = None,
+                 associated_data: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 logging_context: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 plaintext: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Encrypted Data resource in Oracle Cloud Infrastructure Kms service.
@@ -396,13 +396,13 @@ class EncryptedData(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 associated_data: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 crypto_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 logging_context: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 plaintext: Optional[pulumi.Input[_builtins.str]] = None,
+                 associated_data: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 logging_context: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 plaintext: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -436,14 +436,14 @@ class EncryptedData(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            associated_data: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            ciphertext: Optional[pulumi.Input[_builtins.str]] = None,
-            crypto_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            encryption_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-            key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-            logging_context: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            plaintext: Optional[pulumi.Input[_builtins.str]] = None) -> 'EncryptedData':
+            associated_data: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ciphertext: pulumi.Input[Optional[_builtins.str]] = None,
+            crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            encryption_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+            key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            logging_context: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            plaintext: pulumi.Input[Optional[_builtins.str]] = None) -> 'EncryptedData':
         """
         Get an existing EncryptedData resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

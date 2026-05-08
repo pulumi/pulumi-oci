@@ -144,7 +144,7 @@ def get_runbook_import(import_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_runbook_import = oci.FleetAppsManagement.get_runbook_import(import_id=runbook_import_id,
+    test_runbook_import = oci.fleetappsmanagement.get_runbook_import(import_id=runbook_import_id,
         runbook_id=test_runbook["id"])
     ```
 
@@ -167,8 +167,8 @@ def get_runbook_import(import_id: Optional[_builtins.str] = None,
         runbook_version=pulumi.get(__ret__, 'runbook_version'),
         status=pulumi.get(__ret__, 'status'),
         tracking_id=pulumi.get(__ret__, 'tracking_id'))
-def get_runbook_import_output(import_id: Optional[pulumi.Input[_builtins.str]] = None,
-                              runbook_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_runbook_import_output(import_id: pulumi.Input[Optional[_builtins.str]] = None,
+                              runbook_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRunbookImportResult]:
     """
     This data source provides details about a specific Runbook Import resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -181,7 +181,7 @@ def get_runbook_import_output(import_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_runbook_import = oci.FleetAppsManagement.get_runbook_import(import_id=runbook_import_id,
+    test_runbook_import = oci.fleetappsmanagement.get_runbook_import(import_id=runbook_import_id,
         runbook_id=test_runbook["id"])
     ```
 

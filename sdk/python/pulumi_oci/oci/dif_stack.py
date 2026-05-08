@@ -25,20 +25,20 @@ class DifStackArgs:
                  display_name: pulumi.Input[_builtins.str],
                  services: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  stack_templates: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 adbs: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackAdbArgs']]]] = None,
-                 add_service_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 aidataplatforms: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackAidataplatformArgs']]]] = None,
-                 dataflows: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackDataflowArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deploy_artifacts_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 genais: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackGenaiArgs']]]] = None,
-                 ggcs: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackGgcArgs']]]] = None,
-                 notification_email: Optional[pulumi.Input[_builtins.str]] = None,
-                 objectstorages: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackObjectstorageArgs']]]] = None,
-                 okes: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackOkeArgs']]]] = None,
-                 omks: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackOmkArgs']]]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 adbs: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackAdbArgs']]]] = None,
+                 add_service_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 aidataplatforms: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackAidataplatformArgs']]]] = None,
+                 dataflows: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackDataflowArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deploy_artifacts_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 genais: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackGenaiArgs']]]] = None,
+                 ggcs: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackGgcArgs']]]] = None,
+                 notification_email: pulumi.Input[Optional[_builtins.str]] = None,
+                 objectstorages: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackObjectstorageArgs']]]] = None,
+                 okes: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackOkeArgs']]]] = None,
+                 omks: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackOmkArgs']]]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a DifStack resource.
 
@@ -155,67 +155,67 @@ class DifStackArgs:
 
     @_builtins.property
     @pulumi.getter
-    def adbs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DifStackAdbArgs']]]]:
+    def adbs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DifStackAdbArgs']]]]:
         """
         (Updatable) ADB details if adb is included in the services.
         """
         return pulumi.get(self, "adbs")
 
     @adbs.setter
-    def adbs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackAdbArgs']]]]):
+    def adbs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackAdbArgs']]]]):
         pulumi.set(self, "adbs", value)
 
     @_builtins.property
     @pulumi.getter(name="addServiceTrigger")
-    def add_service_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def add_service_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Add Service. Could be set to any integer value.
         """
         return pulumi.get(self, "add_service_trigger")
 
     @add_service_trigger.setter
-    def add_service_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def add_service_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "add_service_trigger", value)
 
     @_builtins.property
     @pulumi.getter
-    def aidataplatforms(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DifStackAidataplatformArgs']]]]:
+    def aidataplatforms(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DifStackAidataplatformArgs']]]]:
         """
         AI Data Platform Details if aidataplatform is included in services.
         """
         return pulumi.get(self, "aidataplatforms")
 
     @aidataplatforms.setter
-    def aidataplatforms(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackAidataplatformArgs']]]]):
+    def aidataplatforms(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackAidataplatformArgs']]]]):
         pulumi.set(self, "aidataplatforms", value)
 
     @_builtins.property
     @pulumi.getter
-    def dataflows(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DifStackDataflowArgs']]]]:
+    def dataflows(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DifStackDataflowArgs']]]]:
         """
         (Updatable) DATAFLOW details if dataflow is included in the services.
         """
         return pulumi.get(self, "dataflows")
 
     @dataflows.setter
-    def dataflows(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackDataflowArgs']]]]):
+    def dataflows(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackDataflowArgs']]]]):
         pulumi.set(self, "dataflows", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deployArtifactsTrigger")
-    def deploy_artifacts_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def deploy_artifacts_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Deploy Artifacts. Could be set to any integer value.
 
@@ -233,133 +233,133 @@ class DifStackArgs:
         return pulumi.get(self, "deploy_artifacts_trigger")
 
     @deploy_artifacts_trigger.setter
-    def deploy_artifacts_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def deploy_artifacts_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "deploy_artifacts_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def genais(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DifStackGenaiArgs']]]]:
+    def genais(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DifStackGenaiArgs']]]]:
         """
         (Updatable) GenAi Details if genai is included in services.
         """
         return pulumi.get(self, "genais")
 
     @genais.setter
-    def genais(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackGenaiArgs']]]]):
+    def genais(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackGenaiArgs']]]]):
         pulumi.set(self, "genais", value)
 
     @_builtins.property
     @pulumi.getter
-    def ggcs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DifStackGgcArgs']]]]:
+    def ggcs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DifStackGgcArgs']]]]:
         """
         (Updatable) GGCS details if ggcs is included in the services.
         """
         return pulumi.get(self, "ggcs")
 
     @ggcs.setter
-    def ggcs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackGgcArgs']]]]):
+    def ggcs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackGgcArgs']]]]):
         pulumi.set(self, "ggcs", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationEmail")
-    def notification_email(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def notification_email(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         email id to which the stack notifications would be sent.
         """
         return pulumi.get(self, "notification_email")
 
     @notification_email.setter
-    def notification_email(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def notification_email(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "notification_email", value)
 
     @_builtins.property
     @pulumi.getter
-    def objectstorages(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DifStackObjectstorageArgs']]]]:
+    def objectstorages(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DifStackObjectstorageArgs']]]]:
         """
         (Updatable) Object Storage Details if object storage is included in services.
         """
         return pulumi.get(self, "objectstorages")
 
     @objectstorages.setter
-    def objectstorages(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackObjectstorageArgs']]]]):
+    def objectstorages(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackObjectstorageArgs']]]]):
         pulumi.set(self, "objectstorages", value)
 
     @_builtins.property
     @pulumi.getter
-    def okes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DifStackOkeArgs']]]]:
+    def okes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DifStackOkeArgs']]]]:
         """
         OKE Details if oke is included in services.
         """
         return pulumi.get(self, "okes")
 
     @okes.setter
-    def okes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackOkeArgs']]]]):
+    def okes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackOkeArgs']]]]):
         pulumi.set(self, "okes", value)
 
     @_builtins.property
     @pulumi.getter
-    def omks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DifStackOmkArgs']]]]:
+    def omks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DifStackOmkArgs']]]]:
         """
         OMK Details if omk is included in services.
         """
         return pulumi.get(self, "omks")
 
     @omks.setter
-    def omks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackOmkArgs']]]]):
+    def omks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackOmkArgs']]]]):
         pulumi.set(self, "omks", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Subnet id for the Private Endpoint creation for artifact deployment.
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
 
 @pulumi.input_type
 class _DifStackState:
     def __init__(__self__, *,
-                 adbs: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackAdbArgs']]]] = None,
-                 add_service_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 aidataplatforms: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackAidataplatformArgs']]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 dataflows: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackDataflowArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deploy_artifacts_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 genais: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackGenaiArgs']]]] = None,
-                 ggcs: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackGgcArgs']]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_email: Optional[pulumi.Input[_builtins.str]] = None,
-                 objectstorages: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackObjectstorageArgs']]]] = None,
-                 okes: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackOkeArgs']]]] = None,
-                 omks: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackOmkArgs']]]] = None,
-                 service_details: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackServiceDetailArgs']]]] = None,
-                 services: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 stack_templates: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 adbs: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackAdbArgs']]]] = None,
+                 add_service_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 aidataplatforms: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackAidataplatformArgs']]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 dataflows: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackDataflowArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deploy_artifacts_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 genais: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackGenaiArgs']]]] = None,
+                 ggcs: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackGgcArgs']]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_email: pulumi.Input[Optional[_builtins.str]] = None,
+                 objectstorages: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackObjectstorageArgs']]]] = None,
+                 okes: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackOkeArgs']]]] = None,
+                 omks: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackOmkArgs']]]] = None,
+                 service_details: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackServiceDetailArgs']]]] = None,
+                 services: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 stack_templates: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DifStack resources.
 
@@ -450,79 +450,79 @@ class _DifStackState:
 
     @_builtins.property
     @pulumi.getter
-    def adbs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DifStackAdbArgs']]]]:
+    def adbs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DifStackAdbArgs']]]]:
         """
         (Updatable) ADB details if adb is included in the services.
         """
         return pulumi.get(self, "adbs")
 
     @adbs.setter
-    def adbs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackAdbArgs']]]]):
+    def adbs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackAdbArgs']]]]):
         pulumi.set(self, "adbs", value)
 
     @_builtins.property
     @pulumi.getter(name="addServiceTrigger")
-    def add_service_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def add_service_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Add Service. Could be set to any integer value.
         """
         return pulumi.get(self, "add_service_trigger")
 
     @add_service_trigger.setter
-    def add_service_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def add_service_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "add_service_trigger", value)
 
     @_builtins.property
     @pulumi.getter
-    def aidataplatforms(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DifStackAidataplatformArgs']]]]:
+    def aidataplatforms(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DifStackAidataplatformArgs']]]]:
         """
         AI Data Platform Details if aidataplatform is included in services.
         """
         return pulumi.get(self, "aidataplatforms")
 
     @aidataplatforms.setter
-    def aidataplatforms(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackAidataplatformArgs']]]]):
+    def aidataplatforms(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackAidataplatformArgs']]]]):
         pulumi.set(self, "aidataplatforms", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the Stack in.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def dataflows(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DifStackDataflowArgs']]]]:
+    def dataflows(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DifStackDataflowArgs']]]]:
         """
         (Updatable) DATAFLOW details if dataflow is included in the services.
         """
         return pulumi.get(self, "dataflows")
 
     @dataflows.setter
-    def dataflows(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackDataflowArgs']]]]):
+    def dataflows(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackDataflowArgs']]]]):
         pulumi.set(self, "dataflows", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deployArtifactsTrigger")
-    def deploy_artifacts_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def deploy_artifacts_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Deploy Artifacts. Could be set to any integer value.
 
@@ -540,211 +540,211 @@ class _DifStackState:
         return pulumi.get(self, "deploy_artifacts_trigger")
 
     @deploy_artifacts_trigger.setter
-    def deploy_artifacts_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def deploy_artifacts_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "deploy_artifacts_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name. Should be unique per compartment. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def genais(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DifStackGenaiArgs']]]]:
+    def genais(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DifStackGenaiArgs']]]]:
         """
         (Updatable) GenAi Details if genai is included in services.
         """
         return pulumi.get(self, "genais")
 
     @genais.setter
-    def genais(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackGenaiArgs']]]]):
+    def genais(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackGenaiArgs']]]]):
         pulumi.set(self, "genais", value)
 
     @_builtins.property
     @pulumi.getter
-    def ggcs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DifStackGgcArgs']]]]:
+    def ggcs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DifStackGgcArgs']]]]:
         """
         (Updatable) GGCS details if ggcs is included in the services.
         """
         return pulumi.get(self, "ggcs")
 
     @ggcs.setter
-    def ggcs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackGgcArgs']]]]):
+    def ggcs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackGgcArgs']]]]):
         pulumi.set(self, "ggcs", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message that describes the current state of the Stack in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationEmail")
-    def notification_email(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def notification_email(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         email id to which the stack notifications would be sent.
         """
         return pulumi.get(self, "notification_email")
 
     @notification_email.setter
-    def notification_email(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def notification_email(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "notification_email", value)
 
     @_builtins.property
     @pulumi.getter
-    def objectstorages(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DifStackObjectstorageArgs']]]]:
+    def objectstorages(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DifStackObjectstorageArgs']]]]:
         """
         (Updatable) Object Storage Details if object storage is included in services.
         """
         return pulumi.get(self, "objectstorages")
 
     @objectstorages.setter
-    def objectstorages(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackObjectstorageArgs']]]]):
+    def objectstorages(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackObjectstorageArgs']]]]):
         pulumi.set(self, "objectstorages", value)
 
     @_builtins.property
     @pulumi.getter
-    def okes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DifStackOkeArgs']]]]:
+    def okes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DifStackOkeArgs']]]]:
         """
         OKE Details if oke is included in services.
         """
         return pulumi.get(self, "okes")
 
     @okes.setter
-    def okes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackOkeArgs']]]]):
+    def okes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackOkeArgs']]]]):
         pulumi.set(self, "okes", value)
 
     @_builtins.property
     @pulumi.getter
-    def omks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DifStackOmkArgs']]]]:
+    def omks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DifStackOmkArgs']]]]:
         """
         OMK Details if omk is included in services.
         """
         return pulumi.get(self, "omks")
 
     @omks.setter
-    def omks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackOmkArgs']]]]):
+    def omks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackOmkArgs']]]]):
         pulumi.set(self, "omks", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceDetails")
-    def service_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DifStackServiceDetailArgs']]]]:
+    def service_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DifStackServiceDetailArgs']]]]:
         """
         Details of the service onboarded for the data intelligence stack.
         """
         return pulumi.get(self, "service_details")
 
     @service_details.setter
-    def service_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DifStackServiceDetailArgs']]]]):
+    def service_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DifStackServiceDetailArgs']]]]):
         pulumi.set(self, "service_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of services to be onboarded for the stack.
         """
         return pulumi.get(self, "services")
 
     @services.setter
-    def services(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def services(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "services", value)
 
     @_builtins.property
     @pulumi.getter(name="stackTemplates")
-    def stack_templates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def stack_templates(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of templates to be onboarded for the stack.
         """
         return pulumi.get(self, "stack_templates")
 
     @stack_templates.setter
-    def stack_templates(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def stack_templates(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "stack_templates", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Stack.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Subnet id for the Private Endpoint creation for artifact deployment.
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Stack was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Stack was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -754,24 +754,24 @@ class DifStack(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 adbs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DifStackAdbArgs', 'DifStackAdbArgsDict']]]]] = None,
-                 add_service_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 aidataplatforms: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DifStackAidataplatformArgs', 'DifStackAidataplatformArgsDict']]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 dataflows: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DifStackDataflowArgs', 'DifStackDataflowArgsDict']]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deploy_artifacts_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 genais: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DifStackGenaiArgs', 'DifStackGenaiArgsDict']]]]] = None,
-                 ggcs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DifStackGgcArgs', 'DifStackGgcArgsDict']]]]] = None,
-                 notification_email: Optional[pulumi.Input[_builtins.str]] = None,
-                 objectstorages: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DifStackObjectstorageArgs', 'DifStackObjectstorageArgsDict']]]]] = None,
-                 okes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DifStackOkeArgs', 'DifStackOkeArgsDict']]]]] = None,
-                 omks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DifStackOmkArgs', 'DifStackOmkArgsDict']]]]] = None,
-                 services: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 stack_templates: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 adbs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackAdbArgs', 'DifStackAdbArgsDict']]]]] = None,
+                 add_service_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 aidataplatforms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackAidataplatformArgs', 'DifStackAidataplatformArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 dataflows: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackDataflowArgs', 'DifStackDataflowArgsDict']]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deploy_artifacts_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 genais: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackGenaiArgs', 'DifStackGenaiArgsDict']]]]] = None,
+                 ggcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackGgcArgs', 'DifStackGgcArgsDict']]]]] = None,
+                 notification_email: pulumi.Input[Optional[_builtins.str]] = None,
+                 objectstorages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackObjectstorageArgs', 'DifStackObjectstorageArgsDict']]]]] = None,
+                 okes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackOkeArgs', 'DifStackOkeArgsDict']]]]] = None,
+                 omks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackOmkArgs', 'DifStackOmkArgsDict']]]]] = None,
+                 services: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 stack_templates: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Stack resource in Oracle Cloud Infrastructure Dif service.
@@ -791,13 +791,13 @@ class DifStack(pulumi.CustomResource):
             stack_templates=stack_stack_templates,
             adbs=[{
                 "admin_password_id": test_admin_password["id"],
-                "data_storage_size_in_tbs": stack_adb_data_storage_size_in_tbs,
+                "data_storage_size_in_tbs": int(stack_adb_data_storage_size_in_tbs),
                 "db_version": stack_adb_db_version,
                 "db_workload": stack_adb_db_workload,
-                "ecpu": stack_adb_ecpu,
+                "ecpu": int(stack_adb_ecpu),
                 "instance_id": stack_adb_instance_id,
-                "is_mtls_connection_required": stack_adb_is_mtls_connection_required,
-                "is_public": stack_adb_is_public,
+                "is_mtls_connection_required": stack_adb_is_mtls_connection_required == "true",
+                "is_public": stack_adb_is_public == "true",
                 "subnet_id": test_subnet["id"],
                 "tools_public_access": stack_adb_tools_public_access,
                 "artifact_object_storage_path": stack_adb_artifact_object_storage_path,
@@ -816,7 +816,7 @@ class DifStack(pulumi.CustomResource):
                 "executor_shape": stack_dataflow_executor_shape,
                 "instance_id": stack_dataflow_instance_id,
                 "log_bucket_instance_id": stack_objectstorage_instance_id,
-                "num_executors": stack_dataflow_num_executors,
+                "num_executors": int(stack_dataflow_num_executors),
                 "spark_version": stack_dataflow_spark_version,
                 "connections": {
                     "connection_details": {
@@ -829,12 +829,12 @@ class DifStack(pulumi.CustomResource):
                     "subnet_id": test_subnet["id"],
                 },
                 "driver_shape_config": {
-                    "memory_in_gbs": stack_dataflow_driver_shape_config_memory_in_gbs,
-                    "ocpus": stack_dataflow_driver_shape_config_ocpus,
+                    "memory_in_gbs": int(stack_dataflow_driver_shape_config_memory_in_gbs),
+                    "ocpus": int(stack_dataflow_driver_shape_config_ocpus),
                 },
                 "executor_shape_config": {
-                    "memory_in_gbs": stack_dataflow_executor_shape_config_memory_in_gbs,
-                    "ocpus": stack_dataflow_executor_shape_config_ocpus,
+                    "memory_in_gbs": int(stack_dataflow_executor_shape_config_memory_in_gbs),
+                    "ocpus": int(stack_dataflow_executor_shape_config_ocpus),
                 },
                 "private_endpoint_id": test_private_endpoint["id"],
                 "warehouse_bucket_instance_id": stack_objectstorage_instance_id,
@@ -852,15 +852,15 @@ class DifStack(pulumi.CustomResource):
                 "cluster_type": stack_genai_cluster_type,
                 "instance_id": stack_genai_instance_id,
                 "oci_region": stack_genai_oci_region,
-                "unit_count": stack_genai_unit_count,
+                "unit_count": int(stack_genai_unit_count),
                 "endpoints": [{
                     "endpoint_name": stack_genai_endpoint_name,
-                    "is_content_moderation_enabled": stack_genai_endpoints_is_content_moderation_enabled,
+                    "is_content_moderation_enabled": stack_genai_endpoints_is_content_moderation_enabled == "true",
                 }],
             }],
             ggcs=[{
                 "instance_id": stack_ggcs_instance_id,
-                "ocpu": stack_ggcs_ocpu,
+                "ocpu": int(stack_ggcs_ocpu),
                 "password_secret_id": test_secret["id"],
                 "subnet_id": test_subnet["id"],
                 "connections": [{
@@ -884,14 +884,14 @@ class DifStack(pulumi.CustomResource):
                 "sources": [{
                     "source_id": stack_ggcs_sources_source_id,
                     "action": stack_ggcs_sources_action,
-                    "should_start_source_operations": stack_ggcs_sources_should_start_source_operations,
+                    "should_start_source_operations": stack_ggcs_sources_should_start_source_operations == "true",
                     "target_uri": stack_ggcs_sources_target_uri,
                     "target_connection_name": stack_ggcs_sources_target_connection_name,
                 }],
                 "targets": [{
                     "target_id": stack_ggcs_target_id,
                     "action": stack_ggcs_action,
-                    "should_start_target_operations": stack_ggcs_should_start_target_operations,
+                    "should_start_target_operations": stack_ggcs_should_start_target_operations == "true",
                     "source_uri": stack_ggcs_source_uri,
                     "source_connection_name": stack_ggcs_source_connection_name,
                 }],
@@ -1000,13 +1000,13 @@ class DifStack(pulumi.CustomResource):
             stack_templates=stack_stack_templates,
             adbs=[{
                 "admin_password_id": test_admin_password["id"],
-                "data_storage_size_in_tbs": stack_adb_data_storage_size_in_tbs,
+                "data_storage_size_in_tbs": int(stack_adb_data_storage_size_in_tbs),
                 "db_version": stack_adb_db_version,
                 "db_workload": stack_adb_db_workload,
-                "ecpu": stack_adb_ecpu,
+                "ecpu": int(stack_adb_ecpu),
                 "instance_id": stack_adb_instance_id,
-                "is_mtls_connection_required": stack_adb_is_mtls_connection_required,
-                "is_public": stack_adb_is_public,
+                "is_mtls_connection_required": stack_adb_is_mtls_connection_required == "true",
+                "is_public": stack_adb_is_public == "true",
                 "subnet_id": test_subnet["id"],
                 "tools_public_access": stack_adb_tools_public_access,
                 "artifact_object_storage_path": stack_adb_artifact_object_storage_path,
@@ -1025,7 +1025,7 @@ class DifStack(pulumi.CustomResource):
                 "executor_shape": stack_dataflow_executor_shape,
                 "instance_id": stack_dataflow_instance_id,
                 "log_bucket_instance_id": stack_objectstorage_instance_id,
-                "num_executors": stack_dataflow_num_executors,
+                "num_executors": int(stack_dataflow_num_executors),
                 "spark_version": stack_dataflow_spark_version,
                 "connections": {
                     "connection_details": {
@@ -1038,12 +1038,12 @@ class DifStack(pulumi.CustomResource):
                     "subnet_id": test_subnet["id"],
                 },
                 "driver_shape_config": {
-                    "memory_in_gbs": stack_dataflow_driver_shape_config_memory_in_gbs,
-                    "ocpus": stack_dataflow_driver_shape_config_ocpus,
+                    "memory_in_gbs": int(stack_dataflow_driver_shape_config_memory_in_gbs),
+                    "ocpus": int(stack_dataflow_driver_shape_config_ocpus),
                 },
                 "executor_shape_config": {
-                    "memory_in_gbs": stack_dataflow_executor_shape_config_memory_in_gbs,
-                    "ocpus": stack_dataflow_executor_shape_config_ocpus,
+                    "memory_in_gbs": int(stack_dataflow_executor_shape_config_memory_in_gbs),
+                    "ocpus": int(stack_dataflow_executor_shape_config_ocpus),
                 },
                 "private_endpoint_id": test_private_endpoint["id"],
                 "warehouse_bucket_instance_id": stack_objectstorage_instance_id,
@@ -1061,15 +1061,15 @@ class DifStack(pulumi.CustomResource):
                 "cluster_type": stack_genai_cluster_type,
                 "instance_id": stack_genai_instance_id,
                 "oci_region": stack_genai_oci_region,
-                "unit_count": stack_genai_unit_count,
+                "unit_count": int(stack_genai_unit_count),
                 "endpoints": [{
                     "endpoint_name": stack_genai_endpoint_name,
-                    "is_content_moderation_enabled": stack_genai_endpoints_is_content_moderation_enabled,
+                    "is_content_moderation_enabled": stack_genai_endpoints_is_content_moderation_enabled == "true",
                 }],
             }],
             ggcs=[{
                 "instance_id": stack_ggcs_instance_id,
-                "ocpu": stack_ggcs_ocpu,
+                "ocpu": int(stack_ggcs_ocpu),
                 "password_secret_id": test_secret["id"],
                 "subnet_id": test_subnet["id"],
                 "connections": [{
@@ -1093,14 +1093,14 @@ class DifStack(pulumi.CustomResource):
                 "sources": [{
                     "source_id": stack_ggcs_sources_source_id,
                     "action": stack_ggcs_sources_action,
-                    "should_start_source_operations": stack_ggcs_sources_should_start_source_operations,
+                    "should_start_source_operations": stack_ggcs_sources_should_start_source_operations == "true",
                     "target_uri": stack_ggcs_sources_target_uri,
                     "target_connection_name": stack_ggcs_sources_target_connection_name,
                 }],
                 "targets": [{
                     "target_id": stack_ggcs_target_id,
                     "action": stack_ggcs_action,
-                    "should_start_target_operations": stack_ggcs_should_start_target_operations,
+                    "should_start_target_operations": stack_ggcs_should_start_target_operations == "true",
                     "source_uri": stack_ggcs_source_uri,
                     "source_connection_name": stack_ggcs_source_connection_name,
                 }],
@@ -1168,24 +1168,24 @@ class DifStack(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 adbs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DifStackAdbArgs', 'DifStackAdbArgsDict']]]]] = None,
-                 add_service_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 aidataplatforms: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DifStackAidataplatformArgs', 'DifStackAidataplatformArgsDict']]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 dataflows: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DifStackDataflowArgs', 'DifStackDataflowArgsDict']]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deploy_artifacts_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 genais: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DifStackGenaiArgs', 'DifStackGenaiArgsDict']]]]] = None,
-                 ggcs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DifStackGgcArgs', 'DifStackGgcArgsDict']]]]] = None,
-                 notification_email: Optional[pulumi.Input[_builtins.str]] = None,
-                 objectstorages: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DifStackObjectstorageArgs', 'DifStackObjectstorageArgsDict']]]]] = None,
-                 okes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DifStackOkeArgs', 'DifStackOkeArgsDict']]]]] = None,
-                 omks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DifStackOmkArgs', 'DifStackOmkArgsDict']]]]] = None,
-                 services: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 stack_templates: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 adbs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackAdbArgs', 'DifStackAdbArgsDict']]]]] = None,
+                 add_service_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 aidataplatforms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackAidataplatformArgs', 'DifStackAidataplatformArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 dataflows: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackDataflowArgs', 'DifStackDataflowArgsDict']]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deploy_artifacts_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 genais: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackGenaiArgs', 'DifStackGenaiArgsDict']]]]] = None,
+                 ggcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackGgcArgs', 'DifStackGgcArgsDict']]]]] = None,
+                 notification_email: pulumi.Input[Optional[_builtins.str]] = None,
+                 objectstorages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackObjectstorageArgs', 'DifStackObjectstorageArgsDict']]]]] = None,
+                 okes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackOkeArgs', 'DifStackOkeArgsDict']]]]] = None,
+                 omks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackOmkArgs', 'DifStackOmkArgsDict']]]]] = None,
+                 services: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 stack_templates: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1237,30 +1237,30 @@ class DifStack(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            adbs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DifStackAdbArgs', 'DifStackAdbArgsDict']]]]] = None,
-            add_service_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            aidataplatforms: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DifStackAidataplatformArgs', 'DifStackAidataplatformArgsDict']]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            dataflows: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DifStackDataflowArgs', 'DifStackDataflowArgsDict']]]]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            deploy_artifacts_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            genais: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DifStackGenaiArgs', 'DifStackGenaiArgsDict']]]]] = None,
-            ggcs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DifStackGgcArgs', 'DifStackGgcArgsDict']]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            notification_email: Optional[pulumi.Input[_builtins.str]] = None,
-            objectstorages: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DifStackObjectstorageArgs', 'DifStackObjectstorageArgsDict']]]]] = None,
-            okes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DifStackOkeArgs', 'DifStackOkeArgsDict']]]]] = None,
-            omks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DifStackOmkArgs', 'DifStackOmkArgsDict']]]]] = None,
-            service_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DifStackServiceDetailArgs', 'DifStackServiceDetailArgsDict']]]]] = None,
-            services: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            stack_templates: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'DifStack':
+            adbs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackAdbArgs', 'DifStackAdbArgsDict']]]]] = None,
+            add_service_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            aidataplatforms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackAidataplatformArgs', 'DifStackAidataplatformArgsDict']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            dataflows: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackDataflowArgs', 'DifStackDataflowArgsDict']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            deploy_artifacts_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            genais: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackGenaiArgs', 'DifStackGenaiArgsDict']]]]] = None,
+            ggcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackGgcArgs', 'DifStackGgcArgsDict']]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            notification_email: pulumi.Input[Optional[_builtins.str]] = None,
+            objectstorages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackObjectstorageArgs', 'DifStackObjectstorageArgsDict']]]]] = None,
+            okes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackOkeArgs', 'DifStackOkeArgsDict']]]]] = None,
+            omks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackOmkArgs', 'DifStackOmkArgsDict']]]]] = None,
+            service_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackServiceDetailArgs', 'DifStackServiceDetailArgsDict']]]]] = None,
+            services: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            stack_templates: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'DifStack':
         """
         Get an existing DifStack resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

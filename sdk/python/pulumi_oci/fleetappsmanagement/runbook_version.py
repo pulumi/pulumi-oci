@@ -25,9 +25,9 @@ class RunbookVersionArgs:
                  groups: pulumi.Input[Sequence[pulumi.Input['RunbookVersionGroupArgs']]],
                  runbook_id: pulumi.Input[_builtins.str],
                  tasks: pulumi.Input[Sequence[pulumi.Input['RunbookVersionTaskArgs']]],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 rollback_workflow_details: Optional[pulumi.Input['RunbookVersionRollbackWorkflowDetailsArgs']] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 rollback_workflow_details: pulumi.Input[Optional['RunbookVersionRollbackWorkflowDetailsArgs']] = None):
         """
         The set of arguments for constructing a RunbookVersion resource.
 
@@ -106,7 +106,7 @@ class RunbookVersionArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
         `{"foo-namespace.bar-key": "value"}`
@@ -114,12 +114,12 @@ class RunbookVersionArgs:
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists
         for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -127,40 +127,40 @@ class RunbookVersionArgs:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="rollbackWorkflowDetails")
-    def rollback_workflow_details(self) -> Optional[pulumi.Input['RunbookVersionRollbackWorkflowDetailsArgs']]:
+    def rollback_workflow_details(self) -> pulumi.Input[Optional['RunbookVersionRollbackWorkflowDetailsArgs']]:
         """
         (Updatable) Rollback Workflow details.
         """
         return pulumi.get(self, "rollback_workflow_details")
 
     @rollback_workflow_details.setter
-    def rollback_workflow_details(self, value: Optional[pulumi.Input['RunbookVersionRollbackWorkflowDetailsArgs']]):
+    def rollback_workflow_details(self, value: pulumi.Input[Optional['RunbookVersionRollbackWorkflowDetailsArgs']]):
         pulumi.set(self, "rollback_workflow_details", value)
 
 
 @pulumi.input_type
 class _RunbookVersionState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 execution_workflow_details: Optional[pulumi.Input['RunbookVersionExecutionWorkflowDetailsArgs']] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 groups: Optional[pulumi.Input[Sequence[pulumi.Input['RunbookVersionGroupArgs']]]] = None,
-                 is_latest: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rollback_workflow_details: Optional[pulumi.Input['RunbookVersionRollbackWorkflowDetailsArgs']] = None,
-                 runbook_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 tasks: Optional[pulumi.Input[Sequence[pulumi.Input['RunbookVersionTaskArgs']]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 execution_workflow_details: pulumi.Input[Optional['RunbookVersionExecutionWorkflowDetailsArgs']] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 groups: pulumi.Input[Optional[Sequence[pulumi.Input['RunbookVersionGroupArgs']]]] = None,
+                 is_latest: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rollback_workflow_details: pulumi.Input[Optional['RunbookVersionRollbackWorkflowDetailsArgs']] = None,
+                 runbook_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 tasks: pulumi.Input[Optional[Sequence[pulumi.Input['RunbookVersionTaskArgs']]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RunbookVersion resources.
 
@@ -217,16 +217,16 @@ class _RunbookVersionState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
         `{"foo-namespace.bar-key": "value"}`
@@ -234,12 +234,12 @@ class _RunbookVersionState:
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="executionWorkflowDetails")
-    def execution_workflow_details(self) -> Optional[pulumi.Input['RunbookVersionExecutionWorkflowDetailsArgs']]:
+    def execution_workflow_details(self) -> pulumi.Input[Optional['RunbookVersionExecutionWorkflowDetailsArgs']]:
         """
         (Updatable) Execution Workflow details.
         <<<<<<< ours
@@ -247,12 +247,12 @@ class _RunbookVersionState:
         return pulumi.get(self, "execution_workflow_details")
 
     @execution_workflow_details.setter
-    def execution_workflow_details(self, value: Optional[pulumi.Input['RunbookVersionExecutionWorkflowDetailsArgs']]):
+    def execution_workflow_details(self, value: pulumi.Input[Optional['RunbookVersionExecutionWorkflowDetailsArgs']]):
         pulumi.set(self, "execution_workflow_details", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists
         for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -260,33 +260,33 @@ class _RunbookVersionState:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RunbookVersionGroupArgs']]]]:
+    def groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RunbookVersionGroupArgs']]]]:
         """
         (Updatable) The groups of the runbook.
         """
         return pulumi.get(self, "groups")
 
     @groups.setter
-    def groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RunbookVersionGroupArgs']]]]):
+    def groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RunbookVersionGroupArgs']]]]):
         pulumi.set(self, "groups", value)
 
     @_builtins.property
     @pulumi.getter(name="isLatest")
-    def is_latest(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_latest(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_latest")
 
     @is_latest.setter
-    def is_latest(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_latest(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_latest", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide
         actionable information for a resource in Failed state.
@@ -294,60 +294,60 @@ class _RunbookVersionState:
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the task
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="rollbackWorkflowDetails")
-    def rollback_workflow_details(self) -> Optional[pulumi.Input['RunbookVersionRollbackWorkflowDetailsArgs']]:
+    def rollback_workflow_details(self) -> pulumi.Input[Optional['RunbookVersionRollbackWorkflowDetailsArgs']]:
         """
         (Updatable) Rollback Workflow details.
         """
         return pulumi.get(self, "rollback_workflow_details")
 
     @rollback_workflow_details.setter
-    def rollback_workflow_details(self, value: Optional[pulumi.Input['RunbookVersionRollbackWorkflowDetailsArgs']]):
+    def rollback_workflow_details(self, value: pulumi.Input[Optional['RunbookVersionRollbackWorkflowDetailsArgs']]):
         pulumi.set(self, "rollback_workflow_details", value)
 
     @_builtins.property
     @pulumi.getter(name="runbookId")
-    def runbook_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def runbook_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the resource.
         """
         return pulumi.get(self, "runbook_id")
 
     @runbook_id.setter
-    def runbook_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def runbook_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "runbook_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the FleetResource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example:
         `{"orcl-cloud.free-tier-retained": "true"}`
@@ -355,12 +355,12 @@ class _RunbookVersionState:
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def tasks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RunbookVersionTaskArgs']]]]:
+    def tasks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RunbookVersionTaskArgs']]]]:
         """
         (Updatable) A set of tasks to execute in the runbook.
         <<<<<<< ours
@@ -368,31 +368,31 @@ class _RunbookVersionState:
         return pulumi.get(self, "tasks")
 
     @tasks.setter
-    def tasks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RunbookVersionTaskArgs']]]]):
+    def tasks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RunbookVersionTaskArgs']]]]):
         pulumi.set(self, "tasks", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time this resource was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time this resource was last updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -402,13 +402,13 @@ class RunbookVersion(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 execution_workflow_details: Optional[pulumi.Input[Union['RunbookVersionExecutionWorkflowDetailsArgs', 'RunbookVersionExecutionWorkflowDetailsArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RunbookVersionGroupArgs', 'RunbookVersionGroupArgsDict']]]]] = None,
-                 rollback_workflow_details: Optional[pulumi.Input[Union['RunbookVersionRollbackWorkflowDetailsArgs', 'RunbookVersionRollbackWorkflowDetailsArgsDict']]] = None,
-                 runbook_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tasks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RunbookVersionTaskArgs', 'RunbookVersionTaskArgsDict']]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 execution_workflow_details: pulumi.Input[Optional[Union['RunbookVersionExecutionWorkflowDetailsArgs', 'RunbookVersionExecutionWorkflowDetailsArgsDict']]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RunbookVersionGroupArgs', 'RunbookVersionGroupArgsDict']]]]] = None,
+                 rollback_workflow_details: pulumi.Input[Optional[Union['RunbookVersionRollbackWorkflowDetailsArgs', 'RunbookVersionRollbackWorkflowDetailsArgsDict']]] = None,
+                 runbook_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RunbookVersionTaskArgs', 'RunbookVersionTaskArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Runbook Version resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -491,13 +491,13 @@ class RunbookVersion(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 execution_workflow_details: Optional[pulumi.Input[Union['RunbookVersionExecutionWorkflowDetailsArgs', 'RunbookVersionExecutionWorkflowDetailsArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RunbookVersionGroupArgs', 'RunbookVersionGroupArgsDict']]]]] = None,
-                 rollback_workflow_details: Optional[pulumi.Input[Union['RunbookVersionRollbackWorkflowDetailsArgs', 'RunbookVersionRollbackWorkflowDetailsArgsDict']]] = None,
-                 runbook_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tasks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RunbookVersionTaskArgs', 'RunbookVersionTaskArgsDict']]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 execution_workflow_details: pulumi.Input[Optional[Union['RunbookVersionExecutionWorkflowDetailsArgs', 'RunbookVersionExecutionWorkflowDetailsArgsDict']]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RunbookVersionGroupArgs', 'RunbookVersionGroupArgsDict']]]]] = None,
+                 rollback_workflow_details: pulumi.Input[Optional[Union['RunbookVersionRollbackWorkflowDetailsArgs', 'RunbookVersionRollbackWorkflowDetailsArgsDict']]] = None,
+                 runbook_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RunbookVersionTaskArgs', 'RunbookVersionTaskArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -540,21 +540,21 @@ class RunbookVersion(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            execution_workflow_details: Optional[pulumi.Input[Union['RunbookVersionExecutionWorkflowDetailsArgs', 'RunbookVersionExecutionWorkflowDetailsArgsDict']]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RunbookVersionGroupArgs', 'RunbookVersionGroupArgsDict']]]]] = None,
-            is_latest: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            rollback_workflow_details: Optional[pulumi.Input[Union['RunbookVersionRollbackWorkflowDetailsArgs', 'RunbookVersionRollbackWorkflowDetailsArgsDict']]] = None,
-            runbook_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            tasks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RunbookVersionTaskArgs', 'RunbookVersionTaskArgsDict']]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'RunbookVersion':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            execution_workflow_details: pulumi.Input[Optional[Union['RunbookVersionExecutionWorkflowDetailsArgs', 'RunbookVersionExecutionWorkflowDetailsArgsDict']]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RunbookVersionGroupArgs', 'RunbookVersionGroupArgsDict']]]]] = None,
+            is_latest: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            rollback_workflow_details: pulumi.Input[Optional[Union['RunbookVersionRollbackWorkflowDetailsArgs', 'RunbookVersionRollbackWorkflowDetailsArgsDict']]] = None,
+            runbook_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RunbookVersionTaskArgs', 'RunbookVersionTaskArgsDict']]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'RunbookVersion':
         """
         Get an existing RunbookVersion resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

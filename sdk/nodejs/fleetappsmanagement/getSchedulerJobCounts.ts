@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulerJobCounts = oci.FleetAppsManagement.getSchedulerJobCounts({
+ * const testSchedulerJobCounts = oci.fleetappsmanagement.getSchedulerJobCounts({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: schedulerJobCountCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: schedulerJobCountCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -75,9 +75,9 @@ export interface GetSchedulerJobCountsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulerJobCounts = oci.FleetAppsManagement.getSchedulerJobCounts({
+ * const testSchedulerJobCounts = oci.fleetappsmanagement.getSchedulerJobCounts({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: schedulerJobCountCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: schedulerJobCountCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -98,10 +98,10 @@ export interface GetSchedulerJobCountsOutputArgs {
     /**
      * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetSchedulerJobCountsFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetSchedulerJobCountsFilterArgs>[] | undefined>;
 }

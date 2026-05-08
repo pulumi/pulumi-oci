@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *     timeScheduled: maintenanceRunTimeScheduled,
  *     compartmentId: compartmentId,
  *     databaseSoftwareImageId: testDatabaseSoftwareImage.id,
- *     isDstFileUpdateEnabled: maintenanceRunIsDstFileUpdateEnabled,
+ *     isDstFileUpdateEnabled: maintenanceRunIsDstFileUpdateEnabled === "true",
  *     patchingMode: maintenanceRunPatchingMode,
  * });
  * ```
@@ -318,129 +318,129 @@ export interface MaintenanceRunState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
      */
-    currentCustomActionTimeoutInMins?: pulumi.Input<number>;
+    currentCustomActionTimeoutInMins?: pulumi.Input<number | undefined>;
     /**
      * The name of the current infrastruture component that is getting patched.
      */
-    currentPatchingComponent?: pulumi.Input<string>;
+    currentPatchingComponent?: pulumi.Input<string | undefined>;
     /**
      * Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
      */
-    customActionTimeoutInMins?: pulumi.Input<number>;
+    customActionTimeoutInMins?: pulumi.Input<number | undefined>;
     /**
      * The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
-    databaseSoftwareImageId?: pulumi.Input<string>;
+    databaseSoftwareImageId?: pulumi.Input<string | undefined>;
     /**
      * Description of the maintenance run.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The user-friendly name for the maintenance run.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The estimated start time of the next infrastruture component patching operation.
      */
-    estimatedComponentPatchingStartTime?: pulumi.Input<string>;
+    estimatedComponentPatchingStartTime?: pulumi.Input<string | undefined>;
     /**
      * The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
      */
-    estimatedPatchingTimes?: pulumi.Input<pulumi.Input<inputs.Database.MaintenanceRunEstimatedPatchingTime>[]>;
+    estimatedPatchingTimes?: pulumi.Input<pulumi.Input<inputs.Database.MaintenanceRunEstimatedPatchingTime>[] | undefined>;
     /**
      * If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
      */
-    isCustomActionTimeoutEnabled?: pulumi.Input<boolean>;
+    isCustomActionTimeoutEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      */
-    isDstFileUpdateEnabled?: pulumi.Input<boolean>;
+    isDstFileUpdateEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * If `FALSE`, the maintenance run doesn't support granular maintenance.
      */
-    isMaintenanceRunGranular?: pulumi.Input<boolean>;
+    isMaintenanceRunGranular?: pulumi.Input<boolean | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Maintenance sub-type.
      */
-    maintenanceSubtype?: pulumi.Input<string>;
+    maintenanceSubtype?: pulumi.Input<string | undefined>;
     /**
      * Maintenance type.
      */
-    maintenanceType?: pulumi.Input<string>;
+    maintenanceType?: pulumi.Input<string | undefined>;
     /**
      * Contain the patch failure count.
      */
-    patchFailureCount?: pulumi.Input<number>;
+    patchFailureCount?: pulumi.Input<number | undefined>;
     /**
      * The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
      */
-    patchId?: pulumi.Input<string>;
+    patchId?: pulumi.Input<string | undefined>;
     /**
      * Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
      */
-    patchType?: pulumi.Input<string>;
+    patchType?: pulumi.Input<string | undefined>;
     /**
      * The time when the patching operation ended.
      */
-    patchingEndTime?: pulumi.Input<string>;
+    patchingEndTime?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
      *
      * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
      */
-    patchingMode?: pulumi.Input<string>;
+    patchingMode?: pulumi.Input<string | undefined>;
     /**
      * The time when the patching operation started.
      */
-    patchingStartTime?: pulumi.Input<string>;
+    patchingStartTime?: pulumi.Input<string | undefined>;
     /**
      * The status of the patching operation.
      */
-    patchingStatus?: pulumi.Input<string>;
+    patchingStatus?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
      */
-    peerMaintenanceRunId?: pulumi.Input<string>;
+    peerMaintenanceRunId?: pulumi.Input<string | undefined>;
     /**
      * The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
      */
-    peerMaintenanceRunIds?: pulumi.Input<pulumi.Input<string>[]>;
+    peerMaintenanceRunIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The target software version for the database server patching operation.
      */
-    targetDbServerVersion?: pulumi.Input<string>;
+    targetDbServerVersion?: pulumi.Input<string | undefined>;
     /**
      * The ID of the target resource for which the maintenance run should be created.
      */
-    targetResourceId?: pulumi.Input<string>;
+    targetResourceId?: pulumi.Input<string | undefined>;
     /**
      * The type of the target resource on which the maintenance run occurs.
      */
-    targetResourceType?: pulumi.Input<string>;
+    targetResourceType?: pulumi.Input<string | undefined>;
     /**
      * The target Cell version that is to be patched to.
      */
-    targetStorageServerVersion?: pulumi.Input<string>;
+    targetStorageServerVersion?: pulumi.Input<string | undefined>;
     /**
      * The date and time the maintenance run was completed.
      */
-    timeEnded?: pulumi.Input<string>;
+    timeEnded?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The date and time that update should be scheduled.
      *
@@ -448,15 +448,15 @@ export interface MaintenanceRunState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeScheduled?: pulumi.Input<string>;
+    timeScheduled?: pulumi.Input<string | undefined>;
     /**
      * The date and time the maintenance run starts.
      */
-    timeStarted?: pulumi.Input<string>;
+    timeStarted?: pulumi.Input<string | undefined>;
     /**
      * The total time taken by corresponding resource activity in minutes.
      */
-    totalTimeTakenInMins?: pulumi.Input<number>;
+    totalTimeTakenInMins?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -466,15 +466,15 @@ export interface MaintenanceRunArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
-    databaseSoftwareImageId?: pulumi.Input<string>;
+    databaseSoftwareImageId?: pulumi.Input<string | undefined>;
     /**
      * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      */
-    isDstFileUpdateEnabled?: pulumi.Input<boolean>;
+    isDstFileUpdateEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
      */
@@ -484,7 +484,7 @@ export interface MaintenanceRunArgs {
      *
      * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
      */
-    patchingMode?: pulumi.Input<string>;
+    patchingMode?: pulumi.Input<string | undefined>;
     /**
      * The ID of the target resource for which the maintenance run should be created.
      */

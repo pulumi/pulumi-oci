@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalPluggableDatabases = oci.Database.getExternalPluggableDatabases({
+ * const testExternalPluggableDatabases = oci.database.getExternalPluggableDatabases({
  *     compartmentId: compartmentId,
  *     displayName: externalPluggableDatabaseDisplayName,
  *     externalContainerDatabaseId: testExternalContainerDatabase.id,
@@ -102,7 +102,7 @@ export interface GetExternalPluggableDatabasesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalPluggableDatabases = oci.Database.getExternalPluggableDatabases({
+ * const testExternalPluggableDatabases = oci.database.getExternalPluggableDatabases({
  *     compartmentId: compartmentId,
  *     displayName: externalPluggableDatabaseDisplayName,
  *     externalContainerDatabaseId: testExternalContainerDatabase.id,
@@ -132,14 +132,14 @@ export interface GetExternalPluggableDatabasesOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    externalContainerDatabaseId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetExternalPluggableDatabasesFilterArgs>[]>;
+    externalContainerDatabaseId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetExternalPluggableDatabasesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the specified lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

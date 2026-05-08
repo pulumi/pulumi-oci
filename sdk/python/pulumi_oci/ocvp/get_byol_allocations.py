@@ -175,7 +175,7 @@ def get_byol_allocations(available_units_greater_than_or_equal_to: Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_byol_allocations = oci.Ocvp.get_byol_allocations(compartment_id=compartment_id,
+    test_byol_allocations = oci.ocvp.get_byol_allocations(compartment_id=compartment_id,
         available_units_greater_than_or_equal_to=byol_allocation_available_units_greater_than_or_equal_to,
         byol_allocation_id=test_byol_allocation["id"],
         byol_id=test_byol["id"],
@@ -216,14 +216,14 @@ def get_byol_allocations(available_units_greater_than_or_equal_to: Optional[_bui
         id=pulumi.get(__ret__, 'id'),
         software_type=pulumi.get(__ret__, 'software_type'),
         state=pulumi.get(__ret__, 'state'))
-def get_byol_allocations_output(available_units_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.float]]] = None,
-                                byol_allocation_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                byol_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetByolAllocationsFilterArgs', 'GetByolAllocationsFilterArgsDict']]]]] = None,
-                                software_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_byol_allocations_output(available_units_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.float]]] = None,
+                                byol_allocation_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                byol_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetByolAllocationsFilterArgs', 'GetByolAllocationsFilterArgsDict']]]]] = None,
+                                software_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetByolAllocationsResult]:
     """
     This data source provides the list of Byol Allocations in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -237,7 +237,7 @@ def get_byol_allocations_output(available_units_greater_than_or_equal_to: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_byol_allocations = oci.Ocvp.get_byol_allocations(compartment_id=compartment_id,
+    test_byol_allocations = oci.ocvp.get_byol_allocations(compartment_id=compartment_id,
         available_units_greater_than_or_equal_to=byol_allocation_available_units_greater_than_or_equal_to,
         byol_allocation_id=test_byol_allocation["id"],
         byol_id=test_byol["id"],

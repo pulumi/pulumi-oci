@@ -278,7 +278,7 @@ def get_domains_user_attributes_setting(attribute_sets: Optional[Sequence[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_user_attributes_setting = oci.Identity.get_domains_user_attributes_setting(idcs_endpoint=test_domain["url"],
+    test_user_attributes_setting = oci.identity.get_domains_user_attributes_setting(idcs_endpoint=test_domain["url"],
         user_attributes_setting_id=test_user_attributes_setting_oci_identity_domains_user_attributes_setting["id"],
         attribute_sets=["all"],
         attributes="",
@@ -325,12 +325,12 @@ def get_domains_user_attributes_setting(attribute_sets: Optional[Sequence[_built
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'),
         user_attributes_setting_id=pulumi.get(__ret__, 'user_attributes_setting_id'))
-def get_domains_user_attributes_setting_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                               attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                               authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                               idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                               resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                               user_attributes_setting_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_domains_user_attributes_setting_output(attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                               attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                               authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                               idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                               resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                               user_attributes_setting_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsUserAttributesSettingResult]:
     """
     This data source provides details about a specific User Attributes Setting resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -343,7 +343,7 @@ def get_domains_user_attributes_setting_output(attribute_sets: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_user_attributes_setting = oci.Identity.get_domains_user_attributes_setting(idcs_endpoint=test_domain["url"],
+    test_user_attributes_setting = oci.identity.get_domains_user_attributes_setting(idcs_endpoint=test_domain["url"],
         user_attributes_setting_id=test_user_attributes_setting_oci_identity_domains_user_attributes_setting["id"],
         attribute_sets=["all"],
         attributes="",

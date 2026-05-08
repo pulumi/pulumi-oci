@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSafePrivateEndpoint = oci.DataSafe.getDataSafePrivateEndpoint({
+ * const testDataSafePrivateEndpoint = oci.datasafe.getDataSafePrivateEndpoint({
  *     dataSafePrivateEndpointId: testDataSafePrivateEndpointOciDataSafeDataSafePrivateEndpoint.id,
  * });
  * ```
@@ -114,7 +114,7 @@ export interface GetDataSafePrivateEndpointResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSafePrivateEndpoint = oci.DataSafe.getDataSafePrivateEndpoint({
+ * const testDataSafePrivateEndpoint = oci.datasafe.getDataSafePrivateEndpoint({
  *     dataSafePrivateEndpointId: testDataSafePrivateEndpointOciDataSafeDataSafePrivateEndpoint.id,
  * });
  * ```

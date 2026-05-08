@@ -134,7 +134,7 @@ def get_migrations(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_migrations = oci.CloudMigrations.get_migrations(compartment_id=compartment_id,
+    test_migrations = oci.cloudmigrations.get_migrations(compartment_id=compartment_id,
         display_name=migration_display_name,
         migration_id=test_migration["id"],
         state=migration_state)
@@ -163,11 +163,11 @@ def get_migrations(compartment_id: Optional[_builtins.str] = None,
         migration_collections=pulumi.get(__ret__, 'migration_collections'),
         migration_id=pulumi.get(__ret__, 'migration_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_migrations_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMigrationsFilterArgs', 'GetMigrationsFilterArgsDict']]]]] = None,
-                          migration_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_migrations_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMigrationsFilterArgs', 'GetMigrationsFilterArgsDict']]]]] = None,
+                          migration_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMigrationsResult]:
     """
     This data source provides the list of Migrations in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -180,7 +180,7 @@ def get_migrations_output(compartment_id: Optional[pulumi.Input[Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_migrations = oci.CloudMigrations.get_migrations(compartment_id=compartment_id,
+    test_migrations = oci.cloudmigrations.get_migrations(compartment_id=compartment_id,
         display_name=migration_display_name,
         migration_id=test_migration["id"],
         state=migration_state)

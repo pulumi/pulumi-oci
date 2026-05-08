@@ -23,11 +23,11 @@ class SecurityListArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  vcn_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 egress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityListEgressSecurityRuleArgs']]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ingress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityListIngressSecurityRuleArgs']]]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 egress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityListEgressSecurityRuleArgs']]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ingress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityListIngressSecurityRuleArgs']]]] = None):
         """
         The set of arguments for constructing a SecurityList resource.
 
@@ -86,77 +86,77 @@ class SecurityListArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="egressSecurityRules")
-    def egress_security_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityListEgressSecurityRuleArgs']]]]:
+    def egress_security_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SecurityListEgressSecurityRuleArgs']]]]:
         """
         (Updatable) Rules for allowing egress IP packets.
         """
         return pulumi.get(self, "egress_security_rules")
 
     @egress_security_rules.setter
-    def egress_security_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityListEgressSecurityRuleArgs']]]]):
+    def egress_security_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityListEgressSecurityRuleArgs']]]]):
         pulumi.set(self, "egress_security_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="ingressSecurityRules")
-    def ingress_security_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityListIngressSecurityRuleArgs']]]]:
+    def ingress_security_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SecurityListIngressSecurityRuleArgs']]]]:
         """
         (Updatable) Rules for allowing ingress IP packets.
         """
         return pulumi.get(self, "ingress_security_rules")
 
     @ingress_security_rules.setter
-    def ingress_security_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityListIngressSecurityRuleArgs']]]]):
+    def ingress_security_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityListIngressSecurityRuleArgs']]]]):
         pulumi.set(self, "ingress_security_rules", value)
 
 
 @pulumi.input_type
 class _SecurityListState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 egress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityListEgressSecurityRuleArgs']]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ingress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityListIngressSecurityRuleArgs']]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcn_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 egress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityListEgressSecurityRuleArgs']]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ingress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityListIngressSecurityRuleArgs']]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcn_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SecurityList resources.
 
@@ -195,103 +195,103 @@ class _SecurityListState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the security list.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="egressSecurityRules")
-    def egress_security_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityListEgressSecurityRuleArgs']]]]:
+    def egress_security_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SecurityListEgressSecurityRuleArgs']]]]:
         """
         (Updatable) Rules for allowing egress IP packets.
         """
         return pulumi.get(self, "egress_security_rules")
 
     @egress_security_rules.setter
-    def egress_security_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityListEgressSecurityRuleArgs']]]]):
+    def egress_security_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityListEgressSecurityRuleArgs']]]]):
         pulumi.set(self, "egress_security_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="ingressSecurityRules")
-    def ingress_security_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityListIngressSecurityRuleArgs']]]]:
+    def ingress_security_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SecurityListIngressSecurityRuleArgs']]]]:
         """
         (Updatable) Rules for allowing ingress IP packets.
         """
         return pulumi.get(self, "ingress_security_rules")
 
     @ingress_security_rules.setter
-    def ingress_security_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityListIngressSecurityRuleArgs']]]]):
+    def ingress_security_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityListIngressSecurityRuleArgs']]]]):
         pulumi.set(self, "ingress_security_rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The security list's current state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the security list was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vcn_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN the security list belongs to.
 
@@ -302,7 +302,7 @@ class _SecurityListState:
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
-    def vcn_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vcn_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vcn_id", value)
 
 
@@ -312,13 +312,13 @@ class SecurityList(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 egress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecurityListEgressSecurityRuleArgs', 'SecurityListEgressSecurityRuleArgsDict']]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ingress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecurityListIngressSecurityRuleArgs', 'SecurityListIngressSecurityRuleArgsDict']]]]] = None,
-                 vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 egress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityListEgressSecurityRuleArgs', 'SecurityListEgressSecurityRuleArgsDict']]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ingress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityListIngressSecurityRuleArgs', 'SecurityListIngressSecurityRuleArgsDict']]]]] = None,
+                 vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Security List resource in Oracle Cloud Infrastructure Core service.
@@ -362,24 +362,24 @@ class SecurityList(pulumi.CustomResource):
                 "description": security_list_egress_security_rules_description,
                 "destination_type": security_list_egress_security_rules_destination_type,
                 "icmp_options": {
-                    "type": security_list_egress_security_rules_icmp_options_type,
-                    "code": security_list_egress_security_rules_icmp_options_code,
+                    "type": int(security_list_egress_security_rules_icmp_options_type),
+                    "code": int(security_list_egress_security_rules_icmp_options_code),
                 },
-                "stateless": security_list_egress_security_rules_stateless,
+                "stateless": security_list_egress_security_rules_stateless == "true",
                 "tcp_options": {
-                    "max": security_list_egress_security_rules_tcp_options_destination_port_range_max,
-                    "min": security_list_egress_security_rules_tcp_options_destination_port_range_min,
+                    "max": int(security_list_egress_security_rules_tcp_options_destination_port_range_max),
+                    "min": int(security_list_egress_security_rules_tcp_options_destination_port_range_min),
                     "source_port_range": {
-                        "max": security_list_egress_security_rules_tcp_options_source_port_range_max,
-                        "min": security_list_egress_security_rules_tcp_options_source_port_range_min,
+                        "max": int(security_list_egress_security_rules_tcp_options_source_port_range_max),
+                        "min": int(security_list_egress_security_rules_tcp_options_source_port_range_min),
                     },
                 },
                 "udp_options": {
-                    "max": security_list_egress_security_rules_udp_options_destination_port_range_max,
-                    "min": security_list_egress_security_rules_udp_options_destination_port_range_min,
+                    "max": int(security_list_egress_security_rules_udp_options_destination_port_range_max),
+                    "min": int(security_list_egress_security_rules_udp_options_destination_port_range_min),
                     "source_port_range": {
-                        "max": security_list_egress_security_rules_udp_options_source_port_range_max,
-                        "min": security_list_egress_security_rules_udp_options_source_port_range_min,
+                        "max": int(security_list_egress_security_rules_udp_options_source_port_range_max),
+                        "min": int(security_list_egress_security_rules_udp_options_source_port_range_min),
                     },
                 },
             }],
@@ -391,25 +391,25 @@ class SecurityList(pulumi.CustomResource):
                 "source": security_list_ingress_security_rules_source,
                 "description": security_list_ingress_security_rules_description,
                 "icmp_options": {
-                    "type": security_list_ingress_security_rules_icmp_options_type,
-                    "code": security_list_ingress_security_rules_icmp_options_code,
+                    "type": int(security_list_ingress_security_rules_icmp_options_type),
+                    "code": int(security_list_ingress_security_rules_icmp_options_code),
                 },
                 "source_type": security_list_ingress_security_rules_source_type,
-                "stateless": security_list_ingress_security_rules_stateless,
+                "stateless": security_list_ingress_security_rules_stateless == "true",
                 "tcp_options": {
-                    "max": security_list_ingress_security_rules_tcp_options_destination_port_range_max,
-                    "min": security_list_ingress_security_rules_tcp_options_destination_port_range_min,
+                    "max": int(security_list_ingress_security_rules_tcp_options_destination_port_range_max),
+                    "min": int(security_list_ingress_security_rules_tcp_options_destination_port_range_min),
                     "source_port_range": {
-                        "max": security_list_ingress_security_rules_tcp_options_source_port_range_max,
-                        "min": security_list_ingress_security_rules_tcp_options_source_port_range_min,
+                        "max": int(security_list_ingress_security_rules_tcp_options_source_port_range_max),
+                        "min": int(security_list_ingress_security_rules_tcp_options_source_port_range_min),
                     },
                 },
                 "udp_options": {
-                    "max": security_list_ingress_security_rules_udp_options_destination_port_range_max,
-                    "min": security_list_ingress_security_rules_udp_options_destination_port_range_min,
+                    "max": int(security_list_ingress_security_rules_udp_options_destination_port_range_max),
+                    "min": int(security_list_ingress_security_rules_udp_options_destination_port_range_min),
                     "source_port_range": {
-                        "max": security_list_ingress_security_rules_udp_options_source_port_range_max,
-                        "min": security_list_ingress_security_rules_udp_options_source_port_range_min,
+                        "max": int(security_list_ingress_security_rules_udp_options_source_port_range_max),
+                        "min": int(security_list_ingress_security_rules_udp_options_source_port_range_min),
                     },
                 },
             }])
@@ -486,24 +486,24 @@ class SecurityList(pulumi.CustomResource):
                 "description": security_list_egress_security_rules_description,
                 "destination_type": security_list_egress_security_rules_destination_type,
                 "icmp_options": {
-                    "type": security_list_egress_security_rules_icmp_options_type,
-                    "code": security_list_egress_security_rules_icmp_options_code,
+                    "type": int(security_list_egress_security_rules_icmp_options_type),
+                    "code": int(security_list_egress_security_rules_icmp_options_code),
                 },
-                "stateless": security_list_egress_security_rules_stateless,
+                "stateless": security_list_egress_security_rules_stateless == "true",
                 "tcp_options": {
-                    "max": security_list_egress_security_rules_tcp_options_destination_port_range_max,
-                    "min": security_list_egress_security_rules_tcp_options_destination_port_range_min,
+                    "max": int(security_list_egress_security_rules_tcp_options_destination_port_range_max),
+                    "min": int(security_list_egress_security_rules_tcp_options_destination_port_range_min),
                     "source_port_range": {
-                        "max": security_list_egress_security_rules_tcp_options_source_port_range_max,
-                        "min": security_list_egress_security_rules_tcp_options_source_port_range_min,
+                        "max": int(security_list_egress_security_rules_tcp_options_source_port_range_max),
+                        "min": int(security_list_egress_security_rules_tcp_options_source_port_range_min),
                     },
                 },
                 "udp_options": {
-                    "max": security_list_egress_security_rules_udp_options_destination_port_range_max,
-                    "min": security_list_egress_security_rules_udp_options_destination_port_range_min,
+                    "max": int(security_list_egress_security_rules_udp_options_destination_port_range_max),
+                    "min": int(security_list_egress_security_rules_udp_options_destination_port_range_min),
                     "source_port_range": {
-                        "max": security_list_egress_security_rules_udp_options_source_port_range_max,
-                        "min": security_list_egress_security_rules_udp_options_source_port_range_min,
+                        "max": int(security_list_egress_security_rules_udp_options_source_port_range_max),
+                        "min": int(security_list_egress_security_rules_udp_options_source_port_range_min),
                     },
                 },
             }],
@@ -515,25 +515,25 @@ class SecurityList(pulumi.CustomResource):
                 "source": security_list_ingress_security_rules_source,
                 "description": security_list_ingress_security_rules_description,
                 "icmp_options": {
-                    "type": security_list_ingress_security_rules_icmp_options_type,
-                    "code": security_list_ingress_security_rules_icmp_options_code,
+                    "type": int(security_list_ingress_security_rules_icmp_options_type),
+                    "code": int(security_list_ingress_security_rules_icmp_options_code),
                 },
                 "source_type": security_list_ingress_security_rules_source_type,
-                "stateless": security_list_ingress_security_rules_stateless,
+                "stateless": security_list_ingress_security_rules_stateless == "true",
                 "tcp_options": {
-                    "max": security_list_ingress_security_rules_tcp_options_destination_port_range_max,
-                    "min": security_list_ingress_security_rules_tcp_options_destination_port_range_min,
+                    "max": int(security_list_ingress_security_rules_tcp_options_destination_port_range_max),
+                    "min": int(security_list_ingress_security_rules_tcp_options_destination_port_range_min),
                     "source_port_range": {
-                        "max": security_list_ingress_security_rules_tcp_options_source_port_range_max,
-                        "min": security_list_ingress_security_rules_tcp_options_source_port_range_min,
+                        "max": int(security_list_ingress_security_rules_tcp_options_source_port_range_max),
+                        "min": int(security_list_ingress_security_rules_tcp_options_source_port_range_min),
                     },
                 },
                 "udp_options": {
-                    "max": security_list_ingress_security_rules_udp_options_destination_port_range_max,
-                    "min": security_list_ingress_security_rules_udp_options_destination_port_range_min,
+                    "max": int(security_list_ingress_security_rules_udp_options_destination_port_range_max),
+                    "min": int(security_list_ingress_security_rules_udp_options_destination_port_range_min),
                     "source_port_range": {
-                        "max": security_list_ingress_security_rules_udp_options_source_port_range_max,
-                        "min": security_list_ingress_security_rules_udp_options_source_port_range_min,
+                        "max": int(security_list_ingress_security_rules_udp_options_source_port_range_max),
+                        "min": int(security_list_ingress_security_rules_udp_options_source_port_range_min),
                     },
                 },
             }])
@@ -563,13 +563,13 @@ class SecurityList(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 egress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecurityListEgressSecurityRuleArgs', 'SecurityListEgressSecurityRuleArgsDict']]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ingress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecurityListIngressSecurityRuleArgs', 'SecurityListIngressSecurityRuleArgsDict']]]]] = None,
-                 vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 egress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityListEgressSecurityRuleArgs', 'SecurityListEgressSecurityRuleArgsDict']]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ingress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityListIngressSecurityRuleArgs', 'SecurityListIngressSecurityRuleArgsDict']]]]] = None,
+                 vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -602,15 +602,15 @@ class SecurityList(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            egress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecurityListEgressSecurityRuleArgs', 'SecurityListEgressSecurityRuleArgsDict']]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            ingress_security_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecurityListIngressSecurityRuleArgs', 'SecurityListIngressSecurityRuleArgsDict']]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            vcn_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'SecurityList':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            egress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityListEgressSecurityRuleArgs', 'SecurityListEgressSecurityRuleArgsDict']]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ingress_security_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityListIngressSecurityRuleArgs', 'SecurityListIngressSecurityRuleArgsDict']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            vcn_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'SecurityList':
         """
         Get an existing SecurityList resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -126,7 +126,7 @@ def get_agent_agents(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_agents = oci.GenerativeAi.get_agent_agents(compartment_id=compartment_id,
+    test_agents = oci.generativeai.get_agent_agents(compartment_id=compartment_id,
         display_name=agent_display_name,
         state=agent_state)
     ```
@@ -151,10 +151,10 @@ def get_agent_agents(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_agent_agents_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAgentAgentsFilterArgs', 'GetAgentAgentsFilterArgsDict']]]]] = None,
-                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_agent_agents_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAgentAgentsFilterArgs', 'GetAgentAgentsFilterArgsDict']]]]] = None,
+                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentAgentsResult]:
     """
     This data source provides the list of Agents in Oracle Cloud Infrastructure Generative Ai Agent service.
@@ -169,7 +169,7 @@ def get_agent_agents_output(compartment_id: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_agents = oci.GenerativeAi.get_agent_agents(compartment_id=compartment_id,
+    test_agents = oci.generativeai.get_agent_agents(compartment_id=compartment_id,
         display_name=agent_display_name,
         state=agent_state)
     ```

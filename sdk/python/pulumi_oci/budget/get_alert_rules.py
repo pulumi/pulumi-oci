@@ -124,7 +124,7 @@ def get_alert_rules(budget_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alert_rules = oci.Budget.get_alert_rules(budget_id=test_budget["id"],
+    test_alert_rules = oci.budget.get_alert_rules(budget_id=test_budget["id"],
         display_name=alert_rule_display_name,
         state=alert_rule_state)
     ```
@@ -149,10 +149,10 @@ def get_alert_rules(budget_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_alert_rules_output(budget_id: Optional[pulumi.Input[_builtins.str]] = None,
-                           display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAlertRulesFilterArgs', 'GetAlertRulesFilterArgsDict']]]]] = None,
-                           state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_alert_rules_output(budget_id: pulumi.Input[Optional[_builtins.str]] = None,
+                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAlertRulesFilterArgs', 'GetAlertRulesFilterArgsDict']]]]] = None,
+                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAlertRulesResult]:
     """
     This data source provides the list of Alert Rules in Oracle Cloud Infrastructure Budget service.
@@ -165,7 +165,7 @@ def get_alert_rules_output(budget_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_alert_rules = oci.Budget.get_alert_rules(budget_id=test_budget["id"],
+    test_alert_rules = oci.budget.get_alert_rules(budget_id=test_budget["id"],
         display_name=alert_rule_display_name,
         state=alert_rule_state)
     ```

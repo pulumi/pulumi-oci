@@ -112,19 +112,19 @@ export class VaultVerification extends pulumi.CustomResource {
  * Input properties used for looking up and filtering VaultVerification resources.
  */
 export interface VaultVerificationState {
-    cryptoEndpoint?: pulumi.Input<string>;
-    managementEndpoint?: pulumi.Input<string>;
+    cryptoEndpoint?: pulumi.Input<string | undefined>;
+    managementEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The region to be created replica to. When updated,
      * replica will be deleted from old region, and created to updated region.
      */
-    replicaRegion?: pulumi.Input<string>;
-    replicaVaultMetadata?: pulumi.Input<inputs.Kms.VaultVerificationReplicaVaultMetadata>;
+    replicaRegion?: pulumi.Input<string | undefined>;
+    replicaVaultMetadata?: pulumi.Input<inputs.Kms.VaultVerificationReplicaVaultMetadata | undefined>;
     /**
      * The OCID of the primary vault to create replica from.
      */
-    vaultId?: pulumi.Input<string>;
-    vaultReplicaStatus?: pulumi.Input<string>;
+    vaultId?: pulumi.Input<string | undefined>;
+    vaultReplicaStatus?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -136,7 +136,7 @@ export interface VaultVerificationArgs {
      * replica will be deleted from old region, and created to updated region.
      */
     replicaRegion: pulumi.Input<string>;
-    replicaVaultMetadata?: pulumi.Input<inputs.Kms.VaultVerificationReplicaVaultMetadata>;
+    replicaVaultMetadata?: pulumi.Input<inputs.Kms.VaultVerificationReplicaVaultMetadata | undefined>;
     /**
      * The OCID of the primary vault to create replica from.
      */

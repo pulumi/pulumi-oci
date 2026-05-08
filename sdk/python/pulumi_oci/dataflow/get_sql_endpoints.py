@@ -136,7 +136,7 @@ def get_sql_endpoints(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_endpoints = oci.DataFlow.get_sql_endpoints(compartment_id=compartment_id,
+    test_sql_endpoints = oci.dataflow.get_sql_endpoints(compartment_id=compartment_id,
         display_name=sql_endpoint_display_name,
         sql_endpoint_id=test_sql_endpoint["id"],
         state=sql_endpoint_state)
@@ -165,11 +165,11 @@ def get_sql_endpoints(compartment_id: Optional[_builtins.str] = None,
         sql_endpoint_collections=pulumi.get(__ret__, 'sql_endpoint_collections'),
         sql_endpoint_id=pulumi.get(__ret__, 'sql_endpoint_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_sql_endpoints_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSqlEndpointsFilterArgs', 'GetSqlEndpointsFilterArgsDict']]]]] = None,
-                             sql_endpoint_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_sql_endpoints_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSqlEndpointsFilterArgs', 'GetSqlEndpointsFilterArgsDict']]]]] = None,
+                             sql_endpoint_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSqlEndpointsResult]:
     """
     This data source provides the list of Sql Endpoints in Oracle Cloud Infrastructure Data Flow service.
@@ -184,7 +184,7 @@ def get_sql_endpoints_output(compartment_id: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_endpoints = oci.DataFlow.get_sql_endpoints(compartment_id=compartment_id,
+    test_sql_endpoints = oci.dataflow.get_sql_endpoints(compartment_id=compartment_id,
         display_name=sql_endpoint_display_name,
         sql_endpoint_id=test_sql_endpoint["id"],
         state=sql_endpoint_state)

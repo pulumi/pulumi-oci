@@ -185,7 +185,7 @@ def get_resource_availability(availability_domain: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_availability = oci.Limits.get_resource_availability(compartment_id=tenancy_ocid,
+    test_resource_availability = oci.limits.get_resource_availability(compartment_id=tenancy_ocid,
         limit_name=resource_availability_limit_name,
         service_name=test_service["name"],
         availability_domain=resource_availability_availability_domain,
@@ -224,12 +224,12 @@ def get_resource_availability(availability_domain: Optional[_builtins.str] = Non
         service_name=pulumi.get(__ret__, 'service_name'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         used=pulumi.get(__ret__, 'used'))
-def get_resource_availability_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                     external_location: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     limit_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                     service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                     subscription_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_resource_availability_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                     external_location: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     limit_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                     service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                     subscription_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResourceAvailabilityResult]:
     """
     This data source provides details about a specific Resource Availability resource in Oracle Cloud Infrastructure Limits service.
@@ -246,7 +246,7 @@ def get_resource_availability_output(availability_domain: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_availability = oci.Limits.get_resource_availability(compartment_id=tenancy_ocid,
+    test_resource_availability = oci.limits.get_resource_availability(compartment_id=tenancy_ocid,
         limit_name=resource_availability_limit_name,
         service_name=test_service["name"],
         availability_domain=resource_availability_availability_domain,

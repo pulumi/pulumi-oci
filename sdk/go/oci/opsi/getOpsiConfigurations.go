@@ -32,8 +32,8 @@ import (
 //			_, err := opsi.GetOpsiConfigurations(ctx, &opsi.GetOpsiConfigurationsArgs{
 //				CompartmentId:   compartmentId,
 //				DisplayName:     pulumi.StringRef(opsiConfigurationDisplayName),
-//				OpsiConfigTypes: opsiConfigurationOpsiConfigType,
-//				States:          opsiConfigurationState,
+//				OpsiConfigTypes: pulumi.ToArray(opsiConfigurationOpsiConfigType),
+//				States:          pulumi.ToArray(opsiConfigurationState),
 //			}, nil)
 //			if err != nil {
 //				return err

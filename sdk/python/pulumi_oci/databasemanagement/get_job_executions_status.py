@@ -132,7 +132,7 @@ def get_job_executions_status(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_job_executions_status = oci.DatabaseManagement.get_job_executions_status(compartment_id=compartment_id,
+    test_job_executions_status = oci.databasemanagement.get_job_executions_status(compartment_id=compartment_id,
         end_time=job_executions_status_end_time,
         start_time=job_executions_status_start_time,
         id=job_executions_status_id,
@@ -170,13 +170,13 @@ def get_job_executions_status(compartment_id: Optional[_builtins.str] = None,
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         name=pulumi.get(__ret__, 'name'),
         start_time=pulumi.get(__ret__, 'start_time'))
-def get_job_executions_status_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                     end_time: Optional[pulumi.Input[_builtins.str]] = None,
-                                     id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     managed_database_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     managed_database_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     start_time: Optional[pulumi.Input[_builtins.str]] = None,
+def get_job_executions_status_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                     end_time: pulumi.Input[Optional[_builtins.str]] = None,
+                                     id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     managed_database_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     managed_database_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     start_time: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJobExecutionsStatusResult]:
     """
     This data source provides details about a specific Job Executions Status resource in Oracle Cloud Infrastructure Database Management service.
@@ -189,7 +189,7 @@ def get_job_executions_status_output(compartment_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_job_executions_status = oci.DatabaseManagement.get_job_executions_status(compartment_id=compartment_id,
+    test_job_executions_status = oci.databasemanagement.get_job_executions_status(compartment_id=compartment_id,
         end_time=job_executions_status_end_time,
         start_time=job_executions_status_start_time,
         id=job_executions_status_id,

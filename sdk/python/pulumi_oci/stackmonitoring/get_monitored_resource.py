@@ -363,7 +363,7 @@ def get_monitored_resource(monitored_resource_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_resource = oci.StackMonitoring.get_monitored_resource(monitored_resource_id=test_monitored_resource_oci_stack_monitoring_monitored_resource["id"])
+    test_monitored_resource = oci.stackmonitoring.get_monitored_resource(monitored_resource_id=test_monitored_resource_oci_stack_monitoring_monitored_resource["id"])
     ```
 
 
@@ -402,7 +402,7 @@ def get_monitored_resource(monitored_resource_id: Optional[_builtins.str] = None
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
-def get_monitored_resource_output(monitored_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_monitored_resource_output(monitored_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMonitoredResourceResult]:
     """
     This data source provides details about a specific Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -415,7 +415,7 @@ def get_monitored_resource_output(monitored_resource_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_resource = oci.StackMonitoring.get_monitored_resource(monitored_resource_id=test_monitored_resource_oci_stack_monitoring_monitored_resource["id"])
+    test_monitored_resource = oci.stackmonitoring.get_monitored_resource(monitored_resource_id=test_monitored_resource_oci_stack_monitoring_monitored_resource["id"])
     ```
 
 

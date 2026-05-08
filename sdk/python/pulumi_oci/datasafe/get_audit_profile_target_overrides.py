@@ -105,7 +105,7 @@ def get_audit_profile_target_overrides(audit_profile_id: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_profile_target_overrides = oci.DataSafe.get_audit_profile_target_overrides(audit_profile_id=test_audit_profile["id"],
+    test_audit_profile_target_overrides = oci.datasafe.get_audit_profile_target_overrides(audit_profile_id=test_audit_profile["id"],
         display_name=audit_profile_target_override_display_name)
     ```
 
@@ -126,9 +126,9 @@ def get_audit_profile_target_overrides(audit_profile_id: Optional[_builtins.str]
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         target_override_collections=pulumi.get(__ret__, 'target_override_collections'))
-def get_audit_profile_target_overrides_output(audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                              display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAuditProfileTargetOverridesFilterArgs', 'GetAuditProfileTargetOverridesFilterArgsDict']]]]] = None,
+def get_audit_profile_target_overrides_output(audit_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAuditProfileTargetOverridesFilterArgs', 'GetAuditProfileTargetOverridesFilterArgsDict']]]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuditProfileTargetOverridesResult]:
     """
     This data source provides the list of Audit Profile Target Overrides in Oracle Cloud Infrastructure Data Safe service.
@@ -141,7 +141,7 @@ def get_audit_profile_target_overrides_output(audit_profile_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_profile_target_overrides = oci.DataSafe.get_audit_profile_target_overrides(audit_profile_id=test_audit_profile["id"],
+    test_audit_profile_target_overrides = oci.datasafe.get_audit_profile_target_overrides(audit_profile_id=test_audit_profile["id"],
         display_name=audit_profile_target_override_display_name)
     ```
 

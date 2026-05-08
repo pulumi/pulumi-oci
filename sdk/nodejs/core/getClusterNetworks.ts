@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterNetworks = oci.Core.getClusterNetworks({
+ * const testClusterNetworks = oci.core.getClusterNetworks({
  *     compartmentId: compartmentId,
  *     displayName: clusterNetworkDisplayName,
  *     state: clusterNetworkState,
@@ -92,7 +92,7 @@ export interface GetClusterNetworksResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterNetworks = oci.Core.getClusterNetworks({
+ * const testClusterNetworks = oci.core.getClusterNetworks({
  *     compartmentId: compartmentId,
  *     displayName: clusterNetworkDisplayName,
  *     state: clusterNetworkState,
@@ -120,10 +120,10 @@ export interface GetClusterNetworksOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetClusterNetworksFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetClusterNetworksFilterArgs>[] | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

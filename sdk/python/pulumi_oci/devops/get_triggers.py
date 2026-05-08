@@ -138,7 +138,7 @@ def get_triggers(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_triggers = oci.DevOps.get_triggers(compartment_id=compartment_id,
+    test_triggers = oci.devops.get_triggers(compartment_id=compartment_id,
         display_name=trigger_display_name,
         id=trigger_id,
         project_id=test_project["id"],
@@ -170,12 +170,12 @@ def get_triggers(compartment_id: Optional[_builtins.str] = None,
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'),
         trigger_collections=pulumi.get(__ret__, 'trigger_collections'))
-def get_triggers_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTriggersFilterArgs', 'GetTriggersFilterArgsDict']]]]] = None,
-                        id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        project_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_triggers_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTriggersFilterArgs', 'GetTriggersFilterArgsDict']]]]] = None,
+                        id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        project_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTriggersResult]:
     """
     This data source provides the list of Triggers in Oracle Cloud Infrastructure Devops service.
@@ -188,7 +188,7 @@ def get_triggers_output(compartment_id: Optional[pulumi.Input[Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_triggers = oci.DevOps.get_triggers(compartment_id=compartment_id,
+    test_triggers = oci.devops.get_triggers(compartment_id=compartment_id,
         display_name=trigger_display_name,
         id=trigger_id,
         project_id=test_project["id"],

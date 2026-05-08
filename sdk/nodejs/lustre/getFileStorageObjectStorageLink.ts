@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testObjectStorageLink = oci.Lustre.getFileStorageObjectStorageLink({
+ * const testObjectStorageLink = oci.lustre.getFileStorageObjectStorageLink({
  *     objectStorageLinkId: testObjectStorageLinkOciLustreFileStorageObjectStorageLink.id,
  * });
  * ```
@@ -126,7 +126,7 @@ export interface GetFileStorageObjectStorageLinkResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testObjectStorageLink = oci.Lustre.getFileStorageObjectStorageLink({
+ * const testObjectStorageLink = oci.lustre.getFileStorageObjectStorageLink({
  *     objectStorageLinkId: testObjectStorageLinkOciLustreFileStorageObjectStorageLink.id,
  * });
  * ```

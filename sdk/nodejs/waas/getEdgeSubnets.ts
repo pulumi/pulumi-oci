@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEdgeSubnets = oci.Waas.getEdgeSubnets({});
+ * const testEdgeSubnets = oci.waas.getEdgeSubnets({});
  * ```
  */
 export function getEdgeSubnets(args?: GetEdgeSubnetsArgs, opts?: pulumi.InvokeOptions): Promise<GetEdgeSubnetsResult> {
@@ -60,7 +60,7 @@ export interface GetEdgeSubnetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEdgeSubnets = oci.Waas.getEdgeSubnets({});
+ * const testEdgeSubnets = oci.waas.getEdgeSubnets({});
  * ```
  */
 export function getEdgeSubnetsOutput(args?: GetEdgeSubnetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetEdgeSubnetsResult> {
@@ -75,5 +75,5 @@ export function getEdgeSubnetsOutput(args?: GetEdgeSubnetsOutputArgs, opts?: pul
  * A collection of arguments for invoking getEdgeSubnets.
  */
 export interface GetEdgeSubnetsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Waas.GetEdgeSubnetsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Waas.GetEdgeSubnetsFilterArgs>[] | undefined>;
 }

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testByols = oci.Ocvp.getByols({
+ * const testByols = oci.ocvp.getByols({
  *     compartmentId: compartmentId,
  *     availableUnitsGreaterThanOrEqualTo: byolAvailableUnitsGreaterThanOrEqualTo,
  *     byolId: testByol.id,
@@ -120,7 +120,7 @@ export interface GetByolsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testByols = oci.Ocvp.getByols({
+ * const testByols = oci.ocvp.getByols({
  *     compartmentId: compartmentId,
  *     availableUnitsGreaterThanOrEqualTo: byolAvailableUnitsGreaterThanOrEqualTo,
  *     byolId: testByol.id,
@@ -150,11 +150,11 @@ export interface GetByolsOutputArgs {
     /**
      * A filter to return only resources whose availableUnits greater than or equal to the given value.
      */
-    availableUnitsGreaterThanOrEqualTo?: pulumi.Input<number>;
+    availableUnitsGreaterThanOrEqualTo?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL.
      */
-    byolId?: pulumi.Input<string>;
+    byolId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -162,14 +162,14 @@ export interface GetByolsOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Ocvp.GetByolsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Ocvp.GetByolsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources whose softwareType matches the given value.
      */
-    softwareType?: pulumi.Input<string>;
+    softwareType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose lifecycle state matches the given value.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

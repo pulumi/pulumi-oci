@@ -24,8 +24,8 @@ import * as utilities from "../utilities";
  *
  * const testVnicAttachment = new oci.core.VnicAttachment("test_vnic_attachment", {
  *     createVnicDetails: {
- *         assignIpv6ip: vnicAttachmentCreateVnicDetailsAssignIpv6ip,
- *         assignPrivateDnsRecord: vnicAttachmentCreateVnicDetailsAssignPrivateDnsRecord,
+ *         assignIpv6ip: vnicAttachmentCreateVnicDetailsAssignIpv6ip === "true",
+ *         assignPrivateDnsRecord: vnicAttachmentCreateVnicDetailsAssignPrivateDnsRecord === "true",
  *         assignPublicIp: vnicAttachmentCreateVnicDetailsAssignPublicIp,
  *         definedTags: vnicAttachmentCreateVnicDetailsDefinedTags,
  *         displayName: vnicAttachmentCreateVnicDetailsDisplayName,
@@ -40,14 +40,14 @@ import * as utilities from "../utilities";
  *         privateIp: vnicAttachmentCreateVnicDetailsPrivateIp,
  *         privateIpId: testPrivateIp.id,
  *         securityAttributes: vnicAttachmentCreateVnicDetailsSecurityAttributes,
- *         skipSourceDestCheck: vnicAttachmentCreateVnicDetailsSkipSourceDestCheck,
+ *         skipSourceDestCheck: vnicAttachmentCreateVnicDetailsSkipSourceDestCheck === "true",
  *         subnetCidr: vnicAttachmentCreateVnicDetailsSubnetCidr,
  *         subnetId: testSubnet.id,
  *         vlanId: testVlan.id,
  *     },
  *     instanceId: testInstance.id,
  *     displayName: vnicAttachmentDisplayName,
- *     nicIndex: vnicAttachmentNicIndex,
+ *     nicIndex: Number(vnicAttachmentNicIndex),
  * });
  * ```
  *
@@ -198,23 +198,23 @@ export interface VnicAttachmentState {
     /**
      * The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment the VNIC attachment is in, which is the same compartment the instance is in.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      */
-    createVnicDetails?: pulumi.Input<inputs.Core.VnicAttachmentCreateVnicDetails>;
+    createVnicDetails?: pulumi.Input<inputs.Core.VnicAttachmentCreateVnicDetails | undefined>;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the instance.
      */
-    instanceId?: pulumi.Input<string>;
+    instanceId?: pulumi.Input<string | undefined>;
     /**
      * Which physical network interface card (NIC) the VNIC will use. Defaults to 0. Certain bare metal instance shapes have two active physical NICs (0 and 1). If you add a secondary VNIC to one of these instances, you can specify which NIC the VNIC will use. For more information, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm). 
      *
@@ -222,31 +222,31 @@ export interface VnicAttachmentState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    nicIndex?: pulumi.Input<number>;
+    nicIndex?: pulumi.Input<number | undefined>;
     /**
      * The current state of the VNIC attachment.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the subnet to create the VNIC in.
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * The date and time the VNIC attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead of a subnet) is possible only if you are an Oracle Cloud VMware Solution customer. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
      */
-    vlanId?: pulumi.Input<string>;
+    vlanId?: pulumi.Input<string | undefined>;
     /**
      * The Oracle-assigned VLAN tag of the attached VNIC. Available after the attachment process is complete.
      */
-    vlanTag?: pulumi.Input<number>;
+    vlanTag?: pulumi.Input<number | undefined>;
     /**
      * The OCID of the VNIC. Available after the attachment process is complete.
      */
-    vnicId?: pulumi.Input<string>;
+    vnicId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -260,7 +260,7 @@ export interface VnicAttachmentArgs {
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the instance.
      */
@@ -272,5 +272,5 @@ export interface VnicAttachmentArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    nicIndex?: pulumi.Input<number>;
+    nicIndex?: pulumi.Input<number | undefined>;
 }

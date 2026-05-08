@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscribedServices = oci.OneSubsription.getSubscribedServices({
+ * const testSubscribedServices = oci.onesubsription.getSubscribedServices({
  *     compartmentId: compartmentId,
  *     subscriptionId: testSubscription.id,
  *     orderLineId: testOrderLine.id,
@@ -97,7 +97,7 @@ export interface GetSubscribedServicesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscribedServices = oci.OneSubsription.getSubscribedServices({
+ * const testSubscribedServices = oci.onesubsription.getSubscribedServices({
  *     compartmentId: compartmentId,
  *     subscriptionId: testSubscription.id,
  *     orderLineId: testOrderLine.id,
@@ -124,15 +124,15 @@ export interface GetSubscribedServicesOutputArgs {
      * The OCID of the root compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OneSubsription.GetSubscribedServicesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OneSubsription.GetSubscribedServicesFilterArgs>[] | undefined>;
     /**
      * Order Line identifier at subscribed service level . This identifier is originated in Order Management module. Default is null.
      */
-    orderLineId?: pulumi.Input<string>;
+    orderLineId?: pulumi.Input<string | undefined>;
     /**
      * This param is used to filter subscribed services based on its status
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Line level Subscription Id
      */

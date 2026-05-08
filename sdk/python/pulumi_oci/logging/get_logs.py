@@ -157,7 +157,7 @@ def get_logs(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_logs = oci.Logging.get_logs(log_group_id=test_log_group["id"],
+    test_logs = oci.logging.get_logs(log_group_id=test_log_group["id"],
         display_name=log_display_name,
         log_type=log_log_type,
         source_resource=log_source_resource,
@@ -194,13 +194,13 @@ def get_logs(display_name: Optional[_builtins.str] = None,
         source_resource=pulumi.get(__ret__, 'source_resource'),
         source_service=pulumi.get(__ret__, 'source_service'),
         state=pulumi.get(__ret__, 'state'))
-def get_logs_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLogsFilterArgs', 'GetLogsFilterArgsDict']]]]] = None,
-                    log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                    log_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                    source_resource: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                    source_service: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                    state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_logs_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLogsFilterArgs', 'GetLogsFilterArgsDict']]]]] = None,
+                    log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                    log_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                    source_resource: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                    source_service: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogsResult]:
     """
     This data source provides the list of Logs in Oracle Cloud Infrastructure Logging service.
@@ -213,7 +213,7 @@ def get_logs_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_logs = oci.Logging.get_logs(log_group_id=test_log_group["id"],
+    test_logs = oci.logging.get_logs(log_group_id=test_log_group["id"],
         display_name=log_display_name,
         log_type=log_log_type,
         source_resource=log_source_resource,

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewalls = oci.NetworkFirewall.getNetworkFirewalls({
+ * const testNetworkFirewalls = oci.networkfirewall.getNetworkFirewalls({
  *     compartmentId: compartmentId,
  *     availabilityDomain: networkFirewallAvailabilityDomain,
  *     displayName: networkFirewallDisplayName,
@@ -116,7 +116,7 @@ export interface GetNetworkFirewallsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewalls = oci.NetworkFirewall.getNetworkFirewalls({
+ * const testNetworkFirewalls = oci.networkfirewall.getNetworkFirewalls({
  *     compartmentId: compartmentId,
  *     availabilityDomain: networkFirewallAvailabilityDomain,
  *     displayName: networkFirewallDisplayName,
@@ -146,7 +146,7 @@ export interface GetNetworkFirewallsOutputArgs {
     /**
      * A filter to return only resources that are present within the specified availability domain. To get a list of availability domains for a tenancy, use [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The ID of the compartment in which to list resources.
      */
@@ -154,18 +154,18 @@ export interface GetNetworkFirewallsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.GetNetworkFirewallsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.GetNetworkFirewallsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall resource.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire networkFirewallPolicyId given.
      */
-    networkFirewallPolicyId?: pulumi.Input<string>;
+    networkFirewallPolicyId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources with a lifecycleState matching the given value.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

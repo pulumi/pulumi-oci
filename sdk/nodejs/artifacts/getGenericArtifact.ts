@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGenericArtifact = oci.Artifacts.getGenericArtifact({
+ * const testGenericArtifact = oci.artifacts.getGenericArtifact({
  *     artifactId: testArtifact.id,
  * });
  * ```
@@ -102,7 +102,7 @@ export interface GetGenericArtifactResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGenericArtifact = oci.Artifacts.getGenericArtifact({
+ * const testGenericArtifact = oci.artifacts.getGenericArtifact({
  *     artifactId: testArtifact.id,
  * });
  * ```

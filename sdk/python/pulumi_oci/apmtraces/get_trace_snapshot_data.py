@@ -160,9 +160,9 @@ def get_trace_snapshot_data(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_trace_snapshot_data = oci.ApmTraces.get_trace_snapshot_data(apm_domain_id=test_apm_domain["id"],
+    test_trace_snapshot_data = oci.apmtraces.get_trace_snapshot_data(apm_domain_id=test_apm_domain["id"],
         trace_key=trace_snapshot_data_trace_key,
-        is_summarized=trace_snapshot_data_is_summarized,
+        is_summarized=trace_snapshot_data_is_summarized == "true",
         snapshot_time=trace_snapshot_data_snapshot_time,
         thread_id=test_thread["id"])
     ```
@@ -194,11 +194,11 @@ def get_trace_snapshot_data(apm_domain_id: Optional[_builtins.str] = None,
         time_started=pulumi.get(__ret__, 'time_started'),
         trace_key=pulumi.get(__ret__, 'trace_key'),
         trace_snapshot_details=pulumi.get(__ret__, 'trace_snapshot_details'))
-def get_trace_snapshot_data_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   is_summarized: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                   snapshot_time: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   thread_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   trace_key: Optional[pulumi.Input[_builtins.str]] = None,
+def get_trace_snapshot_data_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   is_summarized: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                   snapshot_time: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   thread_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   trace_key: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTraceSnapshotDataResult]:
     """
     This data source provides details about a specific Trace Snapshot Data resource in Oracle Cloud Infrastructure Apm Traces service.
@@ -211,9 +211,9 @@ def get_trace_snapshot_data_output(apm_domain_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_trace_snapshot_data = oci.ApmTraces.get_trace_snapshot_data(apm_domain_id=test_apm_domain["id"],
+    test_trace_snapshot_data = oci.apmtraces.get_trace_snapshot_data(apm_domain_id=test_apm_domain["id"],
         trace_key=trace_snapshot_data_trace_key,
-        is_summarized=trace_snapshot_data_is_summarized,
+        is_summarized=trace_snapshot_data_is_summarized == "true",
         snapshot_time=trace_snapshot_data_snapshot_time,
         thread_id=test_thread["id"])
     ```

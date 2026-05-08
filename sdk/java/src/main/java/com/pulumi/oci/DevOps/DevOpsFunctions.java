@@ -163,8 +163,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -205,8 +205,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -247,8 +247,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -289,8 +289,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -331,8 +331,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -373,8 +373,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineStageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -415,8 +415,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineStageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -457,8 +457,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineStageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -499,8 +499,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineStageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -541,8 +541,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineStageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -583,8 +583,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineStagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -629,8 +629,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineStagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -675,8 +675,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineStagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -721,8 +721,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineStagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -767,8 +767,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineStagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -813,8 +813,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineStagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -859,8 +859,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildPipelineStagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -905,8 +905,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -951,8 +951,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -997,8 +997,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1043,8 +1043,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1089,8 +1089,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1135,8 +1135,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1181,8 +1181,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1227,8 +1227,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1269,8 +1269,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1311,8 +1311,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1353,8 +1353,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1395,8 +1395,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1437,8 +1437,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1484,8 +1484,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1531,8 +1531,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1578,8 +1578,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1625,8 +1625,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1672,8 +1672,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1719,8 +1719,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetBuildRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1766,8 +1766,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetConnectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1808,8 +1808,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetConnectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1850,8 +1850,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetConnectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1892,8 +1892,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetConnectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1934,8 +1934,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetConnectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1976,8 +1976,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2023,8 +2023,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2070,8 +2070,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2117,8 +2117,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2164,8 +2164,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2211,8 +2211,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2258,8 +2258,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2305,8 +2305,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployArtifactArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2347,8 +2347,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployArtifactArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2389,8 +2389,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployArtifactArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2431,8 +2431,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployArtifactArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2473,8 +2473,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployArtifactArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2515,8 +2515,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployArtifactsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2561,8 +2561,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployArtifactsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2607,8 +2607,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployArtifactsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2653,8 +2653,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployArtifactsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2699,8 +2699,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployArtifactsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2745,8 +2745,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployArtifactsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2791,8 +2791,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployArtifactsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2837,8 +2837,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2879,8 +2879,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2921,8 +2921,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2963,8 +2963,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3005,8 +3005,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployEnvironmentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3047,8 +3047,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3093,8 +3093,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3139,8 +3139,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3185,8 +3185,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3231,8 +3231,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3277,8 +3277,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3323,8 +3323,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployEnvironmentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3369,8 +3369,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3411,8 +3411,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3453,8 +3453,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3495,8 +3495,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3537,8 +3537,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3579,8 +3579,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3625,8 +3625,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3671,8 +3671,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3717,8 +3717,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3763,8 +3763,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3809,8 +3809,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3855,8 +3855,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3901,8 +3901,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployStageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3943,8 +3943,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployStageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3985,8 +3985,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployStageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4027,8 +4027,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployStageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4069,8 +4069,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployStageArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4111,8 +4111,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployStagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4157,8 +4157,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployStagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4203,8 +4203,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployStagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4249,8 +4249,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployStagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4295,8 +4295,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployStagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4341,8 +4341,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployStagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4387,8 +4387,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeployStagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4433,8 +4433,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeploymentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4475,8 +4475,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeploymentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4517,8 +4517,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeploymentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4559,8 +4559,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeploymentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4601,8 +4601,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeploymentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4643,8 +4643,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeploymentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4692,8 +4692,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeploymentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4741,8 +4741,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeploymentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4790,8 +4790,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeploymentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4839,8 +4839,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeploymentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4888,8 +4888,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeploymentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4937,8 +4937,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetDeploymentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4986,8 +4986,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetProjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5028,8 +5028,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetProjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5070,8 +5070,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetProjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5112,8 +5112,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetProjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5154,8 +5154,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetProjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5196,8 +5196,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetProjectRepositorySettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5238,8 +5238,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetProjectRepositorySettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5280,8 +5280,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetProjectRepositorySettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5322,8 +5322,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetProjectRepositorySettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5364,8 +5364,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetProjectRepositorySettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5406,8 +5406,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5451,8 +5451,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5496,8 +5496,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5541,8 +5541,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5586,8 +5586,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5631,8 +5631,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepoFileLineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5676,8 +5676,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepoFileLineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5721,8 +5721,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepoFileLineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5766,8 +5766,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepoFileLineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5811,8 +5811,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepoFileLineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5856,8 +5856,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5902,8 +5902,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5948,8 +5948,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5994,8 +5994,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6040,8 +6040,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6086,8 +6086,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6132,8 +6132,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6178,8 +6178,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6221,8 +6221,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6264,8 +6264,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6307,8 +6307,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6350,8 +6350,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6393,8 +6393,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryArchiveContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6437,8 +6437,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryArchiveContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6481,8 +6481,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryArchiveContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6525,8 +6525,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryArchiveContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6569,8 +6569,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryArchiveContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6613,8 +6613,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryAuthorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6656,8 +6656,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryAuthorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6699,8 +6699,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryAuthorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6742,8 +6742,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryAuthorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6785,8 +6785,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryAuthorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6828,8 +6828,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryAuthorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6871,8 +6871,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryAuthorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6914,8 +6914,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryAuthorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6957,8 +6957,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryAuthorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7000,8 +7000,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryAuthorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7043,8 +7043,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryCommitArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7086,8 +7086,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryCommitArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7129,8 +7129,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryCommitArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7172,8 +7172,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryCommitArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7215,8 +7215,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryCommitArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7258,8 +7258,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryCommitsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7307,8 +7307,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryCommitsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7356,8 +7356,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryCommitsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7405,8 +7405,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryCommitsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7454,8 +7454,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryCommitsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7503,8 +7503,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryDiffArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7549,8 +7549,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryDiffArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7595,8 +7595,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryDiffArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7641,8 +7641,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryDiffArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7687,8 +7687,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryDiffArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7733,8 +7733,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryDiffsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7779,8 +7779,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryDiffsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7825,8 +7825,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryDiffsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7871,8 +7871,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryDiffsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7917,8 +7917,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryDiffsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7963,8 +7963,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryFileDiffArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8009,8 +8009,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryFileDiffArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8055,8 +8055,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryFileDiffArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8101,8 +8101,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryFileDiffArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8147,8 +8147,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryFileDiffArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8193,8 +8193,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryFileLineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8238,8 +8238,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryFileLineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8283,8 +8283,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryFileLineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8328,8 +8328,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryFileLineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8373,8 +8373,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryFileLineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8418,8 +8418,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryMirrorRecordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8461,8 +8461,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryMirrorRecordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8504,8 +8504,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryMirrorRecordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8547,8 +8547,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryMirrorRecordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8590,8 +8590,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryMirrorRecordArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8633,8 +8633,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryMirrorRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8675,8 +8675,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryMirrorRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8717,8 +8717,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryMirrorRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8759,8 +8759,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryMirrorRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8801,8 +8801,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryMirrorRecordsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8843,8 +8843,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryObjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8887,8 +8887,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryObjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8931,8 +8931,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryObjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8975,8 +8975,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryObjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9019,8 +9019,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryObjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9063,8 +9063,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryObjectContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9107,8 +9107,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryObjectContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9151,8 +9151,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryObjectContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9195,8 +9195,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryObjectContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9239,8 +9239,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryObjectContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9283,8 +9283,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryPathArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9329,8 +9329,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryPathArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9375,8 +9375,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryPathArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9421,8 +9421,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryPathArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9467,8 +9467,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryPathArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9513,8 +9513,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryPathsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9559,8 +9559,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryPathsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9605,8 +9605,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryPathsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9651,8 +9651,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryPathsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9697,8 +9697,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryPathsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9743,8 +9743,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryProtectedBranchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9786,8 +9786,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryProtectedBranchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9829,8 +9829,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryProtectedBranchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9872,8 +9872,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryProtectedBranchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9915,8 +9915,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryProtectedBranchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9958,8 +9958,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryRefArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10001,8 +10001,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryRefArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10044,8 +10044,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryRefArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10087,8 +10087,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryRefArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10130,8 +10130,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryRefArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10173,8 +10173,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryRefsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10218,8 +10218,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryRefsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10263,8 +10263,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryRefsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10308,8 +10308,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryRefsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10353,8 +10353,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositoryRefsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10398,8 +10398,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositorySettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10440,8 +10440,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositorySettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10482,8 +10482,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositorySettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10524,8 +10524,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositorySettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10566,8 +10566,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetRepositorySettingArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10608,8 +10608,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetTriggerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10650,8 +10650,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetTriggerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10692,8 +10692,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetTriggerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10734,8 +10734,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetTriggerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10776,8 +10776,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetTriggerArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10818,8 +10818,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetTriggersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10864,8 +10864,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetTriggersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10910,8 +10910,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetTriggersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10956,8 +10956,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetTriggersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11002,8 +11002,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetTriggersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11048,8 +11048,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetTriggersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -11094,8 +11094,8 @@ public final class DevOpsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DevOps.DevOpsFunctions;
      * import com.pulumi.oci.DevOps.inputs.GetTriggersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

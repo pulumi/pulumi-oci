@@ -213,7 +213,7 @@ def get_fusion_environment_service_attachment(fusion_environment_id: Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_service_attachment = oci.Functions.get_fusion_environment_service_attachment(fusion_environment_id=test_fusion_environment["id"],
+    test_fusion_environment_service_attachment = oci.functions.get_fusion_environment_service_attachment(fusion_environment_id=test_fusion_environment["id"],
         service_attachment_id=test_service_attachment["id"])
     ```
 
@@ -242,8 +242,8 @@ def get_fusion_environment_service_attachment(fusion_environment_id: Optional[_b
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_fusion_environment_service_attachment_output(fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     service_attachment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fusion_environment_service_attachment_output(fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     service_attachment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentServiceAttachmentResult]:
     """
     This data source provides details about a specific Fusion Environment Service Attachment resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -256,7 +256,7 @@ def get_fusion_environment_service_attachment_output(fusion_environment_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_service_attachment = oci.Functions.get_fusion_environment_service_attachment(fusion_environment_id=test_fusion_environment["id"],
+    test_fusion_environment_service_attachment = oci.functions.get_fusion_environment_service_attachment(fusion_environment_id=test_fusion_environment["id"],
         service_attachment_id=test_service_attachment["id"])
     ```
 

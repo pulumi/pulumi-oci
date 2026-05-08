@@ -177,10 +177,10 @@ def get_monitors(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_monitors = oci.ApmSynthetics.get_monitors(apm_domain_id=test_apm_domain["id"],
+    test_monitors = oci.apmsynthetics.get_monitors(apm_domain_id=test_apm_domain["id"],
         display_name=monitor_display_name,
-        is_maintenance_window_active=monitor_is_maintenance_window_active,
-        is_maintenance_window_set=monitor_is_maintenance_window_set,
+        is_maintenance_window_active=monitor_is_maintenance_window_active == "true",
+        is_maintenance_window_set=monitor_is_maintenance_window_set == "true",
         monitor_type=monitor_monitor_type,
         script_id=test_script["id"],
         status=monitor_status,
@@ -222,15 +222,15 @@ def get_monitors(apm_domain_id: Optional[_builtins.str] = None,
         script_id=pulumi.get(__ret__, 'script_id'),
         status=pulumi.get(__ret__, 'status'),
         vantage_point=pulumi.get(__ret__, 'vantage_point'))
-def get_monitors_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                        display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMonitorsFilterArgs', 'GetMonitorsFilterArgsDict']]]]] = None,
-                        is_maintenance_window_active: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                        is_maintenance_window_set: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                        monitor_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        script_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        vantage_point: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_monitors_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMonitorsFilterArgs', 'GetMonitorsFilterArgsDict']]]]] = None,
+                        is_maintenance_window_active: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                        is_maintenance_window_set: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                        monitor_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        script_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        vantage_point: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMonitorsResult]:
     """
     This data source provides the list of Monitors in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
@@ -243,10 +243,10 @@ def get_monitors_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_monitors = oci.ApmSynthetics.get_monitors(apm_domain_id=test_apm_domain["id"],
+    test_monitors = oci.apmsynthetics.get_monitors(apm_domain_id=test_apm_domain["id"],
         display_name=monitor_display_name,
-        is_maintenance_window_active=monitor_is_maintenance_window_active,
-        is_maintenance_window_set=monitor_is_maintenance_window_set,
+        is_maintenance_window_active=monitor_is_maintenance_window_active == "true",
+        is_maintenance_window_set=monitor_is_maintenance_window_set == "true",
         monitor_type=monitor_monitor_type,
         script_id=test_script["id"],
         status=monitor_status,

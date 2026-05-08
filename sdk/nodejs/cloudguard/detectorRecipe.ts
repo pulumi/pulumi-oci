@@ -191,49 +191,49 @@ export interface DetectorRecipeState {
     /**
      * (Updatable) Compartment OCID
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Detector recipe description.
      *
      * Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Detector for the rule
      */
-    detector?: pulumi.Input<string>;
+    detector?: pulumi.Input<string | undefined>;
     /**
      * Recipe type ( STANDARD, ENTERPRISE )
      */
-    detectorRecipeType?: pulumi.Input<string>;
+    detectorRecipeType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Detector rules to override from source detector recipe
      */
-    detectorRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeDetectorRule>[]>;
+    detectorRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeDetectorRule>[] | undefined>;
     /**
      * (Updatable) Detector recipe display name.
      *
      * Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * List of effective detector rules for the detector type for recipe after applying defaults
      */
-    effectiveDetectorRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeEffectiveDetectorRule>[]>;
+    effectiveDetectorRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeEffectiveDetectorRule>[] | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      *
      * Avoid entering confidential information.
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Owner of detector recipe
      */
-    owner?: pulumi.Input<string>;
+    owner?: pulumi.Input<string | undefined>;
     /**
      * The ID of the source detector recipe
      *
@@ -241,27 +241,27 @@ export interface DetectorRecipeState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    sourceDetectorRecipeId?: pulumi.Input<string>;
+    sourceDetectorRecipeId?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the resource
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * List of target IDs to which the recipe is attached
      */
-    targetIds?: pulumi.Input<pulumi.Input<string>[]>;
+    targetIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The date and time the detector recipe was created Format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the detector recipe was last updated Format defined by RFC3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -275,21 +275,21 @@ export interface DetectorRecipeArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Detector recipe description.
      *
      * Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Detector for the rule
      */
-    detector?: pulumi.Input<string>;
+    detector?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Detector rules to override from source detector recipe
      */
-    detectorRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeDetectorRule>[]>;
+    detectorRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeDetectorRule>[] | undefined>;
     /**
      * (Updatable) Detector recipe display name.
      *
@@ -301,7 +301,7 @@ export interface DetectorRecipeArgs {
      *
      * Avoid entering confidential information.
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The ID of the source detector recipe
      *
@@ -309,5 +309,5 @@ export interface DetectorRecipeArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    sourceDetectorRecipeId?: pulumi.Input<string>;
+    sourceDetectorRecipeId?: pulumi.Input<string | undefined>;
 }

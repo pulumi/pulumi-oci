@@ -138,7 +138,7 @@ def get_managed_instance_installed_windows_updates(compartment_id: Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_installed_windows_updates = oci.OsManagementHub.get_managed_instance_installed_windows_updates(managed_instance_id=test_managed_instance["id"],
+    test_managed_instance_installed_windows_updates = oci.osmanagementhub.get_managed_instance_installed_windows_updates(managed_instance_id=test_managed_instance["id"],
         compartment_id=compartment_id,
         display_name=managed_instance_installed_windows_update_display_name,
         display_name_contains=managed_instance_installed_windows_update_display_name_contains,
@@ -171,12 +171,12 @@ def get_managed_instance_installed_windows_updates(compartment_id: Optional[_bui
         installed_windows_update_collections=pulumi.get(__ret__, 'installed_windows_update_collections'),
         managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
         names=pulumi.get(__ret__, 'names'))
-def get_managed_instance_installed_windows_updates_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                          display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                          display_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceInstalledWindowsUpdatesFilterArgs', 'GetManagedInstanceInstalledWindowsUpdatesFilterArgsDict']]]]] = None,
-                                                          managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                          names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_managed_instance_installed_windows_updates_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                          display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedInstanceInstalledWindowsUpdatesFilterArgs', 'GetManagedInstanceInstalledWindowsUpdatesFilterArgsDict']]]]] = None,
+                                                          managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                          names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceInstalledWindowsUpdatesResult]:
     """
     This data source provides the list of Managed Instance Installed Windows Updates in Oracle Cloud Infrastructure Os Management Hub service.
@@ -189,7 +189,7 @@ def get_managed_instance_installed_windows_updates_output(compartment_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_installed_windows_updates = oci.OsManagementHub.get_managed_instance_installed_windows_updates(managed_instance_id=test_managed_instance["id"],
+    test_managed_instance_installed_windows_updates = oci.osmanagementhub.get_managed_instance_installed_windows_updates(managed_instance_id=test_managed_instance["id"],
         compartment_id=compartment_id,
         display_name=managed_instance_installed_windows_update_display_name,
         display_name_contains=managed_instance_installed_windows_update_display_name_contains,

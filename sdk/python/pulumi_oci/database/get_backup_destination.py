@@ -334,7 +334,7 @@ def get_backup_destination(backup_destination_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_backup_destination = oci.Database.get_backup_destination(backup_destination_id=test_backup_destination_oci_database_backup_destination["id"])
+    test_backup_destination = oci.database.get_backup_destination(backup_destination_id=test_backup_destination_oci_database_backup_destination["id"])
     ```
 
 
@@ -370,7 +370,7 @@ def get_backup_destination(backup_destination_id: Optional[_builtins.str] = None
         type=pulumi.get(__ret__, 'type'),
         utilized_storage_size_in_gbs=pulumi.get(__ret__, 'utilized_storage_size_in_gbs'),
         vpc_users=pulumi.get(__ret__, 'vpc_users'))
-def get_backup_destination_output(backup_destination_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_backup_destination_output(backup_destination_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBackupDestinationResult]:
     """
     This data source provides details about a specific Backup Destination resource in Oracle Cloud Infrastructure Database service.
@@ -383,7 +383,7 @@ def get_backup_destination_output(backup_destination_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_backup_destination = oci.Database.get_backup_destination(backup_destination_id=test_backup_destination_oci_database_backup_destination["id"])
+    test_backup_destination = oci.database.get_backup_destination(backup_destination_id=test_backup_destination_oci_database_backup_destination["id"])
     ```
 
 

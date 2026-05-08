@@ -20,12 +20,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDedicatedVmHosts = oci.Core.getDedicatedVmHosts({
+ * const testDedicatedVmHosts = oci.core.getDedicatedVmHosts({
  *     compartmentId: compartmentId,
  *     availabilityDomain: dedicatedVmHostAvailabilityDomain,
  *     displayName: dedicatedVmHostDisplayName,
  *     instanceShapeName: dedicatedVmHostInstanceShapeName,
- *     isMemoryEncryptionEnabled: dedicatedVmHostIsMemoryEncryptionEnabled,
+ *     isMemoryEncryptionEnabled: dedicatedVmHostIsMemoryEncryptionEnabled === "true",
  *     remainingMemoryInGbsGreaterThanOrEqualTo: dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo,
  *     remainingOcpusGreaterThanOrEqualTo: dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo,
  *     state: dedicatedVmHostState,
@@ -137,12 +137,12 @@ export interface GetDedicatedVmHostsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDedicatedVmHosts = oci.Core.getDedicatedVmHosts({
+ * const testDedicatedVmHosts = oci.core.getDedicatedVmHosts({
  *     compartmentId: compartmentId,
  *     availabilityDomain: dedicatedVmHostAvailabilityDomain,
  *     displayName: dedicatedVmHostDisplayName,
  *     instanceShapeName: dedicatedVmHostInstanceShapeName,
- *     isMemoryEncryptionEnabled: dedicatedVmHostIsMemoryEncryptionEnabled,
+ *     isMemoryEncryptionEnabled: dedicatedVmHostIsMemoryEncryptionEnabled === "true",
  *     remainingMemoryInGbsGreaterThanOrEqualTo: dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo,
  *     remainingOcpusGreaterThanOrEqualTo: dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo,
  *     state: dedicatedVmHostState,
@@ -171,7 +171,7 @@ export interface GetDedicatedVmHostsOutputArgs {
     /**
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -179,26 +179,26 @@ export interface GetDedicatedVmHostsOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetDedicatedVmHostsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetDedicatedVmHostsFilterArgs>[] | undefined>;
     /**
      * The name for the instance's shape.
      */
-    instanceShapeName?: pulumi.Input<string>;
+    instanceShapeName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
      */
-    isMemoryEncryptionEnabled?: pulumi.Input<boolean>;
+    isMemoryEncryptionEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The remaining memory of the dedicated VM host, in GBs.
      */
-    remainingMemoryInGbsGreaterThanOrEqualTo?: pulumi.Input<number>;
+    remainingMemoryInGbsGreaterThanOrEqualTo?: pulumi.Input<number | undefined>;
     /**
      * The available OCPUs of the dedicated VM host.
      */
-    remainingOcpusGreaterThanOrEqualTo?: pulumi.Input<number>;
+    remainingOcpusGreaterThanOrEqualTo?: pulumi.Input<number | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -95,7 +95,7 @@ def get_job_advisor_report_checks(filters: Optional[Sequence[Union['GetJobAdviso
     import pulumi
     import pulumi_oci as oci
 
-    test_job_advisor_report_checks = oci.DatabaseMigration.get_job_advisor_report_checks(job_id=test_job["id"])
+    test_job_advisor_report_checks = oci.databasemigration.get_job_advisor_report_checks(job_id=test_job["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_job_advisor_report_checks(filters: Optional[Sequence[Union['GetJobAdviso
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         job_id=pulumi.get(__ret__, 'job_id'))
-def get_job_advisor_report_checks_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetJobAdvisorReportChecksFilterArgs', 'GetJobAdvisorReportChecksFilterArgsDict']]]]] = None,
-                                         job_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_job_advisor_report_checks_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJobAdvisorReportChecksFilterArgs', 'GetJobAdvisorReportChecksFilterArgsDict']]]]] = None,
+                                         job_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJobAdvisorReportChecksResult]:
     """
     This data source provides the list of Job Advisor Report Checks in Oracle Cloud Infrastructure Database Migration service.
@@ -126,7 +126,7 @@ def get_job_advisor_report_checks_output(filters: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_job_advisor_report_checks = oci.DatabaseMigration.get_job_advisor_report_checks(job_id=test_job["id"])
+    test_job_advisor_report_checks = oci.databasemigration.get_job_advisor_report_checks(job_id=test_job["id"])
     ```
 
 

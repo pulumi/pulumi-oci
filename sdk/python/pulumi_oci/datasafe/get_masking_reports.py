@@ -154,9 +154,9 @@ def get_masking_reports(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_reports = oci.DataSafe.get_masking_reports(compartment_id=compartment_id,
+    test_masking_reports = oci.datasafe.get_masking_reports(compartment_id=compartment_id,
         access_level=masking_report_access_level,
-        compartment_id_in_subtree=masking_report_compartment_id_in_subtree,
+        compartment_id_in_subtree=masking_report_compartment_id_in_subtree == "true",
         masking_policy_id=test_masking_policy["id"],
         target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"])
@@ -191,13 +191,13 @@ def get_masking_reports(access_level: Optional[_builtins.str] = None,
         masking_report_collections=pulumi.get(__ret__, 'masking_report_collections'),
         target_database_group_id=pulumi.get(__ret__, 'target_database_group_id'),
         target_id=pulumi.get(__ret__, 'target_id'))
-def get_masking_reports_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaskingReportsFilterArgs', 'GetMaskingReportsFilterArgsDict']]]]] = None,
-                               masking_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               target_database_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_masking_reports_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaskingReportsFilterArgs', 'GetMaskingReportsFilterArgsDict']]]]] = None,
+                               masking_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               target_database_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingReportsResult]:
     """
     This data source provides the list of Masking Reports in Oracle Cloud Infrastructure Data Safe service.
@@ -210,9 +210,9 @@ def get_masking_reports_output(access_level: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_reports = oci.DataSafe.get_masking_reports(compartment_id=compartment_id,
+    test_masking_reports = oci.datasafe.get_masking_reports(compartment_id=compartment_id,
         access_level=masking_report_access_level,
-        compartment_id_in_subtree=masking_report_compartment_id_in_subtree,
+        compartment_id_in_subtree=masking_report_compartment_id_in_subtree == "true",
         masking_policy_id=test_masking_policy["id"],
         target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"])

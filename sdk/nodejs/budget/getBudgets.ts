@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBudgets = oci.Budget.getBudgets({
+ * const testBudgets = oci.budget.getBudgets({
  *     compartmentId: tenancyOcid,
  *     displayName: budgetDisplayName,
  *     state: budgetState,
@@ -115,7 +115,7 @@ export interface GetBudgetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBudgets = oci.Budget.getBudgets({
+ * const testBudgets = oci.budget.getBudgets({
  *     compartmentId: tenancyOcid,
  *     displayName: budgetDisplayName,
  *     state: budgetState,
@@ -145,17 +145,17 @@ export interface GetBudgetsOutputArgs {
     /**
      * A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Budget.GetBudgetsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Budget.GetBudgetsFilterArgs>[] | undefined>;
     /**
      * The current state of the resource to filter by.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The type of target to filter by:
      * * ALL - List all budgets
      * * COMPARTMENT - List all budgets with targetType == "COMPARTMENT"
      * * TAG - List all budgets with targetType == "TAG"
      */
-    targetType?: pulumi.Input<string>;
+    targetType?: pulumi.Input<string | undefined>;
 }

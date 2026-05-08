@@ -318,7 +318,7 @@ def get_analytics_instance(analytics_instance_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_analytics_instance = oci.Analytics.get_analytics_instance(analytics_instance_id=test_analytics_instance_oci_analytics_analytics_instance["id"])
+    test_analytics_instance = oci.analytics.get_analytics_instance(analytics_instance_id=test_analytics_instance_oci_analytics_analytics_instance["id"])
     ```
 
 
@@ -353,7 +353,7 @@ def get_analytics_instance(analytics_instance_id: Optional[_builtins.str] = None
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         update_channel=pulumi.get(__ret__, 'update_channel'))
-def get_analytics_instance_output(analytics_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_analytics_instance_output(analytics_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAnalyticsInstanceResult]:
     """
     This data source provides details about a specific Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
@@ -366,7 +366,7 @@ def get_analytics_instance_output(analytics_instance_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_analytics_instance = oci.Analytics.get_analytics_instance(analytics_instance_id=test_analytics_instance_oci_analytics_analytics_instance["id"])
+    test_analytics_instance = oci.analytics.get_analytics_instance(analytics_instance_id=test_analytics_instance_oci_analytics_analytics_instance["id"])
     ```
 
 

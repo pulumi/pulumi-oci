@@ -24,28 +24,28 @@ class WorkspaceApplicationTaskScheduleArgs:
                  application_key: pulumi.Input[_builtins.str],
                  identifier: pulumi.Input[_builtins.str],
                  workspace_id: pulumi.Input[_builtins.str],
-                 auth_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_provider_delegate: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 end_time_millis: Optional[pulumi.Input[_builtins.str]] = None,
-                 expected_duration: Optional[pulumi.Input[_builtins.float]] = None,
-                 expected_duration_unit: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_backfill_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_concurrent_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 next_run_time_millis: Optional[pulumi.Input[_builtins.str]] = None,
-                 number_of_retries: Optional[pulumi.Input[_builtins.int]] = None,
-                 object_status: Optional[pulumi.Input[_builtins.int]] = None,
-                 object_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 parent_ref: Optional[pulumi.Input['WorkspaceApplicationTaskScheduleParentRefArgs']] = None,
-                 registry_metadata: Optional[pulumi.Input['WorkspaceApplicationTaskScheduleRegistryMetadataArgs']] = None,
-                 retry_delay: Optional[pulumi.Input[_builtins.float]] = None,
-                 retry_delay_unit: Optional[pulumi.Input[_builtins.str]] = None,
-                 schedule_ref: Optional[pulumi.Input['WorkspaceApplicationTaskScheduleScheduleRefArgs']] = None,
-                 start_time_millis: Optional[pulumi.Input[_builtins.str]] = None):
+                 auth_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_provider_delegate: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 end_time_millis: pulumi.Input[Optional[_builtins.str]] = None,
+                 expected_duration: pulumi.Input[Optional[_builtins.float]] = None,
+                 expected_duration_unit: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_backfill_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_concurrent_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 next_run_time_millis: pulumi.Input[Optional[_builtins.str]] = None,
+                 number_of_retries: pulumi.Input[Optional[_builtins.int]] = None,
+                 object_status: pulumi.Input[Optional[_builtins.int]] = None,
+                 object_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 parent_ref: pulumi.Input[Optional['WorkspaceApplicationTaskScheduleParentRefArgs']] = None,
+                 registry_metadata: pulumi.Input[Optional['WorkspaceApplicationTaskScheduleRegistryMetadataArgs']] = None,
+                 retry_delay: pulumi.Input[Optional[_builtins.float]] = None,
+                 retry_delay_unit: pulumi.Input[Optional[_builtins.str]] = None,
+                 schedule_ref: pulumi.Input[Optional['WorkspaceApplicationTaskScheduleScheduleRefArgs']] = None,
+                 start_time_millis: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a WorkspaceApplicationTaskSchedule resource.
 
@@ -168,298 +168,298 @@ class WorkspaceApplicationTaskScheduleArgs:
 
     @_builtins.property
     @pulumi.getter(name="authMode")
-    def auth_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auth_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The authorization mode for the task.
         """
         return pulumi.get(self, "auth_mode")
 
     @auth_mode.setter
-    def auth_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auth_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auth_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="configProviderDelegate")
-    def config_provider_delegate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def config_provider_delegate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The information about the configuration provider.
         """
         return pulumi.get(self, "config_provider_delegate")
 
     @config_provider_delegate.setter
-    def config_provider_delegate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def config_provider_delegate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_provider_delegate", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Detailed description for the object.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="endTimeMillis")
-    def end_time_millis(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def end_time_millis(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The end time in milliseconds.
         """
         return pulumi.get(self, "end_time_millis")
 
     @end_time_millis.setter
-    def end_time_millis(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def end_time_millis(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "end_time_millis", value)
 
     @_builtins.property
     @pulumi.getter(name="expectedDuration")
-    def expected_duration(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def expected_duration(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) The expected duration of the task execution.
         """
         return pulumi.get(self, "expected_duration")
 
     @expected_duration.setter
-    def expected_duration(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def expected_duration(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "expected_duration", value)
 
     @_builtins.property
     @pulumi.getter(name="expectedDurationUnit")
-    def expected_duration_unit(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expected_duration_unit(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The expected duration unit of the task execution.
         """
         return pulumi.get(self, "expected_duration_unit")
 
     @expected_duration_unit.setter
-    def expected_duration_unit(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expected_duration_unit(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expected_duration_unit", value)
 
     @_builtins.property
     @pulumi.getter(name="isBackfillEnabled")
-    def is_backfill_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_backfill_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the backfill is enabled.
         """
         return pulumi.get(self, "is_backfill_enabled")
 
     @is_backfill_enabled.setter
-    def is_backfill_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_backfill_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_backfill_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isConcurrentAllowed")
-    def is_concurrent_allowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_concurrent_allowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the same task can be executed concurrently.
         """
         return pulumi.get(self, "is_concurrent_allowed")
 
     @is_concurrent_allowed.setter
-    def is_concurrent_allowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_concurrent_allowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_concurrent_allowed", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the task schedule is enabled.
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter(name="modelVersion")
-    def model_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
         """
         return pulumi.get(self, "model_version")
 
     @model_version.setter
-    def model_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nextRunTimeMillis")
-    def next_run_time_millis(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def next_run_time_millis(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "next_run_time_millis")
 
     @next_run_time_millis.setter
-    def next_run_time_millis(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def next_run_time_millis(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "next_run_time_millis", value)
 
     @_builtins.property
     @pulumi.getter(name="numberOfRetries")
-    def number_of_retries(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def number_of_retries(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of retries.
         """
         return pulumi.get(self, "number_of_retries")
 
     @number_of_retries.setter
-    def number_of_retries(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def number_of_retries(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "number_of_retries", value)
 
     @_builtins.property
     @pulumi.getter(name="objectStatus")
-    def object_status(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def object_status(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         """
         return pulumi.get(self, "object_status")
 
     @object_status.setter
-    def object_status(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def object_status(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "object_status", value)
 
     @_builtins.property
     @pulumi.getter(name="objectVersion")
-    def object_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def object_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
         """
         return pulumi.get(self, "object_version")
 
     @object_version.setter
-    def object_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def object_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "object_version", value)
 
     @_builtins.property
     @pulumi.getter(name="parentRef")
-    def parent_ref(self) -> Optional[pulumi.Input['WorkspaceApplicationTaskScheduleParentRefArgs']]:
+    def parent_ref(self) -> pulumi.Input[Optional['WorkspaceApplicationTaskScheduleParentRefArgs']]:
         """
         (Updatable) A reference to the object's parent.
         """
         return pulumi.get(self, "parent_ref")
 
     @parent_ref.setter
-    def parent_ref(self, value: Optional[pulumi.Input['WorkspaceApplicationTaskScheduleParentRefArgs']]):
+    def parent_ref(self, value: pulumi.Input[Optional['WorkspaceApplicationTaskScheduleParentRefArgs']]):
         pulumi.set(self, "parent_ref", value)
 
     @_builtins.property
     @pulumi.getter(name="registryMetadata")
-    def registry_metadata(self) -> Optional[pulumi.Input['WorkspaceApplicationTaskScheduleRegistryMetadataArgs']]:
+    def registry_metadata(self) -> pulumi.Input[Optional['WorkspaceApplicationTaskScheduleRegistryMetadataArgs']]:
         """
         (Updatable) Information about the object and its parent.
         """
         return pulumi.get(self, "registry_metadata")
 
     @registry_metadata.setter
-    def registry_metadata(self, value: Optional[pulumi.Input['WorkspaceApplicationTaskScheduleRegistryMetadataArgs']]):
+    def registry_metadata(self, value: pulumi.Input[Optional['WorkspaceApplicationTaskScheduleRegistryMetadataArgs']]):
         pulumi.set(self, "registry_metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="retryDelay")
-    def retry_delay(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def retry_delay(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) The retry delay, the unit for measurement is in the property retry delay unit.
         """
         return pulumi.get(self, "retry_delay")
 
     @retry_delay.setter
-    def retry_delay(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def retry_delay(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "retry_delay", value)
 
     @_builtins.property
     @pulumi.getter(name="retryDelayUnit")
-    def retry_delay_unit(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def retry_delay_unit(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The unit for the retry delay.
         """
         return pulumi.get(self, "retry_delay_unit")
 
     @retry_delay_unit.setter
-    def retry_delay_unit(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def retry_delay_unit(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "retry_delay_unit", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduleRef")
-    def schedule_ref(self) -> Optional[pulumi.Input['WorkspaceApplicationTaskScheduleScheduleRefArgs']]:
+    def schedule_ref(self) -> pulumi.Input[Optional['WorkspaceApplicationTaskScheduleScheduleRefArgs']]:
         """
         (Updatable) The schedule object
         """
         return pulumi.get(self, "schedule_ref")
 
     @schedule_ref.setter
-    def schedule_ref(self, value: Optional[pulumi.Input['WorkspaceApplicationTaskScheduleScheduleRefArgs']]):
+    def schedule_ref(self, value: pulumi.Input[Optional['WorkspaceApplicationTaskScheduleScheduleRefArgs']]):
         pulumi.set(self, "schedule_ref", value)
 
     @_builtins.property
     @pulumi.getter(name="startTimeMillis")
-    def start_time_millis(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def start_time_millis(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The start time in milliseconds.
         """
         return pulumi.get(self, "start_time_millis")
 
     @start_time_millis.setter
-    def start_time_millis(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def start_time_millis(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "start_time_millis", value)
 
 
 @pulumi.input_type
 class _WorkspaceApplicationTaskScheduleState:
     def __init__(__self__, *,
-                 application_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 auth_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_provider_delegate: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 end_time_millis: Optional[pulumi.Input[_builtins.str]] = None,
-                 expected_duration: Optional[pulumi.Input[_builtins.float]] = None,
-                 expected_duration_unit: Optional[pulumi.Input[_builtins.str]] = None,
-                 identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_backfill_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_concurrent_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 last_run_details: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleLastRunDetailArgs']]]] = None,
-                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataArgs']]]] = None,
-                 model_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 next_run_time_millis: Optional[pulumi.Input[_builtins.str]] = None,
-                 number_of_retries: Optional[pulumi.Input[_builtins.int]] = None,
-                 object_status: Optional[pulumi.Input[_builtins.int]] = None,
-                 object_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 parent_ref: Optional[pulumi.Input['WorkspaceApplicationTaskScheduleParentRefArgs']] = None,
-                 registry_metadata: Optional[pulumi.Input['WorkspaceApplicationTaskScheduleRegistryMetadataArgs']] = None,
-                 retry_attempts: Optional[pulumi.Input[_builtins.int]] = None,
-                 retry_delay: Optional[pulumi.Input[_builtins.float]] = None,
-                 retry_delay_unit: Optional[pulumi.Input[_builtins.str]] = None,
-                 schedule_ref: Optional[pulumi.Input['WorkspaceApplicationTaskScheduleScheduleRefArgs']] = None,
-                 start_time_millis: Optional[pulumi.Input[_builtins.str]] = None,
-                 workspace_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 application_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 auth_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_provider_delegate: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 end_time_millis: pulumi.Input[Optional[_builtins.str]] = None,
+                 expected_duration: pulumi.Input[Optional[_builtins.float]] = None,
+                 expected_duration_unit: pulumi.Input[Optional[_builtins.str]] = None,
+                 identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_backfill_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_concurrent_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_run_details: pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleLastRunDetailArgs']]]] = None,
+                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataArgs']]]] = None,
+                 model_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 next_run_time_millis: pulumi.Input[Optional[_builtins.str]] = None,
+                 number_of_retries: pulumi.Input[Optional[_builtins.int]] = None,
+                 object_status: pulumi.Input[Optional[_builtins.int]] = None,
+                 object_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 parent_ref: pulumi.Input[Optional['WorkspaceApplicationTaskScheduleParentRefArgs']] = None,
+                 registry_metadata: pulumi.Input[Optional['WorkspaceApplicationTaskScheduleRegistryMetadataArgs']] = None,
+                 retry_attempts: pulumi.Input[Optional[_builtins.int]] = None,
+                 retry_delay: pulumi.Input[Optional[_builtins.float]] = None,
+                 retry_delay_unit: pulumi.Input[Optional[_builtins.str]] = None,
+                 schedule_ref: pulumi.Input[Optional['WorkspaceApplicationTaskScheduleScheduleRefArgs']] = None,
+                 start_time_millis: pulumi.Input[Optional[_builtins.str]] = None,
+                 workspace_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WorkspaceApplicationTaskSchedule resources.
 
@@ -557,340 +557,340 @@ class _WorkspaceApplicationTaskScheduleState:
 
     @_builtins.property
     @pulumi.getter(name="applicationKey")
-    def application_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The application key.
         """
         return pulumi.get(self, "application_key")
 
     @application_key.setter
-    def application_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_key", value)
 
     @_builtins.property
     @pulumi.getter(name="authMode")
-    def auth_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def auth_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The authorization mode for the task.
         """
         return pulumi.get(self, "auth_mode")
 
     @auth_mode.setter
-    def auth_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def auth_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "auth_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="configProviderDelegate")
-    def config_provider_delegate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def config_provider_delegate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The information about the configuration provider.
         """
         return pulumi.get(self, "config_provider_delegate")
 
     @config_provider_delegate.setter
-    def config_provider_delegate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def config_provider_delegate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_provider_delegate", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Detailed description for the object.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="endTimeMillis")
-    def end_time_millis(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def end_time_millis(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The end time in milliseconds.
         """
         return pulumi.get(self, "end_time_millis")
 
     @end_time_millis.setter
-    def end_time_millis(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def end_time_millis(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "end_time_millis", value)
 
     @_builtins.property
     @pulumi.getter(name="expectedDuration")
-    def expected_duration(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def expected_duration(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) The expected duration of the task execution.
         """
         return pulumi.get(self, "expected_duration")
 
     @expected_duration.setter
-    def expected_duration(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def expected_duration(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "expected_duration", value)
 
     @_builtins.property
     @pulumi.getter(name="expectedDurationUnit")
-    def expected_duration_unit(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expected_duration_unit(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The expected duration unit of the task execution.
         """
         return pulumi.get(self, "expected_duration_unit")
 
     @expected_duration_unit.setter
-    def expected_duration_unit(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expected_duration_unit(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expected_duration_unit", value)
 
     @_builtins.property
     @pulumi.getter
-    def identifier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
     @identifier.setter
-    def identifier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identifier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identifier", value)
 
     @_builtins.property
     @pulumi.getter(name="isBackfillEnabled")
-    def is_backfill_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_backfill_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the backfill is enabled.
         """
         return pulumi.get(self, "is_backfill_enabled")
 
     @is_backfill_enabled.setter
-    def is_backfill_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_backfill_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_backfill_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isConcurrentAllowed")
-    def is_concurrent_allowed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_concurrent_allowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the same task can be executed concurrently.
         """
         return pulumi.get(self, "is_concurrent_allowed")
 
     @is_concurrent_allowed.setter
-    def is_concurrent_allowed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_concurrent_allowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_concurrent_allowed", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the task schedule is enabled.
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter(name="lastRunDetails")
-    def last_run_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleLastRunDetailArgs']]]]:
+    def last_run_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleLastRunDetailArgs']]]]:
         """
         The last run details for the task run.
         """
         return pulumi.get(self, "last_run_details")
 
     @last_run_details.setter
-    def last_run_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleLastRunDetailArgs']]]]):
+    def last_run_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleLastRunDetailArgs']]]]):
         pulumi.set(self, "last_run_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataArgs']]]]:
+    def metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataArgs']]]]:
         """
         A summary type containing information about the object including its key, name and when/who created/updated it.
         """
         return pulumi.get(self, "metadatas")
 
     @metadatas.setter
-    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataArgs']]]]):
+    def metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataArgs']]]]):
         pulumi.set(self, "metadatas", value)
 
     @_builtins.property
     @pulumi.getter(name="modelType")
-    def model_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the object.
         """
         return pulumi.get(self, "model_type")
 
     @model_type.setter
-    def model_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_type", value)
 
     @_builtins.property
     @pulumi.getter(name="modelVersion")
-    def model_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
         """
         return pulumi.get(self, "model_version")
 
     @model_version.setter
-    def model_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nextRunTimeMillis")
-    def next_run_time_millis(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def next_run_time_millis(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "next_run_time_millis")
 
     @next_run_time_millis.setter
-    def next_run_time_millis(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def next_run_time_millis(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "next_run_time_millis", value)
 
     @_builtins.property
     @pulumi.getter(name="numberOfRetries")
-    def number_of_retries(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def number_of_retries(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of retries.
         """
         return pulumi.get(self, "number_of_retries")
 
     @number_of_retries.setter
-    def number_of_retries(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def number_of_retries(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "number_of_retries", value)
 
     @_builtins.property
     @pulumi.getter(name="objectStatus")
-    def object_status(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def object_status(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         """
         return pulumi.get(self, "object_status")
 
     @object_status.setter
-    def object_status(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def object_status(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "object_status", value)
 
     @_builtins.property
     @pulumi.getter(name="objectVersion")
-    def object_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def object_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
         """
         return pulumi.get(self, "object_version")
 
     @object_version.setter
-    def object_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def object_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "object_version", value)
 
     @_builtins.property
     @pulumi.getter(name="parentRef")
-    def parent_ref(self) -> Optional[pulumi.Input['WorkspaceApplicationTaskScheduleParentRefArgs']]:
+    def parent_ref(self) -> pulumi.Input[Optional['WorkspaceApplicationTaskScheduleParentRefArgs']]:
         """
         (Updatable) A reference to the object's parent.
         """
         return pulumi.get(self, "parent_ref")
 
     @parent_ref.setter
-    def parent_ref(self, value: Optional[pulumi.Input['WorkspaceApplicationTaskScheduleParentRefArgs']]):
+    def parent_ref(self, value: pulumi.Input[Optional['WorkspaceApplicationTaskScheduleParentRefArgs']]):
         pulumi.set(self, "parent_ref", value)
 
     @_builtins.property
     @pulumi.getter(name="registryMetadata")
-    def registry_metadata(self) -> Optional[pulumi.Input['WorkspaceApplicationTaskScheduleRegistryMetadataArgs']]:
+    def registry_metadata(self) -> pulumi.Input[Optional['WorkspaceApplicationTaskScheduleRegistryMetadataArgs']]:
         """
         (Updatable) Information about the object and its parent.
         """
         return pulumi.get(self, "registry_metadata")
 
     @registry_metadata.setter
-    def registry_metadata(self, value: Optional[pulumi.Input['WorkspaceApplicationTaskScheduleRegistryMetadataArgs']]):
+    def registry_metadata(self, value: pulumi.Input[Optional['WorkspaceApplicationTaskScheduleRegistryMetadataArgs']]):
         pulumi.set(self, "registry_metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="retryAttempts")
-    def retry_attempts(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retry_attempts(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of retry attempts.
         """
         return pulumi.get(self, "retry_attempts")
 
     @retry_attempts.setter
-    def retry_attempts(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retry_attempts(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retry_attempts", value)
 
     @_builtins.property
     @pulumi.getter(name="retryDelay")
-    def retry_delay(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def retry_delay(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) The retry delay, the unit for measurement is in the property retry delay unit.
         """
         return pulumi.get(self, "retry_delay")
 
     @retry_delay.setter
-    def retry_delay(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def retry_delay(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "retry_delay", value)
 
     @_builtins.property
     @pulumi.getter(name="retryDelayUnit")
-    def retry_delay_unit(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def retry_delay_unit(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The unit for the retry delay.
         """
         return pulumi.get(self, "retry_delay_unit")
 
     @retry_delay_unit.setter
-    def retry_delay_unit(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def retry_delay_unit(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "retry_delay_unit", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduleRef")
-    def schedule_ref(self) -> Optional[pulumi.Input['WorkspaceApplicationTaskScheduleScheduleRefArgs']]:
+    def schedule_ref(self) -> pulumi.Input[Optional['WorkspaceApplicationTaskScheduleScheduleRefArgs']]:
         """
         (Updatable) The schedule object
         """
         return pulumi.get(self, "schedule_ref")
 
     @schedule_ref.setter
-    def schedule_ref(self, value: Optional[pulumi.Input['WorkspaceApplicationTaskScheduleScheduleRefArgs']]):
+    def schedule_ref(self, value: pulumi.Input[Optional['WorkspaceApplicationTaskScheduleScheduleRefArgs']]):
         pulumi.set(self, "schedule_ref", value)
 
     @_builtins.property
     @pulumi.getter(name="startTimeMillis")
-    def start_time_millis(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def start_time_millis(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The start time in milliseconds.
         """
         return pulumi.get(self, "start_time_millis")
 
     @start_time_millis.setter
-    def start_time_millis(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def start_time_millis(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "start_time_millis", value)
 
     @_builtins.property
     @pulumi.getter(name="workspaceId")
-    def workspace_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def workspace_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The workspace ID.
 
@@ -901,7 +901,7 @@ class _WorkspaceApplicationTaskScheduleState:
         return pulumi.get(self, "workspace_id")
 
     @workspace_id.setter
-    def workspace_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def workspace_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "workspace_id", value)
 
 
@@ -911,31 +911,31 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 auth_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_provider_delegate: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 end_time_millis: Optional[pulumi.Input[_builtins.str]] = None,
-                 expected_duration: Optional[pulumi.Input[_builtins.float]] = None,
-                 expected_duration_unit: Optional[pulumi.Input[_builtins.str]] = None,
-                 identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_backfill_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_concurrent_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 next_run_time_millis: Optional[pulumi.Input[_builtins.str]] = None,
-                 number_of_retries: Optional[pulumi.Input[_builtins.int]] = None,
-                 object_status: Optional[pulumi.Input[_builtins.int]] = None,
-                 object_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 parent_ref: Optional[pulumi.Input[Union['WorkspaceApplicationTaskScheduleParentRefArgs', 'WorkspaceApplicationTaskScheduleParentRefArgsDict']]] = None,
-                 registry_metadata: Optional[pulumi.Input[Union['WorkspaceApplicationTaskScheduleRegistryMetadataArgs', 'WorkspaceApplicationTaskScheduleRegistryMetadataArgsDict']]] = None,
-                 retry_delay: Optional[pulumi.Input[_builtins.float]] = None,
-                 retry_delay_unit: Optional[pulumi.Input[_builtins.str]] = None,
-                 schedule_ref: Optional[pulumi.Input[Union['WorkspaceApplicationTaskScheduleScheduleRefArgs', 'WorkspaceApplicationTaskScheduleScheduleRefArgsDict']]] = None,
-                 start_time_millis: Optional[pulumi.Input[_builtins.str]] = None,
-                 workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 application_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 auth_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_provider_delegate: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 end_time_millis: pulumi.Input[Optional[_builtins.str]] = None,
+                 expected_duration: pulumi.Input[Optional[_builtins.float]] = None,
+                 expected_duration_unit: pulumi.Input[Optional[_builtins.str]] = None,
+                 identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_backfill_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_concurrent_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 next_run_time_millis: pulumi.Input[Optional[_builtins.str]] = None,
+                 number_of_retries: pulumi.Input[Optional[_builtins.int]] = None,
+                 object_status: pulumi.Input[Optional[_builtins.int]] = None,
+                 object_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 parent_ref: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleParentRefArgs', 'WorkspaceApplicationTaskScheduleParentRefArgsDict']]] = None,
+                 registry_metadata: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleRegistryMetadataArgs', 'WorkspaceApplicationTaskScheduleRegistryMetadataArgsDict']]] = None,
+                 retry_delay: pulumi.Input[Optional[_builtins.float]] = None,
+                 retry_delay_unit: pulumi.Input[Optional[_builtins.str]] = None,
+                 schedule_ref: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleScheduleRefArgs', 'WorkspaceApplicationTaskScheduleScheduleRefArgsDict']]] = None,
+                 start_time_millis: pulumi.Input[Optional[_builtins.str]] = None,
+                 workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Workspace Application Task Schedule resource in Oracle Cloud Infrastructure Data Integration service.
@@ -962,24 +962,24 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
             end_time_millis=workspace_application_task_schedule_end_time_millis,
             expected_duration=workspace_application_task_schedule_expected_duration,
             expected_duration_unit=workspace_application_task_schedule_expected_duration_unit,
-            is_backfill_enabled=workspace_application_task_schedule_is_backfill_enabled,
-            is_concurrent_allowed=workspace_application_task_schedule_is_concurrent_allowed,
-            is_enabled=workspace_application_task_schedule_is_enabled,
+            is_backfill_enabled=workspace_application_task_schedule_is_backfill_enabled == "true",
+            is_concurrent_allowed=workspace_application_task_schedule_is_concurrent_allowed == "true",
+            is_enabled=workspace_application_task_schedule_is_enabled == "true",
             key=workspace_application_task_schedule_key,
             model_version=workspace_application_task_schedule_model_version,
-            number_of_retries=workspace_application_task_schedule_number_of_retries,
-            object_status=workspace_application_task_schedule_object_status,
-            object_version=workspace_application_task_schedule_object_version,
+            number_of_retries=int(workspace_application_task_schedule_number_of_retries),
+            object_status=int(workspace_application_task_schedule_object_status),
+            object_version=int(workspace_application_task_schedule_object_version),
             parent_ref={
                 "parent": workspace_application_task_schedule_parent_ref_parent,
                 "root_doc_id": test_root_doc["id"],
             },
             registry_metadata={
                 "aggregator_key": workspace_application_task_schedule_registry_metadata_aggregator_key,
-                "is_favorite": workspace_application_task_schedule_registry_metadata_is_favorite,
+                "is_favorite": workspace_application_task_schedule_registry_metadata_is_favorite == "true",
                 "key": workspace_application_task_schedule_registry_metadata_key,
                 "labels": workspace_application_task_schedule_registry_metadata_labels,
-                "registry_version": workspace_application_task_schedule_registry_metadata_registry_version,
+                "registry_version": int(workspace_application_task_schedule_registry_metadata_registry_version),
             },
             retry_delay=workspace_application_task_schedule_retry_delay,
             retry_delay_unit=workspace_application_task_schedule_retry_delay_unit,
@@ -991,16 +991,16 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
                     "day_of_week": workspace_application_task_schedule_schedule_ref_frequency_details_day_of_week,
                     "days": workspace_application_task_schedule_schedule_ref_frequency_details_days,
                     "frequency": workspace_application_task_schedule_schedule_ref_frequency_details_frequency,
-                    "interval": workspace_application_task_schedule_schedule_ref_frequency_details_interval,
+                    "interval": int(workspace_application_task_schedule_schedule_ref_frequency_details_interval),
                     "time": {
-                        "hour": workspace_application_task_schedule_schedule_ref_frequency_details_time_hour,
-                        "minute": workspace_application_task_schedule_schedule_ref_frequency_details_time_minute,
-                        "second": workspace_application_task_schedule_schedule_ref_frequency_details_time_second,
+                        "hour": int(workspace_application_task_schedule_schedule_ref_frequency_details_time_hour),
+                        "minute": int(workspace_application_task_schedule_schedule_ref_frequency_details_time_minute),
+                        "second": int(workspace_application_task_schedule_schedule_ref_frequency_details_time_second),
                     },
                     "week_of_month": workspace_application_task_schedule_schedule_ref_frequency_details_week_of_month,
                 },
                 "identifier": workspace_application_task_schedule_schedule_ref_identifier,
-                "is_daylight_adjustment_enabled": workspace_application_task_schedule_schedule_ref_is_daylight_adjustment_enabled,
+                "is_daylight_adjustment_enabled": workspace_application_task_schedule_schedule_ref_is_daylight_adjustment_enabled == "true",
                 "key": workspace_application_task_schedule_schedule_ref_key,
                 "metadata": {
                     "aggregator": {
@@ -1021,9 +1021,9 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
                     "created_by_name": workspace_application_task_schedule_schedule_ref_metadata_created_by_name,
                     "identifier_path": workspace_application_task_schedule_schedule_ref_metadata_identifier_path,
                     "info_fields": workspace_application_task_schedule_schedule_ref_metadata_info_fields,
-                    "is_favorite": workspace_application_task_schedule_schedule_ref_metadata_is_favorite,
+                    "is_favorite": workspace_application_task_schedule_schedule_ref_metadata_is_favorite == "true",
                     "labels": workspace_application_task_schedule_schedule_ref_metadata_labels,
-                    "registry_version": workspace_application_task_schedule_schedule_ref_metadata_registry_version,
+                    "registry_version": int(workspace_application_task_schedule_schedule_ref_metadata_registry_version),
                     "time_created": workspace_application_task_schedule_schedule_ref_metadata_time_created,
                     "time_updated": workspace_application_task_schedule_schedule_ref_metadata_time_updated,
                     "updated_by": workspace_application_task_schedule_schedule_ref_metadata_updated_by,
@@ -1032,8 +1032,8 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
                 "model_type": workspace_application_task_schedule_schedule_ref_model_type,
                 "model_version": workspace_application_task_schedule_schedule_ref_model_version,
                 "name": workspace_application_task_schedule_schedule_ref_name,
-                "object_status": workspace_application_task_schedule_schedule_ref_object_status,
-                "object_version": workspace_application_task_schedule_schedule_ref_object_version,
+                "object_status": int(workspace_application_task_schedule_schedule_ref_object_status),
+                "object_version": int(workspace_application_task_schedule_schedule_ref_object_version),
                 "parent_ref": {
                     "parent": workspace_application_task_schedule_schedule_ref_parent_ref_parent,
                     "root_doc_id": test_root_doc["id"],
@@ -1114,24 +1114,24 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
             end_time_millis=workspace_application_task_schedule_end_time_millis,
             expected_duration=workspace_application_task_schedule_expected_duration,
             expected_duration_unit=workspace_application_task_schedule_expected_duration_unit,
-            is_backfill_enabled=workspace_application_task_schedule_is_backfill_enabled,
-            is_concurrent_allowed=workspace_application_task_schedule_is_concurrent_allowed,
-            is_enabled=workspace_application_task_schedule_is_enabled,
+            is_backfill_enabled=workspace_application_task_schedule_is_backfill_enabled == "true",
+            is_concurrent_allowed=workspace_application_task_schedule_is_concurrent_allowed == "true",
+            is_enabled=workspace_application_task_schedule_is_enabled == "true",
             key=workspace_application_task_schedule_key,
             model_version=workspace_application_task_schedule_model_version,
-            number_of_retries=workspace_application_task_schedule_number_of_retries,
-            object_status=workspace_application_task_schedule_object_status,
-            object_version=workspace_application_task_schedule_object_version,
+            number_of_retries=int(workspace_application_task_schedule_number_of_retries),
+            object_status=int(workspace_application_task_schedule_object_status),
+            object_version=int(workspace_application_task_schedule_object_version),
             parent_ref={
                 "parent": workspace_application_task_schedule_parent_ref_parent,
                 "root_doc_id": test_root_doc["id"],
             },
             registry_metadata={
                 "aggregator_key": workspace_application_task_schedule_registry_metadata_aggregator_key,
-                "is_favorite": workspace_application_task_schedule_registry_metadata_is_favorite,
+                "is_favorite": workspace_application_task_schedule_registry_metadata_is_favorite == "true",
                 "key": workspace_application_task_schedule_registry_metadata_key,
                 "labels": workspace_application_task_schedule_registry_metadata_labels,
-                "registry_version": workspace_application_task_schedule_registry_metadata_registry_version,
+                "registry_version": int(workspace_application_task_schedule_registry_metadata_registry_version),
             },
             retry_delay=workspace_application_task_schedule_retry_delay,
             retry_delay_unit=workspace_application_task_schedule_retry_delay_unit,
@@ -1143,16 +1143,16 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
                     "day_of_week": workspace_application_task_schedule_schedule_ref_frequency_details_day_of_week,
                     "days": workspace_application_task_schedule_schedule_ref_frequency_details_days,
                     "frequency": workspace_application_task_schedule_schedule_ref_frequency_details_frequency,
-                    "interval": workspace_application_task_schedule_schedule_ref_frequency_details_interval,
+                    "interval": int(workspace_application_task_schedule_schedule_ref_frequency_details_interval),
                     "time": {
-                        "hour": workspace_application_task_schedule_schedule_ref_frequency_details_time_hour,
-                        "minute": workspace_application_task_schedule_schedule_ref_frequency_details_time_minute,
-                        "second": workspace_application_task_schedule_schedule_ref_frequency_details_time_second,
+                        "hour": int(workspace_application_task_schedule_schedule_ref_frequency_details_time_hour),
+                        "minute": int(workspace_application_task_schedule_schedule_ref_frequency_details_time_minute),
+                        "second": int(workspace_application_task_schedule_schedule_ref_frequency_details_time_second),
                     },
                     "week_of_month": workspace_application_task_schedule_schedule_ref_frequency_details_week_of_month,
                 },
                 "identifier": workspace_application_task_schedule_schedule_ref_identifier,
-                "is_daylight_adjustment_enabled": workspace_application_task_schedule_schedule_ref_is_daylight_adjustment_enabled,
+                "is_daylight_adjustment_enabled": workspace_application_task_schedule_schedule_ref_is_daylight_adjustment_enabled == "true",
                 "key": workspace_application_task_schedule_schedule_ref_key,
                 "metadata": {
                     "aggregator": {
@@ -1173,9 +1173,9 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
                     "created_by_name": workspace_application_task_schedule_schedule_ref_metadata_created_by_name,
                     "identifier_path": workspace_application_task_schedule_schedule_ref_metadata_identifier_path,
                     "info_fields": workspace_application_task_schedule_schedule_ref_metadata_info_fields,
-                    "is_favorite": workspace_application_task_schedule_schedule_ref_metadata_is_favorite,
+                    "is_favorite": workspace_application_task_schedule_schedule_ref_metadata_is_favorite == "true",
                     "labels": workspace_application_task_schedule_schedule_ref_metadata_labels,
-                    "registry_version": workspace_application_task_schedule_schedule_ref_metadata_registry_version,
+                    "registry_version": int(workspace_application_task_schedule_schedule_ref_metadata_registry_version),
                     "time_created": workspace_application_task_schedule_schedule_ref_metadata_time_created,
                     "time_updated": workspace_application_task_schedule_schedule_ref_metadata_time_updated,
                     "updated_by": workspace_application_task_schedule_schedule_ref_metadata_updated_by,
@@ -1184,8 +1184,8 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
                 "model_type": workspace_application_task_schedule_schedule_ref_model_type,
                 "model_version": workspace_application_task_schedule_schedule_ref_model_version,
                 "name": workspace_application_task_schedule_schedule_ref_name,
-                "object_status": workspace_application_task_schedule_schedule_ref_object_status,
-                "object_version": workspace_application_task_schedule_schedule_ref_object_version,
+                "object_status": int(workspace_application_task_schedule_schedule_ref_object_status),
+                "object_version": int(workspace_application_task_schedule_schedule_ref_object_version),
                 "parent_ref": {
                     "parent": workspace_application_task_schedule_schedule_ref_parent_ref_parent,
                     "root_doc_id": test_root_doc["id"],
@@ -1219,31 +1219,31 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 auth_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_provider_delegate: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 end_time_millis: Optional[pulumi.Input[_builtins.str]] = None,
-                 expected_duration: Optional[pulumi.Input[_builtins.float]] = None,
-                 expected_duration_unit: Optional[pulumi.Input[_builtins.str]] = None,
-                 identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_backfill_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_concurrent_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 next_run_time_millis: Optional[pulumi.Input[_builtins.str]] = None,
-                 number_of_retries: Optional[pulumi.Input[_builtins.int]] = None,
-                 object_status: Optional[pulumi.Input[_builtins.int]] = None,
-                 object_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 parent_ref: Optional[pulumi.Input[Union['WorkspaceApplicationTaskScheduleParentRefArgs', 'WorkspaceApplicationTaskScheduleParentRefArgsDict']]] = None,
-                 registry_metadata: Optional[pulumi.Input[Union['WorkspaceApplicationTaskScheduleRegistryMetadataArgs', 'WorkspaceApplicationTaskScheduleRegistryMetadataArgsDict']]] = None,
-                 retry_delay: Optional[pulumi.Input[_builtins.float]] = None,
-                 retry_delay_unit: Optional[pulumi.Input[_builtins.str]] = None,
-                 schedule_ref: Optional[pulumi.Input[Union['WorkspaceApplicationTaskScheduleScheduleRefArgs', 'WorkspaceApplicationTaskScheduleScheduleRefArgsDict']]] = None,
-                 start_time_millis: Optional[pulumi.Input[_builtins.str]] = None,
-                 workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 application_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 auth_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_provider_delegate: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 end_time_millis: pulumi.Input[Optional[_builtins.str]] = None,
+                 expected_duration: pulumi.Input[Optional[_builtins.float]] = None,
+                 expected_duration_unit: pulumi.Input[Optional[_builtins.str]] = None,
+                 identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_backfill_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_concurrent_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 next_run_time_millis: pulumi.Input[Optional[_builtins.str]] = None,
+                 number_of_retries: pulumi.Input[Optional[_builtins.int]] = None,
+                 object_status: pulumi.Input[Optional[_builtins.int]] = None,
+                 object_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 parent_ref: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleParentRefArgs', 'WorkspaceApplicationTaskScheduleParentRefArgsDict']]] = None,
+                 registry_metadata: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleRegistryMetadataArgs', 'WorkspaceApplicationTaskScheduleRegistryMetadataArgsDict']]] = None,
+                 retry_delay: pulumi.Input[Optional[_builtins.float]] = None,
+                 retry_delay_unit: pulumi.Input[Optional[_builtins.str]] = None,
+                 schedule_ref: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleScheduleRefArgs', 'WorkspaceApplicationTaskScheduleScheduleRefArgsDict']]] = None,
+                 start_time_millis: pulumi.Input[Optional[_builtins.str]] = None,
+                 workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1298,35 +1298,35 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            application_key: Optional[pulumi.Input[_builtins.str]] = None,
-            auth_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            config_provider_delegate: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            end_time_millis: Optional[pulumi.Input[_builtins.str]] = None,
-            expected_duration: Optional[pulumi.Input[_builtins.float]] = None,
-            expected_duration_unit: Optional[pulumi.Input[_builtins.str]] = None,
-            identifier: Optional[pulumi.Input[_builtins.str]] = None,
-            is_backfill_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_concurrent_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            key: Optional[pulumi.Input[_builtins.str]] = None,
-            last_run_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationTaskScheduleLastRunDetailArgs', 'WorkspaceApplicationTaskScheduleLastRunDetailArgsDict']]]]] = None,
-            metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationTaskScheduleMetadataArgs', 'WorkspaceApplicationTaskScheduleMetadataArgsDict']]]]] = None,
-            model_type: Optional[pulumi.Input[_builtins.str]] = None,
-            model_version: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            next_run_time_millis: Optional[pulumi.Input[_builtins.str]] = None,
-            number_of_retries: Optional[pulumi.Input[_builtins.int]] = None,
-            object_status: Optional[pulumi.Input[_builtins.int]] = None,
-            object_version: Optional[pulumi.Input[_builtins.int]] = None,
-            parent_ref: Optional[pulumi.Input[Union['WorkspaceApplicationTaskScheduleParentRefArgs', 'WorkspaceApplicationTaskScheduleParentRefArgsDict']]] = None,
-            registry_metadata: Optional[pulumi.Input[Union['WorkspaceApplicationTaskScheduleRegistryMetadataArgs', 'WorkspaceApplicationTaskScheduleRegistryMetadataArgsDict']]] = None,
-            retry_attempts: Optional[pulumi.Input[_builtins.int]] = None,
-            retry_delay: Optional[pulumi.Input[_builtins.float]] = None,
-            retry_delay_unit: Optional[pulumi.Input[_builtins.str]] = None,
-            schedule_ref: Optional[pulumi.Input[Union['WorkspaceApplicationTaskScheduleScheduleRefArgs', 'WorkspaceApplicationTaskScheduleScheduleRefArgsDict']]] = None,
-            start_time_millis: Optional[pulumi.Input[_builtins.str]] = None,
-            workspace_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'WorkspaceApplicationTaskSchedule':
+            application_key: pulumi.Input[Optional[_builtins.str]] = None,
+            auth_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            config_provider_delegate: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            end_time_millis: pulumi.Input[Optional[_builtins.str]] = None,
+            expected_duration: pulumi.Input[Optional[_builtins.float]] = None,
+            expected_duration_unit: pulumi.Input[Optional[_builtins.str]] = None,
+            identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            is_backfill_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_concurrent_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            last_run_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationTaskScheduleLastRunDetailArgs', 'WorkspaceApplicationTaskScheduleLastRunDetailArgsDict']]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationTaskScheduleMetadataArgs', 'WorkspaceApplicationTaskScheduleMetadataArgsDict']]]]] = None,
+            model_type: pulumi.Input[Optional[_builtins.str]] = None,
+            model_version: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            next_run_time_millis: pulumi.Input[Optional[_builtins.str]] = None,
+            number_of_retries: pulumi.Input[Optional[_builtins.int]] = None,
+            object_status: pulumi.Input[Optional[_builtins.int]] = None,
+            object_version: pulumi.Input[Optional[_builtins.int]] = None,
+            parent_ref: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleParentRefArgs', 'WorkspaceApplicationTaskScheduleParentRefArgsDict']]] = None,
+            registry_metadata: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleRegistryMetadataArgs', 'WorkspaceApplicationTaskScheduleRegistryMetadataArgsDict']]] = None,
+            retry_attempts: pulumi.Input[Optional[_builtins.int]] = None,
+            retry_delay: pulumi.Input[Optional[_builtins.float]] = None,
+            retry_delay_unit: pulumi.Input[Optional[_builtins.str]] = None,
+            schedule_ref: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleScheduleRefArgs', 'WorkspaceApplicationTaskScheduleScheduleRefArgsDict']]] = None,
+            start_time_millis: pulumi.Input[Optional[_builtins.str]] = None,
+            workspace_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'WorkspaceApplicationTaskSchedule':
         """
         Get an existing WorkspaceApplicationTaskSchedule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

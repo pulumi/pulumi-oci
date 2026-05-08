@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConfiguration = oci.Audit.getConfiguration({
+ * const testConfiguration = oci.audit.getConfiguration({
  *     compartmentId: tenancyOcid,
  * });
  * ```
@@ -59,7 +59,7 @@ export interface GetConfigurationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConfiguration = oci.Audit.getConfiguration({
+ * const testConfiguration = oci.audit.getConfiguration({
  *     compartmentId: tenancyOcid,
  * });
  * ```

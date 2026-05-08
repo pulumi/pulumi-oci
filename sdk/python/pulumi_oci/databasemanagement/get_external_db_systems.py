@@ -111,7 +111,7 @@ def get_external_db_systems(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_external_db_systems = oci.DatabaseManagement.get_external_db_systems(compartment_id=compartment_id,
+    test_external_db_systems = oci.databasemanagement.get_external_db_systems(compartment_id=compartment_id,
         display_name=external_db_system_display_name)
     ```
 
@@ -132,9 +132,9 @@ def get_external_db_systems(compartment_id: Optional[_builtins.str] = None,
         external_db_system_collections=pulumi.get(__ret__, 'external_db_system_collections'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_external_db_systems_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalDbSystemsFilterArgs', 'GetExternalDbSystemsFilterArgsDict']]]]] = None,
+def get_external_db_systems_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalDbSystemsFilterArgs', 'GetExternalDbSystemsFilterArgsDict']]]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalDbSystemsResult]:
     """
     This data source provides the list of External Db Systems in Oracle Cloud Infrastructure Database Management service.
@@ -147,7 +147,7 @@ def get_external_db_systems_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_external_db_systems = oci.DatabaseManagement.get_external_db_systems(compartment_id=compartment_id,
+    test_external_db_systems = oci.databasemanagement.get_external_db_systems(compartment_id=compartment_id,
         display_name=external_db_system_display_name)
     ```
 

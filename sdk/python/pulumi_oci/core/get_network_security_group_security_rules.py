@@ -108,7 +108,7 @@ def get_network_security_group_security_rules(direction: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_network_security_group_security_rules = oci.Core.get_network_security_group_security_rules(network_security_group_id=test_network_security_group["id"],
+    test_network_security_group_security_rules = oci.core.get_network_security_group_security_rules(network_security_group_id=test_network_security_group["id"],
         direction=network_security_group_security_rule_direction)
     ```
 
@@ -129,9 +129,9 @@ def get_network_security_group_security_rules(direction: Optional[_builtins.str]
         id=pulumi.get(__ret__, 'id'),
         network_security_group_id=pulumi.get(__ret__, 'network_security_group_id'),
         security_rules=pulumi.get(__ret__, 'security_rules'))
-def get_network_security_group_security_rules_output(direction: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkSecurityGroupSecurityRulesFilterArgs', 'GetNetworkSecurityGroupSecurityRulesFilterArgsDict']]]]] = None,
-                                                     network_security_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_network_security_group_security_rules_output(direction: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkSecurityGroupSecurityRulesFilterArgs', 'GetNetworkSecurityGroupSecurityRulesFilterArgsDict']]]]] = None,
+                                                     network_security_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkSecurityGroupSecurityRulesResult]:
     """
     This data source provides the list of Network Security Group Security Rules in Oracle Cloud Infrastructure Core service.
@@ -144,7 +144,7 @@ def get_network_security_group_security_rules_output(direction: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_network_security_group_security_rules = oci.Core.get_network_security_group_security_rules(network_security_group_id=test_network_security_group["id"],
+    test_network_security_group_security_rules = oci.core.get_network_security_group_security_rules(network_security_group_id=test_network_security_group["id"],
         direction=network_security_group_security_rule_direction)
     ```
 

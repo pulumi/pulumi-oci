@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFastConnectProviderServiceKey = oci.Core.getFastConnectProviderServiceKey({
+ * const testFastConnectProviderServiceKey = oci.core.getFastConnectProviderServiceKey({
  *     providerServiceId: testFastConnectProviderServices.fastConnectProviderServices[0].id,
  *     providerServiceKeyName: fastConnectProviderServiceKeyProviderServiceKeyName,
  * });
@@ -79,7 +79,7 @@ export interface GetFastConnectProviderServiceKeyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFastConnectProviderServiceKey = oci.Core.getFastConnectProviderServiceKey({
+ * const testFastConnectProviderServiceKey = oci.core.getFastConnectProviderServiceKey({
  *     providerServiceId: testFastConnectProviderServices.fastConnectProviderServices[0].id,
  *     providerServiceKeyName: fastConnectProviderServiceKeyProviderServiceKeyName,
  * });

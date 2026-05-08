@@ -26,11 +26,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveColumnAnalytics = oci.DataSafe.getSensitiveColumnAnalytics({
+ * const testSensitiveColumnAnalytics = oci.datasafe.getSensitiveColumnAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: sensitiveColumnAnalyticAccessLevel,
  *     columnNames: sensitiveColumnAnalyticColumnName,
- *     compartmentIdInSubtree: sensitiveColumnAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sensitiveColumnAnalyticCompartmentIdInSubtree === "true",
  *     groupBies: sensitiveColumnAnalyticGroupBy,
  *     objects: sensitiveColumnAnalyticObject,
  *     schemaNames: sensitiveColumnAnalyticSchemaName,
@@ -180,11 +180,11 @@ export interface GetSensitiveColumnAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveColumnAnalytics = oci.DataSafe.getSensitiveColumnAnalytics({
+ * const testSensitiveColumnAnalytics = oci.datasafe.getSensitiveColumnAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: sensitiveColumnAnalyticAccessLevel,
  *     columnNames: sensitiveColumnAnalyticColumnName,
- *     compartmentIdInSubtree: sensitiveColumnAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sensitiveColumnAnalyticCompartmentIdInSubtree === "true",
  *     groupBies: sensitiveColumnAnalyticGroupBy,
  *     objects: sensitiveColumnAnalyticObject,
  *     schemaNames: sensitiveColumnAnalyticSchemaName,
@@ -222,11 +222,11 @@ export interface GetSensitiveColumnAnalyticsOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only a specific column based on column name.
      */
-    columnNames?: pulumi.Input<pulumi.Input<string>[]>;
+    columnNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -234,38 +234,38 @@ export interface GetSensitiveColumnAnalyticsOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSensitiveColumnAnalyticsFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSensitiveColumnAnalyticsFilterArgs>[] | undefined>;
     /**
      * The group by parameter to summarize the sensitive columns.
      */
-    groupBies?: pulumi.Input<pulumi.Input<string>[]>;
+    groupBies?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only items related to a specific object name.
      */
-    objects?: pulumi.Input<pulumi.Input<string>[]>;
+    objects?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only items related to specific schema name.
      */
-    schemaNames?: pulumi.Input<pulumi.Input<string>[]>;
+    schemaNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only the resources that match the specified sensitive data model OCID.
      */
-    sensitiveDataModelId?: pulumi.Input<string>;
+    sensitiveDataModelId?: pulumi.Input<string | undefined>;
     /**
      * An optional filter to return only resources that match the specified OCID of the sensitive type group resource.
      */
-    sensitiveTypeGroupId?: pulumi.Input<string>;
+    sensitiveTypeGroupId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.
      */
-    sensitiveTypeIds?: pulumi.Input<pulumi.Input<string>[]>;
+    sensitiveTypeIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return the target database group that matches the specified OCID.
      */
-    targetDatabaseGroupId?: pulumi.Input<string>;
+    targetDatabaseGroupId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items related to a specific target OCID.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
 }

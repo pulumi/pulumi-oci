@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrProtectionGroups = oci.DisasterRecovery.getDrProtectionGroups({
+ * const testDrProtectionGroups = oci.disasterrecovery.getDrProtectionGroups({
  *     compartmentId: compartmentId,
  *     displayName: drProtectionGroupDisplayName,
  *     drProtectionGroupId: testDrProtectionGroup.id,
@@ -117,7 +117,7 @@ export interface GetDrProtectionGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrProtectionGroups = oci.DisasterRecovery.getDrProtectionGroups({
+ * const testDrProtectionGroups = oci.disasterrecovery.getDrProtectionGroups({
  *     compartmentId: compartmentId,
  *     displayName: drProtectionGroupDisplayName,
  *     drProtectionGroupId: testDrProtectionGroup.id,
@@ -151,22 +151,22 @@ export interface GetDrProtectionGroupsOutputArgs {
     /**
      * A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the DR protection group. Optional query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
-    drProtectionGroupId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.GetDrProtectionGroupsFilterArgs>[]>;
+    drProtectionGroupId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.GetDrProtectionGroupsFilterArgs>[] | undefined>;
     /**
      * A filter to return only DR protection groups that match the given lifecycle sub-state.
      */
-    lifecycleSubState?: pulumi.Input<string>;
+    lifecycleSubState?: pulumi.Input<string | undefined>;
     /**
      * The DR protection group Role.
      */
-    role?: pulumi.Input<string>;
+    role?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only DR protection groups that match the given lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

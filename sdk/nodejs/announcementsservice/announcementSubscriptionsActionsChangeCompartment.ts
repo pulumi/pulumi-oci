@@ -113,7 +113,7 @@ export interface AnnouncementSubscriptionsActionsChangeCompartmentState {
     /**
      * The OCID of the announcement subscription.
      */
-    announcementSubscriptionId?: pulumi.Input<string>;
+    announcementSubscriptionId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment into which you want to move the announcement subscription. 
      *
@@ -121,7 +121,7 @@ export interface AnnouncementSubscriptionsActionsChangeCompartmentState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
 }
 
 /**

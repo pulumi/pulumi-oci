@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingPolicyHealthReport = oci.DataSafe.getMaskingPolicyHealthReport({
+ * const testMaskingPolicyHealthReport = oci.datasafe.getMaskingPolicyHealthReport({
  *     maskingPolicyHealthReportId: testMaskingPolicyHealthReportOciDataSafeMaskingPolicyHealthReport.id,
  * });
  * ```
@@ -106,7 +106,7 @@ export interface GetMaskingPolicyHealthReportResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingPolicyHealthReport = oci.DataSafe.getMaskingPolicyHealthReport({
+ * const testMaskingPolicyHealthReport = oci.datasafe.getMaskingPolicyHealthReport({
  *     maskingPolicyHealthReportId: testMaskingPolicyHealthReportOciDataSafeMaskingPolicyHealthReport.id,
  * });
  * ```

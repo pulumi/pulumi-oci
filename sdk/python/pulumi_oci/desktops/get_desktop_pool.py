@@ -430,7 +430,7 @@ def get_desktop_pool(desktop_pool_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_desktop_pool = oci.Desktops.get_desktop_pool(desktop_pool_id=test_desktop_pool_oci_desktops_desktop_pool["id"])
+    test_desktop_pool = oci.desktops.get_desktop_pool(desktop_pool_id=test_desktop_pool_oci_desktops_desktop_pool["id"])
     ```
 
 
@@ -474,7 +474,7 @@ def get_desktop_pool(desktop_pool_id: Optional[_builtins.str] = None,
         time_start_scheduled=pulumi.get(__ret__, 'time_start_scheduled'),
         time_stop_scheduled=pulumi.get(__ret__, 'time_stop_scheduled'),
         use_dedicated_vm_host=pulumi.get(__ret__, 'use_dedicated_vm_host'))
-def get_desktop_pool_output(desktop_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_desktop_pool_output(desktop_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDesktopPoolResult]:
     """
     This data source provides details about a specific Desktop Pool resource in Oracle Cloud Infrastructure Desktops service.
@@ -487,7 +487,7 @@ def get_desktop_pool_output(desktop_pool_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_desktop_pool = oci.Desktops.get_desktop_pool(desktop_pool_id=test_desktop_pool_oci_desktops_desktop_pool["id"])
+    test_desktop_pool = oci.desktops.get_desktop_pool(desktop_pool_id=test_desktop_pool_oci_desktops_desktop_pool["id"])
     ```
 
 

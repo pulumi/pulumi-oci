@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingPolicyMaskingSchemas = oci.DataSafe.getMaskingPolicyMaskingSchemas({
+ * const testMaskingPolicyMaskingSchemas = oci.datasafe.getMaskingPolicyMaskingSchemas({
  *     maskingPolicyId: testMaskingPolicy.id,
  *     schemaNames: maskingPolicyMaskingSchemaSchemaName,
  * });
@@ -77,7 +77,7 @@ export interface GetMaskingPolicyMaskingSchemasResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingPolicyMaskingSchemas = oci.DataSafe.getMaskingPolicyMaskingSchemas({
+ * const testMaskingPolicyMaskingSchemas = oci.datasafe.getMaskingPolicyMaskingSchemas({
  *     maskingPolicyId: testMaskingPolicy.id,
  *     schemaNames: maskingPolicyMaskingSchemaSchemaName,
  * });
@@ -96,7 +96,7 @@ export function getMaskingPolicyMaskingSchemasOutput(args: GetMaskingPolicyMaski
  * A collection of arguments for invoking getMaskingPolicyMaskingSchemas.
  */
 export interface GetMaskingPolicyMaskingSchemasOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetMaskingPolicyMaskingSchemasFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetMaskingPolicyMaskingSchemasFilterArgs>[] | undefined>;
     /**
      * The OCID of the masking policy.
      */
@@ -104,5 +104,5 @@ export interface GetMaskingPolicyMaskingSchemasOutputArgs {
     /**
      * A filter to return only items related to specific schema name.
      */
-    schemaNames?: pulumi.Input<pulumi.Input<string>[]>;
+    schemaNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

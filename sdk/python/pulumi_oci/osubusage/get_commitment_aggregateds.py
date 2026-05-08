@@ -187,14 +187,14 @@ def get_commitment_aggregateds(compartment_id: Optional[_builtins.str] = None,
         time_from=pulumi.get(__ret__, 'time_from'),
         time_to=pulumi.get(__ret__, 'time_to'),
         x_one_origin_region=pulumi.get(__ret__, 'x_one_origin_region'))
-def get_commitment_aggregateds_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCommitmentAggregatedsFilterArgs', 'GetCommitmentAggregatedsFilterArgsDict']]]]] = None,
-                                      grouping: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      parent_product: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      time_from: Optional[pulumi.Input[_builtins.str]] = None,
-                                      time_to: Optional[pulumi.Input[_builtins.str]] = None,
-                                      x_one_origin_region: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_commitment_aggregateds_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCommitmentAggregatedsFilterArgs', 'GetCommitmentAggregatedsFilterArgsDict']]]]] = None,
+                                      grouping: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      parent_product: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      time_from: pulumi.Input[Optional[_builtins.str]] = None,
+                                      time_to: pulumi.Input[Optional[_builtins.str]] = None,
+                                      x_one_origin_region: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCommitmentAggregatedsResult]:
     """
     This data source provides the list of Computed Usage Aggregateds in Oracle Cloud Infrastructure Osub Usage service.

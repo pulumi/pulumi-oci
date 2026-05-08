@@ -22,11 +22,11 @@ __all__ = ['CrossConnectGroupArgs', 'CrossConnectGroup']
 class CrossConnectGroupArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
-                 customer_reference_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 macsec_properties: Optional[pulumi.Input['CrossConnectGroupMacsecPropertiesArgs']] = None):
+                 customer_reference_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 macsec_properties: pulumi.Input[Optional['CrossConnectGroupMacsecPropertiesArgs']] = None):
         """
         The set of arguments for constructing a CrossConnectGroup resource.
 
@@ -63,78 +63,78 @@ class CrossConnectGroupArgs:
 
     @_builtins.property
     @pulumi.getter(name="customerReferenceName")
-    def customer_reference_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def customer_reference_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A reference name or identifier for the physical fiber connection that this cross-connect group uses.
         """
         return pulumi.get(self, "customer_reference_name")
 
     @customer_reference_name.setter
-    def customer_reference_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def customer_reference_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "customer_reference_name", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="macsecProperties")
-    def macsec_properties(self) -> Optional[pulumi.Input['CrossConnectGroupMacsecPropertiesArgs']]:
+    def macsec_properties(self) -> pulumi.Input[Optional['CrossConnectGroupMacsecPropertiesArgs']]:
         """
         (Updatable) Properties used to configure MACsec (if capable).
         """
         return pulumi.get(self, "macsec_properties")
 
     @macsec_properties.setter
-    def macsec_properties(self, value: Optional[pulumi.Input['CrossConnectGroupMacsecPropertiesArgs']]):
+    def macsec_properties(self, value: pulumi.Input[Optional['CrossConnectGroupMacsecPropertiesArgs']]):
         pulumi.set(self, "macsec_properties", value)
 
 
 @pulumi.input_type
 class _CrossConnectGroupState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 customer_reference_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 macsec_properties: Optional[pulumi.Input['CrossConnectGroupMacsecPropertiesArgs']] = None,
-                 oci_logical_device_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 oci_physical_device_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 customer_reference_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 macsec_properties: pulumi.Input[Optional['CrossConnectGroupMacsecPropertiesArgs']] = None,
+                 oci_logical_device_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 oci_physical_device_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CrossConnectGroup resources.
 
@@ -172,122 +172,122 @@ class _CrossConnectGroupState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the cross-connect group.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="customerReferenceName")
-    def customer_reference_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def customer_reference_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A reference name or identifier for the physical fiber connection that this cross-connect group uses.
         """
         return pulumi.get(self, "customer_reference_name")
 
     @customer_reference_name.setter
-    def customer_reference_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def customer_reference_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "customer_reference_name", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="macsecProperties")
-    def macsec_properties(self) -> Optional[pulumi.Input['CrossConnectGroupMacsecPropertiesArgs']]:
+    def macsec_properties(self) -> pulumi.Input[Optional['CrossConnectGroupMacsecPropertiesArgs']]:
         """
         (Updatable) Properties used to configure MACsec (if capable).
         """
         return pulumi.get(self, "macsec_properties")
 
     @macsec_properties.setter
-    def macsec_properties(self, value: Optional[pulumi.Input['CrossConnectGroupMacsecPropertiesArgs']]):
+    def macsec_properties(self, value: pulumi.Input[Optional['CrossConnectGroupMacsecPropertiesArgs']]):
         pulumi.set(self, "macsec_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="ociLogicalDeviceName")
-    def oci_logical_device_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oci_logical_device_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
         """
         return pulumi.get(self, "oci_logical_device_name")
 
     @oci_logical_device_name.setter
-    def oci_logical_device_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oci_logical_device_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oci_logical_device_name", value)
 
     @_builtins.property
     @pulumi.getter(name="ociPhysicalDeviceName")
-    def oci_physical_device_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oci_physical_device_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The FastConnect device that terminates the physical connection.
         """
         return pulumi.get(self, "oci_physical_device_name")
 
     @oci_physical_device_name.setter
-    def oci_physical_device_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oci_physical_device_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oci_physical_device_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The cross-connect group's current state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the cross-connect group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -297,12 +297,12 @@ class CrossConnectGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 customer_reference_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 macsec_properties: Optional[pulumi.Input[Union['CrossConnectGroupMacsecPropertiesArgs', 'CrossConnectGroupMacsecPropertiesArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 customer_reference_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 macsec_properties: pulumi.Input[Optional[Union['CrossConnectGroupMacsecPropertiesArgs', 'CrossConnectGroupMacsecPropertiesArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Cross Connect Group resource in Oracle Cloud Infrastructure Core service.
@@ -345,7 +345,7 @@ class CrossConnectGroup(pulumi.CustomResource):
             macsec_properties={
                 "state": cross_connect_group_macsec_properties_state,
                 "encryption_cipher": cross_connect_group_macsec_properties_encryption_cipher,
-                "is_unprotected_traffic_allowed": cross_connect_group_macsec_properties_is_unprotected_traffic_allowed,
+                "is_unprotected_traffic_allowed": cross_connect_group_macsec_properties_is_unprotected_traffic_allowed == "true",
                 "primary_key": {
                     "connectivity_association_key_secret_id": test_secret["id"],
                     "connectivity_association_name_secret_id": test_secret["id"],
@@ -418,7 +418,7 @@ class CrossConnectGroup(pulumi.CustomResource):
             macsec_properties={
                 "state": cross_connect_group_macsec_properties_state,
                 "encryption_cipher": cross_connect_group_macsec_properties_encryption_cipher,
-                "is_unprotected_traffic_allowed": cross_connect_group_macsec_properties_is_unprotected_traffic_allowed,
+                "is_unprotected_traffic_allowed": cross_connect_group_macsec_properties_is_unprotected_traffic_allowed == "true",
                 "primary_key": {
                     "connectivity_association_key_secret_id": test_secret["id"],
                     "connectivity_association_name_secret_id": test_secret["id"],
@@ -450,12 +450,12 @@ class CrossConnectGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 customer_reference_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 macsec_properties: Optional[pulumi.Input[Union['CrossConnectGroupMacsecPropertiesArgs', 'CrossConnectGroupMacsecPropertiesArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 customer_reference_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 macsec_properties: pulumi.Input[Optional[Union['CrossConnectGroupMacsecPropertiesArgs', 'CrossConnectGroupMacsecPropertiesArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -487,16 +487,16 @@ class CrossConnectGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            customer_reference_name: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            macsec_properties: Optional[pulumi.Input[Union['CrossConnectGroupMacsecPropertiesArgs', 'CrossConnectGroupMacsecPropertiesArgsDict']]] = None,
-            oci_logical_device_name: Optional[pulumi.Input[_builtins.str]] = None,
-            oci_physical_device_name: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'CrossConnectGroup':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            customer_reference_name: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            macsec_properties: pulumi.Input[Optional[Union['CrossConnectGroupMacsecPropertiesArgs', 'CrossConnectGroupMacsecPropertiesArgsDict']]] = None,
+            oci_logical_device_name: pulumi.Input[Optional[_builtins.str]] = None,
+            oci_physical_device_name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'CrossConnectGroup':
         """
         Get an existing CrossConnectGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

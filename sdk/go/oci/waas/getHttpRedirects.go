@@ -31,9 +31,9 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := waas.GetHttpRedirects(ctx, &waas.GetHttpRedirectsArgs{
 //				CompartmentId:                   compartmentId,
-//				DisplayNames:                    httpRedirectDisplayNames,
-//				Ids:                             httpRedirectIds,
-//				States:                          httpRedirectStates,
+//				DisplayNames:                    pulumi.ToArray(httpRedirectDisplayNames),
+//				Ids:                             pulumi.ToArray(httpRedirectIds),
+//				States:                          pulumi.ToArray(httpRedirectStates),
 //				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(httpRedirectTimeCreatedGreaterThanOrEqualTo),
 //				TimeCreatedLessThan:             pulumi.StringRef(httpRedirectTimeCreatedLessThan),
 //			}, nil)

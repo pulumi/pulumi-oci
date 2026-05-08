@@ -98,7 +98,7 @@ def get_ekms_private_endpoints(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ekms_private_endpoints = oci.Kms.get_ekms_private_endpoints(compartment_id=compartment_id)
+    test_ekms_private_endpoints = oci.kms.get_ekms_private_endpoints(compartment_id=compartment_id)
     ```
 
 
@@ -115,8 +115,8 @@ def get_ekms_private_endpoints(compartment_id: Optional[_builtins.str] = None,
         ekms_private_endpoints=pulumi.get(__ret__, 'ekms_private_endpoints'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_ekms_private_endpoints_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetEkmsPrivateEndpointsFilterArgs', 'GetEkmsPrivateEndpointsFilterArgsDict']]]]] = None,
+def get_ekms_private_endpoints_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetEkmsPrivateEndpointsFilterArgs', 'GetEkmsPrivateEndpointsFilterArgsDict']]]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEkmsPrivateEndpointsResult]:
     """
     This data source provides the list of Ekms Private Endpoints in Oracle Cloud Infrastructure Kms service.
@@ -129,7 +129,7 @@ def get_ekms_private_endpoints_output(compartment_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_ekms_private_endpoints = oci.Kms.get_ekms_private_endpoints(compartment_id=compartment_id)
+    test_ekms_private_endpoints = oci.kms.get_ekms_private_endpoints(compartment_id=compartment_id)
     ```
 
 

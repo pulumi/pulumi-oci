@@ -104,7 +104,7 @@ def get_utils_subscription_acknowledgment_configuration(compartment_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_acknowledgment_configuration = oci.Jms.get_utils_subscription_acknowledgment_configuration(compartment_id=compartment_id)
+    test_subscription_acknowledgment_configuration = oci.jms.get_utils_subscription_acknowledgment_configuration(compartment_id=compartment_id)
     ```
 
 
@@ -121,7 +121,7 @@ def get_utils_subscription_acknowledgment_configuration(compartment_id: Optional
         id=pulumi.get(__ret__, 'id'),
         is_acknowledged=pulumi.get(__ret__, 'is_acknowledged'),
         time_acknowledged=pulumi.get(__ret__, 'time_acknowledged'))
-def get_utils_subscription_acknowledgment_configuration_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_utils_subscription_acknowledgment_configuration_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUtilsSubscriptionAcknowledgmentConfigurationResult]:
     """
     This data source provides details about a specific Subscription Acknowledgment Configuration resource in Oracle Cloud Infrastructure Jms Utils service.
@@ -134,7 +134,7 @@ def get_utils_subscription_acknowledgment_configuration_output(compartment_id: O
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_acknowledgment_configuration = oci.Jms.get_utils_subscription_acknowledgment_configuration(compartment_id=compartment_id)
+    test_subscription_acknowledgment_configuration = oci.jms.get_utils_subscription_acknowledgment_configuration(compartment_id=compartment_id)
     ```
 
 

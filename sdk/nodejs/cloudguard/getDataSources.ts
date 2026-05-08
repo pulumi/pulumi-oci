@@ -33,10 +33,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSources = oci.CloudGuard.getDataSources({
+ * const testDataSources = oci.cloudguard.getDataSources({
  *     compartmentId: compartmentId,
  *     accessLevel: dataSourceAccessLevel,
- *     compartmentIdInSubtree: dataSourceCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: dataSourceCompartmentIdInSubtree === "true",
  *     dataSourceFeedProvider: dataSourceDataSourceFeedProvider,
  *     displayName: dataSourceDisplayName,
  *     loggingQueryType: dataSourceLoggingQueryType,
@@ -156,10 +156,10 @@ export interface GetDataSourcesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSources = oci.CloudGuard.getDataSources({
+ * const testDataSources = oci.cloudguard.getDataSources({
  *     compartmentId: compartmentId,
  *     accessLevel: dataSourceAccessLevel,
- *     compartmentIdInSubtree: dataSourceCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: dataSourceCompartmentIdInSubtree === "true",
  *     dataSourceFeedProvider: dataSourceDataSourceFeedProvider,
  *     displayName: dataSourceDisplayName,
  *     loggingQueryType: dataSourceLoggingQueryType,
@@ -188,7 +188,7 @@ export interface GetDataSourcesOutputArgs {
     /**
      * Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment in which to list resources.
      */
@@ -196,22 +196,22 @@ export interface GetDataSourcesOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources when their feed provider matches the given feed provider (`DataSourceFeedProvider` resource).
      */
-    dataSourceFeedProvider?: pulumi.Input<string>;
+    dataSourceFeedProvider?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CloudGuard.GetDataSourcesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CloudGuard.GetDataSourcesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources where their query type matches the given LoggingQueryType.
      */
-    loggingQueryType?: pulumi.Input<string>;
+    loggingQueryType?: pulumi.Input<string | undefined>;
     /**
      * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

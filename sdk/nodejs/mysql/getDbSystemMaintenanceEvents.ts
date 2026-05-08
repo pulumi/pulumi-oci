@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystemMaintenanceEvents = oci.Mysql.getDbSystemMaintenanceEvents({
+ * const testDbSystemMaintenanceEvents = oci.mysql.getDbSystemMaintenanceEvents({
  *     dbSystemId: testMysqlDbSystem.id,
  *     maintenanceAction: dbSystemMaintenanceEventMaintenanceAction,
  *     maintenanceStatus: dbSystemMaintenanceEventMaintenanceStatus,
@@ -122,7 +122,7 @@ export interface GetDbSystemMaintenanceEventsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystemMaintenanceEvents = oci.Mysql.getDbSystemMaintenanceEvents({
+ * const testDbSystemMaintenanceEvents = oci.mysql.getDbSystemMaintenanceEvents({
  *     dbSystemId: testMysqlDbSystem.id,
  *     maintenanceAction: dbSystemMaintenanceEventMaintenanceAction,
  *     maintenanceStatus: dbSystemMaintenanceEventMaintenanceStatus,
@@ -153,25 +153,25 @@ export interface GetDbSystemMaintenanceEventsOutputArgs {
      * The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     dbSystemId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Mysql.GetDbSystemMaintenanceEventsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Mysql.GetDbSystemMaintenanceEventsFilterArgs>[] | undefined>;
     /**
      * The nature of the maintenance event.
      */
-    maintenanceAction?: pulumi.Input<string>;
+    maintenanceAction?: pulumi.Input<string | undefined>;
     /**
      * The last status of the maintenance event.
      */
-    maintenanceStatus?: pulumi.Input<string>;
+    maintenanceStatus?: pulumi.Input<string | undefined>;
     /**
      * How the maintenance event was triggered.
      */
-    maintenanceType?: pulumi.Input<string>;
+    maintenanceType?: pulumi.Input<string | undefined>;
     /**
      * The MySQL version after the maintenance event.
      */
-    mysqlVersionAfterMaintenance?: pulumi.Input<string>;
+    mysqlVersionAfterMaintenance?: pulumi.Input<string | undefined>;
     /**
      * The MySQL version before the maintenance event.
      */
-    mysqlVersionBeforeMaintenance?: pulumi.Input<string>;
+    mysqlVersionBeforeMaintenance?: pulumi.Input<string | undefined>;
 }

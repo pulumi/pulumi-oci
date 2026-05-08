@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProtectionCapabilityGroupTags = oci.Waf.getProtectionCapabilityGroupTags({
+ * const testProtectionCapabilityGroupTags = oci.waf.getProtectionCapabilityGroupTags({
  *     compartmentId: compartmentId,
  *     name: protectionCapabilityGroupTagName,
  *     type: protectionCapabilityGroupTagType,
@@ -84,7 +84,7 @@ export interface GetProtectionCapabilityGroupTagsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProtectionCapabilityGroupTags = oci.Waf.getProtectionCapabilityGroupTags({
+ * const testProtectionCapabilityGroupTags = oci.waf.getProtectionCapabilityGroupTags({
  *     compartmentId: compartmentId,
  *     name: protectionCapabilityGroupTagName,
  *     type: protectionCapabilityGroupTagType,
@@ -109,13 +109,13 @@ export interface GetProtectionCapabilityGroupTagsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Waf.GetProtectionCapabilityGroupTagsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Waf.GetProtectionCapabilityGroupTagsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the entire name given.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that matches given type.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

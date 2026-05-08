@@ -161,7 +161,7 @@ def get_associations(associated_resource_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_associations = oci.CertificatesManagement.get_associations(associated_resource_id=test_associated_resource["id"],
+    test_associations = oci.certificatesmanagement.get_associations(associated_resource_id=test_associated_resource["id"],
         association_id=test_association["id"],
         association_type=association_association_type,
         certificates_resource_id=test_certificates_resource["id"],
@@ -198,13 +198,13 @@ def get_associations(associated_resource_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'))
-def get_associations_output(associated_resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            association_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            association_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            certificates_resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAssociationsFilterArgs', 'GetAssociationsFilterArgsDict']]]]] = None,
-                            name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_associations_output(associated_resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            association_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            association_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            certificates_resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAssociationsFilterArgs', 'GetAssociationsFilterArgsDict']]]]] = None,
+                            name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAssociationsResult]:
     """
     This data source provides the list of Associations in Oracle Cloud Infrastructure Certificates Management service.
@@ -218,7 +218,7 @@ def get_associations_output(associated_resource_id: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_associations = oci.CertificatesManagement.get_associations(associated_resource_id=test_associated_resource["id"],
+    test_associations = oci.certificatesmanagement.get_associations(associated_resource_id=test_associated_resource["id"],
         association_id=test_association["id"],
         association_type=association_association_type,
         certificates_resource_id=test_certificates_resource["id"],

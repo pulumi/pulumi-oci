@@ -490,15 +490,15 @@ export interface DomainsIdentityProofingProviderState {
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Configure the verification claims and IAM Domain user attribute mapping.
      *
@@ -512,7 +512,7 @@ export interface DomainsIdentityProofingProviderState {
      * * type: complex
      * * uniqueness: server
      */
-    claimMappings?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProofingProviderClaimMapping>[]>;
+    claimMappings?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProofingProviderClaimMapping>[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (OCID) in which the resource lives.
      *
@@ -526,7 +526,7 @@ export interface DomainsIdentityProofingProviderState {
      * * type: string
      * * uniqueness: none
      */
-    compartmentOcid?: pulumi.Input<string>;
+    compartmentOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Configure the verification provider.
      *
@@ -540,7 +540,7 @@ export interface DomainsIdentityProofingProviderState {
      * * type: complex
      * * uniqueness: server
      */
-    configurations?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProofingProviderConfiguration>[]>;
+    configurations?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProofingProviderConfiguration>[] | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -554,7 +554,7 @@ export interface DomainsIdentityProofingProviderState {
      * * type: boolean
      * * uniqueness: none
      */
-    deleteInProgress?: pulumi.Input<boolean>;
+    deleteInProgress?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Description field to add comments and additional information about the Identity Proofing Provider.
      *
@@ -567,7 +567,7 @@ export interface DomainsIdentityProofingProviderState {
      * * type: string
      * * uniqueness: none
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (OCID) in which the resource lives.
      *
@@ -581,7 +581,7 @@ export interface DomainsIdentityProofingProviderState {
      * * type: string
      * * uniqueness: none
      */
-    domainOcid?: pulumi.Input<string>;
+    domainOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -593,11 +593,11 @@ export interface DomainsIdentityProofingProviderState {
      * * returned: default
      * * type: complex
      */
-    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProofingProviderIdcsCreatedBy>[]>;
+    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProofingProviderIdcsCreatedBy>[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
-    idcsEndpoint?: pulumi.Input<string>;
+    idcsEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -609,7 +609,7 @@ export interface DomainsIdentityProofingProviderState {
      * * returned: default
      * * type: complex
      */
-    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProofingProviderIdcsLastModifiedBy>[]>;
+    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProofingProviderIdcsLastModifiedBy>[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -623,7 +623,7 @@ export interface DomainsIdentityProofingProviderState {
      * * type: string
      * * uniqueness: none
      */
-    idcsLastUpgradedInRelease?: pulumi.Input<string>;
+    idcsLastUpgradedInRelease?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who locked the Resource.
      *
@@ -635,7 +635,7 @@ export interface DomainsIdentityProofingProviderState {
      * * returned: default
      * * type: complex
      */
-    idcsLockedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProofingProviderIdcsLockedBy>[]>;
+    idcsLockedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProofingProviderIdcsLockedBy>[] | undefined>;
     /**
      * (Updatable) The most recent DateTime the resource was locked.
      *
@@ -649,7 +649,7 @@ export interface DomainsIdentityProofingProviderState {
      * * type: dateTime
      * * uniqueness: none
      */
-    idcsLockedOn?: pulumi.Input<string>;
+    idcsLockedOn?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Operations that are locked on the resource.
      *
@@ -663,7 +663,7 @@ export interface DomainsIdentityProofingProviderState {
      * * type: string
      * * uniqueness: none
      */
-    idcsLockedOperations?: pulumi.Input<pulumi.Input<string>[]>;
+    idcsLockedOperations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -676,7 +676,7 @@ export interface DomainsIdentityProofingProviderState {
      * * type: string
      * * uniqueness: none
      */
-    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[]>;
+    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The Identity Proofing Provider.
      *
@@ -692,7 +692,7 @@ export interface DomainsIdentityProofingProviderState {
      * * type: string
      * * uniqueness: none
      */
-    identityProofingProviderProvider?: pulumi.Input<string>;
+    identityProofingProviderProvider?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -706,7 +706,7 @@ export interface DomainsIdentityProofingProviderState {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProofingProviderMeta>[]>;
+    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProofingProviderMeta>[] | undefined>;
     /**
      * (Updatable) Name of the Identity Proofing Provider.
      *
@@ -719,7 +719,7 @@ export interface DomainsIdentityProofingProviderState {
      * * type: string
      * * uniqueness: global
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier (OCID) for the SCIM Resource.
      *
@@ -733,11 +733,11 @@ export interface DomainsIdentityProofingProviderState {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Identity Proofing runtime custom data.
      *
@@ -751,7 +751,7 @@ export interface DomainsIdentityProofingProviderState {
      * * returned: default
      * * type: complex
      */
-    runtimeDatas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProofingProviderRuntimeData>[]>;
+    runtimeDatas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProofingProviderRuntimeData>[] | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -765,7 +765,7 @@ export interface DomainsIdentityProofingProviderState {
      * * type: string
      * * uniqueness: none
      */
-    schemas?: pulumi.Input<pulumi.Input<string>[]>;
+    schemas?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Status of the Identity Proofing Provider.
      *
@@ -779,7 +779,7 @@ export interface DomainsIdentityProofingProviderState {
      * * type: string
      * * uniqueness: none
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (OCID) in which the resource lives.
      *
@@ -797,7 +797,7 @@ export interface DomainsIdentityProofingProviderState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    tenancyOcid?: pulumi.Input<string>;
+    tenancyOcid?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -807,15 +807,15 @@ export interface DomainsIdentityProofingProviderArgs {
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Configure the verification claims and IAM Domain user attribute mapping.
      *
@@ -856,7 +856,7 @@ export interface DomainsIdentityProofingProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -889,7 +889,7 @@ export interface DomainsIdentityProofingProviderArgs {
      * * type: string
      * * uniqueness: global
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier (OCID) for the SCIM Resource.
      *
@@ -903,11 +903,11 @@ export interface DomainsIdentityProofingProviderArgs {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Identity Proofing runtime custom data.
      *
@@ -921,7 +921,7 @@ export interface DomainsIdentityProofingProviderArgs {
      * * returned: default
      * * type: complex
      */
-    runtimeDatas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProofingProviderRuntimeData>[]>;
+    runtimeDatas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityProofingProviderRuntimeData>[] | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -949,5 +949,5 @@ export interface DomainsIdentityProofingProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

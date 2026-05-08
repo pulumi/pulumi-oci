@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOdaPrivateEndpoints = oci.Oda.getOdaPrivateEndpoints({
+ * const testOdaPrivateEndpoints = oci.oda.getOdaPrivateEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: odaPrivateEndpointDisplayName,
  *     state: odaPrivateEndpointState,
@@ -100,7 +100,7 @@ export interface GetOdaPrivateEndpointsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOdaPrivateEndpoints = oci.Oda.getOdaPrivateEndpoints({
+ * const testOdaPrivateEndpoints = oci.oda.getOdaPrivateEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: odaPrivateEndpointDisplayName,
  *     state: odaPrivateEndpointState,
@@ -128,10 +128,10 @@ export interface GetOdaPrivateEndpointsOutputArgs {
     /**
      * List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.  Example: `My new resource`
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Oda.GetOdaPrivateEndpointsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Oda.GetOdaPrivateEndpointsFilterArgs>[] | undefined>;
     /**
      * List only the ODA Private Endpoints that are in this lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

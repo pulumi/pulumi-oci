@@ -115,8 +115,8 @@ def get_network_firewall_policy_decryption_rules(decryption_rule_priority_order:
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy_decryption_rules = oci.NetworkFirewall.get_network_firewall_policy_decryption_rules(network_firewall_policy_id=test_network_firewall_policy["id"],
-        decryption_rule_priority_order=network_firewall_policy_decryption_rule_decryption_rule_priority_order,
+    test_network_firewall_policy_decryption_rules = oci.networkfirewall.get_network_firewall_policy_decryption_rules(network_firewall_policy_id=test_network_firewall_policy["id"],
+        decryption_rule_priority_order=int(network_firewall_policy_decryption_rule_decryption_rule_priority_order),
         display_name=network_firewall_policy_decryption_rule_display_name)
     ```
 
@@ -140,10 +140,10 @@ def get_network_firewall_policy_decryption_rules(decryption_rule_priority_order:
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'))
-def get_network_firewall_policy_decryption_rules_output(decryption_rule_priority_order: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                                        display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkFirewallPolicyDecryptionRulesFilterArgs', 'GetNetworkFirewallPolicyDecryptionRulesFilterArgsDict']]]]] = None,
-                                                        network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_network_firewall_policy_decryption_rules_output(decryption_rule_priority_order: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkFirewallPolicyDecryptionRulesFilterArgs', 'GetNetworkFirewallPolicyDecryptionRulesFilterArgsDict']]]]] = None,
+                                                        network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyDecryptionRulesResult]:
     """
     This data source provides the list of Network Firewall Policy Decryption Rules in Oracle Cloud Infrastructure Network Firewall service.
@@ -156,8 +156,8 @@ def get_network_firewall_policy_decryption_rules_output(decryption_rule_priority
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy_decryption_rules = oci.NetworkFirewall.get_network_firewall_policy_decryption_rules(network_firewall_policy_id=test_network_firewall_policy["id"],
-        decryption_rule_priority_order=network_firewall_policy_decryption_rule_decryption_rule_priority_order,
+    test_network_firewall_policy_decryption_rules = oci.networkfirewall.get_network_firewall_policy_decryption_rules(network_firewall_policy_id=test_network_firewall_policy["id"],
+        decryption_rule_priority_order=int(network_firewall_policy_decryption_rule_decryption_rule_priority_order),
         display_name=network_firewall_policy_decryption_rule_display_name)
     ```
 

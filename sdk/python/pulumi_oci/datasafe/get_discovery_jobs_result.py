@@ -336,7 +336,7 @@ def get_discovery_jobs_result(discovery_job_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_jobs_result = oci.DataSafe.get_discovery_jobs_result(discovery_job_id=test_discovery_job["id"],
+    test_discovery_jobs_result = oci.datasafe.get_discovery_jobs_result(discovery_job_id=test_discovery_job["id"],
         result_key=discovery_jobs_result_result_key)
     ```
 
@@ -375,8 +375,8 @@ def get_discovery_jobs_result(discovery_job_id: Optional[_builtins.str] = None,
         schema_name=pulumi.get(__ret__, 'schema_name'),
         sensitive_columnkey=pulumi.get(__ret__, 'sensitive_columnkey'),
         sensitive_type_id=pulumi.get(__ret__, 'sensitive_type_id'))
-def get_discovery_jobs_result_output(discovery_job_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                     result_key: Optional[pulumi.Input[_builtins.str]] = None,
+def get_discovery_jobs_result_output(discovery_job_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                     result_key: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDiscoveryJobsResultResult]:
     """
     This data source provides details about a specific Discovery Jobs Result resource in Oracle Cloud Infrastructure Data Safe service.
@@ -389,7 +389,7 @@ def get_discovery_jobs_result_output(discovery_job_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_jobs_result = oci.DataSafe.get_discovery_jobs_result(discovery_job_id=test_discovery_job["id"],
+    test_discovery_jobs_result = oci.datasafe.get_discovery_jobs_result(discovery_job_id=test_discovery_job["id"],
         result_key=discovery_jobs_result_result_key)
     ```
 

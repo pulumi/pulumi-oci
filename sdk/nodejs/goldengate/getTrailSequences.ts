@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTrailSequences = oci.GoldenGate.getTrailSequences({
+ * const testTrailSequences = oci.goldengate.getTrailSequences({
  *     deploymentId: testDeployment.id,
  *     trailFileId: testTrailFile.id,
  *     displayName: trailSequenceDisplayName,
@@ -93,7 +93,7 @@ export interface GetTrailSequencesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTrailSequences = oci.GoldenGate.getTrailSequences({
+ * const testTrailSequences = oci.goldengate.getTrailSequences({
  *     deploymentId: testDeployment.id,
  *     trailFileId: testTrailFile.id,
  *     displayName: trailSequenceDisplayName,
@@ -124,7 +124,7 @@ export interface GetTrailSequencesOutputArgs {
      * A filter to return only the resources that match the entire 'displayName' given.
      */
     displayName: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetTrailSequencesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetTrailSequencesFilterArgs>[] | undefined>;
     /**
      * A Trail File identifier
      */

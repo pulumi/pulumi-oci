@@ -128,9 +128,9 @@ def get_sql_firewall_violations(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_firewall_violations = oci.DataSafe.get_sql_firewall_violations(compartment_id=compartment_id,
+    test_sql_firewall_violations = oci.datasafe.get_sql_firewall_violations(compartment_id=compartment_id,
         access_level=sql_firewall_violation_access_level,
-        compartment_id_in_subtree=sql_firewall_violation_compartment_id_in_subtree,
+        compartment_id_in_subtree=sql_firewall_violation_compartment_id_in_subtree == "true",
         scim_query=sql_firewall_violation_scim_query)
     ```
 
@@ -159,11 +159,11 @@ def get_sql_firewall_violations(access_level: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         scim_query=pulumi.get(__ret__, 'scim_query'),
         sql_firewall_violations_collections=pulumi.get(__ret__, 'sql_firewall_violations_collections'))
-def get_sql_firewall_violations_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSqlFirewallViolationsFilterArgs', 'GetSqlFirewallViolationsFilterArgsDict']]]]] = None,
-                                       scim_query: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_sql_firewall_violations_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSqlFirewallViolationsFilterArgs', 'GetSqlFirewallViolationsFilterArgsDict']]]]] = None,
+                                       scim_query: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSqlFirewallViolationsResult]:
     """
     This data source provides the list of Sql Firewall Violations in Oracle Cloud Infrastructure Data Safe service.
@@ -176,9 +176,9 @@ def get_sql_firewall_violations_output(access_level: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_firewall_violations = oci.DataSafe.get_sql_firewall_violations(compartment_id=compartment_id,
+    test_sql_firewall_violations = oci.datasafe.get_sql_firewall_violations(compartment_id=compartment_id,
         access_level=sql_firewall_violation_access_level,
-        compartment_id_in_subtree=sql_firewall_violation_compartment_id_in_subtree,
+        compartment_id_in_subtree=sql_firewall_violation_compartment_id_in_subtree == "true",
         scim_query=sql_firewall_violation_scim_query)
     ```
 

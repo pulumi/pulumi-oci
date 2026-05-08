@@ -225,7 +225,7 @@ def get_key_store(key_store_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_key_store = oci.Database.get_key_store(key_store_id=test_key_store_oci_database_key_store["id"])
+    test_key_store = oci.database.get_key_store(key_store_id=test_key_store_oci_database_key_store["id"])
     ```
 
 
@@ -252,7 +252,7 @@ def get_key_store(key_store_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         type_details=pulumi.get(__ret__, 'type_details'))
-def get_key_store_output(key_store_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_key_store_output(key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetKeyStoreResult]:
     """
     This data source provides details about a specific Key Store resource in Oracle Cloud Infrastructure Database service.
@@ -265,7 +265,7 @@ def get_key_store_output(key_store_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_key_store = oci.Database.get_key_store(key_store_id=test_key_store_oci_database_key_store["id"])
+    test_key_store = oci.database.get_key_store(key_store_id=test_key_store_oci_database_key_store["id"])
     ```
 
 

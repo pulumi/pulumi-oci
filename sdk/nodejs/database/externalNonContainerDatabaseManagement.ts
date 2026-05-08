@@ -118,22 +118,22 @@ export class ExternalNonContainerDatabaseManagement extends pulumi.CustomResourc
  * Input properties used for looking up and filtering ExternalNonContainerDatabaseManagement resources.
  */
 export interface ExternalNonContainerDatabaseManagementState {
-    enableManagement?: pulumi.Input<boolean>;
+    enableManagement?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      */
-    externalDatabaseConnectorId?: pulumi.Input<string>;
+    externalDatabaseConnectorId?: pulumi.Input<string | undefined>;
     /**
      * The external non-container database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    externalNonContainerDatabaseId?: pulumi.Input<string>;
+    externalNonContainerDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * The Oracle license model that applies to the external database. Required only for enabling database management.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    licenseModel?: pulumi.Input<string>;
+    licenseModel?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -155,5 +155,5 @@ export interface ExternalNonContainerDatabaseManagementArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    licenseModel?: pulumi.Input<string>;
+    licenseModel?: pulumi.Input<string | undefined>;
 }

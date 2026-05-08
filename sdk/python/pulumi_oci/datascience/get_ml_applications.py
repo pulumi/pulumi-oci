@@ -144,8 +144,8 @@ def get_ml_applications(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ml_applications = oci.DataScience.get_ml_applications(compartment_id=compartment_id,
-        compartment_id_in_subtree=ml_application_compartment_id_in_subtree,
+    test_ml_applications = oci.datascience.get_ml_applications(compartment_id=compartment_id,
+        compartment_id_in_subtree=ml_application_compartment_id_in_subtree == "true",
         ml_application_id=test_ml_application["id"],
         name=ml_application_name,
         state=ml_application_state)
@@ -177,12 +177,12 @@ def get_ml_applications(compartment_id: Optional[_builtins.str] = None,
         ml_application_id=pulumi.get(__ret__, 'ml_application_id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-def get_ml_applications_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMlApplicationsFilterArgs', 'GetMlApplicationsFilterArgsDict']]]]] = None,
-                               ml_application_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_ml_applications_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMlApplicationsFilterArgs', 'GetMlApplicationsFilterArgsDict']]]]] = None,
+                               ml_application_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMlApplicationsResult]:
     """
     This data source provides the list of Ml Applications in Oracle Cloud Infrastructure Data Science service.
@@ -195,8 +195,8 @@ def get_ml_applications_output(compartment_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_ml_applications = oci.DataScience.get_ml_applications(compartment_id=compartment_id,
-        compartment_id_in_subtree=ml_application_compartment_id_in_subtree,
+    test_ml_applications = oci.datascience.get_ml_applications(compartment_id=compartment_id,
+        compartment_id_in_subtree=ml_application_compartment_id_in_subtree == "true",
         ml_application_id=test_ml_application["id"],
         name=ml_application_name,
         state=ml_application_state)

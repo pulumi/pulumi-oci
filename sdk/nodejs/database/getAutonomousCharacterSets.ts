@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseCharacterSets = oci.Database.getAutonomousCharacterSets({
+ * const testAutonomousDatabaseCharacterSets = oci.database.getAutonomousCharacterSets({
  *     characterSetType: autonomousDatabaseCharacterSetCharacterSetType,
- *     isDedicated: autonomousDatabaseCharacterSetIsDedicated,
- *     isShared: autonomousDatabaseCharacterSetIsShared,
+ *     isDedicated: autonomousDatabaseCharacterSetIsDedicated === "true",
+ *     isShared: autonomousDatabaseCharacterSetIsShared === "true",
  * });
  * ```
  */
@@ -85,10 +85,10 @@ export interface GetAutonomousCharacterSetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseCharacterSets = oci.Database.getAutonomousCharacterSets({
+ * const testAutonomousDatabaseCharacterSets = oci.database.getAutonomousCharacterSets({
  *     characterSetType: autonomousDatabaseCharacterSetCharacterSetType,
- *     isDedicated: autonomousDatabaseCharacterSetIsDedicated,
- *     isShared: autonomousDatabaseCharacterSetIsShared,
+ *     isDedicated: autonomousDatabaseCharacterSetIsDedicated === "true",
+ *     isShared: autonomousDatabaseCharacterSetIsShared === "true",
  * });
  * ```
  */
@@ -110,17 +110,17 @@ export interface GetAutonomousCharacterSetsOutputArgs {
     /**
      * Specifies whether this request pertains to database character sets or national character sets.
      */
-    characterSetType?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousCharacterSetsFilterArgs>[]>;
+    characterSetType?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousCharacterSetsFilterArgs>[] | undefined>;
     /**
      * Specifies if the request is for an Autonomous AI Database Dedicated instance. The default request is for an Autonomous AI Database Dedicated instance.
      */
-    isDedicated?: pulumi.Input<boolean>;
+    isDedicated?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure. 
      *
      *
      * :
      */
-    isShared?: pulumi.Input<boolean>;
+    isShared?: pulumi.Input<boolean | undefined>;
 }

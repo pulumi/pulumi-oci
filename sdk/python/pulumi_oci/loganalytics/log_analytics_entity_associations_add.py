@@ -81,9 +81,9 @@ class LogAnalyticsEntityAssociationsAddArgs:
 @pulumi.input_type
 class _LogAnalyticsEntityAssociationsAddState:
     def __init__(__self__, *,
-                 association_entities: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 log_analytics_entity_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None):
+                 association_entities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 log_analytics_entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LogAnalyticsEntityAssociationsAdd resources.
 
@@ -104,31 +104,31 @@ class _LogAnalyticsEntityAssociationsAddState:
 
     @_builtins.property
     @pulumi.getter(name="associationEntities")
-    def association_entities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def association_entities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Destination entities OCIDs with which associations are to be added.
         """
         return pulumi.get(self, "association_entities")
 
     @association_entities.setter
-    def association_entities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def association_entities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "association_entities", value)
 
     @_builtins.property
     @pulumi.getter(name="logAnalyticsEntityId")
-    def log_analytics_entity_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def log_analytics_entity_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Log analytics entity OCID.
         """
         return pulumi.get(self, "log_analytics_entity_id")
 
     @log_analytics_entity_id.setter
-    def log_analytics_entity_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def log_analytics_entity_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "log_analytics_entity_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Log Analytics namespace used for the request. 
 
@@ -139,7 +139,7 @@ class _LogAnalyticsEntityAssociationsAddState:
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
 
@@ -149,9 +149,9 @@ class LogAnalyticsEntityAssociationsAdd(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 association_entities: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 log_analytics_entity_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
+                 association_entities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 log_analytics_entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Log Analytics Entity Associations Add resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -242,9 +242,9 @@ class LogAnalyticsEntityAssociationsAdd(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 association_entities: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 log_analytics_entity_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
+                 association_entities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 log_analytics_entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -273,9 +273,9 @@ class LogAnalyticsEntityAssociationsAdd(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            association_entities: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            log_analytics_entity_id: Optional[pulumi.Input[_builtins.str]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None) -> 'LogAnalyticsEntityAssociationsAdd':
+            association_entities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            log_analytics_entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None) -> 'LogAnalyticsEntityAssociationsAdd':
         """
         Get an existing LogAnalyticsEntityAssociationsAdd resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

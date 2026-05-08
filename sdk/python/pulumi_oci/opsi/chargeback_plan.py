@@ -27,8 +27,8 @@ class ChargebackPlanArgs:
                  plan_description: pulumi.Input[_builtins.str],
                  plan_name: pulumi.Input[_builtins.str],
                  plan_type: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ChargebackPlan resource.
 
@@ -134,47 +134,47 @@ class ChargebackPlanArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
 
 @pulumi.input_type
 class _ChargebackPlanState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 entity_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_customizable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 plan_category: Optional[pulumi.Input[_builtins.str]] = None,
-                 plan_custom_items: Optional[pulumi.Input[Sequence[pulumi.Input['ChargebackPlanPlanCustomItemArgs']]]] = None,
-                 plan_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 plan_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 plan_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 entity_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_customizable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 plan_category: pulumi.Input[Optional[_builtins.str]] = None,
+                 plan_custom_items: pulumi.Input[Optional[Sequence[pulumi.Input['ChargebackPlanPlanCustomItemArgs']]]] = None,
+                 plan_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 plan_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 plan_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ChargebackPlan resources.
 
@@ -231,127 +231,127 @@ class _ChargebackPlanState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="entitySource")
-    def entity_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Source of the chargeback plan.
         """
         return pulumi.get(self, "entity_source")
 
     @entity_source.setter
-    def entity_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_source", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isCustomizable")
-    def is_customizable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_customizable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the chargeback plan customization item can be customized.
         """
         return pulumi.get(self, "is_customizable")
 
     @is_customizable.setter
-    def is_customizable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_customizable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_customizable", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="planCategory")
-    def plan_category(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def plan_category(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Chargeback Plan category of the chargeback entity. It can be OOB, or CUSTOM.
         """
         return pulumi.get(self, "plan_category")
 
     @plan_category.setter
-    def plan_category(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def plan_category(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "plan_category", value)
 
     @_builtins.property
     @pulumi.getter(name="planCustomItems")
-    def plan_custom_items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ChargebackPlanPlanCustomItemArgs']]]]:
+    def plan_custom_items(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ChargebackPlanPlanCustomItemArgs']]]]:
         """
         (Updatable) List of chargeback plan customizations. At least one item is required.
         """
         return pulumi.get(self, "plan_custom_items")
 
     @plan_custom_items.setter
-    def plan_custom_items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ChargebackPlanPlanCustomItemArgs']]]]):
+    def plan_custom_items(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ChargebackPlanPlanCustomItemArgs']]]]):
         pulumi.set(self, "plan_custom_items", value)
 
     @_builtins.property
     @pulumi.getter(name="planDescription")
-    def plan_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def plan_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description of OPSI Chargeback Plan.
         """
         return pulumi.get(self, "plan_description")
 
     @plan_description.setter
-    def plan_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def plan_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "plan_description", value)
 
     @_builtins.property
     @pulumi.getter(name="planName")
-    def plan_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def plan_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name for the OPSI Chargeback plan.
         """
         return pulumi.get(self, "plan_name")
 
     @plan_name.setter
-    def plan_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def plan_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "plan_name", value)
 
     @_builtins.property
     @pulumi.getter(name="planType")
-    def plan_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def plan_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
 
@@ -362,55 +362,55 @@ class _ChargebackPlanState:
         return pulumi.get(self, "plan_type")
 
     @plan_type.setter
-    def plan_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def plan_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "plan_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Chargeback Plan lifecycle states
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the chargeback plan was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time chargeback plan was updated. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -420,14 +420,14 @@ class ChargebackPlan(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 entity_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 plan_custom_items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ChargebackPlanPlanCustomItemArgs', 'ChargebackPlanPlanCustomItemArgsDict']]]]] = None,
-                 plan_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 plan_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 plan_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 entity_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 plan_custom_items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ChargebackPlanPlanCustomItemArgs', 'ChargebackPlanPlanCustomItemArgsDict']]]]] = None,
+                 plan_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 plan_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 plan_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Chargeback Plan resource in Oracle Cloud Infrastructure Opsi service.
@@ -452,7 +452,7 @@ class ChargebackPlan(pulumi.CustomResource):
             plan_custom_items=[{
                 "name": chargeback_plan_plan_custom_items_name,
                 "value": chargeback_plan_plan_custom_items_value,
-                "is_customizable": chargeback_plan_plan_custom_items_is_customizable,
+                "is_customizable": chargeback_plan_plan_custom_items_is_customizable == "true",
             }],
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -515,7 +515,7 @@ class ChargebackPlan(pulumi.CustomResource):
             plan_custom_items=[{
                 "name": chargeback_plan_plan_custom_items_name,
                 "value": chargeback_plan_plan_custom_items_value,
-                "is_customizable": chargeback_plan_plan_custom_items_is_customizable,
+                "is_customizable": chargeback_plan_plan_custom_items_is_customizable == "true",
             }],
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -549,14 +549,14 @@ class ChargebackPlan(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 entity_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 plan_custom_items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ChargebackPlanPlanCustomItemArgs', 'ChargebackPlanPlanCustomItemArgsDict']]]]] = None,
-                 plan_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 plan_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 plan_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 entity_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 plan_custom_items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ChargebackPlanPlanCustomItemArgs', 'ChargebackPlanPlanCustomItemArgsDict']]]]] = None,
+                 plan_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 plan_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 plan_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -603,21 +603,21 @@ class ChargebackPlan(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            entity_source: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_customizable: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            plan_category: Optional[pulumi.Input[_builtins.str]] = None,
-            plan_custom_items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ChargebackPlanPlanCustomItemArgs', 'ChargebackPlanPlanCustomItemArgsDict']]]]] = None,
-            plan_description: Optional[pulumi.Input[_builtins.str]] = None,
-            plan_name: Optional[pulumi.Input[_builtins.str]] = None,
-            plan_type: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'ChargebackPlan':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            entity_source: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_customizable: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            plan_category: pulumi.Input[Optional[_builtins.str]] = None,
+            plan_custom_items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ChargebackPlanPlanCustomItemArgs', 'ChargebackPlanPlanCustomItemArgsDict']]]]] = None,
+            plan_description: pulumi.Input[Optional[_builtins.str]] = None,
+            plan_name: pulumi.Input[Optional[_builtins.str]] = None,
+            plan_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'ChargebackPlan':
         """
         Get an existing ChargebackPlan resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

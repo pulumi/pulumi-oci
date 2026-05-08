@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGateways = oci.ApiGateway.getGateways({
+ * const testGateways = oci.apigateway.getGateways({
  *     compartmentId: compartmentId,
  *     certificateId: ociApigatewayCertificate.testCertificate.id,
  *     displayName: gatewayDisplayName,
@@ -100,7 +100,7 @@ export interface GetGatewaysResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGateways = oci.ApiGateway.getGateways({
+ * const testGateways = oci.apigateway.getGateways({
  *     compartmentId: compartmentId,
  *     certificateId: ociApigatewayCertificate.testCertificate.id,
  *     displayName: gatewayDisplayName,
@@ -126,7 +126,7 @@ export interface GetGatewaysOutputArgs {
     /**
      * Filter gateways by the certificate ocid.
      */
-    certificateId?: pulumi.Input<string>;
+    certificateId?: pulumi.Input<string | undefined>;
     /**
      * The ocid of the compartment in which to list resources.
      */
@@ -134,10 +134,10 @@ export interface GetGatewaysOutputArgs {
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GetGatewaysFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GetGatewaysFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state.  Example: `SUCCEEDED`
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

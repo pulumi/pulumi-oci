@@ -275,7 +275,7 @@ def get_occm_demand_signal_item(occm_demand_signal_item_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_occm_demand_signal_item = oci.CapacityManagement.get_occm_demand_signal_item(occm_demand_signal_item_id=test_occm_demand_signal_item_oci_capacity_management_occm_demand_signal_item["id"])
+    test_occm_demand_signal_item = oci.capacitymanagement.get_occm_demand_signal_item(occm_demand_signal_item_id=test_occm_demand_signal_item_oci_capacity_management_occm_demand_signal_item["id"])
     ```
 
 
@@ -306,7 +306,7 @@ def get_occm_demand_signal_item(occm_demand_signal_item_id: Optional[_builtins.s
         system_tags=pulumi.get(__ret__, 'system_tags'),
         target_compartment_id=pulumi.get(__ret__, 'target_compartment_id'),
         time_needed_before=pulumi.get(__ret__, 'time_needed_before'))
-def get_occm_demand_signal_item_output(occm_demand_signal_item_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_occm_demand_signal_item_output(occm_demand_signal_item_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOccmDemandSignalItemResult]:
     """
     This data source provides details about a specific Occm Demand Signal Item resource in Oracle Cloud Infrastructure Capacity Management service.
@@ -319,7 +319,7 @@ def get_occm_demand_signal_item_output(occm_demand_signal_item_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_occm_demand_signal_item = oci.CapacityManagement.get_occm_demand_signal_item(occm_demand_signal_item_id=test_occm_demand_signal_item_oci_capacity_management_occm_demand_signal_item["id"])
+    test_occm_demand_signal_item = oci.capacitymanagement.get_occm_demand_signal_item(occm_demand_signal_item_id=test_occm_demand_signal_item_oci_capacity_management_occm_demand_signal_item["id"])
     ```
 
 

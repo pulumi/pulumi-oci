@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabasePreferredCredentials = oci.Database.getManagedPreferredCredentials({
+ * const testManagedDatabasePreferredCredentials = oci.database.getManagedPreferredCredentials({
  *     managedDatabaseId: testManagedDatabase.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetManagedPreferredCredentialsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabasePreferredCredentials = oci.Database.getManagedPreferredCredentials({
+ * const testManagedDatabasePreferredCredentials = oci.database.getManagedPreferredCredentials({
  *     managedDatabaseId: testManagedDatabase.id,
  * });
  * ```
@@ -84,7 +84,7 @@ export function getManagedPreferredCredentialsOutput(args: GetManagedPreferredCr
  * A collection of arguments for invoking getManagedPreferredCredentials.
  */
 export interface GetManagedPreferredCredentialsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetManagedPreferredCredentialsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetManagedPreferredCredentialsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */

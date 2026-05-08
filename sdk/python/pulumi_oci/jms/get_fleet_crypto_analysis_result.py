@@ -288,7 +288,7 @@ def get_fleet_crypto_analysis_result(crypto_analysis_result_id: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_crypto_analysis_result = oci.Jms.get_fleet_crypto_analysis_result(crypto_analysis_result_id=fleet_crypto_analysis_result_id,
+    test_fleet_crypto_analysis_result = oci.jms.get_fleet_crypto_analysis_result(crypto_analysis_result_id=fleet_crypto_analysis_result_id,
         fleet_id=test_fleet["id"])
     ```
 
@@ -323,8 +323,8 @@ def get_fleet_crypto_analysis_result(crypto_analysis_result_id: Optional[_builti
         time_started=pulumi.get(__ret__, 'time_started'),
         total_event_count=pulumi.get(__ret__, 'total_event_count'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
-def get_fleet_crypto_analysis_result_output(crypto_analysis_result_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fleet_crypto_analysis_result_output(crypto_analysis_result_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetCryptoAnalysisResultResult]:
     """
     This data source provides details about a specific Fleet Crypto Analysis Result resource in Oracle Cloud Infrastructure Jms service.
@@ -337,7 +337,7 @@ def get_fleet_crypto_analysis_result_output(crypto_analysis_result_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_crypto_analysis_result = oci.Jms.get_fleet_crypto_analysis_result(crypto_analysis_result_id=fleet_crypto_analysis_result_id,
+    test_fleet_crypto_analysis_result = oci.jms.get_fleet_crypto_analysis_result(crypto_analysis_result_id=fleet_crypto_analysis_result_id,
         fleet_id=test_fleet["id"])
     ```
 

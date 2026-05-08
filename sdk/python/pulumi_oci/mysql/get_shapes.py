@@ -134,7 +134,7 @@ def get_shapes(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_shapes = oci.Mysql.get_shapes(compartment_id=compartment_id,
+    test_shapes = oci.mysql.get_shapes(compartment_id=compartment_id,
         availability_domain=shape_availability_domain,
         is_supported_fors=shape_is_supported_for,
         name=shape_name)
@@ -163,11 +163,11 @@ def get_shapes(availability_domain: Optional[_builtins.str] = None,
         is_supported_fors=pulumi.get(__ret__, 'is_supported_fors'),
         name=pulumi.get(__ret__, 'name'),
         shapes=pulumi.get(__ret__, 'shapes'))
-def get_shapes_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetShapesFilterArgs', 'GetShapesFilterArgsDict']]]]] = None,
-                      is_supported_fors: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                      name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_shapes_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetShapesFilterArgs', 'GetShapesFilterArgsDict']]]]] = None,
+                      is_supported_fors: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                      name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetShapesResult]:
     """
     This data source provides the list of Shapes in Oracle Cloud Infrastructure MySQL Database service.
@@ -183,7 +183,7 @@ def get_shapes_output(availability_domain: Optional[pulumi.Input[Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_shapes = oci.Mysql.get_shapes(compartment_id=compartment_id,
+    test_shapes = oci.mysql.get_shapes(compartment_id=compartment_id,
         availability_domain=shape_availability_domain,
         is_supported_fors=shape_is_supported_for,
         name=shape_name)

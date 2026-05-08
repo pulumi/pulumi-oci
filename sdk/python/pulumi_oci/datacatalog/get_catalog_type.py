@@ -226,7 +226,7 @@ def get_catalog_type(catalog_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog_type = oci.DataCatalog.get_catalog_type(catalog_id=test_catalog["id"],
+    test_catalog_type = oci.datacatalog.get_catalog_type(catalog_id=test_catalog["id"],
         type_key=catalog_type_type_key,
         fields=catalog_type_fields)
     ```
@@ -259,9 +259,9 @@ def get_catalog_type(catalog_id: Optional[_builtins.str] = None,
         type_category=pulumi.get(__ret__, 'type_category'),
         type_key=pulumi.get(__ret__, 'type_key'),
         uri=pulumi.get(__ret__, 'uri'))
-def get_catalog_type_output(catalog_id: Optional[pulumi.Input[_builtins.str]] = None,
-                            fields: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                            type_key: Optional[pulumi.Input[_builtins.str]] = None,
+def get_catalog_type_output(catalog_id: pulumi.Input[Optional[_builtins.str]] = None,
+                            fields: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                            type_key: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCatalogTypeResult]:
     """
     This data source provides details about a specific Catalog Type resource in Oracle Cloud Infrastructure Data Catalog service.
@@ -274,7 +274,7 @@ def get_catalog_type_output(catalog_id: Optional[pulumi.Input[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog_type = oci.DataCatalog.get_catalog_type(catalog_id=test_catalog["id"],
+    test_catalog_type = oci.datacatalog.get_catalog_type(catalog_id=test_catalog["id"],
         type_key=catalog_type_type_key,
         fields=catalog_type_fields)
     ```

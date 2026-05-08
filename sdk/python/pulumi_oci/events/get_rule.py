@@ -205,7 +205,7 @@ def get_rule(rule_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_rule = oci.Events.get_rule(rule_id=test_rule_oci_events_rule["id"])
+    test_rule = oci.events.get_rule(rule_id=test_rule_oci_events_rule["id"])
     ```
 
 
@@ -230,7 +230,7 @@ def get_rule(rule_id: Optional[_builtins.str] = None,
         rule_id=pulumi.get(__ret__, 'rule_id'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_rule_output(rule_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_rule_output(rule_id: pulumi.Input[Optional[_builtins.str]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRuleResult]:
     """
     This data source provides details about a specific Rule resource in Oracle Cloud Infrastructure Events service.
@@ -243,7 +243,7 @@ def get_rule_output(rule_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_rule = oci.Events.get_rule(rule_id=test_rule_oci_events_rule["id"])
+    test_rule = oci.events.get_rule(rule_id=test_rule_oci_events_rule["id"])
     ```
 
 

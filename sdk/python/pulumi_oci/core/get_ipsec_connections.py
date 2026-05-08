@@ -125,7 +125,7 @@ def get_ipsec_connections(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ip_sec_connections = oci.Core.get_ipsec_connections(compartment_id=compartment_id,
+    test_ip_sec_connections = oci.core.get_ipsec_connections(compartment_id=compartment_id,
         cpe_id=test_cpe["id"],
         drg_id=test_drg["id"])
     ```
@@ -150,10 +150,10 @@ def get_ipsec_connections(compartment_id: Optional[_builtins.str] = None,
         drg_id=pulumi.get(__ret__, 'drg_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_ipsec_connections_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 cpe_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 drg_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIpsecConnectionsFilterArgs', 'GetIpsecConnectionsFilterArgsDict']]]]] = None,
+def get_ipsec_connections_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 cpe_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 drg_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIpsecConnectionsFilterArgs', 'GetIpsecConnectionsFilterArgsDict']]]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIpsecConnectionsResult]:
     """
     This data source provides the list of Ip Sec Connections in Oracle Cloud Infrastructure Core service.
@@ -167,7 +167,7 @@ def get_ipsec_connections_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_ip_sec_connections = oci.Core.get_ipsec_connections(compartment_id=compartment_id,
+    test_ip_sec_connections = oci.core.get_ipsec_connections(compartment_id=compartment_id,
         cpe_id=test_cpe["id"],
         drg_id=test_drg["id"])
     ```

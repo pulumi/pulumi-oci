@@ -32,7 +32,7 @@ import (
 //			_, err := osmanagementhub.GetProfileAvailableSoftwareSources(ctx, &osmanagementhub.GetProfileAvailableSoftwareSourcesArgs{
 //				ProfileId:           testProfile.Id,
 //				CompartmentId:       pulumi.StringRef(compartmentId),
-//				DisplayNames:        profileAvailableSoftwareSourceDisplayName,
+//				DisplayNames:        pulumi.ToArray(profileAvailableSoftwareSourceDisplayName),
 //				DisplayNameContains: pulumi.StringRef(profileAvailableSoftwareSourceDisplayNameContains),
 //			}, nil)
 //			if err != nil {

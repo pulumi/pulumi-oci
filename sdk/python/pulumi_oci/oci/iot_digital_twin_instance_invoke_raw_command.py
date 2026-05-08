@@ -22,11 +22,11 @@ class IotDigitalTwinInstanceInvokeRawCommandArgs:
                  digital_twin_instance_id: pulumi.Input[_builtins.str],
                  request_data_format: pulumi.Input[_builtins.str],
                  request_endpoint: pulumi.Input[_builtins.str],
-                 request_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_data_content_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 response_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 response_endpoint: Optional[pulumi.Input[_builtins.str]] = None):
+                 request_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_data_content_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 response_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 response_endpoint: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a IotDigitalTwinInstanceInvokeRawCommand resource.
 
@@ -95,55 +95,55 @@ class IotDigitalTwinInstanceInvokeRawCommandArgs:
 
     @_builtins.property
     @pulumi.getter(name="requestData")
-    def request_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def request_data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         base 64 encoded request data
         """
         return pulumi.get(self, "request_data")
 
     @request_data.setter
-    def request_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def request_data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "request_data", value)
 
     @_builtins.property
     @pulumi.getter(name="requestDataContentType")
-    def request_data_content_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def request_data_content_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Mime content type of data encoded using base64, default is application/octet-stream
         """
         return pulumi.get(self, "request_data_content_type")
 
     @request_data_content_type.setter
-    def request_data_content_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def request_data_content_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "request_data_content_type", value)
 
     @_builtins.property
     @pulumi.getter(name="requestDuration")
-    def request_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def request_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specified duration by which to send the request by.
         """
         return pulumi.get(self, "request_duration")
 
     @request_duration.setter
-    def request_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def request_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "request_duration", value)
 
     @_builtins.property
     @pulumi.getter(name="responseDuration")
-    def response_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def response_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specified duration by which to receive the response by.
         """
         return pulumi.get(self, "response_duration")
 
     @response_duration.setter
-    def response_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def response_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "response_duration", value)
 
     @_builtins.property
     @pulumi.getter(name="responseEndpoint")
-    def response_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def response_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Device endpoint from which response is expected to come.
 
@@ -154,21 +154,21 @@ class IotDigitalTwinInstanceInvokeRawCommandArgs:
         return pulumi.get(self, "response_endpoint")
 
     @response_endpoint.setter
-    def response_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def response_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "response_endpoint", value)
 
 
 @pulumi.input_type
 class _IotDigitalTwinInstanceInvokeRawCommandState:
     def __init__(__self__, *,
-                 digital_twin_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_data_content_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_data_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 response_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 response_endpoint: Optional[pulumi.Input[_builtins.str]] = None):
+                 digital_twin_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_data_content_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_data_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 response_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 response_endpoint: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IotDigitalTwinInstanceInvokeRawCommand resources.
 
@@ -204,91 +204,91 @@ class _IotDigitalTwinInstanceInvokeRawCommandState:
 
     @_builtins.property
     @pulumi.getter(name="digitalTwinInstanceId")
-    def digital_twin_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def digital_twin_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of digital twin instance.
         """
         return pulumi.get(self, "digital_twin_instance_id")
 
     @digital_twin_instance_id.setter
-    def digital_twin_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def digital_twin_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "digital_twin_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="requestData")
-    def request_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def request_data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         base 64 encoded request data
         """
         return pulumi.get(self, "request_data")
 
     @request_data.setter
-    def request_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def request_data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "request_data", value)
 
     @_builtins.property
     @pulumi.getter(name="requestDataContentType")
-    def request_data_content_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def request_data_content_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Mime content type of data encoded using base64, default is application/octet-stream
         """
         return pulumi.get(self, "request_data_content_type")
 
     @request_data_content_type.setter
-    def request_data_content_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def request_data_content_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "request_data_content_type", value)
 
     @_builtins.property
     @pulumi.getter(name="requestDataFormat")
-    def request_data_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def request_data_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         data format: json, binary, text
         """
         return pulumi.get(self, "request_data_format")
 
     @request_data_format.setter
-    def request_data_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def request_data_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "request_data_format", value)
 
     @_builtins.property
     @pulumi.getter(name="requestDuration")
-    def request_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def request_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specified duration by which to send the request by.
         """
         return pulumi.get(self, "request_duration")
 
     @request_duration.setter
-    def request_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def request_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "request_duration", value)
 
     @_builtins.property
     @pulumi.getter(name="requestEndpoint")
-    def request_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def request_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Device endpoint where request should be forwarded to.
         """
         return pulumi.get(self, "request_endpoint")
 
     @request_endpoint.setter
-    def request_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def request_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "request_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="responseDuration")
-    def response_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def response_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specified duration by which to receive the response by.
         """
         return pulumi.get(self, "response_duration")
 
     @response_duration.setter
-    def response_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def response_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "response_duration", value)
 
     @_builtins.property
     @pulumi.getter(name="responseEndpoint")
-    def response_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def response_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Device endpoint from which response is expected to come.
 
@@ -299,7 +299,7 @@ class _IotDigitalTwinInstanceInvokeRawCommandState:
         return pulumi.get(self, "response_endpoint")
 
     @response_endpoint.setter
-    def response_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def response_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "response_endpoint", value)
 
 
@@ -309,14 +309,14 @@ class IotDigitalTwinInstanceInvokeRawCommand(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 digital_twin_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_data_content_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_data_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 response_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 response_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
+                 digital_twin_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_data_content_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_data_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 response_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 response_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Digital Twin Instance Invoke Raw Command resource in Oracle Cloud Infrastructure Iot service.
@@ -414,14 +414,14 @@ class IotDigitalTwinInstanceInvokeRawCommand(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 digital_twin_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_data_content_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_data_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 response_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 response_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
+                 digital_twin_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_data_content_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_data_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 response_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 response_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -455,14 +455,14 @@ class IotDigitalTwinInstanceInvokeRawCommand(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            digital_twin_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            request_data: Optional[pulumi.Input[_builtins.str]] = None,
-            request_data_content_type: Optional[pulumi.Input[_builtins.str]] = None,
-            request_data_format: Optional[pulumi.Input[_builtins.str]] = None,
-            request_duration: Optional[pulumi.Input[_builtins.str]] = None,
-            request_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            response_duration: Optional[pulumi.Input[_builtins.str]] = None,
-            response_endpoint: Optional[pulumi.Input[_builtins.str]] = None) -> 'IotDigitalTwinInstanceInvokeRawCommand':
+            digital_twin_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            request_data: pulumi.Input[Optional[_builtins.str]] = None,
+            request_data_content_type: pulumi.Input[Optional[_builtins.str]] = None,
+            request_data_format: pulumi.Input[Optional[_builtins.str]] = None,
+            request_duration: pulumi.Input[Optional[_builtins.str]] = None,
+            request_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            response_duration: pulumi.Input[Optional[_builtins.str]] = None,
+            response_endpoint: pulumi.Input[Optional[_builtins.str]] = None) -> 'IotDigitalTwinInstanceInvokeRawCommand':
         """
         Get an existing IotDigitalTwinInstanceInvokeRawCommand resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

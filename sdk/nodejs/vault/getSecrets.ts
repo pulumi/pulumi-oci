@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecrets = oci.Vault.getSecrets({
+ * const testSecrets = oci.vault.getSecrets({
  *     compartmentId: compartmentId,
  *     name: secretName,
  *     state: secretState,
@@ -97,7 +97,7 @@ export interface GetSecretsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecrets = oci.Vault.getSecrets({
+ * const testSecrets = oci.vault.getSecrets({
  *     compartmentId: compartmentId,
  *     name: secretName,
  *     state: secretState,
@@ -124,17 +124,17 @@ export interface GetSecretsOutputArgs {
      * The OCID of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Vault.GetSecretsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Vault.GetSecretsFilterArgs>[] | undefined>;
     /**
      * The secret name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns only resources that match the specified lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the vault.
      */
-    vaultId?: pulumi.Input<string>;
+    vaultId?: pulumi.Input<string | undefined>;
 }

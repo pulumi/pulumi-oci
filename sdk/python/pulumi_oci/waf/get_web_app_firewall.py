@@ -215,7 +215,7 @@ def get_web_app_firewall(web_app_firewall_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_firewall = oci.Waf.get_web_app_firewall(web_app_firewall_id=test_web_app_firewall_oci_waf_web_app_firewall["id"])
+    test_web_app_firewall = oci.waf.get_web_app_firewall(web_app_firewall_id=test_web_app_firewall_oci_waf_web_app_firewall["id"])
     ```
 
 
@@ -241,7 +241,7 @@ def get_web_app_firewall(web_app_firewall_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         web_app_firewall_id=pulumi.get(__ret__, 'web_app_firewall_id'),
         web_app_firewall_policy_id=pulumi.get(__ret__, 'web_app_firewall_policy_id'))
-def get_web_app_firewall_output(web_app_firewall_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_web_app_firewall_output(web_app_firewall_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWebAppFirewallResult]:
     """
     This data source provides details about a specific Web App Firewall resource in Oracle Cloud Infrastructure Waf service.
@@ -254,7 +254,7 @@ def get_web_app_firewall_output(web_app_firewall_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_firewall = oci.Waf.get_web_app_firewall(web_app_firewall_id=test_web_app_firewall_oci_waf_web_app_firewall["id"])
+    test_web_app_firewall = oci.waf.get_web_app_firewall(web_app_firewall_id=test_web_app_firewall_oci_waf_web_app_firewall["id"])
     ```
 
 

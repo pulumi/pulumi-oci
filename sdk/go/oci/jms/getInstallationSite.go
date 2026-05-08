@@ -38,7 +38,7 @@ import (
 //				JreVendor:         pulumi.StringRef(fleetInstallationSiteJreVendor),
 //				JreVersion:        pulumi.StringRef(fleetInstallationSiteJreVersion),
 //				ManagedInstanceId: pulumi.StringRef(fleetInstallationSiteManagedInstanceId),
-//				OsFamilies:        fleetInstallationSiteOsFamily,
+//				OsFamilies:        pulumi.ToArray(fleetInstallationSiteOsFamily),
 //				PathContains:      pulumi.StringRef(fleetInstallationSitePathContains),
 //				TimeEnd:           pulumi.StringRef(fleetInstallationSiteTimeEnd),
 //				TimeStart:         pulumi.StringRef(fleetInstallationSiteTimeStart),

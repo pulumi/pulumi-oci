@@ -204,11 +204,11 @@ def get_jms_plugins(agent_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_jms_plugins = oci.Jms.get_jms_plugins(agent_id=jms_plugin_agent_id,
+    test_jms_plugins = oci.jms.get_jms_plugins(agent_id=jms_plugin_agent_id,
         agent_type=jms_plugin_agent_type,
         availability_status=jms_plugin_availability_status,
         compartment_id=compartment_id,
-        compartment_id_in_subtree=jms_plugin_compartment_id_in_subtree,
+        compartment_id_in_subtree=jms_plugin_compartment_id_in_subtree == "true",
         fleet_id=test_fleet["id"],
         hostname_contains=jms_plugin_hostname_contains,
         id=jms_plugin_id,
@@ -260,18 +260,18 @@ def get_jms_plugins(agent_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_last_seen_less_than_or_equal_to=pulumi.get(__ret__, 'time_last_seen_less_than_or_equal_to'),
         time_registered_less_than_or_equal_to=pulumi.get(__ret__, 'time_registered_less_than_or_equal_to'))
-def get_jms_plugins_output(agent_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           agent_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           availability_status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetJmsPluginsFilterArgs', 'GetJmsPluginsFilterArgsDict']]]]] = None,
-                           fleet_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           hostname_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           time_last_seen_less_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           time_registered_less_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_jms_plugins_output(agent_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           agent_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           availability_status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJmsPluginsFilterArgs', 'GetJmsPluginsFilterArgsDict']]]]] = None,
+                           fleet_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           hostname_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           time_last_seen_less_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           time_registered_less_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJmsPluginsResult]:
     """
     This data source provides the list of Jms Plugins in Oracle Cloud Infrastructure Jms service.
@@ -284,11 +284,11 @@ def get_jms_plugins_output(agent_id: Optional[pulumi.Input[Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_jms_plugins = oci.Jms.get_jms_plugins(agent_id=jms_plugin_agent_id,
+    test_jms_plugins = oci.jms.get_jms_plugins(agent_id=jms_plugin_agent_id,
         agent_type=jms_plugin_agent_type,
         availability_status=jms_plugin_availability_status,
         compartment_id=compartment_id,
-        compartment_id_in_subtree=jms_plugin_compartment_id_in_subtree,
+        compartment_id_in_subtree=jms_plugin_compartment_id_in_subtree == "true",
         fleet_id=test_fleet["id"],
         hostname_contains=jms_plugin_hostname_contains,
         id=jms_plugin_id,

@@ -204,7 +204,7 @@ def get_category(category_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_category = oci.Optimizer.get_category(category_id=test_category_oci_optimizer_category["id"])
+    test_category = oci.optimizer.get_category(category_id=test_category_oci_optimizer_category["id"])
     ```
 
 
@@ -229,7 +229,7 @@ def get_category(category_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_category_output(category_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_category_output(category_id: pulumi.Input[Optional[_builtins.str]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCategoryResult]:
     """
     This data source provides details about a specific Category resource in Oracle Cloud Infrastructure Optimizer service.
@@ -242,7 +242,7 @@ def get_category_output(category_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_category = oci.Optimizer.get_category(category_id=test_category_oci_optimizer_category["id"])
+    test_category = oci.optimizer.get_category(category_id=test_category_oci_optimizer_category["id"])
     ```
 
 

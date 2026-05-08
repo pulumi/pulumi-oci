@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalPluggableDatabase = oci.Database.getExternalPluggableDatabase({
+ * const testExternalPluggableDatabase = oci.database.getExternalPluggableDatabase({
  *     externalPluggableDatabaseId: testExternalPluggableDatabaseOciDatabaseExternalPluggableDatabase.id,
  * });
  * ```
@@ -150,7 +150,7 @@ export interface GetExternalPluggableDatabaseResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalPluggableDatabase = oci.Database.getExternalPluggableDatabase({
+ * const testExternalPluggableDatabase = oci.database.getExternalPluggableDatabase({
  *     externalPluggableDatabaseId: testExternalPluggableDatabaseOciDatabaseExternalPluggableDatabase.id,
  * });
  * ```

@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpSecConnectionDeviceConfig = oci.Core.getIpsecConfig({
+ * const testIpSecConnectionDeviceConfig = oci.core.getIpsecConfig({
  *     ipsecId: testIpsec.id,
  * });
  * ```
@@ -81,7 +81,7 @@ export interface GetIpsecConfigResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpSecConnectionDeviceConfig = oci.Core.getIpsecConfig({
+ * const testIpSecConnectionDeviceConfig = oci.core.getIpsecConfig({
  *     ipsecId: testIpsec.id,
  * });
  * ```
@@ -98,7 +98,7 @@ export function getIpsecConfigOutput(args: GetIpsecConfigOutputArgs, opts?: pulu
  * A collection of arguments for invoking getIpsecConfig.
  */
 export interface GetIpsecConfigOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetIpsecConfigFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetIpsecConfigFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
      */

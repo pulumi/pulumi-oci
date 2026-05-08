@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPipelineRun = oci.DataScience.getPipelineRun({
+ * const testPipelineRun = oci.datascience.getPipelineRun({
  *     pipelineRunId: testPipelineRunOciDatasciencePipelineRun.id,
  * });
  * ```
@@ -157,7 +157,7 @@ export interface GetPipelineRunResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPipelineRun = oci.DataScience.getPipelineRun({
+ * const testPipelineRun = oci.datascience.getPipelineRun({
  *     pipelineRunId: testPipelineRunOciDatasciencePipelineRun.id,
  * });
  * ```

@@ -185,7 +185,7 @@ def get_replication_policy(bucket: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_policy = oci.ObjectStorage.get_replication_policy(bucket=replication_policy_bucket,
+    test_replication_policy = oci.objectstorage.get_replication_policy(bucket=replication_policy_bucket,
         namespace=replication_policy_namespace,
         replication_id=test_replication["id"])
     ```
@@ -215,9 +215,9 @@ def get_replication_policy(bucket: Optional[_builtins.str] = None,
         status_message=pulumi.get(__ret__, 'status_message'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_sync=pulumi.get(__ret__, 'time_last_sync'))
-def get_replication_policy_output(bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                                  namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                                  replication_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_replication_policy_output(bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                                  replication_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReplicationPolicyResult]:
     """
     This data source provides details about a specific Replication Policy resource in Oracle Cloud Infrastructure Object Storage service.
@@ -230,7 +230,7 @@ def get_replication_policy_output(bucket: Optional[pulumi.Input[_builtins.str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_policy = oci.ObjectStorage.get_replication_policy(bucket=replication_policy_bucket,
+    test_replication_policy = oci.objectstorage.get_replication_policy(bucket=replication_policy_bucket,
         namespace=replication_policy_namespace,
         replication_id=test_replication["id"])
     ```

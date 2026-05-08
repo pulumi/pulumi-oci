@@ -190,7 +190,7 @@ def get_network_firewall_policy_tunnel_inspection_rule(network_firewall_policy_i
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy_tunnel_inspection_rule = oci.NetworkFirewall.get_network_firewall_policy_tunnel_inspection_rule(network_firewall_policy_id=test_network_firewall_policy["id"],
+    test_network_firewall_policy_tunnel_inspection_rule = oci.networkfirewall.get_network_firewall_policy_tunnel_inspection_rule(network_firewall_policy_id=test_network_firewall_policy["id"],
         tunnel_inspection_rule_name=test_rule["name"])
     ```
 
@@ -217,8 +217,8 @@ def get_network_firewall_policy_tunnel_inspection_rule(network_firewall_policy_i
         profiles=pulumi.get(__ret__, 'profiles'),
         protocol=pulumi.get(__ret__, 'protocol'),
         tunnel_inspection_rule_name=pulumi.get(__ret__, 'tunnel_inspection_rule_name'))
-def get_network_firewall_policy_tunnel_inspection_rule_output(network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                              tunnel_inspection_rule_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_network_firewall_policy_tunnel_inspection_rule_output(network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                              tunnel_inspection_rule_name: pulumi.Input[Optional[_builtins.str]] = None,
                                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyTunnelInspectionRuleResult]:
     """
     This data source provides details about a specific Network Firewall Policy Tunnel Inspection Rule resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -231,7 +231,7 @@ def get_network_firewall_policy_tunnel_inspection_rule_output(network_firewall_p
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy_tunnel_inspection_rule = oci.NetworkFirewall.get_network_firewall_policy_tunnel_inspection_rule(network_firewall_policy_id=test_network_firewall_policy["id"],
+    test_network_firewall_policy_tunnel_inspection_rule = oci.networkfirewall.get_network_firewall_policy_tunnel_inspection_rule(network_firewall_policy_id=test_network_firewall_policy["id"],
         tunnel_inspection_rule_name=test_rule["name"])
     ```
 

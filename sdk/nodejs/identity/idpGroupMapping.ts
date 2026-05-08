@@ -148,15 +148,15 @@ export interface IdpGroupMappingState {
     /**
      * The OCID of the tenancy containing the `IdentityProvider`.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the IAM Service [group](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Group/) you want to map to the IdP group.
      */
-    groupId?: pulumi.Input<string>;
+    groupId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the identity provider.
      */
-    identityProviderId?: pulumi.Input<string>;
+    identityProviderId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The name of the IdP group you want to map.
      *
@@ -164,19 +164,19 @@ export interface IdpGroupMappingState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    idpGroupName?: pulumi.Input<string>;
+    idpGroupName?: pulumi.Input<string | undefined>;
     /**
      * The detailed status of INACTIVE lifecycleState.
      */
-    inactiveState?: pulumi.Input<string>;
+    inactiveState?: pulumi.Input<string | undefined>;
     /**
      * The mapping's current state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Date and time the mapping was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**

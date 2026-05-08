@@ -115,7 +115,7 @@ def get_model_type(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model_type = oci.AiDocument.get_model_type(model_type=model_type_model_type,
+    test_model_type = oci.aidocument.get_model_type(model_type=model_type_model_type,
         compartment_id=compartment_id,
         model_sub_type=model_type_model_sub_type)
     ```
@@ -139,9 +139,9 @@ def get_model_type(compartment_id: Optional[_builtins.str] = None,
         model_sub_type=pulumi.get(__ret__, 'model_sub_type'),
         model_type=pulumi.get(__ret__, 'model_type'),
         versions=pulumi.get(__ret__, 'versions'))
-def get_model_type_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          model_sub_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          model_type: Optional[pulumi.Input[_builtins.str]] = None,
+def get_model_type_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          model_sub_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          model_type: pulumi.Input[Optional[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetModelTypeResult]:
     """
     This data source provides details about a specific Model Type resource in Oracle Cloud Infrastructure Ai Document service.
@@ -154,7 +154,7 @@ def get_model_type_output(compartment_id: Optional[pulumi.Input[Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_model_type = oci.AiDocument.get_model_type(model_type=model_type_model_type,
+    test_model_type = oci.aidocument.get_model_type(model_type=model_type_model_type,
         compartment_id=compartment_id,
         model_sub_type=model_type_model_sub_type)
     ```

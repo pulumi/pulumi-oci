@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingAnalytics = oci.DataSafe.getMaskingAnalytics({
+ * const testMaskingAnalytics = oci.datasafe.getMaskingAnalytics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: maskingAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: maskingAnalyticCompartmentIdInSubtree === "true",
  *     groupBy: maskingAnalyticGroupBy,
  *     maskingPolicyId: testMaskingPolicy.id,
  *     sensitiveTypeId: testSensitiveType.id,
@@ -119,9 +119,9 @@ export interface GetMaskingAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingAnalytics = oci.DataSafe.getMaskingAnalytics({
+ * const testMaskingAnalytics = oci.datasafe.getMaskingAnalytics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: maskingAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: maskingAnalyticCompartmentIdInSubtree === "true",
  *     groupBy: maskingAnalyticGroupBy,
  *     maskingPolicyId: testMaskingPolicy.id,
  *     sensitiveTypeId: testSensitiveType.id,
@@ -155,26 +155,26 @@ export interface GetMaskingAnalyticsOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetMaskingAnalyticsFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetMaskingAnalyticsFilterArgs>[] | undefined>;
     /**
      * Attribute by which the masking analytics data should be grouped.
      */
-    groupBy?: pulumi.Input<string>;
+    groupBy?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that match the specified masking policy OCID.
      */
-    maskingPolicyId?: pulumi.Input<string>;
+    maskingPolicyId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items related to a specific sensitive type OCID.
      */
-    sensitiveTypeId?: pulumi.Input<string>;
+    sensitiveTypeId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return the target database group that matches the specified OCID.
      */
-    targetDatabaseGroupId?: pulumi.Input<string>;
+    targetDatabaseGroupId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items related to a specific target OCID.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
 }

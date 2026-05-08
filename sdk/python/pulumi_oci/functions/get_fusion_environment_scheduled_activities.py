@@ -157,7 +157,7 @@ def get_fusion_environment_scheduled_activities(display_name: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_scheduled_activities = oci.Functions.get_fusion_environment_scheduled_activities(fusion_environment_id=test_fusion_environment["id"],
+    test_fusion_environment_scheduled_activities = oci.functions.get_fusion_environment_scheduled_activities(fusion_environment_id=test_fusion_environment["id"],
         display_name=fusion_environment_scheduled_activity_display_name,
         run_cycle=fusion_environment_scheduled_activity_run_cycle,
         state=fusion_environment_scheduled_activity_state,
@@ -194,13 +194,13 @@ def get_fusion_environment_scheduled_activities(display_name: Optional[_builtins
         state=pulumi.get(__ret__, 'state'),
         time_expected_finish_less_than_or_equal_to=pulumi.get(__ret__, 'time_expected_finish_less_than_or_equal_to'),
         time_scheduled_start_greater_than_or_equal_to=pulumi.get(__ret__, 'time_scheduled_start_greater_than_or_equal_to'))
-def get_fusion_environment_scheduled_activities_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFusionEnvironmentScheduledActivitiesFilterArgs', 'GetFusionEnvironmentScheduledActivitiesFilterArgsDict']]]]] = None,
-                                                       fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                       run_cycle: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                       time_expected_finish_less_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                       time_scheduled_start_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_fusion_environment_scheduled_activities_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFusionEnvironmentScheduledActivitiesFilterArgs', 'GetFusionEnvironmentScheduledActivitiesFilterArgsDict']]]]] = None,
+                                                       fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                       run_cycle: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                       time_expected_finish_less_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                       time_scheduled_start_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentScheduledActivitiesResult]:
     """
     This data source provides the list of Fusion Environment Scheduled Activities in Oracle Cloud Infrastructure Fusion Apps service.
@@ -213,7 +213,7 @@ def get_fusion_environment_scheduled_activities_output(display_name: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_scheduled_activities = oci.Functions.get_fusion_environment_scheduled_activities(fusion_environment_id=test_fusion_environment["id"],
+    test_fusion_environment_scheduled_activities = oci.functions.get_fusion_environment_scheduled_activities(fusion_environment_id=test_fusion_environment["id"],
         display_name=fusion_environment_scheduled_activity_display_name,
         run_cycle=fusion_environment_scheduled_activity_run_cycle,
         state=fusion_environment_scheduled_activity_state,

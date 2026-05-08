@@ -312,7 +312,7 @@ def get_network_load_balancer(network_load_balancer_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_network_load_balancer = oci.NetworkLoadBalancer.get_network_load_balancer(network_load_balancer_id=test_network_load_balancer_oci_network_load_balancer_network_load_balancer["id"])
+    test_network_load_balancer = oci.networkloadbalancer.get_network_load_balancer(network_load_balancer_id=test_network_load_balancer_oci_network_load_balancer_network_load_balancer["id"])
     ```
 
 
@@ -347,7 +347,7 @@ def get_network_load_balancer(network_load_balancer_id: Optional[_builtins.str] 
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_network_load_balancer_output(network_load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_network_load_balancer_output(network_load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkLoadBalancerResult]:
     """
     This data source provides details about a specific Network Load Balancer resource in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -360,7 +360,7 @@ def get_network_load_balancer_output(network_load_balancer_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_network_load_balancer = oci.NetworkLoadBalancer.get_network_load_balancer(network_load_balancer_id=test_network_load_balancer_oci_network_load_balancer_network_load_balancer["id"])
+    test_network_load_balancer = oci.networkloadbalancer.get_network_load_balancer(network_load_balancer_id=test_network_load_balancer_oci_network_load_balancer_network_load_balancer["id"])
     ```
 
 

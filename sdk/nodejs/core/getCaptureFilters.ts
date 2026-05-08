@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCaptureFilters = oci.Core.getCaptureFilters({
+ * const testCaptureFilters = oci.core.getCaptureFilters({
  *     compartmentId: compartmentId,
  *     displayName: captureFilterDisplayName,
  *     filterType: captureFilterFilterType,
@@ -100,7 +100,7 @@ export interface GetCaptureFiltersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCaptureFilters = oci.Core.getCaptureFilters({
+ * const testCaptureFilters = oci.core.getCaptureFilters({
  *     compartmentId: compartmentId,
  *     displayName: captureFilterDisplayName,
  *     filterType: captureFilterFilterType,
@@ -130,14 +130,14 @@ export interface GetCaptureFiltersOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return resources that match the given capture filterType. The filterType value is the string representation of enum - VTAP, FLOWLOG.
      */
-    filterType?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetCaptureFiltersFilterArgs>[]>;
+    filterType?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetCaptureFiltersFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given capture filter lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

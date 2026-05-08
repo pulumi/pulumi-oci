@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCostAlertSubscriptions = oci.Budget.getCostAlertSubscriptions({
+ * const testCostAlertSubscriptions = oci.budget.getCostAlertSubscriptions({
  *     compartmentId: compartmentId,
  *     name: costAlertSubscriptionName,
  *     state: costAlertSubscriptionState,
@@ -90,7 +90,7 @@ export interface GetCostAlertSubscriptionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCostAlertSubscriptions = oci.Budget.getCostAlertSubscriptions({
+ * const testCostAlertSubscriptions = oci.budget.getCostAlertSubscriptions({
  *     compartmentId: compartmentId,
  *     name: costAlertSubscriptionName,
  *     state: costAlertSubscriptionState,
@@ -115,13 +115,13 @@ export interface GetCostAlertSubscriptionsOutputArgs {
      * The ID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Budget.GetCostAlertSubscriptionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Budget.GetCostAlertSubscriptionsFilterArgs>[] | undefined>;
     /**
      * Unique, non-changeable resource name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The current state of the cost alert subscription.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceIngestTimeRules = oci.LogAnalytics.getNamespaceIngestTimeRules({
+ * const testNamespaceIngestTimeRules = oci.loganalytics.getNamespaceIngestTimeRules({
  *     compartmentId: compartmentId,
  *     namespace: namespaceIngestTimeRuleNamespace,
  *     conditionKind: namespaceIngestTimeRuleConditionKind,
@@ -127,7 +127,7 @@ export interface GetNamespaceIngestTimeRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceIngestTimeRules = oci.LogAnalytics.getNamespaceIngestTimeRules({
+ * const testNamespaceIngestTimeRules = oci.loganalytics.getNamespaceIngestTimeRules({
  *     compartmentId: compartmentId,
  *     namespace: namespaceIngestTimeRuleNamespace,
  *     conditionKind: namespaceIngestTimeRuleConditionKind,
@@ -163,20 +163,20 @@ export interface GetNamespaceIngestTimeRulesOutputArgs {
     /**
      * The ingest time rule condition kind used for filtering. Only rules with conditions of the specified kind will be returned.
      */
-    conditionKind?: pulumi.Input<string>;
+    conditionKind?: pulumi.Input<string | undefined>;
     /**
      * A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The field name used for filtering. Only rules using the specified field name will be returned.
      */
-    fieldName?: pulumi.Input<string>;
+    fieldName?: pulumi.Input<string | undefined>;
     /**
      * The field value used for filtering. Only rules using the specified field value will be returned.
      */
-    fieldValue?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetNamespaceIngestTimeRulesFilterArgs>[]>;
+    fieldValue?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetNamespaceIngestTimeRulesFilterArgs>[] | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
@@ -184,5 +184,5 @@ export interface GetNamespaceIngestTimeRulesOutputArgs {
     /**
      * The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

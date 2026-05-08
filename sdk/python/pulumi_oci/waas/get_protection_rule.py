@@ -166,7 +166,7 @@ def get_protection_rule(protection_rule_key: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_rule = oci.Waas.get_protection_rule(protection_rule_key=protection_rule_protection_rule_key,
+    test_protection_rule = oci.waas.get_protection_rule(protection_rule_key=protection_rule_protection_rule_key,
         waas_policy_id=test_waas_policy["id"])
     ```
 
@@ -191,8 +191,8 @@ def get_protection_rule(protection_rule_key: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         protection_rule_key=pulumi.get(__ret__, 'protection_rule_key'),
         waas_policy_id=pulumi.get(__ret__, 'waas_policy_id'))
-def get_protection_rule_output(protection_rule_key: Optional[pulumi.Input[_builtins.str]] = None,
-                               waas_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_protection_rule_output(protection_rule_key: pulumi.Input[Optional[_builtins.str]] = None,
+                               waas_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectionRuleResult]:
     """
     This data source provides details about a specific Protection Rule resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -205,7 +205,7 @@ def get_protection_rule_output(protection_rule_key: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_rule = oci.Waas.get_protection_rule(protection_rule_key=protection_rule_protection_rule_key,
+    test_protection_rule = oci.waas.get_protection_rule(protection_rule_key=protection_rule_protection_rule_key,
         waas_policy_id=test_waas_policy["id"])
     ```
 

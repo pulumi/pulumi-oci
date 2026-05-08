@@ -199,7 +199,7 @@ def get_catalog_types(catalog_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog_types = oci.DataCatalog.get_catalog_types(catalog_id=test_catalog["id"],
+    test_catalog_types = oci.datacatalog.get_catalog_types(catalog_id=test_catalog["id"],
         external_type_name=catalog_type_external_type_name,
         fields=catalog_type_fields,
         is_approved=catalog_type_is_approved,
@@ -248,16 +248,16 @@ def get_catalog_types(catalog_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         type_category=pulumi.get(__ret__, 'type_category'),
         type_collections=pulumi.get(__ret__, 'type_collections'))
-def get_catalog_types_output(catalog_id: Optional[pulumi.Input[_builtins.str]] = None,
-                             external_type_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             fields: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCatalogTypesFilterArgs', 'GetCatalogTypesFilterArgsDict']]]]] = None,
-                             is_approved: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             is_internal: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             is_tag: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             type_category: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_catalog_types_output(catalog_id: pulumi.Input[Optional[_builtins.str]] = None,
+                             external_type_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             fields: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCatalogTypesFilterArgs', 'GetCatalogTypesFilterArgsDict']]]]] = None,
+                             is_approved: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             is_internal: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             is_tag: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             type_category: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCatalogTypesResult]:
     """
     This data source provides the list of Catalog Types in Oracle Cloud Infrastructure Data Catalog service.
@@ -270,7 +270,7 @@ def get_catalog_types_output(catalog_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog_types = oci.DataCatalog.get_catalog_types(catalog_id=test_catalog["id"],
+    test_catalog_types = oci.datacatalog.get_catalog_types(catalog_id=test_catalog["id"],
         external_type_name=catalog_type_external_type_name,
         fields=catalog_type_fields,
         is_approved=catalog_type_is_approved,

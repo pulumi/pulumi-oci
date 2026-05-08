@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testMetricExtensionMetricExtensionOnGivenResourcesManagement = new oci.stackmonitoring.MetricExtensionMetricExtensionOnGivenResourcesManagement("test_metric_extension_metric_extension_on_given_resources_management", {
  *     metricExtensionId: testMetricExtension.id,
  *     resourceIds: metricExtensionMetricExtensionOnGivenResourcesManagementResourceIds[0],
- *     enableMetricExtensionOnGivenResources: enableMetricExtensionOnGivenResources,
+ *     enableMetricExtensionOnGivenResources: enableMetricExtensionOnGivenResources === "true",
  * });
  * ```
  */
@@ -116,15 +116,15 @@ export interface MetricExtensionMetricExtensionOnGivenResourcesManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    enableMetricExtensionOnGivenResources?: pulumi.Input<boolean>;
+    enableMetricExtensionOnGivenResources?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
      */
-    metricExtensionId?: pulumi.Input<string>;
+    metricExtensionId?: pulumi.Input<string | undefined>;
     /**
      * List of Resource IDs [OCIDs]. Currently, supports only one resource id per request.
      */
-    resourceIds?: pulumi.Input<string>;
+    resourceIds?: pulumi.Input<string | undefined>;
 }
 
 /**

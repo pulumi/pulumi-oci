@@ -23,8 +23,8 @@ class InstancePoolInstanceArgs:
     def __init__(__self__, *,
                  instance_id: pulumi.Input[_builtins.str],
                  instance_pool_id: pulumi.Input[_builtins.str],
-                 auto_terminate_instance_on_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 decrement_size_on_delete: Optional[pulumi.Input[_builtins.bool]] = None):
+                 auto_terminate_instance_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 decrement_size_on_delete: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a InstancePoolInstance resource.
 
@@ -72,40 +72,40 @@ class InstancePoolInstanceArgs:
 
     @_builtins.property
     @pulumi.getter(name="autoTerminateInstanceOnDelete")
-    def auto_terminate_instance_on_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_terminate_instance_on_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "auto_terminate_instance_on_delete")
 
     @auto_terminate_instance_on_delete.setter
-    def auto_terminate_instance_on_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_terminate_instance_on_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_terminate_instance_on_delete", value)
 
     @_builtins.property
     @pulumi.getter(name="decrementSizeOnDelete")
-    def decrement_size_on_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def decrement_size_on_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "decrement_size_on_delete")
 
     @decrement_size_on_delete.setter
-    def decrement_size_on_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def decrement_size_on_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "decrement_size_on_delete", value)
 
 
 @pulumi.input_type
 class _InstancePoolInstanceState:
     def __init__(__self__, *,
-                 auto_terminate_instance_on_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 decrement_size_on_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 load_balancer_backends: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolInstanceLoadBalancerBackendArgs']]]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 auto_terminate_instance_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 decrement_size_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 load_balancer_backends: pulumi.Input[Optional[Sequence[pulumi.Input['InstancePoolInstanceLoadBalancerBackendArgs']]]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InstancePoolInstance resources.
 
@@ -157,97 +157,97 @@ class _InstancePoolInstanceState:
 
     @_builtins.property
     @pulumi.getter(name="autoTerminateInstanceOnDelete")
-    def auto_terminate_instance_on_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def auto_terminate_instance_on_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "auto_terminate_instance_on_delete")
 
     @auto_terminate_instance_on_delete.setter
-    def auto_terminate_instance_on_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def auto_terminate_instance_on_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_terminate_instance_on_delete", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability domain the instance is running in.
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the instance.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="decrementSizeOnDelete")
-    def decrement_size_on_delete(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def decrement_size_on_delete(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "decrement_size_on_delete")
 
     @decrement_size_on_delete.setter
-    def decrement_size_on_delete(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def decrement_size_on_delete(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "decrement_size_on_delete", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="faultDomain")
-    def fault_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fault_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The fault domain the instance is running in.
         """
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
-    def fault_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fault_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fault_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceConfigurationId")
-    def instance_configuration_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_configuration_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration used to create the instance.
         """
         return pulumi.get(self, "instance_configuration_id")
 
     @instance_configuration_id.setter
-    def instance_configuration_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_configuration_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_configuration_id", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceId")
-    def instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
         """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
-    def instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="instancePoolId")
-    def instance_pool_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_pool_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
 
@@ -258,67 +258,67 @@ class _InstancePoolInstanceState:
         return pulumi.get(self, "instance_pool_id")
 
     @instance_pool_id.setter
-    def instance_pool_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_pool_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_pool_id", value)
 
     @_builtins.property
     @pulumi.getter(name="loadBalancerBackends")
-    def load_balancer_backends(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolInstanceLoadBalancerBackendArgs']]]]:
+    def load_balancer_backends(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['InstancePoolInstanceLoadBalancerBackendArgs']]]]:
         """
         The load balancer backends that are configured for the instance pool instance.
         """
         return pulumi.get(self, "load_balancer_backends")
 
     @load_balancer_backends.setter
-    def load_balancer_backends(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['InstancePoolInstanceLoadBalancerBackendArgs']]]]):
+    def load_balancer_backends(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['InstancePoolInstanceLoadBalancerBackendArgs']]]]):
         pulumi.set(self, "load_balancer_backends", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The region that contains the availability domain the instance is running in.
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter
-    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         """
         return pulumi.get(self, "shape")
 
     @shape.setter
-    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of the instance. Refer to `lifecycleState` in the [Instance](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance) resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -328,10 +328,10 @@ class InstancePoolInstance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_terminate_instance_on_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 decrement_size_on_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 auto_terminate_instance_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 decrement_size_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Instance Pool Instance resource in Oracle Cloud Infrastructure Core service.
@@ -427,10 +427,10 @@ class InstancePoolInstance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 auto_terminate_instance_on_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 decrement_size_on_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 auto_terminate_instance_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 decrement_size_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -468,20 +468,20 @@ class InstancePoolInstance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            auto_terminate_instance_on_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            decrement_size_on_delete: Optional[pulumi.Input[_builtins.bool]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-            load_balancer_backends: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstancePoolInstanceLoadBalancerBackendArgs', 'InstancePoolInstanceLoadBalancerBackendArgsDict']]]]] = None,
-            region: Optional[pulumi.Input[_builtins.str]] = None,
-            shape: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'InstancePoolInstance':
+            auto_terminate_instance_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            decrement_size_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+            load_balancer_backends: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstancePoolInstanceLoadBalancerBackendArgs', 'InstancePoolInstanceLoadBalancerBackendArgsDict']]]]] = None,
+            region: pulumi.Input[Optional[_builtins.str]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'InstancePoolInstance':
         """
         Get an existing InstancePoolInstance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

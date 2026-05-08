@@ -104,7 +104,7 @@ export interface GetMulticloudMulticloudsubscriptionsOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetMulticloudMulticloudsubscriptionsFilterArgs>[]>;
-    limit?: pulumi.Input<number>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetMulticloudMulticloudsubscriptionsFilterArgs>[] | undefined>;
+    limit?: pulumi.Input<number | undefined>;
 }

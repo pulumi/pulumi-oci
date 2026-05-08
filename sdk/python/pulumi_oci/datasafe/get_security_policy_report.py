@@ -203,7 +203,7 @@ def get_security_policy_report(security_policy_report_id: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_report = oci.DataSafe.get_security_policy_report(security_policy_report_id=test_security_policy_report_oci_data_safe_security_policy_report["id"])
+    test_security_policy_report = oci.datasafe.get_security_policy_report(security_policy_report_id=test_security_policy_report_oci_data_safe_security_policy_report["id"])
     ```
 
 
@@ -228,7 +228,7 @@ def get_security_policy_report(security_policy_report_id: Optional[_builtins.str
         target_id=pulumi.get(__ret__, 'target_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_security_policy_report_output(security_policy_report_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_security_policy_report_output(security_policy_report_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityPolicyReportResult]:
     """
     This data source provides details about a specific Security Policy Report resource in Oracle Cloud Infrastructure Data Safe service.
@@ -241,7 +241,7 @@ def get_security_policy_report_output(security_policy_report_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_report = oci.DataSafe.get_security_policy_report(security_policy_report_id=test_security_policy_report_oci_data_safe_security_policy_report["id"])
+    test_security_policy_report = oci.datasafe.get_security_policy_report(security_policy_report_id=test_security_policy_report_oci_data_safe_security_policy_report["id"])
     ```
 
 

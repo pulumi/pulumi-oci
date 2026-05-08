@@ -179,11 +179,11 @@ def get_fleet_summarize_library_inventory(application_id: Optional[_builtins.str
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'),
         uncorrelated_package_count=pulumi.get(__ret__, 'uncorrelated_package_count'))
-def get_fleet_summarize_library_inventory_output(application_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 fleet_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 managed_instance_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 time_end: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 time_start: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_fleet_summarize_library_inventory_output(application_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 fleet_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 managed_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 time_end: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 time_start: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetSummarizeLibraryInventoryResult]:
     """
     Use this data source to access information about an existing resource.

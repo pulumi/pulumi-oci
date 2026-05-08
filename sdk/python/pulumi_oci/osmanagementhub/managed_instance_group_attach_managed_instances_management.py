@@ -23,7 +23,7 @@ class ManagedInstanceGroupAttachManagedInstancesManagementArgs:
     def __init__(__self__, *,
                  managed_instance_group_id: pulumi.Input[_builtins.str],
                  managed_instances: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 work_request_details: Optional[pulumi.Input['ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs']] = None):
+                 work_request_details: pulumi.Input[Optional['ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs']] = None):
         """
         The set of arguments for constructing a ManagedInstanceGroupAttachManagedInstancesManagement resource.
 
@@ -62,23 +62,23 @@ class ManagedInstanceGroupAttachManagedInstancesManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="workRequestDetails")
-    def work_request_details(self) -> Optional[pulumi.Input['ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs']]:
+    def work_request_details(self) -> pulumi.Input[Optional['ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs']]:
         """
         Provides the name and description of the job.
         """
         return pulumi.get(self, "work_request_details")
 
     @work_request_details.setter
-    def work_request_details(self, value: Optional[pulumi.Input['ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs']]):
+    def work_request_details(self, value: pulumi.Input[Optional['ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs']]):
         pulumi.set(self, "work_request_details", value)
 
 
 @pulumi.input_type
 class _ManagedInstanceGroupAttachManagedInstancesManagementState:
     def __init__(__self__, *,
-                 managed_instance_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 managed_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: Optional[pulumi.Input['ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs']] = None):
+                 managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 work_request_details: pulumi.Input[Optional['ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering ManagedInstanceGroupAttachManagedInstancesManagement resources.
 
@@ -95,38 +95,38 @@ class _ManagedInstanceGroupAttachManagedInstancesManagementState:
 
     @_builtins.property
     @pulumi.getter(name="managedInstanceGroupId")
-    def managed_instance_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def managed_instance_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         """
         return pulumi.get(self, "managed_instance_group_id")
 
     @managed_instance_group_id.setter
-    def managed_instance_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def managed_instance_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "managed_instance_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="managedInstances")
-    def managed_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def managed_instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to the group.
         """
         return pulumi.get(self, "managed_instances")
 
     @managed_instances.setter
-    def managed_instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def managed_instances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "managed_instances", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestDetails")
-    def work_request_details(self) -> Optional[pulumi.Input['ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs']]:
+    def work_request_details(self) -> pulumi.Input[Optional['ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs']]:
         """
         Provides the name and description of the job.
         """
         return pulumi.get(self, "work_request_details")
 
     @work_request_details.setter
-    def work_request_details(self, value: Optional[pulumi.Input['ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs']]):
+    def work_request_details(self, value: pulumi.Input[Optional['ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs']]):
         pulumi.set(self, "work_request_details", value)
 
 
@@ -136,9 +136,9 @@ class ManagedInstanceGroupAttachManagedInstancesManagement(pulumi.CustomResource
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 managed_instance_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 managed_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgsDict']]] = None,
+                 managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Managed Instance Group Attach Managed Instances Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -231,9 +231,9 @@ class ManagedInstanceGroupAttachManagedInstancesManagement(pulumi.CustomResource
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 managed_instance_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 managed_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgsDict']]] = None,
+                 managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -260,9 +260,9 @@ class ManagedInstanceGroupAttachManagedInstancesManagement(pulumi.CustomResource
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            managed_instance_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            managed_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstanceGroupAttachManagedInstancesManagement':
+            managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            managed_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstanceGroupAttachManagedInstancesManagement':
         """
         Get an existing ManagedInstanceGroupAttachManagedInstancesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

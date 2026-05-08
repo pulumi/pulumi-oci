@@ -20,10 +20,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCompatibleFormatsForSensitiveType = oci.DataSafe.getCompatibleFormatsForSensitiveType({
+ * const testCompatibleFormatsForSensitiveType = oci.datasafe.getCompatibleFormatsForSensitiveType({
  *     compartmentId: compartmentId,
  *     accessLevel: compatibleFormatsForSensitiveTypeAccessLevel,
- *     compartmentIdInSubtree: compatibleFormatsForSensitiveTypeCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: compatibleFormatsForSensitiveTypeCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -84,10 +84,10 @@ export interface GetCompatibleFormatsForSensitiveTypeResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCompatibleFormatsForSensitiveType = oci.DataSafe.getCompatibleFormatsForSensitiveType({
+ * const testCompatibleFormatsForSensitiveType = oci.datasafe.getCompatibleFormatsForSensitiveType({
  *     compartmentId: compartmentId,
  *     accessLevel: compatibleFormatsForSensitiveTypeAccessLevel,
- *     compartmentIdInSubtree: compatibleFormatsForSensitiveTypeCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: compatibleFormatsForSensitiveTypeCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -107,7 +107,7 @@ export interface GetCompatibleFormatsForSensitiveTypeOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -115,5 +115,5 @@ export interface GetCompatibleFormatsForSensitiveTypeOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
 }

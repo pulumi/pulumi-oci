@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudAutonomousVmClusters = oci.Database.getCloudAutonomousVmClusters({
+ * const testCloudAutonomousVmClusters = oci.database.getCloudAutonomousVmClusters({
  *     compartmentId: compartmentId,
  *     availabilityDomain: cloudAutonomousVmClusterAvailabilityDomain,
  *     cloudExadataInfrastructureId: testCloudExadataInfrastructure.id,
@@ -110,7 +110,7 @@ export interface GetCloudAutonomousVmClustersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudAutonomousVmClusters = oci.Database.getCloudAutonomousVmClusters({
+ * const testCloudAutonomousVmClusters = oci.database.getCloudAutonomousVmClusters({
  *     compartmentId: compartmentId,
  *     availabilityDomain: cloudAutonomousVmClusterAvailabilityDomain,
  *     cloudExadataInfrastructureId: testCloudExadataInfrastructure.id,
@@ -138,11 +138,11 @@ export interface GetCloudAutonomousVmClustersOutputArgs {
     /**
      * A filter to return only resources that match the given availability domain exactly.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * If provided, filters the results for the specified cloud Exadata infrastructure.
      */
-    cloudExadataInfrastructureId?: pulumi.Input<string>;
+    cloudExadataInfrastructureId?: pulumi.Input<string | undefined>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -150,10 +150,10 @@ export interface GetCloudAutonomousVmClustersOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetCloudAutonomousVmClustersFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetCloudAutonomousVmClustersFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

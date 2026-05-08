@@ -32,15 +32,15 @@ class QuotaLockArgsDict(TypedDict):
     """
     Lock type.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the lock creator. The message typically gives an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
     """
@@ -49,9 +49,9 @@ class QuotaLockArgsDict(TypedDict):
 class QuotaLockArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Lock type.
         :param pulumi.Input[_builtins.str] message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
@@ -80,38 +80,38 @@ class QuotaLockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the lock creator. The message typically gives an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Date and time the quota was created, in the format defined by RFC 3339. Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 

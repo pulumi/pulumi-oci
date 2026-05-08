@@ -99,7 +99,7 @@ def get_customer_secret_keys(filters: Optional[Sequence[Union['GetCustomerSecret
     import pulumi
     import pulumi_oci as oci
 
-    test_customer_secret_keys = oci.Identity.get_customer_secret_keys(user_id=test_user["id"])
+    test_customer_secret_keys = oci.identity.get_customer_secret_keys(user_id=test_user["id"])
     ```
 
 
@@ -116,8 +116,8 @@ def get_customer_secret_keys(filters: Optional[Sequence[Union['GetCustomerSecret
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         user_id=pulumi.get(__ret__, 'user_id'))
-def get_customer_secret_keys_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCustomerSecretKeysFilterArgs', 'GetCustomerSecretKeysFilterArgsDict']]]]] = None,
-                                    user_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_customer_secret_keys_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCustomerSecretKeysFilterArgs', 'GetCustomerSecretKeysFilterArgsDict']]]]] = None,
+                                    user_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCustomerSecretKeysResult]:
     """
     This data source provides the list of Customer Secret Keys in Oracle Cloud Infrastructure Identity service.
@@ -131,7 +131,7 @@ def get_customer_secret_keys_output(filters: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_customer_secret_keys = oci.Identity.get_customer_secret_keys(user_id=test_user["id"])
+    test_customer_secret_keys = oci.identity.get_customer_secret_keys(user_id=test_user["id"])
     ```
 
 

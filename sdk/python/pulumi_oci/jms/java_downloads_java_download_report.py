@@ -23,10 +23,10 @@ class JavaDownloadsJavaDownloadReportArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  format: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_end: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_start: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_end: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_start: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a JavaDownloadsJavaDownloadReport resource.
 
@@ -78,43 +78,43 @@ class JavaDownloadsJavaDownloadReportArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeEnd")
-    def time_end(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_end(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The end time until when the download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         return pulumi.get(self, "time_end")
 
     @time_end.setter
-    def time_end(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_end(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_end", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStart")
-    def time_start(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_start(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The start time from when download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)). 
 
@@ -125,29 +125,29 @@ class JavaDownloadsJavaDownloadReportArgs:
         return pulumi.get(self, "time_start")
 
     @time_start.setter
-    def time_start(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_start(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_start", value)
 
 
 @pulumi.input_type
 class _JavaDownloadsJavaDownloadReportState:
     def __init__(__self__, *,
-                 checksum_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 checksum_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['JavaDownloadsJavaDownloadReportCreatedByArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 file_size_in_bytes: Optional[pulumi.Input[_builtins.str]] = None,
-                 format: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 sort_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 sort_order: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_end: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_start: Optional[pulumi.Input[_builtins.str]] = None):
+                 checksum_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 checksum_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_bies: pulumi.Input[Optional[Sequence[pulumi.Input['JavaDownloadsJavaDownloadReportCreatedByArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_size_in_bytes: pulumi.Input[Optional[_builtins.str]] = None,
+                 format: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 sort_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 sort_order: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_end: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_start: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering JavaDownloadsJavaDownloadReport resources.
 
@@ -205,181 +205,181 @@ class _JavaDownloadsJavaDownloadReportState:
 
     @_builtins.property
     @pulumi.getter(name="checksumType")
-    def checksum_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def checksum_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The algorithm used for calculating the checksum.
         """
         return pulumi.get(self, "checksum_type")
 
     @checksum_type.setter
-    def checksum_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def checksum_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "checksum_type", value)
 
     @_builtins.property
     @pulumi.getter(name="checksumValue")
-    def checksum_value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def checksum_value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The checksum value of the Java download report file.
         """
         return pulumi.get(self, "checksum_value")
 
     @checksum_value.setter
-    def checksum_value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def checksum_value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "checksum_value", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) here should be the tenancy OCID.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBies")
-    def created_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JavaDownloadsJavaDownloadReportCreatedByArgs']]]]:
+    def created_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['JavaDownloadsJavaDownloadReportCreatedByArgs']]]]:
         """
         An authorized principal.
         """
         return pulumi.get(self, "created_bies")
 
     @created_bies.setter
-    def created_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['JavaDownloadsJavaDownloadReportCreatedByArgs']]]]):
+    def created_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['JavaDownloadsJavaDownloadReportCreatedByArgs']]]]):
         pulumi.set(self, "created_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Display name for the Java download report.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="fileSizeInBytes")
-    def file_size_in_bytes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def file_size_in_bytes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Approximate size of the Java download report file in bytes.
         """
         return pulumi.get(self, "file_size_in_bytes")
 
     @file_size_in_bytes.setter
-    def file_size_in_bytes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def file_size_in_bytes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "file_size_in_bytes", value)
 
     @_builtins.property
     @pulumi.getter
-    def format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The format of the report that is generated.
         """
         return pulumi.get(self, "format")
 
     @format.setter
-    def format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "format", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="sortBy")
-    def sort_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sort_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "sort_by")
 
     @sort_by.setter
-    def sort_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sort_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sort_by", value)
 
     @_builtins.property
     @pulumi.getter(name="sortOrder")
-    def sort_order(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sort_order(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "sort_order")
 
     @sort_order.setter
-    def sort_order(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sort_order(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sort_order", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Java download report.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeEnd")
-    def time_end(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_end(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The end time until when the download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         return pulumi.get(self, "time_end")
 
     @time_end.setter
-    def time_end(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_end(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_end", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStart")
-    def time_start(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_start(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The start time from when download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)). 
 
@@ -390,7 +390,7 @@ class _JavaDownloadsJavaDownloadReportState:
         return pulumi.get(self, "time_start")
 
     @time_start.setter
-    def time_start(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_start(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_start", value)
 
 
@@ -400,12 +400,12 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 format: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_end: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_start: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 format: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_end: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_start: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Java Download Report resource in Oracle Cloud Infrastructure Jms Java Downloads service.
@@ -507,12 +507,12 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 format: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_end: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_start: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 format: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_end: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_start: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -552,22 +552,22 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            checksum_type: Optional[pulumi.Input[_builtins.str]] = None,
-            checksum_value: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['JavaDownloadsJavaDownloadReportCreatedByArgs', 'JavaDownloadsJavaDownloadReportCreatedByArgsDict']]]]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            file_size_in_bytes: Optional[pulumi.Input[_builtins.str]] = None,
-            format: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            sort_by: Optional[pulumi.Input[_builtins.str]] = None,
-            sort_order: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_end: Optional[pulumi.Input[_builtins.str]] = None,
-            time_start: Optional[pulumi.Input[_builtins.str]] = None) -> 'JavaDownloadsJavaDownloadReport':
+            checksum_type: pulumi.Input[Optional[_builtins.str]] = None,
+            checksum_value: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JavaDownloadsJavaDownloadReportCreatedByArgs', 'JavaDownloadsJavaDownloadReportCreatedByArgsDict']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            file_size_in_bytes: pulumi.Input[Optional[_builtins.str]] = None,
+            format: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            sort_by: pulumi.Input[Optional[_builtins.str]] = None,
+            sort_order: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_end: pulumi.Input[Optional[_builtins.str]] = None,
+            time_start: pulumi.Input[Optional[_builtins.str]] = None) -> 'JavaDownloadsJavaDownloadReport':
         """
         Get an existing JavaDownloadsJavaDownloadReport resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

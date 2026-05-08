@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalDbSystemConnectors = oci.DatabaseManagement.getExternalDbSystemConnectors({
+ * const testExternalDbSystemConnectors = oci.databasemanagement.getExternalDbSystemConnectors({
  *     compartmentId: compartmentId,
  *     displayName: externalDbSystemConnectorDisplayName,
  *     externalDbSystemId: testExternalDbSystem.id,
@@ -91,7 +91,7 @@ export interface GetExternalDbSystemConnectorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalDbSystemConnectors = oci.DatabaseManagement.getExternalDbSystemConnectors({
+ * const testExternalDbSystemConnectors = oci.databasemanagement.getExternalDbSystemConnectors({
  *     compartmentId: compartmentId,
  *     displayName: externalDbSystemConnectorDisplayName,
  *     externalDbSystemId: testExternalDbSystem.id,
@@ -116,14 +116,14 @@ export interface GetExternalDbSystemConnectorsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return the resources that match the entire display name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      */
-    externalDbSystemId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetExternalDbSystemConnectorsFilterArgs>[]>;
+    externalDbSystemId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetExternalDbSystemConnectorsFilterArgs>[] | undefined>;
 }

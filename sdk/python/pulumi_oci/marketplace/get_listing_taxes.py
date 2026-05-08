@@ -105,7 +105,7 @@ def get_listing_taxes(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_listing_taxes = oci.Marketplace.get_listing_taxes(listing_id=test_listing["id"],
+    test_listing_taxes = oci.marketplace.get_listing_taxes(listing_id=test_listing["id"],
         compartment_id=compartment_id)
     ```
 
@@ -126,9 +126,9 @@ def get_listing_taxes(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         listing_id=pulumi.get(__ret__, 'listing_id'),
         taxes=pulumi.get(__ret__, 'taxes'))
-def get_listing_taxes_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetListingTaxesFilterArgs', 'GetListingTaxesFilterArgsDict']]]]] = None,
-                             listing_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_listing_taxes_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetListingTaxesFilterArgs', 'GetListingTaxesFilterArgsDict']]]]] = None,
+                             listing_id: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetListingTaxesResult]:
     """
     This data source provides the list of Listing Taxes in Oracle Cloud Infrastructure Marketplace service.
@@ -141,7 +141,7 @@ def get_listing_taxes_output(compartment_id: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_listing_taxes = oci.Marketplace.get_listing_taxes(listing_id=test_listing["id"],
+    test_listing_taxes = oci.marketplace.get_listing_taxes(listing_id=test_listing["id"],
         compartment_id=compartment_id)
     ```
 

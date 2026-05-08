@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAllowedDomainLicenseTypes = oci.Identity.getAllowedDomainLicenseTypes({
+ * const testAllowedDomainLicenseTypes = oci.identity.getAllowedDomainLicenseTypes({
  *     currentLicenseTypeName: allowedDomainLicenseTypeCurrentLicenseTypeName,
  * });
  * ```
@@ -78,7 +78,7 @@ export interface GetAllowedDomainLicenseTypesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAllowedDomainLicenseTypes = oci.Identity.getAllowedDomainLicenseTypes({
+ * const testAllowedDomainLicenseTypes = oci.identity.getAllowedDomainLicenseTypes({
  *     currentLicenseTypeName: allowedDomainLicenseTypeCurrentLicenseTypeName,
  * });
  * ```
@@ -99,6 +99,6 @@ export interface GetAllowedDomainLicenseTypesOutputArgs {
     /**
      * The domain license type
      */
-    currentLicenseTypeName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetAllowedDomainLicenseTypesFilterArgs>[]>;
+    currentLicenseTypeName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetAllowedDomainLicenseTypesFilterArgs>[] | undefined>;
 }

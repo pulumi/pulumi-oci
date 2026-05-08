@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaintenanceRuns = oci.Database.getMaintenanceRuns({
+ * const testMaintenanceRuns = oci.database.getMaintenanceRuns({
  *     compartmentId: compartmentId,
  *     availabilityDomain: maintenanceRunAvailabilityDomain,
- *     isLocalAdg: maintenanceRunIsLocalAdg,
+ *     isLocalAdg: maintenanceRunIsLocalAdg === "true",
  *     maintenanceSubtype: maintenanceRunMaintenanceSubtype,
  *     maintenanceType: maintenanceRunMaintenanceType,
  *     state: maintenanceRunState,
@@ -134,10 +134,10 @@ export interface GetMaintenanceRunsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaintenanceRuns = oci.Database.getMaintenanceRuns({
+ * const testMaintenanceRuns = oci.database.getMaintenanceRuns({
  *     compartmentId: compartmentId,
  *     availabilityDomain: maintenanceRunAvailabilityDomain,
- *     isLocalAdg: maintenanceRunIsLocalAdg,
+ *     isLocalAdg: maintenanceRunIsLocalAdg === "true",
  *     maintenanceSubtype: maintenanceRunMaintenanceSubtype,
  *     maintenanceType: maintenanceRunMaintenanceType,
  *     state: maintenanceRunState,
@@ -168,34 +168,34 @@ export interface GetMaintenanceRunsOutputArgs {
     /**
      * A filter to return only resources that match the given availability domain exactly.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetMaintenanceRunsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetMaintenanceRunsFilterArgs>[] | undefined>;
     /**
      * A filter to return the maintenance history results for the local standby Autonomous AI Database Serverless only.
      */
-    isLocalAdg?: pulumi.Input<boolean>;
+    isLocalAdg?: pulumi.Input<boolean | undefined>;
     /**
      * The sub-type of the maintenance run.
      */
-    maintenanceSubtype?: pulumi.Input<string>;
+    maintenanceSubtype?: pulumi.Input<string | undefined>;
     /**
      * The maintenance type.
      */
-    maintenanceType?: pulumi.Input<string>;
+    maintenanceType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The target resource ID.
      */
-    targetResourceId?: pulumi.Input<string>;
+    targetResourceId?: pulumi.Input<string | undefined>;
     /**
      * The type of the target resource. Accepted values are: AUTONOMOUS_CONTAINER_DATABASE, AUTONOMOUS_EXADATA_INFRASTRUCTURE, EXADATA_DB_SYSTEM
      */
-    targetResourceType?: pulumi.Input<string>;
+    targetResourceType?: pulumi.Input<string | undefined>;
 }

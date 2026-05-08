@@ -210,83 +210,83 @@ export interface SqlFirewallPolicyState {
     /**
      * (Updatable) List of allowed ip addresses for the SQL Firewall policy.
      */
-    allowedClientIps?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedClientIps?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) List of allowed operating system user names for the SQL Firewall policy.
      */
-    allowedClientOsUsernames?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedClientOsUsernames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) List of allowed client programs for the SQL Firewall policy.
      */
-    allowedClientPrograms?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedClientPrograms?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The OCID of the compartment containing the SQL Firewall policy.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The database user name.
      */
-    dbUserName?: pulumi.Input<string>;
+    dbUserName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the SQL Firewall policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specifies the SQL Firewall policy enforcement option.
      */
-    enforcementScope?: pulumi.Input<string>;
+    enforcementScope?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Details about the current state of the SQL Firewall policy in Data Safe.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the security policy corresponding to the SQL Firewall policy.
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the SQL Firewall policy resource.
      */
-    sqlFirewallPolicyId?: pulumi.Input<string>;
+    sqlFirewallPolicyId?: pulumi.Input<string | undefined>;
     /**
      * Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      */
-    sqlLevel?: pulumi.Input<string>;
+    sqlLevel?: pulumi.Input<string | undefined>;
     /**
      * The current state of the SQL Firewall policy.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specifies whether the SQL Firewall policy is enabled or disabled.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time that the SQL Firewall policy was created, in the format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the SQL Firewall policy was last updated, in the format defined by RFC3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specifies the SQL Firewall action based on detection of SQL Firewall violations.
      */
-    violationAction?: pulumi.Input<string>;
+    violationAction?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
      *
@@ -294,7 +294,7 @@ export interface SqlFirewallPolicyState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    violationAudit?: pulumi.Input<string>;
+    violationAudit?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -304,39 +304,39 @@ export interface SqlFirewallPolicyArgs {
     /**
      * (Updatable) List of allowed ip addresses for the SQL Firewall policy.
      */
-    allowedClientIps?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedClientIps?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) List of allowed operating system user names for the SQL Firewall policy.
      */
-    allowedClientOsUsernames?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedClientOsUsernames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) List of allowed client programs for the SQL Firewall policy.
      */
-    allowedClientPrograms?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedClientPrograms?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The OCID of the compartment containing the SQL Firewall policy.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the SQL Firewall policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specifies the SQL Firewall policy enforcement option.
      */
-    enforcementScope?: pulumi.Input<string>;
+    enforcementScope?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of the SQL Firewall policy resource.
      */
@@ -344,11 +344,11 @@ export interface SqlFirewallPolicyArgs {
     /**
      * (Updatable) Specifies whether the SQL Firewall policy is enabled or disabled.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specifies the SQL Firewall action based on detection of SQL Firewall violations.
      */
-    violationAction?: pulumi.Input<string>;
+    violationAction?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
      *
@@ -356,5 +356,5 @@ export interface SqlFirewallPolicyArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    violationAudit?: pulumi.Input<string>;
+    violationAudit?: pulumi.Input<string | undefined>;
 }

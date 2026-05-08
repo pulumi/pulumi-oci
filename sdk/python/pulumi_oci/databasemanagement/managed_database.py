@@ -22,8 +22,8 @@ __all__ = ['ManagedDatabaseArgs', 'ManagedDatabase']
 class ManagedDatabaseArgs:
     def __init__(__self__, *,
                  managed_database_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ManagedDatabase resource.
 
@@ -59,54 +59,54 @@ class ManagedDatabaseArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
 
 @pulumi.input_type
 class _ManagedDatabaseState:
     def __init__(__self__, *,
-                 additional_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_platform_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_sub_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 dbmgmt_feature_configs: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_cluster: Optional[pulumi.Input[_builtins.bool]] = None,
-                 managed_database_groups: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseManagedDatabaseGroupArgs']]]] = None,
-                 managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_option: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_container_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 workload_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 additional_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_platform_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_sub_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 dbmgmt_feature_configs: pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
+                 managed_database_groups: pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseManagedDatabaseGroupArgs']]]] = None,
+                 managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_option: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_container_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 workload_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagedDatabase resources.
 
@@ -184,175 +184,175 @@ class _ManagedDatabaseState:
 
     @_builtins.property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def additional_details(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         The additional details specific to a type of database defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "additional_details")
 
     @additional_details.setter
-    def additional_details(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def additional_details(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "additional_details", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databasePlatformName")
-    def database_platform_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_platform_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The operating system of database.
         """
         return pulumi.get(self, "database_platform_name")
 
     @database_platform_name.setter
-    def database_platform_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_platform_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_platform_name", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseStatus")
-    def database_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
         """
         return pulumi.get(self, "database_status")
 
     @database_status.setter
-    def database_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_status", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseSubType")
-    def database_sub_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_sub_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         """
         return pulumi.get(self, "database_sub_type")
 
     @database_sub_type.setter
-    def database_sub_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_sub_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_sub_type", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseType")
-    def database_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of Oracle Database installation.
         """
         return pulumi.get(self, "database_type")
 
     @database_type.setter
-    def database_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_type", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseVersion")
-    def database_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle Database version.
         """
         return pulumi.get(self, "database_version")
 
     @database_version.setter
-    def database_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_version", value)
 
     @_builtins.property
     @pulumi.getter(name="dbSystemId")
-    def db_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system that this Managed Database is part of.
         """
         return pulumi.get(self, "db_system_id")
 
     @db_system_id.setter
-    def db_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dbmgmtFeatureConfigs")
-    def dbmgmt_feature_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigArgs']]]]:
+    def dbmgmt_feature_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigArgs']]]]:
         """
         The list of feature configurations
         """
         return pulumi.get(self, "dbmgmt_feature_configs")
 
     @dbmgmt_feature_configs.setter
-    def dbmgmt_feature_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigArgs']]]]):
+    def dbmgmt_feature_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigArgs']]]]):
         pulumi.set(self, "dbmgmt_feature_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deploymentType")
-    def deployment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deployment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The infrastructure used to deploy the Oracle Database.
         """
         return pulumi.get(self, "deployment_type")
 
     @deployment_type.setter
-    def deployment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deployment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deployment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isCluster")
-    def is_cluster(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cluster(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the Oracle Database is part of a cluster.
         """
         return pulumi.get(self, "is_cluster")
 
     @is_cluster.setter
-    def is_cluster(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cluster(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cluster", value)
 
     @_builtins.property
     @pulumi.getter(name="managedDatabaseGroups")
-    def managed_database_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseManagedDatabaseGroupArgs']]]]:
+    def managed_database_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseManagedDatabaseGroupArgs']]]]:
         """
         A list of Managed Database Groups that the Managed Database belongs to.
         """
         return pulumi.get(self, "managed_database_groups")
 
     @managed_database_groups.setter
-    def managed_database_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseManagedDatabaseGroupArgs']]]]):
+    def managed_database_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseManagedDatabaseGroupArgs']]]]):
         pulumi.set(self, "managed_database_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="managedDatabaseId")
-    def managed_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def managed_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 
@@ -363,91 +363,91 @@ class _ManagedDatabaseState:
         return pulumi.get(self, "managed_database_id")
 
     @managed_database_id.setter
-    def managed_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def managed_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "managed_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="managementOption")
-    def management_option(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_option(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The management option used when enabling Database Management.
         """
         return pulumi.get(self, "management_option")
 
     @management_option.setter
-    def management_option(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_option(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_option", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Managed Database.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="parentContainerId")
-    def parent_container_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parent_container_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database if Managed Database is a Pluggable Database.
         """
         return pulumi.get(self, "parent_container_id")
 
     @parent_container_id.setter
-    def parent_container_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parent_container_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parent_container_id", value)
 
     @_builtins.property
     @pulumi.getter(name="storageSystemId")
-    def storage_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
         """
         return pulumi.get(self, "storage_system_id")
 
     @storage_system_id.setter
-    def storage_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Managed Database was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="workloadType")
-    def workload_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def workload_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The workload type of the Autonomous Database.
         """
         return pulumi.get(self, "workload_type")
 
     @workload_type.setter
-    def workload_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def workload_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "workload_type", value)
 
 
@@ -457,9 +457,9 @@ class ManagedDatabase(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Managed Database resource in Oracle Cloud Infrastructure Database Management service.
@@ -526,9 +526,9 @@ class ManagedDatabase(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -572,28 +572,28 @@ class ManagedDatabase(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            additional_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            database_platform_name: Optional[pulumi.Input[_builtins.str]] = None,
-            database_status: Optional[pulumi.Input[_builtins.str]] = None,
-            database_sub_type: Optional[pulumi.Input[_builtins.str]] = None,
-            database_type: Optional[pulumi.Input[_builtins.str]] = None,
-            database_version: Optional[pulumi.Input[_builtins.str]] = None,
-            db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-            dbmgmt_feature_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedDatabaseDbmgmtFeatureConfigArgs', 'ManagedDatabaseDbmgmtFeatureConfigArgsDict']]]]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_cluster: Optional[pulumi.Input[_builtins.bool]] = None,
-            managed_database_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedDatabaseManagedDatabaseGroupArgs', 'ManagedDatabaseManagedDatabaseGroupArgsDict']]]]] = None,
-            managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            management_option: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            parent_container_id: Optional[pulumi.Input[_builtins.str]] = None,
-            storage_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            workload_type: Optional[pulumi.Input[_builtins.str]] = None) -> 'ManagedDatabase':
+            additional_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_platform_name: pulumi.Input[Optional[_builtins.str]] = None,
+            database_status: pulumi.Input[Optional[_builtins.str]] = None,
+            database_sub_type: pulumi.Input[Optional[_builtins.str]] = None,
+            database_type: pulumi.Input[Optional[_builtins.str]] = None,
+            database_version: pulumi.Input[Optional[_builtins.str]] = None,
+            db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            dbmgmt_feature_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedDatabaseDbmgmtFeatureConfigArgs', 'ManagedDatabaseDbmgmtFeatureConfigArgsDict']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
+            managed_database_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedDatabaseManagedDatabaseGroupArgs', 'ManagedDatabaseManagedDatabaseGroupArgsDict']]]]] = None,
+            managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            management_option: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_container_id: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            workload_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'ManagedDatabase':
         """
         Get an existing ManagedDatabase resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -23,7 +23,7 @@ class CloudVmClusterIormConfigArgs:
     def __init__(__self__, *,
                  cloud_vm_cluster_id: pulumi.Input[_builtins.str],
                  db_plans: pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigDbPlanArgs']]],
-                 objective: Optional[pulumi.Input[_builtins.str]] = None):
+                 objective: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a CloudVmClusterIormConfig resource.
 
@@ -62,25 +62,25 @@ class CloudVmClusterIormConfigArgs:
 
     @_builtins.property
     @pulumi.getter
-    def objective(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def objective(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Value for the IORM objective Default is "Auto"
         """
         return pulumi.get(self, "objective")
 
     @objective.setter
-    def objective(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def objective(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "objective", value)
 
 
 @pulumi.input_type
 class _CloudVmClusterIormConfigState:
     def __init__(__self__, *,
-                 cloud_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_plans: Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigDbPlanArgs']]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 objective: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 cloud_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_plans: pulumi.Input[Optional[Sequence[pulumi.Input['CloudVmClusterIormConfigDbPlanArgs']]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 objective: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudVmClusterIormConfig resources.
 
@@ -103,62 +103,62 @@ class _CloudVmClusterIormConfigState:
 
     @_builtins.property
     @pulumi.getter(name="cloudVmClusterId")
-    def cloud_vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cloud_vm_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "cloud_vm_cluster_id")
 
     @cloud_vm_cluster_id.setter
-    def cloud_vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cloud_vm_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cloud_vm_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dbPlans")
-    def db_plans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigDbPlanArgs']]]]:
+    def db_plans(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudVmClusterIormConfigDbPlanArgs']]]]:
         """
         (Updatable) Array of IORM Setting for all the database in this Cloud Vm Cluster
         """
         return pulumi.get(self, "db_plans")
 
     @db_plans.setter
-    def db_plans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigDbPlanArgs']]]]):
+    def db_plans(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudVmClusterIormConfigDbPlanArgs']]]]):
         pulumi.set(self, "db_plans", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional information about the current `lifecycleState`.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def objective(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def objective(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Value for the IORM objective Default is "Auto"
         """
         return pulumi.get(self, "objective")
 
     @objective.setter
-    def objective(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def objective(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "objective", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of IORM configuration for the Exadata DB system.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
@@ -168,9 +168,9 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cloud_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_plans: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudVmClusterIormConfigDbPlanArgs', 'CloudVmClusterIormConfigDbPlanArgsDict']]]]] = None,
-                 objective: Optional[pulumi.Input[_builtins.str]] = None,
+                 cloud_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_plans: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudVmClusterIormConfigDbPlanArgs', 'CloudVmClusterIormConfigDbPlanArgsDict']]]]] = None,
+                 objective: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Cloud Vm Cluster Iorm Config resource in Oracle Cloud Infrastructure Database service.
@@ -191,7 +191,7 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
         test_cloud_vm_cluster_iorm_config = oci.database.CloudVmClusterIormConfig("test_cloud_vm_cluster_iorm_config",
             db_plans=[{
                 "db_name": cloud_vm_cluster_iorm_config_db_plans_db_name,
-                "share": cloud_vm_cluster_iorm_config_db_plans_share,
+                "share": int(cloud_vm_cluster_iorm_config_db_plans_share),
             }],
             cloud_vm_cluster_id=test_cloud_vm_cluster["id"],
             objective="AUTO")
@@ -237,7 +237,7 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
         test_cloud_vm_cluster_iorm_config = oci.database.CloudVmClusterIormConfig("test_cloud_vm_cluster_iorm_config",
             db_plans=[{
                 "db_name": cloud_vm_cluster_iorm_config_db_plans_db_name,
-                "share": cloud_vm_cluster_iorm_config_db_plans_share,
+                "share": int(cloud_vm_cluster_iorm_config_db_plans_share),
             }],
             cloud_vm_cluster_id=test_cloud_vm_cluster["id"],
             objective="AUTO")
@@ -267,9 +267,9 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cloud_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_plans: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudVmClusterIormConfigDbPlanArgs', 'CloudVmClusterIormConfigDbPlanArgsDict']]]]] = None,
-                 objective: Optional[pulumi.Input[_builtins.str]] = None,
+                 cloud_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_plans: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudVmClusterIormConfigDbPlanArgs', 'CloudVmClusterIormConfigDbPlanArgsDict']]]]] = None,
+                 objective: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -298,11 +298,11 @@ class CloudVmClusterIormConfig(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cloud_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-            db_plans: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudVmClusterIormConfigDbPlanArgs', 'CloudVmClusterIormConfigDbPlanArgsDict']]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            objective: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None) -> 'CloudVmClusterIormConfig':
+            cloud_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            db_plans: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudVmClusterIormConfigDbPlanArgs', 'CloudVmClusterIormConfigDbPlanArgsDict']]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            objective: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> 'CloudVmClusterIormConfig':
         """
         Get an existing CloudVmClusterIormConfig resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

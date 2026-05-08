@@ -422,7 +422,7 @@ def get_virtual_circuit(virtual_circuit_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_circuit = oci.Core.get_virtual_circuit(virtual_circuit_id=test_virtual_circuit_oci_core_virtual_circuit["id"])
+    test_virtual_circuit = oci.core.get_virtual_circuit(virtual_circuit_id=test_virtual_circuit_oci_core_virtual_circuit["id"])
     ```
 
 
@@ -465,7 +465,7 @@ def get_virtual_circuit(virtual_circuit_id: Optional[_builtins.str] = None,
         type=pulumi.get(__ret__, 'type'),
         virtual_circuit_id=pulumi.get(__ret__, 'virtual_circuit_id'),
         virtual_circuit_redundancy_metadatas=pulumi.get(__ret__, 'virtual_circuit_redundancy_metadatas'))
-def get_virtual_circuit_output(virtual_circuit_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_virtual_circuit_output(virtual_circuit_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVirtualCircuitResult]:
     """
     This data source provides details about a specific Virtual Circuit resource in Oracle Cloud Infrastructure Core service.
@@ -478,7 +478,7 @@ def get_virtual_circuit_output(virtual_circuit_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_circuit = oci.Core.get_virtual_circuit(virtual_circuit_id=test_virtual_circuit_oci_core_virtual_circuit["id"])
+    test_virtual_circuit = oci.core.get_virtual_circuit(virtual_circuit_id=test_virtual_circuit_oci_core_virtual_circuit["id"])
     ```
 
 

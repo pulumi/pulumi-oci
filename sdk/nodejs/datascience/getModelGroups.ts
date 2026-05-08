@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelGroups = oci.DataScience.getModelGroups({
+ * const testModelGroups = oci.datascience.getModelGroups({
  *     compartmentId: compartmentId,
  *     createdBy: modelGroupCreatedBy,
  *     displayName: modelGroupDisplayName,
@@ -126,7 +126,7 @@ export interface GetModelGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelGroups = oci.DataScience.getModelGroups({
+ * const testModelGroups = oci.datascience.getModelGroups({
  *     compartmentId: compartmentId,
  *     createdBy: modelGroupCreatedBy,
  *     displayName: modelGroupDisplayName,
@@ -162,26 +162,26 @@ export interface GetModelGroupsOutputArgs {
     /**
      * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * <b>Filter</b> results by its user-friendly name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetModelGroupsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetModelGroupsFilterArgs>[] | undefined>;
     /**
      * <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the modelGroupVersionHistory.
      */
-    modelGroupVersionHistoryId?: pulumi.Input<string>;
+    modelGroupVersionHistoryId?: pulumi.Input<string | undefined>;
     /**
      * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      */
-    projectId?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources matching the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -104,8 +104,8 @@ def get_top_utilized_resources(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_top_utilized_resources = oci.LicenseManager.get_top_utilized_resources(compartment_id=compartment_id,
-        is_compartment_id_in_subtree=top_utilized_resource_is_compartment_id_in_subtree,
+    test_top_utilized_resources = oci.licensemanager.get_top_utilized_resources(compartment_id=compartment_id,
+        is_compartment_id_in_subtree=top_utilized_resource_is_compartment_id_in_subtree == "true",
         resource_unit_type=top_utilized_resource_resource_unit_type)
     ```
 
@@ -127,9 +127,9 @@ def get_top_utilized_resources(compartment_id: Optional[_builtins.str] = None,
         is_compartment_id_in_subtree=pulumi.get(__ret__, 'is_compartment_id_in_subtree'),
         items=pulumi.get(__ret__, 'items'),
         resource_unit_type=pulumi.get(__ret__, 'resource_unit_type'))
-def get_top_utilized_resources_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      is_compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                      resource_unit_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_top_utilized_resources_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      is_compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                      resource_unit_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTopUtilizedResourcesResult]:
     """
     This data source provides the list of Top Utilized Resources in Oracle Cloud Infrastructure License Manager service.
@@ -142,8 +142,8 @@ def get_top_utilized_resources_output(compartment_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_top_utilized_resources = oci.LicenseManager.get_top_utilized_resources(compartment_id=compartment_id,
-        is_compartment_id_in_subtree=top_utilized_resource_is_compartment_id_in_subtree,
+    test_top_utilized_resources = oci.licensemanager.get_top_utilized_resources(compartment_id=compartment_id,
+        is_compartment_id_in_subtree=top_utilized_resource_is_compartment_id_in_subtree == "true",
         resource_unit_type=top_utilized_resource_resource_unit_type)
     ```
 

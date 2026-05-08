@@ -82,22 +82,22 @@ export class OracleManagedCustomEndpoint extends pulumi.CustomResource {
  * Input properties used for looking up and filtering OracleManagedCustomEndpoint resources.
  */
 export interface OracleManagedCustomEndpointState {
-    dnsType?: pulumi.Input<string>;
-    dnsZoneName?: pulumi.Input<string>;
-    hostname?: pulumi.Input<string>;
-    integrationInstanceId?: pulumi.Input<string>;
-    managedType?: pulumi.Input<string>;
-    state?: pulumi.Input<string>;
+    dnsType?: pulumi.Input<string | undefined>;
+    dnsZoneName?: pulumi.Input<string | undefined>;
+    hostname?: pulumi.Input<string | undefined>;
+    integrationInstanceId?: pulumi.Input<string | undefined>;
+    managedType?: pulumi.Input<string | undefined>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a OracleManagedCustomEndpoint resource.
  */
 export interface OracleManagedCustomEndpointArgs {
-    dnsType?: pulumi.Input<string>;
-    dnsZoneName?: pulumi.Input<string>;
+    dnsType?: pulumi.Input<string | undefined>;
+    dnsZoneName?: pulumi.Input<string | undefined>;
     hostname: pulumi.Input<string>;
     integrationInstanceId: pulumi.Input<string>;
-    managedType?: pulumi.Input<string>;
-    state?: pulumi.Input<string>;
+    managedType?: pulumi.Input<string | undefined>;
+    state?: pulumi.Input<string | undefined>;
 }

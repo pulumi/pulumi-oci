@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInvoices = oci.OneSubsription.getInvoices({
+ * const testInvoices = oci.onesubsription.getInvoices({
  *     arCustomerTransactionId: testArCustomerTransaction.id,
  *     compartmentId: compartmentId,
  *     fields: invoiceFields,
@@ -95,7 +95,7 @@ export interface GetInvoicesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInvoices = oci.OneSubsription.getInvoices({
+ * const testInvoices = oci.onesubsription.getInvoices({
  *     arCustomerTransactionId: testArCustomerTransaction.id,
  *     compartmentId: compartmentId,
  *     fields: invoiceFields,
@@ -131,14 +131,14 @@ export interface GetInvoicesOutputArgs {
     /**
      * Partial response refers to an optimization technique offered by the RESTful web APIs to return only the information  (fields) required by the client. This parameter is used to control what fields to return.
      */
-    fields?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OneSubsription.GetInvoicesFilterArgs>[]>;
+    fields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OneSubsription.GetInvoicesFilterArgs>[] | undefined>;
     /**
      * Initial date to filter Invoice data in SPM.
      */
-    timeFrom?: pulumi.Input<string>;
+    timeFrom?: pulumi.Input<string | undefined>;
     /**
      * Final date to filter Invoice data in SPM.
      */
-    timeTo?: pulumi.Input<string>;
+    timeTo?: pulumi.Input<string | undefined>;
 }

@@ -148,7 +148,7 @@ def get_scheduled_actions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_actions = oci.Database.get_scheduled_actions(compartment_id=compartment_id,
+    test_scheduled_actions = oci.database.get_scheduled_actions(compartment_id=compartment_id,
         display_name=scheduled_action_display_name,
         id=scheduled_action_id,
         scheduling_plan_id=test_scheduling_plan["id"],
@@ -184,13 +184,13 @@ def get_scheduled_actions(compartment_id: Optional[_builtins.str] = None,
         scheduling_plan_id=pulumi.get(__ret__, 'scheduling_plan_id'),
         service_type=pulumi.get(__ret__, 'service_type'),
         state=pulumi.get(__ret__, 'state'))
-def get_scheduled_actions_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetScheduledActionsFilterArgs', 'GetScheduledActionsFilterArgsDict']]]]] = None,
-                                 id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 scheduling_plan_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 service_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_scheduled_actions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetScheduledActionsFilterArgs', 'GetScheduledActionsFilterArgsDict']]]]] = None,
+                                 id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 scheduling_plan_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 service_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetScheduledActionsResult]:
     """
     This data source provides the list of Scheduled Actions in Oracle Cloud Infrastructure Database service.
@@ -203,7 +203,7 @@ def get_scheduled_actions_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_actions = oci.Database.get_scheduled_actions(compartment_id=compartment_id,
+    test_scheduled_actions = oci.database.get_scheduled_actions(compartment_id=compartment_id,
         display_name=scheduled_action_display_name,
         id=scheduled_action_id,
         scheduling_plan_id=test_scheduling_plan["id"],

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApplication = oci.DataFlow.getApplication({
+ * const testApplication = oci.dataflow.getApplication({
  *     applicationId: testApplicationOciDataflowApplication.id,
  * });
  * ```
@@ -196,7 +196,7 @@ export interface GetApplicationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApplication = oci.DataFlow.getApplication({
+ * const testApplication = oci.dataflow.getApplication({
  *     applicationId: testApplicationOciDataflowApplication.id,
  * });
  * ```

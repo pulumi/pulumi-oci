@@ -84,7 +84,7 @@ def get_namespace_storage_encryption_key_info(namespace: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_storage_encryption_key_info = oci.LogAnalytics.get_namespace_storage_encryption_key_info(namespace=namespace_storage_encryption_key_info_namespace)
+    test_namespace_storage_encryption_key_info = oci.loganalytics.get_namespace_storage_encryption_key_info(namespace=namespace_storage_encryption_key_info_namespace)
     ```
 
 
@@ -99,7 +99,7 @@ def get_namespace_storage_encryption_key_info(namespace: Optional[_builtins.str]
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'),
         namespace=pulumi.get(__ret__, 'namespace'))
-def get_namespace_storage_encryption_key_info_output(namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_namespace_storage_encryption_key_info_output(namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceStorageEncryptionKeyInfoResult]:
     """
     This data source provides details about a specific Namespace Storage Encryption Key Info resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -112,7 +112,7 @@ def get_namespace_storage_encryption_key_info_output(namespace: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_storage_encryption_key_info = oci.LogAnalytics.get_namespace_storage_encryption_key_info(namespace=namespace_storage_encryption_key_info_namespace)
+    test_namespace_storage_encryption_key_info = oci.loganalytics.get_namespace_storage_encryption_key_info(namespace=namespace_storage_encryption_key_info_namespace)
     ```
 
 

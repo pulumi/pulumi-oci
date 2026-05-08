@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLimitDefinitions = oci.Limits.getLimitDefinitions({
+ * const testLimitDefinitions = oci.limits.getLimitDefinitions({
  *     compartmentId: tenancyOcid,
  *     name: limitDefinitionName,
  *     serviceName: testService.name,
@@ -98,7 +98,7 @@ export interface GetLimitDefinitionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLimitDefinitions = oci.Limits.getLimitDefinitions({
+ * const testLimitDefinitions = oci.limits.getLimitDefinitions({
  *     compartmentId: tenancyOcid,
  *     name: limitDefinitionName,
  *     serviceName: testService.name,
@@ -125,17 +125,17 @@ export interface GetLimitDefinitionsOutputArgs {
      * The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Limits.GetLimitDefinitionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Limits.GetLimitDefinitionsFilterArgs>[] | undefined>;
     /**
      * Optional field, filter for a specific resource limit.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The target service name.
      */
-    serviceName?: pulumi.Input<string>;
+    serviceName?: pulumi.Input<string | undefined>;
     /**
      * The subscription OCID assigned to the tenant.
      */
-    subscriptionId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string | undefined>;
 }

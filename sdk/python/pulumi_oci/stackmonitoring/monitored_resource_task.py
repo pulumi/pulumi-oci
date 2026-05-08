@@ -23,9 +23,9 @@ class MonitoredResourceTaskArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  task_details: pulumi.Input['MonitoredResourceTaskTaskDetailsArgs'],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a MonitoredResourceTask resource.
 
@@ -70,56 +70,56 @@ class MonitoredResourceTaskArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the task. If not provided by default the following names will be taken Oracle Cloud Infrastructure tasks - namespace plus timestamp.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _MonitoredResourceTaskState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 task_details: Optional[pulumi.Input['MonitoredResourceTaskTaskDetailsArgs']] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 work_request_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 task_details: pulumi.Input[Optional['MonitoredResourceTaskTaskDetailsArgs']] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 work_request_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering MonitoredResourceTask resources.
 
@@ -163,146 +163,146 @@ class _MonitoredResourceTaskState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment identifier.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the task. If not provided by default the following names will be taken Oracle Cloud Infrastructure tasks - namespace plus timestamp.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the stack monitoring resource task.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="taskDetails")
-    def task_details(self) -> Optional[pulumi.Input['MonitoredResourceTaskTaskDetailsArgs']]:
+    def task_details(self) -> pulumi.Input[Optional['MonitoredResourceTaskTaskDetailsArgs']]:
         """
         The request details for the performing the task.
         """
         return pulumi.get(self, "task_details")
 
     @task_details.setter
-    def task_details(self, value: Optional[pulumi.Input['MonitoredResourceTaskTaskDetailsArgs']]):
+    def task_details(self, value: pulumi.Input[Optional['MonitoredResourceTaskTaskDetailsArgs']]):
         pulumi.set(self, "task_details", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
         """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time when the stack monitoring resource task was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time when the stack monitoring resource task was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of the task.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestIds")
-    def work_request_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def work_request_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Identifiers [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for work requests submitted for this task.
         """
         return pulumi.get(self, "work_request_ids")
 
     @work_request_ids.setter
-    def work_request_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def work_request_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "work_request_ids", value)
 
 
@@ -312,11 +312,11 @@ class MonitoredResourceTask(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 task_details: Optional[pulumi.Input[Union['MonitoredResourceTaskTaskDetailsArgs', 'MonitoredResourceTaskTaskDetailsArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 task_details: pulumi.Input[Optional[Union['MonitoredResourceTaskTaskDetailsArgs', 'MonitoredResourceTaskTaskDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Monitored Resource Task resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -337,16 +337,16 @@ class MonitoredResourceTask(pulumi.CustomResource):
             task_details={
                 "type": monitored_resource_task_task_details_type,
                 "agent_id": test_agent["id"],
-                "availability_proxy_metric_collection_interval": monitored_resource_task_task_details_availability_proxy_metric_collection_interval,
+                "availability_proxy_metric_collection_interval": int(monitored_resource_task_task_details_availability_proxy_metric_collection_interval),
                 "availability_proxy_metrics": monitored_resource_task_task_details_availability_proxy_metrics,
                 "console_path_prefix": monitored_resource_task_task_details_console_path_prefix,
                 "external_id_mapping": monitored_resource_task_task_details_external_id_mapping,
                 "handler_type": monitored_resource_task_task_details_handler_type,
-                "is_enable": monitored_resource_task_task_details_is_enable,
+                "is_enable": monitored_resource_task_task_details_is_enable == "true",
                 "lifecycle_status_mappings_for_up_statuses": monitored_resource_task_task_details_lifecycle_status_mappings_for_up_status,
                 "namespace": monitored_resource_task_task_details_namespace,
                 "receiver_properties": {
-                    "listener_port": monitored_resource_task_task_details_receiver_properties_listener_port,
+                    "listener_port": int(monitored_resource_task_task_details_receiver_properties_listener_port),
                 },
                 "resource_group": monitored_resource_task_task_details_resource_group,
                 "resource_name_filter": monitored_resource_task_task_details_resource_name_filter,
@@ -355,7 +355,7 @@ class MonitoredResourceTask(pulumi.CustomResource):
                 "resource_type_mapping": monitored_resource_task_task_details_resource_type_mapping,
                 "resource_types_configurations": [{
                     "availability_metrics_config": {
-                        "collection_interval_in_seconds": monitored_resource_task_task_details_resource_types_configuration_availability_metrics_config_collection_interval_in_seconds,
+                        "collection_interval_in_seconds": int(monitored_resource_task_task_details_resource_types_configuration_availability_metrics_config_collection_interval_in_seconds),
                         "metrics": monitored_resource_task_task_details_resource_types_configuration_availability_metrics_config_metrics,
                     },
                     "handler_config": {
@@ -371,26 +371,26 @@ class MonitoredResourceTask(pulumi.CustomResource):
                         }],
                         "metric_mappings": [{
                             "collector_metric_name": test_metric["name"],
-                            "is_skip_upload": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_mappings_is_skip_upload,
-                            "metric_upload_interval_in_seconds": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_mappings_metric_upload_interval_in_seconds,
+                            "is_skip_upload": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_mappings_is_skip_upload == "true",
+                            "metric_upload_interval_in_seconds": int(monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_mappings_metric_upload_interval_in_seconds),
                             "telemetry_metric_name": test_metric["name"],
                         }],
                         "metric_name_config": {
                             "exclude_pattern_on_prefix": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_name_config_exclude_pattern_on_prefix,
-                            "is_prefix_with_collector_type": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_name_config_is_prefix_with_collector_type,
+                            "is_prefix_with_collector_type": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_name_config_is_prefix_with_collector_type == "true",
                         },
-                        "metric_upload_interval_in_seconds": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_upload_interval_in_seconds,
+                        "metric_upload_interval_in_seconds": int(monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_upload_interval_in_seconds),
                         "telegraf_resource_name_config": {
                             "exclude_tags": monitored_resource_task_task_details_resource_types_configuration_handler_config_telegraf_resource_name_config_exclude_tags,
                             "include_tags": monitored_resource_task_task_details_resource_types_configuration_handler_config_telegraf_resource_name_config_include_tags,
-                            "is_use_tags_only": monitored_resource_task_task_details_resource_types_configuration_handler_config_telegraf_resource_name_config_is_use_tags_only,
+                            "is_use_tags_only": monitored_resource_task_task_details_resource_types_configuration_handler_config_telegraf_resource_name_config_is_use_tags_only == "true",
                         },
                         "telemetry_resource_group": monitored_resource_task_task_details_resource_types_configuration_handler_config_telemetry_resource_group,
                     },
                     "resource_type": monitored_resource_task_task_details_resource_types_configuration_resource_type,
                 }],
                 "service_base_url": monitored_resource_task_task_details_service_base_url,
-                "should_use_metrics_flow_for_status": monitored_resource_task_task_details_should_use_metrics_flow_for_status,
+                "should_use_metrics_flow_for_status": monitored_resource_task_task_details_should_use_metrics_flow_for_status == "true",
                 "source": monitored_resource_task_task_details_source,
             },
             defined_tags={
@@ -444,16 +444,16 @@ class MonitoredResourceTask(pulumi.CustomResource):
             task_details={
                 "type": monitored_resource_task_task_details_type,
                 "agent_id": test_agent["id"],
-                "availability_proxy_metric_collection_interval": monitored_resource_task_task_details_availability_proxy_metric_collection_interval,
+                "availability_proxy_metric_collection_interval": int(monitored_resource_task_task_details_availability_proxy_metric_collection_interval),
                 "availability_proxy_metrics": monitored_resource_task_task_details_availability_proxy_metrics,
                 "console_path_prefix": monitored_resource_task_task_details_console_path_prefix,
                 "external_id_mapping": monitored_resource_task_task_details_external_id_mapping,
                 "handler_type": monitored_resource_task_task_details_handler_type,
-                "is_enable": monitored_resource_task_task_details_is_enable,
+                "is_enable": monitored_resource_task_task_details_is_enable == "true",
                 "lifecycle_status_mappings_for_up_statuses": monitored_resource_task_task_details_lifecycle_status_mappings_for_up_status,
                 "namespace": monitored_resource_task_task_details_namespace,
                 "receiver_properties": {
-                    "listener_port": monitored_resource_task_task_details_receiver_properties_listener_port,
+                    "listener_port": int(monitored_resource_task_task_details_receiver_properties_listener_port),
                 },
                 "resource_group": monitored_resource_task_task_details_resource_group,
                 "resource_name_filter": monitored_resource_task_task_details_resource_name_filter,
@@ -462,7 +462,7 @@ class MonitoredResourceTask(pulumi.CustomResource):
                 "resource_type_mapping": monitored_resource_task_task_details_resource_type_mapping,
                 "resource_types_configurations": [{
                     "availability_metrics_config": {
-                        "collection_interval_in_seconds": monitored_resource_task_task_details_resource_types_configuration_availability_metrics_config_collection_interval_in_seconds,
+                        "collection_interval_in_seconds": int(monitored_resource_task_task_details_resource_types_configuration_availability_metrics_config_collection_interval_in_seconds),
                         "metrics": monitored_resource_task_task_details_resource_types_configuration_availability_metrics_config_metrics,
                     },
                     "handler_config": {
@@ -478,26 +478,26 @@ class MonitoredResourceTask(pulumi.CustomResource):
                         }],
                         "metric_mappings": [{
                             "collector_metric_name": test_metric["name"],
-                            "is_skip_upload": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_mappings_is_skip_upload,
-                            "metric_upload_interval_in_seconds": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_mappings_metric_upload_interval_in_seconds,
+                            "is_skip_upload": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_mappings_is_skip_upload == "true",
+                            "metric_upload_interval_in_seconds": int(monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_mappings_metric_upload_interval_in_seconds),
                             "telemetry_metric_name": test_metric["name"],
                         }],
                         "metric_name_config": {
                             "exclude_pattern_on_prefix": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_name_config_exclude_pattern_on_prefix,
-                            "is_prefix_with_collector_type": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_name_config_is_prefix_with_collector_type,
+                            "is_prefix_with_collector_type": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_name_config_is_prefix_with_collector_type == "true",
                         },
-                        "metric_upload_interval_in_seconds": monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_upload_interval_in_seconds,
+                        "metric_upload_interval_in_seconds": int(monitored_resource_task_task_details_resource_types_configuration_handler_config_metric_upload_interval_in_seconds),
                         "telegraf_resource_name_config": {
                             "exclude_tags": monitored_resource_task_task_details_resource_types_configuration_handler_config_telegraf_resource_name_config_exclude_tags,
                             "include_tags": monitored_resource_task_task_details_resource_types_configuration_handler_config_telegraf_resource_name_config_include_tags,
-                            "is_use_tags_only": monitored_resource_task_task_details_resource_types_configuration_handler_config_telegraf_resource_name_config_is_use_tags_only,
+                            "is_use_tags_only": monitored_resource_task_task_details_resource_types_configuration_handler_config_telegraf_resource_name_config_is_use_tags_only == "true",
                         },
                         "telemetry_resource_group": monitored_resource_task_task_details_resource_types_configuration_handler_config_telemetry_resource_group,
                     },
                     "resource_type": monitored_resource_task_task_details_resource_types_configuration_resource_type,
                 }],
                 "service_base_url": monitored_resource_task_task_details_service_base_url,
-                "should_use_metrics_flow_for_status": monitored_resource_task_task_details_should_use_metrics_flow_for_status,
+                "should_use_metrics_flow_for_status": monitored_resource_task_task_details_should_use_metrics_flow_for_status == "true",
                 "source": monitored_resource_task_task_details_source,
             },
             defined_tags={
@@ -533,11 +533,11 @@ class MonitoredResourceTask(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 task_details: Optional[pulumi.Input[Union['MonitoredResourceTaskTaskDetailsArgs', 'MonitoredResourceTaskTaskDetailsArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 task_details: pulumi.Input[Optional[Union['MonitoredResourceTaskTaskDetailsArgs', 'MonitoredResourceTaskTaskDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -573,18 +573,18 @@ class MonitoredResourceTask(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            task_details: Optional[pulumi.Input[Union['MonitoredResourceTaskTaskDetailsArgs', 'MonitoredResourceTaskTaskDetailsArgsDict']]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            work_request_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'MonitoredResourceTask':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            task_details: pulumi.Input[Optional[Union['MonitoredResourceTaskTaskDetailsArgs', 'MonitoredResourceTaskTaskDetailsArgsDict']]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            work_request_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'MonitoredResourceTask':
         """
         Get an existing MonitoredResourceTask resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

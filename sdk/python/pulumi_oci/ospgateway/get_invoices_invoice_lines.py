@@ -115,7 +115,7 @@ def get_invoices_invoice_lines(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_invoices_invoice_lines = oci.OspGateway.get_invoices_invoice_lines(compartment_id=compartment_id,
+    test_invoices_invoice_lines = oci.ospgateway.get_invoices_invoice_lines(compartment_id=compartment_id,
         internal_invoice_id=test_invoice["id"],
         osp_home_region=invoices_invoice_line_osp_home_region)
     ```
@@ -140,10 +140,10 @@ def get_invoices_invoice_lines(compartment_id: Optional[_builtins.str] = None,
         internal_invoice_id=pulumi.get(__ret__, 'internal_invoice_id'),
         invoice_line_collections=pulumi.get(__ret__, 'invoice_line_collections'),
         osp_home_region=pulumi.get(__ret__, 'osp_home_region'))
-def get_invoices_invoice_lines_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInvoicesInvoiceLinesFilterArgs', 'GetInvoicesInvoiceLinesFilterArgsDict']]]]] = None,
-                                      internal_invoice_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      osp_home_region: Optional[pulumi.Input[_builtins.str]] = None,
+def get_invoices_invoice_lines_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInvoicesInvoiceLinesFilterArgs', 'GetInvoicesInvoiceLinesFilterArgsDict']]]]] = None,
+                                      internal_invoice_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      osp_home_region: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInvoicesInvoiceLinesResult]:
     """
     This data source provides the list of Invoices Invoice Lines in Oracle Cloud Infrastructure Osp Gateway service.
@@ -156,7 +156,7 @@ def get_invoices_invoice_lines_output(compartment_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_invoices_invoice_lines = oci.OspGateway.get_invoices_invoice_lines(compartment_id=compartment_id,
+    test_invoices_invoice_lines = oci.ospgateway.get_invoices_invoice_lines(compartment_id=compartment_id,
         internal_invoice_id=test_invoice["id"],
         osp_home_region=invoices_invoice_line_osp_home_region)
     ```

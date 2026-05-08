@@ -60,7 +60,7 @@ export function getAutoScalingConfigurationsOutput(args: GetAutoScalingConfigura
 export interface GetAutoScalingConfigurationsOutputArgs {
     bdsInstanceId: pulumi.Input<string>;
     compartmentId: pulumi.Input<string>;
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.BigDataService.GetAutoScalingConfigurationsFilterArgs>[]>;
-    state?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.BigDataService.GetAutoScalingConfigurationsFilterArgs>[] | undefined>;
+    state?: pulumi.Input<string | undefined>;
 }

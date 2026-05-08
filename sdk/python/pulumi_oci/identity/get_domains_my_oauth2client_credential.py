@@ -330,7 +330,7 @@ def get_domains_my_oauth2client_credential(authorization: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_my_oauth2client_credential = oci.Identity.get_domains_my_oauth2client_credential(idcs_endpoint=test_domain["url"],
+    test_my_oauth2client_credential = oci.identity.get_domains_my_oauth2client_credential(idcs_endpoint=test_domain["url"],
         my_oauth2client_credential_id=test_my_oauth2client_credential_oci_identity_domains_my_oauth2client_credential["id"],
         authorization=my_oauth2client_credential_authorization,
         resource_type_schema_version=my_oauth2client_credential_resource_type_schema_version)
@@ -375,10 +375,10 @@ def get_domains_my_oauth2client_credential(authorization: Optional[_builtins.str
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'),
         users=pulumi.get(__ret__, 'users'))
-def get_domains_my_oauth2client_credential_output(authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                                  my_oauth2client_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                  resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_my_oauth2client_credential_output(authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                                  my_oauth2client_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                  resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsMyOauth2clientCredentialResult]:
     """
     This data source provides details about a specific My O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -391,7 +391,7 @@ def get_domains_my_oauth2client_credential_output(authorization: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_my_oauth2client_credential = oci.Identity.get_domains_my_oauth2client_credential(idcs_endpoint=test_domain["url"],
+    test_my_oauth2client_credential = oci.identity.get_domains_my_oauth2client_credential(idcs_endpoint=test_domain["url"],
         my_oauth2client_credential_id=test_my_oauth2client_credential_oci_identity_domains_my_oauth2client_credential["id"],
         authorization=my_oauth2client_credential_authorization,
         resource_type_schema_version=my_oauth2client_credential_resource_type_schema_version)

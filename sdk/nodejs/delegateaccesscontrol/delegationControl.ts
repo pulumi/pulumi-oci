@@ -30,8 +30,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isAutoApproveDuringMaintenance: delegationControlIsAutoApproveDuringMaintenance,
- *     numApprovalsRequired: delegationControlNumApprovalsRequired,
+ *     isAutoApproveDuringMaintenance: delegationControlIsAutoApproveDuringMaintenance === "true",
+ *     numApprovalsRequired: Number(delegationControlNumApprovalsRequired),
  *     preApprovedServiceProviderActionNames: delegationControlPreApprovedServiceProviderActionNames,
  *     vaultId: testVault.id,
  *     vaultKeyId: testKey.id,
@@ -254,83 +254,83 @@ export interface DelegationControlState {
     /**
      * (Updatable) The OCID of the compartment that contains this Delegation Control.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) List of Delegation Subscription OCID that are allowed for this Delegation Control. The allowed subscriptions will determine the available Service Provider Actions. Only support operators for the allowed subscriptions are allowed to create Delegated Resource Access Request.
      */
-    delegationSubscriptionIds?: pulumi.Input<pulumi.Input<string>[]>;
+    delegationSubscriptionIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Description of the Delegation Control.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Name of the Delegation Control. The name does not need to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Set to true to allow all Delegated Resource Access Request to be approved automatically during maintenance.
      */
-    isAutoApproveDuringMaintenance?: pulumi.Input<boolean>;
+    isAutoApproveDuringMaintenance?: pulumi.Input<boolean | undefined>;
     /**
      * Description of the current lifecycle state in more detail.
      */
-    lifecycleStateDetails?: pulumi.Input<string>;
+    lifecycleStateDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The format of the Oracle Cloud Infrastructure Notification messages for this Delegation Control.
      */
-    notificationMessageFormat?: pulumi.Input<string>;
+    notificationMessageFormat?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
      */
-    notificationTopicId?: pulumi.Input<string>;
+    notificationTopicId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) number of approvals required.
      */
-    numApprovalsRequired?: pulumi.Input<number>;
+    numApprovalsRequired?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) List of pre-approved Service Provider Action names. The list of pre-defined Service Provider Actions can be obtained from the ListServiceProviderActions API. Delegated Resource Access Requests associated with a resource governed by this Delegation Control will be automatically approved if the Delegated Resource Access Request only contain Service Provider Actions in the pre-approved list.
      */
-    preApprovedServiceProviderActionNames?: pulumi.Input<pulumi.Input<string>[]>;
+    preApprovedServiceProviderActionNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The OCID of the selected resources that this Delegation Control is applicable to.
      */
-    resourceIds?: pulumi.Input<pulumi.Input<string>[]>;
+    resourceIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Resource type for which the Delegation Control is applicable to.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the Delegation Control.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Time when the Delegation Control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Time when the Delegation Control was deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format, e.g. '2020-05-22T21:10:29.600Z'. Note a deleted Delegation Control still stays in the system, so that you can still audit Service Provider Actions associated with Delegated Resource Access Requests raised on target resources governed by the deleted Delegation Control.
      */
-    timeDeleted?: pulumi.Input<string>;
+    timeDeleted?: pulumi.Input<string | undefined>;
     /**
      * Time when the Delegation Control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault.
      */
-    vaultId?: pulumi.Input<string>;
+    vaultId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER.
      *
@@ -338,7 +338,7 @@ export interface DelegationControlState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vaultKeyId?: pulumi.Input<string>;
+    vaultKeyId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -352,7 +352,7 @@ export interface DelegationControlArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) List of Delegation Subscription OCID that are allowed for this Delegation Control. The allowed subscriptions will determine the available Service Provider Actions. Only support operators for the allowed subscriptions are allowed to create Delegated Resource Access Request.
      */
@@ -360,7 +360,7 @@ export interface DelegationControlArgs {
     /**
      * (Updatable) Description of the Delegation Control.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Name of the Delegation Control. The name does not need to be unique.
      */
@@ -368,11 +368,11 @@ export interface DelegationControlArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Set to true to allow all Delegated Resource Access Request to be approved automatically during maintenance.
      */
-    isAutoApproveDuringMaintenance?: pulumi.Input<boolean>;
+    isAutoApproveDuringMaintenance?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The format of the Oracle Cloud Infrastructure Notification messages for this Delegation Control.
      */
@@ -384,11 +384,11 @@ export interface DelegationControlArgs {
     /**
      * (Updatable) number of approvals required.
      */
-    numApprovalsRequired?: pulumi.Input<number>;
+    numApprovalsRequired?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) List of pre-approved Service Provider Action names. The list of pre-defined Service Provider Actions can be obtained from the ListServiceProviderActions API. Delegated Resource Access Requests associated with a resource governed by this Delegation Control will be automatically approved if the Delegated Resource Access Request only contain Service Provider Actions in the pre-approved list.
      */
-    preApprovedServiceProviderActionNames?: pulumi.Input<pulumi.Input<string>[]>;
+    preApprovedServiceProviderActionNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The OCID of the selected resources that this Delegation Control is applicable to.
      */
@@ -400,7 +400,7 @@ export interface DelegationControlArgs {
     /**
      * The OCID of the Oracle Cloud Infrastructure Vault that will store the secrets containing the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER. Delegate Access Control Service will generate the SSH keys and store them as secrets in the Oracle Cloud Infrastructure Vault.
      */
-    vaultId?: pulumi.Input<string>;
+    vaultId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the Master Encryption Key in the Oracle Cloud Infrastructure Vault specified by vaultId. This key will be used to encrypt the SSH keys to access the resource governed by this Delegation Control by Delegate Access Control Service. This property is required when resourceType is CLOUDVMCLUSTER.
      *
@@ -408,5 +408,5 @@ export interface DelegationControlArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vaultKeyId?: pulumi.Input<string>;
+    vaultKeyId?: pulumi.Input<string | undefined>;
 }

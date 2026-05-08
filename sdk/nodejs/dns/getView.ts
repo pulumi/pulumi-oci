@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testView = oci.Dns.getView({
+ * const testView = oci.dns.getView({
  *     viewId: testViewOciDnsView.id,
  *     scope: "PRIVATE",
  * });
@@ -110,7 +110,7 @@ export interface GetViewResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testView = oci.Dns.getView({
+ * const testView = oci.dns.getView({
  *     viewId: testViewOciDnsView.id,
  *     scope: "PRIVATE",
  * });
@@ -132,9 +132,9 @@ export interface GetViewOutputArgs {
     /**
      * Value must be `PRIVATE` when listing views for private zones.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the target view.
      */
-    viewId?: pulumi.Input<string>;
+    viewId?: pulumi.Input<string | undefined>;
 }

@@ -13,10 +13,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCompartment = oci.Identity.getAvailabilityDomain({
+ * const testCompartment = oci.identity.getAvailabilityDomain({
  *     compartmentId: tenancyOcid,
  *     id: id,
- *     adNumber: adNumber,
+ *     adNumber: Number(adNumber),
  * });
  * ```
  */
@@ -77,10 +77,10 @@ export interface GetAvailabilityDomainResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCompartment = oci.Identity.getAvailabilityDomain({
+ * const testCompartment = oci.identity.getAvailabilityDomain({
  *     compartmentId: tenancyOcid,
  *     id: id,
- *     adNumber: adNumber,
+ *     adNumber: Number(adNumber),
  * });
  * ```
  */
@@ -100,7 +100,7 @@ export interface GetAvailabilityDomainOutputArgs {
     /**
      * The number of the Availability Domain. Required if `id` is not specified. This number corresponds to the integer in the Availability Domain `name`.
      */
-    adNumber?: pulumi.Input<number>;
+    adNumber?: pulumi.Input<number | undefined>;
     /**
      * The OCID of the tenancy.
      */
@@ -108,5 +108,5 @@ export interface GetAvailabilityDomainOutputArgs {
     /**
      * The OCID of the Availability Domain. Required if `adNumber` is not specified.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
 }

@@ -137,7 +137,7 @@ def get_external_database_connectors(compartment_id: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_external_database_connectors = oci.Database.get_external_database_connectors(compartment_id=compartment_id,
+    test_external_database_connectors = oci.database.get_external_database_connectors(compartment_id=compartment_id,
         external_database_id=test_database["id"],
         display_name=external_database_connector_display_name,
         state=external_database_connector_state)
@@ -166,11 +166,11 @@ def get_external_database_connectors(compartment_id: Optional[_builtins.str] = N
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_external_database_connectors_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            external_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalDatabaseConnectorsFilterArgs', 'GetExternalDatabaseConnectorsFilterArgsDict']]]]] = None,
-                                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_external_database_connectors_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            external_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalDatabaseConnectorsFilterArgs', 'GetExternalDatabaseConnectorsFilterArgsDict']]]]] = None,
+                                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalDatabaseConnectorsResult]:
     """
     This data source provides the list of External Database Connectors in Oracle Cloud Infrastructure Database service.
@@ -183,7 +183,7 @@ def get_external_database_connectors_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_external_database_connectors = oci.Database.get_external_database_connectors(compartment_id=compartment_id,
+    test_external_database_connectors = oci.database.get_external_database_connectors(compartment_id=compartment_id,
         external_database_id=test_database["id"],
         display_name=external_database_connector_display_name,
         state=external_database_connector_state)

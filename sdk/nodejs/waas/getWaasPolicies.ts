@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWaasPolicies = oci.Waas.getWaasPolicies({
+ * const testWaasPolicies = oci.waas.getWaasPolicies({
  *     compartmentId: compartmentId,
  *     displayNames: waasPolicyDisplayNames,
  *     ids: waasPolicyIds,
@@ -105,7 +105,7 @@ export interface GetWaasPoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWaasPolicies = oci.Waas.getWaasPolicies({
+ * const testWaasPolicies = oci.waas.getWaasPolicies({
  *     compartmentId: compartmentId,
  *     displayNames: waasPolicyDisplayNames,
  *     ids: waasPolicyIds,
@@ -139,22 +139,22 @@ export interface GetWaasPoliciesOutputArgs {
     /**
      * Filter policies using a list of display names.
      */
-    displayNames?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Waas.GetWaasPoliciesFilterArgs>[]>;
+    displayNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Waas.GetWaasPoliciesFilterArgs>[] | undefined>;
     /**
      * Filter policies using a list of policy OCIDs.
      */
-    ids?: pulumi.Input<pulumi.Input<string>[]>;
+    ids?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Filter policies using a list of lifecycle states.
      */
-    states?: pulumi.Input<pulumi.Input<string>[]>;
+    states?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter that matches policies created on or after the specified date and time.
      */
-    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A filter that matches policies created before the specified date-time.
      */
-    timeCreatedLessThan?: pulumi.Input<string>;
+    timeCreatedLessThan?: pulumi.Input<string | undefined>;
 }

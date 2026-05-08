@@ -261,7 +261,7 @@ def get_log(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log = oci.ApmTraces.get_log(apm_domain_id=test_apm_domain["id"],
+    test_log = oci.apmtraces.get_log(apm_domain_id=test_apm_domain["id"],
         log_key=log_log_key,
         time_log_ended_less_than=log_time_log_ended_less_than,
         time_log_started_greater_than_or_equal_to=log_time_log_started_greater_than_or_equal_to)
@@ -300,10 +300,10 @@ def get_log(apm_domain_id: Optional[_builtins.str] = None,
         timestamp=pulumi.get(__ret__, 'timestamp'),
         trace_flags=pulumi.get(__ret__, 'trace_flags'),
         trace_key=pulumi.get(__ret__, 'trace_key'))
-def get_log_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                   log_key: Optional[pulumi.Input[_builtins.str]] = None,
-                   time_log_ended_less_than: Optional[pulumi.Input[_builtins.str]] = None,
-                   time_log_started_greater_than_or_equal_to: Optional[pulumi.Input[_builtins.str]] = None,
+def get_log_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                   log_key: pulumi.Input[Optional[_builtins.str]] = None,
+                   time_log_ended_less_than: pulumi.Input[Optional[_builtins.str]] = None,
+                   time_log_started_greater_than_or_equal_to: pulumi.Input[Optional[_builtins.str]] = None,
                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogResult]:
     """
     This data source provides details about a specific Log resource in Oracle Cloud Infrastructure Apm Traces service.
@@ -316,7 +316,7 @@ def get_log_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log = oci.ApmTraces.get_log(apm_domain_id=test_apm_domain["id"],
+    test_log = oci.apmtraces.get_log(apm_domain_id=test_apm_domain["id"],
         log_key=log_log_key,
         time_log_ended_less_than=log_time_log_ended_less_than,
         time_log_started_greater_than_or_equal_to=log_time_log_started_greater_than_or_equal_to)

@@ -177,7 +177,7 @@ def get_connections(assignable_deployment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connections = oci.GoldenGate.get_connections(compartment_id=compartment_id,
+    test_connections = oci.goldengate.get_connections(compartment_id=compartment_id,
         assignable_deployment_id=test_deployment["id"],
         assignable_deployment_type=connection_assignable_deployment_type,
         assigned_deployment_id=test_deployment["id"],
@@ -222,15 +222,15 @@ def get_connections(assignable_deployment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         technology_types=pulumi.get(__ret__, 'technology_types'))
-def get_connections_output(assignable_deployment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           assignable_deployment_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           assigned_deployment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                           connection_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                           display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetConnectionsFilterArgs', 'GetConnectionsFilterArgsDict']]]]] = None,
-                           state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           technology_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_connections_output(assignable_deployment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           assignable_deployment_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           assigned_deployment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                           connection_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConnectionsFilterArgs', 'GetConnectionsFilterArgsDict']]]]] = None,
+                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           technology_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConnectionsResult]:
     """
     This data source provides the list of Connections in Oracle Cloud Infrastructure Golden Gate service.
@@ -243,7 +243,7 @@ def get_connections_output(assignable_deployment_id: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_connections = oci.GoldenGate.get_connections(compartment_id=compartment_id,
+    test_connections = oci.goldengate.get_connections(compartment_id=compartment_id,
         assignable_deployment_id=test_deployment["id"],
         assignable_deployment_type=connection_assignable_deployment_type,
         assigned_deployment_id=test_deployment["id"],

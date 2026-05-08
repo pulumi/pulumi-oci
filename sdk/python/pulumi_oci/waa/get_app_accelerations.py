@@ -138,7 +138,7 @@ def get_app_accelerations(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_accelerations = oci.Waa.get_app_accelerations(compartment_id=compartment_id,
+    test_web_app_accelerations = oci.waa.get_app_accelerations(compartment_id=compartment_id,
         display_name=web_app_acceleration_display_name,
         id=web_app_acceleration_id,
         states=web_app_acceleration_state,
@@ -170,12 +170,12 @@ def get_app_accelerations(compartment_id: Optional[_builtins.str] = None,
         states=pulumi.get(__ret__, 'states'),
         web_app_acceleration_collections=pulumi.get(__ret__, 'web_app_acceleration_collections'),
         web_app_acceleration_policy_id=pulumi.get(__ret__, 'web_app_acceleration_policy_id'))
-def get_app_accelerations_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAppAccelerationsFilterArgs', 'GetAppAccelerationsFilterArgsDict']]]]] = None,
-                                 id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 states: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                 web_app_acceleration_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_app_accelerations_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAppAccelerationsFilterArgs', 'GetAppAccelerationsFilterArgsDict']]]]] = None,
+                                 id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                 web_app_acceleration_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAppAccelerationsResult]:
     """
     This data source provides the list of Web App Accelerations in Oracle Cloud Infrastructure Waa service.
@@ -188,7 +188,7 @@ def get_app_accelerations_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_accelerations = oci.Waa.get_app_accelerations(compartment_id=compartment_id,
+    test_web_app_accelerations = oci.waa.get_app_accelerations(compartment_id=compartment_id,
         display_name=web_app_acceleration_display_name,
         id=web_app_acceleration_id,
         states=web_app_acceleration_state,

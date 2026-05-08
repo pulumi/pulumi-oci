@@ -125,7 +125,7 @@ def get_stream_cdn_configs(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_cdn_configs = oci.MediaServices.get_stream_cdn_configs(distribution_channel_id=test_channel["id"],
+    test_stream_cdn_configs = oci.mediaservices.get_stream_cdn_configs(distribution_channel_id=test_channel["id"],
         display_name=stream_cdn_config_display_name,
         id=stream_cdn_config_id,
         state=stream_cdn_config_state)
@@ -153,11 +153,11 @@ def get_stream_cdn_configs(display_name: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         stream_cdn_config_collections=pulumi.get(__ret__, 'stream_cdn_config_collections'))
-def get_stream_cdn_configs_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  distribution_channel_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetStreamCdnConfigsFilterArgs', 'GetStreamCdnConfigsFilterArgsDict']]]]] = None,
-                                  id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_stream_cdn_configs_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  distribution_channel_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetStreamCdnConfigsFilterArgs', 'GetStreamCdnConfigsFilterArgsDict']]]]] = None,
+                                  id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStreamCdnConfigsResult]:
     """
     This data source provides the list of Stream Cdn Configs in Oracle Cloud Infrastructure Media Services service.
@@ -170,7 +170,7 @@ def get_stream_cdn_configs_output(display_name: Optional[pulumi.Input[Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_cdn_configs = oci.MediaServices.get_stream_cdn_configs(distribution_channel_id=test_channel["id"],
+    test_stream_cdn_configs = oci.mediaservices.get_stream_cdn_configs(distribution_channel_id=test_channel["id"],
         display_name=stream_cdn_config_display_name,
         id=stream_cdn_config_id,
         state=stream_cdn_config_state)

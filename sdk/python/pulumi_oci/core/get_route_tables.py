@@ -140,7 +140,7 @@ def get_route_tables(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_route_tables = oci.Core.get_route_tables(compartment_id=compartment_id,
+    test_route_tables = oci.core.get_route_tables(compartment_id=compartment_id,
         display_name=route_table_display_name,
         state=route_table_state,
         vcn_id=test_vcn["id"])
@@ -169,11 +169,11 @@ def get_route_tables(compartment_id: Optional[_builtins.str] = None,
         route_tables=pulumi.get(__ret__, 'route_tables'),
         state=pulumi.get(__ret__, 'state'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-def get_route_tables_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                            display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRouteTablesFilterArgs', 'GetRouteTablesFilterArgsDict']]]]] = None,
-                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            vcn_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_route_tables_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRouteTablesFilterArgs', 'GetRouteTablesFilterArgsDict']]]]] = None,
+                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            vcn_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRouteTablesResult]:
     """
     This data source provides the list of Route Tables in Oracle Cloud Infrastructure Core service.
@@ -189,7 +189,7 @@ def get_route_tables_output(compartment_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_route_tables = oci.Core.get_route_tables(compartment_id=compartment_id,
+    test_route_tables = oci.core.get_route_tables(compartment_id=compartment_id,
         display_name=route_table_display_name,
         state=route_table_state,
         vcn_id=test_vcn["id"])

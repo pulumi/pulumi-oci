@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUiPassword = oci.Identity.getUiPassword({
+ * const testUiPassword = oci.identity.getUiPassword({
  *     userId: testUser.id,
  * });
  * ```
@@ -70,7 +70,7 @@ export interface GetUiPasswordResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUiPassword = oci.Identity.getUiPassword({
+ * const testUiPassword = oci.identity.getUiPassword({
  *     userId: testUser.id,
  * });
  * ```

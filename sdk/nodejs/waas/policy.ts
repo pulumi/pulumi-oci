@@ -52,8 +52,8 @@ import * as utilities from "../utilities";
  *             name: waasPolicyOriginsCustomHeadersName,
  *             value: waasPolicyOriginsCustomHeadersValue,
  *         }],
- *         httpPort: waasPolicyOriginsHttpPort,
- *         httpsPort: waasPolicyOriginsHttpsPort,
+ *         httpPort: Number(waasPolicyOriginsHttpPort),
+ *         httpsPort: Number(waasPolicyOriginsHttpsPort),
  *     }],
  *     policyConfig: {
  *         certificateId: testCertificate.id,
@@ -63,26 +63,26 @@ import * as utilities from "../utilities";
  *             expectedResponseCodeGroups: waasPolicyPolicyConfigHealthChecksExpectedResponseCodeGroup,
  *             expectedResponseText: waasPolicyPolicyConfigHealthChecksExpectedResponseText,
  *             headers: waasPolicyPolicyConfigHealthChecksHeaders,
- *             healthyThreshold: waasPolicyPolicyConfigHealthChecksHealthyThreshold,
- *             intervalInSeconds: waasPolicyPolicyConfigHealthChecksIntervalInSeconds,
- *             isEnabled: waasPolicyPolicyConfigHealthChecksIsEnabled,
- *             isResponseTextCheckEnabled: waasPolicyPolicyConfigHealthChecksIsResponseTextCheckEnabled,
+ *             healthyThreshold: Number(waasPolicyPolicyConfigHealthChecksHealthyThreshold),
+ *             intervalInSeconds: Number(waasPolicyPolicyConfigHealthChecksIntervalInSeconds),
+ *             isEnabled: waasPolicyPolicyConfigHealthChecksIsEnabled === "true",
+ *             isResponseTextCheckEnabled: waasPolicyPolicyConfigHealthChecksIsResponseTextCheckEnabled === "true",
  *             method: waasPolicyPolicyConfigHealthChecksMethod,
  *             path: waasPolicyPolicyConfigHealthChecksPath,
- *             timeoutInSeconds: waasPolicyPolicyConfigHealthChecksTimeoutInSeconds,
- *             unhealthyThreshold: waasPolicyPolicyConfigHealthChecksUnhealthyThreshold,
+ *             timeoutInSeconds: Number(waasPolicyPolicyConfigHealthChecksTimeoutInSeconds),
+ *             unhealthyThreshold: Number(waasPolicyPolicyConfigHealthChecksUnhealthyThreshold),
  *         },
- *         isBehindCdn: waasPolicyPolicyConfigIsBehindCdn,
- *         isCacheControlRespected: waasPolicyPolicyConfigIsCacheControlRespected,
- *         isHttpsEnabled: waasPolicyPolicyConfigIsHttpsEnabled,
- *         isHttpsForced: waasPolicyPolicyConfigIsHttpsForced,
- *         isOriginCompressionEnabled: waasPolicyPolicyConfigIsOriginCompressionEnabled,
- *         isResponseBufferingEnabled: waasPolicyPolicyConfigIsResponseBufferingEnabled,
- *         isSniEnabled: waasPolicyPolicyConfigIsSniEnabled,
+ *         isBehindCdn: waasPolicyPolicyConfigIsBehindCdn === "true",
+ *         isCacheControlRespected: waasPolicyPolicyConfigIsCacheControlRespected === "true",
+ *         isHttpsEnabled: waasPolicyPolicyConfigIsHttpsEnabled === "true",
+ *         isHttpsForced: waasPolicyPolicyConfigIsHttpsForced === "true",
+ *         isOriginCompressionEnabled: waasPolicyPolicyConfigIsOriginCompressionEnabled === "true",
+ *         isResponseBufferingEnabled: waasPolicyPolicyConfigIsResponseBufferingEnabled === "true",
+ *         isSniEnabled: waasPolicyPolicyConfigIsSniEnabled === "true",
  *         loadBalancingMethod: {
  *             method: waasPolicyPolicyConfigLoadBalancingMethodMethod,
  *             domain: waasPolicyPolicyConfigLoadBalancingMethodDomain,
- *             expirationTimeInSeconds: waasPolicyPolicyConfigLoadBalancingMethodExpirationTimeInSeconds,
+ *             expirationTimeInSeconds: Number(waasPolicyPolicyConfigLoadBalancingMethodExpirationTimeInSeconds),
  *             name: waasPolicyPolicyConfigLoadBalancingMethodName,
  *         },
  *         tlsProtocols: waasPolicyPolicyConfigTlsProtocols,
@@ -94,14 +94,14 @@ import * as utilities from "../utilities";
  *             criterias: [{
  *                 condition: waasPolicyWafConfigAccessRulesCriteriaCondition,
  *                 value: waasPolicyWafConfigAccessRulesCriteriaValue,
- *                 isCaseSensitive: waasPolicyWafConfigAccessRulesCriteriaIsCaseSensitive,
+ *                 isCaseSensitive: waasPolicyWafConfigAccessRulesCriteriaIsCaseSensitive === "true",
  *             }],
  *             name: waasPolicyWafConfigAccessRulesName,
  *             blockAction: waasPolicyWafConfigAccessRulesBlockAction,
  *             blockErrorPageCode: waasPolicyWafConfigAccessRulesBlockErrorPageCode,
  *             blockErrorPageDescription: waasPolicyWafConfigAccessRulesBlockErrorPageDescription,
  *             blockErrorPageMessage: waasPolicyWafConfigAccessRulesBlockErrorPageMessage,
- *             blockResponseCode: waasPolicyWafConfigAccessRulesBlockResponseCode,
+ *             blockResponseCode: Number(waasPolicyWafConfigAccessRulesBlockResponseCode),
  *             bypassChallenges: waasPolicyWafConfigAccessRulesBypassChallenges,
  *             captchaFooter: waasPolicyWafConfigAccessRulesCaptchaFooter,
  *             captchaHeader: waasPolicyWafConfigAccessRulesCaptchaHeader,
@@ -116,10 +116,10 @@ import * as utilities from "../utilities";
  *             }],
  *         }],
  *         addressRateLimiting: {
- *             isEnabled: waasPolicyWafConfigAddressRateLimitingIsEnabled,
- *             allowedRatePerAddress: waasPolicyWafConfigAddressRateLimitingAllowedRatePerAddress,
- *             blockResponseCode: waasPolicyWafConfigAddressRateLimitingBlockResponseCode,
- *             maxDelayedCountPerAddress: waasPolicyWafConfigAddressRateLimitingMaxDelayedCountPerAddress,
+ *             isEnabled: waasPolicyWafConfigAddressRateLimitingIsEnabled === "true",
+ *             allowedRatePerAddress: Number(waasPolicyWafConfigAddressRateLimitingAllowedRatePerAddress),
+ *             blockResponseCode: Number(waasPolicyWafConfigAddressRateLimitingBlockResponseCode),
+ *             maxDelayedCountPerAddress: Number(waasPolicyWafConfigAddressRateLimitingMaxDelayedCountPerAddress),
  *         },
  *         cachingRules: [{
  *             action: waasPolicyWafConfigCachingRulesAction,
@@ -130,12 +130,12 @@ import * as utilities from "../utilities";
  *             name: waasPolicyWafConfigCachingRulesName,
  *             cachingDuration: waasPolicyWafConfigCachingRulesCachingDuration,
  *             clientCachingDuration: waasPolicyWafConfigCachingRulesClientCachingDuration,
- *             isClientCachingEnabled: waasPolicyWafConfigCachingRulesIsClientCachingEnabled,
+ *             isClientCachingEnabled: waasPolicyWafConfigCachingRulesIsClientCachingEnabled === "true",
  *             key: waasPolicyWafConfigCachingRulesKey,
  *         }],
  *         captchas: [{
  *             failureMessage: waasPolicyWafConfigCaptchasFailureMessage,
- *             sessionExpirationInSeconds: waasPolicyWafConfigCaptchasSessionExpirationInSeconds,
+ *             sessionExpirationInSeconds: Number(waasPolicyWafConfigCaptchasSessionExpirationInSeconds),
  *             submitLabel: waasPolicyWafConfigCaptchasSubmitLabel,
  *             title: waasPolicyWafConfigCaptchasTitle,
  *             url: waasPolicyWafConfigCaptchasUrl,
@@ -151,61 +151,61 @@ import * as utilities from "../utilities";
  *             id: waasPolicyWafConfigCustomProtectionRulesId,
  *         }],
  *         deviceFingerprintChallenge: {
- *             isEnabled: waasPolicyWafConfigDeviceFingerprintChallengeIsEnabled,
+ *             isEnabled: waasPolicyWafConfigDeviceFingerprintChallengeIsEnabled === "true",
  *             action: waasPolicyWafConfigDeviceFingerprintChallengeAction,
- *             actionExpirationInSeconds: waasPolicyWafConfigDeviceFingerprintChallengeActionExpirationInSeconds,
+ *             actionExpirationInSeconds: Number(waasPolicyWafConfigDeviceFingerprintChallengeActionExpirationInSeconds),
  *             challengeSettings: {
  *                 blockAction: waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsBlockAction,
  *                 blockErrorPageCode: waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsBlockErrorPageCode,
  *                 blockErrorPageDescription: waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsBlockErrorPageDescription,
  *                 blockErrorPageMessage: waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsBlockErrorPageMessage,
- *                 blockResponseCode: waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsBlockResponseCode,
+ *                 blockResponseCode: Number(waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsBlockResponseCode),
  *                 captchaFooter: waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsCaptchaFooter,
  *                 captchaHeader: waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsCaptchaHeader,
  *                 captchaSubmitLabel: waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsCaptchaSubmitLabel,
  *                 captchaTitle: waasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsCaptchaTitle,
  *             },
- *             failureThreshold: waasPolicyWafConfigDeviceFingerprintChallengeFailureThreshold,
- *             failureThresholdExpirationInSeconds: waasPolicyWafConfigDeviceFingerprintChallengeFailureThresholdExpirationInSeconds,
- *             maxAddressCount: waasPolicyWafConfigDeviceFingerprintChallengeMaxAddressCount,
- *             maxAddressCountExpirationInSeconds: waasPolicyWafConfigDeviceFingerprintChallengeMaxAddressCountExpirationInSeconds,
+ *             failureThreshold: Number(waasPolicyWafConfigDeviceFingerprintChallengeFailureThreshold),
+ *             failureThresholdExpirationInSeconds: Number(waasPolicyWafConfigDeviceFingerprintChallengeFailureThresholdExpirationInSeconds),
+ *             maxAddressCount: Number(waasPolicyWafConfigDeviceFingerprintChallengeMaxAddressCount),
+ *             maxAddressCountExpirationInSeconds: Number(waasPolicyWafConfigDeviceFingerprintChallengeMaxAddressCountExpirationInSeconds),
  *         },
  *         humanInteractionChallenge: {
- *             isEnabled: waasPolicyWafConfigHumanInteractionChallengeIsEnabled,
+ *             isEnabled: waasPolicyWafConfigHumanInteractionChallengeIsEnabled === "true",
  *             action: waasPolicyWafConfigHumanInteractionChallengeAction,
- *             actionExpirationInSeconds: waasPolicyWafConfigHumanInteractionChallengeActionExpirationInSeconds,
+ *             actionExpirationInSeconds: Number(waasPolicyWafConfigHumanInteractionChallengeActionExpirationInSeconds),
  *             challengeSettings: {
  *                 blockAction: waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsBlockAction,
  *                 blockErrorPageCode: waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsBlockErrorPageCode,
  *                 blockErrorPageDescription: waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsBlockErrorPageDescription,
  *                 blockErrorPageMessage: waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsBlockErrorPageMessage,
- *                 blockResponseCode: waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsBlockResponseCode,
+ *                 blockResponseCode: Number(waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsBlockResponseCode),
  *                 captchaFooter: waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsCaptchaFooter,
  *                 captchaHeader: waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsCaptchaHeader,
  *                 captchaSubmitLabel: waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsCaptchaSubmitLabel,
  *                 captchaTitle: waasPolicyWafConfigHumanInteractionChallengeChallengeSettingsCaptchaTitle,
  *             },
- *             failureThreshold: waasPolicyWafConfigHumanInteractionChallengeFailureThreshold,
- *             failureThresholdExpirationInSeconds: waasPolicyWafConfigHumanInteractionChallengeFailureThresholdExpirationInSeconds,
- *             interactionThreshold: waasPolicyWafConfigHumanInteractionChallengeInteractionThreshold,
- *             isNatEnabled: waasPolicyWafConfigHumanInteractionChallengeIsNatEnabled,
- *             recordingPeriodInSeconds: waasPolicyWafConfigHumanInteractionChallengeRecordingPeriodInSeconds,
+ *             failureThreshold: Number(waasPolicyWafConfigHumanInteractionChallengeFailureThreshold),
+ *             failureThresholdExpirationInSeconds: Number(waasPolicyWafConfigHumanInteractionChallengeFailureThresholdExpirationInSeconds),
+ *             interactionThreshold: Number(waasPolicyWafConfigHumanInteractionChallengeInteractionThreshold),
+ *             isNatEnabled: waasPolicyWafConfigHumanInteractionChallengeIsNatEnabled === "true",
+ *             recordingPeriodInSeconds: Number(waasPolicyWafConfigHumanInteractionChallengeRecordingPeriodInSeconds),
  *             setHttpHeader: {
  *                 name: waasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderName,
  *                 value: waasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderValue,
  *             },
  *         },
  *         jsChallenge: {
- *             isEnabled: waasPolicyWafConfigJsChallengeIsEnabled,
+ *             isEnabled: waasPolicyWafConfigJsChallengeIsEnabled === "true",
  *             action: waasPolicyWafConfigJsChallengeAction,
- *             actionExpirationInSeconds: waasPolicyWafConfigJsChallengeActionExpirationInSeconds,
- *             areRedirectsChallenged: waasPolicyWafConfigJsChallengeAreRedirectsChallenged,
+ *             actionExpirationInSeconds: Number(waasPolicyWafConfigJsChallengeActionExpirationInSeconds),
+ *             areRedirectsChallenged: waasPolicyWafConfigJsChallengeAreRedirectsChallenged === "true",
  *             challengeSettings: {
  *                 blockAction: waasPolicyWafConfigJsChallengeChallengeSettingsBlockAction,
  *                 blockErrorPageCode: waasPolicyWafConfigJsChallengeChallengeSettingsBlockErrorPageCode,
  *                 blockErrorPageDescription: waasPolicyWafConfigJsChallengeChallengeSettingsBlockErrorPageDescription,
  *                 blockErrorPageMessage: waasPolicyWafConfigJsChallengeChallengeSettingsBlockErrorPageMessage,
- *                 blockResponseCode: waasPolicyWafConfigJsChallengeChallengeSettingsBlockResponseCode,
+ *                 blockResponseCode: Number(waasPolicyWafConfigJsChallengeChallengeSettingsBlockResponseCode),
  *                 captchaFooter: waasPolicyWafConfigJsChallengeChallengeSettingsCaptchaFooter,
  *                 captchaHeader: waasPolicyWafConfigJsChallengeChallengeSettingsCaptchaHeader,
  *                 captchaSubmitLabel: waasPolicyWafConfigJsChallengeChallengeSettingsCaptchaSubmitLabel,
@@ -214,10 +214,10 @@ import * as utilities from "../utilities";
  *             criterias: [{
  *                 condition: waasPolicyWafConfigJsChallengeCriteriaCondition,
  *                 value: waasPolicyWafConfigJsChallengeCriteriaValue,
- *                 isCaseSensitive: waasPolicyWafConfigJsChallengeCriteriaIsCaseSensitive,
+ *                 isCaseSensitive: waasPolicyWafConfigJsChallengeCriteriaIsCaseSensitive === "true",
  *             }],
- *             failureThreshold: waasPolicyWafConfigJsChallengeFailureThreshold,
- *             isNatEnabled: waasPolicyWafConfigJsChallengeIsNatEnabled,
+ *             failureThreshold: Number(waasPolicyWafConfigJsChallengeFailureThreshold),
+ *             isNatEnabled: waasPolicyWafConfigJsChallengeIsNatEnabled === "true",
  *             setHttpHeader: {
  *                 name: waasPolicyWafConfigJsChallengeSetHttpHeaderName,
  *                 value: waasPolicyWafConfigJsChallengeSetHttpHeaderValue,
@@ -231,14 +231,14 @@ import * as utilities from "../utilities";
  *             blockErrorPageCode: waasPolicyWafConfigProtectionSettingsBlockErrorPageCode,
  *             blockErrorPageDescription: waasPolicyWafConfigProtectionSettingsBlockErrorPageDescription,
  *             blockErrorPageMessage: waasPolicyWafConfigProtectionSettingsBlockErrorPageMessage,
- *             blockResponseCode: waasPolicyWafConfigProtectionSettingsBlockResponseCode,
- *             isResponseInspected: waasPolicyWafConfigProtectionSettingsIsResponseInspected,
- *             maxArgumentCount: waasPolicyWafConfigProtectionSettingsMaxArgumentCount,
- *             maxNameLengthPerArgument: waasPolicyWafConfigProtectionSettingsMaxNameLengthPerArgument,
- *             maxResponseSizeInKiB: waasPolicyWafConfigProtectionSettingsMaxResponseSizeInKiB,
- *             maxTotalNameLengthOfArguments: waasPolicyWafConfigProtectionSettingsMaxTotalNameLengthOfArguments,
+ *             blockResponseCode: Number(waasPolicyWafConfigProtectionSettingsBlockResponseCode),
+ *             isResponseInspected: waasPolicyWafConfigProtectionSettingsIsResponseInspected === "true",
+ *             maxArgumentCount: Number(waasPolicyWafConfigProtectionSettingsMaxArgumentCount),
+ *             maxNameLengthPerArgument: Number(waasPolicyWafConfigProtectionSettingsMaxNameLengthPerArgument),
+ *             maxResponseSizeInKiB: Number(waasPolicyWafConfigProtectionSettingsMaxResponseSizeInKiB),
+ *             maxTotalNameLengthOfArguments: Number(waasPolicyWafConfigProtectionSettingsMaxTotalNameLengthOfArguments),
  *             mediaTypes: waasPolicyWafConfigProtectionSettingsMediaTypes,
- *             recommendationsPeriodInDays: waasPolicyWafConfigProtectionSettingsRecommendationsPeriodInDays,
+ *             recommendationsPeriodInDays: Number(waasPolicyWafConfigProtectionSettingsRecommendationsPeriodInDays),
  *         },
  *         whitelists: [{
  *             name: waasPolicyWafConfigWhitelistsName,
@@ -398,55 +398,55 @@ export interface PolicyState {
     /**
      * (Updatable) An array of additional domains for the specified web application.
      */
-    additionalDomains?: pulumi.Input<pulumi.Input<string>[]>;
+    additionalDomains?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The CNAME record to add to your DNS configuration to route traffic for the domain, and all additional domains, through the WAF.
      */
-    cname?: pulumi.Input<string>;
+    cname?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the WAAS policy.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The web application domain that the WAAS policy protects.
      */
-    domain?: pulumi.Input<string>;
+    domain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
      */
-    originGroups?: pulumi.Input<pulumi.Input<inputs.Waas.PolicyOriginGroup>[]>;
+    originGroups?: pulumi.Input<pulumi.Input<inputs.Waas.PolicyOriginGroup>[] | undefined>;
     /**
      * (Updatable) A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
      */
-    origins?: pulumi.Input<pulumi.Input<inputs.Waas.PolicyOrigin>[]>;
+    origins?: pulumi.Input<pulumi.Input<inputs.Waas.PolicyOrigin>[] | undefined>;
     /**
      * (Updatable) The configuration details for the WAAS policy.
      */
-    policyConfig?: pulumi.Input<inputs.Waas.PolicyPolicyConfig>;
+    policyConfig?: pulumi.Input<inputs.Waas.PolicyPolicyConfig | undefined>;
     /**
      * The current lifecycle state of the WAAS policy.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the policy was created, expressed in RFC 3339 timestamp format.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Web Application Firewall configuration for the WAAS policy creation.
      */
-    wafConfig?: pulumi.Input<inputs.Waas.PolicyWafConfig>;
+    wafConfig?: pulumi.Input<inputs.Waas.PolicyWafConfig | undefined>;
 }
 
 /**
@@ -456,7 +456,7 @@ export interface PolicyArgs {
     /**
      * (Updatable) An array of additional domains for the specified web application.
      */
-    additionalDomains?: pulumi.Input<pulumi.Input<string>[]>;
+    additionalDomains?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the WAAS policy.
      */
@@ -464,11 +464,11 @@ export interface PolicyArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The web application domain that the WAAS policy protects.
      */
@@ -476,21 +476,21 @@ export interface PolicyArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
      */
-    originGroups?: pulumi.Input<pulumi.Input<inputs.Waas.PolicyOriginGroup>[]>;
+    originGroups?: pulumi.Input<pulumi.Input<inputs.Waas.PolicyOriginGroup>[] | undefined>;
     /**
      * (Updatable) A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
      */
-    origins?: pulumi.Input<pulumi.Input<inputs.Waas.PolicyOrigin>[]>;
+    origins?: pulumi.Input<pulumi.Input<inputs.Waas.PolicyOrigin>[] | undefined>;
     /**
      * (Updatable) The configuration details for the WAAS policy.
      */
-    policyConfig?: pulumi.Input<inputs.Waas.PolicyPolicyConfig>;
+    policyConfig?: pulumi.Input<inputs.Waas.PolicyPolicyConfig | undefined>;
     /**
      * (Updatable) The Web Application Firewall configuration for the WAAS policy creation.
      */
-    wafConfig?: pulumi.Input<inputs.Waas.PolicyWafConfig>;
+    wafConfig?: pulumi.Input<inputs.Waas.PolicyWafConfig | undefined>;
 }

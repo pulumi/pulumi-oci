@@ -168,8 +168,8 @@ public final class AiLanguageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
      * import com.pulumi.oci.AiLanguage.inputs.GetJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -210,8 +210,8 @@ public final class AiLanguageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
      * import com.pulumi.oci.AiLanguage.inputs.GetJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -252,8 +252,8 @@ public final class AiLanguageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
      * import com.pulumi.oci.AiLanguage.inputs.GetJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -294,8 +294,8 @@ public final class AiLanguageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
      * import com.pulumi.oci.AiLanguage.inputs.GetJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -336,8 +336,8 @@ public final class AiLanguageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
      * import com.pulumi.oci.AiLanguage.inputs.GetJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -378,8 +378,8 @@ public final class AiLanguageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
      * import com.pulumi.oci.AiLanguage.inputs.GetJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -423,8 +423,8 @@ public final class AiLanguageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
      * import com.pulumi.oci.AiLanguage.inputs.GetJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -468,8 +468,8 @@ public final class AiLanguageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
      * import com.pulumi.oci.AiLanguage.inputs.GetJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -513,8 +513,8 @@ public final class AiLanguageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
      * import com.pulumi.oci.AiLanguage.inputs.GetJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -558,8 +558,8 @@ public final class AiLanguageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
      * import com.pulumi.oci.AiLanguage.inputs.GetJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -658,8 +658,8 @@ public final class AiLanguageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
      * import com.pulumi.oci.AiLanguage.inputs.GetModelEvaluationResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -700,8 +700,8 @@ public final class AiLanguageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
      * import com.pulumi.oci.AiLanguage.inputs.GetModelEvaluationResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -742,8 +742,8 @@ public final class AiLanguageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
      * import com.pulumi.oci.AiLanguage.inputs.GetModelEvaluationResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -784,8 +784,8 @@ public final class AiLanguageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
      * import com.pulumi.oci.AiLanguage.inputs.GetModelEvaluationResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -826,8 +826,8 @@ public final class AiLanguageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
      * import com.pulumi.oci.AiLanguage.inputs.GetModelEvaluationResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -868,8 +868,8 @@ public final class AiLanguageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
      * import com.pulumi.oci.AiLanguage.inputs.GetModelTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -910,8 +910,8 @@ public final class AiLanguageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
      * import com.pulumi.oci.AiLanguage.inputs.GetModelTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -952,8 +952,8 @@ public final class AiLanguageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
      * import com.pulumi.oci.AiLanguage.inputs.GetModelTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -994,8 +994,8 @@ public final class AiLanguageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
      * import com.pulumi.oci.AiLanguage.inputs.GetModelTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1036,8 +1036,8 @@ public final class AiLanguageFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiLanguage.AiLanguageFunctions;
      * import com.pulumi.oci.AiLanguage.inputs.GetModelTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

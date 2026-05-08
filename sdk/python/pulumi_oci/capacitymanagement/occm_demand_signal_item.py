@@ -27,11 +27,11 @@ class OccmDemandSignalItemArgs:
                  request_type: pulumi.Input[_builtins.str],
                  resource_properties: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]],
                  time_needed_before: pulumi.Input[_builtins.str],
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 notes: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_compartment_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 notes: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_compartment_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a OccmDemandSignalItem resource.
 
@@ -176,43 +176,43 @@ class OccmDemandSignalItemArgs:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def notes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def notes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This field will serve as notes section for you. You can use this section to convey a message to Oracle Cloud Infrastructure regarding your resource request.
 
@@ -221,42 +221,42 @@ class OccmDemandSignalItemArgs:
         return pulumi.get(self, "notes")
 
     @notes.setter
-    def notes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def notes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "notes", value)
 
     @_builtins.property
     @pulumi.getter(name="targetCompartmentId")
-    def target_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the tenancy for which you want to request the Oracle Cloud Infrastructure resource for. This is an optional parameter.
         """
         return pulumi.get(self, "target_compartment_id")
 
     @target_compartment_id.setter
-    def target_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_compartment_id", value)
 
 
 @pulumi.input_type
 class _OccmDemandSignalItemState:
     def __init__(__self__, *,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 demand_quantity: Optional[pulumi.Input[_builtins.str]] = None,
-                 demand_signal_catalog_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 demand_signal_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 demand_signal_namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 notes: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 target_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_needed_before: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 demand_quantity: pulumi.Input[Optional[_builtins.str]] = None,
+                 demand_signal_catalog_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 demand_signal_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 demand_signal_namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 notes: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_needed_before: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OccmDemandSignalItem resources.
 
@@ -321,103 +321,103 @@ class _OccmDemandSignalItemState:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the tenancy from which the demand signal item was created.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="demandQuantity")
-    def demand_quantity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def demand_quantity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The quantity of the resource that you want to demand from OCI.
         """
         return pulumi.get(self, "demand_quantity")
 
     @demand_quantity.setter
-    def demand_quantity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def demand_quantity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "demand_quantity", value)
 
     @_builtins.property
     @pulumi.getter(name="demandSignalCatalogResourceId")
-    def demand_signal_catalog_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def demand_signal_catalog_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the correponding demand signal catalog resource.
         """
         return pulumi.get(self, "demand_signal_catalog_resource_id")
 
     @demand_signal_catalog_resource_id.setter
-    def demand_signal_catalog_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def demand_signal_catalog_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "demand_signal_catalog_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="demandSignalId")
-    def demand_signal_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def demand_signal_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the demand signal under which we need to create this item.
         """
         return pulumi.get(self, "demand_signal_id")
 
     @demand_signal_id.setter
-    def demand_signal_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def demand_signal_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "demand_signal_id", value)
 
     @_builtins.property
     @pulumi.getter(name="demandSignalNamespace")
-    def demand_signal_namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def demand_signal_namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Oracle Cloud Infrastructure service in consideration for demand signal submission. For example: COMPUTE, NETWORK, GPU etc.
         """
         return pulumi.get(self, "demand_signal_namespace")
 
     @demand_signal_namespace.setter
-    def demand_signal_namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def demand_signal_namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "demand_signal_namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def notes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def notes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This field will serve as notes section for you. You can use this section to convey a message to Oracle Cloud Infrastructure regarding your resource request.
 
@@ -426,96 +426,96 @@ class _OccmDemandSignalItemState:
         return pulumi.get(self, "notes")
 
     @notes.setter
-    def notes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def notes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "notes", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of region for which you want to request the Oracle Cloud Infrastructure resource.
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter(name="requestType")
-    def request_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def request_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of request (DEMAND or RETURN) that you want to make for this demand signal item.
         """
         return pulumi.get(self, "request_type")
 
     @request_type.setter
-    def request_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def request_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "request_type", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceName")
-    def resource_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Oracle Cloud Infrastructure resource that you want to request.
         """
         return pulumi.get(self, "resource_name")
 
     @resource_name.setter
-    def resource_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceProperties")
-    def resource_properties(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def resource_properties(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A map of various properties associated with the Oracle Cloud Infrastructure resource.
         """
         return pulumi.get(self, "resource_properties")
 
     @resource_properties.setter
-    def resource_properties(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def resource_properties(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "resource_properties", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="targetCompartmentId")
-    def target_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the tenancy for which you want to request the Oracle Cloud Infrastructure resource for. This is an optional parameter.
         """
         return pulumi.get(self, "target_compartment_id")
 
     @target_compartment_id.setter
-    def target_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeNeededBefore")
-    def time_needed_before(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_needed_before(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you. 
 
@@ -526,7 +526,7 @@ class _OccmDemandSignalItemState:
         return pulumi.get(self, "time_needed_before")
 
     @time_needed_before.setter
-    def time_needed_before(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_needed_before(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_needed_before", value)
 
 
@@ -536,19 +536,19 @@ class OccmDemandSignalItem(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 demand_quantity: Optional[pulumi.Input[_builtins.str]] = None,
-                 demand_signal_catalog_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 demand_signal_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 notes: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 target_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_needed_before: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 demand_quantity: pulumi.Input[Optional[_builtins.str]] = None,
+                 demand_signal_catalog_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 demand_signal_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 notes: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_needed_before: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Occm Demand Signal Item resource in Oracle Cloud Infrastructure Capacity Management service.
@@ -679,19 +679,19 @@ class OccmDemandSignalItem(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 demand_quantity: Optional[pulumi.Input[_builtins.str]] = None,
-                 demand_signal_catalog_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 demand_signal_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 notes: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 request_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 target_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_needed_before: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 demand_quantity: pulumi.Input[Optional[_builtins.str]] = None,
+                 demand_signal_catalog_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 demand_signal_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 notes: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 request_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_needed_before: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -744,23 +744,23 @@ class OccmDemandSignalItem(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            demand_quantity: Optional[pulumi.Input[_builtins.str]] = None,
-            demand_signal_catalog_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-            demand_signal_id: Optional[pulumi.Input[_builtins.str]] = None,
-            demand_signal_namespace: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            notes: Optional[pulumi.Input[_builtins.str]] = None,
-            region: Optional[pulumi.Input[_builtins.str]] = None,
-            request_type: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_name_: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            target_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_needed_before: Optional[pulumi.Input[_builtins.str]] = None) -> 'OccmDemandSignalItem':
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            demand_quantity: pulumi.Input[Optional[_builtins.str]] = None,
+            demand_signal_catalog_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            demand_signal_id: pulumi.Input[Optional[_builtins.str]] = None,
+            demand_signal_namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            notes: pulumi.Input[Optional[_builtins.str]] = None,
+            region: pulumi.Input[Optional[_builtins.str]] = None,
+            request_type: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_name_: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_needed_before: pulumi.Input[Optional[_builtins.str]] = None) -> 'OccmDemandSignalItem':
         """
         Get an existing OccmDemandSignalItem resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

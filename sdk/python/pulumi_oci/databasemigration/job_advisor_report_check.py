@@ -83,11 +83,11 @@ class JobAdvisorReportCheckArgs:
 @pulumi.input_type
 class _JobAdvisorReportCheckState:
     def __init__(__self__, *,
-                 advisor_report_check_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_reviewed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input['JobAdvisorReportCheckItemArgs']]]] = None,
-                 job_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 summaries: Optional[pulumi.Input[Sequence[pulumi.Input['JobAdvisorReportCheckSummaryArgs']]]] = None):
+                 advisor_report_check_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_reviewed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input['JobAdvisorReportCheckItemArgs']]]] = None,
+                 job_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 summaries: pulumi.Input[Optional[Sequence[pulumi.Input['JobAdvisorReportCheckSummaryArgs']]]] = None):
         """
         Input properties used for looking up and filtering JobAdvisorReportCheck resources.
 
@@ -114,43 +114,43 @@ class _JobAdvisorReportCheckState:
 
     @_builtins.property
     @pulumi.getter(name="advisorReportCheckId")
-    def advisor_report_check_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def advisor_report_check_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the advisor check
         """
         return pulumi.get(self, "advisor_report_check_id")
 
     @advisor_report_check_id.setter
-    def advisor_report_check_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def advisor_report_check_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "advisor_report_check_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isReviewed")
-    def is_reviewed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_reviewed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) User flag for advisor report check.
         """
         return pulumi.get(self, "is_reviewed")
 
     @is_reviewed.setter
-    def is_reviewed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_reviewed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_reviewed", value)
 
     @_builtins.property
     @pulumi.getter
-    def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JobAdvisorReportCheckItemArgs']]]]:
+    def items(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['JobAdvisorReportCheckItemArgs']]]]:
         """
         Array of advisor check items.
         """
         return pulumi.get(self, "items")
 
     @items.setter
-    def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['JobAdvisorReportCheckItemArgs']]]]):
+    def items(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['JobAdvisorReportCheckItemArgs']]]]):
         pulumi.set(self, "items", value)
 
     @_builtins.property
     @pulumi.getter(name="jobId")
-    def job_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def job_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the job 
 
@@ -161,19 +161,19 @@ class _JobAdvisorReportCheckState:
         return pulumi.get(self, "job_id")
 
     @job_id.setter
-    def job_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def job_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "job_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def summaries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JobAdvisorReportCheckSummaryArgs']]]]:
+    def summaries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['JobAdvisorReportCheckSummaryArgs']]]]:
         """
         Pre-Migration extended advisor report summary.
         """
         return pulumi.get(self, "summaries")
 
     @summaries.setter
-    def summaries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['JobAdvisorReportCheckSummaryArgs']]]]):
+    def summaries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['JobAdvisorReportCheckSummaryArgs']]]]):
         pulumi.set(self, "summaries", value)
 
 
@@ -183,9 +183,9 @@ class JobAdvisorReportCheck(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 advisor_report_check_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_reviewed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 job_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 advisor_report_check_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_reviewed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 job_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Job Advisor Report Check resource in Oracle Cloud Infrastructure Database Migration service.
@@ -203,7 +203,7 @@ class JobAdvisorReportCheck(pulumi.CustomResource):
 
         test_job_advisor_report_check = oci.databasemigration.JobAdvisorReportCheck("test_job_advisor_report_check",
             advisor_report_check_id=test_advisor_report_check["id"],
-            is_reviewed=job_advisor_report_check_is_reviewed,
+            is_reviewed=job_advisor_report_check_is_reviewed == "true",
             job_id=test_job["id"])
         ```
 
@@ -248,7 +248,7 @@ class JobAdvisorReportCheck(pulumi.CustomResource):
 
         test_job_advisor_report_check = oci.databasemigration.JobAdvisorReportCheck("test_job_advisor_report_check",
             advisor_report_check_id=test_advisor_report_check["id"],
-            is_reviewed=job_advisor_report_check_is_reviewed,
+            is_reviewed=job_advisor_report_check_is_reviewed == "true",
             job_id=test_job["id"])
         ```
 
@@ -276,9 +276,9 @@ class JobAdvisorReportCheck(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 advisor_report_check_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_reviewed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 job_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 advisor_report_check_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_reviewed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 job_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -309,11 +309,11 @@ class JobAdvisorReportCheck(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            advisor_report_check_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_reviewed: Optional[pulumi.Input[_builtins.bool]] = None,
-            items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['JobAdvisorReportCheckItemArgs', 'JobAdvisorReportCheckItemArgsDict']]]]] = None,
-            job_id: Optional[pulumi.Input[_builtins.str]] = None,
-            summaries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['JobAdvisorReportCheckSummaryArgs', 'JobAdvisorReportCheckSummaryArgsDict']]]]] = None) -> 'JobAdvisorReportCheck':
+            advisor_report_check_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_reviewed: pulumi.Input[Optional[_builtins.bool]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobAdvisorReportCheckItemArgs', 'JobAdvisorReportCheckItemArgsDict']]]]] = None,
+            job_id: pulumi.Input[Optional[_builtins.str]] = None,
+            summaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobAdvisorReportCheckSummaryArgs', 'JobAdvisorReportCheckSummaryArgsDict']]]]] = None) -> 'JobAdvisorReportCheck':
         """
         Get an existing JobAdvisorReportCheck resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

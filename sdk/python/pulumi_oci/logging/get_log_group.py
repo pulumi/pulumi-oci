@@ -167,7 +167,7 @@ def get_log_group(log_group_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_group = oci.Logging.get_log_group(log_group_id=test_log_group_oci_logging_log_group["id"])
+    test_log_group = oci.logging.get_log_group(log_group_id=test_log_group_oci_logging_log_group["id"])
     ```
 
 
@@ -189,7 +189,7 @@ def get_log_group(log_group_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_modified=pulumi.get(__ret__, 'time_last_modified'))
-def get_log_group_output(log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_log_group_output(log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogGroupResult]:
     """
     This data source provides details about a specific Log Group resource in Oracle Cloud Infrastructure Logging service.
@@ -202,7 +202,7 @@ def get_log_group_output(log_group_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_log_group = oci.Logging.get_log_group(log_group_id=test_log_group_oci_logging_log_group["id"])
+    test_log_group = oci.logging.get_log_group(log_group_id=test_log_group_oci_logging_log_group["id"])
     ```
 
 

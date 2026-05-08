@@ -217,7 +217,7 @@ def get_at_customer_ccc_upgrade_schedule(ccc_upgrade_schedule_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_ccc_upgrade_schedule = oci.ComputeCloud.get_at_customer_ccc_upgrade_schedule(ccc_upgrade_schedule_id=test_ccc_upgrade_schedule_oci_compute_cloud_at_customer_ccc_upgrade_schedule["id"])
+    test_ccc_upgrade_schedule = oci.computecloud.get_at_customer_ccc_upgrade_schedule(ccc_upgrade_schedule_id=test_ccc_upgrade_schedule_oci_compute_cloud_at_customer_ccc_upgrade_schedule["id"])
     ```
 
 
@@ -243,7 +243,7 @@ def get_at_customer_ccc_upgrade_schedule(ccc_upgrade_schedule_id: Optional[_buil
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_at_customer_ccc_upgrade_schedule_output(ccc_upgrade_schedule_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_at_customer_ccc_upgrade_schedule_output(ccc_upgrade_schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAtCustomerCccUpgradeScheduleResult]:
     """
     This data source provides details about a specific Ccc Upgrade Schedule resource in Oracle Cloud Infrastructure Compute Cloud At Customer service.
@@ -257,7 +257,7 @@ def get_at_customer_ccc_upgrade_schedule_output(ccc_upgrade_schedule_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_ccc_upgrade_schedule = oci.ComputeCloud.get_at_customer_ccc_upgrade_schedule(ccc_upgrade_schedule_id=test_ccc_upgrade_schedule_oci_compute_cloud_at_customer_ccc_upgrade_schedule["id"])
+    test_ccc_upgrade_schedule = oci.computecloud.get_at_customer_ccc_upgrade_schedule(ccc_upgrade_schedule_id=test_ccc_upgrade_schedule_oci_compute_cloud_at_customer_ccc_upgrade_schedule["id"])
     ```
 
 

@@ -297,7 +297,7 @@ def get_configuration(configuration_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_configuration = oci.Psql.get_configuration(configuration_id=test_configuration_oci_psql_configuration["id"])
+    test_configuration = oci.psql.get_configuration(configuration_id=test_configuration_oci_psql_configuration["id"])
     ```
 
 
@@ -330,7 +330,7 @@ def get_configuration(configuration_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_configuration_output(configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_configuration_output(configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConfigurationResult]:
     """
     This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Psql service.
@@ -343,7 +343,7 @@ def get_configuration_output(configuration_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_configuration = oci.Psql.get_configuration(configuration_id=test_configuration_oci_psql_configuration["id"])
+    test_configuration = oci.psql.get_configuration(configuration_id=test_configuration_oci_psql_configuration["id"])
     ```
 
 

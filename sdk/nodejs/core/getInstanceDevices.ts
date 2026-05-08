@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceDevices = oci.Core.getInstanceDevices({
+ * const testInstanceDevices = oci.core.getInstanceDevices({
  *     instanceId: testInstance.id,
- *     isAvailable: instanceDeviceIsAvailable,
+ *     isAvailable: instanceDeviceIsAvailable === "true",
  *     name: instanceDeviceName,
  * });
  * ```
@@ -87,9 +87,9 @@ export interface GetInstanceDevicesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceDevices = oci.Core.getInstanceDevices({
+ * const testInstanceDevices = oci.core.getInstanceDevices({
  *     instanceId: testInstance.id,
- *     isAvailable: instanceDeviceIsAvailable,
+ *     isAvailable: instanceDeviceIsAvailable === "true",
  *     name: instanceDeviceName,
  * });
  * ```
@@ -108,7 +108,7 @@ export function getInstanceDevicesOutput(args: GetInstanceDevicesOutputArgs, opt
  * A collection of arguments for invoking getInstanceDevices.
  */
 export interface GetInstanceDevicesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetInstanceDevicesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetInstanceDevicesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      */
@@ -116,9 +116,9 @@ export interface GetInstanceDevicesOutputArgs {
     /**
      * A filter to return only available devices or only used devices.
      */
-    isAvailable?: pulumi.Input<boolean>;
+    isAvailable?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only devices that match the given name exactly.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

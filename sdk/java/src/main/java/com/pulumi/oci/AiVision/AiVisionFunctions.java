@@ -64,8 +64,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -106,8 +106,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -148,8 +148,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -190,8 +190,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -232,8 +232,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -274,8 +274,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -320,8 +320,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -366,8 +366,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -412,8 +412,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -458,8 +458,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -504,8 +504,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -550,8 +550,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -596,8 +596,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetProjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -638,8 +638,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetProjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -680,8 +680,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetProjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -722,8 +722,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetProjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -764,8 +764,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetProjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -806,8 +806,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -851,8 +851,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -896,8 +896,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -941,8 +941,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -986,8 +986,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1031,8 +1031,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1076,8 +1076,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1121,8 +1121,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1163,8 +1163,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1205,8 +1205,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1247,8 +1247,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1289,8 +1289,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1331,8 +1331,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1375,8 +1375,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1419,8 +1419,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1463,8 +1463,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1507,8 +1507,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1551,8 +1551,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1595,8 +1595,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1639,8 +1639,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1681,8 +1681,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1723,8 +1723,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1765,8 +1765,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1807,8 +1807,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1849,8 +1849,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1894,8 +1894,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1939,8 +1939,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1984,8 +1984,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2029,8 +2029,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2074,8 +2074,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2119,8 +2119,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2164,8 +2164,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2206,8 +2206,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2248,8 +2248,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2290,8 +2290,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2332,8 +2332,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2374,8 +2374,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2419,8 +2419,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2464,8 +2464,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2509,8 +2509,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2554,8 +2554,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2599,8 +2599,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2644,8 +2644,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetStreamSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2689,8 +2689,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2731,8 +2731,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2773,8 +2773,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2815,8 +2815,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2857,8 +2857,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2899,8 +2899,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2944,8 +2944,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2989,8 +2989,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3034,8 +3034,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3079,8 +3079,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3124,8 +3124,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3169,8 +3169,8 @@ public final class AiVisionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.AiVision.AiVisionFunctions;
      * import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

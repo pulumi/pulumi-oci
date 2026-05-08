@@ -142,7 +142,7 @@ def get_oda_private_endpoint_scan_proxy(oda_private_endpoint_id: Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_private_endpoint_scan_proxy = oci.Oda.get_oda_private_endpoint_scan_proxy(oda_private_endpoint_id=test_oda_private_endpoint["id"],
+    test_oda_private_endpoint_scan_proxy = oci.oda.get_oda_private_endpoint_scan_proxy(oda_private_endpoint_id=test_oda_private_endpoint["id"],
         oda_private_endpoint_scan_proxy_id=test_oda_private_endpoint_scan_proxy_oci_oda_oda_private_endpoint_scan_proxy["id"])
     ```
 
@@ -165,8 +165,8 @@ def get_oda_private_endpoint_scan_proxy(oda_private_endpoint_id: Optional[_built
         scan_listener_type=pulumi.get(__ret__, 'scan_listener_type'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_oda_private_endpoint_scan_proxy_output(oda_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                               oda_private_endpoint_scan_proxy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_oda_private_endpoint_scan_proxy_output(oda_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                               oda_private_endpoint_scan_proxy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOdaPrivateEndpointScanProxyResult]:
     """
     This data source provides details about a specific Oda Private Endpoint Scan Proxy resource in Oracle Cloud Infrastructure Digital Assistant service.
@@ -179,7 +179,7 @@ def get_oda_private_endpoint_scan_proxy_output(oda_private_endpoint_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_private_endpoint_scan_proxy = oci.Oda.get_oda_private_endpoint_scan_proxy(oda_private_endpoint_id=test_oda_private_endpoint["id"],
+    test_oda_private_endpoint_scan_proxy = oci.oda.get_oda_private_endpoint_scan_proxy(oda_private_endpoint_id=test_oda_private_endpoint["id"],
         oda_private_endpoint_scan_proxy_id=test_oda_private_endpoint_scan_proxy_oci_oda_oda_private_endpoint_scan_proxy["id"])
     ```
 

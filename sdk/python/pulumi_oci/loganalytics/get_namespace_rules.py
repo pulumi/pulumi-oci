@@ -160,7 +160,7 @@ def get_namespace_rules(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_rules = oci.LogAnalytics.get_namespace_rules(compartment_id=compartment_id,
+    test_namespace_rules = oci.loganalytics.get_namespace_rules(compartment_id=compartment_id,
         namespace=namespace_rule_namespace,
         display_name=namespace_rule_display_name,
         kind=namespace_rule_kind,
@@ -197,13 +197,13 @@ def get_namespace_rules(compartment_id: Optional[_builtins.str] = None,
         rule_summary_collections=pulumi.get(__ret__, 'rule_summary_collections'),
         state=pulumi.get(__ret__, 'state'),
         target_service=pulumi.get(__ret__, 'target_service'))
-def get_namespace_rules_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamespaceRulesFilterArgs', 'GetNamespaceRulesFilterArgsDict']]]]] = None,
-                               kind: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                               state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               target_service: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_namespace_rules_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespaceRulesFilterArgs', 'GetNamespaceRulesFilterArgsDict']]]]] = None,
+                               kind: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                               state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               target_service: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceRulesResult]:
     """
     This data source provides the list of Namespace Rules in Oracle Cloud Infrastructure Log Analytics service.
@@ -216,7 +216,7 @@ def get_namespace_rules_output(compartment_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_rules = oci.LogAnalytics.get_namespace_rules(compartment_id=compartment_id,
+    test_namespace_rules = oci.loganalytics.get_namespace_rules(compartment_id=compartment_id,
         namespace=namespace_rule_namespace,
         display_name=namespace_rule_display_name,
         kind=namespace_rule_kind,

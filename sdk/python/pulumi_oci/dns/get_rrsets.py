@@ -153,7 +153,7 @@ def get_rrsets(domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_rrsets = oci.Dns.get_rrsets(zone_name_or_id=test_zone["id"],
+    test_rrsets = oci.dns.get_rrsets(zone_name_or_id=test_zone["id"],
         domain=rrset_domain,
         domain_contains=rrset_domain,
         rtype=rrset_rtype,
@@ -188,13 +188,13 @@ def get_rrsets(domain: Optional[_builtins.str] = None,
         scope=pulumi.get(__ret__, 'scope'),
         view_id=pulumi.get(__ret__, 'view_id'),
         zone_name_or_id=pulumi.get(__ret__, 'zone_name_or_id'))
-def get_rrsets_output(domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      domain_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRrsetsFilterArgs', 'GetRrsetsFilterArgsDict']]]]] = None,
-                      rtype: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      scope: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      view_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      zone_name_or_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_rrsets_output(domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      domain_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRrsetsFilterArgs', 'GetRrsetsFilterArgsDict']]]]] = None,
+                      rtype: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      scope: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      view_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      zone_name_or_id: pulumi.Input[Optional[_builtins.str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRrsetsResult]:
     """
     This data source provides the list of RRsets in Oracle Cloud Infrastructure DNS service.
@@ -209,7 +209,7 @@ def get_rrsets_output(domain: Optional[pulumi.Input[Optional[_builtins.str]]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_rrsets = oci.Dns.get_rrsets(zone_name_or_id=test_zone["id"],
+    test_rrsets = oci.dns.get_rrsets(zone_name_or_id=test_zone["id"],
         domain=rrset_domain,
         domain_contains=rrset_domain,
         rtype=rrset_rtype,

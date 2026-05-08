@@ -128,8 +128,8 @@ def get_recommendation_strategies(compartment_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_recommendation_strategies = oci.Optimizer.get_recommendation_strategies(compartment_id=compartment_id,
-        compartment_id_in_subtree=recommendation_strategy_compartment_id_in_subtree,
+    test_recommendation_strategies = oci.optimizer.get_recommendation_strategies(compartment_id=compartment_id,
+        compartment_id_in_subtree=recommendation_strategy_compartment_id_in_subtree == "true",
         name=recommendation_strategy_name,
         recommendation_name=test_recommendation["name"])
     ```
@@ -159,11 +159,11 @@ def get_recommendation_strategies(compartment_id: Optional[_builtins.str] = None
         name=pulumi.get(__ret__, 'name'),
         recommendation_name=pulumi.get(__ret__, 'recommendation_name'),
         recommendation_strategy_collections=pulumi.get(__ret__, 'recommendation_strategy_collections'))
-def get_recommendation_strategies_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         compartment_id_in_subtree: Optional[pulumi.Input[_builtins.bool]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRecommendationStrategiesFilterArgs', 'GetRecommendationStrategiesFilterArgsDict']]]]] = None,
-                                         name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         recommendation_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_recommendation_strategies_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         compartment_id_in_subtree: pulumi.Input[Optional[_builtins.bool]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRecommendationStrategiesFilterArgs', 'GetRecommendationStrategiesFilterArgsDict']]]]] = None,
+                                         name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         recommendation_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRecommendationStrategiesResult]:
     """
     This data source provides the list of Recommendation Strategies in Oracle Cloud Infrastructure Optimizer service.
@@ -176,8 +176,8 @@ def get_recommendation_strategies_output(compartment_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_recommendation_strategies = oci.Optimizer.get_recommendation_strategies(compartment_id=compartment_id,
-        compartment_id_in_subtree=recommendation_strategy_compartment_id_in_subtree,
+    test_recommendation_strategies = oci.optimizer.get_recommendation_strategies(compartment_id=compartment_id,
+        compartment_id_in_subtree=recommendation_strategy_compartment_id_in_subtree == "true",
         name=recommendation_strategy_name,
         recommendation_name=test_recommendation["name"])
     ```

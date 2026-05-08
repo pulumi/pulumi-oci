@@ -81,9 +81,9 @@ class IotIotDomainChangeDataRetentionPeriodArgs:
 @pulumi.input_type
 class _IotIotDomainChangeDataRetentionPeriodState:
     def __init__(__self__, *,
-                 data_retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 iot_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 data_retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering IotIotDomainChangeDataRetentionPeriod resources.
 
@@ -104,31 +104,31 @@ class _IotIotDomainChangeDataRetentionPeriodState:
 
     @_builtins.property
     @pulumi.getter(name="dataRetentionPeriodInDays")
-    def data_retention_period_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def data_retention_period_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The duration (in days) for which data will be retained in the IoT domain.
         """
         return pulumi.get(self, "data_retention_period_in_days")
 
     @data_retention_period_in_days.setter
-    def data_retention_period_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def data_retention_period_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "data_retention_period_in_days", value)
 
     @_builtins.property
     @pulumi.getter(name="iotDomainId")
-    def iot_domain_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iot_domain_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
         """
         return pulumi.get(self, "iot_domain_id")
 
     @iot_domain_id.setter
-    def iot_domain_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iot_domain_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iot_domain_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of data retention period to apply. Allowed values are RAW_DATA, REJECTED_DATA, HISTORIZED_DATA, and RAW_COMMAND_DATA. 
 
@@ -139,7 +139,7 @@ class _IotIotDomainChangeDataRetentionPeriodState:
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -149,9 +149,9 @@ class IotIotDomainChangeDataRetentionPeriod(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 data_retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 iot_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 data_retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Iot Domain Change Data Retention Period resource in Oracle Cloud Infrastructure Iot service.
@@ -168,7 +168,7 @@ class IotIotDomainChangeDataRetentionPeriod(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_iot_domain_change_data_retention_period = oci.oci.IotIotDomainChangeDataRetentionPeriod("test_iot_domain_change_data_retention_period",
-            data_retention_period_in_days=iot_domain_change_data_retention_period_data_retention_period_in_days,
+            data_retention_period_in_days=int(iot_domain_change_data_retention_period_data_retention_period_in_days),
             iot_domain_id=test_iot_domain["id"],
             type=iot_domain_change_data_retention_period_type)
         ```
@@ -209,7 +209,7 @@ class IotIotDomainChangeDataRetentionPeriod(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_iot_domain_change_data_retention_period = oci.oci.IotIotDomainChangeDataRetentionPeriod("test_iot_domain_change_data_retention_period",
-            data_retention_period_in_days=iot_domain_change_data_retention_period_data_retention_period_in_days,
+            data_retention_period_in_days=int(iot_domain_change_data_retention_period_data_retention_period_in_days),
             iot_domain_id=test_iot_domain["id"],
             type=iot_domain_change_data_retention_period_type)
         ```
@@ -234,9 +234,9 @@ class IotIotDomainChangeDataRetentionPeriod(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 data_retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 iot_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 data_retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -265,9 +265,9 @@ class IotIotDomainChangeDataRetentionPeriod(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            data_retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-            iot_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'IotIotDomainChangeDataRetentionPeriod':
+            data_retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+            iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'IotIotDomainChangeDataRetentionPeriod':
         """
         Get an existing IotIotDomainChangeDataRetentionPeriod resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

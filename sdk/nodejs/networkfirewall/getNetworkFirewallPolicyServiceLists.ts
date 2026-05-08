@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicyServiceLists = oci.NetworkFirewall.getNetworkFirewallPolicyServiceLists({
+ * const testNetworkFirewallPolicyServiceLists = oci.networkfirewall.getNetworkFirewallPolicyServiceLists({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     displayName: networkFirewallPolicyServiceListDisplayName,
  * });
@@ -74,7 +74,7 @@ export interface GetNetworkFirewallPolicyServiceListsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicyServiceLists = oci.NetworkFirewall.getNetworkFirewallPolicyServiceLists({
+ * const testNetworkFirewallPolicyServiceLists = oci.networkfirewall.getNetworkFirewallPolicyServiceLists({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     displayName: networkFirewallPolicyServiceListDisplayName,
  * });
@@ -96,8 +96,8 @@ export interface GetNetworkFirewallPolicyServiceListsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.GetNetworkFirewallPolicyServiceListsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.GetNetworkFirewallPolicyServiceListsFilterArgs>[] | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */

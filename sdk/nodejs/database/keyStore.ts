@@ -186,52 +186,52 @@ export interface KeyStoreState {
     /**
      * List of databases associated with the key store.
      */
-    associatedDatabases?: pulumi.Input<pulumi.Input<inputs.Database.KeyStoreAssociatedDatabase>[]>;
+    associatedDatabases?: pulumi.Input<pulumi.Input<inputs.Database.KeyStoreAssociatedDatabase>[] | undefined>;
     /**
      * Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
      */
-    associatedLongTermBackupCount?: pulumi.Input<number>;
+    associatedLongTermBackupCount?: pulumi.Input<number | undefined>;
     /**
      * List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
      */
-    associatedLongTermBackups?: pulumi.Input<pulumi.Input<inputs.Database.KeyStoreAssociatedLongTermBackup>[]>;
+    associatedLongTermBackups?: pulumi.Input<pulumi.Input<inputs.Database.KeyStoreAssociatedLongTermBackup>[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
-    confirmDetailsTrigger?: pulumi.Input<number>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    confirmDetailsTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The user-friendly name for the key store. The name does not need to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The current state of the key store.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time that the key store was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Key store type details.
      */
-    typeDetails?: pulumi.Input<inputs.Database.KeyStoreTypeDetails>;
+    typeDetails?: pulumi.Input<inputs.Database.KeyStoreTypeDetails | undefined>;
 }
 
 /**
@@ -242,11 +242,11 @@ export interface KeyStoreArgs {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    confirmDetailsTrigger?: pulumi.Input<number>;
+    confirmDetailsTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The user-friendly name for the key store. The name does not need to be unique.
      */
@@ -254,7 +254,7 @@ export interface KeyStoreArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Key store type details.
      */

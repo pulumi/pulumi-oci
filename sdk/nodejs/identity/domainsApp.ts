@@ -28,14 +28,14 @@ import * as utilities from "../utilities";
  *     displayName: appDisplayName,
  *     idcsEndpoint: testDomain.url,
  *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:App"],
- *     accessTokenExpiry: appAccessTokenExpiry,
- *     active: appActive,
+ *     accessTokenExpiry: Number(appAccessTokenExpiry),
+ *     active: appActive === "true",
  *     aliasApps: [{
  *         value: appAliasAppsValue,
  *     }],
- *     allUrlSchemesAllowed: appAllUrlSchemesAllowed,
- *     allowAccessControl: appAllowAccessControl,
- *     allowOffline: appAllowOffline,
+ *     allUrlSchemesAllowed: appAllUrlSchemesAllowed === "true",
+ *     allowAccessControl: appAllowAccessControl === "true",
+ *     allowOffline: appAllowOffline === "true",
  *     allowedGrants: appAllowedGrants,
  *     allowedOperations: appAllowedOperations,
  *     allowedScopes: [{
@@ -61,23 +61,23 @@ import * as utilities from "../utilities";
  *         datatype: appAttrRenderingMetadataDatatype,
  *         helptext: appAttrRenderingMetadataHelptext,
  *         label: appAttrRenderingMetadataLabel,
- *         maxLength: appAttrRenderingMetadataMaxLength,
- *         maxSize: appAttrRenderingMetadataMaxSize,
- *         minLength: appAttrRenderingMetadataMinLength,
- *         minSize: appAttrRenderingMetadataMinSize,
- *         order: appAttrRenderingMetadataOrder,
- *         readOnly: appAttrRenderingMetadataReadOnly,
+ *         maxLength: Number(appAttrRenderingMetadataMaxLength),
+ *         maxSize: Number(appAttrRenderingMetadataMaxSize),
+ *         minLength: Number(appAttrRenderingMetadataMinLength),
+ *         minSize: Number(appAttrRenderingMetadataMinSize),
+ *         order: Number(appAttrRenderingMetadataOrder),
+ *         readOnly: appAttrRenderingMetadataReadOnly === "true",
  *         regexp: appAttrRenderingMetadataRegexp,
- *         required: appAttrRenderingMetadataRequired,
+ *         required: appAttrRenderingMetadataRequired === "true",
  *         section: appAttrRenderingMetadataSection,
- *         visible: appAttrRenderingMetadataVisible,
+ *         visible: appAttrRenderingMetadataVisible === "true",
  *         widget: appAttrRenderingMetadataWidget,
  *     }],
  *     attributeSets: ["all"],
  *     attributes: "",
  *     audience: appAudience,
  *     authorization: appAuthorization,
- *     bypassConsent: appBypassConsent,
+ *     bypassConsent: appBypassConsent === "true",
  *     certificates: [{
  *         certAlias: appCertificatesCertAlias,
  *     }],
@@ -86,9 +86,9 @@ import * as utilities from "../utilities";
  *     contactEmailAddress: appContactEmailAddress,
  *     delegatedServiceNames: appDelegatedServiceNames,
  *     description: appDescription,
- *     disableKmsiTokenAuthentication: appDisableKmsiTokenAuthentication,
+ *     disableKmsiTokenAuthentication: appDisableKmsiTokenAuthentication === "true",
  *     errorPageUrl: appErrorPageUrl,
- *     forceDelete: appForceDelete,
+ *     forceDelete: appForceDelete === "true",
  *     homePageUrl: appHomePageUrl,
  *     icon: appIcon,
  *     id: appId,
@@ -99,20 +99,20 @@ import * as utilities from "../utilities";
  *     idpPolicy: {
  *         value: appIdpPolicyValue,
  *     },
- *     isAliasApp: appIsAliasApp,
- *     isEnterpriseApp: appIsEnterpriseApp,
- *     isFormFill: appIsFormFill,
- *     isKerberosRealm: appIsKerberosRealm,
- *     isLoginTarget: appIsLoginTarget,
- *     isMobileTarget: appIsMobileTarget,
- *     isMulticloudServiceApp: appIsMulticloudServiceApp,
- *     isOauthClient: appIsOauthClient,
- *     isOauthResource: appIsOauthResource,
- *     isObligationCapable: appIsObligationCapable,
- *     isRadiusApp: appIsRadiusApp,
- *     isSamlServiceProvider: appIsSamlServiceProvider,
- *     isUnmanagedApp: appIsUnmanagedApp,
- *     isWebTierPolicy: appIsWebTierPolicy,
+ *     isAliasApp: appIsAliasApp === "true",
+ *     isEnterpriseApp: appIsEnterpriseApp === "true",
+ *     isFormFill: appIsFormFill === "true",
+ *     isKerberosRealm: appIsKerberosRealm === "true",
+ *     isLoginTarget: appIsLoginTarget === "true",
+ *     isMobileTarget: appIsMobileTarget === "true",
+ *     isMulticloudServiceApp: appIsMulticloudServiceApp === "true",
+ *     isOauthClient: appIsOauthClient === "true",
+ *     isOauthResource: appIsOauthResource === "true",
+ *     isObligationCapable: appIsObligationCapable === "true",
+ *     isRadiusApp: appIsRadiusApp === "true",
+ *     isSamlServiceProvider: appIsSamlServiceProvider === "true",
+ *     isUnmanagedApp: appIsUnmanagedApp === "true",
+ *     isWebTierPolicy: appIsWebTierPolicy === "true",
  *     landingPageUrl: appLandingPageUrl,
  *     linkingCallbackUrl: appLinkingCallbackUrl,
  *     loginMechanism: appLoginMechanism,
@@ -132,7 +132,7 @@ import * as utilities from "../utilities";
  *         value: appRadiusPolicyValue,
  *     },
  *     redirectUris: appRedirectUris,
- *     refreshTokenExpiry: appRefreshTokenExpiry,
+ *     refreshTokenExpiry: Number(appRefreshTokenExpiry),
  *     resourceTypeSchemaVersion: appResourceTypeSchemaVersion,
  *     samlServiceProvider: {
  *         value: appSamlServiceProviderValue,
@@ -141,7 +141,7 @@ import * as utilities from "../utilities";
  *         value: appScopesValue,
  *         description: appScopesDescription,
  *         displayName: appScopesDisplayName,
- *         requiresConsent: appScopesRequiresConsent,
+ *         requiresConsent: appScopesRequiresConsent === "true",
  *     }],
  *     secondaryAudiences: ["secondaryAudiences"],
  *     serviceParams: [{
@@ -150,7 +150,7 @@ import * as utilities from "../utilities";
  *     }],
  *     serviceTypeUrn: appServiceTypeUrn,
  *     serviceTypeVersion: appServiceTypeVersion,
- *     showInMyApps: appShowInMyApps,
+ *     showInMyApps: appShowInMyApps === "true",
  *     signonPolicy: {
  *         value: appSignonPolicyValue,
  *     },
@@ -184,14 +184,14 @@ import * as utilities from "../utilities";
  *         domainName: "domainName",
  *     },
  *     urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp: {
- *         allowAuthzDecisionTtl: appUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzDecisionTtl,
+ *         allowAuthzDecisionTtl: Number(appUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzDecisionTtl),
  *         allowAuthzPolicy: {
  *             value: appUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicyValue,
  *         },
  *         appResources: [{
  *             value: appUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResourcesValue,
  *         }],
- *         denyAuthzDecisionTtl: appUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzDecisionTtl,
+ *         denyAuthzDecisionTtl: Number(appUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzDecisionTtl),
  *         denyAuthzPolicy: {
  *             value: appUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicyValue,
  *         },
@@ -205,7 +205,7 @@ import * as utilities from "../utilities";
  *             formUrlMatchType: appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatchFormUrlMatchType,
  *         }],
  *         formType: appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormType,
- *         revealPasswordOnForm: appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppRevealPasswordOnForm,
+ *         revealPasswordOnForm: appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppRevealPasswordOnForm === "true",
  *         userNameFormExpression: appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppUserNameFormExpression,
  *         userNameFormTemplate: appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppUserNameFormTemplate,
  *     },
@@ -218,51 +218,51 @@ import * as utilities from "../utilities";
  *             formUrlMatchType: appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatchFormUrlMatchType,
  *         }],
  *         formType: appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormType,
- *         revealPasswordOnForm: appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateRevealPasswordOnForm,
- *         syncFromTemplate: appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateSyncFromTemplate,
+ *         revealPasswordOnForm: appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateRevealPasswordOnForm === "true",
+ *         syncFromTemplate: appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateSyncFromTemplate === "true",
  *         userNameFormExpression: appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateUserNameFormExpression,
  *         userNameFormTemplate: appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateUserNameFormTemplate,
  *     },
  *     urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp: {
  *         defaultEncryptionSaltType: appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppDefaultEncryptionSaltType,
  *         masterKey: appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppMasterKey,
- *         maxRenewableAge: appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppMaxRenewableAge,
- *         maxTicketLife: appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppMaxTicketLife,
+ *         maxRenewableAge: Number(appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppMaxRenewableAge),
+ *         maxTicketLife: Number(appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppMaxTicketLife),
  *         realmName: appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppRealmName,
  *         supportedEncryptionSaltTypes: appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppSupportedEncryptionSaltTypes,
- *         ticketFlags: appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppTicketFlags,
+ *         ticketFlags: Number(appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppTicketFlags),
  *     },
  *     urnietfparamsscimschemasoracleidcsextensionmanagedappApp: {
- *         adminConsentGranted: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppAdminConsentGranted,
+ *         adminConsentGranted: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppAdminConsentGranted === "true",
  *         bundleConfigurationProperties: [{
  *             icfType: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesIcfType,
  *             name: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesName,
- *             required: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesRequired,
- *             confidential: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesConfidential,
+ *             required: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesRequired === "true",
+ *             confidential: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesConfidential === "true",
  *             displayName: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesDisplayName,
  *             helpMessage: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesHelpMessage,
- *             order: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesOrder,
+ *             order: Number(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesOrder),
  *             values: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesValue,
  *         }],
  *         bundlePoolConfiguration: {
- *             maxIdle: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationMaxIdle,
- *             maxObjects: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationMaxObjects,
- *             maxWait: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationMaxWait,
- *             minEvictableIdleTimeMillis: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationMinEvictableIdleTimeMillis,
- *             minIdle: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationMinIdle,
+ *             maxIdle: Number(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationMaxIdle),
+ *             maxObjects: Number(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationMaxObjects),
+ *             maxWait: Number(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationMaxWait),
+ *             minEvictableIdleTimeMillis: Number(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationMinEvictableIdleTimeMillis),
+ *             minIdle: Number(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationMinIdle),
  *         },
- *         connected: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnected,
- *         enableAuthSyncNewUserNotification: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppEnableAuthSyncNewUserNotification,
- *         enableSync: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppEnableSync,
- *         enableSyncSummaryReportNotification: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppEnableSyncSummaryReportNotification,
+ *         connected: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnected === "true",
+ *         enableAuthSyncNewUserNotification: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppEnableAuthSyncNewUserNotification === "true",
+ *         enableSync: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppEnableSync === "true",
+ *         enableSyncSummaryReportNotification: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppEnableSyncSummaryReportNotification === "true",
  *         flatFileBundleConfigurationProperties: [{
  *             icfType: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesIcfType,
  *             name: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesName,
- *             required: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesRequired,
- *             confidential: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesConfidential,
+ *             required: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesRequired === "true",
+ *             confidential: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesConfidential === "true",
  *             displayName: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesDisplayName,
  *             helpMessage: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesHelpMessage,
- *             order: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesOrder,
+ *             order: Number(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesOrder),
  *             values: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesValue,
  *         }],
  *         flatFileConnectorBundle: {
@@ -270,7 +270,7 @@ import * as utilities from "../utilities";
  *             display: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundleDisplay,
  *             wellKnownId: testWellKnown.id,
  *         },
- *         isAuthoritative: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIsAuthoritative,
+ *         isAuthoritative: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIsAuthoritative === "true",
  *         threeLeggedOauthCredential: {
  *             accessToken: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialAccessToken,
  *             accessTokenExpiry: appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialAccessTokenExpiry,
@@ -286,10 +286,10 @@ import * as utilities from "../utilities";
  *     },
  *     urnietfparamsscimschemasoracleidcsextensionradiusAppApp: {
  *         clientIp: appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppClientIp,
- *         includeGroupInResponse: appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppIncludeGroupInResponse,
+ *         includeGroupInResponse: appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppIncludeGroupInResponse === "true",
  *         port: appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppPort,
  *         secretKey: appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppSecretKey,
- *         captureClientIp: appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppCaptureClientIp,
+ *         captureClientIp: appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppCaptureClientIp === "true",
  *         countryCodeResponseAttributeId: "1",
  *         endUserIpAttribute: appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppEndUserIpAttribute,
  *         groupMembershipRadiusAttribute: appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipRadiusAttribute,
@@ -297,18 +297,18 @@ import * as utilities from "../utilities";
  *             value: appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturnValue,
  *         }],
  *         groupNameFormat: appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupNameFormat,
- *         passwordAndOtpTogether: appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppPasswordAndOtpTogether,
+ *         passwordAndOtpTogether: appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppPasswordAndOtpTogether === "true",
  *         radiusVendorSpecificId: "radiusVendorSpecificId",
  *         responseFormat: appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppResponseFormat,
  *         responseFormatDelimiter: appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppResponseFormatDelimiter,
  *         typeOfRadiusApp: appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppTypeOfRadiusApp,
  *     },
  *     urnietfparamsscimschemasoracleidcsextensionrequestableApp: {
- *         requestable: appUrnietfparamsscimschemasoracleidcsextensionrequestableAppRequestable,
+ *         requestable: appUrnietfparamsscimschemasoracleidcsextensionrequestableAppRequestable === "true",
  *     },
  *     urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp: {
  *         assertionConsumerUrl: appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppAssertionConsumerUrl,
- *         encryptAssertion: appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppEncryptAssertion,
+ *         encryptAssertion: appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppEncryptAssertion === "true",
  *         encryptionAlgorithm: appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppEncryptionAlgorithm,
  *         encryptionCertificate: "encryptionCertificate",
  *         federationProtocol: appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppFederationProtocol,
@@ -319,11 +319,11 @@ import * as utilities from "../utilities";
  *             groupName: "groupName",
  *         }],
  *         hokAcsUrl: appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppHokAcsUrl,
- *         hokRequired: appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppHokRequired,
- *         includeSigningCertInSignature: appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppIncludeSigningCertInSignature,
+ *         hokRequired: appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppHokRequired === "true",
+ *         includeSigningCertInSignature: appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppIncludeSigningCertInSignature === "true",
  *         keyEncryptionAlgorithm: appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppKeyEncryptionAlgorithm,
  *         logoutBinding: appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppLogoutBinding,
- *         logoutEnabled: appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppLogoutEnabled,
+ *         logoutEnabled: appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppLogoutEnabled === "true",
  *         logoutRequestUrl: appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppLogoutRequestUrl,
  *         logoutResponseUrl: appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppLogoutResponseUrl,
  *         metadata: "metadata",
@@ -342,7 +342,7 @@ import * as utilities from "../utilities";
  *         }],
  *     },
  *     urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp: {
- *         resourceRef: appUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppResourceRef,
+ *         resourceRef: appUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppResourceRef === "true",
  *         webTierPolicyAzControl: appUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppWebTierPolicyAzControl,
  *         webTierPolicyJson: appUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppWebTierPolicyJson,
  *     },
@@ -2203,7 +2203,7 @@ export interface DomainsAppState {
      * * type: integer
      * * uniqueness: none
      */
-    accessTokenExpiry?: pulumi.Input<number>;
+    accessTokenExpiry?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Accounts of App
      *
@@ -2217,7 +2217,7 @@ export interface DomainsAppState {
      * * type: complex
      * * uniqueness: none
      */
-    accounts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppAccount>[]>;
+    accounts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppAccount>[] | undefined>;
     /**
      * (Updatable) If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
      *
@@ -2230,7 +2230,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers administrative privilege within this App.
      *
@@ -2243,7 +2243,7 @@ export interface DomainsAppState {
      * * returned: request
      * * type: complex
      */
-    adminRoles?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppAdminRole>[]>;
+    adminRoles?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppAdminRole>[] | undefined>;
     /**
      * (Updatable) Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
      *
@@ -2258,7 +2258,7 @@ export interface DomainsAppState {
      * * type: complex
      * * uniqueness: none
      */
-    aliasApps?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppAliasApp>[]>;
+    aliasApps?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppAliasApp>[] | undefined>;
     /**
      * (Updatable) If true, indicates that the system should allow all URL-schemes within each value of the 'redirectUris' attribute.  Also indicates that the system should not attempt to confirm that each value of the 'redirectUris' attribute is a valid URI.  In particular, the system should not confirm that the domain component of the URI is a top-level domain and the system should not confirm that the hostname portion is a valid system that is reachable over the network.
      *
@@ -2271,7 +2271,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    allUrlSchemesAllowed?: pulumi.Input<boolean>;
+    allUrlSchemesAllowed?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
      *
@@ -2284,7 +2284,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    allowAccessControl?: pulumi.Input<boolean>;
+    allowAccessControl?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
      *
@@ -2297,7 +2297,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    allowOffline?: pulumi.Input<boolean>;
+    allowOffline?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) List of grant-types that this App is allowed to use when it acts as an OAuthClient.
      *
@@ -2311,7 +2311,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    allowedGrants?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedGrants?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are 'introspect' and 'onBehalfOfUser'. The value 'introspect' allows the client to look inside the access-token. The value 'onBehalfOfUser' overrides how the client's privileges are combined with the privileges of the Subject User. Ordinarily, authorization calculates the set of effective privileges as the intersection of the client's privileges and the user's privileges. The value 'onBehalfOf' indicates that authorization should ignore the privileges of the client and use only the user's privileges to calculate the effective privileges.
      *
@@ -2325,7 +2325,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    allowedOperations?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedOperations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A list of scopes (exposed by this App or by other Apps) that this App is allowed to access when it acts as an OAuthClient.
      *
@@ -2340,7 +2340,7 @@ export interface DomainsAppState {
      * * type: complex
      * * uniqueness: none
      */
-    allowedScopes?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppAllowedScope>[]>;
+    allowedScopes?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppAllowedScope>[] | undefined>;
     /**
      * (Updatable) A list of tags, acting as an OAuthClient, this App is allowed to access.
      *
@@ -2356,7 +2356,7 @@ export interface DomainsAppState {
      * * type: complex
      * * uniqueness: none
      */
-    allowedTags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppAllowedTag>[]>;
+    allowedTags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppAllowedTag>[] | undefined>;
     /**
      * (Updatable) Application icon.
      *
@@ -2369,7 +2369,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    appIcon?: pulumi.Input<string>;
+    appIcon?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) App Sign-on Policy.
      *
@@ -2381,7 +2381,7 @@ export interface DomainsAppState {
      * * returned: default
      * * type: complex
      */
-    appSignonPolicy?: pulumi.Input<inputs.Identity.DomainsAppAppSignonPolicy>;
+    appSignonPolicy?: pulumi.Input<inputs.Identity.DomainsAppAppSignonPolicy | undefined>;
     /**
      * (Updatable) Application thumbnail.
      *
@@ -2394,7 +2394,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    appThumbnail?: pulumi.Input<string>;
+    appThumbnail?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Network Perimeter
      *
@@ -2408,7 +2408,7 @@ export interface DomainsAppState {
      * * returned: default
      * * type: complex
      */
-    appsNetworkPerimeters?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppAppsNetworkPerimeter>[]>;
+    appsNetworkPerimeters?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppAppsNetworkPerimeter>[] | undefined>;
     /**
      * (Updatable) OPCService facet of the application.
      *
@@ -2422,7 +2422,7 @@ export interface DomainsAppState {
      * * returned: default
      * * type: complex
      */
-    asOpcService?: pulumi.Input<inputs.Identity.DomainsAppAsOpcService>;
+    asOpcService?: pulumi.Input<inputs.Identity.DomainsAppAsOpcService | undefined>;
     /**
      * (Updatable) Label for the attribute to be shown in the UI.
      *
@@ -2436,15 +2436,15 @@ export interface DomainsAppState {
      * * type: complex
      * * uniqueness: none
      */
-    attrRenderingMetadatas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppAttrRenderingMetadata>[]>;
+    attrRenderingMetadatas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppAttrRenderingMetadata>[] | undefined>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The base URI for all of the scopes defined in this App. The value of 'audience' is combined with the 'value' of each scope to form an 'fqs' or fully qualified scope.
      *
@@ -2458,11 +2458,11 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    audience?: pulumi.Input<string>;
+    audience?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Application template on which the application is based.
      *
@@ -2474,7 +2474,7 @@ export interface DomainsAppState {
      * * returned: default
      * * type: complex
      */
-    basedOnTemplate?: pulumi.Input<inputs.Identity.DomainsAppBasedOnTemplate>;
+    basedOnTemplate?: pulumi.Input<inputs.Identity.DomainsAppBasedOnTemplate | undefined>;
     /**
      * (Updatable) If true, indicates that consent should be skipped for all scopes
      *
@@ -2490,7 +2490,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    bypassConsent?: pulumi.Input<boolean>;
+    bypassConsent?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Callback Service URL
      *
@@ -2504,7 +2504,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    callbackServiceUrl?: pulumi.Input<string>;
+    callbackServiceUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
      *
@@ -2519,7 +2519,7 @@ export interface DomainsAppState {
      * * type: complex
      * * uniqueness: none
      */
-    certificates?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppCertificate>[]>;
+    certificates?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppCertificate>[] | undefined>;
     /**
      * (Updatable) Network Perimeters checking mode
      *
@@ -2535,7 +2535,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    clientIpChecking?: pulumi.Input<string>;
+    clientIpChecking?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This value is the credential of this App, which this App supplies as a password when this App authenticates to the Oracle Public Cloud infrastructure. This value is also the client secret of this App when it acts as an OAuthClient.
      *
@@ -2550,7 +2550,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    clientSecret?: pulumi.Input<string>;
+    clientSecret?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specifies the type of access that this App has when it acts as an OAuthClient.
      *
@@ -2564,7 +2564,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    clientType?: pulumi.Input<string>;
+    clientType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A collection of arbitrary properties that scope the privileges of a cloud-control App.
      *
@@ -2580,7 +2580,7 @@ export interface DomainsAppState {
      * * type: complex
      * * uniqueness: none
      */
-    cloudControlProperties?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppCloudControlProperty>[]>;
+    cloudControlProperties?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppCloudControlProperty>[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -2594,7 +2594,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    compartmentOcid?: pulumi.Input<string>;
+    compartmentOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Contact Email Address
      *
@@ -2609,7 +2609,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    contactEmailAddress?: pulumi.Input<string>;
+    contactEmailAddress?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Service Names allow to use Oracle Cloud Infrastructure signature for client authentication instead of client credentials
      *
@@ -2625,7 +2625,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    delegatedServiceNames?: pulumi.Input<pulumi.Input<string>[]>;
+    delegatedServiceNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -2639,7 +2639,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    deleteInProgress?: pulumi.Input<boolean>;
+    deleteInProgress?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Description of the application.
      *
@@ -2653,7 +2653,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Indicates whether the application is allowed to be access using kmsi token.
      *
@@ -2668,7 +2668,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    disableKmsiTokenAuthentication?: pulumi.Input<boolean>;
+    disableKmsiTokenAuthentication?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Display name of the application. Display name is intended to be user-friendly, and an administrator can change the value at any time.
      *
@@ -2682,7 +2682,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: server
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -2696,7 +2696,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    domainOcid?: pulumi.Input<string>;
+    domainOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) App attributes editable by subject
      *
@@ -2713,7 +2713,7 @@ export interface DomainsAppState {
      * * type: complex
      * * uniqueness: none
      */
-    editableAttributes?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppEditableAttribute>[]>;
+    editableAttributes?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppEditableAttribute>[] | undefined>;
     /**
      * (Updatable) This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
      *
@@ -2727,11 +2727,11 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    errorPageUrl?: pulumi.Input<string>;
+    errorPageUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
      */
-    forceDelete?: pulumi.Input<boolean>;
+    forceDelete?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
      *
@@ -2746,7 +2746,7 @@ export interface DomainsAppState {
      * * type: complex
      * * uniqueness: none
      */
-    grantedAppRoles?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppGrantedAppRole>[]>;
+    grantedAppRoles?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppGrantedAppRole>[] | undefined>;
     /**
      * (Updatable) Grants assigned to the app
      *
@@ -2760,7 +2760,7 @@ export interface DomainsAppState {
      * * type: complex
      * * uniqueness: none
      */
-    grants?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppGrant>[]>;
+    grants?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppGrant>[] | undefined>;
     /**
      * (Updatable) Hashed Client Secret. This hash-value is used to verify the 'clientSecret' credential of this App
      *
@@ -2776,7 +2776,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    hashedClientSecret?: pulumi.Input<string>;
+    hashedClientSecret?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Home Page URL
      *
@@ -2791,7 +2791,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    homePageUrl?: pulumi.Input<string>;
+    homePageUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) URL of application icon.
      *
@@ -2804,7 +2804,7 @@ export interface DomainsAppState {
      * * type: reference
      * * uniqueness: none
      */
-    icon?: pulumi.Input<string>;
+    icon?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Encryption Alogrithm to use for encrypting ID token.
      *
@@ -2820,7 +2820,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    idTokenEncAlgo?: pulumi.Input<string>;
+    idTokenEncAlgo?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -2832,11 +2832,11 @@ export interface DomainsAppState {
      * * returned: default
      * * type: complex
      */
-    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppIdcsCreatedBy>[]>;
+    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppIdcsCreatedBy>[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
-    idcsEndpoint?: pulumi.Input<string>;
+    idcsEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -2848,7 +2848,7 @@ export interface DomainsAppState {
      * * returned: default
      * * type: complex
      */
-    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppIdcsLastModifiedBy>[]>;
+    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppIdcsLastModifiedBy>[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -2862,7 +2862,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    idcsLastUpgradedInRelease?: pulumi.Input<string>;
+    idcsLastUpgradedInRelease?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -2875,7 +2875,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[]>;
+    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A list of IdentityProvider assigned to app. A user trying to access this app will be automatically redirected to configured IdP during the authentication phase, before being able to access App.
      *
@@ -2888,7 +2888,7 @@ export interface DomainsAppState {
      * * returned: request
      * * type: complex
      */
-    identityProviders?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppIdentityProvider>[]>;
+    identityProviders?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppIdentityProvider>[] | undefined>;
     /**
      * (Updatable) IDP Policy.
      *
@@ -2902,7 +2902,7 @@ export interface DomainsAppState {
      * * returned: default
      * * type: complex
      */
-    idpPolicy?: pulumi.Input<inputs.Identity.DomainsAppIdpPolicy>;
+    idpPolicy?: pulumi.Input<inputs.Identity.DomainsAppIdpPolicy | undefined>;
     /**
      * (Updatable) If true, this App is an internal infrastructure App.
      *
@@ -2915,7 +2915,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    infrastructure?: pulumi.Input<boolean>;
+    infrastructure?: pulumi.Input<boolean | undefined>;
     /**
      * If true, this App is an AliasApp and it cannot be granted to an end-user directly.
      *
@@ -2928,7 +2928,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    isAliasApp?: pulumi.Input<boolean>;
+    isAliasApp?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, this application acts as database service Application
      *
@@ -2941,7 +2941,7 @@ export interface DomainsAppState {
      * * required: false
      * * type: boolean
      */
-    isDatabaseService?: pulumi.Input<boolean>;
+    isDatabaseService?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, this app acts as Enterprise app with Authentication and URL Authz policy.
      *
@@ -2956,7 +2956,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    isEnterpriseApp?: pulumi.Input<boolean>;
+    isEnterpriseApp?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, this application acts as FormFill Application
      *
@@ -2969,7 +2969,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    isFormFill?: pulumi.Input<boolean>;
+    isFormFill?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, indicates that this App supports Kerberos Authentication
      *
@@ -2982,7 +2982,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    isKerberosRealm?: pulumi.Input<boolean>;
+    isKerberosRealm?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, this App allows runtime services to log end users into this App automatically.
      *
@@ -2995,7 +2995,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    isLoginTarget?: pulumi.Input<boolean>;
+    isLoginTarget?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, indicates that access to this App requires an account. That is, in order to log in to the App, a User must use an application-specific identity that is maintained in the remote identity-repository of that App.
      *
@@ -3008,7 +3008,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    isManagedApp?: pulumi.Input<boolean>;
+    isManagedApp?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, indicates that the App should be visible in each end-user's mobile application.
      *
@@ -3021,7 +3021,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    isMobileTarget?: pulumi.Input<boolean>;
+    isMobileTarget?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, indicates the app is used for multicloud service integration.
      *
@@ -3036,7 +3036,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    isMulticloudServiceApp?: pulumi.Input<boolean>;
+    isMulticloudServiceApp?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, this application acts as an OAuth Client
      *
@@ -3049,7 +3049,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    isOauthClient?: pulumi.Input<boolean>;
+    isOauthClient?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, indicates that this application acts as an OAuth Resource.
      *
@@ -3062,7 +3062,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    isOauthResource?: pulumi.Input<boolean>;
+    isOauthResource?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
      *
@@ -3076,7 +3076,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    isObligationCapable?: pulumi.Input<boolean>;
+    isObligationCapable?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, this application is an Oracle Public Cloud service-instance.
      *
@@ -3089,7 +3089,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    isOpcService?: pulumi.Input<boolean>;
+    isOpcService?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, this application acts as an Radius App
      *
@@ -3104,7 +3104,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    isRadiusApp?: pulumi.Input<boolean>;
+    isRadiusApp?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, then this App acts as a SAML Service Provider.
      *
@@ -3117,7 +3117,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    isSamlServiceProvider?: pulumi.Input<boolean>;
+    isSamlServiceProvider?: pulumi.Input<boolean | undefined>;
     /**
      * If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User's memberships in AppRoles.
      *
@@ -3130,7 +3130,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    isUnmanagedApp?: pulumi.Input<boolean>;
+    isUnmanagedApp?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, the webtier policy is active
      *
@@ -3143,7 +3143,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    isWebTierPolicy?: pulumi.Input<boolean>;
+    isWebTierPolicy?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
      *
@@ -3156,7 +3156,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    landingPageUrl?: pulumi.Input<string>;
+    landingPageUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This attribute specifies the callback URL for the social linking operation.
      *
@@ -3172,7 +3172,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    linkingCallbackUrl?: pulumi.Input<string>;
+    linkingCallbackUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use Security Assertion Markup Language protocol.
      *
@@ -3186,7 +3186,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    loginMechanism?: pulumi.Input<string>;
+    loginMechanism?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
      *
@@ -3200,7 +3200,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    loginPageUrl?: pulumi.Input<string>;
+    loginPageUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs out.
      *
@@ -3216,7 +3216,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    logoutPageUrl?: pulumi.Input<string>;
+    logoutPageUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) OAuth will use this URI to logout if this App wants to participate in SSO, and if this App's session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
      *
@@ -3230,7 +3230,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    logoutUri?: pulumi.Input<string>;
+    logoutUri?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -3244,7 +3244,7 @@ export interface DomainsAppState {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppMeta>[]>;
+    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppMeta>[] | undefined>;
     /**
      * (Updatable) Indicates whether the application is billed as an OPCService. If true, customer is not billed for runtime operations of the app.
      *
@@ -3259,7 +3259,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    meterAsOpcService?: pulumi.Input<boolean>;
+    meterAsOpcService?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, this App was migrated from an earlier version of Oracle Public Cloud infrastructure (and may therefore require special handling from runtime services such as OAuth or SAML). If false, this App requires no special handling from runtime services.
      *
@@ -3272,7 +3272,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    migrated?: pulumi.Input<boolean>;
+    migrated?: pulumi.Input<boolean | undefined>;
     /**
      * Name of the application. Also serves as username if the application authenticates to Oracle Public Cloud infrastructure. This name may not be user-friendly and cannot be changed once an App is created.
      *
@@ -3286,7 +3286,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: server
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -3300,7 +3300,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
      *
@@ -3314,7 +3314,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    postLogoutRedirectUris?: pulumi.Input<pulumi.Input<string>[]>;
+    postLogoutRedirectUris?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Privacy Policy URL
      *
@@ -3329,7 +3329,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    privacyPolicyUrl?: pulumi.Input<string>;
+    privacyPolicyUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Application Logo URL
      *
@@ -3344,7 +3344,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    productLogoUrl?: pulumi.Input<string>;
+    productLogoUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Product Name
      *
@@ -3359,7 +3359,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    productName?: pulumi.Input<string>;
+    productName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
      *
@@ -3376,7 +3376,7 @@ export interface DomainsAppState {
      * * type: complex
      * * uniqueness: none
      */
-    protectableSecondaryAudiences?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppProtectableSecondaryAudience>[]>;
+    protectableSecondaryAudiences?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppProtectableSecondaryAudience>[] | undefined>;
     /**
      * (Updatable) RADIUS Policy assigned to this application.
      *
@@ -3390,7 +3390,7 @@ export interface DomainsAppState {
      * * returned: default
      * * type: complex
      */
-    radiusPolicy?: pulumi.Input<inputs.Identity.DomainsAppRadiusPolicy>;
+    radiusPolicy?: pulumi.Input<inputs.Identity.DomainsAppRadiusPolicy | undefined>;
     /**
      * (Updatable) If true, this App requires an upgrade and mandates attention from application administrator. The flag is used by UI to indicate this app is ready to upgrade.
      *
@@ -3403,7 +3403,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    readyToUpgrade?: pulumi.Input<boolean>;
+    readyToUpgrade?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
      *
@@ -3417,7 +3417,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    redirectUris?: pulumi.Input<pulumi.Input<string>[]>;
+    redirectUris?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Expiry-time in seconds for a Refresh Token.  Any token that allows access to this App, once refreshed, will expire after the specified duration.
      *
@@ -3430,11 +3430,11 @@ export interface DomainsAppState {
      * * type: integer
      * * uniqueness: none
      */
-    refreshTokenExpiry?: pulumi.Input<number>;
+    refreshTokenExpiry?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An attribute that refers to the SAML Service Provider that runtime services will use to log an end user in to this App automatically. Note that this will be used only if the loginMechanism is 'SAML'.
      *
@@ -3447,7 +3447,7 @@ export interface DomainsAppState {
      * * type: complex
      * * uniqueness: none
      */
-    samlServiceProvider?: pulumi.Input<inputs.Identity.DomainsAppSamlServiceProvider>;
+    samlServiceProvider?: pulumi.Input<inputs.Identity.DomainsAppSamlServiceProvider | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -3461,7 +3461,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    schemas?: pulumi.Input<pulumi.Input<string>[]>;
+    schemas?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Scopes defined by this App. Used when this App acts as an OAuth Resource.
      *
@@ -3476,7 +3476,7 @@ export interface DomainsAppState {
      * * type: complex
      * * uniqueness: none
      */
-    scopes?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppScope>[]>;
+    scopes?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppScope>[] | undefined>;
     /**
      * (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
      *
@@ -3492,7 +3492,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    secondaryAudiences?: pulumi.Input<pulumi.Input<string>[]>;
+    secondaryAudiences?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Custom attribute that is required to compute other attribute values during app creation.
      *
@@ -3506,7 +3506,7 @@ export interface DomainsAppState {
      * * type: complex
      * * uniqueness: none
      */
-    serviceParams?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppServiceParam>[]>;
+    serviceParams?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppServiceParam>[] | undefined>;
     /**
      * (Updatable) This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
      *
@@ -3520,7 +3520,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    serviceTypeUrn?: pulumi.Input<string>;
+    serviceTypeUrn?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This value specifies the version of the Oracle Public Cloud service of which this App is an instance
      *
@@ -3534,7 +3534,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    serviceTypeVersion?: pulumi.Input<string>;
+    serviceTypeVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
      *
@@ -3549,7 +3549,7 @@ export interface DomainsAppState {
      * * type: boolean
      * * uniqueness: none
      */
-    showInMyApps?: pulumi.Input<boolean>;
+    showInMyApps?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Sign-on Policy.
      *
@@ -3563,7 +3563,7 @@ export interface DomainsAppState {
      * * returned: default
      * * type: complex
      */
-    signonPolicy?: pulumi.Input<inputs.Identity.DomainsAppSignonPolicy>;
+    signonPolicy?: pulumi.Input<inputs.Identity.DomainsAppSignonPolicy | undefined>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -3577,7 +3577,7 @@ export interface DomainsAppState {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppTag>[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -3591,7 +3591,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    tenancyOcid?: pulumi.Input<string>;
+    tenancyOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Terms of Service URL
      *
@@ -3606,7 +3606,7 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    termsOfServiceUrl?: pulumi.Input<string>;
+    termsOfServiceUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Terms Of Use.
      *
@@ -3620,7 +3620,7 @@ export interface DomainsAppState {
      * * returned: default
      * * type: complex
      */
-    termsOfUse?: pulumi.Input<inputs.Identity.DomainsAppTermsOfUse>;
+    termsOfUse?: pulumi.Input<inputs.Identity.DomainsAppTermsOfUse | undefined>;
     /**
      * (Updatable) Trust Policies.
      *
@@ -3633,7 +3633,7 @@ export interface DomainsAppState {
      * * returned: default
      * * type: complex
      */
-    trustPolicies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppTrustPolicy>[]>;
+    trustPolicies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppTrustPolicy>[] | undefined>;
     /**
      * (Updatable) Indicates the scope of trust for this App when acting as an OAuthClient. A value of 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources that are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the App is allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud Account. A value of 'Tags' indicates that the App is allowed to access any scope of any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of 'Default' indicates that the Tenant default trust scope configured in the Tenant Settings is used.
      *
@@ -3649,59 +3649,59 @@ export interface DomainsAppState {
      * * type: string
      * * uniqueness: none
      */
-    trustScope?: pulumi.Input<string>;
+    trustScope?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tags.
      */
-    urnietfparamsscimschemasoracleidcsextensionOciTags?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags>;
+    urnietfparamsscimschemasoracleidcsextensionOciTags?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags | undefined>;
     /**
      * (Updatable) This extension provides attributes for database service facet of an App
      */
-    urnietfparamsscimschemasoracleidcsextensiondbcsApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp>;
+    urnietfparamsscimschemasoracleidcsextensiondbcsApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp | undefined>;
     /**
      * (Updatable) This extension defines the Enterprise App related attributes.
      */
-    urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp>;
+    urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp | undefined>;
     /**
      * (Updatable) This extension provides attributes for Form-Fill facet of App
      */
-    urnietfparamsscimschemasoracleidcsextensionformFillAppApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp>;
+    urnietfparamsscimschemasoracleidcsextensionformFillAppApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp | undefined>;
     /**
      * (Updatable) This extension provides attributes for Form-Fill facet of AppTemplate
      */
-    urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate>;
+    urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate | undefined>;
     /**
      * (Updatable) Kerberos Realm
      */
-    urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp>;
+    urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp | undefined>;
     /**
      * (Updatable) Managed App
      */
-    urnietfparamsscimschemasoracleidcsextensionmanagedappApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp>;
+    urnietfparamsscimschemasoracleidcsextensionmanagedappApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp | undefined>;
     /**
      * (Updatable) This extension defines attributes specific to Apps that represent instances of Multicloud Service App
      */
-    urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp>;
+    urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp | undefined>;
     /**
      * (Updatable) This extension defines attributes specific to Apps that represent instances of an Oracle Public Cloud (OPC) service.
      */
-    urnietfparamsscimschemasoracleidcsextensionopcServiceApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp>;
+    urnietfparamsscimschemasoracleidcsextensionopcServiceApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp | undefined>;
     /**
      * (Updatable) This extension defines attributes specific to Apps that represent instances of Radius App.
      */
-    urnietfparamsscimschemasoracleidcsextensionradiusAppApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp>;
+    urnietfparamsscimschemasoracleidcsextensionradiusAppApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp | undefined>;
     /**
      * (Updatable) Requestable App
      */
-    urnietfparamsscimschemasoracleidcsextensionrequestableApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp>;
+    urnietfparamsscimschemasoracleidcsextensionrequestableApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp | undefined>;
     /**
      * (Updatable) This extension defines attributes related to the Service Providers configuration.
      */
-    urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp>;
+    urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp | undefined>;
     /**
      * (Updatable) WebTier Policy
      */
-    urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp>;
+    urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp | undefined>;
     /**
      * (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers end-user privilege within this App.
      *
@@ -3714,7 +3714,7 @@ export interface DomainsAppState {
      * * returned: request
      * * type: complex
      */
-    userRoles?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppUserRole>[]>;
+    userRoles?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppUserRole>[] | undefined>;
 }
 
 /**
@@ -3733,7 +3733,7 @@ export interface DomainsAppArgs {
      * * type: integer
      * * uniqueness: none
      */
-    accessTokenExpiry?: pulumi.Input<number>;
+    accessTokenExpiry?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
      *
@@ -3746,7 +3746,7 @@ export interface DomainsAppArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
      *
@@ -3761,7 +3761,7 @@ export interface DomainsAppArgs {
      * * type: complex
      * * uniqueness: none
      */
-    aliasApps?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppAliasApp>[]>;
+    aliasApps?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppAliasApp>[] | undefined>;
     /**
      * (Updatable) If true, indicates that the system should allow all URL-schemes within each value of the 'redirectUris' attribute.  Also indicates that the system should not attempt to confirm that each value of the 'redirectUris' attribute is a valid URI.  In particular, the system should not confirm that the domain component of the URI is a top-level domain and the system should not confirm that the hostname portion is a valid system that is reachable over the network.
      *
@@ -3774,7 +3774,7 @@ export interface DomainsAppArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    allUrlSchemesAllowed?: pulumi.Input<boolean>;
+    allUrlSchemesAllowed?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
      *
@@ -3787,7 +3787,7 @@ export interface DomainsAppArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    allowAccessControl?: pulumi.Input<boolean>;
+    allowAccessControl?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
      *
@@ -3800,7 +3800,7 @@ export interface DomainsAppArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    allowOffline?: pulumi.Input<boolean>;
+    allowOffline?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) List of grant-types that this App is allowed to use when it acts as an OAuthClient.
      *
@@ -3814,7 +3814,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    allowedGrants?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedGrants?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are 'introspect' and 'onBehalfOfUser'. The value 'introspect' allows the client to look inside the access-token. The value 'onBehalfOfUser' overrides how the client's privileges are combined with the privileges of the Subject User. Ordinarily, authorization calculates the set of effective privileges as the intersection of the client's privileges and the user's privileges. The value 'onBehalfOf' indicates that authorization should ignore the privileges of the client and use only the user's privileges to calculate the effective privileges.
      *
@@ -3828,7 +3828,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    allowedOperations?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedOperations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A list of scopes (exposed by this App or by other Apps) that this App is allowed to access when it acts as an OAuthClient.
      *
@@ -3843,7 +3843,7 @@ export interface DomainsAppArgs {
      * * type: complex
      * * uniqueness: none
      */
-    allowedScopes?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppAllowedScope>[]>;
+    allowedScopes?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppAllowedScope>[] | undefined>;
     /**
      * (Updatable) A list of tags, acting as an OAuthClient, this App is allowed to access.
      *
@@ -3859,7 +3859,7 @@ export interface DomainsAppArgs {
      * * type: complex
      * * uniqueness: none
      */
-    allowedTags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppAllowedTag>[]>;
+    allowedTags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppAllowedTag>[] | undefined>;
     /**
      * (Updatable) Application icon.
      *
@@ -3872,7 +3872,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    appIcon?: pulumi.Input<string>;
+    appIcon?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) App Sign-on Policy.
      *
@@ -3884,7 +3884,7 @@ export interface DomainsAppArgs {
      * * returned: default
      * * type: complex
      */
-    appSignonPolicy?: pulumi.Input<inputs.Identity.DomainsAppAppSignonPolicy>;
+    appSignonPolicy?: pulumi.Input<inputs.Identity.DomainsAppAppSignonPolicy | undefined>;
     /**
      * (Updatable) Application thumbnail.
      *
@@ -3897,7 +3897,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    appThumbnail?: pulumi.Input<string>;
+    appThumbnail?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Network Perimeter
      *
@@ -3911,7 +3911,7 @@ export interface DomainsAppArgs {
      * * returned: default
      * * type: complex
      */
-    appsNetworkPerimeters?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppAppsNetworkPerimeter>[]>;
+    appsNetworkPerimeters?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppAppsNetworkPerimeter>[] | undefined>;
     /**
      * (Updatable) OPCService facet of the application.
      *
@@ -3925,7 +3925,7 @@ export interface DomainsAppArgs {
      * * returned: default
      * * type: complex
      */
-    asOpcService?: pulumi.Input<inputs.Identity.DomainsAppAsOpcService>;
+    asOpcService?: pulumi.Input<inputs.Identity.DomainsAppAsOpcService | undefined>;
     /**
      * (Updatable) Label for the attribute to be shown in the UI.
      *
@@ -3939,15 +3939,15 @@ export interface DomainsAppArgs {
      * * type: complex
      * * uniqueness: none
      */
-    attrRenderingMetadatas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppAttrRenderingMetadata>[]>;
+    attrRenderingMetadatas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppAttrRenderingMetadata>[] | undefined>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The base URI for all of the scopes defined in this App. The value of 'audience' is combined with the 'value' of each scope to form an 'fqs' or fully qualified scope.
      *
@@ -3961,11 +3961,11 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    audience?: pulumi.Input<string>;
+    audience?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Application template on which the application is based.
      *
@@ -3993,7 +3993,7 @@ export interface DomainsAppArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    bypassConsent?: pulumi.Input<boolean>;
+    bypassConsent?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
      *
@@ -4008,7 +4008,7 @@ export interface DomainsAppArgs {
      * * type: complex
      * * uniqueness: none
      */
-    certificates?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppCertificate>[]>;
+    certificates?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppCertificate>[] | undefined>;
     /**
      * (Updatable) Network Perimeters checking mode
      *
@@ -4024,7 +4024,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    clientIpChecking?: pulumi.Input<string>;
+    clientIpChecking?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specifies the type of access that this App has when it acts as an OAuthClient.
      *
@@ -4038,7 +4038,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    clientType?: pulumi.Input<string>;
+    clientType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Contact Email Address
      *
@@ -4053,7 +4053,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    contactEmailAddress?: pulumi.Input<string>;
+    contactEmailAddress?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Service Names allow to use Oracle Cloud Infrastructure signature for client authentication instead of client credentials
      *
@@ -4069,7 +4069,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    delegatedServiceNames?: pulumi.Input<pulumi.Input<string>[]>;
+    delegatedServiceNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Description of the application.
      *
@@ -4083,7 +4083,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Indicates whether the application is allowed to be access using kmsi token.
      *
@@ -4098,7 +4098,7 @@ export interface DomainsAppArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    disableKmsiTokenAuthentication?: pulumi.Input<boolean>;
+    disableKmsiTokenAuthentication?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Display name of the application. Display name is intended to be user-friendly, and an administrator can change the value at any time.
      *
@@ -4126,11 +4126,11 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    errorPageUrl?: pulumi.Input<string>;
+    errorPageUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) To force delete the resource and all its references (if any). Need to `pulumi up` first before `terraform destroy`.
      */
-    forceDelete?: pulumi.Input<boolean>;
+    forceDelete?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Home Page URL
      *
@@ -4145,7 +4145,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    homePageUrl?: pulumi.Input<string>;
+    homePageUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) URL of application icon.
      *
@@ -4158,7 +4158,7 @@ export interface DomainsAppArgs {
      * * type: reference
      * * uniqueness: none
      */
-    icon?: pulumi.Input<string>;
+    icon?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Encryption Alogrithm to use for encrypting ID token.
      *
@@ -4174,7 +4174,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    idTokenEncAlgo?: pulumi.Input<string>;
+    idTokenEncAlgo?: pulumi.Input<string | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -4191,7 +4191,7 @@ export interface DomainsAppArgs {
      * * returned: request
      * * type: complex
      */
-    identityProviders?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppIdentityProvider>[]>;
+    identityProviders?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppIdentityProvider>[] | undefined>;
     /**
      * (Updatable) IDP Policy.
      *
@@ -4205,7 +4205,7 @@ export interface DomainsAppArgs {
      * * returned: default
      * * type: complex
      */
-    idpPolicy?: pulumi.Input<inputs.Identity.DomainsAppIdpPolicy>;
+    idpPolicy?: pulumi.Input<inputs.Identity.DomainsAppIdpPolicy | undefined>;
     /**
      * If true, this App is an AliasApp and it cannot be granted to an end-user directly.
      *
@@ -4218,7 +4218,7 @@ export interface DomainsAppArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    isAliasApp?: pulumi.Input<boolean>;
+    isAliasApp?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, this app acts as Enterprise app with Authentication and URL Authz policy.
      *
@@ -4233,7 +4233,7 @@ export interface DomainsAppArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    isEnterpriseApp?: pulumi.Input<boolean>;
+    isEnterpriseApp?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, this application acts as FormFill Application
      *
@@ -4246,7 +4246,7 @@ export interface DomainsAppArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    isFormFill?: pulumi.Input<boolean>;
+    isFormFill?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, indicates that this App supports Kerberos Authentication
      *
@@ -4259,7 +4259,7 @@ export interface DomainsAppArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    isKerberosRealm?: pulumi.Input<boolean>;
+    isKerberosRealm?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, this App allows runtime services to log end users into this App automatically.
      *
@@ -4272,7 +4272,7 @@ export interface DomainsAppArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    isLoginTarget?: pulumi.Input<boolean>;
+    isLoginTarget?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, indicates that the App should be visible in each end-user's mobile application.
      *
@@ -4285,7 +4285,7 @@ export interface DomainsAppArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    isMobileTarget?: pulumi.Input<boolean>;
+    isMobileTarget?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, indicates the app is used for multicloud service integration.
      *
@@ -4300,7 +4300,7 @@ export interface DomainsAppArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    isMulticloudServiceApp?: pulumi.Input<boolean>;
+    isMulticloudServiceApp?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, this application acts as an OAuth Client
      *
@@ -4313,7 +4313,7 @@ export interface DomainsAppArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    isOauthClient?: pulumi.Input<boolean>;
+    isOauthClient?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, indicates that this application acts as an OAuth Resource.
      *
@@ -4326,7 +4326,7 @@ export interface DomainsAppArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    isOauthResource?: pulumi.Input<boolean>;
+    isOauthResource?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
      *
@@ -4340,7 +4340,7 @@ export interface DomainsAppArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    isObligationCapable?: pulumi.Input<boolean>;
+    isObligationCapable?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, this application acts as an Radius App
      *
@@ -4355,7 +4355,7 @@ export interface DomainsAppArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    isRadiusApp?: pulumi.Input<boolean>;
+    isRadiusApp?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, then this App acts as a SAML Service Provider.
      *
@@ -4368,7 +4368,7 @@ export interface DomainsAppArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    isSamlServiceProvider?: pulumi.Input<boolean>;
+    isSamlServiceProvider?: pulumi.Input<boolean | undefined>;
     /**
      * If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User's memberships in AppRoles.
      *
@@ -4381,7 +4381,7 @@ export interface DomainsAppArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    isUnmanagedApp?: pulumi.Input<boolean>;
+    isUnmanagedApp?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) If true, the webtier policy is active
      *
@@ -4394,7 +4394,7 @@ export interface DomainsAppArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    isWebTierPolicy?: pulumi.Input<boolean>;
+    isWebTierPolicy?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
      *
@@ -4407,7 +4407,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    landingPageUrl?: pulumi.Input<string>;
+    landingPageUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This attribute specifies the callback URL for the social linking operation.
      *
@@ -4423,7 +4423,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    linkingCallbackUrl?: pulumi.Input<string>;
+    linkingCallbackUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use Security Assertion Markup Language protocol.
      *
@@ -4437,7 +4437,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    loginMechanism?: pulumi.Input<string>;
+    loginMechanism?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
      *
@@ -4451,7 +4451,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    loginPageUrl?: pulumi.Input<string>;
+    loginPageUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs out.
      *
@@ -4467,7 +4467,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    logoutPageUrl?: pulumi.Input<string>;
+    logoutPageUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) OAuth will use this URI to logout if this App wants to participate in SSO, and if this App's session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
      *
@@ -4481,7 +4481,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    logoutUri?: pulumi.Input<string>;
+    logoutUri?: pulumi.Input<string | undefined>;
     /**
      * Name of the application. Also serves as username if the application authenticates to Oracle Public Cloud infrastructure. This name may not be user-friendly and cannot be changed once an App is created.
      *
@@ -4495,7 +4495,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: server
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -4509,7 +4509,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
      *
@@ -4523,7 +4523,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    postLogoutRedirectUris?: pulumi.Input<pulumi.Input<string>[]>;
+    postLogoutRedirectUris?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Privacy Policy URL
      *
@@ -4538,7 +4538,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    privacyPolicyUrl?: pulumi.Input<string>;
+    privacyPolicyUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Application Logo URL
      *
@@ -4553,7 +4553,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    productLogoUrl?: pulumi.Input<string>;
+    productLogoUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Product Name
      *
@@ -4568,7 +4568,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    productName?: pulumi.Input<string>;
+    productName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
      *
@@ -4585,7 +4585,7 @@ export interface DomainsAppArgs {
      * * type: complex
      * * uniqueness: none
      */
-    protectableSecondaryAudiences?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppProtectableSecondaryAudience>[]>;
+    protectableSecondaryAudiences?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppProtectableSecondaryAudience>[] | undefined>;
     /**
      * (Updatable) RADIUS Policy assigned to this application.
      *
@@ -4599,7 +4599,7 @@ export interface DomainsAppArgs {
      * * returned: default
      * * type: complex
      */
-    radiusPolicy?: pulumi.Input<inputs.Identity.DomainsAppRadiusPolicy>;
+    radiusPolicy?: pulumi.Input<inputs.Identity.DomainsAppRadiusPolicy | undefined>;
     /**
      * (Updatable) OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
      *
@@ -4613,7 +4613,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    redirectUris?: pulumi.Input<pulumi.Input<string>[]>;
+    redirectUris?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Expiry-time in seconds for a Refresh Token.  Any token that allows access to this App, once refreshed, will expire after the specified duration.
      *
@@ -4626,11 +4626,11 @@ export interface DomainsAppArgs {
      * * type: integer
      * * uniqueness: none
      */
-    refreshTokenExpiry?: pulumi.Input<number>;
+    refreshTokenExpiry?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An attribute that refers to the SAML Service Provider that runtime services will use to log an end user in to this App automatically. Note that this will be used only if the loginMechanism is 'SAML'.
      *
@@ -4643,7 +4643,7 @@ export interface DomainsAppArgs {
      * * type: complex
      * * uniqueness: none
      */
-    samlServiceProvider?: pulumi.Input<inputs.Identity.DomainsAppSamlServiceProvider>;
+    samlServiceProvider?: pulumi.Input<inputs.Identity.DomainsAppSamlServiceProvider | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -4672,7 +4672,7 @@ export interface DomainsAppArgs {
      * * type: complex
      * * uniqueness: none
      */
-    scopes?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppScope>[]>;
+    scopes?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppScope>[] | undefined>;
     /**
      * (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
      *
@@ -4688,7 +4688,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    secondaryAudiences?: pulumi.Input<pulumi.Input<string>[]>;
+    secondaryAudiences?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Custom attribute that is required to compute other attribute values during app creation.
      *
@@ -4702,7 +4702,7 @@ export interface DomainsAppArgs {
      * * type: complex
      * * uniqueness: none
      */
-    serviceParams?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppServiceParam>[]>;
+    serviceParams?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppServiceParam>[] | undefined>;
     /**
      * (Updatable) This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
      *
@@ -4716,7 +4716,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    serviceTypeUrn?: pulumi.Input<string>;
+    serviceTypeUrn?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This value specifies the version of the Oracle Public Cloud service of which this App is an instance
      *
@@ -4730,7 +4730,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    serviceTypeVersion?: pulumi.Input<string>;
+    serviceTypeVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
      *
@@ -4745,7 +4745,7 @@ export interface DomainsAppArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    showInMyApps?: pulumi.Input<boolean>;
+    showInMyApps?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Sign-on Policy.
      *
@@ -4759,7 +4759,7 @@ export interface DomainsAppArgs {
      * * returned: default
      * * type: complex
      */
-    signonPolicy?: pulumi.Input<inputs.Identity.DomainsAppSignonPolicy>;
+    signonPolicy?: pulumi.Input<inputs.Identity.DomainsAppSignonPolicy | undefined>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -4773,7 +4773,7 @@ export interface DomainsAppArgs {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppTag>[] | undefined>;
     /**
      * (Updatable) Terms of Service URL
      *
@@ -4788,7 +4788,7 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    termsOfServiceUrl?: pulumi.Input<string>;
+    termsOfServiceUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Terms Of Use.
      *
@@ -4802,7 +4802,7 @@ export interface DomainsAppArgs {
      * * returned: default
      * * type: complex
      */
-    termsOfUse?: pulumi.Input<inputs.Identity.DomainsAppTermsOfUse>;
+    termsOfUse?: pulumi.Input<inputs.Identity.DomainsAppTermsOfUse | undefined>;
     /**
      * (Updatable) Trust Policies.
      *
@@ -4815,7 +4815,7 @@ export interface DomainsAppArgs {
      * * returned: default
      * * type: complex
      */
-    trustPolicies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppTrustPolicy>[]>;
+    trustPolicies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppTrustPolicy>[] | undefined>;
     /**
      * (Updatable) Indicates the scope of trust for this App when acting as an OAuthClient. A value of 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources that are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the App is allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud Account. A value of 'Tags' indicates that the App is allowed to access any scope of any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of 'Default' indicates that the Tenant default trust scope configured in the Tenant Settings is used.
      *
@@ -4831,57 +4831,57 @@ export interface DomainsAppArgs {
      * * type: string
      * * uniqueness: none
      */
-    trustScope?: pulumi.Input<string>;
+    trustScope?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tags.
      */
-    urnietfparamsscimschemasoracleidcsextensionOciTags?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags>;
+    urnietfparamsscimschemasoracleidcsextensionOciTags?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags | undefined>;
     /**
      * (Updatable) This extension provides attributes for database service facet of an App
      */
-    urnietfparamsscimschemasoracleidcsextensiondbcsApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp>;
+    urnietfparamsscimschemasoracleidcsextensiondbcsApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp | undefined>;
     /**
      * (Updatable) This extension defines the Enterprise App related attributes.
      */
-    urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp>;
+    urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp | undefined>;
     /**
      * (Updatable) This extension provides attributes for Form-Fill facet of App
      */
-    urnietfparamsscimschemasoracleidcsextensionformFillAppApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp>;
+    urnietfparamsscimschemasoracleidcsextensionformFillAppApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp | undefined>;
     /**
      * (Updatable) This extension provides attributes for Form-Fill facet of AppTemplate
      */
-    urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate>;
+    urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate | undefined>;
     /**
      * (Updatable) Kerberos Realm
      */
-    urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp>;
+    urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp | undefined>;
     /**
      * (Updatable) Managed App
      */
-    urnietfparamsscimschemasoracleidcsextensionmanagedappApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp>;
+    urnietfparamsscimschemasoracleidcsextensionmanagedappApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp | undefined>;
     /**
      * (Updatable) This extension defines attributes specific to Apps that represent instances of Multicloud Service App
      */
-    urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp>;
+    urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp | undefined>;
     /**
      * (Updatable) This extension defines attributes specific to Apps that represent instances of an Oracle Public Cloud (OPC) service.
      */
-    urnietfparamsscimschemasoracleidcsextensionopcServiceApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp>;
+    urnietfparamsscimschemasoracleidcsextensionopcServiceApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp | undefined>;
     /**
      * (Updatable) This extension defines attributes specific to Apps that represent instances of Radius App.
      */
-    urnietfparamsscimschemasoracleidcsextensionradiusAppApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp>;
+    urnietfparamsscimschemasoracleidcsextensionradiusAppApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp | undefined>;
     /**
      * (Updatable) Requestable App
      */
-    urnietfparamsscimschemasoracleidcsextensionrequestableApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp>;
+    urnietfparamsscimschemasoracleidcsextensionrequestableApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp | undefined>;
     /**
      * (Updatable) This extension defines attributes related to the Service Providers configuration.
      */
-    urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp>;
+    urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp | undefined>;
     /**
      * (Updatable) WebTier Policy
      */
-    urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp>;
+    urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp?: pulumi.Input<inputs.Identity.DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp | undefined>;
 }

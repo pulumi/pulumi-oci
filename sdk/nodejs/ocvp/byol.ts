@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  *     softwareType: byolSoftwareType,
  *     timeTermEnd: byolTimeTermEnd,
  *     timeTermStart: byolTimeTermStart,
- *     totalUnits: byolTotalUnits,
+ *     totalUnits: Number(byolTotalUnits),
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -226,31 +226,31 @@ export interface ByolState {
     /**
      * The quantity of licensed units that not yet allocated to specific region.
      */
-    availableUnits?: pulumi.Input<number>;
+    availableUnits?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the BYOL.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A description of the BYOL.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A descriptive name for the BYOL.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Broadcom-supplied identifier of a BYOL license.
      */
-    entitlementKey?: pulumi.Input<string>;
+    entitlementKey?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The type of VMware software the BYOL applies to.  Supported values:
      * * VCF (VMware Cloud Foundation)
@@ -258,31 +258,31 @@ export interface ByolState {
      * * VDEFEND (VMware vDefend Firewall)
      * * AVI_LOAD_BALANCER (VMware Avi Load Balancer)
      */
-    softwareType?: pulumi.Input<string>;
+    softwareType?: pulumi.Input<string | undefined>;
     /**
      * The current state of the BYOL.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the BYOL was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The date and time when the BYOL expires and becomes inactive. In the format defined by[RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeTermEnd?: pulumi.Input<string>;
+    timeTermEnd?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The date and time when the BYOL becomes active. VMware software functionality cannot begin before this time. In the format defined by[RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
-    timeTermStart?: pulumi.Input<string>;
+    timeTermStart?: pulumi.Input<string | undefined>;
     /**
      * The date and time the BYOL was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Total quantity of licensed units for the specified `softwareType`:
      * * VCF, VDEFEND: number of OCPUs
@@ -293,7 +293,7 @@ export interface ByolState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    totalUnits?: pulumi.Input<number>;
+    totalUnits?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -307,11 +307,11 @@ export interface ByolArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A description of the BYOL.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A descriptive name for the BYOL.
      */
@@ -323,7 +323,7 @@ export interface ByolArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The type of VMware software the BYOL applies to.  Supported values:
      * * VCF (VMware Cloud Foundation)

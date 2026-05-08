@@ -48,8 +48,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetLimitDefinitionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -95,8 +95,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetLimitDefinitionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -142,8 +142,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetLimitDefinitionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -189,8 +189,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetLimitDefinitionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -236,8 +236,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetLimitDefinitionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -282,8 +282,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetLimitValuesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -331,8 +331,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetLimitValuesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -380,8 +380,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetLimitValuesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -429,8 +429,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetLimitValuesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -478,8 +478,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetLimitValuesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -526,8 +526,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetQuotaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -568,8 +568,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetQuotaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -610,8 +610,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetQuotaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -652,8 +652,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetQuotaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -694,8 +694,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetQuotaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -736,8 +736,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetQuotasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -780,8 +780,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetQuotasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -824,8 +824,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetQuotasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -868,8 +868,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetQuotasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -912,8 +912,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetQuotasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -960,8 +960,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetResourceAvailabilityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1011,8 +1011,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetResourceAvailabilityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1062,8 +1062,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetResourceAvailabilityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1113,8 +1113,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetResourceAvailabilityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1164,8 +1164,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetResourceAvailabilityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1212,8 +1212,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1256,8 +1256,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1300,8 +1300,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1344,8 +1344,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1388,8 +1388,8 @@ public final class LimitsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Limits.LimitsFunctions;
      * import com.pulumi.oci.Limits.inputs.GetServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

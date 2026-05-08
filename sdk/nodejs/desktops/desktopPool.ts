@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDesktopPool = new oci.desktops.DesktopPool("test_desktop_pool", {
- *     arePrivilegedUsers: desktopPoolArePrivilegedUsers,
+ *     arePrivilegedUsers: desktopPoolArePrivilegedUsers === "true",
  *     availabilityDomain: desktopPoolAvailabilityDomain,
  *     availabilityPolicy: {
  *         startSchedule: {
@@ -39,11 +39,11 @@ import * as utilities from "../utilities";
  *         audioMode: desktopPoolDevicePolicyAudioMode,
  *         cdmMode: desktopPoolDevicePolicyCdmMode,
  *         clipboardMode: desktopPoolDevicePolicyClipboardMode,
- *         isDisplayEnabled: desktopPoolDevicePolicyIsDisplayEnabled,
- *         isKeyboardEnabled: desktopPoolDevicePolicyIsKeyboardEnabled,
- *         isPointerEnabled: desktopPoolDevicePolicyIsPointerEnabled,
- *         isPrintingEnabled: desktopPoolDevicePolicyIsPrintingEnabled,
- *         isVideoInputEnabled: desktopPoolDevicePolicyIsVideoInputEnabled,
+ *         isDisplayEnabled: desktopPoolDevicePolicyIsDisplayEnabled === "true",
+ *         isKeyboardEnabled: desktopPoolDevicePolicyIsKeyboardEnabled === "true",
+ *         isPointerEnabled: desktopPoolDevicePolicyIsPointerEnabled === "true",
+ *         isPrintingEnabled: desktopPoolDevicePolicyIsPrintingEnabled === "true",
+ *         isVideoInputEnabled: desktopPoolDevicePolicyIsVideoInputEnabled === "true",
  *     },
  *     displayName: desktopPoolDisplayName,
  *     image: {
@@ -51,18 +51,18 @@ import * as utilities from "../utilities";
  *         imageName: desktopPoolImageImageName,
  *         operatingSystem: desktopPoolImageOperatingSystem,
  *     },
- *     isStorageEnabled: desktopPoolIsStorageEnabled,
- *     maximumSize: desktopPoolMaximumSize,
+ *     isStorageEnabled: desktopPoolIsStorageEnabled === "true",
+ *     maximumSize: Number(desktopPoolMaximumSize),
  *     networkConfiguration: {
  *         subnetId: testSubnet.id,
  *         vcnId: testVcn.id,
  *     },
  *     shapeName: "VM.Standard.E4.Flex",
- *     standbySize: desktopPoolStandbySize,
+ *     standbySize: Number(desktopPoolStandbySize),
  *     storageBackupPolicyId: "ocid1.volumebackuppolicy.oc1.xxxxyyyyyzzzz",
- *     storageSizeInGbs: desktopPoolStorageSizeInGbs,
- *     bootVolumeSizeInGbs: desktopPoolBootVolumeSizeInGbs,
- *     areVolumesPreserved: desktopPoolAreVolumesPreserved,
+ *     storageSizeInGbs: Number(desktopPoolStorageSizeInGbs),
+ *     bootVolumeSizeInGbs: Number(desktopPoolBootVolumeSizeInGbs),
+ *     areVolumesPreserved: desktopPoolAreVolumesPreserved === "true",
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -84,11 +84,11 @@ import * as utilities from "../utilities";
  *     sessionLifecycleActions: {
  *         disconnect: {
  *             action: "STOP",
- *             gracePeriodInMinutes: desktopPoolSessionLifecycleActionsDisconnectGracePeriodInMinutes,
+ *             gracePeriodInMinutes: Number(desktopPoolSessionLifecycleActionsDisconnectGracePeriodInMinutes),
  *         },
  *         inactivity: {
  *             action: "DISCONNECT",
- *             gracePeriodInMinutes: desktopPoolSessionLifecycleActionsInactivityGracePeriodInMinutes,
+ *             gracePeriodInMinutes: Number(desktopPoolSessionLifecycleActionsInactivityGracePeriodInMinutes),
  *         },
  *     },
  *     timeStartScheduled: desktopPoolTimeStartScheduled,
@@ -391,11 +391,11 @@ export interface DesktopPoolState {
     /**
      * The number of active desktops in the desktop pool.
      */
-    activeDesktops?: pulumi.Input<number>;
+    activeDesktops?: pulumi.Input<number | undefined>;
     /**
      * Indicates whether desktop pool users have administrative privileges on their desktop.
      */
-    arePrivilegedUsers?: pulumi.Input<boolean>;
+    arePrivilegedUsers?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
      *
@@ -403,115 +403,115 @@ export interface DesktopPoolState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    areVolumesPreserved?: pulumi.Input<boolean>;
+    areVolumesPreserved?: pulumi.Input<boolean | undefined>;
     /**
      * The availability domain of the desktop pool.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availabilityPolicy { }` to not set a schedule.
      */
-    availabilityPolicy?: pulumi.Input<inputs.Desktops.DesktopPoolAvailabilityPolicy>;
+    availabilityPolicy?: pulumi.Input<inputs.Desktops.DesktopPoolAvailabilityPolicy | undefined>;
     /**
      * (Updatable) The size in GBs of the boot volume for the desktop pool.
      */
-    bootVolumeSizeInGbs?: pulumi.Input<number>;
+    bootVolumeSizeInGbs?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The OCID of the compartment which will contain the desktop pool.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Contact information of the desktop pool administrator. Avoid entering confidential information.
      */
-    contactDetails?: pulumi.Input<string>;
+    contactDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user friendly description providing additional information about the resource. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Provides the settings for desktop and client device options, such as audio in and out, client drive mapping, and clipboard access.
      */
-    devicePolicy?: pulumi.Input<inputs.Desktops.DesktopPoolDevicePolicy>;
+    devicePolicy?: pulumi.Input<inputs.Desktops.DesktopPoolDevicePolicy | undefined>;
     /**
      * (Updatable) A user friendly display name. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Provides information about the desktop image.
      */
-    image?: pulumi.Input<inputs.Desktops.DesktopPoolImage>;
+    image?: pulumi.Input<inputs.Desktops.DesktopPoolImage | undefined>;
     /**
      * Indicates whether storage is enabled for the desktop pool.
      */
-    isStorageEnabled?: pulumi.Input<boolean>;
+    isStorageEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The maximum number of desktops permitted in the desktop pool.
      */
-    maximumSize?: pulumi.Input<number>;
+    maximumSize?: pulumi.Input<number | undefined>;
     /**
      * Provides information about the network configuration of the desktop pool.
      */
-    networkConfiguration?: pulumi.Input<inputs.Desktops.DesktopPoolNetworkConfiguration>;
+    networkConfiguration?: pulumi.Input<inputs.Desktops.DesktopPoolNetworkConfiguration | undefined>;
     /**
      * A list of network security groups for the private access.
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The details of the desktop's private access network connectivity to be set up for the desktop pool.
      */
-    privateAccessDetails?: pulumi.Input<inputs.Desktops.DesktopPoolPrivateAccessDetails>;
+    privateAccessDetails?: pulumi.Input<inputs.Desktops.DesktopPoolPrivateAccessDetails | undefined>;
     /**
      * The details of action to be triggered in case of inactivity or disconnect
      */
-    sessionLifecycleActions?: pulumi.Input<inputs.Desktops.DesktopPoolSessionLifecycleActions>;
+    sessionLifecycleActions?: pulumi.Input<inputs.Desktops.DesktopPoolSessionLifecycleActions | undefined>;
     /**
      * The compute instance shape configuration requested for each desktop in the desktop pool.
      */
-    shapeConfig?: pulumi.Input<inputs.Desktops.DesktopPoolShapeConfig>;
+    shapeConfig?: pulumi.Input<inputs.Desktops.DesktopPoolShapeConfig | undefined>;
     /**
      * The shape of the desktop pool.
      */
-    shapeName?: pulumi.Input<string>;
+    shapeName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The maximum number of standby desktops available in the desktop pool.
      */
-    standbySize?: pulumi.Input<number>;
+    standbySize?: pulumi.Input<number | undefined>;
     /**
      * The current state of the desktop pool.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The backup policy OCID of the storage.
      */
-    storageBackupPolicyId?: pulumi.Input<string>;
+    storageBackupPolicyId?: pulumi.Input<string | undefined>;
     /**
      * The size in GBs of the storage for the desktop pool.
      */
-    storageSizeInGbs?: pulumi.Input<number>;
+    storageSizeInGbs?: pulumi.Input<number | undefined>;
     /**
      * The date and time the resource was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The start time of the desktop pool.
      */
-    timeStartScheduled?: pulumi.Input<string>;
+    timeStartScheduled?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The stop time of the desktop pool.
      */
-    timeStopScheduled?: pulumi.Input<string>;
+    timeStopScheduled?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether the desktop pool uses dedicated virtual machine hosts.
      */
-    useDedicatedVmHost?: pulumi.Input<string>;
+    useDedicatedVmHost?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -529,7 +529,7 @@ export interface DesktopPoolArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    areVolumesPreserved?: pulumi.Input<boolean>;
+    areVolumesPreserved?: pulumi.Input<boolean | undefined>;
     /**
      * The availability domain of the desktop pool.
      */
@@ -541,7 +541,7 @@ export interface DesktopPoolArgs {
     /**
      * (Updatable) The size in GBs of the boot volume for the desktop pool.
      */
-    bootVolumeSizeInGbs?: pulumi.Input<number>;
+    bootVolumeSizeInGbs?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The OCID of the compartment which will contain the desktop pool.
      */
@@ -553,11 +553,11 @@ export interface DesktopPoolArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user friendly description providing additional information about the resource. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Provides the settings for desktop and client device options, such as audio in and out, client drive mapping, and clipboard access.
      */
@@ -569,7 +569,7 @@ export interface DesktopPoolArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Provides information about the desktop image.
      */
@@ -589,19 +589,19 @@ export interface DesktopPoolArgs {
     /**
      * A list of network security groups for the private access.
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The details of the desktop's private access network connectivity to be set up for the desktop pool.
      */
-    privateAccessDetails?: pulumi.Input<inputs.Desktops.DesktopPoolPrivateAccessDetails>;
+    privateAccessDetails?: pulumi.Input<inputs.Desktops.DesktopPoolPrivateAccessDetails | undefined>;
     /**
      * The details of action to be triggered in case of inactivity or disconnect
      */
-    sessionLifecycleActions?: pulumi.Input<inputs.Desktops.DesktopPoolSessionLifecycleActions>;
+    sessionLifecycleActions?: pulumi.Input<inputs.Desktops.DesktopPoolSessionLifecycleActions | undefined>;
     /**
      * The compute instance shape configuration requested for each desktop in the desktop pool.
      */
-    shapeConfig?: pulumi.Input<inputs.Desktops.DesktopPoolShapeConfig>;
+    shapeConfig?: pulumi.Input<inputs.Desktops.DesktopPoolShapeConfig | undefined>;
     /**
      * The shape of the desktop pool.
      */
@@ -621,13 +621,13 @@ export interface DesktopPoolArgs {
     /**
      * (Updatable) The start time of the desktop pool.
      */
-    timeStartScheduled?: pulumi.Input<string>;
+    timeStartScheduled?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The stop time of the desktop pool.
      */
-    timeStopScheduled?: pulumi.Input<string>;
+    timeStopScheduled?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether the desktop pool uses dedicated virtual machine hosts.
      */
-    useDedicatedVmHost?: pulumi.Input<string>;
+    useDedicatedVmHost?: pulumi.Input<string | undefined>;
 }

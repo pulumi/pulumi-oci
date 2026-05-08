@@ -134,7 +134,7 @@ def get_discovery_schedules(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_schedules = oci.CloudBridge.get_discovery_schedules(compartment_id=compartment_id,
+    test_discovery_schedules = oci.cloudbridge.get_discovery_schedules(compartment_id=compartment_id,
         discovery_schedule_id=test_discovery_schedule["id"],
         display_name=discovery_schedule_display_name,
         state=discovery_schedule_state)
@@ -163,11 +163,11 @@ def get_discovery_schedules(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_discovery_schedules_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   discovery_schedule_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDiscoverySchedulesFilterArgs', 'GetDiscoverySchedulesFilterArgsDict']]]]] = None,
-                                   state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_discovery_schedules_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   discovery_schedule_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDiscoverySchedulesFilterArgs', 'GetDiscoverySchedulesFilterArgsDict']]]]] = None,
+                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDiscoverySchedulesResult]:
     """
     This data source provides the list of Discovery Schedules in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -180,7 +180,7 @@ def get_discovery_schedules_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_schedules = oci.CloudBridge.get_discovery_schedules(compartment_id=compartment_id,
+    test_discovery_schedules = oci.cloudbridge.get_discovery_schedules(compartment_id=compartment_id,
         discovery_schedule_id=test_discovery_schedule["id"],
         display_name=discovery_schedule_display_name,
         state=discovery_schedule_state)

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbHomePatchHistoryEntries = oci.Database.getDbHomePatchHistoryEntries({
+ * const testDbHomePatchHistoryEntries = oci.database.getDbHomePatchHistoryEntries({
  *     dbHomeId: testDbHome.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetDbHomePatchHistoryEntriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbHomePatchHistoryEntries = oci.Database.getDbHomePatchHistoryEntries({
+ * const testDbHomePatchHistoryEntries = oci.database.getDbHomePatchHistoryEntries({
  *     dbHomeId: testDbHome.id,
  * });
  * ```
@@ -88,5 +88,5 @@ export interface GetDbHomePatchHistoryEntriesOutputArgs {
      * The Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     dbHomeId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbHomePatchHistoryEntriesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbHomePatchHistoryEntriesFilterArgs>[] | undefined>;
 }

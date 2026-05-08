@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecipes = oci.GoldenGate.getRecipes({
+ * const testRecipes = oci.goldengate.getRecipes({
  *     compartmentId: compartmentId,
  *     displayName: recipeDisplayName,
  *     recipeType: recipeRecipeType,
@@ -87,7 +87,7 @@ export interface GetRecipesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecipes = oci.GoldenGate.getRecipes({
+ * const testRecipes = oci.goldengate.getRecipes({
  *     compartmentId: compartmentId,
  *     displayName: recipeDisplayName,
  *     recipeType: recipeRecipeType,
@@ -115,10 +115,10 @@ export interface GetRecipesOutputArgs {
     /**
      * A filter to return only the resources that match the entire 'displayName' given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetRecipesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetRecipesFilterArgs>[] | undefined>;
     /**
      * The pipeline's recipe type. The default value is ZERO_ETL.
      */
-    recipeType?: pulumi.Input<string>;
+    recipeType?: pulumi.Input<string | undefined>;
 }

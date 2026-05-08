@@ -62,9 +62,9 @@ import * as utilities from "../utilities";
  *         timeCreated: outboundConnectorLocksTimeCreated,
  *     }],
  *     passwordSecretId: testSecret.id,
- *     passwordSecretVersion: outboundConnectorPasswordSecretVersion,
+ *     passwordSecretVersion: Number(outboundConnectorPasswordSecretVersion),
  *     trustedCertificateSecretId: testSecret.id,
- *     trustedCertificateSecretVersion: outboundConnectorTrustedCertificateSecretVersion,
+ *     trustedCertificateSecretVersion: Number(outboundConnectorTrustedCertificateSecretVersion),
  * });
  * ```
  *
@@ -251,64 +251,64 @@ export interface OutboundConnectorState {
     /**
      * The availability domain the outbound connector is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The LDAP Distinguished Name of the bind account.
      */
-    bindDistinguishedName?: pulumi.Input<string>;
+    bindDistinguishedName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the outbound connector.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The account type of this outbound connector.
      */
-    connectorType?: pulumi.Input<string>;
+    connectorType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Array of server endpoints to use when connecting with the LDAP bind account.
      */
-    endpoints?: pulumi.Input<pulumi.Input<inputs.FileStorage.OutboundConnectorEndpoint>[]>;
+    endpoints?: pulumi.Input<pulumi.Input<inputs.FileStorage.OutboundConnectorEndpoint>[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    isLockOverride?: pulumi.Input<boolean>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.OutboundConnectorLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.OutboundConnectorLock>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
      */
-    passwordSecretId?: pulumi.Input<string>;
+    passwordSecretId?: pulumi.Input<string | undefined>;
     /**
      * Version of the password secret in the Vault to use.
      */
-    passwordSecretVersion?: pulumi.Input<number>;
+    passwordSecretVersion?: pulumi.Input<number | undefined>;
     /**
      * The current state of this outbound connector.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
      */
-    trustedCertificateSecretId?: pulumi.Input<string>;
+    trustedCertificateSecretId?: pulumi.Input<string | undefined>;
     /**
      * Version of the trusted certificate secret in the Vault to use.
      *
@@ -316,7 +316,7 @@ export interface OutboundConnectorState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    trustedCertificateSecretVersion?: pulumi.Input<number>;
+    trustedCertificateSecretVersion?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -342,11 +342,11 @@ export interface OutboundConnectorArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Array of server endpoints to use when connecting with the LDAP bind account.
      */
@@ -354,24 +354,24 @@ export interface OutboundConnectorArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    isLockOverride?: pulumi.Input<boolean>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.OutboundConnectorLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.OutboundConnectorLock>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
      */
-    passwordSecretId?: pulumi.Input<string>;
+    passwordSecretId?: pulumi.Input<string | undefined>;
     /**
      * Version of the password secret in the Vault to use.
      */
-    passwordSecretVersion?: pulumi.Input<number>;
+    passwordSecretVersion?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
      */
-    trustedCertificateSecretId?: pulumi.Input<string>;
+    trustedCertificateSecretId?: pulumi.Input<string | undefined>;
     /**
      * Version of the trusted certificate secret in the Vault to use.
      *
@@ -379,5 +379,5 @@ export interface OutboundConnectorArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    trustedCertificateSecretVersion?: pulumi.Input<number>;
+    trustedCertificateSecretVersion?: pulumi.Input<number | undefined>;
 }

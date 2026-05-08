@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceEnvironments = oci.ServiceManagerProxy.getServiceEnvironments({
+ * const testServiceEnvironments = oci.servicemanagerproxy.getServiceEnvironments({
  *     compartmentId: compartmentId,
  *     displayName: serviceEnvironmentDisplayName,
  *     serviceEnvironmentId: testServiceEnvironment.id,
@@ -98,7 +98,7 @@ export interface GetServiceEnvironmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceEnvironments = oci.ServiceManagerProxy.getServiceEnvironments({
+ * const testServiceEnvironments = oci.servicemanagerproxy.getServiceEnvironments({
  *     compartmentId: compartmentId,
  *     displayName: serviceEnvironmentDisplayName,
  *     serviceEnvironmentId: testServiceEnvironment.id,
@@ -128,16 +128,16 @@ export interface GetServiceEnvironmentsOutputArgs {
     /**
      * The display name of the resource.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ServiceManagerProxy.GetServiceEnvironmentsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ServiceManagerProxy.GetServiceEnvironmentsFilterArgs>[] | undefined>;
     /**
      * The unique identifier associated with the service environment. 
      *
      * **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    serviceEnvironmentId?: pulumi.Input<string>;
+    serviceEnvironmentId?: pulumi.Input<string | undefined>;
     /**
      * The environment's service definition type.  For example, "RGBUOROMS" is the service definition type for "Oracle Retail Order Management Cloud Service".
      */
-    serviceEnvironmentType?: pulumi.Input<string>;
+    serviceEnvironmentType?: pulumi.Input<string | undefined>;
 }

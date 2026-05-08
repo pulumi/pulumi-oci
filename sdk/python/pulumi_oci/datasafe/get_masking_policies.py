@@ -200,9 +200,9 @@ def get_masking_policies(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policies = oci.DataSafe.get_masking_policies(compartment_id=compartment_id,
+    test_masking_policies = oci.datasafe.get_masking_policies(compartment_id=compartment_id,
         access_level=masking_policy_access_level,
-        compartment_id_in_subtree=masking_policy_compartment_id_in_subtree,
+        compartment_id_in_subtree=masking_policy_compartment_id_in_subtree == "true",
         display_name=masking_policy_display_name,
         masking_policy_id=test_masking_policy["id"],
         sensitive_data_model_id=test_sensitive_data_model["id"],
@@ -257,17 +257,17 @@ def get_masking_policies(access_level: Optional[_builtins.str] = None,
         target_id=pulumi.get(__ret__, 'target_id'),
         time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
-def get_masking_policies_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaskingPoliciesFilterArgs', 'GetMaskingPoliciesFilterArgsDict']]]]] = None,
-                                masking_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                sensitive_data_model_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                time_created_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_masking_policies_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaskingPoliciesFilterArgs', 'GetMaskingPoliciesFilterArgsDict']]]]] = None,
+                                masking_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                sensitive_data_model_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                time_created_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                time_created_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingPoliciesResult]:
     """
     This data source provides the list of Masking Policies in Oracle Cloud Infrastructure Data Safe service.
@@ -280,9 +280,9 @@ def get_masking_policies_output(access_level: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policies = oci.DataSafe.get_masking_policies(compartment_id=compartment_id,
+    test_masking_policies = oci.datasafe.get_masking_policies(compartment_id=compartment_id,
         access_level=masking_policy_access_level,
-        compartment_id_in_subtree=masking_policy_compartment_id_in_subtree,
+        compartment_id_in_subtree=masking_policy_compartment_id_in_subtree == "true",
         display_name=masking_policy_display_name,
         masking_policy_id=test_masking_policy["id"],
         sensitive_data_model_id=test_sensitive_data_model["id"],

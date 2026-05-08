@@ -197,7 +197,7 @@ def get_lifecycle_environments(arch_type: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_lifecycle_environments = oci.OsManagementHub.get_lifecycle_environments(arch_type=lifecycle_environment_arch_type,
+    test_lifecycle_environments = oci.osmanagementhub.get_lifecycle_environments(arch_type=lifecycle_environment_arch_type,
         compartment_id=compartment_id,
         display_names=lifecycle_environment_display_name,
         display_name_contains=lifecycle_environment_display_name_contains,
@@ -246,16 +246,16 @@ def get_lifecycle_environments(arch_type: Optional[_builtins.str] = None,
         locations=pulumi.get(__ret__, 'locations'),
         os_family=pulumi.get(__ret__, 'os_family'),
         state=pulumi.get(__ret__, 'state'))
-def get_lifecycle_environments_output(arch_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      display_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      display_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLifecycleEnvironmentsFilterArgs', 'GetLifecycleEnvironmentsFilterArgsDict']]]]] = None,
-                                      lifecycle_environment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      location_not_equal_tos: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                      locations: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                      os_family: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_lifecycle_environments_output(arch_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      display_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLifecycleEnvironmentsFilterArgs', 'GetLifecycleEnvironmentsFilterArgsDict']]]]] = None,
+                                      lifecycle_environment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      location_not_equal_tos: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                      locations: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                      os_family: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLifecycleEnvironmentsResult]:
     """
     This data source provides the list of Lifecycle Environments in Oracle Cloud Infrastructure Os Management Hub service.
@@ -269,7 +269,7 @@ def get_lifecycle_environments_output(arch_type: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_lifecycle_environments = oci.OsManagementHub.get_lifecycle_environments(arch_type=lifecycle_environment_arch_type,
+    test_lifecycle_environments = oci.osmanagementhub.get_lifecycle_environments(arch_type=lifecycle_environment_arch_type,
         compartment_id=compartment_id,
         display_names=lifecycle_environment_display_name,
         display_name_contains=lifecycle_environment_display_name_contains,

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTaskRecords = oci.FleetAppsManagement.getTaskRecords({
+ * const testTaskRecords = oci.fleetappsmanagement.getTaskRecords({
  *     compartmentId: compartmentId,
  *     displayName: taskRecordDisplayName,
  *     id: taskRecordId,
@@ -126,7 +126,7 @@ export interface GetTaskRecordsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTaskRecords = oci.FleetAppsManagement.getTaskRecords({
+ * const testTaskRecords = oci.fleetappsmanagement.getTaskRecords({
  *     compartmentId: compartmentId,
  *     displayName: taskRecordDisplayName,
  *     id: taskRecordId,
@@ -159,30 +159,30 @@ export interface GetTaskRecordsOutputArgs {
     /**
      * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetTaskRecordsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetTaskRecordsFilterArgs>[] | undefined>;
     /**
      * Unique identifier or OCID for listing a single task record by id. Either compartmentId or id must be provided.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return task records whose operation matches the given lifecycle operation.
      */
-    operation?: pulumi.Input<string>;
+    operation?: pulumi.Input<string | undefined>;
     /**
      * The platform for the task record.
      */
-    platform?: pulumi.Input<string>;
+    platform?: pulumi.Input<string | undefined>;
     /**
      * The current state of the task record.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The type of the Task.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

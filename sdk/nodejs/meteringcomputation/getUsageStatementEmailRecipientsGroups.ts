@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUsageStatementEmailRecipientsGroups = oci.MeteringComputation.getUsageStatementEmailRecipientsGroups({
+ * const testUsageStatementEmailRecipientsGroups = oci.meteringcomputation.getUsageStatementEmailRecipientsGroups({
  *     compartmentId: compartmentId,
  *     subscriptionId: testSubscription.id,
  * });
@@ -77,7 +77,7 @@ export interface GetUsageStatementEmailRecipientsGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUsageStatementEmailRecipientsGroups = oci.MeteringComputation.getUsageStatementEmailRecipientsGroups({
+ * const testUsageStatementEmailRecipientsGroups = oci.meteringcomputation.getUsageStatementEmailRecipientsGroups({
  *     compartmentId: compartmentId,
  *     subscriptionId: testSubscription.id,
  * });
@@ -100,7 +100,7 @@ export interface GetUsageStatementEmailRecipientsGroupsOutputArgs {
      * The compartment ID in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.GetUsageStatementEmailRecipientsGroupsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.GetUsageStatementEmailRecipientsGroupsFilterArgs>[] | undefined>;
     /**
      * The usage statement subscription unique OCID.
      */

@@ -123,7 +123,7 @@ def get_identity_provider_groups(filters: Optional[Sequence[Union['GetIdentityPr
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_provider_groups = oci.Identity.get_identity_provider_groups(identity_provider_id=test_identity_provider["id"],
+    test_identity_provider_groups = oci.identity.get_identity_provider_groups(identity_provider_id=test_identity_provider["id"],
         name=identity_provider_group_name,
         state=identity_provider_group_state)
     ```
@@ -148,10 +148,10 @@ def get_identity_provider_groups(filters: Optional[Sequence[Union['GetIdentityPr
         identity_provider_id=pulumi.get(__ret__, 'identity_provider_id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-def get_identity_provider_groups_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIdentityProviderGroupsFilterArgs', 'GetIdentityProviderGroupsFilterArgsDict']]]]] = None,
-                                        identity_provider_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                        name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_identity_provider_groups_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIdentityProviderGroupsFilterArgs', 'GetIdentityProviderGroupsFilterArgsDict']]]]] = None,
+                                        identity_provider_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                        name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIdentityProviderGroupsResult]:
     """
     This data source provides the list of Identity Provider Groups in Oracle Cloud Infrastructure Identity service.
@@ -166,7 +166,7 @@ def get_identity_provider_groups_output(filters: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_provider_groups = oci.Identity.get_identity_provider_groups(identity_provider_id=test_identity_provider["id"],
+    test_identity_provider_groups = oci.identity.get_identity_provider_groups(identity_provider_id=test_identity_provider["id"],
         name=identity_provider_group_name,
         state=identity_provider_group_state)
     ```

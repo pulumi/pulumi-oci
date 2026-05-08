@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testByoasn = oci.Core.getByoasn({
+ * const testByoasn = oci.core.getByoasn({
  *     byoasnId: testByoasnOciCoreByoasn.id,
  * });
  * ```
@@ -104,7 +104,7 @@ export interface GetByoasnResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testByoasn = oci.Core.getByoasn({
+ * const testByoasn = oci.core.getByoasn({
  *     byoasnId: testByoasnOciCoreByoasn.id,
  * });
  * ```

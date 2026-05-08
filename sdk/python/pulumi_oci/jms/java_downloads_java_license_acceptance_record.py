@@ -24,7 +24,7 @@ class JavaDownloadsJavaLicenseAcceptanceRecordArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  license_acceptance_status: pulumi.Input[_builtins.str],
                  license_type: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a JavaDownloadsJavaLicenseAcceptanceRecord resource.
 
@@ -85,31 +85,31 @@ class JavaDownloadsJavaLicenseAcceptanceRecordArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
 
 @pulumi.input_type
 class _JavaDownloadsJavaLicenseAcceptanceRecordState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 last_updated_bies: Optional[pulumi.Input[Sequence[pulumi.Input['JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs']]]] = None,
-                 license_acceptance_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_accepted: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_bies: pulumi.Input[Optional[Sequence[pulumi.Input['JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 last_updated_bies: pulumi.Input[Optional[Sequence[pulumi.Input['JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs']]]] = None,
+                 license_acceptance_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_accepted: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering JavaDownloadsJavaLicenseAcceptanceRecord resources.
 
@@ -154,79 +154,79 @@ class _JavaDownloadsJavaLicenseAcceptanceRecordState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user accepting the license.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBies")
-    def created_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs']]]]:
+    def created_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs']]]]:
         """
         An authorized principal.
         """
         return pulumi.get(self, "created_bies")
 
     @created_bies.setter
-    def created_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs']]]]):
+    def created_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs']]]]):
         pulumi.set(self, "created_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdatedBies")
-    def last_updated_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs']]]]:
+    def last_updated_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs']]]]:
         """
         An authorized principal.
         """
         return pulumi.get(self, "last_updated_bies")
 
     @last_updated_bies.setter
-    def last_updated_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs']]]]):
+    def last_updated_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs']]]]):
         pulumi.set(self, "last_updated_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseAcceptanceStatus")
-    def license_acceptance_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_acceptance_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Status of license acceptance.
         """
         return pulumi.get(self, "license_acceptance_status")
 
     @license_acceptance_status.setter
-    def license_acceptance_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_acceptance_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_acceptance_status", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseType")
-    def license_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         License type for the Java version.
 
@@ -237,55 +237,55 @@ class _JavaDownloadsJavaLicenseAcceptanceRecordState:
         return pulumi.get(self, "license_type")
 
     @license_type.setter
-    def license_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the JavaLicenseAcceptanceRecord.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeAccepted")
-    def time_accepted(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_accepted(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         return pulumi.get(self, "time_accepted")
 
     @time_accepted.setter
-    def time_accepted(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_accepted(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_accepted", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastUpdated")
-    def time_last_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         return pulumi.get(self, "time_last_updated")
 
     @time_last_updated.setter
-    def time_last_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_updated", value)
 
 
@@ -295,10 +295,10 @@ class JavaDownloadsJavaLicenseAcceptanceRecord(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 license_acceptance_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 license_acceptance_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Java License Acceptance Record resource in Oracle Cloud Infrastructure Jms Java Downloads service.
@@ -388,10 +388,10 @@ class JavaDownloadsJavaLicenseAcceptanceRecord(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 license_acceptance_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 license_acceptance_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -428,17 +428,17 @@ class JavaDownloadsJavaLicenseAcceptanceRecord(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs', 'JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgsDict']]]]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            last_updated_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs', 'JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgsDict']]]]] = None,
-            license_acceptance_status: Optional[pulumi.Input[_builtins.str]] = None,
-            license_type: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_accepted: Optional[pulumi.Input[_builtins.str]] = None,
-            time_last_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'JavaDownloadsJavaLicenseAcceptanceRecord':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs', 'JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgsDict']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            last_updated_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs', 'JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgsDict']]]]] = None,
+            license_acceptance_status: pulumi.Input[Optional[_builtins.str]] = None,
+            license_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_accepted: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'JavaDownloadsJavaLicenseAcceptanceRecord':
         """
         Get an existing JavaDownloadsJavaLicenseAcceptanceRecord resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

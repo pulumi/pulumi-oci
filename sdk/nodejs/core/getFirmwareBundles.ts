@@ -95,13 +95,13 @@ export interface GetFirmwareBundlesOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetFirmwareBundlesFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetFirmwareBundlesFilterArgs>[] | undefined>;
     /**
      * If true, return only the default firmware bundle for a given platform. Default is false.
      */
-    isDefaultBundle?: pulumi.Input<boolean>;
-    lifecycleState?: pulumi.Input<string>;
+    isDefaultBundle?: pulumi.Input<boolean | undefined>;
+    lifecycleState?: pulumi.Input<string | undefined>;
     /**
      * platform name
      */

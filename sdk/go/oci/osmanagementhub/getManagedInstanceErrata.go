@@ -31,9 +31,9 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := osmanagementhub.GetManagedInstanceErrata(ctx, &osmanagementhub.GetManagedInstanceErrataArgs{
 //				ManagedInstanceId:   testManagedInstance.Id,
-//				ClassificationTypes: managedInstanceErrataClassificationType,
+//				ClassificationTypes: pulumi.ToArray(managedInstanceErrataClassificationType),
 //				CompartmentId:       pulumi.StringRef(compartmentId),
-//				Names:               managedInstanceErrataName,
+//				Names:               pulumi.ToArray(managedInstanceErrataName),
 //				NameContains:        pulumi.StringRef(managedInstanceErrataNameContains),
 //			}, nil)
 //			if err != nil {

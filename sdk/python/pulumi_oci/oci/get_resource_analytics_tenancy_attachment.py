@@ -202,7 +202,7 @@ def get_resource_analytics_tenancy_attachment(tenancy_attachment_id: Optional[_b
         tenancy_id=pulumi.get(__ret__, 'tenancy_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_resource_analytics_tenancy_attachment_output(tenancy_attachment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_resource_analytics_tenancy_attachment_output(tenancy_attachment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResourceAnalyticsTenancyAttachmentResult]:
     """
     This data source provides details about a specific Tenancy Attachment resource in Oracle Cloud Infrastructure Resource Analytics service.

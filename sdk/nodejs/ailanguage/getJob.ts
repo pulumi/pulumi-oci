@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJob = oci.AiLanguage.getJob({
+ * const testJob = oci.ailanguage.getJob({
  *     jobId: testJobOciAiLanguageJob.id,
  * });
  * ```
@@ -140,7 +140,7 @@ export interface GetJobResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJob = oci.AiLanguage.getJob({
+ * const testJob = oci.ailanguage.getJob({
  *     jobId: testJobOciAiLanguageJob.id,
  * });
  * ```

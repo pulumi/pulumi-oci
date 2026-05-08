@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnections = oci.DatabaseMigration.getConnections({
+ * const testConnections = oci.databasemigration.getConnections({
  *     compartmentId: compartmentId,
  *     connectionTypes: connectionConnectionType,
  *     displayName: connectionDisplayName,
@@ -128,7 +128,7 @@ export interface GetConnectionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnections = oci.DatabaseMigration.getConnections({
+ * const testConnections = oci.databasemigration.getConnections({
  *     compartmentId: compartmentId,
  *     connectionTypes: connectionConnectionType,
  *     displayName: connectionDisplayName,
@@ -164,26 +164,26 @@ export interface GetConnectionsOutputArgs {
     /**
      * The array of connection types.
      */
-    connectionTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    connectionTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.GetConnectionsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.GetConnectionsFilterArgs>[] | undefined>;
     /**
      * The OCID of the source database connection.
      */
-    sourceConnectionId?: pulumi.Input<string>;
+    sourceConnectionId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the Database Migration Deployment.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The database technology sub-type.
      */
-    technologySubType?: pulumi.Input<string>;
+    technologySubType?: pulumi.Input<string | undefined>;
     /**
      * The array of technology types.
      */
-    technologyTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    technologyTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

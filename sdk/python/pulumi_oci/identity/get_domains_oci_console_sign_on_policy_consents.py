@@ -216,14 +216,14 @@ def get_domains_oci_console_sign_on_policy_consents(attribute_sets: Optional[Seq
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_console_sign_on_policy_consents = oci.Identity.get_domains_oci_console_sign_on_policy_consents(idcs_endpoint=test_domain["url"],
-        oci_console_sign_on_policy_consent_count=oci_console_sign_on_policy_consent_oci_console_sign_on_policy_consent_count,
+    test_oci_console_sign_on_policy_consents = oci.identity.get_domains_oci_console_sign_on_policy_consents(idcs_endpoint=test_domain["url"],
+        oci_console_sign_on_policy_consent_count=int(oci_console_sign_on_policy_consent_oci_console_sign_on_policy_consent_count),
         oci_console_sign_on_policy_consent_filter=oci_console_sign_on_policy_consent_oci_console_sign_on_policy_consent_filter,
         attribute_sets=oci_console_sign_on_policy_consent_attribute_sets,
         attributes=oci_console_sign_on_policy_consent_attributes,
         authorization=oci_console_sign_on_policy_consent_authorization,
         resource_type_schema_version=oci_console_sign_on_policy_consent_resource_type_schema_version,
-        start_index=oci_console_sign_on_policy_consent_start_index)
+        start_index=int(oci_console_sign_on_policy_consent_start_index))
     ```
 
 
@@ -266,15 +266,15 @@ def get_domains_oci_console_sign_on_policy_consents(attribute_sets: Optional[Seq
         start_index=pulumi.get(__ret__, 'start_index'),
         tags=pulumi.get(__ret__, 'tags'),
         total_results=pulumi.get(__ret__, 'total_results'))
-def get_domains_oci_console_sign_on_policy_consents_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                           attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                           authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDomainsOciConsoleSignOnPolicyConsentsFilterArgs', 'GetDomainsOciConsoleSignOnPolicyConsentsFilterArgsDict']]]]] = None,
-                                                           idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                                           oci_console_sign_on_policy_consent_count: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                                           oci_console_sign_on_policy_consent_filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                           resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                           start_index: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_domains_oci_console_sign_on_policy_consents_output(attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                           attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                           authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDomainsOciConsoleSignOnPolicyConsentsFilterArgs', 'GetDomainsOciConsoleSignOnPolicyConsentsFilterArgsDict']]]]] = None,
+                                                           idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                                           oci_console_sign_on_policy_consent_count: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                                           oci_console_sign_on_policy_consent_filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                           resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                           start_index: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsOciConsoleSignOnPolicyConsentsResult]:
     """
     This data source provides the list of Oci Console Sign On Policy Consents in Oracle Cloud Infrastructure Identity Domains service.
@@ -287,14 +287,14 @@ def get_domains_oci_console_sign_on_policy_consents_output(attribute_sets: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_console_sign_on_policy_consents = oci.Identity.get_domains_oci_console_sign_on_policy_consents(idcs_endpoint=test_domain["url"],
-        oci_console_sign_on_policy_consent_count=oci_console_sign_on_policy_consent_oci_console_sign_on_policy_consent_count,
+    test_oci_console_sign_on_policy_consents = oci.identity.get_domains_oci_console_sign_on_policy_consents(idcs_endpoint=test_domain["url"],
+        oci_console_sign_on_policy_consent_count=int(oci_console_sign_on_policy_consent_oci_console_sign_on_policy_consent_count),
         oci_console_sign_on_policy_consent_filter=oci_console_sign_on_policy_consent_oci_console_sign_on_policy_consent_filter,
         attribute_sets=oci_console_sign_on_policy_consent_attribute_sets,
         attributes=oci_console_sign_on_policy_consent_attributes,
         authorization=oci_console_sign_on_policy_consent_authorization,
         resource_type_schema_version=oci_console_sign_on_policy_consent_resource_type_schema_version,
-        start_index=oci_console_sign_on_policy_consent_start_index)
+        start_index=int(oci_console_sign_on_policy_consent_start_index))
     ```
 
 

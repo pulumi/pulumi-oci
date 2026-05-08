@@ -325,8 +325,8 @@ def get_wlms_wls_domain_server(server_id: Optional[_builtins.str] = None,
         wls_domain_id=pulumi.get(__ret__, 'wls_domain_id'),
         wls_domain_name=pulumi.get(__ret__, 'wls_domain_name'),
         wls_domain_path=pulumi.get(__ret__, 'wls_domain_path'))
-def get_wlms_wls_domain_server_output(server_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      wls_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_wlms_wls_domain_server_output(server_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      wls_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWlmsWlsDomainServerResult]:
     """
     This data source provides details about a specific Wls Domain Server resource in Oracle Cloud Infrastructure Wlms service.

@@ -24,11 +24,11 @@ class NetworkFirewallPolicyTunnelInspectionRuleArgs:
                  condition: pulumi.Input['NetworkFirewallPolicyTunnelInspectionRuleConditionArgs'],
                  network_firewall_policy_id: pulumi.Input[_builtins.str],
                  protocol: pulumi.Input[_builtins.str],
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 position: Optional[pulumi.Input['NetworkFirewallPolicyTunnelInspectionRulePositionArgs']] = None,
-                 profile: Optional[pulumi.Input['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs']] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 position: pulumi.Input[Optional['NetworkFirewallPolicyTunnelInspectionRulePositionArgs']] = None,
+                 profile: pulumi.Input[Optional['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs']] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyTunnelInspectionRule resource.
 
@@ -105,7 +105,7 @@ class NetworkFirewallPolicyTunnelInspectionRuleArgs:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Types of Inspect Action on the traffic flow.
         * INSPECT - Inspect the traffic.
@@ -114,71 +114,71 @@ class NetworkFirewallPolicyTunnelInspectionRuleArgs:
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the tunnel inspect rule. This field can be used to add additional info.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name for the Tunnel Inspection Rule, must be unique within the policy.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def position(self) -> Optional[pulumi.Input['NetworkFirewallPolicyTunnelInspectionRulePositionArgs']]:
+    def position(self) -> pulumi.Input[Optional['NetworkFirewallPolicyTunnelInspectionRulePositionArgs']]:
         """
         (Updatable) An object which defines the position of the rule.
         """
         return pulumi.get(self, "position")
 
     @position.setter
-    def position(self, value: Optional[pulumi.Input['NetworkFirewallPolicyTunnelInspectionRulePositionArgs']]):
+    def position(self, value: pulumi.Input[Optional['NetworkFirewallPolicyTunnelInspectionRulePositionArgs']]):
         pulumi.set(self, "position", value)
 
     @_builtins.property
     @pulumi.getter
-    def profile(self) -> Optional[pulumi.Input['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs']]:
+    def profile(self) -> pulumi.Input[Optional['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs']]:
         """
         (Updatable) Vxlan Inspect profile used in Vxlan Tunnel Inspection Rules.
         """
         return pulumi.get(self, "profile")
 
     @profile.setter
-    def profile(self, value: Optional[pulumi.Input['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs']]):
+    def profile(self, value: pulumi.Input[Optional['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs']]):
         pulumi.set(self, "profile", value)
 
 
 @pulumi.input_type
 class _NetworkFirewallPolicyTunnelInspectionRuleState:
     def __init__(__self__, *,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 condition: Optional[pulumi.Input['NetworkFirewallPolicyTunnelInspectionRuleConditionArgs']] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 position: Optional[pulumi.Input['NetworkFirewallPolicyTunnelInspectionRulePositionArgs']] = None,
-                 priority_order: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile: Optional[pulumi.Input['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs']] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition: pulumi.Input[Optional['NetworkFirewallPolicyTunnelInspectionRuleConditionArgs']] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 position: pulumi.Input[Optional['NetworkFirewallPolicyTunnelInspectionRulePositionArgs']] = None,
+                 priority_order: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile: pulumi.Input[Optional['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs']] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyTunnelInspectionRule resources.
 
@@ -223,7 +223,7 @@ class _NetworkFirewallPolicyTunnelInspectionRuleState:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Types of Inspect Action on the traffic flow.
         * INSPECT - Inspect the traffic.
@@ -232,108 +232,108 @@ class _NetworkFirewallPolicyTunnelInspectionRuleState:
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter
-    def condition(self) -> Optional[pulumi.Input['NetworkFirewallPolicyTunnelInspectionRuleConditionArgs']]:
+    def condition(self) -> pulumi.Input[Optional['NetworkFirewallPolicyTunnelInspectionRuleConditionArgs']]:
         """
         (Updatable) Criteria to evaluate against incoming network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
         """
         return pulumi.get(self, "condition")
 
     @condition.setter
-    def condition(self, value: Optional[pulumi.Input['NetworkFirewallPolicyTunnelInspectionRuleConditionArgs']]):
+    def condition(self, value: pulumi.Input[Optional['NetworkFirewallPolicyTunnelInspectionRuleConditionArgs']]):
         pulumi.set(self, "condition", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the tunnel inspect rule. This field can be used to add additional info.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name for the Tunnel Inspection Rule, must be unique within the policy.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkFirewallPolicyId")
-    def network_firewall_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_firewall_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Network Firewall Policy identifier
         """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @network_firewall_policy_id.setter
-    def network_firewall_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_firewall_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_firewall_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="parentResourceId")
-    def parent_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parent_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the Network Firewall Policy this Tunnel Inspection Rule belongs to.
         """
         return pulumi.get(self, "parent_resource_id")
 
     @parent_resource_id.setter
-    def parent_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parent_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parent_resource_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def position(self) -> Optional[pulumi.Input['NetworkFirewallPolicyTunnelInspectionRulePositionArgs']]:
+    def position(self) -> pulumi.Input[Optional['NetworkFirewallPolicyTunnelInspectionRulePositionArgs']]:
         """
         (Updatable) An object which defines the position of the rule.
         """
         return pulumi.get(self, "position")
 
     @position.setter
-    def position(self, value: Optional[pulumi.Input['NetworkFirewallPolicyTunnelInspectionRulePositionArgs']]):
+    def position(self, value: pulumi.Input[Optional['NetworkFirewallPolicyTunnelInspectionRulePositionArgs']]):
         pulumi.set(self, "position", value)
 
     @_builtins.property
     @pulumi.getter(name="priorityOrder")
-    def priority_order(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def priority_order(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The priority order in which this rule should be evaluated
         """
         return pulumi.get(self, "priority_order")
 
     @priority_order.setter
-    def priority_order(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def priority_order(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "priority_order", value)
 
     @_builtins.property
     @pulumi.getter
-    def profile(self) -> Optional[pulumi.Input['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs']]:
+    def profile(self) -> pulumi.Input[Optional['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs']]:
         """
         (Updatable) Vxlan Inspect profile used in Vxlan Tunnel Inspection Rules.
         """
         return pulumi.get(self, "profile")
 
     @profile.setter
-    def profile(self, value: Optional[pulumi.Input['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs']]):
+    def profile(self, value: pulumi.Input[Optional['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs']]):
         pulumi.set(self, "profile", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Types of Tunnel Inspection Protocol to be applied on the traffic.
         * VXLAN - VXLAN Tunnel Inspection Protocol will be applied on the traffic.
@@ -345,7 +345,7 @@ class _NetworkFirewallPolicyTunnelInspectionRuleState:
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
 
@@ -355,14 +355,14 @@ class NetworkFirewallPolicyTunnelInspectionRule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 condition: Optional[pulumi.Input[Union['NetworkFirewallPolicyTunnelInspectionRuleConditionArgs', 'NetworkFirewallPolicyTunnelInspectionRuleConditionArgsDict']]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 position: Optional[pulumi.Input[Union['NetworkFirewallPolicyTunnelInspectionRulePositionArgs', 'NetworkFirewallPolicyTunnelInspectionRulePositionArgsDict']]] = None,
-                 profile: Optional[pulumi.Input[Union['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs', 'NetworkFirewallPolicyTunnelInspectionRuleProfileArgsDict']]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition: pulumi.Input[Optional[Union['NetworkFirewallPolicyTunnelInspectionRuleConditionArgs', 'NetworkFirewallPolicyTunnelInspectionRuleConditionArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 position: pulumi.Input[Optional[Union['NetworkFirewallPolicyTunnelInspectionRulePositionArgs', 'NetworkFirewallPolicyTunnelInspectionRulePositionArgsDict']]] = None,
+                 profile: pulumi.Input[Optional[Union['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs', 'NetworkFirewallPolicyTunnelInspectionRuleProfileArgsDict']]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Network Firewall Policy Tunnel Inspection Rule resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -393,7 +393,7 @@ class NetworkFirewallPolicyTunnelInspectionRule(pulumi.CustomResource):
                 "before_rule": network_firewall_policy_tunnel_inspection_rule_position_before_rule,
             },
             profile={
-                "must_return_traffic_to_source": network_firewall_policy_tunnel_inspection_rule_profile_must_return_traffic_to_source,
+                "must_return_traffic_to_source": network_firewall_policy_tunnel_inspection_rule_profile_must_return_traffic_to_source == "true",
             })
         ```
 
@@ -459,7 +459,7 @@ class NetworkFirewallPolicyTunnelInspectionRule(pulumi.CustomResource):
                 "before_rule": network_firewall_policy_tunnel_inspection_rule_position_before_rule,
             },
             profile={
-                "must_return_traffic_to_source": network_firewall_policy_tunnel_inspection_rule_profile_must_return_traffic_to_source,
+                "must_return_traffic_to_source": network_firewall_policy_tunnel_inspection_rule_profile_must_return_traffic_to_source == "true",
             })
         ```
 
@@ -487,14 +487,14 @@ class NetworkFirewallPolicyTunnelInspectionRule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 condition: Optional[pulumi.Input[Union['NetworkFirewallPolicyTunnelInspectionRuleConditionArgs', 'NetworkFirewallPolicyTunnelInspectionRuleConditionArgsDict']]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 position: Optional[pulumi.Input[Union['NetworkFirewallPolicyTunnelInspectionRulePositionArgs', 'NetworkFirewallPolicyTunnelInspectionRulePositionArgsDict']]] = None,
-                 profile: Optional[pulumi.Input[Union['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs', 'NetworkFirewallPolicyTunnelInspectionRuleProfileArgsDict']]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition: pulumi.Input[Optional[Union['NetworkFirewallPolicyTunnelInspectionRuleConditionArgs', 'NetworkFirewallPolicyTunnelInspectionRuleConditionArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 position: pulumi.Input[Optional[Union['NetworkFirewallPolicyTunnelInspectionRulePositionArgs', 'NetworkFirewallPolicyTunnelInspectionRulePositionArgsDict']]] = None,
+                 profile: pulumi.Input[Optional[Union['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs', 'NetworkFirewallPolicyTunnelInspectionRuleProfileArgsDict']]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -530,16 +530,16 @@ class NetworkFirewallPolicyTunnelInspectionRule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action: Optional[pulumi.Input[_builtins.str]] = None,
-            condition: Optional[pulumi.Input[Union['NetworkFirewallPolicyTunnelInspectionRuleConditionArgs', 'NetworkFirewallPolicyTunnelInspectionRuleConditionArgsDict']]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            parent_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-            position: Optional[pulumi.Input[Union['NetworkFirewallPolicyTunnelInspectionRulePositionArgs', 'NetworkFirewallPolicyTunnelInspectionRulePositionArgsDict']]] = None,
-            priority_order: Optional[pulumi.Input[_builtins.str]] = None,
-            profile: Optional[pulumi.Input[Union['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs', 'NetworkFirewallPolicyTunnelInspectionRuleProfileArgsDict']]] = None,
-            protocol: Optional[pulumi.Input[_builtins.str]] = None) -> 'NetworkFirewallPolicyTunnelInspectionRule':
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            condition: pulumi.Input[Optional[Union['NetworkFirewallPolicyTunnelInspectionRuleConditionArgs', 'NetworkFirewallPolicyTunnelInspectionRuleConditionArgsDict']]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            position: pulumi.Input[Optional[Union['NetworkFirewallPolicyTunnelInspectionRulePositionArgs', 'NetworkFirewallPolicyTunnelInspectionRulePositionArgsDict']]] = None,
+            priority_order: pulumi.Input[Optional[_builtins.str]] = None,
+            profile: pulumi.Input[Optional[Union['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs', 'NetworkFirewallPolicyTunnelInspectionRuleProfileArgsDict']]] = None,
+            protocol: pulumi.Input[Optional[_builtins.str]] = None) -> 'NetworkFirewallPolicyTunnelInspectionRule':
         """
         Get an existing NetworkFirewallPolicyTunnelInspectionRule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

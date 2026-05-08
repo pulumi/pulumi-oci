@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAssets = oci.CloudBridge.getAssets({
+ * const testAssets = oci.cloudbridge.getAssets({
  *     compartmentId: compartmentId,
  *     assetClassName: assetAssetClassName,
  *     assetClassVersion: assetAssetClassVersion,
@@ -157,7 +157,7 @@ export interface GetAssetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAssets = oci.CloudBridge.getAssets({
+ * const testAssets = oci.cloudbridge.getAssets({
  *     compartmentId: compartmentId,
  *     assetClassName: assetAssetClassName,
  *     assetClassVersion: assetAssetClassVersion,
@@ -195,19 +195,19 @@ export interface GetAssetsOutputArgs {
     /**
      * The name of the asset class.
      */
-    assetClassName?: pulumi.Input<string>;
+    assetClassName?: pulumi.Input<string | undefined>;
     /**
      * The version of the asset class.
      */
-    assetClassVersion?: pulumi.Input<string>;
+    assetClassVersion?: pulumi.Input<string | undefined>;
     /**
      * Unique asset identifier.
      */
-    assetId?: pulumi.Input<string>;
+    assetId?: pulumi.Input<string | undefined>;
     /**
      * The type of asset.
      */
-    assetType?: pulumi.Input<string>;
+    assetType?: pulumi.Input<string | undefined>;
     /**
      * The ID of the compartment in which to list resources.
      */
@@ -215,22 +215,22 @@ export interface GetAssetsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * External asset key.
      */
-    externalAssetKey?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CloudBridge.GetAssetsFilterArgs>[]>;
+    externalAssetKey?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CloudBridge.GetAssetsFilterArgs>[] | undefined>;
     /**
      * Unique Inventory identifier.
      */
-    inventoryId?: pulumi.Input<string>;
+    inventoryId?: pulumi.Input<string | undefined>;
     /**
      * Source key from where the assets originate.
      */
-    sourceKey?: pulumi.Input<string>;
+    sourceKey?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only assets whose lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

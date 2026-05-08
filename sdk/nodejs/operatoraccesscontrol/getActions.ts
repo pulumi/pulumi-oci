@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperatorActions = oci.OperatorAccessControl.getActions({
+ * const testOperatorActions = oci.operatoraccesscontrol.getActions({
  *     compartmentId: compartmentId,
  *     name: operatorActionName,
  *     resourceType: operatorActionResourceType,
@@ -94,7 +94,7 @@ export interface GetActionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperatorActions = oci.OperatorAccessControl.getActions({
+ * const testOperatorActions = oci.operatoraccesscontrol.getActions({
  *     compartmentId: compartmentId,
  *     name: operatorActionName,
  *     resourceType: operatorActionResourceType,
@@ -121,17 +121,17 @@ export interface GetActionsOutputArgs {
      * The ID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OperatorAccessControl.GetActionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OperatorAccessControl.GetActionsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only lists of resources that match the entire given service type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose lifecycleState matches the given OperatorAction lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

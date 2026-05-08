@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerRepository = oci.Artifacts.getContainerRepository({
+ * const testContainerRepository = oci.artifacts.getContainerRepository({
  *     repositoryId: testRepository.id,
  * });
  * ```
@@ -128,7 +128,7 @@ export interface GetContainerRepositoryResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerRepository = oci.Artifacts.getContainerRepository({
+ * const testContainerRepository = oci.artifacts.getContainerRepository({
  *     repositoryId: testRepository.id,
  * });
  * ```

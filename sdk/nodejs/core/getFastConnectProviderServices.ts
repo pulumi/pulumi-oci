@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFastConnectProviderServices = oci.Core.getFastConnectProviderServices({
+ * const testFastConnectProviderServices = oci.core.getFastConnectProviderServices({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -79,7 +79,7 @@ export interface GetFastConnectProviderServicesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFastConnectProviderServices = oci.Core.getFastConnectProviderServices({
+ * const testFastConnectProviderServices = oci.core.getFastConnectProviderServices({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -100,5 +100,5 @@ export interface GetFastConnectProviderServicesOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetFastConnectProviderServicesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetFastConnectProviderServicesFilterArgs>[] | undefined>;
 }

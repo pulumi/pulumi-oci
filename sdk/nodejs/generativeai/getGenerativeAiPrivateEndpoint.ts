@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGenerativeAiPrivateEndpoint = oci.GenerativeAi.getGenerativeAiPrivateEndpoint({
+ * const testGenerativeAiPrivateEndpoint = oci.generativeai.getGenerativeAiPrivateEndpoint({
  *     generativeAiPrivateEndpointId: testGenerativeAiPrivateEndpointOciGenerativeAiGenerativeAiPrivateEndpoint.id,
  * });
  * ```
@@ -110,7 +110,7 @@ export interface GetGenerativeAiPrivateEndpointResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGenerativeAiPrivateEndpoint = oci.GenerativeAi.getGenerativeAiPrivateEndpoint({
+ * const testGenerativeAiPrivateEndpoint = oci.generativeai.getGenerativeAiPrivateEndpoint({
  *     generativeAiPrivateEndpointId: testGenerativeAiPrivateEndpointOciGenerativeAiGenerativeAiPrivateEndpoint.id,
  * });
  * ```

@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  * const testAnalyticsInstance = new oci.analytics.AnalyticsInstance("test_analytics_instance", {
  *     capacity: {
  *         capacityType: analyticsInstanceCapacityCapacityType,
- *         capacityValue: analyticsInstanceCapacityCapacityValue,
+ *         capacityValue: Number(analyticsInstanceCapacityCapacityValue),
  *     },
  *     compartmentId: compartmentId,
  *     featureSet: analyticsInstanceFeatureSet,
@@ -268,67 +268,67 @@ export interface AnalyticsInstanceState {
     /**
      * user name of the authorized user.
      */
-    adminUser?: pulumi.Input<string>;
+    adminUser?: pulumi.Input<string | undefined>;
     /**
      * Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
      */
-    capacity?: pulumi.Input<inputs.Analytics.AnalyticsInstanceCapacity>;
+    capacity?: pulumi.Input<inputs.Analytics.AnalyticsInstanceCapacity | undefined>;
     /**
      * (Updatable) The OCID of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Optional description.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * domain id for which the user is authorized.
      */
-    domainId?: pulumi.Input<string>;
+    domainId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Email address receiving notifications.
      */
-    emailNotification?: pulumi.Input<string>;
+    emailNotification?: pulumi.Input<string | undefined>;
     /**
      * The feature set of an Analytics instance.
      */
-    featureBundle?: pulumi.Input<string>;
+    featureBundle?: pulumi.Input<string | undefined>;
     /**
      * Analytics feature set.
      */
-    featureSet?: pulumi.Input<string>;
+    featureSet?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * IDCS access token identifying a stripe and service administrator user.
      */
-    idcsAccessToken?: pulumi.Input<string>;
+    idcsAccessToken?: pulumi.Input<string | undefined>;
     /**
      * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The license used for the service.
      */
-    licenseType?: pulumi.Input<string>;
+    licenseType?: pulumi.Input<string | undefined>;
     /**
      * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Base representation of a network endpoint.
      */
-    networkEndpointDetails?: pulumi.Input<inputs.Analytics.AnalyticsInstanceNetworkEndpointDetails>;
+    networkEndpointDetails?: pulumi.Input<inputs.Analytics.AnalyticsInstanceNetworkEndpointDetails | undefined>;
     /**
      * URL of the Analytics service.
      */
-    serviceUrl?: pulumi.Input<string>;
+    serviceUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -336,23 +336,23 @@ export interface AnalyticsInstanceState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Analytics instance update channel.
      */
-    updateChannel?: pulumi.Input<string>;
+    updateChannel?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -362,7 +362,7 @@ export interface AnalyticsInstanceArgs {
     /**
      * user name of the authorized user.
      */
-    adminUser?: pulumi.Input<string>;
+    adminUser?: pulumi.Input<string | undefined>;
     /**
      * Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
      */
@@ -374,23 +374,23 @@ export interface AnalyticsInstanceArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Optional description.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * domain id for which the user is authorized.
      */
-    domainId?: pulumi.Input<string>;
+    domainId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Email address receiving notifications.
      */
-    emailNotification?: pulumi.Input<string>;
+    emailNotification?: pulumi.Input<string | undefined>;
     /**
      * The feature set of an Analytics instance.
      */
-    featureBundle?: pulumi.Input<string>;
+    featureBundle?: pulumi.Input<string | undefined>;
     /**
      * Analytics feature set.
      */
@@ -398,15 +398,15 @@ export interface AnalyticsInstanceArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * IDCS access token identifying a stripe and service administrator user.
      */
-    idcsAccessToken?: pulumi.Input<string>;
+    idcsAccessToken?: pulumi.Input<string | undefined>;
     /**
      * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The license used for the service.
      */
@@ -414,11 +414,11 @@ export interface AnalyticsInstanceArgs {
     /**
      * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Base representation of a network endpoint.
      */
-    networkEndpointDetails?: pulumi.Input<inputs.Analytics.AnalyticsInstanceNetworkEndpointDetails>;
+    networkEndpointDetails?: pulumi.Input<inputs.Analytics.AnalyticsInstanceNetworkEndpointDetails | undefined>;
     /**
      * (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -426,9 +426,9 @@ export interface AnalyticsInstanceArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Analytics instance update channel.
      */
-    updateChannel?: pulumi.Input<string>;
+    updateChannel?: pulumi.Input<string | undefined>;
 }

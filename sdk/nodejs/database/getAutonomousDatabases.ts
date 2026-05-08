@@ -30,17 +30,17 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabases = oci.Database.getAutonomousDatabases({
+ * const testAutonomousDatabases = oci.database.getAutonomousDatabases({
  *     compartmentId: compartmentId,
  *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
  *     dbVersion: autonomousDatabaseDbVersion,
  *     dbWorkload: autonomousDatabaseDbWorkload,
  *     displayName: autonomousDatabaseDisplayName,
  *     infrastructureType: autonomousDatabaseInfrastructureType,
- *     isDataGuardEnabled: autonomousDatabaseIsDataGuardEnabled,
- *     isFreeTier: autonomousDatabaseIsFreeTier,
- *     isRefreshableClone: autonomousDatabaseIsRefreshableClone,
- *     isResourcePoolLeader: autonomousDatabaseIsResourcePoolLeader,
+ *     isDataGuardEnabled: autonomousDatabaseIsDataGuardEnabled === "true",
+ *     isFreeTier: autonomousDatabaseIsFreeTier === "true",
+ *     isRefreshableClone: autonomousDatabaseIsRefreshableClone === "true",
+ *     isResourcePoolLeader: autonomousDatabaseIsResourcePoolLeader === "true",
  *     lifecycleStateNotEqualTo: autonomousDatabaseLifecycleStateNotEqualTo,
  *     resourcePoolLeaderId: testResourcePoolLeader.id,
  *     state: autonomousDatabaseState,
@@ -212,17 +212,17 @@ export interface GetAutonomousDatabasesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabases = oci.Database.getAutonomousDatabases({
+ * const testAutonomousDatabases = oci.database.getAutonomousDatabases({
  *     compartmentId: compartmentId,
  *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
  *     dbVersion: autonomousDatabaseDbVersion,
  *     dbWorkload: autonomousDatabaseDbWorkload,
  *     displayName: autonomousDatabaseDisplayName,
  *     infrastructureType: autonomousDatabaseInfrastructureType,
- *     isDataGuardEnabled: autonomousDatabaseIsDataGuardEnabled,
- *     isFreeTier: autonomousDatabaseIsFreeTier,
- *     isRefreshableClone: autonomousDatabaseIsRefreshableClone,
- *     isResourcePoolLeader: autonomousDatabaseIsResourcePoolLeader,
+ *     isDataGuardEnabled: autonomousDatabaseIsDataGuardEnabled === "true",
+ *     isFreeTier: autonomousDatabaseIsFreeTier === "true",
+ *     isRefreshableClone: autonomousDatabaseIsRefreshableClone === "true",
+ *     isResourcePoolLeader: autonomousDatabaseIsResourcePoolLeader === "true",
  *     lifecycleStateNotEqualTo: autonomousDatabaseLifecycleStateNotEqualTo,
  *     resourcePoolLeaderId: testResourcePoolLeader.id,
  *     state: autonomousDatabaseState,
@@ -256,7 +256,7 @@ export interface GetAutonomousDatabasesOutputArgs {
     /**
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    autonomousContainerDatabaseId?: pulumi.Input<string>;
+    autonomousContainerDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -264,43 +264,43 @@ export interface GetAutonomousDatabasesOutputArgs {
     /**
      * A filter to return only Autonomous AI Database resources that match the specified dbVersion.
      */
-    dbVersion?: pulumi.Input<string>;
+    dbVersion?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only Autonomous AI Database resources that match the specified workload type.
      */
-    dbWorkload?: pulumi.Input<string>;
+    dbWorkload?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousDatabasesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousDatabasesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given Infrastructure Type.
      */
-    infrastructureType?: pulumi.Input<string>;
+    infrastructureType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that have Data Guard enabled.
      */
-    isDataGuardEnabled?: pulumi.Input<boolean>;
+    isDataGuardEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
      */
-    isFreeTier?: pulumi.Input<boolean>;
+    isFreeTier?: pulumi.Input<boolean | undefined>;
     /**
      * Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
      */
-    isRefreshableClone?: pulumi.Input<boolean>;
+    isRefreshableClone?: pulumi.Input<boolean | undefined>;
     /**
      * Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
      */
-    isResourcePoolLeader?: pulumi.Input<boolean>;
-    lifecycleStateNotEqualTo?: pulumi.Input<string>;
+    isResourcePoolLeader?: pulumi.Input<boolean | undefined>;
+    lifecycleStateNotEqualTo?: pulumi.Input<string | undefined>;
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous AI Database.
      */
-    resourcePoolLeaderId?: pulumi.Input<string>;
+    resourcePoolLeaderId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

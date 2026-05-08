@@ -105,7 +105,7 @@ def get_managed_my_sql_database_digest_errors(digest: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_digest_errors = oci.DatabaseManagement.get_managed_my_sql_database_digest_errors(digest=managed_my_sql_database_digest_error_digest,
+    test_managed_my_sql_database_digest_errors = oci.databasemanagement.get_managed_my_sql_database_digest_errors(digest=managed_my_sql_database_digest_error_digest,
         managed_my_sql_database_id=test_managed_my_sql_database["id"])
     ```
 
@@ -126,9 +126,9 @@ def get_managed_my_sql_database_digest_errors(digest: Optional[_builtins.str] = 
         id=pulumi.get(__ret__, 'id'),
         managed_my_sql_database_id=pulumi.get(__ret__, 'managed_my_sql_database_id'),
         my_sql_digest_errors_collections=pulumi.get(__ret__, 'my_sql_digest_errors_collections'))
-def get_managed_my_sql_database_digest_errors_output(digest: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedMySqlDatabaseDigestErrorsFilterArgs', 'GetManagedMySqlDatabaseDigestErrorsFilterArgsDict']]]]] = None,
-                                                     managed_my_sql_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_managed_my_sql_database_digest_errors_output(digest: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedMySqlDatabaseDigestErrorsFilterArgs', 'GetManagedMySqlDatabaseDigestErrorsFilterArgsDict']]]]] = None,
+                                                     managed_my_sql_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedMySqlDatabaseDigestErrorsResult]:
     """
     This data source provides the list of Managed My Sql Database Digest Errors in Oracle Cloud Infrastructure Database Management service.
@@ -141,7 +141,7 @@ def get_managed_my_sql_database_digest_errors_output(digest: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_digest_errors = oci.DatabaseManagement.get_managed_my_sql_database_digest_errors(digest=managed_my_sql_database_digest_error_digest,
+    test_managed_my_sql_database_digest_errors = oci.databasemanagement.get_managed_my_sql_database_digest_errors(digest=managed_my_sql_database_digest_error_digest,
         managed_my_sql_database_id=test_managed_my_sql_database["id"])
     ```
 

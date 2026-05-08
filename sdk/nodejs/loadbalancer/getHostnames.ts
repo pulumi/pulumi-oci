@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHostnames = oci.LoadBalancer.getHostnames({
+ * const testHostnames = oci.loadbalancer.getHostnames({
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetHostnamesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHostnames = oci.LoadBalancer.getHostnames({
+ * const testHostnames = oci.loadbalancer.getHostnames({
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
@@ -84,7 +84,7 @@ export function getHostnamesOutput(args: GetHostnamesOutputArgs, opts?: pulumi.I
  * A collection of arguments for invoking getHostnames.
  */
 export interface GetHostnamesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.GetHostnamesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.GetHostnamesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the hostnames to retrieve.
      */

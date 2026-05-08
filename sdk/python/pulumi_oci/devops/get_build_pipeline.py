@@ -216,7 +216,7 @@ def get_build_pipeline(build_pipeline_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_build_pipeline = oci.DevOps.get_build_pipeline(build_pipeline_id=test_build_pipeline_oci_devops_build_pipeline["id"])
+    test_build_pipeline = oci.devops.get_build_pipeline(build_pipeline_id=test_build_pipeline_oci_devops_build_pipeline["id"])
     ```
 
 
@@ -242,7 +242,7 @@ def get_build_pipeline(build_pipeline_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_build_pipeline_output(build_pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_build_pipeline_output(build_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBuildPipelineResult]:
     """
     This data source provides details about a specific Build Pipeline resource in Oracle Cloud Infrastructure Devops service.
@@ -255,7 +255,7 @@ def get_build_pipeline_output(build_pipeline_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_build_pipeline = oci.DevOps.get_build_pipeline(build_pipeline_id=test_build_pipeline_oci_devops_build_pipeline["id"])
+    test_build_pipeline = oci.devops.get_build_pipeline(build_pipeline_id=test_build_pipeline_oci_devops_build_pipeline["id"])
     ```
 
 

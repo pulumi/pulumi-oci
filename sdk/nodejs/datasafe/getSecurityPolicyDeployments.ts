@@ -30,10 +30,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityPolicyDeployments = oci.DataSafe.getSecurityPolicyDeployments({
+ * const testSecurityPolicyDeployments = oci.datasafe.getSecurityPolicyDeployments({
  *     compartmentId: compartmentId,
  *     accessLevel: securityPolicyDeploymentAccessLevel,
- *     compartmentIdInSubtree: securityPolicyDeploymentCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityPolicyDeploymentCompartmentIdInSubtree === "true",
  *     displayName: securityPolicyDeploymentDisplayName,
  *     securityPolicyDeploymentId: testSecurityPolicyDeployment.id,
  *     securityPolicyId: testSecurityPolicy.id,
@@ -167,10 +167,10 @@ export interface GetSecurityPolicyDeploymentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityPolicyDeployments = oci.DataSafe.getSecurityPolicyDeployments({
+ * const testSecurityPolicyDeployments = oci.datasafe.getSecurityPolicyDeployments({
  *     compartmentId: compartmentId,
  *     accessLevel: securityPolicyDeploymentAccessLevel,
- *     compartmentIdInSubtree: securityPolicyDeploymentCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityPolicyDeploymentCompartmentIdInSubtree === "true",
  *     displayName: securityPolicyDeploymentDisplayName,
  *     securityPolicyDeploymentId: testSecurityPolicyDeployment.id,
  *     securityPolicyId: testSecurityPolicy.id,
@@ -203,7 +203,7 @@ export interface GetSecurityPolicyDeploymentsOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -211,30 +211,30 @@ export interface GetSecurityPolicyDeploymentsOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the specified display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityPolicyDeploymentsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityPolicyDeploymentsFilterArgs>[] | undefined>;
     /**
      * An optional filter to return only resources that match the specified OCID of the security policy deployment resource.
      */
-    securityPolicyDeploymentId?: pulumi.Input<string>;
+    securityPolicyDeploymentId?: pulumi.Input<string | undefined>;
     /**
      * An optional filter to return only resources that match the specified OCID of the security policy resource.
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the security policy deployment.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items related to a specific target OCID.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * A optional filter to return only resources that belong to the specified target type.
      */
-    targetType?: pulumi.Input<string>;
+    targetType?: pulumi.Input<string | undefined>;
 }

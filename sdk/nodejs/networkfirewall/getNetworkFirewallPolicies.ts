@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicies = oci.NetworkFirewall.getNetworkFirewallPolicies({
+ * const testNetworkFirewallPolicies = oci.networkfirewall.getNetworkFirewallPolicies({
  *     compartmentId: compartmentId,
  *     displayName: networkFirewallPolicyDisplayName,
  *     id: networkFirewallPolicyId,
@@ -96,7 +96,7 @@ export interface GetNetworkFirewallPoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicies = oci.NetworkFirewall.getNetworkFirewallPolicies({
+ * const testNetworkFirewallPolicies = oci.networkfirewall.getNetworkFirewallPolicies({
  *     compartmentId: compartmentId,
  *     displayName: networkFirewallPolicyDisplayName,
  *     id: networkFirewallPolicyId,
@@ -126,14 +126,14 @@ export interface GetNetworkFirewallPoliciesOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.GetNetworkFirewallPoliciesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.GetNetworkFirewallPoliciesFilterArgs>[] | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources with a lifecycleState matching the given value.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

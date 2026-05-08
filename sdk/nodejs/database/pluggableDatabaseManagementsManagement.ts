@@ -21,14 +21,14 @@ import * as utilities from "../utilities";
  *
  * const testPluggableDatabasePluggabledatabasemanagementsManagement = new oci.database.PluggableDatabaseManagementsManagement("test_pluggable_database_pluggabledatabasemanagements_management", {
  *     pluggableDatabaseId: testPluggableDatabase.id,
- *     enablePluggabledatabasemanagement: enablePluggabledatabasemanagement,
+ *     enablePluggabledatabasemanagement: enablePluggabledatabasemanagement === "true",
  *     credentialDetails: {
  *         passwordSecretId: testSecret.id,
  *         userName: testUser.name,
  *     },
  *     privateEndPointId: testPrivateEndPoint.id,
  *     serviceName: testService.name,
- *     port: pluggableDatabasePluggabledatabasemanagementsManagementPort,
+ *     port: Number(pluggableDatabasePluggabledatabasemanagementsManagementPort),
  *     protocol: pluggableDatabasePluggabledatabasemanagementsManagementProtocol,
  *     role: pluggableDatabasePluggabledatabasemanagementsManagementRole,
  *     sslSecretId: testSecret.id,
@@ -237,23 +237,23 @@ export interface PluggableDatabaseManagementsManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Connection strings to connect to an Oracle Pluggable Database.
      */
-    connectionStrings?: pulumi.Input<pulumi.Input<inputs.Database.PluggableDatabaseManagementsManagementConnectionString>[]>;
+    connectionStrings?: pulumi.Input<pulumi.Input<inputs.Database.PluggableDatabaseManagementsManagementConnectionString>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
      */
-    containerDatabaseId?: pulumi.Input<string>;
+    containerDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * Data for the credential used to connect to the database.
      */
-    credentialDetails?: pulumi.Input<inputs.Database.PluggableDatabaseManagementsManagementCredentialDetails>;
+    credentialDetails?: pulumi.Input<inputs.Database.PluggableDatabaseManagementsManagementCredentialDetails | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
@@ -261,67 +261,67 @@ export interface PluggableDatabaseManagementsManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    enablePluggabledatabasemanagement?: pulumi.Input<boolean>;
+    enablePluggabledatabasemanagement?: pulumi.Input<boolean | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
      */
-    isRestricted?: pulumi.Input<boolean>;
+    isRestricted?: pulumi.Input<boolean | undefined>;
     /**
      * Detailed message for the lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
      */
-    openMode?: pulumi.Input<string>;
+    openMode?: pulumi.Input<string | undefined>;
     /**
      * The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
      */
-    pdbName?: pulumi.Input<string>;
+    pdbName?: pulumi.Input<string | undefined>;
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    pluggableDatabaseId?: pulumi.Input<string>;
+    pluggableDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * The configuration of the Pluggable Database Management service.
      */
-    pluggableDatabaseManagementConfigs?: pulumi.Input<pulumi.Input<inputs.Database.PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig>[]>;
+    pluggableDatabaseManagementConfigs?: pulumi.Input<pulumi.Input<inputs.Database.PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig>[] | undefined>;
     /**
      * The port used to connect to the pluggable database.
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
      */
-    privateEndPointId?: pulumi.Input<string>;
+    privateEndPointId?: pulumi.Input<string | undefined>;
     /**
      * Protocol used by the database connection.
      */
-    protocol?: pulumi.Input<string>;
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * The role of the user that will be connecting to the pluggable database.
      */
-    role?: pulumi.Input<string>;
+    role?: pulumi.Input<string | undefined>;
     /**
      * The name of the Oracle Database service that will be used to connect to the database.
      */
-    serviceName?: pulumi.Input<string>;
+    serviceName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
-    sslSecretId?: pulumi.Input<string>;
+    sslSecretId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the pluggable database.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the pluggable database was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -347,7 +347,7 @@ export interface PluggableDatabaseManagementsManagementArgs {
     /**
      * The port used to connect to the pluggable database.
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
      */
@@ -355,11 +355,11 @@ export interface PluggableDatabaseManagementsManagementArgs {
     /**
      * Protocol used by the database connection.
      */
-    protocol?: pulumi.Input<string>;
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * The role of the user that will be connecting to the pluggable database.
      */
-    role?: pulumi.Input<string>;
+    role?: pulumi.Input<string | undefined>;
     /**
      * The name of the Oracle Database service that will be used to connect to the database.
      */
@@ -367,5 +367,5 @@ export interface PluggableDatabaseManagementsManagementArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
-    sslSecretId?: pulumi.Input<string>;
+    sslSecretId?: pulumi.Input<string | undefined>;
 }

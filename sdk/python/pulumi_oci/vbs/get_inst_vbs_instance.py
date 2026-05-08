@@ -236,7 +236,7 @@ def get_inst_vbs_instance(vbs_instance_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vbs_instance = oci.Vbs.get_inst_vbs_instance(vbs_instance_id=test_vbs_instance_oci_vbs_inst_vbs_instance["id"])
+    test_vbs_instance = oci.vbs.get_inst_vbs_instance(vbs_instance_id=test_vbs_instance_oci_vbs_inst_vbs_instance["id"])
     ```
 
 
@@ -264,7 +264,7 @@ def get_inst_vbs_instance(vbs_instance_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         vbs_access_url=pulumi.get(__ret__, 'vbs_access_url'),
         vbs_instance_id=pulumi.get(__ret__, 'vbs_instance_id'))
-def get_inst_vbs_instance_output(vbs_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_inst_vbs_instance_output(vbs_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstVbsInstanceResult]:
     """
     This data source provides details about a specific Vbs Instance resource in Oracle Cloud Infrastructure Vbs Inst service.
@@ -277,7 +277,7 @@ def get_inst_vbs_instance_output(vbs_instance_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_vbs_instance = oci.Vbs.get_inst_vbs_instance(vbs_instance_id=test_vbs_instance_oci_vbs_inst_vbs_instance["id"])
+    test_vbs_instance = oci.vbs.get_inst_vbs_instance(vbs_instance_id=test_vbs_instance_oci_vbs_inst_vbs_instance["id"])
     ```
 
 

@@ -124,9 +124,9 @@ def get_occ_metric_alarms(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_metric_alarms = oci.DemandSignal.get_occ_metric_alarms(compartment_id=compartment_id,
+    test_occ_metric_alarms = oci.demandsignal.get_occ_metric_alarms(compartment_id=compartment_id,
         display_name=occ_metric_alarm_display_name,
-        is_active=occ_metric_alarm_is_active)
+        is_active=occ_metric_alarm_is_active == "true")
     ```
 
 
@@ -149,10 +149,10 @@ def get_occ_metric_alarms(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         is_active=pulumi.get(__ret__, 'is_active'),
         occ_metric_alarm_collections=pulumi.get(__ret__, 'occ_metric_alarm_collections'))
-def get_occ_metric_alarms_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOccMetricAlarmsFilterArgs', 'GetOccMetricAlarmsFilterArgsDict']]]]] = None,
-                                 is_active: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+def get_occ_metric_alarms_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOccMetricAlarmsFilterArgs', 'GetOccMetricAlarmsFilterArgsDict']]]]] = None,
+                                 is_active: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOccMetricAlarmsResult]:
     """
     This data source provides the list of Occ Metric Alarms in Oracle Cloud Infrastructure Demand Signal service.
@@ -165,9 +165,9 @@ def get_occ_metric_alarms_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_metric_alarms = oci.DemandSignal.get_occ_metric_alarms(compartment_id=compartment_id,
+    test_occ_metric_alarms = oci.demandsignal.get_occ_metric_alarms(compartment_id=compartment_id,
         display_name=occ_metric_alarm_display_name,
-        is_active=occ_metric_alarm_is_active)
+        is_active=occ_metric_alarm_is_active == "true")
     ```
 
 

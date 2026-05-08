@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *
  * const testLifecycleStageRebootManagement = new oci.osmanagementhub.LifecycleStageRebootManagement("test_lifecycle_stage_reboot_management", {
  *     lifecycleStageId: testLifecycleStage.id,
- *     rebootTimeoutInMins: lifecycleStageRebootManagementRebootTimeoutInMins,
+ *     rebootTimeoutInMins: Number(lifecycleStageRebootManagementRebootTimeoutInMins),
  *     workRequestDetails: {
  *         description: lifecycleStageRebootManagementWorkRequestDetailsDescription,
  *         displayName: lifecycleStageRebootManagementWorkRequestDetailsDisplayName,
@@ -116,15 +116,15 @@ export interface LifecycleStageRebootManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
      */
-    lifecycleStageId?: pulumi.Input<string>;
+    lifecycleStageId?: pulumi.Input<string | undefined>;
     /**
      * The number of minutes the service waits for the reboot to complete. If the instances in the stage don't reboot  within this time, the reboot job status is set to failed.
      */
-    rebootTimeoutInMins?: pulumi.Input<number>;
+    rebootTimeoutInMins?: pulumi.Input<number | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.LifecycleStageRebootManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.LifecycleStageRebootManagementWorkRequestDetails | undefined>;
 }
 
 /**
@@ -138,9 +138,9 @@ export interface LifecycleStageRebootManagementArgs {
     /**
      * The number of minutes the service waits for the reboot to complete. If the instances in the stage don't reboot  within this time, the reboot job status is set to failed.
      */
-    rebootTimeoutInMins?: pulumi.Input<number>;
+    rebootTimeoutInMins?: pulumi.Input<number | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.LifecycleStageRebootManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.LifecycleStageRebootManagementWorkRequestDetails | undefined>;
 }

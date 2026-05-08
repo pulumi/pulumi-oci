@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAssessmentObjectTypes = oci.DatabaseMigration.getAssessmentObjectTypes({
+ * const testAssessmentObjectTypes = oci.databasemigration.getAssessmentObjectTypes({
  *     connectionType: assessmentObjectTypeConnectionType,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetAssessmentObjectTypesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAssessmentObjectTypes = oci.DatabaseMigration.getAssessmentObjectTypes({
+ * const testAssessmentObjectTypes = oci.databasemigration.getAssessmentObjectTypes({
  *     connectionType: assessmentObjectTypeConnectionType,
  * });
  * ```
@@ -88,5 +88,5 @@ export interface GetAssessmentObjectTypesOutputArgs {
      * The connection type for assessment objects.
      */
     connectionType: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.GetAssessmentObjectTypesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.GetAssessmentObjectTypesFilterArgs>[] | undefined>;
 }

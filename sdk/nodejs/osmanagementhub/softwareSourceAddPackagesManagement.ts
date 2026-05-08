@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  * const testSoftwareSourceAddPackagesManagement = new oci.osmanagementhub.SoftwareSourceAddPackagesManagement("test_software_source_add_packages_management", {
  *     packages: softwareSourceAddPackagesManagementPackages,
  *     softwareSourceId: testSoftwareSource.id,
- *     isContinueOnMissingPackages: softwareSourceAddPackagesManagementIsContinueOnMissingPackages,
+ *     isContinueOnMissingPackages: softwareSourceAddPackagesManagementIsContinueOnMissingPackages === "true",
  * });
  * ```
  *
@@ -123,11 +123,11 @@ export interface SoftwareSourceAddPackagesManagementState {
     /**
      * Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
      */
-    isContinueOnMissingPackages?: pulumi.Input<boolean>;
+    isContinueOnMissingPackages?: pulumi.Input<boolean | undefined>;
     /**
      * List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
      */
-    packages?: pulumi.Input<pulumi.Input<string>[]>;
+    packages?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      *
@@ -135,7 +135,7 @@ export interface SoftwareSourceAddPackagesManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    softwareSourceId?: pulumi.Input<string>;
+    softwareSourceId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -145,7 +145,7 @@ export interface SoftwareSourceAddPackagesManagementArgs {
     /**
      * Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
      */
-    isContinueOnMissingPackages?: pulumi.Input<boolean>;
+    isContinueOnMissingPackages?: pulumi.Input<boolean | undefined>;
     /**
      * List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
      */

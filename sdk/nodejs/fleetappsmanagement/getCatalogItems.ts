@@ -17,14 +17,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCatalogItems = oci.FleetAppsManagement.getCatalogItems({
+ * const testCatalogItems = oci.fleetappsmanagement.getCatalogItems({
  *     compartmentId: compartmentId,
  *     catalogListingId: testListing.id,
  *     catalogListingVersionCriteria: catalogItemCatalogListingVersionCriteria,
  *     configSourceType: catalogItemConfigSourceType,
  *     displayName: catalogItemDisplayName,
  *     packageType: catalogItemPackageType,
- *     shouldListPublicItems: catalogItemShouldListPublicItems,
+ *     shouldListPublicItems: catalogItemShouldListPublicItems === "true",
  *     state: catalogItemState,
  * });
  * ```
@@ -134,14 +134,14 @@ export interface GetCatalogItemsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCatalogItems = oci.FleetAppsManagement.getCatalogItems({
+ * const testCatalogItems = oci.fleetappsmanagement.getCatalogItems({
  *     compartmentId: compartmentId,
  *     catalogListingId: testListing.id,
  *     catalogListingVersionCriteria: catalogItemCatalogListingVersionCriteria,
  *     configSourceType: catalogItemConfigSourceType,
  *     displayName: catalogItemDisplayName,
  *     packageType: catalogItemPackageType,
- *     shouldListPublicItems: catalogItemShouldListPublicItems,
+ *     shouldListPublicItems: catalogItemShouldListPublicItems === "true",
  *     state: catalogItemState,
  * });
  * ```
@@ -168,11 +168,11 @@ export interface GetCatalogItemsOutputArgs {
     /**
      * catalogListingId of the package. This is an integer whose min and max length are specified.
      */
-    catalogListingId?: pulumi.Input<string>;
+    catalogListingId?: pulumi.Input<string | undefined>;
     /**
      * Parameter to list all catalog items only with latest version or list all catalog items with all versions.
      */
-    catalogListingVersionCriteria?: pulumi.Input<string>;
+    catalogListingVersionCriteria?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The ID of the compartment in which to list resources.
      */
@@ -180,22 +180,22 @@ export interface GetCatalogItemsOutputArgs {
     /**
      * The [ConfigSourceType](https://www.terraform.io/definitions/CatalogItem/configSourceType) Eg: STACK_TEMPLATE_CATALOG_SOURCE, PAR_CATALOG_SOURCE, URL_CATALOG_SOURCE, MARKETPLACE_CATALOG_SOURCE.
      */
-    configSourceType?: pulumi.Input<string>;
+    configSourceType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetCatalogItemsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetCatalogItemsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given package type. The state value is case-insensitive.
      */
-    packageType?: pulumi.Input<string>;
+    packageType?: pulumi.Input<string | undefined>;
     /**
      * The indicator to append Public Items from the root compartment to any query, when set to TRUE.
      */
-    shouldListPublicItems?: pulumi.Input<boolean>;
+    shouldListPublicItems?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

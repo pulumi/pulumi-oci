@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProtectionPolicies = oci.RecoveryMod.getProtectionPolicies({
+ * const testProtectionPolicies = oci.recoverymod.getProtectionPolicies({
  *     compartmentId: compartmentId,
  *     displayName: protectionPolicyDisplayName,
  *     owner: protectionPolicyOwner,
@@ -104,7 +104,7 @@ export interface GetProtectionPoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProtectionPolicies = oci.RecoveryMod.getProtectionPolicies({
+ * const testProtectionPolicies = oci.recoverymod.getProtectionPolicies({
  *     compartmentId: compartmentId,
  *     displayName: protectionPolicyDisplayName,
  *     owner: protectionPolicyOwner,
@@ -136,18 +136,18 @@ export interface GetProtectionPoliciesOutputArgs {
     /**
      * A filter to return only resources that match the entire 'displayname' given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.RecoveryMod.GetProtectionPoliciesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.RecoveryMod.GetProtectionPoliciesFilterArgs>[] | undefined>;
     /**
      * A filter to return only the policies that match the owner as 'Customer' or 'Oracle'.
      */
-    owner?: pulumi.Input<string>;
+    owner?: pulumi.Input<string | undefined>;
     /**
      * The protection policy OCID.
      */
-    protectionPolicyId?: pulumi.Input<string>;
+    protectionPolicyId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

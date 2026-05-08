@@ -194,12 +194,12 @@ def get_domains_my_support_accounts(authorization: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_my_support_accounts = oci.Identity.get_domains_my_support_accounts(idcs_endpoint=test_domain["url"],
-        my_support_account_count=my_support_account_my_support_account_count,
+    test_my_support_accounts = oci.identity.get_domains_my_support_accounts(idcs_endpoint=test_domain["url"],
+        my_support_account_count=int(my_support_account_my_support_account_count),
         my_support_account_filter=my_support_account_my_support_account_filter,
         authorization=my_support_account_authorization,
         resource_type_schema_version=my_support_account_resource_type_schema_version,
-        start_index=my_support_account_start_index)
+        start_index=int(my_support_account_start_index))
     ```
 
 
@@ -238,15 +238,15 @@ def get_domains_my_support_accounts(authorization: Optional[_builtins.str] = Non
         sort_order=pulumi.get(__ret__, 'sort_order'),
         start_index=pulumi.get(__ret__, 'start_index'),
         total_results=pulumi.get(__ret__, 'total_results'))
-def get_domains_my_support_accounts_output(authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                           my_support_account_count: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                           my_support_account_filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           sort_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           sort_order: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           start_index: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_domains_my_support_accounts_output(authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                           my_support_account_count: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                           my_support_account_filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           sort_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           sort_order: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           start_index: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsMySupportAccountsResult]:
     """
     This data source provides the list of My Support Accounts in Oracle Cloud Infrastructure Identity Domains service.
@@ -259,12 +259,12 @@ def get_domains_my_support_accounts_output(authorization: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_my_support_accounts = oci.Identity.get_domains_my_support_accounts(idcs_endpoint=test_domain["url"],
-        my_support_account_count=my_support_account_my_support_account_count,
+    test_my_support_accounts = oci.identity.get_domains_my_support_accounts(idcs_endpoint=test_domain["url"],
+        my_support_account_count=int(my_support_account_my_support_account_count),
         my_support_account_filter=my_support_account_my_support_account_filter,
         authorization=my_support_account_authorization,
         resource_type_schema_version=my_support_account_resource_type_schema_version,
-        start_index=my_support_account_start_index)
+        start_index=int(my_support_account_start_index))
     ```
 
 

@@ -71,7 +71,7 @@ def get_script(script_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_script = oci.DatabaseMigration.get_script(script_id=test_script_oci_database_migration_script["id"])
+    test_script = oci.databasemigration.get_script(script_id=test_script_oci_database_migration_script["id"])
     ```
 
 
@@ -85,7 +85,7 @@ def get_script(script_id: Optional[_builtins.str] = None,
     return AwaitableGetScriptResult(
         id=pulumi.get(__ret__, 'id'),
         script_id=pulumi.get(__ret__, 'script_id'))
-def get_script_output(script_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_script_output(script_id: pulumi.Input[Optional[_builtins.str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetScriptResult]:
     """
     This data source provides details about a specific Script resource in Oracle Cloud Infrastructure Database Migration service.
@@ -98,7 +98,7 @@ def get_script_output(script_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_script = oci.DatabaseMigration.get_script(script_id=test_script_oci_database_migration_script["id"])
+    test_script = oci.databasemigration.get_script(script_id=test_script_oci_database_migration_script["id"])
     ```
 
 

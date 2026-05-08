@@ -125,9 +125,9 @@ def get_java_families(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_java_families = oci.Jms.get_java_families(display_name=java_family_display_name,
+    test_java_families = oci.jms.get_java_families(display_name=java_family_display_name,
         family_version=java_family_family_version,
-        is_supported_version=java_family_is_supported_version)
+        is_supported_version=java_family_is_supported_version == "true")
     ```
 
 
@@ -150,10 +150,10 @@ def get_java_families(display_name: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         is_supported_version=pulumi.get(__ret__, 'is_supported_version'),
         java_family_collections=pulumi.get(__ret__, 'java_family_collections'))
-def get_java_families_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             family_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetJavaFamiliesFilterArgs', 'GetJavaFamiliesFilterArgsDict']]]]] = None,
-                             is_supported_version: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+def get_java_families_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             family_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJavaFamiliesFilterArgs', 'GetJavaFamiliesFilterArgsDict']]]]] = None,
+                             is_supported_version: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJavaFamiliesResult]:
     """
     This data source provides the list of Java Families in Oracle Cloud Infrastructure Jms service.
@@ -167,9 +167,9 @@ def get_java_families_output(display_name: Optional[pulumi.Input[Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_java_families = oci.Jms.get_java_families(display_name=java_family_display_name,
+    test_java_families = oci.jms.get_java_families(display_name=java_family_display_name,
         family_version=java_family_family_version,
-        is_supported_version=java_family_is_supported_version)
+        is_supported_version=java_family_is_supported_version == "true")
     ```
 
 

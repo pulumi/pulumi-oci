@@ -99,11 +99,11 @@ export function getWlmsWlsDomainServersOutput(args: GetWlmsWlsDomainServersOutpu
  * A collection of arguments for invoking getWlmsWlsDomainServers.
  */
 export interface GetWlmsWlsDomainServersOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetWlmsWlsDomainServersFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetWlmsWlsDomainServersFilterArgs>[] | undefined>;
     /**
      * The name of the resource.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WebLogic domain.
      */

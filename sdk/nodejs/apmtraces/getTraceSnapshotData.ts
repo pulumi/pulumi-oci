@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTraceSnapshotData = oci.ApmTraces.getTraceSnapshotData({
+ * const testTraceSnapshotData = oci.apmtraces.getTraceSnapshotData({
  *     apmDomainId: testApmDomain.id,
  *     traceKey: traceSnapshotDataTraceKey,
- *     isSummarized: traceSnapshotDataIsSummarized,
+ *     isSummarized: traceSnapshotDataIsSummarized === "true",
  *     snapshotTime: traceSnapshotDataSnapshotTime,
  *     threadId: testThread.id,
  * });
@@ -104,10 +104,10 @@ export interface GetTraceSnapshotDataResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTraceSnapshotData = oci.ApmTraces.getTraceSnapshotData({
+ * const testTraceSnapshotData = oci.apmtraces.getTraceSnapshotData({
  *     apmDomainId: testApmDomain.id,
  *     traceKey: traceSnapshotDataTraceKey,
- *     isSummarized: traceSnapshotDataIsSummarized,
+ *     isSummarized: traceSnapshotDataIsSummarized === "true",
  *     snapshotTime: traceSnapshotDataSnapshotTime,
  *     threadId: testThread.id,
  * });
@@ -135,15 +135,15 @@ export interface GetTraceSnapshotDataOutputArgs {
     /**
      * If enabled, only span level details are sent.
      */
-    isSummarized?: pulumi.Input<boolean>;
+    isSummarized?: pulumi.Input<boolean | undefined>;
     /**
      * Epoch time of snapshot.
      */
-    snapshotTime?: pulumi.Input<string>;
+    snapshotTime?: pulumi.Input<string | undefined>;
     /**
      * Thread ID for which snapshots need to be retrieved. This identifier of a thread is a long positive number generated when a thread is created.
      */
-    threadId?: pulumi.Input<string>;
+    threadId?: pulumi.Input<string | undefined>;
     /**
      * Unique Application Performance Monitoring trace identifier (traceId).
      */

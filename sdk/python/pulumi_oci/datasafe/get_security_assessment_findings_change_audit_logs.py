@@ -200,10 +200,10 @@ def get_security_assessment_findings_change_audit_logs(filters: Optional[Sequenc
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_findings_change_audit_logs = oci.DataSafe.get_security_assessment_findings_change_audit_logs(security_assessment_id=test_security_assessment["id"],
+    test_security_assessment_findings_change_audit_logs = oci.datasafe.get_security_assessment_findings_change_audit_logs(security_assessment_id=test_security_assessment["id"],
         finding_key=security_assessment_findings_change_audit_log_finding_key,
         finding_title=security_assessment_findings_change_audit_log_finding_title,
-        is_risk_deferred=security_assessment_findings_change_audit_log_is_risk_deferred,
+        is_risk_deferred=security_assessment_findings_change_audit_log_is_risk_deferred == "true",
         modified_by=security_assessment_findings_change_audit_log_modified_by,
         severity=security_assessment_findings_change_audit_log_severity,
         time_updated_greater_than_or_equal_to=security_assessment_findings_change_audit_log_time_updated_greater_than_or_equal_to,
@@ -257,17 +257,17 @@ def get_security_assessment_findings_change_audit_logs(filters: Optional[Sequenc
         time_updated_less_than=pulumi.get(__ret__, 'time_updated_less_than'),
         time_valid_until_greater_than_or_equal_to=pulumi.get(__ret__, 'time_valid_until_greater_than_or_equal_to'),
         time_valid_until_less_than=pulumi.get(__ret__, 'time_valid_until_less_than'))
-def get_security_assessment_findings_change_audit_logs_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityAssessmentFindingsChangeAuditLogsFilterArgs', 'GetSecurityAssessmentFindingsChangeAuditLogsFilterArgsDict']]]]] = None,
-                                                              finding_key: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                              finding_title: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                              is_risk_deferred: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                              modified_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                              security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                              severity: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                              time_updated_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                              time_updated_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                              time_valid_until_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                              time_valid_until_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_security_assessment_findings_change_audit_logs_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityAssessmentFindingsChangeAuditLogsFilterArgs', 'GetSecurityAssessmentFindingsChangeAuditLogsFilterArgsDict']]]]] = None,
+                                                              finding_key: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                              finding_title: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                              is_risk_deferred: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                              modified_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                              security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                              severity: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                              time_updated_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                              time_updated_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                              time_valid_until_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                              time_valid_until_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAssessmentFindingsChangeAuditLogsResult]:
     """
     This data source provides the list of Security Assessment Findings Change Audit Logs in Oracle Cloud Infrastructure Data Safe service.
@@ -280,10 +280,10 @@ def get_security_assessment_findings_change_audit_logs_output(filters: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_findings_change_audit_logs = oci.DataSafe.get_security_assessment_findings_change_audit_logs(security_assessment_id=test_security_assessment["id"],
+    test_security_assessment_findings_change_audit_logs = oci.datasafe.get_security_assessment_findings_change_audit_logs(security_assessment_id=test_security_assessment["id"],
         finding_key=security_assessment_findings_change_audit_log_finding_key,
         finding_title=security_assessment_findings_change_audit_log_finding_title,
-        is_risk_deferred=security_assessment_findings_change_audit_log_is_risk_deferred,
+        is_risk_deferred=security_assessment_findings_change_audit_log_is_risk_deferred == "true",
         modified_by=security_assessment_findings_change_audit_log_modified_by,
         severity=security_assessment_findings_change_audit_log_severity,
         time_updated_greater_than_or_equal_to=security_assessment_findings_change_audit_log_time_updated_greater_than_or_equal_to,

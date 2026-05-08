@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeployments = oci.ApiGateway.getDeployments({
+ * const testDeployments = oci.apigateway.getDeployments({
  *     compartmentId: compartmentId,
  *     displayName: deploymentDisplayName,
  *     gatewayId: testGateway.id,
@@ -100,7 +100,7 @@ export interface GetDeploymentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeployments = oci.ApiGateway.getDeployments({
+ * const testDeployments = oci.apigateway.getDeployments({
  *     compartmentId: compartmentId,
  *     displayName: deploymentDisplayName,
  *     gatewayId: testGateway.id,
@@ -130,14 +130,14 @@ export interface GetDeploymentsOutputArgs {
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GetDeploymentsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GetDeploymentsFilterArgs>[] | undefined>;
     /**
      * Filter deployments by the gateway ocid.
      */
-    gatewayId?: pulumi.Input<string>;
+    gatewayId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state.  Example: `SUCCEEDED`
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

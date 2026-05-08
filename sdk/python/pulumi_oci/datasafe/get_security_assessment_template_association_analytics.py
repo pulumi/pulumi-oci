@@ -181,9 +181,9 @@ def get_security_assessment_template_association_analytics(access_level: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_template_association_analytics = oci.DataSafe.get_security_assessment_template_association_analytics(compartment_id=compartment_id,
+    test_security_assessment_template_association_analytics = oci.datasafe.get_security_assessment_template_association_analytics(compartment_id=compartment_id,
         access_level=security_assessment_template_association_analytic_access_level,
-        compartment_id_in_subtree=security_assessment_template_association_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=security_assessment_template_association_analytic_compartment_id_in_subtree == "true",
         target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"],
         template_assessment_id=test_template_assessment["id"],
@@ -222,14 +222,14 @@ def get_security_assessment_template_association_analytics(access_level: Optiona
         template_assessment_id=pulumi.get(__ret__, 'template_assessment_id'),
         template_association_analytics_collections=pulumi.get(__ret__, 'template_association_analytics_collections'),
         template_baseline_assessment_id=pulumi.get(__ret__, 'template_baseline_assessment_id'))
-def get_security_assessment_template_association_analytics_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                  compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityAssessmentTemplateAssociationAnalyticsFilterArgs', 'GetSecurityAssessmentTemplateAssociationAnalyticsFilterArgsDict']]]]] = None,
-                                                                  target_database_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                  target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                  template_assessment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                  template_baseline_assessment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_security_assessment_template_association_analytics_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                  compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityAssessmentTemplateAssociationAnalyticsFilterArgs', 'GetSecurityAssessmentTemplateAssociationAnalyticsFilterArgsDict']]]]] = None,
+                                                                  target_database_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                  target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                  template_assessment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                  template_baseline_assessment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAssessmentTemplateAssociationAnalyticsResult]:
     """
     This data source provides the list of Security Assessment Template Association Analytics in Oracle Cloud Infrastructure Data Safe service.
@@ -256,9 +256,9 @@ def get_security_assessment_template_association_analytics_output(access_level: 
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_template_association_analytics = oci.DataSafe.get_security_assessment_template_association_analytics(compartment_id=compartment_id,
+    test_security_assessment_template_association_analytics = oci.datasafe.get_security_assessment_template_association_analytics(compartment_id=compartment_id,
         access_level=security_assessment_template_association_analytic_access_level,
-        compartment_id_in_subtree=security_assessment_template_association_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=security_assessment_template_association_analytic_compartment_id_in_subtree == "true",
         target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"],
         template_assessment_id=test_template_assessment["id"],

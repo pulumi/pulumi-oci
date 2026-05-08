@@ -158,11 +158,11 @@ def get_db_versions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_versions = oci.Database.get_db_versions(compartment_id=compartment_id,
+    test_db_versions = oci.database.get_db_versions(compartment_id=compartment_id,
         db_system_id=test_db_system["id"],
         db_system_shape=db_version_db_system_shape,
-        is_database_software_image_supported=db_version_is_database_software_image_supported,
-        is_upgrade_supported=db_version_is_upgrade_supported,
+        is_database_software_image_supported=db_version_is_database_software_image_supported == "true",
+        is_upgrade_supported=db_version_is_upgrade_supported == "true",
         shape_attribute=db_version_shape_attribute,
         storage_management=db_version_storage_management)
     ```
@@ -201,14 +201,14 @@ def get_db_versions(compartment_id: Optional[_builtins.str] = None,
         is_upgrade_supported=pulumi.get(__ret__, 'is_upgrade_supported'),
         shape_attribute=pulumi.get(__ret__, 'shape_attribute'),
         storage_management=pulumi.get(__ret__, 'storage_management'))
-def get_db_versions_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                           db_system_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           db_system_shape: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbVersionsFilterArgs', 'GetDbVersionsFilterArgsDict']]]]] = None,
-                           is_database_software_image_supported: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                           is_upgrade_supported: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                           shape_attribute: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           storage_management: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_db_versions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                           db_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           db_system_shape: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbVersionsFilterArgs', 'GetDbVersionsFilterArgsDict']]]]] = None,
+                           is_database_software_image_supported: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                           is_upgrade_supported: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                           shape_attribute: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           storage_management: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbVersionsResult]:
     """
     This data source provides the list of Db Versions in Oracle Cloud Infrastructure Database service.
@@ -221,11 +221,11 @@ def get_db_versions_output(compartment_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_db_versions = oci.Database.get_db_versions(compartment_id=compartment_id,
+    test_db_versions = oci.database.get_db_versions(compartment_id=compartment_id,
         db_system_id=test_db_system["id"],
         db_system_shape=db_version_db_system_shape,
-        is_database_software_image_supported=db_version_is_database_software_image_supported,
-        is_upgrade_supported=db_version_is_upgrade_supported,
+        is_database_software_image_supported=db_version_is_database_software_image_supported == "true",
+        is_upgrade_supported=db_version_is_upgrade_supported == "true",
         shape_attribute=db_version_shape_attribute,
         storage_management=db_version_storage_management)
     ```

@@ -195,63 +195,63 @@ export interface DbmulticloudOracleDbAzureConnectorState {
     /**
      * (Updatable) Azure bearer access token.
      */
-    accessToken?: pulumi.Input<string>;
+    accessToken?: pulumi.Input<string | undefined>;
     /**
      * List of all VMs where Arc Agent is installed under Cloud VM Cluster.
      */
-    arcAgentNodes?: pulumi.Input<pulumi.Input<inputs.oci.DbmulticloudOracleDbAzureConnectorArcAgentNode>[]>;
+    arcAgentNodes?: pulumi.Input<pulumi.Input<inputs.oci.DbmulticloudOracleDbAzureConnectorArcAgentNode>[] | undefined>;
     /**
      * The current Connectivity status of Azure Identity Connector resource.
      */
-    azureIdentityConnectivityStatus?: pulumi.Input<string>;
+    azureIdentityConnectivityStatus?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Azure Identity mechanism.
      */
-    azureIdentityMechanism?: pulumi.Input<string>;
+    azureIdentityMechanism?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Azure Resource group name.
      */
-    azureResourceGroup?: pulumi.Input<string>;
+    azureResourceGroup?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Azure Subscription ID.
      */
-    azureSubscriptionId?: pulumi.Input<string>;
+    azureSubscriptionId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Azure Tenant ID.
      */
-    azureTenantId?: pulumi.Input<string>;
+    azureTenantId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
      */
-    dbClusterResourceId?: pulumi.Input<string>;
+    dbClusterResourceId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle DB Azure Connector resource name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Description of the latest modification of the Oracle DB Azure Connector resource.
      */
-    lastModification?: pulumi.Input<string>;
+    lastModification?: pulumi.Input<string | undefined>;
     /**
      * Description of the current lifecycle state in more detail.
      */
-    lifecycleStateDetails?: pulumi.Input<string>;
+    lifecycleStateDetails?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the Azure Arc Agent resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Time when the Oracle DB Azure Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -265,7 +265,7 @@ export interface DbmulticloudOracleDbAzureConnectorArgs {
     /**
      * List of all VMs where Arc Agent is installed under Cloud VM Cluster.
      */
-    arcAgentNodes?: pulumi.Input<pulumi.Input<inputs.oci.DbmulticloudOracleDbAzureConnectorArcAgentNode>[]>;
+    arcAgentNodes?: pulumi.Input<pulumi.Input<inputs.oci.DbmulticloudOracleDbAzureConnectorArcAgentNode>[] | undefined>;
     /**
      * (Updatable) Azure Identity mechanism.
      */
@@ -297,9 +297,9 @@ export interface DbmulticloudOracleDbAzureConnectorArgs {
     /**
      * Description of the latest modification of the Oracle DB Azure Connector resource.
      */
-    lastModification?: pulumi.Input<string>;
+    lastModification?: pulumi.Input<string | undefined>;
     /**
      * Description of the current lifecycle state in more detail.
      */
-    lifecycleStateDetails?: pulumi.Input<string>;
+    lifecycleStateDetails?: pulumi.Input<string | undefined>;
 }

@@ -95,7 +95,7 @@ def get_organization_subscriptions(compartment_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_organization_subscriptions = oci.OneSubsription.get_organization_subscriptions(compartment_id=compartment_id)
+    test_organization_subscriptions = oci.onesubsription.get_organization_subscriptions(compartment_id=compartment_id)
     ```
 
 
@@ -112,8 +112,8 @@ def get_organization_subscriptions(compartment_id: Optional[_builtins.str] = Non
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         organization_subscriptions=pulumi.get(__ret__, 'organization_subscriptions'))
-def get_organization_subscriptions_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOrganizationSubscriptionsFilterArgs', 'GetOrganizationSubscriptionsFilterArgsDict']]]]] = None,
+def get_organization_subscriptions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOrganizationSubscriptionsFilterArgs', 'GetOrganizationSubscriptionsFilterArgsDict']]]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOrganizationSubscriptionsResult]:
     """
     This data source provides the list of Organization Subscriptions in Oracle Cloud Infrastructure Onesubscription service.
@@ -126,7 +126,7 @@ def get_organization_subscriptions_output(compartment_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_organization_subscriptions = oci.OneSubsription.get_organization_subscriptions(compartment_id=compartment_id)
+    test_organization_subscriptions = oci.onesubsription.get_organization_subscriptions(compartment_id=compartment_id)
     ```
 
 

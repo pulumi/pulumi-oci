@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSource = oci.GenerativeAi.getAgentDataSource({
+ * const testDataSource = oci.generativeai.getAgentDataSource({
  *     dataSourceId: testDataSourceOciGenerativeAiAgentDataSource.id,
  * });
  * ```
@@ -112,7 +112,7 @@ export interface GetAgentDataSourceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSource = oci.GenerativeAi.getAgentDataSource({
+ * const testDataSource = oci.generativeai.getAgentDataSource({
  *     dataSourceId: testDataSourceOciGenerativeAiAgentDataSource.id,
  * });
  * ```

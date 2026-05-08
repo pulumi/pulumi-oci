@@ -23,9 +23,9 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs:
     def __init__(__self__, *,
                  enable_external_container_dbm_feature: pulumi.Input[_builtins.bool],
                  external_container_database_id: pulumi.Input[_builtins.str],
-                 can_disable_all_pdbs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 feature: Optional[pulumi.Input[_builtins.str]] = None,
-                 feature_details: Optional[pulumi.Input['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs']] = None):
+                 can_disable_all_pdbs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 feature: pulumi.Input[Optional[_builtins.str]] = None,
+                 feature_details: pulumi.Input[Optional['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs']] = None):
         """
         The set of arguments for constructing a ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement resource.
 
@@ -76,43 +76,43 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="canDisableAllPdbs")
-    def can_disable_all_pdbs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_disable_all_pdbs(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "can_disable_all_pdbs")
 
     @can_disable_all_pdbs.setter
-    def can_disable_all_pdbs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_disable_all_pdbs(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_disable_all_pdbs", value)
 
     @_builtins.property
     @pulumi.getter
-    def feature(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def feature(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "feature")
 
     @feature.setter
-    def feature(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def feature(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "feature", value)
 
     @_builtins.property
     @pulumi.getter(name="featureDetails")
-    def feature_details(self) -> Optional[pulumi.Input['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs']]:
+    def feature_details(self) -> pulumi.Input[Optional['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs']]:
         """
         The details required to enable the specified Database Management feature.
         """
         return pulumi.get(self, "feature_details")
 
     @feature_details.setter
-    def feature_details(self, value: Optional[pulumi.Input['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs']]):
+    def feature_details(self, value: pulumi.Input[Optional['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs']]):
         pulumi.set(self, "feature_details", value)
 
 
 @pulumi.input_type
 class _ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState:
     def __init__(__self__, *,
-                 can_disable_all_pdbs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_external_container_dbm_feature: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 feature: Optional[pulumi.Input[_builtins.str]] = None,
-                 feature_details: Optional[pulumi.Input['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs']] = None):
+                 can_disable_all_pdbs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_external_container_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 feature: pulumi.Input[Optional[_builtins.str]] = None,
+                 feature_details: pulumi.Input[Optional['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement resources.
 
@@ -137,16 +137,16 @@ class _ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState:
 
     @_builtins.property
     @pulumi.getter(name="canDisableAllPdbs")
-    def can_disable_all_pdbs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_disable_all_pdbs(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "can_disable_all_pdbs")
 
     @can_disable_all_pdbs.setter
-    def can_disable_all_pdbs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_disable_all_pdbs(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_disable_all_pdbs", value)
 
     @_builtins.property
     @pulumi.getter(name="enableExternalContainerDbmFeature")
-    def enable_external_container_dbm_feature(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_external_container_dbm_feature(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 
@@ -157,40 +157,40 @@ class _ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState:
         return pulumi.get(self, "enable_external_container_dbm_feature")
 
     @enable_external_container_dbm_feature.setter
-    def enable_external_container_dbm_feature(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_external_container_dbm_feature(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_external_container_dbm_feature", value)
 
     @_builtins.property
     @pulumi.getter(name="externalContainerDatabaseId")
-    def external_container_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_container_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external container database.
         """
         return pulumi.get(self, "external_container_database_id")
 
     @external_container_database_id.setter
-    def external_container_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_container_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_container_database_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def feature(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def feature(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "feature")
 
     @feature.setter
-    def feature(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def feature(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "feature", value)
 
     @_builtins.property
     @pulumi.getter(name="featureDetails")
-    def feature_details(self) -> Optional[pulumi.Input['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs']]:
+    def feature_details(self) -> pulumi.Input[Optional['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs']]:
         """
         The details required to enable the specified Database Management feature.
         """
         return pulumi.get(self, "feature_details")
 
     @feature_details.setter
-    def feature_details(self, value: Optional[pulumi.Input['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs']]):
+    def feature_details(self, value: pulumi.Input[Optional['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs']]):
         pulumi.set(self, "feature_details", value)
 
 
@@ -200,11 +200,11 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.Cus
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 can_disable_all_pdbs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_external_container_dbm_feature: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 feature: Optional[pulumi.Input[_builtins.str]] = None,
-                 feature_details: Optional[pulumi.Input[Union['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
+                 can_disable_all_pdbs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_external_container_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 feature: pulumi.Input[Optional[_builtins.str]] = None,
+                 feature_details: pulumi.Input[Optional[Union['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Externalcontainerdatabase External Container Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
@@ -221,7 +221,7 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.Cus
 
         test_externalcontainerdatabase_external_container_dbm_features_management = oci.databasemanagement.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement("test_externalcontainerdatabase_external_container_dbm_features_management",
             external_container_database_id=test_external_container_database["id"],
-            enable_external_container_dbm_feature=enable_external_container_dbm_feature,
+            enable_external_container_dbm_feature=enable_external_container_dbm_feature == "true",
             feature_details={
                 "feature": externalcontainerdatabase_external_container_dbm_features_management_feature_details_feature,
                 "enable_external_container_dbm_feature": enable_external_container_dbm_feature,
@@ -231,8 +231,8 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.Cus
                     "management_agent_id": test_management_agent["id"],
                     "private_end_point_id": test_private_end_point["id"],
                 },
-                "can_enable_all_current_pdbs": externalcontainerdatabase_external_container_dbm_features_management_feature_details_can_enable_all_current_pdbs,
-                "is_auto_enable_pluggable_database": externalcontainerdatabase_external_container_dbm_features_management_feature_details_is_auto_enable_pluggable_database,
+                "can_enable_all_current_pdbs": externalcontainerdatabase_external_container_dbm_features_management_feature_details_can_enable_all_current_pdbs == "true",
+                "is_auto_enable_pluggable_database": externalcontainerdatabase_external_container_dbm_features_management_feature_details_is_auto_enable_pluggable_database == "true",
                 "license_model": externalcontainerdatabase_external_container_dbm_features_management_feature_details_license_model,
             })
         ```
@@ -269,7 +269,7 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.Cus
 
         test_externalcontainerdatabase_external_container_dbm_features_management = oci.databasemanagement.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement("test_externalcontainerdatabase_external_container_dbm_features_management",
             external_container_database_id=test_external_container_database["id"],
-            enable_external_container_dbm_feature=enable_external_container_dbm_feature,
+            enable_external_container_dbm_feature=enable_external_container_dbm_feature == "true",
             feature_details={
                 "feature": externalcontainerdatabase_external_container_dbm_features_management_feature_details_feature,
                 "enable_external_container_dbm_feature": enable_external_container_dbm_feature,
@@ -279,8 +279,8 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.Cus
                     "management_agent_id": test_management_agent["id"],
                     "private_end_point_id": test_private_end_point["id"],
                 },
-                "can_enable_all_current_pdbs": externalcontainerdatabase_external_container_dbm_features_management_feature_details_can_enable_all_current_pdbs,
-                "is_auto_enable_pluggable_database": externalcontainerdatabase_external_container_dbm_features_management_feature_details_is_auto_enable_pluggable_database,
+                "can_enable_all_current_pdbs": externalcontainerdatabase_external_container_dbm_features_management_feature_details_can_enable_all_current_pdbs == "true",
+                "is_auto_enable_pluggable_database": externalcontainerdatabase_external_container_dbm_features_management_feature_details_is_auto_enable_pluggable_database == "true",
                 "license_model": externalcontainerdatabase_external_container_dbm_features_management_feature_details_license_model,
             })
         ```
@@ -301,11 +301,11 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.Cus
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 can_disable_all_pdbs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 enable_external_container_dbm_feature: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 feature: Optional[pulumi.Input[_builtins.str]] = None,
-                 feature_details: Optional[pulumi.Input[Union['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
+                 can_disable_all_pdbs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_external_container_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 feature: pulumi.Input[Optional[_builtins.str]] = None,
+                 feature_details: pulumi.Input[Optional[Union['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -334,11 +334,11 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.Cus
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            can_disable_all_pdbs: Optional[pulumi.Input[_builtins.bool]] = None,
-            enable_external_container_dbm_feature: Optional[pulumi.Input[_builtins.bool]] = None,
-            external_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            feature: Optional[pulumi.Input[_builtins.str]] = None,
-            feature_details: Optional[pulumi.Input[Union['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgsDict']]] = None) -> 'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement':
+            can_disable_all_pdbs: pulumi.Input[Optional[_builtins.bool]] = None,
+            enable_external_container_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
+            external_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            feature: pulumi.Input[Optional[_builtins.str]] = None,
+            feature_details: pulumi.Input[Optional[Union['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgsDict']]] = None) -> 'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement':
         """
         Get an existing ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

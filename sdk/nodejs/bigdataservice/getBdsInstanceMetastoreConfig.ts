@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceMetastoreConfig = oci.BigDataService.getBdsInstanceMetastoreConfig({
+ * const testBdsInstanceMetastoreConfig = oci.bigdataservice.getBdsInstanceMetastoreConfig({
  *     bdsInstanceId: testBdsInstance.id,
  *     metastoreConfigId: testConfig.id,
  * });
@@ -96,7 +96,7 @@ export interface GetBdsInstanceMetastoreConfigResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceMetastoreConfig = oci.BigDataService.getBdsInstanceMetastoreConfig({
+ * const testBdsInstanceMetastoreConfig = oci.bigdataservice.getBdsInstanceMetastoreConfig({
  *     bdsInstanceId: testBdsInstance.id,
  *     metastoreConfigId: testConfig.id,
  * });

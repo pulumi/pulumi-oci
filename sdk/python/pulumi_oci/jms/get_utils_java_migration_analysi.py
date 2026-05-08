@@ -241,7 +241,7 @@ def get_utils_java_migration_analysi(compartment_id: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_java_migration_analysi = oci.Jms.get_utils_java_migration_analysi(java_migration_analysis_id=test_java_migration_analysi_oci_jms_utils_java_migration_analysi["id"])
+    test_java_migration_analysi = oci.jms.get_utils_java_migration_analysi(java_migration_analysis_id=test_java_migration_analysi_oci_jms_utils_java_migration_analysi["id"])
     ```
 
 
@@ -271,8 +271,8 @@ def get_utils_java_migration_analysi(compartment_id: Optional[_builtins.str] = N
         time_finished=pulumi.get(__ret__, 'time_finished'),
         time_started=pulumi.get(__ret__, 'time_started'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
-def get_utils_java_migration_analysi_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            java_migration_analysis_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_utils_java_migration_analysi_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            java_migration_analysis_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUtilsJavaMigrationAnalysiResult]:
     """
     This data source provides details about a specific Java Migration Analysi resource in Oracle Cloud Infrastructure Jms Utils service.
@@ -285,7 +285,7 @@ def get_utils_java_migration_analysi_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_java_migration_analysi = oci.Jms.get_utils_java_migration_analysi(java_migration_analysis_id=test_java_migration_analysi_oci_jms_utils_java_migration_analysi["id"])
+    test_java_migration_analysi = oci.jms.get_utils_java_migration_analysi(java_migration_analysis_id=test_java_migration_analysi_oci_jms_utils_java_migration_analysi["id"])
     ```
 
 

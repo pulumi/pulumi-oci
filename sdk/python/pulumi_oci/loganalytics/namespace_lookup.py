@@ -25,16 +25,16 @@ class NamespaceLookupArgs:
                  namespace: pulumi.Input[_builtins.str],
                  register_lookup_file: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceLookupCategoryArgs']]]] = None,
-                 char_encoding: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_match_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 fields: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceLookupFieldArgs']]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_hidden: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_matches: Optional[pulumi.Input[_builtins.str]] = None):
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceLookupCategoryArgs']]]] = None,
+                 char_encoding: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_match_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 fields: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceLookupFieldArgs']]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_hidden: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_matches: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a NamespaceLookup resource.
 
@@ -136,153 +136,153 @@ class NamespaceLookupArgs:
 
     @_builtins.property
     @pulumi.getter
-    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceLookupCategoryArgs']]]]:
+    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceLookupCategoryArgs']]]]:
         """
         (Updatable) An array of categories to assign to the lookup. Specifying the name attribute for each category would suffice. Oracle-defined category assignments cannot be removed.
         """
         return pulumi.get(self, "categories")
 
     @categories.setter
-    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceLookupCategoryArgs']]]]):
+    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceLookupCategoryArgs']]]]):
         pulumi.set(self, "categories", value)
 
     @_builtins.property
     @pulumi.getter(name="charEncoding")
-    def char_encoding(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def char_encoding(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The character encoding of the uploaded file.
         """
         return pulumi.get(self, "char_encoding")
 
     @char_encoding.setter
-    def char_encoding(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def char_encoding(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "char_encoding", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultMatchValue")
-    def default_match_value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_match_value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The default match value.
         """
         return pulumi.get(self, "default_match_value")
 
     @default_match_value.setter
-    def default_match_value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_match_value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_match_value", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The lookup description.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def fields(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceLookupFieldArgs']]]]:
+    def fields(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceLookupFieldArgs']]]]:
         """
         (Updatable) The lookup fields.
         """
         return pulumi.get(self, "fields")
 
     @fields.setter
-    def fields(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceLookupFieldArgs']]]]):
+    def fields(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceLookupFieldArgs']]]]):
         pulumi.set(self, "fields", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isHidden")
-    def is_hidden(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_hidden(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A flag indicating whether or not the new lookup should be hidden.
         """
         return pulumi.get(self, "is_hidden")
 
     @is_hidden.setter
-    def is_hidden(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_hidden(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_hidden", value)
 
     @_builtins.property
     @pulumi.getter(name="maxMatches")
-    def max_matches(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def max_matches(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The maximum number of matches.
         """
         return pulumi.get(self, "max_matches")
 
     @max_matches.setter
-    def max_matches(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def max_matches(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "max_matches", value)
 
 
 @pulumi.input_type
 class _NamespaceLookupState:
     def __init__(__self__, *,
-                 active_edit_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 canonical_link: Optional[pulumi.Input[_builtins.str]] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceLookupCategoryArgs']]]] = None,
-                 char_encoding: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_match_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 edit_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 fields: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceLookupFieldArgs']]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_built_in: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_hidden: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lookup_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 lookup_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 lookup_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 lookup_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 lookup_reference_string: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_matches: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 referring_sources: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceLookupReferringSourceArgs']]]] = None,
-                 register_lookup_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_summaries: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceLookupStatusSummaryArgs']]]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 active_edit_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 canonical_link: pulumi.Input[Optional[_builtins.str]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceLookupCategoryArgs']]]] = None,
+                 char_encoding: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_match_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 edit_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 fields: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceLookupFieldArgs']]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_built_in: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_hidden: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lookup_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 lookup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 lookup_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 lookup_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 lookup_reference_string: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_matches: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 referring_sources: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceLookupReferringSourceArgs']]]] = None,
+                 register_lookup_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_summaries: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceLookupStatusSummaryArgs']]]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NamespaceLookup resources.
 
@@ -369,295 +369,295 @@ class _NamespaceLookupState:
 
     @_builtins.property
     @pulumi.getter(name="activeEditVersion")
-    def active_edit_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def active_edit_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The active edit version.
         """
         return pulumi.get(self, "active_edit_version")
 
     @active_edit_version.setter
-    def active_edit_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def active_edit_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "active_edit_version", value)
 
     @_builtins.property
     @pulumi.getter(name="canonicalLink")
-    def canonical_link(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def canonical_link(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The canonical link.
         """
         return pulumi.get(self, "canonical_link")
 
     @canonical_link.setter
-    def canonical_link(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def canonical_link(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "canonical_link", value)
 
     @_builtins.property
     @pulumi.getter
-    def categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceLookupCategoryArgs']]]]:
+    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceLookupCategoryArgs']]]]:
         """
         (Updatable) An array of categories to assign to the lookup. Specifying the name attribute for each category would suffice. Oracle-defined category assignments cannot be removed.
         """
         return pulumi.get(self, "categories")
 
     @categories.setter
-    def categories(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceLookupCategoryArgs']]]]):
+    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceLookupCategoryArgs']]]]):
         pulumi.set(self, "categories", value)
 
     @_builtins.property
     @pulumi.getter(name="charEncoding")
-    def char_encoding(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def char_encoding(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The character encoding of the uploaded file.
         """
         return pulumi.get(self, "char_encoding")
 
     @char_encoding.setter
-    def char_encoding(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def char_encoding(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "char_encoding", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultMatchValue")
-    def default_match_value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_match_value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The default match value.
         """
         return pulumi.get(self, "default_match_value")
 
     @default_match_value.setter
-    def default_match_value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_match_value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_match_value", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The lookup description.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="editVersion")
-    def edit_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def edit_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The edit version.
         """
         return pulumi.get(self, "edit_version")
 
     @edit_version.setter
-    def edit_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def edit_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "edit_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def fields(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceLookupFieldArgs']]]]:
+    def fields(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceLookupFieldArgs']]]]:
         """
         (Updatable) The lookup fields.
         """
         return pulumi.get(self, "fields")
 
     @fields.setter
-    def fields(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceLookupFieldArgs']]]]):
+    def fields(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceLookupFieldArgs']]]]):
         pulumi.set(self, "fields", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isBuiltIn")
-    def is_built_in(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def is_built_in(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A flag indicating if the lookup is custom (user-defined) or built in.
         """
         return pulumi.get(self, "is_built_in")
 
     @is_built_in.setter
-    def is_built_in(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def is_built_in(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "is_built_in", value)
 
     @_builtins.property
     @pulumi.getter(name="isHidden")
-    def is_hidden(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_hidden(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A flag indicating whether or not the new lookup should be hidden.
         """
         return pulumi.get(self, "is_hidden")
 
     @is_hidden.setter
-    def is_hidden(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_hidden(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_hidden", value)
 
     @_builtins.property
     @pulumi.getter(name="lookupDisplayName")
-    def lookup_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lookup_display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lookup display name.
         """
         return pulumi.get(self, "lookup_display_name")
 
     @lookup_display_name.setter
-    def lookup_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lookup_display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lookup_display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="lookupId")
-    def lookup_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lookup_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lookup OCID.
         """
         return pulumi.get(self, "lookup_id")
 
     @lookup_id.setter
-    def lookup_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lookup_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lookup_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lookupName")
-    def lookup_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lookup_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the lookup to operate on.
         """
         return pulumi.get(self, "lookup_name")
 
     @lookup_name.setter
-    def lookup_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lookup_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lookup_name", value)
 
     @_builtins.property
     @pulumi.getter(name="lookupReference")
-    def lookup_reference(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lookup_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lookup reference as an integer.
         """
         return pulumi.get(self, "lookup_reference")
 
     @lookup_reference.setter
-    def lookup_reference(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lookup_reference(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lookup_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="lookupReferenceString")
-    def lookup_reference_string(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lookup_reference_string(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lookup reference as a string.
         """
         return pulumi.get(self, "lookup_reference_string")
 
     @lookup_reference_string.setter
-    def lookup_reference_string(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lookup_reference_string(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lookup_reference_string", value)
 
     @_builtins.property
     @pulumi.getter(name="maxMatches")
-    def max_matches(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def max_matches(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The maximum number of matches.
         """
         return pulumi.get(self, "max_matches")
 
     @max_matches.setter
-    def max_matches(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def max_matches(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "max_matches", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="referringSources")
-    def referring_sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceLookupReferringSourceArgs']]]]:
+    def referring_sources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceLookupReferringSourceArgs']]]]:
         """
         AutoLookups
         """
         return pulumi.get(self, "referring_sources")
 
     @referring_sources.setter
-    def referring_sources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceLookupReferringSourceArgs']]]]):
+    def referring_sources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceLookupReferringSourceArgs']]]]):
         pulumi.set(self, "referring_sources", value)
 
     @_builtins.property
     @pulumi.getter(name="registerLookupFile")
-    def register_lookup_file(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def register_lookup_file(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Path to the file containing data for lookup creation.
         """
         return pulumi.get(self, "register_lookup_file")
 
     @register_lookup_file.setter
-    def register_lookup_file(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def register_lookup_file(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "register_lookup_file", value)
 
     @_builtins.property
     @pulumi.getter(name="statusSummaries")
-    def status_summaries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceLookupStatusSummaryArgs']]]]:
+    def status_summaries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceLookupStatusSummaryArgs']]]]:
         """
         StatusSummary
         """
         return pulumi.get(self, "status_summaries")
 
     @status_summaries.setter
-    def status_summaries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceLookupStatusSummaryArgs']]]]):
+    def status_summaries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceLookupStatusSummaryArgs']]]]):
         pulumi.set(self, "status_summaries", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The last updated date.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lookup type. Valid values are Lookup, Dictionary or Module.
 
@@ -668,7 +668,7 @@ class _NamespaceLookupState:
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -678,20 +678,20 @@ class NamespaceLookup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NamespaceLookupCategoryArgs', 'NamespaceLookupCategoryArgsDict']]]]] = None,
-                 char_encoding: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_match_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 fields: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NamespaceLookupFieldArgs', 'NamespaceLookupFieldArgsDict']]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_hidden: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lookup_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_matches: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 register_lookup_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NamespaceLookupCategoryArgs', 'NamespaceLookupCategoryArgsDict']]]]] = None,
+                 char_encoding: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_match_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 fields: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NamespaceLookupFieldArgs', 'NamespaceLookupFieldArgsDict']]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_hidden: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lookup_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_matches: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 register_lookup_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Namespace Lookup resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -715,7 +715,7 @@ class NamespaceLookup(pulumi.CustomResource):
             categories=[{
                 "description": namespace_lookup_categories_description,
                 "display_name": namespace_lookup_categories_display_name,
-                "is_system": namespace_lookup_categories_is_system,
+                "is_system": namespace_lookup_categories_is_system == "true",
                 "name": namespace_lookup_categories_name,
                 "type": namespace_lookup_categories_type,
             }],
@@ -730,7 +730,7 @@ class NamespaceLookup(pulumi.CustomResource):
                 "common_field_name": namespace_lookup_fields_common_field_name,
                 "default_match_value": namespace_lookup_fields_default_match_value,
                 "display_name": namespace_lookup_fields_display_name,
-                "is_common_field": namespace_lookup_fields_is_common_field,
+                "is_common_field": namespace_lookup_fields_is_common_field == "true",
                 "match_operator": namespace_lookup_fields_match_operator,
                 "name": namespace_lookup_fields_name,
                 "position": namespace_lookup_fields_position,
@@ -738,7 +738,7 @@ class NamespaceLookup(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_hidden=namespace_lookup_is_hidden,
+            is_hidden=namespace_lookup_is_hidden == "true",
             max_matches=namespace_lookup_max_matches)
         ```
 
@@ -800,7 +800,7 @@ class NamespaceLookup(pulumi.CustomResource):
             categories=[{
                 "description": namespace_lookup_categories_description,
                 "display_name": namespace_lookup_categories_display_name,
-                "is_system": namespace_lookup_categories_is_system,
+                "is_system": namespace_lookup_categories_is_system == "true",
                 "name": namespace_lookup_categories_name,
                 "type": namespace_lookup_categories_type,
             }],
@@ -815,7 +815,7 @@ class NamespaceLookup(pulumi.CustomResource):
                 "common_field_name": namespace_lookup_fields_common_field_name,
                 "default_match_value": namespace_lookup_fields_default_match_value,
                 "display_name": namespace_lookup_fields_display_name,
-                "is_common_field": namespace_lookup_fields_is_common_field,
+                "is_common_field": namespace_lookup_fields_is_common_field == "true",
                 "match_operator": namespace_lookup_fields_match_operator,
                 "name": namespace_lookup_fields_name,
                 "position": namespace_lookup_fields_position,
@@ -823,7 +823,7 @@ class NamespaceLookup(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_hidden=namespace_lookup_is_hidden,
+            is_hidden=namespace_lookup_is_hidden == "true",
             max_matches=namespace_lookup_max_matches)
         ```
 
@@ -851,20 +851,20 @@ class NamespaceLookup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NamespaceLookupCategoryArgs', 'NamespaceLookupCategoryArgsDict']]]]] = None,
-                 char_encoding: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_match_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 fields: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NamespaceLookupFieldArgs', 'NamespaceLookupFieldArgsDict']]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_hidden: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lookup_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_matches: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 register_lookup_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NamespaceLookupCategoryArgs', 'NamespaceLookupCategoryArgsDict']]]]] = None,
+                 char_encoding: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_match_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 fields: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NamespaceLookupFieldArgs', 'NamespaceLookupFieldArgsDict']]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_hidden: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lookup_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_matches: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 register_lookup_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -917,31 +917,31 @@ class NamespaceLookup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            active_edit_version: Optional[pulumi.Input[_builtins.str]] = None,
-            canonical_link: Optional[pulumi.Input[_builtins.str]] = None,
-            categories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NamespaceLookupCategoryArgs', 'NamespaceLookupCategoryArgsDict']]]]] = None,
-            char_encoding: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            default_match_value: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            edit_version: Optional[pulumi.Input[_builtins.str]] = None,
-            fields: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NamespaceLookupFieldArgs', 'NamespaceLookupFieldArgsDict']]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_built_in: Optional[pulumi.Input[_builtins.str]] = None,
-            is_hidden: Optional[pulumi.Input[_builtins.bool]] = None,
-            lookup_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            lookup_id: Optional[pulumi.Input[_builtins.str]] = None,
-            lookup_name: Optional[pulumi.Input[_builtins.str]] = None,
-            lookup_reference: Optional[pulumi.Input[_builtins.str]] = None,
-            lookup_reference_string: Optional[pulumi.Input[_builtins.str]] = None,
-            max_matches: Optional[pulumi.Input[_builtins.str]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None,
-            referring_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NamespaceLookupReferringSourceArgs', 'NamespaceLookupReferringSourceArgsDict']]]]] = None,
-            register_lookup_file: Optional[pulumi.Input[_builtins.str]] = None,
-            status_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NamespaceLookupStatusSummaryArgs', 'NamespaceLookupStatusSummaryArgsDict']]]]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'NamespaceLookup':
+            active_edit_version: pulumi.Input[Optional[_builtins.str]] = None,
+            canonical_link: pulumi.Input[Optional[_builtins.str]] = None,
+            categories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NamespaceLookupCategoryArgs', 'NamespaceLookupCategoryArgsDict']]]]] = None,
+            char_encoding: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            default_match_value: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            edit_version: pulumi.Input[Optional[_builtins.str]] = None,
+            fields: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NamespaceLookupFieldArgs', 'NamespaceLookupFieldArgsDict']]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_built_in: pulumi.Input[Optional[_builtins.str]] = None,
+            is_hidden: pulumi.Input[Optional[_builtins.bool]] = None,
+            lookup_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            lookup_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lookup_name: pulumi.Input[Optional[_builtins.str]] = None,
+            lookup_reference: pulumi.Input[Optional[_builtins.str]] = None,
+            lookup_reference_string: pulumi.Input[Optional[_builtins.str]] = None,
+            max_matches: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            referring_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NamespaceLookupReferringSourceArgs', 'NamespaceLookupReferringSourceArgsDict']]]]] = None,
+            register_lookup_file: pulumi.Input[Optional[_builtins.str]] = None,
+            status_summaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NamespaceLookupStatusSummaryArgs', 'NamespaceLookupStatusSummaryArgsDict']]]]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'NamespaceLookup':
         """
         Get an existing NamespaceLookup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

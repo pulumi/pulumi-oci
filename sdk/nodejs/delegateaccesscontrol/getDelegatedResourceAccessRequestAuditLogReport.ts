@@ -15,9 +15,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDelegatedResourceAccessRequestAuditLogReport = oci.DelegateAccessControl.getDelegatedResourceAccessRequestAuditLogReport({
+ * const testDelegatedResourceAccessRequestAuditLogReport = oci.delegateaccesscontrol.getDelegatedResourceAccessRequestAuditLogReport({
  *     delegatedResourceAccessRequestId: testDelegatedResourceAccessRequest.id,
- *     isProcessTreeEnabled: delegatedResourceAccessRequestAuditLogReportIsProcessTreeEnabled,
+ *     isProcessTreeEnabled: delegatedResourceAccessRequestAuditLogReportIsProcessTreeEnabled === "true",
  * });
  * ```
  */
@@ -81,9 +81,9 @@ export interface GetDelegatedResourceAccessRequestAuditLogReportResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDelegatedResourceAccessRequestAuditLogReport = oci.DelegateAccessControl.getDelegatedResourceAccessRequestAuditLogReport({
+ * const testDelegatedResourceAccessRequestAuditLogReport = oci.delegateaccesscontrol.getDelegatedResourceAccessRequestAuditLogReport({
  *     delegatedResourceAccessRequestId: testDelegatedResourceAccessRequest.id,
- *     isProcessTreeEnabled: delegatedResourceAccessRequestAuditLogReportIsProcessTreeEnabled,
+ *     isProcessTreeEnabled: delegatedResourceAccessRequestAuditLogReportIsProcessTreeEnabled === "true",
  * });
  * ```
  */
@@ -106,5 +106,5 @@ export interface GetDelegatedResourceAccessRequestAuditLogReportOutputArgs {
     /**
      * Set to true to enable process tree computation in audit report
      */
-    isProcessTreeEnabled?: pulumi.Input<boolean>;
+    isProcessTreeEnabled?: pulumi.Input<boolean | undefined>;
 }

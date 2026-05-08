@@ -26,15 +26,15 @@ class FusionEnvironmentArgs:
                  display_name: pulumi.Input[_builtins.str],
                  fusion_environment_family_id: pulumi.Input[_builtins.str],
                  fusion_environment_type: pulumi.Input[_builtins.str],
-                 additional_egress_rules: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]]] = None,
-                 additional_language_packs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 dns_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_ipv6dual_stack_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 maintenance_policy: Optional[pulumi.Input['FusionEnvironmentMaintenancePolicyArgs']] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRuleArgs']]]] = None):
+                 additional_egress_rules: pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]]] = None,
+                 additional_language_packs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 dns_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_ipv6dual_stack_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 maintenance_policy: pulumi.Input[Optional['FusionEnvironmentMaintenancePolicyArgs']] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentRuleArgs']]]] = None):
         """
         The set of arguments for constructing a FusionEnvironment resource.
 
@@ -139,146 +139,146 @@ class FusionEnvironmentArgs:
 
     @_builtins.property
     @pulumi.getter(name="additionalEgressRules")
-    def additional_egress_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]]]:
+    def additional_egress_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]]]:
         """
         (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
         """
         return pulumi.get(self, "additional_egress_rules")
 
     @additional_egress_rules.setter
-    def additional_egress_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]]]):
+    def additional_egress_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]]]):
         pulumi.set(self, "additional_egress_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="additionalLanguagePacks")
-    def additional_language_packs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def additional_language_packs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Language packs.
         """
         return pulumi.get(self, "additional_language_packs")
 
     @additional_language_packs.setter
-    def additional_language_packs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def additional_language_packs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "additional_language_packs", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="dnsPrefix")
-    def dns_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dns_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         DNS prefix.
         """
         return pulumi.get(self, "dns_prefix")
 
     @dns_prefix.setter
-    def dns_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dns_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dns_prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isIpv6dualStackEnabled")
-    def is_ipv6dual_stack_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_ipv6dual_stack_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
         """
         return pulumi.get(self, "is_ipv6dual_stack_enabled")
 
     @is_ipv6dual_stack_enabled.setter
-    def is_ipv6dual_stack_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_ipv6dual_stack_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_ipv6dual_stack_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) byok kms keyId
         """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
-    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenancePolicy")
-    def maintenance_policy(self) -> Optional[pulumi.Input['FusionEnvironmentMaintenancePolicyArgs']]:
+    def maintenance_policy(self) -> pulumi.Input[Optional['FusionEnvironmentMaintenancePolicyArgs']]:
         """
         (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
         """
         return pulumi.get(self, "maintenance_policy")
 
     @maintenance_policy.setter
-    def maintenance_policy(self, value: Optional[pulumi.Input['FusionEnvironmentMaintenancePolicyArgs']]):
+    def maintenance_policy(self, value: pulumi.Input[Optional['FusionEnvironmentMaintenancePolicyArgs']]):
         pulumi.set(self, "maintenance_policy", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentRuleArgs']]]]:
         """
         (Updatable) Rules.
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
 
 @pulumi.input_type
 class _FusionEnvironmentState:
     def __init__(__self__, *,
-                 additional_egress_rules: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]]] = None,
-                 additional_language_packs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 applied_patch_bundles: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 create_fusion_environment_admin_user_details: Optional[pulumi.Input['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 fusion_environment_family_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 fusion_environment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_domain_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_break_glass_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_ipv6dual_stack_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_infos: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentKmsKeyInfoArgs']]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 lockbox_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 maintenance_policy: Optional[pulumi.Input['FusionEnvironmentMaintenancePolicyArgs']] = None,
-                 public_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 refreshes: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRefreshArgs']]]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRuleArgs']]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 system_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_upcoming_maintenance: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 additional_egress_rules: pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]]] = None,
+                 additional_language_packs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 applied_patch_bundles: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 create_fusion_environment_admin_user_details: pulumi.Input[Optional['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 fusion_environment_family_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 fusion_environment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_domain_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_break_glass_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_ipv6dual_stack_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_infos: pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentKmsKeyInfoArgs']]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 lockbox_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 maintenance_policy: pulumi.Input[Optional['FusionEnvironmentMaintenancePolicyArgs']] = None,
+                 public_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 refreshes: pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentRefreshArgs']]]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentRuleArgs']]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 system_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_upcoming_maintenance: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FusionEnvironment resources.
 
@@ -376,362 +376,362 @@ class _FusionEnvironmentState:
 
     @_builtins.property
     @pulumi.getter(name="additionalEgressRules")
-    def additional_egress_rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]]]:
+    def additional_egress_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]]]:
         """
         (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
         """
         return pulumi.get(self, "additional_egress_rules")
 
     @additional_egress_rules.setter
-    def additional_egress_rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]]]):
+    def additional_egress_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentAdditionalEgressRuleArgs']]]]):
         pulumi.set(self, "additional_egress_rules", value)
 
     @_builtins.property
     @pulumi.getter(name="additionalLanguagePacks")
-    def additional_language_packs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def additional_language_packs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Language packs.
         """
         return pulumi.get(self, "additional_language_packs")
 
     @additional_language_packs.setter
-    def additional_language_packs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def additional_language_packs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "additional_language_packs", value)
 
     @_builtins.property
     @pulumi.getter(name="appliedPatchBundles")
-    def applied_patch_bundles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def applied_patch_bundles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Patch bundle names
         """
         return pulumi.get(self, "applied_patch_bundles")
 
     @applied_patch_bundles.setter
-    def applied_patch_bundles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def applied_patch_bundles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "applied_patch_bundles", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createFusionEnvironmentAdminUserDetails")
-    def create_fusion_environment_admin_user_details(self) -> Optional[pulumi.Input['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs']]:
+    def create_fusion_environment_admin_user_details(self) -> pulumi.Input[Optional['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs']]:
         """
         The credentials for the Fusion Applications service administrator.
         """
         return pulumi.get(self, "create_fusion_environment_admin_user_details")
 
     @create_fusion_environment_admin_user_details.setter
-    def create_fusion_environment_admin_user_details(self, value: Optional[pulumi.Input['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs']]):
+    def create_fusion_environment_admin_user_details(self, value: pulumi.Input[Optional['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs']]):
         pulumi.set(self, "create_fusion_environment_admin_user_details", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) FusionEnvironment Identifier can be renamed.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dnsPrefix")
-    def dns_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dns_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         DNS prefix.
         """
         return pulumi.get(self, "dns_prefix")
 
     @dns_prefix.setter
-    def dns_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dns_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dns_prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="domainId")
-    def domain_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IDCS domain created for the fusion instance
         """
         return pulumi.get(self, "domain_id")
 
     @domain_id.setter
-    def domain_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="fusionEnvironmentFamilyId")
-    def fusion_environment_family_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fusion_environment_family_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
         """
         return pulumi.get(self, "fusion_environment_family_id")
 
     @fusion_environment_family_id.setter
-    def fusion_environment_family_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fusion_environment_family_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fusion_environment_family_id", value)
 
     @_builtins.property
     @pulumi.getter(name="fusionEnvironmentType")
-    def fusion_environment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fusion_environment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of environment. Valid values are Production, Test, or Development.
         """
         return pulumi.get(self, "fusion_environment_type")
 
     @fusion_environment_type.setter
-    def fusion_environment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fusion_environment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fusion_environment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsDomainUrl")
-    def idcs_domain_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_domain_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IDCS Domain URL
         """
         return pulumi.get(self, "idcs_domain_url")
 
     @idcs_domain_url.setter
-    def idcs_domain_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_domain_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_domain_url", value)
 
     @_builtins.property
     @pulumi.getter(name="isBreakGlassEnabled")
-    def is_break_glass_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_break_glass_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If it's true, then the Break Glass feature is enabled
         """
         return pulumi.get(self, "is_break_glass_enabled")
 
     @is_break_glass_enabled.setter
-    def is_break_glass_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_break_glass_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_break_glass_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isIpv6dualStackEnabled")
-    def is_ipv6dual_stack_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_ipv6dual_stack_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enable IPv4/IPv6 dual stack support for the environment (where available). Setting to true will assign an IPv6 address to the environment in addition to an IPv4 address. The default value is false.
         """
         return pulumi.get(self, "is_ipv6dual_stack_enabled")
 
     @is_ipv6dual_stack_enabled.setter
-    def is_ipv6dual_stack_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_ipv6dual_stack_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_ipv6dual_stack_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) byok kms keyId
         """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
-    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyInfos")
-    def kms_key_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentKmsKeyInfoArgs']]]]:
+    def kms_key_infos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentKmsKeyInfoArgs']]]]:
         """
         BYOK key info
         """
         return pulumi.get(self, "kms_key_infos")
 
     @kms_key_infos.setter
-    def kms_key_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentKmsKeyInfoArgs']]]]):
+    def kms_key_infos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentKmsKeyInfoArgs']]]]):
         pulumi.set(self, "kms_key_infos", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="lockboxId")
-    def lockbox_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lockbox_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
         """
         return pulumi.get(self, "lockbox_id")
 
     @lockbox_id.setter
-    def lockbox_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lockbox_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lockbox_id", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenancePolicy")
-    def maintenance_policy(self) -> Optional[pulumi.Input['FusionEnvironmentMaintenancePolicyArgs']]:
+    def maintenance_policy(self) -> pulumi.Input[Optional['FusionEnvironmentMaintenancePolicyArgs']]:
         """
         (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
         """
         return pulumi.get(self, "maintenance_policy")
 
     @maintenance_policy.setter
-    def maintenance_policy(self, value: Optional[pulumi.Input['FusionEnvironmentMaintenancePolicyArgs']]):
+    def maintenance_policy(self, value: pulumi.Input[Optional['FusionEnvironmentMaintenancePolicyArgs']]):
         pulumi.set(self, "maintenance_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="publicUrl")
-    def public_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Public URL
         """
         return pulumi.get(self, "public_url")
 
     @public_url.setter
-    def public_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_url", value)
 
     @_builtins.property
     @pulumi.getter
-    def refreshes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRefreshArgs']]]]:
+    def refreshes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentRefreshArgs']]]]:
         """
         Describes a refresh of a fusion environment
         """
         return pulumi.get(self, "refreshes")
 
     @refreshes.setter
-    def refreshes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRefreshArgs']]]]):
+    def refreshes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentRefreshArgs']]]]):
         pulumi.set(self, "refreshes", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentRuleArgs']]]]:
         """
         (Updatable) Rules.
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the ServiceInstance.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subscriptionIds")
-    def subscription_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def subscription_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of subscription IDs.
         """
         return pulumi.get(self, "subscription_ids")
 
     @subscription_ids.setter
-    def subscription_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def subscription_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "subscription_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="systemName")
-    def system_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def system_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Environment Specific Guid/ System Name
         """
         return pulumi.get(self, "system_name")
 
     @system_name.setter
-    def system_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def system_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "system_name", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpcomingMaintenance")
-    def time_upcoming_maintenance(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_upcoming_maintenance(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The next maintenance for this environment
         """
         return pulumi.get(self, "time_upcoming_maintenance")
 
     @time_upcoming_maintenance.setter
-    def time_upcoming_maintenance(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_upcoming_maintenance(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_upcoming_maintenance", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Version of Fusion Apps used by this environment
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
@@ -741,20 +741,20 @@ class FusionEnvironment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_egress_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentAdditionalEgressRuleArgs', 'FusionEnvironmentAdditionalEgressRuleArgsDict']]]]] = None,
-                 additional_language_packs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 create_fusion_environment_admin_user_details: Optional[pulumi.Input[Union['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs', 'FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 fusion_environment_family_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 fusion_environment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_ipv6dual_stack_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 maintenance_policy: Optional[pulumi.Input[Union['FusionEnvironmentMaintenancePolicyArgs', 'FusionEnvironmentMaintenancePolicyArgsDict']]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentRuleArgs', 'FusionEnvironmentRuleArgsDict']]]]] = None,
+                 additional_egress_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FusionEnvironmentAdditionalEgressRuleArgs', 'FusionEnvironmentAdditionalEgressRuleArgsDict']]]]] = None,
+                 additional_language_packs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 create_fusion_environment_admin_user_details: pulumi.Input[Optional[Union['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs', 'FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 fusion_environment_family_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 fusion_environment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_ipv6dual_stack_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 maintenance_policy: pulumi.Input[Optional[Union['FusionEnvironmentMaintenancePolicyArgs', 'FusionEnvironmentMaintenancePolicyArgsDict']]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FusionEnvironmentRuleArgs', 'FusionEnvironmentRuleArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Fusion Environment resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -784,8 +784,8 @@ class FusionEnvironment(pulumi.CustomResource):
             additional_egress_rules=[{
                 "description": fusion_environment_additional_egress_rules_description,
                 "destination_cidr": fusion_environment_additional_egress_rules_destination_cidr,
-                "max_destination_port": fusion_environment_additional_egress_rules_max_destination_port,
-                "min_destination_port": fusion_environment_additional_egress_rules_min_destination_port,
+                "max_destination_port": int(fusion_environment_additional_egress_rules_max_destination_port),
+                "min_destination_port": int(fusion_environment_additional_egress_rules_min_destination_port),
             }],
             additional_language_packs=fusion_environment_additional_language_packs,
             defined_tags={
@@ -795,7 +795,7 @@ class FusionEnvironment(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_ipv6dual_stack_enabled=fusion_environment_is_ipv6dual_stack_enabled,
+            is_ipv6dual_stack_enabled=fusion_environment_is_ipv6dual_stack_enabled == "true",
             kms_key_id=test_key["id"],
             maintenance_policy={
                 "environment_maintenance_override": fusion_environment_maintenance_policy_environment_maintenance_override,
@@ -871,8 +871,8 @@ class FusionEnvironment(pulumi.CustomResource):
             additional_egress_rules=[{
                 "description": fusion_environment_additional_egress_rules_description,
                 "destination_cidr": fusion_environment_additional_egress_rules_destination_cidr,
-                "max_destination_port": fusion_environment_additional_egress_rules_max_destination_port,
-                "min_destination_port": fusion_environment_additional_egress_rules_min_destination_port,
+                "max_destination_port": int(fusion_environment_additional_egress_rules_max_destination_port),
+                "min_destination_port": int(fusion_environment_additional_egress_rules_min_destination_port),
             }],
             additional_language_packs=fusion_environment_additional_language_packs,
             defined_tags={
@@ -882,7 +882,7 @@ class FusionEnvironment(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_ipv6dual_stack_enabled=fusion_environment_is_ipv6dual_stack_enabled,
+            is_ipv6dual_stack_enabled=fusion_environment_is_ipv6dual_stack_enabled == "true",
             kms_key_id=test_key["id"],
             maintenance_policy={
                 "environment_maintenance_override": fusion_environment_maintenance_policy_environment_maintenance_override,
@@ -922,20 +922,20 @@ class FusionEnvironment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 additional_egress_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentAdditionalEgressRuleArgs', 'FusionEnvironmentAdditionalEgressRuleArgsDict']]]]] = None,
-                 additional_language_packs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 create_fusion_environment_admin_user_details: Optional[pulumi.Input[Union['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs', 'FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 fusion_environment_family_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 fusion_environment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_ipv6dual_stack_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 maintenance_policy: Optional[pulumi.Input[Union['FusionEnvironmentMaintenancePolicyArgs', 'FusionEnvironmentMaintenancePolicyArgsDict']]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentRuleArgs', 'FusionEnvironmentRuleArgsDict']]]]] = None,
+                 additional_egress_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FusionEnvironmentAdditionalEgressRuleArgs', 'FusionEnvironmentAdditionalEgressRuleArgsDict']]]]] = None,
+                 additional_language_packs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 create_fusion_environment_admin_user_details: pulumi.Input[Optional[Union['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs', 'FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 fusion_environment_family_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 fusion_environment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_ipv6dual_stack_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 maintenance_policy: pulumi.Input[Optional[Union['FusionEnvironmentMaintenancePolicyArgs', 'FusionEnvironmentMaintenancePolicyArgsDict']]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FusionEnvironmentRuleArgs', 'FusionEnvironmentRuleArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -995,36 +995,36 @@ class FusionEnvironment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            additional_egress_rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentAdditionalEgressRuleArgs', 'FusionEnvironmentAdditionalEgressRuleArgsDict']]]]] = None,
-            additional_language_packs: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            applied_patch_bundles: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            create_fusion_environment_admin_user_details: Optional[pulumi.Input[Union['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs', 'FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict']]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            dns_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-            domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            fusion_environment_family_id: Optional[pulumi.Input[_builtins.str]] = None,
-            fusion_environment_type: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_domain_url: Optional[pulumi.Input[_builtins.str]] = None,
-            is_break_glass_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_ipv6dual_stack_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            kms_key_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentKmsKeyInfoArgs', 'FusionEnvironmentKmsKeyInfoArgsDict']]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            lockbox_id: Optional[pulumi.Input[_builtins.str]] = None,
-            maintenance_policy: Optional[pulumi.Input[Union['FusionEnvironmentMaintenancePolicyArgs', 'FusionEnvironmentMaintenancePolicyArgsDict']]] = None,
-            public_url: Optional[pulumi.Input[_builtins.str]] = None,
-            refreshes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentRefreshArgs', 'FusionEnvironmentRefreshArgsDict']]]]] = None,
-            rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentRuleArgs', 'FusionEnvironmentRuleArgsDict']]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            subscription_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            system_name: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_upcoming_maintenance: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None) -> 'FusionEnvironment':
+            additional_egress_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FusionEnvironmentAdditionalEgressRuleArgs', 'FusionEnvironmentAdditionalEgressRuleArgsDict']]]]] = None,
+            additional_language_packs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            applied_patch_bundles: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            create_fusion_environment_admin_user_details: pulumi.Input[Optional[Union['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs', 'FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict']]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dns_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            fusion_environment_family_id: pulumi.Input[Optional[_builtins.str]] = None,
+            fusion_environment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_domain_url: pulumi.Input[Optional[_builtins.str]] = None,
+            is_break_glass_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_ipv6dual_stack_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FusionEnvironmentKmsKeyInfoArgs', 'FusionEnvironmentKmsKeyInfoArgsDict']]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            lockbox_id: pulumi.Input[Optional[_builtins.str]] = None,
+            maintenance_policy: pulumi.Input[Optional[Union['FusionEnvironmentMaintenancePolicyArgs', 'FusionEnvironmentMaintenancePolicyArgsDict']]] = None,
+            public_url: pulumi.Input[Optional[_builtins.str]] = None,
+            refreshes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FusionEnvironmentRefreshArgs', 'FusionEnvironmentRefreshArgsDict']]]]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FusionEnvironmentRuleArgs', 'FusionEnvironmentRuleArgsDict']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subscription_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            system_name: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_upcoming_maintenance: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> 'FusionEnvironment':
         """
         Get an existing FusionEnvironment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

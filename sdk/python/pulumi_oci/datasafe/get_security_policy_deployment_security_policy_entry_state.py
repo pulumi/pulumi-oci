@@ -160,7 +160,7 @@ def get_security_policy_deployment_security_policy_entry_state(security_policy_d
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_deployment_security_policy_entry_state = oci.DataSafe.get_security_policy_deployment_security_policy_entry_state(security_policy_deployment_id=test_security_policy_deployment["id"],
+    test_security_policy_deployment_security_policy_entry_state = oci.datasafe.get_security_policy_deployment_security_policy_entry_state(security_policy_deployment_id=test_security_policy_deployment["id"],
         security_policy_entry_state_id=test_security_policy_entry_state["id"])
     ```
 
@@ -184,8 +184,8 @@ def get_security_policy_deployment_security_policy_entry_state(security_policy_d
         security_policy_entry_id=pulumi.get(__ret__, 'security_policy_entry_id'),
         security_policy_entry_state_id=pulumi.get(__ret__, 'security_policy_entry_state_id'),
         target_id=pulumi.get(__ret__, 'target_id'))
-def get_security_policy_deployment_security_policy_entry_state_output(security_policy_deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                      security_policy_entry_state_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_security_policy_deployment_security_policy_entry_state_output(security_policy_deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                      security_policy_entry_state_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult]:
     """
     This data source provides details about a specific Security Policy Deployment Security Policy Entry State resource in Oracle Cloud Infrastructure Data Safe service.
@@ -198,7 +198,7 @@ def get_security_policy_deployment_security_policy_entry_state_output(security_p
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_deployment_security_policy_entry_state = oci.DataSafe.get_security_policy_deployment_security_policy_entry_state(security_policy_deployment_id=test_security_policy_deployment["id"],
+    test_security_policy_deployment_security_policy_entry_state = oci.datasafe.get_security_policy_deployment_security_policy_entry_state(security_policy_deployment_id=test_security_policy_deployment["id"],
         security_policy_entry_state_id=test_security_policy_entry_state["id"])
     ```
 

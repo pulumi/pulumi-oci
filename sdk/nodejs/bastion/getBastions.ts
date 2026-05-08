@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBastions = oci.Bastion.getBastions({
+ * const testBastions = oci.bastion.getBastions({
  *     compartmentId: compartmentId,
  *     bastionId: testBastion.id,
  *     bastionLifecycleState: bastionBastionLifecycleState,
@@ -94,7 +94,7 @@ export interface GetBastionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBastions = oci.Bastion.getBastions({
+ * const testBastions = oci.bastion.getBastions({
  *     compartmentId: compartmentId,
  *     bastionId: testBastion.id,
  *     bastionLifecycleState: bastionBastionLifecycleState,
@@ -120,18 +120,18 @@ export interface GetBastionsOutputArgs {
     /**
      * The unique identifier (OCID) of the bastion in which to list resources.
      */
-    bastionId?: pulumi.Input<string>;
+    bastionId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      */
-    bastionLifecycleState?: pulumi.Input<string>;
+    bastionLifecycleState?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier (OCID) of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Bastion.GetBastionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Bastion.GetBastionsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the entire name given.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

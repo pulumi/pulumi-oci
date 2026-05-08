@@ -214,14 +214,14 @@ def get_domains_policies(attribute_sets: Optional[Sequence[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_policies = oci.Identity.get_domains_policies(idcs_endpoint=test_domain["url"],
-        policy_count=policy_policy_count,
+    test_policies = oci.identity.get_domains_policies(idcs_endpoint=test_domain["url"],
+        policy_count=int(policy_policy_count),
         policy_filter=policy_policy_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=policy_authorization,
         resource_type_schema_version=policy_resource_type_schema_version,
-        start_index=policy_start_index)
+        start_index=int(policy_start_index))
     ```
 
 
@@ -266,17 +266,17 @@ def get_domains_policies(attribute_sets: Optional[Sequence[_builtins.str]] = Non
         sort_order=pulumi.get(__ret__, 'sort_order'),
         start_index=pulumi.get(__ret__, 'start_index'),
         total_results=pulumi.get(__ret__, 'total_results'))
-def get_domains_policies_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                policy_count: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                policy_filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                sort_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                sort_order: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                start_index: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_domains_policies_output(attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                policy_count: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                policy_filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                sort_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                sort_order: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                start_index: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsPoliciesResult]:
     """
     This data source provides the list of Policies in Oracle Cloud Infrastructure Identity Domains service.
@@ -289,14 +289,14 @@ def get_domains_policies_output(attribute_sets: Optional[pulumi.Input[Optional[S
     import pulumi
     import pulumi_oci as oci
 
-    test_policies = oci.Identity.get_domains_policies(idcs_endpoint=test_domain["url"],
-        policy_count=policy_policy_count,
+    test_policies = oci.identity.get_domains_policies(idcs_endpoint=test_domain["url"],
+        policy_count=int(policy_policy_count),
         policy_filter=policy_policy_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=policy_authorization,
         resource_type_schema_version=policy_resource_type_schema_version,
-        start_index=policy_start_index)
+        start_index=int(policy_start_index))
     ```
 
 

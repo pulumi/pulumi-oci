@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListingPackages = oci.Marketplace.getListingPackages({
+ * const testListingPackages = oci.marketplace.getListingPackages({
  *     listingId: testListing.id,
  *     compartmentId: compartmentId,
  *     packageType: listingPackagePackageType,
@@ -120,7 +120,7 @@ export interface GetListingPackagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListingPackages = oci.Marketplace.getListingPackages({
+ * const testListingPackages = oci.marketplace.getListingPackages({
  *     listingId: testListing.id,
  *     compartmentId: compartmentId,
  *     packageType: listingPackagePackageType,
@@ -146,8 +146,8 @@ export interface GetListingPackagesOutputArgs {
     /**
      * The unique identifier for the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Marketplace.GetListingPackagesFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Marketplace.GetListingPackagesFilterArgs>[] | undefined>;
     /**
      * The unique identifier for the listing.
      */
@@ -155,9 +155,9 @@ export interface GetListingPackagesOutputArgs {
     /**
      * A filter to return only packages that match the given package type exactly.
      */
-    packageType?: pulumi.Input<string>;
+    packageType?: pulumi.Input<string | undefined>;
     /**
      * The version of the package. Package versions are unique within a listing.
      */
-    packageVersion?: pulumi.Input<string>;
+    packageVersion?: pulumi.Input<string | undefined>;
 }

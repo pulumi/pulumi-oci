@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccDemandSignals = oci.DemandSignal.getOccDemandSignals({
+ * const testOccDemandSignals = oci.demandsignal.getOccDemandSignals({
  *     compartmentId: compartmentId,
  *     displayName: occDemandSignalDisplayName,
  *     id: occDemandSignalId,
@@ -97,7 +97,7 @@ export interface GetOccDemandSignalsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccDemandSignals = oci.DemandSignal.getOccDemandSignals({
+ * const testOccDemandSignals = oci.demandsignal.getOccDemandSignals({
  *     compartmentId: compartmentId,
  *     displayName: occDemandSignalDisplayName,
  *     id: occDemandSignalId,
@@ -124,18 +124,18 @@ export interface GetOccDemandSignalsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DemandSignal.GetOccDemandSignalsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DemandSignal.GetOccDemandSignalsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OccDemandSignal.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

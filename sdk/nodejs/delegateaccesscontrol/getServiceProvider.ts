@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceProvider = oci.DelegateAccessControl.getServiceProvider({
+ * const testServiceProvider = oci.delegateaccesscontrol.getServiceProvider({
  *     serviceProviderId: testServiceProviderOciDelegateAccessControlServiceProvider.id,
  * });
  * ```
@@ -110,7 +110,7 @@ export interface GetServiceProviderResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceProvider = oci.DelegateAccessControl.getServiceProvider({
+ * const testServiceProvider = oci.delegateaccesscontrol.getServiceProvider({
  *     serviceProviderId: testServiceProviderOciDelegateAccessControlServiceProvider.id,
  * });
  * ```

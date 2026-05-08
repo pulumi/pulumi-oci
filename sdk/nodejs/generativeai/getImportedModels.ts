@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testImportedModels = oci.GenerativeAi.getImportedModels({
+ * const testImportedModels = oci.generativeai.getImportedModels({
  *     compartmentId: compartmentId,
  *     capabilities: importedModelCapability,
  *     displayName: importedModelDisplayName,
@@ -98,7 +98,7 @@ export interface GetImportedModelsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testImportedModels = oci.GenerativeAi.getImportedModels({
+ * const testImportedModels = oci.generativeai.getImportedModels({
  *     compartmentId: compartmentId,
  *     capabilities: importedModelCapability,
  *     displayName: importedModelDisplayName,
@@ -128,7 +128,7 @@ export interface GetImportedModelsOutputArgs {
     /**
      * A filter to return only resources their capability matches the given capability.
      */
-    capabilities?: pulumi.Input<pulumi.Input<string>[]>;
+    capabilities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
@@ -136,18 +136,18 @@ export interface GetImportedModelsOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.GetImportedModelsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.GetImportedModelsFilterArgs>[] | undefined>;
     /**
      * The ID of the importedModel.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire vendor given.
      */
-    vendor?: pulumi.Input<string>;
+    vendor?: pulumi.Input<string | undefined>;
 }

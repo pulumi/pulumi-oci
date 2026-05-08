@@ -147,27 +147,27 @@ export interface NetworkFirewallPolicyAddressListState {
     /**
      * (Updatable) List of addresses.
      */
-    addresses?: pulumi.Input<pulumi.Input<string>[]>;
+    addresses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The description of the address list. This field can be used to add additional info.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Unique name to identify the group of addresses to be used in the policy rules.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */
-    networkFirewallPolicyId?: pulumi.Input<string>;
+    networkFirewallPolicyId?: pulumi.Input<string | undefined>;
     /**
      * OCID of the Network Firewall Policy this Address List belongs to.
      */
-    parentResourceId?: pulumi.Input<string>;
+    parentResourceId?: pulumi.Input<string | undefined>;
     /**
      * Count of total addresses in the AddressList
      */
-    totalAddresses?: pulumi.Input<number>;
+    totalAddresses?: pulumi.Input<number | undefined>;
     /**
      * Type of address List. The accepted values are - * FQDN * IP
      *
@@ -175,7 +175,7 @@ export interface NetworkFirewallPolicyAddressListState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -189,11 +189,11 @@ export interface NetworkFirewallPolicyAddressListArgs {
     /**
      * (Updatable) The description of the address list. This field can be used to add additional info.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Unique name to identify the group of addresses to be used in the policy rules.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */

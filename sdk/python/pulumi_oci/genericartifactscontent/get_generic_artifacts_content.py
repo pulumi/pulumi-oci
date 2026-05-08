@@ -71,7 +71,7 @@ def get_generic_artifacts_content(artifact_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_generic_artifacts_content = oci.GenericArtifactsContent.get_generic_artifacts_content(artifact_id=test_artifact["id"])
+    test_generic_artifacts_content = oci.genericartifactscontent.get_generic_artifacts_content(artifact_id=test_artifact["id"])
     ```
 
 
@@ -85,7 +85,7 @@ def get_generic_artifacts_content(artifact_id: Optional[_builtins.str] = None,
     return AwaitableGetGenericArtifactsContentResult(
         artifact_id=pulumi.get(__ret__, 'artifact_id'),
         id=pulumi.get(__ret__, 'id'))
-def get_generic_artifacts_content_output(artifact_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_generic_artifacts_content_output(artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGenericArtifactsContentResult]:
     """
     This data source provides details about a specific Generic Artifacts Content resource in Oracle Cloud Infrastructure Generic Artifacts Content service.
@@ -98,7 +98,7 @@ def get_generic_artifacts_content_output(artifact_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_generic_artifacts_content = oci.GenericArtifactsContent.get_generic_artifacts_content(artifact_id=test_artifact["id"])
+    test_generic_artifacts_content = oci.genericartifactscontent.get_generic_artifacts_content(artifact_id=test_artifact["id"])
     ```
 
 

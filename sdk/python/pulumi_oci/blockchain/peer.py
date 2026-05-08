@@ -25,7 +25,7 @@ class PeerArgs:
                  blockchain_platform_id: pulumi.Input[_builtins.str],
                  ocpu_allocation_param: pulumi.Input['PeerOcpuAllocationParamArgs'],
                  role: pulumi.Input[_builtins.str],
-                 alias: Optional[pulumi.Input[_builtins.str]] = None):
+                 alias: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Peer resource.
 
@@ -100,28 +100,28 @@ class PeerArgs:
 
     @_builtins.property
     @pulumi.getter
-    def alias(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alias(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         peer alias
         """
         return pulumi.get(self, "alias")
 
     @alias.setter
-    def alias(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alias(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alias", value)
 
 
 @pulumi.input_type
 class _PeerState:
     def __init__(__self__, *,
-                 ad: Optional[pulumi.Input[_builtins.str]] = None,
-                 alias: Optional[pulumi.Input[_builtins.str]] = None,
-                 blockchain_platform_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocpu_allocation_param: Optional[pulumi.Input['PeerOcpuAllocationParamArgs']] = None,
-                 peer_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 ad: pulumi.Input[Optional[_builtins.str]] = None,
+                 alias: pulumi.Input[Optional[_builtins.str]] = None,
+                 blockchain_platform_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocpu_allocation_param: pulumi.Input[Optional['PeerOcpuAllocationParamArgs']] = None,
+                 peer_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Peer resources.
 
@@ -157,79 +157,79 @@ class _PeerState:
 
     @_builtins.property
     @pulumi.getter
-    def ad(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ad(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Availability Domain to place new peer
         """
         return pulumi.get(self, "ad")
 
     @ad.setter
-    def ad(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ad(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ad", value)
 
     @_builtins.property
     @pulumi.getter
-    def alias(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alias(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         peer alias
         """
         return pulumi.get(self, "alias")
 
     @alias.setter
-    def alias(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alias(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alias", value)
 
     @_builtins.property
     @pulumi.getter(name="blockchainPlatformId")
-    def blockchain_platform_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def blockchain_platform_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique service identifier.
         """
         return pulumi.get(self, "blockchain_platform_id")
 
     @blockchain_platform_id.setter
-    def blockchain_platform_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def blockchain_platform_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "blockchain_platform_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Host on which the Peer exists
         """
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter(name="ocpuAllocationParam")
-    def ocpu_allocation_param(self) -> Optional[pulumi.Input['PeerOcpuAllocationParamArgs']]:
+    def ocpu_allocation_param(self) -> pulumi.Input[Optional['PeerOcpuAllocationParamArgs']]:
         """
         (Updatable) OCPU allocation parameter
         """
         return pulumi.get(self, "ocpu_allocation_param")
 
     @ocpu_allocation_param.setter
-    def ocpu_allocation_param(self, value: Optional[pulumi.Input['PeerOcpuAllocationParamArgs']]):
+    def ocpu_allocation_param(self, value: pulumi.Input[Optional['PeerOcpuAllocationParamArgs']]):
         pulumi.set(self, "ocpu_allocation_param", value)
 
     @_builtins.property
     @pulumi.getter(name="peerKey")
-    def peer_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         peer identifier
         """
         return pulumi.get(self, "peer_key")
 
     @peer_key.setter
-    def peer_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Peer role
 
@@ -240,19 +240,19 @@ class _PeerState:
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the peer.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
@@ -262,11 +262,11 @@ class Peer(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ad: Optional[pulumi.Input[_builtins.str]] = None,
-                 alias: Optional[pulumi.Input[_builtins.str]] = None,
-                 blockchain_platform_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocpu_allocation_param: Optional[pulumi.Input[Union['PeerOcpuAllocationParamArgs', 'PeerOcpuAllocationParamArgsDict']]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
+                 ad: pulumi.Input[Optional[_builtins.str]] = None,
+                 alias: pulumi.Input[Optional[_builtins.str]] = None,
+                 blockchain_platform_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocpu_allocation_param: pulumi.Input[Optional[Union['PeerOcpuAllocationParamArgs', 'PeerOcpuAllocationParamArgsDict']]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Peer resource in Oracle Cloud Infrastructure Blockchain service.
@@ -367,11 +367,11 @@ class Peer(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ad: Optional[pulumi.Input[_builtins.str]] = None,
-                 alias: Optional[pulumi.Input[_builtins.str]] = None,
-                 blockchain_platform_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocpu_allocation_param: Optional[pulumi.Input[Union['PeerOcpuAllocationParamArgs', 'PeerOcpuAllocationParamArgsDict']]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
+                 ad: pulumi.Input[Optional[_builtins.str]] = None,
+                 alias: pulumi.Input[Optional[_builtins.str]] = None,
+                 blockchain_platform_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocpu_allocation_param: pulumi.Input[Optional[Union['PeerOcpuAllocationParamArgs', 'PeerOcpuAllocationParamArgsDict']]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -407,14 +407,14 @@ class Peer(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            ad: Optional[pulumi.Input[_builtins.str]] = None,
-            alias: Optional[pulumi.Input[_builtins.str]] = None,
-            blockchain_platform_id: Optional[pulumi.Input[_builtins.str]] = None,
-            host: Optional[pulumi.Input[_builtins.str]] = None,
-            ocpu_allocation_param: Optional[pulumi.Input[Union['PeerOcpuAllocationParamArgs', 'PeerOcpuAllocationParamArgsDict']]] = None,
-            peer_key: Optional[pulumi.Input[_builtins.str]] = None,
-            role: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None) -> 'Peer':
+            ad: pulumi.Input[Optional[_builtins.str]] = None,
+            alias: pulumi.Input[Optional[_builtins.str]] = None,
+            blockchain_platform_id: pulumi.Input[Optional[_builtins.str]] = None,
+            host: pulumi.Input[Optional[_builtins.str]] = None,
+            ocpu_allocation_param: pulumi.Input[Optional[Union['PeerOcpuAllocationParamArgs', 'PeerOcpuAllocationParamArgsDict']]] = None,
+            peer_key: pulumi.Input[Optional[_builtins.str]] = None,
+            role: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> 'Peer':
         """
         Get an existing Peer resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

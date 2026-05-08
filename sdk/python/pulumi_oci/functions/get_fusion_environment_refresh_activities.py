@@ -141,7 +141,7 @@ def get_fusion_environment_refresh_activities(display_name: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_refresh_activities = oci.Functions.get_fusion_environment_refresh_activities(fusion_environment_id=test_fusion_environment["id"],
+    test_fusion_environment_refresh_activities = oci.functions.get_fusion_environment_refresh_activities(fusion_environment_id=test_fusion_environment["id"],
         display_name=fusion_environment_refresh_activity_display_name,
         state=fusion_environment_refresh_activity_state,
         time_expected_finish_less_than_or_equal_to=fusion_environment_refresh_activity_time_expected_finish_less_than_or_equal_to,
@@ -174,12 +174,12 @@ def get_fusion_environment_refresh_activities(display_name: Optional[_builtins.s
         state=pulumi.get(__ret__, 'state'),
         time_expected_finish_less_than_or_equal_to=pulumi.get(__ret__, 'time_expected_finish_less_than_or_equal_to'),
         time_scheduled_start_greater_than_or_equal_to=pulumi.get(__ret__, 'time_scheduled_start_greater_than_or_equal_to'))
-def get_fusion_environment_refresh_activities_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFusionEnvironmentRefreshActivitiesFilterArgs', 'GetFusionEnvironmentRefreshActivitiesFilterArgsDict']]]]] = None,
-                                                     fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     time_expected_finish_less_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     time_scheduled_start_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_fusion_environment_refresh_activities_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFusionEnvironmentRefreshActivitiesFilterArgs', 'GetFusionEnvironmentRefreshActivitiesFilterArgsDict']]]]] = None,
+                                                     fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     time_expected_finish_less_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     time_scheduled_start_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentRefreshActivitiesResult]:
     """
     This data source provides the list of Fusion Environment Refresh Activities in Oracle Cloud Infrastructure Fusion Apps service.
@@ -192,7 +192,7 @@ def get_fusion_environment_refresh_activities_output(display_name: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_refresh_activities = oci.Functions.get_fusion_environment_refresh_activities(fusion_environment_id=test_fusion_environment["id"],
+    test_fusion_environment_refresh_activities = oci.functions.get_fusion_environment_refresh_activities(fusion_environment_id=test_fusion_environment["id"],
         display_name=fusion_environment_refresh_activity_display_name,
         state=fusion_environment_refresh_activity_state,
         time_expected_finish_less_than_or_equal_to=fusion_environment_refresh_activity_time_expected_finish_less_than_or_equal_to,

@@ -153,11 +153,11 @@ def get_batch_batch_contexts(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_batch_batch_contexts_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBatchBatchContextsFilterArgs', 'GetBatchBatchContextsFilterArgsDict']]]]] = None,
-                                    id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_batch_batch_contexts_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBatchBatchContextsFilterArgs', 'GetBatchBatchContextsFilterArgsDict']]]]] = None,
+                                    id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBatchBatchContextsResult]:
     """
     This data source provides the list of Batch Contexts in Oracle Cloud Infrastructure Batch service.

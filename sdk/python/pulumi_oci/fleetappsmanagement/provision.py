@@ -27,12 +27,12 @@ class ProvisionArgs:
                  package_catalog_item_id: pulumi.Input[_builtins.str],
                  tf_variable_region_id: pulumi.Input[_builtins.str],
                  tf_variable_tenancy_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 provision_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 tf_variable_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tf_variable_current_user_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 provision_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 tf_variable_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tf_variable_current_user_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Provision resource.
 
@@ -150,107 +150,107 @@ class ProvisionArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="provisionDescription")
-    def provision_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def provision_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A description of the provision.
         """
         return pulumi.get(self, "provision_description")
 
     @provision_description.setter
-    def provision_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def provision_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "provision_description", value)
 
     @_builtins.property
     @pulumi.getter(name="tfVariableCompartmentId")
-    def tf_variable_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tf_variable_compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An optional variable added to a list of RMS variables for createStack API. Overrides the one supplied in configuration file.
         """
         return pulumi.get(self, "tf_variable_compartment_id")
 
     @tf_variable_compartment_id.setter
-    def tf_variable_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tf_variable_compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tf_variable_compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="tfVariableCurrentUserId")
-    def tf_variable_current_user_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tf_variable_current_user_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An optional variable added to a list of RMS variables for createStack API. Overrides the one supplied in configuration file.
         """
         return pulumi.get(self, "tf_variable_current_user_id")
 
     @tf_variable_current_user_id.setter
-    def tf_variable_current_user_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tf_variable_current_user_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tf_variable_current_user_id", value)
 
 
 @pulumi.input_type
 class _ProvisionState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_catalog_item_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_catalog_item_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_catalog_item_listing_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_catalog_item_listing_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deployed_resources: Optional[pulumi.Input[Sequence[pulumi.Input['ProvisionDeployedResourceArgs']]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 package_catalog_item_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 package_catalog_item_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 package_catalog_item_listing_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 package_catalog_item_listing_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 provision_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 rms_apply_job_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 stack_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 tf_outputs: Optional[pulumi.Input[Sequence[pulumi.Input['ProvisionTfOutputArgs']]]] = None,
-                 tf_variable_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tf_variable_current_user_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tf_variable_region_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tf_variable_tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_catalog_item_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_catalog_item_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_catalog_item_listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_catalog_item_listing_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deployed_resources: pulumi.Input[Optional[Sequence[pulumi.Input['ProvisionDeployedResourceArgs']]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 package_catalog_item_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 package_catalog_item_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 package_catalog_item_listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 package_catalog_item_listing_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 provision_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 rms_apply_job_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 stack_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 tf_outputs: pulumi.Input[Optional[Sequence[pulumi.Input['ProvisionTfOutputArgs']]]] = None,
+                 tf_variable_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tf_variable_current_user_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tf_variable_region_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tf_variable_tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Provision resources.
 
@@ -343,295 +343,295 @@ class _ProvisionState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the FamProvision in.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="configCatalogItemDisplayName")
-    def config_catalog_item_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def config_catalog_item_display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A display Name of the Catalog Item in the Catalog.
         """
         return pulumi.get(self, "config_catalog_item_display_name")
 
     @config_catalog_item_display_name.setter
-    def config_catalog_item_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def config_catalog_item_display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_catalog_item_display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="configCatalogItemId")
-    def config_catalog_item_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def config_catalog_item_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Catalog Item to a file with key/value pairs to set up variables for createStack API.
         """
         return pulumi.get(self, "config_catalog_item_id")
 
     @config_catalog_item_id.setter
-    def config_catalog_item_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def config_catalog_item_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_catalog_item_id", value)
 
     @_builtins.property
     @pulumi.getter(name="configCatalogItemListingId")
-    def config_catalog_item_listing_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def config_catalog_item_listing_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A listing ID of the Catalog Item in the Catalog.
         """
         return pulumi.get(self, "config_catalog_item_listing_id")
 
     @config_catalog_item_listing_id.setter
-    def config_catalog_item_listing_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def config_catalog_item_listing_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_catalog_item_listing_id", value)
 
     @_builtins.property
     @pulumi.getter(name="configCatalogItemListingVersion")
-    def config_catalog_item_listing_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def config_catalog_item_listing_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A listing version of the Catalog Item in the Catalog.
         """
         return pulumi.get(self, "config_catalog_item_listing_version")
 
     @config_catalog_item_listing_version.setter
-    def config_catalog_item_listing_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def config_catalog_item_listing_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_catalog_item_listing_version", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deployedResources")
-    def deployed_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProvisionDeployedResourceArgs']]]]:
+    def deployed_resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ProvisionDeployedResourceArgs']]]]:
         """
         The deployed resources and their summary
         """
         return pulumi.get(self, "deployed_resources")
 
     @deployed_resources.setter
-    def deployed_resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProvisionDeployedResourceArgs']]]]):
+    def deployed_resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ProvisionDeployedResourceArgs']]]]):
         pulumi.set(self, "deployed_resources", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="fleetId")
-    def fleet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fleet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
         """
         return pulumi.get(self, "fleet_id")
 
     @fleet_id.setter
-    def fleet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fleet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fleet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message that describes the current state of the FamProvision in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="packageCatalogItemDisplayName")
-    def package_catalog_item_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def package_catalog_item_display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A display Name of the Catalog Item in the Catalog.
         """
         return pulumi.get(self, "package_catalog_item_display_name")
 
     @package_catalog_item_display_name.setter
-    def package_catalog_item_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def package_catalog_item_display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "package_catalog_item_display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="packageCatalogItemId")
-    def package_catalog_item_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def package_catalog_item_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Catalog Item.
         """
         return pulumi.get(self, "package_catalog_item_id")
 
     @package_catalog_item_id.setter
-    def package_catalog_item_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def package_catalog_item_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "package_catalog_item_id", value)
 
     @_builtins.property
     @pulumi.getter(name="packageCatalogItemListingId")
-    def package_catalog_item_listing_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def package_catalog_item_listing_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A listing ID of the Catalog Item in the Catalog.
         """
         return pulumi.get(self, "package_catalog_item_listing_id")
 
     @package_catalog_item_listing_id.setter
-    def package_catalog_item_listing_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def package_catalog_item_listing_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "package_catalog_item_listing_id", value)
 
     @_builtins.property
     @pulumi.getter(name="packageCatalogItemListingVersion")
-    def package_catalog_item_listing_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def package_catalog_item_listing_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A listing version of the Catalog Item in the Catalog.
         """
         return pulumi.get(self, "package_catalog_item_listing_version")
 
     @package_catalog_item_listing_version.setter
-    def package_catalog_item_listing_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def package_catalog_item_listing_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "package_catalog_item_listing_version", value)
 
     @_builtins.property
     @pulumi.getter(name="provisionDescription")
-    def provision_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def provision_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A description of the provision.
         """
         return pulumi.get(self, "provision_description")
 
     @provision_description.setter
-    def provision_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def provision_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "provision_description", value)
 
     @_builtins.property
     @pulumi.getter(name="rmsApplyJobId")
-    def rms_apply_job_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def rms_apply_job_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the RMS APPLY Job.
         """
         return pulumi.get(self, "rms_apply_job_id")
 
     @rms_apply_job_id.setter
-    def rms_apply_job_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def rms_apply_job_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rms_apply_job_id", value)
 
     @_builtins.property
     @pulumi.getter(name="stackId")
-    def stack_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def stack_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the RMS Stack.
         """
         return pulumi.get(self, "stack_id")
 
     @stack_id.setter
-    def stack_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def stack_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "stack_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the FamProvision.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="tfOutputs")
-    def tf_outputs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProvisionTfOutputArgs']]]]:
+    def tf_outputs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ProvisionTfOutputArgs']]]]:
         """
         Outputs from the pulumi up job
         """
         return pulumi.get(self, "tf_outputs")
 
     @tf_outputs.setter
-    def tf_outputs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProvisionTfOutputArgs']]]]):
+    def tf_outputs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ProvisionTfOutputArgs']]]]):
         pulumi.set(self, "tf_outputs", value)
 
     @_builtins.property
     @pulumi.getter(name="tfVariableCompartmentId")
-    def tf_variable_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tf_variable_compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An optional variable added to a list of RMS variables for createStack API. Overrides the one supplied in configuration file.
         """
         return pulumi.get(self, "tf_variable_compartment_id")
 
     @tf_variable_compartment_id.setter
-    def tf_variable_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tf_variable_compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tf_variable_compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="tfVariableCurrentUserId")
-    def tf_variable_current_user_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tf_variable_current_user_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An optional variable added to a list of RMS variables for createStack API. Overrides the one supplied in configuration file.
         """
         return pulumi.get(self, "tf_variable_current_user_id")
 
     @tf_variable_current_user_id.setter
-    def tf_variable_current_user_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tf_variable_current_user_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tf_variable_current_user_id", value)
 
     @_builtins.property
     @pulumi.getter(name="tfVariableRegionId")
-    def tf_variable_region_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tf_variable_region_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A mandatory variable added to a list of RMS variables for createStack API. Overrides the one supplied in configuration file.
         """
         return pulumi.get(self, "tf_variable_region_id")
 
     @tf_variable_region_id.setter
-    def tf_variable_region_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tf_variable_region_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tf_variable_region_id", value)
 
     @_builtins.property
     @pulumi.getter(name="tfVariableTenancyId")
-    def tf_variable_tenancy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tf_variable_tenancy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A mandatory variable added to a list of RMS variables for createStack API. Overrides the one supplied in configuration file.
 
@@ -642,31 +642,31 @@ class _ProvisionState:
         return pulumi.get(self, "tf_variable_tenancy_id")
 
     @tf_variable_tenancy_id.setter
-    def tf_variable_tenancy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tf_variable_tenancy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tf_variable_tenancy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the FamProvision was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the FamProvision was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -676,18 +676,18 @@ class Provision(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_catalog_item_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 package_catalog_item_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 provision_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 tf_variable_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tf_variable_current_user_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tf_variable_region_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tf_variable_tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_catalog_item_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 package_catalog_item_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 provision_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 tf_variable_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tf_variable_current_user_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tf_variable_region_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tf_variable_tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Provision resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -813,18 +813,18 @@ class Provision(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_catalog_item_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 package_catalog_item_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 provision_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 tf_variable_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tf_variable_current_user_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tf_variable_region_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tf_variable_tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_catalog_item_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 package_catalog_item_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 provision_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 tf_variable_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tf_variable_current_user_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tf_variable_region_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tf_variable_tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -883,33 +883,33 @@ class Provision(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            config_catalog_item_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            config_catalog_item_id: Optional[pulumi.Input[_builtins.str]] = None,
-            config_catalog_item_listing_id: Optional[pulumi.Input[_builtins.str]] = None,
-            config_catalog_item_listing_version: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            deployed_resources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProvisionDeployedResourceArgs', 'ProvisionDeployedResourceArgsDict']]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            package_catalog_item_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            package_catalog_item_id: Optional[pulumi.Input[_builtins.str]] = None,
-            package_catalog_item_listing_id: Optional[pulumi.Input[_builtins.str]] = None,
-            package_catalog_item_listing_version: Optional[pulumi.Input[_builtins.str]] = None,
-            provision_description: Optional[pulumi.Input[_builtins.str]] = None,
-            rms_apply_job_id: Optional[pulumi.Input[_builtins.str]] = None,
-            stack_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            tf_outputs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProvisionTfOutputArgs', 'ProvisionTfOutputArgsDict']]]]] = None,
-            tf_variable_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            tf_variable_current_user_id: Optional[pulumi.Input[_builtins.str]] = None,
-            tf_variable_region_id: Optional[pulumi.Input[_builtins.str]] = None,
-            tf_variable_tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'Provision':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config_catalog_item_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            config_catalog_item_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config_catalog_item_listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config_catalog_item_listing_version: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            deployed_resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProvisionDeployedResourceArgs', 'ProvisionDeployedResourceArgsDict']]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            package_catalog_item_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            package_catalog_item_id: pulumi.Input[Optional[_builtins.str]] = None,
+            package_catalog_item_listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+            package_catalog_item_listing_version: pulumi.Input[Optional[_builtins.str]] = None,
+            provision_description: pulumi.Input[Optional[_builtins.str]] = None,
+            rms_apply_job_id: pulumi.Input[Optional[_builtins.str]] = None,
+            stack_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tf_outputs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProvisionTfOutputArgs', 'ProvisionTfOutputArgsDict']]]]] = None,
+            tf_variable_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            tf_variable_current_user_id: pulumi.Input[Optional[_builtins.str]] = None,
+            tf_variable_region_id: pulumi.Input[Optional[_builtins.str]] = None,
+            tf_variable_tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'Provision':
         """
         Get an existing Provision resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -216,7 +216,7 @@ def get_oci_cache_config_set(oci_cache_config_set_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_cache_config_set = oci.Redis.get_oci_cache_config_set(oci_cache_config_set_id=test_oci_cache_config_set_oci_redis_oci_cache_config_set["id"])
+    test_oci_cache_config_set = oci.redis.get_oci_cache_config_set(oci_cache_config_set_id=test_oci_cache_config_set_oci_redis_oci_cache_config_set["id"])
     ```
 
 
@@ -242,7 +242,7 @@ def get_oci_cache_config_set(oci_cache_config_set_id: Optional[_builtins.str] = 
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_oci_cache_config_set_output(oci_cache_config_set_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_oci_cache_config_set_output(oci_cache_config_set_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOciCacheConfigSetResult]:
     """
     This data source provides details about a specific Oci Cache Config Set resource in Oracle Cloud Infrastructure Redis service.
@@ -255,7 +255,7 @@ def get_oci_cache_config_set_output(oci_cache_config_set_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_oci_cache_config_set = oci.Redis.get_oci_cache_config_set(oci_cache_config_set_id=test_oci_cache_config_set_oci_redis_oci_cache_config_set["id"])
+    test_oci_cache_config_set = oci.redis.get_oci_cache_config_set(oci_cache_config_set_id=test_oci_cache_config_set_oci_redis_oci_cache_config_set["id"])
     ```
 
 

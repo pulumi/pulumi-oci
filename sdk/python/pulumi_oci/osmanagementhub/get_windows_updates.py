@@ -128,7 +128,7 @@ def get_windows_updates(classification_types: Optional[Sequence[_builtins.str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_windows_updates = oci.OsManagementHub.get_windows_updates(compartment_id=compartment_id,
+    test_windows_updates = oci.osmanagementhub.get_windows_updates(compartment_id=compartment_id,
         classification_types=windows_update_classification_type,
         display_name_contains=windows_update_display_name_contains,
         names=windows_update_name)
@@ -157,11 +157,11 @@ def get_windows_updates(classification_types: Optional[Sequence[_builtins.str]] 
         id=pulumi.get(__ret__, 'id'),
         names=pulumi.get(__ret__, 'names'),
         windows_update_collections=pulumi.get(__ret__, 'windows_update_collections'))
-def get_windows_updates_output(classification_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                               compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               display_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWindowsUpdatesFilterArgs', 'GetWindowsUpdatesFilterArgsDict']]]]] = None,
-                               names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_windows_updates_output(classification_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                               compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWindowsUpdatesFilterArgs', 'GetWindowsUpdatesFilterArgsDict']]]]] = None,
+                               names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWindowsUpdatesResult]:
     """
     This data source provides the list of Windows Updates in Oracle Cloud Infrastructure Os Management Hub service.
@@ -174,7 +174,7 @@ def get_windows_updates_output(classification_types: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_windows_updates = oci.OsManagementHub.get_windows_updates(compartment_id=compartment_id,
+    test_windows_updates = oci.osmanagementhub.get_windows_updates(compartment_id=compartment_id,
         classification_types=windows_update_classification_type,
         display_name_contains=windows_update_display_name_contains,
         names=windows_update_name)

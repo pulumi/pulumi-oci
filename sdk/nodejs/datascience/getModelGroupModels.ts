@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelGroupModels = oci.DataScience.getModelGroupModels({
+ * const testModelGroupModels = oci.datascience.getModelGroupModels({
  *     compartmentId: compartmentId,
  *     modelGroupId: testModelGroup.id,
  *     createdBy: modelGroupModelCreatedBy,
@@ -113,7 +113,7 @@ export interface GetModelGroupModelsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelGroupModels = oci.DataScience.getModelGroupModels({
+ * const testModelGroupModels = oci.datascience.getModelGroupModels({
  *     compartmentId: compartmentId,
  *     modelGroupId: testModelGroup.id,
  *     createdBy: modelGroupModelCreatedBy,
@@ -147,16 +147,16 @@ export interface GetModelGroupModelsOutputArgs {
     /**
      * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * <b>Filter</b> results by its user-friendly name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetModelGroupModelsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetModelGroupModelsFilterArgs>[] | undefined>;
     /**
      * <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the modelGroup.
      */
@@ -164,5 +164,5 @@ export interface GetModelGroupModelsOutputArgs {
     /**
      * <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

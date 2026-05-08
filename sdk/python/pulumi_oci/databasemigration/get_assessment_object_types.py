@@ -95,7 +95,7 @@ def get_assessment_object_types(connection_type: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_assessment_object_types = oci.DatabaseMigration.get_assessment_object_types(connection_type=assessment_object_type_connection_type)
+    test_assessment_object_types = oci.databasemigration.get_assessment_object_types(connection_type=assessment_object_type_connection_type)
     ```
 
 
@@ -112,8 +112,8 @@ def get_assessment_object_types(connection_type: Optional[_builtins.str] = None,
         connection_type=pulumi.get(__ret__, 'connection_type'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_assessment_object_types_output(connection_type: Optional[pulumi.Input[_builtins.str]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAssessmentObjectTypesFilterArgs', 'GetAssessmentObjectTypesFilterArgsDict']]]]] = None,
+def get_assessment_object_types_output(connection_type: pulumi.Input[Optional[_builtins.str]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAssessmentObjectTypesFilterArgs', 'GetAssessmentObjectTypesFilterArgsDict']]]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAssessmentObjectTypesResult]:
     """
     This data source provides the list of Assessment Object Types in Oracle Cloud Infrastructure Database Migration service.
@@ -126,7 +126,7 @@ def get_assessment_object_types_output(connection_type: Optional[pulumi.Input[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_assessment_object_types = oci.DatabaseMigration.get_assessment_object_types(connection_type=assessment_object_type_connection_type)
+    test_assessment_object_types = oci.databasemigration.get_assessment_object_types(connection_type=assessment_object_type_connection_type)
     ```
 
 

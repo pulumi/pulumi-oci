@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceRules = oci.LogAnalytics.getNamespaceRules({
+ * const testNamespaceRules = oci.loganalytics.getNamespaceRules({
  *     compartmentId: compartmentId,
  *     namespace: namespaceRuleNamespace,
  *     displayName: namespaceRuleDisplayName,
@@ -117,7 +117,7 @@ export interface GetNamespaceRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceRules = oci.LogAnalytics.getNamespaceRules({
+ * const testNamespaceRules = oci.loganalytics.getNamespaceRules({
  *     compartmentId: compartmentId,
  *     namespace: namespaceRuleNamespace,
  *     displayName: namespaceRuleDisplayName,
@@ -151,12 +151,12 @@ export interface GetNamespaceRulesOutputArgs {
     /**
      * A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetNamespaceRulesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetNamespaceRulesFilterArgs>[] | undefined>;
     /**
      * The rule kind used for filtering. Only rules of the specified kind will be returned.
      */
-    kind?: pulumi.Input<string>;
+    kind?: pulumi.Input<string | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
@@ -164,9 +164,9 @@ export interface GetNamespaceRulesOutputArgs {
     /**
      * The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The target service to use for filtering.
      */
-    targetService?: pulumi.Input<string>;
+    targetService?: pulumi.Input<string | undefined>;
 }

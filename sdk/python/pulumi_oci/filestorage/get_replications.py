@@ -148,7 +148,7 @@ def get_replications(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replications = oci.FileStorage.get_replications(availability_domain=replication_availability_domain,
+    test_replications = oci.filestorage.get_replications(availability_domain=replication_availability_domain,
         compartment_id=compartment_id,
         display_name=replication_display_name,
         file_system_id=test_file_system["id"],
@@ -184,13 +184,13 @@ def get_replications(availability_domain: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         replications=pulumi.get(__ret__, 'replications'),
         state=pulumi.get(__ret__, 'state'))
-def get_replications_output(availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                            display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            file_system_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetReplicationsFilterArgs', 'GetReplicationsFilterArgsDict']]]]] = None,
-                            id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_replications_output(availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            file_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetReplicationsFilterArgs', 'GetReplicationsFilterArgsDict']]]]] = None,
+                            id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReplicationsResult]:
     """
     This data source provides the list of Replications in Oracle Cloud Infrastructure File Storage service.
@@ -203,7 +203,7 @@ def get_replications_output(availability_domain: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_replications = oci.FileStorage.get_replications(availability_domain=replication_availability_domain,
+    test_replications = oci.filestorage.get_replications(availability_domain=replication_availability_domain,
         compartment_id=compartment_id,
         display_name=replication_display_name,
         file_system_id=test_file_system["id"],

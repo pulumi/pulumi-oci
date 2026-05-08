@@ -187,35 +187,35 @@ export interface DedicatedVantagePointState {
     /**
      * (Updatable) The APM domain ID the request is intended for.
      */
-    apmDomainId?: pulumi.Input<string>;
+    apmDomainId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
      */
-    dvpStackDetails?: pulumi.Input<inputs.ApmSynthetics.DedicatedVantagePointDvpStackDetails>;
+    dvpStackDetails?: pulumi.Input<inputs.ApmSynthetics.DedicatedVantagePointDvpStackDetails | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
      */
-    monitorStatusCountMaps?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.DedicatedVantagePointMonitorStatusCountMap>[]>;
+    monitorStatusCountMaps?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.DedicatedVantagePointMonitorStatusCountMap>[] | undefined>;
     /**
      * Unique permanent name of the dedicated vantage point. This is the same as the displayName.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Name of the region.
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Status of the dedicated vantage point.
      *
@@ -223,15 +223,15 @@ export interface DedicatedVantagePointState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -245,7 +245,7 @@ export interface DedicatedVantagePointArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
      */
@@ -257,7 +257,7 @@ export interface DedicatedVantagePointArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Name of the region.
      */
@@ -269,5 +269,5 @@ export interface DedicatedVantagePointArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

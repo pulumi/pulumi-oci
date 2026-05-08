@@ -134,7 +134,7 @@ def get_masking_policy_masking_objects(filters: Optional[Sequence[Union['GetMask
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policy_masking_objects = oci.DataSafe.get_masking_policy_masking_objects(masking_policy_id=test_masking_policy["id"],
+    test_masking_policy_masking_objects = oci.datasafe.get_masking_policy_masking_objects(masking_policy_id=test_masking_policy["id"],
         objects=masking_policy_masking_object_object,
         object_types=masking_policy_masking_object_object_type,
         schema_names=masking_policy_masking_object_schema_name)
@@ -163,11 +163,11 @@ def get_masking_policy_masking_objects(filters: Optional[Sequence[Union['GetMask
         object_types=pulumi.get(__ret__, 'object_types'),
         objects=pulumi.get(__ret__, 'objects'),
         schema_names=pulumi.get(__ret__, 'schema_names'))
-def get_masking_policy_masking_objects_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaskingPolicyMaskingObjectsFilterArgs', 'GetMaskingPolicyMaskingObjectsFilterArgsDict']]]]] = None,
-                                              masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                              object_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                              objects: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                              schema_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_masking_policy_masking_objects_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaskingPolicyMaskingObjectsFilterArgs', 'GetMaskingPolicyMaskingObjectsFilterArgsDict']]]]] = None,
+                                              masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                              object_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                              objects: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                              schema_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingPolicyMaskingObjectsResult]:
     """
     This data source provides the list of Masking Policy Masking Objects in Oracle Cloud Infrastructure Data Safe service.
@@ -180,7 +180,7 @@ def get_masking_policy_masking_objects_output(filters: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policy_masking_objects = oci.DataSafe.get_masking_policy_masking_objects(masking_policy_id=test_masking_policy["id"],
+    test_masking_policy_masking_objects = oci.datasafe.get_masking_policy_masking_objects(masking_policy_id=test_masking_policy["id"],
         objects=masking_policy_masking_object_object,
         object_types=masking_policy_masking_object_object_type,
         schema_names=masking_policy_masking_object_schema_name)

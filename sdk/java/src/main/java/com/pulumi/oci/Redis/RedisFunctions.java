@@ -64,8 +64,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -106,8 +106,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -148,8 +148,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -190,8 +190,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -232,8 +232,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -274,8 +274,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -320,8 +320,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -366,8 +366,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -412,8 +412,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -458,8 +458,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -504,8 +504,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -550,8 +550,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -596,8 +596,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -638,8 +638,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -680,8 +680,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -722,8 +722,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -764,8 +764,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -806,8 +806,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -852,8 +852,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -898,8 +898,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -944,8 +944,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -990,8 +990,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1036,8 +1036,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1082,8 +1082,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1128,8 +1128,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1171,8 +1171,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1214,8 +1214,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1257,8 +1257,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1300,8 +1300,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1343,8 +1343,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1389,8 +1389,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1435,8 +1435,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1481,8 +1481,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1527,8 +1527,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1573,8 +1573,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheEngineOptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1615,8 +1615,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheEngineOptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1657,8 +1657,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheEngineOptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1699,8 +1699,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheEngineOptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1741,8 +1741,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheEngineOptionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1783,8 +1783,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1825,8 +1825,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1867,8 +1867,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1909,8 +1909,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1951,8 +1951,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheUserArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1993,8 +1993,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2037,8 +2037,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2081,8 +2081,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2125,8 +2125,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2169,8 +2169,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2213,8 +2213,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2257,8 +2257,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetOciCacheUsersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2301,8 +2301,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetRedisClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2343,8 +2343,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetRedisClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2385,8 +2385,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetRedisClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2427,8 +2427,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetRedisClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2469,8 +2469,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetRedisClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2511,8 +2511,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetRedisClusterNodesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2554,8 +2554,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetRedisClusterNodesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2597,8 +2597,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetRedisClusterNodesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2640,8 +2640,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetRedisClusterNodesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2683,8 +2683,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetRedisClusterNodesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2726,8 +2726,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetRedisClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2771,8 +2771,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetRedisClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2816,8 +2816,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetRedisClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2861,8 +2861,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetRedisClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2906,8 +2906,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetRedisClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2951,8 +2951,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetRedisClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2996,8 +2996,8 @@ public final class RedisFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Redis.RedisFunctions;
      * import com.pulumi.oci.Redis.inputs.GetRedisClustersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

@@ -140,7 +140,7 @@ def get_model_provenance(model_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model_provenance = oci.DataScience.get_model_provenance(model_id=test_model["id"])
+    test_model_provenance = oci.datascience.get_model_provenance(model_id=test_model["id"])
     ```
 
 
@@ -160,7 +160,7 @@ def get_model_provenance(model_id: Optional[_builtins.str] = None,
         script_dir=pulumi.get(__ret__, 'script_dir'),
         training_id=pulumi.get(__ret__, 'training_id'),
         training_script=pulumi.get(__ret__, 'training_script'))
-def get_model_provenance_output(model_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_model_provenance_output(model_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetModelProvenanceResult]:
     """
     This data source provides details about a specific Model Provenance resource in Oracle Cloud Infrastructure Data Science service.
@@ -173,7 +173,7 @@ def get_model_provenance_output(model_id: Optional[pulumi.Input[_builtins.str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_model_provenance = oci.DataScience.get_model_provenance(model_id=test_model["id"])
+    test_model_provenance = oci.datascience.get_model_provenance(model_id=test_model["id"])
     ```
 
 

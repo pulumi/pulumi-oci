@@ -30,11 +30,11 @@ __all__ = [
 ]
 
 class OdaInstanceRestrictedOperationArgsDict(TypedDict):
-    operation_name: NotRequired[pulumi.Input[_builtins.str]]
+    operation_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the restricted operation.
     """
-    restricting_service: NotRequired[pulumi.Input[_builtins.str]]
+    restricting_service: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the service restricting the operation.
     """
@@ -42,8 +42,8 @@ class OdaInstanceRestrictedOperationArgsDict(TypedDict):
 @pulumi.input_type
 class OdaInstanceRestrictedOperationArgs:
     def __init__(__self__, *,
-                 operation_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 restricting_service: Optional[pulumi.Input[_builtins.str]] = None):
+                 operation_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 restricting_service: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] operation_name: Name of the restricted operation.
         :param pulumi.Input[_builtins.str] restricting_service: Name of the service restricting the operation.
@@ -55,39 +55,39 @@ class OdaInstanceRestrictedOperationArgs:
 
     @_builtins.property
     @pulumi.getter(name="operationName")
-    def operation_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operation_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the restricted operation.
         """
         return pulumi.get(self, "operation_name")
 
     @operation_name.setter
-    def operation_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operation_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operation_name", value)
 
     @_builtins.property
     @pulumi.getter(name="restrictingService")
-    def restricting_service(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def restricting_service(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the service restricting the operation.
         """
         return pulumi.get(self, "restricting_service")
 
     @restricting_service.setter
-    def restricting_service(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def restricting_service(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "restricting_service", value)
 
 
 class OdaPrivateEndpointScanProxyScanListenerInfoArgsDict(TypedDict):
-    scan_listener_fqdn: NotRequired[pulumi.Input[_builtins.str]]
+    scan_listener_fqdn: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
     """
-    scan_listener_ip: NotRequired[pulumi.Input[_builtins.str]]
+    scan_listener_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A SCAN listener's IP of the customer's Real Application Cluster (RAC).
     """
-    scan_listener_port: NotRequired[pulumi.Input[_builtins.int]]
+    scan_listener_port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
     """
@@ -95,9 +95,9 @@ class OdaPrivateEndpointScanProxyScanListenerInfoArgsDict(TypedDict):
 @pulumi.input_type
 class OdaPrivateEndpointScanProxyScanListenerInfoArgs:
     def __init__(__self__, *,
-                 scan_listener_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
-                 scan_listener_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 scan_listener_port: Optional[pulumi.Input[_builtins.int]] = None):
+                 scan_listener_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
+                 scan_listener_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 scan_listener_port: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] scan_listener_fqdn: FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
         :param pulumi.Input[_builtins.str] scan_listener_ip: A SCAN listener's IP of the customer's Real Application Cluster (RAC).
@@ -112,38 +112,38 @@ class OdaPrivateEndpointScanProxyScanListenerInfoArgs:
 
     @_builtins.property
     @pulumi.getter(name="scanListenerFqdn")
-    def scan_listener_fqdn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scan_listener_fqdn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         FQDN of the customer's Real Application Cluster (RAC)'s SCAN listeners.
         """
         return pulumi.get(self, "scan_listener_fqdn")
 
     @scan_listener_fqdn.setter
-    def scan_listener_fqdn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scan_listener_fqdn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scan_listener_fqdn", value)
 
     @_builtins.property
     @pulumi.getter(name="scanListenerIp")
-    def scan_listener_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scan_listener_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A SCAN listener's IP of the customer's Real Application Cluster (RAC).
         """
         return pulumi.get(self, "scan_listener_ip")
 
     @scan_listener_ip.setter
-    def scan_listener_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scan_listener_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scan_listener_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="scanListenerPort")
-    def scan_listener_port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def scan_listener_port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port that customer's Real Application Cluster (RAC)'s SCAN listeners are listening on.
         """
         return pulumi.get(self, "scan_listener_port")
 
     @scan_listener_port.setter
-    def scan_listener_port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def scan_listener_port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "scan_listener_port", value)
 
 

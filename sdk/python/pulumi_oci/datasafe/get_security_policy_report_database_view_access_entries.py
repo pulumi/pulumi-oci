@@ -120,7 +120,7 @@ def get_security_policy_report_database_view_access_entries(filters: Optional[Se
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_report_database_view_access_entries = oci.DataSafe.get_security_policy_report_database_view_access_entries(security_policy_report_id=test_security_policy_report["id"],
+    test_security_policy_report_database_view_access_entries = oci.datasafe.get_security_policy_report_database_view_access_entries(security_policy_report_id=test_security_policy_report["id"],
         scim_query=security_policy_report_database_view_access_entry_scim_query,
         target_id=test_target["id"])
     ```
@@ -147,10 +147,10 @@ def get_security_policy_report_database_view_access_entries(filters: Optional[Se
         scim_query=pulumi.get(__ret__, 'scim_query'),
         security_policy_report_id=pulumi.get(__ret__, 'security_policy_report_id'),
         target_id=pulumi.get(__ret__, 'target_id'))
-def get_security_policy_report_database_view_access_entries_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgs', 'GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgsDict']]]]] = None,
-                                                                   scim_query: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                   security_policy_report_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                   target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_security_policy_report_database_view_access_entries_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgs', 'GetSecurityPolicyReportDatabaseViewAccessEntriesFilterArgsDict']]]]] = None,
+                                                                   scim_query: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                   security_policy_report_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                   target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityPolicyReportDatabaseViewAccessEntriesResult]:
     """
     This data source provides the list of Security Policy Report Database View Access Entries in Oracle Cloud Infrastructure Data Safe service.
@@ -165,7 +165,7 @@ def get_security_policy_report_database_view_access_entries_output(filters: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_report_database_view_access_entries = oci.DataSafe.get_security_policy_report_database_view_access_entries(security_policy_report_id=test_security_policy_report["id"],
+    test_security_policy_report_database_view_access_entries = oci.datasafe.get_security_policy_report_database_view_access_entries(security_policy_report_id=test_security_policy_report["id"],
         scim_query=security_policy_report_database_view_access_entry_scim_query,
         target_id=test_target["id"])
     ```

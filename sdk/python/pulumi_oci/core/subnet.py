@@ -21,20 +21,20 @@ class SubnetArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  vcn_id: pulumi.Input[_builtins.str],
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 dhcp_options_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ipv4cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ipv6cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv6cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 prohibit_internet_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 prohibit_public_ip_on_vnic: Optional[pulumi.Input[_builtins.bool]] = None,
-                 route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_list_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 dhcp_options_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ipv4cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ipv6cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 prohibit_internet_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 prohibit_public_ip_on_vnic: pulumi.Input[Optional[_builtins.bool]] = None,
+                 route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_list_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Subnet resource.
 
@@ -156,7 +156,7 @@ class SubnetArgs:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Controls whether the subnet is regional or specific to an availability domain. Oracle recommends creating regional subnets because they're more flexible and make it easier to implement failover across availability domains. Originally, AD-specific subnets were the only kind available to use.
 
@@ -169,12 +169,12 @@ class SubnetArgs:
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="cidrBlock")
-    def cidr_block(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cidr_block(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The CIDR IP address range of the subnet. The CIDR must maintain the following rules -
 
@@ -185,48 +185,48 @@ class SubnetArgs:
         return pulumi.get(self, "cidr_block")
 
     @cidr_block.setter
-    def cidr_block(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cidr_block(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cidr_block", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="dhcpOptionsId")
-    def dhcp_options_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dhcp_options_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options the subnet will use. If you don't provide a value, the subnet uses the VCN's default set of DHCP options.
         """
         return pulumi.get(self, "dhcp_options_id")
 
     @dhcp_options_id.setter
-    def dhcp_options_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dhcp_options_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dhcp_options_id", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dnsLabel")
-    def dns_label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dns_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
 
@@ -239,24 +239,24 @@ class SubnetArgs:
         return pulumi.get(self, "dns_label")
 
     @dns_label.setter
-    def dns_label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dns_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dns_label", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv4cidrBlocks")
-    def ipv4cidr_blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ipv4cidr_blocks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
         * Ipv4 CIDR blocks must be valid.
@@ -266,12 +266,12 @@ class SubnetArgs:
         return pulumi.get(self, "ipv4cidr_blocks")
 
     @ipv4cidr_blocks.setter
-    def ipv4cidr_blocks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ipv4cidr_blocks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ipv4cidr_blocks", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv6cidrBlock")
-    def ipv6cidr_block(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv6cidr_block(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
 
@@ -282,12 +282,12 @@ class SubnetArgs:
         return pulumi.get(self, "ipv6cidr_block")
 
     @ipv6cidr_block.setter
-    def ipv6cidr_block(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv6cidr_block(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv6cidr_block", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv6cidrBlocks")
-    def ipv6cidr_blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ipv6cidr_blocks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
         * The prefixes must be valid.
@@ -297,12 +297,12 @@ class SubnetArgs:
         return pulumi.get(self, "ipv6cidr_blocks")
 
     @ipv6cidr_blocks.setter
-    def ipv6cidr_blocks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ipv6cidr_blocks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ipv6cidr_blocks", value)
 
     @_builtins.property
     @pulumi.getter(name="prohibitInternetIngress")
-    def prohibit_internet_ingress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def prohibit_internet_ingress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
 
@@ -315,12 +315,12 @@ class SubnetArgs:
         return pulumi.get(self, "prohibit_internet_ingress")
 
     @prohibit_internet_ingress.setter
-    def prohibit_internet_ingress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def prohibit_internet_ingress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "prohibit_internet_ingress", value)
 
     @_builtins.property
     @pulumi.getter(name="prohibitPublicIpOnVnic")
-    def prohibit_public_ip_on_vnic(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def prohibit_public_ip_on_vnic(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).
 
@@ -331,59 +331,59 @@ class SubnetArgs:
         return pulumi.get(self, "prohibit_public_ip_on_vnic")
 
     @prohibit_public_ip_on_vnic.setter
-    def prohibit_public_ip_on_vnic(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def prohibit_public_ip_on_vnic(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "prohibit_public_ip_on_vnic", value)
 
     @_builtins.property
     @pulumi.getter(name="routeTableId")
-    def route_table_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def route_table_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use. If you don't provide a value, the subnet uses the VCN's default route table.
         """
         return pulumi.get(self, "route_table_id")
 
     @route_table_id.setter
-    def route_table_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def route_table_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "route_table_id", value)
 
     @_builtins.property
     @pulumi.getter(name="securityListIds")
-    def security_list_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def security_list_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The OCIDs of the security list or lists the subnet will use. If you don't provide a value, the subnet uses the VCN's default security list. Remember that security lists are associated *with the subnet*, but the rules are applied to the individual VNICs in the subnet.
         """
         return pulumi.get(self, "security_list_ids")
 
     @security_list_ids.setter
-    def security_list_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def security_list_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_list_ids", value)
 
 
 @pulumi.input_type
 class _SubnetState:
     def __init__(__self__, *,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 dhcp_options_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ipv4cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ipv6cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv6cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ipv6virtual_router_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 prohibit_internet_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 prohibit_public_ip_on_vnic: Optional[pulumi.Input[_builtins.bool]] = None,
-                 route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_list_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_domain_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_router_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_router_mac: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 dhcp_options_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ipv4cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ipv6cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ipv6virtual_router_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 prohibit_internet_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 prohibit_public_ip_on_vnic: pulumi.Input[Optional[_builtins.bool]] = None,
+                 route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_list_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_domain_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_router_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_router_mac: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Subnet resources.
 
@@ -497,7 +497,7 @@ class _SubnetState:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Controls whether the subnet is regional or specific to an availability domain. Oracle recommends creating regional subnets because they're more flexible and make it easier to implement failover across availability domains. Originally, AD-specific subnets were the only kind available to use.
 
@@ -510,12 +510,12 @@ class _SubnetState:
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="cidrBlock")
-    def cidr_block(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cidr_block(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The CIDR IP address range of the subnet. The CIDR must maintain the following rules -
 
@@ -526,60 +526,60 @@ class _SubnetState:
         return pulumi.get(self, "cidr_block")
 
     @cidr_block.setter
-    def cidr_block(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cidr_block(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cidr_block", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the subnet.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="dhcpOptionsId")
-    def dhcp_options_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dhcp_options_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options the subnet will use. If you don't provide a value, the subnet uses the VCN's default set of DHCP options.
         """
         return pulumi.get(self, "dhcp_options_id")
 
     @dhcp_options_id.setter
-    def dhcp_options_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dhcp_options_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dhcp_options_id", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dnsLabel")
-    def dns_label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dns_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
 
@@ -592,24 +592,24 @@ class _SubnetState:
         return pulumi.get(self, "dns_label")
 
     @dns_label.setter
-    def dns_label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dns_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dns_label", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv4cidrBlocks")
-    def ipv4cidr_blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ipv4cidr_blocks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of all IPv4 CIDR blocks for the subnet that meets the following criteria:
         * Ipv4 CIDR blocks must be valid.
@@ -619,12 +619,12 @@ class _SubnetState:
         return pulumi.get(self, "ipv4cidr_blocks")
 
     @ipv4cidr_blocks.setter
-    def ipv4cidr_blocks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ipv4cidr_blocks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ipv4cidr_blocks", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv6cidrBlock")
-    def ipv6cidr_block(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv6cidr_block(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6. You can't change this subnet characteristic later. All subnets are /64 in size. The subnet portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
 
@@ -635,12 +635,12 @@ class _SubnetState:
         return pulumi.get(self, "ipv6cidr_block")
 
     @ipv6cidr_block.setter
-    def ipv6cidr_block(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv6cidr_block(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv6cidr_block", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv6cidrBlocks")
-    def ipv6cidr_blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ipv6cidr_blocks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet that meets the following criteria:
         * The prefixes must be valid.
@@ -650,24 +650,24 @@ class _SubnetState:
         return pulumi.get(self, "ipv6cidr_blocks")
 
     @ipv6cidr_blocks.setter
-    def ipv6cidr_blocks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ipv6cidr_blocks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ipv6cidr_blocks", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv6virtualRouterIp")
-    def ipv6virtual_router_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv6virtual_router_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.  Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
         """
         return pulumi.get(self, "ipv6virtual_router_ip")
 
     @ipv6virtual_router_ip.setter
-    def ipv6virtual_router_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv6virtual_router_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv6virtual_router_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="prohibitInternetIngress")
-    def prohibit_internet_ingress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def prohibit_internet_ingress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
 
@@ -680,12 +680,12 @@ class _SubnetState:
         return pulumi.get(self, "prohibit_internet_ingress")
 
     @prohibit_internet_ingress.setter
-    def prohibit_internet_ingress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def prohibit_internet_ingress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "prohibit_internet_ingress", value)
 
     @_builtins.property
     @pulumi.getter(name="prohibitPublicIpOnVnic")
-    def prohibit_public_ip_on_vnic(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def prohibit_public_ip_on_vnic(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether VNICs within this subnet can have public IP addresses. Defaults to false, which means VNICs created in this subnet will automatically be assigned public IP addresses unless specified otherwise during instance launch or VNIC creation (with the `assignPublicIp` flag in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/)). If `prohibitPublicIpOnVnic` is set to true, VNICs created in this subnet cannot have public IP addresses (that is, it's a private subnet).
 
@@ -696,72 +696,72 @@ class _SubnetState:
         return pulumi.get(self, "prohibit_public_ip_on_vnic")
 
     @prohibit_public_ip_on_vnic.setter
-    def prohibit_public_ip_on_vnic(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def prohibit_public_ip_on_vnic(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "prohibit_public_ip_on_vnic", value)
 
     @_builtins.property
     @pulumi.getter(name="routeTableId")
-    def route_table_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def route_table_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the subnet will use. If you don't provide a value, the subnet uses the VCN's default route table.
         """
         return pulumi.get(self, "route_table_id")
 
     @route_table_id.setter
-    def route_table_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def route_table_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "route_table_id", value)
 
     @_builtins.property
     @pulumi.getter(name="securityListIds")
-    def security_list_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def security_list_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The OCIDs of the security list or lists the subnet will use. If you don't provide a value, the subnet uses the VCN's default security list. Remember that security lists are associated *with the subnet*, but the rules are applied to the individual VNICs in the subnet.
         """
         return pulumi.get(self, "security_list_ids")
 
     @security_list_ids.setter
-    def security_list_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def security_list_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_list_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The subnet's current state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetDomainName")
-    def subnet_domain_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_domain_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The subnet's domain name, which consists of the subnet's DNS label, the VCN's DNS label, and the `oraclevcn.com` domain.
         """
         return pulumi.get(self, "subnet_domain_name")
 
     @subnet_domain_name.setter
-    def subnet_domain_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_domain_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_domain_name", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the subnet was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vcn_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN to contain the subnet.
 
@@ -772,31 +772,31 @@ class _SubnetState:
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
-    def vcn_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vcn_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vcn_id", value)
 
     @_builtins.property
     @pulumi.getter(name="virtualRouterIp")
-    def virtual_router_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def virtual_router_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IP address of the virtual router.  Example: `10.0.14.1`
         """
         return pulumi.get(self, "virtual_router_ip")
 
     @virtual_router_ip.setter
-    def virtual_router_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def virtual_router_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "virtual_router_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="virtualRouterMac")
-    def virtual_router_mac(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def virtual_router_mac(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The MAC address of the virtual router.  Example: `00:00:00:00:00:01`
         """
         return pulumi.get(self, "virtual_router_mac")
 
     @virtual_router_mac.setter
-    def virtual_router_mac(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def virtual_router_mac(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "virtual_router_mac", value)
 
 
@@ -806,22 +806,22 @@ class Subnet(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 dhcp_options_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ipv4cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ipv6cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv6cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 prohibit_internet_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 prohibit_public_ip_on_vnic: Optional[pulumi.Input[_builtins.bool]] = None,
-                 route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_list_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 dhcp_options_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ipv4cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ipv6cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 prohibit_internet_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 prohibit_public_ip_on_vnic: pulumi.Input[Optional[_builtins.bool]] = None,
+                 route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_list_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Subnet resource in Oracle Cloud Infrastructure Core service.
@@ -884,8 +884,8 @@ class Subnet(pulumi.CustomResource):
             ipv4cidr_blocks=subnet_ipv4cidr_blocks,
             ipv6cidr_block=subnet_ipv6cidr_block,
             ipv6cidr_blocks=subnet_ipv6cidr_blocks,
-            prohibit_internet_ingress=subnet_prohibit_internet_ingress,
-            prohibit_public_ip_on_vnic=subnet_prohibit_public_ip_on_vnic,
+            prohibit_internet_ingress=subnet_prohibit_internet_ingress == "true",
+            prohibit_public_ip_on_vnic=subnet_prohibit_public_ip_on_vnic == "true",
             route_table_id=test_route_table["id"],
             security_list_ids=subnet_security_list_ids)
         ```
@@ -1025,8 +1025,8 @@ class Subnet(pulumi.CustomResource):
             ipv4cidr_blocks=subnet_ipv4cidr_blocks,
             ipv6cidr_block=subnet_ipv6cidr_block,
             ipv6cidr_blocks=subnet_ipv6cidr_blocks,
-            prohibit_internet_ingress=subnet_prohibit_internet_ingress,
-            prohibit_public_ip_on_vnic=subnet_prohibit_public_ip_on_vnic,
+            prohibit_internet_ingress=subnet_prohibit_internet_ingress == "true",
+            prohibit_public_ip_on_vnic=subnet_prohibit_public_ip_on_vnic == "true",
             route_table_id=test_route_table["id"],
             security_list_ids=subnet_security_list_ids)
         ```
@@ -1055,22 +1055,22 @@ class Subnet(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 dhcp_options_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ipv4cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ipv6cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv6cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 prohibit_internet_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 prohibit_public_ip_on_vnic: Optional[pulumi.Input[_builtins.bool]] = None,
-                 route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_list_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 dhcp_options_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ipv4cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ipv6cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 prohibit_internet_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 prohibit_public_ip_on_vnic: pulumi.Input[Optional[_builtins.bool]] = None,
+                 route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_list_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1116,28 +1116,28 @@ class Subnet(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            dhcp_options_id: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            dns_label: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            ipv4cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ipv6cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-            ipv6cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ipv6virtual_router_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            prohibit_internet_ingress: Optional[pulumi.Input[_builtins.bool]] = None,
-            prohibit_public_ip_on_vnic: Optional[pulumi.Input[_builtins.bool]] = None,
-            route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-            security_list_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet_domain_name: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
-            virtual_router_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            virtual_router_mac: Optional[pulumi.Input[_builtins.str]] = None) -> 'Subnet':
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            dhcp_options_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dns_label: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ipv4cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ipv6cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+            ipv6cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ipv6virtual_router_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            prohibit_internet_ingress: pulumi.Input[Optional[_builtins.bool]] = None,
+            prohibit_public_ip_on_vnic: pulumi.Input[Optional[_builtins.bool]] = None,
+            route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+            security_list_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_domain_name: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
+            virtual_router_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            virtual_router_mac: pulumi.Input[Optional[_builtins.str]] = None) -> 'Subnet':
         """
         Get an existing Subnet resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

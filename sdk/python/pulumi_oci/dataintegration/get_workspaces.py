@@ -121,7 +121,7 @@ def get_workspaces(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspaces = oci.DataIntegration.get_workspaces(compartment_id=compartment_id,
+    test_workspaces = oci.dataintegration.get_workspaces(compartment_id=compartment_id,
         name=workspace_name,
         state=workspace_state)
     ```
@@ -146,10 +146,10 @@ def get_workspaces(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'),
         workspaces=pulumi.get(__ret__, 'workspaces'))
-def get_workspaces_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkspacesFilterArgs', 'GetWorkspacesFilterArgsDict']]]]] = None,
-                          name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_workspaces_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWorkspacesFilterArgs', 'GetWorkspacesFilterArgsDict']]]]] = None,
+                          name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspacesResult]:
     """
     This data source provides the list of Workspaces in Oracle Cloud Infrastructure Data Integration service.
@@ -162,7 +162,7 @@ def get_workspaces_output(compartment_id: Optional[pulumi.Input[_builtins.str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_workspaces = oci.DataIntegration.get_workspaces(compartment_id=compartment_id,
+    test_workspaces = oci.dataintegration.get_workspaces(compartment_id=compartment_id,
         name=workspace_name,
         state=workspace_state)
     ```

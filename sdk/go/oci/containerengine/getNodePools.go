@@ -33,7 +33,7 @@ import (
 //				CompartmentId: compartmentId,
 //				ClusterId:     pulumi.StringRef(testCluster.Id),
 //				Name:          pulumi.StringRef(nodePoolName),
-//				States:        nodePoolState,
+//				States:        pulumi.ToArray(nodePoolState),
 //			}, nil)
 //			if err != nil {
 //				return err

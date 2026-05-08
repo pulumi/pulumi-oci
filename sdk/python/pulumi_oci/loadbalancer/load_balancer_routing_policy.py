@@ -24,7 +24,7 @@ class LoadBalancerRoutingPolicyArgs:
                  condition_language_version: pulumi.Input[_builtins.str],
                  load_balancer_id: pulumi.Input[_builtins.str],
                  rules: pulumi.Input[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleArgs']]],
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a LoadBalancerRoutingPolicy resource.
 
@@ -77,25 +77,25 @@ class LoadBalancerRoutingPolicyArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_routing_rules`
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _LoadBalancerRoutingPolicyState:
     def __init__(__self__, *,
-                 condition_language_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleArgs']]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 condition_language_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleArgs']]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LoadBalancerRoutingPolicy resources.
 
@@ -117,59 +117,59 @@ class _LoadBalancerRoutingPolicyState:
 
     @_builtins.property
     @pulumi.getter(name="conditionLanguageVersion")
-    def condition_language_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def condition_language_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The version of the language in which `condition` of `rules` are composed.
         """
         return pulumi.get(self, "condition_language_version")
 
     @condition_language_version.setter
-    def condition_language_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def condition_language_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition_language_version", value)
 
     @_builtins.property
     @pulumi.getter(name="loadBalancerId")
-    def load_balancer_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def load_balancer_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the routing policy rule list to.
         """
         return pulumi.get(self, "load_balancer_id")
 
     @load_balancer_id.setter
-    def load_balancer_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def load_balancer_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "load_balancer_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_routing_rules`
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleArgs']]]]:
         """
         (Updatable) The list of routing rules.
         """
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
@@ -179,10 +179,10 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 condition_language_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerRoutingPolicyRuleArgs', 'LoadBalancerRoutingPolicyRuleArgsDict']]]]] = None,
+                 condition_language_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LoadBalancerRoutingPolicyRuleArgs', 'LoadBalancerRoutingPolicyRuleArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Load Balancer Routing Policy resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -288,10 +288,10 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 condition_language_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerRoutingPolicyRuleArgs', 'LoadBalancerRoutingPolicyRuleArgsDict']]]]] = None,
+                 condition_language_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LoadBalancerRoutingPolicyRuleArgs', 'LoadBalancerRoutingPolicyRuleArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -322,11 +322,11 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            condition_language_version: Optional[pulumi.Input[_builtins.str]] = None,
-            load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            rules: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerRoutingPolicyRuleArgs', 'LoadBalancerRoutingPolicyRuleArgsDict']]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None) -> 'LoadBalancerRoutingPolicy':
+            condition_language_version: pulumi.Input[Optional[_builtins.str]] = None,
+            load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LoadBalancerRoutingPolicyRuleArgs', 'LoadBalancerRoutingPolicyRuleArgsDict']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> 'LoadBalancerRoutingPolicy':
         """
         Get an existing LoadBalancerRoutingPolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

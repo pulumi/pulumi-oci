@@ -153,7 +153,7 @@ def get_managed_databases(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_databases = oci.DatabaseManagement.get_managed_databases(compartment_id=compartment_id,
+    test_managed_databases = oci.databasemanagement.get_managed_databases(compartment_id=compartment_id,
         deployment_type=managed_database_deployment_type,
         external_exadata_infrastructure_id=test_external_exadata_infrastructure["id"],
         id=managed_database_id,
@@ -189,13 +189,13 @@ def get_managed_databases(compartment_id: Optional[_builtins.str] = None,
         managed_database_collections=pulumi.get(__ret__, 'managed_database_collections'),
         management_option=pulumi.get(__ret__, 'management_option'),
         name=pulumi.get(__ret__, 'name'))
-def get_managed_databases_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 deployment_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 external_exadata_infrastructure_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabasesFilterArgs', 'GetManagedDatabasesFilterArgsDict']]]]] = None,
-                                 id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 management_option: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_managed_databases_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 deployment_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 external_exadata_infrastructure_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabasesFilterArgs', 'GetManagedDatabasesFilterArgsDict']]]]] = None,
+                                 id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 management_option: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabasesResult]:
     """
     This data source provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service.
@@ -213,7 +213,7 @@ def get_managed_databases_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_databases = oci.DatabaseManagement.get_managed_databases(compartment_id=compartment_id,
+    test_managed_databases = oci.databasemanagement.get_managed_databases(compartment_id=compartment_id,
         deployment_type=managed_database_deployment_type,
         external_exadata_infrastructure_id=test_external_exadata_infrastructure["id"],
         id=managed_database_id,

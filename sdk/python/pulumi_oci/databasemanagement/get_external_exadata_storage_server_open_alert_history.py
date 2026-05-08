@@ -84,7 +84,7 @@ def get_external_exadata_storage_server_open_alert_history(external_exadata_stor
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_storage_server_open_alert_history = oci.DatabaseManagement.get_external_exadata_storage_server_open_alert_history(external_exadata_storage_server_id=test_external_exadata_storage_server["id"])
+    test_external_exadata_storage_server_open_alert_history = oci.databasemanagement.get_external_exadata_storage_server_open_alert_history(external_exadata_storage_server_id=test_external_exadata_storage_server["id"])
     ```
 
 
@@ -99,7 +99,7 @@ def get_external_exadata_storage_server_open_alert_history(external_exadata_stor
         alerts=pulumi.get(__ret__, 'alerts'),
         external_exadata_storage_server_id=pulumi.get(__ret__, 'external_exadata_storage_server_id'),
         id=pulumi.get(__ret__, 'id'))
-def get_external_exadata_storage_server_open_alert_history_output(external_exadata_storage_server_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_external_exadata_storage_server_open_alert_history_output(external_exadata_storage_server_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalExadataStorageServerOpenAlertHistoryResult]:
     """
     This data source provides details about a specific External Exadata Storage Server Open Alert History resource in Oracle Cloud Infrastructure Database Management service.
@@ -112,7 +112,7 @@ def get_external_exadata_storage_server_open_alert_history_output(external_exada
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_storage_server_open_alert_history = oci.DatabaseManagement.get_external_exadata_storage_server_open_alert_history(external_exadata_storage_server_id=test_external_exadata_storage_server["id"])
+    test_external_exadata_storage_server_open_alert_history = oci.databasemanagement.get_external_exadata_storage_server_open_alert_history(external_exadata_storage_server_id=test_external_exadata_storage_server["id"])
     ```
 
 

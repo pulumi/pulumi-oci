@@ -116,7 +116,7 @@ def get_resources(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_resources = oci.UsageProxy.get_resources(compartment_id=compartment_id,
+    test_resources = oci.usageproxy.get_resources(compartment_id=compartment_id,
         service_name=test_service["name"],
         entitlement_id=test_entitlement["id"])
     ```
@@ -141,10 +141,10 @@ def get_resources(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         resources_collections=pulumi.get(__ret__, 'resources_collections'),
         service_name=pulumi.get(__ret__, 'service_name'))
-def get_resources_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                         entitlement_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetResourcesFilterArgs', 'GetResourcesFilterArgsDict']]]]] = None,
-                         service_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_resources_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                         entitlement_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetResourcesFilterArgs', 'GetResourcesFilterArgsDict']]]]] = None,
+                         service_name: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResourcesResult]:
     """
     This data source provides the list of Resources in Oracle Cloud Infrastructure Usage Proxy service.
@@ -158,7 +158,7 @@ def get_resources_output(compartment_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_resources = oci.UsageProxy.get_resources(compartment_id=compartment_id,
+    test_resources = oci.usageproxy.get_resources(compartment_id=compartment_id,
         service_name=test_service["name"],
         entitlement_id=test_entitlement["id"])
     ```

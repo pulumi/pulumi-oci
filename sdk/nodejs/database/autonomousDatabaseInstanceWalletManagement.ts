@@ -20,8 +20,8 @@ import * as utilities from "../utilities";
  *
  * const testAutonomousDatabaseInstanceWalletManagement = new oci.database.AutonomousDatabaseInstanceWalletManagement("test_autonomous_database_instance_wallet_management", {
  *     autonomousDatabaseId: testAutonomousDatabase.id,
- *     gracePeriod: autonomousDatabaseInstanceWalletManagementGracePeriod,
- *     shouldRotate: autonomousDatabaseInstanceWalletManagementShouldRotate,
+ *     gracePeriod: Number(autonomousDatabaseInstanceWalletManagementGracePeriod),
+ *     shouldRotate: autonomousDatabaseInstanceWalletManagementShouldRotate === "true",
  * });
  * ```
  *
@@ -123,11 +123,11 @@ export interface AutonomousDatabaseInstanceWalletManagementState {
     /**
      * (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    autonomousDatabaseId?: pulumi.Input<string>;
+    autonomousDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
      */
-    gracePeriod?: pulumi.Input<number>;
+    gracePeriod?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
      *
@@ -135,15 +135,15 @@ export interface AutonomousDatabaseInstanceWalletManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    shouldRotate?: pulumi.Input<boolean>;
+    shouldRotate?: pulumi.Input<boolean | undefined>;
     /**
      * The current lifecycle state of the Autonomous AI Database wallet.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the wallet was last rotated.
      */
-    timeRotated?: pulumi.Input<string>;
+    timeRotated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -157,7 +157,7 @@ export interface AutonomousDatabaseInstanceWalletManagementArgs {
     /**
      * (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
      */
-    gracePeriod?: pulumi.Input<number>;
+    gracePeriod?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
      *
@@ -165,5 +165,5 @@ export interface AutonomousDatabaseInstanceWalletManagementArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    shouldRotate?: pulumi.Input<boolean>;
+    shouldRotate?: pulumi.Input<boolean | undefined>;
 }

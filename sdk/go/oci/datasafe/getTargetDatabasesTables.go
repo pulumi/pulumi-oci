@@ -31,9 +31,9 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := datasafe.GetTargetDatabasesTables(ctx, &datasafe.GetTargetDatabasesTablesArgs{
 //				TargetDatabaseId:   testTargetDatabase.Id,
-//				SchemaNames:        targetDatabasesTableSchemaName,
+//				SchemaNames:        pulumi.ToArray(targetDatabasesTableSchemaName),
 //				SchemaNameContains: pulumi.StringRef(targetDatabasesTableSchemaNameContains),
-//				TableNames:         testTable.Name,
+//				TableNames:         pulumi.ToArray(testTable.Name),
 //				TableNameContains:  pulumi.StringRef(targetDatabasesTableTableNameContains),
 //			}, nil)
 //			if err != nil {

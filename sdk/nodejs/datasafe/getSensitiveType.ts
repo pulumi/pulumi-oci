@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveType = oci.DataSafe.getSensitiveType({
+ * const testSensitiveType = oci.datasafe.getSensitiveType({
  *     sensitiveTypeId: testSensitiveTypeOciDataSafeSensitiveType.id,
  * });
  * ```
@@ -134,7 +134,7 @@ export interface GetSensitiveTypeResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveType = oci.DataSafe.getSensitiveType({
+ * const testSensitiveType = oci.datasafe.getSensitiveType({
  *     sensitiveTypeId: testSensitiveTypeOciDataSafeSensitiveType.id,
  * });
  * ```

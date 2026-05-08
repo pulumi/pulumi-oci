@@ -142,35 +142,35 @@ export interface ListingPackageAgreementState {
     /**
      * The unique identifier for the agreement.
      */
-    agreementId?: pulumi.Input<string>;
+    agreementId?: pulumi.Input<string | undefined>;
     /**
      * Who authored the agreement.
      */
-    author?: pulumi.Input<string>;
+    author?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for the compartment, required in gov regions.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The content URL of the agreement.
      */
-    contentUrl?: pulumi.Input<string>;
+    contentUrl?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for the listing.
      */
-    listingId?: pulumi.Input<string>;
+    listingId?: pulumi.Input<string | undefined>;
     /**
      * The version of the package. Package versions are unique within a listing.
      */
-    packageVersion?: pulumi.Input<string>;
+    packageVersion?: pulumi.Input<string | undefined>;
     /**
      * Textual prompt to read and accept the agreement.
      */
-    prompt?: pulumi.Input<string>;
+    prompt?: pulumi.Input<string | undefined>;
     /**
      * A time-based signature that can be used to accept an agreement or remove a previously accepted agreement from the list that Marketplace checks before a deployment.
      */
-    signature?: pulumi.Input<string>;
+    signature?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -184,7 +184,7 @@ export interface ListingPackageAgreementArgs {
     /**
      * The unique identifier for the compartment, required in gov regions.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for the listing.
      */

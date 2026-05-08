@@ -144,9 +144,9 @@ def get_management_agent_install_keys(access_level: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_install_keys = oci.ManagementAgent.get_management_agent_install_keys(compartment_id=compartment_id,
+    test_management_agent_install_keys = oci.managementagent.get_management_agent_install_keys(compartment_id=compartment_id,
         access_level=management_agent_install_key_access_level,
-        compartment_id_in_subtree=management_agent_install_key_compartment_id_in_subtree,
+        compartment_id_in_subtree=management_agent_install_key_compartment_id_in_subtree == "true",
         display_name=management_agent_install_key_display_name,
         state=management_agent_install_key_state)
     ```
@@ -177,12 +177,12 @@ def get_management_agent_install_keys(access_level: Optional[_builtins.str] = No
         id=pulumi.get(__ret__, 'id'),
         management_agent_install_keys=pulumi.get(__ret__, 'management_agent_install_keys'),
         state=pulumi.get(__ret__, 'state'))
-def get_management_agent_install_keys_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagementAgentInstallKeysFilterArgs', 'GetManagementAgentInstallKeysFilterArgsDict']]]]] = None,
-                                             state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_management_agent_install_keys_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagementAgentInstallKeysFilterArgs', 'GetManagementAgentInstallKeysFilterArgsDict']]]]] = None,
+                                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementAgentInstallKeysResult]:
     """
     This data source provides the list of Management Agent Install Keys in Oracle Cloud Infrastructure Management Agent service.
@@ -195,9 +195,9 @@ def get_management_agent_install_keys_output(access_level: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_install_keys = oci.ManagementAgent.get_management_agent_install_keys(compartment_id=compartment_id,
+    test_management_agent_install_keys = oci.managementagent.get_management_agent_install_keys(compartment_id=compartment_id,
         access_level=management_agent_install_key_access_level,
-        compartment_id_in_subtree=management_agent_install_key_compartment_id_in_subtree,
+        compartment_id_in_subtree=management_agent_install_key_compartment_id_in_subtree == "true",
         display_name=management_agent_install_key_display_name,
         state=management_agent_install_key_state)
     ```

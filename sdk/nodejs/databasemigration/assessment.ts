@@ -48,7 +48,7 @@ import * as utilities from "../utilities";
  *     displayName: assessmentDisplayName,
  *     excludeObjects: [{
  *         object: assessmentExcludeObjectsObject,
- *         isOmitExcludedTableFromReplication: assessmentExcludeObjectsIsOmitExcludedTableFromReplication,
+ *         isOmitExcludedTableFromReplication: assessmentExcludeObjectsIsOmitExcludedTableFromReplication === "true",
  *         owner: assessmentExcludeObjectsOwner,
  *         schema: assessmentExcludeObjectsSchema,
  *         type: assessmentExcludeObjectsType,
@@ -56,7 +56,7 @@ import * as utilities from "../utilities";
  *     freeformTags: assessmentFreeformTags,
  *     includeObjects: [{
  *         object: assessmentIncludeObjectsObject,
- *         isOmitExcludedTableFromReplication: assessmentIncludeObjectsIsOmitExcludedTableFromReplication,
+ *         isOmitExcludedTableFromReplication: assessmentIncludeObjectsIsOmitExcludedTableFromReplication === "true",
  *         owner: assessmentIncludeObjectsOwner,
  *         schema: assessmentIncludeObjectsSchema,
  *         type: assessmentIncludeObjectsType,
@@ -291,95 +291,95 @@ export interface AssessmentState {
     /**
      * (Updatable) Time allowed for the application downtime.
      */
-    acceptableDowntime?: pulumi.Input<string>;
+    acceptableDowntime?: pulumi.Input<string | undefined>;
     /**
      * The migration type of the migration to be performed.
      */
-    assessmentMigrationType?: pulumi.Input<string>;
+    assessmentMigrationType?: pulumi.Input<string | undefined>;
     /**
      * Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
      */
-    bulkIncludeExcludeData?: pulumi.Input<string>;
+    bulkIncludeExcludeData?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the resource being referenced.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The type of assessment creation.
      */
-    creationType?: pulumi.Input<string>;
+    creationType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
      */
-    databaseCombination?: pulumi.Input<string>;
+    databaseCombination?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The size of a source database.
      */
-    databaseDataSize?: pulumi.Input<string>;
+    databaseDataSize?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) DDL expectation values.
      */
-    ddlExpectation?: pulumi.Input<string>;
+    ddlExpectation?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
      */
-    excludeObjects?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.AssessmentExcludeObject>[]>;
+    excludeObjects?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.AssessmentExcludeObject>[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Database objects to include from migration, cannot be specified alongside 'excludeObjects'
      */
-    includeObjects?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.AssessmentIncludeObject>[]>;
+    includeObjects?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.AssessmentIncludeObject>[] | undefined>;
     /**
      * True if CDB should be defined, false otherwise.
      */
-    isCdbSupported?: pulumi.Input<boolean>;
+    isCdbSupported?: pulumi.Input<boolean | undefined>;
     /**
      * The OCID of the resource being referenced.
      */
-    migrationId?: pulumi.Input<string>;
+    migrationId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A network speed in Megabits per second.
      */
-    networkSpeedMegabitPerSecond?: pulumi.Input<string>;
+    networkSpeedMegabitPerSecond?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Source Assessment Connection object
      */
-    sourceDatabaseConnection?: pulumi.Input<inputs.DatabaseMigration.AssessmentSourceDatabaseConnection>;
+    sourceDatabaseConnection?: pulumi.Input<inputs.DatabaseMigration.AssessmentSourceDatabaseConnection | undefined>;
     /**
      * The current state of the Assessment resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Target Assessment Connection object
      */
-    targetDatabaseConnection?: pulumi.Input<inputs.DatabaseMigration.AssessmentTargetDatabaseConnection>;
+    targetDatabaseConnection?: pulumi.Input<inputs.DatabaseMigration.AssessmentTargetDatabaseConnection | undefined>;
     /**
      * An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -393,7 +393,7 @@ export interface AssessmentArgs {
     /**
      * Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
      */
-    bulkIncludeExcludeData?: pulumi.Input<string>;
+    bulkIncludeExcludeData?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the resource being referenced.
      */
@@ -401,7 +401,7 @@ export interface AssessmentArgs {
     /**
      * (Updatable) The type of assessment creation.
      */
-    creationType?: pulumi.Input<string>;
+    creationType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
      */
@@ -417,27 +417,27 @@ export interface AssessmentArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
      */
-    excludeObjects?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.AssessmentExcludeObject>[]>;
+    excludeObjects?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.AssessmentExcludeObject>[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Database objects to include from migration, cannot be specified alongside 'excludeObjects'
      */
-    includeObjects?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.AssessmentIncludeObject>[]>;
+    includeObjects?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.AssessmentIncludeObject>[] | undefined>;
     /**
      * (Updatable) A network speed in Megabits per second.
      */

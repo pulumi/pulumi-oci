@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaMigrationAnalysis = oci.Jms.getUtilsJavaMigrationAnalysis({
+ * const testJavaMigrationAnalysis = oci.jms.getUtilsJavaMigrationAnalysis({
  *     analysisProjectName: testProject.name,
  *     compartmentId: compartmentId,
  *     id: javaMigrationAnalysiId,
@@ -87,7 +87,7 @@ export interface GetUtilsJavaMigrationAnalysisResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaMigrationAnalysis = oci.Jms.getUtilsJavaMigrationAnalysis({
+ * const testJavaMigrationAnalysis = oci.jms.getUtilsJavaMigrationAnalysis({
  *     analysisProjectName: testProject.name,
  *     compartmentId: compartmentId,
  *     id: javaMigrationAnalysiId,
@@ -112,14 +112,14 @@ export interface GetUtilsJavaMigrationAnalysisOutputArgs {
     /**
      * The project name of the Performance Tuning Analysis to query for.
      */
-    analysisProjectName?: pulumi.Input<string>;
+    analysisProjectName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetUtilsJavaMigrationAnalysisFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetUtilsJavaMigrationAnalysisFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java Migration Analysis.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
 }

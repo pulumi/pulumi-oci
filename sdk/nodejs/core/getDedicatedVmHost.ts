@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDedicatedVmHost = oci.Core.getDedicatedVmHost({
+ * const testDedicatedVmHost = oci.core.getDedicatedVmHost({
  *     dedicatedVmHostId: testDedicatedVmHostOciCoreDedicatedVmHost.id,
  * });
  * ```
@@ -129,7 +129,7 @@ export interface GetDedicatedVmHostResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDedicatedVmHost = oci.Core.getDedicatedVmHost({
+ * const testDedicatedVmHost = oci.core.getDedicatedVmHost({
  *     dedicatedVmHostId: testDedicatedVmHostOciCoreDedicatedVmHost.id,
  * });
  * ```

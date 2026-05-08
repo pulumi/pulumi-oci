@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBackups = oci.Database.getBackups({
+ * const testBackups = oci.database.getBackups({
  *     backupDestinationType: backupBackupDestinationType,
  *     compartmentId: compartmentId,
  *     databaseId: testDatabase.id,
@@ -142,7 +142,7 @@ export interface GetBackupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBackups = oci.Database.getBackups({
+ * const testBackups = oci.database.getBackups({
  *     backupDestinationType: backupBackupDestinationType,
  *     compartmentId: compartmentId,
  *     databaseId: testDatabase.id,
@@ -179,38 +179,38 @@ export interface GetBackupsOutputArgs {
     /**
      * A filter to return only resources that match the given backup destination type.
      */
-    backupDestinationType?: pulumi.Input<string>;
+    backupDestinationType?: pulumi.Input<string | undefined>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      */
-    databaseId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetBackupsFilterArgs>[]>;
+    databaseId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetBackupsFilterArgs>[] | undefined>;
     /**
      * If provided, filters the results to the set of database versions which are supported for the given shape family.
      */
-    shapeFamily?: pulumi.Input<string>;
+    shapeFamily?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The start of date-time range of expiration for the long term backups to be fetched.
      */
-    timeExpiryScheduledGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeExpiryScheduledGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * The end of date-time range of expiration for the long term backups to be fetched.
      */
-    timeExpiryScheduledLessThan?: pulumi.Input<string>;
+    timeExpiryScheduledLessThan?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only backups that matches with the given type of Backup.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given database version.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }

@@ -95,7 +95,7 @@ def get_ssl_cipher_suites(filters: Optional[Sequence[Union['GetSslCipherSuitesFi
     import pulumi
     import pulumi_oci as oci
 
-    test_ssl_cipher_suites = oci.LoadBalancer.get_ssl_cipher_suites(load_balancer_id=test_load_balancer["id"])
+    test_ssl_cipher_suites = oci.loadbalancer.get_ssl_cipher_suites(load_balancer_id=test_load_balancer["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_ssl_cipher_suites(filters: Optional[Sequence[Union['GetSslCipherSuitesFi
         id=pulumi.get(__ret__, 'id'),
         load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'),
         ssl_cipher_suites=pulumi.get(__ret__, 'ssl_cipher_suites'))
-def get_ssl_cipher_suites_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSslCipherSuitesFilterArgs', 'GetSslCipherSuitesFilterArgsDict']]]]] = None,
-                                 load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_ssl_cipher_suites_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSslCipherSuitesFilterArgs', 'GetSslCipherSuitesFilterArgsDict']]]]] = None,
+                                 load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSslCipherSuitesResult]:
     """
     This data source provides the list of Ssl Cipher Suites in Oracle Cloud Infrastructure Load Balancer service.
@@ -126,7 +126,7 @@ def get_ssl_cipher_suites_output(filters: Optional[pulumi.Input[Optional[Sequenc
     import pulumi
     import pulumi_oci as oci
 
-    test_ssl_cipher_suites = oci.LoadBalancer.get_ssl_cipher_suites(load_balancer_id=test_load_balancer["id"])
+    test_ssl_cipher_suites = oci.loadbalancer.get_ssl_cipher_suites(load_balancer_id=test_load_balancer["id"])
     ```
 
 

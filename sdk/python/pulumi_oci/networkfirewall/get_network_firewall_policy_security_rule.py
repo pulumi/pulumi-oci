@@ -186,8 +186,8 @@ def get_network_firewall_policy_security_rule(name: Optional[_builtins.str] = No
         parent_resource_id=pulumi.get(__ret__, 'parent_resource_id'),
         positions=pulumi.get(__ret__, 'positions'),
         priority_order=pulumi.get(__ret__, 'priority_order'))
-def get_network_firewall_policy_security_rule_output(name: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_network_firewall_policy_security_rule_output(name: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicySecurityRuleResult]:
     """
     This data source provides details about a specific Network Firewall Policy Security Rule resource in Oracle Cloud Infrastructure Network Firewall service.

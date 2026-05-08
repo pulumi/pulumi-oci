@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProperties = oci.FleetAppsManagement.getProperties({
+ * const testProperties = oci.fleetappsmanagement.getProperties({
  *     compartmentId: compartmentId,
  *     displayName: propertyDisplayName,
  *     id: propertyId,
@@ -119,7 +119,7 @@ export interface GetPropertiesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProperties = oci.FleetAppsManagement.getProperties({
+ * const testProperties = oci.fleetappsmanagement.getProperties({
  *     compartmentId: compartmentId,
  *     displayName: propertyDisplayName,
  *     id: propertyId,
@@ -150,26 +150,26 @@ export interface GetPropertiesOutputArgs {
     /**
      * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetPropertiesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetPropertiesFilterArgs>[] | undefined>;
     /**
      * Unique identifier or OCID for listing a single Property by id. Either compartmentId or id must be provided.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources their scope matches the given scope.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return properties whose type matches the given type.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

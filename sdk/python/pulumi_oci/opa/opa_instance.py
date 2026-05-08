@@ -24,14 +24,14 @@ class OpaInstanceArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
                  shape_name: pulumi.Input[_builtins.str],
-                 consumption_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 idcs_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_breakglass_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metering_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 consumption_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 idcs_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_breakglass_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metering_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a OpaInstance resource.
 
@@ -109,91 +109,91 @@ class OpaInstanceArgs:
 
     @_builtins.property
     @pulumi.getter(name="consumptionModel")
-    def consumption_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def consumption_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Parameter specifying which entitlement to use for billing purposes
         """
         return pulumi.get(self, "consumption_model")
 
     @consumption_model.setter
-    def consumption_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def consumption_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "consumption_model", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description of the Oracle Process Automation instance.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsAt")
-    def idcs_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IDCS Authentication token. This is required for all realms with IDCS. This property is optional, as it is not required for non-IDCS realms.
         """
         return pulumi.get(self, "idcs_at")
 
     @idcs_at.setter
-    def idcs_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_at", value)
 
     @_builtins.property
     @pulumi.getter(name="isBreakglassEnabled")
-    def is_breakglass_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_breakglass_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         indicates if breakGlass is enabled for the opa instance.
         """
         return pulumi.get(self, "is_breakglass_enabled")
 
     @is_breakglass_enabled.setter
-    def is_breakglass_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_breakglass_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_breakglass_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="meteringType")
-    def metering_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metering_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         MeteringType Identifier
         """
         return pulumi.get(self, "metering_type")
 
     @metering_type.setter
-    def metering_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metering_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metering_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
 
@@ -204,33 +204,33 @@ class OpaInstanceArgs:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
 @pulumi.input_type
 class _OpaInstanceState:
     def __init__(__self__, *,
-                 attachments: Optional[pulumi.Input[Sequence[pulumi.Input['OpaInstanceAttachmentArgs']]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 consumption_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 idcs_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 identity_app_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 identity_app_guid: Optional[pulumi.Input[_builtins.str]] = None,
-                 identity_app_opc_service_instance_guid: Optional[pulumi.Input[_builtins.str]] = None,
-                 identity_domain_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_breakglass_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metering_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 attachments: pulumi.Input[Optional[Sequence[pulumi.Input['OpaInstanceAttachmentArgs']]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 consumption_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 idcs_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 identity_app_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 identity_app_guid: pulumi.Input[Optional[_builtins.str]] = None,
+                 identity_app_opc_service_instance_guid: pulumi.Input[Optional[_builtins.str]] = None,
+                 identity_domain_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_breakglass_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metering_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OpaInstance resources.
 
@@ -302,199 +302,199 @@ class _OpaInstanceState:
 
     @_builtins.property
     @pulumi.getter
-    def attachments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OpaInstanceAttachmentArgs']]]]:
+    def attachments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['OpaInstanceAttachmentArgs']]]]:
         """
         A list of associated attachments to other services
         """
         return pulumi.get(self, "attachments")
 
     @attachments.setter
-    def attachments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OpaInstanceAttachmentArgs']]]]):
+    def attachments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['OpaInstanceAttachmentArgs']]]]):
         pulumi.set(self, "attachments", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Compartment Identifier
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="consumptionModel")
-    def consumption_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def consumption_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Parameter specifying which entitlement to use for billing purposes
         """
         return pulumi.get(self, "consumption_model")
 
     @consumption_model.setter
-    def consumption_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def consumption_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "consumption_model", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description of the Oracle Process Automation instance.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) OpaInstance Identifier. User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsAt")
-    def idcs_at(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_at(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IDCS Authentication token. This is required for all realms with IDCS. This property is optional, as it is not required for non-IDCS realms.
         """
         return pulumi.get(self, "idcs_at")
 
     @idcs_at.setter
-    def idcs_at(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_at(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_at", value)
 
     @_builtins.property
     @pulumi.getter(name="identityAppDisplayName")
-    def identity_app_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identity_app_display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
         """
         return pulumi.get(self, "identity_app_display_name")
 
     @identity_app_display_name.setter
-    def identity_app_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identity_app_display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identity_app_display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="identityAppGuid")
-    def identity_app_guid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identity_app_guid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This property specifies the GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user role mappings to grant access to this OPA instance for users within the identity domain.
         """
         return pulumi.get(self, "identity_app_guid")
 
     @identity_app_guid.setter
-    def identity_app_guid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identity_app_guid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identity_app_guid", value)
 
     @_builtins.property
     @pulumi.getter(name="identityAppOpcServiceInstanceGuid")
-    def identity_app_opc_service_instance_guid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identity_app_opc_service_instance_guid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This property specifies the OPC Service Instance GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
         """
         return pulumi.get(self, "identity_app_opc_service_instance_guid")
 
     @identity_app_opc_service_instance_guid.setter
-    def identity_app_opc_service_instance_guid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identity_app_opc_service_instance_guid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identity_app_opc_service_instance_guid", value)
 
     @_builtins.property
     @pulumi.getter(name="identityDomainUrl")
-    def identity_domain_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identity_domain_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This property specifies the domain url of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
         """
         return pulumi.get(self, "identity_domain_url")
 
     @identity_domain_url.setter
-    def identity_domain_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identity_domain_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identity_domain_url", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceUrl")
-    def instance_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OPA Instance URL
         """
         return pulumi.get(self, "instance_url")
 
     @instance_url.setter
-    def instance_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_url", value)
 
     @_builtins.property
     @pulumi.getter(name="isBreakglassEnabled")
-    def is_breakglass_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_breakglass_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         indicates if breakGlass is enabled for the opa instance.
         """
         return pulumi.get(self, "is_breakglass_enabled")
 
     @is_breakglass_enabled.setter
-    def is_breakglass_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_breakglass_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_breakglass_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="meteringType")
-    def metering_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metering_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         MeteringType Identifier
         """
         return pulumi.get(self, "metering_type")
 
     @metering_type.setter
-    def metering_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metering_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metering_type", value)
 
     @_builtins.property
     @pulumi.getter(name="shapeName")
-    def shape_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Shape of the instance.
         """
         return pulumi.get(self, "shape_name")
 
     @shape_name.setter
-    def shape_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
 
@@ -505,43 +505,43 @@ class _OpaInstanceState:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time when OpaInstance was created. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the OpaInstance was updated. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -551,17 +551,17 @@ class OpaInstance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 consumption_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 idcs_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_breakglass_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metering_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 consumption_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 idcs_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_breakglass_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metering_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Opa Instance resource in Oracle Cloud Infrastructure Opa service.
@@ -590,7 +590,7 @@ class OpaInstance(pulumi.CustomResource):
                 "bar-key": "value",
             },
             idcs_at=opa_instance_idcs_at,
-            is_breakglass_enabled=opa_instance_is_breakglass_enabled,
+            is_breakglass_enabled=opa_instance_is_breakglass_enabled == "true",
             metering_type=opa_instance_metering_type)
         ```
 
@@ -654,7 +654,7 @@ class OpaInstance(pulumi.CustomResource):
                 "bar-key": "value",
             },
             idcs_at=opa_instance_idcs_at,
-            is_breakglass_enabled=opa_instance_is_breakglass_enabled,
+            is_breakglass_enabled=opa_instance_is_breakglass_enabled == "true",
             metering_type=opa_instance_metering_type)
         ```
 
@@ -682,17 +682,17 @@ class OpaInstance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 consumption_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 idcs_at: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_breakglass_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metering_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 consumption_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 idcs_at: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_breakglass_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metering_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -738,26 +738,26 @@ class OpaInstance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OpaInstanceAttachmentArgs', 'OpaInstanceAttachmentArgsDict']]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            consumption_model: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            idcs_at: Optional[pulumi.Input[_builtins.str]] = None,
-            identity_app_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            identity_app_guid: Optional[pulumi.Input[_builtins.str]] = None,
-            identity_app_opc_service_instance_guid: Optional[pulumi.Input[_builtins.str]] = None,
-            identity_domain_url: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_url: Optional[pulumi.Input[_builtins.str]] = None,
-            is_breakglass_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            metering_type: Optional[pulumi.Input[_builtins.str]] = None,
-            shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'OpaInstance':
+            attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OpaInstanceAttachmentArgs', 'OpaInstanceAttachmentArgsDict']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            consumption_model: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            idcs_at: pulumi.Input[Optional[_builtins.str]] = None,
+            identity_app_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            identity_app_guid: pulumi.Input[Optional[_builtins.str]] = None,
+            identity_app_opc_service_instance_guid: pulumi.Input[Optional[_builtins.str]] = None,
+            identity_domain_url: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_url: pulumi.Input[Optional[_builtins.str]] = None,
+            is_breakglass_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            metering_type: pulumi.Input[Optional[_builtins.str]] = None,
+            shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'OpaInstance':
         """
         Get an existing OpaInstance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

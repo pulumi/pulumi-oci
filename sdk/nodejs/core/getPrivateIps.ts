@@ -33,7 +33,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * // Filter on Subnet OCID
- * const testPrivateIpsBySubnet = oci.Core.getPrivateIps({
+ * const testPrivateIpsBySubnet = oci.core.getPrivateIps({
  *     subnetId: privateIpSubnetId,
  * });
  * ```
@@ -42,7 +42,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * // Filter on VNIC OCID
- * const testPrivateIpsByVnic = oci.Core.getPrivateIps({
+ * const testPrivateIpsByVnic = oci.core.getPrivateIps({
  *     vnicId: testVnic.id,
  * });
  * ```
@@ -51,7 +51,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * // Filter on private IP address and Subnet OCID
- * const testPrivateIpsByIpAddress = oci.Core.getPrivateIps({
+ * const testPrivateIpsByIpAddress = oci.core.getPrivateIps({
  *     ipAddress: privateIpIpAddress,
  *     ipState: privateIpIpState,
  *     lifetime: privateIpLifetime,
@@ -175,7 +175,7 @@ export interface GetPrivateIpsResult {
  * import * as oci from "@pulumi/oci";
  *
  * // Filter on Subnet OCID
- * const testPrivateIpsBySubnet = oci.Core.getPrivateIps({
+ * const testPrivateIpsBySubnet = oci.core.getPrivateIps({
  *     subnetId: privateIpSubnetId,
  * });
  * ```
@@ -184,7 +184,7 @@ export interface GetPrivateIpsResult {
  * import * as oci from "@pulumi/oci";
  *
  * // Filter on VNIC OCID
- * const testPrivateIpsByVnic = oci.Core.getPrivateIps({
+ * const testPrivateIpsByVnic = oci.core.getPrivateIps({
  *     vnicId: testVnic.id,
  * });
  * ```
@@ -193,7 +193,7 @@ export interface GetPrivateIpsResult {
  * import * as oci from "@pulumi/oci";
  *
  * // Filter on private IP address and Subnet OCID
- * const testPrivateIpsByIpAddress = oci.Core.getPrivateIps({
+ * const testPrivateIpsByIpAddress = oci.core.getPrivateIps({
  *     ipAddress: privateIpIpAddress,
  *     ipState: privateIpIpState,
  *     lifetime: privateIpLifetime,
@@ -221,31 +221,31 @@ export function getPrivateIpsOutput(args?: GetPrivateIpsOutputArgs, opts?: pulum
  * A collection of arguments for invoking getPrivateIps.
  */
 export interface GetPrivateIpsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetPrivateIpsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetPrivateIpsFilterArgs>[] | undefined>;
     /**
      * An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
      */
-    ipAddress?: pulumi.Input<string>;
+    ipAddress?: pulumi.Input<string | undefined>;
     /**
      * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise AVAILABLE
      */
-    ipState?: pulumi.Input<string>;
+    ipState?: pulumi.Input<string | undefined>;
     /**
      * Lifetime of the IP address. There are two types of IPs:
      * * Ephemeral
      * * Reserved
      */
-    lifetime?: pulumi.Input<string>;
+    lifetime?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet.
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN.
      */
-    vlanId?: pulumi.Input<string>;
+    vlanId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the VNIC.
      */
-    vnicId?: pulumi.Input<string>;
+    vnicId?: pulumi.Input<string | undefined>;
 }

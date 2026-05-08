@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInternalNamespaceOccOverviews = oci.CapacityManagement.getInternalNamespaceOccOverviews({
+ * const testInternalNamespaceOccOverviews = oci.capacitymanagement.getInternalNamespaceOccOverviews({
  *     compartmentId: compartmentId,
  *     namespace: internalNamespaceOccOverviewNamespace,
  *     occCustomerGroupId: testOccCustomerGroup.id,
@@ -105,7 +105,7 @@ export interface GetInternalNamespaceOccOverviewsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInternalNamespaceOccOverviews = oci.CapacityManagement.getInternalNamespaceOccOverviews({
+ * const testInternalNamespaceOccOverviews = oci.capacitymanagement.getInternalNamespaceOccOverviews({
  *     compartmentId: compartmentId,
  *     namespace: internalNamespaceOccOverviewNamespace,
  *     occCustomerGroupId: testOccCustomerGroup.id,
@@ -136,11 +136,11 @@ export interface GetInternalNamespaceOccOverviewsOutputArgs {
      * The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetInternalNamespaceOccOverviewsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetInternalNamespaceOccOverviewsFilterArgs>[] | undefined>;
     /**
      * The month corresponding to this date would be considered as the starting point of the time period against which we would like to perform an aggregation.
      */
-    from?: pulumi.Input<string>;
+    from?: pulumi.Input<string | undefined>;
     /**
      * The namespace by which we would filter the list.
      */
@@ -152,9 +152,9 @@ export interface GetInternalNamespaceOccOverviewsOutputArgs {
     /**
      * The month corresponding to this date would be considered as the ending point of the time period against which we would like to perform an aggregation.
      */
-    to?: pulumi.Input<string>;
+    to?: pulumi.Input<string | undefined>;
     /**
      * Workload type using the resources in an availability catalog can be filtered.
      */
-    workloadType?: pulumi.Input<string>;
+    workloadType?: pulumi.Input<string | undefined>;
 }

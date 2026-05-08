@@ -144,7 +144,7 @@ def get_db_nodes(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_nodes = oci.Database.get_db_nodes(compartment_id=compartment_id,
+    test_db_nodes = oci.database.get_db_nodes(compartment_id=compartment_id,
         db_server_id=test_db_server["id"],
         db_system_id=test_db_system["id"],
         state=db_node_state,
@@ -177,12 +177,12 @@ def get_db_nodes(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
-def get_db_nodes_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                        db_server_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        db_system_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbNodesFilterArgs', 'GetDbNodesFilterArgsDict']]]]] = None,
-                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        vm_cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_db_nodes_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                        db_server_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        db_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbNodesFilterArgs', 'GetDbNodesFilterArgsDict']]]]] = None,
+                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        vm_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbNodesResult]:
     """
     This data source provides the list of Db Nodes in Oracle Cloud Infrastructure Database service.
@@ -195,7 +195,7 @@ def get_db_nodes_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_db_nodes = oci.Database.get_db_nodes(compartment_id=compartment_id,
+    test_db_nodes = oci.database.get_db_nodes(compartment_id=compartment_id,
         db_server_id=test_db_server["id"],
         db_system_id=test_db_system["id"],
         state=db_node_state,

@@ -238,79 +238,79 @@ export interface VaultState {
     /**
      * (Updatable) The OCID of the compartment where you want to create this vault.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The service endpoint to perform cryptographic operations against. Cryptographic operations include [Encrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) operations.
      */
-    cryptoEndpoint?: pulumi.Input<string>;
+    cryptoEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Metadata required for accessing External Key manager
      */
-    externalKeyManagerMetadata?: pulumi.Input<inputs.Kms.VaultExternalKeyManagerMetadata>;
+    externalKeyManagerMetadata?: pulumi.Input<inputs.Kms.VaultExternalKeyManagerMetadata | undefined>;
     /**
      * Summary about metadata of external key manager to be returned to the customer as a response.
      */
-    externalKeyManagerMetadataSummaries?: pulumi.Input<pulumi.Input<inputs.Kms.VaultExternalKeyManagerMetadataSummary>[]>;
+    externalKeyManagerMetadataSummaries?: pulumi.Input<pulumi.Input<inputs.Kms.VaultExternalKeyManagerMetadataSummary>[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
      */
-    isPrimary?: pulumi.Input<boolean>;
+    isPrimary?: pulumi.Input<boolean | undefined>;
     /**
      * A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
      */
-    isVaultReplicable?: pulumi.Input<boolean>;
+    isVaultReplicable?: pulumi.Input<boolean | undefined>;
     /**
      * The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
      */
-    managementEndpoint?: pulumi.Input<string>;
+    managementEndpoint?: pulumi.Input<string | undefined>;
     /**
      * Vault replica details
      */
-    replicaDetails?: pulumi.Input<pulumi.Input<inputs.Kms.VaultReplicaDetail>[]>;
+    replicaDetails?: pulumi.Input<pulumi.Input<inputs.Kms.VaultReplicaDetail>[] | undefined>;
     /**
      * (Updatable) Details where vault was backed up.
      */
-    restoreFromFile?: pulumi.Input<inputs.Kms.VaultRestoreFromFile>;
+    restoreFromFile?: pulumi.Input<inputs.Kms.VaultRestoreFromFile | undefined>;
     /**
      * (Updatable) Details where vault was backed up
      */
-    restoreFromObjectStore?: pulumi.Input<inputs.Kms.VaultRestoreFromObjectStore>;
-    restoreTrigger?: pulumi.Input<boolean>;
+    restoreFromObjectStore?: pulumi.Input<inputs.Kms.VaultRestoreFromObjectStore | undefined>;
+    restoreTrigger?: pulumi.Input<boolean | undefined>;
     /**
      * The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
      */
-    restoredFromVaultId?: pulumi.Input<string>;
+    restoredFromVaultId?: pulumi.Input<string | undefined>;
     /**
      * The vault's current lifecycle state.  Example: `DELETED`
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time this vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeOfDeletion?: pulumi.Input<string>;
+    timeOfDeletion?: pulumi.Input<string | undefined>;
     /**
      * The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
      */
-    vaultType?: pulumi.Input<string>;
+    vaultType?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -324,7 +324,7 @@ export interface VaultArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
      */
@@ -332,27 +332,27 @@ export interface VaultArgs {
     /**
      * Metadata required for accessing External Key manager
      */
-    externalKeyManagerMetadata?: pulumi.Input<inputs.Kms.VaultExternalKeyManagerMetadata>;
+    externalKeyManagerMetadata?: pulumi.Input<inputs.Kms.VaultExternalKeyManagerMetadata | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Details where vault was backed up.
      */
-    restoreFromFile?: pulumi.Input<inputs.Kms.VaultRestoreFromFile>;
+    restoreFromFile?: pulumi.Input<inputs.Kms.VaultRestoreFromFile | undefined>;
     /**
      * (Updatable) Details where vault was backed up
      */
-    restoreFromObjectStore?: pulumi.Input<inputs.Kms.VaultRestoreFromObjectStore>;
-    restoreTrigger?: pulumi.Input<boolean>;
+    restoreFromObjectStore?: pulumi.Input<inputs.Kms.VaultRestoreFromObjectStore | undefined>;
+    restoreTrigger?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeOfDeletion?: pulumi.Input<string>;
+    timeOfDeletion?: pulumi.Input<string | undefined>;
     /**
      * The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
      */

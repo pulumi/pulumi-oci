@@ -258,7 +258,7 @@ def get_java_downloads_java_download_report(java_download_report_id: Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_java_download_report = oci.Jms.get_java_downloads_java_download_report(java_download_report_id=test_java_download_report_oci_jms_java_downloads_java_download_report["id"])
+    test_java_download_report = oci.jms.get_java_downloads_java_download_report(java_download_report_id=test_java_download_report_oci_jms_java_downloads_java_download_report["id"])
     ```
 
 
@@ -288,7 +288,7 @@ def get_java_downloads_java_download_report(java_download_report_id: Optional[_b
         time_created=pulumi.get(__ret__, 'time_created'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-def get_java_downloads_java_download_report_output(java_download_report_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_java_downloads_java_download_report_output(java_download_report_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJavaDownloadsJavaDownloadReportResult]:
     """
     This data source provides details about a specific Java Download Report resource in Oracle Cloud Infrastructure Jms Java Downloads service.
@@ -301,7 +301,7 @@ def get_java_downloads_java_download_report_output(java_download_report_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_java_download_report = oci.Jms.get_java_downloads_java_download_report(java_download_report_id=test_java_download_report_oci_jms_java_downloads_java_download_report["id"])
+    test_java_download_report = oci.jms.get_java_downloads_java_download_report(java_download_report_id=test_java_download_report_oci_jms_java_downloads_java_download_report["id"])
     ```
 
 

@@ -308,7 +308,7 @@ def get_sql_collection(sql_collection_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_collection = oci.DataSafe.get_sql_collection(sql_collection_id=test_sql_collection_oci_data_safe_sql_collection["id"])
+    test_sql_collection = oci.datasafe.get_sql_collection(sql_collection_id=test_sql_collection_oci_data_safe_sql_collection["id"])
     ```
 
 
@@ -343,7 +343,7 @@ def get_sql_collection(sql_collection_id: Optional[_builtins.str] = None,
         time_last_started=pulumi.get(__ret__, 'time_last_started'),
         time_last_stopped=pulumi.get(__ret__, 'time_last_stopped'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_sql_collection_output(sql_collection_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_sql_collection_output(sql_collection_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSqlCollectionResult]:
     """
     This data source provides details about a specific Sql Collection resource in Oracle Cloud Infrastructure Data Safe service.
@@ -356,7 +356,7 @@ def get_sql_collection_output(sql_collection_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_collection = oci.DataSafe.get_sql_collection(sql_collection_id=test_sql_collection_oci_data_safe_sql_collection["id"])
+    test_sql_collection = oci.datasafe.get_sql_collection(sql_collection_id=test_sql_collection_oci_data_safe_sql_collection["id"])
     ```
 
 

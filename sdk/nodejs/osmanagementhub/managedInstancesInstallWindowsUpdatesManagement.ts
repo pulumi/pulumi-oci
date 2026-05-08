@@ -116,15 +116,15 @@ export interface ManagedInstancesInstallWindowsUpdatesManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The types of Windows updates to be installed.
      */
-    windowsUpdateTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    windowsUpdateTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetails | undefined>;
 }
 
 /**
@@ -138,9 +138,9 @@ export interface ManagedInstancesInstallWindowsUpdatesManagementArgs {
     /**
      * The types of Windows updates to be installed.
      */
-    windowsUpdateTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    windowsUpdateTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetails | undefined>;
 }

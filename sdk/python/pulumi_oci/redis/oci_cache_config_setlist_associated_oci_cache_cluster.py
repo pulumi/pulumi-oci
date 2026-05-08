@@ -53,8 +53,8 @@ class OciCacheConfigSetlistAssociatedOciCacheClusterArgs:
 @pulumi.input_type
 class _OciCacheConfigSetlistAssociatedOciCacheClusterState:
     def __init__(__self__, *,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input['OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs']]]] = None,
-                 oci_cache_config_set_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input['OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs']]]] = None,
+                 oci_cache_config_set_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OciCacheConfigSetlistAssociatedOciCacheCluster resources.
 
@@ -72,19 +72,19 @@ class _OciCacheConfigSetlistAssociatedOciCacheClusterState:
 
     @_builtins.property
     @pulumi.getter
-    def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs']]]]:
+    def items(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs']]]]:
         """
         List of clusters with the same Oracle Cloud Infrastructure Cache Config Set ID.
         """
         return pulumi.get(self, "items")
 
     @items.setter
-    def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs']]]]):
+    def items(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs']]]]):
         pulumi.set(self, "items", value)
 
     @_builtins.property
     @pulumi.getter(name="ociCacheConfigSetId")
-    def oci_cache_config_set_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oci_cache_config_set_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Oracle Cloud Infrastructure Cache Config Set identifier.
 
@@ -95,7 +95,7 @@ class _OciCacheConfigSetlistAssociatedOciCacheClusterState:
         return pulumi.get(self, "oci_cache_config_set_id")
 
     @oci_cache_config_set_id.setter
-    def oci_cache_config_set_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oci_cache_config_set_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oci_cache_config_set_id", value)
 
 
@@ -105,7 +105,7 @@ class OciCacheConfigSetlistAssociatedOciCacheCluster(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 oci_cache_config_set_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 oci_cache_config_set_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Oci Cache Config Setlist Associated Oci Cache Cluster resource in Oracle Cloud Infrastructure Redis service.
@@ -180,7 +180,7 @@ class OciCacheConfigSetlistAssociatedOciCacheCluster(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 oci_cache_config_set_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 oci_cache_config_set_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -204,8 +204,8 @@ class OciCacheConfigSetlistAssociatedOciCacheCluster(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs', 'OciCacheConfigSetlistAssociatedOciCacheClusterItemArgsDict']]]]] = None,
-            oci_cache_config_set_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'OciCacheConfigSetlistAssociatedOciCacheCluster':
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs', 'OciCacheConfigSetlistAssociatedOciCacheClusterItemArgsDict']]]]] = None,
+            oci_cache_config_set_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'OciCacheConfigSetlistAssociatedOciCacheCluster':
         """
         Get an existing OciCacheConfigSetlistAssociatedOciCacheCluster resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOnPremiseVantagePointWorkers = oci.ApmSynthetics.getOnPremiseVantagePointWorkers({
+ * const testOnPremiseVantagePointWorkers = oci.apmsynthetics.getOnPremiseVantagePointWorkers({
  *     apmDomainId: testApmDomain.id,
  *     onPremiseVantagePointId: testOnPremiseVantagePoint.id,
  *     capability: onPremiseVantagePointWorkerCapability,
@@ -111,7 +111,7 @@ export interface GetOnPremiseVantagePointWorkersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOnPremiseVantagePointWorkers = oci.ApmSynthetics.getOnPremiseVantagePointWorkers({
+ * const testOnPremiseVantagePointWorkers = oci.apmsynthetics.getOnPremiseVantagePointWorkers({
  *     apmDomainId: testApmDomain.id,
  *     onPremiseVantagePointId: testOnPremiseVantagePoint.id,
  *     capability: onPremiseVantagePointWorkerCapability,
@@ -145,16 +145,16 @@ export interface GetOnPremiseVantagePointWorkersOutputArgs {
     /**
      * A filter to return only On-premise VP workers that match the capability given.
      */
-    capability?: pulumi.Input<string>;
+    capability?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that match the entire display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.GetOnPremiseVantagePointWorkersFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.GetOnPremiseVantagePointWorkersFilterArgs>[] | undefined>;
     /**
      * A filter to return only the resources that match the entire name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the On-premise vantage point.
      */
@@ -162,5 +162,5 @@ export interface GetOnPremiseVantagePointWorkersOutputArgs {
     /**
      * A filter to return only On-premise VP workers that match the status given.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

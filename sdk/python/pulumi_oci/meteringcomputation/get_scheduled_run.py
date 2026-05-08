@@ -131,7 +131,7 @@ def get_scheduled_run(scheduled_run_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_run = oci.MeteringComputation.get_scheduled_run(scheduled_run_id=test_scheduled_run_oci_metering_computation_scheduled_run["id"])
+    test_scheduled_run = oci.meteringcomputation.get_scheduled_run(scheduled_run_id=test_scheduled_run_oci_metering_computation_scheduled_run["id"])
     ```
 
 
@@ -150,7 +150,7 @@ def get_scheduled_run(scheduled_run_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_finished=pulumi.get(__ret__, 'time_finished'))
-def get_scheduled_run_output(scheduled_run_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_scheduled_run_output(scheduled_run_id: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetScheduledRunResult]:
     """
     This data source provides details about a specific Scheduled Run resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -163,7 +163,7 @@ def get_scheduled_run_output(scheduled_run_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_run = oci.MeteringComputation.get_scheduled_run(scheduled_run_id=test_scheduled_run_oci_metering_computation_scheduled_run["id"])
+    test_scheduled_run = oci.meteringcomputation.get_scheduled_run(scheduled_run_id=test_scheduled_run_oci_metering_computation_scheduled_run["id"])
     ```
 
 

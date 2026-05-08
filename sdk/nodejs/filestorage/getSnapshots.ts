@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSnapshots = oci.FileStorage.getSnapshots({
+ * const testSnapshots = oci.filestorage.getSnapshots({
  *     compartmentId: compartmentId,
  *     fileSystemId: testFileSystem.id,
  *     filesystemSnapshotPolicyId: testFilesystemSnapshotPolicy.id,
@@ -116,7 +116,7 @@ export interface GetSnapshotsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSnapshots = oci.FileStorage.getSnapshots({
+ * const testSnapshots = oci.filestorage.getSnapshots({
  *     compartmentId: compartmentId,
  *     fileSystemId: testFileSystem.id,
  *     filesystemSnapshotPolicyId: testFilesystemSnapshotPolicy.id,
@@ -145,22 +145,22 @@ export interface GetSnapshotsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
      */
-    fileSystemId?: pulumi.Input<string>;
+    fileSystemId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
      */
-    filesystemSnapshotPolicyId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FileStorage.GetSnapshotsFilterArgs>[]>;
+    filesystemSnapshotPolicyId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FileStorage.GetSnapshotsFilterArgs>[] | undefined>;
     /**
      * Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Filter results by the specified lifecycle state. Must be a valid state for the resource type.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

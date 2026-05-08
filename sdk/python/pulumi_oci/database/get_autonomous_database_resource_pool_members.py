@@ -95,7 +95,7 @@ def get_autonomous_database_resource_pool_members(autonomous_database_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_resource_pool_members = oci.Database.get_autonomous_database_resource_pool_members(autonomous_database_id=test_autonomous_database["id"])
+    test_autonomous_database_resource_pool_members = oci.database.get_autonomous_database_resource_pool_members(autonomous_database_id=test_autonomous_database["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_autonomous_database_resource_pool_members(autonomous_database_id: Option
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         resource_pool_member_collections=pulumi.get(__ret__, 'resource_pool_member_collections'))
-def get_autonomous_database_resource_pool_members_output(autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousDatabaseResourcePoolMembersFilterArgs', 'GetAutonomousDatabaseResourcePoolMembersFilterArgsDict']]]]] = None,
+def get_autonomous_database_resource_pool_members_output(autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousDatabaseResourcePoolMembersFilterArgs', 'GetAutonomousDatabaseResourcePoolMembersFilterArgsDict']]]]] = None,
                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabaseResourcePoolMembersResult]:
     """
     This data source provides the list of Autonomous Database Resource Pool Members in Oracle Cloud Infrastructure Database service.
@@ -126,7 +126,7 @@ def get_autonomous_database_resource_pool_members_output(autonomous_database_id:
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_resource_pool_members = oci.Database.get_autonomous_database_resource_pool_members(autonomous_database_id=test_autonomous_database["id"])
+    test_autonomous_database_resource_pool_members = oci.database.get_autonomous_database_resource_pool_members(autonomous_database_id=test_autonomous_database["id"])
     ```
 
 

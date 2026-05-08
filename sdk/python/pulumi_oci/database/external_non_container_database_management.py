@@ -22,7 +22,7 @@ class ExternalNonContainerDatabaseManagementArgs:
                  enable_management: pulumi.Input[_builtins.bool],
                  external_database_connector_id: pulumi.Input[_builtins.str],
                  external_non_container_database_id: pulumi.Input[_builtins.str],
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None):
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ExternalNonContainerDatabaseManagement resource.
 
@@ -74,7 +74,7 @@ class ExternalNonContainerDatabaseManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle license model that applies to the external database. Required only for enabling database management.
 
@@ -84,17 +84,17 @@ class ExternalNonContainerDatabaseManagementArgs:
         return pulumi.get(self, "license_model")
 
     @license_model.setter
-    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_model", value)
 
 
 @pulumi.input_type
 class _ExternalNonContainerDatabaseManagementState:
     def __init__(__self__, *,
-                 enable_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_database_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_non_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None):
+                 enable_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_non_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalNonContainerDatabaseManagement resources.
 
@@ -116,40 +116,40 @@ class _ExternalNonContainerDatabaseManagementState:
 
     @_builtins.property
     @pulumi.getter(name="enableManagement")
-    def enable_management(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_management(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "enable_management")
 
     @enable_management.setter
-    def enable_management(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_management(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_management", value)
 
     @_builtins.property
     @pulumi.getter(name="externalDatabaseConnectorId")
-    def external_database_connector_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_database_connector_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         """
         return pulumi.get(self, "external_database_connector_id")
 
     @external_database_connector_id.setter
-    def external_database_connector_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_database_connector_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_database_connector_id", value)
 
     @_builtins.property
     @pulumi.getter(name="externalNonContainerDatabaseId")
-    def external_non_container_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_non_container_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The external non-container database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "external_non_container_database_id")
 
     @external_non_container_database_id.setter
-    def external_non_container_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_non_container_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_non_container_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle license model that applies to the external database. Required only for enabling database management.
 
@@ -159,7 +159,7 @@ class _ExternalNonContainerDatabaseManagementState:
         return pulumi.get(self, "license_model")
 
     @license_model.setter
-    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_model", value)
 
 
@@ -169,10 +169,10 @@ class ExternalNonContainerDatabaseManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_database_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_non_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_non_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the External Non Container Database Management resource in Oracle Cloud Infrastructure Database service.
@@ -258,10 +258,10 @@ class ExternalNonContainerDatabaseManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_management: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_database_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_non_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_management: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_non_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -291,10 +291,10 @@ class ExternalNonContainerDatabaseManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enable_management: Optional[pulumi.Input[_builtins.bool]] = None,
-            external_database_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-            external_non_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            license_model: Optional[pulumi.Input[_builtins.str]] = None) -> 'ExternalNonContainerDatabaseManagement':
+            enable_management: pulumi.Input[Optional[_builtins.bool]] = None,
+            external_database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+            external_non_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            license_model: pulumi.Input[Optional[_builtins.str]] = None) -> 'ExternalNonContainerDatabaseManagement':
         """
         Get an existing ExternalNonContainerDatabaseManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

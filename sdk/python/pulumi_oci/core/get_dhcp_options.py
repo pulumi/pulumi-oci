@@ -140,7 +140,7 @@ def get_dhcp_options(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dhcp_options = oci.Core.get_dhcp_options(compartment_id=compartment_id,
+    test_dhcp_options = oci.core.get_dhcp_options(compartment_id=compartment_id,
         display_name=dhcp_options_display_name,
         state=dhcp_options_state,
         vcn_id=test_vcn["id"])
@@ -169,11 +169,11 @@ def get_dhcp_options(compartment_id: Optional[_builtins.str] = None,
         options=pulumi.get(__ret__, 'options'),
         state=pulumi.get(__ret__, 'state'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-def get_dhcp_options_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                            display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDhcpOptionsFilterArgs', 'GetDhcpOptionsFilterArgsDict']]]]] = None,
-                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            vcn_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_dhcp_options_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDhcpOptionsFilterArgs', 'GetDhcpOptionsFilterArgsDict']]]]] = None,
+                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            vcn_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDhcpOptionsResult]:
     """
     This data source provides the list of Dhcp Options in Oracle Cloud Infrastructure Core service.
@@ -189,7 +189,7 @@ def get_dhcp_options_output(compartment_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_dhcp_options = oci.Core.get_dhcp_options(compartment_id=compartment_id,
+    test_dhcp_options = oci.core.get_dhcp_options(compartment_id=compartment_id,
         display_name=dhcp_options_display_name,
         state=dhcp_options_state,
         vcn_id=test_vcn["id"])

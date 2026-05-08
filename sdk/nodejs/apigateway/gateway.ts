@@ -54,14 +54,14 @@ import * as utilities from "../utilities";
  *         type: gatewayResponseCacheDetailsType,
  *         authenticationSecretId: testSecret.id,
  *         authenticationSecretVersionNumber: gatewayResponseCacheDetailsAuthenticationSecretVersionNumber,
- *         connectTimeoutInMs: gatewayResponseCacheDetailsConnectTimeoutInMs,
- *         isSslEnabled: gatewayResponseCacheDetailsIsSslEnabled,
- *         isSslVerifyDisabled: gatewayResponseCacheDetailsIsSslVerifyDisabled,
- *         readTimeoutInMs: gatewayResponseCacheDetailsReadTimeoutInMs,
- *         sendTimeoutInMs: gatewayResponseCacheDetailsSendTimeoutInMs,
+ *         connectTimeoutInMs: Number(gatewayResponseCacheDetailsConnectTimeoutInMs),
+ *         isSslEnabled: gatewayResponseCacheDetailsIsSslEnabled === "true",
+ *         isSslVerifyDisabled: gatewayResponseCacheDetailsIsSslVerifyDisabled === "true",
+ *         readTimeoutInMs: Number(gatewayResponseCacheDetailsReadTimeoutInMs),
+ *         sendTimeoutInMs: Number(gatewayResponseCacheDetailsSendTimeoutInMs),
  *         servers: [{
  *             host: gatewayResponseCacheDetailsServersHost,
- *             port: gatewayResponseCacheDetailsServersPort,
+ *             port: Number(gatewayResponseCacheDetailsServersPort),
  *         }],
  *     },
  * });
@@ -274,72 +274,72 @@ export interface GatewayState {
     /**
      * (Updatable) An array of CA bundles that should be used on the Gateway for TLS validation.
      */
-    caBundles?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GatewayCaBundle>[]>;
+    caBundles?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GatewayCaBundle>[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource which can be empty string.
      */
-    certificateId?: pulumi.Input<string>;
+    certificateId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be accessible on a private IP address on the subnet.  Example: `PUBLIC` or `PRIVATE`
      */
-    endpointType?: pulumi.Input<string>;
+    endpointType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The hostname for APIs deployed on the gateway.
      */
-    hostname?: pulumi.Input<string>;
+    hostname?: pulumi.Input<string | undefined>;
     /**
      * An array of IP addresses associated with the gateway.
      */
-    ipAddresses?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GatewayIpAddress>[]>;
+    ipAddresses?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GatewayIpAddress>[] | undefined>;
     /**
      * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
      */
-    ipMode?: pulumi.Input<string>;
+    ipMode?: pulumi.Input<string | undefined>;
     /**
      * IPv4 address configuration details that should be used when creating the gateway.
      */
-    ipv4addressConfiguration?: pulumi.Input<inputs.ApiGateway.GatewayIpv4addressConfiguration>;
+    ipv4addressConfiguration?: pulumi.Input<inputs.ApiGateway.GatewayIpv4addressConfiguration | undefined>;
     /**
      * IPv6 address configuration details that should be used when creating the gateway.
      */
-    ipv6addressConfiguration?: pulumi.Input<inputs.ApiGateway.GatewayIpv6addressConfiguration>;
-    isLockOverride?: pulumi.Input<boolean>;
+    ipv6addressConfiguration?: pulumi.Input<inputs.ApiGateway.GatewayIpv6addressConfiguration | undefined>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GatewayLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GatewayLock>[] | undefined>;
     /**
      * (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
      */
-    networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+    networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Base Gateway response cache.
      */
-    responseCacheDetails?: pulumi.Input<inputs.ApiGateway.GatewayResponseCacheDetails>;
+    responseCacheDetails?: pulumi.Input<inputs.ApiGateway.GatewayResponseCacheDetails | undefined>;
     /**
      * The current state of the gateway.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which related resources are created. 
      *
@@ -347,19 +347,19 @@ export interface GatewayState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -369,11 +369,11 @@ export interface GatewayArgs {
     /**
      * (Updatable) An array of CA bundles that should be used on the Gateway for TLS validation.
      */
-    caBundles?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GatewayCaBundle>[]>;
+    caBundles?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GatewayCaBundle>[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource which can be empty string.
      */
-    certificateId?: pulumi.Input<string>;
+    certificateId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
      */
@@ -381,11 +381,11 @@ export interface GatewayArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be accessible on a private IP address on the subnet.  Example: `PUBLIC` or `PRIVATE`
      */
@@ -393,32 +393,32 @@ export interface GatewayArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Determines whether the gateway has an IPv4 or IPv6 address assigned to it, or both. `IPV4` means the gateway will only have an IPv4 address assigned to it, and `IPV6` means the gateway will only have an `IPv6` address assigned to it. `DUAL_STACK` means the gateway will have both an IPv4 and IPv6 address assigned to it. Example: `IPV4` or `IPV6` or `DUAL_STACK`
      */
-    ipMode?: pulumi.Input<string>;
+    ipMode?: pulumi.Input<string | undefined>;
     /**
      * IPv4 address configuration details that should be used when creating the gateway.
      */
-    ipv4addressConfiguration?: pulumi.Input<inputs.ApiGateway.GatewayIpv4addressConfiguration>;
+    ipv4addressConfiguration?: pulumi.Input<inputs.ApiGateway.GatewayIpv4addressConfiguration | undefined>;
     /**
      * IPv6 address configuration details that should be used when creating the gateway.
      */
-    ipv6addressConfiguration?: pulumi.Input<inputs.ApiGateway.GatewayIpv6addressConfiguration>;
-    isLockOverride?: pulumi.Input<boolean>;
+    ipv6addressConfiguration?: pulumi.Input<inputs.ApiGateway.GatewayIpv6addressConfiguration | undefined>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GatewayLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GatewayLock>[] | undefined>;
     /**
      * (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
      */
-    networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+    networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Base Gateway response cache.
      */
-    responseCacheDetails?: pulumi.Input<inputs.ApiGateway.GatewayResponseCacheDetails>;
+    responseCacheDetails?: pulumi.Input<inputs.ApiGateway.GatewayResponseCacheDetails | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which related resources are created. 
      *

@@ -263,46 +263,46 @@ export interface IpsecConnectionTunnelManagementState {
     /**
      * The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
      */
-    associatedVirtualCircuits?: pulumi.Input<pulumi.Input<string>[]>;
+    associatedVirtualCircuits?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
      *
      * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
      */
-    bgpSessionInfo?: pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementBgpSessionInfo>;
+    bgpSessionInfo?: pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementBgpSessionInfo | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
      */
-    cpeIp?: pulumi.Input<string>;
+    cpeIp?: pulumi.Input<string | undefined>;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
-    dpdConfigs?: pulumi.Input<pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementDpdConfig>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    dpdConfigs?: pulumi.Input<pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementDpdConfig>[] | undefined>;
     /**
      * Dead peer detection (DPD) mode set on the Oracle side of the connection.
      */
-    dpdMode?: pulumi.Input<string>;
+    dpdMode?: pulumi.Input<string | undefined>;
     /**
      * DPD timeout in seconds.
      */
-    dpdTimeoutInSec?: pulumi.Input<number>;
+    dpdTimeoutInSec?: pulumi.Input<number | undefined>;
     /**
      * Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
      */
-    encryptionDomainConfig?: pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementEncryptionDomainConfig>;
+    encryptionDomainConfig?: pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementEncryptionDomainConfig | undefined>;
     /**
      * Internet Key Exchange protocol version.
      */
-    ikeVersion?: pulumi.Input<string>;
+    ikeVersion?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the IPSec connection.
      */
-    ipsecId?: pulumi.Input<string>;
+    ipsecId?: pulumi.Input<string | undefined>;
     /**
      * By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
      *
@@ -310,55 +310,55 @@ export interface IpsecConnectionTunnelManagementState {
      *
      * The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T even if it senses there may be a NAT device in use.
      */
-    natTranslationEnabled?: pulumi.Input<string>;
+    natTranslationEnabled?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
      */
-    oracleCanInitiate?: pulumi.Input<string>;
+    oracleCanInitiate?: pulumi.Input<string | undefined>;
     /**
      * Configuration details for IKE phase one (ISAKMP) configuration parameters. 
      *
      * See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
      */
-    phaseOneDetails?: pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementPhaseOneDetails>;
+    phaseOneDetails?: pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementPhaseOneDetails | undefined>;
     /**
      * Configuration details for IPSec phase two configuration parameters.
      *
      * See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
      */
-    phaseTwoDetails?: pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementPhaseTwoDetails>;
+    phaseTwoDetails?: pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementPhaseTwoDetails | undefined>;
     /**
      * The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
      */
-    routing?: pulumi.Input<string>;
+    routing?: pulumi.Input<string | undefined>;
     /**
      * The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
      */
-    sharedSecret?: pulumi.Input<string>;
+    sharedSecret?: pulumi.Input<string | undefined>;
     /**
      * The IPSec connection's tunnel's lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The tunnel's current state.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The date and time the IPSec connection tunnel was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * When the status of the tunnel last changed, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeStatusUpdated?: pulumi.Input<string>;
+    timeStatusUpdated?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the IPSec connection's tunnel.
      */
-    tunnelId?: pulumi.Input<string>;
+    tunnelId?: pulumi.Input<string | undefined>;
     /**
      * The IP address of Oracle's VPN headend.  Example: `129.146.17.50`
      */
-    vpnIp?: pulumi.Input<string>;
+    vpnIp?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -370,20 +370,20 @@ export interface IpsecConnectionTunnelManagementArgs {
      *
      * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
      */
-    bgpSessionInfo?: pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementBgpSessionInfo>;
+    bgpSessionInfo?: pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementBgpSessionInfo | undefined>;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
-    dpdConfigs?: pulumi.Input<pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementDpdConfig>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    dpdConfigs?: pulumi.Input<pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementDpdConfig>[] | undefined>;
     /**
      * Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
      */
-    encryptionDomainConfig?: pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementEncryptionDomainConfig>;
+    encryptionDomainConfig?: pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementEncryptionDomainConfig | undefined>;
     /**
      * Internet Key Exchange protocol version.
      */
-    ikeVersion?: pulumi.Input<string>;
+    ikeVersion?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the IPSec connection.
      */
@@ -395,31 +395,31 @@ export interface IpsecConnectionTunnelManagementArgs {
      *
      * The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T even if it senses there may be a NAT device in use.
      */
-    natTranslationEnabled?: pulumi.Input<string>;
+    natTranslationEnabled?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
      */
-    oracleCanInitiate?: pulumi.Input<string>;
+    oracleCanInitiate?: pulumi.Input<string | undefined>;
     /**
      * Configuration details for IKE phase one (ISAKMP) configuration parameters. 
      *
      * See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
      */
-    phaseOneDetails?: pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementPhaseOneDetails>;
+    phaseOneDetails?: pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementPhaseOneDetails | undefined>;
     /**
      * Configuration details for IPSec phase two configuration parameters.
      *
      * See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
      */
-    phaseTwoDetails?: pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementPhaseTwoDetails>;
+    phaseTwoDetails?: pulumi.Input<inputs.Core.IpsecConnectionTunnelManagementPhaseTwoDetails | undefined>;
     /**
      * The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
      */
-    routing?: pulumi.Input<string>;
+    routing?: pulumi.Input<string | undefined>;
     /**
      * The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
      */
-    sharedSecret?: pulumi.Input<string>;
+    sharedSecret?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the IPSec connection's tunnel.
      */

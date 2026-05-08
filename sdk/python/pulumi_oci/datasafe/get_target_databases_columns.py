@@ -174,7 +174,7 @@ def get_target_databases_columns(column_name_contains: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_target_databases_columns = oci.DataSafe.get_target_databases_columns(target_database_id=test_target_database["id"],
+    test_target_databases_columns = oci.datasafe.get_target_databases_columns(target_database_id=test_target_database["id"],
         column_names=target_databases_column_column_name,
         column_name_contains=target_databases_column_column_name_contains,
         datatypes=target_databases_column_datatype,
@@ -219,15 +219,15 @@ def get_target_databases_columns(column_name_contains: Optional[_builtins.str] =
         table_name_contains=pulumi.get(__ret__, 'table_name_contains'),
         table_names=pulumi.get(__ret__, 'table_names'),
         target_database_id=pulumi.get(__ret__, 'target_database_id'))
-def get_target_databases_columns_output(column_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        column_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                        datatypes: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTargetDatabasesColumnsFilterArgs', 'GetTargetDatabasesColumnsFilterArgsDict']]]]] = None,
-                                        schema_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        schema_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                        table_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        table_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                        target_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_target_databases_columns_output(column_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        column_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                        datatypes: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTargetDatabasesColumnsFilterArgs', 'GetTargetDatabasesColumnsFilterArgsDict']]]]] = None,
+                                        schema_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        schema_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                        table_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        table_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                        target_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTargetDatabasesColumnsResult]:
     """
     This data source provides the list of Target Databases Columns in Oracle Cloud Infrastructure Data Safe service.
@@ -240,7 +240,7 @@ def get_target_databases_columns_output(column_name_contains: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_target_databases_columns = oci.DataSafe.get_target_databases_columns(target_database_id=test_target_database["id"],
+    test_target_databases_columns = oci.datasafe.get_target_databases_columns(target_database_id=test_target_database["id"],
         column_names=target_databases_column_column_name,
         column_name_contains=target_databases_column_column_name_contains,
         datatypes=target_databases_column_datatype,

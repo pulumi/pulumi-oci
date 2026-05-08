@@ -118,7 +118,7 @@ def get_deployment_versions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_versions = oci.GoldenGate.get_deployment_versions(compartment_id=compartment_id,
+    test_deployment_versions = oci.goldengate.get_deployment_versions(compartment_id=compartment_id,
         deployment_id=test_deployment["id"],
         deployment_type=deployment_version_deployment_type)
     ```
@@ -143,10 +143,10 @@ def get_deployment_versions(compartment_id: Optional[_builtins.str] = None,
         deployment_version_collections=pulumi.get(__ret__, 'deployment_version_collections'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_deployment_versions_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   deployment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   deployment_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDeploymentVersionsFilterArgs', 'GetDeploymentVersionsFilterArgsDict']]]]] = None,
+def get_deployment_versions_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   deployment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   deployment_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDeploymentVersionsFilterArgs', 'GetDeploymentVersionsFilterArgsDict']]]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentVersionsResult]:
     """
     This data source provides the list of Deployment Versions in Oracle Cloud Infrastructure Golden Gate service.
@@ -159,7 +159,7 @@ def get_deployment_versions_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_versions = oci.GoldenGate.get_deployment_versions(compartment_id=compartment_id,
+    test_deployment_versions = oci.goldengate.get_deployment_versions(compartment_id=compartment_id,
         deployment_id=test_deployment["id"],
         deployment_type=deployment_version_deployment_type)
     ```

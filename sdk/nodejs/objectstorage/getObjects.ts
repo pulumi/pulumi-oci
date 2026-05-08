@@ -134,12 +134,12 @@ export interface GetObjectsOutputArgs {
     /**
      * When this parameter is set, only objects whose names do not contain the delimiter character (after an optionally specified prefix) are returned in the objects key of the response body. Scanned objects whose names contain the delimiter have the part of their name up to the first occurrence of the delimiter (including the optional prefix) returned as a set of prefixes. Note that only '/' is a supported delimiter character at this time.
      */
-    delimiter?: pulumi.Input<string>;
+    delimiter?: pulumi.Input<string | undefined>;
     /**
      * Returns object names which are lexicographically strictly less than this parameter.
      */
-    end?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.GetObjectsFilterArgs>[]>;
+    end?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.GetObjectsFilterArgs>[] | undefined>;
     /**
      * The Object Storage namespace used for the request.
      */
@@ -147,13 +147,13 @@ export interface GetObjectsOutputArgs {
     /**
      * The string to use for matching against the start of object names in a list query.
      */
-    prefix?: pulumi.Input<string>;
+    prefix?: pulumi.Input<string | undefined>;
     /**
      * Returns object names which are lexicographically greater than or equal to this parameter.
      */
-    start?: pulumi.Input<string>;
+    start?: pulumi.Input<string | undefined>;
     /**
      * Returns object names which are lexicographically strictly greater than this parameter.
      */
-    startAfter?: pulumi.Input<string>;
+    startAfter?: pulumi.Input<string | undefined>;
 }

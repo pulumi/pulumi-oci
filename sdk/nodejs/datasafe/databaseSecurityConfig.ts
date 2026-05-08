@@ -176,31 +176,31 @@ export interface DatabaseSecurityConfigState {
     /**
      * (Updatable) The OCID of the compartment containing the database security config.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the database security configuration resource.
      */
-    databaseSecurityConfigId?: pulumi.Input<string>;
+    databaseSecurityConfigId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the security policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the database security config. The name does not have to be unique, and it is changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Details about the current state of the database security config in Data Safe.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
      *
@@ -208,35 +208,35 @@ export interface DatabaseSecurityConfigState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    refreshTrigger?: pulumi.Input<number>;
+    refreshTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Details to update the SQL Firewall config.
      */
-    sqlFirewallConfig?: pulumi.Input<inputs.DataSafe.DatabaseSecurityConfigSqlFirewallConfig>;
+    sqlFirewallConfig?: pulumi.Input<inputs.DataSafe.DatabaseSecurityConfigSqlFirewallConfig | undefined>;
     /**
      * The current state of the database security config.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The target OCID corresponding to the database security config.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * The time that the database security config was created, in the format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The last date and time the database security config was refreshed, in the format defined by RFC3339.
      */
-    timeLastRefreshed?: pulumi.Input<string>;
+    timeLastRefreshed?: pulumi.Input<string | undefined>;
     /**
      * The date and time the database security configuration was last updated, in the format defined by RFC3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -246,7 +246,7 @@ export interface DatabaseSecurityConfigArgs {
     /**
      * (Updatable) The OCID of the compartment containing the database security config.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the database security configuration resource.
      */
@@ -254,19 +254,19 @@ export interface DatabaseSecurityConfigArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the security policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the database security config. The name does not have to be unique, and it is changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
      *
@@ -274,9 +274,9 @@ export interface DatabaseSecurityConfigArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    refreshTrigger?: pulumi.Input<number>;
+    refreshTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Details to update the SQL Firewall config.
      */
-    sqlFirewallConfig?: pulumi.Input<inputs.DataSafe.DatabaseSecurityConfigSqlFirewallConfig>;
+    sqlFirewallConfig?: pulumi.Input<inputs.DataSafe.DatabaseSecurityConfigSqlFirewallConfig | undefined>;
 }

@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHttpMonitor = oci.HealthChecks.getHttpMonitor({
+ * const testHttpMonitor = oci.healthchecks.getHttpMonitor({
  *     monitorId: testMonitor.id,
  * });
  * ```
@@ -126,7 +126,7 @@ export interface GetHttpMonitorResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHttpMonitor = oci.HealthChecks.getHttpMonitor({
+ * const testHttpMonitor = oci.healthchecks.getHttpMonitor({
  *     monitorId: testMonitor.id,
  * });
  * ```

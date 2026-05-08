@@ -22,8 +22,8 @@ __all__ = ['LifecycleStagePromoteSoftwareSourceManagementArgs', 'LifecycleStageP
 class LifecycleStagePromoteSoftwareSourceManagementArgs:
     def __init__(__self__, *,
                  lifecycle_stage_id: pulumi.Input[_builtins.str],
-                 software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 work_request_details: Optional[pulumi.Input['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs']] = None):
+                 software_source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 work_request_details: pulumi.Input[Optional['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs']] = None):
         """
         The set of arguments for constructing a LifecycleStagePromoteSoftwareSourceManagement resource.
 
@@ -51,35 +51,35 @@ class LifecycleStagePromoteSoftwareSourceManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="softwareSourceId")
-    def software_source_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def software_source_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
         """
         return pulumi.get(self, "software_source_id")
 
     @software_source_id.setter
-    def software_source_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def software_source_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "software_source_id", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestDetails")
-    def work_request_details(self) -> Optional[pulumi.Input['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs']]:
+    def work_request_details(self) -> pulumi.Input[Optional['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs']]:
         """
         Provides the name and description of the job.
         """
         return pulumi.get(self, "work_request_details")
 
     @work_request_details.setter
-    def work_request_details(self, value: Optional[pulumi.Input['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs']]):
+    def work_request_details(self, value: pulumi.Input[Optional['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs']]):
         pulumi.set(self, "work_request_details", value)
 
 
 @pulumi.input_type
 class _LifecycleStagePromoteSoftwareSourceManagementState:
     def __init__(__self__, *,
-                 lifecycle_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 work_request_details: Optional[pulumi.Input['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs']] = None):
+                 lifecycle_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 software_source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 work_request_details: pulumi.Input[Optional['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering LifecycleStagePromoteSoftwareSourceManagement resources.
 
@@ -96,38 +96,38 @@ class _LifecycleStagePromoteSoftwareSourceManagementState:
 
     @_builtins.property
     @pulumi.getter(name="lifecycleStageId")
-    def lifecycle_stage_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_stage_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
         """
         return pulumi.get(self, "lifecycle_stage_id")
 
     @lifecycle_stage_id.setter
-    def lifecycle_stage_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_stage_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_stage_id", value)
 
     @_builtins.property
     @pulumi.getter(name="softwareSourceId")
-    def software_source_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def software_source_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source. This filter returns resources associated with this software source.
         """
         return pulumi.get(self, "software_source_id")
 
     @software_source_id.setter
-    def software_source_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def software_source_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "software_source_id", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestDetails")
-    def work_request_details(self) -> Optional[pulumi.Input['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs']]:
+    def work_request_details(self) -> pulumi.Input[Optional['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs']]:
         """
         Provides the name and description of the job.
         """
         return pulumi.get(self, "work_request_details")
 
     @work_request_details.setter
-    def work_request_details(self, value: Optional[pulumi.Input['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs']]):
+    def work_request_details(self, value: pulumi.Input[Optional['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs']]):
         pulumi.set(self, "work_request_details", value)
 
 
@@ -137,9 +137,9 @@ class LifecycleStagePromoteSoftwareSourceManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 lifecycle_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 work_request_details: Optional[pulumi.Input[Union['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs', 'LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgsDict']]] = None,
+                 lifecycle_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 software_source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs', 'LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Lifecycle Stage Promote Software Source Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -236,9 +236,9 @@ class LifecycleStagePromoteSoftwareSourceManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 lifecycle_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 work_request_details: Optional[pulumi.Input[Union['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs', 'LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgsDict']]] = None,
+                 lifecycle_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 software_source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs', 'LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -263,9 +263,9 @@ class LifecycleStagePromoteSoftwareSourceManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            lifecycle_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-            software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
-            work_request_details: Optional[pulumi.Input[Union['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs', 'LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgsDict']]] = None) -> 'LifecycleStagePromoteSoftwareSourceManagement':
+            lifecycle_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+            software_source_id: pulumi.Input[Optional[_builtins.str]] = None,
+            work_request_details: pulumi.Input[Optional[Union['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs', 'LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgsDict']]] = None) -> 'LifecycleStagePromoteSoftwareSourceManagement':
         """
         Get an existing LifecycleStagePromoteSoftwareSourceManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

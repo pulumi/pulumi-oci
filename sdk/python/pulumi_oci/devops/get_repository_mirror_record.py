@@ -141,7 +141,7 @@ def get_repository_mirror_record(mirror_record_type: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_mirror_record = oci.DevOps.get_repository_mirror_record(mirror_record_type=repository_mirror_record_mirror_record_type,
+    test_repository_mirror_record = oci.devops.get_repository_mirror_record(mirror_record_type=repository_mirror_record_mirror_record_type,
         repository_id=test_repository["id"])
     ```
 
@@ -164,8 +164,8 @@ def get_repository_mirror_record(mirror_record_type: Optional[_builtins.str] = N
         time_enqueued=pulumi.get(__ret__, 'time_enqueued'),
         time_started=pulumi.get(__ret__, 'time_started'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
-def get_repository_mirror_record_output(mirror_record_type: Optional[pulumi.Input[_builtins.str]] = None,
-                                        repository_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_repository_mirror_record_output(mirror_record_type: pulumi.Input[Optional[_builtins.str]] = None,
+                                        repository_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryMirrorRecordResult]:
     """
     This data source provides details about a specific Repository Mirror Record resource in Oracle Cloud Infrastructure Devops service.
@@ -178,7 +178,7 @@ def get_repository_mirror_record_output(mirror_record_type: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_mirror_record = oci.DevOps.get_repository_mirror_record(mirror_record_type=repository_mirror_record_mirror_record_type,
+    test_repository_mirror_record = oci.devops.get_repository_mirror_record(mirror_record_type=repository_mirror_record_mirror_record_type,
         repository_id=test_repository["id"])
     ```
 

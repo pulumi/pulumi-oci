@@ -168,10 +168,10 @@ def get_keys(algorithm: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_keys = oci.Kms.get_keys(compartment_id=compartment_id,
+    test_keys = oci.kms.get_keys(compartment_id=compartment_id,
         management_endpoint=key_management_endpoint,
         algorithm=key_algorithm,
-        length=key_length,
+        length=int(key_length),
         curve_id=test_curve["id"],
         protection_mode=key_protection_mode)
     ```
@@ -205,13 +205,13 @@ def get_keys(algorithm: Optional[_builtins.str] = None,
         length=pulumi.get(__ret__, 'length'),
         management_endpoint=pulumi.get(__ret__, 'management_endpoint'),
         protection_mode=pulumi.get(__ret__, 'protection_mode'))
-def get_keys_output(algorithm: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                    compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                    curve_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetKeysFilterArgs', 'GetKeysFilterArgsDict']]]]] = None,
-                    length: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                    management_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                    protection_mode: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_keys_output(algorithm: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                    compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                    curve_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetKeysFilterArgs', 'GetKeysFilterArgsDict']]]]] = None,
+                    length: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                    management_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                    protection_mode: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetKeysResult]:
     """
     This data source provides the list of Keys in Oracle Cloud Infrastructure Kms service.
@@ -229,10 +229,10 @@ def get_keys_output(algorithm: Optional[pulumi.Input[Optional[_builtins.str]]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_keys = oci.Kms.get_keys(compartment_id=compartment_id,
+    test_keys = oci.kms.get_keys(compartment_id=compartment_id,
         management_endpoint=key_management_endpoint,
         algorithm=key_algorithm,
-        length=key_length,
+        length=int(key_length),
         curve_id=test_curve["id"],
         protection_mode=key_protection_mode)
     ```

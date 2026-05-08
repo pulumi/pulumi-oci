@@ -138,7 +138,7 @@ def get_volume_group_replicas(availability_domain: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_group_replicas = oci.Core.get_volume_group_replicas(availability_domain=volume_group_replica_availability_domain,
+    test_volume_group_replicas = oci.core.get_volume_group_replicas(availability_domain=volume_group_replica_availability_domain,
         compartment_id=compartment_id,
         display_name=volume_group_replica_display_name,
         state=volume_group_replica_state)
@@ -167,11 +167,11 @@ def get_volume_group_replicas(availability_domain: Optional[_builtins.str] = Non
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         volume_group_replicas=pulumi.get(__ret__, 'volume_group_replicas'))
-def get_volume_group_replicas_output(availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                                     compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                     display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVolumeGroupReplicasFilterArgs', 'GetVolumeGroupReplicasFilterArgsDict']]]]] = None,
-                                     state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_volume_group_replicas_output(availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                                     compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVolumeGroupReplicasFilterArgs', 'GetVolumeGroupReplicasFilterArgsDict']]]]] = None,
+                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumeGroupReplicasResult]:
     """
     This data source provides the list of Volume Group Replicas in Oracle Cloud Infrastructure Core service.
@@ -185,7 +185,7 @@ def get_volume_group_replicas_output(availability_domain: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_group_replicas = oci.Core.get_volume_group_replicas(availability_domain=volume_group_replica_availability_domain,
+    test_volume_group_replicas = oci.core.get_volume_group_replicas(availability_domain=volume_group_replica_availability_domain,
         compartment_id=compartment_id,
         display_name=volume_group_replica_display_name,
         state=volume_group_replica_state)

@@ -26,15 +26,15 @@ class OutboundConnectorArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  connector_type: pulumi.Input[_builtins.str],
                  endpoints: pulumi.Input[Sequence[pulumi.Input['OutboundConnectorEndpointArgs']]],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['OutboundConnectorLockArgs']]]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 trusted_certificate_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 trusted_certificate_secret_version: Optional[pulumi.Input[_builtins.int]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input['OutboundConnectorLockArgs']]]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 trusted_certificate_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 trusted_certificate_secret_version: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a OutboundConnector resource.
 
@@ -142,100 +142,100 @@ class OutboundConnectorArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isLockOverride")
-    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_lock_override(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_lock_override")
 
     @is_lock_override.setter
-    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_lock_override(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_lock_override", value)
 
     @_builtins.property
     @pulumi.getter
-    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OutboundConnectorLockArgs']]]]:
+    def locks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['OutboundConnectorLockArgs']]]]:
         """
         Locks associated with this resource.
         """
         return pulumi.get(self, "locks")
 
     @locks.setter
-    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OutboundConnectorLockArgs']]]]):
+    def locks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['OutboundConnectorLockArgs']]]]):
         pulumi.set(self, "locks", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretVersion")
-    def password_secret_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def password_secret_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Version of the password secret in the Vault to use.
         """
         return pulumi.get(self, "password_secret_version")
 
     @password_secret_version.setter
-    def password_secret_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def password_secret_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "password_secret_version", value)
 
     @_builtins.property
     @pulumi.getter(name="trustedCertificateSecretId")
-    def trusted_certificate_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trusted_certificate_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
         """
         return pulumi.get(self, "trusted_certificate_secret_id")
 
     @trusted_certificate_secret_id.setter
-    def trusted_certificate_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trusted_certificate_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trusted_certificate_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="trustedCertificateSecretVersion")
-    def trusted_certificate_secret_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def trusted_certificate_secret_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Version of the trusted certificate secret in the Vault to use.
 
@@ -246,30 +246,30 @@ class OutboundConnectorArgs:
         return pulumi.get(self, "trusted_certificate_secret_version")
 
     @trusted_certificate_secret_version.setter
-    def trusted_certificate_secret_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def trusted_certificate_secret_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "trusted_certificate_secret_version", value)
 
 
 @pulumi.input_type
 class _OutboundConnectorState:
     def __init__(__self__, *,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 bind_distinguished_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connector_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['OutboundConnectorEndpointArgs']]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['OutboundConnectorLockArgs']]]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 trusted_certificate_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 trusted_certificate_secret_version: Optional[pulumi.Input[_builtins.int]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 bind_distinguished_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoints: pulumi.Input[Optional[Sequence[pulumi.Input['OutboundConnectorEndpointArgs']]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input['OutboundConnectorLockArgs']]]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 trusted_certificate_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 trusted_certificate_secret_version: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering OutboundConnector resources.
 
@@ -331,196 +331,196 @@ class _OutboundConnectorState:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability domain the outbound connector is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="bindDistinguishedName")
-    def bind_distinguished_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bind_distinguished_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The LDAP Distinguished Name of the bind account.
         """
         return pulumi.get(self, "bind_distinguished_name")
 
     @bind_distinguished_name.setter
-    def bind_distinguished_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bind_distinguished_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bind_distinguished_name", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the outbound connector.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectorType")
-    def connector_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connector_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The account type of this outbound connector.
         """
         return pulumi.get(self, "connector_type")
 
     @connector_type.setter
-    def connector_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connector_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connector_type", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def endpoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OutboundConnectorEndpointArgs']]]]:
+    def endpoints(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['OutboundConnectorEndpointArgs']]]]:
         """
         Array of server endpoints to use when connecting with the LDAP bind account.
         """
         return pulumi.get(self, "endpoints")
 
     @endpoints.setter
-    def endpoints(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OutboundConnectorEndpointArgs']]]]):
+    def endpoints(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['OutboundConnectorEndpointArgs']]]]):
         pulumi.set(self, "endpoints", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isLockOverride")
-    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_lock_override(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_lock_override")
 
     @is_lock_override.setter
-    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_lock_override(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_lock_override", value)
 
     @_builtins.property
     @pulumi.getter
-    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OutboundConnectorLockArgs']]]]:
+    def locks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['OutboundConnectorLockArgs']]]]:
         """
         Locks associated with this resource.
         """
         return pulumi.get(self, "locks")
 
     @locks.setter
-    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OutboundConnectorLockArgs']]]]):
+    def locks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['OutboundConnectorLockArgs']]]]):
         pulumi.set(self, "locks", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretVersion")
-    def password_secret_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def password_secret_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Version of the password secret in the Vault to use.
         """
         return pulumi.get(self, "password_secret_version")
 
     @password_secret_version.setter
-    def password_secret_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def password_secret_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "password_secret_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of this outbound connector.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="trustedCertificateSecretId")
-    def trusted_certificate_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trusted_certificate_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
         """
         return pulumi.get(self, "trusted_certificate_secret_id")
 
     @trusted_certificate_secret_id.setter
-    def trusted_certificate_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trusted_certificate_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trusted_certificate_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="trustedCertificateSecretVersion")
-    def trusted_certificate_secret_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def trusted_certificate_secret_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Version of the trusted certificate secret in the Vault to use.
 
@@ -531,7 +531,7 @@ class _OutboundConnectorState:
         return pulumi.get(self, "trusted_certificate_secret_version")
 
     @trusted_certificate_secret_version.setter
-    def trusted_certificate_secret_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def trusted_certificate_secret_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "trusted_certificate_secret_version", value)
 
 
@@ -541,20 +541,20 @@ class OutboundConnector(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 bind_distinguished_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connector_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorEndpointArgs', 'OutboundConnectorEndpointArgsDict']]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict']]]]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 trusted_certificate_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 trusted_certificate_secret_version: Optional[pulumi.Input[_builtins.int]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 bind_distinguished_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OutboundConnectorEndpointArgs', 'OutboundConnectorEndpointArgsDict']]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict']]]]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 trusted_certificate_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 trusted_certificate_secret_version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         This resource provides the Outbound Connector resource in Oracle Cloud Infrastructure File Storage service.
@@ -612,9 +612,9 @@ class OutboundConnector(pulumi.CustomResource):
                 "time_created": outbound_connector_locks_time_created,
             }],
             password_secret_id=test_secret["id"],
-            password_secret_version=outbound_connector_password_secret_version,
+            password_secret_version=int(outbound_connector_password_secret_version),
             trusted_certificate_secret_id=test_secret["id"],
-            trusted_certificate_secret_version=outbound_connector_trusted_certificate_secret_version)
+            trusted_certificate_secret_version=int(outbound_connector_trusted_certificate_secret_version))
         ```
 
         ## Import
@@ -708,9 +708,9 @@ class OutboundConnector(pulumi.CustomResource):
                 "time_created": outbound_connector_locks_time_created,
             }],
             password_secret_id=test_secret["id"],
-            password_secret_version=outbound_connector_password_secret_version,
+            password_secret_version=int(outbound_connector_password_secret_version),
             trusted_certificate_secret_id=test_secret["id"],
-            trusted_certificate_secret_version=outbound_connector_trusted_certificate_secret_version)
+            trusted_certificate_secret_version=int(outbound_connector_trusted_certificate_secret_version))
         ```
 
         ## Import
@@ -737,20 +737,20 @@ class OutboundConnector(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 bind_distinguished_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connector_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorEndpointArgs', 'OutboundConnectorEndpointArgsDict']]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict']]]]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 trusted_certificate_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 trusted_certificate_secret_version: Optional[pulumi.Input[_builtins.int]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 bind_distinguished_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OutboundConnectorEndpointArgs', 'OutboundConnectorEndpointArgsDict']]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict']]]]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 trusted_certificate_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 trusted_certificate_secret_version: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -797,23 +797,23 @@ class OutboundConnector(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            bind_distinguished_name: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            connector_type: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorEndpointArgs', 'OutboundConnectorEndpointArgsDict']]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict']]]]] = None,
-            password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            password_secret_version: Optional[pulumi.Input[_builtins.int]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            trusted_certificate_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            trusted_certificate_secret_version: Optional[pulumi.Input[_builtins.int]] = None) -> 'OutboundConnector':
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            bind_distinguished_name: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OutboundConnectorEndpointArgs', 'OutboundConnectorEndpointArgsDict']]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict']]]]] = None,
+            password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            password_secret_version: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            trusted_certificate_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            trusted_certificate_secret_version: pulumi.Input[Optional[_builtins.int]] = None) -> 'OutboundConnector':
         """
         Get an existing OutboundConnector resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGiVersionMinorVersions = oci.Database.getGiVersionMinorVersions({
+ * const testGiVersionMinorVersions = oci.database.getGiVersionMinorVersions({
  *     version: giVersionMinorVersionVersion,
  *     availabilityDomain: giVersionMinorVersionAvailabilityDomain,
  *     compartmentId: compartmentId,
- *     isGiVersionForProvisioning: giVersionMinorVersionIsGiVersionForProvisioning,
+ *     isGiVersionForProvisioning: giVersionMinorVersionIsGiVersionForProvisioning === "true",
  *     shape: giVersionMinorVersionShape,
  *     shapeFamily: giVersionMinorVersionShapeFamily,
  * });
@@ -105,11 +105,11 @@ export interface GetGiVersionMinorVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGiVersionMinorVersions = oci.Database.getGiVersionMinorVersions({
+ * const testGiVersionMinorVersions = oci.database.getGiVersionMinorVersions({
  *     version: giVersionMinorVersionVersion,
  *     availabilityDomain: giVersionMinorVersionAvailabilityDomain,
  *     compartmentId: compartmentId,
- *     isGiVersionForProvisioning: giVersionMinorVersionIsGiVersionForProvisioning,
+ *     isGiVersionForProvisioning: giVersionMinorVersionIsGiVersionForProvisioning === "true",
  *     shape: giVersionMinorVersionShape,
  *     shapeFamily: giVersionMinorVersionShapeFamily,
  * });
@@ -135,24 +135,24 @@ export interface GetGiVersionMinorVersionsOutputArgs {
     /**
      * The target availability domain. Only passed if the limit is AD-specific.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetGiVersionMinorVersionsFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetGiVersionMinorVersionsFilterArgs>[] | undefined>;
     /**
      * If true, returns the Grid Infrastructure versions that can be used for provisioning a cluster
      */
-    isGiVersionForProvisioning?: pulumi.Input<boolean>;
+    isGiVersionForProvisioning?: pulumi.Input<boolean | undefined>;
     /**
      * If provided, filters the results for the given shape.
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
     /**
      * If provided, filters the results to the set of database versions which are supported for the given shape family.
      */
-    shapeFamily?: pulumi.Input<string>;
+    shapeFamily?: pulumi.Input<string | undefined>;
     /**
      * The Oracle Grid Infrastructure major version.
      */

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitoredResource = oci.StackMonitoring.getMonitoredResource({
+ * const testMonitoredResource = oci.stackmonitoring.getMonitoredResource({
  *     monitoredResourceId: testMonitoredResourceOciStackMonitoringMonitoredResource.id,
  * });
  * ```
@@ -151,7 +151,7 @@ export interface GetMonitoredResourceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitoredResource = oci.StackMonitoring.getMonitoredResource({
+ * const testMonitoredResource = oci.stackmonitoring.getMonitoredResource({
  *     monitoredResourceId: testMonitoredResourceOciStackMonitoringMonitoredResource.id,
  * });
  * ```

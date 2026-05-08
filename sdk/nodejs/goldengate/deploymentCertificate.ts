@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *     certificateContent: deploymentCertificateCertificateContent,
  *     deploymentId: testDeployment.id,
  *     key: deploymentCertificateKey,
- *     isLockOverride: deploymentCertificateIsLockOverride,
+ *     isLockOverride: deploymentCertificateIsLockOverride === "true",
  * });
  * ```
  *
@@ -230,31 +230,31 @@ export interface DeploymentCertificateState {
     /**
      * The Certificate authority key id.
      */
-    authorityKeyId?: pulumi.Input<string>;
+    authorityKeyId?: pulumi.Input<string | undefined>;
     /**
      * The base64 encoded content of the PEM file containing the SSL certificate.
      */
-    certificateContent?: pulumi.Input<string>;
+    certificateContent?: pulumi.Input<string | undefined>;
     /**
      * A unique Deployment identifier.
      */
-    deploymentId?: pulumi.Input<string>;
+    deploymentId?: pulumi.Input<string | undefined>;
     /**
      * Indicates if the certificate is ca.
      */
-    isCa?: pulumi.Input<boolean>;
+    isCa?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to override locks (if any exist).
      */
-    isLockOverride?: pulumi.Input<boolean>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates if the certificate is self signed.
      */
-    isSelfSigned?: pulumi.Input<boolean>;
+    isSelfSigned?: pulumi.Input<boolean | undefined>;
     /**
      * The Certificate issuer.
      */
-    issuer?: pulumi.Input<string>;
+    issuer?: pulumi.Input<string | undefined>;
     /**
      * The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter. 
      *
@@ -262,59 +262,59 @@ export interface DeploymentCertificateState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * The Certificate md5Hash.
      */
-    md5hash?: pulumi.Input<string>;
+    md5hash?: pulumi.Input<string | undefined>;
     /**
      * The Certificate public key.
      */
-    publicKey?: pulumi.Input<string>;
+    publicKey?: pulumi.Input<string | undefined>;
     /**
      * The Certificate public key algorithm.
      */
-    publicKeyAlgorithm?: pulumi.Input<string>;
+    publicKeyAlgorithm?: pulumi.Input<string | undefined>;
     /**
      * The Certificate public key size.
      */
-    publicKeySize?: pulumi.Input<string>;
+    publicKeySize?: pulumi.Input<string | undefined>;
     /**
      * The Certificate serial.
      */
-    serial?: pulumi.Input<string>;
+    serial?: pulumi.Input<string | undefined>;
     /**
      * The Certificate sha1 hash.
      */
-    sha1hash?: pulumi.Input<string>;
+    sha1hash?: pulumi.Input<string | undefined>;
     /**
      * Possible certificate lifecycle states.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The Certificate subject.
      */
-    subject?: pulumi.Input<string>;
+    subject?: pulumi.Input<string | undefined>;
     /**
      * The Certificate subject key id.
      */
-    subjectKeyId?: pulumi.Input<string>;
+    subjectKeyId?: pulumi.Input<string | undefined>;
     /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the certificate is valid from. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    timeValidFrom?: pulumi.Input<string>;
+    timeValidFrom?: pulumi.Input<string | undefined>;
     /**
      * The time the certificate is valid to. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    timeValidTo?: pulumi.Input<string>;
+    timeValidTo?: pulumi.Input<string | undefined>;
     /**
      * The Certificate version.
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -332,7 +332,7 @@ export interface DeploymentCertificateArgs {
     /**
      * Whether to override locks (if any exist).
      */
-    isLockOverride?: pulumi.Input<boolean>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter. 
      *

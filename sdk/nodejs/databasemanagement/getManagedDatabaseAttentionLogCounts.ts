@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseAttentionLogCounts = oci.DatabaseManagement.getManagedDatabaseAttentionLogCounts({
+ * const testManagedDatabaseAttentionLogCounts = oci.databasemanagement.getManagedDatabaseAttentionLogCounts({
  *     managedDatabaseId: testManagedDatabase.id,
  *     groupBy: managedDatabaseAttentionLogCountGroupBy,
- *     isRegularExpression: managedDatabaseAttentionLogCountIsRegularExpression,
+ *     isRegularExpression: managedDatabaseAttentionLogCountIsRegularExpression === "true",
  *     logSearchText: managedDatabaseAttentionLogCountLogSearchText,
  *     timeGreaterThanOrEqualTo: managedDatabaseAttentionLogCountTimeGreaterThanOrEqualTo,
  *     timeLessThanOrEqualTo: managedDatabaseAttentionLogCountTimeLessThanOrEqualTo,
@@ -119,10 +119,10 @@ export interface GetManagedDatabaseAttentionLogCountsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseAttentionLogCounts = oci.DatabaseManagement.getManagedDatabaseAttentionLogCounts({
+ * const testManagedDatabaseAttentionLogCounts = oci.databasemanagement.getManagedDatabaseAttentionLogCounts({
  *     managedDatabaseId: testManagedDatabase.id,
  *     groupBy: managedDatabaseAttentionLogCountGroupBy,
- *     isRegularExpression: managedDatabaseAttentionLogCountIsRegularExpression,
+ *     isRegularExpression: managedDatabaseAttentionLogCountIsRegularExpression === "true",
  *     logSearchText: managedDatabaseAttentionLogCountLogSearchText,
  *     timeGreaterThanOrEqualTo: managedDatabaseAttentionLogCountTimeGreaterThanOrEqualTo,
  *     timeLessThanOrEqualTo: managedDatabaseAttentionLogCountTimeLessThanOrEqualTo,
@@ -150,19 +150,19 @@ export function getManagedDatabaseAttentionLogCountsOutput(args: GetManagedDatab
  * A collection of arguments for invoking getManagedDatabaseAttentionLogCounts.
  */
 export interface GetManagedDatabaseAttentionLogCountsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseAttentionLogCountsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseAttentionLogCountsFilterArgs>[] | undefined>;
     /**
      * The optional parameter used to group different attention logs.
      */
-    groupBy?: pulumi.Input<string>;
+    groupBy?: pulumi.Input<string | undefined>;
     /**
      * The flag to indicate whether the search text is regular expression or not.
      */
-    isRegularExpression?: pulumi.Input<boolean>;
+    isRegularExpression?: pulumi.Input<boolean | undefined>;
     /**
      * The optional query parameter to filter the attention or alert logs by search text.
      */
-    logSearchText?: pulumi.Input<string>;
+    logSearchText?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
@@ -170,17 +170,17 @@ export interface GetManagedDatabaseAttentionLogCountsOutputArgs {
     /**
      * The optional greater than or equal to timestamp to filter the logs.
      */
-    timeGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * The optional less than or equal to timestamp to filter the logs.
      */
-    timeLessThanOrEqualTo?: pulumi.Input<string>;
+    timeLessThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * The optional parameter to filter the attention or alert logs by type.
      */
-    typeFilter?: pulumi.Input<string>;
+    typeFilter?: pulumi.Input<string | undefined>;
     /**
      * The optional parameter to filter the attention logs by urgency.
      */
-    urgencyFilter?: pulumi.Input<string>;
+    urgencyFilter?: pulumi.Input<string | undefined>;
 }

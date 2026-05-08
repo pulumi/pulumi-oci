@@ -46,9 +46,9 @@ import * as utilities from "../utilities";
  *         type: fsuCycleApplyActionScheduleType,
  *     },
  *     batchingStrategy: {
- *         isForceRolling: fsuCycleBatchingStrategyIsForceRolling,
- *         isWaitForBatchResume: fsuCycleBatchingStrategyIsWaitForBatchResume,
- *         percentage: fsuCycleBatchingStrategyPercentage,
+ *         isForceRolling: fsuCycleBatchingStrategyIsForceRolling === "true",
+ *         isWaitForBatchResume: fsuCycleBatchingStrategyIsWaitForBatchResume === "true",
+ *         percentage: Number(fsuCycleBatchingStrategyPercentage),
  *         type: fsuCycleBatchingStrategyType,
  *     },
  *     definedTags: {
@@ -62,20 +62,20 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     isIgnoreMissingPatches: fsuCycleIsIgnoreMissingPatches,
- *     isIgnorePatches: fsuCycleIsIgnorePatches,
- *     isKeepPlacement: fsuCycleIsKeepPlacement,
- *     maxDrainTimeoutInSeconds: fsuCycleMaxDrainTimeoutInSeconds,
+ *     isIgnorePatches: fsuCycleIsIgnorePatches === "true",
+ *     isKeepPlacement: fsuCycleIsKeepPlacement === "true",
+ *     maxDrainTimeoutInSeconds: Number(fsuCycleMaxDrainTimeoutInSeconds),
  *     stageActionSchedule: {
  *         timeToStart: fsuCycleStageActionScheduleTimeToStart,
  *         type: fsuCycleStageActionScheduleType,
  *     },
  *     upgradeDetails: {
  *         collectionType: fsuCycleUpgradeDetailsCollectionType,
- *         isIgnorePostUpgradeErrors: fsuCycleUpgradeDetailsIsIgnorePostUpgradeErrors,
- *         isIgnorePrerequisites: fsuCycleUpgradeDetailsIsIgnorePrerequisites,
- *         isRecompileInvalidObjects: fsuCycleUpgradeDetailsIsRecompileInvalidObjects,
- *         isTimeZoneUpgrade: fsuCycleUpgradeDetailsIsTimeZoneUpgrade,
- *         maxDrainTimeoutInSeconds: fsuCycleUpgradeDetailsMaxDrainTimeoutInSeconds,
+ *         isIgnorePostUpgradeErrors: fsuCycleUpgradeDetailsIsIgnorePostUpgradeErrors === "true",
+ *         isIgnorePrerequisites: fsuCycleUpgradeDetailsIsIgnorePrerequisites === "true",
+ *         isRecompileInvalidObjects: fsuCycleUpgradeDetailsIsRecompileInvalidObjects === "true",
+ *         isTimeZoneUpgrade: fsuCycleUpgradeDetailsIsTimeZoneUpgrade === "true",
+ *         maxDrainTimeoutInSeconds: Number(fsuCycleUpgradeDetailsMaxDrainTimeoutInSeconds),
  *     },
  * });
  * ```
@@ -325,115 +325,115 @@ export interface FsuCycleState {
     /**
      * Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
      */
-    applyActionSchedule?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleApplyActionSchedule>;
+    applyActionSchedule?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleApplyActionSchedule | undefined>;
     /**
      * (Updatable) Batching strategy details to use during PRECHECK and APPLY Cycle Actions.
      */
-    batchingStrategy?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleBatchingStrategy>;
+    batchingStrategy?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleBatchingStrategy | undefined>;
     /**
      * Type of Exadata Fleet Update collection being upgraded.
      */
-    collectionType?: pulumi.Input<string>;
+    collectionType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Details to configure diagnostics collection for targets affected by this Exadata Fleet Update Maintenance Cycle.
      */
-    diagnosticsCollection?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleDiagnosticsCollection>;
+    diagnosticsCollection?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleDiagnosticsCollection | undefined>;
     /**
      * (Updatable) The user-friendly name for the Exadata Fleet Update Cycle.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Action that is currently in progress, if applicable.
      */
-    executingFsuActionId?: pulumi.Input<string>;
+    executingFsuActionId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
      */
-    fsuCollectionId?: pulumi.Input<string>;
+    fsuCollectionId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Goal version or image details for the Exadata Fleet Update Cycle.
      */
-    goalVersionDetails?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleGoalVersionDetails>;
+    goalVersionDetails?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleGoalVersionDetails | undefined>;
     /**
      * (Updatable) List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
      */
-    isIgnoreMissingPatches?: pulumi.Input<pulumi.Input<string>[]>;
+    isIgnoreMissingPatches?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
      */
-    isIgnorePatches?: pulumi.Input<boolean>;
+    isIgnorePatches?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Ensure that database services are online on the same VMs before and after the maintenance update.
      */
-    isKeepPlacement?: pulumi.Input<boolean>;
+    isKeepPlacement?: pulumi.Input<boolean | undefined>;
     /**
      * The latest Action type that was completed in the Exadata Fleet Update Cycle. No value would indicate that the Cycle has not completed any Action yet.
      */
-    lastCompletedAction?: pulumi.Input<string>;
+    lastCompletedAction?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest Action  in the Exadata Fleet Update Cycle.
      */
-    lastCompletedActionId?: pulumi.Input<string>;
+    lastCompletedActionId?: pulumi.Input<string | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Timeout for session draining for database services specified in seconds.
      */
-    maxDrainTimeoutInSeconds?: pulumi.Input<number>;
+    maxDrainTimeoutInSeconds?: pulumi.Input<number | undefined>;
     /**
      * All possible Exadata Fleet Update Actions will be listed. The first element is the suggested Exadata Fleet Update Action.
      */
-    nextActionToExecutes?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleNextActionToExecute>[]>;
+    nextActionToExecutes?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleNextActionToExecute>[] | undefined>;
     /**
      * Current rollback cycle state if rollback maintenance cycle action has been attempted. No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
      */
-    rollbackCycleState?: pulumi.Input<string>;
+    rollbackCycleState?: pulumi.Input<string | undefined>;
     /**
      * Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
      */
-    stageActionSchedule?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleStageActionSchedule>;
+    stageActionSchedule?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleStageActionSchedule | undefined>;
     /**
      * The current state of the Exadata Fleet Update Cycle.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the Exadata Fleet Update Cycle was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the Exadata Fleet Update Cycle was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    timeFinished?: pulumi.Input<string>;
+    timeFinished?: pulumi.Input<string | undefined>;
     /**
      * The date and time the Exadata Fleet Update Cycle was updated, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Type of Exadata Fleet Update Cycle.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Details of supported upgrade options for DB or GI collection.
      */
-    upgradeDetails?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleUpgradeDetails>;
+    upgradeDetails?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleUpgradeDetails | undefined>;
 }
 
 /**
@@ -443,11 +443,11 @@ export interface FsuCycleArgs {
     /**
      * Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
      */
-    applyActionSchedule?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleApplyActionSchedule>;
+    applyActionSchedule?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleApplyActionSchedule | undefined>;
     /**
      * (Updatable) Batching strategy details to use during PRECHECK and APPLY Cycle Actions.
      */
-    batchingStrategy?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleBatchingStrategy>;
+    batchingStrategy?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleBatchingStrategy | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      */
@@ -455,19 +455,19 @@ export interface FsuCycleArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Details to configure diagnostics collection for targets affected by this Exadata Fleet Update Maintenance Cycle.
      */
-    diagnosticsCollection?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleDiagnosticsCollection>;
+    diagnosticsCollection?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleDiagnosticsCollection | undefined>;
     /**
      * (Updatable) The user-friendly name for the Exadata Fleet Update Cycle.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection which will be updated by the Exadata Fleet Update Cycle being created.
      */
@@ -479,23 +479,23 @@ export interface FsuCycleArgs {
     /**
      * (Updatable) List of identifiers of patches to ignore. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
      */
-    isIgnoreMissingPatches?: pulumi.Input<pulumi.Input<string>[]>;
+    isIgnoreMissingPatches?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Ignore patch conflicts or missing patches between the source and goal homes. This attribute will be ignored for Exadata Image (Guest OS) maintenance update.
      */
-    isIgnorePatches?: pulumi.Input<boolean>;
+    isIgnorePatches?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Ensure that database services are online on the same VMs before and after the maintenance update.
      */
-    isKeepPlacement?: pulumi.Input<boolean>;
+    isKeepPlacement?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Timeout for session draining for database services specified in seconds.
      */
-    maxDrainTimeoutInSeconds?: pulumi.Input<number>;
+    maxDrainTimeoutInSeconds?: pulumi.Input<number | undefined>;
     /**
      * Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
      */
-    stageActionSchedule?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleStageActionSchedule>;
+    stageActionSchedule?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleStageActionSchedule | undefined>;
     /**
      * (Updatable) Type of Exadata Fleet Update Cycle.
      */
@@ -503,5 +503,5 @@ export interface FsuCycleArgs {
     /**
      * (Updatable) Details of supported upgrade options for DB or GI collection.
      */
-    upgradeDetails?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleUpgradeDetails>;
+    upgradeDetails?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleUpgradeDetails | undefined>;
 }

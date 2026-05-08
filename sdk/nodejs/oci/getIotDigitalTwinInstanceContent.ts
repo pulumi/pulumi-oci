@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  *
  * const testDigitalTwinInstanceContent = oci.oci.getIotDigitalTwinInstanceContent({
  *     digitalTwinInstanceId: testDigitalTwinInstance.id,
- *     shouldIncludeMetadata: digitalTwinInstanceContentShouldIncludeMetadata,
+ *     shouldIncludeMetadata: digitalTwinInstanceContentShouldIncludeMetadata === "true",
  * });
  * ```
  */
@@ -69,7 +69,7 @@ export interface GetIotDigitalTwinInstanceContentResult {
  *
  * const testDigitalTwinInstanceContent = oci.oci.getIotDigitalTwinInstanceContent({
  *     digitalTwinInstanceId: testDigitalTwinInstance.id,
- *     shouldIncludeMetadata: digitalTwinInstanceContentShouldIncludeMetadata,
+ *     shouldIncludeMetadata: digitalTwinInstanceContentShouldIncludeMetadata === "true",
  * });
  * ```
  */
@@ -92,5 +92,5 @@ export interface GetIotDigitalTwinInstanceContentOutputArgs {
     /**
      * If set to true , digital twin instance metadata is included in the response.
      */
-    shouldIncludeMetadata?: pulumi.Input<boolean>;
+    shouldIncludeMetadata?: pulumi.Input<boolean | undefined>;
 }

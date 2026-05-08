@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBlockVolumeReplica = oci.Core.getBlockVolumeReplica({
+ * const testBlockVolumeReplica = oci.core.getBlockVolumeReplica({
  *     blockVolumeReplicaId: testBlockVolumeReplicaOciCoreBlockVolumeReplica.id,
  * });
  * ```
@@ -103,7 +103,7 @@ export interface GetBlockVolumeReplicaResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBlockVolumeReplica = oci.Core.getBlockVolumeReplica({
+ * const testBlockVolumeReplica = oci.core.getBlockVolumeReplica({
  *     blockVolumeReplicaId: testBlockVolumeReplicaOciCoreBlockVolumeReplica.id,
  * });
  * ```

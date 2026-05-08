@@ -299,7 +299,7 @@ def get_sensitive_type(sensitive_type_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_type = oci.DataSafe.get_sensitive_type(sensitive_type_id=test_sensitive_type_oci_data_safe_sensitive_type["id"])
+    test_sensitive_type = oci.datasafe.get_sensitive_type(sensitive_type_id=test_sensitive_type_oci_data_safe_sensitive_type["id"])
     ```
 
 
@@ -332,7 +332,7 @@ def get_sensitive_type(sensitive_type_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_sensitive_type_output(sensitive_type_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_sensitive_type_output(sensitive_type_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSensitiveTypeResult]:
     """
     This data source provides details about a specific Sensitive Type resource in Oracle Cloud Infrastructure Data Safe service.
@@ -345,7 +345,7 @@ def get_sensitive_type_output(sensitive_type_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_type = oci.DataSafe.get_sensitive_type(sensitive_type_id=test_sensitive_type_oci_data_safe_sensitive_type["id"])
+    test_sensitive_type = oci.datasafe.get_sensitive_type(sensitive_type_id=test_sensitive_type_oci_data_safe_sensitive_type["id"])
     ```
 
 

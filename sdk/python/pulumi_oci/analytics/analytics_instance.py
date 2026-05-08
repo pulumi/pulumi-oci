@@ -25,19 +25,19 @@ class AnalyticsInstanceArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  feature_set: pulumi.Input[_builtins.str],
                  license_type: pulumi.Input[_builtins.str],
-                 admin_user: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_notification: Optional[pulumi.Input[_builtins.str]] = None,
-                 feature_bundle: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 idcs_access_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_endpoint_details: Optional[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 update_channel: Optional[pulumi.Input[_builtins.str]] = None):
+                 admin_user: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_notification: pulumi.Input[Optional[_builtins.str]] = None,
+                 feature_bundle: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 idcs_access_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_endpoint_details: pulumi.Input[Optional['AnalyticsInstanceNetworkEndpointDetailsArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_channel: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AnalyticsInstance resource.
 
@@ -144,139 +144,139 @@ class AnalyticsInstanceArgs:
 
     @_builtins.property
     @pulumi.getter(name="adminUser")
-    def admin_user(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def admin_user(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         user name of the authorized user.
         """
         return pulumi.get(self, "admin_user")
 
     @admin_user.setter
-    def admin_user(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def admin_user(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "admin_user", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Optional description.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="domainId")
-    def domain_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         domain id for which the user is authorized.
         """
         return pulumi.get(self, "domain_id")
 
     @domain_id.setter
-    def domain_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain_id", value)
 
     @_builtins.property
     @pulumi.getter(name="emailNotification")
-    def email_notification(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email_notification(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Email address receiving notifications.
         """
         return pulumi.get(self, "email_notification")
 
     @email_notification.setter
-    def email_notification(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def email_notification(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email_notification", value)
 
     @_builtins.property
     @pulumi.getter(name="featureBundle")
-    def feature_bundle(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def feature_bundle(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The feature set of an Analytics instance.
         """
         return pulumi.get(self, "feature_bundle")
 
     @feature_bundle.setter
-    def feature_bundle(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def feature_bundle(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "feature_bundle", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsAccessToken")
-    def idcs_access_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_access_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IDCS access token identifying a stripe and service administrator user.
         """
         return pulumi.get(self, "idcs_access_token")
 
     @idcs_access_token.setter
-    def idcs_access_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_access_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_access_token", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
         """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
-    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkEndpointDetails")
-    def network_endpoint_details(self) -> Optional[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsArgs']]:
+    def network_endpoint_details(self) -> pulumi.Input[Optional['AnalyticsInstanceNetworkEndpointDetailsArgs']]:
         """
         Base representation of a network endpoint.
         """
         return pulumi.get(self, "network_endpoint_details")
 
     @network_endpoint_details.setter
-    def network_endpoint_details(self, value: Optional[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsArgs']]):
+    def network_endpoint_details(self, value: pulumi.Input[Optional['AnalyticsInstanceNetworkEndpointDetailsArgs']]):
         pulumi.set(self, "network_endpoint_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`. 
 
@@ -287,46 +287,46 @@ class AnalyticsInstanceArgs:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="updateChannel")
-    def update_channel(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def update_channel(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Analytics instance update channel.
         """
         return pulumi.get(self, "update_channel")
 
     @update_channel.setter
-    def update_channel(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def update_channel(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "update_channel", value)
 
 
 @pulumi.input_type
 class _AnalyticsInstanceState:
     def __init__(__self__, *,
-                 admin_user: Optional[pulumi.Input[_builtins.str]] = None,
-                 capacity: Optional[pulumi.Input['AnalyticsInstanceCapacityArgs']] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_notification: Optional[pulumi.Input[_builtins.str]] = None,
-                 feature_bundle: Optional[pulumi.Input[_builtins.str]] = None,
-                 feature_set: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 idcs_access_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_endpoint_details: Optional[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsArgs']] = None,
-                 service_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 update_channel: Optional[pulumi.Input[_builtins.str]] = None):
+                 admin_user: pulumi.Input[Optional[_builtins.str]] = None,
+                 capacity: pulumi.Input[Optional['AnalyticsInstanceCapacityArgs']] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_notification: pulumi.Input[Optional[_builtins.str]] = None,
+                 feature_bundle: pulumi.Input[Optional[_builtins.str]] = None,
+                 feature_set: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 idcs_access_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_endpoint_details: pulumi.Input[Optional['AnalyticsInstanceNetworkEndpointDetailsArgs']] = None,
+                 service_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_channel: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AnalyticsInstance resources.
 
@@ -401,199 +401,199 @@ class _AnalyticsInstanceState:
 
     @_builtins.property
     @pulumi.getter(name="adminUser")
-    def admin_user(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def admin_user(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         user name of the authorized user.
         """
         return pulumi.get(self, "admin_user")
 
     @admin_user.setter
-    def admin_user(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def admin_user(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "admin_user", value)
 
     @_builtins.property
     @pulumi.getter
-    def capacity(self) -> Optional[pulumi.Input['AnalyticsInstanceCapacityArgs']]:
+    def capacity(self) -> pulumi.Input[Optional['AnalyticsInstanceCapacityArgs']]:
         """
         Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
         """
         return pulumi.get(self, "capacity")
 
     @capacity.setter
-    def capacity(self, value: Optional[pulumi.Input['AnalyticsInstanceCapacityArgs']]):
+    def capacity(self, value: pulumi.Input[Optional['AnalyticsInstanceCapacityArgs']]):
         pulumi.set(self, "capacity", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Optional description.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="domainId")
-    def domain_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         domain id for which the user is authorized.
         """
         return pulumi.get(self, "domain_id")
 
     @domain_id.setter
-    def domain_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain_id", value)
 
     @_builtins.property
     @pulumi.getter(name="emailNotification")
-    def email_notification(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email_notification(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Email address receiving notifications.
         """
         return pulumi.get(self, "email_notification")
 
     @email_notification.setter
-    def email_notification(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def email_notification(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email_notification", value)
 
     @_builtins.property
     @pulumi.getter(name="featureBundle")
-    def feature_bundle(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def feature_bundle(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The feature set of an Analytics instance.
         """
         return pulumi.get(self, "feature_bundle")
 
     @feature_bundle.setter
-    def feature_bundle(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def feature_bundle(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "feature_bundle", value)
 
     @_builtins.property
     @pulumi.getter(name="featureSet")
-    def feature_set(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def feature_set(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Analytics feature set.
         """
         return pulumi.get(self, "feature_set")
 
     @feature_set.setter
-    def feature_set(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def feature_set(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "feature_set", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsAccessToken")
-    def idcs_access_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_access_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IDCS access token identifying a stripe and service administrator user.
         """
         return pulumi.get(self, "idcs_access_token")
 
     @idcs_access_token.setter
-    def idcs_access_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_access_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_access_token", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
         """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
-    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseType")
-    def license_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The license used for the service.
         """
         return pulumi.get(self, "license_type")
 
     @license_type.setter
-    def license_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkEndpointDetails")
-    def network_endpoint_details(self) -> Optional[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsArgs']]:
+    def network_endpoint_details(self) -> pulumi.Input[Optional['AnalyticsInstanceNetworkEndpointDetailsArgs']]:
         """
         Base representation of a network endpoint.
         """
         return pulumi.get(self, "network_endpoint_details")
 
     @network_endpoint_details.setter
-    def network_endpoint_details(self, value: Optional[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsArgs']]):
+    def network_endpoint_details(self, value: pulumi.Input[Optional['AnalyticsInstanceNetworkEndpointDetailsArgs']]):
         pulumi.set(self, "network_endpoint_details", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceUrl")
-    def service_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         URL of the Analytics service.
         """
         return pulumi.get(self, "service_url")
 
     @service_url.setter
-    def service_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_url", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target state for the Analytics Instance. Could be set to `ACTIVE` or `INACTIVE`. 
 
@@ -604,55 +604,55 @@ class _AnalyticsInstanceState:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="updateChannel")
-    def update_channel(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def update_channel(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Analytics instance update channel.
         """
         return pulumi.get(self, "update_channel")
 
     @update_channel.setter
-    def update_channel(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def update_channel(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "update_channel", value)
 
 
@@ -662,23 +662,23 @@ class AnalyticsInstance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 admin_user: Optional[pulumi.Input[_builtins.str]] = None,
-                 capacity: Optional[pulumi.Input[Union['AnalyticsInstanceCapacityArgs', 'AnalyticsInstanceCapacityArgsDict']]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_notification: Optional[pulumi.Input[_builtins.str]] = None,
-                 feature_bundle: Optional[pulumi.Input[_builtins.str]] = None,
-                 feature_set: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 idcs_access_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_endpoint_details: Optional[pulumi.Input[Union['AnalyticsInstanceNetworkEndpointDetailsArgs', 'AnalyticsInstanceNetworkEndpointDetailsArgsDict']]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 update_channel: Optional[pulumi.Input[_builtins.str]] = None,
+                 admin_user: pulumi.Input[Optional[_builtins.str]] = None,
+                 capacity: pulumi.Input[Optional[Union['AnalyticsInstanceCapacityArgs', 'AnalyticsInstanceCapacityArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_notification: pulumi.Input[Optional[_builtins.str]] = None,
+                 feature_bundle: pulumi.Input[Optional[_builtins.str]] = None,
+                 feature_set: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 idcs_access_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_endpoint_details: pulumi.Input[Optional[Union['AnalyticsInstanceNetworkEndpointDetailsArgs', 'AnalyticsInstanceNetworkEndpointDetailsArgsDict']]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_channel: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
@@ -698,7 +698,7 @@ class AnalyticsInstance(pulumi.CustomResource):
         test_analytics_instance = oci.analytics.AnalyticsInstance("test_analytics_instance",
             capacity={
                 "capacity_type": analytics_instance_capacity_capacity_type,
-                "capacity_value": analytics_instance_capacity_capacity_value,
+                "capacity_value": int(analytics_instance_capacity_capacity_value),
             },
             compartment_id=compartment_id,
             feature_set=analytics_instance_feature_set,
@@ -789,7 +789,7 @@ class AnalyticsInstance(pulumi.CustomResource):
         test_analytics_instance = oci.analytics.AnalyticsInstance("test_analytics_instance",
             capacity={
                 "capacity_type": analytics_instance_capacity_capacity_type,
-                "capacity_value": analytics_instance_capacity_capacity_value,
+                "capacity_value": int(analytics_instance_capacity_capacity_value),
             },
             compartment_id=compartment_id,
             feature_set=analytics_instance_feature_set,
@@ -847,23 +847,23 @@ class AnalyticsInstance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 admin_user: Optional[pulumi.Input[_builtins.str]] = None,
-                 capacity: Optional[pulumi.Input[Union['AnalyticsInstanceCapacityArgs', 'AnalyticsInstanceCapacityArgsDict']]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_notification: Optional[pulumi.Input[_builtins.str]] = None,
-                 feature_bundle: Optional[pulumi.Input[_builtins.str]] = None,
-                 feature_set: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 idcs_access_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_endpoint_details: Optional[pulumi.Input[Union['AnalyticsInstanceNetworkEndpointDetailsArgs', 'AnalyticsInstanceNetworkEndpointDetailsArgsDict']]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 update_channel: Optional[pulumi.Input[_builtins.str]] = None,
+                 admin_user: pulumi.Input[Optional[_builtins.str]] = None,
+                 capacity: pulumi.Input[Optional[Union['AnalyticsInstanceCapacityArgs', 'AnalyticsInstanceCapacityArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_notification: pulumi.Input[Optional[_builtins.str]] = None,
+                 feature_bundle: pulumi.Input[Optional[_builtins.str]] = None,
+                 feature_set: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 idcs_access_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_endpoint_details: pulumi.Input[Optional[Union['AnalyticsInstanceNetworkEndpointDetailsArgs', 'AnalyticsInstanceNetworkEndpointDetailsArgsDict']]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_channel: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -914,27 +914,27 @@ class AnalyticsInstance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            admin_user: Optional[pulumi.Input[_builtins.str]] = None,
-            capacity: Optional[pulumi.Input[Union['AnalyticsInstanceCapacityArgs', 'AnalyticsInstanceCapacityArgsDict']]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-            email_notification: Optional[pulumi.Input[_builtins.str]] = None,
-            feature_bundle: Optional[pulumi.Input[_builtins.str]] = None,
-            feature_set: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            idcs_access_token: Optional[pulumi.Input[_builtins.str]] = None,
-            kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            license_type: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            network_endpoint_details: Optional[pulumi.Input[Union['AnalyticsInstanceNetworkEndpointDetailsArgs', 'AnalyticsInstanceNetworkEndpointDetailsArgsDict']]] = None,
-            service_url: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            update_channel: Optional[pulumi.Input[_builtins.str]] = None) -> 'AnalyticsInstance':
+            admin_user: pulumi.Input[Optional[_builtins.str]] = None,
+            capacity: pulumi.Input[Optional[Union['AnalyticsInstanceCapacityArgs', 'AnalyticsInstanceCapacityArgsDict']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            email_notification: pulumi.Input[Optional[_builtins.str]] = None,
+            feature_bundle: pulumi.Input[Optional[_builtins.str]] = None,
+            feature_set: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            idcs_access_token: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            license_type: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_endpoint_details: pulumi.Input[Optional[Union['AnalyticsInstanceNetworkEndpointDetailsArgs', 'AnalyticsInstanceNetworkEndpointDetailsArgsDict']]] = None,
+            service_url: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            update_channel: pulumi.Input[Optional[_builtins.str]] = None) -> 'AnalyticsInstance':
         """
         Get an existing AnalyticsInstance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

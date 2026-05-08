@@ -138,7 +138,7 @@ def get_managed_instance_errata(classification_types: Optional[Sequence[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_errata = oci.OsManagementHub.get_managed_instance_errata(managed_instance_id=test_managed_instance["id"],
+    test_managed_instance_errata = oci.osmanagementhub.get_managed_instance_errata(managed_instance_id=test_managed_instance["id"],
         classification_types=managed_instance_errata_classification_type,
         compartment_id=compartment_id,
         names=managed_instance_errata_name,
@@ -171,12 +171,12 @@ def get_managed_instance_errata(classification_types: Optional[Sequence[_builtin
         managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
         name_contains=pulumi.get(__ret__, 'name_contains'),
         names=pulumi.get(__ret__, 'names'))
-def get_managed_instance_errata_output(classification_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                       compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceErrataFilterArgs', 'GetManagedInstanceErrataFilterArgsDict']]]]] = None,
-                                       managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_managed_instance_errata_output(classification_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                       compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedInstanceErrataFilterArgs', 'GetManagedInstanceErrataFilterArgsDict']]]]] = None,
+                                       managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceErrataResult]:
     """
     This data source provides the list of Managed Instance Errata in Oracle Cloud Infrastructure Os Management Hub service.
@@ -189,7 +189,7 @@ def get_managed_instance_errata_output(classification_types: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_errata = oci.OsManagementHub.get_managed_instance_errata(managed_instance_id=test_managed_instance["id"],
+    test_managed_instance_errata = oci.osmanagementhub.get_managed_instance_errata(managed_instance_id=test_managed_instance["id"],
         classification_types=managed_instance_errata_classification_type,
         compartment_id=compartment_id,
         names=managed_instance_errata_name,

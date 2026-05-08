@@ -119,7 +119,7 @@ def get_billing_schedules(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_billing_schedules = oci.OneSubsription.get_billing_schedules(compartment_id=compartment_id,
+    test_billing_schedules = oci.onesubsription.get_billing_schedules(compartment_id=compartment_id,
         subscription_id=test_subscription["id"],
         subscribed_service_id=test_subscribed_service["id"])
     ```
@@ -144,10 +144,10 @@ def get_billing_schedules(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         subscribed_service_id=pulumi.get(__ret__, 'subscribed_service_id'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'))
-def get_billing_schedules_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBillingSchedulesFilterArgs', 'GetBillingSchedulesFilterArgsDict']]]]] = None,
-                                 subscribed_service_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_billing_schedules_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBillingSchedulesFilterArgs', 'GetBillingSchedulesFilterArgsDict']]]]] = None,
+                                 subscribed_service_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBillingSchedulesResult]:
     """
     This data source provides the list of Billing Schedules in Oracle Cloud Infrastructure Onesubscription service.
@@ -161,7 +161,7 @@ def get_billing_schedules_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_billing_schedules = oci.OneSubsription.get_billing_schedules(compartment_id=compartment_id,
+    test_billing_schedules = oci.onesubsription.get_billing_schedules(compartment_id=compartment_id,
         subscription_id=test_subscription["id"],
         subscribed_service_id=test_subscribed_service["id"])
     ```

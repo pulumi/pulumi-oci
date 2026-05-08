@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVbInstances = oci.VisualBuilder.getVbInstances({
+ * const testVbInstances = oci.visualbuilder.getVbInstances({
  *     compartmentId: compartmentId,
  *     displayName: vbInstanceDisplayName,
  *     state: vbInstanceState,
@@ -90,7 +90,7 @@ export interface GetVbInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVbInstances = oci.VisualBuilder.getVbInstances({
+ * const testVbInstances = oci.visualbuilder.getVbInstances({
  *     compartmentId: compartmentId,
  *     displayName: vbInstanceDisplayName,
  *     state: vbInstanceState,
@@ -118,10 +118,10 @@ export interface GetVbInstancesOutputArgs {
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.VisualBuilder.GetVbInstancesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.VisualBuilder.GetVbInstancesFilterArgs>[] | undefined>;
     /**
      * Life cycle state to query on.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

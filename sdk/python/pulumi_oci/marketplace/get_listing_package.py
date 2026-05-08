@@ -264,7 +264,7 @@ def get_listing_package(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_listing_package = oci.Marketplace.get_listing_package(listing_id=test_listing["id"],
+    test_listing_package = oci.marketplace.get_listing_package(listing_id=test_listing["id"],
         package_version=listing_package_package_version,
         compartment_id=compartment_id)
     ```
@@ -299,9 +299,9 @@ def get_listing_package(compartment_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         variables=pulumi.get(__ret__, 'variables'),
         version=pulumi.get(__ret__, 'version'))
-def get_listing_package_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               listing_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               package_version: Optional[pulumi.Input[_builtins.str]] = None,
+def get_listing_package_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               package_version: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetListingPackageResult]:
     """
     This data source provides details about a specific Listing Package resource in Oracle Cloud Infrastructure Marketplace service.
@@ -327,7 +327,7 @@ def get_listing_package_output(compartment_id: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_listing_package = oci.Marketplace.get_listing_package(listing_id=test_listing["id"],
+    test_listing_package = oci.marketplace.get_listing_package(listing_id=test_listing["id"],
         package_version=listing_package_package_version,
         compartment_id=compartment_id)
     ```

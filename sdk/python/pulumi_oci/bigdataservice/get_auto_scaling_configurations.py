@@ -131,11 +131,11 @@ def get_auto_scaling_configurations(bds_instance_id: Optional[_builtins.str] = N
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_auto_scaling_configurations_output(bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                           compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                           display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutoScalingConfigurationsFilterArgs', 'GetAutoScalingConfigurationsFilterArgsDict']]]]] = None,
-                                           state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_auto_scaling_configurations_output(bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                           compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutoScalingConfigurationsFilterArgs', 'GetAutoScalingConfigurationsFilterArgsDict']]]]] = None,
+                                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutoScalingConfigurationsResult]:
     """
     Use this data source to access information about an existing resource.

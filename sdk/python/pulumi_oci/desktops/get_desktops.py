@@ -142,7 +142,7 @@ def get_desktops(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_desktops = oci.Desktops.get_desktops(compartment_id=compartment_id,
+    test_desktops = oci.desktops.get_desktops(compartment_id=compartment_id,
         availability_domain=desktop_availability_domain,
         desktop_pool_id=test_desktop_pool["id"],
         display_name=desktop_display_name,
@@ -178,13 +178,13 @@ def get_desktops(availability_domain: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_desktops_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                        desktop_pool_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDesktopsFilterArgs', 'GetDesktopsFilterArgsDict']]]]] = None,
-                        id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_desktops_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                        desktop_pool_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDesktopsFilterArgs', 'GetDesktopsFilterArgsDict']]]]] = None,
+                        id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDesktopsResult]:
     """
     This data source provides the list of Desktops in Oracle Cloud Infrastructure Desktops service.
@@ -197,7 +197,7 @@ def get_desktops_output(availability_domain: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_desktops = oci.Desktops.get_desktops(compartment_id=compartment_id,
+    test_desktops = oci.desktops.get_desktops(compartment_id=compartment_id,
         availability_domain=desktop_availability_domain,
         desktop_pool_id=test_desktop_pool["id"],
         display_name=desktop_display_name,

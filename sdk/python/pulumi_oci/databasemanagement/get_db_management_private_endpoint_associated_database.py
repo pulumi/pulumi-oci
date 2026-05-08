@@ -97,7 +97,7 @@ def get_db_management_private_endpoint_associated_database(compartment_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_db_management_private_endpoint_associated_database = oci.DatabaseManagement.get_db_management_private_endpoint_associated_database(compartment_id=compartment_id,
+    test_db_management_private_endpoint_associated_database = oci.databasemanagement.get_db_management_private_endpoint_associated_database(compartment_id=compartment_id,
         db_management_private_endpoint_id=test_db_management_private_endpoint["id"])
     ```
 
@@ -116,8 +116,8 @@ def get_db_management_private_endpoint_associated_database(compartment_id: Optio
         db_management_private_endpoint_id=pulumi.get(__ret__, 'db_management_private_endpoint_id'),
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'))
-def get_db_management_private_endpoint_associated_database_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                  db_management_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_db_management_private_endpoint_associated_database_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                  db_management_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbManagementPrivateEndpointAssociatedDatabaseResult]:
     """
     This data source provides details about a specific Db Management Private Endpoint Associated Database resource in Oracle Cloud Infrastructure Database Management service.
@@ -130,7 +130,7 @@ def get_db_management_private_endpoint_associated_database_output(compartment_id
     import pulumi
     import pulumi_oci as oci
 
-    test_db_management_private_endpoint_associated_database = oci.DatabaseManagement.get_db_management_private_endpoint_associated_database(compartment_id=compartment_id,
+    test_db_management_private_endpoint_associated_database = oci.databasemanagement.get_db_management_private_endpoint_associated_database(compartment_id=compartment_id,
         db_management_private_endpoint_id=test_db_management_private_endpoint["id"])
     ```
 

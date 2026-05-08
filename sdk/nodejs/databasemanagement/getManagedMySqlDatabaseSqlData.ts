@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedMySqlDatabaseSqlData = oci.DatabaseManagement.getManagedMySqlDatabaseSqlData({
+ * const testManagedMySqlDatabaseSqlData = oci.databasemanagement.getManagedMySqlDatabaseSqlData({
  *     endTime: managedMySqlDatabaseSqlDataEndTime,
  *     managedMySqlDatabaseId: testManagedMySqlDatabase.id,
  *     startTime: managedMySqlDatabaseSqlDataStartTime,
@@ -102,7 +102,7 @@ export interface GetManagedMySqlDatabaseSqlDataResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedMySqlDatabaseSqlData = oci.DatabaseManagement.getManagedMySqlDatabaseSqlData({
+ * const testManagedMySqlDatabaseSqlData = oci.databasemanagement.getManagedMySqlDatabaseSqlData({
  *     endTime: managedMySqlDatabaseSqlDataEndTime,
  *     managedMySqlDatabaseId: testManagedMySqlDatabase.id,
  *     startTime: managedMySqlDatabaseSqlDataStartTime,
@@ -146,8 +146,8 @@ export interface GetManagedMySqlDatabaseSqlDataOutputArgs {
      * * HEATWAVE_OFFLOADED
      * * HEATWAVE_OUT_OF_MEMORY
      */
-    filterColumn?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedMySqlDatabaseSqlDataFilterArgs>[]>;
+    filterColumn?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedMySqlDatabaseSqlDataFilterArgs>[] | undefined>;
     /**
      * The OCID of the Managed MySQL Database.
      */

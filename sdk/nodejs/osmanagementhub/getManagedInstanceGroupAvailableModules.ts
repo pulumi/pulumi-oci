@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceGroupAvailableModules = oci.OsManagementHub.getManagedInstanceGroupAvailableModules({
+ * const testManagedInstanceGroupAvailableModules = oci.osmanagementhub.getManagedInstanceGroupAvailableModules({
  *     managedInstanceGroupId: testManagedInstanceGroup.id,
  *     compartmentId: compartmentId,
  *     name: managedInstanceGroupAvailableModuleName,
@@ -91,7 +91,7 @@ export interface GetManagedInstanceGroupAvailableModulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceGroupAvailableModules = oci.OsManagementHub.getManagedInstanceGroupAvailableModules({
+ * const testManagedInstanceGroupAvailableModules = oci.osmanagementhub.getManagedInstanceGroupAvailableModules({
  *     managedInstanceGroupId: testManagedInstanceGroup.id,
  *     compartmentId: compartmentId,
  *     name: managedInstanceGroupAvailableModuleName,
@@ -117,8 +117,8 @@ export interface GetManagedInstanceGroupAvailableModulesOutputArgs {
     /**
      * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagedInstanceGroupAvailableModulesFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagedInstanceGroupAvailableModulesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
@@ -126,9 +126,9 @@ export interface GetManagedInstanceGroupAvailableModulesOutputArgs {
     /**
      * The resource name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that may partially match the name given.
      */
-    nameContains?: pulumi.Input<string>;
+    nameContains?: pulumi.Input<string | undefined>;
 }

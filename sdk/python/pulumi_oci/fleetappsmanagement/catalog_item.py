@@ -26,15 +26,15 @@ class CatalogItemArgs:
                  description: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
                  package_type: pulumi.Input[_builtins.str],
-                 catalog_source_payload: Optional[pulumi.Input['CatalogItemCatalogSourcePayloadArgs']] = None,
-                 clone_catalog_item_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 listing_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 listing_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 short_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_released: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_description: Optional[pulumi.Input[_builtins.str]] = None):
+                 catalog_source_payload: pulumi.Input[Optional['CatalogItemCatalogSourcePayloadArgs']] = None,
+                 clone_catalog_item_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 listing_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 short_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_released: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_description: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a CatalogItem resource.
 
@@ -139,139 +139,139 @@ class CatalogItemArgs:
 
     @_builtins.property
     @pulumi.getter(name="catalogSourcePayload")
-    def catalog_source_payload(self) -> Optional[pulumi.Input['CatalogItemCatalogSourcePayloadArgs']]:
+    def catalog_source_payload(self) -> pulumi.Input[Optional['CatalogItemCatalogSourcePayloadArgs']]:
         """
         Catalog source payload.
         """
         return pulumi.get(self, "catalog_source_payload")
 
     @catalog_source_payload.setter
-    def catalog_source_payload(self, value: Optional[pulumi.Input['CatalogItemCatalogSourcePayloadArgs']]):
+    def catalog_source_payload(self, value: pulumi.Input[Optional['CatalogItemCatalogSourcePayloadArgs']]):
         pulumi.set(self, "catalog_source_payload", value)
 
     @_builtins.property
     @pulumi.getter(name="cloneCatalogItemTrigger")
-    def clone_catalog_item_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def clone_catalog_item_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
         """
         return pulumi.get(self, "clone_catalog_item_trigger")
 
     @clone_catalog_item_trigger.setter
-    def clone_catalog_item_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def clone_catalog_item_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "clone_catalog_item_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="listingId")
-    def listing_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def listing_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The catalog listing Id.
         """
         return pulumi.get(self, "listing_id")
 
     @listing_id.setter
-    def listing_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def listing_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "listing_id", value)
 
     @_builtins.property
     @pulumi.getter(name="listingVersion")
-    def listing_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def listing_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The catalog package version.
         """
         return pulumi.get(self, "listing_version")
 
     @listing_version.setter
-    def listing_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def listing_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "listing_version", value)
 
     @_builtins.property
     @pulumi.getter(name="shortDescription")
-    def short_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def short_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Short description about the catalog item.
         """
         return pulumi.get(self, "short_description")
 
     @short_description.setter
-    def short_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def short_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "short_description", value)
 
     @_builtins.property
     @pulumi.getter(name="timeReleased")
-    def time_released(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_released(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the CatalogItem was released, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_released")
 
     @time_released.setter
-    def time_released(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_released(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_released", value)
 
     @_builtins.property
     @pulumi.getter(name="versionDescription")
-    def version_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Version description about the catalog item.
         """
         return pulumi.get(self, "version_description")
 
     @version_description.setter
-    def version_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_description", value)
 
 
 @pulumi.input_type
 class _CatalogItemState:
     def __init__(__self__, *,
-                 catalog_result_payloads: Optional[pulumi.Input[Sequence[pulumi.Input['CatalogItemCatalogResultPayloadArgs']]]] = None,
-                 catalog_source_payload: Optional[pulumi.Input['CatalogItemCatalogSourcePayloadArgs']] = None,
-                 clone_catalog_item_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 listing_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 listing_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 package_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 short_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 should_list_public_items: Optional[pulumi.Input[_builtins.bool]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_backfill_last_checked: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_checked: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_released: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_description: Optional[pulumi.Input[_builtins.str]] = None):
+                 catalog_result_payloads: pulumi.Input[Optional[Sequence[pulumi.Input['CatalogItemCatalogResultPayloadArgs']]]] = None,
+                 catalog_source_payload: pulumi.Input[Optional['CatalogItemCatalogSourcePayloadArgs']] = None,
+                 clone_catalog_item_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 listing_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 package_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 short_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 should_list_public_items: pulumi.Input[Optional[_builtins.bool]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_backfill_last_checked: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_checked: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_released: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_description: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CatalogItem resources.
 
@@ -348,278 +348,278 @@ class _CatalogItemState:
 
     @_builtins.property
     @pulumi.getter(name="catalogResultPayloads")
-    def catalog_result_payloads(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CatalogItemCatalogResultPayloadArgs']]]]:
+    def catalog_result_payloads(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CatalogItemCatalogResultPayloadArgs']]]]:
         """
         Catalog result payload.
         """
         return pulumi.get(self, "catalog_result_payloads")
 
     @catalog_result_payloads.setter
-    def catalog_result_payloads(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CatalogItemCatalogResultPayloadArgs']]]]):
+    def catalog_result_payloads(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CatalogItemCatalogResultPayloadArgs']]]]):
         pulumi.set(self, "catalog_result_payloads", value)
 
     @_builtins.property
     @pulumi.getter(name="catalogSourcePayload")
-    def catalog_source_payload(self) -> Optional[pulumi.Input['CatalogItemCatalogSourcePayloadArgs']]:
+    def catalog_source_payload(self) -> pulumi.Input[Optional['CatalogItemCatalogSourcePayloadArgs']]:
         """
         Catalog source payload.
         """
         return pulumi.get(self, "catalog_source_payload")
 
     @catalog_source_payload.setter
-    def catalog_source_payload(self, value: Optional[pulumi.Input['CatalogItemCatalogSourcePayloadArgs']]):
+    def catalog_source_payload(self, value: pulumi.Input[Optional['CatalogItemCatalogSourcePayloadArgs']]):
         pulumi.set(self, "catalog_source_payload", value)
 
     @_builtins.property
     @pulumi.getter(name="cloneCatalogItemTrigger")
-    def clone_catalog_item_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def clone_catalog_item_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Clone Catalog Item. Could be set to any integer value.
         """
         return pulumi.get(self, "clone_catalog_item_trigger")
 
     @clone_catalog_item_trigger.setter
-    def clone_catalog_item_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def clone_catalog_item_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "clone_catalog_item_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="configSourceType")
-    def config_source_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def config_source_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Config source type Eg: STACK_TEMPLATE_CATALOG_SOURCE, PAR_CATALOG_SOURCE, GIT_CATALOG_SOURCE, MARKETPLACE_CATALOG_SOURCE.
         """
         return pulumi.get(self, "config_source_type")
 
     @config_source_type.setter
-    def config_source_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def config_source_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_source_type", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the CatalogItem.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The CatalogItem name.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The details of lifecycle state CatalogItem.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="listingId")
-    def listing_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def listing_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The catalog listing Id.
         """
         return pulumi.get(self, "listing_id")
 
     @listing_id.setter
-    def listing_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def listing_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "listing_id", value)
 
     @_builtins.property
     @pulumi.getter(name="listingVersion")
-    def listing_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def listing_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The catalog package version.
         """
         return pulumi.get(self, "listing_version")
 
     @listing_version.setter
-    def listing_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def listing_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "listing_version", value)
 
     @_builtins.property
     @pulumi.getter(name="packageType")
-    def package_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def package_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Config package type Eg: TF_PACKAGE, NON_TF_PACKAGE, CONFIG_FILE.
         """
         return pulumi.get(self, "package_type")
 
     @package_type.setter
-    def package_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def package_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "package_type", value)
 
     @_builtins.property
     @pulumi.getter(name="shortDescription")
-    def short_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def short_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Short description about the catalog item.
         """
         return pulumi.get(self, "short_description")
 
     @short_description.setter
-    def short_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def short_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "short_description", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldListPublicItems")
-    def should_list_public_items(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_list_public_items(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The indicator to append Public Items from the root compartment to any query, when set to TRUE.
         """
         return pulumi.get(self, "should_list_public_items")
 
     @should_list_public_items.setter
-    def should_list_public_items(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_list_public_items(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_list_public_items", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the CatalogItem.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeBackfillLastChecked")
-    def time_backfill_last_checked(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_backfill_last_checked(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the CatalogItem was last checked by backfill job, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_backfill_last_checked")
 
     @time_backfill_last_checked.setter
-    def time_backfill_last_checked(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_backfill_last_checked(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_backfill_last_checked", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the CatalogItem was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastChecked")
-    def time_last_checked(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_checked(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the CatalogItem was last checked, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_last_checked")
 
     @time_last_checked.setter
-    def time_last_checked(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_checked(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_checked", value)
 
     @_builtins.property
     @pulumi.getter(name="timeReleased")
-    def time_released(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_released(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the CatalogItem was released, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_released")
 
     @time_released.setter
-    def time_released(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_released(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_released", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the CatalogItem was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="versionDescription")
-    def version_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Version description about the catalog item.
         """
         return pulumi.get(self, "version_description")
 
     @version_description.setter
-    def version_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_description", value)
 
 
@@ -629,20 +629,20 @@ class CatalogItem(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 catalog_source_payload: Optional[pulumi.Input[Union['CatalogItemCatalogSourcePayloadArgs', 'CatalogItemCatalogSourcePayloadArgsDict']]] = None,
-                 clone_catalog_item_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 listing_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 listing_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 package_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 short_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_released: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_description: Optional[pulumi.Input[_builtins.str]] = None,
+                 catalog_source_payload: pulumi.Input[Optional[Union['CatalogItemCatalogSourcePayloadArgs', 'CatalogItemCatalogSourcePayloadArgsDict']]] = None,
+                 clone_catalog_item_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 listing_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 package_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 short_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_released: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_description: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Catalog Item resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -804,20 +804,20 @@ class CatalogItem(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 catalog_source_payload: Optional[pulumi.Input[Union['CatalogItemCatalogSourcePayloadArgs', 'CatalogItemCatalogSourcePayloadArgsDict']]] = None,
-                 clone_catalog_item_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config_source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 listing_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 listing_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 package_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 short_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_released: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_description: Optional[pulumi.Input[_builtins.str]] = None,
+                 catalog_source_payload: pulumi.Input[Optional[Union['CatalogItemCatalogSourcePayloadArgs', 'CatalogItemCatalogSourcePayloadArgsDict']]] = None,
+                 clone_catalog_item_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 listing_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 package_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 short_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_released: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_description: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -870,29 +870,29 @@ class CatalogItem(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            catalog_result_payloads: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CatalogItemCatalogResultPayloadArgs', 'CatalogItemCatalogResultPayloadArgsDict']]]]] = None,
-            catalog_source_payload: Optional[pulumi.Input[Union['CatalogItemCatalogSourcePayloadArgs', 'CatalogItemCatalogSourcePayloadArgsDict']]] = None,
-            clone_catalog_item_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            config_source_type: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            listing_id: Optional[pulumi.Input[_builtins.str]] = None,
-            listing_version: Optional[pulumi.Input[_builtins.str]] = None,
-            package_type: Optional[pulumi.Input[_builtins.str]] = None,
-            short_description: Optional[pulumi.Input[_builtins.str]] = None,
-            should_list_public_items: Optional[pulumi.Input[_builtins.bool]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_backfill_last_checked: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_last_checked: Optional[pulumi.Input[_builtins.str]] = None,
-            time_released: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            version_description: Optional[pulumi.Input[_builtins.str]] = None) -> 'CatalogItem':
+            catalog_result_payloads: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CatalogItemCatalogResultPayloadArgs', 'CatalogItemCatalogResultPayloadArgsDict']]]]] = None,
+            catalog_source_payload: pulumi.Input[Optional[Union['CatalogItemCatalogSourcePayloadArgs', 'CatalogItemCatalogSourcePayloadArgsDict']]] = None,
+            clone_catalog_item_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config_source_type: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+            listing_version: pulumi.Input[Optional[_builtins.str]] = None,
+            package_type: pulumi.Input[Optional[_builtins.str]] = None,
+            short_description: pulumi.Input[Optional[_builtins.str]] = None,
+            should_list_public_items: pulumi.Input[Optional[_builtins.bool]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_backfill_last_checked: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_checked: pulumi.Input[Optional[_builtins.str]] = None,
+            time_released: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            version_description: pulumi.Input[Optional[_builtins.str]] = None) -> 'CatalogItem':
         """
         Get an existing CatalogItem resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

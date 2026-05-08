@@ -98,7 +98,7 @@ def get_pbf_listing_triggers(filters: Optional[Sequence[Union['GetPbfListingTrig
     import pulumi
     import pulumi_oci as oci
 
-    test_pbf_listing_triggers = oci.Functions.get_pbf_listing_triggers(name=pbf_listing_trigger_name)
+    test_pbf_listing_triggers = oci.functions.get_pbf_listing_triggers(name=pbf_listing_trigger_name)
     ```
 
 
@@ -115,8 +115,8 @@ def get_pbf_listing_triggers(filters: Optional[Sequence[Union['GetPbfListingTrig
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         triggers_collections=pulumi.get(__ret__, 'triggers_collections'))
-def get_pbf_listing_triggers_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPbfListingTriggersFilterArgs', 'GetPbfListingTriggersFilterArgsDict']]]]] = None,
-                                    name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_pbf_listing_triggers_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPbfListingTriggersFilterArgs', 'GetPbfListingTriggersFilterArgsDict']]]]] = None,
+                                    name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPbfListingTriggersResult]:
     """
     This data source provides the list of Pbf Listing Triggers in Oracle Cloud Infrastructure Functions service.
@@ -129,7 +129,7 @@ def get_pbf_listing_triggers_output(filters: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_pbf_listing_triggers = oci.Functions.get_pbf_listing_triggers(name=pbf_listing_trigger_name)
+    test_pbf_listing_triggers = oci.functions.get_pbf_listing_triggers(name=pbf_listing_trigger_name)
     ```
 
 

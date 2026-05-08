@@ -31,9 +31,9 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := waas.GetCertificates(ctx, &waas.GetCertificatesArgs{
 //				CompartmentId:                   compartmentId,
-//				DisplayNames:                    certificateDisplayNames,
-//				Ids:                             certificateIds,
-//				States:                          certificateStates,
+//				DisplayNames:                    pulumi.ToArray(certificateDisplayNames),
+//				Ids:                             pulumi.ToArray(certificateIds),
+//				States:                          pulumi.ToArray(certificateStates),
 //				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(certificateTimeCreatedGreaterThanOrEqualTo),
 //				TimeCreatedLessThan:             pulumi.StringRef(certificateTimeCreatedLessThan),
 //			}, nil)

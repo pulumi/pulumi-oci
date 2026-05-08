@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAccessRequestHistory = oci.OperatorAccessControl.getAccessRequestHistory({
+ * const testAccessRequestHistory = oci.operatoraccesscontrol.getAccessRequestHistory({
  *     accessRequestId: testAccessRequest.id,
  * });
  * ```
@@ -64,7 +64,7 @@ export interface GetAccessRequestHistoryResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAccessRequestHistory = oci.OperatorAccessControl.getAccessRequestHistory({
+ * const testAccessRequestHistory = oci.operatoraccesscontrol.getAccessRequestHistory({
  *     accessRequestId: testAccessRequest.id,
  * });
  * ```

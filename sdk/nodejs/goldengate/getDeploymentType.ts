@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeploymentType = oci.GoldenGate.getDeploymentType({
+ * const testDeploymentType = oci.goldengate.getDeploymentType({
  *     compartmentId: compartmentId,
  *     displayName: deploymentTypeDisplayName,
  * });
@@ -74,7 +74,7 @@ export interface GetDeploymentTypeResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeploymentType = oci.GoldenGate.getDeploymentType({
+ * const testDeploymentType = oci.goldengate.getDeploymentType({
  *     compartmentId: compartmentId,
  *     displayName: deploymentTypeDisplayName,
  * });
@@ -99,5 +99,5 @@ export interface GetDeploymentTypeOutputArgs {
     /**
      * A filter to return only the resources that match the entire 'displayName' given.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
 }

@@ -317,167 +317,167 @@ export class Database extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Database resources.
  */
 export interface DatabaseState {
-    actionTrigger?: pulumi.Input<number>;
+    actionTrigger?: pulumi.Input<number | undefined>;
     /**
      * The character set for the database.
      */
-    characterSet?: pulumi.Input<string>;
+    characterSet?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The Connection strings used to connect to the Oracle Database.
      */
-    connectionStrings?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseConnectionString>[]>;
-    dataGuardAction?: pulumi.Input<string>;
+    connectionStrings?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseConnectionString>[] | undefined>;
+    dataGuardAction?: pulumi.Input<string | undefined>;
     /**
      * Details of Data Guard setup that the given database is part of.  Also includes information about databases part of this Data Guard group and properties for their Data Guard configuration.
      */
-    dataGuardGroups?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseDataGuardGroup>[]>;
+    dataGuardGroups?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseDataGuardGroup>[] | undefined>;
     /**
      * (Updatable) Details for creating a database.
      *
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
-    database?: pulumi.Input<inputs.Database.DatabaseDatabase>;
+    database?: pulumi.Input<inputs.Database.DatabaseDatabase | undefined>;
     /**
      * The configuration of the Database Management service.
      */
-    databaseManagementConfigs?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseDatabaseManagementConfig>[]>;
+    databaseManagementConfigs?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseDatabaseManagementConfig>[] | undefined>;
     /**
      * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
-    databaseSoftwareImageId?: pulumi.Input<string>;
+    databaseSoftwareImageId?: pulumi.Input<string | undefined>;
     /**
      * Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      */
-    dbBackupConfigs?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseDbBackupConfig>[]>;
+    dbBackupConfigs?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseDbBackupConfig>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
      */
-    dbHomeId?: pulumi.Input<string>;
+    dbHomeId?: pulumi.Input<string | undefined>;
     /**
      * The database name.
      */
-    dbName?: pulumi.Input<string>;
+    dbName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      */
-    dbSystemId?: pulumi.Input<string>;
+    dbSystemId?: pulumi.Input<string | undefined>;
     /**
      * A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
      */
-    dbUniqueName?: pulumi.Input<string>;
+    dbUniqueName?: pulumi.Input<string | undefined>;
     /**
      * A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
      *
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      */
-    dbVersion?: pulumi.Input<string>;
+    dbVersion?: pulumi.Input<string | undefined>;
     /**
      * **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
      */
-    dbWorkload?: pulumi.Input<string>;
+    dbWorkload?: pulumi.Input<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * True if the database is a container database.
      */
-    isCdb?: pulumi.Input<boolean>;
+    isCdb?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      */
-    keyStoreId?: pulumi.Input<string>;
+    keyStoreId?: pulumi.Input<string | undefined>;
     /**
      * The wallet name for Oracle Key Vault.
      */
-    keyStoreWalletName?: pulumi.Input<string>;
+    keyStoreWalletName?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
-    kmsKeyId?: pulumi.Input<string>;
-    kmsKeyMigration?: pulumi.Input<boolean>;
-    kmsKeyRotation?: pulumi.Input<number>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
+    kmsKeyMigration?: pulumi.Input<boolean | undefined>;
+    kmsKeyRotation?: pulumi.Input<number | undefined>;
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      */
-    kmsKeyVersionId?: pulumi.Input<string>;
+    kmsKeyVersionId?: pulumi.Input<string | undefined>;
     /**
      * The duration when the latest database backup created.
      */
-    lastBackupDurationInSeconds?: pulumi.Input<number>;
+    lastBackupDurationInSeconds?: pulumi.Input<number | undefined>;
     /**
      * The date and time when the latest database backup was created.
      */
-    lastBackupTimestamp?: pulumi.Input<string>;
+    lastBackupTimestamp?: pulumi.Input<string | undefined>;
     /**
      * The date and time when the latest database backup failed.
      */
-    lastFailedBackupTimestamp?: pulumi.Input<string>;
+    lastFailedBackupTimestamp?: pulumi.Input<string | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The national character set for the database.
      */
-    ncharacterSet?: pulumi.Input<string>;
-    patchVersion?: pulumi.Input<string>;
+    ncharacterSet?: pulumi.Input<string | undefined>;
+    patchVersion?: pulumi.Input<string | undefined>;
     /**
      * The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
      */
-    pdbName?: pulumi.Input<string>;
+    pdbName?: pulumi.Input<string | undefined>;
     /**
      * Specifies a prefix for the `Oracle SID` of the database to be created.
      */
-    sidPrefix?: pulumi.Input<string>;
+    sidPrefix?: pulumi.Input<string | undefined>;
     /**
      * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
     /**
      * Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
      */
-    sourceDatabasePointInTimeRecoveryTimestamp?: pulumi.Input<string>;
+    sourceDatabasePointInTimeRecoveryTimestamp?: pulumi.Input<string | undefined>;
     /**
      * The current state of the database.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
      */
-    storageSizeDetails?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseStorageSizeDetail>[]>;
+    storageSizeDetails?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseStorageSizeDetail>[] | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the database was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      */
-    vaultId?: pulumi.Input<string>;
+    vaultId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      */
-    vmClusterId?: pulumi.Input<string>;
+    vmClusterId?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a Database resource.
  */
 export interface DatabaseArgs {
-    actionTrigger?: pulumi.Input<number>;
-    dataGuardAction?: pulumi.Input<string>;
+    actionTrigger?: pulumi.Input<number | undefined>;
+    dataGuardAction?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Details for creating a database.
      *
@@ -493,21 +493,21 @@ export interface DatabaseArgs {
      *
      * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
      */
-    dbVersion?: pulumi.Input<string>;
+    dbVersion?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      */
-    keyStoreId?: pulumi.Input<string>;
+    keyStoreId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
-    kmsKeyId?: pulumi.Input<string>;
-    kmsKeyMigration?: pulumi.Input<boolean>;
-    kmsKeyRotation?: pulumi.Input<number>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
+    kmsKeyMigration?: pulumi.Input<boolean | undefined>;
+    kmsKeyRotation?: pulumi.Input<number | undefined>;
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      */
-    kmsKeyVersionId?: pulumi.Input<string>;
+    kmsKeyVersionId?: pulumi.Input<string | undefined>;
     /**
      * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
      */
@@ -515,5 +515,5 @@ export interface DatabaseArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      */
-    vaultId?: pulumi.Input<string>;
+    vaultId?: pulumi.Input<string | undefined>;
 }

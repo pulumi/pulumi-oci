@@ -112,7 +112,7 @@ def get_remote_peering_connections(compartment_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_remote_peering_connections = oci.Core.get_remote_peering_connections(compartment_id=compartment_id,
+    test_remote_peering_connections = oci.core.get_remote_peering_connections(compartment_id=compartment_id,
         drg_id=test_drg["id"])
     ```
 
@@ -133,9 +133,9 @@ def get_remote_peering_connections(compartment_id: Optional[_builtins.str] = Non
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         remote_peering_connections=pulumi.get(__ret__, 'remote_peering_connections'))
-def get_remote_peering_connections_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                          drg_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRemotePeeringConnectionsFilterArgs', 'GetRemotePeeringConnectionsFilterArgsDict']]]]] = None,
+def get_remote_peering_connections_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                          drg_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRemotePeeringConnectionsFilterArgs', 'GetRemotePeeringConnectionsFilterArgsDict']]]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRemotePeeringConnectionsResult]:
     """
     This data source provides the list of Remote Peering Connections in Oracle Cloud Infrastructure Core service.
@@ -149,7 +149,7 @@ def get_remote_peering_connections_output(compartment_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_remote_peering_connections = oci.Core.get_remote_peering_connections(compartment_id=compartment_id,
+    test_remote_peering_connections = oci.core.get_remote_peering_connections(compartment_id=compartment_id,
         drg_id=test_drg["id"])
     ```
 

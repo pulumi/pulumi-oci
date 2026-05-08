@@ -21,9 +21,9 @@ class TableReplicaInitArgs:
     def __init__(__self__, *,
                  region: pulumi.Input[_builtins.str],
                  table_name_or_id: pulumi.Input[_builtins.str],
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_read_units: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_write_units: Optional[pulumi.Input[_builtins.int]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_read_units: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_write_units: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a TableReplica resource.
 
@@ -76,49 +76,49 @@ class TableReplicaInitArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="maxReadUnits")
-    def max_read_units(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_read_units(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Maximum sustained read throughput limit for the new replica table. If not specified, the local table's read limit is used.
         """
         return pulumi.get(self, "max_read_units")
 
     @max_read_units.setter
-    def max_read_units(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_read_units(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_read_units", value)
 
     @_builtins.property
     @pulumi.getter(name="maxWriteUnits")
-    def max_write_units(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_write_units(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Maximum sustained write throughput limit for the new replica table. If not specified, the local table's write limit is used.
         """
         return pulumi.get(self, "max_write_units")
 
     @max_write_units.setter
-    def max_write_units(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_write_units(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_write_units", value)
 
 
 @pulumi.input_type
 class _TableReplicaState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_read_units: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_write_units: Optional[pulumi.Input[_builtins.int]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 table_name_or_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_read_units: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_write_units: pulumi.Input[Optional[_builtins.int]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 table_name_or_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering TableReplica resources.
 
@@ -145,55 +145,55 @@ class _TableReplicaState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="maxReadUnits")
-    def max_read_units(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_read_units(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Maximum sustained read throughput limit for the new replica table. If not specified, the local table's read limit is used.
         """
         return pulumi.get(self, "max_read_units")
 
     @max_read_units.setter
-    def max_read_units(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_read_units(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_read_units", value)
 
     @_builtins.property
     @pulumi.getter(name="maxWriteUnits")
-    def max_write_units(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_write_units(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Maximum sustained write throughput limit for the new replica table. If not specified, the local table's write limit is used.
         """
         return pulumi.get(self, "max_write_units")
 
     @max_write_units.setter
-    def max_write_units(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_write_units(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_write_units", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the remote region in standard Oracle Cloud Infrastructure format, i.e. us-ashburn-1
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter(name="tableNameOrId")
-    def table_name_or_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def table_name_or_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A table name within the compartment, or a table OCID.
 
@@ -204,7 +204,7 @@ class _TableReplicaState:
         return pulumi.get(self, "table_name_or_id")
 
     @table_name_or_id.setter
-    def table_name_or_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def table_name_or_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "table_name_or_id", value)
 
 
@@ -214,11 +214,11 @@ class TableReplica(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_read_units: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_write_units: Optional[pulumi.Input[_builtins.int]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 table_name_or_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_read_units: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_write_units: pulumi.Input[Optional[_builtins.int]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 table_name_or_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Table Replica resource in Oracle Cloud Infrastructure NoSQL Database service.
@@ -238,8 +238,8 @@ class TableReplica(pulumi.CustomResource):
             region=table_replica_region,
             table_name_or_id=test_table_name_or["id"],
             compartment_id=compartment_id,
-            max_read_units=table_replica_max_read_units,
-            max_write_units=table_replica_max_write_units)
+            max_read_units=int(table_replica_max_read_units),
+            max_write_units=int(table_replica_max_write_units))
         ```
 
         ## Import
@@ -287,8 +287,8 @@ class TableReplica(pulumi.CustomResource):
             region=table_replica_region,
             table_name_or_id=test_table_name_or["id"],
             compartment_id=compartment_id,
-            max_read_units=table_replica_max_read_units,
-            max_write_units=table_replica_max_write_units)
+            max_read_units=int(table_replica_max_read_units),
+            max_write_units=int(table_replica_max_write_units))
         ```
 
         ## Import
@@ -315,11 +315,11 @@ class TableReplica(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_read_units: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_write_units: Optional[pulumi.Input[_builtins.int]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 table_name_or_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_read_units: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_write_units: pulumi.Input[Optional[_builtins.int]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 table_name_or_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -348,11 +348,11 @@ class TableReplica(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            max_read_units: Optional[pulumi.Input[_builtins.int]] = None,
-            max_write_units: Optional[pulumi.Input[_builtins.int]] = None,
-            region: Optional[pulumi.Input[_builtins.str]] = None,
-            table_name_or_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'TableReplica':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            max_read_units: pulumi.Input[Optional[_builtins.int]] = None,
+            max_write_units: pulumi.Input[Optional[_builtins.int]] = None,
+            region: pulumi.Input[Optional[_builtins.str]] = None,
+            table_name_or_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'TableReplica':
         """
         Get an existing TableReplica resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

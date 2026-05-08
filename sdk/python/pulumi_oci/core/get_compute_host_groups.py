@@ -98,7 +98,7 @@ def get_compute_host_groups(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_host_groups = oci.Core.get_compute_host_groups(compartment_id=compartment_id)
+    test_compute_host_groups = oci.core.get_compute_host_groups(compartment_id=compartment_id)
     ```
 
 
@@ -115,8 +115,8 @@ def get_compute_host_groups(compartment_id: Optional[_builtins.str] = None,
         compute_host_group_collections=pulumi.get(__ret__, 'compute_host_group_collections'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_compute_host_groups_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeHostGroupsFilterArgs', 'GetComputeHostGroupsFilterArgsDict']]]]] = None,
+def get_compute_host_groups_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeHostGroupsFilterArgs', 'GetComputeHostGroupsFilterArgsDict']]]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeHostGroupsResult]:
     """
     This data source provides the list of Compute Host Groups in Oracle Cloud Infrastructure Core service.
@@ -129,7 +129,7 @@ def get_compute_host_groups_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_host_groups = oci.Core.get_compute_host_groups(compartment_id=compartment_id)
+    test_compute_host_groups = oci.core.get_compute_host_groups(compartment_id=compartment_id)
     ```
 
 

@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseRegistration = oci.GoldenGate.getDatabaseRegistration({
+ * const testDatabaseRegistration = oci.goldengate.getDatabaseRegistration({
  *     databaseRegistrationId: testDatabaseRegistrationOciGoldenGateDatabaseRegistration.id,
  * });
  * ```
@@ -158,7 +158,7 @@ export interface GetDatabaseRegistrationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseRegistration = oci.GoldenGate.getDatabaseRegistration({
+ * const testDatabaseRegistration = oci.goldengate.getDatabaseRegistration({
  *     databaseRegistrationId: testDatabaseRegistrationOciGoldenGateDatabaseRegistration.id,
  * });
  * ```

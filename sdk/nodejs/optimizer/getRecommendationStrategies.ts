@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecommendationStrategies = oci.Optimizer.getRecommendationStrategies({
+ * const testRecommendationStrategies = oci.optimizer.getRecommendationStrategies({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: recommendationStrategyCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: recommendationStrategyCompartmentIdInSubtree === "true",
  *     name: recommendationStrategyName,
  *     recommendationName: testRecommendation.name,
  * });
@@ -93,9 +93,9 @@ export interface GetRecommendationStrategiesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecommendationStrategies = oci.Optimizer.getRecommendationStrategies({
+ * const testRecommendationStrategies = oci.optimizer.getRecommendationStrategies({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: recommendationStrategyCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: recommendationStrategyCompartmentIdInSubtree === "true",
  *     name: recommendationStrategyName,
  *     recommendationName: testRecommendation.name,
  * });
@@ -126,13 +126,13 @@ export interface GetRecommendationStrategiesOutputArgs {
      * Can only be set to true when performing ListCompartments on the tenancy (root compartment).
      */
     compartmentIdInSubtree: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Optimizer.GetRecommendationStrategiesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Optimizer.GetRecommendationStrategiesFilterArgs>[] | undefined>;
     /**
      * Optional. A filter that returns results that match the name specified.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Optional. A filter that returns results that match the recommendation name specified.
      */
-    recommendationName?: pulumi.Input<string>;
+    recommendationName?: pulumi.Input<string | undefined>;
 }

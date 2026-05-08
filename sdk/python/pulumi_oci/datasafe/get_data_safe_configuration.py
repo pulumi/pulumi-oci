@@ -168,7 +168,7 @@ def get_data_safe_configuration(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_safe_configuration = oci.DataSafe.get_data_safe_configuration(compartment_id=compartment_id)
+    test_data_safe_configuration = oci.datasafe.get_data_safe_configuration(compartment_id=compartment_id)
     ```
 
 
@@ -190,7 +190,7 @@ def get_data_safe_configuration(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_enabled=pulumi.get(__ret__, 'time_enabled'),
         url=pulumi.get(__ret__, 'url'))
-def get_data_safe_configuration_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_data_safe_configuration_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataSafeConfigurationResult]:
     """
     This data source provides details about a specific Data Safe Configuration resource in Oracle Cloud Infrastructure Data Safe service.
@@ -203,7 +203,7 @@ def get_data_safe_configuration_output(compartment_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_data_safe_configuration = oci.DataSafe.get_data_safe_configuration(compartment_id=compartment_id)
+    test_data_safe_configuration = oci.datasafe.get_data_safe_configuration(compartment_id=compartment_id)
     ```
 
 

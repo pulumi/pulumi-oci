@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProtectedDatabaseFetchConfiguration = oci.RecoveryMod.getProtectedDatabaseFetchConfiguration({
+ * const testProtectedDatabaseFetchConfiguration = oci.recoverymod.getProtectedDatabaseFetchConfiguration({
  *     protectedDatabaseId: testProtectedDatabase.id,
  *     base64EncodeContent: true,
  *     configurationType: protectedDatabaseFetchConfigurationConfigurationType,
@@ -76,7 +76,7 @@ export interface GetProtectedDatabaseFetchConfigurationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProtectedDatabaseFetchConfiguration = oci.RecoveryMod.getProtectedDatabaseFetchConfiguration({
+ * const testProtectedDatabaseFetchConfiguration = oci.recoverymod.getProtectedDatabaseFetchConfiguration({
  *     protectedDatabaseId: testProtectedDatabase.id,
  *     base64EncodeContent: true,
  *     configurationType: protectedDatabaseFetchConfigurationConfigurationType,
@@ -99,11 +99,11 @@ export interface GetProtectedDatabaseFetchConfigurationOutputArgs {
     /**
      * Encodes the downloaded config in base64. It is recommended to set this to `true` to avoid corrupting the file in Terraform state. The default value is `true`.
      */
-    base64EncodeContent?: pulumi.Input<boolean>;
+    base64EncodeContent?: pulumi.Input<boolean | undefined>;
     /**
      * Currently has four config options ALL, TNSNAMES, HOSTS and CABUNDLE. All will return a zipped folder containing the contents of both tnsnames and the certificateChainPem.
      */
-    configurationType?: pulumi.Input<string>;
+    configurationType?: pulumi.Input<string | undefined>;
     /**
      * The protected database OCID.
      */

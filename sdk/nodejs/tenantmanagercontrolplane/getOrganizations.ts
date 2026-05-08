@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOrganizations = oci.Tenantmanagercontrolplane.getOrganizations({
+ * const testOrganizations = oci.tenantmanagercontrolplane.getOrganizations({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -70,7 +70,7 @@ export interface GetOrganizationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOrganizations = oci.Tenantmanagercontrolplane.getOrganizations({
+ * const testOrganizations = oci.tenantmanagercontrolplane.getOrganizations({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -91,5 +91,5 @@ export interface GetOrganizationsOutputArgs {
      * The ID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Tenantmanagercontrolplane.GetOrganizationsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Tenantmanagercontrolplane.GetOrganizationsFilterArgs>[] | undefined>;
 }

@@ -123,19 +123,19 @@ export interface ManagedInstanceInstallWindowsUpdatesManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
-    managedInstanceId?: pulumi.Input<string>;
+    managedInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The list of Windows update unique identifiers.  Note that this is not an OCID, but is a unique identifier assigned by Microsoft. Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
      */
-    windowsUpdateNames?: pulumi.Input<pulumi.Input<string>[]>;
+    windowsUpdateNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The types of Windows updates to be installed.
      */
-    windowsUpdateTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    windowsUpdateTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetails | undefined>;
 }
 
 /**
@@ -149,13 +149,13 @@ export interface ManagedInstanceInstallWindowsUpdatesManagementArgs {
     /**
      * The list of Windows update unique identifiers.  Note that this is not an OCID, but is a unique identifier assigned by Microsoft. Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
      */
-    windowsUpdateNames?: pulumi.Input<pulumi.Input<string>[]>;
+    windowsUpdateNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The types of Windows updates to be installed.
      */
-    windowsUpdateTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    windowsUpdateTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetails | undefined>;
 }

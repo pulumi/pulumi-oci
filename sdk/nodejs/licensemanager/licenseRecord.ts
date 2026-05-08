@@ -20,8 +20,8 @@ import * as utilities from "../utilities";
  *
  * const testLicenseRecord = new oci.licensemanager.LicenseRecord("test_license_record", {
  *     displayName: licenseRecordDisplayName,
- *     isPerpetual: licenseRecordIsPerpetual,
- *     isUnlimited: licenseRecordIsUnlimited,
+ *     isPerpetual: licenseRecordIsPerpetual === "true",
+ *     isUnlimited: licenseRecordIsUnlimited === "true",
  *     productLicenseId: testProductLicense.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     licenseCount: licenseRecordLicenseCount,
+ *     licenseCount: Number(licenseRecordLicenseCount),
  *     productId: testProduct.id,
  *     supportEndDate: licenseRecordSupportEndDate,
  * });
@@ -219,55 +219,55 @@ export interface LicenseRecordState {
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) License record name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
      */
-    expirationDate?: pulumi.Input<string>;
+    expirationDate?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Specifies if the license record term is perpertual.
      */
-    isPerpetual?: pulumi.Input<boolean>;
+    isPerpetual?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Specifies if the license count is unlimited.
      */
-    isUnlimited?: pulumi.Input<boolean>;
+    isUnlimited?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The number of license units added by a user in a license record. Default 1
      */
-    licenseCount?: pulumi.Input<number>;
+    licenseCount?: pulumi.Input<number | undefined>;
     /**
      * The product license unit.
      */
-    licenseUnit?: pulumi.Input<string>;
+    licenseUnit?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The license record product ID.
      */
-    productId?: pulumi.Input<string>;
+    productId?: pulumi.Input<string | undefined>;
     /**
      * The product license name with which the license record is associated.
      */
-    productLicense?: pulumi.Input<string>;
+    productLicense?: pulumi.Input<string | undefined>;
     /**
      * Unique product license identifier.
      */
-    productLicenseId?: pulumi.Input<string>;
+    productLicenseId?: pulumi.Input<string | undefined>;
     /**
      * The current license record state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12` 
      *
@@ -275,19 +275,19 @@ export interface LicenseRecordState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    supportEndDate?: pulumi.Input<string>;
+    supportEndDate?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -297,7 +297,7 @@ export interface LicenseRecordArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) License record name.
      */
@@ -305,11 +305,11 @@ export interface LicenseRecordArgs {
     /**
      * (Updatable) The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
      */
-    expirationDate?: pulumi.Input<string>;
+    expirationDate?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Specifies if the license record term is perpertual.
      */
@@ -321,11 +321,11 @@ export interface LicenseRecordArgs {
     /**
      * (Updatable) The number of license units added by a user in a license record. Default 1
      */
-    licenseCount?: pulumi.Input<number>;
+    licenseCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The license record product ID.
      */
-    productId?: pulumi.Input<string>;
+    productId?: pulumi.Input<string | undefined>;
     /**
      * Unique product license identifier.
      */
@@ -337,5 +337,5 @@ export interface LicenseRecordArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    supportEndDate?: pulumi.Input<string>;
+    supportEndDate?: pulumi.Input<string | undefined>;
 }

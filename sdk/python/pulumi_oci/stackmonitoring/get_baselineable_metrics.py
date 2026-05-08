@@ -170,9 +170,9 @@ def get_baselineable_metrics(baselineable_metric_id: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_baselineable_metrics = oci.StackMonitoring.get_baselineable_metrics(baselineable_metric_id=test_baselineable_metric["id"],
+    test_baselineable_metrics = oci.stackmonitoring.get_baselineable_metrics(baselineable_metric_id=test_baselineable_metric["id"],
         compartment_id=compartment_id,
-        is_out_of_box=baselineable_metric_is_out_of_box,
+        is_out_of_box=baselineable_metric_is_out_of_box == "true",
         metric_namespace=baselineable_metric_metric_namespace,
         name=baselineable_metric_name,
         resource_group=baselineable_metric_resource_group,
@@ -211,14 +211,14 @@ def get_baselineable_metrics(baselineable_metric_id: Optional[_builtins.str] = N
         name=pulumi.get(__ret__, 'name'),
         resource_group=pulumi.get(__ret__, 'resource_group'),
         resource_type=pulumi.get(__ret__, 'resource_type'))
-def get_baselineable_metrics_output(baselineable_metric_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBaselineableMetricsFilterArgs', 'GetBaselineableMetricsFilterArgsDict']]]]] = None,
-                                    is_out_of_box: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                    metric_namespace: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    resource_group: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    resource_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_baselineable_metrics_output(baselineable_metric_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBaselineableMetricsFilterArgs', 'GetBaselineableMetricsFilterArgsDict']]]]] = None,
+                                    is_out_of_box: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                    metric_namespace: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    resource_group: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBaselineableMetricsResult]:
     """
     This data source provides the list of Baselineable Metrics in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -231,9 +231,9 @@ def get_baselineable_metrics_output(baselineable_metric_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_baselineable_metrics = oci.StackMonitoring.get_baselineable_metrics(baselineable_metric_id=test_baselineable_metric["id"],
+    test_baselineable_metrics = oci.stackmonitoring.get_baselineable_metrics(baselineable_metric_id=test_baselineable_metric["id"],
         compartment_id=compartment_id,
-        is_out_of_box=baselineable_metric_is_out_of_box,
+        is_out_of_box=baselineable_metric_is_out_of_box == "true",
         metric_namespace=baselineable_metric_metric_namespace,
         name=baselineable_metric_name,
         resource_group=baselineable_metric_resource_group,

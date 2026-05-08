@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetProducts = oci.FleetAppsManagement.getFleetProducts({
+ * const testFleetProducts = oci.fleetappsmanagement.getFleetProducts({
  *     fleetId: testFleet.id,
  *     compartmentId: compartmentId,
  *     displayName: fleetProductDisplayName,
@@ -107,7 +107,7 @@ export interface GetFleetProductsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetProducts = oci.FleetAppsManagement.getFleetProducts({
+ * const testFleetProducts = oci.fleetappsmanagement.getFleetProducts({
  *     fleetId: testFleet.id,
  *     compartmentId: compartmentId,
  *     displayName: fleetProductDisplayName,
@@ -135,12 +135,12 @@ export interface GetFleetProductsOutputArgs {
     /**
      * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetFleetProductsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetFleetProductsFilterArgs>[] | undefined>;
     /**
      * Unique Fleet identifier.
      */
@@ -148,9 +148,9 @@ export interface GetFleetProductsOutputArgs {
     /**
      * Resource Display Name.
      */
-    resourceDisplayName?: pulumi.Input<string>;
+    resourceDisplayName?: pulumi.Input<string | undefined>;
     /**
      * Resource Identifier
      */
-    resourceId?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
 }

@@ -85,7 +85,7 @@ def get_edge_subnets(filters: Optional[Sequence[Union['GetEdgeSubnetsFilterArgs'
     import pulumi
     import pulumi_oci as oci
 
-    test_edge_subnets = oci.Waas.get_edge_subnets()
+    test_edge_subnets = oci.waas.get_edge_subnets()
     ```
     """
     __args__ = dict()
@@ -97,7 +97,7 @@ def get_edge_subnets(filters: Optional[Sequence[Union['GetEdgeSubnetsFilterArgs'
         edge_subnets=pulumi.get(__ret__, 'edge_subnets'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_edge_subnets_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetEdgeSubnetsFilterArgs', 'GetEdgeSubnetsFilterArgsDict']]]]] = None,
+def get_edge_subnets_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetEdgeSubnetsFilterArgs', 'GetEdgeSubnetsFilterArgsDict']]]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEdgeSubnetsResult]:
     """
     This data source provides the list of Edge Subnets in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -110,7 +110,7 @@ def get_edge_subnets_output(filters: Optional[pulumi.Input[Optional[Sequence[Uni
     import pulumi
     import pulumi_oci as oci
 
-    test_edge_subnets = oci.Waas.get_edge_subnets()
+    test_edge_subnets = oci.waas.get_edge_subnets()
     ```
     """
     __args__ = dict()

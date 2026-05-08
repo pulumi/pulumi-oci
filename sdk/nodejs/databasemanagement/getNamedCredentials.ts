@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamedCredentials = oci.DatabaseManagement.getNamedCredentials({
+ * const testNamedCredentials = oci.databasemanagement.getNamedCredentials({
  *     compartmentId: compartmentId,
  *     associatedResource: namedCredentialAssociatedResource,
  *     name: namedCredentialName,
@@ -110,7 +110,7 @@ export interface GetNamedCredentialsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamedCredentials = oci.DatabaseManagement.getNamedCredentials({
+ * const testNamedCredentials = oci.databasemanagement.getNamedCredentials({
  *     compartmentId: compartmentId,
  *     associatedResource: namedCredentialAssociatedResource,
  *     name: namedCredentialName,
@@ -138,22 +138,22 @@ export interface GetNamedCredentialsOutputArgs {
     /**
      * The resource associated to the named credential.
      */
-    associatedResource?: pulumi.Input<string>;
+    associatedResource?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetNamedCredentialsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetNamedCredentialsFilterArgs>[] | undefined>;
     /**
      * The name of the named credential.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The scope of named credential.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * The type of database that is associated to the named credential.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

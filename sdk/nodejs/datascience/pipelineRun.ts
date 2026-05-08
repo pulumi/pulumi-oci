@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     infrastructureConfigurationOverrideDetails: {
- *         blockStorageSizeInGbs: pipelineRunInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs,
+ *         blockStorageSizeInGbs: Number(pipelineRunInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs),
  *         shapeName: testShape.name,
  *         blockStorageSizeInGbsParameterized: pipelineRunInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbsParameterized,
  *         shapeConfigDetails: {
@@ -49,8 +49,8 @@ import * as utilities from "../utilities";
  *         subnetId: testSubnet.id,
  *     },
  *     logConfigurationOverrideDetails: {
- *         enableAutoLogCreation: pipelineRunLogConfigurationOverrideDetailsEnableAutoLogCreation,
- *         enableLogging: pipelineRunLogConfigurationOverrideDetailsEnableLogging,
+ *         enableAutoLogCreation: pipelineRunLogConfigurationOverrideDetailsEnableAutoLogCreation === "true",
+ *         enableLogging: pipelineRunLogConfigurationOverrideDetailsEnableLogging === "true",
  *         logGroupId: testLogGroup.id,
  *         logId: testLog.id,
  *     },
@@ -91,11 +91,11 @@ import * as utilities from "../utilities";
  *                 ocpusParameterized: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOcpusParameterized,
  *             },
  *             logsBucketUri: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsLogsBucketUri,
- *             numExecutors: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsNumExecutors,
+ *             numExecutors: Number(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsNumExecutors),
  *             warehouseBucketUri: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsWarehouseBucketUri,
  *         },
  *         stepInfrastructureConfigurationDetails: {
- *             blockStorageSizeInGbs: pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
+ *             blockStorageSizeInGbs: Number(pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
  *             shapeName: testShape.name,
  *             blockStorageSizeInGbsParameterized: pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbsParameterized,
  *             shapeConfigDetails: {
@@ -356,80 +356,80 @@ export interface PipelineRunState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The configuration details of a pipeline.
      */
-    configurationDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineRunConfigurationDetail>[]>;
+    configurationDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineRunConfigurationDetail>[] | undefined>;
     /**
      * The configuration details of a pipeline.
      */
-    configurationOverrideDetails?: pulumi.Input<inputs.DataScience.PipelineRunConfigurationOverrideDetails>;
+    configurationOverrideDetails?: pulumi.Input<inputs.DataScience.PipelineRunConfigurationOverrideDetails | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline run.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    deleteRelatedJobRuns?: pulumi.Input<boolean>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    deleteRelatedJobRuns?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A user-friendly display name for the resource.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The infrastructure configuration details of a pipeline or a step.
      */
-    infrastructureConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.PipelineRunInfrastructureConfigurationOverrideDetails>;
+    infrastructureConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.PipelineRunInfrastructureConfigurationOverrideDetails | undefined>;
     /**
      * Details of the state of the step run.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The pipeline log configuration details.
      */
-    logConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.PipelineRunLogConfigurationOverrideDetails>;
+    logConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.PipelineRunLogConfigurationOverrideDetails | undefined>;
     /**
      * Customer logging details for pipeline run.
      */
-    logDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineRunLogDetail>[]>;
+    logDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineRunLogDetail>[] | undefined>;
     /**
      * URL to fetch the Resource Principal Token from the parent resource.
      */
-    opcParentRptUrl?: pulumi.Input<string>;
+    opcParentRptUrl?: pulumi.Input<string | undefined>;
     /**
      * Parameters override used in the pipeline run.
      */
-    parametersOverride?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    parametersOverride?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
      */
-    pipelineId?: pulumi.Input<string>;
+    pipelineId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
      */
-    projectId?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
     /**
      * The state of the step run.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Array of step override details. Only Step Configuration is allowed to be overridden.
      */
-    stepOverrideDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineRunStepOverrideDetail>[]>;
+    stepOverrideDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineRunStepOverrideDetail>[] | undefined>;
     /**
      * Array of StepRun object for each step.
      */
-    stepRuns?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineRunStepRun>[]>;
+    stepRuns?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineRunStepRun>[] | undefined>;
     /**
      * The storage mount override details to mount to the instance running the pipeline step.
      */
-    storageMountConfigurationOverrideDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineRunStorageMountConfigurationOverrideDetailsList>[]>;
+    storageMountConfigurationOverrideDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineRunStorageMountConfigurationOverrideDetailsList>[] | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
      *
@@ -437,23 +437,23 @@ export interface PipelineRunState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeAccepted?: pulumi.Input<string>;
+    timeAccepted?: pulumi.Input<string | undefined>;
     /**
      * The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeFinished?: pulumi.Input<string>;
+    timeFinished?: pulumi.Input<string | undefined>;
     /**
      * The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeStarted?: pulumi.Input<string>;
+    timeStarted?: pulumi.Input<string | undefined>;
     /**
      * The date and time the pipeline run was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -467,36 +467,36 @@ export interface PipelineRunArgs {
     /**
      * The configuration details of a pipeline.
      */
-    configurationOverrideDetails?: pulumi.Input<inputs.DataScience.PipelineRunConfigurationOverrideDetails>;
+    configurationOverrideDetails?: pulumi.Input<inputs.DataScience.PipelineRunConfigurationOverrideDetails | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    deleteRelatedJobRuns?: pulumi.Input<boolean>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    deleteRelatedJobRuns?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A user-friendly display name for the resource.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The infrastructure configuration details of a pipeline or a step.
      */
-    infrastructureConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.PipelineRunInfrastructureConfigurationOverrideDetails>;
+    infrastructureConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.PipelineRunInfrastructureConfigurationOverrideDetails | undefined>;
     /**
      * The pipeline log configuration details.
      */
-    logConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.PipelineRunLogConfigurationOverrideDetails>;
+    logConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.PipelineRunLogConfigurationOverrideDetails | undefined>;
     /**
      * URL to fetch the Resource Principal Token from the parent resource.
      */
-    opcParentRptUrl?: pulumi.Input<string>;
+    opcParentRptUrl?: pulumi.Input<string | undefined>;
     /**
      * Parameters override used in the pipeline run.
      */
-    parametersOverride?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    parametersOverride?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
      */
@@ -508,11 +508,11 @@ export interface PipelineRunArgs {
     /**
      * Array of step override details. Only Step Configuration is allowed to be overridden.
      */
-    stepOverrideDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineRunStepOverrideDetail>[]>;
+    stepOverrideDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineRunStepOverrideDetail>[] | undefined>;
     /**
      * The storage mount override details to mount to the instance running the pipeline step.
      */
-    storageMountConfigurationOverrideDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineRunStorageMountConfigurationOverrideDetailsList>[]>;
+    storageMountConfigurationOverrideDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineRunStorageMountConfigurationOverrideDetailsList>[] | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
      *
@@ -520,5 +520,5 @@ export interface PipelineRunArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

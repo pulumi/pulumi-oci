@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogSavedSearches = oci.Logging.getLogSavedSearches({
+ * const testLogSavedSearches = oci.logging.getLogSavedSearches({
  *     compartmentId: compartmentId,
  *     logSavedSearchId: testLogSavedSearch.id,
  *     name: logSavedSearchName,
@@ -87,7 +87,7 @@ export interface GetLogSavedSearchesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogSavedSearches = oci.Logging.getLogSavedSearches({
+ * const testLogSavedSearches = oci.logging.getLogSavedSearches({
  *     compartmentId: compartmentId,
  *     logSavedSearchId: testLogSavedSearch.id,
  *     name: logSavedSearchName,
@@ -112,13 +112,13 @@ export interface GetLogSavedSearchesOutputArgs {
      * Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Logging.GetLogSavedSearchesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Logging.GetLogSavedSearchesFilterArgs>[] | undefined>;
     /**
      * OCID of the LogSavedSearch.
      */
-    logSavedSearchId?: pulumi.Input<string>;
+    logSavedSearchId?: pulumi.Input<string | undefined>;
     /**
      * Resource name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

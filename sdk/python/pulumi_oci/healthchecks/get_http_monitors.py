@@ -124,7 +124,7 @@ def get_http_monitors(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_http_monitors = oci.HealthChecks.get_http_monitors(compartment_id=compartment_id,
+    test_http_monitors = oci.healthchecks.get_http_monitors(compartment_id=compartment_id,
         display_name=http_monitor_display_name,
         home_region=http_monitor_home_region)
     ```
@@ -149,10 +149,10 @@ def get_http_monitors(compartment_id: Optional[_builtins.str] = None,
         home_region=pulumi.get(__ret__, 'home_region'),
         http_monitors=pulumi.get(__ret__, 'http_monitors'),
         id=pulumi.get(__ret__, 'id'))
-def get_http_monitors_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetHttpMonitorsFilterArgs', 'GetHttpMonitorsFilterArgsDict']]]]] = None,
-                             home_region: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_http_monitors_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetHttpMonitorsFilterArgs', 'GetHttpMonitorsFilterArgsDict']]]]] = None,
+                             home_region: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetHttpMonitorsResult]:
     """
     This data source provides the list of Http Monitors in Oracle Cloud Infrastructure Health Checks service.
@@ -165,7 +165,7 @@ def get_http_monitors_output(compartment_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_http_monitors = oci.HealthChecks.get_http_monitors(compartment_id=compartment_id,
+    test_http_monitors = oci.healthchecks.get_http_monitors(compartment_id=compartment_id,
         display_name=http_monitor_display_name,
         home_region=http_monitor_home_region)
     ```

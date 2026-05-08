@@ -134,10 +134,10 @@ def get_dedicated_vm_host_instances(availability_domain: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vm_hosts_instances = oci.Core.get_dedicated_vm_host_instances(compartment_id=compartment_id,
+    test_dedicated_vm_hosts_instances = oci.core.get_dedicated_vm_host_instances(compartment_id=compartment_id,
         dedicated_vm_host_id=test_dedicated_vm_host["id"],
         availability_domain=dedicated_vm_hosts_instance_availability_domain,
-        is_memory_encryption_enabled=dedicated_vm_hosts_instance_is_memory_encryption_enabled)
+        is_memory_encryption_enabled=dedicated_vm_hosts_instance_is_memory_encryption_enabled == "true")
     ```
 
 
@@ -163,11 +163,11 @@ def get_dedicated_vm_host_instances(availability_domain: Optional[_builtins.str]
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         is_memory_encryption_enabled=pulumi.get(__ret__, 'is_memory_encryption_enabled'))
-def get_dedicated_vm_host_instances_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                           dedicated_vm_host_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDedicatedVmHostInstancesFilterArgs', 'GetDedicatedVmHostInstancesFilterArgsDict']]]]] = None,
-                                           is_memory_encryption_enabled: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+def get_dedicated_vm_host_instances_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                           dedicated_vm_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDedicatedVmHostInstancesFilterArgs', 'GetDedicatedVmHostInstancesFilterArgsDict']]]]] = None,
+                                           is_memory_encryption_enabled: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDedicatedVmHostInstancesResult]:
     """
     This data source provides the list of Dedicated Vm Hosts Instances in Oracle Cloud Infrastructure Core service.
@@ -180,10 +180,10 @@ def get_dedicated_vm_host_instances_output(availability_domain: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vm_hosts_instances = oci.Core.get_dedicated_vm_host_instances(compartment_id=compartment_id,
+    test_dedicated_vm_hosts_instances = oci.core.get_dedicated_vm_host_instances(compartment_id=compartment_id,
         dedicated_vm_host_id=test_dedicated_vm_host["id"],
         availability_domain=dedicated_vm_hosts_instance_availability_domain,
-        is_memory_encryption_enabled=dedicated_vm_hosts_instance_is_memory_encryption_enabled)
+        is_memory_encryption_enabled=dedicated_vm_hosts_instance_is_memory_encryption_enabled == "true")
     ```
 
 

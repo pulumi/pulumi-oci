@@ -27,14 +27,14 @@ import * as utilities from "../utilities";
  *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:IdentityPropagationTrust"],
  *     type: identityPropagationTrustType,
  *     accountId: "accountId",
- *     active: identityPropagationTrustActive,
- *     allowImpersonation: identityPropagationTrustAllowImpersonation,
+ *     active: identityPropagationTrustActive === "true",
+ *     allowImpersonation: identityPropagationTrustAllowImpersonation === "true",
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: identityPropagationTrustAuthorization,
  *     clientClaimName: identityPropagationTrustClientClaimName,
  *     clientClaimValues: ["clientClaimValues"],
- *     clockSkewSeconds: identityPropagationTrustClockSkewSeconds,
+ *     clockSkewSeconds: Number(identityPropagationTrustClockSkewSeconds),
  *     description: identityPropagationTrustDescription,
  *     impersonationServiceUsers: [{
  *         rule: identityPropagationTrustImpersonationServiceUsersRule,
@@ -43,7 +43,7 @@ import * as utilities from "../utilities";
  *     }],
  *     keytab: {
  *         secretOcid: identityPropagationTrustKeytabSecretOcid,
- *         secretVersion: identityPropagationTrustKeytabSecretVersion,
+ *         secretVersion: Number(identityPropagationTrustKeytabSecretVersion),
  *     },
  *     oauthClients: ["oauthClients"],
  *     ocid: identityPropagationTrustOcid,
@@ -651,7 +651,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * idcsSearchable: true
      * * uniqueness: none
      */
-    accountId?: pulumi.Input<string>;
+    accountId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) If true, specifies that this Identity Propagation Trust is in an enabled state. The default value is false.
      *
@@ -664,7 +664,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * uniqueness: none
      * * idcsSearchable: true
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Allow customers to define whether the resulting token should contain the authenticated user as the subject or whether the token should impersonate another Application Principal in IAM.
      *
@@ -677,19 +677,19 @@ export interface DomainsIdentityPropagationTrustState {
      * * uniqueness: none
      * * idcsSearchable: false
      */
-    allowImpersonation?: pulumi.Input<boolean>;
+    allowImpersonation?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \"aud\" or \"client_id\". If Azure, then \"appid\". If GCP, then \"aud\".
      *
@@ -702,7 +702,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * uniqueness: none
      * * idcsSearchable: false
      */
-    clientClaimName?: pulumi.Input<string>;
+    clientClaimName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The value that corresponds to the client claim name used to identify to whom the token is issued.
      *
@@ -716,7 +716,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * caseExact: true
      * * idcsSearchable: false
      */
-    clientClaimValues?: pulumi.Input<pulumi.Input<string>[]>;
+    clientClaimValues?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The clock skew (in secs) that's allowed for the token issue and expiry time.
      *
@@ -732,7 +732,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * type: integer
      * * uniqueness: none
      */
-    clockSkewSeconds?: pulumi.Input<number>;
+    clockSkewSeconds?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -746,7 +746,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * type: string
      * * uniqueness: none
      */
-    compartmentOcid?: pulumi.Input<string>;
+    compartmentOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -760,7 +760,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * type: boolean
      * * uniqueness: none
      */
-    deleteInProgress?: pulumi.Input<boolean>;
+    deleteInProgress?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The description of the Identity Propagation Trust.
      *
@@ -774,7 +774,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * caseExact: false
      * * idcsSearchable: false
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -788,7 +788,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * type: string
      * * uniqueness: none
      */
-    domainOcid?: pulumi.Input<string>;
+    domainOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -800,11 +800,11 @@ export interface DomainsIdentityPropagationTrustState {
      * * returned: default
      * * type: complex
      */
-    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityPropagationTrustIdcsCreatedBy>[]>;
+    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityPropagationTrustIdcsCreatedBy>[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
-    idcsEndpoint?: pulumi.Input<string>;
+    idcsEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -816,7 +816,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * returned: default
      * * type: complex
      */
-    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityPropagationTrustIdcsLastModifiedBy>[]>;
+    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityPropagationTrustIdcsLastModifiedBy>[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -830,7 +830,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * type: string
      * * uniqueness: none
      */
-    idcsLastUpgradedInRelease?: pulumi.Input<string>;
+    idcsLastUpgradedInRelease?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -843,7 +843,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * type: string
      * * uniqueness: none
      */
-    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[]>;
+    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The Impersonating Principal.
      *
@@ -857,7 +857,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * type: complex
      * * uniqueness: none
      */
-    impersonationServiceUsers?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityPropagationTrustImpersonationServiceUser>[]>;
+    impersonationServiceUsers?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityPropagationTrustImpersonationServiceUser>[] | undefined>;
     /**
      * (Updatable) The issuer claim of the Identity provider.
      *
@@ -871,7 +871,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * idcsSearchable: true
      * * uniqueness: server
      */
-    issuer?: pulumi.Input<string>;
+    issuer?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The keytab stored in the tenancy's Vault. This is required if the identity propagation type is 'SPNEGO'.
      *
@@ -885,7 +885,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * type: complex
      * * uniqueness: none
      */
-    keytab?: pulumi.Input<inputs.Identity.DomainsIdentityPropagationTrustKeytab>;
+    keytab?: pulumi.Input<inputs.Identity.DomainsIdentityPropagationTrustKeytab | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -899,7 +899,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityPropagationTrustMeta>[]>;
+    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityPropagationTrustMeta>[] | undefined>;
     /**
      * The name of the the Identity Propagation Trust.
      *
@@ -913,7 +913,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * returned: default
      * * uniqueness: none
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The value of all the authorized OAuth Clients.
      *
@@ -926,7 +926,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * type: string
      * * uniqueness: none
      */
-    oauthClients?: pulumi.Input<pulumi.Input<string>[]>;
+    oauthClients?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -940,7 +940,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Store the public key if public key cert.
      *
@@ -953,7 +953,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * uniqueness: none
      * * idcsSearchable: false
      */
-    publicCertificate?: pulumi.Input<string>;
+    publicCertificate?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The cloud provider's public key API of SAML and OIDC providers for signature validation.
      *
@@ -967,11 +967,11 @@ export interface DomainsIdentityPropagationTrustState {
      * * caseExact: false
      * * idcsSearchable: false
      */
-    publicKeyEndpoint?: pulumi.Input<string>;
+    publicKeyEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -985,7 +985,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * type: string
      * * uniqueness: none
      */
-    schemas?: pulumi.Input<pulumi.Input<string>[]>;
+    schemas?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Used for locating the subject claim from the incoming token.
      *
@@ -999,7 +999,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * caseExact: true
      * * idcsSearchable: false
      */
-    subjectClaimName?: pulumi.Input<string>;
+    subjectClaimName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Subject Mapping Attribute to which the value from subject claim name value would be used for identity lookup.
      *
@@ -1012,7 +1012,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * returned: default
      * * uniqueness: none
      */
-    subjectMappingAttribute?: pulumi.Input<string>;
+    subjectMappingAttribute?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The type of the resource against which lookup will be made in the identity domain in IAM for the incoming subject claim value.
      *
@@ -1025,7 +1025,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * type: string
      * * uniqueness: none
      */
-    subjectType?: pulumi.Input<string>;
+    subjectType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -1039,7 +1039,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityPropagationTrustTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityPropagationTrustTag>[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -1053,7 +1053,7 @@ export interface DomainsIdentityPropagationTrustState {
      * * type: string
      * * uniqueness: none
      */
-    tenancyOcid?: pulumi.Input<string>;
+    tenancyOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The type of the inbound token from the Identity cloud provider.
      *
@@ -1071,7 +1071,7 @@ export interface DomainsIdentityPropagationTrustState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -1091,7 +1091,7 @@ export interface DomainsIdentityPropagationTrustArgs {
      * * idcsSearchable: true
      * * uniqueness: none
      */
-    accountId?: pulumi.Input<string>;
+    accountId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) If true, specifies that this Identity Propagation Trust is in an enabled state. The default value is false.
      *
@@ -1104,7 +1104,7 @@ export interface DomainsIdentityPropagationTrustArgs {
      * * uniqueness: none
      * * idcsSearchable: true
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Allow customers to define whether the resulting token should contain the authenticated user as the subject or whether the token should impersonate another Application Principal in IAM.
      *
@@ -1117,19 +1117,19 @@ export interface DomainsIdentityPropagationTrustArgs {
      * * uniqueness: none
      * * idcsSearchable: false
      */
-    allowImpersonation?: pulumi.Input<boolean>;
+    allowImpersonation?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \"aud\" or \"client_id\". If Azure, then \"appid\". If GCP, then \"aud\".
      *
@@ -1142,7 +1142,7 @@ export interface DomainsIdentityPropagationTrustArgs {
      * * uniqueness: none
      * * idcsSearchable: false
      */
-    clientClaimName?: pulumi.Input<string>;
+    clientClaimName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The value that corresponds to the client claim name used to identify to whom the token is issued.
      *
@@ -1156,7 +1156,7 @@ export interface DomainsIdentityPropagationTrustArgs {
      * * caseExact: true
      * * idcsSearchable: false
      */
-    clientClaimValues?: pulumi.Input<pulumi.Input<string>[]>;
+    clientClaimValues?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The clock skew (in secs) that's allowed for the token issue and expiry time.
      *
@@ -1172,7 +1172,7 @@ export interface DomainsIdentityPropagationTrustArgs {
      * * type: integer
      * * uniqueness: none
      */
-    clockSkewSeconds?: pulumi.Input<number>;
+    clockSkewSeconds?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The description of the Identity Propagation Trust.
      *
@@ -1186,7 +1186,7 @@ export interface DomainsIdentityPropagationTrustArgs {
      * * caseExact: false
      * * idcsSearchable: false
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -1204,7 +1204,7 @@ export interface DomainsIdentityPropagationTrustArgs {
      * * type: complex
      * * uniqueness: none
      */
-    impersonationServiceUsers?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityPropagationTrustImpersonationServiceUser>[]>;
+    impersonationServiceUsers?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityPropagationTrustImpersonationServiceUser>[] | undefined>;
     /**
      * (Updatable) The issuer claim of the Identity provider.
      *
@@ -1232,7 +1232,7 @@ export interface DomainsIdentityPropagationTrustArgs {
      * * type: complex
      * * uniqueness: none
      */
-    keytab?: pulumi.Input<inputs.Identity.DomainsIdentityPropagationTrustKeytab>;
+    keytab?: pulumi.Input<inputs.Identity.DomainsIdentityPropagationTrustKeytab | undefined>;
     /**
      * The name of the the Identity Propagation Trust.
      *
@@ -1246,7 +1246,7 @@ export interface DomainsIdentityPropagationTrustArgs {
      * * returned: default
      * * uniqueness: none
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The value of all the authorized OAuth Clients.
      *
@@ -1259,7 +1259,7 @@ export interface DomainsIdentityPropagationTrustArgs {
      * * type: string
      * * uniqueness: none
      */
-    oauthClients?: pulumi.Input<pulumi.Input<string>[]>;
+    oauthClients?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -1273,7 +1273,7 @@ export interface DomainsIdentityPropagationTrustArgs {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Store the public key if public key cert.
      *
@@ -1286,7 +1286,7 @@ export interface DomainsIdentityPropagationTrustArgs {
      * * uniqueness: none
      * * idcsSearchable: false
      */
-    publicCertificate?: pulumi.Input<string>;
+    publicCertificate?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The cloud provider's public key API of SAML and OIDC providers for signature validation.
      *
@@ -1300,11 +1300,11 @@ export interface DomainsIdentityPropagationTrustArgs {
      * * caseExact: false
      * * idcsSearchable: false
      */
-    publicKeyEndpoint?: pulumi.Input<string>;
+    publicKeyEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -1332,7 +1332,7 @@ export interface DomainsIdentityPropagationTrustArgs {
      * * caseExact: true
      * * idcsSearchable: false
      */
-    subjectClaimName?: pulumi.Input<string>;
+    subjectClaimName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Subject Mapping Attribute to which the value from subject claim name value would be used for identity lookup.
      *
@@ -1345,7 +1345,7 @@ export interface DomainsIdentityPropagationTrustArgs {
      * * returned: default
      * * uniqueness: none
      */
-    subjectMappingAttribute?: pulumi.Input<string>;
+    subjectMappingAttribute?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The type of the resource against which lookup will be made in the identity domain in IAM for the incoming subject claim value.
      *
@@ -1358,7 +1358,7 @@ export interface DomainsIdentityPropagationTrustArgs {
      * * type: string
      * * uniqueness: none
      */
-    subjectType?: pulumi.Input<string>;
+    subjectType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -1372,7 +1372,7 @@ export interface DomainsIdentityPropagationTrustArgs {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityPropagationTrustTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsIdentityPropagationTrustTag>[] | undefined>;
     /**
      * (Updatable) The type of the inbound token from the Identity cloud provider.
      *

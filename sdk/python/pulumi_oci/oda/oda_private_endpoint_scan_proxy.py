@@ -98,12 +98,12 @@ class OdaPrivateEndpointScanProxyArgs:
 @pulumi.input_type
 class _OdaPrivateEndpointScanProxyState:
     def __init__(__self__, *,
-                 oda_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 scan_listener_infos: Optional[pulumi.Input[Sequence[pulumi.Input['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]]] = None,
-                 scan_listener_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 oda_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 scan_listener_infos: pulumi.Input[Optional[Sequence[pulumi.Input['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]]] = None,
+                 scan_listener_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OdaPrivateEndpointScanProxy resources.
 
@@ -133,43 +133,43 @@ class _OdaPrivateEndpointScanProxyState:
 
     @_builtins.property
     @pulumi.getter(name="odaPrivateEndpointId")
-    def oda_private_endpoint_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oda_private_endpoint_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "oda_private_endpoint_id")
 
     @oda_private_endpoint_id.setter
-    def oda_private_endpoint_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oda_private_endpoint_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oda_private_endpoint_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The protocol used for communication between client, scanProxy and RAC's scan listeners
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="scanListenerInfos")
-    def scan_listener_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]]]:
+    def scan_listener_infos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]]]:
         """
         The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
         """
         return pulumi.get(self, "scan_listener_infos")
 
     @scan_listener_infos.setter
-    def scan_listener_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]]]):
+    def scan_listener_infos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]]]):
         pulumi.set(self, "scan_listener_infos", value)
 
     @_builtins.property
     @pulumi.getter(name="scanListenerType")
-    def scan_listener_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scan_listener_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type indicating whether Scan listener is specified by its FQDN or list of IPs 
 
@@ -180,31 +180,31 @@ class _OdaPrivateEndpointScanProxyState:
         return pulumi.get(self, "scan_listener_type")
 
     @scan_listener_type.setter
-    def scan_listener_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scan_listener_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scan_listener_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the ODA Private Endpoint Scan Proxy.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -214,10 +214,10 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 oda_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 scan_listener_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OdaPrivateEndpointScanProxyScanListenerInfoArgs', 'OdaPrivateEndpointScanProxyScanListenerInfoArgsDict']]]]] = None,
-                 scan_listener_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 oda_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 scan_listener_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OdaPrivateEndpointScanProxyScanListenerInfoArgs', 'OdaPrivateEndpointScanProxyScanListenerInfoArgsDict']]]]] = None,
+                 scan_listener_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Oda Private Endpoint Scan Proxy resource in Oracle Cloud Infrastructure Digital Assistant service.
@@ -242,7 +242,7 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
             scan_listener_infos=[{
                 "scan_listener_fqdn": oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_fqdn,
                 "scan_listener_ip": oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_ip,
-                "scan_listener_port": oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_port,
+                "scan_listener_port": int(oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_port),
             }],
             scan_listener_type=oda_private_endpoint_scan_proxy_scan_listener_type)
         ```
@@ -296,7 +296,7 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
             scan_listener_infos=[{
                 "scan_listener_fqdn": oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_fqdn,
                 "scan_listener_ip": oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_ip,
-                "scan_listener_port": oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_port,
+                "scan_listener_port": int(oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_port),
             }],
             scan_listener_type=oda_private_endpoint_scan_proxy_scan_listener_type)
         ```
@@ -325,10 +325,10 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 oda_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 scan_listener_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OdaPrivateEndpointScanProxyScanListenerInfoArgs', 'OdaPrivateEndpointScanProxyScanListenerInfoArgsDict']]]]] = None,
-                 scan_listener_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 oda_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 scan_listener_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OdaPrivateEndpointScanProxyScanListenerInfoArgs', 'OdaPrivateEndpointScanProxyScanListenerInfoArgsDict']]]]] = None,
+                 scan_listener_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -362,12 +362,12 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            oda_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-            protocol: Optional[pulumi.Input[_builtins.str]] = None,
-            scan_listener_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OdaPrivateEndpointScanProxyScanListenerInfoArgs', 'OdaPrivateEndpointScanProxyScanListenerInfoArgsDict']]]]] = None,
-            scan_listener_type: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'OdaPrivateEndpointScanProxy':
+            oda_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+            protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            scan_listener_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OdaPrivateEndpointScanProxyScanListenerInfoArgs', 'OdaPrivateEndpointScanProxyScanListenerInfoArgsDict']]]]] = None,
+            scan_listener_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'OdaPrivateEndpointScanProxy':
         """
         Get an existing OdaPrivateEndpointScanProxy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

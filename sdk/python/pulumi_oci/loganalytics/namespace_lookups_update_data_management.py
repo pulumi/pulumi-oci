@@ -22,9 +22,9 @@ class NamespaceLookupsUpdateDataManagementArgs:
                  lookup_name: pulumi.Input[_builtins.str],
                  namespace: pulumi.Input[_builtins.str],
                  update_lookup_file: pulumi.Input[_builtins.str],
-                 char_encoding: Optional[pulumi.Input[_builtins.str]] = None,
-                 expect: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_force: Optional[pulumi.Input[_builtins.bool]] = None):
+                 char_encoding: pulumi.Input[Optional[_builtins.str]] = None,
+                 expect: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_force: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a NamespaceLookupsUpdateDataManagement resource.
 
@@ -91,50 +91,50 @@ class NamespaceLookupsUpdateDataManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="charEncoding")
-    def char_encoding(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def char_encoding(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The character encoding of the uploaded file.
         """
         return pulumi.get(self, "char_encoding")
 
     @char_encoding.setter
-    def char_encoding(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def char_encoding(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "char_encoding", value)
 
     @_builtins.property
     @pulumi.getter
-    def expect(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expect(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
         """
         return pulumi.get(self, "expect")
 
     @expect.setter
-    def expect(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expect(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expect", value)
 
     @_builtins.property
     @pulumi.getter(name="isForce")
-    def is_force(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_force(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         is force
         """
         return pulumi.get(self, "is_force")
 
     @is_force.setter
-    def is_force(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_force(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_force", value)
 
 
 @pulumi.input_type
 class _NamespaceLookupsUpdateDataManagementState:
     def __init__(__self__, *,
-                 char_encoding: Optional[pulumi.Input[_builtins.str]] = None,
-                 expect: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_force: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lookup_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 update_lookup_file: Optional[pulumi.Input[_builtins.str]] = None):
+                 char_encoding: pulumi.Input[Optional[_builtins.str]] = None,
+                 expect: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_force: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lookup_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_lookup_file: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NamespaceLookupsUpdateDataManagement resources.
 
@@ -164,55 +164,55 @@ class _NamespaceLookupsUpdateDataManagementState:
 
     @_builtins.property
     @pulumi.getter(name="charEncoding")
-    def char_encoding(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def char_encoding(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The character encoding of the uploaded file.
         """
         return pulumi.get(self, "char_encoding")
 
     @char_encoding.setter
-    def char_encoding(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def char_encoding(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "char_encoding", value)
 
     @_builtins.property
     @pulumi.getter
-    def expect(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expect(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
         """
         return pulumi.get(self, "expect")
 
     @expect.setter
-    def expect(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expect(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expect", value)
 
     @_builtins.property
     @pulumi.getter(name="isForce")
-    def is_force(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_force(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         is force
         """
         return pulumi.get(self, "is_force")
 
     @is_force.setter
-    def is_force(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_force(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_force", value)
 
     @_builtins.property
     @pulumi.getter(name="lookupName")
-    def lookup_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lookup_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the lookup to operate on.
         """
         return pulumi.get(self, "lookup_name")
 
     @lookup_name.setter
-    def lookup_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lookup_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lookup_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
 
@@ -223,19 +223,19 @@ class _NamespaceLookupsUpdateDataManagementState:
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="updateLookupFile")
-    def update_lookup_file(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def update_lookup_file(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Path to the file containing data for the lookup update.
         """
         return pulumi.get(self, "update_lookup_file")
 
     @update_lookup_file.setter
-    def update_lookup_file(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def update_lookup_file(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "update_lookup_file", value)
 
 
@@ -245,12 +245,12 @@ class NamespaceLookupsUpdateDataManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 char_encoding: Optional[pulumi.Input[_builtins.str]] = None,
-                 expect: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_force: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lookup_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 update_lookup_file: Optional[pulumi.Input[_builtins.str]] = None,
+                 char_encoding: pulumi.Input[Optional[_builtins.str]] = None,
+                 expect: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_force: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lookup_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_lookup_file: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Namespace Lookups Update Data Management resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -272,7 +272,7 @@ class NamespaceLookupsUpdateDataManagement(pulumi.CustomResource):
             namespace=namespace_lookups_update_data_management_namespace,
             char_encoding=namespace_lookups_update_data_management_char_encoding,
             expect=namespace_lookups_update_data_management_expect,
-            is_force=namespace_lookups_update_data_management_is_force)
+            is_force=namespace_lookups_update_data_management_is_force == "true")
         ```
 
         ## Import
@@ -319,7 +319,7 @@ class NamespaceLookupsUpdateDataManagement(pulumi.CustomResource):
             namespace=namespace_lookups_update_data_management_namespace,
             char_encoding=namespace_lookups_update_data_management_char_encoding,
             expect=namespace_lookups_update_data_management_expect,
-            is_force=namespace_lookups_update_data_management_is_force)
+            is_force=namespace_lookups_update_data_management_is_force == "true")
         ```
 
         ## Import
@@ -342,12 +342,12 @@ class NamespaceLookupsUpdateDataManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 char_encoding: Optional[pulumi.Input[_builtins.str]] = None,
-                 expect: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_force: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lookup_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 update_lookup_file: Optional[pulumi.Input[_builtins.str]] = None,
+                 char_encoding: pulumi.Input[Optional[_builtins.str]] = None,
+                 expect: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_force: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lookup_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_lookup_file: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -379,12 +379,12 @@ class NamespaceLookupsUpdateDataManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            char_encoding: Optional[pulumi.Input[_builtins.str]] = None,
-            expect: Optional[pulumi.Input[_builtins.str]] = None,
-            is_force: Optional[pulumi.Input[_builtins.bool]] = None,
-            lookup_name: Optional[pulumi.Input[_builtins.str]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None,
-            update_lookup_file: Optional[pulumi.Input[_builtins.str]] = None) -> 'NamespaceLookupsUpdateDataManagement':
+            char_encoding: pulumi.Input[Optional[_builtins.str]] = None,
+            expect: pulumi.Input[Optional[_builtins.str]] = None,
+            is_force: pulumi.Input[Optional[_builtins.bool]] = None,
+            lookup_name: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            update_lookup_file: pulumi.Input[Optional[_builtins.str]] = None) -> 'NamespaceLookupsUpdateDataManagement':
         """
         Get an existing NamespaceLookupsUpdateDataManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

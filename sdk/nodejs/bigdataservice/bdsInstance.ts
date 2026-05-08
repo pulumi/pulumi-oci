@@ -26,61 +26,61 @@ import * as utilities from "../utilities";
  *     clusterVersion: bdsInstanceClusterVersion,
  *     compartmentId: compartmentId,
  *     displayName: bdsInstanceDisplayName,
- *     isHighAvailability: bdsInstanceIsHighAvailability,
- *     isSecure: bdsInstanceIsSecure,
+ *     isHighAvailability: bdsInstanceIsHighAvailability === "true",
+ *     isSecure: bdsInstanceIsSecure === "true",
  *     masterNode: {
  *         shape: bdsInstanceNodesShape,
  *         subnetId: testSubnet.id,
- *         numberOfNodes: bdsInstanceNumberOfNodes,
+ *         numberOfNodes: Number(bdsInstanceNumberOfNodes),
  *         blockVolumeSizeInGbs: bdsInstanceNodesBlockVolumeSizeInGbs,
  *         shapeConfig: {
- *             memoryInGbs: bdsInstanceNodesShapeConfigMemoryInGbs,
- *             nvmes: bdsInstanceNodesShapeConfigNvmes,
- *             ocpus: bdsInstanceNodesShapeConfigOcpus,
+ *             memoryInGbs: Number(bdsInstanceNodesShapeConfigMemoryInGbs),
+ *             nvmes: Number(bdsInstanceNodesShapeConfigNvmes),
+ *             ocpus: Number(bdsInstanceNodesShapeConfigOcpus),
  *         },
  *     },
  *     utilNode: {
  *         shape: bdsInstanceNodesShape,
  *         subnetId: testSubnet.id,
- *         numberOfNodes: bdsInstanceNumberOfNodes,
+ *         numberOfNodes: Number(bdsInstanceNumberOfNodes),
  *         blockVolumeSizeInGbs: bdsInstanceNodesBlockVolumeSizeInGbs,
  *         shapeConfig: {
- *             memoryInGbs: bdsInstanceNodesShapeConfigMemoryInGbs,
- *             nvmes: bdsInstanceNodesShapeConfigNvmes,
- *             ocpus: bdsInstanceNodesShapeConfigOcpus,
+ *             memoryInGbs: Number(bdsInstanceNodesShapeConfigMemoryInGbs),
+ *             nvmes: Number(bdsInstanceNodesShapeConfigNvmes),
+ *             ocpus: Number(bdsInstanceNodesShapeConfigOcpus),
  *         },
  *     },
  *     workerNode: {
  *         shape: bdsInstanceNodesShape,
  *         subnetId: testSubnet.id,
- *         numberOfNodes: bdsInstanceNumberOfNodes,
+ *         numberOfNodes: Number(bdsInstanceNumberOfNodes),
  *         blockVolumeSizeInGbs: bdsInstanceNodesBlockVolumeSizeInGbs,
  *         shapeConfig: {
- *             memoryInGbs: bdsInstanceNodesShapeConfigMemoryInGbs,
- *             nvmes: bdsInstanceNodesShapeConfigNvmes,
- *             ocpus: bdsInstanceNodesShapeConfigOcpus,
+ *             memoryInGbs: Number(bdsInstanceNodesShapeConfigMemoryInGbs),
+ *             nvmes: Number(bdsInstanceNodesShapeConfigNvmes),
+ *             ocpus: Number(bdsInstanceNodesShapeConfigOcpus),
  *         },
  *     },
  *     computeOnlyWorkerNode: {
  *         shape: bdsInstanceNodesShape,
  *         subnetId: testSubnet.id,
- *         numberOfNodes: bdsInstanceNumberOfNodes,
+ *         numberOfNodes: Number(bdsInstanceNumberOfNodes),
  *         blockVolumeSizeInGbs: bdsInstanceNodesBlockVolumeSizeInGbs,
  *         shapeConfig: {
- *             memoryInGbs: bdsInstanceNodesShapeConfigMemoryInGbs,
- *             nvmes: bdsInstanceNodesShapeConfigNvmes,
- *             ocpus: bdsInstanceNodesShapeConfigOcpus,
+ *             memoryInGbs: Number(bdsInstanceNodesShapeConfigMemoryInGbs),
+ *             nvmes: Number(bdsInstanceNodesShapeConfigNvmes),
+ *             ocpus: Number(bdsInstanceNodesShapeConfigOcpus),
  *         },
  *     },
  *     edgeNode: {
  *         shape: bdsInstanceNodesShape,
  *         subnetId: testSubnet.id,
- *         numberOfNodes: bdsInstanceNumberOfNodes,
+ *         numberOfNodes: Number(bdsInstanceNumberOfNodes),
  *         blockVolumeSizeInGbs: bdsInstanceNodesBlockVolumeSizeInGbs,
  *         shapeConfig: {
- *             memoryInGbs: bdsInstanceNodesShapeConfigMemoryInGbs,
- *             nvmes: bdsInstanceNodesShapeConfigNvmes,
- *             ocpus: bdsInstanceNodesShapeConfigOcpus,
+ *             memoryInGbs: Number(bdsInstanceNodesShapeConfigMemoryInGbs),
+ *             nvmes: Number(bdsInstanceNodesShapeConfigNvmes),
+ *             ocpus: Number(bdsInstanceNodesShapeConfigOcpus),
  *         },
  *     },
  *     kafkaBrokerNode: {
@@ -89,9 +89,9 @@ import * as utilities from "../utilities";
  *         numberOfNodes: bdsInstanceNumberOfNodes,
  *         blockVolumeSizeInGbs: bdsInstanceNodesBlockVolumeSizeInGbs,
  *         shapeConfig: {
- *             memoryInGbs: bdsInstanceNodesShapeConfigMemoryInGbs,
- *             nvmes: bdsInstanceNodesShapeConfigNvmes,
- *             ocpus: bdsInstanceNodesShapeConfigOcpus,
+ *             memoryInGbs: Number(bdsInstanceNodesShapeConfigMemoryInGbs),
+ *             nvmes: Number(bdsInstanceNodesShapeConfigNvmes),
+ *             ocpus: Number(bdsInstanceNodesShapeConfigOcpus),
  *         },
  *     },
  *     bdsClusterVersionSummary: {
@@ -107,7 +107,7 @@ import * as utilities from "../utilities";
  *     ignoreExistingNodesShapes: ignoreExistingNodesShape,
  *     networkConfig: {
  *         cidrBlock: bdsInstanceNetworkConfigCidrBlock,
- *         isNatGatewayRequired: bdsInstanceNetworkConfigIsNatGatewayRequired,
+ *         isNatGatewayRequired: bdsInstanceNetworkConfigIsNatGatewayRequired === "true",
  *     },
  * });
  * ```
@@ -422,140 +422,140 @@ export interface BdsInstanceState {
     /**
      * Cluster version details including bds and odh version information.
      */
-    bdsClusterVersionSummary?: pulumi.Input<inputs.BigDataService.BdsInstanceBdsClusterVersionSummary>;
+    bdsClusterVersionSummary?: pulumi.Input<inputs.BigDataService.BdsInstanceBdsClusterVersionSummary | undefined>;
     /**
      * (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
      */
-    bootstrapScriptUrl?: pulumi.Input<string>;
+    bootstrapScriptUrl?: pulumi.Input<string | undefined>;
     /**
      * The information about added Cloud SQL capability
      */
-    cloudSqlDetails?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceCloudSqlDetail>[]>;
+    cloudSqlDetails?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceCloudSqlDetail>[] | undefined>;
     /**
      * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      */
-    clusterAdminPassword?: pulumi.Input<string>;
+    clusterAdminPassword?: pulumi.Input<string | undefined>;
     /**
      * Specific info about a Hadoop cluster
      */
-    clusterDetails?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceClusterDetail>[]>;
+    clusterDetails?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceClusterDetail>[] | undefined>;
     /**
      * Profile of the Big Data Service cluster.
      */
-    clusterProfile?: pulumi.Input<string>;
+    clusterProfile?: pulumi.Input<string | undefined>;
     /**
      * The SSH public key used to authenticate the cluster connection.
      */
-    clusterPublicKey?: pulumi.Input<string>;
+    clusterPublicKey?: pulumi.Input<string | undefined>;
     /**
      * Version of the Hadoop distribution
      */
-    clusterVersion?: pulumi.Input<string>;
+    clusterVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment
      */
-    compartmentId?: pulumi.Input<string>;
-    computeOnlyWorkerNode?: pulumi.Input<inputs.BigDataService.BdsInstanceComputeOnlyWorkerNode>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    computeOnlyWorkerNode?: pulumi.Input<inputs.BigDataService.BdsInstanceComputeOnlyWorkerNode | undefined>;
     /**
      * The user who created the cluster.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Name of the BDS instance
      */
-    displayName?: pulumi.Input<string>;
-    edgeNode?: pulumi.Input<inputs.BigDataService.BdsInstanceEdgeNode>;
+    displayName?: pulumi.Input<string | undefined>;
+    edgeNode?: pulumi.Input<inputs.BigDataService.BdsInstanceEdgeNode | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
      */
-    ignoreExistingNodesShapes?: pulumi.Input<pulumi.Input<string>[]>;
+    ignoreExistingNodesShapes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
      */
-    isCloudSqlConfigured?: pulumi.Input<boolean>;
-    isForceRemoveEnabled?: pulumi.Input<boolean>;
+    isCloudSqlConfigured?: pulumi.Input<boolean | undefined>;
+    isForceRemoveEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
      */
-    isForceStopJobs?: pulumi.Input<boolean>;
+    isForceStopJobs?: pulumi.Input<boolean | undefined>;
     /**
      * Boolean flag specifying whether or not the cluster is HA
      */
-    isHighAvailability?: pulumi.Input<boolean>;
+    isHighAvailability?: pulumi.Input<boolean | undefined>;
     /**
      * Boolean flag specifying whether or not Kafka should be configured.
      */
-    isKafkaConfigured?: pulumi.Input<boolean>;
+    isKafkaConfigured?: pulumi.Input<boolean | undefined>;
     /**
      * Boolean flag specifying whether or not the cluster should be setup as secure.
      */
-    isSecure?: pulumi.Input<boolean>;
+    isSecure?: pulumi.Input<boolean | undefined>;
     /**
      * The kafka broker node in the BDS instance
      */
-    kafkaBrokerNode?: pulumi.Input<inputs.BigDataService.BdsInstanceKafkaBrokerNode>;
+    kafkaBrokerNode?: pulumi.Input<inputs.BigDataService.BdsInstanceKafkaBrokerNode | undefined>;
     /**
      * The user-defined kerberos realm name.
      */
-    kerberosRealmName?: pulumi.Input<string>;
+    kerberosRealmName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the Key Management master encryption key.
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * The master node in the BDS instance
      */
-    masterNode?: pulumi.Input<inputs.BigDataService.BdsInstanceMasterNode>;
+    masterNode?: pulumi.Input<inputs.BigDataService.BdsInstanceMasterNode | undefined>;
     /**
      * (Updatable) Additional configuration of the user's network.
      */
-    networkConfig?: pulumi.Input<inputs.BigDataService.BdsInstanceNetworkConfig>;
+    networkConfig?: pulumi.Input<inputs.BigDataService.BdsInstanceNetworkConfig | undefined>;
     /**
      * The list of nodes in the Big Data Service cluster.
      */
-    nodes?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceNode>[]>;
+    nodes?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceNode>[] | undefined>;
     /**
      * Number of nodes that forming the cluster
      */
-    numberOfNodes?: pulumi.Input<number>;
+    numberOfNodes?: pulumi.Input<number | undefined>;
     /**
      * Number of nodes that require a maintenance reboot
      */
-    numberOfNodesRequiringMaintenanceReboot?: pulumi.Input<number>;
+    numberOfNodesRequiringMaintenanceReboot?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The version of the patch to be upated.
      */
-    osPatchVersion?: pulumi.Input<string>;
+    osPatchVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
      */
-    removeNode?: pulumi.Input<string>;
-    startClusterShapeConfigs?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceStartClusterShapeConfig>[]>;
+    removeNode?: pulumi.Input<string | undefined>;
+    startClusterShapeConfigs?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceStartClusterShapeConfig>[] | undefined>;
     /**
      * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The time the BDS instance was created. An RFC3339 formatted datetime string
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the BDS instance was updated. An RFC3339 formatted datetime string
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The utility node in the BDS instance
      */
-    utilNode?: pulumi.Input<inputs.BigDataService.BdsInstanceUtilNode>;
-    workerNode?: pulumi.Input<inputs.BigDataService.BdsInstanceWorkerNode>;
+    utilNode?: pulumi.Input<inputs.BigDataService.BdsInstanceUtilNode | undefined>;
+    workerNode?: pulumi.Input<inputs.BigDataService.BdsInstanceWorkerNode | undefined>;
 }
 
 /**
@@ -565,15 +565,15 @@ export interface BdsInstanceArgs {
     /**
      * Cluster version details including bds and odh version information.
      */
-    bdsClusterVersionSummary?: pulumi.Input<inputs.BigDataService.BdsInstanceBdsClusterVersionSummary>;
+    bdsClusterVersionSummary?: pulumi.Input<inputs.BigDataService.BdsInstanceBdsClusterVersionSummary | undefined>;
     /**
      * (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
      */
-    bootstrapScriptUrl?: pulumi.Input<string>;
+    bootstrapScriptUrl?: pulumi.Input<string | undefined>;
     /**
      * The information about added Cloud SQL capability
      */
-    cloudSqlDetails?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceCloudSqlDetail>[]>;
+    cloudSqlDetails?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceCloudSqlDetail>[] | undefined>;
     /**
      * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      */
@@ -581,7 +581,7 @@ export interface BdsInstanceArgs {
     /**
      * Profile of the Big Data Service cluster.
      */
-    clusterProfile?: pulumi.Input<string>;
+    clusterProfile?: pulumi.Input<string | undefined>;
     /**
      * The SSH public key used to authenticate the cluster connection.
      */
@@ -594,33 +594,33 @@ export interface BdsInstanceArgs {
      * (Updatable) The OCID of the compartment
      */
     compartmentId: pulumi.Input<string>;
-    computeOnlyWorkerNode?: pulumi.Input<inputs.BigDataService.BdsInstanceComputeOnlyWorkerNode>;
+    computeOnlyWorkerNode?: pulumi.Input<inputs.BigDataService.BdsInstanceComputeOnlyWorkerNode | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Name of the BDS instance
      */
     displayName: pulumi.Input<string>;
-    edgeNode?: pulumi.Input<inputs.BigDataService.BdsInstanceEdgeNode>;
+    edgeNode?: pulumi.Input<inputs.BigDataService.BdsInstanceEdgeNode | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
      */
-    ignoreExistingNodesShapes?: pulumi.Input<pulumi.Input<string>[]>;
+    ignoreExistingNodesShapes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
      */
-    isCloudSqlConfigured?: pulumi.Input<boolean>;
-    isForceRemoveEnabled?: pulumi.Input<boolean>;
+    isCloudSqlConfigured?: pulumi.Input<boolean | undefined>;
+    isForceRemoveEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
      */
-    isForceStopJobs?: pulumi.Input<boolean>;
+    isForceStopJobs?: pulumi.Input<boolean | undefined>;
     /**
      * Boolean flag specifying whether or not the cluster is HA
      */
@@ -628,7 +628,7 @@ export interface BdsInstanceArgs {
     /**
      * Boolean flag specifying whether or not Kafka should be configured.
      */
-    isKafkaConfigured?: pulumi.Input<boolean>;
+    isKafkaConfigured?: pulumi.Input<boolean | undefined>;
     /**
      * Boolean flag specifying whether or not the cluster should be setup as secure.
      */
@@ -636,15 +636,15 @@ export interface BdsInstanceArgs {
     /**
      * The kafka broker node in the BDS instance
      */
-    kafkaBrokerNode?: pulumi.Input<inputs.BigDataService.BdsInstanceKafkaBrokerNode>;
+    kafkaBrokerNode?: pulumi.Input<inputs.BigDataService.BdsInstanceKafkaBrokerNode | undefined>;
     /**
      * The user-defined kerberos realm name.
      */
-    kerberosRealmName?: pulumi.Input<string>;
+    kerberosRealmName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the Key Management master encryption key.
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * The master node in the BDS instance
      */
@@ -652,20 +652,20 @@ export interface BdsInstanceArgs {
     /**
      * (Updatable) Additional configuration of the user's network.
      */
-    networkConfig?: pulumi.Input<inputs.BigDataService.BdsInstanceNetworkConfig>;
+    networkConfig?: pulumi.Input<inputs.BigDataService.BdsInstanceNetworkConfig | undefined>;
     /**
      * (Updatable) The version of the patch to be upated.
      */
-    osPatchVersion?: pulumi.Input<string>;
+    osPatchVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when used triggers Remove Node from an Active Cluster. Takes the node ocid as input
      */
-    removeNode?: pulumi.Input<string>;
-    startClusterShapeConfigs?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceStartClusterShapeConfig>[]>;
+    removeNode?: pulumi.Input<string | undefined>;
+    startClusterShapeConfigs?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceStartClusterShapeConfig>[] | undefined>;
     /**
      * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The utility node in the BDS instance
      */

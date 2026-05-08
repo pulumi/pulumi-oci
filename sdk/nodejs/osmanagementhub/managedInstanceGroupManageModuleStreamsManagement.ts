@@ -39,7 +39,7 @@ import * as utilities from "../utilities";
  *         streamName: testStream.name,
  *         softwareSourceId: testSoftwareSource.id,
  *     }],
- *     isDryRun: managedInstanceGroupManageModuleStreamsManagementIsDryRun,
+ *     isDryRun: managedInstanceGroupManageModuleStreamsManagementIsDryRun === "true",
  *     removes: [{
  *         moduleName: managedInstanceGroupManageModuleStreamsManagementRemoveModuleName,
  *         profileName: testProfile.name,
@@ -163,31 +163,31 @@ export interface ManagedInstanceGroupManageModuleStreamsManagementState {
     /**
      * The set of module streams to disable.
      */
-    disables?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementDisable>[]>;
+    disables?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementDisable>[] | undefined>;
     /**
      * The set of module streams to enable.
      */
-    enables?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementEnable>[]>;
+    enables?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementEnable>[] | undefined>;
     /**
      * The set of module stream profiles to install.
      */
-    installs?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementInstall>[]>;
+    installs?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementInstall>[] | undefined>;
     /**
      * Indicates if this operation is a dry run or if the operation should be committed.  If set to true, the result of the operation will be evaluated but not committed.  If set to false, the operation is committed to the managed instance(s).  The default is false.
      */
-    isDryRun?: pulumi.Input<boolean>;
+    isDryRun?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
-    managedInstanceGroupId?: pulumi.Input<string>;
+    managedInstanceGroupId?: pulumi.Input<string | undefined>;
     /**
      * The set of module stream profiles to remove.
      */
-    removes?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementRemove>[]>;
+    removes?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementRemove>[] | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetails | undefined>;
 }
 
 /**
@@ -197,19 +197,19 @@ export interface ManagedInstanceGroupManageModuleStreamsManagementArgs {
     /**
      * The set of module streams to disable.
      */
-    disables?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementDisable>[]>;
+    disables?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementDisable>[] | undefined>;
     /**
      * The set of module streams to enable.
      */
-    enables?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementEnable>[]>;
+    enables?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementEnable>[] | undefined>;
     /**
      * The set of module stream profiles to install.
      */
-    installs?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementInstall>[]>;
+    installs?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementInstall>[] | undefined>;
     /**
      * Indicates if this operation is a dry run or if the operation should be committed.  If set to true, the result of the operation will be evaluated but not committed.  If set to false, the operation is committed to the managed instance(s).  The default is false.
      */
-    isDryRun?: pulumi.Input<boolean>;
+    isDryRun?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
@@ -217,9 +217,9 @@ export interface ManagedInstanceGroupManageModuleStreamsManagementArgs {
     /**
      * The set of module stream profiles to remove.
      */
-    removes?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementRemove>[]>;
+    removes?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementRemove>[] | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetails | undefined>;
 }

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWlpAgents = oci.CloudGuard.getWlpAgents({
+ * const testWlpAgents = oci.cloudguard.getWlpAgents({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -70,7 +70,7 @@ export interface GetWlpAgentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWlpAgents = oci.CloudGuard.getWlpAgents({
+ * const testWlpAgents = oci.cloudguard.getWlpAgents({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -91,5 +91,5 @@ export interface GetWlpAgentsOutputArgs {
      * The OCID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CloudGuard.GetWlpAgentsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CloudGuard.GetWlpAgentsFilterArgs>[] | undefined>;
 }

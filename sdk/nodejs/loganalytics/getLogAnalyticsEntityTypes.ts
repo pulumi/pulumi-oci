@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsEntityTypes = oci.LogAnalytics.getLogAnalyticsEntityTypes({
+ * const testLogAnalyticsEntityTypes = oci.loganalytics.getLogAnalyticsEntityTypes({
  *     namespace: logAnalyticsEntityTypeNamespace,
  *     cloudType: logAnalyticsEntityTypeCloudType,
  *     name: logAnalyticsEntityTypeName,
@@ -104,7 +104,7 @@ export interface GetLogAnalyticsEntityTypesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsEntityTypes = oci.LogAnalytics.getLogAnalyticsEntityTypes({
+ * const testLogAnalyticsEntityTypes = oci.loganalytics.getLogAnalyticsEntityTypes({
  *     namespace: logAnalyticsEntityTypeNamespace,
  *     cloudType: logAnalyticsEntityTypeCloudType,
  *     name: logAnalyticsEntityTypeName,
@@ -132,16 +132,16 @@ export interface GetLogAnalyticsEntityTypesOutputArgs {
     /**
      * A filter to return CLOUD or NON_CLOUD entity types.
      */
-    cloudType?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetLogAnalyticsEntityTypesFilterArgs>[]>;
+    cloudType?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetLogAnalyticsEntityTypesFilterArgs>[] | undefined>;
     /**
      * A filter to return only log analytics entity types whose name matches the entire name given. The match is case-insensitive.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only log analytics entity types whose name or internalName contains name given. The match is case-insensitive.
      */
-    nameContains?: pulumi.Input<string>;
+    nameContains?: pulumi.Input<string | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
@@ -149,5 +149,5 @@ export interface GetLogAnalyticsEntityTypesOutputArgs {
     /**
      * A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -24,12 +24,12 @@ class NetworkFirewallPolicyDecryptionRuleArgs:
                  action: pulumi.Input[_builtins.str],
                  condition: pulumi.Input['NetworkFirewallPolicyDecryptionRuleConditionArgs'],
                  network_firewall_policy_id: pulumi.Input[_builtins.str],
-                 decryption_profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 position: Optional[pulumi.Input['NetworkFirewallPolicyDecryptionRulePositionArgs']] = None,
-                 priority_order: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret: Optional[pulumi.Input[_builtins.str]] = None):
+                 decryption_profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 position: pulumi.Input[Optional['NetworkFirewallPolicyDecryptionRulePositionArgs']] = None,
+                 priority_order: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyDecryptionRule resource.
 
@@ -100,87 +100,87 @@ class NetworkFirewallPolicyDecryptionRuleArgs:
 
     @_builtins.property
     @pulumi.getter(name="decryptionProfile")
-    def decryption_profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def decryption_profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the decryption profile to use.
         """
         return pulumi.get(self, "decryption_profile")
 
     @decryption_profile.setter
-    def decryption_profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def decryption_profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "decryption_profile", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the decryption rule. This field can be used to add additional info.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name for the decryption rule, must be unique within the policy.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def position(self) -> Optional[pulumi.Input['NetworkFirewallPolicyDecryptionRulePositionArgs']]:
+    def position(self) -> pulumi.Input[Optional['NetworkFirewallPolicyDecryptionRulePositionArgs']]:
         """
         (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
         """
         return pulumi.get(self, "position")
 
     @position.setter
-    def position(self, value: Optional[pulumi.Input['NetworkFirewallPolicyDecryptionRulePositionArgs']]):
+    def position(self, value: pulumi.Input[Optional['NetworkFirewallPolicyDecryptionRulePositionArgs']]):
         pulumi.set(self, "position", value)
 
     @_builtins.property
     @pulumi.getter(name="priorityOrder")
-    def priority_order(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def priority_order(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "priority_order")
 
     @priority_order.setter
-    def priority_order(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def priority_order(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "priority_order", value)
 
     @_builtins.property
     @pulumi.getter
-    def secret(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
         """
         return pulumi.get(self, "secret")
 
     @secret.setter
-    def secret(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret", value)
 
 
 @pulumi.input_type
 class _NetworkFirewallPolicyDecryptionRuleState:
     def __init__(__self__, *,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 condition: Optional[pulumi.Input['NetworkFirewallPolicyDecryptionRuleConditionArgs']] = None,
-                 decryption_profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 position: Optional[pulumi.Input['NetworkFirewallPolicyDecryptionRulePositionArgs']] = None,
-                 priority_order: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret: Optional[pulumi.Input[_builtins.str]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition: pulumi.Input[Optional['NetworkFirewallPolicyDecryptionRuleConditionArgs']] = None,
+                 decryption_profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 position: pulumi.Input[Optional['NetworkFirewallPolicyDecryptionRulePositionArgs']] = None,
+                 priority_order: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyDecryptionRule resources.
 
@@ -219,7 +219,7 @@ class _NetworkFirewallPolicyDecryptionRuleState:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Action:
         * NO_DECRYPT - Matching traffic is not decrypted.
@@ -228,112 +228,112 @@ class _NetworkFirewallPolicyDecryptionRuleState:
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter
-    def condition(self) -> Optional[pulumi.Input['NetworkFirewallPolicyDecryptionRuleConditionArgs']]:
+    def condition(self) -> pulumi.Input[Optional['NetworkFirewallPolicyDecryptionRuleConditionArgs']]:
         """
         (Updatable) Match criteria used in Decryption Rule used on the firewall policy rules.
         """
         return pulumi.get(self, "condition")
 
     @condition.setter
-    def condition(self, value: Optional[pulumi.Input['NetworkFirewallPolicyDecryptionRuleConditionArgs']]):
+    def condition(self, value: pulumi.Input[Optional['NetworkFirewallPolicyDecryptionRuleConditionArgs']]):
         pulumi.set(self, "condition", value)
 
     @_builtins.property
     @pulumi.getter(name="decryptionProfile")
-    def decryption_profile(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def decryption_profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the decryption profile to use.
         """
         return pulumi.get(self, "decryption_profile")
 
     @decryption_profile.setter
-    def decryption_profile(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def decryption_profile(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "decryption_profile", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the decryption rule. This field can be used to add additional info.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name for the decryption rule, must be unique within the policy.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkFirewallPolicyId")
-    def network_firewall_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_firewall_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Network Firewall Policy identifier
         """
         return pulumi.get(self, "network_firewall_policy_id")
 
     @network_firewall_policy_id.setter
-    def network_firewall_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_firewall_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_firewall_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="parentResourceId")
-    def parent_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parent_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the Network Firewall Policy this decryption rule belongs to.
         """
         return pulumi.get(self, "parent_resource_id")
 
     @parent_resource_id.setter
-    def parent_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parent_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parent_resource_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def position(self) -> Optional[pulumi.Input['NetworkFirewallPolicyDecryptionRulePositionArgs']]:
+    def position(self) -> pulumi.Input[Optional['NetworkFirewallPolicyDecryptionRulePositionArgs']]:
         """
         (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
         """
         return pulumi.get(self, "position")
 
     @position.setter
-    def position(self, value: Optional[pulumi.Input['NetworkFirewallPolicyDecryptionRulePositionArgs']]):
+    def position(self, value: pulumi.Input[Optional['NetworkFirewallPolicyDecryptionRulePositionArgs']]):
         pulumi.set(self, "position", value)
 
     @_builtins.property
     @pulumi.getter(name="priorityOrder")
-    def priority_order(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def priority_order(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "priority_order")
 
     @priority_order.setter
-    def priority_order(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def priority_order(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "priority_order", value)
 
     @_builtins.property
     @pulumi.getter
-    def secret(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
         """
         return pulumi.get(self, "secret")
 
     @secret.setter
-    def secret(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret", value)
 
 
@@ -343,15 +343,15 @@ class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 condition: Optional[pulumi.Input[Union['NetworkFirewallPolicyDecryptionRuleConditionArgs', 'NetworkFirewallPolicyDecryptionRuleConditionArgsDict']]] = None,
-                 decryption_profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 position: Optional[pulumi.Input[Union['NetworkFirewallPolicyDecryptionRulePositionArgs', 'NetworkFirewallPolicyDecryptionRulePositionArgsDict']]] = None,
-                 priority_order: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition: pulumi.Input[Optional[Union['NetworkFirewallPolicyDecryptionRuleConditionArgs', 'NetworkFirewallPolicyDecryptionRuleConditionArgsDict']]] = None,
+                 decryption_profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 position: pulumi.Input[Optional[Union['NetworkFirewallPolicyDecryptionRulePositionArgs', 'NetworkFirewallPolicyDecryptionRulePositionArgsDict']]] = None,
+                 priority_order: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -473,15 +473,15 @@ class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 condition: Optional[pulumi.Input[Union['NetworkFirewallPolicyDecryptionRuleConditionArgs', 'NetworkFirewallPolicyDecryptionRuleConditionArgsDict']]] = None,
-                 decryption_profile: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 position: Optional[pulumi.Input[Union['NetworkFirewallPolicyDecryptionRulePositionArgs', 'NetworkFirewallPolicyDecryptionRulePositionArgsDict']]] = None,
-                 priority_order: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition: pulumi.Input[Optional[Union['NetworkFirewallPolicyDecryptionRuleConditionArgs', 'NetworkFirewallPolicyDecryptionRuleConditionArgsDict']]] = None,
+                 decryption_profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 position: pulumi.Input[Optional[Union['NetworkFirewallPolicyDecryptionRulePositionArgs', 'NetworkFirewallPolicyDecryptionRulePositionArgsDict']]] = None,
+                 priority_order: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -517,16 +517,16 @@ class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action: Optional[pulumi.Input[_builtins.str]] = None,
-            condition: Optional[pulumi.Input[Union['NetworkFirewallPolicyDecryptionRuleConditionArgs', 'NetworkFirewallPolicyDecryptionRuleConditionArgsDict']]] = None,
-            decryption_profile: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            parent_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-            position: Optional[pulumi.Input[Union['NetworkFirewallPolicyDecryptionRulePositionArgs', 'NetworkFirewallPolicyDecryptionRulePositionArgsDict']]] = None,
-            priority_order: Optional[pulumi.Input[_builtins.str]] = None,
-            secret: Optional[pulumi.Input[_builtins.str]] = None) -> 'NetworkFirewallPolicyDecryptionRule':
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            condition: pulumi.Input[Optional[Union['NetworkFirewallPolicyDecryptionRuleConditionArgs', 'NetworkFirewallPolicyDecryptionRuleConditionArgsDict']]] = None,
+            decryption_profile: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            position: pulumi.Input[Optional[Union['NetworkFirewallPolicyDecryptionRulePositionArgs', 'NetworkFirewallPolicyDecryptionRulePositionArgsDict']]] = None,
+            priority_order: pulumi.Input[Optional[_builtins.str]] = None,
+            secret: pulumi.Input[Optional[_builtins.str]] = None) -> 'NetworkFirewallPolicyDecryptionRule':
         """
         Get an existing NetworkFirewallPolicyDecryptionRule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPublicVantagePoint = oci.ApmSynthetics.getVantagePoint({
+ * const testPublicVantagePoint = oci.apmsynthetics.getVantagePoint({
  *     apmDomainId: testApmDomain.id,
  *     displayName: publicVantagePointDisplayName,
  *     name: publicVantagePointName,
@@ -84,7 +84,7 @@ export interface GetVantagePointResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPublicVantagePoint = oci.ApmSynthetics.getVantagePoint({
+ * const testPublicVantagePoint = oci.apmsynthetics.getVantagePoint({
  *     apmDomainId: testApmDomain.id,
  *     displayName: publicVantagePointDisplayName,
  *     name: publicVantagePointName,
@@ -111,9 +111,9 @@ export interface GetVantagePointOutputArgs {
     /**
      * A filter to return only the resources that match the entire display name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that match the entire name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

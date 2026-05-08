@@ -228,7 +228,7 @@ def get_path_analyzer_test(path_analyzer_test_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_path_analyzer_test = oci.VnMonitoring.get_path_analyzer_test(path_analyzer_test_id=test_path_analyzer_test_oci_vn_monitoring_path_analyzer_test["id"])
+    test_path_analyzer_test = oci.vnmonitoring.get_path_analyzer_test(path_analyzer_test_id=test_path_analyzer_test_oci_vn_monitoring_path_analyzer_test["id"])
     ```
 
 
@@ -255,7 +255,7 @@ def get_path_analyzer_test(path_analyzer_test_id: Optional[_builtins.str] = None
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_path_analyzer_test_output(path_analyzer_test_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_path_analyzer_test_output(path_analyzer_test_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPathAnalyzerTestResult]:
     """
     This data source provides details about a specific Path Analyzer Test resource in Oracle Cloud Infrastructure Vn Monitoring service.
@@ -268,7 +268,7 @@ def get_path_analyzer_test_output(path_analyzer_test_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_path_analyzer_test = oci.VnMonitoring.get_path_analyzer_test(path_analyzer_test_id=test_path_analyzer_test_oci_vn_monitoring_path_analyzer_test["id"])
+    test_path_analyzer_test = oci.vnmonitoring.get_path_analyzer_test(path_analyzer_test_id=test_path_analyzer_test_oci_vn_monitoring_path_analyzer_test["id"])
     ```
 
 

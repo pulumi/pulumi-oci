@@ -190,10 +190,10 @@ def get_target_databases(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_target_databases = oci.DataSafe.get_target_databases(compartment_id=compartment_id,
+    test_target_databases = oci.datasafe.get_target_databases(compartment_id=compartment_id,
         access_level=target_database_access_level,
         associated_resource_id=test_associated_resource["id"],
-        compartment_id_in_subtree=target_database_compartment_id_in_subtree,
+        compartment_id_in_subtree=target_database_compartment_id_in_subtree == "true",
         database_type=target_database_database_type,
         display_name=target_database_display_name,
         infrastructure_type=target_database_infrastructure_type,
@@ -239,16 +239,16 @@ def get_target_databases(access_level: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         target_database_id=pulumi.get(__ret__, 'target_database_id'),
         target_databases=pulumi.get(__ret__, 'target_databases'))
-def get_target_databases_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                associated_resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                database_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTargetDatabasesFilterArgs', 'GetTargetDatabasesFilterArgsDict']]]]] = None,
-                                infrastructure_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                target_database_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_target_databases_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                associated_resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                database_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTargetDatabasesFilterArgs', 'GetTargetDatabasesFilterArgsDict']]]]] = None,
+                                infrastructure_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                target_database_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTargetDatabasesResult]:
     """
     This data source provides the list of Target Databases in Oracle Cloud Infrastructure Data Safe service.
@@ -261,10 +261,10 @@ def get_target_databases_output(access_level: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_target_databases = oci.DataSafe.get_target_databases(compartment_id=compartment_id,
+    test_target_databases = oci.datasafe.get_target_databases(compartment_id=compartment_id,
         access_level=target_database_access_level,
         associated_resource_id=test_associated_resource["id"],
-        compartment_id_in_subtree=target_database_compartment_id_in_subtree,
+        compartment_id_in_subtree=target_database_compartment_id_in_subtree == "true",
         database_type=target_database_database_type,
         display_name=target_database_display_name,
         infrastructure_type=target_database_infrastructure_type,

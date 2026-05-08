@@ -193,59 +193,59 @@ export interface CatalogState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    attachedCatalogPrivateEndpoints?: pulumi.Input<pulumi.Input<string>[]>;
+    attachedCatalogPrivateEndpoints?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Compartment identifier.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Data catalog identifier.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.DataCatalog.CatalogLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.DataCatalog.CatalogLock>[] | undefined>;
     /**
      * The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
      */
-    numberOfObjects?: pulumi.Input<number>;
+    numberOfObjects?: pulumi.Input<number | undefined>;
     /**
      * The REST front endpoint URL to the data catalog instance.
      */
-    serviceApiUrl?: pulumi.Input<string>;
+    serviceApiUrl?: pulumi.Input<string | undefined>;
     /**
      * The console front endpoint URL to the data catalog instance.
      */
-    serviceConsoleUrl?: pulumi.Input<string>;
+    serviceConsoleUrl?: pulumi.Input<string | undefined>;
     /**
      * The current state of the data catalog resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -259,7 +259,7 @@ export interface CatalogArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    attachedCatalogPrivateEndpoints?: pulumi.Input<pulumi.Input<string>[]>;
+    attachedCatalogPrivateEndpoints?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Compartment identifier.
      */
@@ -267,13 +267,13 @@ export interface CatalogArgs {
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Data catalog identifier.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

@@ -208,11 +208,11 @@ def get_repository_file_diff(base_version: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_file_diff = oci.DevOps.get_repository_file_diff(base_version=repository_file_diff_base_version,
+    test_repository_file_diff = oci.devops.get_repository_file_diff(base_version=repository_file_diff_base_version,
         repository_id=test_repository["id"],
         target_version=repository_file_diff_target_version,
         file_path=repository_file_diff_file_path,
-        is_comparison_from_merge_base=repository_file_diff_is_comparison_from_merge_base)
+        is_comparison_from_merge_base=repository_file_diff_is_comparison_from_merge_base == "true")
     ```
 
 
@@ -246,11 +246,11 @@ def get_repository_file_diff(base_version: Optional[_builtins.str] = None,
         old_path=pulumi.get(__ret__, 'old_path'),
         repository_id=pulumi.get(__ret__, 'repository_id'),
         target_version=pulumi.get(__ret__, 'target_version'))
-def get_repository_file_diff_output(base_version: Optional[pulumi.Input[_builtins.str]] = None,
-                                    file_path: Optional[pulumi.Input[_builtins.str]] = None,
-                                    is_comparison_from_merge_base: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                    repository_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    target_version: Optional[pulumi.Input[_builtins.str]] = None,
+def get_repository_file_diff_output(base_version: pulumi.Input[Optional[_builtins.str]] = None,
+                                    file_path: pulumi.Input[Optional[_builtins.str]] = None,
+                                    is_comparison_from_merge_base: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                    repository_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    target_version: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryFileDiffResult]:
     """
     This data source provides details about a specific Repository File Diff resource in Oracle Cloud Infrastructure Devops service.
@@ -263,11 +263,11 @@ def get_repository_file_diff_output(base_version: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_file_diff = oci.DevOps.get_repository_file_diff(base_version=repository_file_diff_base_version,
+    test_repository_file_diff = oci.devops.get_repository_file_diff(base_version=repository_file_diff_base_version,
         repository_id=test_repository["id"],
         target_version=repository_file_diff_target_version,
         file_path=repository_file_diff_file_path,
-        is_comparison_from_merge_base=repository_file_diff_is_comparison_from_merge_base)
+        is_comparison_from_merge_base=repository_file_diff_is_comparison_from_merge_base == "true")
     ```
 
 

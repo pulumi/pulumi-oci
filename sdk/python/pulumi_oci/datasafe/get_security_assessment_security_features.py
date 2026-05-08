@@ -241,9 +241,9 @@ def get_security_assessment_security_features(access_level: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_security_features = oci.DataSafe.get_security_assessment_security_features(compartment_id=compartment_id,
+    test_security_assessment_security_features = oci.datasafe.get_security_assessment_security_features(compartment_id=compartment_id,
         access_level=security_assessment_security_feature_access_level,
-        compartment_id_in_subtree=security_assessment_security_feature_compartment_id_in_subtree,
+        compartment_id_in_subtree=security_assessment_security_feature_compartment_id_in_subtree == "true",
         target_id=test_target["id"],
         targets_with_column_encryption=security_assessment_security_feature_targets_with_column_encryption,
         targets_with_database_vault=security_assessment_security_feature_targets_with_database_vault,
@@ -314,22 +314,22 @@ def get_security_assessment_security_features(access_level: Optional[_builtins.s
         targets_with_tablespace_encryption=pulumi.get(__ret__, 'targets_with_tablespace_encryption'),
         targets_with_traditional_audit=pulumi.get(__ret__, 'targets_with_traditional_audit'),
         targets_with_unified_audit=pulumi.get(__ret__, 'targets_with_unified_audit'))
-def get_security_assessment_security_features_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityAssessmentSecurityFeaturesFilterArgs', 'GetSecurityAssessmentSecurityFeaturesFilterArgsDict']]]]] = None,
-                                                     target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     targets_with_column_encryption: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     targets_with_database_vault: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     targets_with_external_authentication: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     targets_with_fine_grained_audit: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     targets_with_global_authentication: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     targets_with_network_encryption: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     targets_with_password_authentication: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     targets_with_privilege_analysis: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     targets_with_tablespace_encryption: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     targets_with_traditional_audit: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     targets_with_unified_audit: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_security_assessment_security_features_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityAssessmentSecurityFeaturesFilterArgs', 'GetSecurityAssessmentSecurityFeaturesFilterArgsDict']]]]] = None,
+                                                     target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     targets_with_column_encryption: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     targets_with_database_vault: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     targets_with_external_authentication: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     targets_with_fine_grained_audit: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     targets_with_global_authentication: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     targets_with_network_encryption: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     targets_with_password_authentication: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     targets_with_privilege_analysis: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     targets_with_tablespace_encryption: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     targets_with_traditional_audit: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     targets_with_unified_audit: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAssessmentSecurityFeaturesResult]:
     """
     This data source provides the list of Security Assessment Security Features in Oracle Cloud Infrastructure Data Safe service.
@@ -342,9 +342,9 @@ def get_security_assessment_security_features_output(access_level: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_security_features = oci.DataSafe.get_security_assessment_security_features(compartment_id=compartment_id,
+    test_security_assessment_security_features = oci.datasafe.get_security_assessment_security_features(compartment_id=compartment_id,
         access_level=security_assessment_security_feature_access_level,
-        compartment_id_in_subtree=security_assessment_security_feature_compartment_id_in_subtree,
+        compartment_id_in_subtree=security_assessment_security_feature_compartment_id_in_subtree == "true",
         target_id=test_target["id"],
         targets_with_column_encryption=security_assessment_security_feature_targets_with_column_encryption,
         targets_with_database_vault=security_assessment_security_feature_targets_with_database_vault,

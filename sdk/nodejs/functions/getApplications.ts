@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApplications = oci.Functions.getApplications({
+ * const testApplications = oci.functions.getApplications({
  *     compartmentId: compartmentId,
  *     displayName: applicationDisplayName,
  *     id: applicationId,
@@ -96,7 +96,7 @@ export interface GetApplicationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApplications = oci.Functions.getApplications({
+ * const testApplications = oci.functions.getApplications({
  *     compartmentId: compartmentId,
  *     displayName: applicationDisplayName,
  *     id: applicationId,
@@ -126,14 +126,14 @@ export interface GetApplicationsOutputArgs {
     /**
      * A filter to return only applications with display names that match the display name string. Matching is exact.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Functions.GetApplicationsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Functions.GetApplicationsFilterArgs>[] | undefined>;
     /**
      * A filter to return only applications with the specified OCID.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only applications that match the lifecycle state in this parameter. Example: `Creating`
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceProviders = oci.DelegateAccessControl.getServiceProviders({
+ * const testServiceProviders = oci.delegateaccesscontrol.getServiceProviders({
  *     compartmentId: compartmentId,
  *     name: serviceProviderName,
  *     serviceProviderType: serviceProviderServiceProviderType,
@@ -107,7 +107,7 @@ export interface GetServiceProvidersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceProviders = oci.DelegateAccessControl.getServiceProviders({
+ * const testServiceProviders = oci.delegateaccesscontrol.getServiceProviders({
  *     compartmentId: compartmentId,
  *     name: serviceProviderName,
  *     serviceProviderType: serviceProviderServiceProviderType,
@@ -136,21 +136,21 @@ export interface GetServiceProvidersOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DelegateAccessControl.GetServiceProvidersFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DelegateAccessControl.GetServiceProvidersFilterArgs>[] | undefined>;
     /**
      * A filter to return Service Provider resources that match the given name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only Service Provider resources whose provider type matches the given provider type.
      */
-    serviceProviderType?: pulumi.Input<string>;
+    serviceProviderType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only Service Provider resources whose lifecycleState matches the given Service Provider lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only Service Provider resources whose supported resource type matches the given resource type.
      */
-    supportedResourceType?: pulumi.Input<string>;
+    supportedResourceType?: pulumi.Input<string | undefined>;
 }

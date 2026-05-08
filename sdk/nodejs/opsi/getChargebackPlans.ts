@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testChargebackPlans = oci.Opsi.getChargebackPlans({
+ * const testChargebackPlans = oci.opsi.getChargebackPlans({
  *     chargebackplanId: testChargebackplan.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: chargebackPlanCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: chargebackPlanCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -85,10 +85,10 @@ export interface GetChargebackPlansResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testChargebackPlans = oci.Opsi.getChargebackPlans({
+ * const testChargebackPlans = oci.opsi.getChargebackPlans({
  *     chargebackplanId: testChargebackplan.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: chargebackPlanCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: chargebackPlanCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -110,14 +110,14 @@ export interface GetChargebackPlansOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Ops Insights chargeback plan.
      */
-    chargebackplanId?: pulumi.Input<string>;
+    chargebackplanId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A flag to search all resources within a given compartment and all sub-compartments.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Opsi.GetChargebackPlansFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Opsi.GetChargebackPlansFilterArgs>[] | undefined>;
 }

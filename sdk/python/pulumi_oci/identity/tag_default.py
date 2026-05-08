@@ -22,7 +22,7 @@ class TagDefaultArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  tag_definition_id: pulumi.Input[_builtins.str],
                  value: pulumi.Input[_builtins.str],
-                 is_required: Optional[pulumi.Input[_builtins.bool]] = None):
+                 is_required: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a TagDefault resource.
 
@@ -87,7 +87,7 @@ class TagDefaultArgs:
 
     @_builtins.property
     @pulumi.getter(name="isRequired")
-    def is_required(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_required(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
         * If the `isRequired` flag is set to "true", the value is set during resource creation.
@@ -98,21 +98,21 @@ class TagDefaultArgs:
         return pulumi.get(self, "is_required")
 
     @is_required.setter
-    def is_required(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_required(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_required", value)
 
 
 @pulumi.input_type
 class _TagDefaultState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_required: Optional[pulumi.Input[_builtins.bool]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 tag_definition_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 tag_definition_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 tag_namespace_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_required: pulumi.Input[Optional[_builtins.bool]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 tag_definition_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tag_definition_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 tag_namespace_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering TagDefault resources.
 
@@ -152,19 +152,19 @@ class _TagDefaultState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment. The tag default will be applied to all new resources created in this compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isRequired")
-    def is_required(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_required(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
         * If the `isRequired` flag is set to "true", the value is set during resource creation.
@@ -175,72 +175,72 @@ class _TagDefaultState:
         return pulumi.get(self, "is_required")
 
     @is_required.setter
-    def is_required(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_required(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_required", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The tag default's current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="tagDefinitionId")
-    def tag_definition_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tag_definition_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
         """
         return pulumi.get(self, "tag_definition_id")
 
     @tag_definition_id.setter
-    def tag_definition_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tag_definition_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tag_definition_id", value)
 
     @_builtins.property
     @pulumi.getter(name="tagDefinitionName")
-    def tag_definition_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tag_definition_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name used in the tag definition. This field is informational in the context of the tag default.
         """
         return pulumi.get(self, "tag_definition_name")
 
     @tag_definition_name.setter
-    def tag_definition_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tag_definition_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tag_definition_name", value)
 
     @_builtins.property
     @pulumi.getter(name="tagNamespaceId")
-    def tag_namespace_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tag_namespace_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the tag namespace that contains the tag definition.
         """
         return pulumi.get(self, "tag_namespace_id")
 
     @tag_namespace_id.setter
-    def tag_namespace_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tag_namespace_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tag_namespace_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Date and time the `TagDefault` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment. 
 
@@ -251,7 +251,7 @@ class _TagDefaultState:
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
@@ -261,10 +261,10 @@ class TagDefault(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_required: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tag_definition_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_required: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tag_definition_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Tag Default resource in Oracle Cloud Infrastructure Identity service.
@@ -291,7 +291,7 @@ class TagDefault(pulumi.CustomResource):
             compartment_id=compartment_id,
             tag_definition_id=test_tag_definition["id"],
             value=tag_default_value,
-            is_required=tag_default_is_required)
+            is_required=tag_default_is_required == "true")
         ```
 
         ## Import
@@ -349,7 +349,7 @@ class TagDefault(pulumi.CustomResource):
             compartment_id=compartment_id,
             tag_definition_id=test_tag_definition["id"],
             value=tag_default_value,
-            is_required=tag_default_is_required)
+            is_required=tag_default_is_required == "true")
         ```
 
         ## Import
@@ -376,10 +376,10 @@ class TagDefault(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_required: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tag_definition_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_required: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tag_definition_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -413,14 +413,14 @@ class TagDefault(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_required: Optional[pulumi.Input[_builtins.bool]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            tag_definition_id: Optional[pulumi.Input[_builtins.str]] = None,
-            tag_definition_name: Optional[pulumi.Input[_builtins.str]] = None,
-            tag_namespace_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            value: Optional[pulumi.Input[_builtins.str]] = None) -> 'TagDefault':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_required: pulumi.Input[Optional[_builtins.bool]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            tag_definition_id: pulumi.Input[Optional[_builtins.str]] = None,
+            tag_definition_name: pulumi.Input[Optional[_builtins.str]] = None,
+            tag_namespace_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            value: pulumi.Input[Optional[_builtins.str]] = None) -> 'TagDefault':
         """
         Get an existing TagDefault resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

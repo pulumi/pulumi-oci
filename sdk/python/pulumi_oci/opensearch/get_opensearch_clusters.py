@@ -134,7 +134,7 @@ def get_opensearch_clusters(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_opensearch_clusters = oci.Opensearch.get_opensearch_clusters(compartment_id=compartment_id,
+    test_opensearch_clusters = oci.opensearch.get_opensearch_clusters(compartment_id=compartment_id,
         display_name=opensearch_cluster_display_name,
         id=opensearch_cluster_id,
         state=opensearch_cluster_state)
@@ -162,11 +162,11 @@ def get_opensearch_clusters(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         opensearch_cluster_collections=pulumi.get(__ret__, 'opensearch_cluster_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_opensearch_clusters_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOpensearchClustersFilterArgs', 'GetOpensearchClustersFilterArgsDict']]]]] = None,
-                                   id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_opensearch_clusters_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOpensearchClustersFilterArgs', 'GetOpensearchClustersFilterArgsDict']]]]] = None,
+                                   id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOpensearchClustersResult]:
     """
     This data source provides the list of Opensearch Clusters in Oracle Cloud Infrastructure Opensearch service.
@@ -188,7 +188,7 @@ def get_opensearch_clusters_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_opensearch_clusters = oci.Opensearch.get_opensearch_clusters(compartment_id=compartment_id,
+    test_opensearch_clusters = oci.opensearch.get_opensearch_clusters(compartment_id=compartment_id,
         display_name=opensearch_cluster_display_name,
         id=opensearch_cluster_id,
         state=opensearch_cluster_state)

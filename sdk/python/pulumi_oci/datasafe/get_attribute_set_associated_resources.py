@@ -121,7 +121,7 @@ def get_attribute_set_associated_resources(associated_resource_id: Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_attribute_set_associated_resources = oci.DataSafe.get_attribute_set_associated_resources(attribute_set_id=test_attribute_set["id"],
+    test_attribute_set_associated_resources = oci.datasafe.get_attribute_set_associated_resources(attribute_set_id=test_attribute_set["id"],
         associated_resource_id=test_resource["id"],
         associated_resource_type=attribute_set_associated_resource_associated_resource_type)
     ```
@@ -146,10 +146,10 @@ def get_attribute_set_associated_resources(associated_resource_id: Optional[_bui
         attribute_set_id=pulumi.get(__ret__, 'attribute_set_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_attribute_set_associated_resources_output(associated_resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  associated_resource_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  attribute_set_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAttributeSetAssociatedResourcesFilterArgs', 'GetAttributeSetAssociatedResourcesFilterArgsDict']]]]] = None,
+def get_attribute_set_associated_resources_output(associated_resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  associated_resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  attribute_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAttributeSetAssociatedResourcesFilterArgs', 'GetAttributeSetAssociatedResourcesFilterArgsDict']]]]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAttributeSetAssociatedResourcesResult]:
     """
     This data source provides the list of Attribute Set Associated Resources in Oracle Cloud Infrastructure Data Safe service.
@@ -162,7 +162,7 @@ def get_attribute_set_associated_resources_output(associated_resource_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_attribute_set_associated_resources = oci.DataSafe.get_attribute_set_associated_resources(attribute_set_id=test_attribute_set["id"],
+    test_attribute_set_associated_resources = oci.datasafe.get_attribute_set_associated_resources(attribute_set_id=test_attribute_set["id"],
         associated_resource_id=test_resource["id"],
         associated_resource_type=attribute_set_associated_resource_associated_resource_type)
     ```

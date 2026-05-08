@@ -131,7 +131,7 @@ def get_address_rule(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_address_rule = oci.OspGateway.get_address_rule(compartment_id=compartment_id,
+    test_address_rule = oci.ospgateway.get_address_rule(compartment_id=compartment_id,
         country_code=address_rule_country_code,
         osp_home_region=address_rule_osp_home_region)
     ```
@@ -156,9 +156,9 @@ def get_address_rule(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         osp_home_region=pulumi.get(__ret__, 'osp_home_region'),
         taxes=pulumi.get(__ret__, 'taxes'))
-def get_address_rule_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                            country_code: Optional[pulumi.Input[_builtins.str]] = None,
-                            osp_home_region: Optional[pulumi.Input[_builtins.str]] = None,
+def get_address_rule_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                            country_code: pulumi.Input[Optional[_builtins.str]] = None,
+                            osp_home_region: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAddressRuleResult]:
     """
     This data source provides details about a specific Address Rule resource in Oracle Cloud Infrastructure Osp Gateway service.
@@ -171,7 +171,7 @@ def get_address_rule_output(compartment_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_address_rule = oci.OspGateway.get_address_rule(compartment_id=compartment_id,
+    test_address_rule = oci.ospgateway.get_address_rule(compartment_id=compartment_id,
         country_code=address_rule_country_code,
         osp_home_region=address_rule_osp_home_region)
     ```

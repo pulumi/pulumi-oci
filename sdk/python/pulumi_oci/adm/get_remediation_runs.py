@@ -139,7 +139,7 @@ def get_remediation_runs(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_remediation_runs = oci.Adm.get_remediation_runs(compartment_id=compartment_id,
+    test_remediation_runs = oci.adm.get_remediation_runs(compartment_id=compartment_id,
         display_name=remediation_run_display_name,
         id=remediation_run_id,
         remediation_recipe_id=test_remediation_recipe["id"],
@@ -171,12 +171,12 @@ def get_remediation_runs(compartment_id: Optional[_builtins.str] = None,
         remediation_recipe_id=pulumi.get(__ret__, 'remediation_recipe_id'),
         remediation_run_collections=pulumi.get(__ret__, 'remediation_run_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_remediation_runs_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRemediationRunsFilterArgs', 'GetRemediationRunsFilterArgsDict']]]]] = None,
-                                id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                remediation_recipe_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_remediation_runs_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRemediationRunsFilterArgs', 'GetRemediationRunsFilterArgsDict']]]]] = None,
+                                id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                remediation_recipe_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRemediationRunsResult]:
     """
     This data source provides the list of Remediation Runs in Oracle Cloud Infrastructure Adm service.
@@ -190,7 +190,7 @@ def get_remediation_runs_output(compartment_id: Optional[pulumi.Input[Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_remediation_runs = oci.Adm.get_remediation_runs(compartment_id=compartment_id,
+    test_remediation_runs = oci.adm.get_remediation_runs(compartment_id=compartment_id,
         display_name=remediation_run_display_name,
         id=remediation_run_id,
         remediation_recipe_id=test_remediation_recipe["id"],

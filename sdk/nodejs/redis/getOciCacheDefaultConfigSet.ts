@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciCacheDefaultConfigSet = oci.Redis.getOciCacheDefaultConfigSet({
+ * const testOciCacheDefaultConfigSet = oci.redis.getOciCacheDefaultConfigSet({
  *     compartmentId: compartmentId,
  *     ociCacheDefaultConfigSetId: testOciCacheDefaultConfigSetOciRedisOciCacheDefaultConfigSet.id,
  * });
@@ -91,7 +91,7 @@ export interface GetOciCacheDefaultConfigSetResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciCacheDefaultConfigSet = oci.Redis.getOciCacheDefaultConfigSet({
+ * const testOciCacheDefaultConfigSet = oci.redis.getOciCacheDefaultConfigSet({
  *     compartmentId: compartmentId,
  *     ociCacheDefaultConfigSetId: testOciCacheDefaultConfigSetOciRedisOciCacheDefaultConfigSet.id,
  * });

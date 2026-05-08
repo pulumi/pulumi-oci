@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscribedService = oci.OneSubsription.getSubscribedService({
+ * const testSubscribedService = oci.onesubsription.getSubscribedService({
  *     subscribedServiceId: testSubscribedServiceOciOnesubscriptionSubscribedService.id,
  *     fields: subscribedServiceFields,
  * });
@@ -510,7 +510,7 @@ export interface GetSubscribedServiceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscribedService = oci.OneSubsription.getSubscribedService({
+ * const testSubscribedService = oci.onesubsription.getSubscribedService({
  *     subscribedServiceId: testSubscribedServiceOciOnesubscriptionSubscribedService.id,
  *     fields: subscribedServiceFields,
  * });
@@ -531,7 +531,7 @@ export interface GetSubscribedServiceOutputArgs {
     /**
      * Partial response refers to an optimization technique offered by the RESTful web APIs to return only the information  (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter used to control what fields to return should be a query string parameter called "fields" of type array, and usecollectionFormat
      */
-    fields?: pulumi.Input<pulumi.Input<string>[]>;
+    fields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The Subscribed Service Id
      */

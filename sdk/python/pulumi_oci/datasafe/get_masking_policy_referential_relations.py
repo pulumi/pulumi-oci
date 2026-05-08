@@ -147,7 +147,7 @@ def get_masking_policy_referential_relations(column_names: Optional[Sequence[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policy_referential_relations = oci.DataSafe.get_masking_policy_referential_relations(masking_policy_id=test_masking_policy["id"],
+    test_masking_policy_referential_relations = oci.datasafe.get_masking_policy_referential_relations(masking_policy_id=test_masking_policy["id"],
         column_names=masking_policy_referential_relation_column_name,
         objects=masking_policy_referential_relation_object,
         relation_types=masking_policy_referential_relation_relation_type,
@@ -180,12 +180,12 @@ def get_masking_policy_referential_relations(column_names: Optional[Sequence[_bu
         objects=pulumi.get(__ret__, 'objects'),
         relation_types=pulumi.get(__ret__, 'relation_types'),
         schema_names=pulumi.get(__ret__, 'schema_names'))
-def get_masking_policy_referential_relations_output(column_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaskingPolicyReferentialRelationsFilterArgs', 'GetMaskingPolicyReferentialRelationsFilterArgsDict']]]]] = None,
-                                                    masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                    objects: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                    relation_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                    schema_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_masking_policy_referential_relations_output(column_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaskingPolicyReferentialRelationsFilterArgs', 'GetMaskingPolicyReferentialRelationsFilterArgsDict']]]]] = None,
+                                                    masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                    objects: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                    relation_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                    schema_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingPolicyReferentialRelationsResult]:
     """
     This data source provides the list of Masking Policy Referential Relations in Oracle Cloud Infrastructure Data Safe service.
@@ -198,7 +198,7 @@ def get_masking_policy_referential_relations_output(column_names: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policy_referential_relations = oci.DataSafe.get_masking_policy_referential_relations(masking_policy_id=test_masking_policy["id"],
+    test_masking_policy_referential_relations = oci.datasafe.get_masking_policy_referential_relations(masking_policy_id=test_masking_policy["id"],
         column_names=masking_policy_referential_relation_column_name,
         objects=masking_policy_referential_relation_object,
         relation_types=masking_policy_referential_relation_relation_type,

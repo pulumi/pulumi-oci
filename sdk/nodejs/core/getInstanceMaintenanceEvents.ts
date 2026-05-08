@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceMaintenanceEvents = oci.Core.getInstanceMaintenanceEvents({
+ * const testInstanceMaintenanceEvents = oci.core.getInstanceMaintenanceEvents({
  *     compartmentId: compartmentId,
  *     correlationToken: instanceMaintenanceEventCorrelationToken,
  *     instanceAction: instanceMaintenanceEventInstanceAction,
@@ -124,7 +124,7 @@ export interface GetInstanceMaintenanceEventsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceMaintenanceEvents = oci.Core.getInstanceMaintenanceEvents({
+ * const testInstanceMaintenanceEvents = oci.core.getInstanceMaintenanceEvents({
  *     compartmentId: compartmentId,
  *     correlationToken: instanceMaintenanceEventCorrelationToken,
  *     instanceAction: instanceMaintenanceEventInstanceAction,
@@ -160,26 +160,26 @@ export interface GetInstanceMaintenanceEventsOutputArgs {
     /**
      * A filter to only return resources that have a matching correlationToken.
      */
-    correlationToken?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetInstanceMaintenanceEventsFilterArgs>[]>;
+    correlationToken?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetInstanceMaintenanceEventsFilterArgs>[] | undefined>;
     /**
      * A filter to only return resources that match the given instance action.
      */
-    instanceAction?: pulumi.Input<string>;
+    instanceAction?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the instance.
      */
-    instanceId?: pulumi.Input<string>;
+    instanceId?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Starting range to return the maintenances which are not completed (date-time is in [RFC3339](https://tools.ietf.org/html/rfc3339) format).
      */
-    timeWindowStartGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeWindowStartGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * Ending range to return the maintenances which are not completed (date-time is in [RFC3339](https://tools.ietf.org/html/rfc3339) format).
      */
-    timeWindowStartLessThanOrEqualTo?: pulumi.Input<string>;
+    timeWindowStartLessThanOrEqualTo?: pulumi.Input<string | undefined>;
 }

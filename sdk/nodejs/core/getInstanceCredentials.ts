@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceCredential = oci.Core.getInstanceCredentials({
+ * const testInstanceCredential = oci.core.getInstanceCredentials({
  *     instanceId: testInstance.id,
  * });
  * ```
@@ -68,7 +68,7 @@ export interface GetInstanceCredentialsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceCredential = oci.Core.getInstanceCredentials({
+ * const testInstanceCredential = oci.core.getInstanceCredentials({
  *     instanceId: testInstance.id,
  * });
  * ```

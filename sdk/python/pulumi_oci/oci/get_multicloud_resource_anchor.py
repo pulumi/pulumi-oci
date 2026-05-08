@@ -309,7 +309,7 @@ def get_multicloud_resource_anchor(resource_anchor_id: Optional[_builtins.str] =
     test_resource_anchor = oci.oci.get_multicloud_resource_anchor(resource_anchor_id=resource_anchor_id,
         subscription_id=subscription_id,
         subscription_service_name=subscription_service_name,
-        should_fetch_compartment_name=should_fetch_compartment_name)
+        should_fetch_compartment_name=should_fetch_compartment_name == "true")
     ```
 
 
@@ -349,10 +349,10 @@ def get_multicloud_resource_anchor(resource_anchor_id: Optional[_builtins.str] =
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_multicloud_resource_anchor_output(resource_anchor_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                          should_fetch_compartment_name: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                          subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                          subscription_service_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_multicloud_resource_anchor_output(resource_anchor_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                          should_fetch_compartment_name: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                          subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                          subscription_service_name: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMulticloudResourceAnchorResult]:
     """
     This data source provides details about a specific Resource Anchor resource in Oracle Cloud Infrastructure Multicloud service.
@@ -368,7 +368,7 @@ def get_multicloud_resource_anchor_output(resource_anchor_id: Optional[pulumi.In
     test_resource_anchor = oci.oci.get_multicloud_resource_anchor(resource_anchor_id=resource_anchor_id,
         subscription_id=subscription_id,
         subscription_service_name=subscription_service_name,
-        should_fetch_compartment_name=should_fetch_compartment_name)
+        should_fetch_compartment_name=should_fetch_compartment_name == "true")
     ```
 
 

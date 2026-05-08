@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModels = oci.DataScience.getModels({
+ * const testModels = oci.datascience.getModels({
  *     compartmentId: compartmentId,
  *     category: modelCategory,
  *     createdBy: modelCreatedBy,
@@ -148,7 +148,7 @@ export interface GetModelsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModels = oci.DataScience.getModels({
+ * const testModels = oci.datascience.getModels({
  *     compartmentId: compartmentId,
  *     category: modelCategory,
  *     createdBy: modelCreatedBy,
@@ -184,7 +184,7 @@ export interface GetModelsOutputArgs {
     /**
      * Specifies the type of models to list. By default, user models are listed.
      */
-    category?: pulumi.Input<string>;
+    category?: pulumi.Input<string | undefined>;
     /**
      * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -192,31 +192,31 @@ export interface GetModelsOutputArgs {
     /**
      * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * <b>Filter</b> results by its user-friendly name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetModelsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetModelsFilterArgs>[] | undefined>;
     /**
      * <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the model version set that the model is associated to.
      */
-    modelVersionSetId?: pulumi.Input<string>;
+    modelVersionSetId?: pulumi.Input<string | undefined>;
     /**
      * The name of the model version set that the model is associated to.
      */
-    modelVersionSetName?: pulumi.Input<string>;
+    modelVersionSetName?: pulumi.Input<string | undefined>;
     /**
      * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      */
-    projectId?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
     /**
      * <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
      */
-    state?: pulumi.Input<string>;
-    versionLabel?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
+    versionLabel?: pulumi.Input<string | undefined>;
 }

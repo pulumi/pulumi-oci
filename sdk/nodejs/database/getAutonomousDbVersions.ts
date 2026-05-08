@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDbVersions = oci.Database.getAutonomousDbVersions({
+ * const testAutonomousDbVersions = oci.database.getAutonomousDbVersions({
  *     compartmentId: compartmentId,
  *     dbWorkload: autonomousDbVersionDbWorkload,
  * });
@@ -82,7 +82,7 @@ export interface GetAutonomousDbVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDbVersions = oci.Database.getAutonomousDbVersions({
+ * const testAutonomousDbVersions = oci.database.getAutonomousDbVersions({
  *     compartmentId: compartmentId,
  *     dbWorkload: autonomousDbVersionDbWorkload,
  * });
@@ -108,6 +108,6 @@ export interface GetAutonomousDbVersionsOutputArgs {
     /**
      * A filter to return only Autonomous AI Database resources that match the specified workload type.
      */
-    dbWorkload?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousDbVersionsFilterArgs>[]>;
+    dbWorkload?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousDbVersionsFilterArgs>[] | undefined>;
 }

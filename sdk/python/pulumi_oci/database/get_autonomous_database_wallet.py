@@ -139,10 +139,10 @@ def get_autonomous_database_wallet(autonomous_database_id: Optional[_builtins.st
         generate_type=pulumi.get(__ret__, 'generate_type'),
         id=pulumi.get(__ret__, 'id'),
         password=pulumi.get(__ret__, 'password'))
-def get_autonomous_database_wallet_output(autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                          base64_encode_content: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                          generate_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          password: Optional[pulumi.Input[_builtins.str]] = None,
+def get_autonomous_database_wallet_output(autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                          base64_encode_content: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                          generate_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          password: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabaseWalletResult]:
     """
     **Deprecated. Use Database.AutonomousDatabaseWallet instead.**

@@ -140,10 +140,10 @@ def get_batch_batch_context_shapes(availability_domain: Optional[_builtins.str] 
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         shape_type=pulumi.get(__ret__, 'shape_type'))
-def get_batch_batch_context_shapes_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBatchBatchContextShapesFilterArgs', 'GetBatchBatchContextShapesFilterArgsDict']]]]] = None,
-                                          shape_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_batch_batch_context_shapes_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBatchBatchContextShapesFilterArgs', 'GetBatchBatchContextShapesFilterArgsDict']]]]] = None,
+                                          shape_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBatchBatchContextShapesResult]:
     """
     This data source provides the list of Batch Context Shapes in Oracle Cloud Infrastructure Batch service.

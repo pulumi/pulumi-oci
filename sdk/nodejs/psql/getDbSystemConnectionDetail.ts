@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystemConnectionDetail = oci.Psql.getDbSystemConnectionDetail({
+ * const testDbSystemConnectionDetail = oci.psql.getDbSystemConnectionDetail({
  *     dbSystemId: testDbSystem.id,
  * });
  * ```
@@ -76,7 +76,7 @@ export interface GetDbSystemConnectionDetailResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystemConnectionDetail = oci.Psql.getDbSystemConnectionDetail({
+ * const testDbSystemConnectionDetail = oci.psql.getDbSystemConnectionDetail({
  *     dbSystemId: testDbSystem.id,
  * });
  * ```

@@ -126,16 +126,16 @@ export interface PathRouteSetState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
      */
-    loadBalancerId?: pulumi.Input<string>;
+    loadBalancerId?: pulumi.Input<string | undefined>;
     /**
      * The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `examplePathRouteSet`
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The set of path route rules.
      */
-    pathRoutes?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.PathRouteSetPathRoute>[]>;
-    state?: pulumi.Input<string>;
+    pathRoutes?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.PathRouteSetPathRoute>[] | undefined>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -149,7 +149,7 @@ export interface PathRouteSetArgs {
     /**
      * The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `examplePathRouteSet`
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The set of path route rules.
      */

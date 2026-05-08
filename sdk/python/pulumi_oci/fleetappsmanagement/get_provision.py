@@ -396,7 +396,7 @@ def get_provision(provision_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_provision = oci.FleetAppsManagement.get_provision(provision_id=test_provision_oci_fleet_apps_management_provision["id"])
+    test_provision = oci.fleetappsmanagement.get_provision(provision_id=test_provision_oci_fleet_apps_management_provision["id"])
     ```
 
 
@@ -437,7 +437,7 @@ def get_provision(provision_id: Optional[_builtins.str] = None,
         tf_variable_tenancy_id=pulumi.get(__ret__, 'tf_variable_tenancy_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_provision_output(provision_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_provision_output(provision_id: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProvisionResult]:
     """
     This data source provides details about a specific Provision resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -450,7 +450,7 @@ def get_provision_output(provision_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_provision = oci.FleetAppsManagement.get_provision(provision_id=test_provision_oci_fleet_apps_management_provision["id"])
+    test_provision = oci.fleetappsmanagement.get_provision(provision_id=test_provision_oci_fleet_apps_management_provision["id"])
     ```
 
 

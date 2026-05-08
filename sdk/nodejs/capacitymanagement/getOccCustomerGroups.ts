@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccCustomerGroups = oci.CapacityManagement.getOccCustomerGroups({
+ * const testOccCustomerGroups = oci.capacitymanagement.getOccCustomerGroups({
  *     compartmentId: compartmentId,
  *     displayName: occCustomerGroupDisplayName,
  *     id: occCustomerGroupId,
@@ -96,7 +96,7 @@ export interface GetOccCustomerGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccCustomerGroups = oci.CapacityManagement.getOccCustomerGroups({
+ * const testOccCustomerGroups = oci.capacitymanagement.getOccCustomerGroups({
  *     compartmentId: compartmentId,
  *     displayName: occCustomerGroupDisplayName,
  *     id: occCustomerGroupId,
@@ -126,14 +126,14 @@ export interface GetOccCustomerGroupsOutputArgs {
     /**
      * A filter to return only the resources that match the entire display name. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetOccCustomerGroupsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetOccCustomerGroupsFilterArgs>[] | undefined>;
     /**
      * A query filter to return the list result based on the customer group OCID. This is done for users who have INSPECT permission but do not have READ permission.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A query filter to return the list result based on status.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

@@ -97,7 +97,7 @@ def get_cross_connect_port_speed_shape(compartment_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connect_port_speed_shapes = oci.Core.get_cross_connect_port_speed_shape(compartment_id=compartment_id)
+    test_cross_connect_port_speed_shapes = oci.core.get_cross_connect_port_speed_shape(compartment_id=compartment_id)
     ```
 
 
@@ -114,8 +114,8 @@ def get_cross_connect_port_speed_shape(compartment_id: Optional[_builtins.str] =
         cross_connect_port_speed_shapes=pulumi.get(__ret__, 'cross_connect_port_speed_shapes'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_cross_connect_port_speed_shape_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCrossConnectPortSpeedShapeFilterArgs', 'GetCrossConnectPortSpeedShapeFilterArgsDict']]]]] = None,
+def get_cross_connect_port_speed_shape_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCrossConnectPortSpeedShapeFilterArgs', 'GetCrossConnectPortSpeedShapeFilterArgsDict']]]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCrossConnectPortSpeedShapeResult]:
     """
     This data source provides the list of Cross Connect Port Speed Shapes in Oracle Cloud Infrastructure Core service.
@@ -130,7 +130,7 @@ def get_cross_connect_port_speed_shape_output(compartment_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connect_port_speed_shapes = oci.Core.get_cross_connect_port_speed_shape(compartment_id=compartment_id)
+    test_cross_connect_port_speed_shapes = oci.core.get_cross_connect_port_speed_shape(compartment_id=compartment_id)
     ```
 
 

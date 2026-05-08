@@ -171,13 +171,13 @@ def get_computed_usages(compartment_id: Optional[_builtins.str] = None,
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         time_from=pulumi.get(__ret__, 'time_from'),
         time_to=pulumi.get(__ret__, 'time_to'))
-def get_computed_usages_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               computed_product: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputedUsagesFilterArgs', 'GetComputedUsagesFilterArgsDict']]]]] = None,
-                               parent_product: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               time_from: Optional[pulumi.Input[_builtins.str]] = None,
-                               time_to: Optional[pulumi.Input[_builtins.str]] = None,
+def get_computed_usages_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               computed_product: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputedUsagesFilterArgs', 'GetComputedUsagesFilterArgsDict']]]]] = None,
+                               parent_product: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               time_from: pulumi.Input[Optional[_builtins.str]] = None,
+                               time_to: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputedUsagesResult]:
     """
     This data source provides the list of Computed Usages in Oracle Cloud Infrastructure Onesubscription service.

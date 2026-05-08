@@ -191,10 +191,10 @@ def get_audit_policies(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_policies = oci.DataSafe.get_audit_policies(compartment_id=compartment_id,
+    test_audit_policies = oci.datasafe.get_audit_policies(compartment_id=compartment_id,
         access_level=audit_policy_access_level,
         audit_policy_id=test_audit_policy["id"],
-        compartment_id_in_subtree=audit_policy_compartment_id_in_subtree,
+        compartment_id_in_subtree=audit_policy_compartment_id_in_subtree == "true",
         display_name=audit_policy_display_name,
         state=audit_policy_state,
         target_database_group_id=test_target_database_group["id"],
@@ -236,15 +236,15 @@ def get_audit_policies(access_level: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         target_database_group_id=pulumi.get(__ret__, 'target_database_group_id'),
         target_id=pulumi.get(__ret__, 'target_id'))
-def get_audit_policies_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              audit_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                              compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                              display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAuditPoliciesFilterArgs', 'GetAuditPoliciesFilterArgsDict']]]]] = None,
-                              state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              target_database_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_audit_policies_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              audit_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                              compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAuditPoliciesFilterArgs', 'GetAuditPoliciesFilterArgsDict']]]]] = None,
+                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              target_database_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuditPoliciesResult]:
     """
     This data source provides the list of Audit Policies in Oracle Cloud Infrastructure Data Safe service.
@@ -271,10 +271,10 @@ def get_audit_policies_output(access_level: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_policies = oci.DataSafe.get_audit_policies(compartment_id=compartment_id,
+    test_audit_policies = oci.datasafe.get_audit_policies(compartment_id=compartment_id,
         access_level=audit_policy_access_level,
         audit_policy_id=test_audit_policy["id"],
-        compartment_id_in_subtree=audit_policy_compartment_id_in_subtree,
+        compartment_id_in_subtree=audit_policy_compartment_id_in_subtree == "true",
         display_name=audit_policy_display_name,
         state=audit_policy_state,
         target_database_group_id=test_target_database_group["id"],

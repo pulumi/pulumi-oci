@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplicationStatus = oci.Kms.getReplicationStatus({
+ * const testReplicationStatus = oci.kms.getReplicationStatus({
  *     replicationId: testReplication.id,
  *     managementEndpoint: replicationStatusManagementEndpoint,
  * });
@@ -77,7 +77,7 @@ export interface GetReplicationStatusResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplicationStatus = oci.Kms.getReplicationStatus({
+ * const testReplicationStatus = oci.kms.getReplicationStatus({
  *     replicationId: testReplication.id,
  *     managementEndpoint: replicationStatusManagementEndpoint,
  * });

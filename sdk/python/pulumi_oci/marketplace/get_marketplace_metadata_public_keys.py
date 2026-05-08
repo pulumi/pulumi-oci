@@ -95,7 +95,7 @@ def get_marketplace_metadata_public_keys(compartment_id: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_marketplace_metadata_public_keys = oci.Marketplace.get_marketplace_metadata_public_keys(compartment_id=compartment_id)
+    test_marketplace_metadata_public_keys = oci.marketplace.get_marketplace_metadata_public_keys(compartment_id=compartment_id)
     ```
 
 
@@ -112,8 +112,8 @@ def get_marketplace_metadata_public_keys(compartment_id: Optional[_builtins.str]
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         marketplace_metadata_public_keys=pulumi.get(__ret__, 'marketplace_metadata_public_keys'))
-def get_marketplace_metadata_public_keys_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMarketplaceMetadataPublicKeysFilterArgs', 'GetMarketplaceMetadataPublicKeysFilterArgsDict']]]]] = None,
+def get_marketplace_metadata_public_keys_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMarketplaceMetadataPublicKeysFilterArgs', 'GetMarketplaceMetadataPublicKeysFilterArgsDict']]]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMarketplaceMetadataPublicKeysResult]:
     """
     This data source provides the list of Marketplace Metadata Public Keys in Oracle Cloud Infrastructure Marketplace service.
@@ -126,7 +126,7 @@ def get_marketplace_metadata_public_keys_output(compartment_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_marketplace_metadata_public_keys = oci.Marketplace.get_marketplace_metadata_public_keys(compartment_id=compartment_id)
+    test_marketplace_metadata_public_keys = oci.marketplace.get_marketplace_metadata_public_keys(compartment_id=compartment_id)
     ```
 
 

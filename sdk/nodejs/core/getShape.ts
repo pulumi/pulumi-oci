@@ -58,9 +58,9 @@ export function getShapeOutput(args: GetShapeOutputArgs, opts?: pulumi.InvokeOut
  * A collection of arguments for invoking getShape.
  */
 export interface GetShapeOutputArgs {
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetShapeFilterArgs>[]>;
-    imageId?: pulumi.Input<string>;
-    shape?: pulumi.Input<string>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetShapeFilterArgs>[] | undefined>;
+    imageId?: pulumi.Input<string | undefined>;
+    shape?: pulumi.Input<string | undefined>;
 }

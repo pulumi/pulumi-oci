@@ -357,7 +357,7 @@ def get_opensearch_cluster_pipeline(opensearch_cluster_pipeline_id: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_opensearch_cluster_pipeline = oci.Opensearch.get_opensearch_cluster_pipeline(opensearch_cluster_pipeline_id=test_opensearch_cluster_pipeline_oci_opensearch_opensearch_cluster_pipeline["id"])
+    test_opensearch_cluster_pipeline = oci.opensearch.get_opensearch_cluster_pipeline(opensearch_cluster_pipeline_id=test_opensearch_cluster_pipeline_oci_opensearch_opensearch_cluster_pipeline["id"])
     ```
 
 
@@ -395,7 +395,7 @@ def get_opensearch_cluster_pipeline(opensearch_cluster_pipeline_id: Optional[_bu
         time_updated=pulumi.get(__ret__, 'time_updated'),
         vcn_compartment_id=pulumi.get(__ret__, 'vcn_compartment_id'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-def get_opensearch_cluster_pipeline_output(opensearch_cluster_pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_opensearch_cluster_pipeline_output(opensearch_cluster_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOpensearchClusterPipelineResult]:
     """
     This data source provides details about a specific Opensearch Cluster Pipeline resource in Oracle Cloud Infrastructure Opensearch service.
@@ -408,7 +408,7 @@ def get_opensearch_cluster_pipeline_output(opensearch_cluster_pipeline_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_opensearch_cluster_pipeline = oci.Opensearch.get_opensearch_cluster_pipeline(opensearch_cluster_pipeline_id=test_opensearch_cluster_pipeline_oci_opensearch_opensearch_cluster_pipeline["id"])
+    test_opensearch_cluster_pipeline = oci.opensearch.get_opensearch_cluster_pipeline(opensearch_cluster_pipeline_id=test_opensearch_cluster_pipeline_oci_opensearch_opensearch_cluster_pipeline["id"])
     ```
 
 

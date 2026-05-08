@@ -25,7 +25,7 @@ import * as utilities from "../utilities";
  *     queryDefinition: {
  *         costAnalysisUi: {
  *             graph: queryQueryDefinitionCostAnalysisUiGraph,
- *             isCumulativeGraph: queryQueryDefinitionCostAnalysisUiIsCumulativeGraph,
+ *             isCumulativeGraph: queryQueryDefinitionCostAnalysisUiIsCumulativeGraph === "true",
  *         },
  *         displayName: queryQueryDefinitionDisplayName,
  *         reportQuery: {
@@ -45,7 +45,7 @@ import * as utilities from "../utilities";
  *                 namespace: queryQueryDefinitionReportQueryGroupByTagNamespace,
  *                 value: queryQueryDefinitionReportQueryGroupByTagValue,
  *             }],
- *             isAggregateByTime: queryQueryDefinitionReportQueryIsAggregateByTime,
+ *             isAggregateByTime: queryQueryDefinitionReportQueryIsAggregateByTime === "true",
  *             queryType: queryQueryDefinitionReportQueryQueryType,
  *             timeUsageEnded: queryQueryDefinitionReportQueryTimeUsageEnded,
  *             timeUsageStarted: queryQueryDefinitionReportQueryTimeUsageStarted,
@@ -138,11 +138,11 @@ export interface QueryState {
     /**
      * The compartment OCID.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The common fields for queries.
      */
-    queryDefinition?: pulumi.Input<inputs.MeteringComputation.QueryQueryDefinition>;
+    queryDefinition?: pulumi.Input<inputs.MeteringComputation.QueryQueryDefinition | undefined>;
 }
 
 /**

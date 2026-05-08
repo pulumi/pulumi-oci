@@ -180,9 +180,9 @@ def get_security_policy_reports(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_reports = oci.DataSafe.get_security_policy_reports(compartment_id=compartment_id,
+    test_security_policy_reports = oci.datasafe.get_security_policy_reports(compartment_id=compartment_id,
         access_level=security_policy_report_access_level,
-        compartment_id_in_subtree=security_policy_report_compartment_id_in_subtree,
+        compartment_id_in_subtree=security_policy_report_compartment_id_in_subtree == "true",
         display_name=security_policy_report_display_name,
         security_policy_report_id=test_security_policy_report["id"],
         state=security_policy_report_state,
@@ -221,14 +221,14 @@ def get_security_policy_reports(access_level: Optional[_builtins.str] = None,
         security_policy_report_id=pulumi.get(__ret__, 'security_policy_report_id'),
         state=pulumi.get(__ret__, 'state'),
         target_id=pulumi.get(__ret__, 'target_id'))
-def get_security_policy_reports_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                       display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityPolicyReportsFilterArgs', 'GetSecurityPolicyReportsFilterArgsDict']]]]] = None,
-                                       security_policy_report_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_security_policy_reports_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityPolicyReportsFilterArgs', 'GetSecurityPolicyReportsFilterArgsDict']]]]] = None,
+                                       security_policy_report_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityPolicyReportsResult]:
     """
     This data source provides the list of Security Policy Reports in Oracle Cloud Infrastructure Data Safe service.
@@ -254,9 +254,9 @@ def get_security_policy_reports_output(access_level: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_reports = oci.DataSafe.get_security_policy_reports(compartment_id=compartment_id,
+    test_security_policy_reports = oci.datasafe.get_security_policy_reports(compartment_id=compartment_id,
         access_level=security_policy_report_access_level,
-        compartment_id_in_subtree=security_policy_report_compartment_id_in_subtree,
+        compartment_id_in_subtree=security_policy_report_compartment_id_in_subtree == "true",
         display_name=security_policy_report_display_name,
         security_policy_report_id=test_security_policy_report["id"],
         state=security_policy_report_state,

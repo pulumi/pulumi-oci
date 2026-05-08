@@ -134,7 +134,7 @@ def get_bds_instance_node_backups(bds_instance_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_node_backups = oci.BigDataService.get_bds_instance_node_backups(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_node_backups = oci.bigdataservice.get_bds_instance_node_backups(bds_instance_id=test_bds_instance["id"],
         display_name=bds_instance_node_backup_display_name,
         node_host_name=bds_instance_node_backup_node_host_name,
         state=bds_instance_node_backup_state)
@@ -163,11 +163,11 @@ def get_bds_instance_node_backups(bds_instance_id: Optional[_builtins.str] = Non
         node_backups=pulumi.get(__ret__, 'node_backups'),
         node_host_name=pulumi.get(__ret__, 'node_host_name'),
         state=pulumi.get(__ret__, 'state'))
-def get_bds_instance_node_backups_output(bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBdsInstanceNodeBackupsFilterArgs', 'GetBdsInstanceNodeBackupsFilterArgsDict']]]]] = None,
-                                         node_host_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_bds_instance_node_backups_output(bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstanceNodeBackupsFilterArgs', 'GetBdsInstanceNodeBackupsFilterArgsDict']]]]] = None,
+                                         node_host_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceNodeBackupsResult]:
     """
     This data source provides the list of Bds Instance Node Backups in Oracle Cloud Infrastructure Big Data Service service.
@@ -180,7 +180,7 @@ def get_bds_instance_node_backups_output(bds_instance_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_node_backups = oci.BigDataService.get_bds_instance_node_backups(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_node_backups = oci.bigdataservice.get_bds_instance_node_backups(bds_instance_id=test_bds_instance["id"],
         display_name=bds_instance_node_backup_display_name,
         node_host_name=bds_instance_node_backup_node_host_name,
         state=bds_instance_node_backup_state)

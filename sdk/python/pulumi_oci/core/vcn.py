@@ -22,17 +22,17 @@ __all__ = ['VcnArgs', 'Vcn']
 class VcnArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
-                 byoipv6cidr_details: Optional[pulumi.Input[Sequence[pulumi.Input['VcnByoipv6cidrDetailArgs']]]] = None,
-                 cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-                 cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ipv6private_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_ipv6enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_oracle_gua_allocation_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 byoipv6cidr_details: pulumi.Input[Optional[Sequence[pulumi.Input['VcnByoipv6cidrDetailArgs']]]] = None,
+                 cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+                 cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ipv6private_cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_ipv6enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_oracle_gua_allocation_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Vcn resource.
 
@@ -104,31 +104,31 @@ class VcnArgs:
 
     @_builtins.property
     @pulumi.getter(name="byoipv6cidrDetails")
-    def byoipv6cidr_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VcnByoipv6cidrDetailArgs']]]]:
+    def byoipv6cidr_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VcnByoipv6cidrDetailArgs']]]]:
         """
         The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
         """
         return pulumi.get(self, "byoipv6cidr_details")
 
     @byoipv6cidr_details.setter
-    def byoipv6cidr_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VcnByoipv6cidrDetailArgs']]]]):
+    def byoipv6cidr_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VcnByoipv6cidrDetailArgs']]]]):
         pulumi.set(self, "byoipv6cidr_details", value)
 
     @_builtins.property
     @pulumi.getter(name="cidrBlock")
-    def cidr_block(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cidr_block(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         **Deprecated.** Do *not* set this value. Use `cidr_blocks` instead. Example: `10.0.0.0/16`
         """
         return pulumi.get(self, "cidr_block")
 
     @cidr_block.setter
-    def cidr_block(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cidr_block(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cidr_block", value)
 
     @_builtins.property
     @pulumi.getter(name="cidrBlocks")
-    def cidr_blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def cidr_blocks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
         * The CIDR blocks must be valid.
@@ -139,36 +139,36 @@ class VcnArgs:
         return pulumi.get(self, "cidr_blocks")
 
     @cidr_blocks.setter
-    def cidr_blocks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def cidr_blocks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "cidr_blocks", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dnsLabel")
-    def dns_label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dns_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it's a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
         You must set this value if you want instances to be able to use hostnames to resolve other instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
@@ -180,24 +180,24 @@ class VcnArgs:
         return pulumi.get(self, "dns_label")
 
     @dns_label.setter
-    def dns_label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dns_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dns_label", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv6privateCidrBlocks")
-    def ipv6private_cidr_blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ipv6private_cidr_blocks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
         * The CIDR blocks must be valid.
@@ -209,36 +209,36 @@ class VcnArgs:
         return pulumi.get(self, "ipv6private_cidr_blocks")
 
     @ipv6private_cidr_blocks.setter
-    def ipv6private_cidr_blocks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ipv6private_cidr_blocks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ipv6private_cidr_blocks", value)
 
     @_builtins.property
     @pulumi.getter(name="isIpv6enabled")
-    def is_ipv6enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_ipv6enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
         """
         return pulumi.get(self, "is_ipv6enabled")
 
     @is_ipv6enabled.setter
-    def is_ipv6enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_ipv6enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_ipv6enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isOracleGuaAllocationEnabled")
-    def is_oracle_gua_allocation_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_oracle_gua_allocation_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
         """
         return pulumi.get(self, "is_oracle_gua_allocation_enabled")
 
     @is_oracle_gua_allocation_enabled.setter
-    def is_oracle_gua_allocation_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_oracle_gua_allocation_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_oracle_gua_allocation_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
-    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 
@@ -248,33 +248,33 @@ class VcnArgs:
         return pulumi.get(self, "security_attributes")
 
     @security_attributes.setter
-    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
 
 
 @pulumi.input_type
 class _VcnState:
     def __init__(__self__, *,
-                 byoipv6cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 byoipv6cidr_details: Optional[pulumi.Input[Sequence[pulumi.Input['VcnByoipv6cidrDetailArgs']]]] = None,
-                 cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-                 cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_dhcp_options_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_security_list_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ipv6cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ipv6private_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_ipv6enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_oracle_gua_allocation_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcn_domain_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 byoipv6cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 byoipv6cidr_details: pulumi.Input[Optional[Sequence[pulumi.Input['VcnByoipv6cidrDetailArgs']]]] = None,
+                 cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+                 cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_dhcp_options_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_security_list_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ipv6cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ipv6private_cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_ipv6enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_oracle_gua_allocation_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcn_domain_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Vcn resources.
 
@@ -359,43 +359,43 @@ class _VcnState:
 
     @_builtins.property
     @pulumi.getter(name="byoipv6cidrBlocks")
-    def byoipv6cidr_blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def byoipv6cidr_blocks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
         """
         return pulumi.get(self, "byoipv6cidr_blocks")
 
     @byoipv6cidr_blocks.setter
-    def byoipv6cidr_blocks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def byoipv6cidr_blocks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "byoipv6cidr_blocks", value)
 
     @_builtins.property
     @pulumi.getter(name="byoipv6cidrDetails")
-    def byoipv6cidr_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VcnByoipv6cidrDetailArgs']]]]:
+    def byoipv6cidr_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VcnByoipv6cidrDetailArgs']]]]:
         """
         The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
         """
         return pulumi.get(self, "byoipv6cidr_details")
 
     @byoipv6cidr_details.setter
-    def byoipv6cidr_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VcnByoipv6cidrDetailArgs']]]]):
+    def byoipv6cidr_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VcnByoipv6cidrDetailArgs']]]]):
         pulumi.set(self, "byoipv6cidr_details", value)
 
     @_builtins.property
     @pulumi.getter(name="cidrBlock")
-    def cidr_block(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cidr_block(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         **Deprecated.** Do *not* set this value. Use `cidr_blocks` instead. Example: `10.0.0.0/16`
         """
         return pulumi.get(self, "cidr_block")
 
     @cidr_block.setter
-    def cidr_block(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cidr_block(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cidr_block", value)
 
     @_builtins.property
     @pulumi.getter(name="cidrBlocks")
-    def cidr_blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def cidr_blocks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
         * The CIDR blocks must be valid.
@@ -406,84 +406,84 @@ class _VcnState:
         return pulumi.get(self, "cidr_blocks")
 
     @cidr_blocks.setter
-    def cidr_blocks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def cidr_blocks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "cidr_blocks", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the VCN.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultDhcpOptionsId")
-    def default_dhcp_options_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_dhcp_options_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default set of DHCP options.
         """
         return pulumi.get(self, "default_dhcp_options_id")
 
     @default_dhcp_options_id.setter
-    def default_dhcp_options_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_dhcp_options_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_dhcp_options_id", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultRouteTableId")
-    def default_route_table_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_route_table_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default route table.
         """
         return pulumi.get(self, "default_route_table_id")
 
     @default_route_table_id.setter
-    def default_route_table_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_route_table_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_route_table_id", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultSecurityListId")
-    def default_security_list_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_security_list_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default security list.
         """
         return pulumi.get(self, "default_security_list_id")
 
     @default_security_list_id.setter
-    def default_security_list_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_security_list_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_security_list_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dnsLabel")
-    def dns_label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dns_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it's a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
         You must set this value if you want instances to be able to use hostnames to resolve other instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
@@ -495,36 +495,36 @@ class _VcnState:
         return pulumi.get(self, "dns_label")
 
     @dns_label.setter
-    def dns_label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dns_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dns_label", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv6cidrBlocks")
-    def ipv6cidr_blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ipv6cidr_blocks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space. The prefixes are provided by Oracle and the sizes are always /56.
         """
         return pulumi.get(self, "ipv6cidr_blocks")
 
     @ipv6cidr_blocks.setter
-    def ipv6cidr_blocks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ipv6cidr_blocks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ipv6cidr_blocks", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv6privateCidrBlocks")
-    def ipv6private_cidr_blocks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ipv6private_cidr_blocks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
         * The CIDR blocks must be valid.
@@ -536,36 +536,36 @@ class _VcnState:
         return pulumi.get(self, "ipv6private_cidr_blocks")
 
     @ipv6private_cidr_blocks.setter
-    def ipv6private_cidr_blocks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ipv6private_cidr_blocks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ipv6private_cidr_blocks", value)
 
     @_builtins.property
     @pulumi.getter(name="isIpv6enabled")
-    def is_ipv6enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_ipv6enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
         """
         return pulumi.get(self, "is_ipv6enabled")
 
     @is_ipv6enabled.setter
-    def is_ipv6enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_ipv6enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_ipv6enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isOracleGuaAllocationEnabled")
-    def is_oracle_gua_allocation_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_oracle_gua_allocation_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
         """
         return pulumi.get(self, "is_oracle_gua_allocation_enabled")
 
     @is_oracle_gua_allocation_enabled.setter
-    def is_oracle_gua_allocation_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_oracle_gua_allocation_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_oracle_gua_allocation_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
-    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
 
@@ -575,43 +575,43 @@ class _VcnState:
         return pulumi.get(self, "security_attributes")
 
     @security_attributes.setter
-    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The VCN's current state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="vcnDomainName")
-    def vcn_domain_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vcn_domain_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The VCN's domain name, which consists of the VCN's DNS label, and the `oraclevcn.com` domain.
         """
         return pulumi.get(self, "vcn_domain_name")
 
     @vcn_domain_name.setter
-    def vcn_domain_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vcn_domain_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vcn_domain_name", value)
 
 
@@ -621,18 +621,18 @@ class Vcn(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 byoipv6cidr_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VcnByoipv6cidrDetailArgs', 'VcnByoipv6cidrDetailArgsDict']]]]] = None,
-                 cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-                 cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ipv6private_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_ipv6enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_oracle_gua_allocation_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 byoipv6cidr_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VcnByoipv6cidrDetailArgs', 'VcnByoipv6cidrDetailArgsDict']]]]] = None,
+                 cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+                 cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ipv6private_cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_ipv6enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_oracle_gua_allocation_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         This resource provides the Vcn resource in Oracle Cloud Infrastructure Core service.
@@ -704,8 +704,8 @@ class Vcn(pulumi.CustomResource):
                 "Department": "Finance",
             },
             ipv6private_cidr_blocks=vcn_ipv6private_cidr_blocks,
-            is_ipv6enabled=vcn_is_ipv6enabled,
-            is_oracle_gua_allocation_enabled=vcn_is_oracle_gua_allocation_enabled,
+            is_ipv6enabled=vcn_is_ipv6enabled == "true",
+            is_oracle_gua_allocation_enabled=vcn_is_oracle_gua_allocation_enabled == "true",
             security_attributes=vcn_security_attributes)
         ```
 
@@ -826,8 +826,8 @@ class Vcn(pulumi.CustomResource):
                 "Department": "Finance",
             },
             ipv6private_cidr_blocks=vcn_ipv6private_cidr_blocks,
-            is_ipv6enabled=vcn_is_ipv6enabled,
-            is_oracle_gua_allocation_enabled=vcn_is_oracle_gua_allocation_enabled,
+            is_ipv6enabled=vcn_is_ipv6enabled == "true",
+            is_oracle_gua_allocation_enabled=vcn_is_oracle_gua_allocation_enabled == "true",
             security_attributes=vcn_security_attributes)
         ```
 
@@ -855,18 +855,18 @@ class Vcn(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 byoipv6cidr_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VcnByoipv6cidrDetailArgs', 'VcnByoipv6cidrDetailArgsDict']]]]] = None,
-                 cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-                 cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ipv6private_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_ipv6enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_oracle_gua_allocation_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 byoipv6cidr_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VcnByoipv6cidrDetailArgs', 'VcnByoipv6cidrDetailArgsDict']]]]] = None,
+                 cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+                 cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ipv6private_cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_ipv6enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_oracle_gua_allocation_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -908,26 +908,26 @@ class Vcn(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            byoipv6cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            byoipv6cidr_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VcnByoipv6cidrDetailArgs', 'VcnByoipv6cidrDetailArgsDict']]]]] = None,
-            cidr_block: Optional[pulumi.Input[_builtins.str]] = None,
-            cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            default_dhcp_options_id: Optional[pulumi.Input[_builtins.str]] = None,
-            default_route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-            default_security_list_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            dns_label: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            ipv6cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            ipv6private_cidr_blocks: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            is_ipv6enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_oracle_gua_allocation_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            vcn_domain_name: Optional[pulumi.Input[_builtins.str]] = None) -> 'Vcn':
+            byoipv6cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            byoipv6cidr_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VcnByoipv6cidrDetailArgs', 'VcnByoipv6cidrDetailArgsDict']]]]] = None,
+            cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+            cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            default_dhcp_options_id: pulumi.Input[Optional[_builtins.str]] = None,
+            default_route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+            default_security_list_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dns_label: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ipv6cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ipv6private_cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            is_ipv6enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_oracle_gua_allocation_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            vcn_domain_name: pulumi.Input[Optional[_builtins.str]] = None) -> 'Vcn':
         """
         Get an existing Vcn resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

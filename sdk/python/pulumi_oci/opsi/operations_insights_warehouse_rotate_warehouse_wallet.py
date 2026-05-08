@@ -51,7 +51,7 @@ class OperationsInsightsWarehouseRotateWarehouseWalletArgs:
 @pulumi.input_type
 class _OperationsInsightsWarehouseRotateWarehouseWalletState:
     def __init__(__self__, *,
-                 operations_insights_warehouse_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 operations_insights_warehouse_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OperationsInsightsWarehouseRotateWarehouseWallet resources.
 
@@ -66,7 +66,7 @@ class _OperationsInsightsWarehouseRotateWarehouseWalletState:
 
     @_builtins.property
     @pulumi.getter(name="operationsInsightsWarehouseId")
-    def operations_insights_warehouse_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operations_insights_warehouse_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Ops Insights Warehouse identifier
 
@@ -77,7 +77,7 @@ class _OperationsInsightsWarehouseRotateWarehouseWalletState:
         return pulumi.get(self, "operations_insights_warehouse_id")
 
     @operations_insights_warehouse_id.setter
-    def operations_insights_warehouse_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operations_insights_warehouse_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operations_insights_warehouse_id", value)
 
 
@@ -87,7 +87,7 @@ class OperationsInsightsWarehouseRotateWarehouseWallet(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 operations_insights_warehouse_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 operations_insights_warehouse_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Operations Insights Warehouse Rotate Warehouse Wallet resource in Oracle Cloud Infrastructure Opsi service.
@@ -170,7 +170,7 @@ class OperationsInsightsWarehouseRotateWarehouseWallet(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 operations_insights_warehouse_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 operations_insights_warehouse_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -193,7 +193,7 @@ class OperationsInsightsWarehouseRotateWarehouseWallet(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            operations_insights_warehouse_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'OperationsInsightsWarehouseRotateWarehouseWallet':
+            operations_insights_warehouse_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'OperationsInsightsWarehouseRotateWarehouseWallet':
         """
         Get an existing OperationsInsightsWarehouseRotateWarehouseWallet resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -160,7 +160,7 @@ def get_dr_protection_groups(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dr_protection_groups = oci.DisasterRecovery.get_dr_protection_groups(compartment_id=compartment_id,
+    test_dr_protection_groups = oci.disasterrecovery.get_dr_protection_groups(compartment_id=compartment_id,
         display_name=dr_protection_group_display_name,
         dr_protection_group_id=test_dr_protection_group["id"],
         lifecycle_sub_state=dr_protection_group_lifecycle_sub_state,
@@ -197,13 +197,13 @@ def get_dr_protection_groups(compartment_id: Optional[_builtins.str] = None,
         lifecycle_sub_state=pulumi.get(__ret__, 'lifecycle_sub_state'),
         role=pulumi.get(__ret__, 'role'),
         state=pulumi.get(__ret__, 'state'))
-def get_dr_protection_groups_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    dr_protection_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDrProtectionGroupsFilterArgs', 'GetDrProtectionGroupsFilterArgsDict']]]]] = None,
-                                    lifecycle_sub_state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    role: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_dr_protection_groups_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    dr_protection_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDrProtectionGroupsFilterArgs', 'GetDrProtectionGroupsFilterArgsDict']]]]] = None,
+                                    lifecycle_sub_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    role: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDrProtectionGroupsResult]:
     """
     This data source provides the list of Dr Protection Groups in Oracle Cloud Infrastructure Disaster Recovery service.
@@ -216,7 +216,7 @@ def get_dr_protection_groups_output(compartment_id: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_dr_protection_groups = oci.DisasterRecovery.get_dr_protection_groups(compartment_id=compartment_id,
+    test_dr_protection_groups = oci.disasterrecovery.get_dr_protection_groups(compartment_id=compartment_id,
         display_name=dr_protection_group_display_name,
         dr_protection_group_id=test_dr_protection_group["id"],
         lifecycle_sub_state=dr_protection_group_lifecycle_sub_state,

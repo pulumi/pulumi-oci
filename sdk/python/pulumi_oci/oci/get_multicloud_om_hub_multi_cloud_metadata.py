@@ -177,8 +177,8 @@ def get_multicloud_om_hub_multi_cloud_metadata(compartment_id: Optional[_builtin
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_multicloud_om_hub_multi_cloud_metadata_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                      subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_multicloud_om_hub_multi_cloud_metadata_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                      subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMulticloudOmHubMultiCloudMetadataResult]:
     """
     This data source provides details about a specific OmHub MultiCloud base compartment in Oracle Cloud Infrastructure Multicloud service.

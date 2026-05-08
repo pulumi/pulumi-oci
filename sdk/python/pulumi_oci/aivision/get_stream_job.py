@@ -228,7 +228,7 @@ def get_stream_job(stream_job_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_job = oci.AiVision.get_stream_job(stream_job_id=test_stream_job_oci_ai_vision_stream_job["id"])
+    test_stream_job = oci.aivision.get_stream_job(stream_job_id=test_stream_job_oci_ai_vision_stream_job["id"])
     ```
 
 
@@ -255,7 +255,7 @@ def get_stream_job(stream_job_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_stream_job_output(stream_job_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_stream_job_output(stream_job_id: pulumi.Input[Optional[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStreamJobResult]:
     """
     This data source provides details about a specific Stream Job resource in Oracle Cloud Infrastructure Ai Vision service.
@@ -268,7 +268,7 @@ def get_stream_job_output(stream_job_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_job = oci.AiVision.get_stream_job(stream_job_id=test_stream_job_oci_ai_vision_stream_job["id"])
+    test_stream_job = oci.aivision.get_stream_job(stream_job_id=test_stream_job_oci_ai_vision_stream_job["id"])
     ```
 
 

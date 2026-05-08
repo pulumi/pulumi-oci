@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutomaticDrConfigurations = oci.DisasterRecovery.getAutomaticDrConfigurations({
+ * const testAutomaticDrConfigurations = oci.disasterrecovery.getAutomaticDrConfigurations({
  *     drProtectionGroupId: testDrProtectionGroup.id,
  *     automaticDrConfigurationId: testAutomaticDrConfiguration.id,
  *     displayName: automaticDrConfigurationDisplayName,
@@ -104,7 +104,7 @@ export interface GetAutomaticDrConfigurationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutomaticDrConfigurations = oci.DisasterRecovery.getAutomaticDrConfigurations({
+ * const testAutomaticDrConfigurations = oci.disasterrecovery.getAutomaticDrConfigurations({
  *     drProtectionGroupId: testDrProtectionGroup.id,
  *     automaticDrConfigurationId: testAutomaticDrConfiguration.id,
  *     displayName: automaticDrConfigurationDisplayName,
@@ -132,22 +132,22 @@ export interface GetAutomaticDrConfigurationsOutputArgs {
     /**
      * The OCID of the automatic DR configuration.  Example: `ocid1.automaticDrConfiguration.oc1..uniqueID`
      */
-    automaticDrConfigurationId?: pulumi.Input<string>;
+    automaticDrConfigurationId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
     drProtectionGroupId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.GetAutomaticDrConfigurationsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.GetAutomaticDrConfigurationsFilterArgs>[] | undefined>;
     /**
      * A filter to return only Automatic DR configurations that do not match the given lifecycle state.
      */
-    lifecycleStateNotEqualTo?: pulumi.Input<string>;
+    lifecycleStateNotEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only Automatic DR configurations that match the given lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -23,8 +23,8 @@ class ReplicationPolicyArgs:
                  destination_bucket_name: pulumi.Input[_builtins.str],
                  destination_region_name: pulumi.Input[_builtins.str],
                  namespace: pulumi.Input[_builtins.str],
-                 delete_object_in_destination_bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 delete_object_in_destination_bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ReplicationPolicy resource.
 
@@ -105,39 +105,39 @@ class ReplicationPolicyArgs:
     @_builtins.property
     @pulumi.getter(name="deleteObjectInDestinationBucket")
     @_utilities.deprecated("""The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""")
-    def delete_object_in_destination_bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def delete_object_in_destination_bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "delete_object_in_destination_bucket")
 
     @delete_object_in_destination_bucket.setter
-    def delete_object_in_destination_bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def delete_object_in_destination_bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "delete_object_in_destination_bucket", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the policy. Avoid entering confidential information.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _ReplicationPolicyState:
     def __init__(__self__, *,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 delete_object_in_destination_bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination_bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination_region_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_sync: Optional[pulumi.Input[_builtins.str]] = None):
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 delete_object_in_destination_bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_region_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_sync: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ReplicationPolicy resources.
 
@@ -181,65 +181,65 @@ class _ReplicationPolicyState:
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteObjectInDestinationBucket")
     @_utilities.deprecated("""The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""")
-    def delete_object_in_destination_bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def delete_object_in_destination_bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "delete_object_in_destination_bucket")
 
     @delete_object_in_destination_bucket.setter
-    def delete_object_in_destination_bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def delete_object_in_destination_bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "delete_object_in_destination_bucket", value)
 
     @_builtins.property
     @pulumi.getter(name="destinationBucketName")
-    def destination_bucket_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def destination_bucket_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
         """
         return pulumi.get(self, "destination_bucket_name")
 
     @destination_bucket_name.setter
-    def destination_bucket_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def destination_bucket_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "destination_bucket_name", value)
 
     @_builtins.property
     @pulumi.getter(name="destinationRegionName")
-    def destination_region_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def destination_region_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The destination region to replicate to, for example "us-ashburn-1".
         """
         return pulumi.get(self, "destination_region_name")
 
     @destination_region_name.setter
-    def destination_region_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def destination_region_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "destination_region_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the policy. Avoid entering confidential information.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Object Storage namespace used for the request.
 
@@ -250,55 +250,55 @@ class _ReplicationPolicyState:
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="statusMessage")
-    def status_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A human-readable description of the status.
         """
         return pulumi.get(self, "status_message")
 
     @status_message.setter
-    def status_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status_message", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastSync")
-    def time_last_sync(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_sync(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Changes made to the source bucket before this time has been replicated.
         """
         return pulumi.get(self, "time_last_sync")
 
     @time_last_sync.setter
-    def time_last_sync(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_sync(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_sync", value)
 
 
@@ -308,12 +308,12 @@ class ReplicationPolicy(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 delete_object_in_destination_bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination_bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination_region_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 delete_object_in_destination_bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_region_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Replication Policy resource in Oracle Cloud Infrastructure Object Storage service.
@@ -410,12 +410,12 @@ class ReplicationPolicy(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 delete_object_in_destination_bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination_bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination_region_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 delete_object_in_destination_bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_region_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -453,16 +453,16 @@ class ReplicationPolicy(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bucket: Optional[pulumi.Input[_builtins.str]] = None,
-            delete_object_in_destination_bucket: Optional[pulumi.Input[_builtins.str]] = None,
-            destination_bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
-            destination_region_name: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            status_message: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_last_sync: Optional[pulumi.Input[_builtins.str]] = None) -> 'ReplicationPolicy':
+            bucket: pulumi.Input[Optional[_builtins.str]] = None,
+            delete_object_in_destination_bucket: pulumi.Input[Optional[_builtins.str]] = None,
+            destination_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+            destination_region_name: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            status_message: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_sync: pulumi.Input[Optional[_builtins.str]] = None) -> 'ReplicationPolicy':
         """
         Get an existing ReplicationPolicy resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

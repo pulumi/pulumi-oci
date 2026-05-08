@@ -338,7 +338,7 @@ def get_subnet(subnet_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subnet = oci.Core.get_subnet(subnet_id=test_subnet_oci_core_subnet["id"])
+    test_subnet = oci.core.get_subnet(subnet_id=test_subnet_oci_core_subnet["id"])
     ```
 
 
@@ -374,7 +374,7 @@ def get_subnet(subnet_id: Optional[_builtins.str] = None,
         vcn_id=pulumi.get(__ret__, 'vcn_id'),
         virtual_router_ip=pulumi.get(__ret__, 'virtual_router_ip'),
         virtual_router_mac=pulumi.get(__ret__, 'virtual_router_mac'))
-def get_subnet_output(subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_subnet_output(subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubnetResult]:
     """
     This data source provides details about a specific Subnet resource in Oracle Cloud Infrastructure Core service.
@@ -387,7 +387,7 @@ def get_subnet_output(subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subnet = oci.Core.get_subnet(subnet_id=test_subnet_oci_core_subnet["id"])
+    test_subnet = oci.core.get_subnet(subnet_id=test_subnet_oci_core_subnet["id"])
     ```
 
 

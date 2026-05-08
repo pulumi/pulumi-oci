@@ -20,12 +20,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListUserGrants = oci.DataSafe.getListUserGrants({
+ * const testListUserGrants = oci.datasafe.getListUserGrants({
  *     userAssessmentId: testUserAssessment.id,
  *     userKey: listUserGrantUserKey,
- *     depthLevel: listUserGrantDepthLevel,
- *     depthLevelGreaterThanOrEqualTo: listUserGrantDepthLevelGreaterThanOrEqualTo,
- *     depthLevelLessThan: listUserGrantDepthLevelLessThan,
+ *     depthLevel: Number(listUserGrantDepthLevel),
+ *     depthLevelGreaterThanOrEqualTo: Number(listUserGrantDepthLevelGreaterThanOrEqualTo),
+ *     depthLevelLessThan: Number(listUserGrantDepthLevelLessThan),
  *     grantKey: listUserGrantGrantKey,
  *     grantName: listUserGrantGrantName,
  *     privilegeCategory: listUserGrantPrivilegeCategory,
@@ -141,12 +141,12 @@ export interface GetListUserGrantsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListUserGrants = oci.DataSafe.getListUserGrants({
+ * const testListUserGrants = oci.datasafe.getListUserGrants({
  *     userAssessmentId: testUserAssessment.id,
  *     userKey: listUserGrantUserKey,
- *     depthLevel: listUserGrantDepthLevel,
- *     depthLevelGreaterThanOrEqualTo: listUserGrantDepthLevelGreaterThanOrEqualTo,
- *     depthLevelLessThan: listUserGrantDepthLevelLessThan,
+ *     depthLevel: Number(listUserGrantDepthLevel),
+ *     depthLevelGreaterThanOrEqualTo: Number(listUserGrantDepthLevelGreaterThanOrEqualTo),
+ *     depthLevelLessThan: Number(listUserGrantDepthLevelLessThan),
  *     grantKey: listUserGrantGrantKey,
  *     grantName: listUserGrantGrantName,
  *     privilegeCategory: listUserGrantPrivilegeCategory,
@@ -177,32 +177,32 @@ export interface GetListUserGrantsOutputArgs {
     /**
      * A filter to return only items that match the specified user grant depth level.
      */
-    depthLevel?: pulumi.Input<number>;
+    depthLevel?: pulumi.Input<number | undefined>;
     /**
      * A filter to return only items that are at a level greater than or equal to the specified user grant depth level.
      */
-    depthLevelGreaterThanOrEqualTo?: pulumi.Input<number>;
+    depthLevelGreaterThanOrEqualTo?: pulumi.Input<number | undefined>;
     /**
      * A filter to return only items that are at a level less than the specified user grant depth level.
      */
-    depthLevelLessThan?: pulumi.Input<number>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetListUserGrantsFilterArgs>[]>;
+    depthLevelLessThan?: pulumi.Input<number | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetListUserGrantsFilterArgs>[] | undefined>;
     /**
      * A filter to return only items that match the specified user grant key.
      */
-    grantKey?: pulumi.Input<string>;
+    grantKey?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items that match the specified user grant name.
      */
-    grantName?: pulumi.Input<string>;
+    grantName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items that match the specified user privilege category.
      */
-    privilegeCategory?: pulumi.Input<string>;
+    privilegeCategory?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items that match the specified privilege grant type.
      */
-    privilegeType?: pulumi.Input<string>;
+    privilegeType?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the user assessment.
      */

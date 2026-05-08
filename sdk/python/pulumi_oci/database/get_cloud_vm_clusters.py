@@ -150,7 +150,7 @@ def get_cloud_vm_clusters(cloud_exadata_infrastructure_id: Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_vm_clusters = oci.Database.get_cloud_vm_clusters(compartment_id=compartment_id,
+    test_cloud_vm_clusters = oci.database.get_cloud_vm_clusters(compartment_id=compartment_id,
         cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
         display_name=cloud_vm_cluster_display_name,
         state=cloud_vm_cluster_state,
@@ -183,12 +183,12 @@ def get_cloud_vm_clusters(cloud_exadata_infrastructure_id: Optional[_builtins.st
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         vm_cluster_type=pulumi.get(__ret__, 'vm_cluster_type'))
-def get_cloud_vm_clusters_output(cloud_exadata_infrastructure_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCloudVmClustersFilterArgs', 'GetCloudVmClustersFilterArgsDict']]]]] = None,
-                                 state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 vm_cluster_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_cloud_vm_clusters_output(cloud_exadata_infrastructure_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCloudVmClustersFilterArgs', 'GetCloudVmClustersFilterArgsDict']]]]] = None,
+                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 vm_cluster_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudVmClustersResult]:
     """
     This data source provides the list of Cloud Vm Clusters in Oracle Cloud Infrastructure Database service.
@@ -201,7 +201,7 @@ def get_cloud_vm_clusters_output(cloud_exadata_infrastructure_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_vm_clusters = oci.Database.get_cloud_vm_clusters(compartment_id=compartment_id,
+    test_cloud_vm_clusters = oci.database.get_cloud_vm_clusters(compartment_id=compartment_id,
         cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
         display_name=cloud_vm_cluster_display_name,
         state=cloud_vm_cluster_state,

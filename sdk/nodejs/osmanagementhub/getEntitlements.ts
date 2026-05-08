@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEntitlements = oci.OsManagementHub.getEntitlements({
+ * const testEntitlements = oci.osmanagementhub.getEntitlements({
  *     compartmentId: compartmentId,
  *     csi: entitlementCsi,
  *     vendorName: entitlementVendorName,
@@ -92,7 +92,7 @@ export interface GetEntitlementsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEntitlements = oci.OsManagementHub.getEntitlements({
+ * const testEntitlements = oci.osmanagementhub.getEntitlements({
  *     compartmentId: compartmentId,
  *     csi: entitlementCsi,
  *     vendorName: entitlementVendorName,
@@ -120,10 +120,10 @@ export interface GetEntitlementsOutputArgs {
     /**
      * A filter to return entitlements that match the given customer support identifier (CSI).
      */
-    csi?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetEntitlementsFilterArgs>[]>;
+    csi?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetEntitlementsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given vendor name.
      */
-    vendorName?: pulumi.Input<string>;
+    vendorName?: pulumi.Input<string | undefined>;
 }

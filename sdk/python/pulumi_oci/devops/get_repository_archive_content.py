@@ -91,7 +91,7 @@ def get_repository_archive_content(format: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_archive_content = oci.DevOps.get_repository_archive_content(repository_id=test_repository["id"],
+    test_repository_archive_content = oci.devops.get_repository_archive_content(repository_id=test_repository["id"],
         format=repository_archive_content_format,
         ref_name=repository_archive_content_ref_name)
     ```
@@ -113,9 +113,9 @@ def get_repository_archive_content(format: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         ref_name=pulumi.get(__ret__, 'ref_name'),
         repository_id=pulumi.get(__ret__, 'repository_id'))
-def get_repository_archive_content_output(format: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          ref_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          repository_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_repository_archive_content_output(format: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          ref_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          repository_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryArchiveContentResult]:
     """
     This data source provides details about a specific Repository Archive Content resource in Oracle Cloud Infrastructure Devops service.
@@ -128,7 +128,7 @@ def get_repository_archive_content_output(format: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_archive_content = oci.DevOps.get_repository_archive_content(repository_id=test_repository["id"],
+    test_repository_archive_content = oci.devops.get_repository_archive_content(repository_id=test_repository["id"],
         format=repository_archive_content_format,
         ref_name=repository_archive_content_ref_name)
     ```

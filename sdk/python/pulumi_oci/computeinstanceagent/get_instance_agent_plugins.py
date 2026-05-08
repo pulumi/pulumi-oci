@@ -131,7 +131,7 @@ def get_instance_agent_plugins(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_agent_plugins = oci.ComputeInstanceAgent.get_instance_agent_plugins(instanceagent_id=test_instanceagent["id"],
+    test_instance_agent_plugins = oci.computeinstanceagent.get_instance_agent_plugins(instanceagent_id=test_instanceagent["id"],
         name=instance_agent_plugin_name,
         status=instance_agent_plugin_status)
     ```
@@ -158,11 +158,11 @@ def get_instance_agent_plugins(compartment_id: Optional[_builtins.str] = None,
         instanceagent_id=pulumi.get(__ret__, 'instanceagent_id'),
         name=pulumi.get(__ret__, 'name'),
         status=pulumi.get(__ret__, 'status'))
-def get_instance_agent_plugins_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInstanceAgentPluginsFilterArgs', 'GetInstanceAgentPluginsFilterArgsDict']]]]] = None,
-                                      instanceagent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                      status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_instance_agent_plugins_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInstanceAgentPluginsFilterArgs', 'GetInstanceAgentPluginsFilterArgsDict']]]]] = None,
+                                      instanceagent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInstanceAgentPluginsResult]:
     """
     This data source provides the list of Instance Agent Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
@@ -175,7 +175,7 @@ def get_instance_agent_plugins_output(compartment_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_agent_plugins = oci.ComputeInstanceAgent.get_instance_agent_plugins(instanceagent_id=test_instanceagent["id"],
+    test_instance_agent_plugins = oci.computeinstanceagent.get_instance_agent_plugins(instanceagent_id=test_instanceagent["id"],
         name=instance_agent_plugin_name,
         status=instance_agent_plugin_status)
     ```

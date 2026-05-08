@@ -178,7 +178,7 @@ def get_file_systems(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_file_systems = oci.FileStorage.get_file_systems(availability_domain=file_system_availability_domain,
+    test_file_systems = oci.filestorage.get_file_systems(availability_domain=file_system_availability_domain,
         compartment_id=compartment_id,
         display_name=file_system_display_name,
         filesystem_snapshot_policy_id=test_filesystem_snapshot_policy["id"],
@@ -222,15 +222,15 @@ def get_file_systems(availability_domain: Optional[_builtins.str] = None,
         parent_file_system_id=pulumi.get(__ret__, 'parent_file_system_id'),
         source_snapshot_id=pulumi.get(__ret__, 'source_snapshot_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_file_systems_output(availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                            display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            filesystem_snapshot_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFileSystemsFilterArgs', 'GetFileSystemsFilterArgsDict']]]]] = None,
-                            id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            parent_file_system_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            source_snapshot_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_file_systems_output(availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            filesystem_snapshot_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFileSystemsFilterArgs', 'GetFileSystemsFilterArgsDict']]]]] = None,
+                            id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            parent_file_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            source_snapshot_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFileSystemsResult]:
     """
     This data source provides the list of File Systems in Oracle Cloud Infrastructure File Storage service.
@@ -244,7 +244,7 @@ def get_file_systems_output(availability_domain: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_file_systems = oci.FileStorage.get_file_systems(availability_domain=file_system_availability_domain,
+    test_file_systems = oci.filestorage.get_file_systems(availability_domain=file_system_availability_domain,
         compartment_id=compartment_id,
         display_name=file_system_display_name,
         filesystem_snapshot_policy_id=test_filesystem_snapshot_policy["id"],

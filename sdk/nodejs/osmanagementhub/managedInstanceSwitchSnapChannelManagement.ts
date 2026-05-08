@@ -119,15 +119,15 @@ export interface ManagedInstanceSwitchSnapChannelManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
-    managedInstanceId?: pulumi.Input<string>;
+    managedInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Provides the information used to switch a snap channel.
      */
-    snapDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceSwitchSnapChannelManagementSnapDetails>;
+    snapDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceSwitchSnapChannelManagementSnapDetails | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails | undefined>;
 }
 
 /**
@@ -141,9 +141,9 @@ export interface ManagedInstanceSwitchSnapChannelManagementArgs {
     /**
      * Provides the information used to switch a snap channel.
      */
-    snapDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceSwitchSnapChannelManagementSnapDetails>;
+    snapDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceSwitchSnapChannelManagementSnapDetails | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceSwitchSnapChannelManagementWorkRequestDetails | undefined>;
 }

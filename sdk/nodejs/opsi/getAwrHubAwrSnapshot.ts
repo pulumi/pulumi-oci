@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAwrHubAwrSnapshot = oci.Opsi.getAwrHubAwrSnapshot({
+ * const testAwrHubAwrSnapshot = oci.opsi.getAwrHubAwrSnapshot({
  *     awrHubId: testAwrHub.id,
  *     awrSourceDatabaseIdentifier: awrHubAwrSnapshotAwrSourceDatabaseIdentifier,
  *     timeGreaterThanOrEqualTo: awrHubAwrSnapshotTimeGreaterThanOrEqualTo,
@@ -87,7 +87,7 @@ export interface GetAwrHubAwrSnapshotResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAwrHubAwrSnapshot = oci.Opsi.getAwrHubAwrSnapshot({
+ * const testAwrHubAwrSnapshot = oci.opsi.getAwrHubAwrSnapshot({
  *     awrHubId: testAwrHub.id,
  *     awrSourceDatabaseIdentifier: awrHubAwrSnapshotAwrSourceDatabaseIdentifier,
  *     timeGreaterThanOrEqualTo: awrHubAwrSnapshotTimeGreaterThanOrEqualTo,
@@ -120,9 +120,9 @@ export interface GetAwrHubAwrSnapshotOutputArgs {
     /**
      * The optional greater than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
      */
-    timeGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * The optional less than or equal to query parameter to filter the timestamp. The timestamp format to be followed is: YYYY-MM-DDTHH:MM:SSZ, example 2020-12-03T19:00:53Z
      */
-    timeLessThanOrEqualTo?: pulumi.Input<string>;
+    timeLessThanOrEqualTo?: pulumi.Input<string | undefined>;
 }

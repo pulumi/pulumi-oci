@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalDatabaseConnectors = oci.Database.getExternalDatabaseConnectors({
+ * const testExternalDatabaseConnectors = oci.database.getExternalDatabaseConnectors({
  *     compartmentId: compartmentId,
  *     externalDatabaseId: testDatabase.id,
  *     displayName: externalDatabaseConnectorDisplayName,
@@ -100,7 +100,7 @@ export interface GetExternalDatabaseConnectorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalDatabaseConnectors = oci.Database.getExternalDatabaseConnectors({
+ * const testExternalDatabaseConnectors = oci.database.getExternalDatabaseConnectors({
  *     compartmentId: compartmentId,
  *     externalDatabaseId: testDatabase.id,
  *     displayName: externalDatabaseConnectorDisplayName,
@@ -130,14 +130,14 @@ export interface GetExternalDatabaseConnectorsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database whose connectors will be listed.
      */
     externalDatabaseId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetExternalDatabaseConnectorsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetExternalDatabaseConnectorsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the specified lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

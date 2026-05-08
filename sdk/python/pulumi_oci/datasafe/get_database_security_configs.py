@@ -210,9 +210,9 @@ def get_database_security_configs(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_database_security_configs = oci.DataSafe.get_database_security_configs(compartment_id=compartment_id,
+    test_database_security_configs = oci.datasafe.get_database_security_configs(compartment_id=compartment_id,
         access_level=database_security_config_access_level,
-        compartment_id_in_subtree=database_security_config_compartment_id_in_subtree,
+        compartment_id_in_subtree=database_security_config_compartment_id_in_subtree == "true",
         database_security_config_id=test_database_security_config["id"],
         display_name=database_security_config_display_name,
         state=database_security_config_state,
@@ -267,17 +267,17 @@ def get_database_security_configs(access_level: Optional[_builtins.str] = None,
         target_id=pulumi.get(__ret__, 'target_id'),
         time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
-def get_database_security_configs_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                         database_security_config_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatabaseSecurityConfigsFilterArgs', 'GetDatabaseSecurityConfigsFilterArgsDict']]]]] = None,
-                                         state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         target_database_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         time_created_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_database_security_configs_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                         database_security_config_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabaseSecurityConfigsFilterArgs', 'GetDatabaseSecurityConfigsFilterArgsDict']]]]] = None,
+                                         state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         target_database_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         time_created_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         time_created_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseSecurityConfigsResult]:
     """
     This data source provides the list of Database Security Configs in Oracle Cloud Infrastructure Data Safe service.
@@ -303,9 +303,9 @@ def get_database_security_configs_output(access_level: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_database_security_configs = oci.DataSafe.get_database_security_configs(compartment_id=compartment_id,
+    test_database_security_configs = oci.datasafe.get_database_security_configs(compartment_id=compartment_id,
         access_level=database_security_config_access_level,
-        compartment_id_in_subtree=database_security_config_compartment_id_in_subtree,
+        compartment_id_in_subtree=database_security_config_compartment_id_in_subtree == "true",
         database_security_config_id=test_database_security_config["id"],
         display_name=database_security_config_display_name,
         state=database_security_config_state,

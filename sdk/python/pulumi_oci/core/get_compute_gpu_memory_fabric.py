@@ -336,7 +336,7 @@ def get_compute_gpu_memory_fabric(compute_gpu_memory_fabric_id: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_gpu_memory_fabric = oci.Core.get_compute_gpu_memory_fabric(compute_gpu_memory_fabric_id=test_compute_gpu_memory_fabric_oci_core_compute_gpu_memory_fabric["id"])
+    test_compute_gpu_memory_fabric = oci.core.get_compute_gpu_memory_fabric(compute_gpu_memory_fabric_id=test_compute_gpu_memory_fabric_oci_core_compute_gpu_memory_fabric["id"])
     ```
 
 
@@ -372,7 +372,7 @@ def get_compute_gpu_memory_fabric(compute_gpu_memory_fabric_id: Optional[_builti
         target_firmware_bundle_id=pulumi.get(__ret__, 'target_firmware_bundle_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         total_host_count=pulumi.get(__ret__, 'total_host_count'))
-def get_compute_gpu_memory_fabric_output(compute_gpu_memory_fabric_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_compute_gpu_memory_fabric_output(compute_gpu_memory_fabric_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeGpuMemoryFabricResult]:
     """
     This data source provides details about a specific Compute Gpu Memory Fabric resource in Oracle Cloud Infrastructure Core service.
@@ -385,7 +385,7 @@ def get_compute_gpu_memory_fabric_output(compute_gpu_memory_fabric_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_gpu_memory_fabric = oci.Core.get_compute_gpu_memory_fabric(compute_gpu_memory_fabric_id=test_compute_gpu_memory_fabric_oci_core_compute_gpu_memory_fabric["id"])
+    test_compute_gpu_memory_fabric = oci.core.get_compute_gpu_memory_fabric(compute_gpu_memory_fabric_id=test_compute_gpu_memory_fabric_oci_core_compute_gpu_memory_fabric["id"])
     ```
 
 

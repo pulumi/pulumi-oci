@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceFolders = oci.DataIntegration.getWorkspaceFolders({
+ * const testWorkspaceFolders = oci.dataintegration.getWorkspaceFolders({
  *     workspaceId: testWorkspace.id,
  *     aggregatorKey: workspaceFolderAggregatorKey,
  *     fields: workspaceFolderFields,
@@ -111,7 +111,7 @@ export interface GetWorkspaceFoldersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceFolders = oci.DataIntegration.getWorkspaceFolders({
+ * const testWorkspaceFolders = oci.dataintegration.getWorkspaceFolders({
  *     workspaceId: testWorkspace.id,
  *     aggregatorKey: workspaceFolderAggregatorKey,
  *     fields: workspaceFolderFields,
@@ -141,24 +141,24 @@ export interface GetWorkspaceFoldersOutputArgs {
     /**
      * Used to filter by the project or the folder object.
      */
-    aggregatorKey?: pulumi.Input<string>;
+    aggregatorKey?: pulumi.Input<string | undefined>;
     /**
      * Specifies the fields to get for an object.
      */
-    fields?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataIntegration.GetWorkspaceFoldersFilterArgs>[]>;
+    fields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataIntegration.GetWorkspaceFoldersFilterArgs>[] | undefined>;
     /**
      * Used to filter by the identifier of the object.
      */
-    identifiers?: pulumi.Input<pulumi.Input<string>[]>;
+    identifiers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Used to filter by the name of the object.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * This parameter can be used to filter objects by the names that match partially or fully with the given value.
      */
-    nameContains?: pulumi.Input<string>;
+    nameContains?: pulumi.Input<string | undefined>;
     /**
      * The workspace ID.
      */

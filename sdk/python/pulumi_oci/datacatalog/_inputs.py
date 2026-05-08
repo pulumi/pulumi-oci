@@ -36,19 +36,19 @@ __all__ = [
 ]
 
 class CatalogLockArgsDict(TypedDict):
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of the lock.
     """
@@ -56,10 +56,10 @@ class CatalogLockArgsDict(TypedDict):
 @pulumi.input_type
 class CatalogLockArgs:
     def __init__(__self__, *,
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         :param pulumi.Input[_builtins.str] related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
@@ -77,67 +77,67 @@ class CatalogLockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of the lock.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
 class CatalogPrivateEndpointLockArgsDict(TypedDict):
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of the lock.
     """
@@ -145,10 +145,10 @@ class CatalogPrivateEndpointLockArgsDict(TypedDict):
 @pulumi.input_type
 class CatalogPrivateEndpointLockArgs:
     def __init__(__self__, *,
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         :param pulumi.Input[_builtins.str] related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
@@ -166,67 +166,67 @@ class CatalogPrivateEndpointLockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of the lock.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
 class MetastoreLockArgsDict(TypedDict):
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of the lock.
     """
@@ -234,10 +234,10 @@ class MetastoreLockArgsDict(TypedDict):
 @pulumi.input_type
 class MetastoreLockArgs:
     def __init__(__self__, *,
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         :param pulumi.Input[_builtins.str] related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
@@ -255,50 +255,50 @@ class MetastoreLockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of the lock.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 

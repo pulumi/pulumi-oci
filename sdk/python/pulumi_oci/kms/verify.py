@@ -25,7 +25,7 @@ class VerifyArgs:
                  message: pulumi.Input[_builtins.str],
                  signature: pulumi.Input[_builtins.str],
                  signing_algorithm: pulumi.Input[_builtins.str],
-                 message_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 message_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Verify resource.
 
@@ -128,28 +128,28 @@ class VerifyArgs:
 
     @_builtins.property
     @pulumi.getter(name="messageType")
-    def message_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
         """
         return pulumi.get(self, "message_type")
 
     @message_type.setter
-    def message_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message_type", value)
 
 
 @pulumi.input_type
 class _VerifyState:
     def __init__(__self__, *,
-                 crypto_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_signature_valid: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 message_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 signature: Optional[pulumi.Input[_builtins.str]] = None,
-                 signing_algorithm: Optional[pulumi.Input[_builtins.str]] = None):
+                 crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_signature_valid: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 message_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 signature: pulumi.Input[Optional[_builtins.str]] = None,
+                 signing_algorithm: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Verify resources.
 
@@ -185,91 +185,91 @@ class _VerifyState:
 
     @_builtins.property
     @pulumi.getter(name="cryptoEndpoint")
-    def crypto_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crypto_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,', 'GenerateDataEncryptionKey', 'Sign' and 'Verify' operations. see Vault Crypto endpoint.
         """
         return pulumi.get(self, "crypto_endpoint")
 
     @crypto_endpoint.setter
-    def crypto_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crypto_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crypto_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="isSignatureValid")
-    def is_signature_valid(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_signature_valid(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A Boolean value that indicates whether the signature was verified.
         """
         return pulumi.get(self, "is_signature_valid")
 
     @is_signature_valid.setter
-    def is_signature_valid(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_signature_valid(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_signature_valid", value)
 
     @_builtins.property
     @pulumi.getter(name="keyId")
-    def key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key used to sign the message.
         """
         return pulumi.get(self, "key_id")
 
     @key_id.setter
-    def key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="keyVersionId")
-    def key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key version used to sign the message.
         """
         return pulumi.get(self, "key_version_id")
 
     @key_version_id.setter
-    def key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_version_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The base64-encoded binary data object denoting the message or message digest to sign. You can have a message up to 4096 bytes in size. To sign a larger message, provide the message digest.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="messageType")
-    def message_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Denotes whether the value of the message parameter is a raw message or a message digest. The default value, `RAW`, indicates a message. To indicate a message digest, use `DIGEST`.
         """
         return pulumi.get(self, "message_type")
 
     @message_type.setter
-    def message_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def signature(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def signature(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The base64-encoded binary data object denoting the cryptographic signature generated for the message.
         """
         return pulumi.get(self, "signature")
 
     @signature.setter
-    def signature(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def signature(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "signature", value)
 
     @_builtins.property
     @pulumi.getter(name="signingAlgorithm")
-    def signing_algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def signing_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The algorithm to use to sign the message or message digest. For RSA keys, supported signature schemes include PKCS #1 and RSASSA-PSS, along with different hashing algorithms. For ECDSA keys, ECDSA is the supported signature scheme with different hashing algorithms. When you pass a message digest for signing, ensure that you specify the same hashing algorithm as used when creating the message digest. 
 
@@ -280,7 +280,7 @@ class _VerifyState:
         return pulumi.get(self, "signing_algorithm")
 
     @signing_algorithm.setter
-    def signing_algorithm(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def signing_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "signing_algorithm", value)
 
 
@@ -290,13 +290,13 @@ class Verify(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 crypto_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 message_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 signature: Optional[pulumi.Input[_builtins.str]] = None,
-                 signing_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
+                 crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 message_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 signature: pulumi.Input[Optional[_builtins.str]] = None,
+                 signing_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Verify resource in Oracle Cloud Infrastructure Kms service.
@@ -405,13 +405,13 @@ class Verify(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 crypto_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 message_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 signature: Optional[pulumi.Input[_builtins.str]] = None,
-                 signing_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
+                 crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 message_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 signature: pulumi.Input[Optional[_builtins.str]] = None,
+                 signing_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -451,14 +451,14 @@ class Verify(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            crypto_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            is_signature_valid: Optional[pulumi.Input[_builtins.bool]] = None,
-            key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-            message: Optional[pulumi.Input[_builtins.str]] = None,
-            message_type: Optional[pulumi.Input[_builtins.str]] = None,
-            signature: Optional[pulumi.Input[_builtins.str]] = None,
-            signing_algorithm: Optional[pulumi.Input[_builtins.str]] = None) -> 'Verify':
+            crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            is_signature_valid: pulumi.Input[Optional[_builtins.bool]] = None,
+            key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            message: pulumi.Input[Optional[_builtins.str]] = None,
+            message_type: pulumi.Input[Optional[_builtins.str]] = None,
+            signature: pulumi.Input[Optional[_builtins.str]] = None,
+            signing_algorithm: pulumi.Input[Optional[_builtins.str]] = None) -> 'Verify':
         """
         Get an existing Verify resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

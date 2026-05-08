@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceFieldUsage = oci.LogAnalytics.getNamespaceFieldUsage({
+ * const testNamespaceFieldUsage = oci.loganalytics.getNamespaceFieldUsage({
  *     fieldName: namespaceFieldUsageFieldName,
  *     namespace: namespaceFieldUsageNamespace,
  * });
@@ -75,7 +75,7 @@ export interface GetNamespaceFieldUsageResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceFieldUsage = oci.LogAnalytics.getNamespaceFieldUsage({
+ * const testNamespaceFieldUsage = oci.loganalytics.getNamespaceFieldUsage({
  *     fieldName: namespaceFieldUsageFieldName,
  *     namespace: namespaceFieldUsageNamespace,
  * });

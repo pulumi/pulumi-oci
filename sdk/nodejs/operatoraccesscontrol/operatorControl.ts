@@ -216,67 +216,67 @@ export interface OperatorControlState {
     /**
      * List of operator actions that need explicit approval. Any operator action not in the pre-approved list will require explicit approval. Access requests associated with a resource governed by this operator control will be require explicit approval if the access request contains any operator action in this list.
      */
-    approvalRequiredOpActionLists?: pulumi.Input<pulumi.Input<string>[]>;
+    approvalRequiredOpActionLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) List of user groups who can approve an access request associated with a resource governed by this operator control.
      */
-    approverGroupsLists?: pulumi.Input<pulumi.Input<string>[]>;
+    approverGroupsLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) List of users who can approve an access request associated with a resource governed by this operator control.
      */
-    approversLists?: pulumi.Input<pulumi.Input<string>[]>;
+    approversLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The OCID of the compartment that contains this operator control.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Description of the operator control.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of emailId.
      */
-    emailIdLists?: pulumi.Input<pulumi.Input<string>[]>;
+    emailIdLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Whether the operator control is a default Operator Control.
      */
-    isDefaultOperatorControl?: pulumi.Input<boolean>;
+    isDefaultOperatorControl?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
      */
-    isFullyPreApproved?: pulumi.Input<boolean>;
+    isFullyPreApproved?: pulumi.Input<boolean | undefined>;
     /**
      * Description associated with the latest modification of the operator control.
      */
-    lastModifiedInfo?: pulumi.Input<string>;
+    lastModifiedInfo?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Number of approvers required to approve an access request.
      */
-    numberOfApprovers?: pulumi.Input<number>;
+    numberOfApprovers?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Name of the operator control.
      */
-    operatorControlName?: pulumi.Input<string>;
+    operatorControlName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be auto-approved if the access request only contain operator actions in the pre-approved list.
      */
-    preApprovedOpActionLists?: pulumi.Input<pulumi.Input<string>[]>;
+    preApprovedOpActionLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * resourceType for which the OperatorControl is applicable
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the operator control.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This is the message that will be displayed to the operator users while accessing the system.
      *
@@ -284,19 +284,19 @@ export interface OperatorControlState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    systemMessage?: pulumi.Input<string>;
+    systemMessage?: pulumi.Input<string | undefined>;
     /**
      * Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
      */
-    timeOfCreation?: pulumi.Input<string>;
+    timeOfCreation?: pulumi.Input<string | undefined>;
     /**
      * Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'. Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests raised on target resources governed by the deleted operator control.
      */
-    timeOfDeletion?: pulumi.Input<string>;
+    timeOfDeletion?: pulumi.Input<string | undefined>;
     /**
      * Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
      */
-    timeOfModification?: pulumi.Input<string>;
+    timeOfModification?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -310,7 +310,7 @@ export interface OperatorControlArgs {
     /**
      * (Updatable) List of users who can approve an access request associated with a resource governed by this operator control.
      */
-    approversLists?: pulumi.Input<pulumi.Input<string>[]>;
+    approversLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The OCID of the compartment that contains this operator control.
      */
@@ -318,19 +318,19 @@ export interface OperatorControlArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Description of the operator control.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of emailId.
      */
-    emailIdLists?: pulumi.Input<pulumi.Input<string>[]>;
+    emailIdLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
      */
@@ -338,7 +338,7 @@ export interface OperatorControlArgs {
     /**
      * (Updatable) Number of approvers required to approve an access request.
      */
-    numberOfApprovers?: pulumi.Input<number>;
+    numberOfApprovers?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Name of the operator control.
      */
@@ -346,7 +346,7 @@ export interface OperatorControlArgs {
     /**
      * (Updatable) List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be auto-approved if the access request only contain operator actions in the pre-approved list.
      */
-    preApprovedOpActionLists?: pulumi.Input<pulumi.Input<string>[]>;
+    preApprovedOpActionLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * resourceType for which the OperatorControl is applicable
      */
@@ -358,5 +358,5 @@ export interface OperatorControlArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    systemMessage?: pulumi.Input<string>;
+    systemMessage?: pulumi.Input<string | undefined>;
 }

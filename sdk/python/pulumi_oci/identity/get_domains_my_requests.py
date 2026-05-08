@@ -223,14 +223,14 @@ def get_domains_my_requests(attribute_sets: Optional[Sequence[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_my_requests = oci.Identity.get_domains_my_requests(idcs_endpoint=test_domain["url"],
-        my_request_count=my_request_my_request_count,
+    test_my_requests = oci.identity.get_domains_my_requests(idcs_endpoint=test_domain["url"],
+        my_request_count=int(my_request_my_request_count),
         my_request_filter=my_request_my_request_filter,
         attribute_sets=[],
         attributes="",
         authorization=my_request_authorization,
         resource_type_schema_version=my_request_resource_type_schema_version,
-        start_index=my_request_start_index)
+        start_index=int(my_request_start_index))
     ```
 
 
@@ -275,17 +275,17 @@ def get_domains_my_requests(attribute_sets: Optional[Sequence[_builtins.str]] = 
         sort_order=pulumi.get(__ret__, 'sort_order'),
         start_index=pulumi.get(__ret__, 'start_index'),
         total_results=pulumi.get(__ret__, 'total_results'))
-def get_domains_my_requests_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                   attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                   my_request_count: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                   my_request_filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   sort_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   sort_order: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   start_index: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_domains_my_requests_output(attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                   attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                   my_request_count: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                   my_request_filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   sort_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   sort_order: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   start_index: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsMyRequestsResult]:
     """
     This data source provides the list of My Requests in Oracle Cloud Infrastructure Identity Domains service.
@@ -298,14 +298,14 @@ def get_domains_my_requests_output(attribute_sets: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_my_requests = oci.Identity.get_domains_my_requests(idcs_endpoint=test_domain["url"],
-        my_request_count=my_request_my_request_count,
+    test_my_requests = oci.identity.get_domains_my_requests(idcs_endpoint=test_domain["url"],
+        my_request_count=int(my_request_my_request_count),
         my_request_filter=my_request_my_request_filter,
         attribute_sets=[],
         attributes="",
         authorization=my_request_authorization,
         resource_type_schema_version=my_request_resource_type_schema_version,
-        start_index=my_request_start_index)
+        start_index=int(my_request_start_index))
     ```
 
 

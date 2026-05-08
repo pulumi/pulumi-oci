@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVault = oci.Kms.getVault({
+ * const testVault = oci.kms.getVault({
  *     vaultId: testVaultOciKmsVault.id,
  * });
  * ```
@@ -143,7 +143,7 @@ export interface GetVaultResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVault = oci.Kms.getVault({
+ * const testVault = oci.kms.getVault({
  *     vaultId: testVaultOciKmsVault.id,
  * });
  * ```

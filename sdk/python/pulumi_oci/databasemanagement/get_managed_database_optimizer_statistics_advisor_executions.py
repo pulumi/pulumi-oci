@@ -117,7 +117,7 @@ def get_managed_database_optimizer_statistics_advisor_executions(end_time_less_t
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_optimizer_statistics_advisor_executions = oci.DatabaseManagement.get_managed_database_optimizer_statistics_advisor_executions(managed_database_id=test_managed_database["id"],
+    test_managed_database_optimizer_statistics_advisor_executions = oci.databasemanagement.get_managed_database_optimizer_statistics_advisor_executions(managed_database_id=test_managed_database["id"],
         end_time_less_than_or_equal_to=managed_database_optimizer_statistics_advisor_execution_end_time_less_than_or_equal_to,
         start_time_greater_than_or_equal_to=managed_database_optimizer_statistics_advisor_execution_start_time_greater_than_or_equal_to)
     ```
@@ -142,10 +142,10 @@ def get_managed_database_optimizer_statistics_advisor_executions(end_time_less_t
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         optimizer_statistics_advisor_executions_collections=pulumi.get(__ret__, 'optimizer_statistics_advisor_executions_collections'),
         start_time_greater_than_or_equal_to=pulumi.get(__ret__, 'start_time_greater_than_or_equal_to'))
-def get_managed_database_optimizer_statistics_advisor_executions_output(end_time_less_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgs', 'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgsDict']]]]] = None,
-                                                                        managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                        start_time_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_managed_database_optimizer_statistics_advisor_executions_output(end_time_less_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgs', 'GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilterArgsDict']]]]] = None,
+                                                                        managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                        start_time_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsResult]:
     """
     This data source provides the list of Managed Database Optimizer Statistics Advisor Executions in Oracle Cloud Infrastructure Database Management service.
@@ -160,7 +160,7 @@ def get_managed_database_optimizer_statistics_advisor_executions_output(end_time
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_optimizer_statistics_advisor_executions = oci.DatabaseManagement.get_managed_database_optimizer_statistics_advisor_executions(managed_database_id=test_managed_database["id"],
+    test_managed_database_optimizer_statistics_advisor_executions = oci.databasemanagement.get_managed_database_optimizer_statistics_advisor_executions(managed_database_id=test_managed_database["id"],
         end_time_less_than_or_equal_to=managed_database_optimizer_statistics_advisor_execution_end_time_less_than_or_equal_to,
         start_time_greater_than_or_equal_to=managed_database_optimizer_statistics_advisor_execution_start_time_greater_than_or_equal_to)
     ```

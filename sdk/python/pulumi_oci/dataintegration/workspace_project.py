@@ -23,13 +23,13 @@ class WorkspaceProjectArgs:
     def __init__(__self__, *,
                  identifier: pulumi.Input[_builtins.str],
                  workspace_id: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_status: Optional[pulumi.Input[_builtins.int]] = None,
-                 project_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 registry_metadata: Optional[pulumi.Input['WorkspaceProjectRegistryMetadataArgs']] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_status: pulumi.Input[Optional[_builtins.int]] = None,
+                 project_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 registry_metadata: pulumi.Input[Optional['WorkspaceProjectRegistryMetadataArgs']] = None):
         """
         The set of arguments for constructing a WorkspaceProject resource.
 
@@ -93,103 +93,103 @@ class WorkspaceProjectArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user defined description for the project.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Generated key that can be used in API calls to identify project.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter(name="modelVersion")
-    def model_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The model version of an object.
         """
         return pulumi.get(self, "model_version")
 
     @model_version.setter
-    def model_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="objectStatus")
-    def object_status(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def object_status(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         """
         return pulumi.get(self, "object_status")
 
     @object_status.setter
-    def object_status(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def object_status(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "object_status", value)
 
     @_builtins.property
     @pulumi.getter(name="projectKey")
-    def project_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def project_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "project_key")
 
     @project_key.setter
-    def project_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def project_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "project_key", value)
 
     @_builtins.property
     @pulumi.getter(name="registryMetadata")
-    def registry_metadata(self) -> Optional[pulumi.Input['WorkspaceProjectRegistryMetadataArgs']]:
+    def registry_metadata(self) -> pulumi.Input[Optional['WorkspaceProjectRegistryMetadataArgs']]:
         """
         (Updatable) Information about the object and its parent.
         """
         return pulumi.get(self, "registry_metadata")
 
     @registry_metadata.setter
-    def registry_metadata(self, value: Optional[pulumi.Input['WorkspaceProjectRegistryMetadataArgs']]):
+    def registry_metadata(self, value: pulumi.Input[Optional['WorkspaceProjectRegistryMetadataArgs']]):
         pulumi.set(self, "registry_metadata", value)
 
 
 @pulumi.input_type
 class _WorkspaceProjectState:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceProjectMetadataArgs']]]] = None,
-                 model_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_status: Optional[pulumi.Input[_builtins.int]] = None,
-                 object_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 parent_reves: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceProjectParentRefArgs']]]] = None,
-                 project_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 registry_metadata: Optional[pulumi.Input['WorkspaceProjectRegistryMetadataArgs']] = None,
-                 workspace_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_map: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceProjectMetadataArgs']]]] = None,
+                 model_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_status: pulumi.Input[Optional[_builtins.int]] = None,
+                 object_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 parent_reves: pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceProjectParentRefArgs']]]] = None,
+                 project_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 registry_metadata: pulumi.Input[Optional['WorkspaceProjectRegistryMetadataArgs']] = None,
+                 workspace_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WorkspaceProject resources.
 
@@ -242,160 +242,160 @@ class _WorkspaceProjectState:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user defined description for the project.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def identifier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
     @identifier.setter
-    def identifier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identifier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identifier", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Generated key that can be used in API calls to identify project.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter(name="keyMap")
-    def key_map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def key_map(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         """
         return pulumi.get(self, "key_map")
 
     @key_map.setter
-    def key_map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def key_map(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "key_map", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceProjectMetadataArgs']]]]:
+    def metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceProjectMetadataArgs']]]]:
         """
         A summary type containing information about the object including its key, name and when/who created/updated it.
         """
         return pulumi.get(self, "metadatas")
 
     @metadatas.setter
-    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceProjectMetadataArgs']]]]):
+    def metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceProjectMetadataArgs']]]]):
         pulumi.set(self, "metadatas", value)
 
     @_builtins.property
     @pulumi.getter(name="modelType")
-    def model_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the object.
         """
         return pulumi.get(self, "model_type")
 
     @model_type.setter
-    def model_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_type", value)
 
     @_builtins.property
     @pulumi.getter(name="modelVersion")
-    def model_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The model version of an object.
         """
         return pulumi.get(self, "model_version")
 
     @model_version.setter
-    def model_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="objectStatus")
-    def object_status(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def object_status(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         """
         return pulumi.get(self, "object_status")
 
     @object_status.setter
-    def object_status(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def object_status(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "object_status", value)
 
     @_builtins.property
     @pulumi.getter(name="objectVersion")
-    def object_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def object_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The version of the object that is used to track changes in the object instance.
         """
         return pulumi.get(self, "object_version")
 
     @object_version.setter
-    def object_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def object_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "object_version", value)
 
     @_builtins.property
     @pulumi.getter(name="parentReves")
-    def parent_reves(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceProjectParentRefArgs']]]]:
+    def parent_reves(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceProjectParentRefArgs']]]]:
         """
         A reference to the object's parent.
         """
         return pulumi.get(self, "parent_reves")
 
     @parent_reves.setter
-    def parent_reves(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceProjectParentRefArgs']]]]):
+    def parent_reves(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceProjectParentRefArgs']]]]):
         pulumi.set(self, "parent_reves", value)
 
     @_builtins.property
     @pulumi.getter(name="projectKey")
-    def project_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def project_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "project_key")
 
     @project_key.setter
-    def project_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def project_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "project_key", value)
 
     @_builtins.property
     @pulumi.getter(name="registryMetadata")
-    def registry_metadata(self) -> Optional[pulumi.Input['WorkspaceProjectRegistryMetadataArgs']]:
+    def registry_metadata(self) -> pulumi.Input[Optional['WorkspaceProjectRegistryMetadataArgs']]:
         """
         (Updatable) Information about the object and its parent.
         """
         return pulumi.get(self, "registry_metadata")
 
     @registry_metadata.setter
-    def registry_metadata(self, value: Optional[pulumi.Input['WorkspaceProjectRegistryMetadataArgs']]):
+    def registry_metadata(self, value: pulumi.Input[Optional['WorkspaceProjectRegistryMetadataArgs']]):
         pulumi.set(self, "registry_metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="workspaceId")
-    def workspace_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def workspace_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The workspace ID.
 
@@ -406,7 +406,7 @@ class _WorkspaceProjectState:
         return pulumi.get(self, "workspace_id")
 
     @workspace_id.setter
-    def workspace_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def workspace_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "workspace_id", value)
 
 
@@ -416,15 +416,15 @@ class WorkspaceProject(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_status: Optional[pulumi.Input[_builtins.int]] = None,
-                 project_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 registry_metadata: Optional[pulumi.Input[Union['WorkspaceProjectRegistryMetadataArgs', 'WorkspaceProjectRegistryMetadataArgsDict']]] = None,
-                 workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_status: pulumi.Input[Optional[_builtins.int]] = None,
+                 project_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 registry_metadata: pulumi.Input[Optional[Union['WorkspaceProjectRegistryMetadataArgs', 'WorkspaceProjectRegistryMetadataArgsDict']]] = None,
+                 workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Workspace Project resource in Oracle Cloud Infrastructure Data Integration service.
@@ -447,13 +447,13 @@ class WorkspaceProject(pulumi.CustomResource):
             description=workspace_project_description,
             key=workspace_project_key,
             model_version=workspace_project_model_version,
-            object_status=workspace_project_object_status,
+            object_status=int(workspace_project_object_status),
             registry_metadata={
                 "aggregator_key": workspace_project_registry_metadata_aggregator_key,
-                "is_favorite": workspace_project_registry_metadata_is_favorite,
+                "is_favorite": workspace_project_registry_metadata_is_favorite == "true",
                 "key": workspace_project_registry_metadata_key,
                 "labels": workspace_project_registry_metadata_labels,
-                "registry_version": workspace_project_registry_metadata_registry_version,
+                "registry_version": int(workspace_project_registry_metadata_registry_version),
             })
         ```
 
@@ -508,13 +508,13 @@ class WorkspaceProject(pulumi.CustomResource):
             description=workspace_project_description,
             key=workspace_project_key,
             model_version=workspace_project_model_version,
-            object_status=workspace_project_object_status,
+            object_status=int(workspace_project_object_status),
             registry_metadata={
                 "aggregator_key": workspace_project_registry_metadata_aggregator_key,
-                "is_favorite": workspace_project_registry_metadata_is_favorite,
+                "is_favorite": workspace_project_registry_metadata_is_favorite == "true",
                 "key": workspace_project_registry_metadata_key,
                 "labels": workspace_project_registry_metadata_labels,
-                "registry_version": workspace_project_registry_metadata_registry_version,
+                "registry_version": int(workspace_project_registry_metadata_registry_version),
             })
         ```
 
@@ -542,15 +542,15 @@ class WorkspaceProject(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_status: Optional[pulumi.Input[_builtins.int]] = None,
-                 project_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 registry_metadata: Optional[pulumi.Input[Union['WorkspaceProjectRegistryMetadataArgs', 'WorkspaceProjectRegistryMetadataArgsDict']]] = None,
-                 workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_status: pulumi.Input[Optional[_builtins.int]] = None,
+                 project_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 registry_metadata: pulumi.Input[Optional[Union['WorkspaceProjectRegistryMetadataArgs', 'WorkspaceProjectRegistryMetadataArgsDict']]] = None,
+                 workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -588,20 +588,20 @@ class WorkspaceProject(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            identifier: Optional[pulumi.Input[_builtins.str]] = None,
-            key: Optional[pulumi.Input[_builtins.str]] = None,
-            key_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceProjectMetadataArgs', 'WorkspaceProjectMetadataArgsDict']]]]] = None,
-            model_type: Optional[pulumi.Input[_builtins.str]] = None,
-            model_version: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            object_status: Optional[pulumi.Input[_builtins.int]] = None,
-            object_version: Optional[pulumi.Input[_builtins.int]] = None,
-            parent_reves: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceProjectParentRefArgs', 'WorkspaceProjectParentRefArgsDict']]]]] = None,
-            project_key: Optional[pulumi.Input[_builtins.str]] = None,
-            registry_metadata: Optional[pulumi.Input[Union['WorkspaceProjectRegistryMetadataArgs', 'WorkspaceProjectRegistryMetadataArgsDict']]] = None,
-            workspace_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'WorkspaceProject':
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            key_map: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceProjectMetadataArgs', 'WorkspaceProjectMetadataArgsDict']]]]] = None,
+            model_type: pulumi.Input[Optional[_builtins.str]] = None,
+            model_version: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            object_status: pulumi.Input[Optional[_builtins.int]] = None,
+            object_version: pulumi.Input[Optional[_builtins.int]] = None,
+            parent_reves: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceProjectParentRefArgs', 'WorkspaceProjectParentRefArgsDict']]]]] = None,
+            project_key: pulumi.Input[Optional[_builtins.str]] = None,
+            registry_metadata: pulumi.Input[Optional[Union['WorkspaceProjectRegistryMetadataArgs', 'WorkspaceProjectRegistryMetadataArgsDict']]] = None,
+            workspace_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'WorkspaceProject':
         """
         Get an existing WorkspaceProject resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

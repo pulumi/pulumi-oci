@@ -138,7 +138,7 @@ def get_external_pluggable_databases(compartment_id: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_external_pluggable_databases = oci.Database.get_external_pluggable_databases(compartment_id=compartment_id,
+    test_external_pluggable_databases = oci.database.get_external_pluggable_databases(compartment_id=compartment_id,
         display_name=external_pluggable_database_display_name,
         external_container_database_id=test_external_container_database["id"],
         state=external_pluggable_database_state)
@@ -167,11 +167,11 @@ def get_external_pluggable_databases(compartment_id: Optional[_builtins.str] = N
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_external_pluggable_databases_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            external_container_database_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalPluggableDatabasesFilterArgs', 'GetExternalPluggableDatabasesFilterArgsDict']]]]] = None,
-                                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_external_pluggable_databases_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            external_container_database_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalPluggableDatabasesFilterArgs', 'GetExternalPluggableDatabasesFilterArgsDict']]]]] = None,
+                                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalPluggableDatabasesResult]:
     """
     This data source provides the list of External Pluggable Databases in Oracle Cloud Infrastructure Database service.
@@ -185,7 +185,7 @@ def get_external_pluggable_databases_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_external_pluggable_databases = oci.Database.get_external_pluggable_databases(compartment_id=compartment_id,
+    test_external_pluggable_databases = oci.database.get_external_pluggable_databases(compartment_id=compartment_id,
         display_name=external_pluggable_database_display_name,
         external_container_database_id=test_external_container_database["id"],
         state=external_pluggable_database_state)

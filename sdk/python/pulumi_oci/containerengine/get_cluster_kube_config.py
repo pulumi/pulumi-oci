@@ -113,9 +113,9 @@ def get_cluster_kube_config(cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_kube_config = oci.ContainerEngine.get_cluster_kube_config(cluster_id=test_cluster["id"],
+    test_cluster_kube_config = oci.containerengine.get_cluster_kube_config(cluster_id=test_cluster["id"],
         endpoint=cluster_kube_config_endpoint,
-        expiration=cluster_kube_config_expiration,
+        expiration=int(cluster_kube_config_expiration),
         token_version=cluster_kube_config_token_version)
     ```
 
@@ -140,10 +140,10 @@ def get_cluster_kube_config(cluster_id: Optional[_builtins.str] = None,
         expiration=pulumi.get(__ret__, 'expiration'),
         id=pulumi.get(__ret__, 'id'),
         token_version=pulumi.get(__ret__, 'token_version'))
-def get_cluster_kube_config_output(cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   endpoint: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   expiration: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                   token_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_cluster_kube_config_output(cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   endpoint: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   expiration: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                   token_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterKubeConfigResult]:
     """
     This data source provides details about a specific Cluster Kube Config resource in Oracle Cloud Infrastructure Container Engine service.
@@ -156,9 +156,9 @@ def get_cluster_kube_config_output(cluster_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_kube_config = oci.ContainerEngine.get_cluster_kube_config(cluster_id=test_cluster["id"],
+    test_cluster_kube_config = oci.containerengine.get_cluster_kube_config(cluster_id=test_cluster["id"],
         endpoint=cluster_kube_config_endpoint,
-        expiration=cluster_kube_config_expiration,
+        expiration=int(cluster_kube_config_expiration),
         token_version=cluster_kube_config_token_version)
     ```
 

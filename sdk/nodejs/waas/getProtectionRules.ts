@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProtectionRules = oci.Waas.getProtectionRules({
+ * const testProtectionRules = oci.waas.getProtectionRules({
  *     waasPolicyId: testWaasPolicy.id,
  *     actions: protectionRuleAction,
  *     modSecurityRuleIds: testRule.id,
@@ -86,7 +86,7 @@ export interface GetProtectionRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProtectionRules = oci.Waas.getProtectionRules({
+ * const testProtectionRules = oci.waas.getProtectionRules({
  *     waasPolicyId: testWaasPolicy.id,
  *     actions: protectionRuleAction,
  *     modSecurityRuleIds: testRule.id,
@@ -110,12 +110,12 @@ export interface GetProtectionRulesOutputArgs {
     /**
      * Filter rules using a list of actions.
      */
-    actions?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Waas.GetProtectionRulesFilterArgs>[]>;
+    actions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Waas.GetProtectionRulesFilterArgs>[] | undefined>;
     /**
      * Filter rules using a list of ModSecurity rule IDs.
      */
-    modSecurityRuleIds?: pulumi.Input<pulumi.Input<string>[]>;
+    modSecurityRuleIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
      */

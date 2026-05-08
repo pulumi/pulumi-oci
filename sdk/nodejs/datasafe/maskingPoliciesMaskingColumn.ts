@@ -44,7 +44,7 @@ import * as utilities from "../utilities";
  *     maskingPolicyId: testMaskingPolicy.id,
  *     object: maskingPoliciesMaskingColumnObject,
  *     schemaName: maskingPoliciesMaskingColumnSchemaName,
- *     isMaskingEnabled: maskingPoliciesMaskingColumnIsMaskingEnabled,
+ *     isMaskingEnabled: maskingPoliciesMaskingColumnIsMaskingEnabled === "true",
  *     maskingColumnGroup: maskingPoliciesMaskingColumnMaskingColumnGroup,
  *     maskingFormats: [{
  *         formatEntries: [{
@@ -52,12 +52,12 @@ import * as utilities from "../utilities";
  *             columnName: maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesColumnName,
  *             description: maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesDescription,
  *             endDate: maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesEndDate,
- *             endLength: maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesEndLength,
+ *             endLength: Number(maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesEndLength),
  *             endValue: maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesEndValue,
  *             fixedNumber: maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesFixedNumber,
  *             fixedString: maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesFixedString,
  *             groupingColumns: maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesGroupingColumns,
- *             length: maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesLength,
+ *             length: Number(maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesLength),
  *             libraryMaskingFormatId: testLibraryMaskingFormat.id,
  *             pattern: maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesPattern,
  *             postProcessingFunction: maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesPostProcessingFunction,
@@ -67,8 +67,8 @@ import * as utilities from "../utilities";
  *             schemaName: maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesSchemaName,
  *             sqlExpression: maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesSqlExpression,
  *             startDate: maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesStartDate,
- *             startLength: maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesStartLength,
- *             startPosition: maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesStartPosition,
+ *             startLength: Number(maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesStartLength),
+ *             startPosition: Number(maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesStartPosition),
  *             startValue: maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesStartValue,
  *             tableName: testTable.name,
  *             userDefinedFunction: maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesUserDefinedFunction,
@@ -258,51 +258,51 @@ export interface MaskingPoliciesMaskingColumnState {
     /**
      * An array of child columns that are in referential relationship with the masking column.
      */
-    childColumns?: pulumi.Input<pulumi.Input<string>[]>;
+    childColumns?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
      */
-    columnName?: pulumi.Input<string>;
+    columnName?: pulumi.Input<string | undefined>;
     /**
      * The data type of the masking column.
      */
-    dataType?: pulumi.Input<string>;
+    dataType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
      */
-    isMaskingEnabled?: pulumi.Input<boolean>;
+    isMaskingEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The unique key that identifies the masking column. It's numeric and unique within a masking policy.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * Details about the current state of the masking column.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The group of the masking column. It's a masking group identifier and can be any string  of acceptable length. All the columns in a group are masked together to ensure that  the masked data across these columns continue to retain the same logical relationship.  For more details, check  <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
      */
-    maskingColumnGroup?: pulumi.Input<string>;
+    maskingColumnGroup?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The masking formats to be assigned to the masking column. You can specify a condition  as part of each masking format. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions. A masking format can have one or more format  entries. The combined output of all the format entries is used for masking. It  provides the flexibility to define a masking format that can generate different parts  of a data value separately and then combine them to get the final data value for masking.
      */
-    maskingFormats?: pulumi.Input<pulumi.Input<inputs.DataSafe.MaskingPoliciesMaskingColumnMaskingFormat>[]>;
+    maskingFormats?: pulumi.Input<pulumi.Input<inputs.DataSafe.MaskingPoliciesMaskingColumnMaskingFormat>[] | undefined>;
     /**
      * The OCID of the masking policy.
      */
-    maskingPolicyId?: pulumi.Input<string>;
+    maskingPolicyId?: pulumi.Input<string | undefined>;
     /**
      * The name of the object (table or editioning view) that contains the database column. This attribute cannot be updated for an existing masking column.
      */
-    object?: pulumi.Input<string>;
+    object?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The type of the object that contains the database column.
      */
-    objectType?: pulumi.Input<string>;
+    objectType?: pulumi.Input<string | undefined>;
     /**
      * The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
      */
-    schemaName?: pulumi.Input<string>;
+    schemaName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the sensitive type to be associated with the masking column. Note that  if the maskingFormats attribute isn't provided while creating a masking column,   the default masking format associated with the specified sensitive type is assigned  to the masking column.  
      *
@@ -310,19 +310,19 @@ export interface MaskingPoliciesMaskingColumnState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    sensitiveTypeId?: pulumi.Input<string>;
+    sensitiveTypeId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the masking column.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -336,15 +336,15 @@ export interface MaskingPoliciesMaskingColumnArgs {
     /**
      * (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
      */
-    isMaskingEnabled?: pulumi.Input<boolean>;
+    isMaskingEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The group of the masking column. It's a masking group identifier and can be any string  of acceptable length. All the columns in a group are masked together to ensure that  the masked data across these columns continue to retain the same logical relationship.  For more details, check  <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
      */
-    maskingColumnGroup?: pulumi.Input<string>;
+    maskingColumnGroup?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The masking formats to be assigned to the masking column. You can specify a condition  as part of each masking format. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions. A masking format can have one or more format  entries. The combined output of all the format entries is used for masking. It  provides the flexibility to define a masking format that can generate different parts  of a data value separately and then combine them to get the final data value for masking.
      */
-    maskingFormats?: pulumi.Input<pulumi.Input<inputs.DataSafe.MaskingPoliciesMaskingColumnMaskingFormat>[]>;
+    maskingFormats?: pulumi.Input<pulumi.Input<inputs.DataSafe.MaskingPoliciesMaskingColumnMaskingFormat>[] | undefined>;
     /**
      * The OCID of the masking policy.
      */
@@ -356,7 +356,7 @@ export interface MaskingPoliciesMaskingColumnArgs {
     /**
      * (Updatable) The type of the object that contains the database column.
      */
-    objectType?: pulumi.Input<string>;
+    objectType?: pulumi.Input<string | undefined>;
     /**
      * The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
      */
@@ -368,5 +368,5 @@ export interface MaskingPoliciesMaskingColumnArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    sensitiveTypeId?: pulumi.Input<string>;
+    sensitiveTypeId?: pulumi.Input<string | undefined>;
 }

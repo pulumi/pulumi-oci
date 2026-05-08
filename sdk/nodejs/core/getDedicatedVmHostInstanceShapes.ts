@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDedicatedVmHostInstanceShapes = oci.Core.getDedicatedVmHostInstanceShapes({
+ * const testDedicatedVmHostInstanceShapes = oci.core.getDedicatedVmHostInstanceShapes({
  *     compartmentId: compartmentId,
  *     availabilityDomain: dedicatedVmHostInstanceShapeAvailabilityDomain,
  *     dedicatedVmHostShape: dedicatedVmHostInstanceShapeDedicatedVmHostShape,
@@ -86,7 +86,7 @@ export interface GetDedicatedVmHostInstanceShapesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDedicatedVmHostInstanceShapes = oci.Core.getDedicatedVmHostInstanceShapes({
+ * const testDedicatedVmHostInstanceShapes = oci.core.getDedicatedVmHostInstanceShapes({
  *     compartmentId: compartmentId,
  *     availabilityDomain: dedicatedVmHostInstanceShapeAvailabilityDomain,
  *     dedicatedVmHostShape: dedicatedVmHostInstanceShapeDedicatedVmHostShape,
@@ -110,7 +110,7 @@ export interface GetDedicatedVmHostInstanceShapesOutputArgs {
     /**
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -118,6 +118,6 @@ export interface GetDedicatedVmHostInstanceShapesOutputArgs {
     /**
      * Dedicated VM host shape name
      */
-    dedicatedVmHostShape?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetDedicatedVmHostInstanceShapesFilterArgs>[]>;
+    dedicatedVmHostShape?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetDedicatedVmHostInstanceShapesFilterArgs>[] | undefined>;
 }

@@ -220,7 +220,7 @@ def get_workspace_project(project_key: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_project = oci.DataIntegration.get_workspace_project(project_key=workspace_project_project_key,
+    test_workspace_project = oci.dataintegration.get_workspace_project(project_key=workspace_project_project_key,
         workspace_id=test_workspace["id"])
     ```
 
@@ -250,8 +250,8 @@ def get_workspace_project(project_key: Optional[_builtins.str] = None,
         project_key=pulumi.get(__ret__, 'project_key'),
         registry_metadatas=pulumi.get(__ret__, 'registry_metadatas'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-def get_workspace_project_output(project_key: Optional[pulumi.Input[_builtins.str]] = None,
-                                 workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_workspace_project_output(project_key: pulumi.Input[Optional[_builtins.str]] = None,
+                                 workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceProjectResult]:
     """
     This data source provides details about a specific Workspace Project resource in Oracle Cloud Infrastructure Data Integration service.
@@ -264,7 +264,7 @@ def get_workspace_project_output(project_key: Optional[pulumi.Input[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_project = oci.DataIntegration.get_workspace_project(project_key=workspace_project_project_key,
+    test_workspace_project = oci.dataintegration.get_workspace_project(project_key=workspace_project_project_key,
         workspace_id=test_workspace["id"])
     ```
 

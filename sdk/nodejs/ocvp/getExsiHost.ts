@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEsxiHost = oci.Ocvp.getExsiHost({
+ * const testEsxiHost = oci.ocvp.getExsiHost({
  *     esxiHostId: testEsxiHostOciOcvpEsxiHost.id,
  * });
  * ```
@@ -215,7 +215,7 @@ export interface GetExsiHostResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEsxiHost = oci.Ocvp.getExsiHost({
+ * const testEsxiHost = oci.ocvp.getExsiHost({
  *     esxiHostId: testEsxiHostOciOcvpEsxiHost.id,
  * });
  * ```

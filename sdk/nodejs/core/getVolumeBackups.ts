@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeBackups = oci.Core.getVolumeBackups({
+ * const testVolumeBackups = oci.core.getVolumeBackups({
  *     compartmentId: compartmentId,
  *     displayName: volumeBackupDisplayName,
  *     sourceVolumeBackupId: testVolumeBackup.id,
@@ -110,7 +110,7 @@ export interface GetVolumeBackupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeBackups = oci.Core.getVolumeBackups({
+ * const testVolumeBackups = oci.core.getVolumeBackups({
  *     compartmentId: compartmentId,
  *     displayName: volumeBackupDisplayName,
  *     sourceVolumeBackupId: testVolumeBackup.id,
@@ -142,18 +142,18 @@ export interface GetVolumeBackupsOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVolumeBackupsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVolumeBackupsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that originated from the given source volume backup.
      */
-    sourceVolumeBackupId?: pulumi.Input<string>;
+    sourceVolumeBackupId?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the volume.
      */
-    volumeId?: pulumi.Input<string>;
+    volumeId?: pulumi.Input<string | undefined>;
 }

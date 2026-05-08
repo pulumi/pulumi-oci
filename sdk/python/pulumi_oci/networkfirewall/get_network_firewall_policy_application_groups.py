@@ -105,7 +105,7 @@ def get_network_firewall_policy_application_groups(display_name: Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy_application_groups = oci.NetworkFirewall.get_network_firewall_policy_application_groups(network_firewall_policy_id=test_network_firewall_policy["id"],
+    test_network_firewall_policy_application_groups = oci.networkfirewall.get_network_firewall_policy_application_groups(network_firewall_policy_id=test_network_firewall_policy["id"],
         display_name=network_firewall_policy_application_group_display_name)
     ```
 
@@ -126,9 +126,9 @@ def get_network_firewall_policy_application_groups(display_name: Optional[_built
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'))
-def get_network_firewall_policy_application_groups_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkFirewallPolicyApplicationGroupsFilterArgs', 'GetNetworkFirewallPolicyApplicationGroupsFilterArgsDict']]]]] = None,
-                                                          network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_network_firewall_policy_application_groups_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkFirewallPolicyApplicationGroupsFilterArgs', 'GetNetworkFirewallPolicyApplicationGroupsFilterArgsDict']]]]] = None,
+                                                          network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyApplicationGroupsResult]:
     """
     This data source provides the list of Network Firewall Policy Application Groups in Oracle Cloud Infrastructure Network Firewall service.
@@ -141,7 +141,7 @@ def get_network_firewall_policy_application_groups_output(display_name: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy_application_groups = oci.NetworkFirewall.get_network_firewall_policy_application_groups(network_firewall_policy_id=test_network_firewall_policy["id"],
+    test_network_firewall_policy_application_groups = oci.networkfirewall.get_network_firewall_policy_application_groups(network_firewall_policy_id=test_network_firewall_policy["id"],
         display_name=network_firewall_policy_application_group_display_name)
     ```
 

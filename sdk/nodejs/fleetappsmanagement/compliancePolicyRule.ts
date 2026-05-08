@@ -25,14 +25,14 @@ import * as utilities from "../utilities";
  *     displayName: compliancePolicyRuleDisplayName,
  *     patchSelection: {
  *         selectionType: compliancePolicyRulePatchSelectionSelectionType,
- *         daysSinceRelease: compliancePolicyRulePatchSelectionDaysSinceRelease,
+ *         daysSinceRelease: Number(compliancePolicyRulePatchSelectionDaysSinceRelease),
  *         patchLevel: compliancePolicyRulePatchSelectionPatchLevel,
  *         patchName: testPatch.name,
  *     },
  *     patchTypeIds: testPatchType.id,
  *     productVersion: {
  *         version: compliancePolicyRuleProductVersionVersion,
- *         isApplicableForAllHigherVersions: compliancePolicyRuleProductVersionIsApplicableForAllHigherVersions,
+ *         isApplicableForAllHigherVersions: compliancePolicyRuleProductVersionIsApplicableForAllHigherVersions === "true",
  *     },
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
@@ -219,43 +219,43 @@ export interface CompliancePolicyRuleState {
     /**
      * The OCID of the compartment the CompliancePolicyRule belongs to.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Unique OCID of the CompliancePolicy this CompliancePolicyRule belongs to.
      */
-    compliancePolicyId?: pulumi.Input<string>;
+    compliancePolicyId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Grace period in days,weeks,months or years the exemption is applicable for the rule. This enables a grace period when Fleet Application Management doesn't report the product as noncompliant when patch is not applied.
      */
-    gracePeriod?: pulumi.Input<string>;
+    gracePeriod?: pulumi.Input<string | undefined>;
     /**
      * A message that describes the current state of the CompliancePolicyRule in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Patch Selection Details
      */
-    patchSelection?: pulumi.Input<inputs.FleetAppsManagement.CompliancePolicyRulePatchSelection>;
+    patchSelection?: pulumi.Input<inputs.FleetAppsManagement.CompliancePolicyRulePatchSelection | undefined>;
     /**
      * (Updatable) PlatformConfiguration OCID for the patch type to which this CompliancePolicyRule applies.
      */
-    patchTypeIds?: pulumi.Input<pulumi.Input<string>[]>;
+    patchTypeIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A specific product version or a specific version and succeeding. Example: 12.1 or 12.1 and above for Oracle WebLogic Application server. The policy applies to the next version only, and not to other versions such as, 12.1.x.
      */
-    productVersion?: pulumi.Input<inputs.FleetAppsManagement.CompliancePolicyRuleProductVersion>;
+    productVersion?: pulumi.Input<inputs.FleetAppsManagement.CompliancePolicyRuleProductVersion | undefined>;
     /**
      * (Updatable) Severity to which this CompliancePolicyRule applies.
      *
@@ -263,23 +263,23 @@ export interface CompliancePolicyRuleState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    severities?: pulumi.Input<pulumi.Input<string>[]>;
+    severities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The current state of the CompliancePolicyRule.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the CompliancePolicyRule was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the CompliancePolicyRule was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -293,7 +293,7 @@ export interface CompliancePolicyRuleArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
@@ -301,11 +301,11 @@ export interface CompliancePolicyRuleArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Grace period in days,weeks,months or years the exemption is applicable for the rule. This enables a grace period when Fleet Application Management doesn't report the product as noncompliant when patch is not applied.
      */
-    gracePeriod?: pulumi.Input<string>;
+    gracePeriod?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Patch Selection Details
      */
@@ -325,5 +325,5 @@ export interface CompliancePolicyRuleArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    severities?: pulumi.Input<pulumi.Input<string>[]>;
+    severities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

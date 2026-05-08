@@ -22,7 +22,7 @@ class AutonomousContainerDatabaseDataguardRoleChangeArgs:
                  autonomous_container_database_dataguard_association_id: pulumi.Input[_builtins.str],
                  autonomous_container_database_id: pulumi.Input[_builtins.str],
                  role: pulumi.Input[_builtins.str],
-                 connection_strings_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 connection_strings_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AutonomousContainerDatabaseDataguardRoleChange resource.
         """
@@ -61,21 +61,21 @@ class AutonomousContainerDatabaseDataguardRoleChangeArgs:
 
     @_builtins.property
     @pulumi.getter(name="connectionStringsType")
-    def connection_strings_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_strings_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "connection_strings_type")
 
     @connection_strings_type.setter
-    def connection_strings_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_strings_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_strings_type", value)
 
 
 @pulumi.input_type
 class _AutonomousContainerDatabaseDataguardRoleChangeState:
     def __init__(__self__, *,
-                 autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_strings_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None):
+                 autonomous_container_database_dataguard_association_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_strings_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AutonomousContainerDatabaseDataguardRoleChange resources.
         """
@@ -90,38 +90,38 @@ class _AutonomousContainerDatabaseDataguardRoleChangeState:
 
     @_builtins.property
     @pulumi.getter(name="autonomousContainerDatabaseDataguardAssociationId")
-    def autonomous_container_database_dataguard_association_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_container_database_dataguard_association_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "autonomous_container_database_dataguard_association_id")
 
     @autonomous_container_database_dataguard_association_id.setter
-    def autonomous_container_database_dataguard_association_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_container_database_dataguard_association_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_container_database_dataguard_association_id", value)
 
     @_builtins.property
     @pulumi.getter(name="autonomousContainerDatabaseId")
-    def autonomous_container_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_container_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "autonomous_container_database_id")
 
     @autonomous_container_database_id.setter
-    def autonomous_container_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_container_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_container_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionStringsType")
-    def connection_strings_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_strings_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "connection_strings_type")
 
     @connection_strings_type.setter
-    def connection_strings_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_strings_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_strings_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
 
@@ -131,10 +131,10 @@ class AutonomousContainerDatabaseDataguardRoleChange(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_strings_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
+                 autonomous_container_database_dataguard_association_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_strings_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AutonomousContainerDatabaseDataguardRoleChange resource with the given unique name, props, and options.
@@ -166,10 +166,10 @@ class AutonomousContainerDatabaseDataguardRoleChange(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_strings_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
+                 autonomous_container_database_dataguard_association_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_strings_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -199,10 +199,10 @@ class AutonomousContainerDatabaseDataguardRoleChange(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[_builtins.str]] = None,
-            autonomous_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            connection_strings_type: Optional[pulumi.Input[_builtins.str]] = None,
-            role: Optional[pulumi.Input[_builtins.str]] = None) -> 'AutonomousContainerDatabaseDataguardRoleChange':
+            autonomous_container_database_dataguard_association_id: pulumi.Input[Optional[_builtins.str]] = None,
+            autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_strings_type: pulumi.Input[Optional[_builtins.str]] = None,
+            role: pulumi.Input[Optional[_builtins.str]] = None) -> 'AutonomousContainerDatabaseDataguardRoleChange':
         """
         Get an existing AutonomousContainerDatabaseDataguardRoleChange resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

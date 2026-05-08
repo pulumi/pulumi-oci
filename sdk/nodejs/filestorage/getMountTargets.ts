@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMountTargets = oci.FileStorage.getMountTargets({
+ * const testMountTargets = oci.filestorage.getMountTargets({
  *     availabilityDomain: mountTargetAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     displayName: mountTargetDisplayName,
@@ -116,7 +116,7 @@ export interface GetMountTargetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMountTargets = oci.FileStorage.getMountTargets({
+ * const testMountTargets = oci.filestorage.getMountTargets({
  *     availabilityDomain: mountTargetAvailabilityDomain,
  *     compartmentId: compartmentId,
  *     displayName: mountTargetDisplayName,
@@ -154,18 +154,18 @@ export interface GetMountTargetsOutputArgs {
     /**
      * A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.
      */
-    exportSetId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FileStorage.GetMountTargetsFilterArgs>[]>;
+    exportSetId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FileStorage.GetMountTargetsFilterArgs>[] | undefined>;
     /**
      * Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Filter results by the specified lifecycle state. Must be a valid state for the resource type.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

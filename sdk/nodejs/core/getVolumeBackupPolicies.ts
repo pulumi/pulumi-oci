@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeBackupPolicies = oci.Core.getVolumeBackupPolicies({
+ * const testVolumeBackupPolicies = oci.core.getVolumeBackupPolicies({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -77,7 +77,7 @@ export interface GetVolumeBackupPoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeBackupPolicies = oci.Core.getVolumeBackupPolicies({
+ * const testVolumeBackupPolicies = oci.core.getVolumeBackupPolicies({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -98,6 +98,6 @@ export interface GetVolumeBackupPoliciesOutputArgs {
     /**
      * The OCID of the compartment. If no compartment is specified, the Oracle defined backup policies are listed.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVolumeBackupPoliciesFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVolumeBackupPoliciesFilterArgs>[] | undefined>;
 }

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplicationPolicies = oci.ObjectStorage.getReplicationPolicies({
+ * const testReplicationPolicies = oci.objectstorage.getReplicationPolicies({
  *     bucket: replicationPolicyBucket,
  *     namespace: replicationPolicyNamespace,
  * });
@@ -74,7 +74,7 @@ export interface GetReplicationPoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplicationPolicies = oci.ObjectStorage.getReplicationPolicies({
+ * const testReplicationPolicies = oci.objectstorage.getReplicationPolicies({
  *     bucket: replicationPolicyBucket,
  *     namespace: replicationPolicyNamespace,
  * });
@@ -97,7 +97,7 @@ export interface GetReplicationPoliciesOutputArgs {
      * The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      */
     bucket: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.GetReplicationPoliciesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.GetReplicationPoliciesFilterArgs>[] | undefined>;
     /**
      * The Object Storage namespace used for the request.
      */

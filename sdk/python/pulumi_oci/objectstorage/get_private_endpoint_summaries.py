@@ -107,9 +107,9 @@ def get_private_endpoint_summaries(compartment_id: Optional[_builtins.str] = Non
         id=pulumi.get(__ret__, 'id'),
         namespace=pulumi.get(__ret__, 'namespace'),
         private_endpoint_summaries=pulumi.get(__ret__, 'private_endpoint_summaries'))
-def get_private_endpoint_summaries_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPrivateEndpointSummariesFilterArgs', 'GetPrivateEndpointSummariesFilterArgsDict']]]]] = None,
-                                          namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_private_endpoint_summaries_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPrivateEndpointSummariesFilterArgs', 'GetPrivateEndpointSummariesFilterArgsDict']]]]] = None,
+                                          namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateEndpointSummariesResult]:
     """
     Use this data source to access information about an existing resource.

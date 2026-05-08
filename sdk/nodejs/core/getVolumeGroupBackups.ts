@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeGroupBackups = oci.Core.getVolumeGroupBackups({
+ * const testVolumeGroupBackups = oci.core.getVolumeGroupBackups({
  *     compartmentId: compartmentId,
  *     displayName: volumeGroupBackupDisplayName,
  *     volumeGroupId: testVolumeGroup.id,
@@ -92,7 +92,7 @@ export interface GetVolumeGroupBackupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeGroupBackups = oci.Core.getVolumeGroupBackups({
+ * const testVolumeGroupBackups = oci.core.getVolumeGroupBackups({
  *     compartmentId: compartmentId,
  *     displayName: volumeGroupBackupDisplayName,
  *     volumeGroupId: testVolumeGroup.id,
@@ -120,10 +120,10 @@ export interface GetVolumeGroupBackupsOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVolumeGroupBackupsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVolumeGroupBackupsFilterArgs>[] | undefined>;
     /**
      * The OCID of the volume group.
      */
-    volumeGroupId?: pulumi.Input<string>;
+    volumeGroupId?: pulumi.Input<string | undefined>;
 }

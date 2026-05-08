@@ -294,7 +294,7 @@ def get_domains_my_auth_token(authorization: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_my_auth_token = oci.Identity.get_domains_my_auth_token(idcs_endpoint=test_domain["url"],
+    test_my_auth_token = oci.identity.get_domains_my_auth_token(idcs_endpoint=test_domain["url"],
         my_auth_token_id=test_auth_token["id"],
         authorization=my_auth_token_authorization,
         resource_type_schema_version=my_auth_token_resource_type_schema_version)
@@ -336,10 +336,10 @@ def get_domains_my_auth_token(authorization: Optional[_builtins.str] = None,
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'),
         users=pulumi.get(__ret__, 'users'))
-def get_domains_my_auth_token_output(authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                     my_auth_token_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                     resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_my_auth_token_output(authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                     my_auth_token_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                     resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsMyAuthTokenResult]:
     """
     This data source provides details about a specific My Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -352,7 +352,7 @@ def get_domains_my_auth_token_output(authorization: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_my_auth_token = oci.Identity.get_domains_my_auth_token(idcs_endpoint=test_domain["url"],
+    test_my_auth_token = oci.identity.get_domains_my_auth_token(idcs_endpoint=test_domain["url"],
         my_auth_token_id=test_auth_token["id"],
         authorization=my_auth_token_authorization,
         resource_type_schema_version=my_auth_token_resource_type_schema_version)

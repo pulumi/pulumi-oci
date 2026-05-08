@@ -119,11 +119,11 @@ export interface AutonomousContainerDatabaseSnapshotStandbyState {
     /**
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    autonomousContainerDatabaseId?: pulumi.Input<string>;
+    autonomousContainerDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * type of connection strings when converting database to snapshot mode
      */
-    connectionStringsType?: pulumi.Input<string>;
+    connectionStringsType?: pulumi.Input<string | undefined>;
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled. 
      *
@@ -131,7 +131,7 @@ export interface AutonomousContainerDatabaseSnapshotStandbyState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    role?: pulumi.Input<string>;
+    role?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -145,7 +145,7 @@ export interface AutonomousContainerDatabaseSnapshotStandbyArgs {
     /**
      * type of connection strings when converting database to snapshot mode
      */
-    connectionStringsType?: pulumi.Input<string>;
+    connectionStringsType?: pulumi.Input<string | undefined>;
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled. 
      *

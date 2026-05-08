@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTopUtilizedProductLicenses = oci.LicenseManager.getTopUtilizedProductLicenses({
+ * const testTopUtilizedProductLicenses = oci.licensemanager.getTopUtilizedProductLicenses({
  *     compartmentId: compartmentId,
- *     isCompartmentIdInSubtree: topUtilizedProductLicenseIsCompartmentIdInSubtree,
+ *     isCompartmentIdInSubtree: topUtilizedProductLicenseIsCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -71,9 +71,9 @@ export interface GetTopUtilizedProductLicensesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTopUtilizedProductLicenses = oci.LicenseManager.getTopUtilizedProductLicenses({
+ * const testTopUtilizedProductLicenses = oci.licensemanager.getTopUtilizedProductLicenses({
  *     compartmentId: compartmentId,
- *     isCompartmentIdInSubtree: topUtilizedProductLicenseIsCompartmentIdInSubtree,
+ *     isCompartmentIdInSubtree: topUtilizedProductLicenseIsCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -96,5 +96,5 @@ export interface GetTopUtilizedProductLicensesOutputArgs {
     /**
      * Indicates if the given compartment is the root compartment.
      */
-    isCompartmentIdInSubtree?: pulumi.Input<boolean>;
+    isCompartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
 }

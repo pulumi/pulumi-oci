@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSupportedCommitments = oci.Ocvp.getSupportedCommitments({
+ * const testSupportedCommitments = oci.ocvp.getSupportedCommitments({
  *     compartmentId: compartmentId,
  *     hostShapeName: testShape.name,
  * });
@@ -74,7 +74,7 @@ export interface GetSupportedCommitmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSupportedCommitments = oci.Ocvp.getSupportedCommitments({
+ * const testSupportedCommitments = oci.ocvp.getSupportedCommitments({
  *     compartmentId: compartmentId,
  *     hostShapeName: testShape.name,
  * });
@@ -97,9 +97,9 @@ export interface GetSupportedCommitmentsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Ocvp.GetSupportedCommitmentsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Ocvp.GetSupportedCommitmentsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match or support the given ESXi host shape.
      */
-    hostShapeName?: pulumi.Input<string>;
+    hostShapeName?: pulumi.Input<string | undefined>;
 }

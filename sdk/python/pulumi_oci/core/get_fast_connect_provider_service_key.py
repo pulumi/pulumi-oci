@@ -118,7 +118,7 @@ def get_fast_connect_provider_service_key(provider_service_id: Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_fast_connect_provider_service_key = oci.Core.get_fast_connect_provider_service_key(provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"],
+    test_fast_connect_provider_service_key = oci.core.get_fast_connect_provider_service_key(provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"],
         provider_service_key_name=fast_connect_provider_service_key_provider_service_key_name)
     ```
 
@@ -139,8 +139,8 @@ def get_fast_connect_provider_service_key(provider_service_id: Optional[_builtin
         peering_location=pulumi.get(__ret__, 'peering_location'),
         provider_service_id=pulumi.get(__ret__, 'provider_service_id'),
         provider_service_key_name=pulumi.get(__ret__, 'provider_service_key_name'))
-def get_fast_connect_provider_service_key_output(provider_service_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                 provider_service_key_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fast_connect_provider_service_key_output(provider_service_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                 provider_service_key_name: pulumi.Input[Optional[_builtins.str]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFastConnectProviderServiceKeyResult]:
     """
     This data source provides details about a specific Fast Connect Provider Service Key resource in Oracle Cloud Infrastructure Core service.
@@ -154,7 +154,7 @@ def get_fast_connect_provider_service_key_output(provider_service_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_fast_connect_provider_service_key = oci.Core.get_fast_connect_provider_service_key(provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"],
+    test_fast_connect_provider_service_key = oci.core.get_fast_connect_provider_service_key(provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"],
         provider_service_key_name=fast_connect_provider_service_key_provider_service_key_name)
     ```
 

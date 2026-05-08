@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     maxSessionTtlInSeconds: bastionMaxSessionTtlInSeconds,
+ *     maxSessionTtlInSeconds: Number(bastionMaxSessionTtlInSeconds),
  *     name: bastionName,
  *     phoneBookEntry: bastionPhoneBookEntry,
  *     securityAttributes: bastionSecurityAttributes,
@@ -236,67 +236,67 @@ export interface BastionState {
     /**
      * The type of bastion. Use `standard`.
      */
-    bastionType?: pulumi.Input<string>;
+    bastionType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
      */
-    clientCidrBlockAllowLists?: pulumi.Input<pulumi.Input<string>[]>;
+    clientCidrBlockAllowLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
      */
-    dnsProxyStatus?: pulumi.Input<string>;
+    dnsProxyStatus?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A message describing the current state in more detail.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The maximum amount of time that any session on the bastion can remain active.
      */
-    maxSessionTtlInSeconds?: pulumi.Input<number>;
+    maxSessionTtlInSeconds?: pulumi.Input<number | undefined>;
     /**
      * The maximum number of active sessions allowed on the bastion.
      */
-    maxSessionsAllowed?: pulumi.Input<number>;
+    maxSessionsAllowed?: pulumi.Input<number | undefined>;
     /**
      * The name of the bastion, which can't be changed after creation.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
      */
-    phoneBookEntry?: pulumi.Input<string>;
+    phoneBookEntry?: pulumi.Input<string | undefined>;
     /**
      * The private IP address of the created private endpoint.
      */
-    privateEndpointIpAddress?: pulumi.Input<string>;
+    privateEndpointIpAddress?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The current state of the bastion.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
      */
-    staticJumpHostIpAddresses?: pulumi.Input<pulumi.Input<string>[]>;
+    staticJumpHostIpAddresses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The unique identifier (OCID) of the subnet that the bastion connects to.
      *
@@ -304,19 +304,19 @@ export interface BastionState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    targetSubnetId?: pulumi.Input<string>;
+    targetSubnetId?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
      */
-    targetVcnId?: pulumi.Input<string>;
+    targetVcnId?: pulumi.Input<string | undefined>;
     /**
      * The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the bastion was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -330,7 +330,7 @@ export interface BastionArgs {
     /**
      * (Updatable) A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
      */
-    clientCidrBlockAllowLists?: pulumi.Input<pulumi.Input<string>[]>;
+    clientCidrBlockAllowLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
      */
@@ -338,35 +338,35 @@ export interface BastionArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
      */
-    dnsProxyStatus?: pulumi.Input<string>;
+    dnsProxyStatus?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The maximum amount of time that any session on the bastion can remain active.
      */
-    maxSessionTtlInSeconds?: pulumi.Input<number>;
+    maxSessionTtlInSeconds?: pulumi.Input<number | undefined>;
     /**
      * The name of the bastion, which can't be changed after creation.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
      */
-    phoneBookEntry?: pulumi.Input<string>;
+    phoneBookEntry?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls. Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
      */
-    staticJumpHostIpAddresses?: pulumi.Input<pulumi.Input<string>[]>;
+    staticJumpHostIpAddresses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The unique identifier (OCID) of the subnet that the bastion connects to.
      *

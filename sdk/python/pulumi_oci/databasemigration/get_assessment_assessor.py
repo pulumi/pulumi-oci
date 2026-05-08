@@ -241,7 +241,7 @@ def get_assessment_assessor(assessment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_assessment_assessor = oci.DatabaseMigration.get_assessment_assessor(assessment_id=test_assessment["id"],
+    test_assessment_assessor = oci.databasemigration.get_assessment_assessor(assessment_id=test_assessment["id"],
         assessor_name=assessment_assessor_assessor_name)
     ```
 
@@ -272,8 +272,8 @@ def get_assessment_assessor(assessment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         script=pulumi.get(__ret__, 'script'),
         state=pulumi.get(__ret__, 'state'))
-def get_assessment_assessor_output(assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   assessor_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_assessment_assessor_output(assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   assessor_name: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAssessmentAssessorResult]:
     """
     This data source provides details about a specific Assessment Assessor resource in Oracle Cloud Infrastructure Database Migration service.
@@ -286,7 +286,7 @@ def get_assessment_assessor_output(assessment_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_assessment_assessor = oci.DatabaseMigration.get_assessment_assessor(assessment_id=test_assessment["id"],
+    test_assessment_assessor = oci.databasemigration.get_assessment_assessor(assessment_id=test_assessment["id"],
         assessor_name=assessment_assessor_assessor_name)
     ```
 

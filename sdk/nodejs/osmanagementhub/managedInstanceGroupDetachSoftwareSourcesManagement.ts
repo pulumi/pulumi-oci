@@ -119,15 +119,15 @@ export interface ManagedInstanceGroupDetachSoftwareSourcesManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
-    managedInstanceGroupId?: pulumi.Input<string>;
+    managedInstanceGroupId?: pulumi.Input<string | undefined>;
     /**
      * List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from the group.
      */
-    softwareSources?: pulumi.Input<pulumi.Input<string>[]>;
+    softwareSources?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetails | undefined>;
 }
 
 /**
@@ -145,5 +145,5 @@ export interface ManagedInstanceGroupDetachSoftwareSourcesManagementArgs {
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetails | undefined>;
 }

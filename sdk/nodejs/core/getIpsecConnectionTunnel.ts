@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpSecConnectionTunnel = oci.Core.getIpsecConnectionTunnel({
+ * const testIpSecConnectionTunnel = oci.core.getIpsecConnectionTunnel({
  *     ipsecId: testIpsec.id,
  *     tunnelId: testIpSecConnectionTunnels.ipSecConnectionTunnels[0].id,
  * });
@@ -142,7 +142,7 @@ export interface GetIpsecConnectionTunnelResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpSecConnectionTunnel = oci.Core.getIpsecConnectionTunnel({
+ * const testIpSecConnectionTunnel = oci.core.getIpsecConnectionTunnel({
  *     ipsecId: testIpsec.id,
  *     tunnelId: testIpSecConnectionTunnels.ipSecConnectionTunnels[0].id,
  * });

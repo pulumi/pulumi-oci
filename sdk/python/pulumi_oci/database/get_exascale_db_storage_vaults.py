@@ -193,15 +193,15 @@ def get_exascale_db_storage_vaults(attached_shape_attributes: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_exascale_db_storage_vaults = oci.Database.get_exascale_db_storage_vaults(compartment_id=compartment_id,
+    test_exascale_db_storage_vaults = oci.database.get_exascale_db_storage_vaults(compartment_id=compartment_id,
         attached_shape_attributes=exascale_db_storage_vault_attached_shape_attributes,
         attached_shape_attributes_not_equal_to=exascale_db_storage_vault_attached_shape_attributes_not_equal_to,
         cluster_placement_group_id=test_cluster_placement_group["id"],
         display_name=exascale_db_storage_vault_display_name,
         exadata_infrastructure_id=test_exadata_infrastructure["id"],
         state=exascale_db_storage_vault_state,
-        vm_cluster_count_greater_than_or_equal_to=exascale_db_storage_vault_vm_cluster_count_greater_than_or_equal_to,
-        vm_cluster_count_less_than_or_equal_to=exascale_db_storage_vault_vm_cluster_count_less_than_or_equal_to)
+        vm_cluster_count_greater_than_or_equal_to=int(exascale_db_storage_vault_vm_cluster_count_greater_than_or_equal_to),
+        vm_cluster_count_less_than_or_equal_to=int(exascale_db_storage_vault_vm_cluster_count_less_than_or_equal_to))
     ```
 
 
@@ -242,16 +242,16 @@ def get_exascale_db_storage_vaults(attached_shape_attributes: Optional[_builtins
         state=pulumi.get(__ret__, 'state'),
         vm_cluster_count_greater_than_or_equal_to=pulumi.get(__ret__, 'vm_cluster_count_greater_than_or_equal_to'),
         vm_cluster_count_less_than_or_equal_to=pulumi.get(__ret__, 'vm_cluster_count_less_than_or_equal_to'))
-def get_exascale_db_storage_vaults_output(attached_shape_attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          attached_shape_attributes_not_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          cluster_placement_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                          display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          exadata_infrastructure_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExascaleDbStorageVaultsFilterArgs', 'GetExascaleDbStorageVaultsFilterArgsDict']]]]] = None,
-                                          state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          vm_cluster_count_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                          vm_cluster_count_less_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_exascale_db_storage_vaults_output(attached_shape_attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          attached_shape_attributes_not_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          cluster_placement_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          exadata_infrastructure_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExascaleDbStorageVaultsFilterArgs', 'GetExascaleDbStorageVaultsFilterArgsDict']]]]] = None,
+                                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          vm_cluster_count_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                          vm_cluster_count_less_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExascaleDbStorageVaultsResult]:
     """
     This data source provides the list of Exascale Db Storage Vaults in Oracle Cloud Infrastructure Database service.
@@ -264,15 +264,15 @@ def get_exascale_db_storage_vaults_output(attached_shape_attributes: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_exascale_db_storage_vaults = oci.Database.get_exascale_db_storage_vaults(compartment_id=compartment_id,
+    test_exascale_db_storage_vaults = oci.database.get_exascale_db_storage_vaults(compartment_id=compartment_id,
         attached_shape_attributes=exascale_db_storage_vault_attached_shape_attributes,
         attached_shape_attributes_not_equal_to=exascale_db_storage_vault_attached_shape_attributes_not_equal_to,
         cluster_placement_group_id=test_cluster_placement_group["id"],
         display_name=exascale_db_storage_vault_display_name,
         exadata_infrastructure_id=test_exadata_infrastructure["id"],
         state=exascale_db_storage_vault_state,
-        vm_cluster_count_greater_than_or_equal_to=exascale_db_storage_vault_vm_cluster_count_greater_than_or_equal_to,
-        vm_cluster_count_less_than_or_equal_to=exascale_db_storage_vault_vm_cluster_count_less_than_or_equal_to)
+        vm_cluster_count_greater_than_or_equal_to=int(exascale_db_storage_vault_vm_cluster_count_greater_than_or_equal_to),
+        vm_cluster_count_less_than_or_equal_to=int(exascale_db_storage_vault_vm_cluster_count_less_than_or_equal_to))
     ```
 
 

@@ -352,7 +352,7 @@ def get_namespace_lookup(lookup_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_lookup = oci.LogAnalytics.get_namespace_lookup(lookup_name=namespace_lookup_lookup_name,
+    test_namespace_lookup = oci.loganalytics.get_namespace_lookup(lookup_name=namespace_lookup_lookup_name,
         namespace=namespace_lookup_namespace)
     ```
 
@@ -393,8 +393,8 @@ def get_namespace_lookup(lookup_name: Optional[_builtins.str] = None,
         status_summaries=pulumi.get(__ret__, 'status_summaries'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
-def get_namespace_lookup_output(lookup_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_namespace_lookup_output(lookup_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceLookupResult]:
     """
     This data source provides details about a specific Namespace Lookup resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -407,7 +407,7 @@ def get_namespace_lookup_output(lookup_name: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_lookup = oci.LogAnalytics.get_namespace_lookup(lookup_name=namespace_lookup_lookup_name,
+    test_namespace_lookup = oci.loganalytics.get_namespace_lookup(lookup_name=namespace_lookup_lookup_name,
         namespace=namespace_lookup_namespace)
     ```
 

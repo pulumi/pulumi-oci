@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentAvailableHistories = oci.ManagementAgent.getManagementAgentAvailableHistories({
+ * const testManagementAgentAvailableHistories = oci.managementagent.getManagementAgentAvailableHistories({
  *     managementAgentId: testManagementAgent.id,
  *     timeAvailabilityStatusEndedGreaterThan: managementAgentAvailableHistoryTimeAvailabilityStatusEndedGreaterThan,
  *     timeAvailabilityStatusStartedLessThan: managementAgentAvailableHistoryTimeAvailabilityStatusStartedLessThan,
@@ -84,7 +84,7 @@ export interface GetManagementAgentAvailableHistoriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentAvailableHistories = oci.ManagementAgent.getManagementAgentAvailableHistories({
+ * const testManagementAgentAvailableHistories = oci.managementagent.getManagementAgentAvailableHistories({
  *     managementAgentId: testManagementAgent.id,
  *     timeAvailabilityStatusEndedGreaterThan: managementAgentAvailableHistoryTimeAvailabilityStatusEndedGreaterThan,
  *     timeAvailabilityStatusStartedLessThan: managementAgentAvailableHistoryTimeAvailabilityStatusStartedLessThan,
@@ -105,7 +105,7 @@ export function getManagementAgentAvailableHistoriesOutput(args: GetManagementAg
  * A collection of arguments for invoking getManagementAgentAvailableHistories.
  */
 export interface GetManagementAgentAvailableHistoriesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.GetManagementAgentAvailableHistoriesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.GetManagementAgentAvailableHistoriesFilterArgs>[] | undefined>;
     /**
      * Unique Management Agent identifier
      */
@@ -113,9 +113,9 @@ export interface GetManagementAgentAvailableHistoriesOutputArgs {
     /**
      * Filter to limit the availability history results to that of time after the input time including the boundary record. Defaulted to current date minus one year. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
      */
-    timeAvailabilityStatusEndedGreaterThan?: pulumi.Input<string>;
+    timeAvailabilityStatusEndedGreaterThan?: pulumi.Input<string | undefined>;
     /**
      * Filter to limit the availability history results to that of time before the input time including the boundary record Defaulted to current date. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
      */
-    timeAvailabilityStatusStartedLessThan?: pulumi.Input<string>;
+    timeAvailabilityStatusStartedLessThan?: pulumi.Input<string | undefined>;
 }

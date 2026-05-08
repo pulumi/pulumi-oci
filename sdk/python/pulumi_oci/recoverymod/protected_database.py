@@ -27,13 +27,13 @@ class ProtectedDatabaseArgs:
                  password: pulumi.Input[_builtins.str],
                  protection_policy_id: pulumi.Input[_builtins.str],
                  recovery_service_subnets: pulumi.Input[Sequence[pulumi.Input['ProtectedDatabaseRecoveryServiceSubnetArgs']]],
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deletion_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_redo_logs_shipped: Optional[pulumi.Input[_builtins.bool]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deletion_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_redo_logs_shipped: pulumi.Input[Optional[_builtins.bool]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ProtectedDatabase resource.
 
@@ -152,43 +152,43 @@ class ProtectedDatabaseArgs:
 
     @_builtins.property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the protected database.
         """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
-    def database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseSize")
-    def database_size(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_size(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
         """
         return pulumi.get(self, "database_size")
 
     @database_size.setter
-    def database_size(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_size(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_size", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deletionSchedule")
-    def deletion_schedule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deletion_schedule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
         * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
@@ -197,36 +197,36 @@ class ProtectedDatabaseArgs:
         return pulumi.get(self, "deletion_schedule")
 
     @deletion_schedule.setter
-    def deletion_schedule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deletion_schedule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deletion_schedule", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isRedoLogsShipped")
-    def is_redo_logs_shipped(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_redo_logs_shipped(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
         """
         return pulumi.get(self, "is_redo_logs_shipped")
 
     @is_redo_logs_shipped.setter
-    def is_redo_logs_shipped(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_redo_logs_shipped(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_redo_logs_shipped", value)
 
     @_builtins.property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
 
@@ -237,37 +237,37 @@ class ProtectedDatabaseArgs:
         return pulumi.get(self, "subscription_id")
 
     @subscription_id.setter
-    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subscription_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subscription_id", value)
 
 
 @pulumi.input_type
 class _ProtectedDatabaseState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deletion_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 health: Optional[pulumi.Input[_builtins.str]] = None,
-                 health_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_read_only_resource: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_redo_logs_shipped: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 metrics: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectedDatabaseMetricArgs']]]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 policy_locked_date_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 protection_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 recovery_service_subnets: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectedDatabaseRecoveryServiceSubnetArgs']]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc_user_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deletion_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 health: pulumi.Input[Optional[_builtins.str]] = None,
+                 health_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_read_only_resource: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_redo_logs_shipped: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 metrics: pulumi.Input[Optional[Sequence[pulumi.Input['ProtectedDatabaseMetricArgs']]]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 policy_locked_date_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 protection_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 recovery_service_subnets: pulumi.Input[Optional[Sequence[pulumi.Input['ProtectedDatabaseRecoveryServiceSubnetArgs']]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc_user_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProtectedDatabase resources.
 
@@ -353,67 +353,67 @@ class _ProtectedDatabaseState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment that contains the protected database.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the protected database.
         """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
-    def database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseSize")
-    def database_size(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_size(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
         """
         return pulumi.get(self, "database_size")
 
     @database_size.setter
-    def database_size(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_size(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_size", value)
 
     @_builtins.property
     @pulumi.getter(name="dbUniqueName")
-    def db_unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_unique_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
         """
         return pulumi.get(self, "db_unique_name")
 
     @db_unique_name.setter
-    def db_unique_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_unique_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_unique_name", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deletionSchedule")
-    def deletion_schedule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deletion_schedule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
         * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
@@ -422,168 +422,168 @@ class _ProtectedDatabaseState:
         return pulumi.get(self, "deletion_schedule")
 
     @deletion_schedule.setter
-    def deletion_schedule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deletion_schedule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deletion_schedule", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def health(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def health(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates the protection status of the database.
         """
         return pulumi.get(self, "health")
 
     @health.setter
-    def health(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def health(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "health", value)
 
     @_builtins.property
     @pulumi.getter(name="healthDetails")
-    def health_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def health_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current health of the protected database.
         """
         return pulumi.get(self, "health_details")
 
     @health_details.setter
-    def health_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def health_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "health_details", value)
 
     @_builtins.property
     @pulumi.getter(name="isReadOnlyResource")
-    def is_read_only_resource(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_read_only_resource(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the protected database is created by Recovery Service or created manually. Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource. Set to <b>FALSE</b> for a user-defined protected database.
         """
         return pulumi.get(self, "is_read_only_resource")
 
     @is_read_only_resource.setter
-    def is_read_only_resource(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_read_only_resource(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_read_only_resource", value)
 
     @_builtins.property
     @pulumi.getter(name="isRedoLogsShipped")
-    def is_redo_logs_shipped(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_redo_logs_shipped(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
         """
         return pulumi.get(self, "is_redo_logs_shipped")
 
     @is_redo_logs_shipped.setter
-    def is_redo_logs_shipped(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_redo_logs_shipped(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_redo_logs_shipped", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProtectedDatabaseMetricArgs']]]]:
+    def metrics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ProtectedDatabaseMetricArgs']]]]:
         """
         Backup performance and storage utilization metrics for the protected database.
         """
         return pulumi.get(self, "metrics")
 
     @metrics.setter
-    def metrics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectedDatabaseMetricArgs']]]]):
+    def metrics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ProtectedDatabaseMetricArgs']]]]):
         pulumi.set(self, "metrics", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter(name="policyLockedDateTime")
-    def policy_locked_date_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def policy_locked_date_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
         """
         return pulumi.get(self, "policy_locked_date_time")
 
     @policy_locked_date_time.setter
-    def policy_locked_date_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def policy_locked_date_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "policy_locked_date_time", value)
 
     @_builtins.property
     @pulumi.getter(name="protectionPolicyId")
-    def protection_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protection_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the protection policy associated with the protected database.
         """
         return pulumi.get(self, "protection_policy_id")
 
     @protection_policy_id.setter
-    def protection_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protection_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protection_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="recoveryServiceSubnets")
-    def recovery_service_subnets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProtectedDatabaseRecoveryServiceSubnetArgs']]]]:
+    def recovery_service_subnets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ProtectedDatabaseRecoveryServiceSubnetArgs']]]]:
         """
         (Updatable) List of recovery service subnet resources associated with the protected database.
         """
         return pulumi.get(self, "recovery_service_subnets")
 
     @recovery_service_subnets.setter
-    def recovery_service_subnets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectedDatabaseRecoveryServiceSubnetArgs']]]]):
+    def recovery_service_subnets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ProtectedDatabaseRecoveryServiceSubnetArgs']]]]):
         pulumi.set(self, "recovery_service_subnets", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Protected Database.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
 
@@ -594,55 +594,55 @@ class _ProtectedDatabaseState:
         return pulumi.get(self, "subscription_id")
 
     @subscription_id.setter
-    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subscription_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subscription_id", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="vpcUserName")
-    def vpc_user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc_user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
         """
         return pulumi.get(self, "vpc_user_name")
 
     @vpc_user_name.setter
-    def vpc_user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc_user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc_user_name", value)
 
 
@@ -652,19 +652,19 @@ class ProtectedDatabase(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deletion_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_redo_logs_shipped: Optional[pulumi.Input[_builtins.bool]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 protection_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 recovery_service_subnets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectedDatabaseRecoveryServiceSubnetArgs', 'ProtectedDatabaseRecoveryServiceSubnetArgsDict']]]]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deletion_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_redo_logs_shipped: pulumi.Input[Optional[_builtins.bool]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 protection_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 recovery_service_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectedDatabaseRecoveryServiceSubnetArgs', 'ProtectedDatabaseRecoveryServiceSubnetArgsDict']]]]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Protected Database resource in Oracle Cloud Infrastructure Recovery service.
@@ -698,7 +698,7 @@ class ProtectedDatabase(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_redo_logs_shipped=protected_database_is_redo_logs_shipped,
+            is_redo_logs_shipped=protected_database_is_redo_logs_shipped == "true",
             subscription_id=test_subscription["id"])
         ```
 
@@ -771,7 +771,7 @@ class ProtectedDatabase(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_redo_logs_shipped=protected_database_is_redo_logs_shipped,
+            is_redo_logs_shipped=protected_database_is_redo_logs_shipped == "true",
             subscription_id=test_subscription["id"])
         ```
 
@@ -799,19 +799,19 @@ class ProtectedDatabase(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deletion_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_redo_logs_shipped: Optional[pulumi.Input[_builtins.bool]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 protection_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 recovery_service_subnets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectedDatabaseRecoveryServiceSubnetArgs', 'ProtectedDatabaseRecoveryServiceSubnetArgsDict']]]]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deletion_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_redo_logs_shipped: pulumi.Input[Optional[_builtins.bool]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 protection_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 recovery_service_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectedDatabaseRecoveryServiceSubnetArgs', 'ProtectedDatabaseRecoveryServiceSubnetArgsDict']]]]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -869,30 +869,30 @@ class ProtectedDatabase(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            database_size: Optional[pulumi.Input[_builtins.str]] = None,
-            db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            deletion_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            health: Optional[pulumi.Input[_builtins.str]] = None,
-            health_details: Optional[pulumi.Input[_builtins.str]] = None,
-            is_read_only_resource: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_redo_logs_shipped: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            metrics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectedDatabaseMetricArgs', 'ProtectedDatabaseMetricArgsDict']]]]] = None,
-            password: Optional[pulumi.Input[_builtins.str]] = None,
-            policy_locked_date_time: Optional[pulumi.Input[_builtins.str]] = None,
-            protection_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            recovery_service_subnets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectedDatabaseRecoveryServiceSubnetArgs', 'ProtectedDatabaseRecoveryServiceSubnetArgsDict']]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            vpc_user_name: Optional[pulumi.Input[_builtins.str]] = None) -> 'ProtectedDatabase':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_size: pulumi.Input[Optional[_builtins.str]] = None,
+            db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            deletion_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            health: pulumi.Input[Optional[_builtins.str]] = None,
+            health_details: pulumi.Input[Optional[_builtins.str]] = None,
+            is_read_only_resource: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_redo_logs_shipped: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            metrics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectedDatabaseMetricArgs', 'ProtectedDatabaseMetricArgsDict']]]]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            policy_locked_date_time: pulumi.Input[Optional[_builtins.str]] = None,
+            protection_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            recovery_service_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectedDatabaseRecoveryServiceSubnetArgs', 'ProtectedDatabaseRecoveryServiceSubnetArgsDict']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            vpc_user_name: pulumi.Input[Optional[_builtins.str]] = None) -> 'ProtectedDatabase':
         """
         Get an existing ProtectedDatabase resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

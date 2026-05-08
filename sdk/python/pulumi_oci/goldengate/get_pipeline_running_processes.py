@@ -95,7 +95,7 @@ def get_pipeline_running_processes(filters: Optional[Sequence[Union['GetPipeline
     import pulumi
     import pulumi_oci as oci
 
-    test_pipeline_running_processes = oci.GoldenGate.get_pipeline_running_processes(pipeline_id=test_pipeline["id"])
+    test_pipeline_running_processes = oci.goldengate.get_pipeline_running_processes(pipeline_id=test_pipeline["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_pipeline_running_processes(filters: Optional[Sequence[Union['GetPipeline
         id=pulumi.get(__ret__, 'id'),
         pipeline_id=pulumi.get(__ret__, 'pipeline_id'),
         pipeline_running_process_collections=pulumi.get(__ret__, 'pipeline_running_process_collections'))
-def get_pipeline_running_processes_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPipelineRunningProcessesFilterArgs', 'GetPipelineRunningProcessesFilterArgsDict']]]]] = None,
-                                          pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pipeline_running_processes_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPipelineRunningProcessesFilterArgs', 'GetPipelineRunningProcessesFilterArgsDict']]]]] = None,
+                                          pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPipelineRunningProcessesResult]:
     """
     This data source provides the list of Pipeline Running Processes in Oracle Cloud Infrastructure Golden Gate service.
@@ -126,7 +126,7 @@ def get_pipeline_running_processes_output(filters: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_pipeline_running_processes = oci.GoldenGate.get_pipeline_running_processes(pipeline_id=test_pipeline["id"])
+    test_pipeline_running_processes = oci.goldengate.get_pipeline_running_processes(pipeline_id=test_pipeline["id"])
     ```
 
 

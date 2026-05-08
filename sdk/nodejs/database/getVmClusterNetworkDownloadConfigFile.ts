@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVmClusterNetworkDownloadConfigFile = oci.Database.getVmClusterNetworkDownloadConfigFile({
+ * const testVmClusterNetworkDownloadConfigFile = oci.database.getVmClusterNetworkDownloadConfigFile({
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     vmClusterNetworkId: testVmClusterNetwork.id,
  *     base64EncodeContent: false,
@@ -76,7 +76,7 @@ export interface GetVmClusterNetworkDownloadConfigFileResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVmClusterNetworkDownloadConfigFile = oci.Database.getVmClusterNetworkDownloadConfigFile({
+ * const testVmClusterNetworkDownloadConfigFile = oci.database.getVmClusterNetworkDownloadConfigFile({
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     vmClusterNetworkId: testVmClusterNetwork.id,
  *     base64EncodeContent: false,
@@ -99,7 +99,7 @@ export interface GetVmClusterNetworkDownloadConfigFileOutputArgs {
     /**
      * Encodes the downloaded txt config in base64. It is recommended to set this to `true` to avoid corrupting the file in Terraform state. The default value is `false`.
      */
-    base64EncodeContent?: pulumi.Input<boolean>;
+    base64EncodeContent?: pulumi.Input<boolean | undefined>;
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

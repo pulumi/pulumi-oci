@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOauthPartnerCertificate = oci.Identity.getDomainsOauthPartnerCertificate({
+ * const testOauthPartnerCertificate = oci.identity.getDomainsOauthPartnerCertificate({
  *     idcsEndpoint: testDomain.url,
  *     oAuthPartnerCertificateId: testOauthPartnerCertificateOciIdentityDomainsOauthPartnerCertificate.id,
  *     authorization: oauthPartnerCertificateAuthorization,
@@ -173,7 +173,7 @@ export interface GetDomainsOauthPartnerCertificateResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOauthPartnerCertificate = oci.Identity.getDomainsOauthPartnerCertificate({
+ * const testOauthPartnerCertificate = oci.identity.getDomainsOauthPartnerCertificate({
  *     idcsEndpoint: testDomain.url,
  *     oAuthPartnerCertificateId: testOauthPartnerCertificateOciIdentityDomainsOauthPartnerCertificate.id,
  *     authorization: oauthPartnerCertificateAuthorization,
@@ -198,7 +198,7 @@ export interface GetDomainsOauthPartnerCertificateOutputArgs {
     /**
      * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -210,5 +210,5 @@ export interface GetDomainsOauthPartnerCertificateOutputArgs {
     /**
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
 }

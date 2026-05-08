@@ -121,7 +121,7 @@ def get_services(comms_manager_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_services = oci.AnnouncementsService.get_services(compartment_id=compartment_id,
+    test_services = oci.announcementsservice.get_services(compartment_id=compartment_id,
         comms_manager_name=service_comms_manager_name,
         platform_type=service_platform_type)
     ```
@@ -146,10 +146,10 @@ def get_services(comms_manager_name: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         platform_type=pulumi.get(__ret__, 'platform_type'),
         services_collections=pulumi.get(__ret__, 'services_collections'))
-def get_services_output(comms_manager_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServicesFilterArgs', 'GetServicesFilterArgsDict']]]]] = None,
-                        platform_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_services_output(comms_manager_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetServicesFilterArgs', 'GetServicesFilterArgsDict']]]]] = None,
+                        platform_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServicesResult]:
     """
     This data source provides the list of Services in Oracle Cloud Infrastructure.
@@ -162,7 +162,7 @@ def get_services_output(comms_manager_name: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_services = oci.AnnouncementsService.get_services(compartment_id=compartment_id,
+    test_services = oci.announcementsservice.get_services(compartment_id=compartment_id,
         comms_manager_name=service_comms_manager_name,
         platform_type=service_platform_type)
     ```

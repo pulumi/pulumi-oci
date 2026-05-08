@@ -323,7 +323,7 @@ def get_delegation_control(delegation_control_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_delegation_control = oci.DelegateAccessControl.get_delegation_control(delegation_control_id=test_delegation_control_oci_delegate_access_control_delegation_control["id"])
+    test_delegation_control = oci.delegateaccesscontrol.get_delegation_control(delegation_control_id=test_delegation_control_oci_delegate_access_control_delegation_control["id"])
     ```
 
 
@@ -358,7 +358,7 @@ def get_delegation_control(delegation_control_id: Optional[_builtins.str] = None
         time_updated=pulumi.get(__ret__, 'time_updated'),
         vault_id=pulumi.get(__ret__, 'vault_id'),
         vault_key_id=pulumi.get(__ret__, 'vault_key_id'))
-def get_delegation_control_output(delegation_control_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_delegation_control_output(delegation_control_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDelegationControlResult]:
     """
     This data source provides details about a specific Delegation Control resource in Oracle Cloud Infrastructure Delegate Access Control service.
@@ -371,7 +371,7 @@ def get_delegation_control_output(delegation_control_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_delegation_control = oci.DelegateAccessControl.get_delegation_control(delegation_control_id=test_delegation_control_oci_delegate_access_control_delegation_control["id"])
+    test_delegation_control = oci.delegateaccesscontrol.get_delegation_control(delegation_control_id=test_delegation_control_oci_delegate_access_control_delegation_control["id"])
     ```
 
 

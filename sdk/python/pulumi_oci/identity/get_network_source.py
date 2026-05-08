@@ -204,7 +204,7 @@ def get_network_source(network_source_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_network_source = oci.Identity.get_network_source(network_source_id=test_network_source_oci_identity_network_source["id"])
+    test_network_source = oci.identity.get_network_source(network_source_id=test_network_source_oci_identity_network_source["id"])
     ```
 
 
@@ -229,7 +229,7 @@ def get_network_source(network_source_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         virtual_source_lists=pulumi.get(__ret__, 'virtual_source_lists'))
-def get_network_source_output(network_source_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_network_source_output(network_source_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkSourceResult]:
     """
     This data source provides details about a specific Network Source resource in Oracle Cloud Infrastructure Identity service.
@@ -242,7 +242,7 @@ def get_network_source_output(network_source_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_network_source = oci.Identity.get_network_source(network_source_id=test_network_source_oci_identity_network_source["id"])
+    test_network_source = oci.identity.get_network_source(network_source_id=test_network_source_oci_identity_network_source["id"])
     ```
 
 

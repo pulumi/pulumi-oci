@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  * const testConfig = new oci.stackmonitoring.Config("test_config", {
  *     compartmentId: compartmentId,
  *     configType: configConfigType,
- *     isEnabled: configIsEnabled,
+ *     isEnabled: configIsEnabled === "true",
  *     resourceType: configResourceType,
  *     license: configLicense,
  *     definedTags: {
@@ -225,71 +225,71 @@ export interface ConfigState {
     /**
      * (Updatable) Property Details
      */
-    additionalConfigurations?: pulumi.Input<inputs.StackMonitoring.ConfigAdditionalConfigurations>;
+    additionalConfigurations?: pulumi.Input<inputs.StackMonitoring.ConfigAdditionalConfigurations | undefined>;
     /**
      * (Updatable) Compartment in which the configuration is created.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
      */
-    configType?: pulumi.Input<string>;
+    configType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The display name of the configuration.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of dynamic groups dedicated for Stack Monitoring.
      */
-    dynamicGroups?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.ConfigDynamicGroup>[]>;
+    dynamicGroups?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.ConfigDynamicGroup>[] | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) True if customer decides marks configuration as manually configured.
      */
-    isManuallyOnboarded?: pulumi.Input<boolean>;
+    isManuallyOnboarded?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) License edition.
      */
-    license?: pulumi.Input<string>;
+    license?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of policy names assigned for onboarding
      */
-    policyNames?: pulumi.Input<pulumi.Input<string>[]>;
+    policyNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The type of resource to configure for automatic promotion.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The current state of the configuration.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the configuration was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the Config was updated.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of user groups dedicated for Stack Monitoring.
      */
-    userGroups?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.ConfigUserGroup>[]>;
+    userGroups?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.ConfigUserGroup>[] | undefined>;
     /**
      * (Updatable) Assigned version to given onboard configuration.
      *
@@ -297,7 +297,7 @@ export interface ConfigState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -307,7 +307,7 @@ export interface ConfigArgs {
     /**
      * (Updatable) Property Details
      */
-    additionalConfigurations?: pulumi.Input<inputs.StackMonitoring.ConfigAdditionalConfigurations>;
+    additionalConfigurations?: pulumi.Input<inputs.StackMonitoring.ConfigAdditionalConfigurations | undefined>;
     /**
      * (Updatable) Compartment in which the configuration is created.
      */
@@ -319,43 +319,43 @@ export interface ConfigArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The display name of the configuration.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of dynamic groups dedicated for Stack Monitoring.
      */
-    dynamicGroups?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.ConfigDynamicGroup>[]>;
+    dynamicGroups?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.ConfigDynamicGroup>[] | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) True if customer decides marks configuration as manually configured.
      */
-    isManuallyOnboarded?: pulumi.Input<boolean>;
+    isManuallyOnboarded?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) License edition.
      */
-    license?: pulumi.Input<string>;
+    license?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of policy names assigned for onboarding
      */
-    policyNames?: pulumi.Input<pulumi.Input<string>[]>;
+    policyNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The type of resource to configure for automatic promotion.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of user groups dedicated for Stack Monitoring.
      */
-    userGroups?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.ConfigUserGroup>[]>;
+    userGroups?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.ConfigUserGroup>[] | undefined>;
     /**
      * (Updatable) Assigned version to given onboard configuration.
      *
@@ -363,5 +363,5 @@ export interface ConfigArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    version?: pulumi.Input<string>;
+    version?: pulumi.Input<string | undefined>;
 }

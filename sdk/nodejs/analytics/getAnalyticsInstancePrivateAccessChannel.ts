@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAnalyticsInstancePrivateAccessChannel = oci.Analytics.getAnalyticsInstancePrivateAccessChannel({
+ * const testAnalyticsInstancePrivateAccessChannel = oci.analytics.getAnalyticsInstancePrivateAccessChannel({
  *     analyticsInstanceId: testAnalyticsInstance.id,
  *     privateAccessChannelKey: analyticsInstancePrivateAccessChannelPrivateAccessChannelKey,
  * });
@@ -100,7 +100,7 @@ export interface GetAnalyticsInstancePrivateAccessChannelResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAnalyticsInstancePrivateAccessChannel = oci.Analytics.getAnalyticsInstancePrivateAccessChannel({
+ * const testAnalyticsInstancePrivateAccessChannel = oci.analytics.getAnalyticsInstancePrivateAccessChannel({
  *     analyticsInstanceId: testAnalyticsInstance.id,
  *     privateAccessChannelKey: analyticsInstancePrivateAccessChannelPrivateAccessChannelKey,
  * });

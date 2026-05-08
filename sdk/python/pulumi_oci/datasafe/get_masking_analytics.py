@@ -163,8 +163,8 @@ def get_masking_analytics(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_analytics = oci.DataSafe.get_masking_analytics(compartment_id=compartment_id,
-        compartment_id_in_subtree=masking_analytic_compartment_id_in_subtree,
+    test_masking_analytics = oci.datasafe.get_masking_analytics(compartment_id=compartment_id,
+        compartment_id_in_subtree=masking_analytic_compartment_id_in_subtree == "true",
         group_by=masking_analytic_group_by,
         masking_policy_id=test_masking_policy["id"],
         sensitive_type_id=test_sensitive_type["id"],
@@ -204,14 +204,14 @@ def get_masking_analytics(compartment_id: Optional[_builtins.str] = None,
         sensitive_type_id=pulumi.get(__ret__, 'sensitive_type_id'),
         target_database_group_id=pulumi.get(__ret__, 'target_database_group_id'),
         target_id=pulumi.get(__ret__, 'target_id'))
-def get_masking_analytics_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaskingAnalyticsFilterArgs', 'GetMaskingAnalyticsFilterArgsDict']]]]] = None,
-                                 group_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 masking_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 sensitive_type_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 target_database_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_masking_analytics_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaskingAnalyticsFilterArgs', 'GetMaskingAnalyticsFilterArgsDict']]]]] = None,
+                                 group_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 masking_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 sensitive_type_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 target_database_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingAnalyticsResult]:
     """
     This data source provides the list of Masking Analytics in Oracle Cloud Infrastructure Data Safe service.
@@ -226,8 +226,8 @@ def get_masking_analytics_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_analytics = oci.DataSafe.get_masking_analytics(compartment_id=compartment_id,
-        compartment_id_in_subtree=masking_analytic_compartment_id_in_subtree,
+    test_masking_analytics = oci.datasafe.get_masking_analytics(compartment_id=compartment_id,
+        compartment_id_in_subtree=masking_analytic_compartment_id_in_subtree == "true",
         group_by=masking_analytic_group_by,
         masking_policy_id=test_masking_policy["id"],
         sensitive_type_id=test_sensitive_type["id"],

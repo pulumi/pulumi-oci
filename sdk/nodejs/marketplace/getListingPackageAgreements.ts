@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListingPackageAgreements = oci.Marketplace.getListingPackageAgreements({
+ * const testListingPackageAgreements = oci.marketplace.getListingPackageAgreements({
  *     listingId: testListing.id,
  *     packageVersion: listingPackageAgreementPackageVersion,
  *     compartmentId: compartmentId,
@@ -84,7 +84,7 @@ export interface GetListingPackageAgreementsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListingPackageAgreements = oci.Marketplace.getListingPackageAgreements({
+ * const testListingPackageAgreements = oci.marketplace.getListingPackageAgreements({
  *     listingId: testListing.id,
  *     packageVersion: listingPackageAgreementPackageVersion,
  *     compartmentId: compartmentId,
@@ -108,8 +108,8 @@ export interface GetListingPackageAgreementsOutputArgs {
     /**
      * The unique identifier for the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Marketplace.GetListingPackageAgreementsFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Marketplace.GetListingPackageAgreementsFilterArgs>[] | undefined>;
     /**
      * The unique identifier for the listing.
      */

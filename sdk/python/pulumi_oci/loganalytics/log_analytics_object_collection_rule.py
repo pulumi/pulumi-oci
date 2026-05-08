@@ -26,28 +26,28 @@ class LogAnalyticsObjectCollectionRuleArgs:
                  namespace: pulumi.Input[_builtins.str],
                  os_bucket_name: pulumi.Input[_builtins.str],
                  os_namespace: pulumi.Input[_builtins.str],
-                 char_encoding: Optional[pulumi.Input[_builtins.str]] = None,
-                 collection_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_force_historic_collection: Optional[pulumi.Input[_builtins.bool]] = None,
-                 log_set: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_set_ext_regex: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_set_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_source_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_name_filters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 overrides: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]]] = None,
-                 poll_since: Optional[pulumi.Input[_builtins.str]] = None,
-                 poll_till: Optional[pulumi.Input[_builtins.str]] = None,
-                 stream_cursor_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 stream_cursor_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 stream_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None):
+                 char_encoding: pulumi.Input[Optional[_builtins.str]] = None,
+                 collection_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_force_historic_collection: pulumi.Input[Optional[_builtins.bool]] = None,
+                 log_set: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_set_ext_regex: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_set_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_source_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_name_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 overrides: pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]]] = None,
+                 poll_since: pulumi.Input[Optional[_builtins.str]] = None,
+                 poll_till: pulumi.Input[Optional[_builtins.str]] = None,
+                 stream_cursor_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 stream_cursor_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 stream_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a LogAnalyticsObjectCollectionRule resource.
 
@@ -195,259 +195,259 @@ class LogAnalyticsObjectCollectionRuleArgs:
 
     @_builtins.property
     @pulumi.getter(name="charEncoding")
-    def char_encoding(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def char_encoding(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
         """
         return pulumi.get(self, "char_encoding")
 
     @char_encoding.setter
-    def char_encoding(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def char_encoding(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "char_encoding", value)
 
     @_builtins.property
     @pulumi.getter(name="collectionType")
-    def collection_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def collection_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of collection. Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
         """
         return pulumi.get(self, "collection_type")
 
     @collection_type.setter
-    def collection_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def collection_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "collection_type", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="entityId")
-    def entity_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
         """
         return pulumi.get(self, "entity_id")
 
     @entity_id.setter
-    def entity_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether or not this rule is currently enabled.
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isForceHistoricCollection")
-    def is_force_historic_collection(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_force_historic_collection(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
         """
         return pulumi.get(self, "is_force_historic_collection")
 
     @is_force_historic_collection.setter
-    def is_force_historic_collection(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_force_historic_collection(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_force_historic_collection", value)
 
     @_builtins.property
     @pulumi.getter(name="logSet")
-    def log_set(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def log_set(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
         """
         return pulumi.get(self, "log_set")
 
     @log_set.setter
-    def log_set(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def log_set(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "log_set", value)
 
     @_builtins.property
     @pulumi.getter(name="logSetExtRegex")
-    def log_set_ext_regex(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def log_set_ext_regex(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
         """
         return pulumi.get(self, "log_set_ext_regex")
 
     @log_set_ext_regex.setter
-    def log_set_ext_regex(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def log_set_ext_regex(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "log_set_ext_regex", value)
 
     @_builtins.property
     @pulumi.getter(name="logSetKey")
-    def log_set_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def log_set_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
         """
         return pulumi.get(self, "log_set_key")
 
     @log_set_key.setter
-    def log_set_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def log_set_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "log_set_key", value)
 
     @_builtins.property
     @pulumi.getter(name="logSourceName")
-    def log_source_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def log_source_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of the Log Analytics Source to use for the processing.
         """
         return pulumi.get(self, "log_source_name")
 
     @log_source_name.setter
-    def log_source_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def log_source_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "log_source_name", value)
 
     @_builtins.property
     @pulumi.getter(name="logType")
-    def log_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def log_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of files/objects in this object collection rule.
         """
         return pulumi.get(self, "log_type")
 
     @log_type.setter
-    def log_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def log_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "log_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="objectNameFilters")
-    def object_name_filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def object_name_filters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
         """
         return pulumi.get(self, "object_name_filters")
 
     @object_name_filters.setter
-    def object_name_filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def object_name_filters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "object_name_filters", value)
 
     @_builtins.property
     @pulumi.getter
-    def overrides(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]]]:
+    def overrides(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]]]:
         """
         (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
         """
         return pulumi.get(self, "overrides")
 
     @overrides.setter
-    def overrides(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]]]):
+    def overrides(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]]]):
         pulumi.set(self, "overrides", value)
 
     @_builtins.property
     @pulumi.getter(name="pollSince")
-    def poll_since(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def poll_since(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
         """
         return pulumi.get(self, "poll_since")
 
     @poll_since.setter
-    def poll_since(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def poll_since(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "poll_since", value)
 
     @_builtins.property
     @pulumi.getter(name="pollTill")
-    def poll_till(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def poll_till(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
         """
         return pulumi.get(self, "poll_till")
 
     @poll_till.setter
-    def poll_till(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def poll_till(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "poll_till", value)
 
     @_builtins.property
     @pulumi.getter(name="streamCursorTime")
-    def stream_cursor_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def stream_cursor_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The time from which to consume the objects, if streamCursorType is AT_TIME.
         """
         return pulumi.get(self, "stream_cursor_time")
 
     @stream_cursor_time.setter
-    def stream_cursor_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def stream_cursor_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "stream_cursor_time", value)
 
     @_builtins.property
     @pulumi.getter(name="streamCursorType")
-    def stream_cursor_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def stream_cursor_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
         """
         return pulumi.get(self, "stream_cursor_type")
 
     @stream_cursor_type.setter
-    def stream_cursor_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def stream_cursor_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "stream_cursor_type", value)
 
     @_builtins.property
     @pulumi.getter(name="streamId")
-    def stream_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def stream_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
         """
         return pulumi.get(self, "stream_id")
 
     @stream_id.setter
-    def stream_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def stream_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "stream_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used. 
 
@@ -458,45 +458,45 @@ class LogAnalyticsObjectCollectionRuleArgs:
         return pulumi.get(self, "timezone")
 
     @timezone.setter
-    def timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "timezone", value)
 
 
 @pulumi.input_type
 class _LogAnalyticsObjectCollectionRuleState:
     def __init__(__self__, *,
-                 char_encoding: Optional[pulumi.Input[_builtins.str]] = None,
-                 collection_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_force_historic_collection: Optional[pulumi.Input[_builtins.bool]] = None,
-                 last_collected_object: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_set: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_set_ext_regex: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_set_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_source_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_name_filters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 os_bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 overrides: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]]] = None,
-                 poll_since: Optional[pulumi.Input[_builtins.str]] = None,
-                 poll_till: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 stream_cursor_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 stream_cursor_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 stream_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None):
+                 char_encoding: pulumi.Input[Optional[_builtins.str]] = None,
+                 collection_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_force_historic_collection: pulumi.Input[Optional[_builtins.bool]] = None,
+                 last_collected_object: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_set: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_set_ext_regex: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_set_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_source_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_name_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 os_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 overrides: pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]]] = None,
+                 poll_since: pulumi.Input[Optional[_builtins.str]] = None,
+                 poll_till: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 stream_cursor_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 stream_cursor_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 stream_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LogAnalyticsObjectCollectionRule resources.
 
@@ -604,379 +604,379 @@ class _LogAnalyticsObjectCollectionRuleState:
 
     @_builtins.property
     @pulumi.getter(name="charEncoding")
-    def char_encoding(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def char_encoding(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
         """
         return pulumi.get(self, "char_encoding")
 
     @char_encoding.setter
-    def char_encoding(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def char_encoding(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "char_encoding", value)
 
     @_builtins.property
     @pulumi.getter(name="collectionType")
-    def collection_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def collection_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of collection. Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
         """
         return pulumi.get(self, "collection_type")
 
     @collection_type.setter
-    def collection_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def collection_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "collection_type", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="entityId")
-    def entity_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
         """
         return pulumi.get(self, "entity_id")
 
     @entity_id.setter
-    def entity_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether or not this rule is currently enabled.
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isForceHistoricCollection")
-    def is_force_historic_collection(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_force_historic_collection(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
         """
         return pulumi.get(self, "is_force_historic_collection")
 
     @is_force_historic_collection.setter
-    def is_force_historic_collection(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_force_historic_collection(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_force_historic_collection", value)
 
     @_builtins.property
     @pulumi.getter(name="lastCollectedObject")
-    def last_collected_object(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_collected_object(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Last Collected Object for the rule
         """
         return pulumi.get(self, "last_collected_object")
 
     @last_collected_object.setter
-    def last_collected_object(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_collected_object(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_collected_object", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A detailed status of the life cycle state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def log_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Log Analytics Log group OCID to associate the processed logs with.
         """
         return pulumi.get(self, "log_group_id")
 
     @log_group_id.setter
-    def log_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def log_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "log_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="logSet")
-    def log_set(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def log_set(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
         """
         return pulumi.get(self, "log_set")
 
     @log_set.setter
-    def log_set(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def log_set(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "log_set", value)
 
     @_builtins.property
     @pulumi.getter(name="logSetExtRegex")
-    def log_set_ext_regex(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def log_set_ext_regex(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
         """
         return pulumi.get(self, "log_set_ext_regex")
 
     @log_set_ext_regex.setter
-    def log_set_ext_regex(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def log_set_ext_regex(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "log_set_ext_regex", value)
 
     @_builtins.property
     @pulumi.getter(name="logSetKey")
-    def log_set_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def log_set_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
         """
         return pulumi.get(self, "log_set_key")
 
     @log_set_key.setter
-    def log_set_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def log_set_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "log_set_key", value)
 
     @_builtins.property
     @pulumi.getter(name="logSourceName")
-    def log_source_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def log_source_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of the Log Analytics Source to use for the processing.
         """
         return pulumi.get(self, "log_source_name")
 
     @log_source_name.setter
-    def log_source_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def log_source_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "log_source_name", value)
 
     @_builtins.property
     @pulumi.getter(name="logType")
-    def log_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def log_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of files/objects in this object collection rule.
         """
         return pulumi.get(self, "log_type")
 
     @log_type.setter
-    def log_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def log_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "log_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="objectNameFilters")
-    def object_name_filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def object_name_filters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
         """
         return pulumi.get(self, "object_name_filters")
 
     @object_name_filters.setter
-    def object_name_filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def object_name_filters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "object_name_filters", value)
 
     @_builtins.property
     @pulumi.getter(name="osBucketName")
-    def os_bucket_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def os_bucket_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the Object Storage bucket.
         """
         return pulumi.get(self, "os_bucket_name")
 
     @os_bucket_name.setter
-    def os_bucket_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def os_bucket_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "os_bucket_name", value)
 
     @_builtins.property
     @pulumi.getter(name="osNamespace")
-    def os_namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def os_namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Object Storage namespace.
         """
         return pulumi.get(self, "os_namespace")
 
     @os_namespace.setter
-    def os_namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def os_namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "os_namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def overrides(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]]]:
+    def overrides(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]]]:
         """
         (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
         """
         return pulumi.get(self, "overrides")
 
     @overrides.setter
-    def overrides(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]]]):
+    def overrides(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]]]):
         pulumi.set(self, "overrides", value)
 
     @_builtins.property
     @pulumi.getter(name="pollSince")
-    def poll_since(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def poll_since(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
         """
         return pulumi.get(self, "poll_since")
 
     @poll_since.setter
-    def poll_since(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def poll_since(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "poll_since", value)
 
     @_builtins.property
     @pulumi.getter(name="pollTill")
-    def poll_till(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def poll_till(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
         """
         return pulumi.get(self, "poll_till")
 
     @poll_till.setter
-    def poll_till(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def poll_till(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "poll_till", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the rule.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="streamCursorTime")
-    def stream_cursor_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def stream_cursor_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The time from which to consume the objects, if streamCursorType is AT_TIME.
         """
         return pulumi.get(self, "stream_cursor_time")
 
     @stream_cursor_time.setter
-    def stream_cursor_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def stream_cursor_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "stream_cursor_time", value)
 
     @_builtins.property
     @pulumi.getter(name="streamCursorType")
-    def stream_cursor_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def stream_cursor_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
         """
         return pulumi.get(self, "stream_cursor_type")
 
     @stream_cursor_type.setter
-    def stream_cursor_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def stream_cursor_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "stream_cursor_type", value)
 
     @_builtins.property
     @pulumi.getter(name="streamId")
-    def stream_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def stream_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
         """
         return pulumi.get(self, "stream_id")
 
     @stream_id.setter
-    def stream_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def stream_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "stream_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time when this rule was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time when this rule was last updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def timezone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used. 
 
@@ -987,7 +987,7 @@ class _LogAnalyticsObjectCollectionRuleState:
         return pulumi.get(self, "timezone")
 
     @timezone.setter
-    def timezone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "timezone", value)
 
 
@@ -997,33 +997,33 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 char_encoding: Optional[pulumi.Input[_builtins.str]] = None,
-                 collection_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_force_historic_collection: Optional[pulumi.Input[_builtins.bool]] = None,
-                 log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_set: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_set_ext_regex: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_set_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_source_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_name_filters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 os_bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 overrides: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsObjectCollectionRuleOverrideArgs', 'LogAnalyticsObjectCollectionRuleOverrideArgsDict']]]]] = None,
-                 poll_since: Optional[pulumi.Input[_builtins.str]] = None,
-                 poll_till: Optional[pulumi.Input[_builtins.str]] = None,
-                 stream_cursor_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 stream_cursor_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 stream_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
+                 char_encoding: pulumi.Input[Optional[_builtins.str]] = None,
+                 collection_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_force_historic_collection: pulumi.Input[Optional[_builtins.bool]] = None,
+                 log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_set: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_set_ext_regex: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_set_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_source_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_name_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 os_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsObjectCollectionRuleOverrideArgs', 'LogAnalyticsObjectCollectionRuleOverrideArgsDict']]]]] = None,
+                 poll_since: pulumi.Input[Optional[_builtins.str]] = None,
+                 poll_till: pulumi.Input[Optional[_builtins.str]] = None,
+                 stream_cursor_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 stream_cursor_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 stream_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Log Analytics Object Collection Rule resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -1056,8 +1056,8 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_enabled=log_analytics_object_collection_rule_is_enabled,
-            is_force_historic_collection=log_analytics_object_collection_rule_is_force_historic_collection,
+            is_enabled=log_analytics_object_collection_rule_is_enabled == "true",
+            is_force_historic_collection=log_analytics_object_collection_rule_is_force_historic_collection == "true",
             log_set=log_analytics_object_collection_rule_log_set,
             log_set_ext_regex=log_analytics_object_collection_rule_log_set_ext_regex,
             log_set_key=log_analytics_object_collection_rule_log_set_key,
@@ -1153,8 +1153,8 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_enabled=log_analytics_object_collection_rule_is_enabled,
-            is_force_historic_collection=log_analytics_object_collection_rule_is_force_historic_collection,
+            is_enabled=log_analytics_object_collection_rule_is_enabled == "true",
+            is_force_historic_collection=log_analytics_object_collection_rule_is_force_historic_collection == "true",
             log_set=log_analytics_object_collection_rule_log_set,
             log_set_ext_regex=log_analytics_object_collection_rule_log_set_ext_regex,
             log_set_key=log_analytics_object_collection_rule_log_set_key,
@@ -1194,33 +1194,33 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 char_encoding: Optional[pulumi.Input[_builtins.str]] = None,
-                 collection_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_force_historic_collection: Optional[pulumi.Input[_builtins.bool]] = None,
-                 log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_set: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_set_ext_regex: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_set_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_source_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_name_filters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 os_bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 overrides: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsObjectCollectionRuleOverrideArgs', 'LogAnalyticsObjectCollectionRuleOverrideArgsDict']]]]] = None,
-                 poll_since: Optional[pulumi.Input[_builtins.str]] = None,
-                 poll_till: Optional[pulumi.Input[_builtins.str]] = None,
-                 stream_cursor_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 stream_cursor_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 stream_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 timezone: Optional[pulumi.Input[_builtins.str]] = None,
+                 char_encoding: pulumi.Input[Optional[_builtins.str]] = None,
+                 collection_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_force_historic_collection: pulumi.Input[Optional[_builtins.bool]] = None,
+                 log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_set: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_set_ext_regex: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_set_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_source_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_name_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 os_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsObjectCollectionRuleOverrideArgs', 'LogAnalyticsObjectCollectionRuleOverrideArgsDict']]]]] = None,
+                 poll_since: pulumi.Input[Optional[_builtins.str]] = None,
+                 poll_till: pulumi.Input[Optional[_builtins.str]] = None,
+                 stream_cursor_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 stream_cursor_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 stream_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1282,38 +1282,38 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            char_encoding: Optional[pulumi.Input[_builtins.str]] = None,
-            collection_type: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            entity_id: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_force_historic_collection: Optional[pulumi.Input[_builtins.bool]] = None,
-            last_collected_object: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            log_set: Optional[pulumi.Input[_builtins.str]] = None,
-            log_set_ext_regex: Optional[pulumi.Input[_builtins.str]] = None,
-            log_set_key: Optional[pulumi.Input[_builtins.str]] = None,
-            log_source_name: Optional[pulumi.Input[_builtins.str]] = None,
-            log_type: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None,
-            object_name_filters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            os_bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
-            os_namespace: Optional[pulumi.Input[_builtins.str]] = None,
-            overrides: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsObjectCollectionRuleOverrideArgs', 'LogAnalyticsObjectCollectionRuleOverrideArgsDict']]]]] = None,
-            poll_since: Optional[pulumi.Input[_builtins.str]] = None,
-            poll_till: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            stream_cursor_time: Optional[pulumi.Input[_builtins.str]] = None,
-            stream_cursor_type: Optional[pulumi.Input[_builtins.str]] = None,
-            stream_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            timezone: Optional[pulumi.Input[_builtins.str]] = None) -> 'LogAnalyticsObjectCollectionRule':
+            char_encoding: pulumi.Input[Optional[_builtins.str]] = None,
+            collection_type: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_force_historic_collection: pulumi.Input[Optional[_builtins.bool]] = None,
+            last_collected_object: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            log_set: pulumi.Input[Optional[_builtins.str]] = None,
+            log_set_ext_regex: pulumi.Input[Optional[_builtins.str]] = None,
+            log_set_key: pulumi.Input[Optional[_builtins.str]] = None,
+            log_source_name: pulumi.Input[Optional[_builtins.str]] = None,
+            log_type: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            object_name_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            os_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+            os_namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsObjectCollectionRuleOverrideArgs', 'LogAnalyticsObjectCollectionRuleOverrideArgsDict']]]]] = None,
+            poll_since: pulumi.Input[Optional[_builtins.str]] = None,
+            poll_till: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            stream_cursor_time: pulumi.Input[Optional[_builtins.str]] = None,
+            stream_cursor_type: pulumi.Input[Optional[_builtins.str]] = None,
+            stream_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            timezone: pulumi.Input[Optional[_builtins.str]] = None) -> 'LogAnalyticsObjectCollectionRule':
         """
         Get an existing LogAnalyticsObjectCollectionRule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

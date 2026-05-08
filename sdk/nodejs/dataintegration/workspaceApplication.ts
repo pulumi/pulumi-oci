@@ -35,13 +35,13 @@ import * as utilities from "../utilities";
  *     },
  *     key: workspaceApplicationKey,
  *     modelVersion: workspaceApplicationModelVersion,
- *     objectStatus: workspaceApplicationObjectStatus,
+ *     objectStatus: Number(workspaceApplicationObjectStatus),
  *     registryMetadata: {
  *         aggregatorKey: workspaceApplicationRegistryMetadataAggregatorKey,
- *         isFavorite: workspaceApplicationRegistryMetadataIsFavorite,
+ *         isFavorite: workspaceApplicationRegistryMetadataIsFavorite === "true",
  *         key: workspaceApplicationRegistryMetadataKey,
  *         labels: workspaceApplicationRegistryMetadataLabels,
- *         registryVersion: workspaceApplicationRegistryMetadataRegistryVersion,
+ *         registryVersion: Number(workspaceApplicationRegistryMetadataRegistryVersion),
  *     },
  *     sourceApplicationInfo: {
  *         applicationKey: workspaceApplicationSourceApplicationInfoApplicationKey,
@@ -280,99 +280,99 @@ export interface WorkspaceApplicationState {
     /**
      * The source application version of the application.
      */
-    applicationVersion?: pulumi.Input<number>;
+    applicationVersion?: pulumi.Input<number | undefined>;
     /**
      * OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A list of dependent objects in this patch.
      */
-    dependentObjectMetadatas?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationDependentObjectMetadata>[]>;
+    dependentObjectMetadatas?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationDependentObjectMetadata>[] | undefined>;
     /**
      * (Updatable) Detailed description for the object.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
-    identifier?: pulumi.Input<string>;
+    identifier?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Currently not used on application creation. Reserved for future.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      */
-    keyMap?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    keyMap?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationMetadata>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationMetadata>[] | undefined>;
     /**
      * (Updatable) The type of the application.
      */
-    modelType?: pulumi.Input<string>;
+    modelType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The object's model version.
      */
-    modelVersion?: pulumi.Input<string>;
+    modelVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      */
-    objectStatus?: pulumi.Input<number>;
+    objectStatus?: pulumi.Input<number | undefined>;
     /**
      * The object version.
      */
-    objectVersion?: pulumi.Input<number>;
+    objectVersion?: pulumi.Input<number | undefined>;
     /**
      * A reference to the object's parent.
      */
-    parentReves?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationParentRef>[]>;
+    parentReves?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationParentRef>[] | undefined>;
     /**
      * A list of objects that are published or unpublished in this patch.
      */
-    publishedObjectMetadatas?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationPublishedObjectMetadata>[]>;
+    publishedObjectMetadatas?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationPublishedObjectMetadata>[] | undefined>;
     /**
      * Information about the object and its parent.
      */
-    registryMetadata?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationRegistryMetadata>;
+    registryMetadata?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationRegistryMetadata | undefined>;
     /**
      * The information about the application.
      */
-    sourceApplicationInfo?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationSourceApplicationInfo>;
+    sourceApplicationInfo?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationSourceApplicationInfo | undefined>;
     /**
      * (Updatable) The current state of the workspace.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the application was created, in the timestamp format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the application was patched, in the timestamp format defined by RFC3339.
      */
-    timePatched?: pulumi.Input<string>;
+    timePatched?: pulumi.Input<string | undefined>;
     /**
      * The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The workspace ID.
      *
@@ -380,7 +380,7 @@ export interface WorkspaceApplicationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    workspaceId?: pulumi.Input<string>;
+    workspaceId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -390,19 +390,19 @@ export interface WorkspaceApplicationArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Detailed description for the object.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
@@ -410,7 +410,7 @@ export interface WorkspaceApplicationArgs {
     /**
      * (Updatable) Currently not used on application creation. Reserved for future.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The type of the application.
      */
@@ -418,27 +418,27 @@ export interface WorkspaceApplicationArgs {
     /**
      * (Updatable) The object's model version.
      */
-    modelVersion?: pulumi.Input<string>;
+    modelVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      */
-    objectStatus?: pulumi.Input<number>;
+    objectStatus?: pulumi.Input<number | undefined>;
     /**
      * Information about the object and its parent.
      */
-    registryMetadata?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationRegistryMetadata>;
+    registryMetadata?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationRegistryMetadata | undefined>;
     /**
      * The information about the application.
      */
-    sourceApplicationInfo?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationSourceApplicationInfo>;
+    sourceApplicationInfo?: pulumi.Input<inputs.DataIntegration.WorkspaceApplicationSourceApplicationInfo | undefined>;
     /**
      * (Updatable) The current state of the workspace.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The workspace ID.
      *

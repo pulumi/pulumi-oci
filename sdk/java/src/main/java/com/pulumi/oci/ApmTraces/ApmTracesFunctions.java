@@ -52,8 +52,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetAttributeAutoActivateStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -95,8 +95,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetAttributeAutoActivateStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -138,8 +138,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetAttributeAutoActivateStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -181,8 +181,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetAttributeAutoActivateStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -224,8 +224,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetAttributeAutoActivateStatusArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -267,8 +267,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetLogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -312,8 +312,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetLogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -357,8 +357,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetLogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -402,8 +402,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetLogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -447,8 +447,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetLogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -493,8 +493,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetQueryQuickPicksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -536,8 +536,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetQueryQuickPicksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -579,8 +579,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetQueryQuickPicksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -622,8 +622,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetQueryQuickPicksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -665,8 +665,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetQueryQuickPicksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -707,8 +707,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetScheduledQueriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -750,8 +750,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetScheduledQueriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -793,8 +793,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetScheduledQueriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -836,8 +836,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetScheduledQueriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -879,8 +879,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetScheduledQueriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -922,8 +922,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetScheduledQueryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -965,8 +965,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetScheduledQueryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1008,8 +1008,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetScheduledQueryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1051,8 +1051,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetScheduledQueryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1094,8 +1094,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetScheduledQueryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1137,8 +1137,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetTraceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1183,8 +1183,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetTraceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1229,8 +1229,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetTraceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1275,8 +1275,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetTraceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1321,8 +1321,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetTraceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1367,8 +1367,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetTraceAggregatedSnapshotDataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1414,8 +1414,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetTraceAggregatedSnapshotDataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1461,8 +1461,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetTraceAggregatedSnapshotDataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1508,8 +1508,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetTraceAggregatedSnapshotDataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1555,8 +1555,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetTraceAggregatedSnapshotDataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1602,8 +1602,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetTraceSnapshotDataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1648,8 +1648,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetTraceSnapshotDataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1694,8 +1694,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetTraceSnapshotDataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1740,8 +1740,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetTraceSnapshotDataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1786,8 +1786,8 @@ public final class ApmTracesFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
      * import com.pulumi.oci.ApmTraces.inputs.GetTraceSnapshotDataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

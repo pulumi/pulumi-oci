@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceFolder = oci.DataIntegration.getWorkspaceFolder({
+ * const testWorkspaceFolder = oci.dataintegration.getWorkspaceFolder({
  *     folderKey: workspaceFolderFolderKey,
  *     workspaceId: testWorkspace.id,
  * });
@@ -113,7 +113,7 @@ export interface GetWorkspaceFolderResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceFolder = oci.DataIntegration.getWorkspaceFolder({
+ * const testWorkspaceFolder = oci.dataintegration.getWorkspaceFolder({
  *     folderKey: workspaceFolderFolderKey,
  *     workspaceId: testWorkspace.id,
  * });

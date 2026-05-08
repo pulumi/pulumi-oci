@@ -380,7 +380,7 @@ def get_host_insight(host_insight_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_host_insight = oci.Opsi.get_host_insight(host_insight_id=test_host_insight_oci_opsi_host_insight["id"])
+    test_host_insight = oci.opsi.get_host_insight(host_insight_id=test_host_insight_oci_opsi_host_insight["id"])
     ```
 
 
@@ -420,7 +420,7 @@ def get_host_insight(host_insight_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_host_insight_output(host_insight_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_host_insight_output(host_insight_id: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetHostInsightResult]:
     """
     This data source provides details about a specific Host Insight resource in Oracle Cloud Infrastructure Opsi service.
@@ -433,7 +433,7 @@ def get_host_insight_output(host_insight_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_host_insight = oci.Opsi.get_host_insight(host_insight_id=test_host_insight_oci_opsi_host_insight["id"])
+    test_host_insight = oci.opsi.get_host_insight(host_insight_id=test_host_insight_oci_opsi_host_insight["id"])
     ```
 
 

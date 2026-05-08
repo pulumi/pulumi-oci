@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceStorageEncryptionKeyInfo = oci.LogAnalytics.getNamespaceStorageEncryptionKeyInfo({
+ * const testNamespaceStorageEncryptionKeyInfo = oci.loganalytics.getNamespaceStorageEncryptionKeyInfo({
  *     namespace: namespaceStorageEncryptionKeyInfoNamespace,
  * });
  * ```
@@ -64,7 +64,7 @@ export interface GetNamespaceStorageEncryptionKeyInfoResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceStorageEncryptionKeyInfo = oci.LogAnalytics.getNamespaceStorageEncryptionKeyInfo({
+ * const testNamespaceStorageEncryptionKeyInfo = oci.loganalytics.getNamespaceStorageEncryptionKeyInfo({
  *     namespace: namespaceStorageEncryptionKeyInfoNamespace,
  * });
  * ```

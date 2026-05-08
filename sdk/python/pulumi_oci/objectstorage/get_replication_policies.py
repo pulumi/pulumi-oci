@@ -105,7 +105,7 @@ def get_replication_policies(bucket: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_policies = oci.ObjectStorage.get_replication_policies(bucket=replication_policy_bucket,
+    test_replication_policies = oci.objectstorage.get_replication_policies(bucket=replication_policy_bucket,
         namespace=replication_policy_namespace)
     ```
 
@@ -126,9 +126,9 @@ def get_replication_policies(bucket: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         namespace=pulumi.get(__ret__, 'namespace'),
         replication_policies=pulumi.get(__ret__, 'replication_policies'))
-def get_replication_policies_output(bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetReplicationPoliciesFilterArgs', 'GetReplicationPoliciesFilterArgsDict']]]]] = None,
-                                    namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_replication_policies_output(bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetReplicationPoliciesFilterArgs', 'GetReplicationPoliciesFilterArgsDict']]]]] = None,
+                                    namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReplicationPoliciesResult]:
     """
     This data source provides the list of Replication Policies in Oracle Cloud Infrastructure Object Storage service.
@@ -141,7 +141,7 @@ def get_replication_policies_output(bucket: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_policies = oci.ObjectStorage.get_replication_policies(bucket=replication_policy_bucket,
+    test_replication_policies = oci.objectstorage.get_replication_policies(bucket=replication_policy_bucket,
         namespace=replication_policy_namespace)
     ```
 

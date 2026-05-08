@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetDiagnoses = oci.Jms.getFleetDiagnoses({
+ * const testFleetDiagnoses = oci.jms.getFleetDiagnoses({
  *     fleetId: testFleet.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetFleetDiagnosesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetDiagnoses = oci.Jms.getFleetDiagnoses({
+ * const testFleetDiagnoses = oci.jms.getFleetDiagnoses({
  *     fleetId: testFleet.id,
  * });
  * ```
@@ -84,7 +84,7 @@ export function getFleetDiagnosesOutput(args: GetFleetDiagnosesOutputArgs, opts?
  * A collection of arguments for invoking getFleetDiagnoses.
  */
 export interface GetFleetDiagnosesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetDiagnosesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetDiagnosesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */

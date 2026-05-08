@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAttributeSetAssociatedResources = oci.DataSafe.getAttributeSetAssociatedResources({
+ * const testAttributeSetAssociatedResources = oci.datasafe.getAttributeSetAssociatedResources({
  *     attributeSetId: testAttributeSet.id,
  *     associatedResourceId: testResource.id,
  *     associatedResourceType: attributeSetAssociatedResourceAssociatedResourceType,
@@ -87,7 +87,7 @@ export interface GetAttributeSetAssociatedResourcesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAttributeSetAssociatedResources = oci.DataSafe.getAttributeSetAssociatedResources({
+ * const testAttributeSetAssociatedResources = oci.datasafe.getAttributeSetAssociatedResources({
  *     attributeSetId: testAttributeSet.id,
  *     associatedResourceId: testResource.id,
  *     associatedResourceType: attributeSetAssociatedResourceAssociatedResourceType,
@@ -111,14 +111,14 @@ export interface GetAttributeSetAssociatedResourcesOutputArgs {
     /**
      * A filter to return attribute set associated resource that matches the specified associated resource id query param.
      */
-    associatedResourceId?: pulumi.Input<string>;
+    associatedResourceId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return attribute set associated resources that matches the specified resource type query param.
      */
-    associatedResourceType?: pulumi.Input<string>;
+    associatedResourceType?: pulumi.Input<string | undefined>;
     /**
      * OCID of an attribute set.
      */
     attributeSetId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetAttributeSetAssociatedResourcesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetAttributeSetAssociatedResourcesFilterArgs>[] | undefined>;
 }

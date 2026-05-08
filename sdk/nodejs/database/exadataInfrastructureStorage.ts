@@ -204,67 +204,67 @@ export class ExadataInfrastructureStorage extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ExadataInfrastructureStorage resources.
  */
 export interface ExadataInfrastructureStorageState {
-    activatedStorageCount?: pulumi.Input<number>;
-    activationFile?: pulumi.Input<string>;
-    additionalStorageCount?: pulumi.Input<number>;
-    adminNetworkCidr?: pulumi.Input<string>;
-    cloudControlPlaneServer1?: pulumi.Input<string>;
-    cloudControlPlaneServer2?: pulumi.Input<string>;
-    compartmentId?: pulumi.Input<string>;
-    computeCount?: pulumi.Input<number>;
-    contacts?: pulumi.Input<pulumi.Input<inputs.Database.ExadataInfrastructureStorageContact>[]>;
-    corporateProxy?: pulumi.Input<string>;
-    cpusEnabled?: pulumi.Input<number>;
-    csiNumber?: pulumi.Input<string>;
-    dataStorageSizeInTbs?: pulumi.Input<number>;
-    dbNodeStorageSizeInGbs?: pulumi.Input<number>;
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    displayName?: pulumi.Input<string>;
-    dnsServers?: pulumi.Input<pulumi.Input<string>[]>;
-    exadataInfrastructureId?: pulumi.Input<string>;
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    gateway?: pulumi.Input<string>;
-    infiniBandNetworkCidr?: pulumi.Input<string>;
-    lifecycleDetails?: pulumi.Input<string>;
-    maintenanceSloStatus?: pulumi.Input<string>;
-    maintenanceWindow?: pulumi.Input<inputs.Database.ExadataInfrastructureStorageMaintenanceWindow>;
-    maxCpuCount?: pulumi.Input<number>;
-    maxDataStorageInTbs?: pulumi.Input<number>;
-    maxDbNodeStorageInGbs?: pulumi.Input<number>;
-    maxMemoryInGbs?: pulumi.Input<number>;
-    memorySizeInGbs?: pulumi.Input<number>;
-    netmask?: pulumi.Input<string>;
-    ntpServers?: pulumi.Input<pulumi.Input<string>[]>;
-    shape?: pulumi.Input<string>;
-    state?: pulumi.Input<string>;
-    storageCount?: pulumi.Input<number>;
-    timeCreated?: pulumi.Input<string>;
-    timeZone?: pulumi.Input<string>;
+    activatedStorageCount?: pulumi.Input<number | undefined>;
+    activationFile?: pulumi.Input<string | undefined>;
+    additionalStorageCount?: pulumi.Input<number | undefined>;
+    adminNetworkCidr?: pulumi.Input<string | undefined>;
+    cloudControlPlaneServer1?: pulumi.Input<string | undefined>;
+    cloudControlPlaneServer2?: pulumi.Input<string | undefined>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    computeCount?: pulumi.Input<number | undefined>;
+    contacts?: pulumi.Input<pulumi.Input<inputs.Database.ExadataInfrastructureStorageContact>[] | undefined>;
+    corporateProxy?: pulumi.Input<string | undefined>;
+    cpusEnabled?: pulumi.Input<number | undefined>;
+    csiNumber?: pulumi.Input<string | undefined>;
+    dataStorageSizeInTbs?: pulumi.Input<number | undefined>;
+    dbNodeStorageSizeInGbs?: pulumi.Input<number | undefined>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    displayName?: pulumi.Input<string | undefined>;
+    dnsServers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    exadataInfrastructureId?: pulumi.Input<string | undefined>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    gateway?: pulumi.Input<string | undefined>;
+    infiniBandNetworkCidr?: pulumi.Input<string | undefined>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
+    maintenanceSloStatus?: pulumi.Input<string | undefined>;
+    maintenanceWindow?: pulumi.Input<inputs.Database.ExadataInfrastructureStorageMaintenanceWindow | undefined>;
+    maxCpuCount?: pulumi.Input<number | undefined>;
+    maxDataStorageInTbs?: pulumi.Input<number | undefined>;
+    maxDbNodeStorageInGbs?: pulumi.Input<number | undefined>;
+    maxMemoryInGbs?: pulumi.Input<number | undefined>;
+    memorySizeInGbs?: pulumi.Input<number | undefined>;
+    netmask?: pulumi.Input<string | undefined>;
+    ntpServers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    shape?: pulumi.Input<string | undefined>;
+    state?: pulumi.Input<string | undefined>;
+    storageCount?: pulumi.Input<number | undefined>;
+    timeCreated?: pulumi.Input<string | undefined>;
+    timeZone?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a ExadataInfrastructureStorage resource.
  */
 export interface ExadataInfrastructureStorageArgs {
-    activationFile?: pulumi.Input<string>;
+    activationFile?: pulumi.Input<string | undefined>;
     adminNetworkCidr: pulumi.Input<string>;
     cloudControlPlaneServer1: pulumi.Input<string>;
     cloudControlPlaneServer2: pulumi.Input<string>;
     compartmentId: pulumi.Input<string>;
-    computeCount?: pulumi.Input<number>;
-    contacts?: pulumi.Input<pulumi.Input<inputs.Database.ExadataInfrastructureStorageContact>[]>;
-    corporateProxy?: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    computeCount?: pulumi.Input<number | undefined>;
+    contacts?: pulumi.Input<pulumi.Input<inputs.Database.ExadataInfrastructureStorageContact>[] | undefined>;
+    corporateProxy?: pulumi.Input<string | undefined>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     displayName: pulumi.Input<string>;
     dnsServers: pulumi.Input<pulumi.Input<string>[]>;
-    exadataInfrastructureId?: pulumi.Input<string>;
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    exadataInfrastructureId?: pulumi.Input<string | undefined>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     gateway: pulumi.Input<string>;
     infiniBandNetworkCidr: pulumi.Input<string>;
-    maintenanceWindow?: pulumi.Input<inputs.Database.ExadataInfrastructureStorageMaintenanceWindow>;
+    maintenanceWindow?: pulumi.Input<inputs.Database.ExadataInfrastructureStorageMaintenanceWindow | undefined>;
     netmask: pulumi.Input<string>;
     ntpServers: pulumi.Input<pulumi.Input<string>[]>;
     shape: pulumi.Input<string>;
-    storageCount?: pulumi.Input<number>;
+    storageCount?: pulumi.Input<number | undefined>;
     timeZone: pulumi.Input<string>;
 }

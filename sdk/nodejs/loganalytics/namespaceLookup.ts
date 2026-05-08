@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  *     categories: [{
  *         description: namespaceLookupCategoriesDescription,
  *         displayName: namespaceLookupCategoriesDisplayName,
- *         isSystem: namespaceLookupCategoriesIsSystem,
+ *         isSystem: namespaceLookupCategoriesIsSystem === "true",
  *         name: namespaceLookupCategoriesName,
  *         type: namespaceLookupCategoriesType,
  *     }],
@@ -43,7 +43,7 @@ import * as utilities from "../utilities";
  *         commonFieldName: namespaceLookupFieldsCommonFieldName,
  *         defaultMatchValue: namespaceLookupFieldsDefaultMatchValue,
  *         displayName: namespaceLookupFieldsDisplayName,
- *         isCommonField: namespaceLookupFieldsIsCommonField,
+ *         isCommonField: namespaceLookupFieldsIsCommonField === "true",
  *         matchOperator: namespaceLookupFieldsMatchOperator,
  *         name: namespaceLookupFieldsName,
  *         position: namespaceLookupFieldsPosition,
@@ -51,7 +51,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isHidden: namespaceLookupIsHidden,
+ *     isHidden: namespaceLookupIsHidden === "true",
  *     maxMatches: namespaceLookupMaxMatches,
  * });
  * ```
@@ -287,99 +287,99 @@ export interface NamespaceLookupState {
     /**
      * The active edit version.
      */
-    activeEditVersion?: pulumi.Input<string>;
+    activeEditVersion?: pulumi.Input<string | undefined>;
     /**
      * The canonical link.
      */
-    canonicalLink?: pulumi.Input<string>;
+    canonicalLink?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An array of categories to assign to the lookup. Specifying the name attribute for each category would suffice. Oracle-defined category assignments cannot be removed.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.NamespaceLookupCategory>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.NamespaceLookupCategory>[] | undefined>;
     /**
      * The character encoding of the uploaded file.
      */
-    charEncoding?: pulumi.Input<string>;
+    charEncoding?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The default match value.
      */
-    defaultMatchValue?: pulumi.Input<string>;
+    defaultMatchValue?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The lookup description.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * The edit version.
      */
-    editVersion?: pulumi.Input<string>;
+    editVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The lookup fields.
      */
-    fields?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.NamespaceLookupField>[]>;
+    fields?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.NamespaceLookupField>[] | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A flag indicating if the lookup is custom (user-defined) or built in.
      */
-    isBuiltIn?: pulumi.Input<string>;
+    isBuiltIn?: pulumi.Input<string | undefined>;
     /**
      * A flag indicating whether or not the new lookup should be hidden.
      */
-    isHidden?: pulumi.Input<boolean>;
+    isHidden?: pulumi.Input<boolean | undefined>;
     /**
      * The lookup display name.
      */
-    lookupDisplayName?: pulumi.Input<string>;
+    lookupDisplayName?: pulumi.Input<string | undefined>;
     /**
      * The lookup OCID.
      */
-    lookupId?: pulumi.Input<string>;
+    lookupId?: pulumi.Input<string | undefined>;
     /**
      * The name of the lookup to operate on.
      */
-    lookupName?: pulumi.Input<string>;
+    lookupName?: pulumi.Input<string | undefined>;
     /**
      * The lookup reference as an integer.
      */
-    lookupReference?: pulumi.Input<string>;
+    lookupReference?: pulumi.Input<string | undefined>;
     /**
      * The lookup reference as a string.
      */
-    lookupReferenceString?: pulumi.Input<string>;
+    lookupReferenceString?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The maximum number of matches.
      */
-    maxMatches?: pulumi.Input<string>;
+    maxMatches?: pulumi.Input<string | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * AutoLookups
      */
-    referringSources?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.NamespaceLookupReferringSource>[]>;
+    referringSources?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.NamespaceLookupReferringSource>[] | undefined>;
     /**
      * Path to the file containing data for lookup creation.
      */
-    registerLookupFile?: pulumi.Input<string>;
+    registerLookupFile?: pulumi.Input<string | undefined>;
     /**
      * StatusSummary
      */
-    statusSummaries?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.NamespaceLookupStatusSummary>[]>;
+    statusSummaries?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.NamespaceLookupStatusSummary>[] | undefined>;
     /**
      * The last updated date.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The lookup type. Valid values are Lookup, Dictionary or Module.
      *
@@ -387,7 +387,7 @@ export interface NamespaceLookupState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -397,39 +397,39 @@ export interface NamespaceLookupArgs {
     /**
      * (Updatable) An array of categories to assign to the lookup. Specifying the name attribute for each category would suffice. Oracle-defined category assignments cannot be removed.
      */
-    categories?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.NamespaceLookupCategory>[]>;
+    categories?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.NamespaceLookupCategory>[] | undefined>;
     /**
      * The character encoding of the uploaded file.
      */
-    charEncoding?: pulumi.Input<string>;
+    charEncoding?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The default match value.
      */
-    defaultMatchValue?: pulumi.Input<string>;
+    defaultMatchValue?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The lookup description.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The lookup fields.
      */
-    fields?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.NamespaceLookupField>[]>;
+    fields?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.NamespaceLookupField>[] | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A flag indicating whether or not the new lookup should be hidden.
      */
-    isHidden?: pulumi.Input<boolean>;
+    isHidden?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the lookup to operate on.
      */
@@ -437,7 +437,7 @@ export interface NamespaceLookupArgs {
     /**
      * (Updatable) The maximum number of matches.
      */
-    maxMatches?: pulumi.Input<string>;
+    maxMatches?: pulumi.Input<string | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */

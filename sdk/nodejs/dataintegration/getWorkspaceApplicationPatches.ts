@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceApplicationPatches = oci.DataIntegration.getWorkspaceApplicationPatches({
+ * const testWorkspaceApplicationPatches = oci.dataintegration.getWorkspaceApplicationPatches({
  *     applicationKey: workspaceApplicationPatchApplicationKey,
  *     workspaceId: testWorkspace.id,
  *     fields: workspaceApplicationPatchFields,
@@ -101,7 +101,7 @@ export interface GetWorkspaceApplicationPatchesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceApplicationPatches = oci.DataIntegration.getWorkspaceApplicationPatches({
+ * const testWorkspaceApplicationPatches = oci.dataintegration.getWorkspaceApplicationPatches({
  *     applicationKey: workspaceApplicationPatchApplicationKey,
  *     workspaceId: testWorkspace.id,
  *     fields: workspaceApplicationPatchFields,
@@ -133,16 +133,16 @@ export interface GetWorkspaceApplicationPatchesOutputArgs {
     /**
      * Specifies the fields to get for an object.
      */
-    fields?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataIntegration.GetWorkspaceApplicationPatchesFilterArgs>[]>;
+    fields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataIntegration.GetWorkspaceApplicationPatchesFilterArgs>[] | undefined>;
     /**
      * Used to filter by the identifier of the published object.
      */
-    identifiers?: pulumi.Input<pulumi.Input<string>[]>;
+    identifiers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Used to filter by the name of the object.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The workspace ID.
      */

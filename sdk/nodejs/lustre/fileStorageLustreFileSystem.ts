@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *
  * const testLustreFileSystem = new oci.lustre.FileStorageLustreFileSystem("test_lustre_file_system", {
  *     availabilityDomain: lustreFileSystemAvailabilityDomain,
- *     capacityInGbs: lustreFileSystemCapacityInGbs,
+ *     capacityInGbs: Number(lustreFileSystemCapacityInGbs),
  *     compartmentId: compartmentId,
  *     fileSystemName: testFileSystem.name,
  *     performanceTier: lustreFileSystemPerformanceTier,
@@ -302,72 +302,72 @@ export interface FileStorageLustreFileSystemState {
     /**
      * The availability domain the file system is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Capacity of the Lustre file system in GB. You can increase capacity only in multiples of 5 TB.
      */
-    capacityInGbs?: pulumi.Input<number>;
+    capacityInGbs?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group in which the Lustre file system exists.
      */
-    clusterPlacementGroupId?: pulumi.Input<string>;
+    clusterPlacementGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Lustre file system.
      */
-    compartmentId?: pulumi.Input<string>;
-    dateTimeDetails?: pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemDateTimeDetails>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    dateTimeDetails?: pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemDateTimeDetails | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My Lustre file system`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Short description of the Lustre file system. Avoid entering confidential information.
      */
-    fileSystemDescription?: pulumi.Input<string>;
+    fileSystemDescription?: pulumi.Input<string | undefined>;
     /**
      * The Lustre file system name. This is used in mount commands and other aspects of the client command line interface. The file system name is limited to 8 characters. Allowed characters are lower and upper case English letters, numbers, and '_'. If you have multiple Lustre file systems mounted on the same clients, this name can help distinguish them.
      */
-    fileSystemName?: pulumi.Input<string>;
+    fileSystemName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * A message that describes the current state of the Lustre file system in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Type of network used by clients to mount the file system.   Example: `tcp`
      */
-    lnet?: pulumi.Input<string>;
+    lnet?: pulumi.Input<string | undefined>;
     /**
      * The meta-data for maintenance window.
      */
-    maintenanceWindowMetadatas?: pulumi.Input<pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemMaintenanceWindowMetadata>[]>;
+    maintenanceWindowMetadatas?: pulumi.Input<pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemMaintenanceWindowMetadata>[] | undefined>;
     /**
      * (Updatable) The preferred day and time to perform maintenance.
      */
-    maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemMaintenanceWindow>[]>;
+    maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemMaintenanceWindow>[] | undefined>;
     /**
      * Major version of Lustre running in the Lustre file system.  Example: `2.15`
      */
-    majorVersion?: pulumi.Input<string>;
+    majorVersion?: pulumi.Input<string | undefined>;
     /**
      * The IPv4 address of MGS (Lustre Management Service) used by clients to mount the file system. For example '10.0.0.4'.
      */
-    managementServiceAddress?: pulumi.Input<string>;
+    managementServiceAddress?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Override Maintenance. Could be set to any integer value.
      *
@@ -375,39 +375,39 @@ export interface FileStorageLustreFileSystemState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    overrideMaintenanceTrigger?: pulumi.Input<number>;
+    overrideMaintenanceTrigger?: pulumi.Input<number | undefined>;
     /**
      * The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
      */
-    performanceTier?: pulumi.Input<string>;
+    performanceTier?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An administrative feature that allows you to restrict root level access from clients that try to access your Lustre file system as root.
      */
-    rootSquashConfiguration?: pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemRootSquashConfiguration>;
+    rootSquashConfiguration?: pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemRootSquashConfiguration | undefined>;
     /**
      * The current state of the Lustre file system.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Lustre file system is in.
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time that the current billing cycle for the file system will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. After the current cycle ends, this date is updated automatically to the next timestamp, which is 30 days later. File systems deleted earlier than this time will still incur charges until the billing cycle ends.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeBillingCycleEnd?: pulumi.Input<string>;
+    timeBillingCycleEnd?: pulumi.Input<string | undefined>;
     /**
      * The date and time the Lustre file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2024-04-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the Lustre file system was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2024-04-25T21:10:29.600Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -425,24 +425,24 @@ export interface FileStorageLustreFileSystemArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group in which the Lustre file system exists.
      */
-    clusterPlacementGroupId?: pulumi.Input<string>;
+    clusterPlacementGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Lustre file system.
      */
     compartmentId: pulumi.Input<string>;
-    dateTimeDetails?: pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemDateTimeDetails>;
+    dateTimeDetails?: pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemDateTimeDetails | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My Lustre file system`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Short description of the Lustre file system. Avoid entering confidential information.
      */
-    fileSystemDescription?: pulumi.Input<string>;
+    fileSystemDescription?: pulumi.Input<string | undefined>;
     /**
      * The Lustre file system name. This is used in mount commands and other aspects of the client command line interface. The file system name is limited to 8 characters. Allowed characters are lower and upper case English letters, numbers, and '_'. If you have multiple Lustre file systems mounted on the same clients, this name can help distinguish them.
      */
@@ -450,19 +450,19 @@ export interface FileStorageLustreFileSystemArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The preferred day and time to perform maintenance.
      */
-    maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemMaintenanceWindow>[]>;
+    maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Lustre.FileStorageLustreFileSystemMaintenanceWindow>[] | undefined>;
     /**
      * (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this lustre file system. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the lustre file system from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Override Maintenance. Could be set to any integer value.
      *
@@ -470,7 +470,7 @@ export interface FileStorageLustreFileSystemArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    overrideMaintenanceTrigger?: pulumi.Input<number>;
+    overrideMaintenanceTrigger?: pulumi.Input<number | undefined>;
     /**
      * The Lustre file system performance tier. A value of `MBPS_PER_TB_125` represents 125 megabytes per second per terabyte.
      */
@@ -486,5 +486,5 @@ export interface FileStorageLustreFileSystemArgs {
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

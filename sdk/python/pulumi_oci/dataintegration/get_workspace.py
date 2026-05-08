@@ -320,7 +320,7 @@ def get_workspace(workspace_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace = oci.DataIntegration.get_workspace(workspace_id=test_workspace_oci_dataintegration_workspace["id"])
+    test_workspace = oci.dataintegration.get_workspace(workspace_id=test_workspace_oci_dataintegration_workspace["id"])
     ```
 
 
@@ -356,7 +356,7 @@ def get_workspace(workspace_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-def get_workspace_output(workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_workspace_output(workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceResult]:
     """
     This data source provides details about a specific Workspace resource in Oracle Cloud Infrastructure Data Integration service.
@@ -369,7 +369,7 @@ def get_workspace_output(workspace_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace = oci.DataIntegration.get_workspace(workspace_id=test_workspace_oci_dataintegration_workspace["id"])
+    test_workspace = oci.dataintegration.get_workspace(workspace_id=test_workspace_oci_dataintegration_workspace["id"])
     ```
 
 

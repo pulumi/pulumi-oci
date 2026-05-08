@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *         name: steeringPolicyAnswersName,
  *         rdata: steeringPolicyAnswersRdata,
  *         rtype: steeringPolicyAnswersRtype,
- *         isDisabled: steeringPolicyAnswersIsDisabled,
+ *         isDisabled: steeringPolicyAnswersIsDisabled === "true",
  *         pool: steeringPolicyAnswersPool,
  *     }],
  *     definedTags: steeringPolicyDefinedTags,
@@ -40,21 +40,21 @@ import * as utilities from "../utilities";
  *         cases: [{
  *             answerDatas: [{
  *                 answerCondition: steeringPolicyRulesCasesAnswerDataAnswerCondition,
- *                 shouldKeep: steeringPolicyRulesCasesAnswerDataShouldKeep,
- *                 value: steeringPolicyRulesCasesAnswerDataValue,
+ *                 shouldKeep: steeringPolicyRulesCasesAnswerDataShouldKeep === "true",
+ *                 value: Number(steeringPolicyRulesCasesAnswerDataValue),
  *             }],
  *             caseCondition: steeringPolicyRulesCasesCaseCondition,
- *             count: steeringPolicyRulesCasesCount,
+ *             count: Number(steeringPolicyRulesCasesCount),
  *         }],
  *         defaultAnswerDatas: [{
  *             answerCondition: steeringPolicyRulesDefaultAnswerDataAnswerCondition,
- *             shouldKeep: steeringPolicyRulesDefaultAnswerDataShouldKeep,
- *             value: steeringPolicyRulesDefaultAnswerDataValue,
+ *             shouldKeep: steeringPolicyRulesDefaultAnswerDataShouldKeep === "true",
+ *             value: Number(steeringPolicyRulesDefaultAnswerDataValue),
  *         }],
- *         defaultCount: steeringPolicyRulesDefaultCount,
+ *         defaultCount: Number(steeringPolicyRulesDefaultCount),
  *         description: steeringPolicyRulesDescription,
  *     }],
- *     ttl: steeringPolicyTtl,
+ *     ttl: Number(steeringPolicyTtl),
  * });
  * ```
  *
@@ -226,43 +226,43 @@ export interface SteeringPolicyState {
     /**
      * The set of all answers that can potentially issue from the steering policy.
      */
-    answers?: pulumi.Input<pulumi.Input<inputs.Dns.SteeringPolicyAnswer>[]>;
+    answers?: pulumi.Input<pulumi.Input<inputs.Dns.SteeringPolicyAnswer>[] | undefined>;
     /**
      * (Updatable) The OCID of the compartment containing the steering policy.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
      *
      * **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
      */
-    healthCheckMonitorId?: pulumi.Input<string>;
+    healthCheckMonitorId?: pulumi.Input<string | undefined>;
     /**
      * The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
      *
      * The first rule receives a shuffled list of all answers, and every other rule receives the list of answers emitted by the one preceding it. The last rule populates the response.
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.Dns.SteeringPolicyRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.Dns.SteeringPolicyRule>[] | undefined>;
     /**
      * The canonical absolute URL of the resource.
      */
-    self?: pulumi.Input<string>;
+    self?: pulumi.Input<string | undefined>;
     /**
      * The current state of the resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
      *
@@ -280,11 +280,11 @@ export interface SteeringPolicyState {
      * * `ROUTE_BY_IP` - Answers DNS queries based on the query's IP address.
      * * `CUSTOM` - Allows a customized configuration of rules.
      */
-    template?: pulumi.Input<string>;
+    template?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource was created, expressed in RFC 3339 timestamp format.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Time To Live (TTL) for responses from the steering policy, in seconds. If not specified during creation, a value of 30 seconds will be used. 
      *
@@ -292,7 +292,7 @@ export interface SteeringPolicyState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    ttl?: pulumi.Input<number>;
+    ttl?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -302,7 +302,7 @@ export interface SteeringPolicyArgs {
     /**
      * The set of all answers that can potentially issue from the steering policy.
      */
-    answers?: pulumi.Input<pulumi.Input<inputs.Dns.SteeringPolicyAnswer>[]>;
+    answers?: pulumi.Input<pulumi.Input<inputs.Dns.SteeringPolicyAnswer>[] | undefined>;
     /**
      * (Updatable) The OCID of the compartment containing the steering policy.
      */
@@ -310,7 +310,7 @@ export interface SteeringPolicyArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
      */
@@ -318,19 +318,19 @@ export interface SteeringPolicyArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
      *
      * **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
      */
-    healthCheckMonitorId?: pulumi.Input<string>;
+    healthCheckMonitorId?: pulumi.Input<string | undefined>;
     /**
      * The series of rules that will be processed in sequence to reduce the pool of answers to a response for any given request.
      *
      * The first rule receives a shuffled list of all answers, and every other rule receives the list of answers emitted by the one preceding it. The last rule populates the response.
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.Dns.SteeringPolicyRule>[]>;
+    rules?: pulumi.Input<pulumi.Input<inputs.Dns.SteeringPolicyRule>[] | undefined>;
     /**
      * (Updatable) A set of predefined rules based on the desired purpose of the steering policy. Each template utilizes Traffic Management's rules in a different order to produce the desired results when answering DNS queries.
      *
@@ -356,5 +356,5 @@ export interface SteeringPolicyArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    ttl?: pulumi.Input<number>;
+    ttl?: pulumi.Input<number | undefined>;
 }

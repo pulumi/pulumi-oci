@@ -22,19 +22,19 @@ __all__ = ['ScheduledQueryArgs', 'ScheduledQuery']
 class ScheduledQueryArgs:
     def __init__(__self__, *,
                  apm_domain_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 opc_dry_run: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_maximum_runtime_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_processing_configuration: Optional[pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationArgs']] = None,
-                 scheduled_query_processing_sub_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_processing_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_retention_criteria: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_retention_period_in_ms: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_text: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 opc_dry_run: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_maximum_runtime_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_processing_configuration: pulumi.Input[Optional['ScheduledQueryScheduledQueryProcessingConfigurationArgs']] = None,
+                 scheduled_query_processing_sub_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_processing_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_retention_criteria: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_retention_period_in_ms: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_text: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ScheduledQuery resource.
 
@@ -99,151 +99,151 @@ class ScheduledQueryArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="opcDryRun")
-    def opc_dry_run(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def opc_dry_run(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not create or modify the resource  and is used only to perform validation on the submitted data.
         """
         return pulumi.get(self, "opc_dry_run")
 
     @opc_dry_run.setter
-    def opc_dry_run(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def opc_dry_run(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "opc_dry_run", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledQueryDescription")
-    def scheduled_query_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_query_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description for the scheduled query.
         """
         return pulumi.get(self, "scheduled_query_description")
 
     @scheduled_query_description.setter
-    def scheduled_query_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_query_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_query_description", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledQueryMaximumRuntimeInSeconds")
-    def scheduled_query_maximum_runtime_in_seconds(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_query_maximum_runtime_in_seconds(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Maximum runtime for the scheduled query in seconds.
         """
         return pulumi.get(self, "scheduled_query_maximum_runtime_in_seconds")
 
     @scheduled_query_maximum_runtime_in_seconds.setter
-    def scheduled_query_maximum_runtime_in_seconds(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_query_maximum_runtime_in_seconds(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_query_maximum_runtime_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledQueryName")
-    def scheduled_query_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_query_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of the scheduled query.
         """
         return pulumi.get(self, "scheduled_query_name")
 
     @scheduled_query_name.setter
-    def scheduled_query_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_query_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_query_name", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledQueryProcessingConfiguration")
-    def scheduled_query_processing_configuration(self) -> Optional[pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationArgs']]:
+    def scheduled_query_processing_configuration(self) -> pulumi.Input[Optional['ScheduledQueryScheduledQueryProcessingConfigurationArgs']]:
         """
         (Updatable) Definition of the scheduled query processing configuration.
         """
         return pulumi.get(self, "scheduled_query_processing_configuration")
 
     @scheduled_query_processing_configuration.setter
-    def scheduled_query_processing_configuration(self, value: Optional[pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationArgs']]):
+    def scheduled_query_processing_configuration(self, value: pulumi.Input[Optional['ScheduledQueryScheduledQueryProcessingConfigurationArgs']]):
         pulumi.set(self, "scheduled_query_processing_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledQueryProcessingSubType")
-    def scheduled_query_processing_sub_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_query_processing_sub_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Processing sub type of the scheduled query.
         """
         return pulumi.get(self, "scheduled_query_processing_sub_type")
 
     @scheduled_query_processing_sub_type.setter
-    def scheduled_query_processing_sub_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_query_processing_sub_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_query_processing_sub_type", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledQueryProcessingType")
-    def scheduled_query_processing_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_query_processing_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Type of the scheduled query.
         """
         return pulumi.get(self, "scheduled_query_processing_type")
 
     @scheduled_query_processing_type.setter
-    def scheduled_query_processing_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_query_processing_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_query_processing_type", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledQueryRetentionCriteria")
-    def scheduled_query_retention_criteria(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_query_retention_criteria(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Retention criteria for the scheduled query.
         """
         return pulumi.get(self, "scheduled_query_retention_criteria")
 
     @scheduled_query_retention_criteria.setter
-    def scheduled_query_retention_criteria(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_query_retention_criteria(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_query_retention_criteria", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledQueryRetentionPeriodInMs")
-    def scheduled_query_retention_period_in_ms(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_query_retention_period_in_ms(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Retention period for the scheduled query in milliseconds.
         """
         return pulumi.get(self, "scheduled_query_retention_period_in_ms")
 
     @scheduled_query_retention_period_in_ms.setter
-    def scheduled_query_retention_period_in_ms(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_query_retention_period_in_ms(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_query_retention_period_in_ms", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledQuerySchedule")
-    def scheduled_query_schedule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_query_schedule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Schedule for the scheduled query.
         """
         return pulumi.get(self, "scheduled_query_schedule")
 
     @scheduled_query_schedule.setter
-    def scheduled_query_schedule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_query_schedule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_query_schedule", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledQueryText")
-    def scheduled_query_text(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_query_text(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Scheduled query to be run. 
 
@@ -254,31 +254,31 @@ class ScheduledQueryArgs:
         return pulumi.get(self, "scheduled_query_text")
 
     @scheduled_query_text.setter
-    def scheduled_query_text(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_query_text(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_query_text", value)
 
 
 @pulumi.input_type
 class _ScheduledQueryState:
     def __init__(__self__, *,
-                 apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 opc_dry_run: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_instances: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_maximum_runtime_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_next_run_in_ms: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_processing_configuration: Optional[pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationArgs']] = None,
-                 scheduled_query_processing_sub_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_processing_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_retention_criteria: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_retention_period_in_ms: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_text: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 opc_dry_run: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_instances: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_maximum_runtime_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_next_run_in_ms: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_processing_configuration: pulumi.Input[Optional['ScheduledQueryScheduledQueryProcessingConfigurationArgs']] = None,
+                 scheduled_query_processing_sub_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_processing_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_retention_criteria: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_retention_period_in_ms: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_text: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering ScheduledQuery resources.
 
@@ -344,187 +344,187 @@ class _ScheduledQueryState:
 
     @_builtins.property
     @pulumi.getter(name="apmDomainId")
-    def apm_domain_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def apm_domain_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The APM Domain ID for the intended request.
         """
         return pulumi.get(self, "apm_domain_id")
 
     @apm_domain_id.setter
-    def apm_domain_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def apm_domain_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "apm_domain_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="opcDryRun")
-    def opc_dry_run(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def opc_dry_run(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not create or modify the resource  and is used only to perform validation on the submitted data.
         """
         return pulumi.get(self, "opc_dry_run")
 
     @opc_dry_run.setter
-    def opc_dry_run(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def opc_dry_run(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "opc_dry_run", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledQueryDescription")
-    def scheduled_query_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_query_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description for the scheduled query.
         """
         return pulumi.get(self, "scheduled_query_description")
 
     @scheduled_query_description.setter
-    def scheduled_query_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_query_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_query_description", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledQueryInstances")
-    def scheduled_query_instances(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_query_instances(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Scheduled query instances.
         """
         return pulumi.get(self, "scheduled_query_instances")
 
     @scheduled_query_instances.setter
-    def scheduled_query_instances(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_query_instances(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_query_instances", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledQueryMaximumRuntimeInSeconds")
-    def scheduled_query_maximum_runtime_in_seconds(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_query_maximum_runtime_in_seconds(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Maximum runtime for the scheduled query in seconds.
         """
         return pulumi.get(self, "scheduled_query_maximum_runtime_in_seconds")
 
     @scheduled_query_maximum_runtime_in_seconds.setter
-    def scheduled_query_maximum_runtime_in_seconds(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_query_maximum_runtime_in_seconds(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_query_maximum_runtime_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledQueryName")
-    def scheduled_query_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_query_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of the scheduled query.
         """
         return pulumi.get(self, "scheduled_query_name")
 
     @scheduled_query_name.setter
-    def scheduled_query_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_query_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_query_name", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledQueryNextRunInMs")
-    def scheduled_query_next_run_in_ms(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_query_next_run_in_ms(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Next run for the scheduled query.
         """
         return pulumi.get(self, "scheduled_query_next_run_in_ms")
 
     @scheduled_query_next_run_in_ms.setter
-    def scheduled_query_next_run_in_ms(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_query_next_run_in_ms(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_query_next_run_in_ms", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledQueryProcessingConfiguration")
-    def scheduled_query_processing_configuration(self) -> Optional[pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationArgs']]:
+    def scheduled_query_processing_configuration(self) -> pulumi.Input[Optional['ScheduledQueryScheduledQueryProcessingConfigurationArgs']]:
         """
         (Updatable) Definition of the scheduled query processing configuration.
         """
         return pulumi.get(self, "scheduled_query_processing_configuration")
 
     @scheduled_query_processing_configuration.setter
-    def scheduled_query_processing_configuration(self, value: Optional[pulumi.Input['ScheduledQueryScheduledQueryProcessingConfigurationArgs']]):
+    def scheduled_query_processing_configuration(self, value: pulumi.Input[Optional['ScheduledQueryScheduledQueryProcessingConfigurationArgs']]):
         pulumi.set(self, "scheduled_query_processing_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledQueryProcessingSubType")
-    def scheduled_query_processing_sub_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_query_processing_sub_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Processing sub type of the scheduled query.
         """
         return pulumi.get(self, "scheduled_query_processing_sub_type")
 
     @scheduled_query_processing_sub_type.setter
-    def scheduled_query_processing_sub_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_query_processing_sub_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_query_processing_sub_type", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledQueryProcessingType")
-    def scheduled_query_processing_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_query_processing_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Type of the scheduled query.
         """
         return pulumi.get(self, "scheduled_query_processing_type")
 
     @scheduled_query_processing_type.setter
-    def scheduled_query_processing_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_query_processing_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_query_processing_type", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledQueryRetentionCriteria")
-    def scheduled_query_retention_criteria(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_query_retention_criteria(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Retention criteria for the scheduled query.
         """
         return pulumi.get(self, "scheduled_query_retention_criteria")
 
     @scheduled_query_retention_criteria.setter
-    def scheduled_query_retention_criteria(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_query_retention_criteria(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_query_retention_criteria", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledQueryRetentionPeriodInMs")
-    def scheduled_query_retention_period_in_ms(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_query_retention_period_in_ms(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Retention period for the scheduled query in milliseconds.
         """
         return pulumi.get(self, "scheduled_query_retention_period_in_ms")
 
     @scheduled_query_retention_period_in_ms.setter
-    def scheduled_query_retention_period_in_ms(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_query_retention_period_in_ms(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_query_retention_period_in_ms", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledQuerySchedule")
-    def scheduled_query_schedule(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_query_schedule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Schedule for the scheduled query.
         """
         return pulumi.get(self, "scheduled_query_schedule")
 
     @scheduled_query_schedule.setter
-    def scheduled_query_schedule(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_query_schedule(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_query_schedule", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduledQueryText")
-    def scheduled_query_text(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduled_query_text(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Scheduled query to be run. 
 
@@ -535,31 +535,31 @@ class _ScheduledQueryState:
         return pulumi.get(self, "scheduled_query_text")
 
     @scheduled_query_text.setter
-    def scheduled_query_text(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduled_query_text(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduled_query_text", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the Scheduled Query.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
 
@@ -569,20 +569,20 @@ class ScheduledQuery(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 opc_dry_run: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_maximum_runtime_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_processing_configuration: Optional[pulumi.Input[Union['ScheduledQueryScheduledQueryProcessingConfigurationArgs', 'ScheduledQueryScheduledQueryProcessingConfigurationArgsDict']]] = None,
-                 scheduled_query_processing_sub_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_processing_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_retention_criteria: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_retention_period_in_ms: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_text: Optional[pulumi.Input[_builtins.str]] = None,
+                 apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 opc_dry_run: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_maximum_runtime_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_processing_configuration: pulumi.Input[Optional[Union['ScheduledQueryScheduledQueryProcessingConfigurationArgs', 'ScheduledQueryScheduledQueryProcessingConfigurationArgsDict']]] = None,
+                 scheduled_query_processing_sub_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_processing_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_retention_criteria: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_retention_period_in_ms: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_text: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Scheduled Query resource in Oracle Cloud Infrastructure Apm Traces service.
@@ -660,20 +660,20 @@ class ScheduledQuery(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 opc_dry_run: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_maximum_runtime_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_processing_configuration: Optional[pulumi.Input[Union['ScheduledQueryScheduledQueryProcessingConfigurationArgs', 'ScheduledQueryScheduledQueryProcessingConfigurationArgsDict']]] = None,
-                 scheduled_query_processing_sub_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_processing_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_retention_criteria: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_retention_period_in_ms: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheduled_query_text: Optional[pulumi.Input[_builtins.str]] = None,
+                 apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 opc_dry_run: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_maximum_runtime_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_processing_configuration: pulumi.Input[Optional[Union['ScheduledQueryScheduledQueryProcessingConfigurationArgs', 'ScheduledQueryScheduledQueryProcessingConfigurationArgsDict']]] = None,
+                 scheduled_query_processing_sub_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_processing_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_retention_criteria: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_retention_period_in_ms: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheduled_query_text: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -713,24 +713,24 @@ class ScheduledQuery(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            opc_dry_run: Optional[pulumi.Input[_builtins.str]] = None,
-            scheduled_query_description: Optional[pulumi.Input[_builtins.str]] = None,
-            scheduled_query_instances: Optional[pulumi.Input[_builtins.str]] = None,
-            scheduled_query_maximum_runtime_in_seconds: Optional[pulumi.Input[_builtins.str]] = None,
-            scheduled_query_name: Optional[pulumi.Input[_builtins.str]] = None,
-            scheduled_query_next_run_in_ms: Optional[pulumi.Input[_builtins.str]] = None,
-            scheduled_query_processing_configuration: Optional[pulumi.Input[Union['ScheduledQueryScheduledQueryProcessingConfigurationArgs', 'ScheduledQueryScheduledQueryProcessingConfigurationArgsDict']]] = None,
-            scheduled_query_processing_sub_type: Optional[pulumi.Input[_builtins.str]] = None,
-            scheduled_query_processing_type: Optional[pulumi.Input[_builtins.str]] = None,
-            scheduled_query_retention_criteria: Optional[pulumi.Input[_builtins.str]] = None,
-            scheduled_query_retention_period_in_ms: Optional[pulumi.Input[_builtins.str]] = None,
-            scheduled_query_schedule: Optional[pulumi.Input[_builtins.str]] = None,
-            scheduled_query_text: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None) -> 'ScheduledQuery':
+            apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            opc_dry_run: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_query_description: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_query_instances: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_query_maximum_runtime_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_query_name: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_query_next_run_in_ms: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_query_processing_configuration: pulumi.Input[Optional[Union['ScheduledQueryScheduledQueryProcessingConfigurationArgs', 'ScheduledQueryScheduledQueryProcessingConfigurationArgsDict']]] = None,
+            scheduled_query_processing_sub_type: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_query_processing_type: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_query_retention_criteria: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_query_retention_period_in_ms: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_query_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_query_text: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None) -> 'ScheduledQuery':
         """
         Get an existing ScheduledQuery resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -177,7 +177,7 @@ def get_bds_instance_node_backup(bds_instance_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_node_backup = oci.BigDataService.get_bds_instance_node_backup(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_node_backup = oci.bigdataservice.get_bds_instance_node_backup(bds_instance_id=test_bds_instance["id"],
         node_backup_id=test_backup["id"])
     ```
 
@@ -203,8 +203,8 @@ def get_bds_instance_node_backup(bds_instance_id: Optional[_builtins.str] = None
         node_instance_id=pulumi.get(__ret__, 'node_instance_id'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_bds_instance_node_backup_output(bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                        node_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_bds_instance_node_backup_output(bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                        node_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceNodeBackupResult]:
     """
     This data source provides details about a specific Bds Instance Node Backup resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -217,7 +217,7 @@ def get_bds_instance_node_backup_output(bds_instance_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_node_backup = oci.BigDataService.get_bds_instance_node_backup(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_node_backup = oci.bigdataservice.get_bds_instance_node_backup(bds_instance_id=test_bds_instance["id"],
         node_backup_id=test_backup["id"])
     ```
 

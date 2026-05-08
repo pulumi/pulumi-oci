@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsEntities = oci.LogAnalytics.getLogAnalyticsEntities({
+ * const testLogAnalyticsEntities = oci.loganalytics.getLogAnalyticsEntities({
  *     compartmentId: compartmentId,
  *     namespace: logAnalyticsEntityNamespace,
  *     cloudResourceId: logAnalyticsEntityCloudResourceId,
@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *     hostname: logAnalyticsEntityHostname,
  *     hostnameContains: logAnalyticsEntityHostnameContains,
  *     isManagementAgentIdNull: logAnalyticsEntityIsManagementAgentIdNull,
- *     isShowAssociatedSourcesCount: logAnalyticsEntityIsShowAssociatedSourcesCount,
+ *     isShowAssociatedSourcesCount: logAnalyticsEntityIsShowAssociatedSourcesCount === "true",
  *     lifecycleDetailsContains: logAnalyticsEntityLifecycleDetailsContains,
  *     metadataEquals: logAnalyticsEntityMetadataEquals,
  *     name: logAnalyticsEntityName,
@@ -207,7 +207,7 @@ export interface GetLogAnalyticsEntitiesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsEntities = oci.LogAnalytics.getLogAnalyticsEntities({
+ * const testLogAnalyticsEntities = oci.loganalytics.getLogAnalyticsEntities({
  *     compartmentId: compartmentId,
  *     namespace: logAnalyticsEntityNamespace,
  *     cloudResourceId: logAnalyticsEntityCloudResourceId,
@@ -219,7 +219,7 @@ export interface GetLogAnalyticsEntitiesResult {
  *     hostname: logAnalyticsEntityHostname,
  *     hostnameContains: logAnalyticsEntityHostnameContains,
  *     isManagementAgentIdNull: logAnalyticsEntityIsManagementAgentIdNull,
- *     isShowAssociatedSourcesCount: logAnalyticsEntityIsShowAssociatedSourcesCount,
+ *     isShowAssociatedSourcesCount: logAnalyticsEntityIsShowAssociatedSourcesCount === "true",
  *     lifecycleDetailsContains: logAnalyticsEntityLifecycleDetailsContains,
  *     metadataEquals: logAnalyticsEntityMetadataEquals,
  *     name: logAnalyticsEntityName,
@@ -261,7 +261,7 @@ export interface GetLogAnalyticsEntitiesOutputArgs {
     /**
      * A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
      */
-    cloudResourceId?: pulumi.Input<string>;
+    cloudResourceId?: pulumi.Input<string | undefined>;
     /**
      * The ID of the compartment in which to list resources.
      */
@@ -269,56 +269,56 @@ export interface GetLogAnalyticsEntitiesOutputArgs {
     /**
      * A list of tag filters to apply.  Only entities with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
      */
-    definedTagEquals?: pulumi.Input<pulumi.Input<string>[]>;
+    definedTagEquals?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A list of tag existence filters to apply.  Only entities for which the specified defined tags exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag) or "{namespace}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
      */
-    definedTagExists?: pulumi.Input<pulumi.Input<string>[]>;
+    definedTagExists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of one of the entityTypeNames given in the list. The match is case-insensitive.
      */
-    entityTypeNames?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetLogAnalyticsEntitiesFilterArgs>[]>;
+    entityTypeNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetLogAnalyticsEntitiesFilterArgs>[] | undefined>;
     /**
      * A list of tag filters to apply.  Only entities with a freeform tag matching the value will be returned. The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
      */
-    freeformTagEquals?: pulumi.Input<pulumi.Input<string>[]>;
+    freeformTagEquals?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A list of tag existence filters to apply.  Only entities for which the specified freeform tags exist the value will be returned. The key for each tag is "{tagName}.true".  All inputs are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported. Multiple values for different tag names are interpreted as "AND".
      */
-    freeformTagExists?: pulumi.Input<pulumi.Input<string>[]>;
+    freeformTagExists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only log analytics entities whose hostname matches the entire hostname given.
      */
-    hostname?: pulumi.Input<string>;
+    hostname?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only log analytics entities whose hostname contains the substring given. The match is case-insensitive.
      */
-    hostnameContains?: pulumi.Input<string>;
+    hostnameContains?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only those log analytics entities whose managementAgentId is null or is not null.
      */
-    isManagementAgentIdNull?: pulumi.Input<string>;
+    isManagementAgentIdNull?: pulumi.Input<string | undefined>;
     /**
      * Option to return count of associated log sources for log analytics entity(s).
      */
-    isShowAssociatedSourcesCount?: pulumi.Input<boolean>;
+    isShowAssociatedSourcesCount?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only log analytics entities whose lifecycleDetails contains the specified string.
      */
-    lifecycleDetailsContains?: pulumi.Input<string>;
+    lifecycleDetailsContains?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only log analytics entities whose metadata name, value and type matches the specified string. Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
      */
-    metadataEquals?: pulumi.Input<pulumi.Input<string>[]>;
+    metadataEquals?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only log analytics entities whose name contains the name given. The match is case-insensitive.
      */
-    nameContains?: pulumi.Input<string>;
+    nameContains?: pulumi.Input<string | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
@@ -326,9 +326,9 @@ export interface GetLogAnalyticsEntitiesOutputArgs {
     /**
      * A filter to return only log analytics entities whose sourceId matches the sourceId given.
      */
-    sourceId?: pulumi.Input<string>;
+    sourceId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

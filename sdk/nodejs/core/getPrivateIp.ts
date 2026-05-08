@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPrivateIp = oci.Core.getPrivateIp({
+ * const testPrivateIp = oci.core.getPrivateIp({
  *     privateIpId: testPrivateIpOciCorePrivateIp.id,
  * });
  * ```
@@ -135,7 +135,7 @@ export interface GetPrivateIpResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPrivateIp = oci.Core.getPrivateIp({
+ * const testPrivateIp = oci.core.getPrivateIp({
  *     privateIpId: testPrivateIpOciCorePrivateIp.id,
  * });
  * ```

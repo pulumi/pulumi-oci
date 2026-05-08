@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  *         }],
  *     },
  *     name: profileName,
- *     aggregationIntervalInDays: profileAggregationIntervalInDays,
+ *     aggregationIntervalInDays: Number(profileAggregationIntervalInDays),
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
@@ -200,52 +200,52 @@ export interface ProfileState {
     /**
      * (Updatable) The time period over which to collect data for the recommendations, measured in number of days.
      */
-    aggregationIntervalInDays?: pulumi.Input<number>;
+    aggregationIntervalInDays?: pulumi.Input<number | undefined>;
     /**
      * The OCID of the tenancy. The tenancy is the root compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Text describing the profile. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A list of configuration levels for each recommendation.
      */
-    levelsConfiguration?: pulumi.Input<inputs.Optimizer.ProfileLevelsConfiguration>;
+    levelsConfiguration?: pulumi.Input<inputs.Optimizer.ProfileLevelsConfiguration | undefined>;
     /**
      * (Updatable) The name assigned to the profile. Avoid entering confidential information.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The profile's current state.
      */
-    state?: pulumi.Input<string>;
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    state?: pulumi.Input<string | undefined>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Optional. The compartments specified in the profile override for a recommendation.
      */
-    targetCompartments?: pulumi.Input<inputs.Optimizer.ProfileTargetCompartments>;
+    targetCompartments?: pulumi.Input<inputs.Optimizer.ProfileTargetCompartments | undefined>;
     /**
      * (Updatable) Optional. The tags specified in the profile override for a recommendation.
      */
-    targetTags?: pulumi.Input<inputs.Optimizer.ProfileTargetTags>;
+    targetTags?: pulumi.Input<inputs.Optimizer.ProfileTargetTags | undefined>;
     /**
      * The date and time the profile was created, in the format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the profile was last updated, in the format defined by RFC3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -255,7 +255,7 @@ export interface ProfileArgs {
     /**
      * (Updatable) The time period over which to collect data for the recommendations, measured in number of days.
      */
-    aggregationIntervalInDays?: pulumi.Input<number>;
+    aggregationIntervalInDays?: pulumi.Input<number | undefined>;
     /**
      * The OCID of the tenancy. The tenancy is the root compartment.
      */
@@ -263,7 +263,7 @@ export interface ProfileArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Text describing the profile. Avoid entering confidential information.
      */
@@ -271,7 +271,7 @@ export interface ProfileArgs {
     /**
      * (Updatable) Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A list of configuration levels for each recommendation.
      */
@@ -279,13 +279,13 @@ export interface ProfileArgs {
     /**
      * (Updatable) The name assigned to the profile. Avoid entering confidential information.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Optional. The compartments specified in the profile override for a recommendation.
      */
-    targetCompartments?: pulumi.Input<inputs.Optimizer.ProfileTargetCompartments>;
+    targetCompartments?: pulumi.Input<inputs.Optimizer.ProfileTargetCompartments | undefined>;
     /**
      * (Updatable) Optional. The tags specified in the profile override for a recommendation.
      */
-    targetTags?: pulumi.Input<inputs.Optimizer.ProfileTargetTags>;
+    targetTags?: pulumi.Input<inputs.Optimizer.ProfileTargetTags | undefined>;
 }

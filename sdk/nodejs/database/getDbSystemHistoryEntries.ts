@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystemPatchHistoryEntries = oci.Database.getDbSystemHistoryEntries({
+ * const testDbSystemPatchHistoryEntries = oci.database.getDbSystemHistoryEntries({
  *     dbSystemId: testDbSystem.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetDbSystemHistoryEntriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystemPatchHistoryEntries = oci.Database.getDbSystemHistoryEntries({
+ * const testDbSystemPatchHistoryEntries = oci.database.getDbSystemHistoryEntries({
  *     dbSystemId: testDbSystem.id,
  * });
  * ```
@@ -88,5 +88,5 @@ export interface GetDbSystemHistoryEntriesOutputArgs {
      * The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     dbSystemId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbSystemHistoryEntriesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbSystemHistoryEntriesFilterArgs>[] | undefined>;
 }

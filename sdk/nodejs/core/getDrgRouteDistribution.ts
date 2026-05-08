@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrgRouteDistribution = oci.Core.getDrgRouteDistribution({
+ * const testDrgRouteDistribution = oci.core.getDrgRouteDistribution({
  *     drgRouteDistributionId: testDrgRouteDistributionOciCoreDrgRouteDistribution.id,
  * });
  * ```
@@ -90,7 +90,7 @@ export interface GetDrgRouteDistributionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrgRouteDistribution = oci.Core.getDrgRouteDistribution({
+ * const testDrgRouteDistribution = oci.core.getDrgRouteDistribution({
  *     drgRouteDistributionId: testDrgRouteDistributionOciCoreDrgRouteDistribution.id,
  * });
  * ```

@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * const testPingMonitor = new oci.healthchecks.PingMonitor("test_ping_monitor", {
  *     compartmentId: compartmentId,
  *     displayName: pingMonitorDisplayName,
- *     intervalInSeconds: pingMonitorIntervalInSeconds,
+ *     intervalInSeconds: Number(pingMonitorIntervalInSeconds),
  *     protocol: pingMonitorProtocol,
  *     targets: pingMonitorTargets,
  *     definedTags: {
@@ -32,9 +32,9 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isEnabled: pingMonitorIsEnabled,
- *     port: pingMonitorPort,
- *     timeoutInSeconds: pingMonitorTimeoutInSeconds,
+ *     isEnabled: pingMonitorIsEnabled === "true",
+ *     port: Number(pingMonitorPort),
+ *     timeoutInSeconds: Number(pingMonitorTimeoutInSeconds),
  *     vantagePointNames: pingMonitorVantagePointNames,
  * });
  * ```
@@ -207,55 +207,55 @@ export interface PingMonitorState {
     /**
      * (Updatable) The OCID of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly and mutable name suitable for display in a user interface.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The region where updates must be made and where results must be fetched from.
      */
-    homeRegion?: pulumi.Input<string>;
+    homeRegion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
      */
-    intervalInSeconds?: pulumi.Input<number>;
+    intervalInSeconds?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Enables or disables the monitor. Set to 'true' to launch monitoring.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The protocols for ping probes.
      */
-    protocol?: pulumi.Input<string>;
+    protocol?: pulumi.Input<string | undefined>;
     /**
      * A URL for fetching the probe results.
      */
-    resultsUrl?: pulumi.Input<string>;
+    resultsUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of targets (hostnames or IP addresses) of the probe.
      */
-    targets?: pulumi.Input<pulumi.Input<string>[]>;
+    targets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The RFC 3339-formatted creation date and time of the probe.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
      */
-    timeoutInSeconds?: pulumi.Input<number>;
+    timeoutInSeconds?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) A list of names of vantage points from which to execute the probe.
      *
@@ -263,7 +263,7 @@ export interface PingMonitorState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vantagePointNames?: pulumi.Input<pulumi.Input<string>[]>;
+    vantagePointNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -277,7 +277,7 @@ export interface PingMonitorArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly and mutable name suitable for display in a user interface.
      */
@@ -285,7 +285,7 @@ export interface PingMonitorArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
      */
@@ -293,11 +293,11 @@ export interface PingMonitorArgs {
     /**
      * (Updatable) Enables or disables the monitor. Set to 'true' to launch monitoring.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The protocols for ping probes.
      */
@@ -309,7 +309,7 @@ export interface PingMonitorArgs {
     /**
      * (Updatable) The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
      */
-    timeoutInSeconds?: pulumi.Input<number>;
+    timeoutInSeconds?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) A list of names of vantage points from which to execute the probe.
      *
@@ -317,5 +317,5 @@ export interface PingMonitorArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vantagePointNames?: pulumi.Input<pulumi.Input<string>[]>;
+    vantagePointNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

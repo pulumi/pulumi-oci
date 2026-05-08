@@ -180,9 +180,9 @@ def get_masking_policy_health_reports(access_level: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policy_health_reports = oci.DataSafe.get_masking_policy_health_reports(compartment_id=compartment_id,
+    test_masking_policy_health_reports = oci.datasafe.get_masking_policy_health_reports(compartment_id=compartment_id,
         access_level=masking_policy_health_report_access_level,
-        compartment_id_in_subtree=masking_policy_health_report_compartment_id_in_subtree,
+        compartment_id_in_subtree=masking_policy_health_report_compartment_id_in_subtree == "true",
         display_name=masking_policy_health_report_display_name,
         masking_policy_health_report_id=test_masking_policy_health_report["id"],
         masking_policy_id=test_masking_policy["id"],
@@ -225,15 +225,15 @@ def get_masking_policy_health_reports(access_level: Optional[_builtins.str] = No
         masking_policy_id=pulumi.get(__ret__, 'masking_policy_id'),
         state=pulumi.get(__ret__, 'state'),
         target_id=pulumi.get(__ret__, 'target_id'))
-def get_masking_policy_health_reports_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaskingPolicyHealthReportsFilterArgs', 'GetMaskingPolicyHealthReportsFilterArgsDict']]]]] = None,
-                                             masking_policy_health_report_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             masking_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_masking_policy_health_reports_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaskingPolicyHealthReportsFilterArgs', 'GetMaskingPolicyHealthReportsFilterArgsDict']]]]] = None,
+                                             masking_policy_health_report_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             masking_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingPolicyHealthReportsResult]:
     """
     This data source provides the list of Masking Policy Health Reports in Oracle Cloud Infrastructure Data Safe service.
@@ -246,9 +246,9 @@ def get_masking_policy_health_reports_output(access_level: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policy_health_reports = oci.DataSafe.get_masking_policy_health_reports(compartment_id=compartment_id,
+    test_masking_policy_health_reports = oci.datasafe.get_masking_policy_health_reports(compartment_id=compartment_id,
         access_level=masking_policy_health_report_access_level,
-        compartment_id_in_subtree=masking_policy_health_report_compartment_id_in_subtree,
+        compartment_id_in_subtree=masking_policy_health_report_compartment_id_in_subtree == "true",
         display_name=masking_policy_health_report_display_name,
         masking_policy_health_report_id=test_masking_policy_health_report["id"],
         masking_policy_id=test_masking_policy["id"],

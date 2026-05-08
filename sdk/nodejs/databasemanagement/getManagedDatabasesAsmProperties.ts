@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabasesAsmProperties = oci.DatabaseManagement.getManagedDatabasesAsmProperties({
+ * const testManagedDatabasesAsmProperties = oci.databasemanagement.getManagedDatabasesAsmProperties({
  *     managedDatabaseId: testManagedDatabase.id,
  *     name: managedDatabasesAsmPropertyName,
  * });
@@ -74,7 +74,7 @@ export interface GetManagedDatabasesAsmPropertiesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabasesAsmProperties = oci.DatabaseManagement.getManagedDatabasesAsmProperties({
+ * const testManagedDatabasesAsmProperties = oci.databasemanagement.getManagedDatabasesAsmProperties({
  *     managedDatabaseId: testManagedDatabase.id,
  *     name: managedDatabasesAsmPropertyName,
  * });
@@ -93,7 +93,7 @@ export function getManagedDatabasesAsmPropertiesOutput(args: GetManagedDatabases
  * A collection of arguments for invoking getManagedDatabasesAsmProperties.
  */
 export interface GetManagedDatabasesAsmPropertiesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabasesAsmPropertiesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabasesAsmPropertiesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
@@ -101,5 +101,5 @@ export interface GetManagedDatabasesAsmPropertiesOutputArgs {
     /**
      * A filter to return only resources that match the entire name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

@@ -24,10 +24,10 @@ class CertificateArgs:
                  certificate_data: pulumi.Input[_builtins.str],
                  compartment_id: pulumi.Input[_builtins.str],
                  private_key_data: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_trust_verification_disabled: Optional[pulumi.Input[_builtins.bool]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_trust_verification_disabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a Certificate resource.
 
@@ -105,75 +105,75 @@ class CertificateArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name for the SSL certificate. The name can be changed and does not need to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isTrustVerificationDisabled")
-    def is_trust_verification_disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_trust_verification_disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Set to `true` if the SSL certificate is self-signed.
         """
         return pulumi.get(self, "is_trust_verification_disabled")
 
     @is_trust_verification_disabled.setter
-    def is_trust_verification_disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_trust_verification_disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_trust_verification_disabled", value)
 
 
 @pulumi.input_type
 class _CertificateState:
     def __init__(__self__, *,
-                 certificate_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 extensions: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateExtensionArgs']]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_trust_verification_disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 issued_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 issuer_names: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateIssuerNameArgs']]]] = None,
-                 private_key_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_key_infos: Optional[pulumi.Input[Sequence[pulumi.Input['CertificatePublicKeyInfoArgs']]]] = None,
-                 serial_number: Optional[pulumi.Input[_builtins.str]] = None,
-                 signature_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subject_names: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateSubjectNameArgs']]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_not_valid_after: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_not_valid_before: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.int]] = None):
+                 certificate_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 extensions: pulumi.Input[Optional[Sequence[pulumi.Input['CertificateExtensionArgs']]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_trust_verification_disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 issued_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 issuer_names: pulumi.Input[Optional[Sequence[pulumi.Input['CertificateIssuerNameArgs']]]] = None,
+                 private_key_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_key_infos: pulumi.Input[Optional[Sequence[pulumi.Input['CertificatePublicKeyInfoArgs']]]] = None,
+                 serial_number: pulumi.Input[Optional[_builtins.str]] = None,
+                 signature_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subject_names: pulumi.Input[Optional[Sequence[pulumi.Input['CertificateSubjectNameArgs']]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_not_valid_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_not_valid_before: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering Certificate resources.
 
@@ -245,7 +245,7 @@ class _CertificateState:
 
     @_builtins.property
     @pulumi.getter(name="certificateData")
-    def certificate_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The data of the SSL certificate.
 
@@ -256,105 +256,105 @@ class _CertificateState:
         return pulumi.get(self, "certificate_data")
 
     @certificate_data.setter
-    def certificate_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_data", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the SSL certificate.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name for the SSL certificate. The name can be changed and does not need to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def extensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CertificateExtensionArgs']]]]:
+    def extensions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CertificateExtensionArgs']]]]:
         """
         Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
         """
         return pulumi.get(self, "extensions")
 
     @extensions.setter
-    def extensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateExtensionArgs']]]]):
+    def extensions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CertificateExtensionArgs']]]]):
         pulumi.set(self, "extensions", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isTrustVerificationDisabled")
-    def is_trust_verification_disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_trust_verification_disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Set to `true` if the SSL certificate is self-signed.
         """
         return pulumi.get(self, "is_trust_verification_disabled")
 
     @is_trust_verification_disabled.setter
-    def is_trust_verification_disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_trust_verification_disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_trust_verification_disabled", value)
 
     @_builtins.property
     @pulumi.getter(name="issuedBy")
-    def issued_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def issued_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "issued_by")
 
     @issued_by.setter
-    def issued_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def issued_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "issued_by", value)
 
     @_builtins.property
     @pulumi.getter(name="issuerNames")
-    def issuer_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CertificateIssuerNameArgs']]]]:
+    def issuer_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CertificateIssuerNameArgs']]]]:
         """
         The issuer of the certificate.
         """
         return pulumi.get(self, "issuer_names")
 
     @issuer_names.setter
-    def issuer_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateIssuerNameArgs']]]]):
+    def issuer_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CertificateIssuerNameArgs']]]]):
         pulumi.set(self, "issuer_names", value)
 
     @_builtins.property
     @pulumi.getter(name="privateKeyData")
-    def private_key_data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_key_data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The private key of the SSL certificate.
 
@@ -365,115 +365,115 @@ class _CertificateState:
         return pulumi.get(self, "private_key_data")
 
     @private_key_data.setter
-    def private_key_data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_key_data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_key_data", value)
 
     @_builtins.property
     @pulumi.getter(name="publicKeyInfos")
-    def public_key_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CertificatePublicKeyInfoArgs']]]]:
+    def public_key_infos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CertificatePublicKeyInfoArgs']]]]:
         """
         Information about the public key and the algorithm used by the public key.
         """
         return pulumi.get(self, "public_key_infos")
 
     @public_key_infos.setter
-    def public_key_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CertificatePublicKeyInfoArgs']]]]):
+    def public_key_infos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CertificatePublicKeyInfoArgs']]]]):
         pulumi.set(self, "public_key_infos", value)
 
     @_builtins.property
     @pulumi.getter(name="serialNumber")
-    def serial_number(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def serial_number(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
         """
         return pulumi.get(self, "serial_number")
 
     @serial_number.setter
-    def serial_number(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def serial_number(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "serial_number", value)
 
     @_builtins.property
     @pulumi.getter(name="signatureAlgorithm")
-    def signature_algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def signature_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
         """
         return pulumi.get(self, "signature_algorithm")
 
     @signature_algorithm.setter
-    def signature_algorithm(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def signature_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "signature_algorithm", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the SSL certificate.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subjectNames")
-    def subject_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CertificateSubjectNameArgs']]]]:
+    def subject_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CertificateSubjectNameArgs']]]]:
         """
         The entity to be secured by the certificate.
         """
         return pulumi.get(self, "subject_names")
 
     @subject_names.setter
-    def subject_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateSubjectNameArgs']]]]):
+    def subject_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CertificateSubjectNameArgs']]]]):
         pulumi.set(self, "subject_names", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the certificate was created, expressed in RFC 3339 timestamp format.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeNotValidAfter")
-    def time_not_valid_after(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_not_valid_after(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the certificate will expire, expressed in RFC 3339 timestamp format.
         """
         return pulumi.get(self, "time_not_valid_after")
 
     @time_not_valid_after.setter
-    def time_not_valid_after(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_not_valid_after(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_not_valid_after", value)
 
     @_builtins.property
     @pulumi.getter(name="timeNotValidBefore")
-    def time_not_valid_before(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_not_valid_before(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the certificate will become valid, expressed in RFC 3339 timestamp format.
         """
         return pulumi.get(self, "time_not_valid_before")
 
     @time_not_valid_before.setter
-    def time_not_valid_before(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_not_valid_before(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_not_valid_before", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The version of the encoded certificate.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "version", value)
 
 
@@ -483,13 +483,13 @@ class Certificate(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 certificate_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_trust_verification_disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 private_key_data: Optional[pulumi.Input[_builtins.str]] = None,
+                 certificate_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_trust_verification_disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 private_key_data: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Certificate resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -518,7 +518,7 @@ class Certificate(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_trust_verification_disabled=certificate_is_trust_verification_disabled)
+            is_trust_verification_disabled=certificate_is_trust_verification_disabled == "true")
         ```
 
         ## Import
@@ -577,7 +577,7 @@ class Certificate(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_trust_verification_disabled=certificate_is_trust_verification_disabled)
+            is_trust_verification_disabled=certificate_is_trust_verification_disabled == "true")
         ```
 
         ## Import
@@ -600,13 +600,13 @@ class Certificate(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 certificate_data: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_trust_verification_disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 private_key_data: Optional[pulumi.Input[_builtins.str]] = None,
+                 certificate_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_trust_verification_disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 private_key_data: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -653,25 +653,25 @@ class Certificate(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            certificate_data: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            extensions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CertificateExtensionArgs', 'CertificateExtensionArgsDict']]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_trust_verification_disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            issued_by: Optional[pulumi.Input[_builtins.str]] = None,
-            issuer_names: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CertificateIssuerNameArgs', 'CertificateIssuerNameArgsDict']]]]] = None,
-            private_key_data: Optional[pulumi.Input[_builtins.str]] = None,
-            public_key_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CertificatePublicKeyInfoArgs', 'CertificatePublicKeyInfoArgsDict']]]]] = None,
-            serial_number: Optional[pulumi.Input[_builtins.str]] = None,
-            signature_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            subject_names: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CertificateSubjectNameArgs', 'CertificateSubjectNameArgsDict']]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_not_valid_after: Optional[pulumi.Input[_builtins.str]] = None,
-            time_not_valid_before: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.int]] = None) -> 'Certificate':
+            certificate_data: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            extensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateExtensionArgs', 'CertificateExtensionArgsDict']]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_trust_verification_disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            issued_by: pulumi.Input[Optional[_builtins.str]] = None,
+            issuer_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateIssuerNameArgs', 'CertificateIssuerNameArgsDict']]]]] = None,
+            private_key_data: pulumi.Input[Optional[_builtins.str]] = None,
+            public_key_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificatePublicKeyInfoArgs', 'CertificatePublicKeyInfoArgsDict']]]]] = None,
+            serial_number: pulumi.Input[Optional[_builtins.str]] = None,
+            signature_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subject_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateSubjectNameArgs', 'CertificateSubjectNameArgsDict']]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_not_valid_after: pulumi.Input[Optional[_builtins.str]] = None,
+            time_not_valid_before: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None) -> 'Certificate':
         """
         Get an existing Certificate resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

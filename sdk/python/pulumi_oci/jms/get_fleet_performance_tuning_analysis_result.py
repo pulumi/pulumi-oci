@@ -264,7 +264,7 @@ def get_fleet_performance_tuning_analysis_result(fleet_id: Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_performance_tuning_analysis_result = oci.Jms.get_fleet_performance_tuning_analysis_result(fleet_id=test_fleet["id"],
+    test_fleet_performance_tuning_analysis_result = oci.jms.get_fleet_performance_tuning_analysis_result(fleet_id=test_fleet["id"],
         performance_tuning_analysis_result_id=fleet_performance_tuning_analysis_result_id)
     ```
 
@@ -297,8 +297,8 @@ def get_fleet_performance_tuning_analysis_result(fleet_id: Optional[_builtins.st
         time_started=pulumi.get(__ret__, 'time_started'),
         warning_count=pulumi.get(__ret__, 'warning_count'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
-def get_fleet_performance_tuning_analysis_result_output(fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                        performance_tuning_analysis_result_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fleet_performance_tuning_analysis_result_output(fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                        performance_tuning_analysis_result_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetPerformanceTuningAnalysisResultResult]:
     """
     This data source provides details about a specific Fleet Performance Tuning Analysis Result resource in Oracle Cloud Infrastructure Jms service.
@@ -311,7 +311,7 @@ def get_fleet_performance_tuning_analysis_result_output(fleet_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_performance_tuning_analysis_result = oci.Jms.get_fleet_performance_tuning_analysis_result(fleet_id=test_fleet["id"],
+    test_fleet_performance_tuning_analysis_result = oci.jms.get_fleet_performance_tuning_analysis_result(fleet_id=test_fleet["id"],
         performance_tuning_analysis_result_id=fleet_performance_tuning_analysis_result_id)
     ```
 

@@ -264,7 +264,7 @@ def get_automatic_dr_configuration(automatic_dr_configuration_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_automatic_dr_configuration = oci.DisasterRecovery.get_automatic_dr_configuration(automatic_dr_configuration_id=test_automatic_dr_configuration_oci_disaster_recovery_automatic_dr_configuration["id"])
+    test_automatic_dr_configuration = oci.disasterrecovery.get_automatic_dr_configuration(automatic_dr_configuration_id=test_automatic_dr_configuration_oci_disaster_recovery_automatic_dr_configuration["id"])
     ```
 
 
@@ -294,7 +294,7 @@ def get_automatic_dr_configuration(automatic_dr_configuration_id: Optional[_buil
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_automatic_dr_execution_submit_attempt=pulumi.get(__ret__, 'time_last_automatic_dr_execution_submit_attempt'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_automatic_dr_configuration_output(automatic_dr_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_automatic_dr_configuration_output(automatic_dr_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutomaticDrConfigurationResult]:
     """
     This data source provides details about a specific Automatic Dr Configuration resource in Oracle Cloud Infrastructure Disaster Recovery service.
@@ -307,7 +307,7 @@ def get_automatic_dr_configuration_output(automatic_dr_configuration_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_automatic_dr_configuration = oci.DisasterRecovery.get_automatic_dr_configuration(automatic_dr_configuration_id=test_automatic_dr_configuration_oci_disaster_recovery_automatic_dr_configuration["id"])
+    test_automatic_dr_configuration = oci.disasterrecovery.get_automatic_dr_configuration(automatic_dr_configuration_id=test_automatic_dr_configuration_oci_disaster_recovery_automatic_dr_configuration["id"])
     ```
 
 

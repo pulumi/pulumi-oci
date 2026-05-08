@@ -109,7 +109,7 @@ def get_virtual_circuit_public_prefixes(filters: Optional[Sequence[Union['GetVir
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_circuit_public_prefixes = oci.Core.get_virtual_circuit_public_prefixes(virtual_circuit_id=test_virtual_circuit["id"],
+    test_virtual_circuit_public_prefixes = oci.core.get_virtual_circuit_public_prefixes(virtual_circuit_id=test_virtual_circuit["id"],
         verification_state=virtual_circuit_public_prefix_verification_state)
     ```
 
@@ -132,9 +132,9 @@ def get_virtual_circuit_public_prefixes(filters: Optional[Sequence[Union['GetVir
         verification_state=pulumi.get(__ret__, 'verification_state'),
         virtual_circuit_id=pulumi.get(__ret__, 'virtual_circuit_id'),
         virtual_circuit_public_prefixes=pulumi.get(__ret__, 'virtual_circuit_public_prefixes'))
-def get_virtual_circuit_public_prefixes_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVirtualCircuitPublicPrefixesFilterArgs', 'GetVirtualCircuitPublicPrefixesFilterArgsDict']]]]] = None,
-                                               verification_state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                               virtual_circuit_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_virtual_circuit_public_prefixes_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVirtualCircuitPublicPrefixesFilterArgs', 'GetVirtualCircuitPublicPrefixesFilterArgsDict']]]]] = None,
+                                               verification_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                               virtual_circuit_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVirtualCircuitPublicPrefixesResult]:
     """
     This data source provides the list of Virtual Circuit Public Prefixes in Oracle Cloud Infrastructure Core service.
@@ -148,7 +148,7 @@ def get_virtual_circuit_public_prefixes_output(filters: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_circuit_public_prefixes = oci.Core.get_virtual_circuit_public_prefixes(virtual_circuit_id=test_virtual_circuit["id"],
+    test_virtual_circuit_public_prefixes = oci.core.get_virtual_circuit_public_prefixes(virtual_circuit_id=test_virtual_circuit["id"],
         verification_state=virtual_circuit_public_prefix_verification_state)
     ```
 

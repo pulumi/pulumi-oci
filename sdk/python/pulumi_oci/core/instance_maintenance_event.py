@@ -20,12 +20,12 @@ __all__ = ['InstanceMaintenanceEventArgs', 'InstanceMaintenanceEvent']
 class InstanceMaintenanceEventArgs:
     def __init__(__self__, *,
                  instance_maintenance_event_id: pulumi.Input[_builtins.str],
-                 alternative_resolution_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 can_delete_local_storage: Optional[pulumi.Input[_builtins.bool]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_window_start: Optional[pulumi.Input[_builtins.str]] = None):
+                 alternative_resolution_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 can_delete_local_storage: pulumi.Input[Optional[_builtins.bool]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_window_start: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a InstanceMaintenanceEvent resource.
 
@@ -75,19 +75,19 @@ class InstanceMaintenanceEventArgs:
 
     @_builtins.property
     @pulumi.getter(name="alternativeResolutionAction")
-    def alternative_resolution_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alternative_resolution_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) One of the alternativeResolutionActions that was provided in the InstanceMaintenanceEvent.
         """
         return pulumi.get(self, "alternative_resolution_action")
 
     @alternative_resolution_action.setter
-    def alternative_resolution_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alternative_resolution_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alternative_resolution_action", value)
 
     @_builtins.property
     @pulumi.getter(name="canDeleteLocalStorage")
-    def can_delete_local_storage(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_delete_local_storage(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) This field is only applicable when setting the alternativeResolutionAction.
 
@@ -98,48 +98,48 @@ class InstanceMaintenanceEventArgs:
         return pulumi.get(self, "can_delete_local_storage")
 
     @can_delete_local_storage.setter
-    def can_delete_local_storage(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_delete_local_storage(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_delete_local_storage", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeWindowStart")
-    def time_window_start(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_window_start(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The beginning of the time window when Maintenance is scheduled to begin. The Maintenance will not begin before this time.
 
@@ -152,38 +152,38 @@ class InstanceMaintenanceEventArgs:
         return pulumi.get(self, "time_window_start")
 
     @time_window_start.setter
-    def time_window_start(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_window_start(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_window_start", value)
 
 
 @pulumi.input_type
 class _InstanceMaintenanceEventState:
     def __init__(__self__, *,
-                 additional_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 alternative_resolution_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 alternative_resolution_actions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 can_delete_local_storage: Optional[pulumi.Input[_builtins.bool]] = None,
-                 can_reschedule: Optional[pulumi.Input[_builtins.bool]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 correlation_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 estimated_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 instance_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_maintenance_event_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 maintenance_category: Optional[pulumi.Input[_builtins.str]] = None,
-                 maintenance_reason: Optional[pulumi.Input[_builtins.str]] = None,
-                 start_window_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_finished: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_hard_due_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_started: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_window_start: Optional[pulumi.Input[_builtins.str]] = None):
+                 additional_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 alternative_resolution_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 alternative_resolution_actions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 can_delete_local_storage: pulumi.Input[Optional[_builtins.bool]] = None,
+                 can_reschedule: pulumi.Input[Optional[_builtins.bool]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 correlation_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 estimated_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 instance_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_maintenance_event_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 maintenance_category: pulumi.Input[Optional[_builtins.str]] = None,
+                 maintenance_reason: pulumi.Input[Optional[_builtins.str]] = None,
+                 start_window_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_finished: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_hard_due_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_started: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_window_start: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InstanceMaintenanceEvent resources.
 
@@ -276,43 +276,43 @@ class _InstanceMaintenanceEventState:
 
     @_builtins.property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def additional_details(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Additional details of the maintenance in the form of json.
         """
         return pulumi.get(self, "additional_details")
 
     @additional_details.setter
-    def additional_details(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def additional_details(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "additional_details", value)
 
     @_builtins.property
     @pulumi.getter(name="alternativeResolutionAction")
-    def alternative_resolution_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def alternative_resolution_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) One of the alternativeResolutionActions that was provided in the InstanceMaintenanceEvent.
         """
         return pulumi.get(self, "alternative_resolution_action")
 
     @alternative_resolution_action.setter
-    def alternative_resolution_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def alternative_resolution_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "alternative_resolution_action", value)
 
     @_builtins.property
     @pulumi.getter(name="alternativeResolutionActions")
-    def alternative_resolution_actions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def alternative_resolution_actions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         These are alternative actions to the requested instanceAction that can be taken to resolve the Maintenance.
         """
         return pulumi.get(self, "alternative_resolution_actions")
 
     @alternative_resolution_actions.setter
-    def alternative_resolution_actions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def alternative_resolution_actions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "alternative_resolution_actions", value)
 
     @_builtins.property
     @pulumi.getter(name="canDeleteLocalStorage")
-    def can_delete_local_storage(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_delete_local_storage(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) This field is only applicable when setting the alternativeResolutionAction.
 
@@ -323,252 +323,252 @@ class _InstanceMaintenanceEventState:
         return pulumi.get(self, "can_delete_local_storage")
 
     @can_delete_local_storage.setter
-    def can_delete_local_storage(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_delete_local_storage(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_delete_local_storage", value)
 
     @_builtins.property
     @pulumi.getter(name="canReschedule")
-    def can_reschedule(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_reschedule(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if this MaintenanceEvent is capable of being rescheduled up to the timeHardDueDate.
         """
         return pulumi.get(self, "can_reschedule")
 
     @can_reschedule.setter
-    def can_reschedule(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_reschedule(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_reschedule", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment that contains the instance.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="correlationToken")
-    def correlation_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def correlation_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A unique identifier that will group Instances that have a relationship with one another and must be scheduled together for the Maintenance to proceed. Any Instances that have a relationship with one another from a Maintenance perspective will have a matching correlationToken.
         """
         return pulumi.get(self, "correlation_token")
 
     @correlation_token.setter
-    def correlation_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def correlation_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "correlation_token", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The creator of the maintenance event.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         It is the descriptive information about the maintenance taking place on the customer instance.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="estimatedDuration")
-    def estimated_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def estimated_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This is the estimated duration of the Maintenance, once the Maintenance has entered the STARTED state.
         """
         return pulumi.get(self, "estimated_duration")
 
     @estimated_duration.setter
-    def estimated_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def estimated_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "estimated_duration", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceAction")
-    def instance_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This is the action that will be performed on the Instance by Oracle Cloud Infrastructure when the Maintenance begins.
         """
         return pulumi.get(self, "instance_action")
 
     @instance_action.setter
-    def instance_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_action", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceId")
-    def instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the instance.
         """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
-    def instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceMaintenanceEventId")
-    def instance_maintenance_event_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_maintenance_event_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the instance maintenance event.
         """
         return pulumi.get(self, "instance_maintenance_event_id")
 
     @instance_maintenance_event_id.setter
-    def instance_maintenance_event_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_maintenance_event_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_maintenance_event_id", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenanceCategory")
-    def maintenance_category(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def maintenance_category(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This indicates the priority and allowed actions for this Maintenance. Higher priority forms of Maintenance have tighter restrictions and may not be rescheduled, while lower priority/severity Maintenance can be rescheduled, deferred, or even cancelled. Please see the [Instance Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
         """
         return pulumi.get(self, "maintenance_category")
 
     @maintenance_category.setter
-    def maintenance_category(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def maintenance_category(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "maintenance_category", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenanceReason")
-    def maintenance_reason(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def maintenance_reason(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This is the reason that Maintenance is being performed. See [Instance Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/placeholder.htm) documentation for details.
         """
         return pulumi.get(self, "maintenance_reason")
 
     @maintenance_reason.setter
-    def maintenance_reason(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def maintenance_reason(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "maintenance_reason", value)
 
     @_builtins.property
     @pulumi.getter(name="startWindowDuration")
-    def start_window_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def start_window_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The duration of the time window Maintenance is scheduled to begin within.
         """
         return pulumi.get(self, "start_window_duration")
 
     @start_window_duration.setter
-    def start_window_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def start_window_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "start_window_duration", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the maintenance event.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the maintenance event was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_finished(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time at which the Maintenance actually finished.
         """
         return pulumi.get(self, "time_finished")
 
     @time_finished.setter
-    def time_finished(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_finished(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_finished", value)
 
     @_builtins.property
     @pulumi.getter(name="timeHardDueDate")
-    def time_hard_due_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_hard_due_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         It is the scheduled hard due date and time of the maintenance event. The maintenance event will happen at this time and the due date will not be extended.
         """
         return pulumi.get(self, "time_hard_due_date")
 
     @time_hard_due_date.setter
-    def time_hard_due_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_hard_due_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_hard_due_date", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_started(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time at which the Maintenance actually started.
         """
         return pulumi.get(self, "time_started")
 
     @time_started.setter
-    def time_started(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_started(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_started", value)
 
     @_builtins.property
     @pulumi.getter(name="timeWindowStart")
-    def time_window_start(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_window_start(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The beginning of the time window when Maintenance is scheduled to begin. The Maintenance will not begin before this time.
 
@@ -581,7 +581,7 @@ class _InstanceMaintenanceEventState:
         return pulumi.get(self, "time_window_start")
 
     @time_window_start.setter
-    def time_window_start(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_window_start(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_window_start", value)
 
 
@@ -591,13 +591,13 @@ class InstanceMaintenanceEvent(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alternative_resolution_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 can_delete_local_storage: Optional[pulumi.Input[_builtins.bool]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 instance_maintenance_event_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_window_start: Optional[pulumi.Input[_builtins.str]] = None,
+                 alternative_resolution_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 can_delete_local_storage: pulumi.Input[Optional[_builtins.bool]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 instance_maintenance_event_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_window_start: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Instance Maintenance Event resource in Oracle Cloud Infrastructure Core service.
@@ -668,13 +668,13 @@ class InstanceMaintenanceEvent(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 alternative_resolution_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 can_delete_local_storage: Optional[pulumi.Input[_builtins.bool]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 instance_maintenance_event_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_window_start: Optional[pulumi.Input[_builtins.str]] = None,
+                 alternative_resolution_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 can_delete_local_storage: pulumi.Input[Optional[_builtins.bool]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 instance_maintenance_event_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_window_start: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -721,31 +721,31 @@ class InstanceMaintenanceEvent(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            additional_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            alternative_resolution_action: Optional[pulumi.Input[_builtins.str]] = None,
-            alternative_resolution_actions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            can_delete_local_storage: Optional[pulumi.Input[_builtins.bool]] = None,
-            can_reschedule: Optional[pulumi.Input[_builtins.bool]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            correlation_token: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            estimated_duration: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            instance_action: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_maintenance_event_id: Optional[pulumi.Input[_builtins.str]] = None,
-            maintenance_category: Optional[pulumi.Input[_builtins.str]] = None,
-            maintenance_reason: Optional[pulumi.Input[_builtins.str]] = None,
-            start_window_duration: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_finished: Optional[pulumi.Input[_builtins.str]] = None,
-            time_hard_due_date: Optional[pulumi.Input[_builtins.str]] = None,
-            time_started: Optional[pulumi.Input[_builtins.str]] = None,
-            time_window_start: Optional[pulumi.Input[_builtins.str]] = None) -> 'InstanceMaintenanceEvent':
+            additional_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            alternative_resolution_action: pulumi.Input[Optional[_builtins.str]] = None,
+            alternative_resolution_actions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            can_delete_local_storage: pulumi.Input[Optional[_builtins.bool]] = None,
+            can_reschedule: pulumi.Input[Optional[_builtins.bool]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            correlation_token: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            estimated_duration: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            instance_action: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_maintenance_event_id: pulumi.Input[Optional[_builtins.str]] = None,
+            maintenance_category: pulumi.Input[Optional[_builtins.str]] = None,
+            maintenance_reason: pulumi.Input[Optional[_builtins.str]] = None,
+            start_window_duration: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_finished: pulumi.Input[Optional[_builtins.str]] = None,
+            time_hard_due_date: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started: pulumi.Input[Optional[_builtins.str]] = None,
+            time_window_start: pulumi.Input[Optional[_builtins.str]] = None) -> 'InstanceMaintenanceEvent':
         """
         Get an existing InstanceMaintenanceEvent resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

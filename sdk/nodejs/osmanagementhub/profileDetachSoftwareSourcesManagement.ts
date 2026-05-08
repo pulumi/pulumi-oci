@@ -111,7 +111,7 @@ export interface ProfileDetachSoftwareSourcesManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
      */
-    profileId?: pulumi.Input<string>;
+    profileId?: pulumi.Input<string | undefined>;
     /**
      * List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from the profile.
      *
@@ -119,7 +119,7 @@ export interface ProfileDetachSoftwareSourcesManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    softwareSources?: pulumi.Input<pulumi.Input<string>[]>;
+    softwareSources?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**

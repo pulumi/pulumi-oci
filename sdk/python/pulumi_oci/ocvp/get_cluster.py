@@ -435,7 +435,7 @@ def get_cluster(cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster = oci.Ocvp.get_cluster(cluster_id=test_cluster_oci_ocvp_cluster["id"])
+    test_cluster = oci.ocvp.get_cluster(cluster_id=test_cluster_oci_ocvp_cluster["id"])
     ```
 
 
@@ -480,7 +480,7 @@ def get_cluster(cluster_id: Optional[_builtins.str] = None,
         vsphere_type=pulumi.get(__ret__, 'vsphere_type'),
         vsphere_upgrade_objects=pulumi.get(__ret__, 'vsphere_upgrade_objects'),
         workload_network_cidr=pulumi.get(__ret__, 'workload_network_cidr'))
-def get_cluster_output(cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cluster_output(cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterResult]:
     """
     This data source provides details about a specific Cluster resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -493,7 +493,7 @@ def get_cluster_output(cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster = oci.Ocvp.get_cluster(cluster_id=test_cluster_oci_ocvp_cluster["id"])
+    test_cluster = oci.ocvp.get_cluster(cluster_id=test_cluster_oci_ocvp_cluster["id"])
     ```
 
 

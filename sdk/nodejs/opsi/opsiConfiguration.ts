@@ -212,55 +212,55 @@ export interface OpsiConfigurationState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned. By default only customized configuration items are returned.
      */
-    configItemCustomStatuses?: pulumi.Input<pulumi.Input<string>[]>;
+    configItemCustomStatuses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Specifies the fields to return in a config item summary.
      */
-    configItemFields?: pulumi.Input<pulumi.Input<string>[]>;
+    configItemFields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Array of configuration items with custom values. All and only configuration items requiring custom values should be part of this array.
      */
-    configItems?: pulumi.Input<pulumi.Input<inputs.Opsi.OpsiConfigurationConfigItem>[]>;
+    configItems?: pulumi.Input<pulumi.Input<inputs.Opsi.OpsiConfigurationConfigItem>[] | undefined>;
     /**
      * Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
      */
-    configItemsApplicableContexts?: pulumi.Input<pulumi.Input<string>[]>;
+    configItemsApplicableContexts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Description of OPSI configuration.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
      */
-    opsiConfigFields?: pulumi.Input<pulumi.Input<string>[]>;
+    opsiConfigFields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) OPSI configuration type.
      */
-    opsiConfigType?: pulumi.Input<string>;
+    opsiConfigType?: pulumi.Input<string | undefined>;
     /**
      * OPSI configuration resource lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
      *
@@ -268,15 +268,15 @@ export interface OpsiConfigurationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time at which the resource was first created. An RFC3339 formatted datetime string
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time at which the resource was last updated. An RFC3339 formatted datetime string
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -286,43 +286,43 @@ export interface OpsiConfigurationArgs {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned. By default only customized configuration items are returned.
      */
-    configItemCustomStatuses?: pulumi.Input<pulumi.Input<string>[]>;
+    configItemCustomStatuses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Specifies the fields to return in a config item summary.
      */
-    configItemFields?: pulumi.Input<pulumi.Input<string>[]>;
+    configItemFields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Array of configuration items with custom values. All and only configuration items requiring custom values should be part of this array.
      */
-    configItems?: pulumi.Input<pulumi.Input<inputs.Opsi.OpsiConfigurationConfigItem>[]>;
+    configItems?: pulumi.Input<pulumi.Input<inputs.Opsi.OpsiConfigurationConfigItem>[] | undefined>;
     /**
      * Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
      */
-    configItemsApplicableContexts?: pulumi.Input<pulumi.Input<string>[]>;
+    configItemsApplicableContexts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Description of OPSI configuration.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
      */
-    opsiConfigFields?: pulumi.Input<pulumi.Input<string>[]>;
+    opsiConfigFields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) OPSI configuration type.
      */
@@ -334,5 +334,5 @@ export interface OpsiConfigurationArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

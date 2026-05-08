@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentTemplateBaselineComparison = oci.DataSafe.getSecurityAssessmentTemplateBaselineComparison({
+ * const testSecurityAssessmentTemplateBaselineComparison = oci.datasafe.getSecurityAssessmentTemplateBaselineComparison({
  *     comparisonSecurityAssessmentId: testSecurityAssessment.id,
  *     securityAssessmentId: testSecurityAssessment.id,
  *     category: securityAssessmentTemplateBaselineComparisonCategory,
@@ -135,7 +135,7 @@ export interface GetSecurityAssessmentTemplateBaselineComparisonResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentTemplateBaselineComparison = oci.DataSafe.getSecurityAssessmentTemplateBaselineComparison({
+ * const testSecurityAssessmentTemplateBaselineComparison = oci.datasafe.getSecurityAssessmentTemplateBaselineComparison({
  *     comparisonSecurityAssessmentId: testSecurityAssessment.id,
  *     securityAssessmentId: testSecurityAssessment.id,
  *     category: securityAssessmentTemplateBaselineComparisonCategory,
@@ -162,7 +162,7 @@ export interface GetSecurityAssessmentTemplateBaselineComparisonOutputArgs {
     /**
      * The category of the finding.
      */
-    category?: pulumi.Input<string>;
+    category?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the security assessment baseline.
      */
@@ -170,7 +170,7 @@ export interface GetSecurityAssessmentTemplateBaselineComparisonOutputArgs {
     /**
      * The unique key that identifies the finding. It is a string and unique within a security assessment.
      */
-    findingKey?: pulumi.Input<string>;
+    findingKey?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the security assessment.
      */
@@ -178,5 +178,5 @@ export interface GetSecurityAssessmentTemplateBaselineComparisonOutputArgs {
     /**
      * A filter to return only items related to a specific target OCID.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
 }

@@ -123,19 +123,19 @@ export interface ManagedInstanceUpdatePackagesManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
-    managedInstanceId?: pulumi.Input<string>;
+    managedInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The list of package names.
      */
-    packageNames?: pulumi.Input<pulumi.Input<string>[]>;
+    packageNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The types of updates to be applied.
      */
-    updateTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    updateTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceUpdatePackagesManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceUpdatePackagesManagementWorkRequestDetails | undefined>;
 }
 
 /**
@@ -149,13 +149,13 @@ export interface ManagedInstanceUpdatePackagesManagementArgs {
     /**
      * The list of package names.
      */
-    packageNames?: pulumi.Input<pulumi.Input<string>[]>;
+    packageNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The types of updates to be applied.
      */
-    updateTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    updateTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceUpdatePackagesManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceUpdatePackagesManagementWorkRequestDetails | undefined>;
 }

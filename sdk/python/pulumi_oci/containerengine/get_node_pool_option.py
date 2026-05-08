@@ -170,12 +170,12 @@ def get_node_pool_option(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_node_pool_option = oci.ContainerEngine.get_node_pool_option(node_pool_option_id=test_node_pool_option_oci_containerengine_node_pool_option["id"],
+    test_node_pool_option = oci.containerengine.get_node_pool_option(node_pool_option_id=test_node_pool_option_oci_containerengine_node_pool_option["id"],
         compartment_id=compartment_id,
         node_pool_k8s_version=node_pool_option_node_pool_k8s_version,
         node_pool_os_arch=node_pool_option_node_pool_os_arch,
         node_pool_os_type=node_pool_option_node_pool_os_type,
-        should_list_all_patch_versions=node_pool_option_should_list_all_patch_versions)
+        should_list_all_patch_versions=node_pool_option_should_list_all_patch_versions == "true")
     ```
 
 
@@ -208,12 +208,12 @@ def get_node_pool_option(compartment_id: Optional[_builtins.str] = None,
         shapes=pulumi.get(__ret__, 'shapes'),
         should_list_all_patch_versions=pulumi.get(__ret__, 'should_list_all_patch_versions'),
         sources=pulumi.get(__ret__, 'sources'))
-def get_node_pool_option_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                node_pool_k8s_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                node_pool_option_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                node_pool_os_arch: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                node_pool_os_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                should_list_all_patch_versions: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+def get_node_pool_option_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                node_pool_k8s_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                node_pool_option_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                node_pool_os_arch: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                node_pool_os_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                should_list_all_patch_versions: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNodePoolOptionResult]:
     """
     This data source provides details about a specific Node Pool Option resource in Oracle Cloud Infrastructure Container Engine service.
@@ -226,12 +226,12 @@ def get_node_pool_option_output(compartment_id: Optional[pulumi.Input[Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_node_pool_option = oci.ContainerEngine.get_node_pool_option(node_pool_option_id=test_node_pool_option_oci_containerengine_node_pool_option["id"],
+    test_node_pool_option = oci.containerengine.get_node_pool_option(node_pool_option_id=test_node_pool_option_oci_containerengine_node_pool_option["id"],
         compartment_id=compartment_id,
         node_pool_k8s_version=node_pool_option_node_pool_k8s_version,
         node_pool_os_arch=node_pool_option_node_pool_os_arch,
         node_pool_os_type=node_pool_option_node_pool_os_type,
-        should_list_all_patch_versions=node_pool_option_should_list_all_patch_versions)
+        should_list_all_patch_versions=node_pool_option_should_list_all_patch_versions == "true")
     ```
 
 

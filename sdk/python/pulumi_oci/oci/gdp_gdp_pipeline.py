@@ -26,19 +26,19 @@ class GdpGdpPipelineArgs:
                  display_name: pulumi.Input[_builtins.str],
                  peering_region: pulumi.Input[_builtins.str],
                  pipeline_type: pulumi.Input[_builtins.str],
-                 approval_key_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 env: Optional[pulumi.Input[_builtins.str]] = None,
-                 file_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_approval_needed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_chunking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_file_override_in_destination_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_scanning_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 service_log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 approval_key_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 env: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_approval_needed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_chunking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_file_override_in_destination_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_scanning_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 service_log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a GdpGdpPipeline resource.
 
@@ -158,139 +158,139 @@ class GdpGdpPipelineArgs:
 
     @_builtins.property
     @pulumi.getter(name="approvalKeyVaultId")
-    def approval_key_vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def approval_key_vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The KMS vault OCID used for cryptographic approvals of transfers.
         """
         return pulumi.get(self, "approval_key_vault_id")
 
     @approval_key_vault_id.setter
-    def approval_key_vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def approval_key_vault_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "approval_key_vault_id", value)
 
     @_builtins.property
     @pulumi.getter(name="authorizationDetails")
-    def authorization_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authorization_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Authorization information about the pipeline being configured.
         """
         return pulumi.get(self, "authorization_details")
 
     @authorization_details.setter
-    def authorization_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authorization_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authorization_details", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Short field input by customer for a description of the data pipeline use-case.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def env(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def env(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The environment where the pipeline resides. Valid values are COMMERCIAL or USGOV. Defaults to COMMERCIAL.
         """
         return pulumi.get(self, "env")
 
     @env.setter
-    def env(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def env(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "env", value)
 
     @_builtins.property
     @pulumi.getter(name="fileTypes")
-    def file_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def file_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of file types allowed to be transferred in the pipeline according to the authorization details (e.g. .pdf, .xml, .doc).
         """
         return pulumi.get(self, "file_types")
 
     @file_types.setter
-    def file_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def file_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "file_types", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isApprovalNeeded")
-    def is_approval_needed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_approval_needed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Determines whether file transfers need to go through an approval workflow.
         """
         return pulumi.get(self, "is_approval_needed")
 
     @is_approval_needed.setter
-    def is_approval_needed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_approval_needed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_approval_needed", value)
 
     @_builtins.property
     @pulumi.getter(name="isChunkingEnabled")
-    def is_chunking_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_chunking_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Determines whether file must be chunked during the transfer. This is only a property of SENDER pipelines.
         """
         return pulumi.get(self, "is_chunking_enabled")
 
     @is_chunking_enabled.setter
-    def is_chunking_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_chunking_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_chunking_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isFileOverrideInDestinationEnabled")
-    def is_file_override_in_destination_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_file_override_in_destination_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enable file override feature in destination bucket. If 2 files with same name exist in destination bucket, original file will be overwritten.
         """
         return pulumi.get(self, "is_file_override_in_destination_enabled")
 
     @is_file_override_in_destination_enabled.setter
-    def is_file_override_in_destination_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_file_override_in_destination_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_file_override_in_destination_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isScanningEnabled")
-    def is_scanning_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_scanning_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Determines whether GDP Scanning should be enabled for the pipeline.
         """
         return pulumi.get(self, "is_scanning_enabled")
 
     @is_scanning_enabled.setter
-    def is_scanning_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_scanning_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_scanning_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceLogGroupId")
-    def service_log_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_log_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) the OCID of the service log group.
 
@@ -300,48 +300,48 @@ class GdpGdpPipelineArgs:
         return pulumi.get(self, "service_log_group_id")
 
     @service_log_group_id.setter
-    def service_log_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_log_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_log_group_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the pipeline.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
 @pulumi.input_type
 class _GdpGdpPipelineState:
     def __init__(__self__, *,
-                 approval_key_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket_details: Optional[pulumi.Input[Sequence[pulumi.Input['GdpGdpPipelineBucketDetailArgs']]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 env: Optional[pulumi.Input[_builtins.str]] = None,
-                 file_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_approval_needed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_chunking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_file_override_in_destination_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_scanning_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 peered_gdp_pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peering_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 pipeline_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 approval_key_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket_details: pulumi.Input[Optional[Sequence[pulumi.Input['GdpGdpPipelineBucketDetailArgs']]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 env: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_approval_needed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_chunking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_file_override_in_destination_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_scanning_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 peered_gdp_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peering_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 pipeline_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering GdpGdpPipeline resources.
 
@@ -421,223 +421,223 @@ class _GdpGdpPipelineState:
 
     @_builtins.property
     @pulumi.getter(name="approvalKeyVaultId")
-    def approval_key_vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def approval_key_vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The KMS vault OCID used for cryptographic approvals of transfers.
         """
         return pulumi.get(self, "approval_key_vault_id")
 
     @approval_key_vault_id.setter
-    def approval_key_vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def approval_key_vault_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "approval_key_vault_id", value)
 
     @_builtins.property
     @pulumi.getter(name="authorizationDetails")
-    def authorization_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authorization_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Authorization information about the pipeline being configured.
         """
         return pulumi.get(self, "authorization_details")
 
     @authorization_details.setter
-    def authorization_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authorization_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authorization_details", value)
 
     @_builtins.property
     @pulumi.getter(name="bucketDetails")
-    def bucket_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GdpGdpPipelineBucketDetailArgs']]]]:
+    def bucket_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['GdpGdpPipelineBucketDetailArgs']]]]:
         """
         Configuration information about the buckets used for this pipeline.
         """
         return pulumi.get(self, "bucket_details")
 
     @bucket_details.setter
-    def bucket_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GdpGdpPipelineBucketDetailArgs']]]]):
+    def bucket_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['GdpGdpPipelineBucketDetailArgs']]]]):
         pulumi.set(self, "bucket_details", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Short field input by customer for a description of the data pipeline use-case.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Pipeline short name.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def env(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def env(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The environment where the pipeline resides. Valid values are COMMERCIAL or USGOV. Defaults to COMMERCIAL.
         """
         return pulumi.get(self, "env")
 
     @env.setter
-    def env(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def env(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "env", value)
 
     @_builtins.property
     @pulumi.getter(name="fileTypes")
-    def file_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def file_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of file types allowed to be transferred in the pipeline according to the authorization details (e.g. .pdf, .xml, .doc).
         """
         return pulumi.get(self, "file_types")
 
     @file_types.setter
-    def file_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def file_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "file_types", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isApprovalNeeded")
-    def is_approval_needed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_approval_needed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Determines whether file transfers need to go through an approval workflow.
         """
         return pulumi.get(self, "is_approval_needed")
 
     @is_approval_needed.setter
-    def is_approval_needed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_approval_needed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_approval_needed", value)
 
     @_builtins.property
     @pulumi.getter(name="isChunkingEnabled")
-    def is_chunking_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_chunking_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Determines whether file must be chunked during the transfer. This is only a property of SENDER pipelines.
         """
         return pulumi.get(self, "is_chunking_enabled")
 
     @is_chunking_enabled.setter
-    def is_chunking_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_chunking_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_chunking_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isFileOverrideInDestinationEnabled")
-    def is_file_override_in_destination_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_file_override_in_destination_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enable file override feature in destination bucket. If 2 files with same name exist in destination bucket, original file will be overwritten.
         """
         return pulumi.get(self, "is_file_override_in_destination_enabled")
 
     @is_file_override_in_destination_enabled.setter
-    def is_file_override_in_destination_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_file_override_in_destination_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_file_override_in_destination_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isScanningEnabled")
-    def is_scanning_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_scanning_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Determines whether GDP Scanning should be enabled for the pipeline.
         """
         return pulumi.get(self, "is_scanning_enabled")
 
     @is_scanning_enabled.setter
-    def is_scanning_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_scanning_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_scanning_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional details about the current state of the pipeline.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="peeredGdpPipelineId")
-    def peered_gdp_pipeline_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peered_gdp_pipeline_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the peered pipeline. This null for SENDER pipeline.
         """
         return pulumi.get(self, "peered_gdp_pipeline_id")
 
     @peered_gdp_pipeline_id.setter
-    def peered_gdp_pipeline_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peered_gdp_pipeline_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peered_gdp_pipeline_id", value)
 
     @_builtins.property
     @pulumi.getter(name="peeringRegion")
-    def peering_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peering_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Public region name where the peered pipeline exists.
         """
         return pulumi.get(self, "peering_region")
 
     @peering_region.setter
-    def peering_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peering_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peering_region", value)
 
     @_builtins.property
     @pulumi.getter(name="pipelineType")
-    def pipeline_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pipeline_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of pipeline. Can be SENDER or RECEIVER.
         """
         return pulumi.get(self, "pipeline_type")
 
     @pipeline_type.setter
-    def pipeline_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pipeline_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pipeline_type", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceLogGroupId")
-    def service_log_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_log_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) the OCID of the service log group.
 
@@ -647,55 +647,55 @@ class _GdpGdpPipelineState:
         return pulumi.get(self, "service_log_group_id")
 
     @service_log_group_id.setter
-    def service_log_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_log_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_log_group_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the pipeline.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the the pipeline was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the pipeline was updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -705,24 +705,24 @@ class GdpGdpPipeline(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 approval_key_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GdpGdpPipelineBucketDetailArgs', 'GdpGdpPipelineBucketDetailArgsDict']]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 env: Optional[pulumi.Input[_builtins.str]] = None,
-                 file_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_approval_needed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_chunking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_file_override_in_destination_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_scanning_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 peering_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 pipeline_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
+                 approval_key_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GdpGdpPipelineBucketDetailArgs', 'GdpGdpPipelineBucketDetailArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 env: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_approval_needed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_chunking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_file_override_in_destination_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_scanning_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 peering_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 pipeline_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Gdp Pipeline resource in Oracle Cloud Infrastructure Gdp service.
@@ -760,10 +760,10 @@ class GdpGdpPipeline(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_approval_needed=gdp_pipeline_is_approval_needed,
-            is_chunking_enabled=gdp_pipeline_is_chunking_enabled,
-            is_file_override_in_destination_enabled=gdp_pipeline_is_file_override_in_destination_enabled,
-            is_scanning_enabled=gdp_pipeline_is_scanning_enabled,
+            is_approval_needed=gdp_pipeline_is_approval_needed == "true",
+            is_chunking_enabled=gdp_pipeline_is_chunking_enabled == "true",
+            is_file_override_in_destination_enabled=gdp_pipeline_is_file_override_in_destination_enabled == "true",
+            is_scanning_enabled=gdp_pipeline_is_scanning_enabled == "true",
             service_log_group_id=test_log_group["id"])
         ```
 
@@ -842,10 +842,10 @@ class GdpGdpPipeline(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_approval_needed=gdp_pipeline_is_approval_needed,
-            is_chunking_enabled=gdp_pipeline_is_chunking_enabled,
-            is_file_override_in_destination_enabled=gdp_pipeline_is_file_override_in_destination_enabled,
-            is_scanning_enabled=gdp_pipeline_is_scanning_enabled,
+            is_approval_needed=gdp_pipeline_is_approval_needed == "true",
+            is_chunking_enabled=gdp_pipeline_is_chunking_enabled == "true",
+            is_file_override_in_destination_enabled=gdp_pipeline_is_file_override_in_destination_enabled == "true",
+            is_scanning_enabled=gdp_pipeline_is_scanning_enabled == "true",
             service_log_group_id=test_log_group["id"])
         ```
 
@@ -873,24 +873,24 @@ class GdpGdpPipeline(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 approval_key_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 authorization_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GdpGdpPipelineBucketDetailArgs', 'GdpGdpPipelineBucketDetailArgsDict']]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 env: Optional[pulumi.Input[_builtins.str]] = None,
-                 file_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_approval_needed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_chunking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_file_override_in_destination_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_scanning_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 peering_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 pipeline_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
+                 approval_key_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 authorization_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GdpGdpPipelineBucketDetailArgs', 'GdpGdpPipelineBucketDetailArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 env: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_approval_needed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_chunking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_file_override_in_destination_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_scanning_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 peering_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 pipeline_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -943,29 +943,29 @@ class GdpGdpPipeline(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            approval_key_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-            authorization_details: Optional[pulumi.Input[_builtins.str]] = None,
-            bucket_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GdpGdpPipelineBucketDetailArgs', 'GdpGdpPipelineBucketDetailArgsDict']]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            env: Optional[pulumi.Input[_builtins.str]] = None,
-            file_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_approval_needed: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_chunking_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_file_override_in_destination_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_scanning_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            peered_gdp_pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
-            peering_region: Optional[pulumi.Input[_builtins.str]] = None,
-            pipeline_type: Optional[pulumi.Input[_builtins.str]] = None,
-            service_log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'GdpGdpPipeline':
+            approval_key_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+            authorization_details: pulumi.Input[Optional[_builtins.str]] = None,
+            bucket_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GdpGdpPipelineBucketDetailArgs', 'GdpGdpPipelineBucketDetailArgsDict']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            env: pulumi.Input[Optional[_builtins.str]] = None,
+            file_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_approval_needed: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_chunking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_file_override_in_destination_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_scanning_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            peered_gdp_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+            peering_region: pulumi.Input[Optional[_builtins.str]] = None,
+            pipeline_type: pulumi.Input[Optional[_builtins.str]] = None,
+            service_log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'GdpGdpPipeline':
         """
         Get an existing GdpGdpPipeline resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

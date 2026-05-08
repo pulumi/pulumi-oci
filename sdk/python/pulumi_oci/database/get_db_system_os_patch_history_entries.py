@@ -124,7 +124,7 @@ def get_db_system_os_patch_history_entries(action: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_os_patch_history_entries = oci.Database.get_db_system_os_patch_history_entries(db_system_id=test_db_system["id"],
+    test_db_system_os_patch_history_entries = oci.database.get_db_system_os_patch_history_entries(db_system_id=test_db_system["id"],
         action=db_system_os_patch_history_entry_action,
         state=db_system_os_patch_history_entry_state)
     ```
@@ -149,10 +149,10 @@ def get_db_system_os_patch_history_entries(action: Optional[_builtins.str] = Non
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_db_system_os_patch_history_entries_output(action: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbSystemOsPatchHistoryEntriesFilterArgs', 'GetDbSystemOsPatchHistoryEntriesFilterArgsDict']]]]] = None,
-                                                  state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_db_system_os_patch_history_entries_output(action: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemOsPatchHistoryEntriesFilterArgs', 'GetDbSystemOsPatchHistoryEntriesFilterArgsDict']]]]] = None,
+                                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemOsPatchHistoryEntriesResult]:
     """
     This data source provides the list of Db System Os Patch History Entries in Oracle Cloud Infrastructure Database service.
@@ -165,7 +165,7 @@ def get_db_system_os_patch_history_entries_output(action: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_os_patch_history_entries = oci.Database.get_db_system_os_patch_history_entries(db_system_id=test_db_system["id"],
+    test_db_system_os_patch_history_entries = oci.database.get_db_system_os_patch_history_entries(db_system_id=test_db_system["id"],
         action=db_system_os_patch_history_entry_action,
         state=db_system_os_patch_history_entry_state)
     ```

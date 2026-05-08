@@ -37,10 +37,10 @@ import * as utilities from "../utilities";
  *                 type: instanceConfigurationInstanceDetailsBlockVolumesAttachDetailsType,
  *                 device: instanceConfigurationInstanceDetailsBlockVolumesAttachDetailsDevice,
  *                 displayName: instanceConfigurationInstanceDetailsBlockVolumesAttachDetailsDisplayName,
- *                 isPvEncryptionInTransitEnabled: instanceConfigurationInstanceDetailsBlockVolumesAttachDetailsIsPvEncryptionInTransitEnabled,
- *                 isReadOnly: instanceConfigurationInstanceDetailsBlockVolumesAttachDetailsIsReadOnly,
- *                 isShareable: instanceConfigurationInstanceDetailsBlockVolumesAttachDetailsIsShareable,
- *                 useChap: instanceConfigurationInstanceDetailsBlockVolumesAttachDetailsUseChap,
+ *                 isPvEncryptionInTransitEnabled: instanceConfigurationInstanceDetailsBlockVolumesAttachDetailsIsPvEncryptionInTransitEnabled === "true",
+ *                 isReadOnly: instanceConfigurationInstanceDetailsBlockVolumesAttachDetailsIsReadOnly === "true",
+ *                 isShareable: instanceConfigurationInstanceDetailsBlockVolumesAttachDetailsIsShareable === "true",
+ *                 useChap: instanceConfigurationInstanceDetailsBlockVolumesAttachDetailsUseChap === "true",
  *             },
  *             createDetails: {
  *                 autotunePolicies: [{
@@ -62,7 +62,7 @@ import * as utilities from "../utilities";
  *                 freeformTags: {
  *                     Department: "Finance",
  *                 },
- *                 isAutoTuneEnabled: instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsIsAutoTuneEnabled,
+ *                 isAutoTuneEnabled: instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsIsAutoTuneEnabled === "true",
  *                 isReservationsEnabled: instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsIsReservationsEnabled,
  *                 kmsKeyId: testKey.id,
  *                 sizeInGbs: instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsSizeInGbs,
@@ -77,16 +77,16 @@ import * as utilities from "../utilities";
  *         }],
  *         launchDetails: {
  *             agentConfig: {
- *                 areAllPluginsDisabled: instanceConfigurationInstanceDetailsLaunchDetailsAgentConfigAreAllPluginsDisabled,
- *                 isManagementDisabled: instanceConfigurationInstanceDetailsLaunchDetailsAgentConfigIsManagementDisabled,
- *                 isMonitoringDisabled: instanceConfigurationInstanceDetailsLaunchDetailsAgentConfigIsMonitoringDisabled,
+ *                 areAllPluginsDisabled: instanceConfigurationInstanceDetailsLaunchDetailsAgentConfigAreAllPluginsDisabled === "true",
+ *                 isManagementDisabled: instanceConfigurationInstanceDetailsLaunchDetailsAgentConfigIsManagementDisabled === "true",
+ *                 isMonitoringDisabled: instanceConfigurationInstanceDetailsLaunchDetailsAgentConfigIsMonitoringDisabled === "true",
  *                 pluginsConfigs: [{
  *                     desiredState: instanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigDesiredState,
  *                     name: instanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigName,
  *                 }],
  *             },
  *             availabilityConfig: {
- *                 isLiveMigrationPreferred: instanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigIsLiveMigrationPreferred,
+ *                 isLiveMigrationPreferred: instanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigIsLiveMigrationPreferred === "true",
  *                 recoveryAction: instanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigRecoveryAction,
  *             },
  *             availabilityDomain: instanceConfigurationInstanceDetailsLaunchDetailsAvailabilityDomain,
@@ -95,9 +95,9 @@ import * as utilities from "../utilities";
  *             compartmentId: compartmentId,
  *             computeClusterId: testComputeCluster.id,
  *             createVnicDetails: {
- *                 assignIpv6ip: instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignIpv6ip,
- *                 assignPrivateDnsRecord: instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignPrivateDnsRecord,
- *                 assignPublicIp: instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignPublicIp,
+ *                 assignIpv6ip: instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignIpv6ip === "true",
+ *                 assignPrivateDnsRecord: instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignPrivateDnsRecord === "true",
+ *                 assignPublicIp: instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignPublicIp === "true",
  *                 definedTags: {
  *                     "Operations.CostCenter": "42",
  *                 },
@@ -115,7 +115,7 @@ import * as utilities from "../utilities";
  *                 privateIp: instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsPrivateIp,
  *                 privateIpId: testPrivateIp.id,
  *                 securityAttributes: instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsSecurityAttributes,
- *                 skipSourceDestCheck: instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsSkipSourceDestCheck,
+ *                 skipSourceDestCheck: instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsSkipSourceDestCheck === "true",
  *                 subnetCidr: instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsSubnetCidr,
  *                 subnetId: testSubnet.id,
  *             },
@@ -130,17 +130,17 @@ import * as utilities from "../utilities";
  *                 Department: "Finance",
  *             },
  *             instanceOptions: {
- *                 areLegacyImdsEndpointsDisabled: instanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsAreLegacyImdsEndpointsDisabled,
+ *                 areLegacyImdsEndpointsDisabled: instanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsAreLegacyImdsEndpointsDisabled === "true",
  *             },
  *             ipxeScript: instanceConfigurationInstanceDetailsLaunchDetailsIpxeScript,
- *             isAiEnterpriseEnabled: instanceConfigurationInstanceDetailsLaunchDetailsIsAiEnterpriseEnabled,
- *             isPvEncryptionInTransitEnabled: instanceConfigurationInstanceDetailsLaunchDetailsIsPvEncryptionInTransitEnabled,
+ *             isAiEnterpriseEnabled: instanceConfigurationInstanceDetailsLaunchDetailsIsAiEnterpriseEnabled === "true",
+ *             isPvEncryptionInTransitEnabled: instanceConfigurationInstanceDetailsLaunchDetailsIsPvEncryptionInTransitEnabled === "true",
  *             launchMode: instanceConfigurationInstanceDetailsLaunchDetailsLaunchMode,
  *             launchOptions: {
  *                 bootVolumeType: instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsBootVolumeType,
  *                 firmware: instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsFirmware,
- *                 isConsistentVolumeNamingEnabled: instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsIsConsistentVolumeNamingEnabled,
- *                 isPvEncryptionInTransitEnabled: instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsIsPvEncryptionInTransitEnabled,
+ *                 isConsistentVolumeNamingEnabled: instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsIsConsistentVolumeNamingEnabled === "true",
+ *                 isPvEncryptionInTransitEnabled: instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsIsPvEncryptionInTransitEnabled === "true",
  *                 networkType: instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsNetworkType,
  *                 remoteDataVolumeType: instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsRemoteDataVolumeType,
  *             },
@@ -155,22 +155,22 @@ import * as utilities from "../utilities";
  *             },
  *             platformConfig: {
  *                 type: instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigType,
- *                 areVirtualInstructionsEnabled: instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigAreVirtualInstructionsEnabled,
+ *                 areVirtualInstructionsEnabled: instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigAreVirtualInstructionsEnabled === "true",
  *                 configMap: instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigConfigMap,
- *                 isAccessControlServiceEnabled: instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsAccessControlServiceEnabled,
- *                 isInputOutputMemoryManagementUnitEnabled: instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsInputOutputMemoryManagementUnitEnabled,
- *                 isMeasuredBootEnabled: instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsMeasuredBootEnabled,
- *                 isMemoryEncryptionEnabled: instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsMemoryEncryptionEnabled,
- *                 isSecureBootEnabled: instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsSecureBootEnabled,
- *                 isSymmetricMultiThreadingEnabled: instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsSymmetricMultiThreadingEnabled,
- *                 isTrustedPlatformModuleEnabled: instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsTrustedPlatformModuleEnabled,
+ *                 isAccessControlServiceEnabled: instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsAccessControlServiceEnabled === "true",
+ *                 isInputOutputMemoryManagementUnitEnabled: instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsInputOutputMemoryManagementUnitEnabled === "true",
+ *                 isMeasuredBootEnabled: instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsMeasuredBootEnabled === "true",
+ *                 isMemoryEncryptionEnabled: instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsMemoryEncryptionEnabled === "true",
+ *                 isSecureBootEnabled: instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsSecureBootEnabled === "true",
+ *                 isSymmetricMultiThreadingEnabled: instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsSymmetricMultiThreadingEnabled === "true",
+ *                 isTrustedPlatformModuleEnabled: instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsTrustedPlatformModuleEnabled === "true",
  *                 numaNodesPerSocket: instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigNumaNodesPerSocket,
- *                 percentageOfCoresEnabled: instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigPercentageOfCoresEnabled,
+ *                 percentageOfCoresEnabled: Number(instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigPercentageOfCoresEnabled),
  *             },
  *             preemptibleInstanceConfig: {
  *                 preemptionAction: {
  *                     type: instanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionType,
- *                     preserveBootVolume: instanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionPreserveBootVolume,
+ *                     preserveBootVolume: instanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionPreserveBootVolume === "true",
  *                 },
  *             },
  *             preferredMaintenanceAction: instanceConfigurationInstanceDetailsLaunchDetailsPreferredMaintenanceAction,
@@ -179,10 +179,10 @@ import * as utilities from "../utilities";
  *             shapeConfig: {
  *                 baselineOcpuUtilization: instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigBaselineOcpuUtilization,
  *                 memoryInGbs: instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigMemoryInGbs,
- *                 nvmes: instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigNvmes,
+ *                 nvmes: Number(instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigNvmes),
  *                 ocpus: instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigOcpus,
  *                 resourceManagement: instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigResourceManagement,
- *                 vcpus: instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigVcpus,
+ *                 vcpus: Number(instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigVcpus),
  *             },
  *             sourceDetails: {
  *                 sourceType: instanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsSourceType,
@@ -205,10 +205,10 @@ import * as utilities from "../utilities";
  *                     type: instanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsType,
  *                     device: instanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsDevice,
  *                     displayName: instanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsDisplayName,
- *                     isPvEncryptionInTransitEnabled: instanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsIsPvEncryptionInTransitEnabled,
- *                     isReadOnly: instanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsIsReadOnly,
- *                     isShareable: instanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsIsShareable,
- *                     useChap: instanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsUseChap,
+ *                     isPvEncryptionInTransitEnabled: instanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsIsPvEncryptionInTransitEnabled === "true",
+ *                     isReadOnly: instanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsIsReadOnly === "true",
+ *                     isShareable: instanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsIsShareable === "true",
+ *                     useChap: instanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsUseChap === "true",
  *                 },
  *                 createDetails: {
  *                     autotunePolicies: [{
@@ -226,7 +226,7 @@ import * as utilities from "../utilities";
  *                     freeformTags: {
  *                         Department: "Finance",
  *                     },
- *                     isAutoTuneEnabled: instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsIsAutoTuneEnabled,
+ *                     isAutoTuneEnabled: instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsIsAutoTuneEnabled === "true",
  *                     isReservationsEnabled: instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsIsReservationsEnabled,
  *                     kmsKeyId: testKey.id,
  *                     sizeInGbs: instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsSizeInGbs,
@@ -241,9 +241,9 @@ import * as utilities from "../utilities";
  *             }],
  *             launchDetails: {
  *                 agentConfig: {
- *                     areAllPluginsDisabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigAreAllPluginsDisabled,
- *                     isManagementDisabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigIsManagementDisabled,
- *                     isMonitoringDisabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigIsMonitoringDisabled,
+ *                     areAllPluginsDisabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigAreAllPluginsDisabled === "true",
+ *                     isManagementDisabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigIsManagementDisabled === "true",
+ *                     isMonitoringDisabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigIsMonitoringDisabled === "true",
  *                     pluginsConfigs: [{
  *                         desiredState: instanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigPluginsConfigDesiredState,
  *                         name: instanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigPluginsConfigName,
@@ -258,9 +258,9 @@ import * as utilities from "../utilities";
  *                 compartmentId: compartmentId,
  *                 computeClusterId: testComputeCluster.id,
  *                 createVnicDetails: {
- *                     assignIpv6ip: instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignIpv6ip,
- *                     assignPrivateDnsRecord: instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsAssignPrivateDnsRecord,
- *                     assignPublicIp: instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsAssignPublicIp,
+ *                     assignIpv6ip: instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignIpv6ip === "true",
+ *                     assignPrivateDnsRecord: instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsAssignPrivateDnsRecord === "true",
+ *                     assignPublicIp: instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsAssignPublicIp === "true",
  *                     definedTags: {
  *                         "Operations.CostCenter": "42",
  *                     },
@@ -278,7 +278,7 @@ import * as utilities from "../utilities";
  *                     privateIp: instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsPrivateIp,
  *                     privateIpId: testPrivateIp.id,
  *                     securityAttributes: instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsSecurityAttributes,
- *                     skipSourceDestCheck: instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsSkipSourceDestCheck,
+ *                     skipSourceDestCheck: instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsSkipSourceDestCheck === "true",
  *                     subnetCidr: instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsSubnetCidr,
  *                     subnetId: testSubnet.id,
  *                 },
@@ -293,17 +293,17 @@ import * as utilities from "../utilities";
  *                     Department: "Finance",
  *                 },
  *                 instanceOptions: {
- *                     areLegacyImdsEndpointsDisabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsInstanceOptionsAreLegacyImdsEndpointsDisabled,
+ *                     areLegacyImdsEndpointsDisabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsInstanceOptionsAreLegacyImdsEndpointsDisabled === "true",
  *                 },
  *                 ipxeScript: instanceConfigurationInstanceDetailsOptionsLaunchDetailsIpxeScript,
- *                 isAiEnterpriseEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsIsAiEnterpriseEnabled,
- *                 isPvEncryptionInTransitEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsIsPvEncryptionInTransitEnabled,
+ *                 isAiEnterpriseEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsIsAiEnterpriseEnabled === "true",
+ *                 isPvEncryptionInTransitEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsIsPvEncryptionInTransitEnabled === "true",
  *                 launchMode: instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchMode,
  *                 launchOptions: {
  *                     bootVolumeType: instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsBootVolumeType,
  *                     firmware: instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsFirmware,
- *                     isConsistentVolumeNamingEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsIsConsistentVolumeNamingEnabled,
- *                     isPvEncryptionInTransitEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsIsPvEncryptionInTransitEnabled,
+ *                     isConsistentVolumeNamingEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsIsConsistentVolumeNamingEnabled === "true",
+ *                     isPvEncryptionInTransitEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsIsPvEncryptionInTransitEnabled === "true",
  *                     networkType: instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsNetworkType,
  *                     remoteDataVolumeType: instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsRemoteDataVolumeType,
  *                 },
@@ -318,21 +318,21 @@ import * as utilities from "../utilities";
  *                 },
  *                 platformConfig: {
  *                     type: instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigType,
- *                     areVirtualInstructionsEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigAreVirtualInstructionsEnabled,
- *                     isAccessControlServiceEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsAccessControlServiceEnabled,
- *                     isInputOutputMemoryManagementUnitEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsInputOutputMemoryManagementUnitEnabled,
- *                     isMeasuredBootEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsMeasuredBootEnabled,
- *                     isMemoryEncryptionEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsMemoryEncryptionEnabled,
- *                     isSecureBootEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsSecureBootEnabled,
- *                     isSymmetricMultiThreadingEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsSymmetricMultiThreadingEnabled,
- *                     isTrustedPlatformModuleEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsTrustedPlatformModuleEnabled,
+ *                     areVirtualInstructionsEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigAreVirtualInstructionsEnabled === "true",
+ *                     isAccessControlServiceEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsAccessControlServiceEnabled === "true",
+ *                     isInputOutputMemoryManagementUnitEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsInputOutputMemoryManagementUnitEnabled === "true",
+ *                     isMeasuredBootEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsMeasuredBootEnabled === "true",
+ *                     isMemoryEncryptionEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsMemoryEncryptionEnabled === "true",
+ *                     isSecureBootEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsSecureBootEnabled === "true",
+ *                     isSymmetricMultiThreadingEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsSymmetricMultiThreadingEnabled === "true",
+ *                     isTrustedPlatformModuleEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsTrustedPlatformModuleEnabled === "true",
  *                     numaNodesPerSocket: instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigNumaNodesPerSocket,
- *                     percentageOfCoresEnabled: instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigPercentageOfCoresEnabled,
+ *                     percentageOfCoresEnabled: Number(instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigPercentageOfCoresEnabled),
  *                 },
  *                 preemptibleInstanceConfig: {
  *                     preemptionAction: {
  *                         type: instanceConfigurationInstanceDetailsOptionsLaunchDetailsPreemptibleInstanceConfigPreemptionActionType,
- *                         preserveBootVolume: instanceConfigurationInstanceDetailsOptionsLaunchDetailsPreemptibleInstanceConfigPreemptionActionPreserveBootVolume,
+ *                         preserveBootVolume: instanceConfigurationInstanceDetailsOptionsLaunchDetailsPreemptibleInstanceConfigPreemptionActionPreserveBootVolume === "true",
  *                     },
  *                 },
  *                 preferredMaintenanceAction: instanceConfigurationInstanceDetailsOptionsLaunchDetailsPreferredMaintenanceAction,
@@ -341,10 +341,10 @@ import * as utilities from "../utilities";
  *                 shapeConfig: {
  *                     baselineOcpuUtilization: instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigBaselineOcpuUtilization,
  *                     memoryInGbs: instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigMemoryInGbs,
- *                     nvmes: instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigNvmes,
+ *                     nvmes: Number(instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigNvmes),
  *                     ocpus: instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigOcpus,
  *                     resourceManagement: instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigResourceManagement,
- *                     vcpus: instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigVcpus,
+ *                     vcpus: Number(instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigVcpus),
  *                 },
  *                 sourceDetails: {
  *                     sourceType: instanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsSourceType,
@@ -362,9 +362,9 @@ import * as utilities from "../utilities";
  *             },
  *             secondaryVnics: [{
  *                 createVnicDetails: {
- *                     assignIpv6ip: instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsAssignIpv6ip,
- *                     assignPrivateDnsRecord: instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsAssignPrivateDnsRecord,
- *                     assignPublicIp: instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsAssignPublicIp,
+ *                     assignIpv6ip: instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsAssignIpv6ip === "true",
+ *                     assignPrivateDnsRecord: instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsAssignPrivateDnsRecord === "true",
+ *                     assignPublicIp: instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsAssignPublicIp === "true",
  *                     definedTags: {
  *                         "Operations.CostCenter": "42",
  *                     },
@@ -382,18 +382,18 @@ import * as utilities from "../utilities";
  *                     privateIp: instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsPrivateIp,
  *                     privateIpId: testPrivateIp.id,
  *                     securityAttributes: instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsSecurityAttributes,
- *                     skipSourceDestCheck: instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck,
+ *                     skipSourceDestCheck: instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck === "true",
  *                     subnetCidr: instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsSubnetCidr,
  *                     subnetId: testSubnet.id,
  *                 },
  *                 displayName: instanceConfigurationInstanceDetailsOptionsSecondaryVnicsDisplayName,
- *                 nicIndex: instanceConfigurationInstanceDetailsOptionsSecondaryVnicsNicIndex,
+ *                 nicIndex: Number(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsNicIndex),
  *             }],
  *         }],
  *         secondaryVnics: [{
  *             createVnicDetails: {
- *                 assignPrivateDnsRecord: instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsAssignPrivateDnsRecord,
- *                 assignPublicIp: instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsAssignPublicIp,
+ *                 assignPrivateDnsRecord: instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsAssignPrivateDnsRecord === "true",
+ *                 assignPublicIp: instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsAssignPublicIp === "true",
  *                 definedTags: {
  *                     "Operations.CostCenter": "42",
  *                 },
@@ -411,12 +411,12 @@ import * as utilities from "../utilities";
  *                 privateIp: instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsPrivateIp,
  *                 privateIpId: testPrivateIp.id,
  *                 securityAttributes: instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsSecurityAttributes,
- *                 skipSourceDestCheck: instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck,
+ *                 skipSourceDestCheck: instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck === "true",
  *                 subnetCidr: instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsSubnetCidr,
  *                 subnetId: testSubnet.id,
  *             },
  *             displayName: instanceConfigurationInstanceDetailsSecondaryVnicsDisplayName,
- *             nicIndex: instanceConfigurationInstanceDetailsSecondaryVnicsNicIndex,
+ *             nicIndex: Number(instanceConfigurationInstanceDetailsSecondaryVnicsNicIndex),
  *         }],
  *     },
  *     instanceId: testInstance.id,
@@ -557,28 +557,28 @@ export interface InstanceConfigurationState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Parameters that were not specified when the instance configuration was created, but that are required to launch an instance from the instance configuration. See the [LaunchInstanceConfiguration](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstanceConfiguration) operation.
      */
-    deferredFields?: pulumi.Input<pulumi.Input<string>[]>;
+    deferredFields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    instanceDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetails>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    instanceDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetails | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
      */
-    instanceId?: pulumi.Input<string>;
+    instanceId?: pulumi.Input<string | undefined>;
     /**
      * The source of the instance configuration. An instance configuration defines the settings to use when creating Compute instances, including details such as the base image, shape, and metadata. You can also specify the associated resources for the instance, such as block volume attachments and network configuration.
      *
@@ -596,11 +596,11 @@ export interface InstanceConfigurationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
     /**
      * The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -614,20 +614,20 @@ export interface InstanceConfigurationArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    instanceDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetails>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    instanceDetails?: pulumi.Input<inputs.Core.InstanceConfigurationInstanceDetails | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
      */
-    instanceId?: pulumi.Input<string>;
+    instanceId?: pulumi.Input<string | undefined>;
     /**
      * The source of the instance configuration. An instance configuration defines the settings to use when creating Compute instances, including details such as the base image, shape, and metadata. You can also specify the associated resources for the instance, such as block volume attachments and network configuration.
      *
@@ -645,5 +645,5 @@ export interface InstanceConfigurationArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
 }

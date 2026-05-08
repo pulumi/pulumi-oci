@@ -21,22 +21,22 @@ class WorkspaceArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_server_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_server_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_force_operation: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_private_network_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 quiesce_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 registry_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 registry_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 registry_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcn_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_server_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_server_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_force_operation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_private_network_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 quiesce_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 registry_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 registry_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 registry_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcn_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Workspace resource.
 
@@ -122,181 +122,181 @@ class WorkspaceArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user defined description for the workspace.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="dnsServerIp")
-    def dns_server_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dns_server_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IP of the custom DNS.
         """
         return pulumi.get(self, "dns_server_ip")
 
     @dns_server_ip.setter
-    def dns_server_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dns_server_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dns_server_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="dnsServerZone")
-    def dns_server_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dns_server_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The DNS zone of the custom DNS to use to resolve names.
         """
         return pulumi.get(self, "dns_server_zone")
 
     @dns_server_zone.setter
-    def dns_server_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dns_server_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dns_server_zone", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointCompartmentId")
-    def endpoint_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         DCMS PRivate Endpoint Compartment Identifier
         """
         return pulumi.get(self, "endpoint_compartment_id")
 
     @endpoint_compartment_id.setter
-    def endpoint_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointId")
-    def endpoint_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
         """
         return pulumi.get(self, "endpoint_id")
 
     @endpoint_id.setter
-    def endpoint_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_id", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointName")
-    def endpoint_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         DCMS Private Endpoint Name
         """
         return pulumi.get(self, "endpoint_name")
 
     @endpoint_name.setter
-    def endpoint_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isForceOperation")
-    def is_force_operation(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_force_operation(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_force_operation")
 
     @is_force_operation.setter
-    def is_force_operation(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_force_operation(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_force_operation", value)
 
     @_builtins.property
     @pulumi.getter(name="isPrivateNetworkEnabled")
-    def is_private_network_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_private_network_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether the private network connection is enabled or disabled.
         """
         return pulumi.get(self, "is_private_network_enabled")
 
     @is_private_network_enabled.setter
-    def is_private_network_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_private_network_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_private_network_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="quiesceTimeout")
-    def quiesce_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def quiesce_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "quiesce_timeout")
 
     @quiesce_timeout.setter
-    def quiesce_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def quiesce_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "quiesce_timeout", value)
 
     @_builtins.property
     @pulumi.getter(name="registryCompartmentId")
-    def registry_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def registry_compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         DCMS Data Asset Registry Compartment Identifier
         """
         return pulumi.get(self, "registry_compartment_id")
 
     @registry_compartment_id.setter
-    def registry_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def registry_compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "registry_compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="registryId")
-    def registry_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def registry_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         DCMS Data Asset Registry ID to which the workspace is associated
         """
         return pulumi.get(self, "registry_id")
 
     @registry_id.setter
-    def registry_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def registry_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "registry_id", value)
 
     @_builtins.property
     @pulumi.getter(name="registryName")
-    def registry_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def registry_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         DCMS Data Asset Registry display name
         """
         return pulumi.get(self, "registry_name")
 
     @registry_name.setter
-    def registry_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def registry_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "registry_name", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the subnet for customer connected databases.
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vcn_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the VCN the subnet is in.
 
@@ -307,35 +307,35 @@ class WorkspaceArgs:
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
-    def vcn_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vcn_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vcn_id", value)
 
 
 @pulumi.input_type
 class _WorkspaceState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_server_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_server_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_force_operation: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_private_network_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 quiesce_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 registry_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 registry_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 registry_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 state_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcn_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_server_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_server_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_force_operation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_private_network_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 quiesce_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 registry_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 registry_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 registry_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 state_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcn_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Workspace resources.
 
@@ -411,253 +411,253 @@ class _WorkspaceState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment containing the workspace.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user defined description for the workspace.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dnsServerIp")
-    def dns_server_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dns_server_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IP of the custom DNS.
         """
         return pulumi.get(self, "dns_server_ip")
 
     @dns_server_ip.setter
-    def dns_server_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dns_server_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dns_server_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="dnsServerZone")
-    def dns_server_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dns_server_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The DNS zone of the custom DNS to use to resolve names.
         """
         return pulumi.get(self, "dns_server_zone")
 
     @dns_server_zone.setter
-    def dns_server_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dns_server_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dns_server_zone", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointCompartmentId")
-    def endpoint_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         DCMS PRivate Endpoint Compartment Identifier
         """
         return pulumi.get(self, "endpoint_compartment_id")
 
     @endpoint_compartment_id.setter
-    def endpoint_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointId")
-    def endpoint_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
         """
         return pulumi.get(self, "endpoint_id")
 
     @endpoint_id.setter
-    def endpoint_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_id", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointName")
-    def endpoint_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         DCMS Private Endpoint Name
         """
         return pulumi.get(self, "endpoint_name")
 
     @endpoint_name.setter
-    def endpoint_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isForceOperation")
-    def is_force_operation(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_force_operation(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_force_operation")
 
     @is_force_operation.setter
-    def is_force_operation(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_force_operation(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_force_operation", value)
 
     @_builtins.property
     @pulumi.getter(name="isPrivateNetworkEnabled")
-    def is_private_network_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_private_network_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether the private network connection is enabled or disabled.
         """
         return pulumi.get(self, "is_private_network_enabled")
 
     @is_private_network_enabled.setter
-    def is_private_network_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_private_network_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_private_network_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="quiesceTimeout")
-    def quiesce_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def quiesce_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "quiesce_timeout")
 
     @quiesce_timeout.setter
-    def quiesce_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def quiesce_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "quiesce_timeout", value)
 
     @_builtins.property
     @pulumi.getter(name="registryCompartmentId")
-    def registry_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def registry_compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         DCMS Data Asset Registry Compartment Identifier
         """
         return pulumi.get(self, "registry_compartment_id")
 
     @registry_compartment_id.setter
-    def registry_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def registry_compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "registry_compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="registryId")
-    def registry_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def registry_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         DCMS Data Asset Registry ID to which the workspace is associated
         """
         return pulumi.get(self, "registry_id")
 
     @registry_id.setter
-    def registry_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def registry_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "registry_id", value)
 
     @_builtins.property
     @pulumi.getter(name="registryName")
-    def registry_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def registry_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         DCMS Data Asset Registry display name
         """
         return pulumi.get(self, "registry_name")
 
     @registry_name.setter
-    def registry_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def registry_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "registry_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="stateMessage")
-    def state_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
         """
         return pulumi.get(self, "state_message")
 
     @state_message.setter
-    def state_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state_message", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the subnet for customer connected databases.
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the workspace was created, in the timestamp format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the workspace was updated, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vcn_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the VCN the subnet is in.
 
@@ -668,7 +668,7 @@ class _WorkspaceState:
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
-    def vcn_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vcn_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vcn_id", value)
 
 
@@ -678,24 +678,24 @@ class Workspace(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_server_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_server_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_force_operation: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_private_network_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 quiesce_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 registry_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 registry_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 registry_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_server_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_server_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_force_operation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_private_network_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 quiesce_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 registry_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 registry_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 registry_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Workspace resource in Oracle Cloud Infrastructure Data Integration service.
@@ -726,7 +726,7 @@ class Workspace(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_private_network_enabled=workspace_is_private_network_enabled,
+            is_private_network_enabled=workspace_is_private_network_enabled == "true",
             registry_compartment_id=test_compartment["id"],
             registry_id=test_registry["id"],
             registry_name=test_registry["name"],
@@ -801,7 +801,7 @@ class Workspace(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_private_network_enabled=workspace_is_private_network_enabled,
+            is_private_network_enabled=workspace_is_private_network_enabled == "true",
             registry_compartment_id=test_compartment["id"],
             registry_id=test_registry["id"],
             registry_name=test_registry["name"],
@@ -833,24 +833,24 @@ class Workspace(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_server_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 dns_server_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_force_operation: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_private_network_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 quiesce_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 registry_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 registry_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 registry_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_server_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 dns_server_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_force_operation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_private_network_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 quiesce_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 registry_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 registry_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 registry_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -896,28 +896,28 @@ class Workspace(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            dns_server_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            dns_server_zone: Optional[pulumi.Input[_builtins.str]] = None,
-            endpoint_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-            endpoint_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_force_operation: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_private_network_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            quiesce_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-            registry_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            registry_id: Optional[pulumi.Input[_builtins.str]] = None,
-            registry_name: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            state_message: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            vcn_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'Workspace':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dns_server_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            dns_server_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            endpoint_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+            endpoint_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_force_operation: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_private_network_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            quiesce_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+            registry_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            registry_id: pulumi.Input[Optional[_builtins.str]] = None,
+            registry_name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            state_message: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            vcn_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'Workspace':
         """
         Get an existing Workspace resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

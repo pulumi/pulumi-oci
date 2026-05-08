@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  *     displayName: consumerGroupDisplayName,
  *     queueId: testQueue.id,
  *     consumerGroupFilter: consumerGroupConsumerGroupFilter,
- *     deadLetterQueueDeliveryCount: consumerGroupDeadLetterQueueDeliveryCount,
+ *     deadLetterQueueDeliveryCount: Number(consumerGroupDeadLetterQueueDeliveryCount),
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isEnabled: consumerGroupIsEnabled,
+ *     isEnabled: consumerGroupIsEnabled === "true",
  * });
  * ```
  *
@@ -177,31 +177,31 @@ export interface ConsumerGroupState {
     /**
      * (Updatable) The filter used by the consumer group. Only messages matching the filter will be available by consumers of the group. The primary consumer group cannot have any filter.
      */
-    consumerGroupFilter?: pulumi.Input<string>;
+    consumerGroupFilter?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue.  A value of 0 indicates that the DLQ is not used. If the value isn't specified, it will be using the value defined at the queue level.
      */
-    deadLetterQueueDeliveryCount?: pulumi.Input<number>;
+    deadLetterQueueDeliveryCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The user-friendly name of the consumer group.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Used to enable or disable the consumer group.  An enabled consumer group will have a lifecycle state of ACTIVE, while a disabled will have its state as INACTIVE.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Any additional details about the current state of the consumer group.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the associated queue.
      *
@@ -209,23 +209,23 @@ export interface ConsumerGroupState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    queueId?: pulumi.Input<string>;
+    queueId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the consumer group.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time that the consumer group was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time that the consumer group was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -235,15 +235,15 @@ export interface ConsumerGroupArgs {
     /**
      * (Updatable) The filter used by the consumer group. Only messages matching the filter will be available by consumers of the group. The primary consumer group cannot have any filter.
      */
-    consumerGroupFilter?: pulumi.Input<string>;
+    consumerGroupFilter?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue.  A value of 0 indicates that the DLQ is not used. If the value isn't specified, it will be using the value defined at the queue level.
      */
-    deadLetterQueueDeliveryCount?: pulumi.Input<number>;
+    deadLetterQueueDeliveryCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The user-friendly name of the consumer group.
      */
@@ -251,11 +251,11 @@ export interface ConsumerGroupArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Used to enable or disable the consumer group.  An enabled consumer group will have a lifecycle state of ACTIVE, while a disabled will have its state as INACTIVE.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The OCID of the associated queue.
      *

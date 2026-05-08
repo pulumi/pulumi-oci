@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabasePeerTargetDatabases = oci.DataSafe.getTargetDatabasePeerTargetDatabases({
+ * const testTargetDatabasePeerTargetDatabases = oci.datasafe.getTargetDatabasePeerTargetDatabases({
  *     targetDatabaseId: testTargetDatabase.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetTargetDatabasePeerTargetDatabasesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabasePeerTargetDatabases = oci.DataSafe.getTargetDatabasePeerTargetDatabases({
+ * const testTargetDatabasePeerTargetDatabases = oci.datasafe.getTargetDatabasePeerTargetDatabases({
  *     targetDatabaseId: testTargetDatabase.id,
  * });
  * ```
@@ -84,7 +84,7 @@ export function getTargetDatabasePeerTargetDatabasesOutput(args: GetTargetDataba
  * A collection of arguments for invoking getTargetDatabasePeerTargetDatabases.
  */
 export interface GetTargetDatabasePeerTargetDatabasesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetTargetDatabasePeerTargetDatabasesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetTargetDatabasePeerTargetDatabasesFilterArgs>[] | undefined>;
     /**
      * The OCID of the Data Safe target database.
      */

@@ -138,7 +138,7 @@ def get_filesystem_snapshot_policies(availability_domain: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_filesystem_snapshot_policies = oci.FileStorage.get_filesystem_snapshot_policies(availability_domain=filesystem_snapshot_policy_availability_domain,
+    test_filesystem_snapshot_policies = oci.filestorage.get_filesystem_snapshot_policies(availability_domain=filesystem_snapshot_policy_availability_domain,
         compartment_id=compartment_id,
         display_name=filesystem_snapshot_policy_display_name,
         id=filesystem_snapshot_policy_id,
@@ -170,12 +170,12 @@ def get_filesystem_snapshot_policies(availability_domain: Optional[_builtins.str
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_filesystem_snapshot_policies_output(availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                                            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFilesystemSnapshotPoliciesFilterArgs', 'GetFilesystemSnapshotPoliciesFilterArgsDict']]]]] = None,
-                                            id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_filesystem_snapshot_policies_output(availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                                            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFilesystemSnapshotPoliciesFilterArgs', 'GetFilesystemSnapshotPoliciesFilterArgsDict']]]]] = None,
+                                            id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFilesystemSnapshotPoliciesResult]:
     """
     This data source provides the list of Filesystem Snapshot Policies in Oracle Cloud Infrastructure File Storage service.
@@ -188,7 +188,7 @@ def get_filesystem_snapshot_policies_output(availability_domain: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_filesystem_snapshot_policies = oci.FileStorage.get_filesystem_snapshot_policies(availability_domain=filesystem_snapshot_policy_availability_domain,
+    test_filesystem_snapshot_policies = oci.filestorage.get_filesystem_snapshot_policies(availability_domain=filesystem_snapshot_policy_availability_domain,
         compartment_id=compartment_id,
         display_name=filesystem_snapshot_policy_display_name,
         id=filesystem_snapshot_policy_id,

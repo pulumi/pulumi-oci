@@ -94,7 +94,7 @@ def get_network_firewall_policy_mapped_secrets(display_name: Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy_mapped_secrets = oci.NetworkFirewall.get_network_firewall_policy_mapped_secrets(network_firewall_policy_id=test_network_firewall_policy["id"],
+    test_network_firewall_policy_mapped_secrets = oci.networkfirewall.get_network_firewall_policy_mapped_secrets(network_firewall_policy_id=test_network_firewall_policy["id"],
         display_name=network_firewall_policy_mapped_secret_display_name)
     ```
 
@@ -113,8 +113,8 @@ def get_network_firewall_policy_mapped_secrets(display_name: Optional[_builtins.
         id=pulumi.get(__ret__, 'id'),
         mapped_secret_summary_collections=pulumi.get(__ret__, 'mapped_secret_summary_collections'),
         network_firewall_policy_id=pulumi.get(__ret__, 'network_firewall_policy_id'))
-def get_network_firewall_policy_mapped_secrets_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                      network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_network_firewall_policy_mapped_secrets_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyMappedSecretsResult]:
     """
     This data source provides the list of Network Firewall Policy Mapped Secrets in Oracle Cloud Infrastructure Network Firewall service.
@@ -127,7 +127,7 @@ def get_network_firewall_policy_mapped_secrets_output(display_name: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy_mapped_secrets = oci.NetworkFirewall.get_network_firewall_policy_mapped_secrets(network_firewall_policy_id=test_network_firewall_policy["id"],
+    test_network_firewall_policy_mapped_secrets = oci.networkfirewall.get_network_firewall_policy_mapped_secrets(network_firewall_policy_id=test_network_firewall_policy["id"],
         display_name=network_firewall_policy_mapped_secret_display_name)
     ```
 

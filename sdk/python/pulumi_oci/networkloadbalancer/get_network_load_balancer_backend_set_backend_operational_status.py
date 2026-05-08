@@ -103,7 +103,7 @@ def get_network_load_balancer_backend_set_backend_operational_status(backend_nam
     import pulumi
     import pulumi_oci as oci
 
-    test_network_load_balancer_backend_set_backend_operational_status = oci.NetworkLoadBalancer.get_network_load_balancer_backend_set_backend_operational_status(backend_name=test_backend["name"],
+    test_network_load_balancer_backend_set_backend_operational_status = oci.networkloadbalancer.get_network_load_balancer_backend_set_backend_operational_status(backend_name=test_backend["name"],
         backend_set_name=test_backend_set["name"],
         network_load_balancer_id=test_network_load_balancer["id"])
     ```
@@ -126,9 +126,9 @@ def get_network_load_balancer_backend_set_backend_operational_status(backend_nam
         id=pulumi.get(__ret__, 'id'),
         network_load_balancer_id=pulumi.get(__ret__, 'network_load_balancer_id'),
         status=pulumi.get(__ret__, 'status'))
-def get_network_load_balancer_backend_set_backend_operational_status_output(backend_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                            backend_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                            network_load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_network_load_balancer_backend_set_backend_operational_status_output(backend_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                            backend_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                            network_load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkLoadBalancerBackendSetBackendOperationalStatusResult]:
     """
     This data source provides details about a specific Network Load Balancer Backend Set Backend Operational Status resource in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -141,7 +141,7 @@ def get_network_load_balancer_backend_set_backend_operational_status_output(back
     import pulumi
     import pulumi_oci as oci
 
-    test_network_load_balancer_backend_set_backend_operational_status = oci.NetworkLoadBalancer.get_network_load_balancer_backend_set_backend_operational_status(backend_name=test_backend["name"],
+    test_network_load_balancer_backend_set_backend_operational_status = oci.networkloadbalancer.get_network_load_balancer_backend_set_backend_operational_status(backend_name=test_backend["name"],
         backend_set_name=test_backend_set["name"],
         network_load_balancer_id=test_network_load_balancer["id"])
     ```

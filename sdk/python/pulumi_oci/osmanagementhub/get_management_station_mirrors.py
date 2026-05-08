@@ -128,7 +128,7 @@ def get_management_station_mirrors(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_management_station_mirrors = oci.OsManagementHub.get_management_station_mirrors(management_station_id=test_management_station["id"],
+    test_management_station_mirrors = oci.osmanagementhub.get_management_station_mirrors(management_station_id=test_management_station["id"],
         display_name=management_station_mirror_display_name,
         display_name_contains=management_station_mirror_display_name_contains,
         mirror_states=management_station_mirror_mirror_states)
@@ -157,11 +157,11 @@ def get_management_station_mirrors(display_name: Optional[_builtins.str] = None,
         management_station_id=pulumi.get(__ret__, 'management_station_id'),
         mirror_states=pulumi.get(__ret__, 'mirror_states'),
         mirrors_collections=pulumi.get(__ret__, 'mirrors_collections'))
-def get_management_station_mirrors_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          display_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagementStationMirrorsFilterArgs', 'GetManagementStationMirrorsFilterArgsDict']]]]] = None,
-                                          management_station_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                          mirror_states: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_management_station_mirrors_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagementStationMirrorsFilterArgs', 'GetManagementStationMirrorsFilterArgsDict']]]]] = None,
+                                          management_station_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                          mirror_states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementStationMirrorsResult]:
     """
     This data source provides the list of Management Station Mirrors in Oracle Cloud Infrastructure Os Management Hub service.
@@ -174,7 +174,7 @@ def get_management_station_mirrors_output(display_name: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_management_station_mirrors = oci.OsManagementHub.get_management_station_mirrors(management_station_id=test_management_station["id"],
+    test_management_station_mirrors = oci.osmanagementhub.get_management_station_mirrors(management_station_id=test_management_station["id"],
         display_name=management_station_mirror_display_name,
         display_name_contains=management_station_mirror_display_name_contains,
         mirror_states=management_station_mirror_mirror_states)

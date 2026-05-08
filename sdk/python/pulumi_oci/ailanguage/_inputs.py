@@ -62,11 +62,11 @@ __all__ = [
 ]
 
 class JobInputConfigurationArgsDict(TypedDict):
-    configuration: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]
+    configuration: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]]
     """
     meta data about documents For CSV valid JSON format is {"CSV" :{inputColumn: "reviewDetails", rowId: "reviewId", copyColumnsToOutput: ["reviewId" "userId"] , delimiter: ","} Note: In future if new file types added we will update here in documentation about input file meta data
     """
-    document_types: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    document_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     Type of documents supported for this release only TXT,CSV  and one element is allowed here. for future scope this is marked as list
     """
@@ -74,8 +74,8 @@ class JobInputConfigurationArgsDict(TypedDict):
 @pulumi.input_type
 class JobInputConfigurationArgs:
     def __init__(__self__, *,
-                 configuration: Optional[pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]] = None,
-                 document_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 configuration: pulumi.Input[Optional[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]] = None,
+                 document_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]] configuration: meta data about documents For CSV valid JSON format is {"CSV" :{inputColumn: "reviewDetails", rowId: "reviewId", copyColumnsToOutput: ["reviewId" "userId"] , delimiter: ","} Note: In future if new file types added we will update here in documentation about input file meta data
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] document_types: Type of documents supported for this release only TXT,CSV  and one element is allowed here. for future scope this is marked as list
@@ -87,26 +87,26 @@ class JobInputConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def configuration(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]:
+    def configuration(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]:
         """
         meta data about documents For CSV valid JSON format is {"CSV" :{inputColumn: "reviewDetails", rowId: "reviewId", copyColumnsToOutput: ["reviewId" "userId"] , delimiter: ","} Note: In future if new file types added we will update here in documentation about input file meta data
         """
         return pulumi.get(self, "configuration")
 
     @configuration.setter
-    def configuration(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]):
+    def configuration(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]):
         pulumi.set(self, "configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="documentTypes")
-    def document_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def document_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Type of documents supported for this release only TXT,CSV  and one element is allowed here. for future scope this is marked as list
         """
         return pulumi.get(self, "document_types")
 
     @document_types.setter
-    def document_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def document_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "document_types", value)
 
 
@@ -123,7 +123,7 @@ class JobInputLocationArgsDict(TypedDict):
     """
     Object Storage namespace name.
     """
-    object_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    object_names: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     List of objects to be processed
     """
@@ -134,7 +134,7 @@ class JobInputLocationArgs:
                  bucket: pulumi.Input[_builtins.str],
                  location_type: pulumi.Input[_builtins.str],
                  namespace: pulumi.Input[_builtins.str],
-                 object_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 object_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] bucket: Object Storage bucket name.
         :param pulumi.Input[_builtins.str] location_type: locationType
@@ -185,27 +185,27 @@ class JobInputLocationArgs:
 
     @_builtins.property
     @pulumi.getter(name="objectNames")
-    def object_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def object_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of objects to be processed
         """
         return pulumi.get(self, "object_names")
 
     @object_names.setter
-    def object_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def object_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "object_names", value)
 
 
 class JobModelMetadataDetailArgsDict(TypedDict):
-    configuration: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]
+    configuration: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]]
     """
     model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
     """
-    endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    endpoint_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Unique identifier endpoint OCID that should be used for inference
     """
-    language_code: NotRequired[pulumi.Input[_builtins.str]]
+    language_code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Language code supported
     * auto : Automatically detect language
@@ -233,11 +233,11 @@ class JobModelMetadataDetailArgsDict(TypedDict):
     * el : Greek
     * he : Hebrew
     """
-    model_id: NotRequired[pulumi.Input[_builtins.str]]
+    model_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Unique identifier model OCID that should be used for inference
     """
-    model_type: NotRequired[pulumi.Input[_builtins.str]]
+    model_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     model type to used for inference allowed values are
     * LANGUAGE_SENTIMENT_ANALYSIS
@@ -252,11 +252,11 @@ class JobModelMetadataDetailArgsDict(TypedDict):
 @pulumi.input_type
 class JobModelMetadataDetailArgs:
     def __init__(__self__, *,
-                 configuration: Optional[pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]] = None,
-                 endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 language_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 configuration: pulumi.Input[Optional[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]] = None,
+                 endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 language_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]] configuration: model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
         :param pulumi.Input[_builtins.str] endpoint_id: Unique identifier endpoint OCID that should be used for inference
@@ -308,31 +308,31 @@ class JobModelMetadataDetailArgs:
 
     @_builtins.property
     @pulumi.getter
-    def configuration(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]:
+    def configuration(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]:
         """
         model configuration details For PII :  < ENTITY_TYPE , ConfigurationDetails> ex."ORACLE":{ "mode" : "MASK","maskingCharacter" : "&","leaveCharactersUnmasked": 3,"isUnmaskedFromEnd" : true  } For language translation : { "targetLanguageCodes" : ConfigurationDetails}
         """
         return pulumi.get(self, "configuration")
 
     @configuration.setter
-    def configuration(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]):
+    def configuration(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]):
         pulumi.set(self, "configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="endpointId")
-    def endpoint_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier endpoint OCID that should be used for inference
         """
         return pulumi.get(self, "endpoint_id")
 
     @endpoint_id.setter
-    def endpoint_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_id", value)
 
     @_builtins.property
     @pulumi.getter(name="languageCode")
-    def language_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def language_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Language code supported
         * auto : Automatically detect language
@@ -363,24 +363,24 @@ class JobModelMetadataDetailArgs:
         return pulumi.get(self, "language_code")
 
     @language_code.setter
-    def language_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def language_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "language_code", value)
 
     @_builtins.property
     @pulumi.getter(name="modelId")
-    def model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier model OCID that should be used for inference
         """
         return pulumi.get(self, "model_id")
 
     @model_id.setter
-    def model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_id", value)
 
     @_builtins.property
     @pulumi.getter(name="modelType")
-    def model_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         model type to used for inference allowed values are
         * LANGUAGE_SENTIMENT_ANALYSIS
@@ -394,7 +394,7 @@ class JobModelMetadataDetailArgs:
         return pulumi.get(self, "model_type")
 
     @model_type.setter
-    def model_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_type", value)
 
 
@@ -407,7 +407,7 @@ class JobOutputLocationArgsDict(TypedDict):
     """
     Object Storage namespace name.
     """
-    prefix: NotRequired[pulumi.Input[_builtins.str]]
+    prefix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The prefix (directory) in an Object Storage bucket.
 
@@ -421,7 +421,7 @@ class JobOutputLocationArgs:
     def __init__(__self__, *,
                  bucket: pulumi.Input[_builtins.str],
                  namespace: pulumi.Input[_builtins.str],
-                 prefix: Optional[pulumi.Input[_builtins.str]] = None):
+                 prefix: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] bucket: Object Storage bucket name.
         :param pulumi.Input[_builtins.str] namespace: Object Storage namespace name.
@@ -462,7 +462,7 @@ class JobOutputLocationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The prefix (directory) in an Object Storage bucket.
 
@@ -473,32 +473,32 @@ class JobOutputLocationArgs:
         return pulumi.get(self, "prefix")
 
     @prefix.setter
-    def prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "prefix", value)
 
 
 class ModelEvaluationResultArgsDict(TypedDict):
-    class_metrics: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultClassMetricArgsDict']]]]
+    class_metrics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelEvaluationResultClassMetricArgs']]]]]
     """
     List of text classification metrics
     """
-    confusion_matrix: NotRequired[pulumi.Input[_builtins.str]]
+    confusion_matrix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     class level confusion matrix
     """
-    entity_metrics: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultEntityMetricArgsDict']]]]
+    entity_metrics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelEvaluationResultEntityMetricArgs']]]]]
     """
     List of entity metrics
     """
-    labels: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    labels: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     labels
     """
-    metrics: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultMetricArgsDict']]]]
+    metrics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelEvaluationResultMetricArgs']]]]]
     """
     Model level named entity recognition metrics
     """
-    model_type: NotRequired[pulumi.Input[_builtins.str]]
+    model_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Model type
     """
@@ -506,12 +506,12 @@ class ModelEvaluationResultArgsDict(TypedDict):
 @pulumi.input_type
 class ModelEvaluationResultArgs:
     def __init__(__self__, *,
-                 class_metrics: Optional[pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultClassMetricArgs']]]] = None,
-                 confusion_matrix: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_metrics: Optional[pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultEntityMetricArgs']]]] = None,
-                 labels: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 metrics: Optional[pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultMetricArgs']]]] = None,
-                 model_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 class_metrics: pulumi.Input[Optional[Sequence[pulumi.Input['ModelEvaluationResultClassMetricArgs']]]] = None,
+                 confusion_matrix: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_metrics: pulumi.Input[Optional[Sequence[pulumi.Input['ModelEvaluationResultEntityMetricArgs']]]] = None,
+                 labels: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 metrics: pulumi.Input[Optional[Sequence[pulumi.Input['ModelEvaluationResultMetricArgs']]]] = None,
+                 model_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultClassMetricArgs']]] class_metrics: List of text classification metrics
         :param pulumi.Input[_builtins.str] confusion_matrix: class level confusion matrix
@@ -535,95 +535,95 @@ class ModelEvaluationResultArgs:
 
     @_builtins.property
     @pulumi.getter(name="classMetrics")
-    def class_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultClassMetricArgs']]]]:
+    def class_metrics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ModelEvaluationResultClassMetricArgs']]]]:
         """
         List of text classification metrics
         """
         return pulumi.get(self, "class_metrics")
 
     @class_metrics.setter
-    def class_metrics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultClassMetricArgs']]]]):
+    def class_metrics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ModelEvaluationResultClassMetricArgs']]]]):
         pulumi.set(self, "class_metrics", value)
 
     @_builtins.property
     @pulumi.getter(name="confusionMatrix")
-    def confusion_matrix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def confusion_matrix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         class level confusion matrix
         """
         return pulumi.get(self, "confusion_matrix")
 
     @confusion_matrix.setter
-    def confusion_matrix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def confusion_matrix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "confusion_matrix", value)
 
     @_builtins.property
     @pulumi.getter(name="entityMetrics")
-    def entity_metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultEntityMetricArgs']]]]:
+    def entity_metrics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ModelEvaluationResultEntityMetricArgs']]]]:
         """
         List of entity metrics
         """
         return pulumi.get(self, "entity_metrics")
 
     @entity_metrics.setter
-    def entity_metrics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultEntityMetricArgs']]]]):
+    def entity_metrics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ModelEvaluationResultEntityMetricArgs']]]]):
         pulumi.set(self, "entity_metrics", value)
 
     @_builtins.property
     @pulumi.getter
-    def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def labels(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         labels
         """
         return pulumi.get(self, "labels")
 
     @labels.setter
-    def labels(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def labels(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "labels", value)
 
     @_builtins.property
     @pulumi.getter
-    def metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultMetricArgs']]]]:
+    def metrics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ModelEvaluationResultMetricArgs']]]]:
         """
         Model level named entity recognition metrics
         """
         return pulumi.get(self, "metrics")
 
     @metrics.setter
-    def metrics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ModelEvaluationResultMetricArgs']]]]):
+    def metrics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ModelEvaluationResultMetricArgs']]]]):
         pulumi.set(self, "metrics", value)
 
     @_builtins.property
     @pulumi.getter(name="modelType")
-    def model_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Model type
         """
         return pulumi.get(self, "model_type")
 
     @model_type.setter
-    def model_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_type", value)
 
 
 class ModelEvaluationResultClassMetricArgsDict(TypedDict):
-    f1: NotRequired[pulumi.Input[_builtins.float]]
+    f1: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     F1-score, is a measure of a model’s accuracy on a dataset
     """
-    label: NotRequired[pulumi.Input[_builtins.str]]
+    label: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Entity label
     """
-    precision: NotRequired[pulumi.Input[_builtins.float]]
+    precision: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
     """
-    recall: NotRequired[pulumi.Input[_builtins.float]]
+    recall: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
     """
-    support: NotRequired[pulumi.Input[_builtins.float]]
+    support: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     number of samples in the test set
     """
@@ -631,11 +631,11 @@ class ModelEvaluationResultClassMetricArgsDict(TypedDict):
 @pulumi.input_type
 class ModelEvaluationResultClassMetricArgs:
     def __init__(__self__, *,
-                 f1: Optional[pulumi.Input[_builtins.float]] = None,
-                 label: Optional[pulumi.Input[_builtins.str]] = None,
-                 precision: Optional[pulumi.Input[_builtins.float]] = None,
-                 recall: Optional[pulumi.Input[_builtins.float]] = None,
-                 support: Optional[pulumi.Input[_builtins.float]] = None):
+                 f1: pulumi.Input[Optional[_builtins.float]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 precision: pulumi.Input[Optional[_builtins.float]] = None,
+                 recall: pulumi.Input[Optional[_builtins.float]] = None,
+                 support: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[_builtins.float] f1: F1-score, is a measure of a model’s accuracy on a dataset
         :param pulumi.Input[_builtins.str] label: Entity label
@@ -656,79 +656,79 @@ class ModelEvaluationResultClassMetricArgs:
 
     @_builtins.property
     @pulumi.getter
-    def f1(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def f1(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         F1-score, is a measure of a model’s accuracy on a dataset
         """
         return pulumi.get(self, "f1")
 
     @f1.setter
-    def f1(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def f1(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "f1", value)
 
     @_builtins.property
     @pulumi.getter
-    def label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Entity label
         """
         return pulumi.get(self, "label")
 
     @label.setter
-    def label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "label", value)
 
     @_builtins.property
     @pulumi.getter
-    def precision(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def precision(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
         """
         return pulumi.get(self, "precision")
 
     @precision.setter
-    def precision(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def precision(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "precision", value)
 
     @_builtins.property
     @pulumi.getter
-    def recall(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def recall(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
         """
         return pulumi.get(self, "recall")
 
     @recall.setter
-    def recall(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def recall(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "recall", value)
 
     @_builtins.property
     @pulumi.getter
-    def support(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def support(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         number of samples in the test set
         """
         return pulumi.get(self, "support")
 
     @support.setter
-    def support(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def support(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "support", value)
 
 
 class ModelEvaluationResultEntityMetricArgsDict(TypedDict):
-    f1: NotRequired[pulumi.Input[_builtins.float]]
+    f1: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     F1-score, is a measure of a model’s accuracy on a dataset
     """
-    label: NotRequired[pulumi.Input[_builtins.str]]
+    label: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Entity label
     """
-    precision: NotRequired[pulumi.Input[_builtins.float]]
+    precision: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
     """
-    recall: NotRequired[pulumi.Input[_builtins.float]]
+    recall: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
     """
@@ -736,10 +736,10 @@ class ModelEvaluationResultEntityMetricArgsDict(TypedDict):
 @pulumi.input_type
 class ModelEvaluationResultEntityMetricArgs:
     def __init__(__self__, *,
-                 f1: Optional[pulumi.Input[_builtins.float]] = None,
-                 label: Optional[pulumi.Input[_builtins.str]] = None,
-                 precision: Optional[pulumi.Input[_builtins.float]] = None,
-                 recall: Optional[pulumi.Input[_builtins.float]] = None):
+                 f1: pulumi.Input[Optional[_builtins.float]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 precision: pulumi.Input[Optional[_builtins.float]] = None,
+                 recall: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[_builtins.float] f1: F1-score, is a measure of a model’s accuracy on a dataset
         :param pulumi.Input[_builtins.str] label: Entity label
@@ -757,91 +757,91 @@ class ModelEvaluationResultEntityMetricArgs:
 
     @_builtins.property
     @pulumi.getter
-    def f1(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def f1(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         F1-score, is a measure of a model’s accuracy on a dataset
         """
         return pulumi.get(self, "f1")
 
     @f1.setter
-    def f1(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def f1(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "f1", value)
 
     @_builtins.property
     @pulumi.getter
-    def label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Entity label
         """
         return pulumi.get(self, "label")
 
     @label.setter
-    def label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "label", value)
 
     @_builtins.property
     @pulumi.getter
-    def precision(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def precision(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
         """
         return pulumi.get(self, "precision")
 
     @precision.setter
-    def precision(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def precision(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "precision", value)
 
     @_builtins.property
     @pulumi.getter
-    def recall(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def recall(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
         """
         return pulumi.get(self, "recall")
 
     @recall.setter
-    def recall(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def recall(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "recall", value)
 
 
 class ModelEvaluationResultMetricArgsDict(TypedDict):
-    accuracy: NotRequired[pulumi.Input[_builtins.float]]
+    accuracy: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The fraction of the labels that were correctly recognised .
     """
-    macro_f1: NotRequired[pulumi.Input[_builtins.float]]
+    macro_f1: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     F1-score, is a measure of a model’s accuracy on a dataset
     """
-    macro_precision: NotRequired[pulumi.Input[_builtins.float]]
+    macro_precision: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
     """
-    macro_recall: NotRequired[pulumi.Input[_builtins.float]]
+    macro_recall: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
     """
-    micro_f1: NotRequired[pulumi.Input[_builtins.float]]
+    micro_f1: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     F1-score, is a measure of a model’s accuracy on a dataset
     """
-    micro_precision: NotRequired[pulumi.Input[_builtins.float]]
+    micro_precision: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
     """
-    micro_recall: NotRequired[pulumi.Input[_builtins.float]]
+    micro_recall: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
     """
-    weighted_f1: NotRequired[pulumi.Input[_builtins.float]]
+    weighted_f1: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     F1-score, is a measure of a model’s accuracy on a dataset
     """
-    weighted_precision: NotRequired[pulumi.Input[_builtins.float]]
+    weighted_precision: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
     """
-    weighted_recall: NotRequired[pulumi.Input[_builtins.float]]
+    weighted_recall: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
     """
@@ -849,16 +849,16 @@ class ModelEvaluationResultMetricArgsDict(TypedDict):
 @pulumi.input_type
 class ModelEvaluationResultMetricArgs:
     def __init__(__self__, *,
-                 accuracy: Optional[pulumi.Input[_builtins.float]] = None,
-                 macro_f1: Optional[pulumi.Input[_builtins.float]] = None,
-                 macro_precision: Optional[pulumi.Input[_builtins.float]] = None,
-                 macro_recall: Optional[pulumi.Input[_builtins.float]] = None,
-                 micro_f1: Optional[pulumi.Input[_builtins.float]] = None,
-                 micro_precision: Optional[pulumi.Input[_builtins.float]] = None,
-                 micro_recall: Optional[pulumi.Input[_builtins.float]] = None,
-                 weighted_f1: Optional[pulumi.Input[_builtins.float]] = None,
-                 weighted_precision: Optional[pulumi.Input[_builtins.float]] = None,
-                 weighted_recall: Optional[pulumi.Input[_builtins.float]] = None):
+                 accuracy: pulumi.Input[Optional[_builtins.float]] = None,
+                 macro_f1: pulumi.Input[Optional[_builtins.float]] = None,
+                 macro_precision: pulumi.Input[Optional[_builtins.float]] = None,
+                 macro_recall: pulumi.Input[Optional[_builtins.float]] = None,
+                 micro_f1: pulumi.Input[Optional[_builtins.float]] = None,
+                 micro_precision: pulumi.Input[Optional[_builtins.float]] = None,
+                 micro_recall: pulumi.Input[Optional[_builtins.float]] = None,
+                 weighted_f1: pulumi.Input[Optional[_builtins.float]] = None,
+                 weighted_precision: pulumi.Input[Optional[_builtins.float]] = None,
+                 weighted_recall: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[_builtins.float] accuracy: The fraction of the labels that were correctly recognised .
         :param pulumi.Input[_builtins.float] macro_f1: F1-score, is a measure of a model’s accuracy on a dataset
@@ -894,122 +894,122 @@ class ModelEvaluationResultMetricArgs:
 
     @_builtins.property
     @pulumi.getter
-    def accuracy(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def accuracy(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The fraction of the labels that were correctly recognised .
         """
         return pulumi.get(self, "accuracy")
 
     @accuracy.setter
-    def accuracy(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def accuracy(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "accuracy", value)
 
     @_builtins.property
     @pulumi.getter(name="macroF1")
-    def macro_f1(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def macro_f1(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         F1-score, is a measure of a model’s accuracy on a dataset
         """
         return pulumi.get(self, "macro_f1")
 
     @macro_f1.setter
-    def macro_f1(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def macro_f1(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "macro_f1", value)
 
     @_builtins.property
     @pulumi.getter(name="macroPrecision")
-    def macro_precision(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def macro_precision(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
         """
         return pulumi.get(self, "macro_precision")
 
     @macro_precision.setter
-    def macro_precision(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def macro_precision(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "macro_precision", value)
 
     @_builtins.property
     @pulumi.getter(name="macroRecall")
-    def macro_recall(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def macro_recall(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
         """
         return pulumi.get(self, "macro_recall")
 
     @macro_recall.setter
-    def macro_recall(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def macro_recall(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "macro_recall", value)
 
     @_builtins.property
     @pulumi.getter(name="microF1")
-    def micro_f1(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def micro_f1(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         F1-score, is a measure of a model’s accuracy on a dataset
         """
         return pulumi.get(self, "micro_f1")
 
     @micro_f1.setter
-    def micro_f1(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def micro_f1(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "micro_f1", value)
 
     @_builtins.property
     @pulumi.getter(name="microPrecision")
-    def micro_precision(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def micro_precision(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
         """
         return pulumi.get(self, "micro_precision")
 
     @micro_precision.setter
-    def micro_precision(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def micro_precision(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "micro_precision", value)
 
     @_builtins.property
     @pulumi.getter(name="microRecall")
-    def micro_recall(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def micro_recall(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
         """
         return pulumi.get(self, "micro_recall")
 
     @micro_recall.setter
-    def micro_recall(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def micro_recall(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "micro_recall", value)
 
     @_builtins.property
     @pulumi.getter(name="weightedF1")
-    def weighted_f1(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def weighted_f1(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         F1-score, is a measure of a model’s accuracy on a dataset
         """
         return pulumi.get(self, "weighted_f1")
 
     @weighted_f1.setter
-    def weighted_f1(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def weighted_f1(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "weighted_f1", value)
 
     @_builtins.property
     @pulumi.getter(name="weightedPrecision")
-    def weighted_precision(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def weighted_precision(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Precision refers to the number of true positives divided by the total number of positive predictions (i.e., the number of true positives plus the number of false positives)
         """
         return pulumi.get(self, "weighted_precision")
 
     @weighted_precision.setter
-    def weighted_precision(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def weighted_precision(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "weighted_precision", value)
 
     @_builtins.property
     @pulumi.getter(name="weightedRecall")
-    def weighted_recall(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def weighted_recall(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Measures the model's ability to predict actual positive classes. It is the ratio between the predicted true positives and what was actually tagged. The recall metric reveals how many of the predicted classes are correct.
         """
         return pulumi.get(self, "weighted_recall")
 
     @weighted_recall.setter
-    def weighted_recall(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def weighted_recall(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "weighted_recall", value)
 
 
@@ -1018,15 +1018,15 @@ class ModelModelDetailsArgsDict(TypedDict):
     """
     Model type
     """
-    classification_mode: NotRequired[pulumi.Input['ModelModelDetailsClassificationModeArgsDict']]
+    classification_mode: NotRequired[pulumi.Input[Optional['ModelModelDetailsClassificationModeArgs']]]
     """
     possible text classification modes
     """
-    language_code: NotRequired[pulumi.Input[_builtins.str]]
+    language_code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     supported language default value is en
     """
-    version: NotRequired[pulumi.Input[_builtins.str]]
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
     """
@@ -1035,9 +1035,9 @@ class ModelModelDetailsArgsDict(TypedDict):
 class ModelModelDetailsArgs:
     def __init__(__self__, *,
                  model_type: pulumi.Input[_builtins.str],
-                 classification_mode: Optional[pulumi.Input['ModelModelDetailsClassificationModeArgs']] = None,
-                 language_code: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 classification_mode: pulumi.Input[Optional['ModelModelDetailsClassificationModeArgs']] = None,
+                 language_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] model_type: Model type
         :param pulumi.Input['ModelModelDetailsClassificationModeArgs'] classification_mode: possible text classification modes
@@ -1066,38 +1066,38 @@ class ModelModelDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="classificationMode")
-    def classification_mode(self) -> Optional[pulumi.Input['ModelModelDetailsClassificationModeArgs']]:
+    def classification_mode(self) -> pulumi.Input[Optional['ModelModelDetailsClassificationModeArgs']]:
         """
         possible text classification modes
         """
         return pulumi.get(self, "classification_mode")
 
     @classification_mode.setter
-    def classification_mode(self, value: Optional[pulumi.Input['ModelModelDetailsClassificationModeArgs']]):
+    def classification_mode(self, value: pulumi.Input[Optional['ModelModelDetailsClassificationModeArgs']]):
         pulumi.set(self, "classification_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="languageCode")
-    def language_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def language_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         supported language default value is en
         """
         return pulumi.get(self, "language_code")
 
     @language_code.setter
-    def language_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def language_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "language_code", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
@@ -1106,7 +1106,7 @@ class ModelModelDetailsClassificationModeArgsDict(TypedDict):
     """
     classification Modes
     """
-    version: NotRequired[pulumi.Input[_builtins.str]]
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
     """
@@ -1115,7 +1115,7 @@ class ModelModelDetailsClassificationModeArgsDict(TypedDict):
 class ModelModelDetailsClassificationModeArgs:
     def __init__(__self__, *,
                  classification_mode: pulumi.Input[_builtins.str],
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] classification_mode: classification Modes
         :param pulumi.Input[_builtins.str] version: Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
@@ -1138,14 +1138,14 @@ class ModelModelDetailsClassificationModeArgs:
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
@@ -1158,7 +1158,7 @@ class ModelTestStrategyArgsDict(TypedDict):
     """
     Possible data set type
     """
-    validation_dataset: NotRequired[pulumi.Input['ModelTestStrategyValidationDatasetArgsDict']]
+    validation_dataset: NotRequired[pulumi.Input[Optional['ModelTestStrategyValidationDatasetArgs']]]
     """
     Possible data set type
     """
@@ -1168,7 +1168,7 @@ class ModelTestStrategyArgs:
     def __init__(__self__, *,
                  strategy_type: pulumi.Input[_builtins.str],
                  testing_dataset: pulumi.Input['ModelTestStrategyTestingDatasetArgs'],
-                 validation_dataset: Optional[pulumi.Input['ModelTestStrategyValidationDatasetArgs']] = None):
+                 validation_dataset: pulumi.Input[Optional['ModelTestStrategyValidationDatasetArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] strategy_type: This information will define the test strategy different datasets for test and validation(optional) dataset.
         :param pulumi.Input['ModelTestStrategyTestingDatasetArgs'] testing_dataset: Possible data set type
@@ -1205,14 +1205,14 @@ class ModelTestStrategyArgs:
 
     @_builtins.property
     @pulumi.getter(name="validationDataset")
-    def validation_dataset(self) -> Optional[pulumi.Input['ModelTestStrategyValidationDatasetArgs']]:
+    def validation_dataset(self) -> pulumi.Input[Optional['ModelTestStrategyValidationDatasetArgs']]:
         """
         Possible data set type
         """
         return pulumi.get(self, "validation_dataset")
 
     @validation_dataset.setter
-    def validation_dataset(self, value: Optional[pulumi.Input['ModelTestStrategyValidationDatasetArgs']]):
+    def validation_dataset(self, value: pulumi.Input[Optional['ModelTestStrategyValidationDatasetArgs']]):
         pulumi.set(self, "validation_dataset", value)
 
 
@@ -1221,11 +1221,11 @@ class ModelTestStrategyTestingDatasetArgsDict(TypedDict):
     """
     Possible data sets
     """
-    dataset_id: NotRequired[pulumi.Input[_builtins.str]]
+    dataset_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Data Science Labelling Service OCID
     """
-    location_details: NotRequired[pulumi.Input['ModelTestStrategyTestingDatasetLocationDetailsArgsDict']]
+    location_details: NotRequired[pulumi.Input[Optional['ModelTestStrategyTestingDatasetLocationDetailsArgs']]]
     """
     Possible object storage location types
     """
@@ -1234,8 +1234,8 @@ class ModelTestStrategyTestingDatasetArgsDict(TypedDict):
 class ModelTestStrategyTestingDatasetArgs:
     def __init__(__self__, *,
                  dataset_type: pulumi.Input[_builtins.str],
-                 dataset_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 location_details: Optional[pulumi.Input['ModelTestStrategyTestingDatasetLocationDetailsArgs']] = None):
+                 dataset_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 location_details: pulumi.Input[Optional['ModelTestStrategyTestingDatasetLocationDetailsArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] dataset_type: Possible data sets
         :param pulumi.Input[_builtins.str] dataset_id: Data Science Labelling Service OCID
@@ -1261,26 +1261,26 @@ class ModelTestStrategyTestingDatasetArgs:
 
     @_builtins.property
     @pulumi.getter(name="datasetId")
-    def dataset_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dataset_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Data Science Labelling Service OCID
         """
         return pulumi.get(self, "dataset_id")
 
     @dataset_id.setter
-    def dataset_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dataset_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dataset_id", value)
 
     @_builtins.property
     @pulumi.getter(name="locationDetails")
-    def location_details(self) -> Optional[pulumi.Input['ModelTestStrategyTestingDatasetLocationDetailsArgs']]:
+    def location_details(self) -> pulumi.Input[Optional['ModelTestStrategyTestingDatasetLocationDetailsArgs']]:
         """
         Possible object storage location types
         """
         return pulumi.get(self, "location_details")
 
     @location_details.setter
-    def location_details(self, value: Optional[pulumi.Input['ModelTestStrategyTestingDatasetLocationDetailsArgs']]):
+    def location_details(self, value: pulumi.Input[Optional['ModelTestStrategyTestingDatasetLocationDetailsArgs']]):
         pulumi.set(self, "location_details", value)
 
 
@@ -1374,11 +1374,11 @@ class ModelTestStrategyValidationDatasetArgsDict(TypedDict):
     """
     Possible data sets
     """
-    dataset_id: NotRequired[pulumi.Input[_builtins.str]]
+    dataset_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Data Science Labelling Service OCID
     """
-    location_details: NotRequired[pulumi.Input['ModelTestStrategyValidationDatasetLocationDetailsArgsDict']]
+    location_details: NotRequired[pulumi.Input[Optional['ModelTestStrategyValidationDatasetLocationDetailsArgs']]]
     """
     Possible object storage location types
     """
@@ -1387,8 +1387,8 @@ class ModelTestStrategyValidationDatasetArgsDict(TypedDict):
 class ModelTestStrategyValidationDatasetArgs:
     def __init__(__self__, *,
                  dataset_type: pulumi.Input[_builtins.str],
-                 dataset_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 location_details: Optional[pulumi.Input['ModelTestStrategyValidationDatasetLocationDetailsArgs']] = None):
+                 dataset_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 location_details: pulumi.Input[Optional['ModelTestStrategyValidationDatasetLocationDetailsArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] dataset_type: Possible data sets
         :param pulumi.Input[_builtins.str] dataset_id: Data Science Labelling Service OCID
@@ -1414,26 +1414,26 @@ class ModelTestStrategyValidationDatasetArgs:
 
     @_builtins.property
     @pulumi.getter(name="datasetId")
-    def dataset_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dataset_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Data Science Labelling Service OCID
         """
         return pulumi.get(self, "dataset_id")
 
     @dataset_id.setter
-    def dataset_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dataset_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dataset_id", value)
 
     @_builtins.property
     @pulumi.getter(name="locationDetails")
-    def location_details(self) -> Optional[pulumi.Input['ModelTestStrategyValidationDatasetLocationDetailsArgs']]:
+    def location_details(self) -> pulumi.Input[Optional['ModelTestStrategyValidationDatasetLocationDetailsArgs']]:
         """
         Possible object storage location types
         """
         return pulumi.get(self, "location_details")
 
     @location_details.setter
-    def location_details(self, value: Optional[pulumi.Input['ModelTestStrategyValidationDatasetLocationDetailsArgs']]):
+    def location_details(self, value: pulumi.Input[Optional['ModelTestStrategyValidationDatasetLocationDetailsArgs']]):
         pulumi.set(self, "location_details", value)
 
 
@@ -1527,11 +1527,11 @@ class ModelTrainingDatasetArgsDict(TypedDict):
     """
     Possible data sets
     """
-    dataset_id: NotRequired[pulumi.Input[_builtins.str]]
+    dataset_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Data Science Labelling Service OCID
     """
-    location_details: NotRequired[pulumi.Input['ModelTrainingDatasetLocationDetailsArgsDict']]
+    location_details: NotRequired[pulumi.Input[Optional['ModelTrainingDatasetLocationDetailsArgs']]]
     """
     Possible object storage location types
     """
@@ -1540,8 +1540,8 @@ class ModelTrainingDatasetArgsDict(TypedDict):
 class ModelTrainingDatasetArgs:
     def __init__(__self__, *,
                  dataset_type: pulumi.Input[_builtins.str],
-                 dataset_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 location_details: Optional[pulumi.Input['ModelTrainingDatasetLocationDetailsArgs']] = None):
+                 dataset_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 location_details: pulumi.Input[Optional['ModelTrainingDatasetLocationDetailsArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] dataset_type: Possible data sets
         :param pulumi.Input[_builtins.str] dataset_id: Data Science Labelling Service OCID
@@ -1567,26 +1567,26 @@ class ModelTrainingDatasetArgs:
 
     @_builtins.property
     @pulumi.getter(name="datasetId")
-    def dataset_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dataset_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Data Science Labelling Service OCID
         """
         return pulumi.get(self, "dataset_id")
 
     @dataset_id.setter
-    def dataset_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dataset_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dataset_id", value)
 
     @_builtins.property
     @pulumi.getter(name="locationDetails")
-    def location_details(self) -> Optional[pulumi.Input['ModelTrainingDatasetLocationDetailsArgs']]:
+    def location_details(self) -> pulumi.Input[Optional['ModelTrainingDatasetLocationDetailsArgs']]:
         """
         Possible object storage location types
         """
         return pulumi.get(self, "location_details")
 
     @location_details.setter
-    def location_details(self, value: Optional[pulumi.Input['ModelTrainingDatasetLocationDetailsArgs']]):
+    def location_details(self, value: pulumi.Input[Optional['ModelTrainingDatasetLocationDetailsArgs']]):
         pulumi.set(self, "location_details", value)
 
 

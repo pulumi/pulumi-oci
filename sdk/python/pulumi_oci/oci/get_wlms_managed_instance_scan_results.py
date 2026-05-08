@@ -146,10 +146,10 @@ def get_wlms_managed_instance_scan_results(filters: Optional[Sequence[Union['Get
         scan_result_collections=pulumi.get(__ret__, 'scan_result_collections'),
         server_name=pulumi.get(__ret__, 'server_name'),
         wls_domain_id=pulumi.get(__ret__, 'wls_domain_id'))
-def get_wlms_managed_instance_scan_results_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWlmsManagedInstanceScanResultsFilterArgs', 'GetWlmsManagedInstanceScanResultsFilterArgsDict']]]]] = None,
-                                                  managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                  server_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  wls_domain_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_wlms_managed_instance_scan_results_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWlmsManagedInstanceScanResultsFilterArgs', 'GetWlmsManagedInstanceScanResultsFilterArgsDict']]]]] = None,
+                                                  managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                  server_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  wls_domain_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWlmsManagedInstanceScanResultsResult]:
     """
     This data source provides the list of Managed Instance Scan Results in Oracle Cloud Infrastructure Wlms service.

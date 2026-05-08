@@ -324,7 +324,7 @@ def get_function(function_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_function = oci.Functions.get_function(function_id=test_function_oci_functions_function["id"])
+    test_function = oci.functions.get_function(function_id=test_function_oci_functions_function["id"])
     ```
 
 
@@ -359,7 +359,7 @@ def get_function(function_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         timeout_in_seconds=pulumi.get(__ret__, 'timeout_in_seconds'),
         trace_configs=pulumi.get(__ret__, 'trace_configs'))
-def get_function_output(function_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_function_output(function_id: pulumi.Input[Optional[_builtins.str]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFunctionResult]:
     """
     This data source provides details about a specific Function resource in Oracle Cloud Infrastructure Functions service.
@@ -372,7 +372,7 @@ def get_function_output(function_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_function = oci.Functions.get_function(function_id=test_function_oci_functions_function["id"])
+    test_function = oci.functions.get_function(function_id=test_function_oci_functions_function["id"])
     ```
 
 

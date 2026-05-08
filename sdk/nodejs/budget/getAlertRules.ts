@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlertRules = oci.Budget.getAlertRules({
+ * const testAlertRules = oci.budget.getAlertRules({
  *     budgetId: testBudget.id,
  *     displayName: alertRuleDisplayName,
  *     state: alertRuleState,
@@ -90,7 +90,7 @@ export interface GetAlertRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlertRules = oci.Budget.getAlertRules({
+ * const testAlertRules = oci.budget.getAlertRules({
  *     budgetId: testBudget.id,
  *     displayName: alertRuleDisplayName,
  *     state: alertRuleState,
@@ -118,10 +118,10 @@ export interface GetAlertRulesOutputArgs {
     /**
      * A user-friendly name. This does not have to be unique, and it's changeable.  Example: `My new resource`
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Budget.GetAlertRulesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Budget.GetAlertRulesFilterArgs>[] | undefined>;
     /**
      * The current state of the resource to filter by.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

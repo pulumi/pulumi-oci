@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccmDemandSignal = oci.CapacityManagement.getOccmDemandSignal({
+ * const testOccmDemandSignal = oci.capacitymanagement.getOccmDemandSignal({
  *     occmDemandSignalId: testOccmDemandSignalOciCapacityManagementOccmDemandSignal.id,
  * });
  * ```
@@ -98,7 +98,7 @@ export interface GetOccmDemandSignalResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOccmDemandSignal = oci.CapacityManagement.getOccmDemandSignal({
+ * const testOccmDemandSignal = oci.capacitymanagement.getOccmDemandSignal({
  *     occmDemandSignalId: testOccmDemandSignalOciCapacityManagementOccmDemandSignal.id,
  * });
  * ```

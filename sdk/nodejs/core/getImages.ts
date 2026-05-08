@@ -27,7 +27,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testImages = oci.Core.getImages({
+ * const testImages = oci.core.getImages({
  *     compartmentId: compartmentId,
  *     displayName: imageDisplayName,
  *     operatingSystem: imageOperatingSystem,
@@ -151,7 +151,7 @@ export interface GetImagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testImages = oci.Core.getImages({
+ * const testImages = oci.core.getImages({
  *     compartmentId: compartmentId,
  *     displayName: imageDisplayName,
  *     operatingSystem: imageOperatingSystem,
@@ -189,30 +189,30 @@ export interface GetImagesOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetImagesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetImagesFilterArgs>[] | undefined>;
     /**
      * The image's operating system.  Example: `Oracle Linux`
      */
-    operatingSystem?: pulumi.Input<string>;
+    operatingSystem?: pulumi.Input<string | undefined>;
     /**
      * The image's operating system version.  Example: `7.2`
      */
-    operatingSystemVersion?: pulumi.Input<string>;
+    operatingSystemVersion?: pulumi.Input<string | undefined>;
     /**
      * Shape name.
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
     /**
      * Sort the resources returned, by creation time or display name. Example `TIMECREATED` or `DISPLAYNAME`.
      */
-    sortBy?: pulumi.Input<string>;
+    sortBy?: pulumi.Input<string | undefined>;
     /**
      * The sort order to use, either ascending (`ASC`) or descending (`DESC`).
      */
-    sortOrder?: pulumi.Input<string>;
+    sortOrder?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

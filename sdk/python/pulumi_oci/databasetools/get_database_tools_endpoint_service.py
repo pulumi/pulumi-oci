@@ -203,7 +203,7 @@ def get_database_tools_endpoint_service(database_tools_endpoint_service_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_endpoint_service = oci.DatabaseTools.get_database_tools_endpoint_service(database_tools_endpoint_service_id=test_database_tools_endpoint_service_oci_database_tools_database_tools_endpoint_service["id"])
+    test_database_tools_endpoint_service = oci.databasetools.get_database_tools_endpoint_service(database_tools_endpoint_service_id=test_database_tools_endpoint_service_oci_database_tools_database_tools_endpoint_service["id"])
     ```
 
 
@@ -228,7 +228,7 @@ def get_database_tools_endpoint_service(database_tools_endpoint_service_id: Opti
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_database_tools_endpoint_service_output(database_tools_endpoint_service_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_database_tools_endpoint_service_output(database_tools_endpoint_service_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseToolsEndpointServiceResult]:
     """
     This data source provides details about a specific Database Tools Endpoint Service resource in Oracle Cloud Infrastructure Database Tools service.
@@ -241,7 +241,7 @@ def get_database_tools_endpoint_service_output(database_tools_endpoint_service_i
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_endpoint_service = oci.DatabaseTools.get_database_tools_endpoint_service(database_tools_endpoint_service_id=test_database_tools_endpoint_service_oci_database_tools_database_tools_endpoint_service["id"])
+    test_database_tools_endpoint_service = oci.databasetools.get_database_tools_endpoint_service(database_tools_endpoint_service_id=test_database_tools_endpoint_service_oci_database_tools_database_tools_endpoint_service["id"])
     ```
 
 

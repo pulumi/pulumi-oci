@@ -97,7 +97,7 @@ def get_appliance_image(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_appliance_image = oci.CloudBridge.get_appliance_image(compartment_id=compartment_id,
+    test_appliance_image = oci.cloudbridge.get_appliance_image(compartment_id=compartment_id,
         display_name=appliance_image_display_name)
     ```
 
@@ -116,8 +116,8 @@ def get_appliance_image(compartment_id: Optional[_builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'))
-def get_appliance_image_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_appliance_image_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetApplianceImageResult]:
     """
     This data source provides details about a specific Appliance Image resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -130,7 +130,7 @@ def get_appliance_image_output(compartment_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_appliance_image = oci.CloudBridge.get_appliance_image(compartment_id=compartment_id,
+    test_appliance_image = oci.cloudbridge.get_appliance_image(compartment_id=compartment_id,
         display_name=appliance_image_display_name)
     ```
 

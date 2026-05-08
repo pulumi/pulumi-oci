@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDynamicSetManagedInstances = oci.OsManagementHub.getDynamicSetManagedInstances({
+ * const testDynamicSetManagedInstances = oci.osmanagementhub.getDynamicSetManagedInstances({
  *     dynamicSetId: testDynamicSet.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: dynamicSetManagedInstanceCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: dynamicSetManagedInstanceCompartmentIdInSubtree === "true",
  *     displayName: dynamicSetManagedInstanceDisplayName,
  *     displayNameContains: dynamicSetManagedInstanceDisplayNameContains,
  * });
@@ -101,10 +101,10 @@ export interface GetDynamicSetManagedInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDynamicSetManagedInstances = oci.OsManagementHub.getDynamicSetManagedInstances({
+ * const testDynamicSetManagedInstances = oci.osmanagementhub.getDynamicSetManagedInstances({
  *     dynamicSetId: testDynamicSet.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: dynamicSetManagedInstanceCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: dynamicSetManagedInstanceCompartmentIdInSubtree === "true",
  *     displayName: dynamicSetManagedInstanceDisplayName,
  *     displayNameContains: dynamicSetManagedInstanceDisplayNameContains,
  * });
@@ -129,22 +129,22 @@ export interface GetDynamicSetManagedInstancesOutputArgs {
     /**
      * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether to include subcompartments in the returned results. Default is false.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return resources that match the given user-friendly name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that may partially match the given display name.
      */
-    displayNameContains?: pulumi.Input<string>;
+    displayNameContains?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
      */
     dynamicSetId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetDynamicSetManagedInstancesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetDynamicSetManagedInstancesFilterArgs>[] | undefined>;
 }

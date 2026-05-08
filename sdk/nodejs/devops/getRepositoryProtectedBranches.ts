@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryProtectedBranches = oci.DevOps.getRepositoryProtectedBranches({
+ * const testRepositoryProtectedBranches = oci.devops.getRepositoryProtectedBranches({
  *     repositoryId: testRepository.id,
  *     name: repositoryProtectedBranchName,
  * });
@@ -74,7 +74,7 @@ export interface GetRepositoryProtectedBranchesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryProtectedBranches = oci.DevOps.getRepositoryProtectedBranches({
+ * const testRepositoryProtectedBranches = oci.devops.getRepositoryProtectedBranches({
  *     repositoryId: testRepository.id,
  *     name: repositoryProtectedBranchName,
  * });
@@ -93,11 +93,11 @@ export function getRepositoryProtectedBranchesOutput(args: GetRepositoryProtecte
  * A collection of arguments for invoking getRepositoryProtectedBranches.
  */
 export interface GetRepositoryProtectedBranchesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DevOps.GetRepositoryProtectedBranchesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DevOps.GetRepositoryProtectedBranchesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given branch name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique repository identifier.
      */

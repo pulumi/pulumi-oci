@@ -151,22 +151,22 @@ export interface GetDbmulticloudOracleDbAzureVaultAssociationsOutputArgs {
     /**
      * A filter to return Oracle DB Azure Vault Association resources that match the specified display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgs>[] | undefined>;
     /**
      * A filter to return Oracle DB Azure Azure Identity Connector resources.
      */
-    oracleDbAzureConnectorId?: pulumi.Input<string>;
+    oracleDbAzureConnectorId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return Oracle DB Azure Vault resources that match the specified OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
      */
-    oracleDbAzureVaultAssociationId?: pulumi.Input<string>;
+    oracleDbAzureVaultAssociationId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
      */
-    oracleDbAzureVaultId?: pulumi.Input<string>;
+    oracleDbAzureVaultId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

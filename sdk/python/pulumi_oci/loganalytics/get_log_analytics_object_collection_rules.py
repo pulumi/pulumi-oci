@@ -134,7 +134,7 @@ def get_log_analytics_object_collection_rules(compartment_id: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_object_collection_rules = oci.LogAnalytics.get_log_analytics_object_collection_rules(compartment_id=compartment_id,
+    test_log_analytics_object_collection_rules = oci.loganalytics.get_log_analytics_object_collection_rules(compartment_id=compartment_id,
         namespace=log_analytics_object_collection_rule_namespace,
         name=log_analytics_object_collection_rule_name,
         state=log_analytics_object_collection_rule_state)
@@ -163,11 +163,11 @@ def get_log_analytics_object_collection_rules(compartment_id: Optional[_builtins
         name=pulumi.get(__ret__, 'name'),
         namespace=pulumi.get(__ret__, 'namespace'),
         state=pulumi.get(__ret__, 'state'))
-def get_log_analytics_object_collection_rules_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLogAnalyticsObjectCollectionRulesFilterArgs', 'GetLogAnalyticsObjectCollectionRulesFilterArgsDict']]]]] = None,
-                                                     name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_log_analytics_object_collection_rules_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLogAnalyticsObjectCollectionRulesFilterArgs', 'GetLogAnalyticsObjectCollectionRulesFilterArgsDict']]]]] = None,
+                                                     name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsObjectCollectionRulesResult]:
     """
     This data source provides the list of Log Analytics Object Collection Rules in Oracle Cloud Infrastructure Log Analytics service.
@@ -180,7 +180,7 @@ def get_log_analytics_object_collection_rules_output(compartment_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_object_collection_rules = oci.LogAnalytics.get_log_analytics_object_collection_rules(compartment_id=compartment_id,
+    test_log_analytics_object_collection_rules = oci.loganalytics.get_log_analytics_object_collection_rules(compartment_id=compartment_id,
         namespace=log_analytics_object_collection_rule_namespace,
         name=log_analytics_object_collection_rule_name,
         state=log_analytics_object_collection_rule_state)

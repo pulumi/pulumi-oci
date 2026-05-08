@@ -90,10 +90,10 @@ class AssessmentAssessorActionArgs:
 @pulumi.input_type
 class _AssessmentAssessorActionState:
     def __init__(__self__, *,
-                 assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 assessor_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 assessor_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input['AssessmentAssessorActionItemArgs']]]] = None):
+                 assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 assessor_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 assessor_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input['AssessmentAssessorActionItemArgs']]]] = None):
         """
         Input properties used for looking up and filtering AssessmentAssessorAction resources.
 
@@ -113,50 +113,50 @@ class _AssessmentAssessorActionState:
 
     @_builtins.property
     @pulumi.getter(name="assessmentId")
-    def assessment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def assessment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the Assessment
         """
         return pulumi.get(self, "assessment_id")
 
     @assessment_id.setter
-    def assessment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def assessment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "assessment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="assessorAction")
-    def assessor_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def assessor_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Accessor Action
         """
         return pulumi.get(self, "assessor_action")
 
     @assessor_action.setter
-    def assessor_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def assessor_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "assessor_action", value)
 
     @_builtins.property
     @pulumi.getter(name="assessorName")
-    def assessor_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def assessor_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Assessor
         """
         return pulumi.get(self, "assessor_name")
 
     @assessor_name.setter
-    def assessor_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def assessor_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "assessor_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssessmentAssessorActionItemArgs']]]]:
+    def items(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AssessmentAssessorActionItemArgs']]]]:
         """
         Array of name-value details for assessor action.
         """
         return pulumi.get(self, "items")
 
     @items.setter
-    def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssessmentAssessorActionItemArgs']]]]):
+    def items(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AssessmentAssessorActionItemArgs']]]]):
         pulumi.set(self, "items", value)
 
 
@@ -166,10 +166,10 @@ class AssessmentAssessorAction(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 assessor_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 assessor_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AssessmentAssessorActionItemArgs', 'AssessmentAssessorActionItemArgsDict']]]]] = None,
+                 assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 assessor_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 assessor_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentAssessorActionItemArgs', 'AssessmentAssessorActionItemArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Assessment Assessor Action resource in Oracle Cloud Infrastructure Database Migration service.
@@ -265,10 +265,10 @@ class AssessmentAssessorAction(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 assessor_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 assessor_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AssessmentAssessorActionItemArgs', 'AssessmentAssessorActionItemArgsDict']]]]] = None,
+                 assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 assessor_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 assessor_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentAssessorActionItemArgs', 'AssessmentAssessorActionItemArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -300,10 +300,10 @@ class AssessmentAssessorAction(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            assessor_action: Optional[pulumi.Input[_builtins.str]] = None,
-            assessor_name: Optional[pulumi.Input[_builtins.str]] = None,
-            items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AssessmentAssessorActionItemArgs', 'AssessmentAssessorActionItemArgsDict']]]]] = None) -> 'AssessmentAssessorAction':
+            assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            assessor_action: pulumi.Input[Optional[_builtins.str]] = None,
+            assessor_name: pulumi.Input[Optional[_builtins.str]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentAssessorActionItemArgs', 'AssessmentAssessorActionItemArgsDict']]]]] = None) -> 'AssessmentAssessorAction':
         """
         Get an existing AssessmentAssessorAction resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

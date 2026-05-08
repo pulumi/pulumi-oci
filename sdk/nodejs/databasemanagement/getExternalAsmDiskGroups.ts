@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalAsmDiskGroups = oci.DatabaseManagement.getExternalAsmDiskGroups({
+ * const testExternalAsmDiskGroups = oci.databasemanagement.getExternalAsmDiskGroups({
  *     externalAsmId: testExternalAsm.id,
  *     opcNamedCredentialId: externalAsmDiskGroupOpcNamedCredentialId,
  * });
@@ -74,7 +74,7 @@ export interface GetExternalAsmDiskGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalAsmDiskGroups = oci.DatabaseManagement.getExternalAsmDiskGroups({
+ * const testExternalAsmDiskGroups = oci.databasemanagement.getExternalAsmDiskGroups({
  *     externalAsmId: testExternalAsm.id,
  *     opcNamedCredentialId: externalAsmDiskGroupOpcNamedCredentialId,
  * });
@@ -97,9 +97,9 @@ export interface GetExternalAsmDiskGroupsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
      */
     externalAsmId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetExternalAsmDiskGroupsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetExternalAsmDiskGroupsFilterArgs>[] | undefined>;
     /**
      * The OCID of the Named Credential.
      */
-    opcNamedCredentialId?: pulumi.Input<string>;
+    opcNamedCredentialId?: pulumi.Input<string | undefined>;
 }

@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  *
  * const testAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement = new oci.databasemanagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement("test_autonomous_database_autonomous_database_dbm_features_management", {
  *     autonomousDatabaseId: testAutonomousDatabase.id,
- *     enableAutonomousDatabaseDbmFeature: enableAutonomousDatabaseDbmFeature,
+ *     enableAutonomousDatabaseDbmFeature: enableAutonomousDatabaseDbmFeature === "true",
  *     featureDetails: {
  *         feature: autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsFeature,
  *         enableAutonomousDatabaseDbmFeature: enableAutonomousDatabaseDbmFeature,
@@ -36,7 +36,7 @@ import * as utilities from "../utilities";
  *             },
  *             connectionString: {
  *                 connectionType: autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringConnectionType,
- *                 port: autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringPort,
+ *                 port: Number(autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringPort),
  *                 protocol: autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringProtocol,
  *                 service: autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringService,
  *             },
@@ -136,7 +136,7 @@ export interface AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementState 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
      */
-    autonomousDatabaseId?: pulumi.Input<string>;
+    autonomousDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
@@ -144,11 +144,11 @@ export interface AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementState 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    enableAutonomousDatabaseDbmFeature?: pulumi.Input<boolean>;
+    enableAutonomousDatabaseDbmFeature?: pulumi.Input<boolean | undefined>;
     /**
      * The details required to enable the specified Database Management feature for an Autonomous Database.
      */
-    featureDetails?: pulumi.Input<inputs.DatabaseManagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetails>;
+    featureDetails?: pulumi.Input<inputs.DatabaseManagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetails | undefined>;
 }
 
 /**
@@ -170,5 +170,5 @@ export interface AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementArgs {
     /**
      * The details required to enable the specified Database Management feature for an Autonomous Database.
      */
-    featureDetails?: pulumi.Input<inputs.DatabaseManagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetails>;
+    featureDetails?: pulumi.Input<inputs.DatabaseManagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetails | undefined>;
 }

@@ -20,7 +20,7 @@ __all__ = ['UnsetUserAssessmentBaselineArgs', 'UnsetUserAssessmentBaseline']
 class UnsetUserAssessmentBaselineArgs:
     def __init__(__self__, *,
                  user_assessment_id: pulumi.Input[_builtins.str],
-                 target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 target_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a UnsetUserAssessmentBaseline resource.
 
@@ -53,22 +53,22 @@ class UnsetUserAssessmentBaselineArgs:
 
     @_builtins.property
     @pulumi.getter(name="targetIds")
-    def target_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def target_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of database target OCIDs for which the user intends to unset the baseline.
         """
         return pulumi.get(self, "target_ids")
 
     @target_ids.setter
-    def target_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def target_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "target_ids", value)
 
 
 @pulumi.input_type
 class _UnsetUserAssessmentBaselineState:
     def __init__(__self__, *,
-                 target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 user_assessment_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 target_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 user_assessment_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UnsetUserAssessmentBaseline resources.
 
@@ -86,19 +86,19 @@ class _UnsetUserAssessmentBaselineState:
 
     @_builtins.property
     @pulumi.getter(name="targetIds")
-    def target_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def target_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of database target OCIDs for which the user intends to unset the baseline.
         """
         return pulumi.get(self, "target_ids")
 
     @target_ids.setter
-    def target_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def target_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "target_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="userAssessmentId")
-    def user_assessment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_assessment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the user assessment.
 
@@ -109,7 +109,7 @@ class _UnsetUserAssessmentBaselineState:
         return pulumi.get(self, "user_assessment_id")
 
     @user_assessment_id.setter
-    def user_assessment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_assessment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_assessment_id", value)
 
 
@@ -119,8 +119,8 @@ class UnsetUserAssessmentBaseline(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 user_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 user_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Unset User Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
@@ -212,8 +212,8 @@ class UnsetUserAssessmentBaseline(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 user_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 user_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -237,8 +237,8 @@ class UnsetUserAssessmentBaseline(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            user_assessment_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'UnsetUserAssessmentBaseline':
+            target_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            user_assessment_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'UnsetUserAssessmentBaseline':
         """
         Get an existing UnsetUserAssessmentBaseline resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

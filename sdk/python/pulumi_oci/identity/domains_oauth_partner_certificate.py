@@ -24,16 +24,16 @@ class DomainsOauthPartnerCertificateArgs:
                  certificate_alias: pulumi.Input[_builtins.str],
                  idcs_endpoint: pulumi.Input[_builtins.str],
                  schemas: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 map: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsOauthPartnerCertificateTagArgs']]]] = None,
-                 x509base64certificate: Optional[pulumi.Input[_builtins.str]] = None):
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 map: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsOauthPartnerCertificateTagArgs']]]] = None,
+                 x509base64certificate: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a DomainsOauthPartnerCertificate resource.
 
@@ -229,19 +229,19 @@ class DomainsOauthPartnerCertificateArgs:
 
     @_builtins.property
     @pulumi.getter
-    def authorization(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authorization(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
-    def authorization(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authorization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authorization", value)
 
     @_builtins.property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
 
@@ -257,12 +257,12 @@ class DomainsOauthPartnerCertificateArgs:
         return pulumi.get(self, "external_id")
 
     @external_id.setter
-    def external_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_id", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStoreId")
-    def key_store_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Key store ID
 
@@ -278,12 +278,12 @@ class DomainsOauthPartnerCertificateArgs:
         return pulumi.get(self, "key_store_id")
 
     @key_store_id.setter
-    def key_store_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_id", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStoreName")
-    def key_store_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Key store name
 
@@ -298,12 +298,12 @@ class DomainsOauthPartnerCertificateArgs:
         return pulumi.get(self, "key_store_name")
 
     @key_store_name.setter
-    def key_store_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_name", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStorePassword")
-    def key_store_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Key store password
 
@@ -319,12 +319,12 @@ class DomainsOauthPartnerCertificateArgs:
         return pulumi.get(self, "key_store_password")
 
     @key_store_password.setter
-    def key_store_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_password", value)
 
     @_builtins.property
     @pulumi.getter
-    def map(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def map(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Map
 
@@ -339,12 +339,12 @@ class DomainsOauthPartnerCertificateArgs:
         return pulumi.get(self, "map")
 
     @map.setter
-    def map(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def map(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "map", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
@@ -361,24 +361,24 @@ class DomainsOauthPartnerCertificateArgs:
         return pulumi.get(self, "ocid")
 
     @ocid.setter
-    def ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTypeSchemaVersion")
-    def resource_type_schema_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type_schema_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
-    def resource_type_schema_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type_schema_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type_schema_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsOauthPartnerCertificateTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsOauthPartnerCertificateTagArgs']]]]:
         """
         A list of tags on this resource.
 
@@ -395,12 +395,12 @@ class DomainsOauthPartnerCertificateArgs:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsOauthPartnerCertificateTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsOauthPartnerCertificateTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def x509base64certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def x509base64certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Base 64Key data attribute
 
@@ -420,39 +420,39 @@ class DomainsOauthPartnerCertificateArgs:
         return pulumi.get(self, "x509base64certificate")
 
     @x509base64certificate.setter
-    def x509base64certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def x509base64certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "x509base64certificate", value)
 
 
 @pulumi.input_type
 class _DomainsOauthPartnerCertificateState:
     def __init__(__self__, *,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 cert_end_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 cert_start_date: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_alias: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 delete_in_progress: Optional[pulumi.Input[_builtins.bool]] = None,
-                 domain_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsOauthPartnerCertificateIdcsCreatedByArgs']]]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsOauthPartnerCertificateIdcsLastModifiedByArgs']]]] = None,
-                 idcs_last_upgraded_in_release: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 key_store_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 map: Optional[pulumi.Input[_builtins.str]] = None,
-                 metas: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsOauthPartnerCertificateMetaArgs']]]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 sha1thumbprint: Optional[pulumi.Input[_builtins.str]] = None,
-                 sha256thumbprint: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsOauthPartnerCertificateTagArgs']]]] = None,
-                 tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 x509base64certificate: Optional[pulumi.Input[_builtins.str]] = None):
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 cert_end_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 cert_start_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_alias: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsOauthPartnerCertificateIdcsCreatedByArgs']]]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsOauthPartnerCertificateIdcsLastModifiedByArgs']]]] = None,
+                 idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 map: pulumi.Input[Optional[_builtins.str]] = None,
+                 metas: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsOauthPartnerCertificateMetaArgs']]]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 sha1thumbprint: pulumi.Input[Optional[_builtins.str]] = None,
+                 sha256thumbprint: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsOauthPartnerCertificateTagArgs']]]] = None,
+                 tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 x509base64certificate: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DomainsOauthPartnerCertificate resources.
 
@@ -755,19 +755,19 @@ class _DomainsOauthPartnerCertificateState:
 
     @_builtins.property
     @pulumi.getter
-    def authorization(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authorization(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
         """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
-    def authorization(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authorization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authorization", value)
 
     @_builtins.property
     @pulumi.getter(name="certEndDate")
-    def cert_end_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cert_end_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Certificate end date
 
@@ -783,12 +783,12 @@ class _DomainsOauthPartnerCertificateState:
         return pulumi.get(self, "cert_end_date")
 
     @cert_end_date.setter
-    def cert_end_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cert_end_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cert_end_date", value)
 
     @_builtins.property
     @pulumi.getter(name="certStartDate")
-    def cert_start_date(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cert_start_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Certificate start date
 
@@ -804,12 +804,12 @@ class _DomainsOauthPartnerCertificateState:
         return pulumi.get(self, "cert_start_date")
 
     @cert_start_date.setter
-    def cert_start_date(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cert_start_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cert_start_date", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateAlias")
-    def certificate_alias(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_alias(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Certificate alias
 
@@ -826,12 +826,12 @@ class _DomainsOauthPartnerCertificateState:
         return pulumi.get(self, "certificate_alias")
 
     @certificate_alias.setter
-    def certificate_alias(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_alias(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_alias", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
 
@@ -848,12 +848,12 @@ class _DomainsOauthPartnerCertificateState:
         return pulumi.get(self, "compartment_ocid")
 
     @compartment_ocid.setter
-    def compartment_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_in_progress(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
 
@@ -870,12 +870,12 @@ class _DomainsOauthPartnerCertificateState:
         return pulumi.get(self, "delete_in_progress")
 
     @delete_in_progress.setter
-    def delete_in_progress(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_in_progress", value)
 
     @_builtins.property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
 
@@ -892,12 +892,12 @@ class _DomainsOauthPartnerCertificateState:
         return pulumi.get(self, "domain_ocid")
 
     @domain_ocid.setter
-    def domain_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain_ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="externalId")
-    def external_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
 
@@ -913,12 +913,12 @@ class _DomainsOauthPartnerCertificateState:
         return pulumi.get(self, "external_id")
 
     @external_id.setter
-    def external_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_id", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsOauthPartnerCertificateIdcsCreatedByArgs']]]]:
+    def idcs_created_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsOauthPartnerCertificateIdcsCreatedByArgs']]]]:
         """
         (Updatable) The User or App who created the Resource
 
@@ -933,24 +933,24 @@ class _DomainsOauthPartnerCertificateState:
         return pulumi.get(self, "idcs_created_bies")
 
     @idcs_created_bies.setter
-    def idcs_created_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsOauthPartnerCertificateIdcsCreatedByArgs']]]]):
+    def idcs_created_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsOauthPartnerCertificateIdcsCreatedByArgs']]]]):
         pulumi.set(self, "idcs_created_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsEndpoint")
-    def idcs_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The basic endpoint for the identity domain
         """
         return pulumi.get(self, "idcs_endpoint")
 
     @idcs_endpoint.setter
-    def idcs_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsOauthPartnerCertificateIdcsLastModifiedByArgs']]]]:
+    def idcs_last_modified_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsOauthPartnerCertificateIdcsLastModifiedByArgs']]]]:
         """
         (Updatable) The User or App who modified the Resource
 
@@ -965,12 +965,12 @@ class _DomainsOauthPartnerCertificateState:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @idcs_last_modified_bies.setter
-    def idcs_last_modified_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsOauthPartnerCertificateIdcsLastModifiedByArgs']]]]):
+    def idcs_last_modified_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsOauthPartnerCertificateIdcsLastModifiedByArgs']]]]):
         pulumi.set(self, "idcs_last_modified_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_last_upgraded_in_release(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The release number when the resource was upgraded.
 
@@ -987,12 +987,12 @@ class _DomainsOauthPartnerCertificateState:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @idcs_last_upgraded_in_release.setter
-    def idcs_last_upgraded_in_release(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_last_upgraded_in_release(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_last_upgraded_in_release", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def idcs_prevented_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
 
@@ -1008,12 +1008,12 @@ class _DomainsOauthPartnerCertificateState:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @idcs_prevented_operations.setter
-    def idcs_prevented_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def idcs_prevented_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "idcs_prevented_operations", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStoreId")
-    def key_store_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Key store ID
 
@@ -1029,12 +1029,12 @@ class _DomainsOauthPartnerCertificateState:
         return pulumi.get(self, "key_store_id")
 
     @key_store_id.setter
-    def key_store_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_id", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStoreName")
-    def key_store_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Key store name
 
@@ -1049,12 +1049,12 @@ class _DomainsOauthPartnerCertificateState:
         return pulumi.get(self, "key_store_name")
 
     @key_store_name.setter
-    def key_store_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_name", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStorePassword")
-    def key_store_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Key store password
 
@@ -1070,12 +1070,12 @@ class _DomainsOauthPartnerCertificateState:
         return pulumi.get(self, "key_store_password")
 
     @key_store_password.setter
-    def key_store_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_password", value)
 
     @_builtins.property
     @pulumi.getter
-    def map(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def map(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Map
 
@@ -1090,12 +1090,12 @@ class _DomainsOauthPartnerCertificateState:
         return pulumi.get(self, "map")
 
     @map.setter
-    def map(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def map(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "map", value)
 
     @_builtins.property
     @pulumi.getter
-    def metas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsOauthPartnerCertificateMetaArgs']]]]:
+    def metas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsOauthPartnerCertificateMetaArgs']]]]:
         """
         (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 
@@ -1112,12 +1112,12 @@ class _DomainsOauthPartnerCertificateState:
         return pulumi.get(self, "metas")
 
     @metas.setter
-    def metas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsOauthPartnerCertificateMetaArgs']]]]):
+    def metas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsOauthPartnerCertificateMetaArgs']]]]):
         pulumi.set(self, "metas", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
@@ -1134,24 +1134,24 @@ class _DomainsOauthPartnerCertificateState:
         return pulumi.get(self, "ocid")
 
     @ocid.setter
-    def ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ocid", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceTypeSchemaVersion")
-    def resource_type_schema_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type_schema_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
-    def resource_type_schema_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type_schema_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type_schema_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def schemas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def schemas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
 
@@ -1168,12 +1168,12 @@ class _DomainsOauthPartnerCertificateState:
         return pulumi.get(self, "schemas")
 
     @schemas.setter
-    def schemas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def schemas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "schemas", value)
 
     @_builtins.property
     @pulumi.getter
-    def sha1thumbprint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sha1thumbprint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) SHA-1 Thumbprint
 
@@ -1189,12 +1189,12 @@ class _DomainsOauthPartnerCertificateState:
         return pulumi.get(self, "sha1thumbprint")
 
     @sha1thumbprint.setter
-    def sha1thumbprint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sha1thumbprint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sha1thumbprint", value)
 
     @_builtins.property
     @pulumi.getter
-    def sha256thumbprint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sha256thumbprint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) SHA-256 Thumbprint
 
@@ -1210,12 +1210,12 @@ class _DomainsOauthPartnerCertificateState:
         return pulumi.get(self, "sha256thumbprint")
 
     @sha256thumbprint.setter
-    def sha256thumbprint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sha256thumbprint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sha256thumbprint", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsOauthPartnerCertificateTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainsOauthPartnerCertificateTagArgs']]]]:
         """
         A list of tags on this resource.
 
@@ -1232,12 +1232,12 @@ class _DomainsOauthPartnerCertificateState:
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsOauthPartnerCertificateTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainsOauthPartnerCertificateTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
 
@@ -1254,12 +1254,12 @@ class _DomainsOauthPartnerCertificateState:
         return pulumi.get(self, "tenancy_ocid")
 
     @tenancy_ocid.setter
-    def tenancy_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy_ocid", value)
 
     @_builtins.property
     @pulumi.getter
-    def x509base64certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def x509base64certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Base 64Key data attribute
 
@@ -1279,7 +1279,7 @@ class _DomainsOauthPartnerCertificateState:
         return pulumi.get(self, "x509base64certificate")
 
     @x509base64certificate.setter
-    def x509base64certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def x509base64certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "x509base64certificate", value)
 
 
@@ -1289,19 +1289,19 @@ class DomainsOauthPartnerCertificate(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_alias: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 map: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateTagArgs', 'DomainsOauthPartnerCertificateTagArgsDict']]]]] = None,
-                 x509base64certificate: Optional[pulumi.Input[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_alias: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 map: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateTagArgs', 'DomainsOauthPartnerCertificateTagArgsDict']]]]] = None,
+                 x509base64certificate: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the O Auth Partner Certificate resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1520,19 +1520,19 @@ class DomainsOauthPartnerCertificate(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 authorization: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_alias: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 map: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocid: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateTagArgs', 'DomainsOauthPartnerCertificateTagArgsDict']]]]] = None,
-                 x509base64certificate: Optional[pulumi.Input[_builtins.str]] = None,
+                 authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_alias: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 map: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateTagArgs', 'DomainsOauthPartnerCertificateTagArgsDict']]]]] = None,
+                 x509base64certificate: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1586,32 +1586,32 @@ class DomainsOauthPartnerCertificate(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            authorization: Optional[pulumi.Input[_builtins.str]] = None,
-            cert_end_date: Optional[pulumi.Input[_builtins.str]] = None,
-            cert_start_date: Optional[pulumi.Input[_builtins.str]] = None,
-            certificate_alias: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            delete_in_progress: Optional[pulumi.Input[_builtins.bool]] = None,
-            domain_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            external_id: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateIdcsCreatedByArgs', 'DomainsOauthPartnerCertificateIdcsCreatedByArgsDict']]]]] = None,
-            idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateIdcsLastModifiedByArgs', 'DomainsOauthPartnerCertificateIdcsLastModifiedByArgsDict']]]]] = None,
-            idcs_last_upgraded_in_release: Optional[pulumi.Input[_builtins.str]] = None,
-            idcs_prevented_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            key_store_id: Optional[pulumi.Input[_builtins.str]] = None,
-            key_store_name: Optional[pulumi.Input[_builtins.str]] = None,
-            key_store_password: Optional[pulumi.Input[_builtins.str]] = None,
-            map: Optional[pulumi.Input[_builtins.str]] = None,
-            metas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateMetaArgs', 'DomainsOauthPartnerCertificateMetaArgsDict']]]]] = None,
-            ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_type_schema_version: Optional[pulumi.Input[_builtins.str]] = None,
-            schemas: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            sha1thumbprint: Optional[pulumi.Input[_builtins.str]] = None,
-            sha256thumbprint: Optional[pulumi.Input[_builtins.str]] = None,
-            tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateTagArgs', 'DomainsOauthPartnerCertificateTagArgsDict']]]]] = None,
-            tenancy_ocid: Optional[pulumi.Input[_builtins.str]] = None,
-            x509base64certificate: Optional[pulumi.Input[_builtins.str]] = None) -> 'DomainsOauthPartnerCertificate':
+            authorization: pulumi.Input[Optional[_builtins.str]] = None,
+            cert_end_date: pulumi.Input[Optional[_builtins.str]] = None,
+            cert_start_date: pulumi.Input[Optional[_builtins.str]] = None,
+            certificate_alias: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            external_id: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateIdcsCreatedByArgs', 'DomainsOauthPartnerCertificateIdcsCreatedByArgsDict']]]]] = None,
+            idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateIdcsLastModifiedByArgs', 'DomainsOauthPartnerCertificateIdcsLastModifiedByArgsDict']]]]] = None,
+            idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key_store_name: pulumi.Input[Optional[_builtins.str]] = None,
+            key_store_password: pulumi.Input[Optional[_builtins.str]] = None,
+            map: pulumi.Input[Optional[_builtins.str]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateMetaArgs', 'DomainsOauthPartnerCertificateMetaArgsDict']]]]] = None,
+            ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            sha1thumbprint: pulumi.Input[Optional[_builtins.str]] = None,
+            sha256thumbprint: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsOauthPartnerCertificateTagArgs', 'DomainsOauthPartnerCertificateTagArgsDict']]]]] = None,
+            tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            x509base64certificate: pulumi.Input[Optional[_builtins.str]] = None) -> 'DomainsOauthPartnerCertificate':
         """
         Get an existing DomainsOauthPartnerCertificate resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

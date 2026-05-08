@@ -190,7 +190,7 @@ def get_managed_database_sql_tuning_advisor_tasks_summary_report(begin_exec_id_g
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks_summary_report = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_summary_report(managed_database_id=test_managed_database["id"],
+    test_managed_database_sql_tuning_advisor_tasks_summary_report = oci.databasemanagement.get_managed_database_sql_tuning_advisor_tasks_summary_report(managed_database_id=test_managed_database["id"],
         sql_tuning_advisor_task_id=test_sql_tuning_advisor_task["id"],
         begin_exec_id_greater_than_or_equal_to=managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to,
         end_exec_id_less_than_or_equal_to=managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to,
@@ -236,14 +236,14 @@ def get_managed_database_sql_tuning_advisor_tasks_summary_report(begin_exec_id_g
         task_infos=pulumi.get(__ret__, 'task_infos'),
         time_greater_than_or_equal_to=pulumi.get(__ret__, 'time_greater_than_or_equal_to'),
         time_less_than_or_equal_to=pulumi.get(__ret__, 'time_less_than_or_equal_to'))
-def get_managed_database_sql_tuning_advisor_tasks_summary_report_output(begin_exec_id_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                        end_exec_id_less_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                        managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                        opc_named_credential_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                        search_period: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                        sql_tuning_advisor_task_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                        time_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                        time_less_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_managed_database_sql_tuning_advisor_tasks_summary_report_output(begin_exec_id_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                        end_exec_id_less_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                        managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                        opc_named_credential_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                        search_period: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                        sql_tuning_advisor_task_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                        time_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                        time_less_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult]:
     """
     This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Summary Report resource in Oracle Cloud Infrastructure Database Management service.
@@ -256,7 +256,7 @@ def get_managed_database_sql_tuning_advisor_tasks_summary_report_output(begin_ex
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks_summary_report = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_summary_report(managed_database_id=test_managed_database["id"],
+    test_managed_database_sql_tuning_advisor_tasks_summary_report = oci.databasemanagement.get_managed_database_sql_tuning_advisor_tasks_summary_report(managed_database_id=test_managed_database["id"],
         sql_tuning_advisor_task_id=test_sql_tuning_advisor_task["id"],
         begin_exec_id_greater_than_or_equal_to=managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to,
         end_exec_id_less_than_or_equal_to=managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to,

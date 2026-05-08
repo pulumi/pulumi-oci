@@ -267,55 +267,55 @@ export interface CertificateState {
     /**
      * (Updatable) The details of the contents of the certificate and certificate metadata.
      */
-    certificateConfig?: pulumi.Input<inputs.CertificatesManagement.CertificateCertificateConfig>;
+    certificateConfig?: pulumi.Input<inputs.CertificatesManagement.CertificateCertificateConfig | undefined>;
     /**
      * The name of the profile used to create the certificate, which depends on the type of certificate you need.
      */
-    certificateProfileType?: pulumi.Input<string>;
+    certificateProfileType?: pulumi.Input<string | undefined>;
     /**
      * The details of the certificate revocation list (CRL).
      */
-    certificateRevocationListDetails?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.CertificateCertificateRevocationListDetail>[]>;
+    certificateRevocationListDetails?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.CertificateCertificateRevocationListDetail>[] | undefined>;
     /**
      * (Updatable) An optional list of rules that control how the certificate is used and managed.
      */
-    certificateRules?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.CertificateCertificateRule>[]>;
+    certificateRules?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.CertificateCertificateRule>[] | undefined>;
     /**
      * (Updatable) The OCID of the compartment where you want to create the certificate.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The origin of the certificate. It must be one of the supported types: MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA or ISSUED_BY_INTERNAL_CA.
      */
-    configType?: pulumi.Input<string>;
+    configType?: pulumi.Input<string | undefined>;
     /**
      * The details of the certificate version. This object does not contain the certificate contents.
      */
-    currentVersions?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.CertificateCurrentVersion>[]>;
+    currentVersions?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.CertificateCurrentVersion>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A brief description of the certificate. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of the certificate authority (CA) that issued the certificate.
      */
-    issuerCertificateAuthorityId?: pulumi.Input<string>;
+    issuerCertificateAuthorityId?: pulumi.Input<string | undefined>;
     /**
      * The algorithm used to create key pairs.
      */
-    keyAlgorithm?: pulumi.Input<string>;
+    keyAlgorithm?: pulumi.Input<string | undefined>;
     /**
      * Additional information about the current lifecycle state of the certificate.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * A user-friendly name for the certificate. Names are unique within a compartment. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods. 
      *
@@ -323,27 +323,27 @@ export interface CertificateState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The algorithm used to sign the public key certificate.
      */
-    signatureAlgorithm?: pulumi.Input<string>;
+    signatureAlgorithm?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the certificate.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      */
-    subjects?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.CertificateSubject>[]>;
+    subjects?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.CertificateSubject>[] | undefined>;
     /**
      * A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    timeOfDeletion?: pulumi.Input<string>;
+    timeOfDeletion?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -357,7 +357,7 @@ export interface CertificateArgs {
     /**
      * (Updatable) An optional list of rules that control how the certificate is used and managed.
      */
-    certificateRules?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.CertificateCertificateRule>[]>;
+    certificateRules?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.CertificateCertificateRule>[] | undefined>;
     /**
      * (Updatable) The OCID of the compartment where you want to create the certificate.
      */
@@ -365,15 +365,15 @@ export interface CertificateArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A brief description of the certificate. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A user-friendly name for the certificate. Names are unique within a compartment. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods. 
      *
@@ -381,5 +381,5 @@ export interface CertificateArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

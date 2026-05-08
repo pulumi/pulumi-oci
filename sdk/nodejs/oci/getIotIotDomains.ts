@@ -138,18 +138,18 @@ export interface GetIotIotDomainsOutputArgs {
     /**
      * Filter resources whose display name matches the specified value.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetIotIotDomainsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetIotIotDomainsFilterArgs>[] | undefined>;
     /**
      * Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain group.
      */
-    iotDomainGroupId?: pulumi.Input<string>;
+    iotDomainGroupId?: pulumi.Input<string | undefined>;
     /**
      * Filter resources whose lifecycleState matches the specified value.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

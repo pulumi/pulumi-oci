@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProductLicenses = oci.LicenseManager.getProductLicenses({
+ * const testProductLicenses = oci.licensemanager.getProductLicenses({
  *     compartmentId: compartmentId,
- *     isCompartmentIdInSubtree: productLicenseIsCompartmentIdInSubtree,
+ *     isCompartmentIdInSubtree: productLicenseIsCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -77,9 +77,9 @@ export interface GetProductLicensesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProductLicenses = oci.LicenseManager.getProductLicenses({
+ * const testProductLicenses = oci.licensemanager.getProductLicenses({
  *     compartmentId: compartmentId,
- *     isCompartmentIdInSubtree: productLicenseIsCompartmentIdInSubtree,
+ *     isCompartmentIdInSubtree: productLicenseIsCompartmentIdInSubtree === "true",
  * });
  * ```
  */
@@ -100,9 +100,9 @@ export interface GetProductLicensesOutputArgs {
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.LicenseManager.GetProductLicensesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LicenseManager.GetProductLicensesFilterArgs>[] | undefined>;
     /**
      * Indicates if the given compartment is the root compartment.
      */
-    isCompartmentIdInSubtree?: pulumi.Input<boolean>;
+    isCompartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
 }

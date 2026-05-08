@@ -118,7 +118,7 @@ def get_database_pdb_conversion_history_entries(database_id: Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_database_pdb_conversion_history_entries = oci.Database.get_database_pdb_conversion_history_entries(database_id=test_database["id"],
+    test_database_pdb_conversion_history_entries = oci.database.get_database_pdb_conversion_history_entries(database_id=test_database["id"],
         pdb_conversion_action=database_pdb_conversion_history_entry_pdb_conversion_action,
         state=database_pdb_conversion_history_entry_state)
     ```
@@ -143,10 +143,10 @@ def get_database_pdb_conversion_history_entries(database_id: Optional[_builtins.
         pdb_conversion_action=pulumi.get(__ret__, 'pdb_conversion_action'),
         pdb_conversion_history_entries=pulumi.get(__ret__, 'pdb_conversion_history_entries'),
         state=pulumi.get(__ret__, 'state'))
-def get_database_pdb_conversion_history_entries_output(database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatabasePdbConversionHistoryEntriesFilterArgs', 'GetDatabasePdbConversionHistoryEntriesFilterArgsDict']]]]] = None,
-                                                       pdb_conversion_action: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_database_pdb_conversion_history_entries_output(database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabasePdbConversionHistoryEntriesFilterArgs', 'GetDatabasePdbConversionHistoryEntriesFilterArgsDict']]]]] = None,
+                                                       pdb_conversion_action: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabasePdbConversionHistoryEntriesResult]:
     """
     This data source provides the list of Database Pdb Conversion History Entries in Oracle Cloud Infrastructure Database service.
@@ -159,7 +159,7 @@ def get_database_pdb_conversion_history_entries_output(database_id: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_database_pdb_conversion_history_entries = oci.Database.get_database_pdb_conversion_history_entries(database_id=test_database["id"],
+    test_database_pdb_conversion_history_entries = oci.database.get_database_pdb_conversion_history_entries(database_id=test_database["id"],
         pdb_conversion_action=database_pdb_conversion_history_entry_pdb_conversion_action,
         state=database_pdb_conversion_history_entry_state)
     ```

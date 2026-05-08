@@ -25,12 +25,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlarmSuppressions = oci.Monitoring.getAlarmSuppressions({
+ * const testAlarmSuppressions = oci.monitoring.getAlarmSuppressions({
  *     alarmId: testAlarm.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: alarmSuppressionCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: alarmSuppressionCompartmentIdInSubtree === "true",
  *     displayName: alarmSuppressionDisplayName,
- *     isAllSuppressions: alarmSuppressionIsAllSuppressions,
+ *     isAllSuppressions: alarmSuppressionIsAllSuppressions === "true",
  *     level: alarmSuppressionLevel,
  *     state: alarmSuppressionState,
  *     targetType: alarmSuppressionTargetType,
@@ -162,12 +162,12 @@ export interface GetAlarmSuppressionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlarmSuppressions = oci.Monitoring.getAlarmSuppressions({
+ * const testAlarmSuppressions = oci.monitoring.getAlarmSuppressions({
  *     alarmId: testAlarm.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: alarmSuppressionCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: alarmSuppressionCompartmentIdInSubtree === "true",
  *     displayName: alarmSuppressionDisplayName,
- *     isAllSuppressions: alarmSuppressionIsAllSuppressions,
+ *     isAllSuppressions: alarmSuppressionIsAllSuppressions === "true",
  *     level: alarmSuppressionLevel,
  *     state: alarmSuppressionState,
  *     targetType: alarmSuppressionTargetType,
@@ -197,7 +197,7 @@ export interface GetAlarmSuppressionsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
      */
-    alarmId?: pulumi.Input<string>;
+    alarmId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for searching.  Use the tenancy OCID to search in the root compartment.
      *
@@ -205,16 +205,16 @@ export interface GetAlarmSuppressionsOutputArgs {
      *
      * Example: `ocid1.compartment.oc1..exampleuniqueID`
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly. Use this filter to list an alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Monitoring.GetAlarmSuppressionsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Monitoring.GetAlarmSuppressionsFilterArgs>[] | undefined>;
     /**
      * Setting this parameter to true requires the query to specify the alarm (`alarmId`).
      *
@@ -222,17 +222,17 @@ export interface GetAlarmSuppressionsOutputArgs {
      *
      * Default is false.
      */
-    isAllSuppressions?: pulumi.Input<boolean>;
+    isAllSuppressions?: pulumi.Input<boolean | undefined>;
     /**
      * The level of this alarm suppression. `ALARM` indicates a suppression of the entire alarm, regardless of dimension. `DIMENSION` indicates a suppression configured for specified dimensions.
      */
-    level?: pulumi.Input<string>;
+    level?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly. When not specified, only resources in the ACTIVE lifecycle state are listed.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The target type to use when listing alarm suppressions.     `ALARM` lists all suppression records for the specified alarm. `COMPARTMENT` lists all suppression records for the specified compartment or tenancy.
      */
-    targetType?: pulumi.Input<string>;
+    targetType?: pulumi.Input<string | undefined>;
 }

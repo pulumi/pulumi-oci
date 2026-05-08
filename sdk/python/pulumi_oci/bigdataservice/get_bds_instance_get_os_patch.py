@@ -156,7 +156,7 @@ def get_bds_instance_get_os_patch(bds_instance_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_get_os_patch = oci.BigDataService.get_bds_instance_get_os_patch(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_get_os_patch = oci.bigdataservice.get_bds_instance_get_os_patch(bds_instance_id=test_bds_instance["id"],
         os_patch_version=bds_instance_get_os_patch_os_patch_version)
     ```
 
@@ -181,9 +181,9 @@ def get_bds_instance_get_os_patch(bds_instance_id: Optional[_builtins.str] = Non
         patch_type=pulumi.get(__ret__, 'patch_type'),
         release_date=pulumi.get(__ret__, 'release_date'),
         target_packages=pulumi.get(__ret__, 'target_packages'))
-def get_bds_instance_get_os_patch_output(bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBdsInstanceGetOsPatchFilterArgs', 'GetBdsInstanceGetOsPatchFilterArgsDict']]]]] = None,
-                                         os_patch_version: Optional[pulumi.Input[_builtins.str]] = None,
+def get_bds_instance_get_os_patch_output(bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstanceGetOsPatchFilterArgs', 'GetBdsInstanceGetOsPatchFilterArgsDict']]]]] = None,
+                                         os_patch_version: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceGetOsPatchResult]:
     """
     This data source provides the list of Bds Instance Get Os Patch in Oracle Cloud Infrastructure Big Data Service service.
@@ -196,7 +196,7 @@ def get_bds_instance_get_os_patch_output(bds_instance_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_get_os_patch = oci.BigDataService.get_bds_instance_get_os_patch(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_get_os_patch = oci.bigdataservice.get_bds_instance_get_os_patch(bds_instance_id=test_bds_instance["id"],
         os_patch_version=bds_instance_get_os_patch_os_patch_version)
     ```
 

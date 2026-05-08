@@ -365,10 +365,10 @@ def get_assessment_assessor_check(assessment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         object_count=pulumi.get(__ret__, 'object_count'),
         objects_display_name=pulumi.get(__ret__, 'objects_display_name'))
-def get_assessment_assessor_check_output(assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         assessor_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                         check_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                         compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_assessment_assessor_check_output(assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         assessor_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                         check_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                         compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAssessmentAssessorCheckResult]:
     """
     This data source provides details about a specific Assessment Assessor Check resource in Oracle Cloud Infrastructure Database Migration service.

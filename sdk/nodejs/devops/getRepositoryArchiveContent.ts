@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryArchiveContent = oci.DevOps.getRepositoryArchiveContent({
+ * const testRepositoryArchiveContent = oci.devops.getRepositoryArchiveContent({
  *     repositoryId: testRepository.id,
  *     format: repositoryArchiveContentFormat,
  *     refName: repositoryArchiveContentRefName,
@@ -72,7 +72,7 @@ export interface GetRepositoryArchiveContentResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryArchiveContent = oci.DevOps.getRepositoryArchiveContent({
+ * const testRepositoryArchiveContent = oci.devops.getRepositoryArchiveContent({
  *     repositoryId: testRepository.id,
  *     format: repositoryArchiveContentFormat,
  *     refName: repositoryArchiveContentRefName,
@@ -95,11 +95,11 @@ export interface GetRepositoryArchiveContentOutputArgs {
     /**
      * The archive format query parameter for downloading repository endpoint.
      */
-    format?: pulumi.Input<string>;
+    format?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given reference name.
      */
-    refName?: pulumi.Input<string>;
+    refName?: pulumi.Input<string | undefined>;
     /**
      * Unique repository identifier.
      */

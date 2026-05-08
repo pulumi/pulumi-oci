@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentScheduledActivities = oci.Functions.getFusionEnvironmentScheduledActivities({
+ * const testFusionEnvironmentScheduledActivities = oci.functions.getFusionEnvironmentScheduledActivities({
  *     fusionEnvironmentId: testFusionEnvironment.id,
  *     displayName: fusionEnvironmentScheduledActivityDisplayName,
  *     runCycle: fusionEnvironmentScheduledActivityRunCycle,
@@ -114,7 +114,7 @@ export interface GetFusionEnvironmentScheduledActivitiesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentScheduledActivities = oci.Functions.getFusionEnvironmentScheduledActivities({
+ * const testFusionEnvironmentScheduledActivities = oci.functions.getFusionEnvironmentScheduledActivities({
  *     fusionEnvironmentId: testFusionEnvironment.id,
  *     displayName: fusionEnvironmentScheduledActivityDisplayName,
  *     runCycle: fusionEnvironmentScheduledActivityRunCycle,
@@ -144,8 +144,8 @@ export interface GetFusionEnvironmentScheduledActivitiesOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Functions.GetFusionEnvironmentScheduledActivitiesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Functions.GetFusionEnvironmentScheduledActivitiesFilterArgs>[] | undefined>;
     /**
      * unique FusionEnvironment identifier
      */
@@ -153,17 +153,17 @@ export interface GetFusionEnvironmentScheduledActivitiesOutputArgs {
     /**
      * A filter that returns all resources that match the specified run cycle.
      */
-    runCycle?: pulumi.Input<string>;
+    runCycle?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns all resources that match the specified status
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns all resources that end before this date
      */
-    timeExpectedFinishLessThanOrEqualTo?: pulumi.Input<string>;
+    timeExpectedFinishLessThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns all resources that are scheduled after this date
      */
-    timeScheduledStartGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeScheduledStartGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
 }

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testAwrHubSourceAwrhubsourcesManagement = new oci.opsi.AwrHubSourceAwrhubsourcesManagement("test_awr_hub_source_awrhubsources_management", {
  *     awrHubSourceId: testAwrHubSource.id,
- *     enableAwrhubsource: enableAwrhubsource,
+ *     enableAwrhubsource: enableAwrhubsource === "true",
  * });
  * ```
  */
@@ -102,7 +102,7 @@ export interface AwrHubSourceAwrhubsourcesManagementState {
     /**
      * Unique Awr Hub Source identifier
      */
-    awrHubSourceId?: pulumi.Input<string>;
+    awrHubSourceId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
@@ -110,7 +110,7 @@ export interface AwrHubSourceAwrhubsourcesManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    enableAwrhubsource?: pulumi.Input<boolean>;
+    enableAwrhubsource?: pulumi.Input<boolean | undefined>;
 }
 
 /**

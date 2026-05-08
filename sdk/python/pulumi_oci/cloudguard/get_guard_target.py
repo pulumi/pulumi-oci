@@ -276,7 +276,7 @@ def get_guard_target(target_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_target = oci.CloudGuard.get_guard_target(target_id=test_target_oci_cloud_guard_target["id"])
+    test_target = oci.cloudguard.get_guard_target(target_id=test_target_oci_cloud_guard_target["id"])
     ```
 
 
@@ -307,7 +307,7 @@ def get_guard_target(target_id: Optional[_builtins.str] = None,
         target_responder_recipes=pulumi.get(__ret__, 'target_responder_recipes'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_guard_target_output(target_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_guard_target_output(target_id: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGuardTargetResult]:
     """
     This data source provides details about a specific Target resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -320,7 +320,7 @@ def get_guard_target_output(target_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_target = oci.CloudGuard.get_guard_target(target_id=test_target_oci_cloud_guard_target["id"])
+    test_target = oci.cloudguard.get_guard_target(target_id=test_target_oci_cloud_guard_target["id"])
     ```
 
 

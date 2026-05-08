@@ -31,9 +31,9 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := waas.GetWaasPolicies(ctx, &waas.GetWaasPoliciesArgs{
 //				CompartmentId:                   compartmentId,
-//				DisplayNames:                    waasPolicyDisplayNames,
-//				Ids:                             waasPolicyIds,
-//				States:                          waasPolicyStates,
+//				DisplayNames:                    pulumi.ToArray(waasPolicyDisplayNames),
+//				Ids:                             pulumi.ToArray(waasPolicyIds),
+//				States:                          pulumi.ToArray(waasPolicyStates),
 //				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(waasPolicyTimeCreatedGreaterThanOrEqualTo),
 //				TimeCreatedLessThan:             pulumi.StringRef(waasPolicyTimeCreatedLessThan),
 //			}, nil)

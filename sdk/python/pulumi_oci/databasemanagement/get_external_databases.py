@@ -131,7 +131,7 @@ def get_external_databases(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_external_databases = oci.DatabaseManagement.get_external_databases(compartment_id=compartment_id,
+    test_external_databases = oci.databasemanagement.get_external_databases(compartment_id=compartment_id,
         display_name=external_database_display_name,
         external_database_id=test_external_database["id"],
         external_db_system_id=test_external_db_system["id"])
@@ -160,11 +160,11 @@ def get_external_databases(compartment_id: Optional[_builtins.str] = None,
         external_db_system_id=pulumi.get(__ret__, 'external_db_system_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_external_databases_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  external_database_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  external_db_system_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExternalDatabasesFilterArgs', 'GetExternalDatabasesFilterArgsDict']]]]] = None,
+def get_external_databases_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  external_database_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  external_db_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExternalDatabasesFilterArgs', 'GetExternalDatabasesFilterArgsDict']]]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalDatabasesResult]:
     """
     This data source provides the list of External Databases in Oracle Cloud Infrastructure Database Management service.
@@ -177,7 +177,7 @@ def get_external_databases_output(compartment_id: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_external_databases = oci.DatabaseManagement.get_external_databases(compartment_id=compartment_id,
+    test_external_databases = oci.databasemanagement.get_external_databases(compartment_id=compartment_id,
         display_name=external_database_display_name,
         external_database_id=test_external_database["id"],
         external_db_system_id=test_external_db_system["id"])

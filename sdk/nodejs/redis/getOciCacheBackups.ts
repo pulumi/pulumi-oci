@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciCacheBackups = oci.Redis.getOciCacheBackups({
+ * const testOciCacheBackups = oci.redis.getOciCacheBackups({
  *     compartmentId: compartmentId,
  *     displayName: ociCacheBackupDisplayName,
  *     ociCacheBackupId: testOciCacheBackup.id,
@@ -108,7 +108,7 @@ export interface GetOciCacheBackupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOciCacheBackups = oci.Redis.getOciCacheBackups({
+ * const testOciCacheBackups = oci.redis.getOciCacheBackups({
  *     compartmentId: compartmentId,
  *     displayName: ociCacheBackupDisplayName,
  *     ociCacheBackupId: testOciCacheBackup.id,
@@ -137,22 +137,22 @@ export interface GetOciCacheBackupsOutputArgs {
     /**
      * The ID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Redis.GetOciCacheBackupsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Redis.GetOciCacheBackupsFilterArgs>[] | undefined>;
     /**
      * Unique Oracle Cloud Infrastructure Cache Backup identifier.
      */
-    ociCacheBackupId?: pulumi.Input<string>;
+    ociCacheBackupId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return the Oracle Cloud Infrastructure Cache Backup resources, whose source cluster ID matches with the given source cluster ID.
      */
-    sourceClusterId?: pulumi.Input<string>;
+    sourceClusterId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return the Oracle Cloud Infrastructure Cache Backup resources, whose lifecycle state matches with the given lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

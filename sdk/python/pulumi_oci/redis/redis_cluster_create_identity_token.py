@@ -22,8 +22,8 @@ class RedisClusterCreateIdentityTokenArgs:
                  public_key: pulumi.Input[_builtins.str],
                  redis_cluster_id: pulumi.Input[_builtins.str],
                  redis_user: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a RedisClusterCreateIdentityToken resource.
 
@@ -85,32 +85,32 @@ class RedisClusterCreateIdentityTokenArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
 
 @pulumi.input_type
 class _RedisClusterCreateIdentityTokenState:
     def __init__(__self__, *,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 identity_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 redis_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 redis_user: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 identity_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 redis_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 redis_user: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RedisClusterCreateIdentityToken resources.
 
@@ -138,61 +138,61 @@ class _RedisClusterCreateIdentityTokenState:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="identityToken")
-    def identity_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identity_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Generated Identity token
         """
         return pulumi.get(self, "identity_token")
 
     @identity_token.setter
-    def identity_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identity_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identity_token", value)
 
     @_builtins.property
     @pulumi.getter(name="publicKey")
-    def public_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User public key pair
         """
         return pulumi.get(self, "public_key")
 
     @public_key.setter
-    def public_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_key", value)
 
     @_builtins.property
     @pulumi.getter(name="redisClusterId")
-    def redis_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def redis_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
         """
         return pulumi.get(self, "redis_cluster_id")
 
     @redis_cluster_id.setter
-    def redis_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def redis_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "redis_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="redisUser")
-    def redis_user(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def redis_user(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Redis User generating identity token.
 
@@ -203,7 +203,7 @@ class _RedisClusterCreateIdentityTokenState:
         return pulumi.get(self, "redis_user")
 
     @redis_user.setter
-    def redis_user(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def redis_user(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "redis_user", value)
 
 
@@ -213,11 +213,11 @@ class RedisClusterCreateIdentityToken(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 public_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 redis_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 redis_user: Optional[pulumi.Input[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 public_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 redis_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 redis_user: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Redis Cluster Create Identity Token resource in Oracle Cloud Infrastructure Redis service.
@@ -300,11 +300,11 @@ class RedisClusterCreateIdentityToken(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 public_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 redis_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 redis_user: Optional[pulumi.Input[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 public_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 redis_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 redis_user: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -336,12 +336,12 @@ class RedisClusterCreateIdentityToken(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            identity_token: Optional[pulumi.Input[_builtins.str]] = None,
-            public_key: Optional[pulumi.Input[_builtins.str]] = None,
-            redis_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-            redis_user: Optional[pulumi.Input[_builtins.str]] = None) -> 'RedisClusterCreateIdentityToken':
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            identity_token: pulumi.Input[Optional[_builtins.str]] = None,
+            public_key: pulumi.Input[Optional[_builtins.str]] = None,
+            redis_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            redis_user: pulumi.Input[Optional[_builtins.str]] = None) -> 'RedisClusterCreateIdentityToken':
         """
         Get an existing RedisClusterCreateIdentityToken resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

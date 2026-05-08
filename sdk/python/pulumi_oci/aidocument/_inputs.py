@@ -62,7 +62,7 @@ __all__ = [
 ]
 
 class ModelComponentModelArgsDict(TypedDict):
-    model_id: NotRequired[pulumi.Input[_builtins.str]]
+    model_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
     """
@@ -70,7 +70,7 @@ class ModelComponentModelArgsDict(TypedDict):
 @pulumi.input_type
 class ModelComponentModelArgs:
     def __init__(__self__, *,
-                 model_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 model_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
         """
@@ -79,14 +79,14 @@ class ModelComponentModelArgs:
 
     @_builtins.property
     @pulumi.getter(name="modelId")
-    def model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
         """
         return pulumi.get(self, "model_id")
 
     @model_id.setter
-    def model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_id", value)
 
 
@@ -95,19 +95,19 @@ class ModelLockArgsDict(TypedDict):
     """
     Lock type.
     """
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The compartment identifier.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the lock creator. The message typically gives an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     When the model was created, as an RFC3339 datetime string.
     """
@@ -116,10 +116,10 @@ class ModelLockArgsDict(TypedDict):
 class ModelLockArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Lock type.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment identifier.
@@ -151,67 +151,67 @@ class ModelLockArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The compartment identifier.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the lock creator. The message typically gives an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the model was created, as an RFC3339 datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
 class ModelMetricArgsDict(TypedDict):
-    dataset_summaries: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelMetricDatasetSummaryArgsDict']]]]
+    dataset_summaries: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricDatasetSummaryArgs']]]]]
     """
     Summary of count of samples used during model training.
     """
-    label_metrics_reports: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelMetricLabelMetricsReportArgsDict']]]]
+    label_metrics_reports: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricLabelMetricsReportArgs']]]]]
     """
     List of metrics entries per label.
     """
-    model_type: NotRequired[pulumi.Input[_builtins.str]]
+    model_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of the Document model.
     """
-    overall_metrics_reports: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelMetricOverallMetricsReportArgsDict']]]]
+    overall_metrics_reports: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricOverallMetricsReportArgs']]]]]
     """
     Overall Metrics report for Document Classification Model.
     """
@@ -219,10 +219,10 @@ class ModelMetricArgsDict(TypedDict):
 @pulumi.input_type
 class ModelMetricArgs:
     def __init__(__self__, *,
-                 dataset_summaries: Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricDatasetSummaryArgs']]]] = None,
-                 label_metrics_reports: Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricLabelMetricsReportArgs']]]] = None,
-                 model_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 overall_metrics_reports: Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricOverallMetricsReportArgs']]]] = None):
+                 dataset_summaries: pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricDatasetSummaryArgs']]]] = None,
+                 label_metrics_reports: pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricLabelMetricsReportArgs']]]] = None,
+                 model_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 overall_metrics_reports: pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricOverallMetricsReportArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['ModelMetricDatasetSummaryArgs']]] dataset_summaries: Summary of count of samples used during model training.
         :param pulumi.Input[Sequence[pulumi.Input['ModelMetricLabelMetricsReportArgs']]] label_metrics_reports: List of metrics entries per label.
@@ -240,63 +240,63 @@ class ModelMetricArgs:
 
     @_builtins.property
     @pulumi.getter(name="datasetSummaries")
-    def dataset_summaries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricDatasetSummaryArgs']]]]:
+    def dataset_summaries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricDatasetSummaryArgs']]]]:
         """
         Summary of count of samples used during model training.
         """
         return pulumi.get(self, "dataset_summaries")
 
     @dataset_summaries.setter
-    def dataset_summaries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricDatasetSummaryArgs']]]]):
+    def dataset_summaries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricDatasetSummaryArgs']]]]):
         pulumi.set(self, "dataset_summaries", value)
 
     @_builtins.property
     @pulumi.getter(name="labelMetricsReports")
-    def label_metrics_reports(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricLabelMetricsReportArgs']]]]:
+    def label_metrics_reports(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricLabelMetricsReportArgs']]]]:
         """
         List of metrics entries per label.
         """
         return pulumi.get(self, "label_metrics_reports")
 
     @label_metrics_reports.setter
-    def label_metrics_reports(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricLabelMetricsReportArgs']]]]):
+    def label_metrics_reports(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricLabelMetricsReportArgs']]]]):
         pulumi.set(self, "label_metrics_reports", value)
 
     @_builtins.property
     @pulumi.getter(name="modelType")
-    def model_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the Document model.
         """
         return pulumi.get(self, "model_type")
 
     @model_type.setter
-    def model_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_type", value)
 
     @_builtins.property
     @pulumi.getter(name="overallMetricsReports")
-    def overall_metrics_reports(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricOverallMetricsReportArgs']]]]:
+    def overall_metrics_reports(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricOverallMetricsReportArgs']]]]:
         """
         Overall Metrics report for Document Classification Model.
         """
         return pulumi.get(self, "overall_metrics_reports")
 
     @overall_metrics_reports.setter
-    def overall_metrics_reports(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricOverallMetricsReportArgs']]]]):
+    def overall_metrics_reports(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricOverallMetricsReportArgs']]]]):
         pulumi.set(self, "overall_metrics_reports", value)
 
 
 class ModelMetricDatasetSummaryArgsDict(TypedDict):
-    test_sample_count: NotRequired[pulumi.Input[_builtins.int]]
+    test_sample_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Number of samples used for testing the model.
     """
-    training_sample_count: NotRequired[pulumi.Input[_builtins.int]]
+    training_sample_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Number of samples used for training the model.
     """
-    validation_sample_count: NotRequired[pulumi.Input[_builtins.int]]
+    validation_sample_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Number of samples used for validating the model.
     """
@@ -304,9 +304,9 @@ class ModelMetricDatasetSummaryArgsDict(TypedDict):
 @pulumi.input_type
 class ModelMetricDatasetSummaryArgs:
     def __init__(__self__, *,
-                 test_sample_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 training_sample_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 validation_sample_count: Optional[pulumi.Input[_builtins.int]] = None):
+                 test_sample_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 training_sample_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 validation_sample_count: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] test_sample_count: Number of samples used for testing the model.
         :param pulumi.Input[_builtins.int] training_sample_count: Number of samples used for training the model.
@@ -321,55 +321,55 @@ class ModelMetricDatasetSummaryArgs:
 
     @_builtins.property
     @pulumi.getter(name="testSampleCount")
-    def test_sample_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def test_sample_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of samples used for testing the model.
         """
         return pulumi.get(self, "test_sample_count")
 
     @test_sample_count.setter
-    def test_sample_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def test_sample_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "test_sample_count", value)
 
     @_builtins.property
     @pulumi.getter(name="trainingSampleCount")
-    def training_sample_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def training_sample_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of samples used for training the model.
         """
         return pulumi.get(self, "training_sample_count")
 
     @training_sample_count.setter
-    def training_sample_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def training_sample_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "training_sample_count", value)
 
     @_builtins.property
     @pulumi.getter(name="validationSampleCount")
-    def validation_sample_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def validation_sample_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of samples used for validating the model.
         """
         return pulumi.get(self, "validation_sample_count")
 
     @validation_sample_count.setter
-    def validation_sample_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def validation_sample_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "validation_sample_count", value)
 
 
 class ModelMetricLabelMetricsReportArgsDict(TypedDict):
-    confidence_entries: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelMetricLabelMetricsReportConfidenceEntryArgsDict']]]]
+    confidence_entries: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricLabelMetricsReportConfidenceEntryArgs']]]]]
     """
     List of document classification confidence report.
     """
-    document_count: NotRequired[pulumi.Input[_builtins.int]]
+    document_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Total test documents in the label.
     """
-    label: NotRequired[pulumi.Input[_builtins.str]]
+    label: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Label name
     """
-    mean_average_precision: NotRequired[pulumi.Input[_builtins.float]]
+    mean_average_precision: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Mean average precision under different thresholds
     """
@@ -377,10 +377,10 @@ class ModelMetricLabelMetricsReportArgsDict(TypedDict):
 @pulumi.input_type
 class ModelMetricLabelMetricsReportArgs:
     def __init__(__self__, *,
-                 confidence_entries: Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricLabelMetricsReportConfidenceEntryArgs']]]] = None,
-                 document_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 label: Optional[pulumi.Input[_builtins.str]] = None,
-                 mean_average_precision: Optional[pulumi.Input[_builtins.float]] = None):
+                 confidence_entries: pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricLabelMetricsReportConfidenceEntryArgs']]]] = None,
+                 document_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 mean_average_precision: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['ModelMetricLabelMetricsReportConfidenceEntryArgs']]] confidence_entries: List of document classification confidence report.
         :param pulumi.Input[_builtins.int] document_count: Total test documents in the label.
@@ -398,71 +398,71 @@ class ModelMetricLabelMetricsReportArgs:
 
     @_builtins.property
     @pulumi.getter(name="confidenceEntries")
-    def confidence_entries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricLabelMetricsReportConfidenceEntryArgs']]]]:
+    def confidence_entries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricLabelMetricsReportConfidenceEntryArgs']]]]:
         """
         List of document classification confidence report.
         """
         return pulumi.get(self, "confidence_entries")
 
     @confidence_entries.setter
-    def confidence_entries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricLabelMetricsReportConfidenceEntryArgs']]]]):
+    def confidence_entries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricLabelMetricsReportConfidenceEntryArgs']]]]):
         pulumi.set(self, "confidence_entries", value)
 
     @_builtins.property
     @pulumi.getter(name="documentCount")
-    def document_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def document_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Total test documents in the label.
         """
         return pulumi.get(self, "document_count")
 
     @document_count.setter
-    def document_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def document_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "document_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Label name
         """
         return pulumi.get(self, "label")
 
     @label.setter
-    def label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "label", value)
 
     @_builtins.property
     @pulumi.getter(name="meanAveragePrecision")
-    def mean_average_precision(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def mean_average_precision(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Mean average precision under different thresholds
         """
         return pulumi.get(self, "mean_average_precision")
 
     @mean_average_precision.setter
-    def mean_average_precision(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def mean_average_precision(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "mean_average_precision", value)
 
 
 class ModelMetricLabelMetricsReportConfidenceEntryArgsDict(TypedDict):
-    accuracy: NotRequired[pulumi.Input[_builtins.float]]
+    accuracy: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     accuracy under the threshold
     """
-    f1score: NotRequired[pulumi.Input[_builtins.float]]
+    f1score: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     f1Score under the threshold
     """
-    precision: NotRequired[pulumi.Input[_builtins.float]]
+    precision: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Precision under the threshold
     """
-    recall: NotRequired[pulumi.Input[_builtins.float]]
+    recall: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Recall under the threshold
     """
-    threshold: NotRequired[pulumi.Input[_builtins.float]]
+    threshold: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Threshold used to calculate precision and recall.
     """
@@ -470,11 +470,11 @@ class ModelMetricLabelMetricsReportConfidenceEntryArgsDict(TypedDict):
 @pulumi.input_type
 class ModelMetricLabelMetricsReportConfidenceEntryArgs:
     def __init__(__self__, *,
-                 accuracy: Optional[pulumi.Input[_builtins.float]] = None,
-                 f1score: Optional[pulumi.Input[_builtins.float]] = None,
-                 precision: Optional[pulumi.Input[_builtins.float]] = None,
-                 recall: Optional[pulumi.Input[_builtins.float]] = None,
-                 threshold: Optional[pulumi.Input[_builtins.float]] = None):
+                 accuracy: pulumi.Input[Optional[_builtins.float]] = None,
+                 f1score: pulumi.Input[Optional[_builtins.float]] = None,
+                 precision: pulumi.Input[Optional[_builtins.float]] = None,
+                 recall: pulumi.Input[Optional[_builtins.float]] = None,
+                 threshold: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[_builtins.float] accuracy: accuracy under the threshold
         :param pulumi.Input[_builtins.float] f1score: f1Score under the threshold
@@ -495,75 +495,75 @@ class ModelMetricLabelMetricsReportConfidenceEntryArgs:
 
     @_builtins.property
     @pulumi.getter
-    def accuracy(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def accuracy(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         accuracy under the threshold
         """
         return pulumi.get(self, "accuracy")
 
     @accuracy.setter
-    def accuracy(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def accuracy(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "accuracy", value)
 
     @_builtins.property
     @pulumi.getter
-    def f1score(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def f1score(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         f1Score under the threshold
         """
         return pulumi.get(self, "f1score")
 
     @f1score.setter
-    def f1score(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def f1score(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "f1score", value)
 
     @_builtins.property
     @pulumi.getter
-    def precision(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def precision(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Precision under the threshold
         """
         return pulumi.get(self, "precision")
 
     @precision.setter
-    def precision(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def precision(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "precision", value)
 
     @_builtins.property
     @pulumi.getter
-    def recall(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def recall(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Recall under the threshold
         """
         return pulumi.get(self, "recall")
 
     @recall.setter
-    def recall(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def recall(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "recall", value)
 
     @_builtins.property
     @pulumi.getter
-    def threshold(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def threshold(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Threshold used to calculate precision and recall.
         """
         return pulumi.get(self, "threshold")
 
     @threshold.setter
-    def threshold(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def threshold(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "threshold", value)
 
 
 class ModelMetricOverallMetricsReportArgsDict(TypedDict):
-    confidence_entries: NotRequired[pulumi.Input[Sequence[pulumi.Input['ModelMetricOverallMetricsReportConfidenceEntryArgsDict']]]]
+    confidence_entries: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricOverallMetricsReportConfidenceEntryArgs']]]]]
     """
     List of document classification confidence report.
     """
-    document_count: NotRequired[pulumi.Input[_builtins.int]]
+    document_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Total test documents in the label.
     """
-    mean_average_precision: NotRequired[pulumi.Input[_builtins.float]]
+    mean_average_precision: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Mean average precision under different thresholds
     """
@@ -571,9 +571,9 @@ class ModelMetricOverallMetricsReportArgsDict(TypedDict):
 @pulumi.input_type
 class ModelMetricOverallMetricsReportArgs:
     def __init__(__self__, *,
-                 confidence_entries: Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricOverallMetricsReportConfidenceEntryArgs']]]] = None,
-                 document_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 mean_average_precision: Optional[pulumi.Input[_builtins.float]] = None):
+                 confidence_entries: pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricOverallMetricsReportConfidenceEntryArgs']]]] = None,
+                 document_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 mean_average_precision: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['ModelMetricOverallMetricsReportConfidenceEntryArgs']]] confidence_entries: List of document classification confidence report.
         :param pulumi.Input[_builtins.int] document_count: Total test documents in the label.
@@ -588,59 +588,59 @@ class ModelMetricOverallMetricsReportArgs:
 
     @_builtins.property
     @pulumi.getter(name="confidenceEntries")
-    def confidence_entries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricOverallMetricsReportConfidenceEntryArgs']]]]:
+    def confidence_entries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricOverallMetricsReportConfidenceEntryArgs']]]]:
         """
         List of document classification confidence report.
         """
         return pulumi.get(self, "confidence_entries")
 
     @confidence_entries.setter
-    def confidence_entries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricOverallMetricsReportConfidenceEntryArgs']]]]):
+    def confidence_entries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricOverallMetricsReportConfidenceEntryArgs']]]]):
         pulumi.set(self, "confidence_entries", value)
 
     @_builtins.property
     @pulumi.getter(name="documentCount")
-    def document_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def document_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Total test documents in the label.
         """
         return pulumi.get(self, "document_count")
 
     @document_count.setter
-    def document_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def document_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "document_count", value)
 
     @_builtins.property
     @pulumi.getter(name="meanAveragePrecision")
-    def mean_average_precision(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def mean_average_precision(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Mean average precision under different thresholds
         """
         return pulumi.get(self, "mean_average_precision")
 
     @mean_average_precision.setter
-    def mean_average_precision(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def mean_average_precision(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "mean_average_precision", value)
 
 
 class ModelMetricOverallMetricsReportConfidenceEntryArgsDict(TypedDict):
-    accuracy: NotRequired[pulumi.Input[_builtins.float]]
+    accuracy: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     accuracy under the threshold
     """
-    f1score: NotRequired[pulumi.Input[_builtins.float]]
+    f1score: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     f1Score under the threshold
     """
-    precision: NotRequired[pulumi.Input[_builtins.float]]
+    precision: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Precision under the threshold
     """
-    recall: NotRequired[pulumi.Input[_builtins.float]]
+    recall: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Recall under the threshold
     """
-    threshold: NotRequired[pulumi.Input[_builtins.float]]
+    threshold: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Threshold used to calculate precision and recall.
     """
@@ -648,11 +648,11 @@ class ModelMetricOverallMetricsReportConfidenceEntryArgsDict(TypedDict):
 @pulumi.input_type
 class ModelMetricOverallMetricsReportConfidenceEntryArgs:
     def __init__(__self__, *,
-                 accuracy: Optional[pulumi.Input[_builtins.float]] = None,
-                 f1score: Optional[pulumi.Input[_builtins.float]] = None,
-                 precision: Optional[pulumi.Input[_builtins.float]] = None,
-                 recall: Optional[pulumi.Input[_builtins.float]] = None,
-                 threshold: Optional[pulumi.Input[_builtins.float]] = None):
+                 accuracy: pulumi.Input[Optional[_builtins.float]] = None,
+                 f1score: pulumi.Input[Optional[_builtins.float]] = None,
+                 precision: pulumi.Input[Optional[_builtins.float]] = None,
+                 recall: pulumi.Input[Optional[_builtins.float]] = None,
+                 threshold: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[_builtins.float] accuracy: accuracy under the threshold
         :param pulumi.Input[_builtins.float] f1score: f1Score under the threshold
@@ -673,62 +673,62 @@ class ModelMetricOverallMetricsReportConfidenceEntryArgs:
 
     @_builtins.property
     @pulumi.getter
-    def accuracy(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def accuracy(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         accuracy under the threshold
         """
         return pulumi.get(self, "accuracy")
 
     @accuracy.setter
-    def accuracy(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def accuracy(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "accuracy", value)
 
     @_builtins.property
     @pulumi.getter
-    def f1score(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def f1score(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         f1Score under the threshold
         """
         return pulumi.get(self, "f1score")
 
     @f1score.setter
-    def f1score(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def f1score(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "f1score", value)
 
     @_builtins.property
     @pulumi.getter
-    def precision(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def precision(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Precision under the threshold
         """
         return pulumi.get(self, "precision")
 
     @precision.setter
-    def precision(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def precision(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "precision", value)
 
     @_builtins.property
     @pulumi.getter
-    def recall(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def recall(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Recall under the threshold
         """
         return pulumi.get(self, "recall")
 
     @recall.setter
-    def recall(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def recall(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "recall", value)
 
     @_builtins.property
     @pulumi.getter
-    def threshold(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def threshold(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Threshold used to calculate precision and recall.
         """
         return pulumi.get(self, "threshold")
 
     @threshold.setter
-    def threshold(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def threshold(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "threshold", value)
 
 
@@ -805,19 +805,19 @@ class ModelTestingDatasetArgsDict(TypedDict):
     """
     The dataset type, based on where it is stored.
     """
-    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the Object Storage bucket that contains the input data file.
     """
-    dataset_id: NotRequired[pulumi.Input[_builtins.str]]
+    dataset_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     OCID of the Data Labeling dataset.
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The namespace name of the Object Storage bucket that contains the input data file.
     """
-    object: NotRequired[pulumi.Input[_builtins.str]]
+    object: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The object name of the input data file.
     """
@@ -826,10 +826,10 @@ class ModelTestingDatasetArgsDict(TypedDict):
 class ModelTestingDatasetArgs:
     def __init__(__self__, *,
                  dataset_type: pulumi.Input[_builtins.str],
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 dataset_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None):
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 dataset_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] dataset_type: The dataset type, based on where it is stored.
         :param pulumi.Input[_builtins.str] bucket: The name of the Object Storage bucket that contains the input data file.
@@ -861,50 +861,50 @@ class ModelTestingDatasetArgs:
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Object Storage bucket that contains the input data file.
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter(name="datasetId")
-    def dataset_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dataset_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the Data Labeling dataset.
         """
         return pulumi.get(self, "dataset_id")
 
     @dataset_id.setter
-    def dataset_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dataset_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dataset_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The namespace name of the Object Storage bucket that contains the input data file.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def object(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The object name of the input data file.
         """
         return pulumi.get(self, "object")
 
     @object.setter
-    def object(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object", value)
 
 
@@ -913,19 +913,19 @@ class ModelTrainingDatasetArgsDict(TypedDict):
     """
     The dataset type, based on where it is stored.
     """
-    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the Object Storage bucket that contains the input data file.
     """
-    dataset_id: NotRequired[pulumi.Input[_builtins.str]]
+    dataset_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     OCID of the Data Labeling dataset.
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The namespace name of the Object Storage bucket that contains the input data file.
     """
-    object: NotRequired[pulumi.Input[_builtins.str]]
+    object: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The object name of the input data file.
     """
@@ -934,10 +934,10 @@ class ModelTrainingDatasetArgsDict(TypedDict):
 class ModelTrainingDatasetArgs:
     def __init__(__self__, *,
                  dataset_type: pulumi.Input[_builtins.str],
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 dataset_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None):
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 dataset_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] dataset_type: The dataset type, based on where it is stored.
         :param pulumi.Input[_builtins.str] bucket: The name of the Object Storage bucket that contains the input data file.
@@ -969,50 +969,50 @@ class ModelTrainingDatasetArgs:
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Object Storage bucket that contains the input data file.
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter(name="datasetId")
-    def dataset_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dataset_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the Data Labeling dataset.
         """
         return pulumi.get(self, "dataset_id")
 
     @dataset_id.setter
-    def dataset_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dataset_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dataset_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The namespace name of the Object Storage bucket that contains the input data file.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def object(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The object name of the input data file.
         """
         return pulumi.get(self, "object")
 
     @object.setter
-    def object(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object", value)
 
 
@@ -1021,19 +1021,19 @@ class ModelValidationDatasetArgsDict(TypedDict):
     """
     The dataset type, based on where it is stored.
     """
-    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the Object Storage bucket that contains the input data file.
     """
-    dataset_id: NotRequired[pulumi.Input[_builtins.str]]
+    dataset_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     OCID of the Data Labeling dataset.
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The namespace name of the Object Storage bucket that contains the input data file.
     """
-    object: NotRequired[pulumi.Input[_builtins.str]]
+    object: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The object name of the input data file.
 
@@ -1046,10 +1046,10 @@ class ModelValidationDatasetArgsDict(TypedDict):
 class ModelValidationDatasetArgs:
     def __init__(__self__, *,
                  dataset_type: pulumi.Input[_builtins.str],
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 dataset_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None):
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 dataset_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] dataset_type: The dataset type, based on where it is stored.
         :param pulumi.Input[_builtins.str] bucket: The name of the Object Storage bucket that contains the input data file.
@@ -1085,43 +1085,43 @@ class ModelValidationDatasetArgs:
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Object Storage bucket that contains the input data file.
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter(name="datasetId")
-    def dataset_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dataset_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the Data Labeling dataset.
         """
         return pulumi.get(self, "dataset_id")
 
     @dataset_id.setter
-    def dataset_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dataset_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dataset_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The namespace name of the Object Storage bucket that contains the input data file.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def object(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The object name of the input data file.
 
@@ -1132,7 +1132,7 @@ class ModelValidationDatasetArgs:
         return pulumi.get(self, "object")
 
     @object.setter
-    def object(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object", value)
 
 
@@ -1143,15 +1143,15 @@ class ProcessorJobInputLocationArgsDict(TypedDict):
     * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
     * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
     """
-    data: NotRequired[pulumi.Input[_builtins.str]]
+    data: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Raw document data with Base64 encoding.
     """
-    object_locations: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProcessorJobInputLocationObjectLocationArgsDict']]]]
+    object_locations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ProcessorJobInputLocationObjectLocationArgs']]]]]
     """
     The list of ObjectLocations.
     """
-    page_ranges: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    page_ranges: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The page ranges to be analysed.
     """
@@ -1160,9 +1160,9 @@ class ProcessorJobInputLocationArgsDict(TypedDict):
 class ProcessorJobInputLocationArgs:
     def __init__(__self__, *,
                  source_type: pulumi.Input[_builtins.str],
-                 data: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_locations: Optional[pulumi.Input[Sequence[pulumi.Input['ProcessorJobInputLocationObjectLocationArgs']]]] = None,
-                 page_ranges: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 data: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_locations: pulumi.Input[Optional[Sequence[pulumi.Input['ProcessorJobInputLocationObjectLocationArgs']]]] = None,
+                 page_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] source_type: The type of input location. The allowed values are:
                * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
@@ -1195,55 +1195,55 @@ class ProcessorJobInputLocationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Raw document data with Base64 encoding.
         """
         return pulumi.get(self, "data")
 
     @data.setter
-    def data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data", value)
 
     @_builtins.property
     @pulumi.getter(name="objectLocations")
-    def object_locations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProcessorJobInputLocationObjectLocationArgs']]]]:
+    def object_locations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ProcessorJobInputLocationObjectLocationArgs']]]]:
         """
         The list of ObjectLocations.
         """
         return pulumi.get(self, "object_locations")
 
     @object_locations.setter
-    def object_locations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProcessorJobInputLocationObjectLocationArgs']]]]):
+    def object_locations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ProcessorJobInputLocationObjectLocationArgs']]]]):
         pulumi.set(self, "object_locations", value)
 
     @_builtins.property
     @pulumi.getter(name="pageRanges")
-    def page_ranges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def page_ranges(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The page ranges to be analysed.
         """
         return pulumi.get(self, "page_ranges")
 
     @page_ranges.setter
-    def page_ranges(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def page_ranges(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "page_ranges", value)
 
 
 class ProcessorJobInputLocationObjectLocationArgsDict(TypedDict):
-    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Object Storage bucket name.
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Object Storage namespace name.
     """
-    object: NotRequired[pulumi.Input[_builtins.str]]
+    object: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Object Storage object name.
     """
-    page_ranges: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    page_ranges: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The page ranges to be analysed.
     """
@@ -1251,10 +1251,10 @@ class ProcessorJobInputLocationObjectLocationArgsDict(TypedDict):
 @pulumi.input_type
 class ProcessorJobInputLocationObjectLocationArgs:
     def __init__(__self__, *,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None,
-                 page_ranges: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None,
+                 page_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] bucket: The Object Storage bucket name.
         :param pulumi.Input[_builtins.str] namespace: The Object Storage namespace name.
@@ -1272,50 +1272,50 @@ class ProcessorJobInputLocationObjectLocationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Object Storage bucket name.
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Object Storage namespace name.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def object(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Object Storage object name.
         """
         return pulumi.get(self, "object")
 
     @object.setter
-    def object(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object", value)
 
     @_builtins.property
     @pulumi.getter(name="pageRanges")
-    def page_ranges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def page_ranges(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The page ranges to be analysed.
         """
         return pulumi.get(self, "page_ranges")
 
     @page_ranges.setter
-    def page_ranges(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def page_ranges(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "page_ranges", value)
 
 
@@ -1398,23 +1398,23 @@ class ProcessorJobProcessorConfigArgsDict(TypedDict):
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
-    document_type: NotRequired[pulumi.Input[_builtins.str]]
+    document_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The document type.
     """
-    is_zip_output_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_zip_output_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Whether or not to generate a ZIP file containing the results.
     """
-    language: NotRequired[pulumi.Input[_builtins.str]]
+    language: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The document language, abbreviated according to the BCP 47 Language-Tag syntax.
     """
-    model_id: NotRequired[pulumi.Input[_builtins.str]]
+    model_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Unique identifier custom model OCID that should be used for inference.
     """
-    normalization_fields: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldArgsDict']]]]
+    normalization_fields: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldArgs']]]]]
     """
     A string-to-object map where the key is the normalization field and the object contains information about the field.
     """
@@ -1424,11 +1424,11 @@ class ProcessorJobProcessorConfigArgs:
     def __init__(__self__, *,
                  features: pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigFeatureArgs']]],
                  processor_type: pulumi.Input[_builtins.str],
-                 document_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_zip_output_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 language: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 normalization_fields: Optional[pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldArgs']]]] = None):
+                 document_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_zip_output_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 language: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 normalization_fields: pulumi.Input[Optional[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigFeatureArgs']]] features: The types of document analysis requested.
         :param pulumi.Input[_builtins.str] processor_type: The type of the processor.
@@ -1485,62 +1485,62 @@ class ProcessorJobProcessorConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="documentType")
-    def document_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def document_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The document type.
         """
         return pulumi.get(self, "document_type")
 
     @document_type.setter
-    def document_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def document_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "document_type", value)
 
     @_builtins.property
     @pulumi.getter(name="isZipOutputEnabled")
-    def is_zip_output_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_zip_output_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether or not to generate a ZIP file containing the results.
         """
         return pulumi.get(self, "is_zip_output_enabled")
 
     @is_zip_output_enabled.setter
-    def is_zip_output_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_zip_output_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_zip_output_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def language(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def language(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The document language, abbreviated according to the BCP 47 Language-Tag syntax.
         """
         return pulumi.get(self, "language")
 
     @language.setter
-    def language(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def language(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "language", value)
 
     @_builtins.property
     @pulumi.getter(name="modelId")
-    def model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier custom model OCID that should be used for inference.
         """
         return pulumi.get(self, "model_id")
 
     @model_id.setter
-    def model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_id", value)
 
     @_builtins.property
     @pulumi.getter(name="normalizationFields")
-    def normalization_fields(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldArgs']]]]:
+    def normalization_fields(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldArgs']]]]:
         """
         A string-to-object map where the key is the normalization field and the object contains information about the field.
         """
         return pulumi.get(self, "normalization_fields")
 
     @normalization_fields.setter
-    def normalization_fields(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldArgs']]]]):
+    def normalization_fields(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldArgs']]]]):
         pulumi.set(self, "normalization_fields", value)
 
 
@@ -1555,23 +1555,23 @@ class ProcessorJobProcessorConfigFeatureArgsDict(TypedDict):
     * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
     * `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
     """
-    generate_searchable_pdf: NotRequired[pulumi.Input[_builtins.bool]]
+    generate_searchable_pdf: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Whether or not to generate a searchable PDF file.
     """
-    max_results: NotRequired[pulumi.Input[_builtins.int]]
+    max_results: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The maximum number of results to return.
     """
-    model_id: NotRequired[pulumi.Input[_builtins.str]]
+    model_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Unique identifier custom model OCID that should be used for inference.
     """
-    selection_mark_detection: NotRequired[pulumi.Input[_builtins.bool]]
+    selection_mark_detection: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Whether checkbox detection feature is enabled or disabled.
     """
-    tenancy_id: NotRequired[pulumi.Input[_builtins.str]]
+    tenancy_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The custom model tenancy ID when modelId represents aliasName.
     """
@@ -1580,11 +1580,11 @@ class ProcessorJobProcessorConfigFeatureArgsDict(TypedDict):
 class ProcessorJobProcessorConfigFeatureArgs:
     def __init__(__self__, *,
                  feature_type: pulumi.Input[_builtins.str],
-                 generate_searchable_pdf: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_results: Optional[pulumi.Input[_builtins.int]] = None,
-                 model_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 selection_mark_detection: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tenancy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 generate_searchable_pdf: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_results: pulumi.Input[Optional[_builtins.int]] = None,
+                 model_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 selection_mark_detection: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tenancy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] feature_type: The type of document analysis requested. The allowed values are:
                * `LANGUAGE_CLASSIFICATION`: Detect the language.
@@ -1631,67 +1631,67 @@ class ProcessorJobProcessorConfigFeatureArgs:
 
     @_builtins.property
     @pulumi.getter(name="generateSearchablePdf")
-    def generate_searchable_pdf(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def generate_searchable_pdf(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether or not to generate a searchable PDF file.
         """
         return pulumi.get(self, "generate_searchable_pdf")
 
     @generate_searchable_pdf.setter
-    def generate_searchable_pdf(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def generate_searchable_pdf(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "generate_searchable_pdf", value)
 
     @_builtins.property
     @pulumi.getter(name="maxResults")
-    def max_results(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_results(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum number of results to return.
         """
         return pulumi.get(self, "max_results")
 
     @max_results.setter
-    def max_results(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_results(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_results", value)
 
     @_builtins.property
     @pulumi.getter(name="modelId")
-    def model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique identifier custom model OCID that should be used for inference.
         """
         return pulumi.get(self, "model_id")
 
     @model_id.setter
-    def model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_id", value)
 
     @_builtins.property
     @pulumi.getter(name="selectionMarkDetection")
-    def selection_mark_detection(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def selection_mark_detection(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether checkbox detection feature is enabled or disabled.
         """
         return pulumi.get(self, "selection_mark_detection")
 
     @selection_mark_detection.setter
-    def selection_mark_detection(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def selection_mark_detection(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "selection_mark_detection", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyId")
-    def tenancy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The custom model tenancy ID when modelId represents aliasName.
         """
         return pulumi.get(self, "tenancy_id")
 
     @tenancy_id.setter
-    def tenancy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy_id", value)
 
 
 class ProcessorJobProcessorConfigNormalizationFieldArgsDict(TypedDict):
-    maps: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldMapArgsDict']]]]
+    maps: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldMapArgs']]]]]
     """
     A wrapped map.
     """
@@ -1699,7 +1699,7 @@ class ProcessorJobProcessorConfigNormalizationFieldArgsDict(TypedDict):
 @pulumi.input_type
 class ProcessorJobProcessorConfigNormalizationFieldArgs:
     def __init__(__self__, *,
-                 maps: Optional[pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldMapArgs']]]] = None):
+                 maps: pulumi.Input[Optional[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldMapArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldMapArgs']]] maps: A wrapped map.
         """
@@ -1708,19 +1708,19 @@ class ProcessorJobProcessorConfigNormalizationFieldArgs:
 
     @_builtins.property
     @pulumi.getter
-    def maps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldMapArgs']]]]:
+    def maps(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldMapArgs']]]]:
         """
         A wrapped map.
         """
         return pulumi.get(self, "maps")
 
     @maps.setter
-    def maps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldMapArgs']]]]):
+    def maps(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldMapArgs']]]]):
         pulumi.set(self, "maps", value)
 
 
 class ProcessorJobProcessorConfigNormalizationFieldMapArgsDict(TypedDict):
-    normalization_type: NotRequired[pulumi.Input[_builtins.str]]
+    normalization_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A string mapping to the normalization type.
     """
@@ -1728,7 +1728,7 @@ class ProcessorJobProcessorConfigNormalizationFieldMapArgsDict(TypedDict):
 @pulumi.input_type
 class ProcessorJobProcessorConfigNormalizationFieldMapArgs:
     def __init__(__self__, *,
-                 normalization_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 normalization_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] normalization_type: A string mapping to the normalization type.
         """
@@ -1737,14 +1737,14 @@ class ProcessorJobProcessorConfigNormalizationFieldMapArgs:
 
     @_builtins.property
     @pulumi.getter(name="normalizationType")
-    def normalization_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def normalization_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A string mapping to the normalization type.
         """
         return pulumi.get(self, "normalization_type")
 
     @normalization_type.setter
-    def normalization_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def normalization_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "normalization_type", value)
 
 
@@ -1753,19 +1753,19 @@ class ProjectLockArgsDict(TypedDict):
     """
     Lock type.
     """
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The compartment identifier.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the lock creator. The message typically gives an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     When the project was created, as an RFC3339 datetime string.
     """
@@ -1774,10 +1774,10 @@ class ProjectLockArgsDict(TypedDict):
 class ProjectLockArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Lock type.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment identifier.
@@ -1809,50 +1809,50 @@ class ProjectLockArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The compartment identifier.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the lock creator. The message typically gives an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the project was created, as an RFC3339 datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 

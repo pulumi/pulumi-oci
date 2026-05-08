@@ -151,7 +151,7 @@ def get_mount_targets(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_mount_targets = oci.FileStorage.get_mount_targets(availability_domain=mount_target_availability_domain,
+    test_mount_targets = oci.filestorage.get_mount_targets(availability_domain=mount_target_availability_domain,
         compartment_id=compartment_id,
         display_name=mount_target_display_name,
         export_set_id=test_export_set["id"],
@@ -187,13 +187,13 @@ def get_mount_targets(availability_domain: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         mount_targets=pulumi.get(__ret__, 'mount_targets'),
         state=pulumi.get(__ret__, 'state'))
-def get_mount_targets_output(availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             export_set_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMountTargetsFilterArgs', 'GetMountTargetsFilterArgsDict']]]]] = None,
-                             id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_mount_targets_output(availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             export_set_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMountTargetsFilterArgs', 'GetMountTargetsFilterArgsDict']]]]] = None,
+                             id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMountTargetsResult]:
     """
     This data source provides the list of Mount Targets in Oracle Cloud Infrastructure File Storage service.
@@ -206,7 +206,7 @@ def get_mount_targets_output(availability_domain: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_mount_targets = oci.FileStorage.get_mount_targets(availability_domain=mount_target_availability_domain,
+    test_mount_targets = oci.filestorage.get_mount_targets(availability_domain=mount_target_availability_domain,
         compartment_id=compartment_id,
         display_name=mount_target_display_name,
         export_set_id=test_export_set["id"],

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBillingSchedules = oci.OsubBillingSchedule.getBillingSchedule({
+ * const testBillingSchedules = oci.osubbillingschedule.getBillingSchedule({
  *     compartmentId: compartmentId,
  *     subscriptionId: testSubscription.id,
  *     subscribedServiceId: testService.id,
@@ -90,7 +90,7 @@ export interface GetBillingScheduleResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBillingSchedules = oci.OsubBillingSchedule.getBillingSchedule({
+ * const testBillingSchedules = oci.osubbillingschedule.getBillingSchedule({
  *     compartmentId: compartmentId,
  *     subscriptionId: testSubscription.id,
  *     subscribedServiceId: testService.id,
@@ -117,11 +117,11 @@ export interface GetBillingScheduleOutputArgs {
      * The OCID of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsubBillingSchedule.GetBillingScheduleFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsubBillingSchedule.GetBillingScheduleFilterArgs>[] | undefined>;
     /**
      * This param is used to get only the billing schedules for a particular Subscribed Service
      */
-    subscribedServiceId?: pulumi.Input<string>;
+    subscribedServiceId?: pulumi.Input<string | undefined>;
     /**
      * This param is used to get only the billing schedules for a particular Subscription Id
      */
@@ -129,5 +129,5 @@ export interface GetBillingScheduleOutputArgs {
     /**
      * The Oracle Cloud Infrastructure home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
      */
-    xOneOriginRegion?: pulumi.Input<string>;
+    xOneOriginRegion?: pulumi.Input<string | undefined>;
 }

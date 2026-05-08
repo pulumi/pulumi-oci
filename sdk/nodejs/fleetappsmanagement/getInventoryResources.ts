@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInventoryResources = oci.FleetAppsManagement.getInventoryResources({
+ * const testInventoryResources = oci.fleetappsmanagement.getInventoryResources({
  *     compartmentId: compartmentId,
  *     resourceCompartmentId: testCompartment.id,
  *     definedTagEquals: inventoryResourceDefinedTagEquals,
@@ -140,7 +140,7 @@ export interface GetInventoryResourcesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInventoryResources = oci.FleetAppsManagement.getInventoryResources({
+ * const testInventoryResources = oci.fleetappsmanagement.getInventoryResources({
  *     compartmentId: compartmentId,
  *     resourceCompartmentId: testCompartment.id,
  *     definedTagEquals: inventoryResourceDefinedTagEquals,
@@ -180,24 +180,24 @@ export interface GetInventoryResourcesOutputArgs {
     /**
      * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}={value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND". Example: Identification.Development=Yes
      */
-    definedTagEquals?: pulumi.Input<pulumi.Input<string>[]>;
+    definedTagEquals?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetInventoryResourcesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetInventoryResourcesFilterArgs>[] | undefined>;
     /**
      * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned. The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
      */
-    freeformTagEquals?: pulumi.Input<pulumi.Input<string>[]>;
+    freeformTagEquals?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A list of inventory properties filters to apply. The key for each inventory property and value for each resource type is "{resourceType}.{inventoryProperty}={value}". Example: Instance.displayName=TEST_INSTANCE
      */
-    inventoryProperties?: pulumi.Input<pulumi.Input<string>[]>;
+    inventoryProperties?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Fetch resources matching ANY or ALL criteria passed as params in "tags" and "inventoryProperties". Example: matchingCriteria=ANY
      */
-    matchingCriteria?: pulumi.Input<string>;
+    matchingCriteria?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose resource Compartment ID matches the given resource Compartment ID.
      */
@@ -205,9 +205,9 @@ export interface GetInventoryResourcesOutputArgs {
     /**
      * Resource Region
      */
-    resourceRegion?: pulumi.Input<string>;
+    resourceRegion?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

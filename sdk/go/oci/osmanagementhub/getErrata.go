@@ -31,7 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := osmanagementhub.GetErrata(ctx, &osmanagementhub.GetErrataArgs{
 //				CompartmentId: compartmentId,
-//				Names:         errataName,
+//				Names:         pulumi.ToArray(errataName),
 //			}, nil)
 //			if err != nil {
 //				return err

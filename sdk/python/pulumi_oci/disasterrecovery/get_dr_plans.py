@@ -157,7 +157,7 @@ def get_dr_plans(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dr_plans = oci.DisasterRecovery.get_dr_plans(dr_protection_group_id=test_dr_protection_group["id"],
+    test_dr_plans = oci.disasterrecovery.get_dr_plans(dr_protection_group_id=test_dr_protection_group["id"],
         display_name=dr_plan_display_name,
         dr_plan_id=test_dr_plan["id"],
         dr_plan_type=dr_plan_dr_plan_type,
@@ -194,13 +194,13 @@ def get_dr_plans(display_name: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         lifecycle_sub_state=pulumi.get(__ret__, 'lifecycle_sub_state'),
         state=pulumi.get(__ret__, 'state'))
-def get_dr_plans_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        dr_plan_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        dr_plan_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        dr_protection_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDrPlansFilterArgs', 'GetDrPlansFilterArgsDict']]]]] = None,
-                        lifecycle_sub_state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_dr_plans_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        dr_plan_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        dr_plan_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        dr_protection_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDrPlansFilterArgs', 'GetDrPlansFilterArgsDict']]]]] = None,
+                        lifecycle_sub_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDrPlansResult]:
     """
     This data source provides the list of Dr Plans in Oracle Cloud Infrastructure Disaster Recovery service.
@@ -213,7 +213,7 @@ def get_dr_plans_output(display_name: Optional[pulumi.Input[Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_dr_plans = oci.DisasterRecovery.get_dr_plans(dr_protection_group_id=test_dr_protection_group["id"],
+    test_dr_plans = oci.disasterrecovery.get_dr_plans(dr_protection_group_id=test_dr_protection_group["id"],
         display_name=dr_plan_display_name,
         dr_plan_id=test_dr_plan["id"],
         dr_plan_type=dr_plan_dr_plan_type,

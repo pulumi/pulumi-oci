@@ -166,36 +166,36 @@ export function getManagedDatabaseSqlPlanBaselinesOutput(args: GetManagedDatabas
  * A collection of arguments for invoking getManagedDatabaseSqlPlanBaselines.
  */
 export interface GetManagedDatabaseSqlPlanBaselinesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseSqlPlanBaselinesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseSqlPlanBaselinesFilterArgs>[] | undefined>;
     /**
      * A filter to return only SQL plan baselines that are either accepted or not accepted. By default, all SQL plan baselines are returned.
      */
-    isAccepted?: pulumi.Input<boolean>;
+    isAccepted?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only SQL plan baselines that are either adaptive or not adaptive. By default, all SQL plan baselines are returned.
      */
-    isAdaptive?: pulumi.Input<boolean>;
+    isAdaptive?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only SQL plan baselines that are either auto-purged or not auto-purged. By default, all SQL plan baselines are returned.
      */
-    isAutoPurged?: pulumi.Input<boolean>;
+    isAutoPurged?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only SQL plan baselines that are either enabled or not enabled. By default, all SQL plan baselines are returned.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only SQL plan baselines that are either fixed or not fixed. By default, all SQL plan baselines are returned.
      */
-    isFixed?: pulumi.Input<boolean>;
+    isFixed?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only SQL plan baselines that are not executed till now. By default, all SQL plan baselines are returned.
      */
-    isNeverExecuted?: pulumi.Input<boolean>;
+    isNeverExecuted?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only SQL plan baselines that were either reproduced or not reproduced by the optimizer. By default, all SQL plan baselines are returned.
      */
-    isReproduced?: pulumi.Input<boolean>;
-    limit?: pulumi.Input<number>;
+    isReproduced?: pulumi.Input<boolean | undefined>;
+    limit?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
@@ -203,21 +203,21 @@ export interface GetManagedDatabaseSqlPlanBaselinesOutputArgs {
     /**
      * The OCID of the Named Credential.
      */
-    opcNamedCredentialId?: pulumi.Input<string>;
+    opcNamedCredentialId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return all the SQL plan baselines that match the origin.
      */
-    origin?: pulumi.Input<string>;
+    origin?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only SQL plan baselines that match the plan name.
      */
-    planName?: pulumi.Input<string>;
+    planName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return all the SQL plan baselines for the specified SQL handle.
      */
-    sqlHandle?: pulumi.Input<string>;
+    sqlHandle?: pulumi.Input<string | undefined>;
     /**
      * A filter to return all the SQL plan baselines that match the SQL text. By default, the search is case insensitive. To run an exact or case-sensitive search, double-quote the search string. You may also use the '%' symbol as a wildcard.
      */
-    sqlText?: pulumi.Input<string>;
+    sqlText?: pulumi.Input<string | undefined>;
 }

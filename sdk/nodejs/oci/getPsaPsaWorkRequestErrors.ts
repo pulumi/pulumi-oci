@@ -46,6 +46,6 @@ export function getPsaPsaWorkRequestErrorsOutput(args: GetPsaPsaWorkRequestError
  * A collection of arguments for invoking getPsaPsaWorkRequestErrors.
  */
 export interface GetPsaPsaWorkRequestErrorsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetPsaPsaWorkRequestErrorsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetPsaPsaWorkRequestErrorsFilterArgs>[] | undefined>;
     workRequestId: pulumi.Input<string>;
 }

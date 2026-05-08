@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSupportedHostShapes = oci.Ocvp.getSupportedHostShapes({
+ * const testSupportedHostShapes = oci.ocvp.getSupportedHostShapes({
  *     compartmentId: compartmentId,
  *     initialHostShapeName: testShape.name,
- *     isSingleHostSddcSupported: supportedHostShapeIsSingleHostSddcSupported,
+ *     isSingleHostSddcSupported: supportedHostShapeIsSingleHostSddcSupported === "true",
  *     name: supportedHostShapeName,
  * });
  * ```
@@ -105,10 +105,10 @@ export interface GetSupportedHostShapesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSupportedHostShapes = oci.Ocvp.getSupportedHostShapes({
+ * const testSupportedHostShapes = oci.ocvp.getSupportedHostShapes({
  *     compartmentId: compartmentId,
  *     initialHostShapeName: testShape.name,
- *     isSingleHostSddcSupported: supportedHostShapeIsSingleHostSddcSupported,
+ *     isSingleHostSddcSupported: supportedHostShapeIsSingleHostSddcSupported === "true",
  *     name: supportedHostShapeName,
  * });
  * ```
@@ -133,23 +133,23 @@ export interface GetSupportedHostShapesOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Ocvp.GetSupportedHostShapesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Ocvp.GetSupportedHostShapesFilterArgs>[] | undefined>;
     /**
      * A filter to return only the shapes compatible with the initial host shape of the Cluster.
      */
-    initialHostShapeName?: pulumi.Input<string>;
+    initialHostShapeName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that support single host SDDC.
      */
-    isSingleHostSddcSupported?: pulumi.Input<boolean>;
+    isSingleHostSddcSupported?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the given name exactly.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Optional) A filter to return only resources that match the given SDDC type exactly.
      *
      * @deprecated The 'sddc_type' field has been deprecated. Please use 'is_single_host_sddc_supported' instead.
      */
-    sddcType?: pulumi.Input<string>;
+    sddcType?: pulumi.Input<string | undefined>;
 }

@@ -25,13 +25,13 @@ class ComputeGpuMemoryClusterArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  compute_cluster_id: pulumi.Input[_builtins.str],
                  instance_configuration_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 gpu_memory_cluster_scale_config: Optional[pulumi.Input['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs']] = None,
-                 gpu_memory_fabric_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 size: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gpu_memory_cluster_scale_config: pulumi.Input[Optional['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs']] = None,
+                 gpu_memory_fabric_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 size: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ComputeGpuMemoryCluster resource.
 
@@ -120,79 +120,79 @@ class ComputeGpuMemoryClusterArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="gpuMemoryClusterScaleConfig")
-    def gpu_memory_cluster_scale_config(self) -> Optional[pulumi.Input['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs']]:
+    def gpu_memory_cluster_scale_config(self) -> pulumi.Input[Optional['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs']]:
         """
         (Updatable) Configuration settings for GPU Memory Cluster scaling.
         """
         return pulumi.get(self, "gpu_memory_cluster_scale_config")
 
     @gpu_memory_cluster_scale_config.setter
-    def gpu_memory_cluster_scale_config(self, value: Optional[pulumi.Input['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs']]):
+    def gpu_memory_cluster_scale_config(self, value: pulumi.Input[Optional['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs']]):
         pulumi.set(self, "gpu_memory_cluster_scale_config", value)
 
     @_builtins.property
     @pulumi.getter(name="gpuMemoryFabricId")
-    def gpu_memory_fabric_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def gpu_memory_fabric_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
         """
         return pulumi.get(self, "gpu_memory_fabric_id")
 
     @gpu_memory_fabric_id.setter
-    def gpu_memory_fabric_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def gpu_memory_fabric_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "gpu_memory_fabric_id", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIpIds")
-    def private_ip_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def private_ip_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
         """
         return pulumi.get(self, "private_ip_ids")
 
     @private_ip_ids.setter
-    def private_ip_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def private_ip_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "private_ip_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def size(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def size(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The desired number of instances for the GPU Memory Cluster. 
 
@@ -203,27 +203,27 @@ class ComputeGpuMemoryClusterArgs:
         return pulumi.get(self, "size")
 
     @size.setter
-    def size(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def size(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "size", value)
 
 
 @pulumi.input_type
 class _ComputeGpuMemoryClusterState:
     def __init__(__self__, *,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 gpu_memory_cluster_scale_config: Optional[pulumi.Input['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs']] = None,
-                 gpu_memory_fabric_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 size: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gpu_memory_cluster_scale_config: pulumi.Input[Optional['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs']] = None,
+                 gpu_memory_fabric_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 size: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ComputeGpuMemoryCluster resources.
 
@@ -277,127 +277,127 @@ class _ComputeGpuMemoryClusterState:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability domain of the GPU Memory Cluster.
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the compute GPU Memory Cluster. compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeClusterId")
-    def compute_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
         """
         return pulumi.get(self, "compute_cluster_id")
 
     @compute_cluster_id.setter
-    def compute_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="gpuMemoryClusterScaleConfig")
-    def gpu_memory_cluster_scale_config(self) -> Optional[pulumi.Input['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs']]:
+    def gpu_memory_cluster_scale_config(self) -> pulumi.Input[Optional['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs']]:
         """
         (Updatable) Configuration settings for GPU Memory Cluster scaling.
         """
         return pulumi.get(self, "gpu_memory_cluster_scale_config")
 
     @gpu_memory_cluster_scale_config.setter
-    def gpu_memory_cluster_scale_config(self, value: Optional[pulumi.Input['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs']]):
+    def gpu_memory_cluster_scale_config(self, value: pulumi.Input[Optional['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs']]):
         pulumi.set(self, "gpu_memory_cluster_scale_config", value)
 
     @_builtins.property
     @pulumi.getter(name="gpuMemoryFabricId")
-    def gpu_memory_fabric_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def gpu_memory_fabric_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
         """
         return pulumi.get(self, "gpu_memory_fabric_id")
 
     @gpu_memory_fabric_id.setter
-    def gpu_memory_fabric_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def gpu_memory_fabric_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "gpu_memory_fabric_id", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceConfigurationId")
-    def instance_configuration_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_configuration_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Instance Configuration to be used for this GPU Memory Cluster
         """
         return pulumi.get(self, "instance_configuration_id")
 
     @instance_configuration_id.setter
-    def instance_configuration_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_configuration_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_configuration_id", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIpIds")
-    def private_ip_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def private_ip_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
         """
         return pulumi.get(self, "private_ip_ids")
 
     @private_ip_ids.setter
-    def private_ip_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def private_ip_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "private_ip_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def size(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def size(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The desired number of instances for the GPU Memory Cluster. 
 
@@ -408,43 +408,43 @@ class _ComputeGpuMemoryClusterState:
         return pulumi.get(self, "size")
 
     @size.setter
-    def size(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def size(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "size", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of the GPU Memory Cluster
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the GPU Memory Cluster was created.  Example: `2016-09-15T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -454,17 +454,17 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 gpu_memory_cluster_scale_config: Optional[pulumi.Input[Union['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs', 'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict']]] = None,
-                 gpu_memory_fabric_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 size: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gpu_memory_cluster_scale_config: pulumi.Input[Optional[Union['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs', 'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict']]] = None,
+                 gpu_memory_fabric_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 size: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Compute Gpu Memory Cluster resource in Oracle Cloud Infrastructure Core service.
@@ -493,8 +493,8 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
                 "Department": "Finance",
             },
             gpu_memory_cluster_scale_config={
-                "is_upsize_enabled": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_is_upsize_enabled,
-                "is_downsize_enabled": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_is_downsize_enabled,
+                "is_upsize_enabled": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_is_upsize_enabled == "true",
+                "is_downsize_enabled": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_is_downsize_enabled == "true",
                 "target_size": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_target_size,
             },
             gpu_memory_fabric_id=test_gpu_memory_fabric["id"],
@@ -562,8 +562,8 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
                 "Department": "Finance",
             },
             gpu_memory_cluster_scale_config={
-                "is_upsize_enabled": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_is_upsize_enabled,
-                "is_downsize_enabled": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_is_downsize_enabled,
+                "is_upsize_enabled": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_is_upsize_enabled == "true",
+                "is_downsize_enabled": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_is_downsize_enabled == "true",
                 "target_size": compute_gpu_memory_cluster_gpu_memory_cluster_scale_config_target_size,
             },
             gpu_memory_fabric_id=test_gpu_memory_fabric["id"],
@@ -595,17 +595,17 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 gpu_memory_cluster_scale_config: Optional[pulumi.Input[Union['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs', 'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict']]] = None,
-                 gpu_memory_fabric_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 size: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gpu_memory_cluster_scale_config: pulumi.Input[Optional[Union['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs', 'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict']]] = None,
+                 gpu_memory_fabric_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 size: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -647,20 +647,20 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compute_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            gpu_memory_cluster_scale_config: Optional[pulumi.Input[Union['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs', 'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict']]] = None,
-            gpu_memory_fabric_id: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
-            private_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            size: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'ComputeGpuMemoryCluster':
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            gpu_memory_cluster_scale_config: pulumi.Input[Optional[Union['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs', 'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict']]] = None,
+            gpu_memory_fabric_id: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+            private_ip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            size: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'ComputeGpuMemoryCluster':
         """
         Get an existing ComputeGpuMemoryCluster resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

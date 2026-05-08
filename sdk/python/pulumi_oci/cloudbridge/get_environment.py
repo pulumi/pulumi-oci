@@ -179,7 +179,7 @@ def get_environment(environment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_environment = oci.CloudBridge.get_environment(environment_id=test_environment_oci_cloud_bridge_environment["id"])
+    test_environment = oci.cloudbridge.get_environment(environment_id=test_environment_oci_cloud_bridge_environment["id"])
     ```
 
 
@@ -202,7 +202,7 @@ def get_environment(environment_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_environment_output(environment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_environment_output(environment_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEnvironmentResult]:
     """
     This data source provides details about a specific Environment resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -215,7 +215,7 @@ def get_environment_output(environment_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_environment = oci.CloudBridge.get_environment(environment_id=test_environment_oci_cloud_bridge_environment["id"])
+    test_environment = oci.cloudbridge.get_environment(environment_id=test_environment_oci_cloud_bridge_environment["id"])
     ```
 
 

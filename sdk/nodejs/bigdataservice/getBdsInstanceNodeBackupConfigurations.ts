@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceNodeBackupConfigurations = oci.BigDataService.getBdsInstanceNodeBackupConfigurations({
+ * const testBdsInstanceNodeBackupConfigurations = oci.bigdataservice.getBdsInstanceNodeBackupConfigurations({
  *     bdsInstanceId: testBdsInstance.id,
  *     displayName: bdsInstanceNodeBackupConfigurationDisplayName,
  *     state: bdsInstanceNodeBackupConfigurationState,
@@ -90,7 +90,7 @@ export interface GetBdsInstanceNodeBackupConfigurationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceNodeBackupConfigurations = oci.BigDataService.getBdsInstanceNodeBackupConfigurations({
+ * const testBdsInstanceNodeBackupConfigurations = oci.bigdataservice.getBdsInstanceNodeBackupConfigurations({
  *     bdsInstanceId: testBdsInstance.id,
  *     displayName: bdsInstanceNodeBackupConfigurationDisplayName,
  *     state: bdsInstanceNodeBackupConfigurationState,
@@ -118,10 +118,10 @@ export interface GetBdsInstanceNodeBackupConfigurationsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.BigDataService.GetBdsInstanceNodeBackupConfigurationsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.BigDataService.GetBdsInstanceNodeBackupConfigurationsFilterArgs>[] | undefined>;
     /**
      * The state of the NodeBackupConfiguration configuration.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

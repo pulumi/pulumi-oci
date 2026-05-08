@@ -22,13 +22,13 @@ class BackendArgs:
                  backend_set_name: pulumi.Input[_builtins.str],
                  network_load_balancer_id: pulumi.Input[_builtins.str],
                  port: pulumi.Input[_builtins.int],
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_backup: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_drain: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_offline: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 weight: Optional[pulumi.Input[_builtins.int]] = None):
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_backup: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_drain: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_offline: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 weight: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a Backend resource.
 
@@ -103,79 +103,79 @@ class BackendArgs:
 
     @_builtins.property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IP address of the backend server. Example: `10.0.0.3`
         """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
-    def ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="isBackup")
-    def is_backup(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_backup(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
         """
         return pulumi.get(self, "is_backup")
 
     @is_backup.setter
-    def is_backup(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_backup(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_backup", value)
 
     @_builtins.property
     @pulumi.getter(name="isDrain")
-    def is_drain(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_drain(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated.  Example: `false`
         """
         return pulumi.get(self, "is_drain")
 
     @is_drain.setter
-    def is_drain(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_drain(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_drain", value)
 
     @_builtins.property
     @pulumi.getter(name="isOffline")
-    def is_offline(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_offline(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         """
         return pulumi.get(self, "is_offline")
 
     @is_offline.setter
-    def is_offline(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_offline(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_offline", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Optional unique name identifying the backend within the backend set. If not specified, then one will be generated. Example: `webServer1`
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
         """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
-    def target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def weight(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def weight(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about network load balancer policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3` 
 
@@ -186,23 +186,23 @@ class BackendArgs:
         return pulumi.get(self, "weight")
 
     @weight.setter
-    def weight(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def weight(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "weight", value)
 
 
 @pulumi.input_type
 class _BackendState:
     def __init__(__self__, *,
-                 backend_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_backup: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_drain: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_offline: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 weight: Optional[pulumi.Input[_builtins.int]] = None):
+                 backend_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_backup: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_drain: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_offline: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 weight: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering Backend resources.
 
@@ -244,115 +244,115 @@ class _BackendState:
 
     @_builtins.property
     @pulumi.getter(name="backendSetName")
-    def backend_set_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backend_set_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the backend set to which to add the backend server.  Example: `example_backend_set`
         """
         return pulumi.get(self, "backend_set_name")
 
     @backend_set_name.setter
-    def backend_set_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backend_set_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backend_set_name", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IP address of the backend server. Example: `10.0.0.3`
         """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
-    def ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="isBackup")
-    def is_backup(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_backup(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
         """
         return pulumi.get(self, "is_backup")
 
     @is_backup.setter
-    def is_backup(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_backup(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_backup", value)
 
     @_builtins.property
     @pulumi.getter(name="isDrain")
-    def is_drain(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_drain(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the network load balancer should drain this server.  Servers marked "isDrain" stop receiving new connections but will continue to receive traffic on existing connections until the connection is terminated.  Example: `false`
         """
         return pulumi.get(self, "is_drain")
 
     @is_drain.setter
-    def is_drain(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_drain(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_drain", value)
 
     @_builtins.property
     @pulumi.getter(name="isOffline")
-    def is_offline(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_offline(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         """
         return pulumi.get(self, "is_offline")
 
     @is_offline.setter
-    def is_offline(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_offline(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_offline", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Optional unique name identifying the backend within the backend set. If not specified, then one will be generated. Example: `webServer1`
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkLoadBalancerId")
-    def network_load_balancer_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_load_balancer_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
         """
         return pulumi.get(self, "network_load_balancer_id")
 
     @network_load_balancer_id.setter
-    def network_load_balancer_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_load_balancer_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_load_balancer_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The communication port for the backend server.  Example: `8080`
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
         """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
-    def target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def weight(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def weight(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about network load balancer policies, see [Network Load Balancer Policies](https://docs.cloud.oracle.com/iaas/Content/NetworkLoadBalancer/introduction.htm#Policies).  Example: `3` 
 
@@ -363,7 +363,7 @@ class _BackendState:
         return pulumi.get(self, "weight")
 
     @weight.setter
-    def weight(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def weight(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "weight", value)
 
 
@@ -373,16 +373,16 @@ class Backend(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 backend_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_backup: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_drain: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_offline: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 weight: Optional[pulumi.Input[_builtins.int]] = None,
+                 backend_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_backup: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_drain: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_offline: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 weight: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         This resource provides the Backend resource in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -401,14 +401,14 @@ class Backend(pulumi.CustomResource):
         test_backend = oci.networkloadbalancer.Backend("test_backend",
             backend_set_name=test_backend_set["name"],
             network_load_balancer_id=test_network_load_balancer["id"],
-            port=backend_port,
+            port=int(backend_port),
             ip_address=backend_ip_address,
-            is_backup=backend_is_backup,
-            is_drain=backend_is_drain,
-            is_offline=backend_is_offline,
+            is_backup=backend_is_backup == "true",
+            is_drain=backend_is_drain == "true",
+            is_offline=backend_is_offline == "true",
             name=backend_name,
             target_id=test_target["id"],
-            weight=backend_weight)
+            weight=int(backend_weight))
         ```
 
         ## Import
@@ -460,14 +460,14 @@ class Backend(pulumi.CustomResource):
         test_backend = oci.networkloadbalancer.Backend("test_backend",
             backend_set_name=test_backend_set["name"],
             network_load_balancer_id=test_network_load_balancer["id"],
-            port=backend_port,
+            port=int(backend_port),
             ip_address=backend_ip_address,
-            is_backup=backend_is_backup,
-            is_drain=backend_is_drain,
-            is_offline=backend_is_offline,
+            is_backup=backend_is_backup == "true",
+            is_drain=backend_is_drain == "true",
+            is_offline=backend_is_offline == "true",
             name=backend_name,
             target_id=test_target["id"],
-            weight=backend_weight)
+            weight=int(backend_weight))
         ```
 
         ## Import
@@ -494,16 +494,16 @@ class Backend(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 backend_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_backup: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_drain: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_offline: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 weight: Optional[pulumi.Input[_builtins.int]] = None,
+                 backend_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_backup: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_drain: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_offline: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 weight: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -539,16 +539,16 @@ class Backend(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            backend_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-            ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-            is_backup: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_drain: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_offline: Optional[pulumi.Input[_builtins.bool]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            network_load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-            port: Optional[pulumi.Input[_builtins.int]] = None,
-            target_id: Optional[pulumi.Input[_builtins.str]] = None,
-            weight: Optional[pulumi.Input[_builtins.int]] = None) -> 'Backend':
+            backend_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            is_backup: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_drain: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_offline: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            weight: pulumi.Input[Optional[_builtins.int]] = None) -> 'Backend':
         """
         Get an existing Backend resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

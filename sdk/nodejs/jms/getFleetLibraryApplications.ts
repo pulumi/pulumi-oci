@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetLibraryApplications = oci.Jms.getFleetLibraryApplications({
+ * const testFleetLibraryApplications = oci.jms.getFleetLibraryApplications({
  *     fleetId: testFleet.id,
  *     libraryKey: fleetLibraryApplicationLibraryKey,
  *     applicationId: testApplication.id,
@@ -119,7 +119,7 @@ export interface GetFleetLibraryApplicationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetLibraryApplications = oci.Jms.getFleetLibraryApplications({
+ * const testFleetLibraryApplications = oci.jms.getFleetLibraryApplications({
  *     fleetId: testFleet.id,
  *     libraryKey: fleetLibraryApplicationLibraryKey,
  *     applicationId: testApplication.id,
@@ -153,16 +153,16 @@ export interface GetFleetLibraryApplicationsOutputArgs {
     /**
      * The Fleet-unique identifier of the application.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * The name of the application.
      */
-    applicationName?: pulumi.Input<string>;
+    applicationName?: pulumi.Input<string | undefined>;
     /**
      * Filter the list with application name contains the given value.
      */
-    applicationNameContains?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetLibraryApplicationsFilterArgs>[]>;
+    applicationNameContains?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetLibraryApplicationsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
@@ -174,13 +174,13 @@ export interface GetFleetLibraryApplicationsOutputArgs {
     /**
      * The Fleet-unique identifier of the managed instance.
      */
-    managedInstanceId?: pulumi.Input<string>;
+    managedInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeEnd?: pulumi.Input<string>;
+    timeEnd?: pulumi.Input<string | undefined>;
     /**
      * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeStart?: pulumi.Input<string>;
+    timeStart?: pulumi.Input<string | undefined>;
 }

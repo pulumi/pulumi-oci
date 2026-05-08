@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInvoiceLineComputedUsages = oci.OneSubsription.getInvoiceLineComputedUsages({
+ * const testInvoiceLineComputedUsages = oci.onesubsription.getInvoiceLineComputedUsages({
  *     compartmentId: compartmentId,
  *     invoiceLineId: testInvoiceLine.id,
  *     fields: invoiceLineComputedUsageFields,
@@ -81,7 +81,7 @@ export interface GetInvoiceLineComputedUsagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInvoiceLineComputedUsages = oci.OneSubsription.getInvoiceLineComputedUsages({
+ * const testInvoiceLineComputedUsages = oci.onesubsription.getInvoiceLineComputedUsages({
  *     compartmentId: compartmentId,
  *     invoiceLineId: testInvoiceLine.id,
  *     fields: invoiceLineComputedUsageFields,
@@ -109,8 +109,8 @@ export interface GetInvoiceLineComputedUsagesOutputArgs {
     /**
      * Partial response refers to an optimization technique offered by the RESTful web APIs to return only the information  (fields) required by the client. This parameter is used to control what fields to return.
      */
-    fields?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OneSubsription.GetInvoiceLineComputedUsagesFilterArgs>[]>;
+    fields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OneSubsription.GetInvoiceLineComputedUsagesFilterArgs>[] | undefined>;
     /**
      * Invoice Line Identifier - Primary Key SPM
      */

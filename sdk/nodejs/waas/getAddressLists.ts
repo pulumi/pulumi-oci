@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAddressLists = oci.Waas.getAddressLists({
+ * const testAddressLists = oci.waas.getAddressLists({
  *     compartmentId: compartmentId,
  *     ids: addressListIds,
  *     names: addressListNames,
@@ -105,7 +105,7 @@ export interface GetAddressListsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAddressLists = oci.Waas.getAddressLists({
+ * const testAddressLists = oci.waas.getAddressLists({
  *     compartmentId: compartmentId,
  *     ids: addressListIds,
  *     names: addressListNames,
@@ -136,25 +136,25 @@ export interface GetAddressListsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Waas.GetAddressListsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Waas.GetAddressListsFilterArgs>[] | undefined>;
     /**
      * Filter address lists using a list of address lists OCIDs.
      */
-    ids?: pulumi.Input<pulumi.Input<string>[]>;
+    ids?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Filter address lists using a list of names.
      */
-    names?: pulumi.Input<pulumi.Input<string>[]>;
+    names?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Filter address lists using a list of lifecycle states.
      */
-    states?: pulumi.Input<pulumi.Input<string>[]>;
+    states?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter that matches address lists created on or after the specified date-time.
      */
-    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A filter that matches address lists created before the specified date-time.
      */
-    timeCreatedLessThan?: pulumi.Input<string>;
+    timeCreatedLessThan?: pulumi.Input<string | undefined>;
 }

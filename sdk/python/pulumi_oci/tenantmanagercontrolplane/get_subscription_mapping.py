@@ -155,7 +155,7 @@ def get_subscription_mapping(subscription_mapping_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_mapping = oci.Tenantmanagercontrolplane.get_subscription_mapping(subscription_mapping_id=test_subscription_mapping_oci_tenantmanagercontrolplane_subscription_mapping["id"])
+    test_subscription_mapping = oci.tenantmanagercontrolplane.get_subscription_mapping(subscription_mapping_id=test_subscription_mapping_oci_tenantmanagercontrolplane_subscription_mapping["id"])
     ```
 
 
@@ -176,7 +176,7 @@ def get_subscription_mapping(subscription_mapping_id: Optional[_builtins.str] = 
         time_created=pulumi.get(__ret__, 'time_created'),
         time_terminated=pulumi.get(__ret__, 'time_terminated'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_subscription_mapping_output(subscription_mapping_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_subscription_mapping_output(subscription_mapping_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionMappingResult]:
     """
     This data source provides details about a specific Subscription Mapping resource in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
@@ -189,7 +189,7 @@ def get_subscription_mapping_output(subscription_mapping_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_mapping = oci.Tenantmanagercontrolplane.get_subscription_mapping(subscription_mapping_id=test_subscription_mapping_oci_tenantmanagercontrolplane_subscription_mapping["id"])
+    test_subscription_mapping = oci.tenantmanagercontrolplane.get_subscription_mapping(subscription_mapping_id=test_subscription_mapping_oci_tenantmanagercontrolplane_subscription_mapping["id"])
     ```
 
 

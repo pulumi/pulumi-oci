@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSourceEvents = oci.CloudGuard.getDataSourceEvents({
+ * const testDataSourceEvents = oci.cloudguard.getDataSourceEvents({
  *     dataSourceId: testDataSource.id,
  *     region: dataSourceEventRegion,
  * });
@@ -84,7 +84,7 @@ export interface GetDataSourceEventsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSourceEvents = oci.CloudGuard.getDataSourceEvents({
+ * const testDataSourceEvents = oci.cloudguard.getDataSourceEvents({
  *     dataSourceId: testDataSource.id,
  *     region: dataSourceEventRegion,
  * });
@@ -107,9 +107,9 @@ export interface GetDataSourceEventsOutputArgs {
      * Data source OCID.
      */
     dataSourceId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CloudGuard.GetDataSourceEventsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CloudGuard.GetDataSourceEventsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resource where their region matches the given region.
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
 }

@@ -141,7 +141,7 @@ def get_management_agent_plugins(agent_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_plugins = oci.ManagementAgent.get_management_agent_plugins(compartment_id=compartment_id,
+    test_management_agent_plugins = oci.managementagent.get_management_agent_plugins(compartment_id=compartment_id,
         agent_id=management_agent_id,
         display_name=management_agent_plugin_display_name,
         platform_types=management_agent_plugin_platform_type,
@@ -174,12 +174,12 @@ def get_management_agent_plugins(agent_id: Optional[_builtins.str] = None,
         management_agent_plugins=pulumi.get(__ret__, 'management_agent_plugins'),
         platform_types=pulumi.get(__ret__, 'platform_types'),
         state=pulumi.get(__ret__, 'state'))
-def get_management_agent_plugins_output(agent_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                        display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagementAgentPluginsFilterArgs', 'GetManagementAgentPluginsFilterArgsDict']]]]] = None,
-                                        platform_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_management_agent_plugins_output(agent_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagementAgentPluginsFilterArgs', 'GetManagementAgentPluginsFilterArgsDict']]]]] = None,
+                                        platform_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementAgentPluginsResult]:
     """
     This data source provides the list of Management Agent Plugins in Oracle Cloud Infrastructure Management Agent service.
@@ -192,7 +192,7 @@ def get_management_agent_plugins_output(agent_id: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_plugins = oci.ManagementAgent.get_management_agent_plugins(compartment_id=compartment_id,
+    test_management_agent_plugins = oci.managementagent.get_management_agent_plugins(compartment_id=compartment_id,
         agent_id=management_agent_id,
         display_name=management_agent_plugin_display_name,
         platform_types=management_agent_plugin_platform_type,

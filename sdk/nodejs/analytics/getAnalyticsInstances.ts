@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAnalyticsInstances = oci.Analytics.getAnalyticsInstances({
+ * const testAnalyticsInstances = oci.analytics.getAnalyticsInstances({
  *     compartmentId: compartmentId,
  *     capacityType: analyticsInstanceCapacityType,
  *     featureSet: analyticsInstanceFeatureSet,
@@ -110,7 +110,7 @@ export interface GetAnalyticsInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAnalyticsInstances = oci.Analytics.getAnalyticsInstances({
+ * const testAnalyticsInstances = oci.analytics.getAnalyticsInstances({
  *     compartmentId: compartmentId,
  *     capacityType: analyticsInstanceCapacityType,
  *     featureSet: analyticsInstanceFeatureSet,
@@ -138,7 +138,7 @@ export interface GetAnalyticsInstancesOutputArgs {
     /**
      * A filter to only return resources matching the capacity type enum. Values are case-insensitive.
      */
-    capacityType?: pulumi.Input<string>;
+    capacityType?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment.
      */
@@ -146,14 +146,14 @@ export interface GetAnalyticsInstancesOutputArgs {
     /**
      * A filter to only return resources matching the feature set. Values are case-insensitive.
      */
-    featureSet?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Analytics.GetAnalyticsInstancesFilterArgs>[]>;
+    featureSet?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Analytics.GetAnalyticsInstancesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given name exactly.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return resources matching the lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

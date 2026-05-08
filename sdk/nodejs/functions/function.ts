@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     detachedModeTimeoutInSeconds: functionDetachedModeTimeoutInSeconds,
+ *     detachedModeTimeoutInSeconds: Number(functionDetachedModeTimeoutInSeconds),
  *     failureDestination: {
  *         kind: functionFailureDestinationKind,
  *         channelId: testChannel.id,
@@ -43,7 +43,7 @@ import * as utilities from "../utilities";
  *     imageDigest: functionImageDigest,
  *     provisionedConcurrencyConfig: {
  *         strategy: functionProvisionedConcurrencyConfigStrategy,
- *         count: functionProvisionedConcurrencyConfigCount,
+ *         count: Number(functionProvisionedConcurrencyConfigCount),
  *     },
  *     sourceDetails: {
  *         pbfListingId: testPbfListing.id,
@@ -56,9 +56,9 @@ import * as utilities from "../utilities";
  *         streamId: testStream.id,
  *         topicId: testNotificationTopic.id,
  *     },
- *     timeoutInSeconds: functionTimeoutInSeconds,
+ *     timeoutInSeconds: Number(functionTimeoutInSeconds),
  *     traceConfig: {
- *         isEnabled: functionTraceConfigIsEnabled,
+ *         isEnabled: functionTraceConfigIsEnabled === "true",
  *     },
  * });
  * ```
@@ -265,89 +265,89 @@ export interface FunctionState {
     /**
      * The OCID of the application this function belongs to.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment that contains the function.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
      *
      * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
      */
-    config?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    config?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Timeout for detached function invocations. Value in seconds.
      */
-    detachedModeTimeoutInSeconds?: pulumi.Input<number>;
+    detachedModeTimeoutInSeconds?: pulumi.Input<number | undefined>;
     /**
      * The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
      */
-    failureDestination?: pulumi.Input<inputs.Functions.FunctionFailureDestination>;
+    failureDestination?: pulumi.Input<inputs.Functions.FunctionFailureDestination | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
      */
-    image?: pulumi.Input<string>;
+    image?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
      */
-    imageDigest?: pulumi.Input<string>;
+    imageDigest?: pulumi.Input<string | undefined>;
     /**
      * The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
      */
-    invokeEndpoint?: pulumi.Input<string>;
+    invokeEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Maximum usable memory for the function (MiB).
      */
-    memoryInMbs?: pulumi.Input<string>;
+    memoryInMbs?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Define the strategy for provisioned concurrency for the function.
      */
-    provisionedConcurrencyConfig?: pulumi.Input<inputs.Functions.FunctionProvisionedConcurrencyConfig>;
+    provisionedConcurrencyConfig?: pulumi.Input<inputs.Functions.FunctionProvisionedConcurrencyConfig | undefined>;
     /**
      * The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
     /**
      * The source details for the Function. The function can be created from various sources.
      */
-    sourceDetails?: pulumi.Input<inputs.Functions.FunctionSourceDetails>;
+    sourceDetails?: pulumi.Input<inputs.Functions.FunctionSourceDetails | undefined>;
     /**
      * The current state of the function.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
      */
-    successDestination?: pulumi.Input<inputs.Functions.FunctionSuccessDestination>;
+    successDestination?: pulumi.Input<inputs.Functions.FunctionSuccessDestination | undefined>;
     /**
      * The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Timeout for executions of the function. Value in seconds.
      */
-    timeoutInSeconds?: pulumi.Input<number>;
+    timeoutInSeconds?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Define the tracing configuration for a function.
      */
-    traceConfig?: pulumi.Input<inputs.Functions.FunctionTraceConfig>;
+    traceConfig?: pulumi.Input<inputs.Functions.FunctionTraceConfig | undefined>;
 }
 
 /**
@@ -363,15 +363,15 @@ export interface FunctionArgs {
      *
      * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
      */
-    config?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    config?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Timeout for detached function invocations. Value in seconds.
      */
-    detachedModeTimeoutInSeconds?: pulumi.Input<number>;
+    detachedModeTimeoutInSeconds?: pulumi.Input<number | undefined>;
     /**
      * The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
      */
@@ -379,19 +379,19 @@ export interface FunctionArgs {
     /**
      * (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
      */
-    failureDestination?: pulumi.Input<inputs.Functions.FunctionFailureDestination>;
+    failureDestination?: pulumi.Input<inputs.Functions.FunctionFailureDestination | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
      */
-    image?: pulumi.Input<string>;
+    image?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
      */
-    imageDigest?: pulumi.Input<string>;
+    imageDigest?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Maximum usable memory for the function (MiB).
      */
@@ -399,21 +399,21 @@ export interface FunctionArgs {
     /**
      * (Updatable) Define the strategy for provisioned concurrency for the function.
      */
-    provisionedConcurrencyConfig?: pulumi.Input<inputs.Functions.FunctionProvisionedConcurrencyConfig>;
+    provisionedConcurrencyConfig?: pulumi.Input<inputs.Functions.FunctionProvisionedConcurrencyConfig | undefined>;
     /**
      * The source details for the Function. The function can be created from various sources.
      */
-    sourceDetails?: pulumi.Input<inputs.Functions.FunctionSourceDetails>;
+    sourceDetails?: pulumi.Input<inputs.Functions.FunctionSourceDetails | undefined>;
     /**
      * (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
      */
-    successDestination?: pulumi.Input<inputs.Functions.FunctionSuccessDestination>;
+    successDestination?: pulumi.Input<inputs.Functions.FunctionSuccessDestination | undefined>;
     /**
      * (Updatable) Timeout for executions of the function. Value in seconds.
      */
-    timeoutInSeconds?: pulumi.Input<number>;
+    timeoutInSeconds?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Define the tracing configuration for a function.
      */
-    traceConfig?: pulumi.Input<inputs.Functions.FunctionTraceConfig>;
+    traceConfig?: pulumi.Input<inputs.Functions.FunctionTraceConfig | undefined>;
 }

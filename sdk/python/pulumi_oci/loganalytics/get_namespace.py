@@ -144,7 +144,7 @@ def get_namespace(namespace: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace = oci.LogAnalytics.get_namespace(namespace=namespace_namespace)
+    test_namespace = oci.loganalytics.get_namespace(namespace=namespace_namespace)
     ```
 
 
@@ -164,7 +164,7 @@ def get_namespace(namespace: Optional[_builtins.str] = None,
         is_onboarded=pulumi.get(__ret__, 'is_onboarded'),
         namespace=pulumi.get(__ret__, 'namespace'),
         state=pulumi.get(__ret__, 'state'))
-def get_namespace_output(namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_namespace_output(namespace: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceResult]:
     """
     This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -177,7 +177,7 @@ def get_namespace_output(namespace: Optional[pulumi.Input[_builtins.str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace = oci.LogAnalytics.get_namespace(namespace=namespace_namespace)
+    test_namespace = oci.loganalytics.get_namespace(namespace=namespace_namespace)
     ```
 
 

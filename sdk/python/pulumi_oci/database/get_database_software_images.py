@@ -173,12 +173,12 @@ def get_database_software_images(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_database_software_images = oci.Database.get_database_software_images(compartment_id=compartment_id,
+    test_database_software_images = oci.database.get_database_software_images(compartment_id=compartment_id,
         db_system_id=test_db_system["id"],
         display_name=database_software_image_display_name,
         image_shape_family=database_software_image_image_shape_family,
         image_type=database_software_image_image_type,
-        is_upgrade_supported=database_software_image_is_upgrade_supported,
+        is_upgrade_supported=database_software_image_is_upgrade_supported == "true",
         state=database_software_image_state)
     ```
 
@@ -214,14 +214,14 @@ def get_database_software_images(compartment_id: Optional[_builtins.str] = None,
         image_type=pulumi.get(__ret__, 'image_type'),
         is_upgrade_supported=pulumi.get(__ret__, 'is_upgrade_supported'),
         state=pulumi.get(__ret__, 'state'))
-def get_database_software_images_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                        db_system_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatabaseSoftwareImagesFilterArgs', 'GetDatabaseSoftwareImagesFilterArgsDict']]]]] = None,
-                                        image_shape_family: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        image_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        is_upgrade_supported: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_database_software_images_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                        db_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabaseSoftwareImagesFilterArgs', 'GetDatabaseSoftwareImagesFilterArgsDict']]]]] = None,
+                                        image_shape_family: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        image_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        is_upgrade_supported: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseSoftwareImagesResult]:
     """
     This data source provides the list of Database Software Images in Oracle Cloud Infrastructure Database service.
@@ -234,12 +234,12 @@ def get_database_software_images_output(compartment_id: Optional[pulumi.Input[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_database_software_images = oci.Database.get_database_software_images(compartment_id=compartment_id,
+    test_database_software_images = oci.database.get_database_software_images(compartment_id=compartment_id,
         db_system_id=test_db_system["id"],
         display_name=database_software_image_display_name,
         image_shape_family=database_software_image_image_shape_family,
         image_type=database_software_image_image_type,
-        is_upgrade_supported=database_software_image_is_upgrade_supported,
+        is_upgrade_supported=database_software_image_is_upgrade_supported == "true",
         state=database_software_image_state)
     ```
 

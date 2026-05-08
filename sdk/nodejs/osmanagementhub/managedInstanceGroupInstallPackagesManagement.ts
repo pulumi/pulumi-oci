@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * const testManagedInstanceGroupInstallPackagesManagement = new oci.osmanagementhub.ManagedInstanceGroupInstallPackagesManagement("test_managed_instance_group_install_packages_management", {
  *     managedInstanceGroupId: testManagedInstanceGroup.id,
  *     packageNames: managedInstanceGroupInstallPackagesManagementPackageNames,
- *     isLatest: managedInstanceGroupInstallPackagesManagementIsLatest,
+ *     isLatest: managedInstanceGroupInstallPackagesManagementIsLatest === "true",
  *     workRequestDetails: {
  *         description: managedInstanceGroupInstallPackagesManagementWorkRequestDetailsDescription,
  *         displayName: managedInstanceGroupInstallPackagesManagementWorkRequestDetailsDisplayName,
@@ -126,19 +126,19 @@ export interface ManagedInstanceGroupInstallPackagesManagementState {
     /**
      * Indicates whether this is the latest package version.
      */
-    isLatest?: pulumi.Input<boolean>;
+    isLatest?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
-    managedInstanceGroupId?: pulumi.Input<string>;
+    managedInstanceGroupId?: pulumi.Input<string | undefined>;
     /**
      * The list of package names.
      */
-    packageNames?: pulumi.Input<pulumi.Input<string>[]>;
+    packageNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupInstallPackagesManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupInstallPackagesManagementWorkRequestDetails | undefined>;
 }
 
 /**
@@ -148,7 +148,7 @@ export interface ManagedInstanceGroupInstallPackagesManagementArgs {
     /**
      * Indicates whether this is the latest package version.
      */
-    isLatest?: pulumi.Input<boolean>;
+    isLatest?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
@@ -160,5 +160,5 @@ export interface ManagedInstanceGroupInstallPackagesManagementArgs {
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupInstallPackagesManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupInstallPackagesManagementWorkRequestDetails | undefined>;
 }

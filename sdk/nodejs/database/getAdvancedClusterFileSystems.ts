@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAdvancedClusterFileSystems = oci.Database.getAdvancedClusterFileSystems({
+ * const testAdvancedClusterFileSystems = oci.database.getAdvancedClusterFileSystems({
  *     compartmentId: compartmentId,
  *     name: advancedClusterFileSystemName,
  *     resourceId: testResource.id,
@@ -107,7 +107,7 @@ export interface GetAdvancedClusterFileSystemsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAdvancedClusterFileSystems = oci.Database.getAdvancedClusterFileSystems({
+ * const testAdvancedClusterFileSystems = oci.database.getAdvancedClusterFileSystems({
  *     compartmentId: compartmentId,
  *     name: advancedClusterFileSystemName,
  *     resourceId: testResource.id,
@@ -136,21 +136,21 @@ export interface GetAdvancedClusterFileSystemsOutputArgs {
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAdvancedClusterFileSystemsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAdvancedClusterFileSystemsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the entire name given. The match is not case sensitive.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * If provided, filters the results for the specified resource Id.
      */
-    resourceId?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only ACFS that match the given vm cluster id exactly.
      */
-    vmClusterId?: pulumi.Input<string>;
+    vmClusterId?: pulumi.Input<string | undefined>;
 }

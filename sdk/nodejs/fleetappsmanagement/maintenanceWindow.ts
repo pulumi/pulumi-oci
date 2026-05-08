@@ -30,8 +30,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isOutage: maintenanceWindowIsOutage,
- *     isRecurring: maintenanceWindowIsRecurring,
+ *     isOutage: maintenanceWindowIsOutage === "true",
+ *     isRecurring: maintenanceWindowIsRecurring === "true",
  *     recurrences: maintenanceWindowRecurrences,
  * });
  * ```
@@ -210,59 +210,59 @@ export interface MaintenanceWindowState {
     /**
      * Compartment OCID
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
      */
-    duration?: pulumi.Input<string>;
+    duration?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
      */
-    isOutage?: pulumi.Input<boolean>;
+    isOutage?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Is this a recurring maintenance window?
      */
-    isRecurring?: pulumi.Input<boolean>;
+    isRecurring?: pulumi.Input<boolean | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
      */
-    recurrences?: pulumi.Input<string>;
+    recurrences?: pulumi.Input<string | undefined>;
     /**
      * Associated region
      */
-    resourceRegion?: pulumi.Input<string>;
+    resourceRegion?: pulumi.Input<string | undefined>;
     /**
      * The current state of the MaintenanceWindow.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specify the date and time of the day that the maintenance window starts.
      *
@@ -270,11 +270,11 @@ export interface MaintenanceWindowState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeScheduleStart?: pulumi.Input<string>;
+    timeScheduleStart?: pulumi.Input<string | undefined>;
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -288,15 +288,15 @@ export interface MaintenanceWindowArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
      */
@@ -304,19 +304,19 @@ export interface MaintenanceWindowArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Does the maintenenace window cause outage? An outage indicates whether a maintenance window can consider operations that require downtime. It means a period when the application is not accessible.
      */
-    isOutage?: pulumi.Input<boolean>;
+    isOutage?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Is this a recurring maintenance window?
      */
-    isRecurring?: pulumi.Input<boolean>;
+    isRecurring?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
      */
-    recurrences?: pulumi.Input<string>;
+    recurrences?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specify the date and time of the day that the maintenance window starts.
      *

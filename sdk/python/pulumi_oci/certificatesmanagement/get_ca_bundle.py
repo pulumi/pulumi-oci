@@ -176,7 +176,7 @@ def get_ca_bundle(ca_bundle_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ca_bundle = oci.CertificatesManagement.get_ca_bundle(ca_bundle_id=test_ca_bundle_oci_certificates_management_ca_bundle["id"])
+    test_ca_bundle = oci.certificatesmanagement.get_ca_bundle(ca_bundle_id=test_ca_bundle_oci_certificates_management_ca_bundle["id"])
     ```
 
 
@@ -199,7 +199,7 @@ def get_ca_bundle(ca_bundle_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_ca_bundle_output(ca_bundle_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_ca_bundle_output(ca_bundle_id: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCaBundleResult]:
     """
     This data source provides details about a specific Ca Bundle resource in Oracle Cloud Infrastructure Certificates Management service.
@@ -212,7 +212,7 @@ def get_ca_bundle_output(ca_bundle_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_ca_bundle = oci.CertificatesManagement.get_ca_bundle(ca_bundle_id=test_ca_bundle_oci_certificates_management_ca_bundle["id"])
+    test_ca_bundle = oci.certificatesmanagement.get_ca_bundle(ca_bundle_id=test_ca_bundle_oci_certificates_management_ca_bundle["id"])
     ```
 
 

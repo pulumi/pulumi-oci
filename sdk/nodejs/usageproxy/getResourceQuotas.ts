@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResourceQuotas = oci.UsageProxy.getResourceQuotas({
+ * const testResourceQuotas = oci.usageproxy.getResourceQuotas({
  *     compartmentId: compartmentId,
  *     serviceName: testService.name,
  *     serviceEntitlement: resourceQuotaServiceEntitlement,
@@ -83,7 +83,7 @@ export interface GetResourceQuotasResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResourceQuotas = oci.UsageProxy.getResourceQuotas({
+ * const testResourceQuotas = oci.usageproxy.getResourceQuotas({
  *     compartmentId: compartmentId,
  *     serviceName: testService.name,
  *     serviceEntitlement: resourceQuotaServiceEntitlement,
@@ -108,11 +108,11 @@ export interface GetResourceQuotasOutputArgs {
      * The OCID of the root compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.UsageProxy.GetResourceQuotasFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.UsageProxy.GetResourceQuotasFilterArgs>[] | undefined>;
     /**
      * Service entitlement Id.
      */
-    serviceEntitlement?: pulumi.Input<string>;
+    serviceEntitlement?: pulumi.Input<string | undefined>;
     /**
      * Service Name.
      */

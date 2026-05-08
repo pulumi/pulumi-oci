@@ -21,25 +21,25 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSocialIdentityProvider = new oci.identity.DomainsSocialIdentityProvider("test_social_identity_provider", {
- *     accountLinkingEnabled: socialIdentityProviderAccountLinkingEnabled,
+ *     accountLinkingEnabled: socialIdentityProviderAccountLinkingEnabled === "true",
  *     consumerKey: socialIdentityProviderConsumerKey,
  *     consumerSecret: socialIdentityProviderConsumerSecret,
- *     enabled: socialIdentityProviderEnabled,
+ *     enabled: socialIdentityProviderEnabled === "true",
  *     idcsEndpoint: testDomain.url,
  *     name: socialIdentityProviderName,
- *     registrationEnabled: socialIdentityProviderRegistrationEnabled,
+ *     registrationEnabled: socialIdentityProviderRegistrationEnabled === "true",
  *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:SocialIdentityProvider"],
  *     serviceProviderName: socialIdentityProviderServiceProviderName,
- *     showOnLogin: socialIdentityProviderShowOnLogin,
+ *     showOnLogin: socialIdentityProviderShowOnLogin === "true",
  *     accessTokenUrl: socialIdentityProviderAccessTokenUrl,
  *     adminScopes: socialIdentityProviderAdminScope,
  *     appleDevId: testAppleDev.id,
  *     appleKeyId: testKey.id,
  *     authorization: socialIdentityProviderAuthorization,
  *     authzUrl: socialIdentityProviderAuthzUrl,
- *     autoRedirectEnabled: socialIdentityProviderAutoRedirectEnabled,
- *     clientCredentialInPayload: socialIdentityProviderClientCredentialInPayload,
- *     clockSkewInSeconds: socialIdentityProviderClockSkewInSeconds,
+ *     autoRedirectEnabled: socialIdentityProviderAutoRedirectEnabled === "true",
+ *     clientCredentialInPayload: socialIdentityProviderClientCredentialInPayload === "true",
+ *     clockSkewInSeconds: Number(socialIdentityProviderClockSkewInSeconds),
  *     description: socialIdentityProviderDescription,
  *     discoveryUrl: socialIdentityProviderDiscoveryUrl,
  *     iconUrl: socialIdentityProviderIconUrl,
@@ -47,7 +47,7 @@ import * as utilities from "../utilities";
  *     jitProvAssignedGroups: [{
  *         value: socialIdentityProviderJitProvAssignedGroupsValue,
  *     }],
- *     jitProvGroupStaticListEnabled: socialIdentityProviderJitProvGroupStaticListEnabled,
+ *     jitProvGroupStaticListEnabled: socialIdentityProviderJitProvGroupStaticListEnabled === "true",
  *     ocid: socialIdentityProviderOcid,
  *     profileUrl: socialIdentityProviderProfileUrl,
  *     redirectUrl: socialIdentityProviderRedirectUrl,
@@ -58,7 +58,7 @@ import * as utilities from "../utilities";
  *     }],
  *     resourceTypeSchemaVersion: socialIdentityProviderResourceTypeSchemaVersion,
  *     scopes: socialIdentityProviderScope,
- *     socialJitProvisioningEnabled: socialIdentityProviderSocialJitProvisioningEnabled,
+ *     socialJitProvisioningEnabled: socialIdentityProviderSocialJitProvisioningEnabled === "true",
  *     status: socialIdentityProviderStatus,
  *     tags: [{
  *         key: socialIdentityProviderTagsKey,
@@ -866,7 +866,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    accessTokenUrl?: pulumi.Input<string>;
+    accessTokenUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether account linking is enabled
      *
@@ -880,7 +880,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: boolean
      * * uniqueness: none
      */
-    accountLinkingEnabled?: pulumi.Input<boolean>;
+    accountLinkingEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Admin scope to request
      *
@@ -894,7 +894,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    adminScopes?: pulumi.Input<pulumi.Input<string>[]>;
+    adminScopes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Apple Developer ID
      *
@@ -910,7 +910,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    appleDevId?: pulumi.Input<string>;
+    appleDevId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Apple Private Key ID
      *
@@ -926,11 +926,11 @@ export interface DomainsSocialIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    appleKeyId?: pulumi.Input<string>;
+    appleKeyId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Social IDP Authorization URL
      *
@@ -944,7 +944,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    authzUrl?: pulumi.Input<string>;
+    authzUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
      *
@@ -960,7 +960,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: boolean
      * * uniqueness: none
      */
-    autoRedirectEnabled?: pulumi.Input<boolean>;
+    autoRedirectEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether the client credential is contained in payload
      *
@@ -976,7 +976,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: boolean
      * * uniqueness: none
      */
-    clientCredentialInPayload?: pulumi.Input<boolean>;
+    clientCredentialInPayload?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Social IDP allowed clock skew time
      *
@@ -989,7 +989,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: integer
      * * uniqueness: none
      */
-    clockSkewInSeconds?: pulumi.Input<number>;
+    clockSkewInSeconds?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -1003,7 +1003,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    compartmentOcid?: pulumi.Input<string>;
+    compartmentOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Social IDP Client Application Client ID
      *
@@ -1017,7 +1017,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    consumerKey?: pulumi.Input<string>;
+    consumerKey?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Social IDP Client Application Client Secret
      *
@@ -1032,7 +1032,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    consumerSecret?: pulumi.Input<string>;
+    consumerSecret?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -1046,7 +1046,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: boolean
      * * uniqueness: none
      */
-    deleteInProgress?: pulumi.Input<boolean>;
+    deleteInProgress?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Social IDP description
      *
@@ -1060,7 +1060,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Discovery URL
      *
@@ -1076,7 +1076,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    discoveryUrl?: pulumi.Input<string>;
+    discoveryUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -1090,7 +1090,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    domainOcid?: pulumi.Input<string>;
+    domainOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether the IDP is enabled or not
      *
@@ -1104,7 +1104,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: boolean
      * * uniqueness: none
      */
-    enabled?: pulumi.Input<boolean>;
+    enabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) ICON URL for social idp
      *
@@ -1120,7 +1120,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    iconUrl?: pulumi.Input<string>;
+    iconUrl?: pulumi.Input<string | undefined>;
     /**
      * Id attribute used for account linking
      *
@@ -1134,7 +1134,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    idAttribute?: pulumi.Input<string>;
+    idAttribute?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -1146,11 +1146,11 @@ export interface DomainsSocialIdentityProviderState {
      * * returned: default
      * * type: complex
      */
-    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSocialIdentityProviderIdcsCreatedBy>[]>;
+    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSocialIdentityProviderIdcsCreatedBy>[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
-    idcsEndpoint?: pulumi.Input<string>;
+    idcsEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -1162,7 +1162,7 @@ export interface DomainsSocialIdentityProviderState {
      * * returned: default
      * * type: complex
      */
-    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSocialIdentityProviderIdcsLastModifiedBy>[]>;
+    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSocialIdentityProviderIdcsLastModifiedBy>[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -1176,7 +1176,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    idcsLastUpgradedInRelease?: pulumi.Input<string>;
+    idcsLastUpgradedInRelease?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -1189,7 +1189,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[]>;
+    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
      *
@@ -1205,7 +1205,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: complex
      * * uniqueness: none
      */
-    jitProvAssignedGroups?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSocialIdentityProviderJitProvAssignedGroup>[]>;
+    jitProvAssignedGroups?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSocialIdentityProviderJitProvAssignedGroup>[] | undefined>;
     /**
      * (Updatable) Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
      *
@@ -1221,7 +1221,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: boolean
      * * uniqueness: none
      */
-    jitProvGroupStaticListEnabled?: pulumi.Input<boolean>;
+    jitProvGroupStaticListEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -1235,7 +1235,7 @@ export interface DomainsSocialIdentityProviderState {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSocialIdentityProviderMeta>[]>;
+    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSocialIdentityProviderMeta>[] | undefined>;
     /**
      * (Updatable) Social provider name
      *
@@ -1249,7 +1249,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: string
      * * uniqueness: global
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -1263,7 +1263,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Social IDP User profile URL
      *
@@ -1277,7 +1277,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    profileUrl?: pulumi.Input<string>;
+    profileUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) redirect URL for social idp
      *
@@ -1291,7 +1291,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    redirectUrl?: pulumi.Input<string>;
+    redirectUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Social IDP Refresh token URL
      *
@@ -1307,7 +1307,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    refreshTokenUrl?: pulumi.Input<string>;
+    refreshTokenUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether registration is enabled
      *
@@ -1321,7 +1321,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: boolean
      * * uniqueness: none
      */
-    registrationEnabled?: pulumi.Input<boolean>;
+    registrationEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Relay Param variable for Social IDP
      *
@@ -1337,11 +1337,11 @@ export interface DomainsSocialIdentityProviderState {
      * * type: complex
      * * uniqueness: none
      */
-    relayIdpParamMappings?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSocialIdentityProviderRelayIdpParamMapping>[]>;
+    relayIdpParamMappings?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSocialIdentityProviderRelayIdpParamMapping>[] | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -1355,7 +1355,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    schemas?: pulumi.Input<pulumi.Input<string>[]>;
+    schemas?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Scope to request
      *
@@ -1369,7 +1369,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    scopes?: pulumi.Input<pulumi.Input<string>[]>;
+    scopes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Service Provider Name
      *
@@ -1383,7 +1383,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    serviceProviderName?: pulumi.Input<string>;
+    serviceProviderName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether show on login
      *
@@ -1397,7 +1397,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: boolean
      * * uniqueness: none
      */
-    showOnLogin?: pulumi.Input<boolean>;
+    showOnLogin?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether Social JIT Provisioning is enabled
      *
@@ -1413,7 +1413,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: boolean
      * * uniqueness: none
      */
-    socialJitProvisioningEnabled?: pulumi.Input<boolean>;
+    socialJitProvisioningEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Status
      *
@@ -1429,7 +1429,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: string
      * * uniqueness: none
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -1443,7 +1443,7 @@ export interface DomainsSocialIdentityProviderState {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSocialIdentityProviderTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSocialIdentityProviderTag>[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -1461,7 +1461,7 @@ export interface DomainsSocialIdentityProviderState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    tenancyOcid?: pulumi.Input<string>;
+    tenancyOcid?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -1481,7 +1481,7 @@ export interface DomainsSocialIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    accessTokenUrl?: pulumi.Input<string>;
+    accessTokenUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether account linking is enabled
      *
@@ -1509,7 +1509,7 @@ export interface DomainsSocialIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    adminScopes?: pulumi.Input<pulumi.Input<string>[]>;
+    adminScopes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Apple Developer ID
      *
@@ -1525,7 +1525,7 @@ export interface DomainsSocialIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    appleDevId?: pulumi.Input<string>;
+    appleDevId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Apple Private Key ID
      *
@@ -1541,11 +1541,11 @@ export interface DomainsSocialIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    appleKeyId?: pulumi.Input<string>;
+    appleKeyId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Social IDP Authorization URL
      *
@@ -1559,7 +1559,7 @@ export interface DomainsSocialIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    authzUrl?: pulumi.Input<string>;
+    authzUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
      *
@@ -1575,7 +1575,7 @@ export interface DomainsSocialIdentityProviderArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    autoRedirectEnabled?: pulumi.Input<boolean>;
+    autoRedirectEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether the client credential is contained in payload
      *
@@ -1591,7 +1591,7 @@ export interface DomainsSocialIdentityProviderArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    clientCredentialInPayload?: pulumi.Input<boolean>;
+    clientCredentialInPayload?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Social IDP allowed clock skew time
      *
@@ -1604,7 +1604,7 @@ export interface DomainsSocialIdentityProviderArgs {
      * * type: integer
      * * uniqueness: none
      */
-    clockSkewInSeconds?: pulumi.Input<number>;
+    clockSkewInSeconds?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Social IDP Client Application Client ID
      *
@@ -1647,7 +1647,7 @@ export interface DomainsSocialIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Discovery URL
      *
@@ -1663,7 +1663,7 @@ export interface DomainsSocialIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    discoveryUrl?: pulumi.Input<string>;
+    discoveryUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether the IDP is enabled or not
      *
@@ -1693,7 +1693,7 @@ export interface DomainsSocialIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    iconUrl?: pulumi.Input<string>;
+    iconUrl?: pulumi.Input<string | undefined>;
     /**
      * Id attribute used for account linking
      *
@@ -1707,7 +1707,7 @@ export interface DomainsSocialIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    idAttribute?: pulumi.Input<string>;
+    idAttribute?: pulumi.Input<string | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -1727,7 +1727,7 @@ export interface DomainsSocialIdentityProviderArgs {
      * * type: complex
      * * uniqueness: none
      */
-    jitProvAssignedGroups?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSocialIdentityProviderJitProvAssignedGroup>[]>;
+    jitProvAssignedGroups?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSocialIdentityProviderJitProvAssignedGroup>[] | undefined>;
     /**
      * (Updatable) Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
      *
@@ -1743,7 +1743,7 @@ export interface DomainsSocialIdentityProviderArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    jitProvGroupStaticListEnabled?: pulumi.Input<boolean>;
+    jitProvGroupStaticListEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Social provider name
      *
@@ -1757,7 +1757,7 @@ export interface DomainsSocialIdentityProviderArgs {
      * * type: string
      * * uniqueness: global
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -1771,7 +1771,7 @@ export interface DomainsSocialIdentityProviderArgs {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Social IDP User profile URL
      *
@@ -1785,7 +1785,7 @@ export interface DomainsSocialIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    profileUrl?: pulumi.Input<string>;
+    profileUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) redirect URL for social idp
      *
@@ -1799,7 +1799,7 @@ export interface DomainsSocialIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    redirectUrl?: pulumi.Input<string>;
+    redirectUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Social IDP Refresh token URL
      *
@@ -1815,7 +1815,7 @@ export interface DomainsSocialIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    refreshTokenUrl?: pulumi.Input<string>;
+    refreshTokenUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether registration is enabled
      *
@@ -1845,11 +1845,11 @@ export interface DomainsSocialIdentityProviderArgs {
      * * type: complex
      * * uniqueness: none
      */
-    relayIdpParamMappings?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSocialIdentityProviderRelayIdpParamMapping>[]>;
+    relayIdpParamMappings?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSocialIdentityProviderRelayIdpParamMapping>[] | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -1877,7 +1877,7 @@ export interface DomainsSocialIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    scopes?: pulumi.Input<pulumi.Input<string>[]>;
+    scopes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Service Provider Name
      *
@@ -1921,7 +1921,7 @@ export interface DomainsSocialIdentityProviderArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    socialJitProvisioningEnabled?: pulumi.Input<boolean>;
+    socialJitProvisioningEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Status
      *
@@ -1937,7 +1937,7 @@ export interface DomainsSocialIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -1951,5 +1951,5 @@ export interface DomainsSocialIdentityProviderArgs {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSocialIdentityProviderTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSocialIdentityProviderTag>[] | undefined>;
 }

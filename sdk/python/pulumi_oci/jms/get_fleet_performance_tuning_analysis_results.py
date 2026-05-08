@@ -170,7 +170,7 @@ def get_fleet_performance_tuning_analysis_results(application_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_performance_tuning_analysis_results = oci.Jms.get_fleet_performance_tuning_analysis_results(fleet_id=test_fleet["id"],
+    test_fleet_performance_tuning_analysis_results = oci.jms.get_fleet_performance_tuning_analysis_results(fleet_id=test_fleet["id"],
         application_id=fleet_performance_tuning_analysis_result_application_id,
         application_name=fleet_performance_tuning_analysis_result_application_name,
         host_name=fleet_performance_tuning_analysis_result_host_name,
@@ -211,14 +211,14 @@ def get_fleet_performance_tuning_analysis_results(application_id: Optional[_buil
         performance_tuning_analysis_result_collections=pulumi.get(__ret__, 'performance_tuning_analysis_result_collections'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-def get_fleet_performance_tuning_analysis_results_output(application_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                         application_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetPerformanceTuningAnalysisResultsFilterArgs', 'GetFleetPerformanceTuningAnalysisResultsFilterArgsDict']]]]] = None,
-                                                         fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                         host_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                         managed_instance_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                         time_end: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                         time_start: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_fleet_performance_tuning_analysis_results_output(application_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                         application_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetPerformanceTuningAnalysisResultsFilterArgs', 'GetFleetPerformanceTuningAnalysisResultsFilterArgsDict']]]]] = None,
+                                                         fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                         host_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                         managed_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                         time_end: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                         time_start: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetPerformanceTuningAnalysisResultsResult]:
     """
     This data source provides the list of Fleet Performance Tuning Analysis Results in Oracle Cloud Infrastructure Jms service.
@@ -231,7 +231,7 @@ def get_fleet_performance_tuning_analysis_results_output(application_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_performance_tuning_analysis_results = oci.Jms.get_fleet_performance_tuning_analysis_results(fleet_id=test_fleet["id"],
+    test_fleet_performance_tuning_analysis_results = oci.jms.get_fleet_performance_tuning_analysis_results(fleet_id=test_fleet["id"],
         application_id=fleet_performance_tuning_analysis_result_application_id,
         application_name=fleet_performance_tuning_analysis_result_application_name,
         host_name=fleet_performance_tuning_analysis_result_host_name,

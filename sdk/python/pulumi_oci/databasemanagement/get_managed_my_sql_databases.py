@@ -108,7 +108,7 @@ def get_managed_my_sql_databases(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_databases = oci.DatabaseManagement.get_managed_my_sql_databases(compartment_id=compartment_id,
+    test_managed_my_sql_databases = oci.databasemanagement.get_managed_my_sql_databases(compartment_id=compartment_id,
         filter_by_my_sql_database_type_param=managed_my_sql_database_filter_by_my_sql_database_type_param)
     ```
 
@@ -129,9 +129,9 @@ def get_managed_my_sql_databases(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         managed_my_sql_database_collections=pulumi.get(__ret__, 'managed_my_sql_database_collections'))
-def get_managed_my_sql_databases_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                        filter_by_my_sql_database_type_param: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedMySqlDatabasesFilterArgs', 'GetManagedMySqlDatabasesFilterArgsDict']]]]] = None,
+def get_managed_my_sql_databases_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                        filter_by_my_sql_database_type_param: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedMySqlDatabasesFilterArgs', 'GetManagedMySqlDatabasesFilterArgsDict']]]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedMySqlDatabasesResult]:
     """
     This data source provides the list of Managed My Sql Databases in Oracle Cloud Infrastructure Database Management service.
@@ -144,7 +144,7 @@ def get_managed_my_sql_databases_output(compartment_id: Optional[pulumi.Input[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_databases = oci.DatabaseManagement.get_managed_my_sql_databases(compartment_id=compartment_id,
+    test_managed_my_sql_databases = oci.databasemanagement.get_managed_my_sql_databases(compartment_id=compartment_id,
         filter_by_my_sql_database_type_param=managed_my_sql_database_filter_by_my_sql_database_type_param)
     ```
 

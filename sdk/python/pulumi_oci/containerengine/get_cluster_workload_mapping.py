@@ -168,7 +168,7 @@ def get_cluster_workload_mapping(cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_workload_mapping = oci.ContainerEngine.get_cluster_workload_mapping(cluster_id=test_cluster["id"],
+    test_cluster_workload_mapping = oci.containerengine.get_cluster_workload_mapping(cluster_id=test_cluster["id"],
         workload_mapping_id=test_workload_mapping["id"])
     ```
 
@@ -193,8 +193,8 @@ def get_cluster_workload_mapping(cluster_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         workload_mapping_id=pulumi.get(__ret__, 'workload_mapping_id'))
-def get_cluster_workload_mapping_output(cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                        workload_mapping_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cluster_workload_mapping_output(cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                        workload_mapping_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterWorkloadMappingResult]:
     """
     This data source provides details about a specific Cluster Workload Mapping resource in Oracle Cloud Infrastructure Container Engine service.
@@ -207,7 +207,7 @@ def get_cluster_workload_mapping_output(cluster_id: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_workload_mapping = oci.ContainerEngine.get_cluster_workload_mapping(cluster_id=test_cluster["id"],
+    test_cluster_workload_mapping = oci.containerengine.get_cluster_workload_mapping(cluster_id=test_cluster["id"],
         workload_mapping_id=test_workload_mapping["id"])
     ```
 

@@ -187,13 +187,13 @@ def get_mysql_db_systems(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_db_systems = oci.Mysql.get_mysql_db_systems(compartment_id=compartment_id,
+    test_mysql_db_systems = oci.mysql.get_mysql_db_systems(compartment_id=compartment_id,
         configuration_id=mysql_configuration_id,
         database_managements=mysql_db_system_database_management,
         db_system_id=test_db_system["id"],
         display_name=mysql_db_system_display_name,
-        is_heat_wave_cluster_attached=mysql_db_system_is_heat_wave_cluster_attached,
-        is_up_to_date=mysql_db_system_is_up_to_date,
+        is_heat_wave_cluster_attached=mysql_db_system_is_heat_wave_cluster_attached == "true",
+        is_up_to_date=mysql_db_system_is_up_to_date == "true",
         state=mysql_db_system_state)
     ```
 
@@ -232,15 +232,15 @@ def get_mysql_db_systems(compartment_id: Optional[_builtins.str] = None,
         is_heat_wave_cluster_attached=pulumi.get(__ret__, 'is_heat_wave_cluster_attached'),
         is_up_to_date=pulumi.get(__ret__, 'is_up_to_date'),
         state=pulumi.get(__ret__, 'state'))
-def get_mysql_db_systems_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                configuration_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                database_managements: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                db_system_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMysqlDbSystemsFilterArgs', 'GetMysqlDbSystemsFilterArgsDict']]]]] = None,
-                                is_heat_wave_cluster_attached: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                is_up_to_date: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_mysql_db_systems_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                configuration_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                database_managements: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                db_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMysqlDbSystemsFilterArgs', 'GetMysqlDbSystemsFilterArgsDict']]]]] = None,
+                                is_heat_wave_cluster_attached: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                is_up_to_date: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMysqlDbSystemsResult]:
     """
     This data source provides the list of Mysql Db Systems in Oracle Cloud Infrastructure MySQL Database service.
@@ -254,13 +254,13 @@ def get_mysql_db_systems_output(compartment_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_db_systems = oci.Mysql.get_mysql_db_systems(compartment_id=compartment_id,
+    test_mysql_db_systems = oci.mysql.get_mysql_db_systems(compartment_id=compartment_id,
         configuration_id=mysql_configuration_id,
         database_managements=mysql_db_system_database_management,
         db_system_id=test_db_system["id"],
         display_name=mysql_db_system_display_name,
-        is_heat_wave_cluster_attached=mysql_db_system_is_heat_wave_cluster_attached,
-        is_up_to_date=mysql_db_system_is_up_to_date,
+        is_heat_wave_cluster_attached=mysql_db_system_is_heat_wave_cluster_attached == "true",
+        is_up_to_date=mysql_db_system_is_up_to_date == "true",
         state=mysql_db_system_state)
     ```
 

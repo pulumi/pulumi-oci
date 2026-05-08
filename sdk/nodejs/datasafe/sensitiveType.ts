@@ -230,55 +230,55 @@ export interface SensitiveTypeState {
     /**
      * (Updatable) A regular expression to be used by data discovery for matching column comments.
      */
-    commentPattern?: pulumi.Input<string>;
+    commentPattern?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment where the sensitive type should be created.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A regular expression to be used by data discovery for matching column data values.
      */
-    dataPattern?: pulumi.Input<string>;
+    dataPattern?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
      */
-    defaultMaskingFormatId?: pulumi.Input<string>;
+    defaultMaskingFormatId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the sensitive type.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the sensitive type. The name does not have to be unique, and it's changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
      */
-    entityType?: pulumi.Input<string>;
+    entityType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
      */
-    isCommon?: pulumi.Input<boolean>;
+    isCommon?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A regular expression to be used by data discovery for matching column names.
      */
-    namePattern?: pulumi.Input<string>;
+    namePattern?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the parent sensitive category.
      */
-    parentCategoryId?: pulumi.Input<string>;
+    parentCategoryId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
      */
-    searchType?: pulumi.Input<string>;
+    searchType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The short name of the sensitive type.
      *
@@ -286,27 +286,27 @@ export interface SensitiveTypeState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    shortName?: pulumi.Input<string>;
+    shortName?: pulumi.Input<string | undefined>;
     /**
      * Specifies whether the sensitive type is user-defined or predefined.
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
     /**
      * The current state of the sensitive type.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -316,7 +316,7 @@ export interface SensitiveTypeArgs {
     /**
      * (Updatable) A regular expression to be used by data discovery for matching column comments.
      */
-    commentPattern?: pulumi.Input<string>;
+    commentPattern?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment where the sensitive type should be created.
      */
@@ -324,23 +324,23 @@ export interface SensitiveTypeArgs {
     /**
      * (Updatable) A regular expression to be used by data discovery for matching column data values.
      */
-    dataPattern?: pulumi.Input<string>;
+    dataPattern?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
      */
-    defaultMaskingFormatId?: pulumi.Input<string>;
+    defaultMaskingFormatId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the sensitive type.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the sensitive type. The name does not have to be unique, and it's changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
      */
@@ -348,19 +348,19 @@ export interface SensitiveTypeArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A regular expression to be used by data discovery for matching column names.
      */
-    namePattern?: pulumi.Input<string>;
+    namePattern?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the parent sensitive category.
      */
-    parentCategoryId?: pulumi.Input<string>;
+    parentCategoryId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
      */
-    searchType?: pulumi.Input<string>;
+    searchType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The short name of the sensitive type.
      *
@@ -368,5 +368,5 @@ export interface SensitiveTypeArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    shortName?: pulumi.Input<string>;
+    shortName?: pulumi.Input<string | undefined>;
 }

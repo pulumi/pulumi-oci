@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSnapshot = oci.FileStorage.getSnapshot({
+ * const testSnapshot = oci.filestorage.getSnapshot({
  *     snapshotId: testSnapshotOciFileStorageSnapshot.id,
  * });
  * ```
@@ -132,7 +132,7 @@ export interface GetSnapshotResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSnapshot = oci.FileStorage.getSnapshot({
+ * const testSnapshot = oci.filestorage.getSnapshot({
  *     snapshotId: testSnapshotOciFileStorageSnapshot.id,
  * });
  * ```

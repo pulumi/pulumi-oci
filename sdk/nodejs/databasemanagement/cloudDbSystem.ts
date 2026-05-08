@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     dbSystemDiscoveryId: testDbSystemDiscovery.id,
  *     databaseManagementConfig: {
- *         isEnabled: cloudDbSystemDatabaseManagementConfigIsEnabled,
+ *         isEnabled: cloudDbSystemDatabaseManagementConfigIsEnabled === "true",
  *         metadata: cloudDbSystemDatabaseManagementConfigMetadata,
  *     },
  *     definedTags: {
@@ -35,7 +35,7 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     stackMonitoringConfig: {
- *         isEnabled: cloudDbSystemStackMonitoringConfigIsEnabled,
+ *         isEnabled: cloudDbSystemStackMonitoringConfigIsEnabled === "true",
  *         metadata: cloudDbSystemStackMonitoringConfigMetadata,
  *     },
  * });
@@ -214,71 +214,71 @@ export interface CloudDbSystemState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The configuration details of Database Management for a cloud DB system.
      */
-    databaseManagementConfig?: pulumi.Input<inputs.DatabaseManagement.CloudDbSystemDatabaseManagementConfig>;
+    databaseManagementConfig?: pulumi.Input<inputs.DatabaseManagement.CloudDbSystemDatabaseManagementConfig | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
      */
-    dbSystemDiscoveryId?: pulumi.Input<string>;
+    dbSystemDiscoveryId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
      */
-    dbaasParentInfrastructureId?: pulumi.Input<string>;
+    dbaasParentInfrastructureId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The deployment type of cloud dbsystem.
      */
-    deploymentType?: pulumi.Input<string>;
+    deploymentType?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
      */
-    discoveryAgentId?: pulumi.Input<string>;
+    discoveryAgentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
      */
-    homeDirectory?: pulumi.Input<string>;
+    homeDirectory?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether the DB system is a cluster DB system or not.
      */
-    isCluster?: pulumi.Input<boolean>;
+    isCluster?: pulumi.Input<boolean | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The configuration details of Stack Monitoring for a cloud DB system.
      */
-    stackMonitoringConfig?: pulumi.Input<inputs.DatabaseManagement.CloudDbSystemStackMonitoringConfig>;
+    stackMonitoringConfig?: pulumi.Input<inputs.DatabaseManagement.CloudDbSystemStackMonitoringConfig | undefined>;
     /**
      * The current lifecycle state of the cloud DB system resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the cloud DB system was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the cloud DB system was last updated.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -292,7 +292,7 @@ export interface CloudDbSystemArgs {
     /**
      * The configuration details of Database Management for a cloud DB system.
      */
-    databaseManagementConfig?: pulumi.Input<inputs.DatabaseManagement.CloudDbSystemDatabaseManagementConfig>;
+    databaseManagementConfig?: pulumi.Input<inputs.DatabaseManagement.CloudDbSystemDatabaseManagementConfig | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
      */
@@ -300,17 +300,17 @@ export interface CloudDbSystemArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The configuration details of Stack Monitoring for a cloud DB system.
      */
-    stackMonitoringConfig?: pulumi.Input<inputs.DatabaseManagement.CloudDbSystemStackMonitoringConfig>;
+    stackMonitoringConfig?: pulumi.Input<inputs.DatabaseManagement.CloudDbSystemStackMonitoringConfig | undefined>;
 }

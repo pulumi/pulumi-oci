@@ -52,7 +52,7 @@ export function getSupportedCloudRegionsOutput(args?: GetSupportedCloudRegionsOu
  * A collection of arguments for invoking getSupportedCloudRegions.
  */
 export interface GetSupportedCloudRegionsOutputArgs {
-    assetSourceType?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CloudBridge.GetSupportedCloudRegionsFilterArgs>[]>;
-    nameContains?: pulumi.Input<string>;
+    assetSourceType?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CloudBridge.GetSupportedCloudRegionsFilterArgs>[] | undefined>;
+    nameContains?: pulumi.Input<string | undefined>;
 }

@@ -172,7 +172,7 @@ def get_fleets(application_type: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleets = oci.FleetAppsManagement.get_fleets(application_type=fleet_application_type,
+    test_fleets = oci.fleetappsmanagement.get_fleets(application_type=fleet_application_type,
         compartment_id=compartment_id,
         display_name=fleet_display_name,
         environment_type=fleet_environment_type,
@@ -216,15 +216,15 @@ def get_fleets(application_type: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         product=pulumi.get(__ret__, 'product'),
         state=pulumi.get(__ret__, 'state'))
-def get_fleets_output(application_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      environment_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetsFilterArgs', 'GetFleetsFilterArgsDict']]]]] = None,
-                      fleet_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      product: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_fleets_output(application_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      environment_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetsFilterArgs', 'GetFleetsFilterArgsDict']]]]] = None,
+                      fleet_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      product: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetsResult]:
     """
     This data source provides the list of Fleets in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -238,7 +238,7 @@ def get_fleets_output(application_type: Optional[pulumi.Input[Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_fleets = oci.FleetAppsManagement.get_fleets(application_type=fleet_application_type,
+    test_fleets = oci.fleetappsmanagement.get_fleets(application_type=fleet_application_type,
         compartment_id=compartment_id,
         display_name=fleet_display_name,
         environment_type=fleet_environment_type,

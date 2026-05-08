@@ -254,7 +254,7 @@ def get_mysql_configuration(configuration_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_configuration = oci.Mysql.get_mysql_configuration(configuration_id=mysql_configuration_id)
+    test_mysql_configuration = oci.mysql.get_mysql_configuration(configuration_id=mysql_configuration_id)
     ```
 
 
@@ -283,7 +283,7 @@ def get_mysql_configuration(configuration_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'),
         variables=pulumi.get(__ret__, 'variables'))
-def get_mysql_configuration_output(configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_mysql_configuration_output(configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMysqlConfigurationResult]:
     """
     This data source provides details about a specific Mysql Configuration resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -296,7 +296,7 @@ def get_mysql_configuration_output(configuration_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_configuration = oci.Mysql.get_mysql_configuration(configuration_id=mysql_configuration_id)
+    test_mysql_configuration = oci.mysql.get_mysql_configuration(configuration_id=mysql_configuration_id)
     ```
 
 

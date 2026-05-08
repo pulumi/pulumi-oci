@@ -105,8 +105,8 @@ def get_fleet_error_analytics(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_error_analytics = oci.Jms.get_fleet_error_analytics(compartment_id=compartment_id,
-        compartment_id_in_subtree=fleet_error_analytic_compartment_id_in_subtree)
+    test_fleet_error_analytics = oci.jms.get_fleet_error_analytics(compartment_id=compartment_id,
+        compartment_id_in_subtree=fleet_error_analytic_compartment_id_in_subtree == "true")
     ```
 
 
@@ -126,9 +126,9 @@ def get_fleet_error_analytics(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         fleet_error_aggregation_collections=pulumi.get(__ret__, 'fleet_error_aggregation_collections'),
         id=pulumi.get(__ret__, 'id'))
-def get_fleet_error_analytics_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetErrorAnalyticsFilterArgs', 'GetFleetErrorAnalyticsFilterArgsDict']]]]] = None,
+def get_fleet_error_analytics_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetErrorAnalyticsFilterArgs', 'GetFleetErrorAnalyticsFilterArgsDict']]]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetErrorAnalyticsResult]:
     """
     This data source provides the list of Fleet Error Analytics in Oracle Cloud Infrastructure Jms service.
@@ -141,8 +141,8 @@ def get_fleet_error_analytics_output(compartment_id: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_error_analytics = oci.Jms.get_fleet_error_analytics(compartment_id=compartment_id,
-        compartment_id_in_subtree=fleet_error_analytic_compartment_id_in_subtree)
+    test_fleet_error_analytics = oci.jms.get_fleet_error_analytics(compartment_id=compartment_id,
+        compartment_id_in_subtree=fleet_error_analytic_compartment_id_in_subtree == "true")
     ```
 
 

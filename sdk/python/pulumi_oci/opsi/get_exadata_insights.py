@@ -162,8 +162,8 @@ def get_exadata_insights(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_exadata_insights = oci.Opsi.get_exadata_insights(compartment_id=compartment_id,
-        compartment_id_in_subtree=exadata_insight_compartment_id_in_subtree,
+    test_exadata_insights = oci.opsi.get_exadata_insights(compartment_id=compartment_id,
+        compartment_id_in_subtree=exadata_insight_compartment_id_in_subtree == "true",
         enterprise_manager_bridge_id=test_enterprise_manager_bridge["id"],
         exadata_types=exadata_insight_exadata_type,
         id=exadata_insight_id,
@@ -202,14 +202,14 @@ def get_exadata_insights(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         states=pulumi.get(__ret__, 'states'),
         statuses=pulumi.get(__ret__, 'statuses'))
-def get_exadata_insights_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                enterprise_manager_bridge_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                exadata_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExadataInsightsFilterArgs', 'GetExadataInsightsFilterArgsDict']]]]] = None,
-                                id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                states: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                statuses: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_exadata_insights_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                enterprise_manager_bridge_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                exadata_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExadataInsightsFilterArgs', 'GetExadataInsightsFilterArgsDict']]]]] = None,
+                                id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                statuses: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExadataInsightsResult]:
     """
     This data source provides the list of Exadata Insights in Oracle Cloud Infrastructure Opsi service.
@@ -223,8 +223,8 @@ def get_exadata_insights_output(compartment_id: Optional[pulumi.Input[Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_exadata_insights = oci.Opsi.get_exadata_insights(compartment_id=compartment_id,
-        compartment_id_in_subtree=exadata_insight_compartment_id_in_subtree,
+    test_exadata_insights = oci.opsi.get_exadata_insights(compartment_id=compartment_id,
+        compartment_id_in_subtree=exadata_insight_compartment_id_in_subtree == "true",
         enterprise_manager_bridge_id=test_enterprise_manager_bridge["id"],
         exadata_types=exadata_insight_exadata_type,
         id=exadata_insight_id,

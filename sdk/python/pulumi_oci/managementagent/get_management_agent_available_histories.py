@@ -118,7 +118,7 @@ def get_management_agent_available_histories(filters: Optional[Sequence[Union['G
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_available_histories = oci.ManagementAgent.get_management_agent_available_histories(management_agent_id=test_management_agent["id"],
+    test_management_agent_available_histories = oci.managementagent.get_management_agent_available_histories(management_agent_id=test_management_agent["id"],
         time_availability_status_ended_greater_than=management_agent_available_history_time_availability_status_ended_greater_than,
         time_availability_status_started_less_than=management_agent_available_history_time_availability_status_started_less_than)
     ```
@@ -143,10 +143,10 @@ def get_management_agent_available_histories(filters: Optional[Sequence[Union['G
         management_agent_id=pulumi.get(__ret__, 'management_agent_id'),
         time_availability_status_ended_greater_than=pulumi.get(__ret__, 'time_availability_status_ended_greater_than'),
         time_availability_status_started_less_than=pulumi.get(__ret__, 'time_availability_status_started_less_than'))
-def get_management_agent_available_histories_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagementAgentAvailableHistoriesFilterArgs', 'GetManagementAgentAvailableHistoriesFilterArgsDict']]]]] = None,
-                                                    management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                    time_availability_status_ended_greater_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    time_availability_status_started_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_management_agent_available_histories_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagementAgentAvailableHistoriesFilterArgs', 'GetManagementAgentAvailableHistoriesFilterArgsDict']]]]] = None,
+                                                    management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                    time_availability_status_ended_greater_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    time_availability_status_started_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementAgentAvailableHistoriesResult]:
     """
     This data source provides the list of Management Agent Available Histories in Oracle Cloud Infrastructure Management Agent service.
@@ -159,7 +159,7 @@ def get_management_agent_available_histories_output(filters: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_available_histories = oci.ManagementAgent.get_management_agent_available_histories(management_agent_id=test_management_agent["id"],
+    test_management_agent_available_histories = oci.managementagent.get_management_agent_available_histories(management_agent_id=test_management_agent["id"],
         time_availability_status_ended_greater_than=management_agent_available_history_time_availability_status_ended_greater_than,
         time_availability_status_started_less_than=management_agent_available_history_time_availability_status_started_less_than)
     ```

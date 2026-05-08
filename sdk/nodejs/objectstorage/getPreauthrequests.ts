@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPreauthenticatedRequests = oci.ObjectStorage.getPreauthrequests({
+ * const testPreauthenticatedRequests = oci.objectstorage.getPreauthrequests({
  *     bucket: preauthenticatedRequestBucket,
  *     namespace: preauthenticatedRequestNamespace,
  *     objectNamePrefix: preauthenticatedRequestObjectNamePrefix,
@@ -87,7 +87,7 @@ export interface GetPreauthrequestsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPreauthenticatedRequests = oci.ObjectStorage.getPreauthrequests({
+ * const testPreauthenticatedRequests = oci.objectstorage.getPreauthrequests({
  *     bucket: preauthenticatedRequestBucket,
  *     namespace: preauthenticatedRequestNamespace,
  *     objectNamePrefix: preauthenticatedRequestObjectNamePrefix,
@@ -112,7 +112,7 @@ export interface GetPreauthrequestsOutputArgs {
      * The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
      */
     bucket: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.GetPreauthrequestsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.GetPreauthrequestsFilterArgs>[] | undefined>;
     /**
      * The Object Storage namespace used for the request.
      */
@@ -120,5 +120,5 @@ export interface GetPreauthrequestsOutputArgs {
     /**
      * User-specified object name prefixes can be used to query and return a list of pre-authenticated requests.
      */
-    objectNamePrefix?: pulumi.Input<string>;
+    objectNamePrefix?: pulumi.Input<string | undefined>;
 }

@@ -408,7 +408,7 @@ def get_cloud_listener(cloud_listener_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_listener = oci.DatabaseManagement.get_cloud_listener(cloud_listener_id=test_cloud_listener_oci_database_management_cloud_listener["id"])
+    test_cloud_listener = oci.databasemanagement.get_cloud_listener(cloud_listener_id=test_cloud_listener_oci_database_management_cloud_listener["id"])
     ```
 
 
@@ -450,7 +450,7 @@ def get_cloud_listener(cloud_listener_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         trace_directory=pulumi.get(__ret__, 'trace_directory'),
         version=pulumi.get(__ret__, 'version'))
-def get_cloud_listener_output(cloud_listener_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cloud_listener_output(cloud_listener_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudListenerResult]:
     """
     This data source provides details about a specific Cloud Listener resource in Oracle Cloud Infrastructure Database Management service.
@@ -463,7 +463,7 @@ def get_cloud_listener_output(cloud_listener_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_listener = oci.DatabaseManagement.get_cloud_listener(cloud_listener_id=test_cloud_listener_oci_database_management_cloud_listener["id"])
+    test_cloud_listener = oci.databasemanagement.get_cloud_listener(cloud_listener_id=test_cloud_listener_oci_database_management_cloud_listener["id"])
     ```
 
 

@@ -38,7 +38,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     opcDryRun: clusterPlacementGroupOpcDryRun,
+ *     opcDryRun: clusterPlacementGroupOpcDryRun === "true",
  *     placementInstruction: {
  *         type: clusterPlacementGroupPlacementInstructionType,
  *         value: clusterPlacementGroupPlacementInstructionValue,
@@ -217,47 +217,47 @@ export interface ClusterPlacementGroupState {
     /**
      * The availability domain where you want to create the cluster placement group.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * A list of resources that you can create in a cluster placement group.
      */
-    capabilities?: pulumi.Input<inputs.ClusterPlacementGroups.ClusterPlacementGroupCapabilities>;
+    capabilities?: pulumi.Input<inputs.ClusterPlacementGroups.ClusterPlacementGroupCapabilities | undefined>;
     /**
      * ClusterPlacementGroup Identifier.
      */
-    clusterPlacementGroupType?: pulumi.Input<string>;
+    clusterPlacementGroupType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the cluster placement group.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A description of the cluster placement group.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A message describing the current state in more detail. For example, lifecycle details for a resource in a Failed state might include information to act on.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The friendly name of the cluster placement group.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * When set to `true`, the request performs validation on the submitted data without modifying configuration item details.
      */
-    opcDryRun?: pulumi.Input<boolean>;
+    opcDryRun?: pulumi.Input<boolean | undefined>;
     /**
      * Details that inform cluster placement group provisioning.
      */
-    placementInstruction?: pulumi.Input<inputs.ClusterPlacementGroups.ClusterPlacementGroupPlacementInstruction>;
+    placementInstruction?: pulumi.Input<inputs.ClusterPlacementGroups.ClusterPlacementGroupPlacementInstruction | undefined>;
     /**
      * (Updatable) The target state for the Cluster Placement Group. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -265,19 +265,19 @@ export interface ClusterPlacementGroupState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the cluster placement group was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the cluster placement group was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -291,7 +291,7 @@ export interface ClusterPlacementGroupArgs {
     /**
      * A list of resources that you can create in a cluster placement group.
      */
-    capabilities?: pulumi.Input<inputs.ClusterPlacementGroups.ClusterPlacementGroupCapabilities>;
+    capabilities?: pulumi.Input<inputs.ClusterPlacementGroups.ClusterPlacementGroupCapabilities | undefined>;
     /**
      * ClusterPlacementGroup Identifier.
      */
@@ -303,7 +303,7 @@ export interface ClusterPlacementGroupArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A description of the cluster placement group.
      */
@@ -311,19 +311,19 @@ export interface ClusterPlacementGroupArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The friendly name of the cluster placement group.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * When set to `true`, the request performs validation on the submitted data without modifying configuration item details.
      */
-    opcDryRun?: pulumi.Input<boolean>;
+    opcDryRun?: pulumi.Input<boolean | undefined>;
     /**
      * Details that inform cluster placement group provisioning.
      */
-    placementInstruction?: pulumi.Input<inputs.ClusterPlacementGroups.ClusterPlacementGroupPlacementInstruction>;
+    placementInstruction?: pulumi.Input<inputs.ClusterPlacementGroups.ClusterPlacementGroupPlacementInstruction | undefined>;
     /**
      * (Updatable) The target state for the Cluster Placement Group. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -331,5 +331,5 @@ export interface ClusterPlacementGroupArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

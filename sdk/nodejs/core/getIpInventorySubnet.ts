@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpInventorySubnet = oci.Core.getIpInventorySubnet({
+ * const testIpInventorySubnet = oci.core.getIpInventorySubnet({
  *     subnetId: testSubnet.id,
  * });
  * ```
@@ -80,7 +80,7 @@ export interface GetIpInventorySubnetResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpInventorySubnet = oci.Core.getIpInventorySubnet({
+ * const testIpInventorySubnet = oci.core.getIpInventorySubnet({
  *     subnetId: testSubnet.id,
  * });
  * ```

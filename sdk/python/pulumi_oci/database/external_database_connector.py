@@ -26,9 +26,9 @@ class ExternalDatabaseConnectorArgs:
                  connector_agent_id: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
                  external_database_id: pulumi.Input[_builtins.str],
-                 connector_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ExternalDatabaseConnector resource.
 
@@ -119,31 +119,31 @@ class ExternalDatabaseConnectorArgs:
 
     @_builtins.property
     @pulumi.getter(name="connectorType")
-    def connector_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connector_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of connector used by the external database resource.
         """
         return pulumi.get(self, "connector_type")
 
     @connector_type.setter
-    def connector_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connector_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connector_type", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
 
@@ -154,28 +154,28 @@ class ExternalDatabaseConnectorArgs:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
 
 @pulumi.input_type
 class _ExternalDatabaseConnectorState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_credentials: Optional[pulumi.Input['ExternalDatabaseConnectorConnectionCredentialsArgs']] = None,
-                 connection_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_string: Optional[pulumi.Input['ExternalDatabaseConnectorConnectionStringArgs']] = None,
-                 connector_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connector_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_connection_status_last_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_credentials: pulumi.Input[Optional['ExternalDatabaseConnectorConnectionCredentialsArgs']] = None,
+                 connection_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_string: pulumi.Input[Optional['ExternalDatabaseConnectorConnectionStringArgs']] = None,
+                 connector_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_connection_status_last_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalDatabaseConnector resources.
 
@@ -232,115 +232,115 @@ class _ExternalDatabaseConnectorState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionCredentials")
-    def connection_credentials(self) -> Optional[pulumi.Input['ExternalDatabaseConnectorConnectionCredentialsArgs']]:
+    def connection_credentials(self) -> pulumi.Input[Optional['ExternalDatabaseConnectorConnectionCredentialsArgs']]:
         """
         (Updatable) Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
         """
         return pulumi.get(self, "connection_credentials")
 
     @connection_credentials.setter
-    def connection_credentials(self, value: Optional[pulumi.Input['ExternalDatabaseConnectorConnectionCredentialsArgs']]):
+    def connection_credentials(self, value: pulumi.Input[Optional['ExternalDatabaseConnectorConnectionCredentialsArgs']]):
         pulumi.set(self, "connection_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionStatus")
-    def connection_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of connectivity to the external database.
         """
         return pulumi.get(self, "connection_status")
 
     @connection_status.setter
-    def connection_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_status", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionString")
-    def connection_string(self) -> Optional[pulumi.Input['ExternalDatabaseConnectorConnectionStringArgs']]:
+    def connection_string(self) -> pulumi.Input[Optional['ExternalDatabaseConnectorConnectionStringArgs']]:
         """
         (Updatable) The Oracle AI Database connection string.
         """
         return pulumi.get(self, "connection_string")
 
     @connection_string.setter
-    def connection_string(self, value: Optional[pulumi.Input['ExternalDatabaseConnectorConnectionStringArgs']]):
+    def connection_string(self, value: pulumi.Input[Optional['ExternalDatabaseConnectorConnectionStringArgs']]):
         pulumi.set(self, "connection_string", value)
 
     @_builtins.property
     @pulumi.getter(name="connectorAgentId")
-    def connector_agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connector_agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         """
         return pulumi.get(self, "connector_agent_id")
 
     @connector_agent_id.setter
-    def connector_agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connector_agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connector_agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectorType")
-    def connector_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connector_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of connector used by the external database resource.
         """
         return pulumi.get(self, "connector_type")
 
     @connector_type.setter
-    def connector_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connector_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connector_type", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-friendly name for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails). The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="externalDatabaseId")
-    def external_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database resource.
         """
         return pulumi.get(self, "external_database_id")
 
     @external_database_id.setter
-    def external_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
 
@@ -351,67 +351,67 @@ class _ExternalDatabaseConnectorState:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the external database connector resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeConnectionStatusLastUpdated")
-    def time_connection_status_last_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_connection_status_last_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the `connectionStatus` of this external connector was last updated.
         """
         return pulumi.get(self, "time_connection_status_last_updated")
 
     @time_connection_status_last_updated.setter
-    def time_connection_status_last_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_connection_status_last_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_connection_status_last_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the external connector was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -421,14 +421,14 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 connection_credentials: Optional[pulumi.Input[Union['ExternalDatabaseConnectorConnectionCredentialsArgs', 'ExternalDatabaseConnectorConnectionCredentialsArgsDict']]] = None,
-                 connection_string: Optional[pulumi.Input[Union['ExternalDatabaseConnectorConnectionStringArgs', 'ExternalDatabaseConnectorConnectionStringArgsDict']]] = None,
-                 connector_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connector_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 connection_credentials: pulumi.Input[Optional[Union['ExternalDatabaseConnectorConnectionCredentialsArgs', 'ExternalDatabaseConnectorConnectionCredentialsArgsDict']]] = None,
+                 connection_string: pulumi.Input[Optional[Union['ExternalDatabaseConnectorConnectionStringArgs', 'ExternalDatabaseConnectorConnectionStringArgsDict']]] = None,
+                 connector_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         This resource provides the External Database Connector resource in Oracle Cloud Infrastructure Database service.
@@ -455,7 +455,7 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
             },
             connection_string={
                 "hostname": external_database_connector_connection_string_hostname,
-                "port": external_database_connector_connection_string_port,
+                "port": int(external_database_connector_connection_string_port),
                 "protocol": external_database_connector_connection_string_protocol,
                 "service": external_database_connector_connection_string_service,
             },
@@ -524,7 +524,7 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
             },
             connection_string={
                 "hostname": external_database_connector_connection_string_hostname,
-                "port": external_database_connector_connection_string_port,
+                "port": int(external_database_connector_connection_string_port),
                 "protocol": external_database_connector_connection_string_protocol,
                 "service": external_database_connector_connection_string_service,
             },
@@ -562,14 +562,14 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 connection_credentials: Optional[pulumi.Input[Union['ExternalDatabaseConnectorConnectionCredentialsArgs', 'ExternalDatabaseConnectorConnectionCredentialsArgsDict']]] = None,
-                 connection_string: Optional[pulumi.Input[Union['ExternalDatabaseConnectorConnectionStringArgs', 'ExternalDatabaseConnectorConnectionStringArgsDict']]] = None,
-                 connector_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connector_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 connection_credentials: pulumi.Input[Optional[Union['ExternalDatabaseConnectorConnectionCredentialsArgs', 'ExternalDatabaseConnectorConnectionCredentialsArgsDict']]] = None,
+                 connection_string: pulumi.Input[Optional[Union['ExternalDatabaseConnectorConnectionStringArgs', 'ExternalDatabaseConnectorConnectionStringArgsDict']]] = None,
+                 connector_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -614,21 +614,21 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            connection_credentials: Optional[pulumi.Input[Union['ExternalDatabaseConnectorConnectionCredentialsArgs', 'ExternalDatabaseConnectorConnectionCredentialsArgsDict']]] = None,
-            connection_status: Optional[pulumi.Input[_builtins.str]] = None,
-            connection_string: Optional[pulumi.Input[Union['ExternalDatabaseConnectorConnectionStringArgs', 'ExternalDatabaseConnectorConnectionStringArgsDict']]] = None,
-            connector_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-            connector_type: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            external_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_connection_status_last_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'ExternalDatabaseConnector':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_credentials: pulumi.Input[Optional[Union['ExternalDatabaseConnectorConnectionCredentialsArgs', 'ExternalDatabaseConnectorConnectionCredentialsArgsDict']]] = None,
+            connection_status: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_string: pulumi.Input[Optional[Union['ExternalDatabaseConnectorConnectionStringArgs', 'ExternalDatabaseConnectorConnectionStringArgsDict']]] = None,
+            connector_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            external_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_connection_status_last_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'ExternalDatabaseConnector':
         """
         Get an existing ExternalDatabaseConnector resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

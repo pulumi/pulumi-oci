@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbHome = oci.Database.getDbHome({
+ * const testDbHome = oci.database.getDbHome({
  *     dbHomeId: dbHomeId,
  * });
  * ```
@@ -129,7 +129,7 @@ export interface GetDbHomeResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbHome = oci.Database.getDbHome({
+ * const testDbHome = oci.database.getDbHome({
  *     dbHomeId: dbHomeId,
  * });
  * ```

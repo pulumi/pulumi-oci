@@ -52,8 +52,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -95,8 +95,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -138,8 +138,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -181,8 +181,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -224,8 +224,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -267,8 +267,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -309,8 +309,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -351,8 +351,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -393,8 +393,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -435,8 +435,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -477,8 +477,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -521,8 +521,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -565,8 +565,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -609,8 +609,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -653,8 +653,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -697,8 +697,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogSavedSearchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -739,8 +739,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogSavedSearchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -781,8 +781,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogSavedSearchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -823,8 +823,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogSavedSearchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -865,8 +865,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogSavedSearchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -907,8 +907,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogSavedSearchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -951,8 +951,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogSavedSearchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -995,8 +995,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogSavedSearchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1039,8 +1039,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogSavedSearchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1083,8 +1083,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogSavedSearchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1127,8 +1127,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1174,8 +1174,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1221,8 +1221,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1268,8 +1268,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1315,8 +1315,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1362,8 +1362,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetUnifiedAgentConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1404,8 +1404,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetUnifiedAgentConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1446,8 +1446,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetUnifiedAgentConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1488,8 +1488,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetUnifiedAgentConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1530,8 +1530,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetUnifiedAgentConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1572,8 +1572,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetUnifiedAgentConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1619,8 +1619,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetUnifiedAgentConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1666,8 +1666,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetUnifiedAgentConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1713,8 +1713,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetUnifiedAgentConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1760,8 +1760,8 @@ public final class LoggingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Logging.LoggingFunctions;
      * import com.pulumi.oci.Logging.inputs.GetUnifiedAgentConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

@@ -431,7 +431,7 @@ def get_db_node(db_node_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node = oci.Database.get_db_node(db_node_id=db_node_id)
+    test_db_node = oci.database.get_db_node(db_node_id=db_node_id)
     ```
 
 
@@ -475,7 +475,7 @@ def get_db_node(db_node_id: Optional[_builtins.str] = None,
         total_cpu_core_count=pulumi.get(__ret__, 'total_cpu_core_count'),
         vnic2id=pulumi.get(__ret__, 'vnic2id'),
         vnic_id=pulumi.get(__ret__, 'vnic_id'))
-def get_db_node_output(db_node_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_db_node_output(db_node_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbNodeResult]:
     """
     This data source provides details about a specific Db Node resource in Oracle Cloud Infrastructure Database service.
@@ -488,7 +488,7 @@ def get_db_node_output(db_node_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node = oci.Database.get_db_node(db_node_id=db_node_id)
+    test_db_node = oci.database.get_db_node(db_node_id=db_node_id)
     ```
 
 

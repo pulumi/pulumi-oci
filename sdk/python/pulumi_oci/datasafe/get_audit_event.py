@@ -129,9 +129,9 @@ def get_audit_event(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_event = oci.DataSafe.get_audit_event(compartment_id=compartment_id,
+    test_audit_event = oci.datasafe.get_audit_event(compartment_id=compartment_id,
         access_level=audit_event_access_level,
-        compartment_id_in_subtree=audit_event_compartment_id_in_subtree,
+        compartment_id_in_subtree=audit_event_compartment_id_in_subtree == "true",
         scim_query=audit_event_scim_query)
     ```
 
@@ -158,10 +158,10 @@ def get_audit_event(access_level: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'),
         scim_query=pulumi.get(__ret__, 'scim_query'))
-def get_audit_event_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                           compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                           scim_query: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_audit_event_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                           compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                           scim_query: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuditEventResult]:
     """
     This data source provides details about a specific Audit Event resource in Oracle Cloud Infrastructure Data Safe service.
@@ -186,9 +186,9 @@ def get_audit_event_output(access_level: Optional[pulumi.Input[Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_event = oci.DataSafe.get_audit_event(compartment_id=compartment_id,
+    test_audit_event = oci.datasafe.get_audit_event(compartment_id=compartment_id,
         access_level=audit_event_access_level,
-        compartment_id_in_subtree=audit_event_compartment_id_in_subtree,
+        compartment_id_in_subtree=audit_event_compartment_id_in_subtree == "true",
         scim_query=audit_event_scim_query)
     ```
 

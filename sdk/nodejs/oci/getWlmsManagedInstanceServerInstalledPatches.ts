@@ -95,7 +95,7 @@ export function getWlmsManagedInstanceServerInstalledPatchesOutput(args: GetWlms
  * A collection of arguments for invoking getWlmsManagedInstanceServerInstalledPatches.
  */
 export interface GetWlmsManagedInstanceServerInstalledPatchesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetWlmsManagedInstanceServerInstalledPatchesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetWlmsManagedInstanceServerInstalledPatchesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      */

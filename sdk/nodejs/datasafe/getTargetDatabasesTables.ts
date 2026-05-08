@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabasesTables = oci.DataSafe.getTargetDatabasesTables({
+ * const testTargetDatabasesTables = oci.datasafe.getTargetDatabasesTables({
  *     targetDatabaseId: testTargetDatabase.id,
  *     schemaNames: targetDatabasesTableSchemaName,
  *     schemaNameContains: targetDatabasesTableSchemaNameContains,
@@ -101,7 +101,7 @@ export interface GetTargetDatabasesTablesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetDatabasesTables = oci.DataSafe.getTargetDatabasesTables({
+ * const testTargetDatabasesTables = oci.datasafe.getTargetDatabasesTables({
  *     targetDatabaseId: testTargetDatabase.id,
  *     schemaNames: targetDatabasesTableSchemaName,
  *     schemaNameContains: targetDatabasesTableSchemaNameContains,
@@ -126,23 +126,23 @@ export function getTargetDatabasesTablesOutput(args: GetTargetDatabasesTablesOut
  * A collection of arguments for invoking getTargetDatabasesTables.
  */
 export interface GetTargetDatabasesTablesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetTargetDatabasesTablesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetTargetDatabasesTablesFilterArgs>[] | undefined>;
     /**
      * A filter to return only items if schema name contains a specific string.
      */
-    schemaNameContains?: pulumi.Input<string>;
+    schemaNameContains?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items related to specific schema name.
      */
-    schemaNames?: pulumi.Input<pulumi.Input<string>[]>;
+    schemaNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only items if table name contains a specific string.
      */
-    tableNameContains?: pulumi.Input<string>;
+    tableNameContains?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items related to specific table name.
      */
-    tableNames?: pulumi.Input<pulumi.Input<string>[]>;
+    tableNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the Data Safe target database.
      */

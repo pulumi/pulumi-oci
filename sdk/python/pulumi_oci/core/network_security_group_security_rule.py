@@ -24,15 +24,15 @@ class NetworkSecurityGroupSecurityRuleArgs:
                  direction: pulumi.Input[_builtins.str],
                  network_security_group_id: pulumi.Input[_builtins.str],
                  protocol: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 icmp_options: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs']] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 stateless: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tcp_options: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleTcpOptionsArgs']] = None,
-                 udp_options: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleUdpOptionsArgs']] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 icmp_options: pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs']] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 stateless: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tcp_options: pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleTcpOptionsArgs']] = None,
+                 udp_options: pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleUdpOptionsArgs']] = None):
         """
         The set of arguments for constructing a NetworkSecurityGroupSecurityRule resource.
 
@@ -114,43 +114,43 @@ class NetworkSecurityGroupSecurityRuleArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An optional description of your choice for the rule.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def destination(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def destination(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
         """
         return pulumi.get(self, "destination")
 
     @destination.setter
-    def destination(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def destination(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "destination", value)
 
     @_builtins.property
     @pulumi.getter(name="destinationType")
-    def destination_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def destination_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of destination for the rule. Required if `direction` = `EGRESS`.
         """
         return pulumi.get(self, "destination_type")
 
     @destination_type.setter
-    def destination_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def destination_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "destination_type", value)
 
     @_builtins.property
     @pulumi.getter(name="icmpOptions")
-    def icmp_options(self) -> Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs']]:
+    def icmp_options(self) -> pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs']]:
         """
         Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
         * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
@@ -159,24 +159,24 @@ class NetworkSecurityGroupSecurityRuleArgs:
         return pulumi.get(self, "icmp_options")
 
     @icmp_options.setter
-    def icmp_options(self, value: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs']]):
+    def icmp_options(self, value: pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs']]):
         pulumi.set(self, "icmp_options", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
         """
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceType")
-    def source_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of source for the rule. Required if `direction` = `INGRESS`.
         * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
@@ -186,63 +186,63 @@ class NetworkSecurityGroupSecurityRuleArgs:
         return pulumi.get(self, "source_type")
 
     @source_type.setter
-    def source_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def stateless(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def stateless(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
         """
         return pulumi.get(self, "stateless")
 
     @stateless.setter
-    def stateless(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def stateless(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "stateless", value)
 
     @_builtins.property
     @pulumi.getter(name="tcpOptions")
-    def tcp_options(self) -> Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleTcpOptionsArgs']]:
+    def tcp_options(self) -> pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleTcpOptionsArgs']]:
         """
         Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
         """
         return pulumi.get(self, "tcp_options")
 
     @tcp_options.setter
-    def tcp_options(self, value: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleTcpOptionsArgs']]):
+    def tcp_options(self, value: pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleTcpOptionsArgs']]):
         pulumi.set(self, "tcp_options", value)
 
     @_builtins.property
     @pulumi.getter(name="udpOptions")
-    def udp_options(self) -> Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleUdpOptionsArgs']]:
+    def udp_options(self) -> pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleUdpOptionsArgs']]:
         """
         Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
         """
         return pulumi.get(self, "udp_options")
 
     @udp_options.setter
-    def udp_options(self, value: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleUdpOptionsArgs']]):
+    def udp_options(self, value: pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleUdpOptionsArgs']]):
         pulumi.set(self, "udp_options", value)
 
 
 @pulumi.input_type
 class _NetworkSecurityGroupSecurityRuleState:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 direction: Optional[pulumi.Input[_builtins.str]] = None,
-                 icmp_options: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs']] = None,
-                 is_valid: Optional[pulumi.Input[_builtins.bool]] = None,
-                 network_security_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 stateless: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tcp_options: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleTcpOptionsArgs']] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 udp_options: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleUdpOptionsArgs']] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 direction: pulumi.Input[Optional[_builtins.str]] = None,
+                 icmp_options: pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs']] = None,
+                 is_valid: pulumi.Input[Optional[_builtins.bool]] = None,
+                 network_security_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 stateless: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tcp_options: pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleTcpOptionsArgs']] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 udp_options: pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleUdpOptionsArgs']] = None):
         """
         Input properties used for looking up and filtering NetworkSecurityGroupSecurityRule resources.
 
@@ -297,55 +297,55 @@ class _NetworkSecurityGroupSecurityRuleState:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An optional description of your choice for the rule.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def destination(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def destination(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Conceptually, this is the range of IP addresses that a packet originating from the instance can go to.
         """
         return pulumi.get(self, "destination")
 
     @destination.setter
-    def destination(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def destination(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "destination", value)
 
     @_builtins.property
     @pulumi.getter(name="destinationType")
-    def destination_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def destination_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of destination for the rule. Required if `direction` = `EGRESS`.
         """
         return pulumi.get(self, "destination_type")
 
     @destination_type.setter
-    def destination_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def destination_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "destination_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def direction(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def direction(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.
         """
         return pulumi.get(self, "direction")
 
     @direction.setter
-    def direction(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def direction(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "direction", value)
 
     @_builtins.property
     @pulumi.getter(name="icmpOptions")
-    def icmp_options(self) -> Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs']]:
+    def icmp_options(self) -> pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs']]:
         """
         Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:
         * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
@@ -354,60 +354,60 @@ class _NetworkSecurityGroupSecurityRuleState:
         return pulumi.get(self, "icmp_options")
 
     @icmp_options.setter
-    def icmp_options(self, value: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs']]):
+    def icmp_options(self, value: pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs']]):
         pulumi.set(self, "icmp_options", value)
 
     @_builtins.property
     @pulumi.getter(name="isValid")
-    def is_valid(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_valid(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the rule is valid. The value is `True` when the rule is first created. If the rule's `source` or `destination` is a network security group, the value changes to `False` if that network security group is deleted.
         """
         return pulumi.get(self, "is_valid")
 
     @is_valid.setter
-    def is_valid(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_valid(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_valid", value)
 
     @_builtins.property
     @pulumi.getter(name="networkSecurityGroupId")
-    def network_security_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_security_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
         """
         return pulumi.get(self, "network_security_group_id")
 
     @network_security_group_id.setter
-    def network_security_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_security_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_security_group_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
         """
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceType")
-    def source_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of source for the rule. Required if `direction` = `INGRESS`.
         * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
@@ -417,55 +417,55 @@ class _NetworkSecurityGroupSecurityRuleState:
         return pulumi.get(self, "source_type")
 
     @source_type.setter
-    def source_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def stateless(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def stateless(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
         """
         return pulumi.get(self, "stateless")
 
     @stateless.setter
-    def stateless(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def stateless(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "stateless", value)
 
     @_builtins.property
     @pulumi.getter(name="tcpOptions")
-    def tcp_options(self) -> Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleTcpOptionsArgs']]:
+    def tcp_options(self) -> pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleTcpOptionsArgs']]:
         """
         Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
         """
         return pulumi.get(self, "tcp_options")
 
     @tcp_options.setter
-    def tcp_options(self, value: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleTcpOptionsArgs']]):
+    def tcp_options(self, value: pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleTcpOptionsArgs']]):
         pulumi.set(self, "tcp_options", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the security rule was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="udpOptions")
-    def udp_options(self) -> Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleUdpOptionsArgs']]:
+    def udp_options(self) -> pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleUdpOptionsArgs']]:
         """
         Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
         """
         return pulumi.get(self, "udp_options")
 
     @udp_options.setter
-    def udp_options(self, value: Optional[pulumi.Input['NetworkSecurityGroupSecurityRuleUdpOptionsArgs']]):
+    def udp_options(self, value: pulumi.Input[Optional['NetworkSecurityGroupSecurityRuleUdpOptionsArgs']]):
         pulumi.set(self, "udp_options", value)
 
 
@@ -475,18 +475,18 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 direction: Optional[pulumi.Input[_builtins.str]] = None,
-                 icmp_options: Optional[pulumi.Input[Union['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs', 'NetworkSecurityGroupSecurityRuleIcmpOptionsArgsDict']]] = None,
-                 network_security_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 stateless: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tcp_options: Optional[pulumi.Input[Union['NetworkSecurityGroupSecurityRuleTcpOptionsArgs', 'NetworkSecurityGroupSecurityRuleTcpOptionsArgsDict']]] = None,
-                 udp_options: Optional[pulumi.Input[Union['NetworkSecurityGroupSecurityRuleUdpOptionsArgs', 'NetworkSecurityGroupSecurityRuleUdpOptionsArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 direction: pulumi.Input[Optional[_builtins.str]] = None,
+                 icmp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs', 'NetworkSecurityGroupSecurityRuleIcmpOptionsArgsDict']]] = None,
+                 network_security_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 stateless: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tcp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleTcpOptionsArgs', 'NetworkSecurityGroupSecurityRuleTcpOptionsArgsDict']]] = None,
+                 udp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleUdpOptionsArgs', 'NetworkSecurityGroupSecurityRuleUdpOptionsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Network Security Group Security Rule resource in Oracle Cloud Infrastructure Core service.
@@ -510,30 +510,30 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
             destination=network_security_group_security_rule_destination,
             destination_type=network_security_group_security_rule_destination_type,
             icmp_options={
-                "type": network_security_group_security_rule_icmp_options_type,
-                "code": network_security_group_security_rule_icmp_options_code,
+                "type": int(network_security_group_security_rule_icmp_options_type),
+                "code": int(network_security_group_security_rule_icmp_options_code),
             },
             source=network_security_group_security_rule_source,
             source_type=network_security_group_security_rule_source_type,
-            stateless=network_security_group_security_rule_stateless,
+            stateless=network_security_group_security_rule_stateless == "true",
             tcp_options={
                 "destination_port_range": {
-                    "max": network_security_group_security_rule_tcp_options_destination_port_range_max,
-                    "min": network_security_group_security_rule_tcp_options_destination_port_range_min,
+                    "max": int(network_security_group_security_rule_tcp_options_destination_port_range_max),
+                    "min": int(network_security_group_security_rule_tcp_options_destination_port_range_min),
                 },
                 "source_port_range": {
-                    "max": network_security_group_security_rule_tcp_options_source_port_range_max,
-                    "min": network_security_group_security_rule_tcp_options_source_port_range_min,
+                    "max": int(network_security_group_security_rule_tcp_options_source_port_range_max),
+                    "min": int(network_security_group_security_rule_tcp_options_source_port_range_min),
                 },
             },
             udp_options={
                 "destination_port_range": {
-                    "max": network_security_group_security_rule_udp_options_destination_port_range_max,
-                    "min": network_security_group_security_rule_udp_options_destination_port_range_min,
+                    "max": int(network_security_group_security_rule_udp_options_destination_port_range_max),
+                    "min": int(network_security_group_security_rule_udp_options_destination_port_range_min),
                 },
                 "source_port_range": {
-                    "max": network_security_group_security_rule_udp_options_source_port_range_max,
-                    "min": network_security_group_security_rule_udp_options_source_port_range_min,
+                    "max": int(network_security_group_security_rule_udp_options_source_port_range_max),
+                    "min": int(network_security_group_security_rule_udp_options_source_port_range_min),
                 },
             })
         ```
@@ -595,30 +595,30 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
             destination=network_security_group_security_rule_destination,
             destination_type=network_security_group_security_rule_destination_type,
             icmp_options={
-                "type": network_security_group_security_rule_icmp_options_type,
-                "code": network_security_group_security_rule_icmp_options_code,
+                "type": int(network_security_group_security_rule_icmp_options_type),
+                "code": int(network_security_group_security_rule_icmp_options_code),
             },
             source=network_security_group_security_rule_source,
             source_type=network_security_group_security_rule_source_type,
-            stateless=network_security_group_security_rule_stateless,
+            stateless=network_security_group_security_rule_stateless == "true",
             tcp_options={
                 "destination_port_range": {
-                    "max": network_security_group_security_rule_tcp_options_destination_port_range_max,
-                    "min": network_security_group_security_rule_tcp_options_destination_port_range_min,
+                    "max": int(network_security_group_security_rule_tcp_options_destination_port_range_max),
+                    "min": int(network_security_group_security_rule_tcp_options_destination_port_range_min),
                 },
                 "source_port_range": {
-                    "max": network_security_group_security_rule_tcp_options_source_port_range_max,
-                    "min": network_security_group_security_rule_tcp_options_source_port_range_min,
+                    "max": int(network_security_group_security_rule_tcp_options_source_port_range_max),
+                    "min": int(network_security_group_security_rule_tcp_options_source_port_range_min),
                 },
             },
             udp_options={
                 "destination_port_range": {
-                    "max": network_security_group_security_rule_udp_options_destination_port_range_max,
-                    "min": network_security_group_security_rule_udp_options_destination_port_range_min,
+                    "max": int(network_security_group_security_rule_udp_options_destination_port_range_max),
+                    "min": int(network_security_group_security_rule_udp_options_destination_port_range_min),
                 },
                 "source_port_range": {
-                    "max": network_security_group_security_rule_udp_options_source_port_range_max,
-                    "min": network_security_group_security_rule_udp_options_source_port_range_min,
+                    "max": int(network_security_group_security_rule_udp_options_source_port_range_max),
+                    "min": int(network_security_group_security_rule_udp_options_source_port_range_min),
                 },
             })
         ```
@@ -647,18 +647,18 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 direction: Optional[pulumi.Input[_builtins.str]] = None,
-                 icmp_options: Optional[pulumi.Input[Union['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs', 'NetworkSecurityGroupSecurityRuleIcmpOptionsArgsDict']]] = None,
-                 network_security_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 stateless: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tcp_options: Optional[pulumi.Input[Union['NetworkSecurityGroupSecurityRuleTcpOptionsArgs', 'NetworkSecurityGroupSecurityRuleTcpOptionsArgsDict']]] = None,
-                 udp_options: Optional[pulumi.Input[Union['NetworkSecurityGroupSecurityRuleUdpOptionsArgs', 'NetworkSecurityGroupSecurityRuleUdpOptionsArgsDict']]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 direction: pulumi.Input[Optional[_builtins.str]] = None,
+                 icmp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs', 'NetworkSecurityGroupSecurityRuleIcmpOptionsArgsDict']]] = None,
+                 network_security_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 stateless: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tcp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleTcpOptionsArgs', 'NetworkSecurityGroupSecurityRuleTcpOptionsArgsDict']]] = None,
+                 udp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleUdpOptionsArgs', 'NetworkSecurityGroupSecurityRuleUdpOptionsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -698,20 +698,20 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            destination: Optional[pulumi.Input[_builtins.str]] = None,
-            destination_type: Optional[pulumi.Input[_builtins.str]] = None,
-            direction: Optional[pulumi.Input[_builtins.str]] = None,
-            icmp_options: Optional[pulumi.Input[Union['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs', 'NetworkSecurityGroupSecurityRuleIcmpOptionsArgsDict']]] = None,
-            is_valid: Optional[pulumi.Input[_builtins.bool]] = None,
-            network_security_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            protocol: Optional[pulumi.Input[_builtins.str]] = None,
-            source: Optional[pulumi.Input[_builtins.str]] = None,
-            source_type: Optional[pulumi.Input[_builtins.str]] = None,
-            stateless: Optional[pulumi.Input[_builtins.bool]] = None,
-            tcp_options: Optional[pulumi.Input[Union['NetworkSecurityGroupSecurityRuleTcpOptionsArgs', 'NetworkSecurityGroupSecurityRuleTcpOptionsArgsDict']]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            udp_options: Optional[pulumi.Input[Union['NetworkSecurityGroupSecurityRuleUdpOptionsArgs', 'NetworkSecurityGroupSecurityRuleUdpOptionsArgsDict']]] = None) -> 'NetworkSecurityGroupSecurityRule':
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            destination: pulumi.Input[Optional[_builtins.str]] = None,
+            destination_type: pulumi.Input[Optional[_builtins.str]] = None,
+            direction: pulumi.Input[Optional[_builtins.str]] = None,
+            icmp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs', 'NetworkSecurityGroupSecurityRuleIcmpOptionsArgsDict']]] = None,
+            is_valid: pulumi.Input[Optional[_builtins.bool]] = None,
+            network_security_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            source: pulumi.Input[Optional[_builtins.str]] = None,
+            source_type: pulumi.Input[Optional[_builtins.str]] = None,
+            stateless: pulumi.Input[Optional[_builtins.bool]] = None,
+            tcp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleTcpOptionsArgs', 'NetworkSecurityGroupSecurityRuleTcpOptionsArgsDict']]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            udp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleUdpOptionsArgs', 'NetworkSecurityGroupSecurityRuleUdpOptionsArgsDict']]] = None) -> 'NetworkSecurityGroupSecurityRule':
         """
         Get an existing NetworkSecurityGroupSecurityRule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

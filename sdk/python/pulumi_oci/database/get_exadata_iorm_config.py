@@ -125,7 +125,7 @@ def get_exadata_iorm_config(db_system_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_exadata_iorm_config = oci.Database.get_exadata_iorm_config(db_system_id=test_db_system["id"])
+    test_exadata_iorm_config = oci.database.get_exadata_iorm_config(db_system_id=test_db_system["id"])
     ```
 
 
@@ -143,7 +143,7 @@ def get_exadata_iorm_config(db_system_id: Optional[_builtins.str] = None,
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         objective=pulumi.get(__ret__, 'objective'),
         state=pulumi.get(__ret__, 'state'))
-def get_exadata_iorm_config_output(db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_exadata_iorm_config_output(db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExadataIormConfigResult]:
     """
     This data source provides details about a specific Exadata Iorm Config resource in Oracle Cloud Infrastructure Database service.
@@ -164,7 +164,7 @@ def get_exadata_iorm_config_output(db_system_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_exadata_iorm_config = oci.Database.get_exadata_iorm_config(db_system_id=test_db_system["id"])
+    test_exadata_iorm_config = oci.database.get_exadata_iorm_config(db_system_id=test_db_system["id"])
     ```
 
 

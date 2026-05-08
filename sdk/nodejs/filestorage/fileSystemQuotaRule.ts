@@ -21,11 +21,11 @@ import * as utilities from "../utilities";
  *
  * const testFileSystemQuotaRule = new oci.filestorage.FileSystemQuotaRule("test_file_system_quota_rule", {
  *     fileSystemId: testFileSystem.id,
- *     isHardQuota: fileSystemQuotaRuleIsHardQuota,
+ *     isHardQuota: fileSystemQuotaRuleIsHardQuota === "true",
  *     principalType: fileSystemQuotaRulePrincipalType,
- *     quotaLimitInGigabytes: fileSystemQuotaRuleQuotaLimitInGigabytes,
+ *     quotaLimitInGigabytes: Number(fileSystemQuotaRuleQuotaLimitInGigabytes),
  *     displayName: fileSystemQuotaRuleDisplayName,
- *     principalId: testPrincipal.id,
+ *     principalId: Number(testPrincipal.id),
  * });
  * ```
  *
@@ -161,27 +161,27 @@ export class FileSystemQuotaRule extends pulumi.CustomResource {
  * Input properties used for looking up and filtering FileSystemQuotaRule resources.
  */
 export interface FileSystemQuotaRuleState {
-    areViolatorsOnly?: pulumi.Input<boolean>;
+    areViolatorsOnly?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. Example: `UserXYZ's quota`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
      */
-    fileSystemId?: pulumi.Input<string>;
+    fileSystemId?: pulumi.Input<string | undefined>;
     /**
      * The flag is an identifier to tell whether the quota rule will be enforced. If `isHardQuota` is true, the quota rule will be enforced so the write will be blocked if usage exceeds the hard quota limit. If `isHardQuota` is false, usage can exceed the soft quota limit. An alarm or notification will be sent to the customer, if the specific usage exceeds.
      */
-    isHardQuota?: pulumi.Input<boolean>;
+    isHardQuota?: pulumi.Input<boolean | undefined>;
     /**
      * An identifier for the owner of this usage and quota rule. Unix-like operating systems use this integer value to identify a user or group to manage access control.
      */
-    principalId?: pulumi.Input<number>;
+    principalId?: pulumi.Input<number | undefined>;
     /**
      * The type of the owner of this quota rule and usage.
      */
-    principalType?: pulumi.Input<string>;
+    principalType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The value of the quota rule. The unit is Gigabyte. 
      *
@@ -189,27 +189,27 @@ export interface FileSystemQuotaRuleState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    quotaLimitInGigabytes?: pulumi.Input<number>;
-    quotaRuleId?: pulumi.Input<string>;
+    quotaLimitInGigabytes?: pulumi.Input<number | undefined>;
+    quotaRuleId?: pulumi.Input<string | undefined>;
     /**
      * The date and time the quota rule was started, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the quota rule was last updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a FileSystemQuotaRule resource.
  */
 export interface FileSystemQuotaRuleArgs {
-    areViolatorsOnly?: pulumi.Input<boolean>;
+    areViolatorsOnly?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. Example: `UserXYZ's quota`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
      */
@@ -221,7 +221,7 @@ export interface FileSystemQuotaRuleArgs {
     /**
      * An identifier for the owner of this usage and quota rule. Unix-like operating systems use this integer value to identify a user or group to manage access control.
      */
-    principalId?: pulumi.Input<number>;
+    principalId?: pulumi.Input<number | undefined>;
     /**
      * The type of the owner of this quota rule and usage.
      */
@@ -234,5 +234,5 @@ export interface FileSystemQuotaRuleArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     quotaLimitInGigabytes: pulumi.Input<number>;
-    quotaRuleId?: pulumi.Input<string>;
+    quotaRuleId?: pulumi.Input<string | undefined>;
 }

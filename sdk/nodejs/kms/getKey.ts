@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testKey = oci.Kms.getKey({
+ * const testKey = oci.kms.getKey({
  *     keyId: testKeyOciKmsKey.id,
  *     managementEndpoint: keyManagementEndpoint,
  * });
@@ -159,7 +159,7 @@ export interface GetKeyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testKey = oci.Kms.getKey({
+ * const testKey = oci.kms.getKey({
  *     keyId: testKeyOciKmsKey.id,
  *     managementEndpoint: keyManagementEndpoint,
  * });

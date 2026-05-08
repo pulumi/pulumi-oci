@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *         maxPermissibleSeverity: remediationRecipeDetectConfigurationMaxPermissibleSeverity,
  *         upgradePolicy: remediationRecipeDetectConfigurationUpgradePolicy,
  *     },
- *     isRunTriggeredOnKbChange: remediationRecipeIsRunTriggeredOnKbChange,
+ *     isRunTriggeredOnKbChange: remediationRecipeIsRunTriggeredOnKbChange === "true",
  *     knowledgeBaseId: testKnowledgeBase.id,
  *     networkConfiguration: {
  *         subnetId: testSubnet.id,
@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  *     },
  *     scmConfiguration: {
  *         branch: remediationRecipeScmConfigurationBranch,
- *         isAutomergeEnabled: remediationRecipeScmConfigurationIsAutomergeEnabled,
+ *         isAutomergeEnabled: remediationRecipeScmConfigurationIsAutomergeEnabled === "true",
  *         scmType: remediationRecipeScmConfigurationScmType,
  *         buildFileLocation: remediationRecipeScmConfigurationBuildFileLocation,
  *         externalScmType: remediationRecipeScmConfigurationExternalScmType,
@@ -242,39 +242,39 @@ export interface RemediationRecipeState {
     /**
      * (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
      */
-    detectConfiguration?: pulumi.Input<inputs.Adm.RemediationRecipeDetectConfiguration>;
+    detectConfiguration?: pulumi.Input<inputs.Adm.RemediationRecipeDetectConfiguration | undefined>;
     /**
      * (Updatable) The name of the remediation recipe.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
      */
-    isRunTriggeredOnKbChange?: pulumi.Input<boolean>;
+    isRunTriggeredOnKbChange?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
      */
-    knowledgeBaseId?: pulumi.Input<string>;
+    knowledgeBaseId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A network configuration defines the required network characteristics for the remediation run of the recipe to access the source repository and/or verify build services.
      */
-    networkConfiguration?: pulumi.Input<inputs.Adm.RemediationRecipeNetworkConfiguration>;
+    networkConfiguration?: pulumi.Input<inputs.Adm.RemediationRecipeNetworkConfiguration | undefined>;
     /**
      * (Updatable) A configuration for the Source Code Management tool/platform used by a remediation recipe.
      */
-    scmConfiguration?: pulumi.Input<inputs.Adm.RemediationRecipeScmConfiguration>;
+    scmConfiguration?: pulumi.Input<inputs.Adm.RemediationRecipeScmConfiguration | undefined>;
     /**
      * (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
      *
@@ -282,23 +282,23 @@ export interface RemediationRecipeState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
      */
-    verifyConfiguration?: pulumi.Input<inputs.Adm.RemediationRecipeVerifyConfiguration>;
+    verifyConfiguration?: pulumi.Input<inputs.Adm.RemediationRecipeVerifyConfiguration | undefined>;
 }
 
 /**
@@ -312,7 +312,7 @@ export interface RemediationRecipeArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A configuration to define the constraints when detecting vulnerable dependencies and recommending remediations.
      */
@@ -320,11 +320,11 @@ export interface RemediationRecipeArgs {
     /**
      * (Updatable) The name of the remediation recipe.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
      */
@@ -348,7 +348,7 @@ export interface RemediationRecipeArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
      */

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInternalOccmDemandSignalItems = oci.CapacityManagement.getInternalOccmDemandSignalItems({
+ * const testInternalOccmDemandSignalItems = oci.capacitymanagement.getInternalOccmDemandSignalItems({
  *     compartmentId: compartmentId,
  *     occCustomerGroupId: testOccCustomerGroup.id,
  *     demandSignalNamespace: internalOccmDemandSignalItemDemandSignalNamespace,
@@ -107,7 +107,7 @@ export interface GetInternalOccmDemandSignalItemsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInternalOccmDemandSignalItems = oci.CapacityManagement.getInternalOccmDemandSignalItems({
+ * const testInternalOccmDemandSignalItems = oci.capacitymanagement.getInternalOccmDemandSignalItems({
  *     compartmentId: compartmentId,
  *     occCustomerGroupId: testOccCustomerGroup.id,
  *     demandSignalNamespace: internalOccmDemandSignalItemDemandSignalNamespace,
@@ -139,8 +139,8 @@ export interface GetInternalOccmDemandSignalItemsOutputArgs {
     /**
      * A query parameter to filter the list of demand signal details based on the namespace.
      */
-    demandSignalNamespace?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetInternalOccmDemandSignalItemsFilterArgs>[]>;
+    demandSignalNamespace?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetInternalOccmDemandSignalItemsFilterArgs>[] | undefined>;
     /**
      * The customer group ocid by which we would filter the list.
      */
@@ -148,9 +148,9 @@ export interface GetInternalOccmDemandSignalItemsOutputArgs {
     /**
      * A query parameter to filter the list of demand signal items based on a demand signal id.
      */
-    occmDemandSignalId?: pulumi.Input<string>;
+    occmDemandSignalId?: pulumi.Input<string | undefined>;
     /**
      * A query parameter to filter the list of demand signal details based on the resource name.
      */
-    resourceName?: pulumi.Input<string>;
+    resourceName?: pulumi.Input<string | undefined>;
 }

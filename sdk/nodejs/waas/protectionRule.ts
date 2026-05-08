@@ -151,35 +151,35 @@ export interface ProtectionRuleState {
     /**
      * (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * The description of the protection rule.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable)
      */
-    exclusions?: pulumi.Input<pulumi.Input<inputs.Waas.ProtectionRuleExclusion>[]>;
+    exclusions?: pulumi.Input<pulumi.Input<inputs.Waas.ProtectionRuleExclusion>[] | undefined>;
     /**
      * (Updatable) The unique key of the protection rule.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * The list of labels for the protection rule.
      */
-    labels?: pulumi.Input<pulumi.Input<string>[]>;
+    labels?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see [Mod Security's documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
      */
-    modSecurityRuleIds?: pulumi.Input<pulumi.Input<string>[]>;
+    modSecurityRuleIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The name of the protection rule.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
      */
-    waasPolicyId?: pulumi.Input<string>;
+    waasPolicyId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -189,11 +189,11 @@ export interface ProtectionRuleArgs {
     /**
      * (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * (Updatable)
      */
-    exclusions?: pulumi.Input<pulumi.Input<inputs.Waas.ProtectionRuleExclusion>[]>;
+    exclusions?: pulumi.Input<pulumi.Input<inputs.Waas.ProtectionRuleExclusion>[] | undefined>;
     /**
      * (Updatable) The unique key of the protection rule.
      */

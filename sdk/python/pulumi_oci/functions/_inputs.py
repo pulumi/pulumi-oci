@@ -66,7 +66,7 @@ class ApplicationImagePolicyConfigArgsDict(TypedDict):
     """
     (Updatable) Define if image signature verification policy is enabled for the application.
     """
-    key_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ApplicationImagePolicyConfigKeyDetailArgsDict']]]]
+    key_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ApplicationImagePolicyConfigKeyDetailArgs']]]]]
     """
     (Updatable) A list of KMS key details.
     """
@@ -75,7 +75,7 @@ class ApplicationImagePolicyConfigArgsDict(TypedDict):
 class ApplicationImagePolicyConfigArgs:
     def __init__(__self__, *,
                  is_policy_enabled: pulumi.Input[_builtins.bool],
-                 key_details: Optional[pulumi.Input[Sequence[pulumi.Input['ApplicationImagePolicyConfigKeyDetailArgs']]]] = None):
+                 key_details: pulumi.Input[Optional[Sequence[pulumi.Input['ApplicationImagePolicyConfigKeyDetailArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_policy_enabled: (Updatable) Define if image signature verification policy is enabled for the application.
         :param pulumi.Input[Sequence[pulumi.Input['ApplicationImagePolicyConfigKeyDetailArgs']]] key_details: (Updatable) A list of KMS key details.
@@ -98,14 +98,14 @@ class ApplicationImagePolicyConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="keyDetails")
-    def key_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ApplicationImagePolicyConfigKeyDetailArgs']]]]:
+    def key_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ApplicationImagePolicyConfigKeyDetailArgs']]]]:
         """
         (Updatable) A list of KMS key details.
         """
         return pulumi.get(self, "key_details")
 
     @key_details.setter
-    def key_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ApplicationImagePolicyConfigKeyDetailArgs']]]]):
+    def key_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ApplicationImagePolicyConfigKeyDetailArgs']]]]):
         pulumi.set(self, "key_details", value)
 
 
@@ -138,7 +138,7 @@ class ApplicationImagePolicyConfigKeyDetailArgs:
 
 
 class ApplicationLoggingArgsDict(TypedDict):
-    line_format: NotRequired[pulumi.Input[_builtins.str]]
+    line_format: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specify the format of log lines emitted by functions in this application.
     """
@@ -146,7 +146,7 @@ class ApplicationLoggingArgsDict(TypedDict):
 @pulumi.input_type
 class ApplicationLoggingArgs:
     def __init__(__self__, *,
-                 line_format: Optional[pulumi.Input[_builtins.str]] = None):
+                 line_format: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] line_format: (Updatable) Specify the format of log lines emitted by functions in this application.
         """
@@ -155,23 +155,23 @@ class ApplicationLoggingArgs:
 
     @_builtins.property
     @pulumi.getter(name="lineFormat")
-    def line_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def line_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specify the format of log lines emitted by functions in this application.
         """
         return pulumi.get(self, "line_format")
 
     @line_format.setter
-    def line_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def line_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "line_format", value)
 
 
 class ApplicationTraceConfigArgsDict(TypedDict):
-    domain_id: NotRequired[pulumi.Input[_builtins.str]]
+    domain_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
     """
-    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Define if tracing is enabled for the resource. 
 
@@ -183,8 +183,8 @@ class ApplicationTraceConfigArgsDict(TypedDict):
 @pulumi.input_type
 class ApplicationTraceConfigArgs:
     def __init__(__self__, *,
-                 domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
+                 domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] domain_id: (Updatable) The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Define if tracing is enabled for the resource. 
@@ -200,19 +200,19 @@ class ApplicationTraceConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="domainId")
-    def domain_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
         """
         return pulumi.get(self, "domain_id")
 
     @domain_id.setter
-    def domain_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Define if tracing is enabled for the resource. 
 
@@ -223,7 +223,7 @@ class ApplicationTraceConfigArgs:
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
 
@@ -232,19 +232,19 @@ class FunctionFailureDestinationArgsDict(TypedDict):
     """
     (Updatable) The type of destination for the response to a failed detached function invocation.
     """
-    channel_id: NotRequired[pulumi.Input[_builtins.str]]
+    channel_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The ID of the channel in the queue.
     """
-    queue_id: NotRequired[pulumi.Input[_builtins.str]]
+    queue_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
     """
-    stream_id: NotRequired[pulumi.Input[_builtins.str]]
+    stream_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
     """
-    topic_id: NotRequired[pulumi.Input[_builtins.str]]
+    topic_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
     """
@@ -253,10 +253,10 @@ class FunctionFailureDestinationArgsDict(TypedDict):
 class FunctionFailureDestinationArgs:
     def __init__(__self__, *,
                  kind: pulumi.Input[_builtins.str],
-                 channel_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 queue_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 stream_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 topic_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 channel_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 queue_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 stream_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 topic_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] kind: (Updatable) The type of destination for the response to a failed detached function invocation.
         :param pulumi.Input[_builtins.str] channel_id: (Updatable) The ID of the channel in the queue.
@@ -288,50 +288,50 @@ class FunctionFailureDestinationArgs:
 
     @_builtins.property
     @pulumi.getter(name="channelId")
-    def channel_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def channel_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ID of the channel in the queue.
         """
         return pulumi.get(self, "channel_id")
 
     @channel_id.setter
-    def channel_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def channel_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "channel_id", value)
 
     @_builtins.property
     @pulumi.getter(name="queueId")
-    def queue_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def queue_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
         """
         return pulumi.get(self, "queue_id")
 
     @queue_id.setter
-    def queue_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def queue_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "queue_id", value)
 
     @_builtins.property
     @pulumi.getter(name="streamId")
-    def stream_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def stream_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         """
         return pulumi.get(self, "stream_id")
 
     @stream_id.setter
-    def stream_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def stream_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "stream_id", value)
 
     @_builtins.property
     @pulumi.getter(name="topicId")
-    def topic_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def topic_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
         """
         return pulumi.get(self, "topic_id")
 
     @topic_id.setter
-    def topic_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def topic_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "topic_id", value)
 
 
@@ -340,7 +340,7 @@ class FunctionProvisionedConcurrencyConfigArgsDict(TypedDict):
     """
     (Updatable) The strategy for provisioned concurrency to be used.
     """
-    count: NotRequired[pulumi.Input[_builtins.int]]
+    count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Configuration specifying a constant amount of provisioned concurrency.
     """
@@ -349,7 +349,7 @@ class FunctionProvisionedConcurrencyConfigArgsDict(TypedDict):
 class FunctionProvisionedConcurrencyConfigArgs:
     def __init__(__self__, *,
                  strategy: pulumi.Input[_builtins.str],
-                 count: Optional[pulumi.Input[_builtins.int]] = None):
+                 count: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] strategy: (Updatable) The strategy for provisioned concurrency to be used.
         :param pulumi.Input[_builtins.int] count: (Updatable) Configuration specifying a constant amount of provisioned concurrency.
@@ -372,14 +372,14 @@ class FunctionProvisionedConcurrencyConfigArgs:
 
     @_builtins.property
     @pulumi.getter
-    def count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Configuration specifying a constant amount of provisioned concurrency.
         """
         return pulumi.get(self, "count")
 
     @count.setter
-    def count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "count", value)
 
 
@@ -435,19 +435,19 @@ class FunctionSuccessDestinationArgsDict(TypedDict):
     """
     (Updatable) The type of destination for the response to a successful detached function invocation.
     """
-    channel_id: NotRequired[pulumi.Input[_builtins.str]]
+    channel_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The ID of the channel in the queue.
     """
-    queue_id: NotRequired[pulumi.Input[_builtins.str]]
+    queue_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
     """
-    stream_id: NotRequired[pulumi.Input[_builtins.str]]
+    stream_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
     """
-    topic_id: NotRequired[pulumi.Input[_builtins.str]]
+    topic_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
     """
@@ -456,10 +456,10 @@ class FunctionSuccessDestinationArgsDict(TypedDict):
 class FunctionSuccessDestinationArgs:
     def __init__(__self__, *,
                  kind: pulumi.Input[_builtins.str],
-                 channel_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 queue_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 stream_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 topic_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 channel_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 queue_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 stream_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 topic_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] kind: (Updatable) The type of destination for the response to a successful detached function invocation.
         :param pulumi.Input[_builtins.str] channel_id: (Updatable) The ID of the channel in the queue.
@@ -491,55 +491,55 @@ class FunctionSuccessDestinationArgs:
 
     @_builtins.property
     @pulumi.getter(name="channelId")
-    def channel_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def channel_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ID of the channel in the queue.
         """
         return pulumi.get(self, "channel_id")
 
     @channel_id.setter
-    def channel_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def channel_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "channel_id", value)
 
     @_builtins.property
     @pulumi.getter(name="queueId")
-    def queue_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def queue_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the queue.
         """
         return pulumi.get(self, "queue_id")
 
     @queue_id.setter
-    def queue_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def queue_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "queue_id", value)
 
     @_builtins.property
     @pulumi.getter(name="streamId")
-    def stream_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def stream_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream.
         """
         return pulumi.get(self, "stream_id")
 
     @stream_id.setter
-    def stream_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def stream_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "stream_id", value)
 
     @_builtins.property
     @pulumi.getter(name="topicId")
-    def topic_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def topic_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic.
         """
         return pulumi.get(self, "topic_id")
 
     @topic_id.setter
-    def topic_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def topic_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "topic_id", value)
 
 
 class FunctionTraceConfigArgsDict(TypedDict):
-    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Define if tracing is enabled for the resource. 
 
@@ -551,7 +551,7 @@ class FunctionTraceConfigArgsDict(TypedDict):
 @pulumi.input_type
 class FunctionTraceConfigArgs:
     def __init__(__self__, *,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Define if tracing is enabled for the resource. 
                
@@ -564,7 +564,7 @@ class FunctionTraceConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Define if tracing is enabled for the resource. 
 
@@ -575,7 +575,7 @@ class FunctionTraceConfigArgs:
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
 

@@ -132,7 +132,7 @@ def get_fleet_resources(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_resources = oci.FleetAppsManagement.get_fleet_resources(fleet_id=test_fleet["id"],
+    test_fleet_resources = oci.fleetappsmanagement.get_fleet_resources(fleet_id=test_fleet["id"],
         display_name=fleet_resource_display_name,
         fleet_resource_type=fleet_resource_fleet_resource_type,
         id=fleet_resource_id,
@@ -164,12 +164,12 @@ def get_fleet_resources(display_name: Optional[_builtins.str] = None,
         fleet_resource_type=pulumi.get(__ret__, 'fleet_resource_type'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_fleet_resources_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetResourcesFilterArgs', 'GetFleetResourcesFilterArgsDict']]]]] = None,
-                               fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               fleet_resource_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_fleet_resources_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetResourcesFilterArgs', 'GetFleetResourcesFilterArgsDict']]]]] = None,
+                               fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               fleet_resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetResourcesResult]:
     """
     This data source provides the list of Fleet Resources in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -182,7 +182,7 @@ def get_fleet_resources_output(display_name: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_resources = oci.FleetAppsManagement.get_fleet_resources(fleet_id=test_fleet["id"],
+    test_fleet_resources = oci.fleetappsmanagement.get_fleet_resources(fleet_id=test_fleet["id"],
         display_name=fleet_resource_display_name,
         fleet_resource_type=fleet_resource_fleet_resource_type,
         id=fleet_resource_id,

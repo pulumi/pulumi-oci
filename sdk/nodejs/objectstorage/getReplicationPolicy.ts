@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplicationPolicy = oci.ObjectStorage.getReplicationPolicy({
+ * const testReplicationPolicy = oci.objectstorage.getReplicationPolicy({
  *     bucket: replicationPolicyBucket,
  *     namespace: replicationPolicyNamespace,
  *     replicationId: testReplication.id,
@@ -104,7 +104,7 @@ export interface GetReplicationPolicyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplicationPolicy = oci.ObjectStorage.getReplicationPolicy({
+ * const testReplicationPolicy = oci.objectstorage.getReplicationPolicy({
  *     bucket: replicationPolicyBucket,
  *     namespace: replicationPolicyNamespace,
  *     replicationId: testReplication.id,

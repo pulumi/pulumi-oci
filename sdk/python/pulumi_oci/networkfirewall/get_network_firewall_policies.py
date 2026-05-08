@@ -125,7 +125,7 @@ def get_network_firewall_policies(compartment_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policies = oci.NetworkFirewall.get_network_firewall_policies(compartment_id=compartment_id,
+    test_network_firewall_policies = oci.networkfirewall.get_network_firewall_policies(compartment_id=compartment_id,
         display_name=network_firewall_policy_display_name,
         id=network_firewall_policy_id,
         state=network_firewall_policy_state)
@@ -153,11 +153,11 @@ def get_network_firewall_policies(compartment_id: Optional[_builtins.str] = None
         id=pulumi.get(__ret__, 'id'),
         network_firewall_policy_summary_collections=pulumi.get(__ret__, 'network_firewall_policy_summary_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_network_firewall_policies_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkFirewallPoliciesFilterArgs', 'GetNetworkFirewallPoliciesFilterArgsDict']]]]] = None,
-                                         id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_network_firewall_policies_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkFirewallPoliciesFilterArgs', 'GetNetworkFirewallPoliciesFilterArgsDict']]]]] = None,
+                                         id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPoliciesResult]:
     """
     This data source provides the list of Network Firewall Policies in Oracle Cloud Infrastructure Network Firewall service.
@@ -170,7 +170,7 @@ def get_network_firewall_policies_output(compartment_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policies = oci.NetworkFirewall.get_network_firewall_policies(compartment_id=compartment_id,
+    test_network_firewall_policies = oci.networkfirewall.get_network_firewall_policies(compartment_id=compartment_id,
         display_name=network_firewall_policy_display_name,
         id=network_firewall_policy_id,
         state=network_firewall_policy_state)

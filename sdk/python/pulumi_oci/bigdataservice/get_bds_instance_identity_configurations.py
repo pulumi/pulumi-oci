@@ -131,7 +131,7 @@ def get_bds_instance_identity_configurations(bds_instance_id: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_identity_configurations = oci.BigDataService.get_bds_instance_identity_configurations(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_identity_configurations = oci.bigdataservice.get_bds_instance_identity_configurations(bds_instance_id=test_bds_instance["id"],
         compartment_id=compartment_id,
         display_name=bds_instance_identity_configuration_display_name,
         state=bds_instance_identity_configuration_state)
@@ -160,11 +160,11 @@ def get_bds_instance_identity_configurations(bds_instance_id: Optional[_builtins
         id=pulumi.get(__ret__, 'id'),
         identity_configurations=pulumi.get(__ret__, 'identity_configurations'),
         state=pulumi.get(__ret__, 'state'))
-def get_bds_instance_identity_configurations_output(bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                    compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                    display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBdsInstanceIdentityConfigurationsFilterArgs', 'GetBdsInstanceIdentityConfigurationsFilterArgsDict']]]]] = None,
-                                                    state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_bds_instance_identity_configurations_output(bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                    compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstanceIdentityConfigurationsFilterArgs', 'GetBdsInstanceIdentityConfigurationsFilterArgsDict']]]]] = None,
+                                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceIdentityConfigurationsResult]:
     """
     This data source provides the list of Bds Instance Identity Configurations in Oracle Cloud Infrastructure Big Data Service service.
@@ -177,7 +177,7 @@ def get_bds_instance_identity_configurations_output(bds_instance_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_identity_configurations = oci.BigDataService.get_bds_instance_identity_configurations(bds_instance_id=test_bds_instance["id"],
+    test_bds_instance_identity_configurations = oci.bigdataservice.get_bds_instance_identity_configurations(bds_instance_id=test_bds_instance["id"],
         compartment_id=compartment_id,
         display_name=bds_instance_identity_configuration_display_name,
         state=bds_instance_identity_configuration_state)

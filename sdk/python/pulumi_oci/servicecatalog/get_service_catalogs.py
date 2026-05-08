@@ -134,7 +134,7 @@ def get_service_catalogs(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_service_catalogs = oci.ServiceCatalog.get_service_catalogs(compartment_id=compartment_id,
+    test_service_catalogs = oci.servicecatalog.get_service_catalogs(compartment_id=compartment_id,
         display_name=service_catalog_display_name,
         service_catalog_id=test_service_catalog["id"],
         status=service_catalog_status)
@@ -163,11 +163,11 @@ def get_service_catalogs(compartment_id: Optional[_builtins.str] = None,
         service_catalog_collections=pulumi.get(__ret__, 'service_catalog_collections'),
         service_catalog_id=pulumi.get(__ret__, 'service_catalog_id'),
         status=pulumi.get(__ret__, 'status'))
-def get_service_catalogs_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServiceCatalogsFilterArgs', 'GetServiceCatalogsFilterArgsDict']]]]] = None,
-                                service_catalog_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_service_catalogs_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetServiceCatalogsFilterArgs', 'GetServiceCatalogsFilterArgsDict']]]]] = None,
+                                service_catalog_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceCatalogsResult]:
     """
     This data source provides the list of Service Catalogs in Oracle Cloud Infrastructure Service Catalog service.
@@ -180,7 +180,7 @@ def get_service_catalogs_output(compartment_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_service_catalogs = oci.ServiceCatalog.get_service_catalogs(compartment_id=compartment_id,
+    test_service_catalogs = oci.servicecatalog.get_service_catalogs(compartment_id=compartment_id,
         display_name=service_catalog_display_name,
         service_catalog_id=test_service_catalog["id"],
         status=service_catalog_status)

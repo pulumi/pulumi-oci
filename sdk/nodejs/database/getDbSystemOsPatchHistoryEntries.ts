@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystemOsPatchHistoryEntries = oci.Database.getDbSystemOsPatchHistoryEntries({
+ * const testDbSystemOsPatchHistoryEntries = oci.database.getDbSystemOsPatchHistoryEntries({
  *     dbSystemId: testDbSystem.id,
  *     action: dbSystemOsPatchHistoryEntryAction,
  *     state: dbSystemOsPatchHistoryEntryState,
@@ -90,7 +90,7 @@ export interface GetDbSystemOsPatchHistoryEntriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystemOsPatchHistoryEntries = oci.Database.getDbSystemOsPatchHistoryEntries({
+ * const testDbSystemOsPatchHistoryEntries = oci.database.getDbSystemOsPatchHistoryEntries({
  *     dbSystemId: testDbSystem.id,
  *     action: dbSystemOsPatchHistoryEntryAction,
  *     state: dbSystemOsPatchHistoryEntryState,
@@ -114,14 +114,14 @@ export interface GetDbSystemOsPatchHistoryEntriesOutputArgs {
     /**
      * A filter to return only OS patch history entries that match the specified OS patch action.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     dbSystemId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbSystemOsPatchHistoryEntriesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbSystemOsPatchHistoryEntriesFilterArgs>[] | undefined>;
     /**
      * A filter to return only OS patch history entries that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

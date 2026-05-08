@@ -26,12 +26,12 @@ import * as utilities from "../utilities";
  *         networkSourceIds: authenticationPolicyNetworkPolicyNetworkSourceIds,
  *     },
  *     passwordPolicy: {
- *         isLowercaseCharactersRequired: authenticationPolicyPasswordPolicyIsLowercaseCharactersRequired,
- *         isNumericCharactersRequired: authenticationPolicyPasswordPolicyIsNumericCharactersRequired,
- *         isSpecialCharactersRequired: authenticationPolicyPasswordPolicyIsSpecialCharactersRequired,
- *         isUppercaseCharactersRequired: authenticationPolicyPasswordPolicyIsUppercaseCharactersRequired,
- *         isUsernameContainmentAllowed: authenticationPolicyPasswordPolicyIsUsernameContainmentAllowed,
- *         minimumPasswordLength: authenticationPolicyPasswordPolicyMinimumPasswordLength,
+ *         isLowercaseCharactersRequired: authenticationPolicyPasswordPolicyIsLowercaseCharactersRequired === "true",
+ *         isNumericCharactersRequired: authenticationPolicyPasswordPolicyIsNumericCharactersRequired === "true",
+ *         isSpecialCharactersRequired: authenticationPolicyPasswordPolicyIsSpecialCharactersRequired === "true",
+ *         isUppercaseCharactersRequired: authenticationPolicyPasswordPolicyIsUppercaseCharactersRequired === "true",
+ *         isUsernameContainmentAllowed: authenticationPolicyPasswordPolicyIsUsernameContainmentAllowed === "true",
+ *         minimumPasswordLength: Number(authenticationPolicyPasswordPolicyMinimumPasswordLength),
  *     },
  * });
  * ```
@@ -122,15 +122,15 @@ export interface AuthenticationPolicyState {
     /**
      * The OCID of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Network policy, Consists of a list of Network Source ids.
      */
-    networkPolicy?: pulumi.Input<inputs.Identity.AuthenticationPolicyNetworkPolicy>;
+    networkPolicy?: pulumi.Input<inputs.Identity.AuthenticationPolicyNetworkPolicy | undefined>;
     /**
      * (Updatable) Password policy, currently set for the given compartment.
      */
-    passwordPolicy?: pulumi.Input<inputs.Identity.AuthenticationPolicyPasswordPolicy>;
+    passwordPolicy?: pulumi.Input<inputs.Identity.AuthenticationPolicyPasswordPolicy | undefined>;
 }
 
 /**
@@ -144,9 +144,9 @@ export interface AuthenticationPolicyArgs {
     /**
      * (Updatable) Network policy, Consists of a list of Network Source ids.
      */
-    networkPolicy?: pulumi.Input<inputs.Identity.AuthenticationPolicyNetworkPolicy>;
+    networkPolicy?: pulumi.Input<inputs.Identity.AuthenticationPolicyNetworkPolicy | undefined>;
     /**
      * (Updatable) Password policy, currently set for the given compartment.
      */
-    passwordPolicy?: pulumi.Input<inputs.Identity.AuthenticationPolicyPasswordPolicy>;
+    passwordPolicy?: pulumi.Input<inputs.Identity.AuthenticationPolicyPasswordPolicy | undefined>;
 }

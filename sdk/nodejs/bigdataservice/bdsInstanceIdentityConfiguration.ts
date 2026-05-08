@@ -27,7 +27,7 @@ import * as utilities from "../utilities";
  *     displayName: bdsInstanceIdentityConfigurationDisplayName,
  *     identityDomainId: testDomain.id,
  *     iamUserSyncConfigurationDetails: {
- *         isPosixAttributesAdditionRequired: bdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsIsPosixAttributesAdditionRequired,
+ *         isPosixAttributesAdditionRequired: bdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsIsPosixAttributesAdditionRequired === "true",
  *     },
  *     upstConfigurationDetails: {
  *         masterEncryptionKeyId: testKey.id,
@@ -218,43 +218,43 @@ export interface BdsInstanceIdentityConfigurationState {
     /**
      * (Updatable) An optional property when set to "true" triggers Activate Iam User Sync Configuration and when set to "false" triggers Deactivate Iam User Sync Configuration.
      */
-    activateIamUserSyncConfigurationTrigger?: pulumi.Input<string>;
+    activateIamUserSyncConfigurationTrigger?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when set to "true" triggers Activate Upst Configuration and when set to "false" triggers Deactivate Upst Configuration.
      */
-    activateUpstConfigurationTrigger?: pulumi.Input<string>;
+    activateUpstConfigurationTrigger?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the cluster.
      */
-    bdsInstanceId?: pulumi.Input<string>;
+    bdsInstanceId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Base-64 encoded password for the cluster admin user.
      */
-    clusterAdminPassword?: pulumi.Input<string>;
+    clusterAdminPassword?: pulumi.Input<string | undefined>;
     /**
      * Identity domain confidential application ID for the identity config, required for creating identity configuration
      */
-    confidentialApplicationId?: pulumi.Input<string>;
+    confidentialApplicationId?: pulumi.Input<string | undefined>;
     /**
      * Display name of the identity configuration, required for creating identity configuration.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Details for activating/updating an IAM user sync configuration
      */
-    iamUserSyncConfigurationDetails?: pulumi.Input<inputs.BigDataService.BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetails>;
+    iamUserSyncConfigurationDetails?: pulumi.Input<inputs.BigDataService.BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetails | undefined>;
     /**
      * Information about the IAM user sync configuration.
      */
-    iamUserSyncConfigurations?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceIdentityConfigurationIamUserSyncConfiguration>[]>;
+    iamUserSyncConfigurations?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceIdentityConfigurationIamUserSyncConfiguration>[] | undefined>;
     /**
      * Identity domain OCID to use for identity config, required for creating identity configuration
      */
-    identityDomainId?: pulumi.Input<string>;
+    identityDomainId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when set to "true" triggers Refresh Confidential Application.
      */
-    refreshConfidentialApplicationTrigger?: pulumi.Input<string>;
+    refreshConfidentialApplicationTrigger?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when set to "true"  triggers Refresh Upst Token Exchange Keytab.
      *
@@ -262,27 +262,27 @@ export interface BdsInstanceIdentityConfigurationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    refreshUpstTokenExchangeKeytabTrigger?: pulumi.Input<string>;
+    refreshUpstTokenExchangeKeytabTrigger?: pulumi.Input<string | undefined>;
     /**
      * Lifecycle state of the UPST config
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Time when this UPST config was created, shown as an RFC 3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Time when this UPST config was updated, shown as an RFC 3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Details for activating/updating UPST config on the cluster
      */
-    upstConfigurationDetails?: pulumi.Input<inputs.BigDataService.BdsInstanceIdentityConfigurationUpstConfigurationDetails>;
+    upstConfigurationDetails?: pulumi.Input<inputs.BigDataService.BdsInstanceIdentityConfigurationUpstConfigurationDetails | undefined>;
     /**
      * Information about the UPST configuration.
      */
-    upstConfigurations?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceIdentityConfigurationUpstConfiguration>[]>;
+    upstConfigurations?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceIdentityConfigurationUpstConfiguration>[] | undefined>;
 }
 
 /**
@@ -292,11 +292,11 @@ export interface BdsInstanceIdentityConfigurationArgs {
     /**
      * (Updatable) An optional property when set to "true" triggers Activate Iam User Sync Configuration and when set to "false" triggers Deactivate Iam User Sync Configuration.
      */
-    activateIamUserSyncConfigurationTrigger?: pulumi.Input<string>;
+    activateIamUserSyncConfigurationTrigger?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when set to "true" triggers Activate Upst Configuration and when set to "false" triggers Deactivate Upst Configuration.
      */
-    activateUpstConfigurationTrigger?: pulumi.Input<string>;
+    activateUpstConfigurationTrigger?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the cluster.
      */
@@ -316,7 +316,7 @@ export interface BdsInstanceIdentityConfigurationArgs {
     /**
      * (Updatable) Details for activating/updating an IAM user sync configuration
      */
-    iamUserSyncConfigurationDetails?: pulumi.Input<inputs.BigDataService.BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetails>;
+    iamUserSyncConfigurationDetails?: pulumi.Input<inputs.BigDataService.BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetails | undefined>;
     /**
      * Identity domain OCID to use for identity config, required for creating identity configuration
      */
@@ -324,7 +324,7 @@ export interface BdsInstanceIdentityConfigurationArgs {
     /**
      * (Updatable) An optional property when set to "true" triggers Refresh Confidential Application.
      */
-    refreshConfidentialApplicationTrigger?: pulumi.Input<string>;
+    refreshConfidentialApplicationTrigger?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when set to "true"  triggers Refresh Upst Token Exchange Keytab.
      *
@@ -332,9 +332,9 @@ export interface BdsInstanceIdentityConfigurationArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    refreshUpstTokenExchangeKeytabTrigger?: pulumi.Input<string>;
+    refreshUpstTokenExchangeKeytabTrigger?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Details for activating/updating UPST config on the cluster
      */
-    upstConfigurationDetails?: pulumi.Input<inputs.BigDataService.BdsInstanceIdentityConfigurationUpstConfigurationDetails>;
+    upstConfigurationDetails?: pulumi.Input<inputs.BigDataService.BdsInstanceIdentityConfigurationUpstConfigurationDetails | undefined>;
 }

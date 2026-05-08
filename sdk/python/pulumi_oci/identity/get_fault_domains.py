@@ -113,7 +113,7 @@ def get_fault_domains(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fault_domains = oci.Identity.get_fault_domains(availability_domain=fault_domain_availability_domain,
+    test_fault_domains = oci.identity.get_fault_domains(availability_domain=fault_domain_availability_domain,
         compartment_id=compartment_id)
     ```
 
@@ -134,9 +134,9 @@ def get_fault_domains(availability_domain: Optional[_builtins.str] = None,
         fault_domains=pulumi.get(__ret__, 'fault_domains'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_fault_domains_output(availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFaultDomainsFilterArgs', 'GetFaultDomainsFilterArgsDict']]]]] = None,
+def get_fault_domains_output(availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFaultDomainsFilterArgs', 'GetFaultDomainsFilterArgsDict']]]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFaultDomainsResult]:
     """
     This data source provides the list of Fault Domains in Oracle Cloud Infrastructure Identity service.
@@ -151,7 +151,7 @@ def get_fault_domains_output(availability_domain: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_fault_domains = oci.Identity.get_fault_domains(availability_domain=fault_domain_availability_domain,
+    test_fault_domains = oci.identity.get_fault_domains(availability_domain=fault_domain_availability_domain,
         compartment_id=compartment_id)
     ```
 

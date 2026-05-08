@@ -115,8 +115,8 @@ def get_multicloud_om_hub_multi_clouds_metadata(compartment_id: Optional[_builti
         id=pulumi.get(__ret__, 'id'),
         limit=pulumi.get(__ret__, 'limit'),
         multi_cloud_metadata_collections=pulumi.get(__ret__, 'multi_cloud_metadata_collections'))
-def get_multicloud_om_hub_multi_clouds_metadata_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                       limit: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_multicloud_om_hub_multi_clouds_metadata_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                       limit: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMulticloudOmHubMultiCloudsMetadataResult]:
     """
     This data source provides information about the Multicloud base compartment for a given tenancy Id.

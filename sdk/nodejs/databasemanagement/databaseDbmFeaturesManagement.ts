@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  *
  * const testDatabaseDbmFeaturesManagement = new oci.databasemanagement.DatabaseDbmFeaturesManagement("test_database_dbm_features_management", {
  *     databaseId: testDatabase.id,
- *     enableDatabaseDbmFeature: enableDatabaseDbmFeature,
+ *     enableDatabaseDbmFeature: enableDatabaseDbmFeature === "true",
  *     featureDetails: {
  *         feature: databaseDbmFeaturesManagementFeatureDetailsFeature,
  *         enableDatabaseDbmFeature: enableDatabaseDbmFeature,
@@ -43,13 +43,13 @@ import * as utilities from "../utilities";
  *             },
  *             connectionString: {
  *                 connectionType: databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringConnectionType,
- *                 port: databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringPort,
+ *                 port: Number(databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringPort),
  *                 protocol: databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringProtocol,
  *                 service: databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringService,
  *             },
  *         },
- *         canEnableAllCurrentPdbs: databaseDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs,
- *         isAutoEnablePluggableDatabase: databaseDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase,
+ *         canEnableAllCurrentPdbs: databaseDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs === "true",
+ *         isAutoEnablePluggableDatabase: databaseDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase === "true",
  *         managementType: databaseDbmFeaturesManagementFeatureDetailsManagementType,
  *     },
  * });
@@ -146,11 +146,11 @@ export class DatabaseDbmFeaturesManagement extends pulumi.CustomResource {
  * Input properties used for looking up and filtering DatabaseDbmFeaturesManagement resources.
  */
 export interface DatabaseDbmFeaturesManagementState {
-    canDisableAllPdbs?: pulumi.Input<boolean>;
+    canDisableAllPdbs?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
      */
-    databaseId?: pulumi.Input<string>;
+    databaseId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
@@ -158,20 +158,20 @@ export interface DatabaseDbmFeaturesManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    enableDatabaseDbmFeature?: pulumi.Input<boolean>;
-    feature?: pulumi.Input<string>;
+    enableDatabaseDbmFeature?: pulumi.Input<boolean | undefined>;
+    feature?: pulumi.Input<string | undefined>;
     /**
      * The details required to enable the specified Database Management feature.
      */
-    featureDetails?: pulumi.Input<inputs.DatabaseManagement.DatabaseDbmFeaturesManagementFeatureDetails>;
-    modifyDatabaseDbmFeature?: pulumi.Input<boolean>;
+    featureDetails?: pulumi.Input<inputs.DatabaseManagement.DatabaseDbmFeaturesManagementFeatureDetails | undefined>;
+    modifyDatabaseDbmFeature?: pulumi.Input<boolean | undefined>;
 }
 
 /**
  * The set of arguments for constructing a DatabaseDbmFeaturesManagement resource.
  */
 export interface DatabaseDbmFeaturesManagementArgs {
-    canDisableAllPdbs?: pulumi.Input<boolean>;
+    canDisableAllPdbs?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
      */
@@ -184,10 +184,10 @@ export interface DatabaseDbmFeaturesManagementArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     enableDatabaseDbmFeature: pulumi.Input<boolean>;
-    feature?: pulumi.Input<string>;
+    feature?: pulumi.Input<string | undefined>;
     /**
      * The details required to enable the specified Database Management feature.
      */
-    featureDetails?: pulumi.Input<inputs.DatabaseManagement.DatabaseDbmFeaturesManagementFeatureDetails>;
-    modifyDatabaseDbmFeature?: pulumi.Input<boolean>;
+    featureDetails?: pulumi.Input<inputs.DatabaseManagement.DatabaseDbmFeaturesManagementFeatureDetails | undefined>;
+    modifyDatabaseDbmFeature?: pulumi.Input<boolean | undefined>;
 }

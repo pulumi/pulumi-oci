@@ -31,7 +31,7 @@ import * as utilities from "../utilities";
  *     backupPolicy: {
  *         copyPolicies: [{
  *             copyToRegion: mysqlDbSystemBackupPolicyCopyPoliciesCopyToRegion,
- *             backupCopyRetentionInDays: mysqlDbSystemBackupPolicyCopyPoliciesBackupCopyRetentionInDays,
+ *             backupCopyRetentionInDays: Number(mysqlDbSystemBackupPolicyCopyPoliciesBackupCopyRetentionInDays),
  *         }],
  *         definedTags: {
  *             "foo-namespace.bar-key": "value",
@@ -39,11 +39,11 @@ import * as utilities from "../utilities";
  *         freeformTags: {
  *             "bar-key": "value",
  *         },
- *         isEnabled: mysqlDbSystemBackupPolicyIsEnabled,
+ *         isEnabled: mysqlDbSystemBackupPolicyIsEnabled === "true",
  *         pitrPolicy: {
- *             isEnabled: mysqlDbSystemBackupPolicyPitrPolicyIsEnabled,
+ *             isEnabled: mysqlDbSystemBackupPolicyPitrPolicyIsEnabled === "true",
  *         },
- *         retentionInDays: mysqlDbSystemBackupPolicyRetentionInDays,
+ *         retentionInDays: Number(mysqlDbSystemBackupPolicyRetentionInDays),
  *         softDelete: mysqlDbSystemBackupPolicySoftDelete,
  *         windowStartTime: mysqlDbSystemBackupPolicyWindowStartTime,
  *     },
@@ -53,13 +53,13 @@ import * as utilities from "../utilities";
  *         email: mysqlDbSystemCustomerContactsEmail,
  *     }],
  *     dataStorage: {
- *         isAutoExpandStorageEnabled: mysqlDbSystemDataStorageIsAutoExpandStorageEnabled,
- *         maxStorageSizeInGbs: mysqlDbSystemDataStorageMaxStorageSizeInGbs,
+ *         isAutoExpandStorageEnabled: mysqlDbSystemDataStorageIsAutoExpandStorageEnabled === "true",
+ *         maxStorageSizeInGbs: Number(mysqlDbSystemDataStorageMaxStorageSizeInGbs),
  *     },
- *     dataStorageSizeInGb: mysqlDbSystemDataStorageSizeInGb,
+ *     dataStorageSizeInGb: Number(mysqlDbSystemDataStorageSizeInGb),
  *     databaseConsole: {
  *         status: mysqlDbSystemDatabaseConsoleStatus,
- *         port: mysqlDbSystemDatabaseConsolePort,
+ *         port: Number(mysqlDbSystemDatabaseConsolePort),
  *     },
  *     databaseManagement: mysqlDbSystemDatabaseManagement,
  *     databaseMode: mysqlDbSystemDatabaseMode,
@@ -69,7 +69,7 @@ import * as utilities from "../utilities";
  *     deletionPolicies: [{
  *         automaticBackupRetention: mysqlDbSystemDeletionPolicyAutomaticBackupRetention,
  *         finalBackup: mysqlDbSystemDeletionPolicyFinalBackup,
- *         isDeleteProtected: mysqlDbSystemDeletionPolicyIsDeleteProtected,
+ *         isDeleteProtected: mysqlDbSystemDeletionPolicyIsDeleteProtected === "true",
  *     }],
  *     description: mysqlDbSystemDescription,
  *     displayName: mysqlDbSystemDisplayName,
@@ -83,7 +83,7 @@ import * as utilities from "../utilities";
  *     },
  *     hostnameLabel: mysqlDbSystemHostnameLabel,
  *     ipAddress: mysqlDbSystemIpAddress,
- *     isHighlyAvailable: mysqlDbSystemIsHighlyAvailable,
+ *     isHighlyAvailable: mysqlDbSystemIsHighlyAvailable === "true",
  *     maintenance: {
  *         windowStartTime: mysqlDbSystemMaintenanceWindowStartTime,
  *         maintenanceDisabledWindows: [{
@@ -95,17 +95,17 @@ import * as utilities from "../utilities";
  *         versionTrackPreference: mysqlDbSystemMaintenanceVersionTrackPreference,
  *     },
  *     nsgIds: mysqlDbSystemNsgIds,
- *     port: mysqlDbSystemPort,
- *     portX: mysqlDbSystemPortX,
+ *     port: Number(mysqlDbSystemPort),
+ *     portX: Number(mysqlDbSystemPortX),
  *     readEndpoint: {
  *         excludeIps: mysqlDbSystemReadEndpointExcludeIps,
- *         isEnabled: mysqlDbSystemReadEndpointIsEnabled,
+ *         isEnabled: mysqlDbSystemReadEndpointIsEnabled === "true",
  *         readEndpointHostnameLabel: mysqlDbSystemReadEndpointReadEndpointHostnameLabel,
  *         readEndpointIpAddress: mysqlDbSystemReadEndpointReadEndpointIpAddress,
  *     },
  *     rest: {
  *         configuration: mysqlDbSystemRestConfiguration,
- *         port: mysqlDbSystemRestPort,
+ *         port: Number(mysqlDbSystemRestPort),
  *     },
  *     secureConnections: {
  *         certificateGenerationType: mysqlDbSystemSecureConnectionsCertificateGenerationType,
@@ -526,15 +526,15 @@ export interface MysqlDbSystemState {
      * * UNRESTRICTED (default): the access to the database is not restricted;
      * * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
      */
-    accessMode?: pulumi.Input<string>;
+    accessMode?: pulumi.Input<string | undefined>;
     /**
      * The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
      */
-    adminPassword?: pulumi.Input<string>;
+    adminPassword?: pulumi.Input<string | undefined>;
     /**
      * The username for the administrative user.
      */
-    adminUsername?: pulumi.Input<string>;
+    adminUsername?: pulumi.Input<string | undefined>;
     /**
      * The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
      *
@@ -542,81 +542,81 @@ export interface MysqlDbSystemState {
      *
      * For a standalone DB System, this defines the availability domain in which the DB System is placed.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Backup policy as optionally used for DB System Creation.
      */
-    backupPolicy?: pulumi.Input<inputs.Mysql.MysqlDbSystemBackupPolicy>;
+    backupPolicy?: pulumi.Input<inputs.Mysql.MysqlDbSystemBackupPolicy | undefined>;
     /**
      * A list with a summary of all the Channels attached to the DB System.
      */
-    channels?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemChannel>[]>;
+    channels?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemChannel>[] | undefined>;
     /**
      * The OCID of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the Configuration to be used for this DB System.
      */
-    configurationId?: pulumi.Input<string>;
+    configurationId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
      */
-    crashRecovery?: pulumi.Input<string>;
+    crashRecovery?: pulumi.Input<string | undefined>;
     /**
      * The availability domain and fault domain a DB System is placed in.
      */
-    currentPlacements?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemCurrentPlacement>[]>;
+    currentPlacements?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemCurrentPlacement>[] | undefined>;
     /**
      * (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
      */
-    customerContacts?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemCustomerContact>[]>;
+    customerContacts?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemCustomerContact>[] | undefined>;
     /**
      * (Updatable) Data Storage configuration properties.
      */
-    dataStorage?: pulumi.Input<inputs.Mysql.MysqlDbSystemDataStorage>;
+    dataStorage?: pulumi.Input<inputs.Mysql.MysqlDbSystemDataStorage | undefined>;
     /**
      * (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
      */
-    dataStorageSizeInGb?: pulumi.Input<number>;
+    dataStorageSizeInGb?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Details required to configure the database console while creating a DB System.
      */
-    databaseConsole?: pulumi.Input<inputs.Mysql.MysqlDbSystemDatabaseConsole>;
+    databaseConsole?: pulumi.Input<inputs.Mysql.MysqlDbSystemDatabaseConsole | undefined>;
     /**
      * (Updatable) Whether to enable monitoring via the Database Management service.
      */
-    databaseManagement?: pulumi.Input<string>;
+    databaseManagement?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
      * * READ_WRITE (default): allow running read and write statements on the DB system;
      * * READ_ONLY: only allow running read statements on the DB system.
      */
-    databaseMode?: pulumi.Input<string>;
+    databaseMode?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
      */
-    deletionPolicies?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemDeletionPolicy>[]>;
+    deletionPolicies?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemDeletionPolicy>[] | undefined>;
     /**
      * (Updatable) User-provided data about the DB System.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The user-friendly name for the DB System. It does not have to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Encrypt data details.
      */
-    encryptData?: pulumi.Input<inputs.Mysql.MysqlDbSystemEncryptData>;
+    encryptData?: pulumi.Input<inputs.Mysql.MysqlDbSystemEncryptData | undefined>;
     /**
      * The network endpoints available for this DB System.
      */
-    endpoints?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemEndpoint>[]>;
+    endpoints?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemEndpoint>[] | undefined>;
     /**
      * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
      *
@@ -624,15 +624,15 @@ export interface MysqlDbSystemState {
      *
      * For a standalone DB System, this defines the fault domain in which the DB System is placed.
      */
-    faultDomain?: pulumi.Input<string>;
+    faultDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A summary of a HeatWave cluster.
      */
-    heatWaveClusters?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemHeatWaveCluster>[]>;
+    heatWaveClusters?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemHeatWaveCluster>[] | undefined>;
     /**
      * (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
      *
@@ -640,105 +640,105 @@ export interface MysqlDbSystemState {
      *
      * Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
      */
-    hostnameLabel?: pulumi.Input<string>;
+    hostnameLabel?: pulumi.Input<string | undefined>;
     /**
      * The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
      */
-    ipAddress?: pulumi.Input<string>;
+    ipAddress?: pulumi.Input<string | undefined>;
     /**
      * If the DB System has a HeatWave Cluster attached.
      */
-    isHeatWaveClusterAttached?: pulumi.Input<boolean>;
+    isHeatWaveClusterAttached?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Specifies if the DB System is highly available.
      *
      * When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
      */
-    isHighlyAvailable?: pulumi.Input<boolean>;
+    isHighlyAvailable?: pulumi.Input<boolean | undefined>;
     /**
      * Additional information about the current lifecycleState.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backupPolicy` cannot be updated in the same request.
      */
-    maintenance?: pulumi.Input<inputs.Mysql.MysqlDbSystemMaintenance>;
+    maintenance?: pulumi.Input<inputs.Mysql.MysqlDbSystemMaintenance | undefined>;
     /**
      * The specific MySQL version identifier.
      */
-    mysqlVersion?: pulumi.Input<string>;
+    mysqlVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Network Security Group OCIDs used for the VNIC attachment.
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
      */
-    pointInTimeRecoveryDetails?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemPointInTimeRecoveryDetail>[]>;
+    pointInTimeRecoveryDetails?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemPointInTimeRecoveryDetail>[] | undefined>;
     /**
      * The port for primary endpoint of the DB System to listen on.
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
      */
-    portX?: pulumi.Input<number>;
+    portX?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Details required to create a Read Endpoint.
      */
-    readEndpoint?: pulumi.Input<inputs.Mysql.MysqlDbSystemReadEndpoint>;
+    readEndpoint?: pulumi.Input<inputs.Mysql.MysqlDbSystemReadEndpoint | undefined>;
     /**
      * (Updatable) Details required to configure REST while creating a DB System.
      */
-    rest?: pulumi.Input<inputs.Mysql.MysqlDbSystemRest>;
+    rest?: pulumi.Input<inputs.Mysql.MysqlDbSystemRest | undefined>;
     /**
      * (Updatable) Secure connection configuration details.
      */
-    secureConnections?: pulumi.Input<inputs.Mysql.MysqlDbSystemSecureConnections>;
+    secureConnections?: pulumi.Input<inputs.Mysql.MysqlDbSystemSecureConnections | undefined>;
     /**
      * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The name of the shape. The shape determines the resources allocated
      * * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      */
-    shapeName?: pulumi.Input<string>;
+    shapeName?: pulumi.Input<string | undefined>;
     /**
      * It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    shutdownType?: pulumi.Input<string>;
+    shutdownType?: pulumi.Input<string | undefined>;
     /**
      * Parameters detailing how to provision the initial data of the system.
      */
-    source?: pulumi.Input<inputs.Mysql.MysqlDbSystemSource>;
+    source?: pulumi.Input<inputs.Mysql.MysqlDbSystemSource | undefined>;
     /**
      * (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the subnet the DB System is associated with.
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Details required to configure how MySQL telemetry should be exposed.
      */
-    telemetryConfiguration?: pulumi.Input<inputs.Mysql.MysqlDbSystemTelemetryConfiguration>;
+    telemetryConfiguration?: pulumi.Input<inputs.Mysql.MysqlDbSystemTelemetryConfiguration | undefined>;
     /**
      * The date and time the DB System was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the DB System was last updated.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -750,15 +750,15 @@ export interface MysqlDbSystemArgs {
      * * UNRESTRICTED (default): the access to the database is not restricted;
      * * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
      */
-    accessMode?: pulumi.Input<string>;
+    accessMode?: pulumi.Input<string | undefined>;
     /**
      * The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
      */
-    adminPassword?: pulumi.Input<string>;
+    adminPassword?: pulumi.Input<string | undefined>;
     /**
      * The username for the administrative user.
      */
-    adminUsername?: pulumi.Input<string>;
+    adminUsername?: pulumi.Input<string | undefined>;
     /**
      * The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
      *
@@ -770,7 +770,7 @@ export interface MysqlDbSystemArgs {
     /**
      * (Updatable) Backup policy as optionally used for DB System Creation.
      */
-    backupPolicy?: pulumi.Input<inputs.Mysql.MysqlDbSystemBackupPolicy>;
+    backupPolicy?: pulumi.Input<inputs.Mysql.MysqlDbSystemBackupPolicy | undefined>;
     /**
      * The OCID of the compartment.
      */
@@ -778,57 +778,57 @@ export interface MysqlDbSystemArgs {
     /**
      * (Updatable) The OCID of the Configuration to be used for this DB System.
      */
-    configurationId?: pulumi.Input<string>;
+    configurationId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
      */
-    crashRecovery?: pulumi.Input<string>;
+    crashRecovery?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure DB System resource.  Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.  Up to 10 email addresses can be added to the customer contacts for a DB System.
      */
-    customerContacts?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemCustomerContact>[]>;
+    customerContacts?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemCustomerContact>[] | undefined>;
     /**
      * (Updatable) Data Storage configuration properties.
      */
-    dataStorage?: pulumi.Input<inputs.Mysql.MysqlDbSystemDataStorage>;
+    dataStorage?: pulumi.Input<inputs.Mysql.MysqlDbSystemDataStorage | undefined>;
     /**
      * (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
      */
-    dataStorageSizeInGb?: pulumi.Input<number>;
+    dataStorageSizeInGb?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Details required to configure the database console while creating a DB System.
      */
-    databaseConsole?: pulumi.Input<inputs.Mysql.MysqlDbSystemDatabaseConsole>;
+    databaseConsole?: pulumi.Input<inputs.Mysql.MysqlDbSystemDatabaseConsole | undefined>;
     /**
      * (Updatable) Whether to enable monitoring via the Database Management service.
      */
-    databaseManagement?: pulumi.Input<string>;
+    databaseManagement?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The database mode indicating the types of statements that will be allowed to run in the DB system. This mode will apply only to statements run by user connections. Replicated write statements will continue  to be allowed regardless of the DatabaseMode.
      * * READ_WRITE (default): allow running read and write statements on the DB system;
      * * READ_ONLY: only allow running read statements on the DB system.
      */
-    databaseMode?: pulumi.Input<string>;
+    databaseMode?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
      */
-    deletionPolicies?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemDeletionPolicy>[]>;
+    deletionPolicies?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemDeletionPolicy>[] | undefined>;
     /**
      * (Updatable) User-provided data about the DB System.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The user-friendly name for the DB System. It does not have to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Encrypt data details.
      */
-    encryptData?: pulumi.Input<inputs.Mysql.MysqlDbSystemEncryptData>;
+    encryptData?: pulumi.Input<inputs.Mysql.MysqlDbSystemEncryptData | undefined>;
     /**
      * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
      *
@@ -836,11 +836,11 @@ export interface MysqlDbSystemArgs {
      *
      * For a standalone DB System, this defines the fault domain in which the DB System is placed.
      */
-    faultDomain?: pulumi.Input<string>;
+    faultDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The hostname for the primary endpoint of the DB System. Used for DNS.
      *
@@ -848,53 +848,53 @@ export interface MysqlDbSystemArgs {
      *
      * Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
      */
-    hostnameLabel?: pulumi.Input<string>;
+    hostnameLabel?: pulumi.Input<string | undefined>;
     /**
      * The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
      */
-    ipAddress?: pulumi.Input<string>;
+    ipAddress?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specifies if the DB System is highly available.
      *
      * When creating a DB System with High Availability, three instances are created and placed according to your region- and subnet-type. The secondaries are placed automatically in the other two availability or fault domains.  You can choose the preferred location of your primary instance, only.
      */
-    isHighlyAvailable?: pulumi.Input<boolean>;
+    isHighlyAvailable?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backupPolicy` cannot be updated in the same request.
      */
-    maintenance?: pulumi.Input<inputs.Mysql.MysqlDbSystemMaintenance>;
+    maintenance?: pulumi.Input<inputs.Mysql.MysqlDbSystemMaintenance | undefined>;
     /**
      * The specific MySQL version identifier.
      */
-    mysqlVersion?: pulumi.Input<string>;
+    mysqlVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Network Security Group OCIDs used for the VNIC attachment.
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The port for primary endpoint of the DB System to listen on.
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
      */
-    portX?: pulumi.Input<number>;
+    portX?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Details required to create a Read Endpoint.
      */
-    readEndpoint?: pulumi.Input<inputs.Mysql.MysqlDbSystemReadEndpoint>;
+    readEndpoint?: pulumi.Input<inputs.Mysql.MysqlDbSystemReadEndpoint | undefined>;
     /**
      * (Updatable) Details required to configure REST while creating a DB System.
      */
-    rest?: pulumi.Input<inputs.Mysql.MysqlDbSystemRest>;
+    rest?: pulumi.Input<inputs.Mysql.MysqlDbSystemRest | undefined>;
     /**
      * (Updatable) Secure connection configuration details.
      */
-    secureConnections?: pulumi.Input<inputs.Mysql.MysqlDbSystemSecureConnections>;
+    secureConnections?: pulumi.Input<inputs.Mysql.MysqlDbSystemSecureConnections | undefined>;
     /**
      * (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [ZPR Artifacts](https://docs.oracle.com/en-us/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The name of the shape. The shape determines the resources allocated
      * * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
@@ -906,15 +906,15 @@ export interface MysqlDbSystemArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    shutdownType?: pulumi.Input<string>;
+    shutdownType?: pulumi.Input<string | undefined>;
     /**
      * Parameters detailing how to provision the initial data of the system.
      */
-    source?: pulumi.Input<inputs.Mysql.MysqlDbSystemSource>;
+    source?: pulumi.Input<inputs.Mysql.MysqlDbSystemSource | undefined>;
     /**
      * (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the subnet the DB System is associated with.
      */
@@ -922,5 +922,5 @@ export interface MysqlDbSystemArgs {
     /**
      * (Updatable) Details required to configure how MySQL telemetry should be exposed.
      */
-    telemetryConfiguration?: pulumi.Input<inputs.Mysql.MysqlDbSystemTelemetryConfiguration>;
+    telemetryConfiguration?: pulumi.Input<inputs.Mysql.MysqlDbSystemTelemetryConfiguration | undefined>;
 }

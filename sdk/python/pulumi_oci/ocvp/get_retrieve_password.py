@@ -92,7 +92,7 @@ def get_retrieve_password(sddc_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_password = oci.Ocvp.get_retrieve_password(sddc_id=compartment_id,
+    test_password = oci.ocvp.get_retrieve_password(sddc_id=compartment_id,
         type=password_type)
     ```
 
@@ -111,8 +111,8 @@ def get_retrieve_password(sddc_id: Optional[_builtins.str] = None,
         sddc_id=pulumi.get(__ret__, 'sddc_id'),
         sddc_password=pulumi.get(__ret__, 'sddc_password'),
         type=pulumi.get(__ret__, 'type'))
-def get_retrieve_password_output(sddc_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 type: Optional[pulumi.Input[_builtins.str]] = None,
+def get_retrieve_password_output(sddc_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 type: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRetrievePasswordResult]:
     """
     This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -123,7 +123,7 @@ def get_retrieve_password_output(sddc_id: Optional[pulumi.Input[_builtins.str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_password = oci.Ocvp.get_retrieve_password(sddc_id=compartment_id,
+    test_password = oci.ocvp.get_retrieve_password(sddc_id=compartment_id,
         type=password_type)
     ```
 

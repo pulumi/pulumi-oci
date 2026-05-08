@@ -71,7 +71,7 @@ def get_report_content(report_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_report_content = oci.DataSafe.get_report_content(report_id=test_report["id"])
+    test_report_content = oci.datasafe.get_report_content(report_id=test_report["id"])
     ```
 
 
@@ -85,7 +85,7 @@ def get_report_content(report_id: Optional[_builtins.str] = None,
     return AwaitableGetReportContentResult(
         id=pulumi.get(__ret__, 'id'),
         report_id=pulumi.get(__ret__, 'report_id'))
-def get_report_content_output(report_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_report_content_output(report_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReportContentResult]:
     """
     This data source provides details about a specific Report Content resource in Oracle Cloud Infrastructure Data Safe service.
@@ -98,7 +98,7 @@ def get_report_content_output(report_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_report_content = oci.DataSafe.get_report_content(report_id=test_report["id"])
+    test_report_content = oci.datasafe.get_report_content(report_id=test_report["id"])
     ```
 
 

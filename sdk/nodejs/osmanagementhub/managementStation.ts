@@ -28,11 +28,11 @@ import * as utilities from "../utilities";
  *         directory: managementStationMirrorDirectory,
  *         port: managementStationMirrorPort,
  *         sslport: managementStationMirrorSslport,
- *         isSslverifyEnabled: managementStationMirrorIsSslverifyEnabled,
+ *         isSslverifyEnabled: managementStationMirrorIsSslverifyEnabled === "true",
  *         sslcert: managementStationMirrorSslcert,
  *     },
  *     proxy: {
- *         isEnabled: managementStationProxyIsEnabled,
+ *         isEnabled: managementStationProxyIsEnabled === "true",
  *         forward: managementStationProxyForward,
  *         hosts: managementStationProxyHosts,
  *         port: managementStationProxyPort,
@@ -45,7 +45,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isAutoConfigEnabled: managementStationIsAutoConfigEnabled,
+ *     isAutoConfigEnabled: managementStationIsAutoConfigEnabled === "true",
  *     osFamily: managementStationOsFamily,
  * });
  * ```
@@ -314,103 +314,103 @@ export interface ManagementStationState {
     /**
      * (Updatable) The architecture type.
      */
-    archType?: pulumi.Input<string>;
+    archType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) User-specified description of the management station. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Overall health information of the management station.
      */
-    healths?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagementStationHealth>[]>;
+    healths?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagementStationHealth>[] | undefined>;
     /**
      * (Updatable) Hostname of the management station.
      */
-    hostname?: pulumi.Input<string>;
+    hostname?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
      */
-    isAutoConfigEnabled?: pulumi.Input<boolean>;
+    isAutoConfigEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The location of the instance that is acting as the management station.
      */
-    location?: pulumi.Input<string>;
+    location?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance that is acting as the management station.
      */
-    managedInstanceId?: pulumi.Input<string>;
+    managedInstanceId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Information used to create the mirror configuration for a management station.
      */
-    mirror?: pulumi.Input<inputs.OsManagementHub.ManagementStationMirror>;
+    mirror?: pulumi.Input<inputs.OsManagementHub.ManagementStationMirror | undefined>;
     /**
      * A decimal number representing the amount of mirror capacity used by the sync.
      */
-    mirrorCapacity?: pulumi.Input<number>;
+    mirrorCapacity?: pulumi.Input<number | undefined>;
     /**
      * The total number of all packages within the mirrored software sources.
      */
-    mirrorPackageCount?: pulumi.Input<number>;
+    mirrorPackageCount?: pulumi.Input<number | undefined>;
     /**
      * The total size of all software source mirrors in bytes.
      */
-    mirrorSize?: pulumi.Input<string>;
+    mirrorSize?: pulumi.Input<string | undefined>;
     /**
      * Amount of available mirror storage in bytes.
      */
-    mirrorStorageAvailableSize?: pulumi.Input<string>;
+    mirrorStorageAvailableSize?: pulumi.Input<string | undefined>;
     /**
      * Total mirror storage size in bytes.
      */
-    mirrorStorageSize?: pulumi.Input<string>;
+    mirrorStorageSize?: pulumi.Input<string | undefined>;
     /**
      * Status summary of the mirror sync.
      */
-    mirrorSyncStatuses?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagementStationMirrorSyncStatus>[]>;
+    mirrorSyncStatuses?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagementStationMirrorSyncStatus>[] | undefined>;
     /**
      * The total number of unique packages within the mirrored software sources on the station. Each package is counted only once, regardless of how many versions it has.
      */
-    mirrorUniquePackageCount?: pulumi.Input<number>;
+    mirrorUniquePackageCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The operating system family.
      */
-    osFamily?: pulumi.Input<string>;
+    osFamily?: pulumi.Input<string | undefined>;
     /**
      * A decimal number representing the progress of the current mirror sync.
      */
-    overallPercentage?: pulumi.Input<number>;
+    overallPercentage?: pulumi.Input<number | undefined>;
     /**
      * Current state of the mirror sync for the management station.
      */
-    overallState?: pulumi.Input<string>;
+    overallState?: pulumi.Input<string | undefined>;
     /**
      * A list of other management stations that are behind the same load balancer within a high availability configuration. Stations are identified as peers if they have the same hostname and compartment.
      */
-    peerManagementStations?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagementStationPeerManagementStation>[]>;
+    peerManagementStations?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ManagementStationPeerManagementStation>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
      */
-    profileId?: pulumi.Input<string>;
+    profileId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Information used to create the proxy configuration for a management station.
      */
-    proxy?: pulumi.Input<inputs.OsManagementHub.ManagementStationProxy>;
+    proxy?: pulumi.Input<inputs.OsManagementHub.ManagementStationProxy | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
      *
@@ -418,23 +418,23 @@ export interface ManagementStationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    refreshTrigger?: pulumi.Input<number>;
+    refreshTrigger?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job for the mirror sync.
      */
-    scheduledJobId?: pulumi.Input<string>;
+    scheduledJobId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the management station.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The number of software sources that the station is mirroring.
      */
-    totalMirrors?: pulumi.Input<number>;
+    totalMirrors?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -444,7 +444,7 @@ export interface ManagementStationArgs {
     /**
      * (Updatable) The architecture type.
      */
-    archType?: pulumi.Input<string>;
+    archType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
      */
@@ -452,11 +452,11 @@ export interface ManagementStationArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) User-specified description of the management station. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) User-friendly name for the management station. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      */
@@ -464,7 +464,7 @@ export interface ManagementStationArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Hostname of the management station.
      */
@@ -472,7 +472,7 @@ export interface ManagementStationArgs {
     /**
      * (Updatable) When enabled, the station setup script automatically runs to configure the firewall and SELinux settings on the station.
      */
-    isAutoConfigEnabled?: pulumi.Input<boolean>;
+    isAutoConfigEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Information used to create the mirror configuration for a management station.
      */
@@ -480,7 +480,7 @@ export interface ManagementStationArgs {
     /**
      * (Updatable) The operating system family.
      */
-    osFamily?: pulumi.Input<string>;
+    osFamily?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Information used to create the proxy configuration for a management station.
      */
@@ -492,5 +492,5 @@ export interface ManagementStationArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    refreshTrigger?: pulumi.Input<number>;
+    refreshTrigger?: pulumi.Input<number | undefined>;
 }

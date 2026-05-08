@@ -31,10 +31,10 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := datasafe.GetMaskingPolicyReferentialRelations(ctx, &datasafe.GetMaskingPolicyReferentialRelationsArgs{
 //				MaskingPolicyId: testMaskingPolicy.Id,
-//				ColumnNames:     maskingPolicyReferentialRelationColumnName,
-//				Objects:         maskingPolicyReferentialRelationObject,
-//				RelationTypes:   maskingPolicyReferentialRelationRelationType,
-//				SchemaNames:     maskingPolicyReferentialRelationSchemaName,
+//				ColumnNames:     pulumi.ToArray(maskingPolicyReferentialRelationColumnName),
+//				Objects:         pulumi.ToArray(maskingPolicyReferentialRelationObject),
+//				RelationTypes:   pulumi.ToArray(maskingPolicyReferentialRelationRelationType),
+//				SchemaNames:     pulumi.ToArray(maskingPolicyReferentialRelationSchemaName),
 //			}, nil)
 //			if err != nil {
 //				return err

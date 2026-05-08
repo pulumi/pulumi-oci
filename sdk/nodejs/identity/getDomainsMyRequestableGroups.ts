@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyRequestableGroups = oci.Identity.getDomainsMyRequestableGroups({
+ * const testMyRequestableGroups = oci.identity.getDomainsMyRequestableGroups({
  *     idcsEndpoint: testDomain.url,
- *     myRequestableGroupCount: myRequestableGroupMyRequestableGroupCount,
+ *     myRequestableGroupCount: Number(myRequestableGroupMyRequestableGroupCount),
  *     myRequestableGroupFilter: myRequestableGroupMyRequestableGroupFilter,
  *     authorization: myRequestableGroupAuthorization,
  *     resourceTypeSchemaVersion: myRequestableGroupResourceTypeSchemaVersion,
- *     startIndex: myRequestableGroupStartIndex,
+ *     startIndex: Number(myRequestableGroupStartIndex),
  * });
  * ```
  */
@@ -123,13 +123,13 @@ export interface GetDomainsMyRequestableGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyRequestableGroups = oci.Identity.getDomainsMyRequestableGroups({
+ * const testMyRequestableGroups = oci.identity.getDomainsMyRequestableGroups({
  *     idcsEndpoint: testDomain.url,
- *     myRequestableGroupCount: myRequestableGroupMyRequestableGroupCount,
+ *     myRequestableGroupCount: Number(myRequestableGroupMyRequestableGroupCount),
  *     myRequestableGroupFilter: myRequestableGroupMyRequestableGroupFilter,
  *     authorization: myRequestableGroupAuthorization,
  *     resourceTypeSchemaVersion: myRequestableGroupResourceTypeSchemaVersion,
- *     startIndex: myRequestableGroupStartIndex,
+ *     startIndex: Number(myRequestableGroupStartIndex),
  * });
  * ```
  */
@@ -155,8 +155,8 @@ export interface GetDomainsMyRequestableGroupsOutputArgs {
     /**
      * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
-    compartmentId?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -164,19 +164,19 @@ export interface GetDomainsMyRequestableGroupsOutputArgs {
     /**
      * OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
      */
-    myRequestableGroupCount?: pulumi.Input<number>;
+    myRequestableGroupCount?: pulumi.Input<number | undefined>;
     /**
      * OPTIONAL. The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See the Filtering section of the SCIM specification for more information (Section 3.4.2.2). The string should contain at least one condition that each item must match in order to be returned in the search results. Each condition specifies an attribute, an operator, and a value. Conditions within a filter can be connected by logical operators (such as AND and OR). Sets of conditions can be grouped together using parentheses.
      */
-    myRequestableGroupFilter?: pulumi.Input<string>;
+    myRequestableGroupFilter?: pulumi.Input<string | undefined>;
     /**
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
-    sortBy?: pulumi.Input<string>;
-    sortOrder?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
+    sortBy?: pulumi.Input<string | undefined>;
+    sortOrder?: pulumi.Input<string | undefined>;
     /**
      * OPTIONAL. An integer that indicates the 1-based index of the first query result. See the Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The number of results pages to return. The first page is 1. Specify 2 to access the second page of results, and so on.
      */
-    startIndex?: pulumi.Input<number>;
+    startIndex?: pulumi.Input<number | undefined>;
 }

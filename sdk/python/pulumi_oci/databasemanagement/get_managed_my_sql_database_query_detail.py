@@ -118,7 +118,7 @@ def get_managed_my_sql_database_query_detail(digest: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_query_detail = oci.DatabaseManagement.get_managed_my_sql_database_query_detail(digest=managed_my_sql_database_query_detail_digest,
+    test_managed_my_sql_database_query_detail = oci.databasemanagement.get_managed_my_sql_database_query_detail(digest=managed_my_sql_database_query_detail_digest,
         managed_my_sql_database_id=test_managed_my_sql_database["id"])
     ```
 
@@ -139,8 +139,8 @@ def get_managed_my_sql_database_query_detail(digest: Optional[_builtins.str] = N
         query_explain_plans=pulumi.get(__ret__, 'query_explain_plans'),
         query_messages=pulumi.get(__ret__, 'query_messages'),
         query_sample_details=pulumi.get(__ret__, 'query_sample_details'))
-def get_managed_my_sql_database_query_detail_output(digest: Optional[pulumi.Input[_builtins.str]] = None,
-                                                    managed_my_sql_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_managed_my_sql_database_query_detail_output(digest: pulumi.Input[Optional[_builtins.str]] = None,
+                                                    managed_my_sql_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedMySqlDatabaseQueryDetailResult]:
     """
     This data source provides details about a specific Managed My Sql Database Query Detail resource in Oracle Cloud Infrastructure Database Management service.
@@ -153,7 +153,7 @@ def get_managed_my_sql_database_query_detail_output(digest: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_database_query_detail = oci.DatabaseManagement.get_managed_my_sql_database_query_detail(digest=managed_my_sql_database_query_detail_digest,
+    test_managed_my_sql_database_query_detail = oci.databasemanagement.get_managed_my_sql_database_query_detail(digest=managed_my_sql_database_query_detail_digest,
         managed_my_sql_database_id=test_managed_my_sql_database["id"])
     ```
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalMySqlDatabaseConnectors = oci.DatabaseManagement.getExternalMySqlDatabaseConnectors({
+ * const testExternalMySqlDatabaseConnectors = oci.databasemanagement.getExternalMySqlDatabaseConnectors({
  *     compartmentId: compartmentId,
  *     name: externalMySqlDatabaseConnectorName,
  * });
@@ -80,7 +80,7 @@ export interface GetExternalMySqlDatabaseConnectorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalMySqlDatabaseConnectors = oci.DatabaseManagement.getExternalMySqlDatabaseConnectors({
+ * const testExternalMySqlDatabaseConnectors = oci.databasemanagement.getExternalMySqlDatabaseConnectors({
  *     compartmentId: compartmentId,
  *     name: externalMySqlDatabaseConnectorName,
  * });
@@ -103,9 +103,9 @@ export interface GetExternalMySqlDatabaseConnectorsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetExternalMySqlDatabaseConnectorsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetExternalMySqlDatabaseConnectorsFilterArgs>[] | undefined>;
     /**
      * The parameter to filter by MySQL Database System type.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

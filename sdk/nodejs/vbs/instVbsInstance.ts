@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     idcsAccessToken: vbsInstanceIdcsAccessToken,
- *     isResourceUsageAgreementGranted: vbsInstanceIsResourceUsageAgreementGranted,
+ *     isResourceUsageAgreementGranted: vbsInstanceIsResourceUsageAgreementGranted === "true",
  *     resourceCompartmentId: resourceCompartmentId,
  * });
  * ```
@@ -193,35 +193,35 @@ export interface InstVbsInstanceState {
     /**
      * (Updatable) Compartment Identifier. It can only be the root compartment
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Display Name
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * IDCS personal acceess token identifying IDCS user and stripe for the VBS service
      */
-    idcsAccessToken?: pulumi.Input<string>;
+    idcsAccessToken?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
      */
-    isResourceUsageAgreementGranted?: pulumi.Input<boolean>;
+    isResourceUsageAgreementGranted?: pulumi.Input<boolean | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecyleDetails?: pulumi.Input<string>;
+    lifecyleDetails?: pulumi.Input<string | undefined>;
     /**
      * Service Instance Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Compartment where VBS may create additional resources for the service instance
      *
@@ -229,27 +229,27 @@ export interface InstVbsInstanceState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    resourceCompartmentId?: pulumi.Input<string>;
+    resourceCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the VbsInstance.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the the VbsInstance was created. An RFC3339 formatted datetime string
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the VbsInstance was updated. An RFC3339 formatted datetime string
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * Public web URL for accessing the VBS service instance
      */
-    vbsAccessUrl?: pulumi.Input<string>;
+    vbsAccessUrl?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -263,7 +263,7 @@ export interface InstVbsInstanceArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Display Name
      */
@@ -271,19 +271,19 @@ export interface InstVbsInstanceArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * IDCS personal acceess token identifying IDCS user and stripe for the VBS service
      */
-    idcsAccessToken?: pulumi.Input<string>;
+    idcsAccessToken?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
      */
-    isResourceUsageAgreementGranted?: pulumi.Input<boolean>;
+    isResourceUsageAgreementGranted?: pulumi.Input<boolean | undefined>;
     /**
      * Service Instance Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Compartment where VBS may create additional resources for the service instance
      *
@@ -291,5 +291,5 @@ export interface InstVbsInstanceArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    resourceCompartmentId?: pulumi.Input<string>;
+    resourceCompartmentId?: pulumi.Input<string | undefined>;
 }

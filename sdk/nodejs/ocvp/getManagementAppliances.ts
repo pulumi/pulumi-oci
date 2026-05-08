@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAppliances = oci.Ocvp.getManagementAppliances({
+ * const testManagementAppliances = oci.ocvp.getManagementAppliances({
  *     compartmentId: compartmentId,
  *     displayName: managementApplianceDisplayName,
  *     managementApplianceId: testManagementAppliance.id,
@@ -107,7 +107,7 @@ export interface GetManagementAppliancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAppliances = oci.Ocvp.getManagementAppliances({
+ * const testManagementAppliances = oci.ocvp.getManagementAppliances({
  *     compartmentId: compartmentId,
  *     displayName: managementApplianceDisplayName,
  *     managementApplianceId: testManagementAppliance.id,
@@ -139,18 +139,18 @@ export interface GetManagementAppliancesOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Ocvp.GetManagementAppliancesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Ocvp.GetManagementAppliancesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management appliance.
      */
-    managementApplianceId?: pulumi.Input<string>;
+    managementApplianceId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
      */
-    sddcId?: pulumi.Input<string>;
+    sddcId?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of the management appliance.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

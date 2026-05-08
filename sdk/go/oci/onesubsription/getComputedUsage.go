@@ -32,7 +32,7 @@ import (
 //			_, err := onesubsription.GetComputedUsage(ctx, &onesubsription.GetComputedUsageArgs{
 //				CompartmentId:   compartmentId,
 //				ComputedUsageId: testComputedUsageOciOnesubscriptionComputedUsage.Id,
-//				Fields:          computedUsageFields,
+//				Fields:          pulumi.ToArray(computedUsageFields),
 //			}, nil)
 //			if err != nil {
 //				return err

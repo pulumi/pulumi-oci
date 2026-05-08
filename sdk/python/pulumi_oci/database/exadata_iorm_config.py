@@ -23,7 +23,7 @@ class ExadataIormConfigArgs:
     def __init__(__self__, *,
                  db_plans: pulumi.Input[Sequence[pulumi.Input['ExadataIormConfigDbPlanArgs']]],
                  db_system_id: pulumi.Input[_builtins.str],
-                 objective: Optional[pulumi.Input[_builtins.str]] = None):
+                 objective: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ExadataIormConfig resource.
 
@@ -66,7 +66,7 @@ class ExadataIormConfigArgs:
 
     @_builtins.property
     @pulumi.getter
-    def objective(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def objective(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Value for the IORM objective Default is "Auto" 
 
@@ -77,18 +77,18 @@ class ExadataIormConfigArgs:
         return pulumi.get(self, "objective")
 
     @objective.setter
-    def objective(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def objective(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "objective", value)
 
 
 @pulumi.input_type
 class _ExadataIormConfigState:
     def __init__(__self__, *,
-                 db_plans: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataIormConfigDbPlanArgs']]]] = None,
-                 db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 objective: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 db_plans: pulumi.Input[Optional[Sequence[pulumi.Input['ExadataIormConfigDbPlanArgs']]]] = None,
+                 db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 objective: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExadataIormConfig resources.
 
@@ -115,43 +115,43 @@ class _ExadataIormConfigState:
 
     @_builtins.property
     @pulumi.getter(name="dbPlans")
-    def db_plans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataIormConfigDbPlanArgs']]]]:
+    def db_plans(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExadataIormConfigDbPlanArgs']]]]:
         """
         (Updatable) Array of IORM Setting for all the database in this Exadata DB System
         """
         return pulumi.get(self, "db_plans")
 
     @db_plans.setter
-    def db_plans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataIormConfigDbPlanArgs']]]]):
+    def db_plans(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExadataIormConfigDbPlanArgs']]]]):
         pulumi.set(self, "db_plans", value)
 
     @_builtins.property
     @pulumi.getter(name="dbSystemId")
-    def db_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "db_system_id")
 
     @db_system_id.setter
-    def db_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional information about the current `lifecycleState`.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def objective(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def objective(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Value for the IORM objective Default is "Auto" 
 
@@ -162,19 +162,19 @@ class _ExadataIormConfigState:
         return pulumi.get(self, "objective")
 
     @objective.setter
-    def objective(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def objective(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "objective", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of IORM configuration for the Exadata DB system.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
@@ -184,9 +184,9 @@ class ExadataIormConfig(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 db_plans: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadataIormConfigDbPlanArgs', 'ExadataIormConfigDbPlanArgsDict']]]]] = None,
-                 db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 objective: Optional[pulumi.Input[_builtins.str]] = None,
+                 db_plans: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataIormConfigDbPlanArgs', 'ExadataIormConfigDbPlanArgsDict']]]]] = None,
+                 db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 objective: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Exadata Iorm Config resource in Oracle Cloud Infrastructure Database service.
@@ -212,7 +212,7 @@ class ExadataIormConfig(pulumi.CustomResource):
         test_exadata_iorm_config = oci.database.ExadataIormConfig("test_exadata_iorm_config",
             db_plans=[{
                 "db_name": exadata_iorm_config_db_plans_db_name,
-                "share": exadata_iorm_config_db_plans_share,
+                "share": int(exadata_iorm_config_db_plans_share),
             }],
             db_system_id=test_db_system["id"],
             objective="AUTO")
@@ -263,7 +263,7 @@ class ExadataIormConfig(pulumi.CustomResource):
         test_exadata_iorm_config = oci.database.ExadataIormConfig("test_exadata_iorm_config",
             db_plans=[{
                 "db_name": exadata_iorm_config_db_plans_db_name,
-                "share": exadata_iorm_config_db_plans_share,
+                "share": int(exadata_iorm_config_db_plans_share),
             }],
             db_system_id=test_db_system["id"],
             objective="AUTO")
@@ -289,9 +289,9 @@ class ExadataIormConfig(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 db_plans: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadataIormConfigDbPlanArgs', 'ExadataIormConfigDbPlanArgsDict']]]]] = None,
-                 db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 objective: Optional[pulumi.Input[_builtins.str]] = None,
+                 db_plans: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataIormConfigDbPlanArgs', 'ExadataIormConfigDbPlanArgsDict']]]]] = None,
+                 db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 objective: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -320,11 +320,11 @@ class ExadataIormConfig(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            db_plans: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadataIormConfigDbPlanArgs', 'ExadataIormConfigDbPlanArgsDict']]]]] = None,
-            db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            objective: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None) -> 'ExadataIormConfig':
+            db_plans: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataIormConfigDbPlanArgs', 'ExadataIormConfigDbPlanArgsDict']]]]] = None,
+            db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            objective: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> 'ExadataIormConfig':
         """
         Get an existing ExadataIormConfig resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

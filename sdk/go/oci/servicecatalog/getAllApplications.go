@@ -36,9 +36,9 @@ import (
 //				EntityId:      pulumi.StringRef(testEntity.Id),
 //				EntityType:    pulumi.StringRef(allApplicationEntityType),
 //				IsFeatured:    pulumi.BoolRef(allApplicationIsFeatured),
-//				PackageTypes:  allApplicationPackageType,
-//				Pricings:      allApplicationPricing,
-//				PublisherIds:  testPublisher.Id,
+//				PackageTypes:  pulumi.ToArray(allApplicationPackageType),
+//				Pricings:      pulumi.ToArray(allApplicationPricing),
+//				PublisherIds:  pulumi.ToArray(testPublisher.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

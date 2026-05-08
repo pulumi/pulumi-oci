@@ -264,7 +264,7 @@ def get_external_db_system_connector(external_db_system_connector_id: Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_external_db_system_connector = oci.DatabaseManagement.get_external_db_system_connector(external_db_system_connector_id=test_external_db_system_connector_oci_database_management_external_db_system_connector["id"])
+    test_external_db_system_connector = oci.databasemanagement.get_external_db_system_connector(external_db_system_connector_id=test_external_db_system_connector_oci_database_management_external_db_system_connector["id"])
     ```
 
 
@@ -294,7 +294,7 @@ def get_external_db_system_connector(external_db_system_connector_id: Optional[_
         time_connection_status_last_updated=pulumi.get(__ret__, 'time_connection_status_last_updated'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_external_db_system_connector_output(external_db_system_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_external_db_system_connector_output(external_db_system_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalDbSystemConnectorResult]:
     """
     This data source provides details about a specific External Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
@@ -307,7 +307,7 @@ def get_external_db_system_connector_output(external_db_system_connector_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_external_db_system_connector = oci.DatabaseManagement.get_external_db_system_connector(external_db_system_connector_id=test_external_db_system_connector_oci_database_management_external_db_system_connector["id"])
+    test_external_db_system_connector = oci.databasemanagement.get_external_db_system_connector(external_db_system_connector_id=test_external_db_system_connector_oci_database_management_external_db_system_connector["id"])
     ```
 
 

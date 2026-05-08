@@ -161,8 +161,8 @@ def get_plugin_errors(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_plugin_errors = oci.Jms.get_plugin_errors(compartment_id=compartment_id,
-        compartment_id_in_subtree=plugin_error_compartment_id_in_subtree,
+    test_plugin_errors = oci.jms.get_plugin_errors(compartment_id=compartment_id,
+        compartment_id_in_subtree=plugin_error_compartment_id_in_subtree == "true",
         managed_instance_id=test_managed_instance["id"],
         time_first_seen_greater_than_or_equal_to=plugin_error_time_first_seen_greater_than_or_equal_to,
         time_first_seen_less_than_or_equal_to=plugin_error_time_first_seen_less_than_or_equal_to,
@@ -202,14 +202,14 @@ def get_plugin_errors(compartment_id: Optional[_builtins.str] = None,
         time_first_seen_less_than_or_equal_to=pulumi.get(__ret__, 'time_first_seen_less_than_or_equal_to'),
         time_last_seen_greater_than_or_equal_to=pulumi.get(__ret__, 'time_last_seen_greater_than_or_equal_to'),
         time_last_seen_less_than_or_equal_to=pulumi.get(__ret__, 'time_last_seen_less_than_or_equal_to'))
-def get_plugin_errors_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPluginErrorsFilterArgs', 'GetPluginErrorsFilterArgsDict']]]]] = None,
-                             managed_instance_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             time_first_seen_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             time_first_seen_less_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             time_last_seen_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             time_last_seen_less_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_plugin_errors_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPluginErrorsFilterArgs', 'GetPluginErrorsFilterArgsDict']]]]] = None,
+                             managed_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             time_first_seen_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             time_first_seen_less_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             time_last_seen_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             time_last_seen_less_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPluginErrorsResult]:
     """
     This data source provides the list of Plugin Errors in Oracle Cloud Infrastructure Jms service.
@@ -222,8 +222,8 @@ def get_plugin_errors_output(compartment_id: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_plugin_errors = oci.Jms.get_plugin_errors(compartment_id=compartment_id,
-        compartment_id_in_subtree=plugin_error_compartment_id_in_subtree,
+    test_plugin_errors = oci.jms.get_plugin_errors(compartment_id=compartment_id,
+        compartment_id_in_subtree=plugin_error_compartment_id_in_subtree == "true",
         managed_instance_id=test_managed_instance["id"],
         time_first_seen_greater_than_or_equal_to=plugin_error_time_first_seen_greater_than_or_equal_to,
         time_first_seen_less_than_or_equal_to=plugin_error_time_first_seen_less_than_or_equal_to,

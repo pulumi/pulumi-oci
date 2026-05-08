@@ -138,7 +138,7 @@ def get_file_storage_lustre_file_systems(availability_domain: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_lustre_file_systems = oci.Lustre.get_file_storage_lustre_file_systems(availability_domain=lustre_file_system_availability_domain,
+    test_lustre_file_systems = oci.lustre.get_file_storage_lustre_file_systems(availability_domain=lustre_file_system_availability_domain,
         compartment_id=compartment_id,
         display_name=lustre_file_system_display_name,
         id=lustre_file_system_id,
@@ -170,12 +170,12 @@ def get_file_storage_lustre_file_systems(availability_domain: Optional[_builtins
         id=pulumi.get(__ret__, 'id'),
         lustre_file_system_collections=pulumi.get(__ret__, 'lustre_file_system_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_file_storage_lustre_file_systems_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFileStorageLustreFileSystemsFilterArgs', 'GetFileStorageLustreFileSystemsFilterArgsDict']]]]] = None,
-                                                id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_file_storage_lustre_file_systems_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFileStorageLustreFileSystemsFilterArgs', 'GetFileStorageLustreFileSystemsFilterArgsDict']]]]] = None,
+                                                id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFileStorageLustreFileSystemsResult]:
     """
     This data source provides the list of Lustre File Systems in Oracle Cloud Infrastructure Lustre File Storage service.
@@ -188,7 +188,7 @@ def get_file_storage_lustre_file_systems_output(availability_domain: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_lustre_file_systems = oci.Lustre.get_file_storage_lustre_file_systems(availability_domain=lustre_file_system_availability_domain,
+    test_lustre_file_systems = oci.lustre.get_file_storage_lustre_file_systems(availability_domain=lustre_file_system_availability_domain,
         compartment_id=compartment_id,
         display_name=lustre_file_system_display_name,
         id=lustre_file_system_id,

@@ -256,119 +256,119 @@ export interface ComputeHostState {
     /**
      * Additional data that can be exposed to the customer.  Will include raw fault codes for strategic customers
      */
-    additionalData?: pulumi.Input<string>;
+    additionalData?: pulumi.Input<string | undefined>;
     /**
      * The availability domain of the compute host.  Example: `Uocm:US-CHICAGO-1-AD-2`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Capacity Reserver that is currently on host
      */
-    capacityReservationId?: pulumi.Input<string>;
+    capacityReservationId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
      */
-    computeHostGroupId?: pulumi.Input<string>;
+    computeHostGroupId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host.
      */
-    computeHostId?: pulumi.Input<string>;
+    computeHostId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
      */
-    configurationActionType?: pulumi.Input<string>;
+    configurationActionType?: pulumi.Input<string | undefined>;
     /**
      * Compute Host Configuration Data
      */
-    configurationDatas?: pulumi.Input<pulumi.Input<inputs.Core.ComputeHostConfigurationData>[]>;
+    configurationDatas?: pulumi.Input<pulumi.Input<inputs.Core.ComputeHostConfigurationData>[] | undefined>;
     /**
      * Configuration state of the Compute Bare Metal Host.
      */
-    configurationState?: pulumi.Input<string>;
+    configurationState?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
      */
-    faultDomain?: pulumi.Input<string>;
+    faultDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host.
      */
-    firmwareBundleId?: pulumi.Input<string>;
+    firmwareBundleId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique GPU Memory Fabric
      */
-    gpuMemoryFabricId?: pulumi.Input<string>;
+    gpuMemoryFabricId?: pulumi.Input<string | undefined>;
     /**
      * The heathy state of the host
      */
-    health?: pulumi.Input<string>;
+    health?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island
      */
-    hpcIslandId?: pulumi.Input<string>;
+    hpcIslandId?: pulumi.Input<string | undefined>;
     /**
      * A list that contains impacted components related to an unhealthy host. An impacted component will be a  free-form structure of key values pairs that will provide more or less details based on data tiering
      */
-    impactedComponentDetails?: pulumi.Input<string>;
+    impactedComponentDetails?: pulumi.Input<string | undefined>;
     /**
      * The public [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Virtual Machine or Bare Metal instance
      */
-    instanceId?: pulumi.Input<string>;
+    instanceId?: pulumi.Input<string | undefined>;
     /**
      * A free-form description detailing why the host is in its current state.
      */
-    lifecycleDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    lifecycleDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Local Block
      */
-    localBlockId?: pulumi.Input<string>;
+    localBlockId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
      */
-    networkBlockId?: pulumi.Input<string>;
+    networkBlockId?: pulumi.Input<string | undefined>;
     /**
      * The platform of the host
      */
-    platform?: pulumi.Input<string>;
+    platform?: pulumi.Input<string | undefined>;
     /**
      * Shows details about the last recycle performed on this host.
      */
-    recycleDetails?: pulumi.Input<pulumi.Input<inputs.Core.ComputeHostRecycleDetail>[]>;
+    recycleDetails?: pulumi.Input<pulumi.Input<inputs.Core.ComputeHostRecycleDetail>[] | undefined>;
     /**
      * The shape of host
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of the host
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the compute bare metal host configuration check was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeConfigurationCheck?: pulumi.Input<string>;
+    timeConfigurationCheck?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the compute host record was created, in the format defined by [RFC3339](https://tools .ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the compute host record was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -378,7 +378,7 @@ export interface ComputeHostArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
      */
-    computeHostGroupId?: pulumi.Input<string>;
+    computeHostGroupId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host.
      */
@@ -386,5 +386,5 @@ export interface ComputeHostArgs {
     /**
      * (Updatable) The configuration action to next occur on the host if pinning its firmware with a host group.
      */
-    configurationActionType?: pulumi.Input<string>;
+    configurationActionType?: pulumi.Input<string | undefined>;
 }

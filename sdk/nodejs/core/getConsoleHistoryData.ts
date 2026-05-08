@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConsoleHistoryData = oci.Core.getConsoleHistoryData({
+ * const testConsoleHistoryData = oci.core.getConsoleHistoryData({
  *     consoleHistoryId: testConsoleHistory.id,
- *     length: consoleHistoryContentLength,
- *     offset: consoleHistoryContentOffset,
+ *     length: Number(consoleHistoryContentLength),
+ *     offset: Number(consoleHistoryContentOffset),
  * });
  * ```
  */
@@ -80,10 +80,10 @@ export interface GetConsoleHistoryDataResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConsoleHistoryData = oci.Core.getConsoleHistoryData({
+ * const testConsoleHistoryData = oci.core.getConsoleHistoryData({
  *     consoleHistoryId: testConsoleHistory.id,
- *     length: consoleHistoryContentLength,
- *     offset: consoleHistoryContentOffset,
+ *     length: Number(consoleHistoryContentLength),
+ *     offset: Number(consoleHistoryContentOffset),
  * });
  * ```
  */
@@ -107,9 +107,9 @@ export interface GetConsoleHistoryDataOutputArgs {
     /**
      * Length of the snapshot data to retrieve. Cannot be less than 10240.
      */
-    length?: pulumi.Input<number>;
+    length?: pulumi.Input<number | undefined>;
     /**
      * Offset of the snapshot data to retrieve.
      */
-    offset?: pulumi.Input<number>;
+    offset?: pulumi.Input<number | undefined>;
 }

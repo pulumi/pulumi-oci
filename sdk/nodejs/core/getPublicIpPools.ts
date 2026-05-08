@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPublicIpPools = oci.Core.getPublicIpPools({
+ * const testPublicIpPools = oci.core.getPublicIpPools({
  *     compartmentId: compartmentId,
  *     byoipRangeId: testByoipRange.id,
  *     displayName: publicIpPoolDisplayName,
@@ -89,7 +89,7 @@ export interface GetPublicIpPoolsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPublicIpPools = oci.Core.getPublicIpPools({
+ * const testPublicIpPools = oci.core.getPublicIpPools({
  *     compartmentId: compartmentId,
  *     byoipRangeId: testByoipRange.id,
  *     displayName: publicIpPoolDisplayName,
@@ -113,7 +113,7 @@ export interface GetPublicIpPoolsOutputArgs {
     /**
      * A filter to return only resources that match the given BYOIP CIDR block.
      */
-    byoipRangeId?: pulumi.Input<string>;
+    byoipRangeId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -121,6 +121,6 @@ export interface GetPublicIpPoolsOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetPublicIpPoolsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetPublicIpPoolsFilterArgs>[] | undefined>;
 }

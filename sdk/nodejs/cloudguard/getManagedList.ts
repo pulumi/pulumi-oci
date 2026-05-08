@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedList = oci.CloudGuard.getManagedList({
+ * const testManagedList = oci.cloudguard.getManagedList({
  *     managedListId: testManagedListOciCloudGuardManagedList.id,
  * });
  * ```
@@ -122,7 +122,7 @@ export interface GetManagedListResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedList = oci.CloudGuard.getManagedList({
+ * const testManagedList = oci.cloudguard.getManagedList({
  *     managedListId: testManagedListOciCloudGuardManagedList.id,
  * });
  * ```

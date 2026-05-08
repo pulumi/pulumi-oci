@@ -131,7 +131,7 @@ def get_managed_instance_group_available_software_sources(compartment_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_group_available_software_sources = oci.OsManagementHub.get_managed_instance_group_available_software_sources(managed_instance_group_id=test_managed_instance_group["id"],
+    test_managed_instance_group_available_software_sources = oci.osmanagementhub.get_managed_instance_group_available_software_sources(managed_instance_group_id=test_managed_instance_group["id"],
         compartment_id=compartment_id,
         display_names=managed_instance_group_available_software_source_display_name,
         display_name_contains=managed_instance_group_available_software_source_display_name_contains)
@@ -160,11 +160,11 @@ def get_managed_instance_group_available_software_sources(compartment_id: Option
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         managed_instance_group_id=pulumi.get(__ret__, 'managed_instance_group_id'))
-def get_managed_instance_group_available_software_sources_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                 display_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                 display_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceGroupAvailableSoftwareSourcesFilterArgs', 'GetManagedInstanceGroupAvailableSoftwareSourcesFilterArgsDict']]]]] = None,
-                                                                 managed_instance_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_managed_instance_group_available_software_sources_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                 display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                 display_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedInstanceGroupAvailableSoftwareSourcesFilterArgs', 'GetManagedInstanceGroupAvailableSoftwareSourcesFilterArgsDict']]]]] = None,
+                                                                 managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceGroupAvailableSoftwareSourcesResult]:
     """
     This data source provides the list of Managed Instance Group Available Software Sources in Oracle Cloud Infrastructure Os Management Hub service.
@@ -177,7 +177,7 @@ def get_managed_instance_group_available_software_sources_output(compartment_id:
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_group_available_software_sources = oci.OsManagementHub.get_managed_instance_group_available_software_sources(managed_instance_group_id=test_managed_instance_group["id"],
+    test_managed_instance_group_available_software_sources = oci.osmanagementhub.get_managed_instance_group_available_software_sources(managed_instance_group_id=test_managed_instance_group["id"],
         compartment_id=compartment_id,
         display_names=managed_instance_group_available_software_source_display_name,
         display_name_contains=managed_instance_group_available_software_source_display_name_contains)

@@ -163,8 +163,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetContainersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -211,8 +211,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetContainersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -259,8 +259,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetContainersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -307,8 +307,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetContainersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -355,8 +355,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetContainersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -403,8 +403,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetContainersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -451,8 +451,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetContainersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -499,8 +499,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetFastLaunchJobConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -541,8 +541,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetFastLaunchJobConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -583,8 +583,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetFastLaunchJobConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -625,8 +625,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetFastLaunchJobConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -667,8 +667,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetFastLaunchJobConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -709,8 +709,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -751,8 +751,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -793,8 +793,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -835,8 +835,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -877,8 +877,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -919,8 +919,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetJobRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -961,8 +961,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetJobRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1003,8 +1003,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetJobRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1045,8 +1045,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetJobRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1087,8 +1087,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetJobRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1129,8 +1129,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetJobRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1176,8 +1176,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetJobRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1223,8 +1223,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetJobRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1270,8 +1270,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetJobRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1317,8 +1317,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetJobRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1364,8 +1364,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetJobShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1406,8 +1406,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetJobShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1448,8 +1448,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetJobShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1490,8 +1490,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetJobShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1532,8 +1532,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetJobShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1574,8 +1574,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1621,8 +1621,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1668,8 +1668,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1715,8 +1715,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1762,8 +1762,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1809,8 +1809,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1851,8 +1851,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1893,8 +1893,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1935,8 +1935,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1977,8 +1977,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2019,8 +2019,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2061,8 +2061,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2103,8 +2103,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2145,8 +2145,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2187,8 +2187,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2229,8 +2229,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2271,8 +2271,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2313,8 +2313,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2355,8 +2355,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2397,8 +2397,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2439,8 +2439,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2482,8 +2482,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2525,8 +2525,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2568,8 +2568,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2611,8 +2611,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationVersionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2654,8 +2654,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2701,8 +2701,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2748,8 +2748,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2795,8 +2795,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2842,8 +2842,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationImplementationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2889,8 +2889,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2931,8 +2931,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2973,8 +2973,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3015,8 +3015,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3057,8 +3057,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationInstanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3099,8 +3099,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3144,8 +3144,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3189,8 +3189,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3234,8 +3234,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3279,8 +3279,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationInstancesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3324,8 +3324,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3370,8 +3370,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3416,8 +3416,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3462,8 +3462,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3508,8 +3508,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetMlApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3554,8 +3554,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3596,8 +3596,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3638,8 +3638,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3680,8 +3680,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3722,8 +3722,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3764,8 +3764,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelCustomMetadataArtifactContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3808,8 +3808,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelCustomMetadataArtifactContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3852,8 +3852,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelCustomMetadataArtifactContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3896,8 +3896,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelCustomMetadataArtifactContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3940,8 +3940,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelCustomMetadataArtifactContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3984,8 +3984,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelDefinedMetadataArtifactContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4028,8 +4028,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelDefinedMetadataArtifactContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4072,8 +4072,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelDefinedMetadataArtifactContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4116,8 +4116,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelDefinedMetadataArtifactContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4160,8 +4160,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelDefinedMetadataArtifactContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4204,8 +4204,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4246,8 +4246,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4288,8 +4288,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4330,8 +4330,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4372,8 +4372,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4414,8 +4414,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentModelStatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4461,8 +4461,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentModelStatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4508,8 +4508,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentModelStatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4555,8 +4555,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentModelStatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4602,8 +4602,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentModelStatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4649,8 +4649,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4691,8 +4691,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4733,8 +4733,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4775,8 +4775,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4817,8 +4817,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4859,8 +4859,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4906,8 +4906,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4953,8 +4953,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5000,8 +5000,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5047,8 +5047,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5094,8 +5094,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5136,8 +5136,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5178,8 +5178,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5220,8 +5220,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5262,8 +5262,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5304,8 +5304,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupArtifactContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5347,8 +5347,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupArtifactContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5390,8 +5390,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupArtifactContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5433,8 +5433,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupArtifactContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5476,8 +5476,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupArtifactContentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5519,8 +5519,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5566,8 +5566,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5613,8 +5613,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5660,8 +5660,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5707,8 +5707,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5754,8 +5754,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupVersionHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5801,8 +5801,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupVersionHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5848,8 +5848,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupVersionHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5895,8 +5895,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupVersionHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5942,8 +5942,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupVersionHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5989,8 +5989,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupVersionHistoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6031,8 +6031,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupVersionHistoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6073,8 +6073,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupVersionHistoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6115,8 +6115,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupVersionHistoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6157,8 +6157,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupVersionHistoryArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6199,8 +6199,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6247,8 +6247,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6295,8 +6295,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6343,8 +6343,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6391,8 +6391,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6439,8 +6439,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelProvenanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6481,8 +6481,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelProvenanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6523,8 +6523,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelProvenanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6565,8 +6565,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelProvenanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6607,8 +6607,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelProvenanceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6649,8 +6649,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelVersionSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6691,8 +6691,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelVersionSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6733,8 +6733,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelVersionSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6775,8 +6775,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelVersionSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6817,8 +6817,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelVersionSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6859,8 +6859,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelVersionSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6907,8 +6907,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelVersionSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -6955,8 +6955,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelVersionSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7003,8 +7003,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelVersionSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7051,8 +7051,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelVersionSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7099,8 +7099,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7148,8 +7148,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7197,8 +7197,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7246,8 +7246,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7295,8 +7295,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetModelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7344,8 +7344,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7386,8 +7386,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7428,8 +7428,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7470,8 +7470,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7512,8 +7512,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7554,8 +7554,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7596,8 +7596,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7638,8 +7638,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7680,8 +7680,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7722,8 +7722,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7764,8 +7764,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7811,8 +7811,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7858,8 +7858,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7905,8 +7905,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7952,8 +7952,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetNotebookSessionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -7999,8 +7999,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8041,8 +8041,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8083,8 +8083,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8125,8 +8125,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8167,8 +8167,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPipelineArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8209,8 +8209,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPipelineRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8251,8 +8251,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPipelineRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8293,8 +8293,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPipelineRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8335,8 +8335,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPipelineRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8377,8 +8377,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPipelineRunArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8419,8 +8419,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPipelineRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8466,8 +8466,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPipelineRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8513,8 +8513,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPipelineRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8560,8 +8560,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPipelineRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8607,8 +8607,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPipelineRunsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8654,8 +8654,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8701,8 +8701,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8748,8 +8748,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8795,8 +8795,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8842,8 +8842,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPipelinesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8889,8 +8889,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8931,8 +8931,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -8973,8 +8973,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9015,8 +9015,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9057,8 +9057,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9099,8 +9099,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9145,8 +9145,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9191,8 +9191,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9237,8 +9237,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9283,8 +9283,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9329,8 +9329,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetProjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9371,8 +9371,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetProjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9413,8 +9413,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetProjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9455,8 +9455,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetProjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9497,8 +9497,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetProjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9539,8 +9539,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9585,8 +9585,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9631,8 +9631,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9677,8 +9677,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9723,8 +9723,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9769,8 +9769,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9811,8 +9811,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9853,8 +9853,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9895,8 +9895,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9937,8 +9937,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -9979,8 +9979,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10025,8 +10025,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10071,8 +10071,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10117,8 +10117,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -10163,8 +10163,8 @@ public final class DataScienceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataScience.DataScienceFunctions;
      * import com.pulumi.oci.DataScience.inputs.GetSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  *
  * const testExternalDbSystemDatabaseManagementsManagement = new oci.databasemanagement.ExternalDbSystemDatabaseManagementsManagement("test_external_db_system_database_managements_management", {
  *     externalDbSystemId: testExternalDbSystem.id,
- *     enableDatabaseManagement: enableDatabaseManagement,
+ *     enableDatabaseManagement: enableDatabaseManagement === "true",
  *     licenseModel: externalDbSystemDatabaseManagementsManagementLicenseModel,
  * });
  * ```
@@ -114,15 +114,15 @@ export interface ExternalDbSystemDatabaseManagementsManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    enableDatabaseManagement?: pulumi.Input<boolean>;
+    enableDatabaseManagement?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      */
-    externalDbSystemId?: pulumi.Input<string>;
+    externalDbSystemId?: pulumi.Input<string | undefined>;
     /**
      * The Oracle license model that applies to the external database.
      */
-    licenseModel?: pulumi.Input<string>;
+    licenseModel?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -144,5 +144,5 @@ export interface ExternalDbSystemDatabaseManagementsManagementArgs {
     /**
      * The Oracle license model that applies to the external database.
      */
-    licenseModel?: pulumi.Input<string>;
+    licenseModel?: pulumi.Input<string | undefined>;
 }

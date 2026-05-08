@@ -89,32 +89,32 @@ class AutoScalingConfigurationPolicyArgsDict(TypedDict):
     """
     The type of autoscaling policy.
     """
-    capacity: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyCapacityArgsDict']]
+    capacity: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyCapacityArgs']]]
     """
     The capacity requirements of the autoscaling policy.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
     """
-    execution_schedule: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyExecutionScheduleArgsDict']]
+    execution_schedule: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyExecutionScheduleArgs']]]
     """
     An execution schedule for an autoscaling policy.
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     ID of the condition that is assigned after creation.
     """
-    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Whether the autoscaling policy is enabled.
     """
-    resource_action: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyResourceActionArgsDict']]
+    resource_action: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyResourceActionArgs']]]
     """
     An action to run on a resource, such as stopping or starting an instance pool.
     """
-    rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyRuleArgsDict']]]]
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AutoScalingConfigurationPolicyRuleArgs']]]]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
     """
@@ -123,14 +123,14 @@ class AutoScalingConfigurationPolicyArgsDict(TypedDict):
 class AutoScalingConfigurationPolicyArgs:
     def __init__(__self__, *,
                  policy_type: pulumi.Input[_builtins.str],
-                 capacity: Optional[pulumi.Input['AutoScalingConfigurationPolicyCapacityArgs']] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 execution_schedule: Optional[pulumi.Input['AutoScalingConfigurationPolicyExecutionScheduleArgs']] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 resource_action: Optional[pulumi.Input['AutoScalingConfigurationPolicyResourceActionArgs']] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyRuleArgs']]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 capacity: pulumi.Input[Optional['AutoScalingConfigurationPolicyCapacityArgs']] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 execution_schedule: pulumi.Input[Optional['AutoScalingConfigurationPolicyExecutionScheduleArgs']] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 resource_action: pulumi.Input[Optional['AutoScalingConfigurationPolicyResourceActionArgs']] = None,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['AutoScalingConfigurationPolicyRuleArgs']]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] policy_type: The type of autoscaling policy.
         :param pulumi.Input['AutoScalingConfigurationPolicyCapacityArgs'] capacity: The capacity requirements of the autoscaling policy.
@@ -173,112 +173,112 @@ class AutoScalingConfigurationPolicyArgs:
 
     @_builtins.property
     @pulumi.getter
-    def capacity(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyCapacityArgs']]:
+    def capacity(self) -> pulumi.Input[Optional['AutoScalingConfigurationPolicyCapacityArgs']]:
         """
         The capacity requirements of the autoscaling policy.
         """
         return pulumi.get(self, "capacity")
 
     @capacity.setter
-    def capacity(self, value: Optional[pulumi.Input['AutoScalingConfigurationPolicyCapacityArgs']]):
+    def capacity(self, value: pulumi.Input[Optional['AutoScalingConfigurationPolicyCapacityArgs']]):
         pulumi.set(self, "capacity", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="executionSchedule")
-    def execution_schedule(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyExecutionScheduleArgs']]:
+    def execution_schedule(self) -> pulumi.Input[Optional['AutoScalingConfigurationPolicyExecutionScheduleArgs']]:
         """
         An execution schedule for an autoscaling policy.
         """
         return pulumi.get(self, "execution_schedule")
 
     @execution_schedule.setter
-    def execution_schedule(self, value: Optional[pulumi.Input['AutoScalingConfigurationPolicyExecutionScheduleArgs']]):
+    def execution_schedule(self, value: pulumi.Input[Optional['AutoScalingConfigurationPolicyExecutionScheduleArgs']]):
         pulumi.set(self, "execution_schedule", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the condition that is assigned after creation.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the autoscaling policy is enabled.
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceAction")
-    def resource_action(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyResourceActionArgs']]:
+    def resource_action(self) -> pulumi.Input[Optional['AutoScalingConfigurationPolicyResourceActionArgs']]:
         """
         An action to run on a resource, such as stopping or starting an instance pool.
         """
         return pulumi.get(self, "resource_action")
 
     @resource_action.setter
-    def resource_action(self, value: Optional[pulumi.Input['AutoScalingConfigurationPolicyResourceActionArgs']]):
+    def resource_action(self, value: pulumi.Input[Optional['AutoScalingConfigurationPolicyResourceActionArgs']]):
         pulumi.set(self, "resource_action", value)
 
     @_builtins.property
     @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyRuleArgs']]]]:
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutoScalingConfigurationPolicyRuleArgs']]]]:
         return pulumi.get(self, "rules")
 
     @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyRuleArgs']]]]):
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutoScalingConfigurationPolicyRuleArgs']]]]):
         pulumi.set(self, "rules", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
 class AutoScalingConfigurationPolicyCapacityArgsDict(TypedDict):
-    initial: NotRequired[pulumi.Input[_builtins.int]]
+    initial: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
 
     For a schedule-based autoscaling policy, this value is the target pool size to scale to when executing the schedule that's defined in the autoscaling policy.
     """
-    max: NotRequired[pulumi.Input[_builtins.int]]
+    max: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
 
     For a schedule-based autoscaling policy, this value is not used.
     """
-    min: NotRequired[pulumi.Input[_builtins.int]]
+    min: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
 
@@ -288,9 +288,9 @@ class AutoScalingConfigurationPolicyCapacityArgsDict(TypedDict):
 @pulumi.input_type
 class AutoScalingConfigurationPolicyCapacityArgs:
     def __init__(__self__, *,
-                 initial: Optional[pulumi.Input[_builtins.int]] = None,
-                 max: Optional[pulumi.Input[_builtins.int]] = None,
-                 min: Optional[pulumi.Input[_builtins.int]] = None):
+                 initial: pulumi.Input[Optional[_builtins.int]] = None,
+                 max: pulumi.Input[Optional[_builtins.int]] = None,
+                 min: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] initial: For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
                
@@ -311,7 +311,7 @@ class AutoScalingConfigurationPolicyCapacityArgs:
 
     @_builtins.property
     @pulumi.getter
-    def initial(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def initial(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the instance pool immediately after autoscaling is enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
 
@@ -320,12 +320,12 @@ class AutoScalingConfigurationPolicyCapacityArgs:
         return pulumi.get(self, "initial")
 
     @initial.setter
-    def initial(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def initial(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "initial", value)
 
     @_builtins.property
     @pulumi.getter
-    def max(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         For a threshold-based autoscaling policy, this value is the maximum number of instances the instance pool is allowed to increase to (scale out).
 
@@ -334,12 +334,12 @@ class AutoScalingConfigurationPolicyCapacityArgs:
         return pulumi.get(self, "max")
 
     @max.setter
-    def max(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max", value)
 
     @_builtins.property
     @pulumi.getter
-    def min(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def min(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         For a threshold-based autoscaling policy, this value is the minimum number of instances the instance pool is allowed to decrease to (scale in).
 
@@ -348,7 +348,7 @@ class AutoScalingConfigurationPolicyCapacityArgs:
         return pulumi.get(self, "min")
 
     @min.setter
-    def min(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def min(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "min", value)
 
 
@@ -487,23 +487,23 @@ class AutoScalingConfigurationPolicyRuleArgsDict(TypedDict):
     """
     A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
     """
-    action: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyRuleActionArgsDict']]
+    action: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyRuleActionArgs']]]
     """
     The action to take when autoscaling is triggered.
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     ID of the condition that is assigned after creation.
     """
-    metric: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyRuleMetricArgsDict']]
+    metric: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyRuleMetricArgs']]]
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyRuleArgs:
     def __init__(__self__, *,
                  display_name: pulumi.Input[_builtins.str],
-                 action: Optional[pulumi.Input['AutoScalingConfigurationPolicyRuleActionArgs']] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric: Optional[pulumi.Input['AutoScalingConfigurationPolicyRuleMetricArgs']] = None):
+                 action: pulumi.Input[Optional['AutoScalingConfigurationPolicyRuleActionArgs']] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric: pulumi.Input[Optional['AutoScalingConfigurationPolicyRuleMetricArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input['AutoScalingConfigurationPolicyRuleActionArgs'] action: The action to take when autoscaling is triggered.
@@ -531,44 +531,44 @@ class AutoScalingConfigurationPolicyRuleArgs:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyRuleActionArgs']]:
+    def action(self) -> pulumi.Input[Optional['AutoScalingConfigurationPolicyRuleActionArgs']]:
         """
         The action to take when autoscaling is triggered.
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input['AutoScalingConfigurationPolicyRuleActionArgs']]):
+    def action(self, value: pulumi.Input[Optional['AutoScalingConfigurationPolicyRuleActionArgs']]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the condition that is assigned after creation.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter
-    def metric(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyRuleMetricArgs']]:
+    def metric(self) -> pulumi.Input[Optional['AutoScalingConfigurationPolicyRuleMetricArgs']]:
         return pulumi.get(self, "metric")
 
     @metric.setter
-    def metric(self, value: Optional[pulumi.Input['AutoScalingConfigurationPolicyRuleMetricArgs']]):
+    def metric(self, value: pulumi.Input[Optional['AutoScalingConfigurationPolicyRuleMetricArgs']]):
         pulumi.set(self, "metric", value)
 
 
 class AutoScalingConfigurationPolicyRuleActionArgsDict(TypedDict):
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of action to take.
     """
-    value: NotRequired[pulumi.Input[_builtins.int]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     To scale out (increase the number of instances), provide a positive value. To scale in (decrease the number of instances), provide a negative value.
     """
@@ -576,8 +576,8 @@ class AutoScalingConfigurationPolicyRuleActionArgsDict(TypedDict):
 @pulumi.input_type
 class AutoScalingConfigurationPolicyRuleActionArgs:
     def __init__(__self__, *,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.int]] = None):
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] type: The type of action to take.
         :param pulumi.Input[_builtins.int] value: To scale out (increase the number of instances), provide a positive value. To scale in (decrease the number of instances), provide a negative value.
@@ -589,35 +589,35 @@ class AutoScalingConfigurationPolicyRuleActionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of action to take.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         To scale out (increase the number of instances), provide a positive value. To scale in (decrease the number of instances), provide a negative value.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "value", value)
 
 
 class AutoScalingConfigurationPolicyRuleMetricArgsDict(TypedDict):
-    metric_compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    metric_compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the compartment containing the metrics.
     """
-    metric_source: NotRequired[pulumi.Input[_builtins.str]]
+    metric_source: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Source of the metric data for creating the alarm used to trigger autoscaling actions.
 
@@ -625,18 +625,18 @@ class AutoScalingConfigurationPolicyRuleMetricArgsDict(TypedDict):
     * `COMPUTE_AGENT`: CPU or memory metrics emitted by the Compute Instance Monitoring plugin.
     * `CUSTOM_QUERY`: A custom Monitoring Query Language (MQL) expression.
     """
-    metric_type: NotRequired[pulumi.Input[_builtins.str]]
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    metric_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The namespace for the query.
     """
-    pending_duration: NotRequired[pulumi.Input[_builtins.str]]
+    pending_duration: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
 
     The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
     """
-    query: NotRequired[pulumi.Input[_builtins.str]]
+    query: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
 
@@ -648,23 +648,23 @@ class AutoScalingConfigurationPolicyRuleMetricArgsDict(TypedDict):
 
     -----
     """
-    resource_group: NotRequired[pulumi.Input[_builtins.str]]
+    resource_group: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The resource group for the query.
     """
-    threshold: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyRuleMetricThresholdArgsDict']]
+    threshold: NotRequired[pulumi.Input[Optional['AutoScalingConfigurationPolicyRuleMetricThresholdArgs']]]
 
 @pulumi.input_type
 class AutoScalingConfigurationPolicyRuleMetricArgs:
     def __init__(__self__, *,
-                 metric_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 pending_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 query: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 threshold: Optional[pulumi.Input['AutoScalingConfigurationPolicyRuleMetricThresholdArgs']] = None):
+                 metric_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 pending_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 query: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 threshold: pulumi.Input[Optional['AutoScalingConfigurationPolicyRuleMetricThresholdArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] metric_compartment_id: The OCID of the compartment containing the metrics.
         :param pulumi.Input[_builtins.str] metric_source: Source of the metric data for creating the alarm used to trigger autoscaling actions.
@@ -706,19 +706,19 @@ class AutoScalingConfigurationPolicyRuleMetricArgs:
 
     @_builtins.property
     @pulumi.getter(name="metricCompartmentId")
-    def metric_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment containing the metrics.
         """
         return pulumi.get(self, "metric_compartment_id")
 
     @metric_compartment_id.setter
-    def metric_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="metricSource")
-    def metric_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Source of the metric data for creating the alarm used to trigger autoscaling actions.
 
@@ -729,33 +729,33 @@ class AutoScalingConfigurationPolicyRuleMetricArgs:
         return pulumi.get(self, "metric_source")
 
     @metric_source.setter
-    def metric_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_source", value)
 
     @_builtins.property
     @pulumi.getter(name="metricType")
-    def metric_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "metric_type")
 
     @metric_type.setter
-    def metric_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The namespace for the query.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="pendingDuration")
-    def pending_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pending_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
 
@@ -764,12 +764,12 @@ class AutoScalingConfigurationPolicyRuleMetricArgs:
         return pulumi.get(self, "pending_duration")
 
     @pending_duration.setter
-    def pending_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pending_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pending_duration", value)
 
     @_builtins.property
     @pulumi.getter
-    def query(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def query(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
 
@@ -784,37 +784,37 @@ class AutoScalingConfigurationPolicyRuleMetricArgs:
         return pulumi.get(self, "query")
 
     @query.setter
-    def query(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def query(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "query", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The resource group for the query.
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter
-    def threshold(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyRuleMetricThresholdArgs']]:
+    def threshold(self) -> pulumi.Input[Optional['AutoScalingConfigurationPolicyRuleMetricThresholdArgs']]:
         return pulumi.get(self, "threshold")
 
     @threshold.setter
-    def threshold(self, value: Optional[pulumi.Input['AutoScalingConfigurationPolicyRuleMetricThresholdArgs']]):
+    def threshold(self, value: pulumi.Input[Optional['AutoScalingConfigurationPolicyRuleMetricThresholdArgs']]):
         pulumi.set(self, "threshold", value)
 
 
 class AutoScalingConfigurationPolicyRuleMetricThresholdArgsDict(TypedDict):
-    operator: NotRequired[pulumi.Input[_builtins.str]]
+    operator: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The comparison operator to use. Options are greater than (`GT`), greater than or equal to (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
     """
-    value: NotRequired[pulumi.Input[_builtins.int]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -823,8 +823,8 @@ class AutoScalingConfigurationPolicyRuleMetricThresholdArgsDict(TypedDict):
 @pulumi.input_type
 class AutoScalingConfigurationPolicyRuleMetricThresholdArgs:
     def __init__(__self__, *,
-                 operator: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.int]] = None):
+                 operator: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] operator: The comparison operator to use. Options are greater than (`GT`), greater than or equal to (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
         :param pulumi.Input[_builtins.int] value: ** IMPORTANT **
@@ -837,19 +837,19 @@ class AutoScalingConfigurationPolicyRuleMetricThresholdArgs:
 
     @_builtins.property
     @pulumi.getter
-    def operator(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The comparison operator to use. Options are greater than (`GT`), greater than or equal to (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
         """
         return pulumi.get(self, "operator")
 
     @operator.setter
-    def operator(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operator(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operator", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -857,7 +857,7 @@ class AutoScalingConfigurationPolicyRuleMetricThresholdArgs:
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "value", value)
 
 

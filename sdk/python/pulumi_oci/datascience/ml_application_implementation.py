@@ -23,13 +23,13 @@ class MlApplicationImplementationArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  ml_application_id: pulumi.Input[_builtins.str],
-                 allowed_migration_destinations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 logging: Optional[pulumi.Input['MlApplicationImplementationLoggingArgs']] = None,
-                 ml_application_package: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 opc_ml_app_package_args: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 allowed_migration_destinations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 logging: pulumi.Input[Optional['MlApplicationImplementationLoggingArgs']] = None,
+                 ml_application_package: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 opc_ml_app_package_args: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a MlApplicationImplementation resource.
 
@@ -90,67 +90,67 @@ class MlApplicationImplementationArgs:
 
     @_builtins.property
     @pulumi.getter(name="allowedMigrationDestinations")
-    def allowed_migration_destinations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_migration_destinations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of ML Application Implementation OCIDs for which migration from this implementation is allowed. Migration means that if consumers change implementation for their instances to implementation with OCID from this list, instance components will be updated in place otherwise new instance components are created based on the new implementation and old instance components are removed.
         """
         return pulumi.get(self, "allowed_migration_destinations")
 
     @allowed_migration_destinations.setter
-    def allowed_migration_destinations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_migration_destinations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_migration_destinations", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def logging(self) -> Optional[pulumi.Input['MlApplicationImplementationLoggingArgs']]:
+    def logging(self) -> pulumi.Input[Optional['MlApplicationImplementationLoggingArgs']]:
         """
         (Updatable) Configuration of Logging for ML Application Implementation.
         """
         return pulumi.get(self, "logging")
 
     @logging.setter
-    def logging(self, value: Optional[pulumi.Input['MlApplicationImplementationLoggingArgs']]):
+    def logging(self, value: pulumi.Input[Optional['MlApplicationImplementationLoggingArgs']]):
         pulumi.set(self, "logging", value)
 
     @_builtins.property
     @pulumi.getter(name="mlApplicationPackage")
-    def ml_application_package(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def ml_application_package(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Configuration of The ML Application Package to upload.
         """
         return pulumi.get(self, "ml_application_package")
 
     @ml_application_package.setter
-    def ml_application_package(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def ml_application_package(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ml_application_package", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ML Application Implementation name which is unique for given ML Application.
 
@@ -161,45 +161,45 @@ class MlApplicationImplementationArgs:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="opcMlAppPackageArgs")
-    def opc_ml_app_package_args(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def opc_ml_app_package_args(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) ML Application package arguments required during ML Application package upload. Each argument is a simple key-value pair.
         """
         return pulumi.get(self, "opc_ml_app_package_args")
 
     @opc_ml_app_package_args.setter
-    def opc_ml_app_package_args(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def opc_ml_app_package_args(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "opc_ml_app_package_args", value)
 
 
 @pulumi.input_type
 class _MlApplicationImplementationState:
     def __init__(__self__, *,
-                 allowed_migration_destinations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 application_components: Optional[pulumi.Input[Sequence[pulumi.Input['MlApplicationImplementationApplicationComponentArgs']]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configuration_schemas: Optional[pulumi.Input[Sequence[pulumi.Input['MlApplicationImplementationConfigurationSchemaArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 logging: Optional[pulumi.Input['MlApplicationImplementationLoggingArgs']] = None,
-                 ml_application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ml_application_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ml_application_package: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ml_application_package_arguments: Optional[pulumi.Input[Sequence[pulumi.Input['MlApplicationImplementationMlApplicationPackageArgumentArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 opc_ml_app_package_args: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 package_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 allowed_migration_destinations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 application_components: pulumi.Input[Optional[Sequence[pulumi.Input['MlApplicationImplementationApplicationComponentArgs']]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configuration_schemas: pulumi.Input[Optional[Sequence[pulumi.Input['MlApplicationImplementationConfigurationSchemaArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 logging: pulumi.Input[Optional['MlApplicationImplementationLoggingArgs']] = None,
+                 ml_application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ml_application_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ml_application_package: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ml_application_package_arguments: pulumi.Input[Optional[Sequence[pulumi.Input['MlApplicationImplementationMlApplicationPackageArgumentArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 opc_ml_app_package_args: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 package_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MlApplicationImplementation resources.
 
@@ -271,163 +271,163 @@ class _MlApplicationImplementationState:
 
     @_builtins.property
     @pulumi.getter(name="allowedMigrationDestinations")
-    def allowed_migration_destinations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def allowed_migration_destinations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of ML Application Implementation OCIDs for which migration from this implementation is allowed. Migration means that if consumers change implementation for their instances to implementation with OCID from this list, instance components will be updated in place otherwise new instance components are created based on the new implementation and old instance components are removed.
         """
         return pulumi.get(self, "allowed_migration_destinations")
 
     @allowed_migration_destinations.setter
-    def allowed_migration_destinations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def allowed_migration_destinations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "allowed_migration_destinations", value)
 
     @_builtins.property
     @pulumi.getter(name="applicationComponents")
-    def application_components(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MlApplicationImplementationApplicationComponentArgs']]]]:
+    def application_components(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MlApplicationImplementationApplicationComponentArgs']]]]:
         """
         List of application components (OCI resources shared for all MlApplicationInstances). These have been created automatically based on their definitions in the ML Application package.
         """
         return pulumi.get(self, "application_components")
 
     @application_components.setter
-    def application_components(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MlApplicationImplementationApplicationComponentArgs']]]]):
+    def application_components(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MlApplicationImplementationApplicationComponentArgs']]]]):
         pulumi.set(self, "application_components", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment where ML Application Implementation is created.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="configurationSchemas")
-    def configuration_schemas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MlApplicationImplementationConfigurationSchemaArgs']]]]:
+    def configuration_schemas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MlApplicationImplementationConfigurationSchemaArgs']]]]:
         """
         Schema of configuration which needs to be provided for each ML Application Instance. It is defined in the ML Application package descriptor.
         """
         return pulumi.get(self, "configuration_schemas")
 
     @configuration_schemas.setter
-    def configuration_schemas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MlApplicationImplementationConfigurationSchemaArgs']]]]):
+    def configuration_schemas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MlApplicationImplementationConfigurationSchemaArgs']]]]):
         pulumi.set(self, "configuration_schemas", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         short description of the argument
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def logging(self) -> Optional[pulumi.Input['MlApplicationImplementationLoggingArgs']]:
+    def logging(self) -> pulumi.Input[Optional['MlApplicationImplementationLoggingArgs']]:
         """
         (Updatable) Configuration of Logging for ML Application Implementation.
         """
         return pulumi.get(self, "logging")
 
     @logging.setter
-    def logging(self, value: Optional[pulumi.Input['MlApplicationImplementationLoggingArgs']]):
+    def logging(self, value: pulumi.Input[Optional['MlApplicationImplementationLoggingArgs']]):
         pulumi.set(self, "logging", value)
 
     @_builtins.property
     @pulumi.getter(name="mlApplicationId")
-    def ml_application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ml_application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the ML Application implemented by this ML Application Implementation
         """
         return pulumi.get(self, "ml_application_id")
 
     @ml_application_id.setter
-    def ml_application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ml_application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ml_application_id", value)
 
     @_builtins.property
     @pulumi.getter(name="mlApplicationName")
-    def ml_application_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ml_application_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of ML Application (based on mlApplicationId)
         """
         return pulumi.get(self, "ml_application_name")
 
     @ml_application_name.setter
-    def ml_application_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ml_application_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ml_application_name", value)
 
     @_builtins.property
     @pulumi.getter(name="mlApplicationPackage")
-    def ml_application_package(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def ml_application_package(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Configuration of The ML Application Package to upload.
         """
         return pulumi.get(self, "ml_application_package")
 
     @ml_application_package.setter
-    def ml_application_package(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def ml_application_package(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ml_application_package", value)
 
     @_builtins.property
     @pulumi.getter(name="mlApplicationPackageArguments")
-    def ml_application_package_arguments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MlApplicationImplementationMlApplicationPackageArgumentArgs']]]]:
+    def ml_application_package_arguments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MlApplicationImplementationMlApplicationPackageArgumentArgs']]]]:
         """
         List of ML Application package arguments provided during ML Application package upload.
         """
         return pulumi.get(self, "ml_application_package_arguments")
 
     @ml_application_package_arguments.setter
-    def ml_application_package_arguments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MlApplicationImplementationMlApplicationPackageArgumentArgs']]]]):
+    def ml_application_package_arguments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MlApplicationImplementationMlApplicationPackageArgumentArgs']]]]):
         pulumi.set(self, "ml_application_package_arguments", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ML Application Implementation name which is unique for given ML Application.
 
@@ -438,79 +438,79 @@ class _MlApplicationImplementationState:
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="opcMlAppPackageArgs")
-    def opc_ml_app_package_args(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def opc_ml_app_package_args(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) ML Application package arguments required during ML Application package upload. Each argument is a simple key-value pair.
         """
         return pulumi.get(self, "opc_ml_app_package_args")
 
     @opc_ml_app_package_args.setter
-    def opc_ml_app_package_args(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def opc_ml_app_package_args(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "opc_ml_app_package_args", value)
 
     @_builtins.property
     @pulumi.getter(name="packageVersion")
-    def package_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def package_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of ML Application Package (e.g. "1.2" or "2.0.4") defined in ML Application package descriptor. Value is not mandatory only for CREATING state otherwise it must be always presented.
         """
         return pulumi.get(self, "package_version")
 
     @package_version.setter
-    def package_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def package_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "package_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the MlApplicationImplementation.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Creation time of MlApplicationImplementation creation in the format defined by RFC 3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time of last MlApplicationImplementation update in the format defined by RFC 3339.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -520,15 +520,15 @@ class MlApplicationImplementation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allowed_migration_destinations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 logging: Optional[pulumi.Input[Union['MlApplicationImplementationLoggingArgs', 'MlApplicationImplementationLoggingArgsDict']]] = None,
-                 ml_application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ml_application_package: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 opc_ml_app_package_args: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 allowed_migration_destinations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 logging: pulumi.Input[Optional[Union['MlApplicationImplementationLoggingArgs', 'MlApplicationImplementationLoggingArgsDict']]] = None,
+                 ml_application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ml_application_package: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 opc_ml_app_package_args: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         This resource provides the Ml Application Implementation resource in Oracle Cloud Infrastructure Data Science service.
@@ -562,17 +562,17 @@ class MlApplicationImplementation(pulumi.CustomResource):
             },
             logging={
                 "aggregated_instance_view_log": {
-                    "enable_logging": ml_application_implementation_logging_aggregated_instance_view_log_enable_logging,
+                    "enable_logging": ml_application_implementation_logging_aggregated_instance_view_log_enable_logging == "true",
                     "log_group_id": test_log_group["id"],
                     "log_id": test_log["id"],
                 },
                 "implementation_log": {
-                    "enable_logging": ml_application_implementation_logging_implementation_log_enable_logging,
+                    "enable_logging": ml_application_implementation_logging_implementation_log_enable_logging == "true",
                     "log_group_id": test_log_group["id"],
                     "log_id": test_log["id"],
                 },
                 "trigger_log": {
-                    "enable_logging": ml_application_implementation_logging_trigger_log_enable_logging,
+                    "enable_logging": ml_application_implementation_logging_trigger_log_enable_logging == "true",
                     "log_group_id": test_log_group["id"],
                     "log_id": test_log["id"],
                 },
@@ -642,17 +642,17 @@ class MlApplicationImplementation(pulumi.CustomResource):
             },
             logging={
                 "aggregated_instance_view_log": {
-                    "enable_logging": ml_application_implementation_logging_aggregated_instance_view_log_enable_logging,
+                    "enable_logging": ml_application_implementation_logging_aggregated_instance_view_log_enable_logging == "true",
                     "log_group_id": test_log_group["id"],
                     "log_id": test_log["id"],
                 },
                 "implementation_log": {
-                    "enable_logging": ml_application_implementation_logging_implementation_log_enable_logging,
+                    "enable_logging": ml_application_implementation_logging_implementation_log_enable_logging == "true",
                     "log_group_id": test_log_group["id"],
                     "log_id": test_log["id"],
                 },
                 "trigger_log": {
-                    "enable_logging": ml_application_implementation_logging_trigger_log_enable_logging,
+                    "enable_logging": ml_application_implementation_logging_trigger_log_enable_logging == "true",
                     "log_group_id": test_log_group["id"],
                     "log_id": test_log["id"],
                 },
@@ -683,15 +683,15 @@ class MlApplicationImplementation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 allowed_migration_destinations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 logging: Optional[pulumi.Input[Union['MlApplicationImplementationLoggingArgs', 'MlApplicationImplementationLoggingArgsDict']]] = None,
-                 ml_application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ml_application_package: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 opc_ml_app_package_args: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 allowed_migration_destinations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 logging: pulumi.Input[Optional[Union['MlApplicationImplementationLoggingArgs', 'MlApplicationImplementationLoggingArgsDict']]] = None,
+                 ml_application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ml_application_package: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 opc_ml_app_package_args: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -735,26 +735,26 @@ class MlApplicationImplementation(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            allowed_migration_destinations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            application_components: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MlApplicationImplementationApplicationComponentArgs', 'MlApplicationImplementationApplicationComponentArgsDict']]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            configuration_schemas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MlApplicationImplementationConfigurationSchemaArgs', 'MlApplicationImplementationConfigurationSchemaArgsDict']]]]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            logging: Optional[pulumi.Input[Union['MlApplicationImplementationLoggingArgs', 'MlApplicationImplementationLoggingArgsDict']]] = None,
-            ml_application_id: Optional[pulumi.Input[_builtins.str]] = None,
-            ml_application_name: Optional[pulumi.Input[_builtins.str]] = None,
-            ml_application_package: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            ml_application_package_arguments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MlApplicationImplementationMlApplicationPackageArgumentArgs', 'MlApplicationImplementationMlApplicationPackageArgumentArgsDict']]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            opc_ml_app_package_args: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            package_version: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'MlApplicationImplementation':
+            allowed_migration_destinations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            application_components: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MlApplicationImplementationApplicationComponentArgs', 'MlApplicationImplementationApplicationComponentArgsDict']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            configuration_schemas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MlApplicationImplementationConfigurationSchemaArgs', 'MlApplicationImplementationConfigurationSchemaArgsDict']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            logging: pulumi.Input[Optional[Union['MlApplicationImplementationLoggingArgs', 'MlApplicationImplementationLoggingArgsDict']]] = None,
+            ml_application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ml_application_name: pulumi.Input[Optional[_builtins.str]] = None,
+            ml_application_package: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ml_application_package_arguments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MlApplicationImplementationMlApplicationPackageArgumentArgs', 'MlApplicationImplementationMlApplicationPackageArgumentArgsDict']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            opc_ml_app_package_args: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            package_version: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'MlApplicationImplementation':
         """
         Get an existing MlApplicationImplementation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

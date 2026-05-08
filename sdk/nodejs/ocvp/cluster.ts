@@ -27,7 +27,7 @@ import * as utilities from "../utilities";
  *
  * const testCluster = new oci.ocvp.Cluster("test_cluster", {
  *     computeAvailabilityDomain: clusterComputeAvailabilityDomain,
- *     esxiHostsCount: clusterEsxiHostsCount,
+ *     esxiHostsCount: Number(clusterEsxiHostsCount),
  *     networkConfiguration: {
  *         nsxEdgeVtepVlanId: testVlan.id,
  *         nsxVtepVlanId: testVlan.id,
@@ -65,7 +65,7 @@ import * as utilities from "../utilities";
  *     initialHostShapeName: testShape.name,
  *     initialVcfByolAllocationId: testByolAllocation.id,
  *     instanceDisplayNamePrefix: clusterInstanceDisplayNamePrefix,
- *     isShieldedInstanceEnabled: clusterIsShieldedInstanceEnabled,
+ *     isShieldedInstanceEnabled: clusterIsShieldedInstanceEnabled === "true",
  *     vmwareSoftwareVersion: clusterVmwareSoftwareVersion,
  *     workloadNetworkCidr: clusterWorkloadNetworkCidr,
  * });
@@ -330,121 +330,121 @@ export class Cluster extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Cluster resources.
  */
 export interface ClusterState {
-    actualEsxiHostsCount?: pulumi.Input<number>;
-    attachDatastoreClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+    actualEsxiHostsCount?: pulumi.Input<number | undefined>;
+    attachDatastoreClusterIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      */
-    capacityReservationId?: pulumi.Input<string>;
+    capacityReservationId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The BYOL allocations used for VMware Cluster provisioning.
      */
-    clusterByolAllocationDetails?: pulumi.Input<inputs.Ocvp.ClusterClusterByolAllocationDetails>;
+    clusterByolAllocationDetails?: pulumi.Input<inputs.Ocvp.ClusterClusterByolAllocationDetails | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
      */
-    computeAvailabilityDomain?: pulumi.Input<string>;
+    computeAvailabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * A list of datastore clusters.
      */
-    datastoreClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+    datastoreClusterIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
      */
-    datastores?: pulumi.Input<pulumi.Input<inputs.Ocvp.ClusterDatastore>[]>;
+    datastores?: pulumi.Input<pulumi.Input<inputs.Ocvp.ClusterDatastore>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    detachDatastoreClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    detachDatastoreClusterIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). 
      *
      * **Note:** If you later delete EXSi hosts from a production Cluster to make SDDC total host count less than 3, you are still billed for the 3 minimum recommended  ESXi hosts. Also, you cannot add more VMware workloads to the Cluster until the  SDDC again has at least 3 ESXi hosts.
      */
-    esxiHostsCount?: pulumi.Input<number>;
+    esxiHostsCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The ESXi software bundle to install on the ESXi hosts in the Cluster.  Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
      */
-    esxiSoftwareVersion?: pulumi.Input<string>;
+    esxiSoftwareVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
      */
-    initialCommitment?: pulumi.Input<string>;
+    initialCommitment?: pulumi.Input<string | undefined>;
     /**
      * The initial OCPU count of the Cluster's ESXi hosts.
      */
-    initialHostOcpuCount?: pulumi.Input<number>;
+    initialHostOcpuCount?: pulumi.Input<number | undefined>;
     /**
      * The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
      */
-    initialHostShapeName?: pulumi.Input<string>;
+    initialHostShapeName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
      */
-    initialVcfByolAllocationId?: pulumi.Input<string>;
+    initialVcfByolAllocationId?: pulumi.Input<string | undefined>;
     /**
      * A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
      *
      * For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
      */
-    instanceDisplayNamePrefix?: pulumi.Input<string>;
+    instanceDisplayNamePrefix?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether shielded instance is enabled for this Cluster.
      */
-    isShieldedInstanceEnabled?: pulumi.Input<boolean>;
+    isShieldedInstanceEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
      */
-    networkConfiguration?: pulumi.Input<inputs.Ocvp.ClusterNetworkConfiguration>;
+    networkConfiguration?: pulumi.Input<inputs.Ocvp.ClusterNetworkConfiguration | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the Cluster belongs to.
      */
-    sddcId?: pulumi.Input<string>;
+    sddcId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the Cluster.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the Cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the Cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The vSphere licenses to use when upgrading the Cluster.
      */
-    upgradeLicenses?: pulumi.Input<pulumi.Input<inputs.Ocvp.ClusterUpgradeLicense>[]>;
+    upgradeLicenses?: pulumi.Input<pulumi.Input<inputs.Ocvp.ClusterUpgradeLicense>[] | undefined>;
     /**
      * (Updatable) The VMware software bundle to install on the ESXi hosts in the Cluster. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
      */
-    vmwareSoftwareVersion?: pulumi.Input<string>;
+    vmwareSoftwareVersion?: pulumi.Input<string | undefined>;
     /**
      * vSphere Cluster types.
      */
-    vsphereType?: pulumi.Input<string>;
+    vsphereType?: pulumi.Input<string | undefined>;
     /**
      * The links to binary objects needed to upgrade vSphere.
      */
-    vsphereUpgradeObjects?: pulumi.Input<pulumi.Input<inputs.Ocvp.ClusterVsphereUpgradeObject>[]>;
+    vsphereUpgradeObjects?: pulumi.Input<pulumi.Input<inputs.Ocvp.ClusterVsphereUpgradeObject>[] | undefined>;
     /**
      * The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads. 
      *
@@ -452,22 +452,22 @@ export interface ClusterState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    workloadNetworkCidr?: pulumi.Input<string>;
+    workloadNetworkCidr?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a Cluster resource.
  */
 export interface ClusterArgs {
-    attachDatastoreClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+    attachDatastoreClusterIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
      */
-    capacityReservationId?: pulumi.Input<string>;
+    capacityReservationId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The BYOL allocations used for VMware Cluster provisioning.
      */
-    clusterByolAllocationDetails?: pulumi.Input<inputs.Ocvp.ClusterClusterByolAllocationDetails>;
+    clusterByolAllocationDetails?: pulumi.Input<inputs.Ocvp.ClusterClusterByolAllocationDetails | undefined>;
     /**
      * The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
      */
@@ -475,20 +475,20 @@ export interface ClusterArgs {
     /**
      * A list of datastore clusters.
      */
-    datastoreClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+    datastoreClusterIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
      */
-    datastores?: pulumi.Input<pulumi.Input<inputs.Ocvp.ClusterDatastore>[]>;
+    datastores?: pulumi.Input<pulumi.Input<inputs.Ocvp.ClusterDatastore>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    detachDatastoreClusterIds?: pulumi.Input<pulumi.Input<string>[]>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    detachDatastoreClusterIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). 
      *
@@ -498,37 +498,37 @@ export interface ClusterArgs {
     /**
      * (Updatable) The ESXi software bundle to install on the ESXi hosts in the Cluster.  Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
      */
-    esxiSoftwareVersion?: pulumi.Input<string>;
+    esxiSoftwareVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
      */
-    initialCommitment?: pulumi.Input<string>;
+    initialCommitment?: pulumi.Input<string | undefined>;
     /**
      * The initial OCPU count of the Cluster's ESXi hosts.
      */
-    initialHostOcpuCount?: pulumi.Input<number>;
+    initialHostOcpuCount?: pulumi.Input<number | undefined>;
     /**
      * The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
      */
-    initialHostShapeName?: pulumi.Input<string>;
+    initialHostShapeName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the initial VMware BYOL Allocation used to deploy VMware Cloud Foundation.
      */
-    initialVcfByolAllocationId?: pulumi.Input<string>;
+    initialVcfByolAllocationId?: pulumi.Input<string | undefined>;
     /**
      * A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
      *
      * For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
      */
-    instanceDisplayNamePrefix?: pulumi.Input<string>;
+    instanceDisplayNamePrefix?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether shielded instance is enabled for this Cluster.
      */
-    isShieldedInstanceEnabled?: pulumi.Input<boolean>;
+    isShieldedInstanceEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
      */
@@ -540,7 +540,7 @@ export interface ClusterArgs {
     /**
      * (Updatable) The VMware software bundle to install on the ESXi hosts in the Cluster. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
      */
-    vmwareSoftwareVersion?: pulumi.Input<string>;
+    vmwareSoftwareVersion?: pulumi.Input<string | undefined>;
     /**
      * The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads. 
      *
@@ -548,5 +548,5 @@ export interface ClusterArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    workloadNetworkCidr?: pulumi.Input<string>;
+    workloadNetworkCidr?: pulumi.Input<string | undefined>;
 }

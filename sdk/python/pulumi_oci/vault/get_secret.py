@@ -378,7 +378,7 @@ def get_secret(secret_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_secret = oci.Vault.get_secret(secret_id=test_secret_oci_vault_secret["id"])
+    test_secret = oci.vault.get_secret(secret_id=test_secret_oci_vault_secret["id"])
     ```
 
 
@@ -418,7 +418,7 @@ def get_secret(secret_id: Optional[_builtins.str] = None,
         time_of_current_version_expiry=pulumi.get(__ret__, 'time_of_current_version_expiry'),
         time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'),
         vault_id=pulumi.get(__ret__, 'vault_id'))
-def get_secret_output(secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_secret_output(secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecretResult]:
     """
     This data source provides details about a specific Secret resource in Oracle Cloud Infrastructure Vault service.
@@ -431,7 +431,7 @@ def get_secret_output(secret_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_secret = oci.Vault.get_secret(secret_id=test_secret_oci_vault_secret["id"])
+    test_secret = oci.vault.get_secret(secret_id=test_secret_oci_vault_secret["id"])
     ```
 
 

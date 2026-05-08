@@ -121,11 +121,11 @@ export interface LogAnalyticsEntityAssociationsAddState {
     /**
      * Destination entities OCIDs with which associations are to be added.
      */
-    associationEntities?: pulumi.Input<pulumi.Input<string>[]>;
+    associationEntities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The Log analytics entity OCID.
      */
-    logAnalyticsEntityId?: pulumi.Input<string>;
+    logAnalyticsEntityId?: pulumi.Input<string | undefined>;
     /**
      * The Log Analytics namespace used for the request. 
      *
@@ -133,7 +133,7 @@ export interface LogAnalyticsEntityAssociationsAddState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
 }
 
 /**

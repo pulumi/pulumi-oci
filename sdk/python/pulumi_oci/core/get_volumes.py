@@ -163,7 +163,7 @@ def get_volumes(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_volumes = oci.Core.get_volumes(availability_domain=volume_availability_domain,
+    test_volumes = oci.core.get_volumes(availability_domain=volume_availability_domain,
         cluster_placement_group_id=test_group["id"],
         compartment_id=compartment_id,
         display_name=volume_display_name,
@@ -200,13 +200,13 @@ def get_volumes(availability_domain: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         volume_group_id=pulumi.get(__ret__, 'volume_group_id'),
         volumes=pulumi.get(__ret__, 'volumes'))
-def get_volumes_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       cluster_placement_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVolumesFilterArgs', 'GetVolumesFilterArgsDict']]]]] = None,
-                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       volume_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_volumes_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       cluster_placement_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVolumesFilterArgs', 'GetVolumesFilterArgsDict']]]]] = None,
+                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       volume_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVolumesResult]:
     """
     This data source provides the list of Volumes in Oracle Cloud Infrastructure Core service.
@@ -219,7 +219,7 @@ def get_volumes_output(availability_domain: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_volumes = oci.Core.get_volumes(availability_domain=volume_availability_domain,
+    test_volumes = oci.core.get_volumes(availability_domain=volume_availability_domain,
         cluster_placement_group_id=test_group["id"],
         compartment_id=compartment_id,
         display_name=volume_display_name,

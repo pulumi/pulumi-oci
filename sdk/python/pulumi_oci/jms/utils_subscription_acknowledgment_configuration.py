@@ -66,10 +66,10 @@ class UtilsSubscriptionAcknowledgmentConfigurationArgs:
 @pulumi.input_type
 class _UtilsSubscriptionAcknowledgmentConfigurationState:
     def __init__(__self__, *,
-                 acknowledged_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_acknowledged: Optional[pulumi.Input[_builtins.bool]] = None,
-                 time_acknowledged: Optional[pulumi.Input[_builtins.str]] = None):
+                 acknowledged_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
+                 time_acknowledged: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UtilsSubscriptionAcknowledgmentConfiguration resources.
 
@@ -93,31 +93,31 @@ class _UtilsSubscriptionAcknowledgmentConfigurationState:
 
     @_builtins.property
     @pulumi.getter(name="acknowledgedBy")
-    def acknowledged_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def acknowledged_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal that ackwnoledged the subscription.
         """
         return pulumi.get(self, "acknowledged_by")
 
     @acknowledged_by.setter
-    def acknowledged_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def acknowledged_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "acknowledged_by", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isAcknowledged")
-    def is_acknowledged(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_acknowledged(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Flag to determine whether the subscription was acknowledged or not.
 
@@ -128,19 +128,19 @@ class _UtilsSubscriptionAcknowledgmentConfigurationState:
         return pulumi.get(self, "is_acknowledged")
 
     @is_acknowledged.setter
-    def is_acknowledged(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_acknowledged(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_acknowledged", value)
 
     @_builtins.property
     @pulumi.getter(name="timeAcknowledged")
-    def time_acknowledged(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_acknowledged(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the subscription was acknowledged (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         return pulumi.get(self, "time_acknowledged")
 
     @time_acknowledged.setter
-    def time_acknowledged(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_acknowledged(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_acknowledged", value)
 
 
@@ -150,8 +150,8 @@ class UtilsSubscriptionAcknowledgmentConfiguration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_acknowledged: Optional[pulumi.Input[_builtins.bool]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         This resource provides the Subscription Acknowledgment Configuration resource in Oracle Cloud Infrastructure Jms Utils service.
@@ -166,7 +166,7 @@ class UtilsSubscriptionAcknowledgmentConfiguration(pulumi.CustomResource):
 
         test_subscription_acknowledgment_configuration = oci.jms.UtilsSubscriptionAcknowledgmentConfiguration("test_subscription_acknowledgment_configuration",
             compartment_id=compartment_id,
-            is_acknowledged=subscription_acknowledgment_configuration_is_acknowledged)
+            is_acknowledged=subscription_acknowledgment_configuration_is_acknowledged == "true")
         ```
 
         ## Import
@@ -206,7 +206,7 @@ class UtilsSubscriptionAcknowledgmentConfiguration(pulumi.CustomResource):
 
         test_subscription_acknowledgment_configuration = oci.jms.UtilsSubscriptionAcknowledgmentConfiguration("test_subscription_acknowledgment_configuration",
             compartment_id=compartment_id,
-            is_acknowledged=subscription_acknowledgment_configuration_is_acknowledged)
+            is_acknowledged=subscription_acknowledgment_configuration_is_acknowledged == "true")
         ```
 
         ## Import
@@ -233,8 +233,8 @@ class UtilsSubscriptionAcknowledgmentConfiguration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_acknowledged: Optional[pulumi.Input[_builtins.bool]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -262,10 +262,10 @@ class UtilsSubscriptionAcknowledgmentConfiguration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            acknowledged_by: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_acknowledged: Optional[pulumi.Input[_builtins.bool]] = None,
-            time_acknowledged: Optional[pulumi.Input[_builtins.str]] = None) -> 'UtilsSubscriptionAcknowledgmentConfiguration':
+            acknowledged_by: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_acknowledged: pulumi.Input[Optional[_builtins.bool]] = None,
+            time_acknowledged: pulumi.Input[Optional[_builtins.str]] = None) -> 'UtilsSubscriptionAcknowledgmentConfiguration':
         """
         Get an existing UtilsSubscriptionAcknowledgmentConfiguration resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

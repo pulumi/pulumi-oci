@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentFindingsChangeAuditLogs = oci.DataSafe.getSecurityAssessmentFindingsChangeAuditLogs({
+ * const testSecurityAssessmentFindingsChangeAuditLogs = oci.datasafe.getSecurityAssessmentFindingsChangeAuditLogs({
  *     securityAssessmentId: testSecurityAssessment.id,
  *     findingKey: securityAssessmentFindingsChangeAuditLogFindingKey,
  *     findingTitle: securityAssessmentFindingsChangeAuditLogFindingTitle,
- *     isRiskDeferred: securityAssessmentFindingsChangeAuditLogIsRiskDeferred,
+ *     isRiskDeferred: securityAssessmentFindingsChangeAuditLogIsRiskDeferred === "true",
  *     modifiedBy: securityAssessmentFindingsChangeAuditLogModifiedBy,
  *     severity: securityAssessmentFindingsChangeAuditLogSeverity,
  *     timeUpdatedGreaterThanOrEqualTo: securityAssessmentFindingsChangeAuditLogTimeUpdatedGreaterThanOrEqualTo,
@@ -149,11 +149,11 @@ export interface GetSecurityAssessmentFindingsChangeAuditLogsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessmentFindingsChangeAuditLogs = oci.DataSafe.getSecurityAssessmentFindingsChangeAuditLogs({
+ * const testSecurityAssessmentFindingsChangeAuditLogs = oci.datasafe.getSecurityAssessmentFindingsChangeAuditLogs({
  *     securityAssessmentId: testSecurityAssessment.id,
  *     findingKey: securityAssessmentFindingsChangeAuditLogFindingKey,
  *     findingTitle: securityAssessmentFindingsChangeAuditLogFindingTitle,
- *     isRiskDeferred: securityAssessmentFindingsChangeAuditLogIsRiskDeferred,
+ *     isRiskDeferred: securityAssessmentFindingsChangeAuditLogIsRiskDeferred === "true",
  *     modifiedBy: securityAssessmentFindingsChangeAuditLogModifiedBy,
  *     severity: securityAssessmentFindingsChangeAuditLogSeverity,
  *     timeUpdatedGreaterThanOrEqualTo: securityAssessmentFindingsChangeAuditLogTimeUpdatedGreaterThanOrEqualTo,
@@ -184,23 +184,23 @@ export function getSecurityAssessmentFindingsChangeAuditLogsOutput(args: GetSecu
  * A collection of arguments for invoking getSecurityAssessmentFindingsChangeAuditLogs.
  */
 export interface GetSecurityAssessmentFindingsChangeAuditLogsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityAssessmentFindingsChangeAuditLogsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityAssessmentFindingsChangeAuditLogsFilterArgs>[] | undefined>;
     /**
      * The unique key that identifies the finding. It is a string and unique within a security assessment.
      */
-    findingKey?: pulumi.Input<string>;
+    findingKey?: pulumi.Input<string | undefined>;
     /**
      * The unique title that identifies the finding. It is a string and unique within a security assessment.
      */
-    findingTitle?: pulumi.Input<string>;
+    findingTitle?: pulumi.Input<string | undefined>;
     /**
      * A filter to check findings whose risks were deferred by the user.
      */
-    isRiskDeferred?: pulumi.Input<boolean>;
+    isRiskDeferred?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to check which user modified the risk level of the finding.
      */
-    modifiedBy?: pulumi.Input<string>;
+    modifiedBy?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the security assessment.
      */
@@ -208,25 +208,25 @@ export interface GetSecurityAssessmentFindingsChangeAuditLogsOutputArgs {
     /**
      * A filter to return only findings of a particular risk level.
      */
-    severity?: pulumi.Input<string>;
+    severity?: pulumi.Input<string | undefined>;
     /**
      * Search for resources that were updated after a specific date. Specifying this parameter corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
      */
-    timeUpdatedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeUpdatedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * Search for resources that were updated before a specific date. Specifying this parameter corresponding `timeUpdatedLessThan` parameter will retrieve all resources updated before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
      */
-    timeUpdatedLessThan?: pulumi.Input<string>;
+    timeUpdatedLessThan?: pulumi.Input<string | undefined>;
     /**
      * Specifying `TimeValidUntilGreaterThanOrEqualToQueryParam` parameter  will retrieve all items for which the risk level modification by user will  no longer be valid greater than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * **Example:** 2016-12-19T00:00:00.000Z
      */
-    timeValidUntilGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeValidUntilGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * Specifying `TimeValidUntilLessThanQueryParam` parameter will retrieve all items for which the risk level modification by user will  be valid until less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * **Example:** 2016-12-19T00:00:00.000Z
      */
-    timeValidUntilLessThan?: pulumi.Input<string>;
+    timeValidUntilLessThan?: pulumi.Input<string | undefined>;
 }

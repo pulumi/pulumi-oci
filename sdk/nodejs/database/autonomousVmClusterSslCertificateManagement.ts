@@ -125,19 +125,19 @@ export interface AutonomousVmClusterSslCertificateManagementState {
     /**
      * The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    autonomousVmClusterId?: pulumi.Input<string>;
+    autonomousVmClusterId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate bundle.
      */
-    caBundleId?: pulumi.Input<string>;
+    caBundleId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
      */
-    certificateAuthorityId?: pulumi.Input<string>;
+    certificateAuthorityId?: pulumi.Input<string | undefined>;
     /**
      * Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
      */
-    certificateGenerationType?: pulumi.Input<string>;
+    certificateGenerationType?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate to use. 
      *
@@ -145,7 +145,7 @@ export interface AutonomousVmClusterSslCertificateManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    certificateId?: pulumi.Input<string>;
+    certificateId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -159,11 +159,11 @@ export interface AutonomousVmClusterSslCertificateManagementArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate bundle.
      */
-    caBundleId?: pulumi.Input<string>;
+    caBundleId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the certificate authority.
      */
-    certificateAuthorityId?: pulumi.Input<string>;
+    certificateAuthorityId?: pulumi.Input<string | undefined>;
     /**
      * Specify SYSTEM for using Oracle managed certificates. Specify BYOC when you want to bring your own certificate.
      */
@@ -175,5 +175,5 @@ export interface AutonomousVmClusterSslCertificateManagementArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    certificateId?: pulumi.Input<string>;
+    certificateId?: pulumi.Input<string | undefined>;
 }

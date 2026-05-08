@@ -18,10 +18,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaFamilies = oci.Jms.getJavaFamilies({
+ * const testJavaFamilies = oci.jms.getJavaFamilies({
  *     displayName: javaFamilyDisplayName,
  *     familyVersion: javaFamilyFamilyVersion,
- *     isSupportedVersion: javaFamilyIsSupportedVersion,
+ *     isSupportedVersion: javaFamilyIsSupportedVersion === "true",
  * });
  * ```
  */
@@ -93,10 +93,10 @@ export interface GetJavaFamiliesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJavaFamilies = oci.Jms.getJavaFamilies({
+ * const testJavaFamilies = oci.jms.getJavaFamilies({
  *     displayName: javaFamilyDisplayName,
  *     familyVersion: javaFamilyFamilyVersion,
- *     isSupportedVersion: javaFamilyIsSupportedVersion,
+ *     isSupportedVersion: javaFamilyIsSupportedVersion === "true",
  * });
  * ```
  */
@@ -118,14 +118,14 @@ export interface GetJavaFamiliesOutputArgs {
     /**
      * The display name for the Java family.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The version identifier for the Java family.
      */
-    familyVersion?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetJavaFamiliesFilterArgs>[]>;
+    familyVersion?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetJavaFamiliesFilterArgs>[] | undefined>;
     /**
      * Filter the Java Release Family versions by support status.
      */
-    isSupportedVersion?: pulumi.Input<boolean>;
+    isSupportedVersion?: pulumi.Input<boolean | undefined>;
 }

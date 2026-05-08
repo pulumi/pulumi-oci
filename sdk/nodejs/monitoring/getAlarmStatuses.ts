@@ -29,9 +29,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlarmStatuses = oci.Monitoring.getAlarmStatuses({
+ * const testAlarmStatuses = oci.monitoring.getAlarmStatuses({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: alarmStatusCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: alarmStatusCompartmentIdInSubtree === "true",
  *     displayName: alarmStatusDisplayName,
  *     entityId: testEntity.id,
  *     resourceId: testResource.id,
@@ -139,9 +139,9 @@ export interface GetAlarmStatusesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlarmStatuses = oci.Monitoring.getAlarmStatuses({
+ * const testAlarmStatuses = oci.monitoring.getAlarmStatuses({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: alarmStatusCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: alarmStatusCompartmentIdInSubtree === "true",
  *     displayName: alarmStatusDisplayName,
  *     entityId: testEntity.id,
  *     resourceId: testResource.id,
@@ -175,26 +175,26 @@ export interface GetAlarmStatusesOutputArgs {
     /**
      * When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity monitored by the metric that you are searching for.  Example: `ocid1.instance.oc1.phx.exampleuniqueID`
      */
-    entityId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Monitoring.GetAlarmStatusesFilterArgs>[]>;
+    entityId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Monitoring.GetAlarmStatusesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a resource that is monitored by the metric that you are searching for.  Example: `ocid1.instance.oc1.phx.exampleuniqueID`
      */
-    resourceId?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given service name exactly. Use this filter to list all alarms containing metric streams that match the *exact* service-name dimension.  Example: `logging-analytics`
      */
-    serviceName?: pulumi.Input<string>;
+    serviceName?: pulumi.Input<string | undefined>;
     /**
      * The status of the metric stream to use for alarm filtering. For example, set `StatusQueryParam` to "FIRING" to filter results to metric streams of the alarm with that status. Default behaviour is to return alarms irrespective of metric streams' status.  Example: `FIRING`
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

@@ -155,7 +155,7 @@ def get_software_source_module_stream_profile(module_name: Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_module_stream_profile = oci.OsManagementHub.get_software_source_module_stream_profile(module_name=software_source_module_stream_profile_module_name,
+    test_software_source_module_stream_profile = oci.osmanagementhub.get_software_source_module_stream_profile(module_name=software_source_module_stream_profile_module_name,
         profile_name=test_profile["name"],
         software_source_id=test_software_source["id"],
         stream_name=test_stream["name"])
@@ -185,10 +185,10 @@ def get_software_source_module_stream_profile(module_name: Optional[_builtins.st
         profile_name=pulumi.get(__ret__, 'profile_name'),
         software_source_id=pulumi.get(__ret__, 'software_source_id'),
         stream_name=pulumi.get(__ret__, 'stream_name'))
-def get_software_source_module_stream_profile_output(module_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     profile_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     stream_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_software_source_module_stream_profile_output(module_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     profile_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     software_source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     stream_name: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSoftwareSourceModuleStreamProfileResult]:
     """
     This data source provides details about a specific Software Source Module Stream Profile resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -201,7 +201,7 @@ def get_software_source_module_stream_profile_output(module_name: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_module_stream_profile = oci.OsManagementHub.get_software_source_module_stream_profile(module_name=software_source_module_stream_profile_module_name,
+    test_software_source_module_stream_profile = oci.osmanagementhub.get_software_source_module_stream_profile(module_name=software_source_module_stream_profile_module_name,
         profile_name=test_profile["name"],
         software_source_id=test_software_source["id"],
         stream_name=test_stream["name"])

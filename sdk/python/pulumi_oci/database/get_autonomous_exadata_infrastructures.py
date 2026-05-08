@@ -137,7 +137,7 @@ def get_autonomous_exadata_infrastructures(availability_domain: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_exadata_infrastructures = oci.Database.get_autonomous_exadata_infrastructures(compartment_id=compartment_id,
+    test_autonomous_exadata_infrastructures = oci.database.get_autonomous_exadata_infrastructures(compartment_id=compartment_id,
         availability_domain=autonomous_exadata_infrastructure_availability_domain,
         display_name=autonomous_exadata_infrastructure_display_name,
         state=autonomous_exadata_infrastructure_state)
@@ -166,11 +166,11 @@ def get_autonomous_exadata_infrastructures(availability_domain: Optional[_builti
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_autonomous_exadata_infrastructures_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                  display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousExadataInfrastructuresFilterArgs', 'GetAutonomousExadataInfrastructuresFilterArgsDict']]]]] = None,
-                                                  state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_autonomous_exadata_infrastructures_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                  display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousExadataInfrastructuresFilterArgs', 'GetAutonomousExadataInfrastructuresFilterArgsDict']]]]] = None,
+                                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousExadataInfrastructuresResult]:
     """
     This data source provides the list of Autonomous Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
@@ -183,7 +183,7 @@ def get_autonomous_exadata_infrastructures_output(availability_domain: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_exadata_infrastructures = oci.Database.get_autonomous_exadata_infrastructures(compartment_id=compartment_id,
+    test_autonomous_exadata_infrastructures = oci.database.get_autonomous_exadata_infrastructures(compartment_id=compartment_id,
         availability_domain=autonomous_exadata_infrastructure_availability_domain,
         display_name=autonomous_exadata_infrastructure_display_name,
         state=autonomous_exadata_infrastructure_state)

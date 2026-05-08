@@ -311,7 +311,7 @@ def get_bastion(bastion_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_bastion = oci.Bastion.get_bastion(bastion_id=test_bastion_oci_bastion_bastion["id"])
+    test_bastion = oci.bastion.get_bastion(bastion_id=test_bastion_oci_bastion_bastion["id"])
     ```
 
 
@@ -345,7 +345,7 @@ def get_bastion(bastion_id: Optional[_builtins.str] = None,
         target_vcn_id=pulumi.get(__ret__, 'target_vcn_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_bastion_output(bastion_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_bastion_output(bastion_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBastionResult]:
     """
     This data source provides details about a specific Bastion resource in Oracle Cloud Infrastructure Bastion service.
@@ -358,7 +358,7 @@ def get_bastion_output(bastion_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_bastion = oci.Bastion.get_bastion(bastion_id=test_bastion_oci_bastion_bastion["id"])
+    test_bastion = oci.bastion.get_bastion(bastion_id=test_bastion_oci_bastion_bastion["id"])
     ```
 
 

@@ -139,18 +139,18 @@ export interface GetDbmulticloudOracleDbAzureConnectorsOutputArgs {
     /**
      * The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database resource.
      */
-    dbClusterResourceId?: pulumi.Input<string>;
+    dbClusterResourceId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return Oracle DB Azure Connector resources that match the specified display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDbmulticloudOracleDbAzureConnectorsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDbmulticloudOracleDbAzureConnectorsFilterArgs>[] | undefined>;
     /**
      * A filter to return Oracle DB Azure Azure Identity Connector resources.
      */
-    oracleDbAzureConnectorId?: pulumi.Input<string>;
+    oracleDbAzureConnectorId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

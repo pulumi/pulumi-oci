@@ -36,7 +36,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPublicIps = oci.Core.getPublicIps({
+ * const testPublicIps = oci.core.getPublicIps({
  *     compartmentId: compartmentId,
  *     scope: publicIpScope,
  *     availabilityDomain: publicIpAvailabilityDomain,
@@ -154,7 +154,7 @@ export interface GetPublicIpsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPublicIps = oci.Core.getPublicIps({
+ * const testPublicIps = oci.core.getPublicIps({
  *     compartmentId: compartmentId,
  *     scope: publicIpScope,
  *     availabilityDomain: publicIpAvailabilityDomain,
@@ -182,20 +182,20 @@ export interface GetPublicIpsOutputArgs {
     /**
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetPublicIpsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetPublicIpsFilterArgs>[] | undefined>;
     /**
      * A filter to return only public IPs that match given lifetime.
      */
-    lifetime?: pulumi.Input<string>;
+    lifetime?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that belong to the given public IP pool.
      */
-    publicIpPoolId?: pulumi.Input<string>;
+    publicIpPoolId?: pulumi.Input<string | undefined>;
     /**
      * Whether the public IP is regional or specific to a particular availability domain.
      * * `REGION`: The public IP exists within a region and is assigned to a regional entity (such as a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/)), or can be assigned to a private IP in any availability domain in the region. Reserved public IPs have `scope` = `REGION`, as do ephemeral public IPs assigned to a regional entity.

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusters = oci.ContainerEngine.getClusters({
+ * const testClusters = oci.containerengine.getClusters({
  *     compartmentId: compartmentId,
  *     name: clusterName,
  *     states: clusterState,
@@ -90,7 +90,7 @@ export interface GetClustersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusters = oci.ContainerEngine.getClusters({
+ * const testClusters = oci.containerengine.getClusters({
  *     compartmentId: compartmentId,
  *     name: clusterName,
  *     states: clusterState,
@@ -115,13 +115,13 @@ export interface GetClustersOutputArgs {
      * The OCID of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.GetClustersFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.GetClustersFilterArgs>[] | undefined>;
     /**
      * The name to filter on.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A cluster lifecycle state to filter on. Can have multiple parameters of this name.
      */
-    states?: pulumi.Input<pulumi.Input<string>[]>;
+    states?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModels = oci.AiDocument.getModels({
+ * const testModels = oci.aidocument.getModels({
  *     compartmentId: compartmentId,
  *     displayName: modelDisplayName,
  *     id: modelId,
@@ -107,7 +107,7 @@ export interface GetModelsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModels = oci.AiDocument.getModels({
+ * const testModels = oci.aidocument.getModels({
  *     compartmentId: compartmentId,
  *     displayName: modelDisplayName,
  *     id: modelId,
@@ -136,22 +136,22 @@ export interface GetModelsOutputArgs {
     /**
      * The ID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.AiDocument.GetModelsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.AiDocument.GetModelsFilterArgs>[] | undefined>;
     /**
      * The filter to find the model with the given identifier.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The ID of the project for which to list the objects.
      */
-    projectId?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
     /**
      * The filter to match models with the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

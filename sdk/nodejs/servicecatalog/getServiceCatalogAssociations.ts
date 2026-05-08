@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceCatalogAssociations = oci.ServiceCatalog.getServiceCatalogAssociations({
+ * const testServiceCatalogAssociations = oci.servicecatalog.getServiceCatalogAssociations({
  *     entityId: testEntity.id,
  *     entityType: serviceCatalogAssociationEntityType,
  *     serviceCatalogAssociationId: testServiceCatalogAssociation.id,
@@ -98,7 +98,7 @@ export interface GetServiceCatalogAssociationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceCatalogAssociations = oci.ServiceCatalog.getServiceCatalogAssociations({
+ * const testServiceCatalogAssociations = oci.servicecatalog.getServiceCatalogAssociations({
  *     entityId: testEntity.id,
  *     entityType: serviceCatalogAssociationEntityType,
  *     serviceCatalogAssociationId: testServiceCatalogAssociation.id,
@@ -125,18 +125,18 @@ export interface GetServiceCatalogAssociationsOutputArgs {
     /**
      * The unique identifier of the entity associated with service catalog.
      */
-    entityId?: pulumi.Input<string>;
+    entityId?: pulumi.Input<string | undefined>;
     /**
      * The type of the application in the service catalog.
      */
-    entityType?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ServiceCatalog.GetServiceCatalogAssociationsFilterArgs>[]>;
+    entityType?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ServiceCatalog.GetServiceCatalogAssociationsFilterArgs>[] | undefined>;
     /**
      * The unique identifier for the service catalog association.
      */
-    serviceCatalogAssociationId?: pulumi.Input<string>;
+    serviceCatalogAssociationId?: pulumi.Input<string | undefined>;
     /**
      * The unique identifier for the service catalog.
      */
-    serviceCatalogId?: pulumi.Input<string>;
+    serviceCatalogId?: pulumi.Input<string | undefined>;
 }

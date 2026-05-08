@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOneoffPatches = oci.Database.getOneoffPatches({
+ * const testOneoffPatches = oci.database.getOneoffPatches({
  *     compartmentId: compartmentId,
  *     displayName: oneoffPatchDisplayName,
  *     state: oneoffPatchState,
@@ -90,7 +90,7 @@ export interface GetOneoffPatchesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOneoffPatches = oci.Database.getOneoffPatches({
+ * const testOneoffPatches = oci.database.getOneoffPatches({
  *     compartmentId: compartmentId,
  *     displayName: oneoffPatchDisplayName,
  *     state: oneoffPatchState,
@@ -118,10 +118,10 @@ export interface GetOneoffPatchesOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetOneoffPatchesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetOneoffPatchesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

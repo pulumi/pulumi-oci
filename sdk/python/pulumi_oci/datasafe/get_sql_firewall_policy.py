@@ -311,7 +311,7 @@ def get_sql_firewall_policy(sql_firewall_policy_id: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_firewall_policy = oci.DataSafe.get_sql_firewall_policy(sql_firewall_policy_id=test_sql_firewall_policy_oci_data_safe_sql_firewall_policy["id"])
+    test_sql_firewall_policy = oci.datasafe.get_sql_firewall_policy(sql_firewall_policy_id=test_sql_firewall_policy_oci_data_safe_sql_firewall_policy["id"])
     ```
 
 
@@ -345,7 +345,7 @@ def get_sql_firewall_policy(sql_firewall_policy_id: Optional[_builtins.str] = No
         time_updated=pulumi.get(__ret__, 'time_updated'),
         violation_action=pulumi.get(__ret__, 'violation_action'),
         violation_audit=pulumi.get(__ret__, 'violation_audit'))
-def get_sql_firewall_policy_output(sql_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_sql_firewall_policy_output(sql_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSqlFirewallPolicyResult]:
     """
     This data source provides details about a specific Sql Firewall Policy resource in Oracle Cloud Infrastructure Data Safe service.
@@ -358,7 +358,7 @@ def get_sql_firewall_policy_output(sql_firewall_policy_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_firewall_policy = oci.DataSafe.get_sql_firewall_policy(sql_firewall_policy_id=test_sql_firewall_policy_oci_data_safe_sql_firewall_policy["id"])
+    test_sql_firewall_policy = oci.datasafe.get_sql_firewall_policy(sql_firewall_policy_id=test_sql_firewall_policy_oci_data_safe_sql_firewall_policy["id"])
     ```
 
 

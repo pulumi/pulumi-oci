@@ -108,7 +108,7 @@ def get_autonomous_exadata_infrastructure_ocpu(autonomous_exadata_infrastructure
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_exadata_infrastructure_ocpu = oci.Database.get_autonomous_exadata_infrastructure_ocpu(autonomous_exadata_infrastructure_id=test_autonomous_exadata_infrastructure["id"])
+    test_autonomous_exadata_infrastructure_ocpu = oci.database.get_autonomous_exadata_infrastructure_ocpu(autonomous_exadata_infrastructure_id=test_autonomous_exadata_infrastructure["id"])
     ```
 
 
@@ -125,7 +125,7 @@ def get_autonomous_exadata_infrastructure_ocpu(autonomous_exadata_infrastructure
         consumed_cpu=pulumi.get(__ret__, 'consumed_cpu'),
         id=pulumi.get(__ret__, 'id'),
         total_cpu=pulumi.get(__ret__, 'total_cpu'))
-def get_autonomous_exadata_infrastructure_ocpu_output(autonomous_exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_autonomous_exadata_infrastructure_ocpu_output(autonomous_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousExadataInfrastructureOcpuResult]:
     """
     This data source provides details about a specific Autonomous Exadata Infrastructure Ocpu resource in Oracle Cloud Infrastructure Database service.
@@ -138,7 +138,7 @@ def get_autonomous_exadata_infrastructure_ocpu_output(autonomous_exadata_infrast
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_exadata_infrastructure_ocpu = oci.Database.get_autonomous_exadata_infrastructure_ocpu(autonomous_exadata_infrastructure_id=test_autonomous_exadata_infrastructure["id"])
+    test_autonomous_exadata_infrastructure_ocpu = oci.database.get_autonomous_exadata_infrastructure_ocpu(autonomous_exadata_infrastructure_id=test_autonomous_exadata_infrastructure["id"])
     ```
 
 

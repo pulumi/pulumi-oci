@@ -68,13 +68,13 @@ class RunStatementArgs:
 @pulumi.input_type
 class _RunStatementState:
     def __init__(__self__, *,
-                 code: Optional[pulumi.Input[_builtins.str]] = None,
-                 outputs: Optional[pulumi.Input[Sequence[pulumi.Input['RunStatementOutputArgs']]]] = None,
-                 progress: Optional[pulumi.Input[_builtins.float]] = None,
-                 run_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_completed: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 code: pulumi.Input[Optional[_builtins.str]] = None,
+                 outputs: pulumi.Input[Optional[Sequence[pulumi.Input['RunStatementOutputArgs']]]] = None,
+                 progress: pulumi.Input[Optional[_builtins.float]] = None,
+                 run_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_completed: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RunStatement resources.
 
@@ -107,43 +107,43 @@ class _RunStatementState:
 
     @_builtins.property
     @pulumi.getter
-    def code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The statement code to execute. Example: `println(sc.version)`
         """
         return pulumi.get(self, "code")
 
     @code.setter
-    def code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "code", value)
 
     @_builtins.property
     @pulumi.getter
-    def outputs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RunStatementOutputArgs']]]]:
+    def outputs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RunStatementOutputArgs']]]]:
         """
         The execution output of a statement.
         """
         return pulumi.get(self, "outputs")
 
     @outputs.setter
-    def outputs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RunStatementOutputArgs']]]]):
+    def outputs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RunStatementOutputArgs']]]]):
         pulumi.set(self, "outputs", value)
 
     @_builtins.property
     @pulumi.getter
-    def progress(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def progress(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The execution progress.
         """
         return pulumi.get(self, "progress")
 
     @progress.setter
-    def progress(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def progress(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "progress", value)
 
     @_builtins.property
     @pulumi.getter(name="runId")
-    def run_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def run_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique ID for the run 
 
@@ -154,43 +154,43 @@ class _RunStatementState:
         return pulumi.get(self, "run_id")
 
     @run_id.setter
-    def run_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def run_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "run_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of this statement.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCompleted")
-    def time_completed(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_completed(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
         """
         return pulumi.get(self, "time_completed")
 
     @time_completed.setter
-    def time_completed(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_completed(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_completed", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -200,8 +200,8 @@ class RunStatement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 code: Optional[pulumi.Input[_builtins.str]] = None,
-                 run_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 code: pulumi.Input[Optional[_builtins.str]] = None,
+                 run_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Run Statement resource in Oracle Cloud Infrastructure Data Flow service.
@@ -289,8 +289,8 @@ class RunStatement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 code: Optional[pulumi.Input[_builtins.str]] = None,
-                 run_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 code: pulumi.Input[Optional[_builtins.str]] = None,
+                 run_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -321,13 +321,13 @@ class RunStatement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            code: Optional[pulumi.Input[_builtins.str]] = None,
-            outputs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RunStatementOutputArgs', 'RunStatementOutputArgsDict']]]]] = None,
-            progress: Optional[pulumi.Input[_builtins.float]] = None,
-            run_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_completed: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'RunStatement':
+            code: pulumi.Input[Optional[_builtins.str]] = None,
+            outputs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RunStatementOutputArgs', 'RunStatementOutputArgsDict']]]]] = None,
+            progress: pulumi.Input[Optional[_builtins.float]] = None,
+            run_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_completed: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'RunStatement':
         """
         Get an existing RunStatement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

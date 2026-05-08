@@ -50,15 +50,15 @@ __all__ = [
 ]
 
 class DatabaseToolsConnectionKeyStoreArgsDict(TypedDict):
-    key_store_content: NotRequired[pulumi.Input['DatabaseToolsConnectionKeyStoreKeyStoreContentArgsDict']]
+    key_store_content: NotRequired[pulumi.Input[Optional['DatabaseToolsConnectionKeyStoreKeyStoreContentArgs']]]
     """
     (Updatable) The key store content.
     """
-    key_store_password: NotRequired[pulumi.Input['DatabaseToolsConnectionKeyStoreKeyStorePasswordArgsDict']]
+    key_store_password: NotRequired[pulumi.Input[Optional['DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs']]]
     """
     (Updatable) The key store password.
     """
-    key_store_type: NotRequired[pulumi.Input[_builtins.str]]
+    key_store_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The key store type.
     """
@@ -66,9 +66,9 @@ class DatabaseToolsConnectionKeyStoreArgsDict(TypedDict):
 @pulumi.input_type
 class DatabaseToolsConnectionKeyStoreArgs:
     def __init__(__self__, *,
-                 key_store_content: Optional[pulumi.Input['DatabaseToolsConnectionKeyStoreKeyStoreContentArgs']] = None,
-                 key_store_password: Optional[pulumi.Input['DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs']] = None,
-                 key_store_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 key_store_content: pulumi.Input[Optional['DatabaseToolsConnectionKeyStoreKeyStoreContentArgs']] = None,
+                 key_store_password: pulumi.Input[Optional['DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs']] = None,
+                 key_store_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input['DatabaseToolsConnectionKeyStoreKeyStoreContentArgs'] key_store_content: (Updatable) The key store content.
         :param pulumi.Input['DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs'] key_store_password: (Updatable) The key store password.
@@ -83,38 +83,38 @@ class DatabaseToolsConnectionKeyStoreArgs:
 
     @_builtins.property
     @pulumi.getter(name="keyStoreContent")
-    def key_store_content(self) -> Optional[pulumi.Input['DatabaseToolsConnectionKeyStoreKeyStoreContentArgs']]:
+    def key_store_content(self) -> pulumi.Input[Optional['DatabaseToolsConnectionKeyStoreKeyStoreContentArgs']]:
         """
         (Updatable) The key store content.
         """
         return pulumi.get(self, "key_store_content")
 
     @key_store_content.setter
-    def key_store_content(self, value: Optional[pulumi.Input['DatabaseToolsConnectionKeyStoreKeyStoreContentArgs']]):
+    def key_store_content(self, value: pulumi.Input[Optional['DatabaseToolsConnectionKeyStoreKeyStoreContentArgs']]):
         pulumi.set(self, "key_store_content", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStorePassword")
-    def key_store_password(self) -> Optional[pulumi.Input['DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs']]:
+    def key_store_password(self) -> pulumi.Input[Optional['DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs']]:
         """
         (Updatable) The key store password.
         """
         return pulumi.get(self, "key_store_password")
 
     @key_store_password.setter
-    def key_store_password(self, value: Optional[pulumi.Input['DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs']]):
+    def key_store_password(self, value: pulumi.Input[Optional['DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs']]):
         pulumi.set(self, "key_store_password", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStoreType")
-    def key_store_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The key store type.
         """
         return pulumi.get(self, "key_store_type")
 
     @key_store_type.setter
-    def key_store_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_type", value)
 
 
@@ -123,7 +123,7 @@ class DatabaseToolsConnectionKeyStoreKeyStoreContentArgsDict(TypedDict):
     """
     (Updatable) The value type of the key store content.
     """
-    secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store.
     """
@@ -132,7 +132,7 @@ class DatabaseToolsConnectionKeyStoreKeyStoreContentArgsDict(TypedDict):
 class DatabaseToolsConnectionKeyStoreKeyStoreContentArgs:
     def __init__(__self__, *,
                  value_type: pulumi.Input[_builtins.str],
-                 secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] value_type: (Updatable) The value type of the key store content.
         :param pulumi.Input[_builtins.str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store.
@@ -155,14 +155,14 @@ class DatabaseToolsConnectionKeyStoreKeyStoreContentArgs:
 
     @_builtins.property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store.
         """
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
-    def secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_id", value)
 
 
@@ -171,7 +171,7 @@ class DatabaseToolsConnectionKeyStoreKeyStorePasswordArgsDict(TypedDict):
     """
     (Updatable) The value type of the key store password.
     """
-    secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store password.
     """
@@ -180,7 +180,7 @@ class DatabaseToolsConnectionKeyStoreKeyStorePasswordArgsDict(TypedDict):
 class DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs:
     def __init__(__self__, *,
                  value_type: pulumi.Input[_builtins.str],
-                 secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] value_type: (Updatable) The value type of the key store password.
         :param pulumi.Input[_builtins.str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store password.
@@ -203,14 +203,14 @@ class DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs:
 
     @_builtins.property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store password.
         """
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
-    def secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_id", value)
 
 
@@ -219,15 +219,15 @@ class DatabaseToolsConnectionLockArgsDict(TypedDict):
     """
     Type of the lock.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     When the lock was created.
     """
@@ -236,9 +236,9 @@ class DatabaseToolsConnectionLockArgsDict(TypedDict):
 class DatabaseToolsConnectionLockArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Type of the lock.
         :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
@@ -267,38 +267,38 @@ class DatabaseToolsConnectionLockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the lock was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -307,15 +307,15 @@ class DatabaseToolsConnectionProxyClientArgsDict(TypedDict):
     """
     (Updatable) The proxy authentication type.
     """
-    roles: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    roles: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
     """
-    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The user name.
     """
-    user_password: NotRequired[pulumi.Input['DatabaseToolsConnectionProxyClientUserPasswordArgsDict']]
+    user_password: NotRequired[pulumi.Input[Optional['DatabaseToolsConnectionProxyClientUserPasswordArgs']]]
     """
     (Updatable) The database user password.
     """
@@ -324,9 +324,9 @@ class DatabaseToolsConnectionProxyClientArgsDict(TypedDict):
 class DatabaseToolsConnectionProxyClientArgs:
     def __init__(__self__, *,
                  proxy_authentication_type: pulumi.Input[_builtins.str],
-                 roles: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_password: Optional[pulumi.Input['DatabaseToolsConnectionProxyClientUserPasswordArgs']] = None):
+                 roles: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_password: pulumi.Input[Optional['DatabaseToolsConnectionProxyClientUserPasswordArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] proxy_authentication_type: (Updatable) The proxy authentication type.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] roles: (Updatable) A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
@@ -355,38 +355,38 @@ class DatabaseToolsConnectionProxyClientArgs:
 
     @_builtins.property
     @pulumi.getter
-    def roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def roles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
         """
         return pulumi.get(self, "roles")
 
     @roles.setter
-    def roles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def roles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "roles", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user name.
         """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
     @_builtins.property
     @pulumi.getter(name="userPassword")
-    def user_password(self) -> Optional[pulumi.Input['DatabaseToolsConnectionProxyClientUserPasswordArgs']]:
+    def user_password(self) -> pulumi.Input[Optional['DatabaseToolsConnectionProxyClientUserPasswordArgs']]:
         """
         (Updatable) The database user password.
         """
         return pulumi.get(self, "user_password")
 
     @user_password.setter
-    def user_password(self, value: Optional[pulumi.Input['DatabaseToolsConnectionProxyClientUserPasswordArgs']]):
+    def user_password(self, value: pulumi.Input[Optional['DatabaseToolsConnectionProxyClientUserPasswordArgs']]):
         pulumi.set(self, "user_password", value)
 
 
@@ -438,11 +438,11 @@ class DatabaseToolsConnectionProxyClientUserPasswordArgs:
 
 
 class DatabaseToolsConnectionRelatedResourceArgsDict(TypedDict):
-    entity_type: NotRequired[pulumi.Input[_builtins.str]]
+    entity_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The resource entity type.
     """
-    identifier: NotRequired[pulumi.Input[_builtins.str]]
+    identifier: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
     """
@@ -450,8 +450,8 @@ class DatabaseToolsConnectionRelatedResourceArgsDict(TypedDict):
 @pulumi.input_type
 class DatabaseToolsConnectionRelatedResourceArgs:
     def __init__(__self__, *,
-                 entity_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 identifier: Optional[pulumi.Input[_builtins.str]] = None):
+                 entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 identifier: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] entity_type: (Updatable) The resource entity type.
         :param pulumi.Input[_builtins.str] identifier: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
@@ -463,26 +463,26 @@ class DatabaseToolsConnectionRelatedResourceArgs:
 
     @_builtins.property
     @pulumi.getter(name="entityType")
-    def entity_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The resource entity type.
         """
         return pulumi.get(self, "entity_type")
 
     @entity_type.setter
-    def entity_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def identifier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
         """
         return pulumi.get(self, "identifier")
 
     @identifier.setter
-    def identifier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identifier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identifier", value)
 
 
@@ -550,15 +550,15 @@ class DatabaseToolsIdentityLockArgsDict(TypedDict):
     """
     Type of the lock.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     When the lock was created.
     """
@@ -567,9 +567,9 @@ class DatabaseToolsIdentityLockArgsDict(TypedDict):
 class DatabaseToolsIdentityLockArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Type of the lock.
         :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
@@ -598,38 +598,38 @@ class DatabaseToolsIdentityLockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the lock was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -638,15 +638,15 @@ class DatabaseToolsPrivateEndpointLockArgsDict(TypedDict):
     """
     Type of the lock.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     When the lock was created.
     """
@@ -655,9 +655,9 @@ class DatabaseToolsPrivateEndpointLockArgsDict(TypedDict):
 class DatabaseToolsPrivateEndpointLockArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Type of the lock.
         :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
@@ -686,43 +686,43 @@ class DatabaseToolsPrivateEndpointLockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the lock was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
 class DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgsDict(TypedDict):
-    reverse_connections_source_ips: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgsDict']]]]
+    reverse_connections_source_ips: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs']]]]]
     """
     A list of IP addresses in the customer VCN to be used as the source IPs for reverse connection packets traveling from the service's VCN to the customer's VCN.
     """
@@ -730,7 +730,7 @@ class DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgsDict(TypedDi
 @pulumi.input_type
 class DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs:
     def __init__(__self__, *,
-                 reverse_connections_source_ips: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs']]]] = None):
+                 reverse_connections_source_ips: pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs']]] reverse_connections_source_ips: A list of IP addresses in the customer VCN to be used as the source IPs for reverse connection packets traveling from the service's VCN to the customer's VCN.
         """
@@ -739,19 +739,19 @@ class DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="reverseConnectionsSourceIps")
-    def reverse_connections_source_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs']]]]:
+    def reverse_connections_source_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs']]]]:
         """
         A list of IP addresses in the customer VCN to be used as the source IPs for reverse connection packets traveling from the service's VCN to the customer's VCN.
         """
         return pulumi.get(self, "reverse_connections_source_ips")
 
     @reverse_connections_source_ips.setter
-    def reverse_connections_source_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs']]]]):
+    def reverse_connections_source_ips(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs']]]]):
         pulumi.set(self, "reverse_connections_source_ips", value)
 
 
 class DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgsDict(TypedDict):
-    source_ip: NotRequired[pulumi.Input[_builtins.str]]
+    source_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The IP address in the customer's VCN to be used as the source IP for reverse connection packets traveling from the customer's VCN to the service's VCN.
     """
@@ -759,7 +759,7 @@ class DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectio
 @pulumi.input_type
 class DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs:
     def __init__(__self__, *,
-                 source_ip: Optional[pulumi.Input[_builtins.str]] = None):
+                 source_ip: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] source_ip: The IP address in the customer's VCN to be used as the source IP for reverse connection packets traveling from the customer's VCN to the service's VCN.
         """
@@ -768,14 +768,14 @@ class DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectio
 
     @_builtins.property
     @pulumi.getter(name="sourceIp")
-    def source_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IP address in the customer's VCN to be used as the source IP for reverse connection packets traveling from the customer's VCN to the service's VCN.
         """
         return pulumi.get(self, "source_ip")
 
     @source_ip.setter
-    def source_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_ip", value)
 
 

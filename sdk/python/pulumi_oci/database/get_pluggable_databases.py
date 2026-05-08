@@ -134,7 +134,7 @@ def get_pluggable_databases(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pluggable_databases = oci.Database.get_pluggable_databases(compartment_id=compartment_id,
+    test_pluggable_databases = oci.database.get_pluggable_databases(compartment_id=compartment_id,
         database_id=test_database["id"],
         pdb_name=pluggable_database_pdb_name,
         state=pluggable_database_state)
@@ -163,11 +163,11 @@ def get_pluggable_databases(compartment_id: Optional[_builtins.str] = None,
         pdb_name=pulumi.get(__ret__, 'pdb_name'),
         pluggable_databases=pulumi.get(__ret__, 'pluggable_databases'),
         state=pulumi.get(__ret__, 'state'))
-def get_pluggable_databases_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   database_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPluggableDatabasesFilterArgs', 'GetPluggableDatabasesFilterArgsDict']]]]] = None,
-                                   pdb_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_pluggable_databases_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   database_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPluggableDatabasesFilterArgs', 'GetPluggableDatabasesFilterArgsDict']]]]] = None,
+                                   pdb_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPluggableDatabasesResult]:
     """
     This data source provides the list of Pluggable Databases in Oracle Cloud Infrastructure Database service.
@@ -180,7 +180,7 @@ def get_pluggable_databases_output(compartment_id: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_pluggable_databases = oci.Database.get_pluggable_databases(compartment_id=compartment_id,
+    test_pluggable_databases = oci.database.get_pluggable_databases(compartment_id=compartment_id,
         database_id=test_database["id"],
         pdb_name=pluggable_database_pdb_name,
         state=pluggable_database_state)

@@ -137,7 +137,7 @@ def get_repository_refs(commit_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_refs = oci.DevOps.get_repository_refs(repository_id=test_repository["id"],
+    test_repository_refs = oci.devops.get_repository_refs(repository_id=test_repository["id"],
         commit_id=test_commit["id"],
         ref_name=repository_ref_ref_name,
         ref_type=repository_ref_ref_type)
@@ -166,11 +166,11 @@ def get_repository_refs(commit_id: Optional[_builtins.str] = None,
         ref_type=pulumi.get(__ret__, 'ref_type'),
         repository_id=pulumi.get(__ret__, 'repository_id'),
         repository_ref_collections=pulumi.get(__ret__, 'repository_ref_collections'))
-def get_repository_refs_output(commit_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRepositoryRefsFilterArgs', 'GetRepositoryRefsFilterArgsDict']]]]] = None,
-                               ref_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               ref_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               repository_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_repository_refs_output(commit_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRepositoryRefsFilterArgs', 'GetRepositoryRefsFilterArgsDict']]]]] = None,
+                               ref_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               ref_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               repository_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryRefsResult]:
     """
     This data source provides the list of Repository Refs in Oracle Cloud Infrastructure Devops service.
@@ -183,7 +183,7 @@ def get_repository_refs_output(commit_id: Optional[pulumi.Input[Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_refs = oci.DevOps.get_repository_refs(repository_id=test_repository["id"],
+    test_repository_refs = oci.devops.get_repository_refs(repository_id=test_repository["id"],
         commit_id=test_commit["id"],
         ref_name=repository_ref_ref_name,
         ref_type=repository_ref_ref_type)

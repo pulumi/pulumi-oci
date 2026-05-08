@@ -51,7 +51,7 @@ import * as utilities from "../utilities";
  * const testFileSystem = new oci.filestorage.FileSystem("test_file_system", {
  *     availabilityDomain: fileSystemAvailabilityDomain,
  *     compartmentId: compartmentId,
- *     areQuotaRulesEnabled: fileSystemAreQuotaRulesEnabled,
+ *     areQuotaRulesEnabled: fileSystemAreQuotaRulesEnabled === "true",
  *     cloneAttachStatus: fileSystemCloneAttachStatus,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -302,27 +302,27 @@ export interface FileSystemState {
     /**
      * (Updatable) Specifies the enforcement of quota rules on the file system.
      */
-    areQuotaRulesEnabled?: pulumi.Input<boolean>;
+    areQuotaRulesEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
      */
-    cloneAttachStatus?: pulumi.Input<string>;
+    cloneAttachStatus?: pulumi.Input<string | undefined>;
     /**
      * Specifies the total number of children of a file system.
      */
-    cloneCount?: pulumi.Input<number>;
+    cloneCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
      *
@@ -330,82 +330,82 @@ export interface FileSystemState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    detachCloneTrigger?: pulumi.Input<number>;
+    detachCloneTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
      *
      * May be unset as a blank value.
      */
-    filesystemSnapshotPolicyId?: pulumi.Input<string>;
+    filesystemSnapshotPolicyId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
-    isCloneParent?: pulumi.Input<boolean>;
+    isCloneParent?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
      */
-    isHydrated?: pulumi.Input<boolean>;
-    isLockOverride?: pulumi.Input<boolean>;
+    isHydrated?: pulumi.Input<boolean | undefined>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
      */
-    isTargetable?: pulumi.Input<boolean>;
+    isTargetable?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * Additional information about the current 'lifecycleState'.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.FileSystemLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.FileSystemLock>[] | undefined>;
     /**
      * The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
      */
-    meteredBytes?: pulumi.Input<string>;
+    meteredBytes?: pulumi.Input<string | undefined>;
     /**
      * Displays the state of enforcement of quota rules on the file system.
      */
-    quotaEnforcementState?: pulumi.Input<string>;
+    quotaEnforcementState?: pulumi.Input<string | undefined>;
     /**
      * Specifies the total number of replications for which this file system is a source.
      */
-    replicationSourceCount?: pulumi.Input<number>;
+    replicationSourceCount?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
      */
-    replicationTargetId?: pulumi.Input<string>;
+    replicationTargetId?: pulumi.Input<string | undefined>;
     /**
      * Source information for the file system.
      */
-    sourceDetails?: pulumi.Input<pulumi.Input<inputs.FileStorage.FileSystemSourceDetail>[]>;
+    sourceDetails?: pulumi.Input<pulumi.Input<inputs.FileStorage.FileSystemSourceDetail>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
-    sourceSnapshotId?: pulumi.Input<string>;
+    sourceSnapshotId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the file system.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -415,7 +415,7 @@ export interface FileSystemArgs {
     /**
      * (Updatable) Specifies the enforcement of quota rules on the file system.
      */
-    areQuotaRulesEnabled?: pulumi.Input<boolean>;
+    areQuotaRulesEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
      */
@@ -423,7 +423,7 @@ export interface FileSystemArgs {
     /**
      * Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
      */
-    cloneAttachStatus?: pulumi.Input<string>;
+    cloneAttachStatus?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
      */
@@ -431,7 +431,7 @@ export interface FileSystemArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
      *
@@ -439,32 +439,32 @@ export interface FileSystemArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    detachCloneTrigger?: pulumi.Input<number>;
+    detachCloneTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
      *
      * May be unset as a blank value.
      */
-    filesystemSnapshotPolicyId?: pulumi.Input<string>;
+    filesystemSnapshotPolicyId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    isLockOverride?: pulumi.Input<boolean>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.FileSystemLock>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.FileStorage.FileSystemLock>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
-    sourceSnapshotId?: pulumi.Input<string>;
+    sourceSnapshotId?: pulumi.Input<string | undefined>;
 }

@@ -251,7 +251,7 @@ def get_operations_insights_private_endpoint(operations_insights_private_endpoin
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_private_endpoint = oci.Opsi.get_operations_insights_private_endpoint(operations_insights_private_endpoint_id=test_operations_insights_private_endpoint_oci_opsi_operations_insights_private_endpoint["id"])
+    test_operations_insights_private_endpoint = oci.opsi.get_operations_insights_private_endpoint(operations_insights_private_endpoint_id=test_operations_insights_private_endpoint_oci_opsi_operations_insights_private_endpoint["id"])
     ```
 
 
@@ -280,7 +280,7 @@ def get_operations_insights_private_endpoint(operations_insights_private_endpoin
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-def get_operations_insights_private_endpoint_output(operations_insights_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_operations_insights_private_endpoint_output(operations_insights_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOperationsInsightsPrivateEndpointResult]:
     """
     This data source provides details about a specific Operations Insights Private Endpoint resource in Oracle Cloud Infrastructure Opsi service.
@@ -293,7 +293,7 @@ def get_operations_insights_private_endpoint_output(operations_insights_private_
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_private_endpoint = oci.Opsi.get_operations_insights_private_endpoint(operations_insights_private_endpoint_id=test_operations_insights_private_endpoint_oci_opsi_operations_insights_private_endpoint["id"])
+    test_operations_insights_private_endpoint = oci.opsi.get_operations_insights_private_endpoint(operations_insights_private_endpoint_id=test_operations_insights_private_endpoint_oci_opsi_operations_insights_private_endpoint["id"])
     ```
 
 

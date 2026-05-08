@@ -236,69 +236,69 @@ export interface OccmDemandSignalItemState {
     /**
      * (Updatable) The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the tenancy from which the demand signal item was created.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The quantity of the resource that you want to demand from OCI.
      */
-    demandQuantity?: pulumi.Input<string>;
+    demandQuantity?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the correponding demand signal catalog resource.
      */
-    demandSignalCatalogResourceId?: pulumi.Input<string>;
+    demandSignalCatalogResourceId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the demand signal under which we need to create this item.
      */
-    demandSignalId?: pulumi.Input<string>;
+    demandSignalId?: pulumi.Input<string | undefined>;
     /**
      * The name of the Oracle Cloud Infrastructure service in consideration for demand signal submission. For example: COMPUTE, NETWORK, GPU etc.
      */
-    demandSignalNamespace?: pulumi.Input<string>;
+    demandSignalNamespace?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) This field will serve as notes section for you. You can use this section to convey a message to Oracle Cloud Infrastructure regarding your resource request.
      *
      * NOTE: The previous value gets overwritten with the new one for this once updated.
      */
-    notes?: pulumi.Input<string>;
+    notes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The name of region for which you want to request the Oracle Cloud Infrastructure resource.
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * The type of request (DEMAND or RETURN) that you want to make for this demand signal item.
      */
-    requestType?: pulumi.Input<string>;
+    requestType?: pulumi.Input<string | undefined>;
     /**
      * The name of the Oracle Cloud Infrastructure resource that you want to request.
      */
-    resourceName?: pulumi.Input<string>;
+    resourceName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A map of various properties associated with the Oracle Cloud Infrastructure resource.
      */
-    resourceProperties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    resourceProperties?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The current lifecycle state of the resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The OCID of the tenancy for which you want to request the Oracle Cloud Infrastructure resource for. This is an optional parameter.
      */
-    targetCompartmentId?: pulumi.Input<string>;
+    targetCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you. 
      *
@@ -306,7 +306,7 @@ export interface OccmDemandSignalItemState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeNeededBefore?: pulumi.Input<string>;
+    timeNeededBefore?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -316,7 +316,7 @@ export interface OccmDemandSignalItemArgs {
     /**
      * (Updatable) The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the tenancy from which the demand signal item was created.
      */
@@ -324,7 +324,7 @@ export interface OccmDemandSignalItemArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The quantity of the resource that you want to demand from OCI.
      */
@@ -340,13 +340,13 @@ export interface OccmDemandSignalItemArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) This field will serve as notes section for you. You can use this section to convey a message to Oracle Cloud Infrastructure regarding your resource request.
      *
      * NOTE: The previous value gets overwritten with the new one for this once updated.
      */
-    notes?: pulumi.Input<string>;
+    notes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The name of region for which you want to request the Oracle Cloud Infrastructure resource.
      */
@@ -362,7 +362,7 @@ export interface OccmDemandSignalItemArgs {
     /**
      * (Updatable) The OCID of the tenancy for which you want to request the Oracle Cloud Infrastructure resource for. This is an optional parameter.
      */
-    targetCompartmentId?: pulumi.Input<string>;
+    targetCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you. 
      *

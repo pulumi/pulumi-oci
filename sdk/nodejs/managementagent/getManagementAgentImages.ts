@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentImages = oci.ManagementAgent.getManagementAgentImages({
+ * const testManagementAgentImages = oci.managementagent.getManagementAgentImages({
  *     compartmentId: compartmentId,
  *     installType: managementAgentImageInstallType,
  *     name: managementAgentImageName,
@@ -91,7 +91,7 @@ export interface GetManagementAgentImagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentImages = oci.ManagementAgent.getManagementAgentImages({
+ * const testManagementAgentImages = oci.managementagent.getManagementAgentImages({
  *     compartmentId: compartmentId,
  *     installType: managementAgentImageInstallType,
  *     name: managementAgentImageName,
@@ -118,17 +118,17 @@ export interface GetManagementAgentImagesOutputArgs {
      * The OCID of the compartment to which a request will be scoped.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.GetManagementAgentImagesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.GetManagementAgentImagesFilterArgs>[] | undefined>;
     /**
      * A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
      */
-    installType?: pulumi.Input<string>;
+    installType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire platform name given.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Filter to return only Management Agents in the particular lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

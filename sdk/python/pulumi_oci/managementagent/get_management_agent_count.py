@@ -121,9 +121,9 @@ def get_management_agent_count(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_count = oci.ManagementAgent.get_management_agent_count(compartment_id=compartment_id,
+    test_management_agent_count = oci.managementagent.get_management_agent_count(compartment_id=compartment_id,
         group_bies=management_agent_count_group_by,
-        has_plugins=management_agent_count_has_plugins,
+        has_plugins=management_agent_count_has_plugins == "true",
         install_type=management_agent_count_install_type)
     ```
 
@@ -148,10 +148,10 @@ def get_management_agent_count(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         install_type=pulumi.get(__ret__, 'install_type'),
         items=pulumi.get(__ret__, 'items'))
-def get_management_agent_count_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                      group_bies: Optional[pulumi.Input[Sequence[_builtins.str]]] = None,
-                                      has_plugins: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                      install_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_management_agent_count_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                      group_bies: pulumi.Input[Optional[Sequence[_builtins.str]]] = None,
+                                      has_plugins: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                      install_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementAgentCountResult]:
     """
     This data source provides details about a specific Management Agent Count resource in Oracle Cloud Infrastructure Management Agent service.
@@ -165,9 +165,9 @@ def get_management_agent_count_output(compartment_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_count = oci.ManagementAgent.get_management_agent_count(compartment_id=compartment_id,
+    test_management_agent_count = oci.managementagent.get_management_agent_count(compartment_id=compartment_id,
         group_bies=management_agent_count_group_by,
-        has_plugins=management_agent_count_has_plugins,
+        has_plugins=management_agent_count_has_plugins == "true",
         install_type=management_agent_count_install_type)
     ```
 

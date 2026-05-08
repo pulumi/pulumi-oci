@@ -122,13 +122,13 @@ export interface GetMulticloudExternalLocationSummariesMetadataOutputArgs {
     /**
      * The resource type query (i.e. dbsystem, instance etc.)
      */
-    entityType?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetMulticloudExternalLocationSummariesMetadataFilterArgs>[]>;
-    limit?: pulumi.Input<number>;
+    entityType?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetMulticloudExternalLocationSummariesMetadataFilterArgs>[] | undefined>;
+    limit?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription in which to list resources.
      */
-    subscriptionId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string | undefined>;
     /**
      * The subscription service name values from [ORACLEDBATAZURE, ORACLEDBATGOOGLE, ORACLEDBATAWS]
      */

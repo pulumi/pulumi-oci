@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpsecAlgorithm = oci.Core.getIpsecAlgorithm({});
+ * const testIpsecAlgorithm = oci.core.getIpsecAlgorithm({});
  * ```
  */
 export function getIpsecAlgorithm(opts?: pulumi.InvokeOptions): Promise<GetIpsecAlgorithmResult> {
@@ -62,7 +62,7 @@ export interface GetIpsecAlgorithmResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpsecAlgorithm = oci.Core.getIpsecAlgorithm({});
+ * const testIpsecAlgorithm = oci.core.getIpsecAlgorithm({});
  * ```
  */
 export function getIpsecAlgorithmOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIpsecAlgorithmResult> {

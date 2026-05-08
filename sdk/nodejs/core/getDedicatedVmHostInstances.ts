@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDedicatedVmHostsInstances = oci.Core.getDedicatedVmHostInstances({
+ * const testDedicatedVmHostsInstances = oci.core.getDedicatedVmHostInstances({
  *     compartmentId: compartmentId,
  *     dedicatedVmHostId: testDedicatedVmHost.id,
  *     availabilityDomain: dedicatedVmHostsInstanceAvailabilityDomain,
- *     isMemoryEncryptionEnabled: dedicatedVmHostsInstanceIsMemoryEncryptionEnabled,
+ *     isMemoryEncryptionEnabled: dedicatedVmHostsInstanceIsMemoryEncryptionEnabled === "true",
  * });
  * ```
  */
@@ -97,11 +97,11 @@ export interface GetDedicatedVmHostInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDedicatedVmHostsInstances = oci.Core.getDedicatedVmHostInstances({
+ * const testDedicatedVmHostsInstances = oci.core.getDedicatedVmHostInstances({
  *     compartmentId: compartmentId,
  *     dedicatedVmHostId: testDedicatedVmHost.id,
  *     availabilityDomain: dedicatedVmHostsInstanceAvailabilityDomain,
- *     isMemoryEncryptionEnabled: dedicatedVmHostsInstanceIsMemoryEncryptionEnabled,
+ *     isMemoryEncryptionEnabled: dedicatedVmHostsInstanceIsMemoryEncryptionEnabled === "true",
  * });
  * ```
  */
@@ -123,7 +123,7 @@ export interface GetDedicatedVmHostInstancesOutputArgs {
     /**
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -132,9 +132,9 @@ export interface GetDedicatedVmHostInstancesOutputArgs {
      * The OCID of the dedicated VM host.
      */
     dedicatedVmHostId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetDedicatedVmHostInstancesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetDedicatedVmHostInstancesFilterArgs>[] | undefined>;
     /**
      * A filter to return only confidential Dedicated VM hosts (DVMH) or confidential VM instances on DVMH.
      */
-    isMemoryEncryptionEnabled?: pulumi.Input<boolean>;
+    isMemoryEncryptionEnabled?: pulumi.Input<boolean | undefined>;
 }

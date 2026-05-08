@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceConsoleConnections = oci.Core.getInstanceConsoleConnections({
+ * const testInstanceConsoleConnections = oci.core.getInstanceConsoleConnections({
  *     compartmentId: compartmentId,
  *     instanceId: testInstance.id,
  * });
@@ -84,7 +84,7 @@ export interface GetInstanceConsoleConnectionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceConsoleConnections = oci.Core.getInstanceConsoleConnections({
+ * const testInstanceConsoleConnections = oci.core.getInstanceConsoleConnections({
  *     compartmentId: compartmentId,
  *     instanceId: testInstance.id,
  * });
@@ -107,9 +107,9 @@ export interface GetInstanceConsoleConnectionsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetInstanceConsoleConnectionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetInstanceConsoleConnectionsFilterArgs>[] | undefined>;
     /**
      * The OCID of the instance.
      */
-    instanceId?: pulumi.Input<string>;
+    instanceId?: pulumi.Input<string | undefined>;
 }

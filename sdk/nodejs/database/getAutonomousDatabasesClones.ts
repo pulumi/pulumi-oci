@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabasesClones = oci.Database.getAutonomousDatabasesClones({
+ * const testAutonomousDatabasesClones = oci.database.getAutonomousDatabasesClones({
  *     autonomousDatabaseId: testAutonomousDatabase.id,
  *     compartmentId: compartmentId,
  *     cloneType: autonomousDatabasesCloneCloneType,
@@ -107,7 +107,7 @@ export interface GetAutonomousDatabasesClonesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabasesClones = oci.Database.getAutonomousDatabasesClones({
+ * const testAutonomousDatabasesClones = oci.database.getAutonomousDatabasesClones({
  *     autonomousDatabaseId: testAutonomousDatabase.id,
  *     compartmentId: compartmentId,
  *     cloneType: autonomousDatabasesCloneCloneType,
@@ -139,7 +139,7 @@ export interface GetAutonomousDatabasesClonesOutputArgs {
     /**
      * A filter to return only resources that match the given clone type exactly.
      */
-    cloneType?: pulumi.Input<string>;
+    cloneType?: pulumi.Input<string | undefined>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -147,10 +147,10 @@ export interface GetAutonomousDatabasesClonesOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousDatabasesClonesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousDatabasesClonesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

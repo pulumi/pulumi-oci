@@ -105,7 +105,7 @@ def get_autonomous_exadata_infrastructure_shapes(availability_domain: Optional[_
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_exadata_infrastructure_shapes = oci.Database.get_autonomous_exadata_infrastructure_shapes(availability_domain=autonomous_exadata_infrastructure_shape_availability_domain,
+    test_autonomous_exadata_infrastructure_shapes = oci.database.get_autonomous_exadata_infrastructure_shapes(availability_domain=autonomous_exadata_infrastructure_shape_availability_domain,
         compartment_id=compartment_id)
     ```
 
@@ -126,9 +126,9 @@ def get_autonomous_exadata_infrastructure_shapes(availability_domain: Optional[_
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_autonomous_exadata_infrastructure_shapes_output(availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                                                        compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousExadataInfrastructureShapesFilterArgs', 'GetAutonomousExadataInfrastructureShapesFilterArgsDict']]]]] = None,
+def get_autonomous_exadata_infrastructure_shapes_output(availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                                                        compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousExadataInfrastructureShapesFilterArgs', 'GetAutonomousExadataInfrastructureShapesFilterArgsDict']]]]] = None,
                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousExadataInfrastructureShapesResult]:
     """
     This data source provides the list of Autonomous Exadata Infrastructure Shapes in Oracle Cloud Infrastructure Database service.
@@ -141,7 +141,7 @@ def get_autonomous_exadata_infrastructure_shapes_output(availability_domain: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_exadata_infrastructure_shapes = oci.Database.get_autonomous_exadata_infrastructure_shapes(availability_domain=autonomous_exadata_infrastructure_shape_availability_domain,
+    test_autonomous_exadata_infrastructure_shapes = oci.database.get_autonomous_exadata_infrastructure_shapes(availability_domain=autonomous_exadata_infrastructure_shape_availability_domain,
         compartment_id=compartment_id)
     ```
 

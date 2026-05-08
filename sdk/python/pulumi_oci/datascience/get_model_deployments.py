@@ -151,7 +151,7 @@ def get_model_deployments(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model_deployments = oci.DataScience.get_model_deployments(compartment_id=compartment_id,
+    test_model_deployments = oci.datascience.get_model_deployments(compartment_id=compartment_id,
         created_by=model_deployment_created_by,
         display_name=model_deployment_display_name,
         id=model_deployment_id,
@@ -187,13 +187,13 @@ def get_model_deployments(compartment_id: Optional[_builtins.str] = None,
         model_deployments=pulumi.get(__ret__, 'model_deployments'),
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_model_deployments_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 created_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetModelDeploymentsFilterArgs', 'GetModelDeploymentsFilterArgsDict']]]]] = None,
-                                 id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 project_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_model_deployments_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 created_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetModelDeploymentsFilterArgs', 'GetModelDeploymentsFilterArgsDict']]]]] = None,
+                                 id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 project_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetModelDeploymentsResult]:
     """
     This data source provides the list of Model Deployments in Oracle Cloud Infrastructure Datascience service.
@@ -206,7 +206,7 @@ def get_model_deployments_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_model_deployments = oci.DataScience.get_model_deployments(compartment_id=compartment_id,
+    test_model_deployments = oci.datascience.get_model_deployments(compartment_id=compartment_id,
         created_by=model_deployment_created_by,
         display_name=model_deployment_display_name,
         id=model_deployment_id,

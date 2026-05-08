@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeploymentVersions = oci.GoldenGate.getDeploymentVersions({
+ * const testDeploymentVersions = oci.goldengate.getDeploymentVersions({
  *     compartmentId: compartmentId,
  *     deploymentId: testDeployment.id,
  *     deploymentType: deploymentVersionDeploymentType,
@@ -84,7 +84,7 @@ export interface GetDeploymentVersionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeploymentVersions = oci.GoldenGate.getDeploymentVersions({
+ * const testDeploymentVersions = oci.goldengate.getDeploymentVersions({
  *     compartmentId: compartmentId,
  *     deploymentId: testDeployment.id,
  *     deploymentType: deploymentVersionDeploymentType,
@@ -112,10 +112,10 @@ export interface GetDeploymentVersionsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
      */
-    deploymentId?: pulumi.Input<string>;
+    deploymentId?: pulumi.Input<string | undefined>;
     /**
      * The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
      */
-    deploymentType?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetDeploymentVersionsFilterArgs>[]>;
+    deploymentType?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetDeploymentVersionsFilterArgs>[] | undefined>;
 }

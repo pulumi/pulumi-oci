@@ -180,7 +180,7 @@ def get_db_node_console_connection(db_node_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node_console_connection = oci.Database.get_db_node_console_connection(db_node_id=test_db_node["id"],
+    test_db_node_console_connection = oci.database.get_db_node_console_connection(db_node_id=test_db_node["id"],
         id=db_node_console_connection_id)
     ```
 
@@ -206,8 +206,8 @@ def get_db_node_console_connection(db_node_id: Optional[_builtins.str] = None,
         public_key=pulumi.get(__ret__, 'public_key'),
         service_host_key_fingerprint=pulumi.get(__ret__, 'service_host_key_fingerprint'),
         state=pulumi.get(__ret__, 'state'))
-def get_db_node_console_connection_output(db_node_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                          id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_db_node_console_connection_output(db_node_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                          id: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbNodeConsoleConnectionResult]:
     """
     This data source provides details about a specific Db Node Console Connection resource in Oracle Cloud Infrastructure Database service.
@@ -220,7 +220,7 @@ def get_db_node_console_connection_output(db_node_id: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node_console_connection = oci.Database.get_db_node_console_connection(db_node_id=test_db_node["id"],
+    test_db_node_console_connection = oci.database.get_db_node_console_connection(db_node_id=test_db_node["id"],
         id=db_node_console_connection_id)
     ```
 

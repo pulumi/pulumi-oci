@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditProfileCollectedAuditVolume = oci.DataSafe.getAuditProfileCollectedAuditVolume({
+ * const testAuditProfileCollectedAuditVolume = oci.datasafe.getAuditProfileCollectedAuditVolume({
  *     auditProfileId: testAuditProfile.id,
  *     workRequestId: testWorkRequest.id,
  *     monthInConsiderationGreaterThan: auditProfileCollectedAuditVolumeMonthInConsiderationGreaterThan,
@@ -92,7 +92,7 @@ export interface GetAuditProfileCollectedAuditVolumeResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditProfileCollectedAuditVolume = oci.DataSafe.getAuditProfileCollectedAuditVolume({
+ * const testAuditProfileCollectedAuditVolume = oci.datasafe.getAuditProfileCollectedAuditVolume({
  *     auditProfileId: testAuditProfile.id,
  *     workRequestId: testWorkRequest.id,
  *     monthInConsiderationGreaterThan: auditProfileCollectedAuditVolumeMonthInConsiderationGreaterThan,
@@ -123,13 +123,13 @@ export interface GetAuditProfileCollectedAuditVolumeOutputArgs {
      *
      * **Example:** 2016-12-19T00:00:00.000Z
      */
-    monthInConsiderationGreaterThan?: pulumi.Input<string>;
+    monthInConsiderationGreaterThan?: pulumi.Input<string | undefined>;
     /**
      * Specifying `monthInConsiderationLessThan` parameter will retrieve all items for which the event month is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * **Example:** 2016-12-19T00:00:00.000Z
      */
-    monthInConsiderationLessThan?: pulumi.Input<string>;
+    monthInConsiderationLessThan?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the work request.
      */

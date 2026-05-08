@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAttributeNamespaces = oci.SecurityAttribute.getSecurityAttributeNamespaces({
+ * const testSecurityAttributeNamespaces = oci.securityattribute.getSecurityAttributeNamespaces({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: securityAttributeNamespaceCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAttributeNamespaceCompartmentIdInSubtree === "true",
  *     name: securityAttributeNamespaceName,
  *     state: securityAttributeNamespaceState,
  * });
@@ -98,9 +98,9 @@ export interface GetSecurityAttributeNamespacesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAttributeNamespaces = oci.SecurityAttribute.getSecurityAttributeNamespaces({
+ * const testSecurityAttributeNamespaces = oci.securityattribute.getSecurityAttributeNamespaces({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: securityAttributeNamespaceCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAttributeNamespaceCompartmentIdInSubtree === "true",
  *     name: securityAttributeNamespaceName,
  *     state: securityAttributeNamespaceState,
  * });
@@ -125,18 +125,18 @@ export interface GetSecurityAttributeNamespacesOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * An optional boolean parameter indicating whether to retrieve all security attribute namespaces in subcompartments. If this parameter is not specified, only the namespaces defined in the specified compartment are retrieved.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.SecurityAttribute.GetSecurityAttributeNamespacesFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.SecurityAttribute.GetSecurityAttributeNamespacesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

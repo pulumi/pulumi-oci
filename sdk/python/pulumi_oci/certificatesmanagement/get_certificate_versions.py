@@ -112,7 +112,7 @@ def get_certificate_versions(certificate_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate_versions = oci.CertificatesManagement.get_certificate_versions(certificate_id=test_certificate["id"],
+    test_certificate_versions = oci.certificatesmanagement.get_certificate_versions(certificate_id=test_certificate["id"],
         version_number=certificate_version_version_number)
     ```
 
@@ -133,9 +133,9 @@ def get_certificate_versions(certificate_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         version_number=pulumi.get(__ret__, 'version_number'))
-def get_certificate_versions_output(certificate_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCertificateVersionsFilterArgs', 'GetCertificateVersionsFilterArgsDict']]]]] = None,
-                                    version_number: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_certificate_versions_output(certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCertificateVersionsFilterArgs', 'GetCertificateVersionsFilterArgsDict']]]]] = None,
+                                    version_number: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCertificateVersionsResult]:
     """
     This data source provides the list of Certificate Versions in Oracle Cloud Infrastructure Certificates Management service.
@@ -149,7 +149,7 @@ def get_certificate_versions_output(certificate_id: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate_versions = oci.CertificatesManagement.get_certificate_versions(certificate_id=test_certificate["id"],
+    test_certificate_versions = oci.certificatesmanagement.get_certificate_versions(certificate_id=test_certificate["id"],
         version_number=certificate_version_version_number)
     ```
 

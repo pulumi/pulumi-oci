@@ -150,7 +150,7 @@ def get_exadb_vm_clusters(cluster_placement_group_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_exadb_vm_clusters = oci.Database.get_exadb_vm_clusters(compartment_id=compartment_id,
+    test_exadb_vm_clusters = oci.database.get_exadb_vm_clusters(compartment_id=compartment_id,
         cluster_placement_group_id=test_cluster_placement_group["id"],
         display_name=exadb_vm_cluster_display_name,
         exascale_db_storage_vault_id=test_exascale_db_storage_vault["id"],
@@ -183,12 +183,12 @@ def get_exadb_vm_clusters(cluster_placement_group_id: Optional[_builtins.str] = 
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_exadb_vm_clusters_output(cluster_placement_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 exascale_db_storage_vault_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExadbVmClustersFilterArgs', 'GetExadbVmClustersFilterArgsDict']]]]] = None,
-                                 state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_exadb_vm_clusters_output(cluster_placement_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 exascale_db_storage_vault_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExadbVmClustersFilterArgs', 'GetExadbVmClustersFilterArgsDict']]]]] = None,
+                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExadbVmClustersResult]:
     """
     This data source provides the list of Exadb Vm Clusters in Oracle Cloud Infrastructure Database service.
@@ -201,7 +201,7 @@ def get_exadb_vm_clusters_output(cluster_placement_group_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_exadb_vm_clusters = oci.Database.get_exadb_vm_clusters(compartment_id=compartment_id,
+    test_exadb_vm_clusters = oci.database.get_exadb_vm_clusters(compartment_id=compartment_id,
         cluster_placement_group_id=test_cluster_placement_group["id"],
         display_name=exadb_vm_cluster_display_name,
         exascale_db_storage_vault_id=test_exascale_db_storage_vault["id"],

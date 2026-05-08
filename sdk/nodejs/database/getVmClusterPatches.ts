@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVmClusterPatches = oci.Database.getVmClusterPatches({
+ * const testVmClusterPatches = oci.database.getVmClusterPatches({
  *     vmClusterId: testVmCluster.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetVmClusterPatchesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVmClusterPatches = oci.Database.getVmClusterPatches({
+ * const testVmClusterPatches = oci.database.getVmClusterPatches({
  *     vmClusterId: testVmCluster.id,
  * });
  * ```
@@ -84,7 +84,7 @@ export function getVmClusterPatchesOutput(args: GetVmClusterPatchesOutputArgs, o
  * A collection of arguments for invoking getVmClusterPatches.
  */
 export interface GetVmClusterPatchesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetVmClusterPatchesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetVmClusterPatchesFilterArgs>[] | undefined>;
     /**
      * The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

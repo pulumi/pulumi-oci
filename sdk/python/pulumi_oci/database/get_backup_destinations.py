@@ -111,7 +111,7 @@ def get_backup_destinations(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_backup_destinations = oci.Database.get_backup_destinations(compartment_id=compartment_id,
+    test_backup_destinations = oci.database.get_backup_destinations(compartment_id=compartment_id,
         type=backup_destination_type)
     ```
 
@@ -132,9 +132,9 @@ def get_backup_destinations(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         type=pulumi.get(__ret__, 'type'))
-def get_backup_destinations_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBackupDestinationsFilterArgs', 'GetBackupDestinationsFilterArgsDict']]]]] = None,
-                                   type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_backup_destinations_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBackupDestinationsFilterArgs', 'GetBackupDestinationsFilterArgsDict']]]]] = None,
+                                   type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBackupDestinationsResult]:
     """
     This data source provides the list of Backup Destinations in Oracle Cloud Infrastructure Database service.
@@ -147,7 +147,7 @@ def get_backup_destinations_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_backup_destinations = oci.Database.get_backup_destinations(compartment_id=compartment_id,
+    test_backup_destinations = oci.database.get_backup_destinations(compartment_id=compartment_id,
         type=backup_destination_type)
     ```
 

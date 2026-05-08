@@ -251,7 +251,7 @@ def get_generative_ai_private_endpoint(generative_ai_private_endpoint_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_generative_ai_private_endpoint = oci.GenerativeAi.get_generative_ai_private_endpoint(generative_ai_private_endpoint_id=test_generative_ai_private_endpoint_oci_generative_ai_generative_ai_private_endpoint["id"])
+    test_generative_ai_private_endpoint = oci.generativeai.get_generative_ai_private_endpoint(generative_ai_private_endpoint_id=test_generative_ai_private_endpoint_oci_generative_ai_generative_ai_private_endpoint["id"])
     ```
 
 
@@ -281,7 +281,7 @@ def get_generative_ai_private_endpoint(generative_ai_private_endpoint_id: Option
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_generative_ai_private_endpoint_output(generative_ai_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_generative_ai_private_endpoint_output(generative_ai_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGenerativeAiPrivateEndpointResult]:
     """
     This data source provides details about a specific Generative Ai Private Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
@@ -294,7 +294,7 @@ def get_generative_ai_private_endpoint_output(generative_ai_private_endpoint_id:
     import pulumi
     import pulumi_oci as oci
 
-    test_generative_ai_private_endpoint = oci.GenerativeAi.get_generative_ai_private_endpoint(generative_ai_private_endpoint_id=test_generative_ai_private_endpoint_oci_generative_ai_generative_ai_private_endpoint["id"])
+    test_generative_ai_private_endpoint = oci.generativeai.get_generative_ai_private_endpoint(generative_ai_private_endpoint_id=test_generative_ai_private_endpoint_oci_generative_ai_generative_ai_private_endpoint["id"])
     ```
 
 

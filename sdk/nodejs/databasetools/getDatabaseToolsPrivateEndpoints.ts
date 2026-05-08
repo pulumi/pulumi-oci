@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseToolsPrivateEndpoints = oci.DatabaseTools.getDatabaseToolsPrivateEndpoints({
+ * const testDatabaseToolsPrivateEndpoints = oci.databasetools.getDatabaseToolsPrivateEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: databaseToolsPrivateEndpointDisplayName,
  *     endpointServiceId: testService.id,
@@ -110,7 +110,7 @@ export interface GetDatabaseToolsPrivateEndpointsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseToolsPrivateEndpoints = oci.DatabaseTools.getDatabaseToolsPrivateEndpoints({
+ * const testDatabaseToolsPrivateEndpoints = oci.databasetools.getDatabaseToolsPrivateEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: databaseToolsPrivateEndpointDisplayName,
  *     endpointServiceId: testService.id,
@@ -142,18 +142,18 @@ export interface GetDatabaseToolsPrivateEndpointsOutputArgs {
     /**
      * A filter to return only resources that match the entire specified display name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
      */
-    endpointServiceId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.GetDatabaseToolsPrivateEndpointsFilterArgs>[]>;
+    endpointServiceId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.GetDatabaseToolsPrivateEndpointsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources their `subnetId` matches the specified `subnetId`.
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
 }

@@ -360,7 +360,7 @@ def get_asset(asset_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_asset = oci.CloudBridge.get_asset(asset_id=test_asset_oci_cloud_bridge_asset["id"])
+    test_asset = oci.cloudbridge.get_asset(asset_id=test_asset_oci_cloud_bridge_asset["id"])
     ```
 
 
@@ -399,7 +399,7 @@ def get_asset(asset_id: Optional[_builtins.str] = None,
         vms=pulumi.get(__ret__, 'vms'),
         vmware_vcenters=pulumi.get(__ret__, 'vmware_vcenters'),
         vmware_vms=pulumi.get(__ret__, 'vmware_vms'))
-def get_asset_output(asset_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_asset_output(asset_id: pulumi.Input[Optional[_builtins.str]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAssetResult]:
     """
     This data source provides details about a specific Asset resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -412,7 +412,7 @@ def get_asset_output(asset_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_asset = oci.CloudBridge.get_asset(asset_id=test_asset_oci_cloud_bridge_asset["id"])
+    test_asset = oci.cloudbridge.get_asset(asset_id=test_asset_oci_cloud_bridge_asset["id"])
     ```
 
 

@@ -26,10 +26,10 @@ class MigrationAssetArgs:
                  migration_id: pulumi.Input[_builtins.str],
                  replication_compartment_id: pulumi.Input[_builtins.str],
                  snap_shot_bucket_name: pulumi.Input[_builtins.str],
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 migration_asset_depends_ons: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 replication_location_detail: Optional[pulumi.Input['MigrationAssetReplicationLocationDetailArgs']] = None,
-                 replication_schedule_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 migration_asset_depends_ons: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 replication_location_detail: pulumi.Input[Optional['MigrationAssetReplicationLocationDetailArgs']] = None,
+                 replication_schedule_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a MigrationAsset resource.
 
@@ -126,75 +126,75 @@ class MigrationAssetArgs:
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="migrationAssetDependsOns")
-    def migration_asset_depends_ons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def migration_asset_depends_ons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "migration_asset_depends_ons")
 
     @migration_asset_depends_ons.setter
-    def migration_asset_depends_ons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def migration_asset_depends_ons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "migration_asset_depends_ons", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationLocationDetail")
-    def replication_location_detail(self) -> Optional[pulumi.Input['MigrationAssetReplicationLocationDetailArgs']]:
+    def replication_location_detail(self) -> pulumi.Input[Optional['MigrationAssetReplicationLocationDetailArgs']]:
         """
         Replication location detail where the snapshots reside
         """
         return pulumi.get(self, "replication_location_detail")
 
     @replication_location_detail.setter
-    def replication_location_detail(self, value: Optional[pulumi.Input['MigrationAssetReplicationLocationDetailArgs']]):
+    def replication_location_detail(self, value: pulumi.Input[Optional['MigrationAssetReplicationLocationDetailArgs']]):
         pulumi.set(self, "replication_location_detail", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationScheduleId")
-    def replication_schedule_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_schedule_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Replication schedule identifier
         """
         return pulumi.get(self, "replication_schedule_id")
 
     @replication_schedule_id.setter
-    def replication_schedule_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_schedule_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_schedule_id", value)
 
 
 @pulumi.input_type
 class _MigrationAssetState:
     def __init__(__self__, *,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 depended_on_bies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 destination_disks: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 inventory_asset_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 migration_asset_depends_ons: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 migration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 parent_snapshot: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_location_detail: Optional[pulumi.Input['MigrationAssetReplicationLocationDetailArgs']] = None,
-                 replication_schedule_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 snap_shot_bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 snapshots: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 source_asset_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 depended_on_bies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 destination_disks: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 inventory_asset_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 migration_asset_depends_ons: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 migration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 parent_snapshot: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_location_detail: pulumi.Input[Optional['MigrationAssetReplicationLocationDetailArgs']] = None,
+                 replication_schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 snap_shot_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 snapshots: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 source_asset_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MigrationAsset resources.
 
@@ -271,172 +271,172 @@ class _MigrationAssetState:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Availability domain
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Compartment Identifier
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dependedOnBies")
-    def depended_on_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def depended_on_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of migration assets that depend on the asset.
         """
         return pulumi.get(self, "depended_on_bies")
 
     @depended_on_bies.setter
-    def depended_on_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def depended_on_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "depended_on_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="destinationDisks")
-    def destination_disks(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def destination_disks(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Mapping of source disk id to destination disk details
         """
         return pulumi.get(self, "destination_disks")
 
     @destination_disks.setter
-    def destination_disks(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def destination_disks(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "destination_disks", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. If empty, then source asset name will be used. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="inventoryAssetId")
-    def inventory_asset_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def inventory_asset_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of an asset for an inventory.
         """
         return pulumi.get(self, "inventory_asset_id")
 
     @inventory_asset_id.setter
-    def inventory_asset_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def inventory_asset_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "inventory_asset_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="migrationAssetDependsOns")
-    def migration_asset_depends_ons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def migration_asset_depends_ons(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "migration_asset_depends_ons")
 
     @migration_asset_depends_ons.setter
-    def migration_asset_depends_ons(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def migration_asset_depends_ons(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "migration_asset_depends_ons", value)
 
     @_builtins.property
     @pulumi.getter(name="migrationId")
-    def migration_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def migration_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the associated migration.
         """
         return pulumi.get(self, "migration_id")
 
     @migration_id.setter
-    def migration_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def migration_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "migration_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def notifications(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def notifications(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of notifications
         """
         return pulumi.get(self, "notifications")
 
     @notifications.setter
-    def notifications(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def notifications(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "notifications", value)
 
     @_builtins.property
     @pulumi.getter(name="parentSnapshot")
-    def parent_snapshot(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parent_snapshot(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The parent snapshot of the migration asset to be used by the replication task.
         """
         return pulumi.get(self, "parent_snapshot")
 
     @parent_snapshot.setter
-    def parent_snapshot(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parent_snapshot(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parent_snapshot", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationCompartmentId")
-    def replication_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Replication compartment identifier
         """
         return pulumi.get(self, "replication_compartment_id")
 
     @replication_compartment_id.setter
-    def replication_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationLocationDetail")
-    def replication_location_detail(self) -> Optional[pulumi.Input['MigrationAssetReplicationLocationDetailArgs']]:
+    def replication_location_detail(self) -> pulumi.Input[Optional['MigrationAssetReplicationLocationDetailArgs']]:
         """
         Replication location detail where the snapshots reside
         """
         return pulumi.get(self, "replication_location_detail")
 
     @replication_location_detail.setter
-    def replication_location_detail(self, value: Optional[pulumi.Input['MigrationAssetReplicationLocationDetailArgs']]):
+    def replication_location_detail(self, value: pulumi.Input[Optional['MigrationAssetReplicationLocationDetailArgs']]):
         pulumi.set(self, "replication_location_detail", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationScheduleId")
-    def replication_schedule_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def replication_schedule_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Replication schedule identifier
         """
         return pulumi.get(self, "replication_schedule_id")
 
     @replication_schedule_id.setter
-    def replication_schedule_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def replication_schedule_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "replication_schedule_id", value)
 
     @_builtins.property
     @pulumi.getter(name="snapShotBucketName")
-    def snap_shot_bucket_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def snap_shot_bucket_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of snapshot bucket
 
@@ -447,91 +447,91 @@ class _MigrationAssetState:
         return pulumi.get(self, "snap_shot_bucket_name")
 
     @snap_shot_bucket_name.setter
-    def snap_shot_bucket_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def snap_shot_bucket_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "snap_shot_bucket_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def snapshots(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def snapshots(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "snapshots")
 
     @snapshots.setter
-    def snapshots(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def snapshots(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "snapshots", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceAssetId")
-    def source_asset_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_asset_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID that is referenced to an asset for an inventory.
         """
         return pulumi.get(self, "source_asset_id")
 
     @source_asset_id.setter
-    def source_asset_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_asset_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_asset_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the migration asset.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyId")
-    def tenancy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Tenancy identifier
         """
         return pulumi.get(self, "tenancy_id")
 
     @tenancy_id.setter
-    def tenancy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time when the migration asset was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time when the migration asset was updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of asset referenced for inventory.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -541,15 +541,15 @@ class MigrationAsset(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 inventory_asset_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 migration_asset_depends_ons: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 migration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_location_detail: Optional[pulumi.Input[Union['MigrationAssetReplicationLocationDetailArgs', 'MigrationAssetReplicationLocationDetailArgsDict']]] = None,
-                 replication_schedule_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 snap_shot_bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 inventory_asset_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 migration_asset_depends_ons: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 migration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_location_detail: pulumi.Input[Optional[Union['MigrationAssetReplicationLocationDetailArgs', 'MigrationAssetReplicationLocationDetailArgsDict']]] = None,
+                 replication_schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 snap_shot_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Migration Asset resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -621,15 +621,15 @@ class MigrationAsset(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 inventory_asset_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 migration_asset_depends_ons: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 migration_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 replication_location_detail: Optional[pulumi.Input[Union['MigrationAssetReplicationLocationDetailArgs', 'MigrationAssetReplicationLocationDetailArgsDict']]] = None,
-                 replication_schedule_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 snap_shot_bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 inventory_asset_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 migration_asset_depends_ons: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 migration_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 replication_location_detail: pulumi.Input[Optional[Union['MigrationAssetReplicationLocationDetailArgs', 'MigrationAssetReplicationLocationDetailArgsDict']]] = None,
+                 replication_schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 snap_shot_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -681,28 +681,28 @@ class MigrationAsset(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            depended_on_bies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            destination_disks: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            inventory_asset_id: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            migration_asset_depends_ons: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            migration_id: Optional[pulumi.Input[_builtins.str]] = None,
-            notifications: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            parent_snapshot: Optional[pulumi.Input[_builtins.str]] = None,
-            replication_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            replication_location_detail: Optional[pulumi.Input[Union['MigrationAssetReplicationLocationDetailArgs', 'MigrationAssetReplicationLocationDetailArgsDict']]] = None,
-            replication_schedule_id: Optional[pulumi.Input[_builtins.str]] = None,
-            snap_shot_bucket_name: Optional[pulumi.Input[_builtins.str]] = None,
-            snapshots: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            source_asset_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'MigrationAsset':
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            depended_on_bies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            destination_disks: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            inventory_asset_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            migration_asset_depends_ons: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            migration_id: pulumi.Input[Optional[_builtins.str]] = None,
+            notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            parent_snapshot: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_location_detail: pulumi.Input[Optional[Union['MigrationAssetReplicationLocationDetailArgs', 'MigrationAssetReplicationLocationDetailArgsDict']]] = None,
+            replication_schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
+            snap_shot_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+            snapshots: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            source_asset_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'MigrationAsset':
         """
         Get an existing MigrationAsset resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

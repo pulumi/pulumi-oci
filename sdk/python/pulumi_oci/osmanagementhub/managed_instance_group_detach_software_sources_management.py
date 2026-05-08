@@ -23,7 +23,7 @@ class ManagedInstanceGroupDetachSoftwareSourcesManagementArgs:
     def __init__(__self__, *,
                  managed_instance_group_id: pulumi.Input[_builtins.str],
                  software_sources: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 work_request_details: Optional[pulumi.Input['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs']] = None):
+                 work_request_details: pulumi.Input[Optional['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs']] = None):
         """
         The set of arguments for constructing a ManagedInstanceGroupDetachSoftwareSourcesManagement resource.
 
@@ -62,23 +62,23 @@ class ManagedInstanceGroupDetachSoftwareSourcesManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="workRequestDetails")
-    def work_request_details(self) -> Optional[pulumi.Input['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs']]:
+    def work_request_details(self) -> pulumi.Input[Optional['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs']]:
         """
         Provides the name and description of the job.
         """
         return pulumi.get(self, "work_request_details")
 
     @work_request_details.setter
-    def work_request_details(self, value: Optional[pulumi.Input['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs']]):
+    def work_request_details(self, value: pulumi.Input[Optional['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs']]):
         pulumi.set(self, "work_request_details", value)
 
 
 @pulumi.input_type
 class _ManagedInstanceGroupDetachSoftwareSourcesManagementState:
     def __init__(__self__, *,
-                 managed_instance_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: Optional[pulumi.Input['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs']] = None):
+                 managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 software_sources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 work_request_details: pulumi.Input[Optional['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering ManagedInstanceGroupDetachSoftwareSourcesManagement resources.
 
@@ -95,38 +95,38 @@ class _ManagedInstanceGroupDetachSoftwareSourcesManagementState:
 
     @_builtins.property
     @pulumi.getter(name="managedInstanceGroupId")
-    def managed_instance_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def managed_instance_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
         """
         return pulumi.get(self, "managed_instance_group_id")
 
     @managed_instance_group_id.setter
-    def managed_instance_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def managed_instance_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "managed_instance_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="softwareSources")
-    def software_sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def software_sources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to detach from the group.
         """
         return pulumi.get(self, "software_sources")
 
     @software_sources.setter
-    def software_sources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def software_sources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "software_sources", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestDetails")
-    def work_request_details(self) -> Optional[pulumi.Input['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs']]:
+    def work_request_details(self) -> pulumi.Input[Optional['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs']]:
         """
         Provides the name and description of the job.
         """
         return pulumi.get(self, "work_request_details")
 
     @work_request_details.setter
-    def work_request_details(self, value: Optional[pulumi.Input['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs']]):
+    def work_request_details(self, value: pulumi.Input[Optional['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs']]):
         pulumi.set(self, "work_request_details", value)
 
 
@@ -136,9 +136,9 @@ class ManagedInstanceGroupDetachSoftwareSourcesManagement(pulumi.CustomResource)
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 managed_instance_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgsDict']]] = None,
+                 managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 software_sources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Managed Instance Group Detach Software Sources Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -231,9 +231,9 @@ class ManagedInstanceGroupDetachSoftwareSourcesManagement(pulumi.CustomResource)
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 managed_instance_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgsDict']]] = None,
+                 managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 software_sources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -260,9 +260,9 @@ class ManagedInstanceGroupDetachSoftwareSourcesManagement(pulumi.CustomResource)
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            managed_instance_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            work_request_details: Optional[pulumi.Input[Union['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstanceGroupDetachSoftwareSourcesManagement':
+            managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            software_sources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgsDict']]] = None) -> 'ManagedInstanceGroupDetachSoftwareSourcesManagement':
         """
         Get an existing ManagedInstanceGroupDetachSoftwareSourcesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

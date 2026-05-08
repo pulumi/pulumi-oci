@@ -23,23 +23,23 @@ class VirtualCircuitArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 bandwidth_shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 bgp_admin_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 cross_connect_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitCrossConnectMappingArgs']]]] = None,
-                 customer_asn: Optional[pulumi.Input[_builtins.str]] = None,
-                 customer_bgp_asn: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 gateway_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_mtu: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_bfd_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_transport_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-                 provider_service_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 provider_service_key_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 routing_policies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 bandwidth_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 bgp_admin_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 cross_connect_mappings: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualCircuitCrossConnectMappingArgs']]]] = None,
+                 customer_asn: pulumi.Input[Optional[_builtins.str]] = None,
+                 customer_bgp_asn: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gateway_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_mtu: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_bfd_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_transport_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 provider_service_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 provider_service_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 routing_policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a VirtualCircuit resource.
 
@@ -137,242 +137,242 @@ class VirtualCircuitArgs:
 
     @_builtins.property
     @pulumi.getter(name="bandwidthShapeName")
-    def bandwidth_shape_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bandwidth_shape_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
         """
         return pulumi.get(self, "bandwidth_shape_name")
 
     @bandwidth_shape_name.setter
-    def bandwidth_shape_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bandwidth_shape_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bandwidth_shape_name", value)
 
     @_builtins.property
     @pulumi.getter(name="bgpAdminState")
-    def bgp_admin_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bgp_admin_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
         """
         return pulumi.get(self, "bgp_admin_state")
 
     @bgp_admin_state.setter
-    def bgp_admin_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bgp_admin_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bgp_admin_state", value)
 
     @_builtins.property
     @pulumi.getter(name="crossConnectMappings")
-    def cross_connect_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitCrossConnectMappingArgs']]]]:
+    def cross_connect_mappings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualCircuitCrossConnectMappingArgs']]]]:
         """
         (Updatable) Create a `CrossConnectMapping` for each cross-connect or cross-connect group this virtual circuit will run on.
         """
         return pulumi.get(self, "cross_connect_mappings")
 
     @cross_connect_mappings.setter
-    def cross_connect_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitCrossConnectMappingArgs']]]]):
+    def cross_connect_mappings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualCircuitCrossConnectMappingArgs']]]]):
         pulumi.set(self, "cross_connect_mappings", value)
 
     @_builtins.property
     @pulumi.getter(name="customerAsn")
-    def customer_asn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def customer_asn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Your BGP ASN (either public or private). Provide this value only if there's a BGP session that goes from your edge router to Oracle. Otherwise, leave this empty or null. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.  Example: `12345` (2-byte) or `1587232876` (4-byte)
         """
         return pulumi.get(self, "customer_asn")
 
     @customer_asn.setter
-    def customer_asn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def customer_asn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "customer_asn", value)
 
     @_builtins.property
     @pulumi.getter(name="customerBgpAsn")
     @_utilities.deprecated("""The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.""")
-    def customer_bgp_asn(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def customer_bgp_asn(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
         """
         return pulumi.get(self, "customer_bgp_asn")
 
     @customer_bgp_asn.setter
-    def customer_bgp_asn(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def customer_bgp_asn(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "customer_bgp_asn", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="gatewayId")
-    def gateway_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def gateway_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) For private virtual circuits only. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses.
         """
         return pulumi.get(self, "gateway_id")
 
     @gateway_id.setter
-    def gateway_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def gateway_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "gateway_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ipMtu")
-    def ip_mtu(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_mtu(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The layer 3 IP MTU to use with this virtual circuit.
         """
         return pulumi.get(self, "ip_mtu")
 
     @ip_mtu.setter
-    def ip_mtu(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_mtu(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_mtu", value)
 
     @_builtins.property
     @pulumi.getter(name="isBfdEnabled")
-    def is_bfd_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_bfd_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
         """
         return pulumi.get(self, "is_bfd_enabled")
 
     @is_bfd_enabled.setter
-    def is_bfd_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_bfd_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_bfd_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isTransportMode")
-    def is_transport_mode(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_transport_mode(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
         """
         return pulumi.get(self, "is_transport_mode")
 
     @is_transport_mode.setter
-    def is_transport_mode(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_transport_mode(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_transport_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="providerServiceId")
-    def provider_service_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def provider_service_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
         """
         return pulumi.get(self, "provider_service_id")
 
     @provider_service_id.setter
-    def provider_service_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def provider_service_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "provider_service_id", value)
 
     @_builtins.property
     @pulumi.getter(name="providerServiceKeyName")
-    def provider_service_key_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def provider_service_key_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
         """
         return pulumi.get(self, "provider_service_key_name")
 
     @provider_service_key_name.setter
-    def provider_service_key_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def provider_service_key_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "provider_service_key_name", value)
 
     @_builtins.property
     @pulumi.getter(name="publicPrefixes")
-    def public_prefixes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]]]:
+    def public_prefixes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]]]:
         """
         (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
         """
         return pulumi.get(self, "public_prefixes")
 
     @public_prefixes.setter
-    def public_prefixes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]]]):
+    def public_prefixes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]]]):
         pulumi.set(self, "public_prefixes", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter(name="routingPolicies")
-    def routing_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def routing_policies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
         """
         return pulumi.get(self, "routing_policies")
 
     @routing_policies.setter
-    def routing_policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def routing_policies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "routing_policies", value)
 
 
 @pulumi.input_type
 class _VirtualCircuitState:
     def __init__(__self__, *,
-                 bandwidth_shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 bgp_admin_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 bgp_ipv6session_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 bgp_management: Optional[pulumi.Input[_builtins.str]] = None,
-                 bgp_session_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cross_connect_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitCrossConnectMappingArgs']]]] = None,
-                 customer_asn: Optional[pulumi.Input[_builtins.str]] = None,
-                 customer_bgp_asn: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 gateway_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_mtu: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_bfd_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_transport_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-                 oracle_bgp_asn: Optional[pulumi.Input[_builtins.int]] = None,
-                 provider_service_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 provider_service_key_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 provider_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]]] = None,
-                 reference_comment: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 routing_policies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 service_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtual_circuit_redundancy_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitVirtualCircuitRedundancyMetadataArgs']]]] = None):
+                 bandwidth_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 bgp_admin_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 bgp_ipv6session_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 bgp_management: pulumi.Input[Optional[_builtins.str]] = None,
+                 bgp_session_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cross_connect_mappings: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualCircuitCrossConnectMappingArgs']]]] = None,
+                 customer_asn: pulumi.Input[Optional[_builtins.str]] = None,
+                 customer_bgp_asn: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gateway_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_mtu: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_bfd_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_transport_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 oracle_bgp_asn: pulumi.Input[Optional[_builtins.int]] = None,
+                 provider_service_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 provider_service_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 provider_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]]] = None,
+                 reference_comment: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 routing_policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 service_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_circuit_redundancy_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualCircuitVirtualCircuitRedundancyMetadataArgs']]]] = None):
         """
         Input properties used for looking up and filtering VirtualCircuit resources.
 
@@ -477,333 +477,333 @@ class _VirtualCircuitState:
 
     @_builtins.property
     @pulumi.getter(name="bandwidthShapeName")
-    def bandwidth_shape_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bandwidth_shape_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
         """
         return pulumi.get(self, "bandwidth_shape_name")
 
     @bandwidth_shape_name.setter
-    def bandwidth_shape_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bandwidth_shape_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bandwidth_shape_name", value)
 
     @_builtins.property
     @pulumi.getter(name="bgpAdminState")
-    def bgp_admin_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bgp_admin_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
         """
         return pulumi.get(self, "bgp_admin_state")
 
     @bgp_admin_state.setter
-    def bgp_admin_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bgp_admin_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bgp_admin_state", value)
 
     @_builtins.property
     @pulumi.getter(name="bgpIpv6sessionState")
-    def bgp_ipv6session_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bgp_ipv6session_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The state of the Ipv6 BGP session associated with the virtual circuit.
         """
         return pulumi.get(self, "bgp_ipv6session_state")
 
     @bgp_ipv6session_state.setter
-    def bgp_ipv6session_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bgp_ipv6session_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bgp_ipv6session_state", value)
 
     @_builtins.property
     @pulumi.getter(name="bgpManagement")
     @_utilities.deprecated("""The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead.""")
-    def bgp_management(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bgp_management(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
         """
         return pulumi.get(self, "bgp_management")
 
     @bgp_management.setter
-    def bgp_management(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bgp_management(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bgp_management", value)
 
     @_builtins.property
     @pulumi.getter(name="bgpSessionState")
-    def bgp_session_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bgp_session_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The state of the Ipv4 BGP session associated with the virtual circuit.
         """
         return pulumi.get(self, "bgp_session_state")
 
     @bgp_session_state.setter
-    def bgp_session_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bgp_session_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bgp_session_state", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the virtual circuit.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="crossConnectMappings")
-    def cross_connect_mappings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitCrossConnectMappingArgs']]]]:
+    def cross_connect_mappings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualCircuitCrossConnectMappingArgs']]]]:
         """
         (Updatable) Create a `CrossConnectMapping` for each cross-connect or cross-connect group this virtual circuit will run on.
         """
         return pulumi.get(self, "cross_connect_mappings")
 
     @cross_connect_mappings.setter
-    def cross_connect_mappings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitCrossConnectMappingArgs']]]]):
+    def cross_connect_mappings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualCircuitCrossConnectMappingArgs']]]]):
         pulumi.set(self, "cross_connect_mappings", value)
 
     @_builtins.property
     @pulumi.getter(name="customerAsn")
-    def customer_asn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def customer_asn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Your BGP ASN (either public or private). Provide this value only if there's a BGP session that goes from your edge router to Oracle. Otherwise, leave this empty or null. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.  Example: `12345` (2-byte) or `1587232876` (4-byte)
         """
         return pulumi.get(self, "customer_asn")
 
     @customer_asn.setter
-    def customer_asn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def customer_asn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "customer_asn", value)
 
     @_builtins.property
     @pulumi.getter(name="customerBgpAsn")
     @_utilities.deprecated("""The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.""")
-    def customer_bgp_asn(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def customer_bgp_asn(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
         """
         return pulumi.get(self, "customer_bgp_asn")
 
     @customer_bgp_asn.setter
-    def customer_bgp_asn(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def customer_bgp_asn(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "customer_bgp_asn", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="gatewayId")
-    def gateway_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def gateway_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) For private virtual circuits only. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses.
         """
         return pulumi.get(self, "gateway_id")
 
     @gateway_id.setter
-    def gateway_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def gateway_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "gateway_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ipMtu")
-    def ip_mtu(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_mtu(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The layer 3 IP MTU to use with this virtual circuit.
         """
         return pulumi.get(self, "ip_mtu")
 
     @ip_mtu.setter
-    def ip_mtu(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_mtu(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_mtu", value)
 
     @_builtins.property
     @pulumi.getter(name="isBfdEnabled")
-    def is_bfd_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_bfd_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
         """
         return pulumi.get(self, "is_bfd_enabled")
 
     @is_bfd_enabled.setter
-    def is_bfd_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_bfd_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_bfd_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isTransportMode")
-    def is_transport_mode(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_transport_mode(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
         """
         return pulumi.get(self, "is_transport_mode")
 
     @is_transport_mode.setter
-    def is_transport_mode(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_transport_mode(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_transport_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="oracleBgpAsn")
-    def oracle_bgp_asn(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def oracle_bgp_asn(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The Oracle BGP ASN.
         """
         return pulumi.get(self, "oracle_bgp_asn")
 
     @oracle_bgp_asn.setter
-    def oracle_bgp_asn(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def oracle_bgp_asn(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "oracle_bgp_asn", value)
 
     @_builtins.property
     @pulumi.getter(name="providerServiceId")
-    def provider_service_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def provider_service_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
         """
         return pulumi.get(self, "provider_service_id")
 
     @provider_service_id.setter
-    def provider_service_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def provider_service_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "provider_service_id", value)
 
     @_builtins.property
     @pulumi.getter(name="providerServiceKeyName")
-    def provider_service_key_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def provider_service_key_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
         """
         return pulumi.get(self, "provider_service_key_name")
 
     @provider_service_key_name.setter
-    def provider_service_key_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def provider_service_key_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "provider_service_key_name", value)
 
     @_builtins.property
     @pulumi.getter(name="providerState")
-    def provider_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def provider_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The provider's state in relation to this virtual circuit (if the customer is connecting via a provider). ACTIVE means the provider has provisioned the virtual circuit from their end. INACTIVE means the provider has not yet provisioned the virtual circuit, or has de-provisioned it.
         """
         return pulumi.get(self, "provider_state")
 
     @provider_state.setter
-    def provider_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def provider_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "provider_state", value)
 
     @_builtins.property
     @pulumi.getter(name="publicPrefixes")
-    def public_prefixes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]]]:
+    def public_prefixes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]]]:
         """
         (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
         """
         return pulumi.get(self, "public_prefixes")
 
     @public_prefixes.setter
-    def public_prefixes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]]]):
+    def public_prefixes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]]]):
         pulumi.set(self, "public_prefixes", value)
 
     @_builtins.property
     @pulumi.getter(name="referenceComment")
-    def reference_comment(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def reference_comment(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Provider-supplied reference information about this virtual circuit (if the customer is connecting via a provider).
         """
         return pulumi.get(self, "reference_comment")
 
     @reference_comment.setter
-    def reference_comment(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def reference_comment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "reference_comment", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter(name="routingPolicies")
-    def routing_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def routing_policies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
         """
         return pulumi.get(self, "routing_policies")
 
     @routing_policies.setter
-    def routing_policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def routing_policies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "routing_policies", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceType")
-    def service_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Provider service type.
         """
         return pulumi.get(self, "service_type")
 
     @service_type.setter
-    def service_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The virtual circuit's current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16). 
 
@@ -814,19 +814,19 @@ class _VirtualCircuitState:
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter(name="virtualCircuitRedundancyMetadatas")
-    def virtual_circuit_redundancy_metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitVirtualCircuitRedundancyMetadataArgs']]]]:
+    def virtual_circuit_redundancy_metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualCircuitVirtualCircuitRedundancyMetadataArgs']]]]:
         """
         This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
         """
         return pulumi.get(self, "virtual_circuit_redundancy_metadatas")
 
     @virtual_circuit_redundancy_metadatas.setter
-    def virtual_circuit_redundancy_metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VirtualCircuitVirtualCircuitRedundancyMetadataArgs']]]]):
+    def virtual_circuit_redundancy_metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualCircuitVirtualCircuitRedundancyMetadataArgs']]]]):
         pulumi.set(self, "virtual_circuit_redundancy_metadatas", value)
 
 
@@ -836,25 +836,25 @@ class VirtualCircuit(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bandwidth_shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 bgp_admin_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cross_connect_mappings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitCrossConnectMappingArgs', 'VirtualCircuitCrossConnectMappingArgsDict']]]]] = None,
-                 customer_asn: Optional[pulumi.Input[_builtins.str]] = None,
-                 customer_bgp_asn: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 gateway_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_mtu: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_bfd_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_transport_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-                 provider_service_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 provider_service_key_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 routing_policies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 bandwidth_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 bgp_admin_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cross_connect_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitCrossConnectMappingArgs', 'VirtualCircuitCrossConnectMappingArgsDict']]]]] = None,
+                 customer_asn: pulumi.Input[Optional[_builtins.str]] = None,
+                 customer_bgp_asn: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gateway_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_mtu: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_bfd_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_transport_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 provider_service_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 provider_service_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 routing_policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Virtual Circuit resource in Oracle Cloud Infrastructure Core service.
@@ -902,10 +902,10 @@ class VirtualCircuit(pulumi.CustomResource):
                 "customer_bgp_peering_ipv6": virtual_circuit_cross_connect_mappings_customer_bgp_peering_ipv6,
                 "oracle_bgp_peering_ip": virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ip,
                 "oracle_bgp_peering_ipv6": virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ipv6,
-                "vlan": virtual_circuit_cross_connect_mappings_vlan,
+                "vlan": int(virtual_circuit_cross_connect_mappings_vlan),
             }],
             customer_asn=virtual_circuit_customer_asn,
-            customer_bgp_asn=virtual_circuit_customer_bgp_asn,
+            customer_bgp_asn=int(virtual_circuit_customer_bgp_asn),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -914,8 +914,8 @@ class VirtualCircuit(pulumi.CustomResource):
                 "Department": "Finance",
             },
             ip_mtu=virtual_circuit_ip_mtu,
-            is_bfd_enabled=virtual_circuit_is_bfd_enabled,
-            is_transport_mode=virtual_circuit_is_transport_mode,
+            is_bfd_enabled=virtual_circuit_is_bfd_enabled == "true",
+            is_transport_mode=virtual_circuit_is_transport_mode == "true",
             gateway_id=test_gateway["id"],
             provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"],
             provider_service_key_name=virtual_circuit_provider_service_key_name,
@@ -1013,10 +1013,10 @@ class VirtualCircuit(pulumi.CustomResource):
                 "customer_bgp_peering_ipv6": virtual_circuit_cross_connect_mappings_customer_bgp_peering_ipv6,
                 "oracle_bgp_peering_ip": virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ip,
                 "oracle_bgp_peering_ipv6": virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ipv6,
-                "vlan": virtual_circuit_cross_connect_mappings_vlan,
+                "vlan": int(virtual_circuit_cross_connect_mappings_vlan),
             }],
             customer_asn=virtual_circuit_customer_asn,
-            customer_bgp_asn=virtual_circuit_customer_bgp_asn,
+            customer_bgp_asn=int(virtual_circuit_customer_bgp_asn),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -1025,8 +1025,8 @@ class VirtualCircuit(pulumi.CustomResource):
                 "Department": "Finance",
             },
             ip_mtu=virtual_circuit_ip_mtu,
-            is_bfd_enabled=virtual_circuit_is_bfd_enabled,
-            is_transport_mode=virtual_circuit_is_transport_mode,
+            is_bfd_enabled=virtual_circuit_is_bfd_enabled == "true",
+            is_transport_mode=virtual_circuit_is_transport_mode == "true",
             gateway_id=test_gateway["id"],
             provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"],
             provider_service_key_name=virtual_circuit_provider_service_key_name,
@@ -1061,25 +1061,25 @@ class VirtualCircuit(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bandwidth_shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 bgp_admin_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cross_connect_mappings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitCrossConnectMappingArgs', 'VirtualCircuitCrossConnectMappingArgsDict']]]]] = None,
-                 customer_asn: Optional[pulumi.Input[_builtins.str]] = None,
-                 customer_bgp_asn: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 gateway_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_mtu: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_bfd_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_transport_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-                 provider_service_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 provider_service_key_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 routing_policies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 bandwidth_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 bgp_admin_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cross_connect_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitCrossConnectMappingArgs', 'VirtualCircuitCrossConnectMappingArgsDict']]]]] = None,
+                 customer_asn: pulumi.Input[Optional[_builtins.str]] = None,
+                 customer_bgp_asn: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gateway_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_mtu: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_bfd_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_transport_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 provider_service_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 provider_service_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 routing_policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1132,35 +1132,35 @@ class VirtualCircuit(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bandwidth_shape_name: Optional[pulumi.Input[_builtins.str]] = None,
-            bgp_admin_state: Optional[pulumi.Input[_builtins.str]] = None,
-            bgp_ipv6session_state: Optional[pulumi.Input[_builtins.str]] = None,
-            bgp_management: Optional[pulumi.Input[_builtins.str]] = None,
-            bgp_session_state: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cross_connect_mappings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitCrossConnectMappingArgs', 'VirtualCircuitCrossConnectMappingArgsDict']]]]] = None,
-            customer_asn: Optional[pulumi.Input[_builtins.str]] = None,
-            customer_bgp_asn: Optional[pulumi.Input[_builtins.int]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            gateway_id: Optional[pulumi.Input[_builtins.str]] = None,
-            ip_mtu: Optional[pulumi.Input[_builtins.str]] = None,
-            is_bfd_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_transport_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-            oracle_bgp_asn: Optional[pulumi.Input[_builtins.int]] = None,
-            provider_service_id: Optional[pulumi.Input[_builtins.str]] = None,
-            provider_service_key_name: Optional[pulumi.Input[_builtins.str]] = None,
-            provider_state: Optional[pulumi.Input[_builtins.str]] = None,
-            public_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]]] = None,
-            reference_comment: Optional[pulumi.Input[_builtins.str]] = None,
-            region: Optional[pulumi.Input[_builtins.str]] = None,
-            routing_policies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            service_type: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None,
-            virtual_circuit_redundancy_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitVirtualCircuitRedundancyMetadataArgs', 'VirtualCircuitVirtualCircuitRedundancyMetadataArgsDict']]]]] = None) -> 'VirtualCircuit':
+            bandwidth_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+            bgp_admin_state: pulumi.Input[Optional[_builtins.str]] = None,
+            bgp_ipv6session_state: pulumi.Input[Optional[_builtins.str]] = None,
+            bgp_management: pulumi.Input[Optional[_builtins.str]] = None,
+            bgp_session_state: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cross_connect_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitCrossConnectMappingArgs', 'VirtualCircuitCrossConnectMappingArgsDict']]]]] = None,
+            customer_asn: pulumi.Input[Optional[_builtins.str]] = None,
+            customer_bgp_asn: pulumi.Input[Optional[_builtins.int]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            gateway_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_mtu: pulumi.Input[Optional[_builtins.str]] = None,
+            is_bfd_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_transport_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+            oracle_bgp_asn: pulumi.Input[Optional[_builtins.int]] = None,
+            provider_service_id: pulumi.Input[Optional[_builtins.str]] = None,
+            provider_service_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+            provider_state: pulumi.Input[Optional[_builtins.str]] = None,
+            public_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]]] = None,
+            reference_comment: pulumi.Input[Optional[_builtins.str]] = None,
+            region: pulumi.Input[Optional[_builtins.str]] = None,
+            routing_policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            service_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            virtual_circuit_redundancy_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitVirtualCircuitRedundancyMetadataArgs', 'VirtualCircuitVirtualCircuitRedundancyMetadataArgsDict']]]]] = None) -> 'VirtualCircuit':
         """
         Get an existing VirtualCircuit resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

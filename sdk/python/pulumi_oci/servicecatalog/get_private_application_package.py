@@ -155,7 +155,7 @@ def get_private_application_package(private_application_package_id: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_private_application_package = oci.ServiceCatalog.get_private_application_package(private_application_package_id=test_private_application_package_oci_service_catalog_private_application_package["id"])
+    test_private_application_package = oci.servicecatalog.get_private_application_package(private_application_package_id=test_private_application_package_oci_service_catalog_private_application_package["id"])
     ```
 
 
@@ -176,7 +176,7 @@ def get_private_application_package(private_application_package_id: Optional[_bu
         private_application_package_id=pulumi.get(__ret__, 'private_application_package_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         version=pulumi.get(__ret__, 'version'))
-def get_private_application_package_output(private_application_package_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_private_application_package_output(private_application_package_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateApplicationPackageResult]:
     """
     This data source provides details about a specific Private Application Package resource in Oracle Cloud Infrastructure Service Catalog service.
@@ -189,7 +189,7 @@ def get_private_application_package_output(private_application_package_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_private_application_package = oci.ServiceCatalog.get_private_application_package(private_application_package_id=test_private_application_package_oci_service_catalog_private_application_package["id"])
+    test_private_application_package = oci.servicecatalog.get_private_application_package(private_application_package_id=test_private_application_package_oci_service_catalog_private_application_package["id"])
     ```
 
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInternalOccmDemandSignalCatalogResources = oci.CapacityManagement.getInternalOccmDemandSignalCatalogResources({
+ * const testInternalOccmDemandSignalCatalogResources = oci.capacitymanagement.getInternalOccmDemandSignalCatalogResources({
  *     compartmentId: compartmentId,
  *     occCustomerGroupId: testOccCustomerGroup.id,
  *     occmDemandSignalCatalogId: testCatalog.id,
@@ -107,7 +107,7 @@ export interface GetInternalOccmDemandSignalCatalogResourcesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInternalOccmDemandSignalCatalogResources = oci.CapacityManagement.getInternalOccmDemandSignalCatalogResources({
+ * const testInternalOccmDemandSignalCatalogResources = oci.capacitymanagement.getInternalOccmDemandSignalCatalogResources({
  *     compartmentId: compartmentId,
  *     occCustomerGroupId: testOccCustomerGroup.id,
  *     occmDemandSignalCatalogId: testCatalog.id,
@@ -139,12 +139,12 @@ export interface GetInternalOccmDemandSignalCatalogResourcesOutputArgs {
     /**
      * A query parameter to filter the list of demand signal catalog resources based on the namespace.
      */
-    demandSignalNamespace?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetInternalOccmDemandSignalCatalogResourcesFilterArgs>[]>;
+    demandSignalNamespace?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CapacityManagement.GetInternalOccmDemandSignalCatalogResourcesFilterArgs>[] | undefined>;
     /**
      * A query parameter to filter the list of demand signal catalog resource based on the resource name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The customer group ocid by which we would filter the list.
      */

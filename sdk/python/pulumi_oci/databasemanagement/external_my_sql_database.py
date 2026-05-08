@@ -66,9 +66,9 @@ class ExternalMySqlDatabaseArgs:
 @pulumi.input_type
 class _ExternalMySqlDatabaseState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_database_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_database_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalMySqlDatabase resources.
 
@@ -89,19 +89,19 @@ class _ExternalMySqlDatabaseState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of compartment for the External MySQL Database.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dbName")
-    def db_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of the External MySQL Database.
 
@@ -112,19 +112,19 @@ class _ExternalMySqlDatabaseState:
         return pulumi.get(self, "db_name")
 
     @db_name.setter
-    def db_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_name", value)
 
     @_builtins.property
     @pulumi.getter(name="externalDatabaseId")
-    def external_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of External MySQL Database.
         """
         return pulumi.get(self, "external_database_id")
 
     @external_database_id.setter
-    def external_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_database_id", value)
 
 
@@ -134,8 +134,8 @@ class ExternalMySqlDatabase(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the External My Sql Database resource in Oracle Cloud Infrastructure Database Management service.
@@ -223,8 +223,8 @@ class ExternalMySqlDatabase(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -251,9 +251,9 @@ class ExternalMySqlDatabase(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            db_name: Optional[pulumi.Input[_builtins.str]] = None,
-            external_database_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ExternalMySqlDatabase':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            db_name: pulumi.Input[Optional[_builtins.str]] = None,
+            external_database_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ExternalMySqlDatabase':
         """
         Get an existing ExternalMySqlDatabase resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

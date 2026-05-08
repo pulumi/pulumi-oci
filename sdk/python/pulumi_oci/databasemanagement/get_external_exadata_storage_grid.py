@@ -264,7 +264,7 @@ def get_external_exadata_storage_grid(external_exadata_storage_grid_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_storage_grid = oci.DatabaseManagement.get_external_exadata_storage_grid(external_exadata_storage_grid_id=test_external_exadata_storage_grid_oci_database_management_external_exadata_storage_grid["id"])
+    test_external_exadata_storage_grid = oci.databasemanagement.get_external_exadata_storage_grid(external_exadata_storage_grid_id=test_external_exadata_storage_grid_oci_database_management_external_exadata_storage_grid["id"])
     ```
 
 
@@ -294,7 +294,7 @@ def get_external_exadata_storage_grid(external_exadata_storage_grid_id: Optional
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
-def get_external_exadata_storage_grid_output(external_exadata_storage_grid_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_external_exadata_storage_grid_output(external_exadata_storage_grid_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExternalExadataStorageGridResult]:
     """
     This data source provides details about a specific External Exadata Storage Grid resource in Oracle Cloud Infrastructure Database Management service.
@@ -307,7 +307,7 @@ def get_external_exadata_storage_grid_output(external_exadata_storage_grid_id: O
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_storage_grid = oci.DatabaseManagement.get_external_exadata_storage_grid(external_exadata_storage_grid_id=test_external_exadata_storage_grid_oci_database_management_external_exadata_storage_grid["id"])
+    test_external_exadata_storage_grid = oci.databasemanagement.get_external_exadata_storage_grid(external_exadata_storage_grid_id=test_external_exadata_storage_grid_oci_database_management_external_exadata_storage_grid["id"])
     ```
 
 

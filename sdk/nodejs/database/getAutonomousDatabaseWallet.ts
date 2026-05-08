@@ -105,7 +105,7 @@ export interface GetAutonomousDatabaseWalletOutputArgs {
     /**
      * Encodes the downloaded zipped wallet in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
      */
-    base64EncodeContent?: pulumi.Input<boolean>;
+    base64EncodeContent?: pulumi.Input<boolean | undefined>;
     /**
      * The type of wallet to generate.
      *
@@ -115,7 +115,7 @@ export interface GetAutonomousDatabaseWalletOutputArgs {
      *
      * **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
      */
-    generateType?: pulumi.Input<string>;
+    generateType?: pulumi.Input<string | undefined>;
     /**
      * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
      */

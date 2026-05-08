@@ -211,14 +211,14 @@ def get_dbmulticloud_multi_cloud_resource_discoveries(compartment_id: Optional[_
         resource_type=pulumi.get(__ret__, 'resource_type'),
         resources_filters=pulumi.get(__ret__, 'resources_filters'),
         state=pulumi.get(__ret__, 'state'))
-def get_dbmulticloud_multi_cloud_resource_discoveries_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgs', 'GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgsDict']]]]] = None,
-                                                             multi_cloud_resource_discovery_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                             oracle_db_azure_connector_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                             resource_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                             resources_filters: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                             state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_dbmulticloud_multi_cloud_resource_discoveries_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgs', 'GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgsDict']]]]] = None,
+                                                             multi_cloud_resource_discovery_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                             oracle_db_azure_connector_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                             resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                             resources_filters: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbmulticloudMultiCloudResourceDiscoveriesResult]:
     """
     This data source provides the list of Multi Cloud Resource Discoveries in Oracle Cloud Infrastructure Dbmulticloud service.

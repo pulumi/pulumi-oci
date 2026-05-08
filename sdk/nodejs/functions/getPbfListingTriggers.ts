@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPbfListingTriggers = oci.Functions.getPbfListingTriggers({
+ * const testPbfListingTriggers = oci.functions.getPbfListingTriggers({
  *     name: pbfListingTriggerName,
  * });
  * ```
@@ -71,7 +71,7 @@ export interface GetPbfListingTriggersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPbfListingTriggers = oci.Functions.getPbfListingTriggers({
+ * const testPbfListingTriggers = oci.functions.getPbfListingTriggers({
  *     name: pbfListingTriggerName,
  * });
  * ```
@@ -89,9 +89,9 @@ export function getPbfListingTriggersOutput(args?: GetPbfListingTriggersOutputAr
  * A collection of arguments for invoking getPbfListingTriggers.
  */
 export interface GetPbfListingTriggersOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Functions.GetPbfListingTriggersFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Functions.GetPbfListingTriggersFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the service trigger source of a PBF.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

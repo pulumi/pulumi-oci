@@ -72,15 +72,15 @@ class MediaAssetLockArgsDict(TypedDict):
     """
     Type of the lock.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     When the lock was created.
     """
@@ -90,9 +90,9 @@ class MediaAssetLockArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment ID of the lock.
         :param pulumi.Input[_builtins.str] type: Type of the lock.
@@ -135,38 +135,38 @@ class MediaAssetLockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the lock was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -175,7 +175,7 @@ class MediaAssetMediaAssetTagArgsDict(TypedDict):
     """
     (Updatable) Tag of the MediaAsset.
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Type of the tag.
     """
@@ -184,7 +184,7 @@ class MediaAssetMediaAssetTagArgsDict(TypedDict):
 class MediaAssetMediaAssetTagArgs:
     def __init__(__self__, *,
                  value: pulumi.Input[_builtins.str],
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] value: (Updatable) Tag of the MediaAsset.
         :param pulumi.Input[_builtins.str] type: (Updatable) Type of the tag.
@@ -207,14 +207,14 @@ class MediaAssetMediaAssetTagArgs:
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Type of the tag.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -255,15 +255,15 @@ class MediaWorkflowConfigurationLockArgsDict(TypedDict):
     """
     Type of the lock.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     When the lock was created.
     """
@@ -273,9 +273,9 @@ class MediaWorkflowConfigurationLockArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment ID of the lock.
         :param pulumi.Input[_builtins.str] type: Type of the lock.
@@ -318,38 +318,38 @@ class MediaWorkflowConfigurationLockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the lock was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -362,15 +362,15 @@ class MediaWorkflowJobLockArgsDict(TypedDict):
     """
     Type of the lock.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     When the lock was created.
     """
@@ -380,9 +380,9 @@ class MediaWorkflowJobLockArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment ID of the lock.
         :param pulumi.Input[_builtins.str] type: Type of the lock.
@@ -425,59 +425,59 @@ class MediaWorkflowJobLockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the lock was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
 class MediaWorkflowJobOutputArgsDict(TypedDict):
-    asset_type: NotRequired[pulumi.Input[_builtins.str]]
+    asset_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of job output.
     """
-    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The bucket name of the job output.
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The ID associated with the job output.
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The namespace name of the job output.
     """
-    object: NotRequired[pulumi.Input[_builtins.str]]
+    object: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The object name of the job output.
     """
@@ -485,11 +485,11 @@ class MediaWorkflowJobOutputArgsDict(TypedDict):
 @pulumi.input_type
 class MediaWorkflowJobOutputArgs:
     def __init__(__self__, *,
-                 asset_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None):
+                 asset_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] asset_type: Type of job output.
         :param pulumi.Input[_builtins.str] bucket: The bucket name of the job output.
@@ -510,75 +510,75 @@ class MediaWorkflowJobOutputArgs:
 
     @_builtins.property
     @pulumi.getter(name="assetType")
-    def asset_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def asset_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of job output.
         """
         return pulumi.get(self, "asset_type")
 
     @asset_type.setter
-    def asset_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def asset_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "asset_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The bucket name of the job output.
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID associated with the job output.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The namespace name of the job output.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def object(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The object name of the job output.
         """
         return pulumi.get(self, "object")
 
     @object.setter
-    def object(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object", value)
 
 
 class MediaWorkflowJobTaskLifecycleStateArgsDict(TypedDict):
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Unique key within a MediaWorkflowJob for the task.
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The lifecycle details of MediaWorkflowJob task.
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current state of the MediaWorkflowJob task.
     """
@@ -586,9 +586,9 @@ class MediaWorkflowJobTaskLifecycleStateArgsDict(TypedDict):
 @pulumi.input_type
 class MediaWorkflowJobTaskLifecycleStateArgs:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] key: Unique key within a MediaWorkflowJob for the task.
         :param pulumi.Input[_builtins.str] lifecycle_details: The lifecycle details of MediaWorkflowJob task.
@@ -603,38 +603,38 @@ class MediaWorkflowJobTaskLifecycleStateArgs:
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique key within a MediaWorkflowJob for the task.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle details of MediaWorkflowJob task.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the MediaWorkflowJob task.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 
@@ -647,15 +647,15 @@ class MediaWorkflowLockArgsDict(TypedDict):
     """
     Type of the lock.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     When the lock was created.
     """
@@ -665,9 +665,9 @@ class MediaWorkflowLockArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment ID of the lock.
         :param pulumi.Input[_builtins.str] type: Type of the lock.
@@ -710,38 +710,38 @@ class MediaWorkflowLockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the lock was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -766,15 +766,15 @@ class MediaWorkflowTaskArgsDict(TypedDict):
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
-    enable_parameter_reference: NotRequired[pulumi.Input[_builtins.str]]
+    enable_parameter_reference: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
     """
-    enable_when_referenced_parameter_equals: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    enable_when_referenced_parameter_equals: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
     """
-    prerequisites: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    prerequisites: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
     """
@@ -786,9 +786,9 @@ class MediaWorkflowTaskArgs:
                  parameters: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
                  version: pulumi.Input[_builtins.str],
-                 enable_parameter_reference: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_when_referenced_parameter_equals: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 prerequisites: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 enable_parameter_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_when_referenced_parameter_equals: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 prerequisites: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] key: (Updatable) A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
         :param pulumi.Input[_builtins.str] parameters: (Updatable) Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
@@ -867,38 +867,38 @@ class MediaWorkflowTaskArgs:
 
     @_builtins.property
     @pulumi.getter(name="enableParameterReference")
-    def enable_parameter_reference(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def enable_parameter_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
         """
         return pulumi.get(self, "enable_parameter_reference")
 
     @enable_parameter_reference.setter
-    def enable_parameter_reference(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def enable_parameter_reference(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "enable_parameter_reference", value)
 
     @_builtins.property
     @pulumi.getter(name="enableWhenReferencedParameterEquals")
-    def enable_when_referenced_parameter_equals(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def enable_when_referenced_parameter_equals(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
         """
         return pulumi.get(self, "enable_when_referenced_parameter_equals")
 
     @enable_when_referenced_parameter_equals.setter
-    def enable_when_referenced_parameter_equals(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def enable_when_referenced_parameter_equals(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "enable_when_referenced_parameter_equals", value)
 
     @_builtins.property
     @pulumi.getter
-    def prerequisites(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def prerequisites(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
         """
         return pulumi.get(self, "prerequisites")
 
     @prerequisites.setter
-    def prerequisites(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def prerequisites(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "prerequisites", value)
 
 
@@ -907,47 +907,47 @@ class StreamCdnConfigConfigArgsDict(TypedDict):
     """
     (Updatable) The name of the CDN configuration type.
     """
-    edge_hostname: NotRequired[pulumi.Input[_builtins.str]]
+    edge_hostname: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The hostname of the CDN edge server to use when building CDN URLs.
     """
-    edge_path_prefix: NotRequired[pulumi.Input[_builtins.str]]
+    edge_path_prefix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The path to prepend when building CDN URLs.
     """
-    edge_token_key: NotRequired[pulumi.Input[_builtins.str]]
+    edge_token_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The encryption key to use for edge token authentication.
     """
-    edge_token_salt: NotRequired[pulumi.Input[_builtins.str]]
+    edge_token_salt: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Salt to use when encrypting authentication token.
     """
-    is_edge_token_auth: NotRequired[pulumi.Input[_builtins.bool]]
+    is_edge_token_auth: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether token authentication should be used at the CDN edge.
     """
-    origin_auth_secret_key_a: NotRequired[pulumi.Input[_builtins.str]]
+    origin_auth_secret_key_a: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The shared secret key A, two for errorless key rotation.
     """
-    origin_auth_secret_key_b: NotRequired[pulumi.Input[_builtins.str]]
+    origin_auth_secret_key_b: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The shared secret key B, two for errorless key rotation.
     """
-    origin_auth_secret_key_nonce_a: NotRequired[pulumi.Input[_builtins.str]]
+    origin_auth_secret_key_nonce_a: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Nonce identifier for originAuthSecretKeyA (used to determine key used to sign).
     """
-    origin_auth_secret_key_nonce_b: NotRequired[pulumi.Input[_builtins.str]]
+    origin_auth_secret_key_nonce_b: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
     """
-    origin_auth_sign_encryption: NotRequired[pulumi.Input[_builtins.str]]
+    origin_auth_sign_encryption: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The type of encryption used to compute the signature.
     """
-    origin_auth_sign_type: NotRequired[pulumi.Input[_builtins.str]]
+    origin_auth_sign_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The type of data used to compute the signature.
     """
@@ -956,17 +956,17 @@ class StreamCdnConfigConfigArgsDict(TypedDict):
 class StreamCdnConfigConfigArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 edge_hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 edge_path_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 edge_token_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 edge_token_salt: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_edge_token_auth: Optional[pulumi.Input[_builtins.bool]] = None,
-                 origin_auth_secret_key_a: Optional[pulumi.Input[_builtins.str]] = None,
-                 origin_auth_secret_key_b: Optional[pulumi.Input[_builtins.str]] = None,
-                 origin_auth_secret_key_nonce_a: Optional[pulumi.Input[_builtins.str]] = None,
-                 origin_auth_secret_key_nonce_b: Optional[pulumi.Input[_builtins.str]] = None,
-                 origin_auth_sign_encryption: Optional[pulumi.Input[_builtins.str]] = None,
-                 origin_auth_sign_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 edge_hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 edge_path_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 edge_token_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 edge_token_salt: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_edge_token_auth: pulumi.Input[Optional[_builtins.bool]] = None,
+                 origin_auth_secret_key_a: pulumi.Input[Optional[_builtins.str]] = None,
+                 origin_auth_secret_key_b: pulumi.Input[Optional[_builtins.str]] = None,
+                 origin_auth_secret_key_nonce_a: pulumi.Input[Optional[_builtins.str]] = None,
+                 origin_auth_secret_key_nonce_b: pulumi.Input[Optional[_builtins.str]] = None,
+                 origin_auth_sign_encryption: pulumi.Input[Optional[_builtins.str]] = None,
+                 origin_auth_sign_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: (Updatable) The name of the CDN configuration type.
         :param pulumi.Input[_builtins.str] edge_hostname: (Updatable) The hostname of the CDN edge server to use when building CDN URLs.
@@ -1019,134 +1019,134 @@ class StreamCdnConfigConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="edgeHostname")
-    def edge_hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def edge_hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The hostname of the CDN edge server to use when building CDN URLs.
         """
         return pulumi.get(self, "edge_hostname")
 
     @edge_hostname.setter
-    def edge_hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def edge_hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "edge_hostname", value)
 
     @_builtins.property
     @pulumi.getter(name="edgePathPrefix")
-    def edge_path_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def edge_path_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The path to prepend when building CDN URLs.
         """
         return pulumi.get(self, "edge_path_prefix")
 
     @edge_path_prefix.setter
-    def edge_path_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def edge_path_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "edge_path_prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="edgeTokenKey")
-    def edge_token_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def edge_token_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The encryption key to use for edge token authentication.
         """
         return pulumi.get(self, "edge_token_key")
 
     @edge_token_key.setter
-    def edge_token_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def edge_token_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "edge_token_key", value)
 
     @_builtins.property
     @pulumi.getter(name="edgeTokenSalt")
-    def edge_token_salt(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def edge_token_salt(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Salt to use when encrypting authentication token.
         """
         return pulumi.get(self, "edge_token_salt")
 
     @edge_token_salt.setter
-    def edge_token_salt(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def edge_token_salt(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "edge_token_salt", value)
 
     @_builtins.property
     @pulumi.getter(name="isEdgeTokenAuth")
-    def is_edge_token_auth(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_edge_token_auth(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether token authentication should be used at the CDN edge.
         """
         return pulumi.get(self, "is_edge_token_auth")
 
     @is_edge_token_auth.setter
-    def is_edge_token_auth(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_edge_token_auth(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_edge_token_auth", value)
 
     @_builtins.property
     @pulumi.getter(name="originAuthSecretKeyA")
-    def origin_auth_secret_key_a(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def origin_auth_secret_key_a(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The shared secret key A, two for errorless key rotation.
         """
         return pulumi.get(self, "origin_auth_secret_key_a")
 
     @origin_auth_secret_key_a.setter
-    def origin_auth_secret_key_a(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def origin_auth_secret_key_a(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "origin_auth_secret_key_a", value)
 
     @_builtins.property
     @pulumi.getter(name="originAuthSecretKeyB")
-    def origin_auth_secret_key_b(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def origin_auth_secret_key_b(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The shared secret key B, two for errorless key rotation.
         """
         return pulumi.get(self, "origin_auth_secret_key_b")
 
     @origin_auth_secret_key_b.setter
-    def origin_auth_secret_key_b(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def origin_auth_secret_key_b(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "origin_auth_secret_key_b", value)
 
     @_builtins.property
     @pulumi.getter(name="originAuthSecretKeyNonceA")
-    def origin_auth_secret_key_nonce_a(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def origin_auth_secret_key_nonce_a(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Nonce identifier for originAuthSecretKeyA (used to determine key used to sign).
         """
         return pulumi.get(self, "origin_auth_secret_key_nonce_a")
 
     @origin_auth_secret_key_nonce_a.setter
-    def origin_auth_secret_key_nonce_a(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def origin_auth_secret_key_nonce_a(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "origin_auth_secret_key_nonce_a", value)
 
     @_builtins.property
     @pulumi.getter(name="originAuthSecretKeyNonceB")
-    def origin_auth_secret_key_nonce_b(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def origin_auth_secret_key_nonce_b(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Nonce identifier for originAuthSecretKeyB (used to determine key used to sign).
         """
         return pulumi.get(self, "origin_auth_secret_key_nonce_b")
 
     @origin_auth_secret_key_nonce_b.setter
-    def origin_auth_secret_key_nonce_b(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def origin_auth_secret_key_nonce_b(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "origin_auth_secret_key_nonce_b", value)
 
     @_builtins.property
     @pulumi.getter(name="originAuthSignEncryption")
-    def origin_auth_sign_encryption(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def origin_auth_sign_encryption(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of encryption used to compute the signature.
         """
         return pulumi.get(self, "origin_auth_sign_encryption")
 
     @origin_auth_sign_encryption.setter
-    def origin_auth_sign_encryption(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def origin_auth_sign_encryption(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "origin_auth_sign_encryption", value)
 
     @_builtins.property
     @pulumi.getter(name="originAuthSignType")
-    def origin_auth_sign_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def origin_auth_sign_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of data used to compute the signature.
         """
         return pulumi.get(self, "origin_auth_sign_type")
 
     @origin_auth_sign_type.setter
-    def origin_auth_sign_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def origin_auth_sign_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "origin_auth_sign_type", value)
 
 
@@ -1163,15 +1163,15 @@ class StreamCdnConfigLockArgsDict(TypedDict):
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     When the lock was created.
     """
@@ -1181,9 +1181,9 @@ class StreamCdnConfigLockArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: The compartment ID of the lock.
         :param pulumi.Input[_builtins.str] type: Type of the lock.
@@ -1234,38 +1234,38 @@ class StreamCdnConfigLockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the lock was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -1282,15 +1282,15 @@ class StreamDistributionChannelLockArgsDict(TypedDict):
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     When the lock was created.
     """
@@ -1300,9 +1300,9 @@ class StreamDistributionChannelLockArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment ID of the lock.
         :param pulumi.Input[_builtins.str] type: Type of the lock.
@@ -1353,38 +1353,38 @@ class StreamDistributionChannelLockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the lock was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -1393,7 +1393,7 @@ class StreamPackagingConfigEncryptionArgsDict(TypedDict):
     """
     The encryption algorithm for the stream packaging configuration.
     """
-    kms_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    kms_key_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
     """
@@ -1402,7 +1402,7 @@ class StreamPackagingConfigEncryptionArgsDict(TypedDict):
 class StreamPackagingConfigEncryptionArgs:
     def __init__(__self__, *,
                  algorithm: pulumi.Input[_builtins.str],
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] algorithm: The encryption algorithm for the stream packaging configuration.
         :param pulumi.Input[_builtins.str] kms_key_id: The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
@@ -1425,14 +1425,14 @@ class StreamPackagingConfigEncryptionArgs:
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The identifier of the customer managed Vault KMS symmetric encryption key (null if Oracle managed).
         """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
-    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
 
 
@@ -1445,15 +1445,15 @@ class StreamPackagingConfigLockArgsDict(TypedDict):
     """
     Type of the lock.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     When the lock was created.
     """
@@ -1463,9 +1463,9 @@ class StreamPackagingConfigLockArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: The compartment ID of the lock.
         :param pulumi.Input[_builtins.str] type: Type of the lock.
@@ -1508,38 +1508,38 @@ class StreamPackagingConfigLockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the lock was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 

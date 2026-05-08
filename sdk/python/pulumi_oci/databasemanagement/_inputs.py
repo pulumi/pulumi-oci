@@ -426,11 +426,11 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArg
     """
     The name of the Database Management feature.
     """
-    connector_details: NotRequired[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]
+    connector_details: NotRequired[pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]]
     """
     The connector details required to connect to an Oracle cloud database.
     """
-    database_connection_details: NotRequired[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict']]
+    database_connection_details: NotRequired[pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']]]
     """
     The connection details required to connect to the database.
     """
@@ -439,8 +439,8 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArg
 class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs:
     def __init__(__self__, *,
                  feature: pulumi.Input[_builtins.str],
-                 connector_details: Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']] = None,
-                 database_connection_details: Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']] = None):
+                 connector_details: pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']] = None,
+                 database_connection_details: pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] feature: The name of the Database Management feature.
         :param pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs'] connector_details: The connector details required to connect to an Oracle cloud database.
@@ -466,31 +466,31 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArg
 
     @_builtins.property
     @pulumi.getter(name="connectorDetails")
-    def connector_details(self) -> Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]:
+    def connector_details(self) -> pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]:
         """
         The connector details required to connect to an Oracle cloud database.
         """
         return pulumi.get(self, "connector_details")
 
     @connector_details.setter
-    def connector_details(self, value: Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]):
+    def connector_details(self, value: pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]):
         pulumi.set(self, "connector_details", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseConnectionDetails")
-    def database_connection_details(self) -> Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']]:
+    def database_connection_details(self) -> pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']]:
         """
         The connection details required to connect to the database.
         """
         return pulumi.get(self, "database_connection_details")
 
     @database_connection_details.setter
-    def database_connection_details(self, value: Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']]):
+    def database_connection_details(self, value: pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']]):
         pulumi.set(self, "database_connection_details", value)
 
 
 class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict(TypedDict):
-    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    connector_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The list of supported connection types:
     * PE: Private endpoint
@@ -498,15 +498,15 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsCon
     * EXTERNAL: External database connector
     * DIRECT: Direct connection
     """
-    database_connector_id: NotRequired[pulumi.Input[_builtins.str]]
+    database_connector_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
     """
-    management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    management_agent_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
     """
-    private_end_point_id: NotRequired[pulumi.Input[_builtins.str]]
+    private_end_point_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
     """
@@ -514,10 +514,10 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsCon
 @pulumi.input_type
 class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs:
     def __init__(__self__, *,
-                 connector_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_end_point_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_end_point_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] connector_type: The list of supported connection types:
                * PE: Private endpoint
@@ -539,7 +539,7 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsCon
 
     @_builtins.property
     @pulumi.getter(name="connectorType")
-    def connector_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connector_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The list of supported connection types:
         * PE: Private endpoint
@@ -550,52 +550,52 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsCon
         return pulumi.get(self, "connector_type")
 
     @connector_type.setter
-    def connector_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connector_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connector_type", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseConnectorId")
-    def database_connector_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_connector_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
         """
         return pulumi.get(self, "database_connector_id")
 
     @database_connector_id.setter
-    def database_connector_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_connector_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_connector_id", value)
 
     @_builtins.property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
         """
         return pulumi.get(self, "management_agent_id")
 
     @management_agent_id.setter
-    def management_agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndPointId")
-    def private_end_point_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_end_point_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         """
         return pulumi.get(self, "private_end_point_id")
 
     @private_end_point_id.setter
-    def private_end_point_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_end_point_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_end_point_id", value)
 
 
 class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict(TypedDict):
-    connection_credentials: NotRequired[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgsDict']]
+    connection_credentials: NotRequired[pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']]]
     """
     The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_string: NotRequired[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgsDict']]
+    connection_string: NotRequired[pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']]]
     """
     The details of the Oracle Database connection string.
     """
@@ -603,8 +603,8 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDat
 @pulumi.input_type
 class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs:
     def __init__(__self__, *,
-                 connection_credentials: Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']] = None,
-                 connection_string: Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']] = None):
+                 connection_credentials: pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']] = None,
+                 connection_string: pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']] = None):
         """
         :param pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs'] connection_credentials: The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         :param pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs'] connection_string: The details of the Oracle Database connection string.
@@ -616,53 +616,53 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDat
 
     @_builtins.property
     @pulumi.getter(name="connectionCredentials")
-    def connection_credentials(self) -> Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']]:
+    def connection_credentials(self) -> pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']]:
         """
         The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         """
         return pulumi.get(self, "connection_credentials")
 
     @connection_credentials.setter
-    def connection_credentials(self, value: Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']]):
+    def connection_credentials(self, value: pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']]):
         pulumi.set(self, "connection_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionString")
-    def connection_string(self) -> Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']]:
+    def connection_string(self) -> pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']]:
         """
         The details of the Oracle Database connection string.
         """
         return pulumi.get(self, "connection_string")
 
     @connection_string.setter
-    def connection_string(self, value: Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']]):
+    def connection_string(self, value: pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']]):
         pulumi.set(self, "connection_string", value)
 
 
 class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgsDict(TypedDict):
-    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    credential_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 
     For example: inventorydb.abc112233445566778899
     """
-    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    credential_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of credential used to connect to the database.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the user connecting to the database.
     """
-    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    ssl_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
     """
-    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user name used to connect to the database.
     """
@@ -670,12 +670,12 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDat
 @pulumi.input_type
 class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs:
     def __init__(__self__, *,
-                 credential_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 credential_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 credential_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 credential_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
                
@@ -701,7 +701,7 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDat
 
     @_builtins.property
     @pulumi.getter(name="credentialName")
-    def credential_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 
@@ -710,85 +710,85 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDat
         return pulumi.get(self, "credential_name")
 
     @credential_name.setter
-    def credential_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_name", value)
 
     @_builtins.property
     @pulumi.getter(name="credentialType")
-    def credential_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of credential used to connect to the database.
         """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
-    def credential_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_type", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the user connecting to the database.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="sslSecretId")
-    def ssl_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
         """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
-    def ssl_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user name used to connect to the database.
         """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
 
 class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgsDict(TypedDict):
-    connection_type: NotRequired[pulumi.Input[_builtins.str]]
+    connection_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The list of supported connection types:
     * BASIC: Basic connection details
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port number used to connect to the database.
     """
-    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The protocol used to connect to the database.
     """
-    service: NotRequired[pulumi.Input[_builtins.str]]
+    service: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The service name of the database.
     """
@@ -796,10 +796,10 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDat
 @pulumi.input_type
 class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs:
     def __init__(__self__, *,
-                 connection_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 service: Optional[pulumi.Input[_builtins.str]] = None):
+                 connection_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 service: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] connection_type: The list of supported connection types:
                * BASIC: Basic connection details
@@ -818,7 +818,7 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDat
 
     @_builtins.property
     @pulumi.getter(name="connectionType")
-    def connection_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The list of supported connection types:
         * BASIC: Basic connection details
@@ -826,80 +826,80 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDat
         return pulumi.get(self, "connection_type")
 
     @connection_type.setter
-    def connection_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port number used to connect to the database.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The protocol used to connect to the database.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def service(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service name of the database.
         """
         return pulumi.get(self, "service")
 
     @service.setter
-    def service(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service", value)
 
 
 class CloudAsmServicedDatabaseArgsDict(TypedDict):
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
     """
-    database_sub_type: NotRequired[pulumi.Input[_builtins.str]]
+    database_sub_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
     """
-    database_type: NotRequired[pulumi.Input[_builtins.str]]
+    database_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of Oracle Database installation.
     """
-    db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
+    db_unique_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique name of the cloud database.
     """
-    dbaas_id: NotRequired[pulumi.Input[_builtins.str]]
+    dbaas_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
     """
-    disk_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    disk_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The list of ASM disk groups used by the database.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user-friendly name for the database. The name does not have to be unique.
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
     """
-    is_managed: NotRequired[pulumi.Input[_builtins.bool]]
+    is_managed: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the database is a Managed Database or not.
     """
@@ -907,15 +907,15 @@ class CloudAsmServicedDatabaseArgsDict(TypedDict):
 @pulumi.input_type
 class CloudAsmServicedDatabaseArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_sub_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dbaas_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 disk_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_managed: Optional[pulumi.Input[_builtins.bool]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_sub_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dbaas_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 disk_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_managed: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
         :param pulumi.Input[_builtins.str] database_sub_type: The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
@@ -948,123 +948,123 @@ class CloudAsmServicedDatabaseArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseSubType")
-    def database_sub_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_sub_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         """
         return pulumi.get(self, "database_sub_type")
 
     @database_sub_type.setter
-    def database_sub_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_sub_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_sub_type", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseType")
-    def database_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of Oracle Database installation.
         """
         return pulumi.get(self, "database_type")
 
     @database_type.setter
-    def database_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dbUniqueName")
-    def db_unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_unique_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique name of the cloud database.
         """
         return pulumi.get(self, "db_unique_name")
 
     @db_unique_name.setter
-    def db_unique_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_unique_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_unique_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dbaasId")
-    def dbaas_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dbaas_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         """
         return pulumi.get(self, "dbaas_id")
 
     @dbaas_id.setter
-    def dbaas_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dbaas_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dbaas_id", value)
 
     @_builtins.property
     @pulumi.getter(name="diskGroups")
-    def disk_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def disk_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of ASM disk groups used by the database.
         """
         return pulumi.get(self, "disk_groups")
 
     @disk_groups.setter
-    def disk_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def disk_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "disk_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-friendly name for the database. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter(name="isManaged")
-    def is_managed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_managed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the database is a Managed Database or not.
         """
         return pulumi.get(self, "is_managed")
 
     @is_managed.setter
-    def is_managed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_managed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_managed", value)
 
 
 class CloudClusterNetworkConfigurationArgsDict(TypedDict):
-    network_number: NotRequired[pulumi.Input[_builtins.int]]
+    network_number: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The network number from which VIPs are obtained.
     """
-    network_type: NotRequired[pulumi.Input[_builtins.str]]
+    network_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The network type.
     """
-    subnet: NotRequired[pulumi.Input[_builtins.str]]
+    subnet: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The subnet for the network.
     """
@@ -1072,9 +1072,9 @@ class CloudClusterNetworkConfigurationArgsDict(TypedDict):
 @pulumi.input_type
 class CloudClusterNetworkConfigurationArgs:
     def __init__(__self__, *,
-                 network_number: Optional[pulumi.Input[_builtins.int]] = None,
-                 network_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet: Optional[pulumi.Input[_builtins.str]] = None):
+                 network_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 network_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.int] network_number: The network number from which VIPs are obtained.
         :param pulumi.Input[_builtins.str] network_type: The network type.
@@ -1089,55 +1089,55 @@ class CloudClusterNetworkConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="networkNumber")
-    def network_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def network_number(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The network number from which VIPs are obtained.
         """
         return pulumi.get(self, "network_number")
 
     @network_number.setter
-    def network_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def network_number(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "network_number", value)
 
     @_builtins.property
     @pulumi.getter(name="networkType")
-    def network_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The network type.
         """
         return pulumi.get(self, "network_type")
 
     @network_type.setter
-    def network_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def subnet(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The subnet for the network.
         """
         return pulumi.get(self, "subnet")
 
     @subnet.setter
-    def subnet(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet", value)
 
 
 class CloudClusterScanConfigurationArgsDict(TypedDict):
-    network_number: NotRequired[pulumi.Input[_builtins.int]]
+    network_number: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The network number from which VIPs are obtained.
     """
-    scan_name: NotRequired[pulumi.Input[_builtins.str]]
+    scan_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the SCAN listener.
     """
-    scan_port: NotRequired[pulumi.Input[_builtins.int]]
+    scan_port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port number of the SCAN listener.
     """
-    scan_protocol: NotRequired[pulumi.Input[_builtins.str]]
+    scan_protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The protocol of the SCAN listener.
     """
@@ -1145,10 +1145,10 @@ class CloudClusterScanConfigurationArgsDict(TypedDict):
 @pulumi.input_type
 class CloudClusterScanConfigurationArgs:
     def __init__(__self__, *,
-                 network_number: Optional[pulumi.Input[_builtins.int]] = None,
-                 scan_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scan_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 scan_protocol: Optional[pulumi.Input[_builtins.str]] = None):
+                 network_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 scan_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scan_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 scan_protocol: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.int] network_number: The network number from which VIPs are obtained.
         :param pulumi.Input[_builtins.str] scan_name: The name of the SCAN listener.
@@ -1166,63 +1166,63 @@ class CloudClusterScanConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="networkNumber")
-    def network_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def network_number(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The network number from which VIPs are obtained.
         """
         return pulumi.get(self, "network_number")
 
     @network_number.setter
-    def network_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def network_number(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "network_number", value)
 
     @_builtins.property
     @pulumi.getter(name="scanName")
-    def scan_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scan_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the SCAN listener.
         """
         return pulumi.get(self, "scan_name")
 
     @scan_name.setter
-    def scan_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scan_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scan_name", value)
 
     @_builtins.property
     @pulumi.getter(name="scanPort")
-    def scan_port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def scan_port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port number of the SCAN listener.
         """
         return pulumi.get(self, "scan_port")
 
     @scan_port.setter
-    def scan_port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def scan_port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "scan_port", value)
 
     @_builtins.property
     @pulumi.getter(name="scanProtocol")
-    def scan_protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scan_protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The protocol of the SCAN listener.
         """
         return pulumi.get(self, "scan_protocol")
 
     @scan_protocol.setter
-    def scan_protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scan_protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scan_protocol", value)
 
 
 class CloudClusterVipConfigurationArgsDict(TypedDict):
-    address: NotRequired[pulumi.Input[_builtins.str]]
+    address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The VIP name or IP address.
     """
-    network_number: NotRequired[pulumi.Input[_builtins.int]]
+    network_number: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The network number from which VIPs are obtained.
     """
-    node_name: NotRequired[pulumi.Input[_builtins.str]]
+    node_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the node with the VIP.
     """
@@ -1230,9 +1230,9 @@ class CloudClusterVipConfigurationArgsDict(TypedDict):
 @pulumi.input_type
 class CloudClusterVipConfigurationArgs:
     def __init__(__self__, *,
-                 address: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_number: Optional[pulumi.Input[_builtins.int]] = None,
-                 node_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 address: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 node_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] address: The VIP name or IP address.
         :param pulumi.Input[_builtins.int] network_number: The network number from which VIPs are obtained.
@@ -1247,38 +1247,38 @@ class CloudClusterVipConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The VIP name or IP address.
         """
         return pulumi.get(self, "address")
 
     @address.setter
-    def address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "address", value)
 
     @_builtins.property
     @pulumi.getter(name="networkNumber")
-    def network_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def network_number(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The network number from which VIPs are obtained.
         """
         return pulumi.get(self, "network_number")
 
     @network_number.setter
-    def network_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def network_number(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "network_number", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeName")
-    def node_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def node_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the node with the VIP.
         """
         return pulumi.get(self, "node_name")
 
     @node_name.setter
-    def node_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def node_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "node_name", value)
 
 
@@ -1287,11 +1287,11 @@ class CloudDbSystemConnectorConnectionInfoArgsDict(TypedDict):
     """
     The component type.
     """
-    connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemConnectorConnectionInfoConnectionCredentialArgsDict']]]]
+    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemConnectorConnectionInfoConnectionCredentialArgs']]]]]
     """
     The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemConnectorConnectionInfoConnectionStringArgsDict']]]]
+    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemConnectorConnectionInfoConnectionStringArgs']]]]]
     """
     The Oracle Database connection string.
     """
@@ -1300,8 +1300,8 @@ class CloudDbSystemConnectorConnectionInfoArgsDict(TypedDict):
 class CloudDbSystemConnectorConnectionInfoArgs:
     def __init__(__self__, *,
                  component_type: pulumi.Input[_builtins.str],
-                 connection_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
-                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemConnectorConnectionInfoConnectionStringArgs']]]] = None):
+                 connection_credentials: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
+                 connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemConnectorConnectionInfoConnectionStringArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] component_type: The component type.
         :param pulumi.Input[Sequence[pulumi.Input['CloudDbSystemConnectorConnectionInfoConnectionCredentialArgs']]] connection_credentials: The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
@@ -1327,55 +1327,55 @@ class CloudDbSystemConnectorConnectionInfoArgs:
 
     @_builtins.property
     @pulumi.getter(name="connectionCredentials")
-    def connection_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemConnectorConnectionInfoConnectionCredentialArgs']]]]:
+    def connection_credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemConnectorConnectionInfoConnectionCredentialArgs']]]]:
         """
         The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         """
         return pulumi.get(self, "connection_credentials")
 
     @connection_credentials.setter
-    def connection_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemConnectorConnectionInfoConnectionCredentialArgs']]]]):
+    def connection_credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemConnectorConnectionInfoConnectionCredentialArgs']]]]):
         pulumi.set(self, "connection_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionStrings")
-    def connection_strings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemConnectorConnectionInfoConnectionStringArgs']]]]:
+    def connection_strings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemConnectorConnectionInfoConnectionStringArgs']]]]:
         """
         The Oracle Database connection string.
         """
         return pulumi.get(self, "connection_strings")
 
     @connection_strings.setter
-    def connection_strings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemConnectorConnectionInfoConnectionStringArgs']]]]):
+    def connection_strings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemConnectorConnectionInfoConnectionStringArgs']]]]):
         pulumi.set(self, "connection_strings", value)
 
 
 class CloudDbSystemConnectorConnectionInfoConnectionCredentialArgsDict(TypedDict):
-    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    credential_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
     """
-    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    credential_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of credential used to connect to the ASM instance.
     """
-    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    named_credential_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the user connecting to the ASM instance.
     """
-    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    ssl_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
     """
-    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user name used to connect to the ASM instance.
     """
@@ -1383,13 +1383,13 @@ class CloudDbSystemConnectorConnectionInfoConnectionCredentialArgsDict(TypedDict
 @pulumi.input_type
 class CloudDbSystemConnectorConnectionInfoConnectionCredentialArgs:
     def __init__(__self__, *,
-                 credential_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 credential_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 credential_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 credential_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 named_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
         :param pulumi.Input[_builtins.str] credential_type: The type of credential used to connect to the ASM instance.
@@ -1416,107 +1416,107 @@ class CloudDbSystemConnectorConnectionInfoConnectionCredentialArgs:
 
     @_builtins.property
     @pulumi.getter(name="credentialName")
-    def credential_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
         """
         return pulumi.get(self, "credential_name")
 
     @credential_name.setter
-    def credential_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_name", value)
 
     @_builtins.property
     @pulumi.getter(name="credentialType")
-    def credential_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of credential used to connect to the ASM instance.
         """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
-    def credential_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_type", value)
 
     @_builtins.property
     @pulumi.getter(name="namedCredentialId")
-    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def named_credential_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
         """
         return pulumi.get(self, "named_credential_id")
 
     @named_credential_id.setter
-    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def named_credential_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the user connecting to the ASM instance.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="sslSecretId")
-    def ssl_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
         """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
-    def ssl_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user name used to connect to the ASM instance.
         """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
 
 class CloudDbSystemConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
-    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    host_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The host name of the database or the SCAN name in case of a RAC database.
     """
-    hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    hosts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The list of host names of the ASM instances.
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port used to connect to the ASM instance.
     """
-    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The protocol used to connect to the ASM instance.
     """
-    service: NotRequired[pulumi.Input[_builtins.str]]
+    service: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The service name of the ASM instance.
     """
@@ -1524,11 +1524,11 @@ class CloudDbSystemConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
 @pulumi.input_type
 class CloudDbSystemConnectorConnectionInfoConnectionStringArgs:
     def __init__(__self__, *,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 service: Optional[pulumi.Input[_builtins.str]] = None):
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 hosts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 service: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] host_name: The host name of the database or the SCAN name in case of a RAC database.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] hosts: The list of host names of the ASM instances.
@@ -1549,62 +1549,62 @@ class CloudDbSystemConnectorConnectionInfoConnectionStringArgs:
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host name of the database or the SCAN name in case of a RAC database.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def hosts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of host names of the ASM instances.
         """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
-    def hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def hosts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "hosts", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port used to connect to the ASM instance.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The protocol used to connect to the ASM instance.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def service(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service name of the ASM instance.
         """
         return pulumi.get(self, "service")
 
     @service.setter
-    def service(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service", value)
 
 
@@ -1613,7 +1613,7 @@ class CloudDbSystemDatabaseManagementConfigArgsDict(TypedDict):
     """
     The status of the associated service.
     """
-    metadata: NotRequired[pulumi.Input[_builtins.str]]
+    metadata: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The associated service-specific inputs in JSON string format, which Database Management can identify.
     """
@@ -1622,7 +1622,7 @@ class CloudDbSystemDatabaseManagementConfigArgsDict(TypedDict):
 class CloudDbSystemDatabaseManagementConfigArgs:
     def __init__(__self__, *,
                  is_enabled: pulumi.Input[_builtins.bool],
-                 metadata: Optional[pulumi.Input[_builtins.str]] = None):
+                 metadata: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_enabled: The status of the associated service.
         :param pulumi.Input[_builtins.str] metadata: The associated service-specific inputs in JSON string format, which Database Management can identify.
@@ -1645,223 +1645,223 @@ class CloudDbSystemDatabaseManagementConfigArgs:
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metadata(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The associated service-specific inputs in JSON string format, which Database Management can identify.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metadata(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metadata", value)
 
 
 class CloudDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
-    adr_home_directory: NotRequired[pulumi.Input[_builtins.str]]
+    adr_home_directory: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
     """
-    asm_instances: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgsDict']]]]
+    asm_instances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs']]]]]
     """
     The list of asm instances for the cloud Asm.
     """
-    associated_components: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgsDict']]]]
+    associated_components: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]]]]
     """
     The list of associated components.
     """
-    can_enable_all_current_pdbs: NotRequired[pulumi.Input[_builtins.bool]]
+    can_enable_all_current_pdbs: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
     """
-    cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    cluster_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier of the Oracle cluster.
     """
-    cluster_instances: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceArgsDict']]]]
+    cluster_instances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs']]]]]
     """
     The list of cluster instances for the cloud cluster.
     """
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
     """
-    component_id: NotRequired[pulumi.Input[_builtins.str]]
+    component_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The identifier of the discovered DB system component.
     """
-    component_name: NotRequired[pulumi.Input[_builtins.str]]
+    component_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the discovered DB system component.
     """
-    component_type: NotRequired[pulumi.Input[_builtins.str]]
+    component_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The component type.
     """
-    connectors: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorArgsDict']]]]
+    connectors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorArgs']]]]]
     """
     The connector details used to connect to the cloud DB system component.
     """
-    container_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    container_database_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier of the parent Container Database (CDB).
     """
-    cpu_core_count: NotRequired[pulumi.Input[_builtins.float]]
+    cpu_core_count: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The number of CPU cores available on the DB node.
     """
-    crs_base_directory: NotRequired[pulumi.Input[_builtins.str]]
+    crs_base_directory: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Oracle base location of Cluster Ready Services (CRS).
     """
-    db_edition: NotRequired[pulumi.Input[_builtins.str]]
+    db_edition: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Oracle Database edition.
     """
-    db_id: NotRequired[pulumi.Input[_builtins.str]]
+    db_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Oracle Database ID.
     """
-    db_instances: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentDbInstanceArgsDict']]]]
+    db_instances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentDbInstanceArgs']]]]]
     """
     The list of database instances.
     """
-    db_node_name: NotRequired[pulumi.Input[_builtins.str]]
+    db_node_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the DB node.
     """
-    db_packs: NotRequired[pulumi.Input[_builtins.str]]
+    db_packs: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The database packs licensed for the cloud Oracle Database.
     """
-    db_role: NotRequired[pulumi.Input[_builtins.str]]
+    db_role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the Oracle Database in Oracle Data Guard configuration.
     """
-    db_type: NotRequired[pulumi.Input[_builtins.str]]
+    db_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
     """
-    db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
+    db_unique_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The `DB_UNIQUE_NAME` of the cloud database.
     """
-    db_version: NotRequired[pulumi.Input[_builtins.str]]
+    db_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Oracle Database version.
     """
-    dbaas_id: NotRequired[pulumi.Input[_builtins.str]]
+    dbaas_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
     """
-    endpoints: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentEndpointArgsDict']]]]
+    endpoints: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentEndpointArgs']]]]]
     """
     The list of protocol addresses the listener is configured to listen on.
     """
-    grid_home: NotRequired[pulumi.Input[_builtins.str]]
+    grid_home: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The directory in which Oracle Grid Infrastructure is installed.
     """
-    guid: NotRequired[pulumi.Input[_builtins.str]]
+    guid: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier of the PDB.
     """
-    home_directory: NotRequired[pulumi.Input[_builtins.str]]
+    home_directory: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The location of the DB home.
     """
-    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    host_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The host name of the database or the SCAN name in case of a RAC database.
     """
-    instance_name: NotRequired[pulumi.Input[_builtins.str]]
+    instance_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the ASM instance.
     """
-    is_auto_enable_pluggable_database: NotRequired[pulumi.Input[_builtins.bool]]
+    is_auto_enable_pluggable_database: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
     """
-    is_cluster: NotRequired[pulumi.Input[_builtins.bool]]
+    is_cluster: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the Oracle Database is part of a cluster.
     """
-    is_flex_cluster: NotRequired[pulumi.Input[_builtins.bool]]
+    is_flex_cluster: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the cluster is an Oracle Flex Cluster or not.
     """
-    is_flex_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_flex_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether Oracle Flex ASM is enabled or not.
     """
-    is_selected_for_monitoring: NotRequired[pulumi.Input[_builtins.bool]]
+    is_selected_for_monitoring: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
     """
-    listener_alias: NotRequired[pulumi.Input[_builtins.str]]
+    listener_alias: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The listener alias.
     """
-    listener_type: NotRequired[pulumi.Input[_builtins.str]]
+    listener_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of listener.
     """
-    log_directory: NotRequired[pulumi.Input[_builtins.str]]
+    log_directory: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The destination directory of the listener log file.
     """
-    memory_size_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    memory_size_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The total memory in gigabytes (GB) on the DB node.
     """
-    network_configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgsDict']]]]
+    network_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs']]]]]
     """
     The list of network address configurations of the cloud cluster.
     """
-    node_name: NotRequired[pulumi.Input[_builtins.str]]
+    node_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the node with the VIP.
     """
-    node_role: NotRequired[pulumi.Input[_builtins.str]]
+    node_role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the cluster node.
     """
-    ocr_file_location: NotRequired[pulumi.Input[_builtins.str]]
+    ocr_file_location: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The location of the Oracle Cluster Registry (OCR) file.
     """
-    oracle_home: NotRequired[pulumi.Input[_builtins.str]]
+    oracle_home: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Oracle home location of the DB instance.
     """
-    pluggable_databases: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgsDict']]]]
+    pluggable_databases: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs']]]]]
     """
     The list of Pluggable Databases.
     """
-    resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
     """
-    scan_configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentScanConfigurationArgsDict']]]]
+    scan_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs']]]]]
     """
     The list of Single Client Access Name (SCAN) configurations of the cloud cluster.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The state of the discovered DB system component.
     """
-    trace_directory: NotRequired[pulumi.Input[_builtins.str]]
+    trace_directory: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The destination directory of the listener trace file.
     """
-    version: NotRequired[pulumi.Input[_builtins.str]]
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The version of Oracle Clusterware running in the cluster.
     """
-    vip_configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentVipConfigurationArgsDict']]]]
+    vip_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]]]]
     """
     The list of Virtual IP (VIP) configurations of the cloud cluster.
     """
@@ -1869,58 +1869,58 @@ class CloudDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentArgs:
     def __init__(__self__, *,
-                 adr_home_directory: Optional[pulumi.Input[_builtins.str]] = None,
-                 asm_instances: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs']]]] = None,
-                 associated_components: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]]] = None,
-                 can_enable_all_current_pdbs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_instances: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs']]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 component_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 component_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 component_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 connectors: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorArgs']]]] = None,
-                 container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpu_core_count: Optional[pulumi.Input[_builtins.float]] = None,
-                 crs_base_directory: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_edition: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_instances: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentDbInstanceArgs']]]] = None,
-                 db_node_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_packs: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_role: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 dbaas_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentEndpointArgs']]]] = None,
-                 grid_home: Optional[pulumi.Input[_builtins.str]] = None,
-                 guid: Optional[pulumi.Input[_builtins.str]] = None,
-                 home_directory: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_auto_enable_pluggable_database: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_cluster: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_flex_cluster: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_flex_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_selected_for_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 listener_alias: Optional[pulumi.Input[_builtins.str]] = None,
-                 listener_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_directory: Optional[pulumi.Input[_builtins.str]] = None,
-                 memory_size_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 network_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs']]]] = None,
-                 node_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_role: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocr_file_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 oracle_home: Optional[pulumi.Input[_builtins.str]] = None,
-                 pluggable_databases: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs']]]] = None,
-                 resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 scan_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs']]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 trace_directory: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None,
-                 vip_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]]] = None):
+                 adr_home_directory: pulumi.Input[Optional[_builtins.str]] = None,
+                 asm_instances: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs']]]] = None,
+                 associated_components: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]]] = None,
+                 can_enable_all_current_pdbs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_instances: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs']]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 component_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 component_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 component_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 connectors: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorArgs']]]] = None,
+                 container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpu_core_count: pulumi.Input[Optional[_builtins.float]] = None,
+                 crs_base_directory: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_edition: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_instances: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentDbInstanceArgs']]]] = None,
+                 db_node_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_packs: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_role: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 dbaas_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoints: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentEndpointArgs']]]] = None,
+                 grid_home: pulumi.Input[Optional[_builtins.str]] = None,
+                 guid: pulumi.Input[Optional[_builtins.str]] = None,
+                 home_directory: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_auto_enable_pluggable_database: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_flex_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_flex_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_selected_for_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 listener_alias: pulumi.Input[Optional[_builtins.str]] = None,
+                 listener_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_directory: pulumi.Input[Optional[_builtins.str]] = None,
+                 memory_size_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 network_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs']]]] = None,
+                 node_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_role: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocr_file_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 oracle_home: pulumi.Input[Optional[_builtins.str]] = None,
+                 pluggable_databases: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs']]]] = None,
+                 resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 scan_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs']]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 trace_directory: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None,
+                 vip_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         :param pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs']]] asm_instances: The list of asm instances for the cloud Asm.
@@ -2082,639 +2082,639 @@ class CloudDbSystemDiscoveryDiscoveredComponentArgs:
 
     @_builtins.property
     @pulumi.getter(name="adrHomeDirectory")
-    def adr_home_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def adr_home_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         """
         return pulumi.get(self, "adr_home_directory")
 
     @adr_home_directory.setter
-    def adr_home_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def adr_home_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "adr_home_directory", value)
 
     @_builtins.property
     @pulumi.getter(name="asmInstances")
-    def asm_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs']]]]:
+    def asm_instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs']]]]:
         """
         The list of asm instances for the cloud Asm.
         """
         return pulumi.get(self, "asm_instances")
 
     @asm_instances.setter
-    def asm_instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs']]]]):
+    def asm_instances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs']]]]):
         pulumi.set(self, "asm_instances", value)
 
     @_builtins.property
     @pulumi.getter(name="associatedComponents")
-    def associated_components(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]]]:
+    def associated_components(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]]]:
         """
         The list of associated components.
         """
         return pulumi.get(self, "associated_components")
 
     @associated_components.setter
-    def associated_components(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]]]):
+    def associated_components(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]]]):
         pulumi.set(self, "associated_components", value)
 
     @_builtins.property
     @pulumi.getter(name="canEnableAllCurrentPdbs")
-    def can_enable_all_current_pdbs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_enable_all_current_pdbs(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
         """
         return pulumi.get(self, "can_enable_all_current_pdbs")
 
     @can_enable_all_current_pdbs.setter
-    def can_enable_all_current_pdbs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_enable_all_current_pdbs(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_enable_all_current_pdbs", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterId")
-    def cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the Oracle cluster.
         """
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
-    def cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterInstances")
-    def cluster_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs']]]]:
+    def cluster_instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs']]]]:
         """
         The list of cluster instances for the cloud cluster.
         """
         return pulumi.get(self, "cluster_instances")
 
     @cluster_instances.setter
-    def cluster_instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs']]]]):
+    def cluster_instances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs']]]]):
         pulumi.set(self, "cluster_instances", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="componentId")
-    def component_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def component_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The identifier of the discovered DB system component.
         """
         return pulumi.get(self, "component_id")
 
     @component_id.setter
-    def component_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def component_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "component_id", value)
 
     @_builtins.property
     @pulumi.getter(name="componentName")
-    def component_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def component_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the discovered DB system component.
         """
         return pulumi.get(self, "component_name")
 
     @component_name.setter
-    def component_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def component_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "component_name", value)
 
     @_builtins.property
     @pulumi.getter(name="componentType")
-    def component_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def component_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The component type.
         """
         return pulumi.get(self, "component_type")
 
     @component_type.setter
-    def component_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def component_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "component_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def connectors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorArgs']]]]:
+    def connectors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorArgs']]]]:
         """
         The connector details used to connect to the cloud DB system component.
         """
         return pulumi.get(self, "connectors")
 
     @connectors.setter
-    def connectors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorArgs']]]]):
+    def connectors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorArgs']]]]):
         pulumi.set(self, "connectors", value)
 
     @_builtins.property
     @pulumi.getter(name="containerDatabaseId")
-    def container_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def container_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the parent Container Database (CDB).
         """
         return pulumi.get(self, "container_database_id")
 
     @container_database_id.setter
-    def container_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def container_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "container_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="cpuCoreCount")
-    def cpu_core_count(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def cpu_core_count(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The number of CPU cores available on the DB node.
         """
         return pulumi.get(self, "cpu_core_count")
 
     @cpu_core_count.setter
-    def cpu_core_count(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def cpu_core_count(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "cpu_core_count", value)
 
     @_builtins.property
     @pulumi.getter(name="crsBaseDirectory")
-    def crs_base_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crs_base_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle base location of Cluster Ready Services (CRS).
         """
         return pulumi.get(self, "crs_base_directory")
 
     @crs_base_directory.setter
-    def crs_base_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crs_base_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crs_base_directory", value)
 
     @_builtins.property
     @pulumi.getter(name="dbEdition")
-    def db_edition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_edition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle Database edition.
         """
         return pulumi.get(self, "db_edition")
 
     @db_edition.setter
-    def db_edition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_edition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_edition", value)
 
     @_builtins.property
     @pulumi.getter(name="dbId")
-    def db_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle Database ID.
         """
         return pulumi.get(self, "db_id")
 
     @db_id.setter
-    def db_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dbInstances")
-    def db_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentDbInstanceArgs']]]]:
+    def db_instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentDbInstanceArgs']]]]:
         """
         The list of database instances.
         """
         return pulumi.get(self, "db_instances")
 
     @db_instances.setter
-    def db_instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentDbInstanceArgs']]]]):
+    def db_instances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentDbInstanceArgs']]]]):
         pulumi.set(self, "db_instances", value)
 
     @_builtins.property
     @pulumi.getter(name="dbNodeName")
-    def db_node_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_node_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the DB node.
         """
         return pulumi.get(self, "db_node_name")
 
     @db_node_name.setter
-    def db_node_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_node_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_node_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dbPacks")
-    def db_packs(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_packs(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database packs licensed for the cloud Oracle Database.
         """
         return pulumi.get(self, "db_packs")
 
     @db_packs.setter
-    def db_packs(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_packs(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_packs", value)
 
     @_builtins.property
     @pulumi.getter(name="dbRole")
-    def db_role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the Oracle Database in Oracle Data Guard configuration.
         """
         return pulumi.get(self, "db_role")
 
     @db_role.setter
-    def db_role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_role", value)
 
     @_builtins.property
     @pulumi.getter(name="dbType")
-    def db_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
         """
         return pulumi.get(self, "db_type")
 
     @db_type.setter
-    def db_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dbUniqueName")
-    def db_unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_unique_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The `DB_UNIQUE_NAME` of the cloud database.
         """
         return pulumi.get(self, "db_unique_name")
 
     @db_unique_name.setter
-    def db_unique_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_unique_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_unique_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dbVersion")
-    def db_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle Database version.
         """
         return pulumi.get(self, "db_version")
 
     @db_version.setter
-    def db_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_version", value)
 
     @_builtins.property
     @pulumi.getter(name="dbaasId")
-    def dbaas_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dbaas_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         """
         return pulumi.get(self, "dbaas_id")
 
     @dbaas_id.setter
-    def dbaas_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dbaas_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dbaas_id", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def endpoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentEndpointArgs']]]]:
+    def endpoints(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentEndpointArgs']]]]:
         """
         The list of protocol addresses the listener is configured to listen on.
         """
         return pulumi.get(self, "endpoints")
 
     @endpoints.setter
-    def endpoints(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentEndpointArgs']]]]):
+    def endpoints(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentEndpointArgs']]]]):
         pulumi.set(self, "endpoints", value)
 
     @_builtins.property
     @pulumi.getter(name="gridHome")
-    def grid_home(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def grid_home(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The directory in which Oracle Grid Infrastructure is installed.
         """
         return pulumi.get(self, "grid_home")
 
     @grid_home.setter
-    def grid_home(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def grid_home(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "grid_home", value)
 
     @_builtins.property
     @pulumi.getter
-    def guid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def guid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the PDB.
         """
         return pulumi.get(self, "guid")
 
     @guid.setter
-    def guid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def guid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "guid", value)
 
     @_builtins.property
     @pulumi.getter(name="homeDirectory")
-    def home_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def home_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The location of the DB home.
         """
         return pulumi.get(self, "home_directory")
 
     @home_directory.setter
-    def home_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def home_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "home_directory", value)
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host name of the database or the SCAN name in case of a RAC database.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceName")
-    def instance_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the ASM instance.
         """
         return pulumi.get(self, "instance_name")
 
     @instance_name.setter
-    def instance_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_name", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoEnablePluggableDatabase")
-    def is_auto_enable_pluggable_database(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_enable_pluggable_database(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         """
         return pulumi.get(self, "is_auto_enable_pluggable_database")
 
     @is_auto_enable_pluggable_database.setter
-    def is_auto_enable_pluggable_database(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_enable_pluggable_database(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_enable_pluggable_database", value)
 
     @_builtins.property
     @pulumi.getter(name="isCluster")
-    def is_cluster(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cluster(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the Oracle Database is part of a cluster.
         """
         return pulumi.get(self, "is_cluster")
 
     @is_cluster.setter
-    def is_cluster(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cluster(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cluster", value)
 
     @_builtins.property
     @pulumi.getter(name="isFlexCluster")
-    def is_flex_cluster(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_flex_cluster(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the cluster is an Oracle Flex Cluster or not.
         """
         return pulumi.get(self, "is_flex_cluster")
 
     @is_flex_cluster.setter
-    def is_flex_cluster(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_flex_cluster(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_flex_cluster", value)
 
     @_builtins.property
     @pulumi.getter(name="isFlexEnabled")
-    def is_flex_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_flex_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether Oracle Flex ASM is enabled or not.
         """
         return pulumi.get(self, "is_flex_enabled")
 
     @is_flex_enabled.setter
-    def is_flex_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_flex_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_flex_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isSelectedForMonitoring")
-    def is_selected_for_monitoring(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_selected_for_monitoring(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
         """
         return pulumi.get(self, "is_selected_for_monitoring")
 
     @is_selected_for_monitoring.setter
-    def is_selected_for_monitoring(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_selected_for_monitoring(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_selected_for_monitoring", value)
 
     @_builtins.property
     @pulumi.getter(name="listenerAlias")
-    def listener_alias(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def listener_alias(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The listener alias.
         """
         return pulumi.get(self, "listener_alias")
 
     @listener_alias.setter
-    def listener_alias(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def listener_alias(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "listener_alias", value)
 
     @_builtins.property
     @pulumi.getter(name="listenerType")
-    def listener_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def listener_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of listener.
         """
         return pulumi.get(self, "listener_type")
 
     @listener_type.setter
-    def listener_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def listener_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "listener_type", value)
 
     @_builtins.property
     @pulumi.getter(name="logDirectory")
-    def log_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def log_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The destination directory of the listener log file.
         """
         return pulumi.get(self, "log_directory")
 
     @log_directory.setter
-    def log_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def log_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "log_directory", value)
 
     @_builtins.property
     @pulumi.getter(name="memorySizeInGbs")
-    def memory_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def memory_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The total memory in gigabytes (GB) on the DB node.
         """
         return pulumi.get(self, "memory_size_in_gbs")
 
     @memory_size_in_gbs.setter
-    def memory_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def memory_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "memory_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="networkConfigurations")
-    def network_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs']]]]:
+    def network_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs']]]]:
         """
         The list of network address configurations of the cloud cluster.
         """
         return pulumi.get(self, "network_configurations")
 
     @network_configurations.setter
-    def network_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs']]]]):
+    def network_configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs']]]]):
         pulumi.set(self, "network_configurations", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeName")
-    def node_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def node_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the node with the VIP.
         """
         return pulumi.get(self, "node_name")
 
     @node_name.setter
-    def node_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def node_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "node_name", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeRole")
-    def node_role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def node_role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the cluster node.
         """
         return pulumi.get(self, "node_role")
 
     @node_role.setter
-    def node_role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def node_role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "node_role", value)
 
     @_builtins.property
     @pulumi.getter(name="ocrFileLocation")
-    def ocr_file_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ocr_file_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The location of the Oracle Cluster Registry (OCR) file.
         """
         return pulumi.get(self, "ocr_file_location")
 
     @ocr_file_location.setter
-    def ocr_file_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ocr_file_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ocr_file_location", value)
 
     @_builtins.property
     @pulumi.getter(name="oracleHome")
-    def oracle_home(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oracle_home(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle home location of the DB instance.
         """
         return pulumi.get(self, "oracle_home")
 
     @oracle_home.setter
-    def oracle_home(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oracle_home(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oracle_home", value)
 
     @_builtins.property
     @pulumi.getter(name="pluggableDatabases")
-    def pluggable_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs']]]]:
+    def pluggable_databases(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs']]]]:
         """
         The list of Pluggable Databases.
         """
         return pulumi.get(self, "pluggable_databases")
 
     @pluggable_databases.setter
-    def pluggable_databases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs']]]]):
+    def pluggable_databases(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs']]]]):
         pulumi.set(self, "pluggable_databases", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceId")
-    def resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
         """
         return pulumi.get(self, "resource_id")
 
     @resource_id.setter
-    def resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="scanConfigurations")
-    def scan_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs']]]]:
+    def scan_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs']]]]:
         """
         The list of Single Client Access Name (SCAN) configurations of the cloud cluster.
         """
         return pulumi.get(self, "scan_configurations")
 
     @scan_configurations.setter
-    def scan_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs']]]]):
+    def scan_configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs']]]]):
         pulumi.set(self, "scan_configurations", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The state of the discovered DB system component.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="traceDirectory")
-    def trace_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trace_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The destination directory of the listener trace file.
         """
         return pulumi.get(self, "trace_directory")
 
     @trace_directory.setter
-    def trace_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trace_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trace_directory", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of Oracle Clusterware running in the cluster.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
     @_builtins.property
     @pulumi.getter(name="vipConfigurations")
-    def vip_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]]]:
+    def vip_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]]]:
         """
         The list of Virtual IP (VIP) configurations of the cloud cluster.
         """
         return pulumi.get(self, "vip_configurations")
 
     @vip_configurations.setter
-    def vip_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]]]):
+    def vip_configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]]]):
         pulumi.set(self, "vip_configurations", value)
 
 
 class CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgsDict(TypedDict):
-    adr_home_directory: NotRequired[pulumi.Input[_builtins.str]]
+    adr_home_directory: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
     """
-    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    host_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The host name of the database or the SCAN name in case of a RAC database.
     """
-    instance_name: NotRequired[pulumi.Input[_builtins.str]]
+    instance_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the ASM instance.
     """
@@ -2722,9 +2722,9 @@ class CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgsDict(TypedDict):
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs:
     def __init__(__self__, *,
-                 adr_home_directory: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 adr_home_directory: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         :param pulumi.Input[_builtins.str] host_name: The host name of the database or the SCAN name in case of a RAC database.
@@ -2739,51 +2739,51 @@ class CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs:
 
     @_builtins.property
     @pulumi.getter(name="adrHomeDirectory")
-    def adr_home_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def adr_home_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         """
         return pulumi.get(self, "adr_home_directory")
 
     @adr_home_directory.setter
-    def adr_home_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def adr_home_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "adr_home_directory", value)
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host name of the database or the SCAN name in case of a RAC database.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceName")
-    def instance_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the ASM instance.
         """
         return pulumi.get(self, "instance_name")
 
     @instance_name.setter
-    def instance_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_name", value)
 
 
 class CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgsDict(TypedDict):
-    association_type: NotRequired[pulumi.Input[_builtins.str]]
+    association_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The association type.
     """
-    component_id: NotRequired[pulumi.Input[_builtins.str]]
+    component_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The identifier of the discovered DB system component.
     """
-    component_type: NotRequired[pulumi.Input[_builtins.str]]
+    component_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The component type.
     """
@@ -2791,9 +2791,9 @@ class CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgsDict(Typed
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs:
     def __init__(__self__, *,
-                 association_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 component_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 component_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 association_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 component_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 component_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] association_type: The association type.
         :param pulumi.Input[_builtins.str] component_id: The identifier of the discovered DB system component.
@@ -2808,63 +2808,63 @@ class CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs:
 
     @_builtins.property
     @pulumi.getter(name="associationType")
-    def association_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def association_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The association type.
         """
         return pulumi.get(self, "association_type")
 
     @association_type.setter
-    def association_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def association_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "association_type", value)
 
     @_builtins.property
     @pulumi.getter(name="componentId")
-    def component_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def component_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The identifier of the discovered DB system component.
         """
         return pulumi.get(self, "component_id")
 
     @component_id.setter
-    def component_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def component_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "component_id", value)
 
     @_builtins.property
     @pulumi.getter(name="componentType")
-    def component_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def component_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The component type.
         """
         return pulumi.get(self, "component_type")
 
     @component_type.setter
-    def component_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def component_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "component_type", value)
 
 
 class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceArgsDict(TypedDict):
-    adr_home_directory: NotRequired[pulumi.Input[_builtins.str]]
+    adr_home_directory: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
     """
-    cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    cluster_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier of the Oracle cluster.
     """
-    connectors: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgsDict']]]]
+    connectors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs']]]]]
     """
     The connector details used to connect to the cloud DB system component.
     """
-    crs_base_directory: NotRequired[pulumi.Input[_builtins.str]]
+    crs_base_directory: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Oracle base location of Cluster Ready Services (CRS).
     """
-    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    host_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The host name of the database or the SCAN name in case of a RAC database.
     """
-    node_role: NotRequired[pulumi.Input[_builtins.str]]
+    node_role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the cluster node.
     """
@@ -2872,12 +2872,12 @@ class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceArgsDict(TypedDict
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs:
     def __init__(__self__, *,
-                 adr_home_directory: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connectors: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs']]]] = None,
-                 crs_base_directory: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_role: Optional[pulumi.Input[_builtins.str]] = None):
+                 adr_home_directory: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connectors: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs']]]] = None,
+                 crs_base_directory: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_role: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         :param pulumi.Input[_builtins.str] cluster_id: The unique identifier of the Oracle cluster.
@@ -2901,103 +2901,103 @@ class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs:
 
     @_builtins.property
     @pulumi.getter(name="adrHomeDirectory")
-    def adr_home_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def adr_home_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         """
         return pulumi.get(self, "adr_home_directory")
 
     @adr_home_directory.setter
-    def adr_home_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def adr_home_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "adr_home_directory", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterId")
-    def cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the Oracle cluster.
         """
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
-    def cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def connectors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs']]]]:
+    def connectors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs']]]]:
         """
         The connector details used to connect to the cloud DB system component.
         """
         return pulumi.get(self, "connectors")
 
     @connectors.setter
-    def connectors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs']]]]):
+    def connectors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs']]]]):
         pulumi.set(self, "connectors", value)
 
     @_builtins.property
     @pulumi.getter(name="crsBaseDirectory")
-    def crs_base_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crs_base_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle base location of Cluster Ready Services (CRS).
         """
         return pulumi.get(self, "crs_base_directory")
 
     @crs_base_directory.setter
-    def crs_base_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crs_base_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crs_base_directory", value)
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host name of the database or the SCAN name in case of a RAC database.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeRole")
-    def node_role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def node_role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the cluster node.
         """
         return pulumi.get(self, "node_role")
 
     @node_role.setter
-    def node_role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def node_role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "node_role", value)
 
 
 class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgsDict(TypedDict):
-    agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    agent_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
     """
-    connection_failure_message: NotRequired[pulumi.Input[_builtins.str]]
+    connection_failure_message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The error message indicating the reason for connection failure or `null` if the connection was successful.
     """
-    connection_infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgsDict']]]]
+    connection_infos: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs']]]]]
     """
     The connection details required to connect to a cloud DB system component.
     """
-    connection_status: NotRequired[pulumi.Input[_builtins.str]]
+    connection_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The status of connectivity to the cloud DB system component.
     """
-    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    connector_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of connector.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
     """
-    time_connection_status_last_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_connection_status_last_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the connectionStatus of the cloud DB system connector was last updated.
     """
@@ -3005,13 +3005,13 @@ class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgsDict(
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs:
     def __init__(__self__, *,
-                 agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_failure_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs']]]] = None,
-                 connection_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 connector_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_connection_status_last_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_failure_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_infos: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs']]]] = None,
+                 connection_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_connection_status_last_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
         :param pulumi.Input[_builtins.str] connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
@@ -3038,99 +3038,99 @@ class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs:
 
     @_builtins.property
     @pulumi.getter(name="agentId")
-    def agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
         """
         return pulumi.get(self, "agent_id")
 
     @agent_id.setter
-    def agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionFailureMessage")
-    def connection_failure_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_failure_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The error message indicating the reason for connection failure or `null` if the connection was successful.
         """
         return pulumi.get(self, "connection_failure_message")
 
     @connection_failure_message.setter
-    def connection_failure_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_failure_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_failure_message", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionInfos")
-    def connection_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs']]]]:
+    def connection_infos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs']]]]:
         """
         The connection details required to connect to a cloud DB system component.
         """
         return pulumi.get(self, "connection_infos")
 
     @connection_infos.setter
-    def connection_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs']]]]):
+    def connection_infos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs']]]]):
         pulumi.set(self, "connection_infos", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionStatus")
-    def connection_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of connectivity to the cloud DB system component.
         """
         return pulumi.get(self, "connection_status")
 
     @connection_status.setter
-    def connection_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_status", value)
 
     @_builtins.property
     @pulumi.getter(name="connectorType")
-    def connector_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connector_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of connector.
         """
         return pulumi.get(self, "connector_type")
 
     @connector_type.setter
-    def connector_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connector_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connector_type", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="timeConnectionStatusLastUpdated")
-    def time_connection_status_last_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_connection_status_last_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the connectionStatus of the cloud DB system connector was last updated.
         """
         return pulumi.get(self, "time_connection_status_last_updated")
 
     @time_connection_status_last_updated.setter
-    def time_connection_status_last_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_connection_status_last_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_connection_status_last_updated", value)
 
 
 class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgsDict(TypedDict):
-    component_type: NotRequired[pulumi.Input[_builtins.str]]
+    component_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The component type.
     """
-    connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgsDict']]]]
+    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]]]]
     """
     The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgsDict']]]]
+    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]]]]
     """
     The Oracle Database connection string.
     """
@@ -3138,9 +3138,9 @@ class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectio
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs:
     def __init__(__self__, *,
-                 component_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
-                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]]] = None):
+                 component_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_credentials: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
+                 connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] component_type: The component type.
         :param pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]] connection_credentials: The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
@@ -3155,67 +3155,67 @@ class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectio
 
     @_builtins.property
     @pulumi.getter(name="componentType")
-    def component_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def component_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The component type.
         """
         return pulumi.get(self, "component_type")
 
     @component_type.setter
-    def component_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def component_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "component_type", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionCredentials")
-    def connection_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]]]:
+    def connection_credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]]]:
         """
         The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         """
         return pulumi.get(self, "connection_credentials")
 
     @connection_credentials.setter
-    def connection_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]]]):
+    def connection_credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]]]):
         pulumi.set(self, "connection_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionStrings")
-    def connection_strings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]]]:
+    def connection_strings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]]]:
         """
         The Oracle Database connection string.
         """
         return pulumi.get(self, "connection_strings")
 
     @connection_strings.setter
-    def connection_strings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]]]):
+    def connection_strings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]]]):
         pulumi.set(self, "connection_strings", value)
 
 
 class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgsDict(TypedDict):
-    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    credential_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
     """
-    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    credential_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of credential used to connect to the ASM instance.
     """
-    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    named_credential_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the user connecting to the ASM instance.
     """
-    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    ssl_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
     """
-    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user name used to connect to the ASM instance.
     """
@@ -3223,13 +3223,13 @@ class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectio
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs:
     def __init__(__self__, *,
-                 credential_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 credential_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 credential_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 credential_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 named_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
         :param pulumi.Input[_builtins.str] credential_type: The type of credential used to connect to the ASM instance.
@@ -3256,107 +3256,107 @@ class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectio
 
     @_builtins.property
     @pulumi.getter(name="credentialName")
-    def credential_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
         """
         return pulumi.get(self, "credential_name")
 
     @credential_name.setter
-    def credential_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_name", value)
 
     @_builtins.property
     @pulumi.getter(name="credentialType")
-    def credential_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of credential used to connect to the ASM instance.
         """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
-    def credential_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_type", value)
 
     @_builtins.property
     @pulumi.getter(name="namedCredentialId")
-    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def named_credential_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
         """
         return pulumi.get(self, "named_credential_id")
 
     @named_credential_id.setter
-    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def named_credential_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the user connecting to the ASM instance.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="sslSecretId")
-    def ssl_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
         """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
-    def ssl_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user name used to connect to the ASM instance.
         """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
 
 class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
-    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    host_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The host name of the database or the SCAN name in case of a RAC database.
     """
-    hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    hosts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The list of host names of the ASM instances.
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port used to connect to the ASM instance.
     """
-    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The protocol used to connect to the ASM instance.
     """
-    service: NotRequired[pulumi.Input[_builtins.str]]
+    service: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The service name of the ASM instance.
     """
@@ -3364,11 +3364,11 @@ class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectio
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs:
     def __init__(__self__, *,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 service: Optional[pulumi.Input[_builtins.str]] = None):
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 hosts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 service: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] host_name: The host name of the database or the SCAN name in case of a RAC database.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] hosts: The list of host names of the ASM instances.
@@ -3389,91 +3389,91 @@ class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectio
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host name of the database or the SCAN name in case of a RAC database.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def hosts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of host names of the ASM instances.
         """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
-    def hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def hosts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "hosts", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port used to connect to the ASM instance.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The protocol used to connect to the ASM instance.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def service(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service name of the ASM instance.
         """
         return pulumi.get(self, "service")
 
     @service.setter
-    def service(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service", value)
 
 
 class CloudDbSystemDiscoveryDiscoveredComponentConnectorArgsDict(TypedDict):
-    agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    agent_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
     """
-    connection_failure_message: NotRequired[pulumi.Input[_builtins.str]]
+    connection_failure_message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The error message indicating the reason for connection failure or `null` if the connection was successful.
     """
-    connection_infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgsDict']]]]
+    connection_infos: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs']]]]]
     """
     The connection details required to connect to a cloud DB system component.
     """
-    connection_status: NotRequired[pulumi.Input[_builtins.str]]
+    connection_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The status of connectivity to the cloud DB system component.
     """
-    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    connector_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of connector.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
     """
-    time_connection_status_last_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_connection_status_last_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the connectionStatus of the cloud DB system connector was last updated.
     """
@@ -3481,13 +3481,13 @@ class CloudDbSystemDiscoveryDiscoveredComponentConnectorArgsDict(TypedDict):
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentConnectorArgs:
     def __init__(__self__, *,
-                 agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_failure_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs']]]] = None,
-                 connection_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 connector_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_connection_status_last_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_failure_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_infos: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs']]]] = None,
+                 connection_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_connection_status_last_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
         :param pulumi.Input[_builtins.str] connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
@@ -3514,99 +3514,99 @@ class CloudDbSystemDiscoveryDiscoveredComponentConnectorArgs:
 
     @_builtins.property
     @pulumi.getter(name="agentId")
-    def agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
         """
         return pulumi.get(self, "agent_id")
 
     @agent_id.setter
-    def agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionFailureMessage")
-    def connection_failure_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_failure_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The error message indicating the reason for connection failure or `null` if the connection was successful.
         """
         return pulumi.get(self, "connection_failure_message")
 
     @connection_failure_message.setter
-    def connection_failure_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_failure_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_failure_message", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionInfos")
-    def connection_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs']]]]:
+    def connection_infos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs']]]]:
         """
         The connection details required to connect to a cloud DB system component.
         """
         return pulumi.get(self, "connection_infos")
 
     @connection_infos.setter
-    def connection_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs']]]]):
+    def connection_infos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs']]]]):
         pulumi.set(self, "connection_infos", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionStatus")
-    def connection_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of connectivity to the cloud DB system component.
         """
         return pulumi.get(self, "connection_status")
 
     @connection_status.setter
-    def connection_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_status", value)
 
     @_builtins.property
     @pulumi.getter(name="connectorType")
-    def connector_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connector_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of connector.
         """
         return pulumi.get(self, "connector_type")
 
     @connector_type.setter
-    def connector_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connector_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connector_type", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="timeConnectionStatusLastUpdated")
-    def time_connection_status_last_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_connection_status_last_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the connectionStatus of the cloud DB system connector was last updated.
         """
         return pulumi.get(self, "time_connection_status_last_updated")
 
     @time_connection_status_last_updated.setter
-    def time_connection_status_last_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_connection_status_last_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_connection_status_last_updated", value)
 
 
 class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgsDict(TypedDict):
-    component_type: NotRequired[pulumi.Input[_builtins.str]]
+    component_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The component type.
     """
-    connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgsDict']]]]
+    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]]]]
     """
     The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgsDict']]]]
+    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]]]]
     """
     The Oracle Database connection string.
     """
@@ -3614,9 +3614,9 @@ class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgsDict(T
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs:
     def __init__(__self__, *,
-                 component_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
-                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]]] = None):
+                 component_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_credentials: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
+                 connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] component_type: The component type.
         :param pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]] connection_credentials: The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
@@ -3631,67 +3631,67 @@ class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs:
 
     @_builtins.property
     @pulumi.getter(name="componentType")
-    def component_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def component_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The component type.
         """
         return pulumi.get(self, "component_type")
 
     @component_type.setter
-    def component_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def component_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "component_type", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionCredentials")
-    def connection_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]]]:
+    def connection_credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]]]:
         """
         The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         """
         return pulumi.get(self, "connection_credentials")
 
     @connection_credentials.setter
-    def connection_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]]]):
+    def connection_credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]]]):
         pulumi.set(self, "connection_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionStrings")
-    def connection_strings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]]]:
+    def connection_strings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]]]:
         """
         The Oracle Database connection string.
         """
         return pulumi.get(self, "connection_strings")
 
     @connection_strings.setter
-    def connection_strings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]]]):
+    def connection_strings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]]]):
         pulumi.set(self, "connection_strings", value)
 
 
 class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgsDict(TypedDict):
-    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    credential_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
     """
-    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    credential_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of credential used to connect to the ASM instance.
     """
-    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    named_credential_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the user connecting to the ASM instance.
     """
-    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    ssl_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
     """
-    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user name used to connect to the ASM instance.
     """
@@ -3699,13 +3699,13 @@ class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnection
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs:
     def __init__(__self__, *,
-                 credential_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 credential_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 credential_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 credential_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 named_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
         :param pulumi.Input[_builtins.str] credential_type: The type of credential used to connect to the ASM instance.
@@ -3732,107 +3732,107 @@ class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnection
 
     @_builtins.property
     @pulumi.getter(name="credentialName")
-    def credential_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
         """
         return pulumi.get(self, "credential_name")
 
     @credential_name.setter
-    def credential_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_name", value)
 
     @_builtins.property
     @pulumi.getter(name="credentialType")
-    def credential_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of credential used to connect to the ASM instance.
         """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
-    def credential_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_type", value)
 
     @_builtins.property
     @pulumi.getter(name="namedCredentialId")
-    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def named_credential_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
         """
         return pulumi.get(self, "named_credential_id")
 
     @named_credential_id.setter
-    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def named_credential_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the user connecting to the ASM instance.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="sslSecretId")
-    def ssl_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
         """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
-    def ssl_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user name used to connect to the ASM instance.
         """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
 
 class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
-    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    host_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The host name of the database or the SCAN name in case of a RAC database.
     """
-    hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    hosts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The list of host names of the ASM instances.
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port used to connect to the ASM instance.
     """
-    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The protocol used to connect to the ASM instance.
     """
-    service: NotRequired[pulumi.Input[_builtins.str]]
+    service: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The service name of the ASM instance.
     """
@@ -3840,11 +3840,11 @@ class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnection
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs:
     def __init__(__self__, *,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 service: Optional[pulumi.Input[_builtins.str]] = None):
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 hosts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 service: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] host_name: The host name of the database or the SCAN name in case of a RAC database.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] hosts: The list of host names of the ASM instances.
@@ -3865,83 +3865,83 @@ class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnection
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host name of the database or the SCAN name in case of a RAC database.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def hosts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of host names of the ASM instances.
         """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
-    def hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def hosts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "hosts", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port used to connect to the ASM instance.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The protocol used to connect to the ASM instance.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def service(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service name of the ASM instance.
         """
         return pulumi.get(self, "service")
 
     @service.setter
-    def service(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service", value)
 
 
 class CloudDbSystemDiscoveryDiscoveredComponentDbInstanceArgsDict(TypedDict):
-    adr_home_directory: NotRequired[pulumi.Input[_builtins.str]]
+    adr_home_directory: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
     """
-    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    host_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The host name of the database or the SCAN name in case of a RAC database.
     """
-    instance_name: NotRequired[pulumi.Input[_builtins.str]]
+    instance_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the ASM instance.
     """
-    node_name: NotRequired[pulumi.Input[_builtins.str]]
+    node_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the node with the VIP.
     """
-    oracle_home: NotRequired[pulumi.Input[_builtins.str]]
+    oracle_home: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Oracle home location of the DB instance.
     """
@@ -3949,11 +3949,11 @@ class CloudDbSystemDiscoveryDiscoveredComponentDbInstanceArgsDict(TypedDict):
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentDbInstanceArgs:
     def __init__(__self__, *,
-                 adr_home_directory: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 oracle_home: Optional[pulumi.Input[_builtins.str]] = None):
+                 adr_home_directory: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 oracle_home: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         :param pulumi.Input[_builtins.str] host_name: The host name of the database or the SCAN name in case of a RAC database.
@@ -3974,83 +3974,83 @@ class CloudDbSystemDiscoveryDiscoveredComponentDbInstanceArgs:
 
     @_builtins.property
     @pulumi.getter(name="adrHomeDirectory")
-    def adr_home_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def adr_home_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         """
         return pulumi.get(self, "adr_home_directory")
 
     @adr_home_directory.setter
-    def adr_home_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def adr_home_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "adr_home_directory", value)
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host name of the database or the SCAN name in case of a RAC database.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceName")
-    def instance_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the ASM instance.
         """
         return pulumi.get(self, "instance_name")
 
     @instance_name.setter
-    def instance_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_name", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeName")
-    def node_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def node_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the node with the VIP.
         """
         return pulumi.get(self, "node_name")
 
     @node_name.setter
-    def node_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def node_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "node_name", value)
 
     @_builtins.property
     @pulumi.getter(name="oracleHome")
-    def oracle_home(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oracle_home(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle home location of the DB instance.
         """
         return pulumi.get(self, "oracle_home")
 
     @oracle_home.setter
-    def oracle_home(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oracle_home(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oracle_home", value)
 
 
 class CloudDbSystemDiscoveryDiscoveredComponentEndpointArgsDict(TypedDict):
-    host: NotRequired[pulumi.Input[_builtins.str]]
+    host: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The host name or IP address.
     """
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique name of the service.
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port used to connect to the ASM instance.
     """
-    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The protocol used to connect to the ASM instance.
     """
-    services: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    services: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The list of services registered with the listener.
     """
@@ -4058,11 +4058,11 @@ class CloudDbSystemDiscoveryDiscoveredComponentEndpointArgsDict(TypedDict):
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentEndpointArgs:
     def __init__(__self__, *,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 services: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 services: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] host: The host name or IP address.
         :param pulumi.Input[_builtins.str] key: The unique name of the service.
@@ -4083,75 +4083,75 @@ class CloudDbSystemDiscoveryDiscoveredComponentEndpointArgs:
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host name or IP address.
         """
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique name of the service.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port used to connect to the ASM instance.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The protocol used to connect to the ASM instance.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of services registered with the listener.
         """
         return pulumi.get(self, "services")
 
     @services.setter
-    def services(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def services(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "services", value)
 
 
 class CloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgsDict(TypedDict):
-    network_number: NotRequired[pulumi.Input[_builtins.int]]
+    network_number: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The network number from which VIPs are obtained.
     """
-    network_type: NotRequired[pulumi.Input[_builtins.str]]
+    network_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The network type.
     """
-    subnet: NotRequired[pulumi.Input[_builtins.str]]
+    subnet: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The subnet for the network.
     """
@@ -4159,9 +4159,9 @@ class CloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgsDict(Type
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs:
     def __init__(__self__, *,
-                 network_number: Optional[pulumi.Input[_builtins.int]] = None,
-                 network_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet: Optional[pulumi.Input[_builtins.str]] = None):
+                 network_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 network_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.int] network_number: The network number from which VIPs are obtained.
         :param pulumi.Input[_builtins.str] network_type: The network type.
@@ -4176,55 +4176,55 @@ class CloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="networkNumber")
-    def network_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def network_number(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The network number from which VIPs are obtained.
         """
         return pulumi.get(self, "network_number")
 
     @network_number.setter
-    def network_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def network_number(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "network_number", value)
 
     @_builtins.property
     @pulumi.getter(name="networkType")
-    def network_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The network type.
         """
         return pulumi.get(self, "network_type")
 
     @network_type.setter
-    def network_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def subnet(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The subnet for the network.
         """
         return pulumi.get(self, "subnet")
 
     @subnet.setter
-    def subnet(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet", value)
 
 
 class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgsDict(TypedDict):
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
     """
-    connectors: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgsDict']]]]
+    connectors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]]]]
     """
     The connector details used to connect to the cloud DB system component.
     """
-    container_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    container_database_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier of the parent Container Database (CDB).
     """
-    guid: NotRequired[pulumi.Input[_builtins.str]]
+    guid: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier of the PDB.
     """
@@ -4232,10 +4232,10 @@ class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgsDict(TypedDi
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connectors: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]]] = None,
-                 container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 guid: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connectors: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]]] = None,
+                 container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 guid: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
         :param pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]] connectors: The connector details used to connect to the cloud DB system component.
@@ -4253,79 +4253,79 @@ class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def connectors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]]]:
+    def connectors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]]]:
         """
         The connector details used to connect to the cloud DB system component.
         """
         return pulumi.get(self, "connectors")
 
     @connectors.setter
-    def connectors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]]]):
+    def connectors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]]]):
         pulumi.set(self, "connectors", value)
 
     @_builtins.property
     @pulumi.getter(name="containerDatabaseId")
-    def container_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def container_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the parent Container Database (CDB).
         """
         return pulumi.get(self, "container_database_id")
 
     @container_database_id.setter
-    def container_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def container_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "container_database_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def guid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def guid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the PDB.
         """
         return pulumi.get(self, "guid")
 
     @guid.setter
-    def guid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def guid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "guid", value)
 
 
 class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgsDict(TypedDict):
-    agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    agent_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
     """
-    connection_failure_message: NotRequired[pulumi.Input[_builtins.str]]
+    connection_failure_message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The error message indicating the reason for connection failure or `null` if the connection was successful.
     """
-    connection_infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgsDict']]]]
+    connection_infos: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs']]]]]
     """
     The connection details required to connect to a cloud DB system component.
     """
-    connection_status: NotRequired[pulumi.Input[_builtins.str]]
+    connection_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The status of connectivity to the cloud DB system component.
     """
-    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    connector_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of connector.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
     """
-    time_connection_status_last_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_connection_status_last_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the connectionStatus of the cloud DB system connector was last updated.
     """
@@ -4333,13 +4333,13 @@ class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgsDic
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs:
     def __init__(__self__, *,
-                 agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_failure_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs']]]] = None,
-                 connection_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 connector_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_connection_status_last_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_failure_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_infos: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs']]]] = None,
+                 connection_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_connection_status_last_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
         :param pulumi.Input[_builtins.str] connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
@@ -4366,99 +4366,99 @@ class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs:
 
     @_builtins.property
     @pulumi.getter(name="agentId")
-    def agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
         """
         return pulumi.get(self, "agent_id")
 
     @agent_id.setter
-    def agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionFailureMessage")
-    def connection_failure_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_failure_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The error message indicating the reason for connection failure or `null` if the connection was successful.
         """
         return pulumi.get(self, "connection_failure_message")
 
     @connection_failure_message.setter
-    def connection_failure_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_failure_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_failure_message", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionInfos")
-    def connection_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs']]]]:
+    def connection_infos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs']]]]:
         """
         The connection details required to connect to a cloud DB system component.
         """
         return pulumi.get(self, "connection_infos")
 
     @connection_infos.setter
-    def connection_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs']]]]):
+    def connection_infos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs']]]]):
         pulumi.set(self, "connection_infos", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionStatus")
-    def connection_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of connectivity to the cloud DB system component.
         """
         return pulumi.get(self, "connection_status")
 
     @connection_status.setter
-    def connection_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_status", value)
 
     @_builtins.property
     @pulumi.getter(name="connectorType")
-    def connector_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connector_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of connector.
         """
         return pulumi.get(self, "connector_type")
 
     @connector_type.setter
-    def connector_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connector_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connector_type", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="timeConnectionStatusLastUpdated")
-    def time_connection_status_last_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_connection_status_last_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the connectionStatus of the cloud DB system connector was last updated.
         """
         return pulumi.get(self, "time_connection_status_last_updated")
 
     @time_connection_status_last_updated.setter
-    def time_connection_status_last_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_connection_status_last_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_connection_status_last_updated", value)
 
 
 class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgsDict(TypedDict):
-    component_type: NotRequired[pulumi.Input[_builtins.str]]
+    component_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The component type.
     """
-    connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgsDict']]]]
+    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]]]]
     """
     The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgsDict']]]]
+    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]]]]
     """
     The Oracle Database connection string.
     """
@@ -4466,9 +4466,9 @@ class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnect
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs:
     def __init__(__self__, *,
-                 component_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
-                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]]] = None):
+                 component_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_credentials: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
+                 connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] component_type: The component type.
         :param pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]] connection_credentials: The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
@@ -4483,67 +4483,67 @@ class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnect
 
     @_builtins.property
     @pulumi.getter(name="componentType")
-    def component_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def component_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The component type.
         """
         return pulumi.get(self, "component_type")
 
     @component_type.setter
-    def component_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def component_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "component_type", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionCredentials")
-    def connection_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]]]:
+    def connection_credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]]]:
         """
         The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         """
         return pulumi.get(self, "connection_credentials")
 
     @connection_credentials.setter
-    def connection_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]]]):
+    def connection_credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]]]):
         pulumi.set(self, "connection_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionStrings")
-    def connection_strings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]]]:
+    def connection_strings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]]]:
         """
         The Oracle Database connection string.
         """
         return pulumi.get(self, "connection_strings")
 
     @connection_strings.setter
-    def connection_strings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]]]):
+    def connection_strings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]]]):
         pulumi.set(self, "connection_strings", value)
 
 
 class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgsDict(TypedDict):
-    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    credential_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
     """
-    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    credential_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of credential used to connect to the ASM instance.
     """
-    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    named_credential_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the user connecting to the ASM instance.
     """
-    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    ssl_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
     """
-    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user name used to connect to the ASM instance.
     """
@@ -4551,13 +4551,13 @@ class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnect
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs:
     def __init__(__self__, *,
-                 credential_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 credential_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 credential_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 credential_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 named_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
         :param pulumi.Input[_builtins.str] credential_type: The type of credential used to connect to the ASM instance.
@@ -4584,107 +4584,107 @@ class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnect
 
     @_builtins.property
     @pulumi.getter(name="credentialName")
-    def credential_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
         """
         return pulumi.get(self, "credential_name")
 
     @credential_name.setter
-    def credential_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_name", value)
 
     @_builtins.property
     @pulumi.getter(name="credentialType")
-    def credential_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of credential used to connect to the ASM instance.
         """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
-    def credential_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_type", value)
 
     @_builtins.property
     @pulumi.getter(name="namedCredentialId")
-    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def named_credential_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
         """
         return pulumi.get(self, "named_credential_id")
 
     @named_credential_id.setter
-    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def named_credential_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the user connecting to the ASM instance.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="sslSecretId")
-    def ssl_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
         """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
-    def ssl_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user name used to connect to the ASM instance.
         """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
 
 class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
-    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    host_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The host name of the database or the SCAN name in case of a RAC database.
     """
-    hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    hosts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The list of host names of the ASM instances.
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port used to connect to the ASM instance.
     """
-    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The protocol used to connect to the ASM instance.
     """
-    service: NotRequired[pulumi.Input[_builtins.str]]
+    service: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The service name of the ASM instance.
     """
@@ -4692,11 +4692,11 @@ class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnect
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs:
     def __init__(__self__, *,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 service: Optional[pulumi.Input[_builtins.str]] = None):
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 hosts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 service: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] host_name: The host name of the database or the SCAN name in case of a RAC database.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] hosts: The list of host names of the ASM instances.
@@ -4717,79 +4717,79 @@ class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnect
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host name of the database or the SCAN name in case of a RAC database.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def hosts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of host names of the ASM instances.
         """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
-    def hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def hosts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "hosts", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port used to connect to the ASM instance.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The protocol used to connect to the ASM instance.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def service(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service name of the ASM instance.
         """
         return pulumi.get(self, "service")
 
     @service.setter
-    def service(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service", value)
 
 
 class CloudDbSystemDiscoveryDiscoveredComponentScanConfigurationArgsDict(TypedDict):
-    network_number: NotRequired[pulumi.Input[_builtins.int]]
+    network_number: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The network number from which VIPs are obtained.
     """
-    scan_name: NotRequired[pulumi.Input[_builtins.str]]
+    scan_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the SCAN listener.
     """
-    scan_port: NotRequired[pulumi.Input[_builtins.int]]
+    scan_port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port number of the SCAN listener.
     """
-    scan_protocol: NotRequired[pulumi.Input[_builtins.str]]
+    scan_protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The protocol of the SCAN listener.
     """
@@ -4797,10 +4797,10 @@ class CloudDbSystemDiscoveryDiscoveredComponentScanConfigurationArgsDict(TypedDi
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs:
     def __init__(__self__, *,
-                 network_number: Optional[pulumi.Input[_builtins.int]] = None,
-                 scan_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scan_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 scan_protocol: Optional[pulumi.Input[_builtins.str]] = None):
+                 network_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 scan_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scan_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 scan_protocol: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.int] network_number: The network number from which VIPs are obtained.
         :param pulumi.Input[_builtins.str] scan_name: The name of the SCAN listener.
@@ -4818,63 +4818,63 @@ class CloudDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="networkNumber")
-    def network_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def network_number(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The network number from which VIPs are obtained.
         """
         return pulumi.get(self, "network_number")
 
     @network_number.setter
-    def network_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def network_number(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "network_number", value)
 
     @_builtins.property
     @pulumi.getter(name="scanName")
-    def scan_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scan_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the SCAN listener.
         """
         return pulumi.get(self, "scan_name")
 
     @scan_name.setter
-    def scan_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scan_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scan_name", value)
 
     @_builtins.property
     @pulumi.getter(name="scanPort")
-    def scan_port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def scan_port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port number of the SCAN listener.
         """
         return pulumi.get(self, "scan_port")
 
     @scan_port.setter
-    def scan_port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def scan_port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "scan_port", value)
 
     @_builtins.property
     @pulumi.getter(name="scanProtocol")
-    def scan_protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scan_protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The protocol of the SCAN listener.
         """
         return pulumi.get(self, "scan_protocol")
 
     @scan_protocol.setter
-    def scan_protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scan_protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scan_protocol", value)
 
 
 class CloudDbSystemDiscoveryDiscoveredComponentVipConfigurationArgsDict(TypedDict):
-    address: NotRequired[pulumi.Input[_builtins.str]]
+    address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The VIP name or IP address.
     """
-    network_number: NotRequired[pulumi.Input[_builtins.int]]
+    network_number: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The network number from which VIPs are obtained.
     """
-    node_name: NotRequired[pulumi.Input[_builtins.str]]
+    node_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the node with the VIP.
     """
@@ -4882,9 +4882,9 @@ class CloudDbSystemDiscoveryDiscoveredComponentVipConfigurationArgsDict(TypedDic
 @pulumi.input_type
 class CloudDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs:
     def __init__(__self__, *,
-                 address: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_number: Optional[pulumi.Input[_builtins.int]] = None,
-                 node_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 address: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 node_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] address: The VIP name or IP address.
         :param pulumi.Input[_builtins.int] network_number: The network number from which VIPs are obtained.
@@ -4899,38 +4899,38 @@ class CloudDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The VIP name or IP address.
         """
         return pulumi.get(self, "address")
 
     @address.setter
-    def address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "address", value)
 
     @_builtins.property
     @pulumi.getter(name="networkNumber")
-    def network_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def network_number(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The network number from which VIPs are obtained.
         """
         return pulumi.get(self, "network_number")
 
     @network_number.setter
-    def network_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def network_number(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "network_number", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeName")
-    def node_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def node_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the node with the VIP.
         """
         return pulumi.get(self, "node_name")
 
     @node_name.setter
-    def node_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def node_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "node_name", value)
 
 
@@ -4943,7 +4943,7 @@ class CloudDbSystemDiscoveryPatchOperationArgsDict(TypedDict):
     """
     (Updatable)
     """
-    value: NotRequired[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueArgsDict']]
+    value: NotRequired[pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueArgs']]]
     """
     (Updatable) 
 
@@ -4957,7 +4957,7 @@ class CloudDbSystemDiscoveryPatchOperationArgs:
     def __init__(__self__, *,
                  operation: pulumi.Input[_builtins.str],
                  selection: pulumi.Input[_builtins.str],
-                 value: Optional[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueArgs']] = None):
+                 value: pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] operation: (Updatable) The operation can be one of these values: `MERGE`
         :param pulumi.Input[_builtins.str] selection: (Updatable)
@@ -4998,7 +4998,7 @@ class CloudDbSystemDiscoveryPatchOperationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueArgs']]:
+    def value(self) -> pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueArgs']]:
         """
         (Updatable) 
 
@@ -5009,24 +5009,24 @@ class CloudDbSystemDiscoveryPatchOperationArgs:
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueArgs']]):
+    def value(self, value: pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueArgs']]):
         pulumi.set(self, "value", value)
 
 
 class CloudDbSystemDiscoveryPatchOperationValueArgsDict(TypedDict):
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
     """
-    connector: NotRequired[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorArgsDict']]
+    connector: NotRequired[pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueConnectorArgs']]]
     """
     The connector details used to connect to the cloud DB system component.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
     """
-    is_selected_for_monitoring: NotRequired[pulumi.Input[_builtins.bool]]
+    is_selected_for_monitoring: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
     """
@@ -5034,10 +5034,10 @@ class CloudDbSystemDiscoveryPatchOperationValueArgsDict(TypedDict):
 @pulumi.input_type
 class CloudDbSystemDiscoveryPatchOperationValueArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connector: Optional[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorArgs']] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_selected_for_monitoring: Optional[pulumi.Input[_builtins.bool]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connector: pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueConnectorArgs']] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_selected_for_monitoring: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
         :param pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorArgs'] connector: The connector details used to connect to the cloud DB system component.
@@ -5055,50 +5055,50 @@ class CloudDbSystemDiscoveryPatchOperationValueArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def connector(self) -> Optional[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorArgs']]:
+    def connector(self) -> pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueConnectorArgs']]:
         """
         The connector details used to connect to the cloud DB system component.
         """
         return pulumi.get(self, "connector")
 
     @connector.setter
-    def connector(self, value: Optional[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorArgs']]):
+    def connector(self, value: pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueConnectorArgs']]):
         pulumi.set(self, "connector", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="isSelectedForMonitoring")
-    def is_selected_for_monitoring(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_selected_for_monitoring(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
         """
         return pulumi.get(self, "is_selected_for_monitoring")
 
     @is_selected_for_monitoring.setter
-    def is_selected_for_monitoring(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_selected_for_monitoring(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_selected_for_monitoring", value)
 
 
@@ -5111,11 +5111,11 @@ class CloudDbSystemDiscoveryPatchOperationValueConnectorArgsDict(TypedDict):
     """
     (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
     """
-    agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    agent_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
     """
-    connection_info: NotRequired[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgsDict']]
+    connection_info: NotRequired[pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs']]]
     """
     The connection details required to connect to a cloud DB system component.
     """
@@ -5125,8 +5125,8 @@ class CloudDbSystemDiscoveryPatchOperationValueConnectorArgs:
     def __init__(__self__, *,
                  connector_type: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
-                 agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_info: Optional[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs']] = None):
+                 agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_info: pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] connector_type: The type of connector.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
@@ -5166,26 +5166,26 @@ class CloudDbSystemDiscoveryPatchOperationValueConnectorArgs:
 
     @_builtins.property
     @pulumi.getter(name="agentId")
-    def agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
         """
         return pulumi.get(self, "agent_id")
 
     @agent_id.setter
-    def agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionInfo")
-    def connection_info(self) -> Optional[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs']]:
+    def connection_info(self) -> pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs']]:
         """
         The connection details required to connect to a cloud DB system component.
         """
         return pulumi.get(self, "connection_info")
 
     @connection_info.setter
-    def connection_info(self, value: Optional[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs']]):
+    def connection_info(self, value: pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs']]):
         pulumi.set(self, "connection_info", value)
 
 
@@ -5194,11 +5194,11 @@ class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgsDict(T
     """
     The component type.
     """
-    connection_credentials: NotRequired[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgsDict']]
+    connection_credentials: NotRequired[pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs']]]
     """
     The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_string: NotRequired[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgsDict']]
+    connection_string: NotRequired[pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs']]]
     """
     The Oracle Database connection string.
     """
@@ -5207,8 +5207,8 @@ class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgsDict(T
 class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs:
     def __init__(__self__, *,
                  component_type: pulumi.Input[_builtins.str],
-                 connection_credentials: Optional[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs']] = None,
-                 connection_string: Optional[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs']] = None):
+                 connection_credentials: pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs']] = None,
+                 connection_string: pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] component_type: The component type.
         :param pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs'] connection_credentials: The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
@@ -5234,26 +5234,26 @@ class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs:
 
     @_builtins.property
     @pulumi.getter(name="connectionCredentials")
-    def connection_credentials(self) -> Optional[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs']]:
+    def connection_credentials(self) -> pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs']]:
         """
         The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         """
         return pulumi.get(self, "connection_credentials")
 
     @connection_credentials.setter
-    def connection_credentials(self, value: Optional[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs']]):
+    def connection_credentials(self, value: pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs']]):
         pulumi.set(self, "connection_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionString")
-    def connection_string(self) -> Optional[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs']]:
+    def connection_string(self) -> pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs']]:
         """
         The Oracle Database connection string.
         """
         return pulumi.get(self, "connection_string")
 
     @connection_string.setter
-    def connection_string(self, value: Optional[pulumi.Input['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs']]):
+    def connection_string(self, value: pulumi.Input[Optional['CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs']]):
         pulumi.set(self, "connection_string", value)
 
 
@@ -5262,23 +5262,23 @@ class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnection
     """
     The type of credential used to connect to the ASM instance.
     """
-    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    credential_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the user connecting to the ASM instance.
     """
-    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    ssl_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
     """
-    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user name used to connect to the ASM instance.
     """
@@ -5287,11 +5287,11 @@ class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnection
 class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs:
     def __init__(__self__, *,
                  credential_type: pulumi.Input[_builtins.str],
-                 credential_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 credential_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_type: The type of credential used to connect to the ASM instance.
         :param pulumi.Input[_builtins.str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
@@ -5326,83 +5326,83 @@ class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnection
 
     @_builtins.property
     @pulumi.getter(name="credentialName")
-    def credential_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
         """
         return pulumi.get(self, "credential_name")
 
     @credential_name.setter
-    def credential_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_name", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the user connecting to the ASM instance.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="sslSecretId")
-    def ssl_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
         """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
-    def ssl_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user name used to connect to the ASM instance.
         """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
 
 class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
-    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    host_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The host name of the database or the SCAN name in case of a RAC database.
     """
-    hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    hosts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The list of host names of the ASM instances.
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port used to connect to the ASM instance.
     """
-    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The protocol used to connect to the ASM instance.
     """
-    service: NotRequired[pulumi.Input[_builtins.str]]
+    service: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The service name of the ASM instance.
     """
@@ -5410,11 +5410,11 @@ class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnection
 @pulumi.input_type
 class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs:
     def __init__(__self__, *,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 service: Optional[pulumi.Input[_builtins.str]] = None):
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 hosts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 service: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] host_name: The host name of the database or the SCAN name in case of a RAC database.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] hosts: The list of host names of the ASM instances.
@@ -5435,62 +5435,62 @@ class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnection
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host name of the database or the SCAN name in case of a RAC database.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def hosts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of host names of the ASM instances.
         """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
-    def hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def hosts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "hosts", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port used to connect to the ASM instance.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The protocol used to connect to the ASM instance.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def service(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service name of the ASM instance.
         """
         return pulumi.get(self, "service")
 
     @service.setter
-    def service(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service", value)
 
 
@@ -5499,7 +5499,7 @@ class CloudDbSystemStackMonitoringConfigArgsDict(TypedDict):
     """
     The status of the associated service.
     """
-    metadata: NotRequired[pulumi.Input[_builtins.str]]
+    metadata: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The associated service-specific inputs in JSON string format, which Database Management can identify.
 
@@ -5512,7 +5512,7 @@ class CloudDbSystemStackMonitoringConfigArgsDict(TypedDict):
 class CloudDbSystemStackMonitoringConfigArgs:
     def __init__(__self__, *,
                  is_enabled: pulumi.Input[_builtins.bool],
-                 metadata: Optional[pulumi.Input[_builtins.str]] = None):
+                 metadata: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_enabled: The status of the associated service.
         :param pulumi.Input[_builtins.str] metadata: The associated service-specific inputs in JSON string format, which Database Management can identify.
@@ -5539,7 +5539,7 @@ class CloudDbSystemStackMonitoringConfigArgs:
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metadata(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The associated service-specific inputs in JSON string format, which Database Management can identify.
 
@@ -5550,56 +5550,56 @@ class CloudDbSystemStackMonitoringConfigArgs:
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metadata(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metadata", value)
 
 
 class CloudExadataInfrastructureStorageGridArgsDict(TypedDict):
-    additional_details: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    additional_details: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the Exadata infrastructure.
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
     """
-    internal_id: NotRequired[pulumi.Input[_builtins.str]]
+    internal_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The internal ID of the Exadata resource.
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The details of the lifecycle state of the Exadata resource.
     """
-    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    resource_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of Exadata resource.
     """
-    server_count: NotRequired[pulumi.Input[_builtins.int]]
+    server_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The number of Exadata storage servers in the Exadata infrastructure.
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current lifecycle state of the database resource.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The status of the Exadata resource.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The timestamp of the creation of the Exadata resource.
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The timestamp of the last update of the Exadata resource.
     """
-    version: NotRequired[pulumi.Input[_builtins.str]]
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The version of the Exadata resource.
     """
@@ -5607,18 +5607,18 @@ class CloudExadataInfrastructureStorageGridArgsDict(TypedDict):
 @pulumi.input_type
 class CloudExadataInfrastructureStorageGridArgs:
     def __init__(__self__, *,
-                 additional_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 internal_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 server_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 additional_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 internal_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 server_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name of the Exadata infrastructure.
@@ -5660,207 +5660,207 @@ class CloudExadataInfrastructureStorageGridArgs:
 
     @_builtins.property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def additional_details(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "additional_details")
 
     @additional_details.setter
-    def additional_details(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def additional_details(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "additional_details", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the Exadata infrastructure.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter(name="internalId")
-    def internal_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def internal_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The internal ID of the Exadata resource.
         """
         return pulumi.get(self, "internal_id")
 
     @internal_id.setter
-    def internal_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def internal_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "internal_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The details of the lifecycle state of the Exadata resource.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of Exadata resource.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="serverCount")
-    def server_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def server_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of Exadata storage servers in the Exadata infrastructure.
         """
         return pulumi.get(self, "server_count")
 
     @server_count.setter
-    def server_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def server_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "server_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the database resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the Exadata resource.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The timestamp of the creation of the Exadata resource.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The timestamp of the last update of the Exadata resource.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the Exadata resource.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
 class CloudExadataInfrastructureVmClusterArgsDict(TypedDict):
-    additional_details: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    additional_details: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
     """
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     """
-    deployment_type: NotRequired[pulumi.Input[_builtins.str]]
+    deployment_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The infrastructure deployment type.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the Exadata infrastructure.
     """
-    home_directory: NotRequired[pulumi.Input[_builtins.str]]
+    home_directory: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Oracle home directory.
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
     """
-    internal_id: NotRequired[pulumi.Input[_builtins.str]]
+    internal_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The internal ID of the Exadata resource.
     """
-    license_model: NotRequired[pulumi.Input[_builtins.str]]
+    license_model: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The Oracle license model that applies to the database management resources.
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The details of the lifecycle state of the Exadata resource.
     """
-    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    resource_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of Exadata resource.
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current lifecycle state of the database resource.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The status of the Exadata resource.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The timestamp of the creation of the Exadata resource.
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The timestamp of the last update of the Exadata resource.
     """
-    version: NotRequired[pulumi.Input[_builtins.str]]
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The version of the Exadata resource.
     """
@@ -5868,21 +5868,21 @@ class CloudExadataInfrastructureVmClusterArgsDict(TypedDict):
 @pulumi.input_type
 class CloudExadataInfrastructureVmClusterArgs:
     def __init__(__self__, *,
-                 additional_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 home_directory: Optional[pulumi.Input[_builtins.str]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 internal_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 additional_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 home_directory: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 internal_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -5933,182 +5933,182 @@ class CloudExadataInfrastructureVmClusterArgs:
 
     @_builtins.property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def additional_details(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "additional_details")
 
     @additional_details.setter
-    def additional_details(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def additional_details(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "additional_details", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="deploymentType")
-    def deployment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deployment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The infrastructure deployment type.
         """
         return pulumi.get(self, "deployment_type")
 
     @deployment_type.setter
-    def deployment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deployment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deployment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the Exadata infrastructure.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="homeDirectory")
-    def home_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def home_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle home directory.
         """
         return pulumi.get(self, "home_directory")
 
     @home_directory.setter
-    def home_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def home_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "home_directory", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter(name="internalId")
-    def internal_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def internal_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The internal ID of the Exadata resource.
         """
         return pulumi.get(self, "internal_id")
 
     @internal_id.setter
-    def internal_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def internal_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "internal_id", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Oracle license model that applies to the database management resources.
         """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
-    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_model", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The details of the lifecycle state of the Exadata resource.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of Exadata resource.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the database resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the Exadata resource.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The timestamp of the creation of the Exadata resource.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The timestamp of the last update of the Exadata resource.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the Exadata resource.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
@@ -6121,15 +6121,15 @@ class CloudExadataStorageConnectorCredentialInfoArgsDict(TypedDict):
     """
     (Updatable) The name of the user.
     """
-    ssl_trust_store_location: NotRequired[pulumi.Input[_builtins.str]]
+    ssl_trust_store_location: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The full path of the SSL truststore location in the agent.
     """
-    ssl_trust_store_password: NotRequired[pulumi.Input[_builtins.str]]
+    ssl_trust_store_password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The password of the SSL truststore location in the agent.
     """
-    ssl_trust_store_type: NotRequired[pulumi.Input[_builtins.str]]
+    ssl_trust_store_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The SSL truststore type.
     """
@@ -6139,9 +6139,9 @@ class CloudExadataStorageConnectorCredentialInfoArgs:
     def __init__(__self__, *,
                  password: pulumi.Input[_builtins.str],
                  username: pulumi.Input[_builtins.str],
-                 ssl_trust_store_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_trust_store_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_trust_store_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 ssl_trust_store_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_trust_store_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_trust_store_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] password: (Updatable) The password of the user.
         :param pulumi.Input[_builtins.str] username: (Updatable) The name of the user.
@@ -6184,63 +6184,63 @@ class CloudExadataStorageConnectorCredentialInfoArgs:
 
     @_builtins.property
     @pulumi.getter(name="sslTrustStoreLocation")
-    def ssl_trust_store_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_trust_store_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The full path of the SSL truststore location in the agent.
         """
         return pulumi.get(self, "ssl_trust_store_location")
 
     @ssl_trust_store_location.setter
-    def ssl_trust_store_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_trust_store_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_trust_store_location", value)
 
     @_builtins.property
     @pulumi.getter(name="sslTrustStorePassword")
-    def ssl_trust_store_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_trust_store_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The password of the SSL truststore location in the agent.
         """
         return pulumi.get(self, "ssl_trust_store_password")
 
     @ssl_trust_store_password.setter
-    def ssl_trust_store_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_trust_store_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_trust_store_password", value)
 
     @_builtins.property
     @pulumi.getter(name="sslTrustStoreType")
-    def ssl_trust_store_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_trust_store_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The SSL truststore type.
         """
         return pulumi.get(self, "ssl_trust_store_type")
 
     @ssl_trust_store_type.setter
-    def ssl_trust_store_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_trust_store_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_trust_store_type", value)
 
 
 class CloudExadataStorageGridStorageServerArgsDict(TypedDict):
-    additional_details: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    additional_details: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
     """
-    connector_id: NotRequired[pulumi.Input[_builtins.str]]
+    connector_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
     """
-    cpu_count: NotRequired[pulumi.Input[_builtins.int]]
+    cpu_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The CPU count of the Exadata storage server.
     """
-    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    defined_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
     """
-    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    freeform_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
 
@@ -6248,71 +6248,71 @@ class CloudExadataStorageGridStorageServerArgsDict(TypedDict):
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
     """
-    internal_id: NotRequired[pulumi.Input[_builtins.str]]
+    internal_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The internal ID of the Exadata resource.
     """
-    ip_address: NotRequired[pulumi.Input[_builtins.str]]
+    ip_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The IP address of the Exadata storage server.
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The details of the lifecycle state of the Exadata resource.
     """
-    make_model: NotRequired[pulumi.Input[_builtins.str]]
+    make_model: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The make model of the Exadata storage server.
     """
-    max_flash_disk_iops: NotRequired[pulumi.Input[_builtins.int]]
+    max_flash_disk_iops: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The maximum flash disk IO operations per second of the Exadata storage server.
     """
-    max_flash_disk_throughput: NotRequired[pulumi.Input[_builtins.int]]
+    max_flash_disk_throughput: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The maximum flash disk IO throughput in MB/s of the Exadata storage server.
     """
-    max_hard_disk_iops: NotRequired[pulumi.Input[_builtins.int]]
+    max_hard_disk_iops: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The maximum hard disk IO operations per second of the Exadata storage server.
     """
-    max_hard_disk_throughput: NotRequired[pulumi.Input[_builtins.int]]
+    max_hard_disk_throughput: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The maximum hard disk IO throughput in MB/s of the Exadata storage server.
     """
-    memory_gb: NotRequired[pulumi.Input[_builtins.float]]
+    memory_gb: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The Exadata storage server memory size in GB.
     """
-    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    resource_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of Exadata resource.
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current lifecycle state of the database resource.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The status of the Exadata resource.
     """
-    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    system_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The timestamp of the creation of the Exadata resource.
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The timestamp of the last update of the Exadata resource.
     """
-    version: NotRequired[pulumi.Input[_builtins.str]]
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The version of the Exadata resource.
     """
@@ -6320,29 +6320,29 @@ class CloudExadataStorageGridStorageServerArgsDict(TypedDict):
 @pulumi.input_type
 class CloudExadataStorageGridStorageServerArgs:
     def __init__(__self__, *,
-                 additional_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpu_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 internal_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 make_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_flash_disk_iops: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_flash_disk_throughput: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_hard_disk_iops: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_hard_disk_throughput: Optional[pulumi.Input[_builtins.int]] = None,
-                 memory_gb: Optional[pulumi.Input[_builtins.float]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 additional_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 internal_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 make_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_flash_disk_iops: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_flash_disk_throughput: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_hard_disk_iops: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_hard_disk_throughput: pulumi.Input[Optional[_builtins.int]] = None,
+                 memory_gb: pulumi.Input[Optional[_builtins.float]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
@@ -6421,67 +6421,67 @@ class CloudExadataStorageGridStorageServerArgs:
 
     @_builtins.property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def additional_details(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "additional_details")
 
     @additional_details.setter
-    def additional_details(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def additional_details(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "additional_details", value)
 
     @_builtins.property
     @pulumi.getter(name="connectorId")
-    def connector_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connector_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
         """
         return pulumi.get(self, "connector_id")
 
     @connector_id.setter
-    def connector_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connector_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connector_id", value)
 
     @_builtins.property
     @pulumi.getter(name="cpuCount")
-    def cpu_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cpu_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The CPU count of the Exadata storage server.
         """
         return pulumi.get(self, "cpu_count")
 
     @cpu_count.setter
-    def cpu_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cpu_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cpu_count", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
 
@@ -6492,236 +6492,236 @@ class CloudExadataStorageGridStorageServerArgs:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter(name="internalId")
-    def internal_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def internal_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The internal ID of the Exadata resource.
         """
         return pulumi.get(self, "internal_id")
 
     @internal_id.setter
-    def internal_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def internal_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "internal_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IP address of the Exadata storage server.
         """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
-    def ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The details of the lifecycle state of the Exadata resource.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="makeModel")
-    def make_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def make_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The make model of the Exadata storage server.
         """
         return pulumi.get(self, "make_model")
 
     @make_model.setter
-    def make_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def make_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "make_model", value)
 
     @_builtins.property
     @pulumi.getter(name="maxFlashDiskIops")
-    def max_flash_disk_iops(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_flash_disk_iops(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum flash disk IO operations per second of the Exadata storage server.
         """
         return pulumi.get(self, "max_flash_disk_iops")
 
     @max_flash_disk_iops.setter
-    def max_flash_disk_iops(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_flash_disk_iops(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_flash_disk_iops", value)
 
     @_builtins.property
     @pulumi.getter(name="maxFlashDiskThroughput")
-    def max_flash_disk_throughput(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_flash_disk_throughput(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum flash disk IO throughput in MB/s of the Exadata storage server.
         """
         return pulumi.get(self, "max_flash_disk_throughput")
 
     @max_flash_disk_throughput.setter
-    def max_flash_disk_throughput(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_flash_disk_throughput(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_flash_disk_throughput", value)
 
     @_builtins.property
     @pulumi.getter(name="maxHardDiskIops")
-    def max_hard_disk_iops(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_hard_disk_iops(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum hard disk IO operations per second of the Exadata storage server.
         """
         return pulumi.get(self, "max_hard_disk_iops")
 
     @max_hard_disk_iops.setter
-    def max_hard_disk_iops(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_hard_disk_iops(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_hard_disk_iops", value)
 
     @_builtins.property
     @pulumi.getter(name="maxHardDiskThroughput")
-    def max_hard_disk_throughput(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_hard_disk_throughput(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum hard disk IO throughput in MB/s of the Exadata storage server.
         """
         return pulumi.get(self, "max_hard_disk_throughput")
 
     @max_hard_disk_throughput.setter
-    def max_hard_disk_throughput(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_hard_disk_throughput(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_hard_disk_throughput", value)
 
     @_builtins.property
     @pulumi.getter(name="memoryGb")
-    def memory_gb(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def memory_gb(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The Exadata storage server memory size in GB.
         """
         return pulumi.get(self, "memory_gb")
 
     @memory_gb.setter
-    def memory_gb(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def memory_gb(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "memory_gb", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of Exadata resource.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the database resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the Exadata resource.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The timestamp of the creation of the Exadata resource.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The timestamp of the last update of the Exadata resource.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the Exadata resource.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
 class CloudExadataStorageServerConnectorArgsDict(TypedDict):
-    additional_details: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    additional_details: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
     """
-    agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    agent_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
     """
-    connection_uri: NotRequired[pulumi.Input[_builtins.str]]
+    connection_uri: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
     """
-    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    defined_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
     """
-    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    freeform_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
 
@@ -6729,47 +6729,47 @@ class CloudExadataStorageServerConnectorArgsDict(TypedDict):
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
     """
-    internal_id: NotRequired[pulumi.Input[_builtins.str]]
+    internal_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The internal ID of the Exadata resource.
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The details of the lifecycle state of the Exadata resource.
     """
-    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    resource_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of Exadata resource.
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current lifecycle state of the database resource.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The status of the Exadata resource.
     """
-    storage_server_id: NotRequired[pulumi.Input[_builtins.str]]
+    storage_server_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
     """
-    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    system_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The timestamp of the creation of the Exadata resource.
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The timestamp of the last update of the Exadata resource.
     """
-    version: NotRequired[pulumi.Input[_builtins.str]]
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The version of the Exadata resource.
     """
@@ -6777,23 +6777,23 @@ class CloudExadataStorageServerConnectorArgsDict(TypedDict):
 @pulumi.input_type
 class CloudExadataStorageServerConnectorArgs:
     def __init__(__self__, *,
-                 additional_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 internal_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_server_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 additional_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 internal_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_server_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
@@ -6854,67 +6854,67 @@ class CloudExadataStorageServerConnectorArgs:
 
     @_builtins.property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def additional_details(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "additional_details")
 
     @additional_details.setter
-    def additional_details(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def additional_details(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "additional_details", value)
 
     @_builtins.property
     @pulumi.getter(name="agentId")
-    def agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
         """
         return pulumi.get(self, "agent_id")
 
     @agent_id.setter
-    def agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionUri")
-    def connection_uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_uri(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
         """
         return pulumi.get(self, "connection_uri")
 
     @connection_uri.setter
-    def connection_uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_uri(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_uri", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
 
@@ -6925,160 +6925,160 @@ class CloudExadataStorageServerConnectorArgs:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter(name="internalId")
-    def internal_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def internal_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The internal ID of the Exadata resource.
         """
         return pulumi.get(self, "internal_id")
 
     @internal_id.setter
-    def internal_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def internal_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "internal_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The details of the lifecycle state of the Exadata resource.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of Exadata resource.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the database resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the Exadata resource.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="storageServerId")
-    def storage_server_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_server_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
         """
         return pulumi.get(self, "storage_server_id")
 
     @storage_server_id.setter
-    def storage_server_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_server_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_server_id", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The timestamp of the creation of the Exadata resource.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The timestamp of the last update of the Exadata resource.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the Exadata resource.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
 class CloudListenerEndpointArgsDict(TypedDict):
-    host: NotRequired[pulumi.Input[_builtins.str]]
+    host: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The host name or IP address.
     """
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique name of the service.
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port number.
     """
-    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The listener protocol.
     """
-    services: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    services: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The list of services registered with the listener.
     """
@@ -7086,11 +7086,11 @@ class CloudListenerEndpointArgsDict(TypedDict):
 @pulumi.input_type
 class CloudListenerEndpointArgs:
     def __init__(__self__, *,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 services: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 services: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] host: The host name or IP address.
         :param pulumi.Input[_builtins.str] key: The unique name of the service.
@@ -7111,75 +7111,75 @@ class CloudListenerEndpointArgs:
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host name or IP address.
         """
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique name of the service.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port number.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The listener protocol.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of services registered with the listener.
         """
         return pulumi.get(self, "services")
 
     @services.setter
-    def services(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def services(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "services", value)
 
 
 class CloudListenerServicedAsmArgsDict(TypedDict):
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user-friendly name for the database. The name does not have to be unique.
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
     """
@@ -7187,9 +7187,9 @@ class CloudListenerServicedAsmArgsDict(TypedDict):
 @pulumi.input_type
 class CloudListenerServicedAsmArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the database. The name does not have to be unique.
@@ -7204,71 +7204,71 @@ class CloudListenerServicedAsmArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-friendly name for the database. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
 
 class CloudListenerServicedDatabaseArgsDict(TypedDict):
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
     """
-    database_sub_type: NotRequired[pulumi.Input[_builtins.str]]
+    database_sub_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
     """
-    database_type: NotRequired[pulumi.Input[_builtins.str]]
+    database_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of Oracle Database installation.
     """
-    db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
+    db_unique_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique name of the cloud database.
     """
-    dbaas_id: NotRequired[pulumi.Input[_builtins.str]]
+    dbaas_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user-friendly name for the database. The name does not have to be unique.
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
     """
-    is_managed: NotRequired[pulumi.Input[_builtins.bool]]
+    is_managed: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the database is a Managed Database or not.
     """
@@ -7276,14 +7276,14 @@ class CloudListenerServicedDatabaseArgsDict(TypedDict):
 @pulumi.input_type
 class CloudListenerServicedDatabaseArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_sub_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 dbaas_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_managed: Optional[pulumi.Input[_builtins.bool]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_sub_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 dbaas_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_managed: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
         :param pulumi.Input[_builtins.str] database_sub_type: The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
@@ -7313,98 +7313,98 @@ class CloudListenerServicedDatabaseArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseSubType")
-    def database_sub_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_sub_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         """
         return pulumi.get(self, "database_sub_type")
 
     @database_sub_type.setter
-    def database_sub_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_sub_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_sub_type", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseType")
-    def database_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of Oracle Database installation.
         """
         return pulumi.get(self, "database_type")
 
     @database_type.setter
-    def database_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dbUniqueName")
-    def db_unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_unique_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique name of the cloud database.
         """
         return pulumi.get(self, "db_unique_name")
 
     @db_unique_name.setter
-    def db_unique_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_unique_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_unique_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dbaasId")
-    def dbaas_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dbaas_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
         """
         return pulumi.get(self, "dbaas_id")
 
     @dbaas_id.setter
-    def dbaas_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dbaas_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dbaas_id", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-friendly name for the database. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter(name="isManaged")
-    def is_managed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_managed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the database is a Managed Database or not.
         """
         return pulumi.get(self, "is_managed")
 
     @is_managed.setter
-    def is_managed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_managed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_managed", value)
 
 
@@ -7413,23 +7413,23 @@ class DatabaseDbmFeaturesManagementFeatureDetailsArgsDict(TypedDict):
     """
     The name of the Database Management feature.
     """
-    can_enable_all_current_pdbs: NotRequired[pulumi.Input[_builtins.bool]]
+    can_enable_all_current_pdbs: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
     """
-    connector_details: NotRequired[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]
+    connector_details: NotRequired[pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]]
     """
     The connector details required to connect to an Oracle cloud database.
     """
-    database_connection_details: NotRequired[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict']]
+    database_connection_details: NotRequired[pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']]]
     """
     The connection details required to connect to the database.
     """
-    is_auto_enable_pluggable_database: NotRequired[pulumi.Input[_builtins.bool]]
+    is_auto_enable_pluggable_database: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
     """
-    management_type: NotRequired[pulumi.Input[_builtins.str]]
+    management_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The management type for the database. Use "BASIC" for basic management. Use "ADVANCED" for full management.
     """
@@ -7438,11 +7438,11 @@ class DatabaseDbmFeaturesManagementFeatureDetailsArgsDict(TypedDict):
 class DatabaseDbmFeaturesManagementFeatureDetailsArgs:
     def __init__(__self__, *,
                  feature: pulumi.Input[_builtins.str],
-                 can_enable_all_current_pdbs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 connector_details: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']] = None,
-                 database_connection_details: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']] = None,
-                 is_auto_enable_pluggable_database: Optional[pulumi.Input[_builtins.bool]] = None,
-                 management_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 can_enable_all_current_pdbs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 connector_details: pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']] = None,
+                 database_connection_details: pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']] = None,
+                 is_auto_enable_pluggable_database: pulumi.Input[Optional[_builtins.bool]] = None,
+                 management_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] feature: The name of the Database Management feature.
         :param pulumi.Input[_builtins.bool] can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
@@ -7477,67 +7477,67 @@ class DatabaseDbmFeaturesManagementFeatureDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="canEnableAllCurrentPdbs")
-    def can_enable_all_current_pdbs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_enable_all_current_pdbs(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
         """
         return pulumi.get(self, "can_enable_all_current_pdbs")
 
     @can_enable_all_current_pdbs.setter
-    def can_enable_all_current_pdbs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_enable_all_current_pdbs(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_enable_all_current_pdbs", value)
 
     @_builtins.property
     @pulumi.getter(name="connectorDetails")
-    def connector_details(self) -> Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]:
+    def connector_details(self) -> pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]:
         """
         The connector details required to connect to an Oracle cloud database.
         """
         return pulumi.get(self, "connector_details")
 
     @connector_details.setter
-    def connector_details(self, value: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]):
+    def connector_details(self, value: pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]):
         pulumi.set(self, "connector_details", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseConnectionDetails")
-    def database_connection_details(self) -> Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']]:
+    def database_connection_details(self) -> pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']]:
         """
         The connection details required to connect to the database.
         """
         return pulumi.get(self, "database_connection_details")
 
     @database_connection_details.setter
-    def database_connection_details(self, value: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']]):
+    def database_connection_details(self, value: pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']]):
         pulumi.set(self, "database_connection_details", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoEnablePluggableDatabase")
-    def is_auto_enable_pluggable_database(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_enable_pluggable_database(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         """
         return pulumi.get(self, "is_auto_enable_pluggable_database")
 
     @is_auto_enable_pluggable_database.setter
-    def is_auto_enable_pluggable_database(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_enable_pluggable_database(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_enable_pluggable_database", value)
 
     @_builtins.property
     @pulumi.getter(name="managementType")
-    def management_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The management type for the database. Use "BASIC" for basic management. Use "ADVANCED" for full management.
         """
         return pulumi.get(self, "management_type")
 
     @management_type.setter
-    def management_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_type", value)
 
 
 class DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict(TypedDict):
-    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    connector_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The list of supported connection types:
     * PE: Private endpoint
@@ -7545,15 +7545,15 @@ class DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict(TypedD
     * EXTERNAL: External database connector
     * DIRECT: Direct connection
     """
-    database_connector_id: NotRequired[pulumi.Input[_builtins.str]]
+    database_connector_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
     """
-    management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    management_agent_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
     """
-    private_end_point_id: NotRequired[pulumi.Input[_builtins.str]]
+    private_end_point_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
     """
@@ -7561,10 +7561,10 @@ class DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict(TypedD
 @pulumi.input_type
 class DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs:
     def __init__(__self__, *,
-                 connector_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_end_point_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_end_point_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] connector_type: The list of supported connection types:
                * PE: Private endpoint
@@ -7586,7 +7586,7 @@ class DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="connectorType")
-    def connector_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connector_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The list of supported connection types:
         * PE: Private endpoint
@@ -7597,52 +7597,52 @@ class DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs:
         return pulumi.get(self, "connector_type")
 
     @connector_type.setter
-    def connector_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connector_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connector_type", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseConnectorId")
-    def database_connector_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_connector_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
         """
         return pulumi.get(self, "database_connector_id")
 
     @database_connector_id.setter
-    def database_connector_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_connector_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_connector_id", value)
 
     @_builtins.property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
         """
         return pulumi.get(self, "management_agent_id")
 
     @management_agent_id.setter
-    def management_agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndPointId")
-    def private_end_point_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_end_point_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         """
         return pulumi.get(self, "private_end_point_id")
 
     @private_end_point_id.setter
-    def private_end_point_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_end_point_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_end_point_id", value)
 
 
 class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict(TypedDict):
-    connection_credentials: NotRequired[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgsDict']]
+    connection_credentials: NotRequired[pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']]]
     """
     The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_string: NotRequired[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgsDict']]
+    connection_string: NotRequired[pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']]]
     """
     The details of the Oracle Database connection string.
     """
@@ -7650,8 +7650,8 @@ class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDi
 @pulumi.input_type
 class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs:
     def __init__(__self__, *,
-                 connection_credentials: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']] = None,
-                 connection_string: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']] = None):
+                 connection_credentials: pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']] = None,
+                 connection_string: pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']] = None):
         """
         :param pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs'] connection_credentials: The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         :param pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs'] connection_string: The details of the Oracle Database connection string.
@@ -7663,57 +7663,57 @@ class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="connectionCredentials")
-    def connection_credentials(self) -> Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']]:
+    def connection_credentials(self) -> pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']]:
         """
         The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         """
         return pulumi.get(self, "connection_credentials")
 
     @connection_credentials.setter
-    def connection_credentials(self, value: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']]):
+    def connection_credentials(self, value: pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']]):
         pulumi.set(self, "connection_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionString")
-    def connection_string(self) -> Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']]:
+    def connection_string(self) -> pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']]:
         """
         The details of the Oracle Database connection string.
         """
         return pulumi.get(self, "connection_string")
 
     @connection_string.setter
-    def connection_string(self, value: Optional[pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']]):
+    def connection_string(self, value: pulumi.Input[Optional['DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']]):
         pulumi.set(self, "connection_string", value)
 
 
 class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgsDict(TypedDict):
-    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    credential_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 
     For example: inventorydb.abc112233445566778899
     """
-    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    credential_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of credential used to connect to the database.
     """
-    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    named_credential_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the user connecting to the database.
     """
-    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    ssl_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
     """
-    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user name used to connect to the database.
     """
@@ -7721,13 +7721,13 @@ class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnec
 @pulumi.input_type
 class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs:
     def __init__(__self__, *,
-                 credential_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 credential_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 credential_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 credential_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 named_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
                
@@ -7756,7 +7756,7 @@ class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnec
 
     @_builtins.property
     @pulumi.getter(name="credentialName")
-    def credential_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 
@@ -7765,97 +7765,97 @@ class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnec
         return pulumi.get(self, "credential_name")
 
     @credential_name.setter
-    def credential_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_name", value)
 
     @_builtins.property
     @pulumi.getter(name="credentialType")
-    def credential_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of credential used to connect to the database.
         """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
-    def credential_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_type", value)
 
     @_builtins.property
     @pulumi.getter(name="namedCredentialId")
-    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def named_credential_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
         """
         return pulumi.get(self, "named_credential_id")
 
     @named_credential_id.setter
-    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def named_credential_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the user connecting to the database.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="sslSecretId")
-    def ssl_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
         """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
-    def ssl_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user name used to connect to the database.
         """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
 
 class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgsDict(TypedDict):
-    connection_type: NotRequired[pulumi.Input[_builtins.str]]
+    connection_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The list of supported connection types:
     * BASIC: Basic connection details
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port number used to connect to the database.
     """
-    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The protocol used to connect to the database.
     """
-    service: NotRequired[pulumi.Input[_builtins.str]]
+    service: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The service name of the database.
     """
@@ -7863,10 +7863,10 @@ class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnec
 @pulumi.input_type
 class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs:
     def __init__(__self__, *,
-                 connection_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 service: Optional[pulumi.Input[_builtins.str]] = None):
+                 connection_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 service: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] connection_type: The list of supported connection types:
                * BASIC: Basic connection details
@@ -7885,7 +7885,7 @@ class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnec
 
     @_builtins.property
     @pulumi.getter(name="connectionType")
-    def connection_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The list of supported connection types:
         * BASIC: Basic connection details
@@ -7893,76 +7893,76 @@ class DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnec
         return pulumi.get(self, "connection_type")
 
     @connection_type.setter
-    def connection_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port number used to connect to the database.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The protocol used to connect to the database.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def service(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service name of the database.
         """
         return pulumi.get(self, "service")
 
     @service.setter
-    def service(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service", value)
 
 
 class ExternalAsmServicedDatabaseArgsDict(TypedDict):
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
     """
-    database_sub_type: NotRequired[pulumi.Input[_builtins.str]]
+    database_sub_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
     """
-    database_type: NotRequired[pulumi.Input[_builtins.str]]
+    database_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of Oracle Database installation.
     """
-    db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
+    db_unique_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique name of the external database.
     """
-    disk_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    disk_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The list of ASM disk groups used by the database.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user-friendly name for the database. The name does not have to be unique.
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
     """
-    is_managed: NotRequired[pulumi.Input[_builtins.bool]]
+    is_managed: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the database is a Managed Database or not.
     """
@@ -7970,14 +7970,14 @@ class ExternalAsmServicedDatabaseArgsDict(TypedDict):
 @pulumi.input_type
 class ExternalAsmServicedDatabaseArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_sub_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 disk_groups: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_managed: Optional[pulumi.Input[_builtins.bool]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_sub_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 disk_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_managed: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
         :param pulumi.Input[_builtins.str] database_sub_type: The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
@@ -8007,111 +8007,111 @@ class ExternalAsmServicedDatabaseArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseSubType")
-    def database_sub_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_sub_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         """
         return pulumi.get(self, "database_sub_type")
 
     @database_sub_type.setter
-    def database_sub_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_sub_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_sub_type", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseType")
-    def database_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of Oracle Database installation.
         """
         return pulumi.get(self, "database_type")
 
     @database_type.setter
-    def database_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dbUniqueName")
-    def db_unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_unique_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique name of the external database.
         """
         return pulumi.get(self, "db_unique_name")
 
     @db_unique_name.setter
-    def db_unique_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_unique_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_unique_name", value)
 
     @_builtins.property
     @pulumi.getter(name="diskGroups")
-    def disk_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def disk_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of ASM disk groups used by the database.
         """
         return pulumi.get(self, "disk_groups")
 
     @disk_groups.setter
-    def disk_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def disk_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "disk_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-friendly name for the database. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter(name="isManaged")
-    def is_managed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_managed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the database is a Managed Database or not.
         """
         return pulumi.get(self, "is_managed")
 
     @is_managed.setter
-    def is_managed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_managed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_managed", value)
 
 
 class ExternalClusterNetworkConfigurationArgsDict(TypedDict):
-    network_number: NotRequired[pulumi.Input[_builtins.int]]
+    network_number: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The network number from which VIPs are obtained.
     """
-    network_type: NotRequired[pulumi.Input[_builtins.str]]
+    network_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The network type.
     """
-    subnet: NotRequired[pulumi.Input[_builtins.str]]
+    subnet: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The subnet for the network.
     """
@@ -8119,9 +8119,9 @@ class ExternalClusterNetworkConfigurationArgsDict(TypedDict):
 @pulumi.input_type
 class ExternalClusterNetworkConfigurationArgs:
     def __init__(__self__, *,
-                 network_number: Optional[pulumi.Input[_builtins.int]] = None,
-                 network_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet: Optional[pulumi.Input[_builtins.str]] = None):
+                 network_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 network_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.int] network_number: The network number from which VIPs are obtained.
         :param pulumi.Input[_builtins.str] network_type: The network type.
@@ -8136,55 +8136,55 @@ class ExternalClusterNetworkConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="networkNumber")
-    def network_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def network_number(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The network number from which VIPs are obtained.
         """
         return pulumi.get(self, "network_number")
 
     @network_number.setter
-    def network_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def network_number(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "network_number", value)
 
     @_builtins.property
     @pulumi.getter(name="networkType")
-    def network_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The network type.
         """
         return pulumi.get(self, "network_type")
 
     @network_type.setter
-    def network_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def subnet(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The subnet for the network.
         """
         return pulumi.get(self, "subnet")
 
     @subnet.setter
-    def subnet(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet", value)
 
 
 class ExternalClusterScanConfigurationArgsDict(TypedDict):
-    network_number: NotRequired[pulumi.Input[_builtins.int]]
+    network_number: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The network number from which VIPs are obtained.
     """
-    scan_name: NotRequired[pulumi.Input[_builtins.str]]
+    scan_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the SCAN listener.
     """
-    scan_port: NotRequired[pulumi.Input[_builtins.int]]
+    scan_port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port number of the SCAN listener.
     """
-    scan_protocol: NotRequired[pulumi.Input[_builtins.str]]
+    scan_protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The protocol of the SCAN listener.
     """
@@ -8192,10 +8192,10 @@ class ExternalClusterScanConfigurationArgsDict(TypedDict):
 @pulumi.input_type
 class ExternalClusterScanConfigurationArgs:
     def __init__(__self__, *,
-                 network_number: Optional[pulumi.Input[_builtins.int]] = None,
-                 scan_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scan_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 scan_protocol: Optional[pulumi.Input[_builtins.str]] = None):
+                 network_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 scan_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scan_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 scan_protocol: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.int] network_number: The network number from which VIPs are obtained.
         :param pulumi.Input[_builtins.str] scan_name: The name of the SCAN listener.
@@ -8213,63 +8213,63 @@ class ExternalClusterScanConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="networkNumber")
-    def network_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def network_number(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The network number from which VIPs are obtained.
         """
         return pulumi.get(self, "network_number")
 
     @network_number.setter
-    def network_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def network_number(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "network_number", value)
 
     @_builtins.property
     @pulumi.getter(name="scanName")
-    def scan_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scan_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the SCAN listener.
         """
         return pulumi.get(self, "scan_name")
 
     @scan_name.setter
-    def scan_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scan_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scan_name", value)
 
     @_builtins.property
     @pulumi.getter(name="scanPort")
-    def scan_port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def scan_port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port number of the SCAN listener.
         """
         return pulumi.get(self, "scan_port")
 
     @scan_port.setter
-    def scan_port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def scan_port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "scan_port", value)
 
     @_builtins.property
     @pulumi.getter(name="scanProtocol")
-    def scan_protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scan_protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The protocol of the SCAN listener.
         """
         return pulumi.get(self, "scan_protocol")
 
     @scan_protocol.setter
-    def scan_protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scan_protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scan_protocol", value)
 
 
 class ExternalClusterVipConfigurationArgsDict(TypedDict):
-    address: NotRequired[pulumi.Input[_builtins.str]]
+    address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The VIP name or IP address.
     """
-    network_number: NotRequired[pulumi.Input[_builtins.int]]
+    network_number: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The network number from which VIPs are obtained.
     """
-    node_name: NotRequired[pulumi.Input[_builtins.str]]
+    node_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the node with the VIP.
     """
@@ -8277,9 +8277,9 @@ class ExternalClusterVipConfigurationArgsDict(TypedDict):
 @pulumi.input_type
 class ExternalClusterVipConfigurationArgs:
     def __init__(__self__, *,
-                 address: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_number: Optional[pulumi.Input[_builtins.int]] = None,
-                 node_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 address: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 node_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] address: The VIP name or IP address.
         :param pulumi.Input[_builtins.int] network_number: The network number from which VIPs are obtained.
@@ -8294,38 +8294,38 @@ class ExternalClusterVipConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The VIP name or IP address.
         """
         return pulumi.get(self, "address")
 
     @address.setter
-    def address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "address", value)
 
     @_builtins.property
     @pulumi.getter(name="networkNumber")
-    def network_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def network_number(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The network number from which VIPs are obtained.
         """
         return pulumi.get(self, "network_number")
 
     @network_number.setter
-    def network_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def network_number(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "network_number", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeName")
-    def node_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def node_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the node with the VIP.
         """
         return pulumi.get(self, "node_name")
 
     @node_name.setter
-    def node_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def node_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "node_name", value)
 
 
@@ -8334,15 +8334,15 @@ class ExternalDbSystemConnectorConnectionInfoArgsDict(TypedDict):
     """
     The component type.
     """
-    connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgsDict']]]]
+    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs']]]]]
     """
     The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionStringArgsDict']]]]
+    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionStringArgs']]]]]
     """
     The Oracle Database connection string.
     """
-    database_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgsDict']]]]
+    database_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs']]]]]
     """
     The credential to connect to the database to perform tablespace administration tasks.
     """
@@ -8351,9 +8351,9 @@ class ExternalDbSystemConnectorConnectionInfoArgsDict(TypedDict):
 class ExternalDbSystemConnectorConnectionInfoArgs:
     def __init__(__self__, *,
                  component_type: pulumi.Input[_builtins.str],
-                 connection_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
-                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionStringArgs']]]] = None,
-                 database_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs']]]] = None):
+                 connection_credentials: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
+                 connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionStringArgs']]]] = None,
+                 database_credentials: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] component_type: The component type.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs']]] connection_credentials: The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
@@ -8382,67 +8382,67 @@ class ExternalDbSystemConnectorConnectionInfoArgs:
 
     @_builtins.property
     @pulumi.getter(name="connectionCredentials")
-    def connection_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs']]]]:
+    def connection_credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs']]]]:
         """
         The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         """
         return pulumi.get(self, "connection_credentials")
 
     @connection_credentials.setter
-    def connection_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs']]]]):
+    def connection_credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs']]]]):
         pulumi.set(self, "connection_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionStrings")
-    def connection_strings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionStringArgs']]]]:
+    def connection_strings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionStringArgs']]]]:
         """
         The Oracle Database connection string.
         """
         return pulumi.get(self, "connection_strings")
 
     @connection_strings.setter
-    def connection_strings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionStringArgs']]]]):
+    def connection_strings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoConnectionStringArgs']]]]):
         pulumi.set(self, "connection_strings", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseCredentials")
-    def database_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs']]]]:
+    def database_credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs']]]]:
         """
         The credential to connect to the database to perform tablespace administration tasks.
         """
         return pulumi.get(self, "database_credentials")
 
     @database_credentials.setter
-    def database_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs']]]]):
+    def database_credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs']]]]):
         pulumi.set(self, "database_credentials", value)
 
 
 class ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgsDict(TypedDict):
-    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    credential_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
     """
-    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    credential_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of the credential for tablespace administration tasks.
     """
-    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    named_credential_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the database user.
     """
-    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    ssl_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
     """
-    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user name used to connect to the ASM instance.
     """
@@ -8450,13 +8450,13 @@ class ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgsDict(TypedD
 @pulumi.input_type
 class ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs:
     def __init__(__self__, *,
-                 credential_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 credential_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 credential_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 credential_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 named_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
         :param pulumi.Input[_builtins.str] credential_type: The type of the credential for tablespace administration tasks.
@@ -8483,107 +8483,107 @@ class ExternalDbSystemConnectorConnectionInfoConnectionCredentialArgs:
 
     @_builtins.property
     @pulumi.getter(name="credentialName")
-    def credential_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
         """
         return pulumi.get(self, "credential_name")
 
     @credential_name.setter
-    def credential_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_name", value)
 
     @_builtins.property
     @pulumi.getter(name="credentialType")
-    def credential_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the credential for tablespace administration tasks.
         """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
-    def credential_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_type", value)
 
     @_builtins.property
     @pulumi.getter(name="namedCredentialId")
-    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def named_credential_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
         """
         return pulumi.get(self, "named_credential_id")
 
     @named_credential_id.setter
-    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def named_credential_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the database user.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="sslSecretId")
-    def ssl_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
         """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
-    def ssl_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user name used to connect to the ASM instance.
         """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
 
 class ExternalDbSystemConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
-    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    host_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The host name of the database or the SCAN name in case of a RAC database.
     """
-    hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    hosts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The list of host names of the ASM instances.
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port used to connect to the ASM instance.
     """
-    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The protocol used to connect to the ASM instance.
     """
-    service: NotRequired[pulumi.Input[_builtins.str]]
+    service: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The service name of the ASM instance.
     """
@@ -8591,11 +8591,11 @@ class ExternalDbSystemConnectorConnectionInfoConnectionStringArgsDict(TypedDict)
 @pulumi.input_type
 class ExternalDbSystemConnectorConnectionInfoConnectionStringArgs:
     def __init__(__self__, *,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 service: Optional[pulumi.Input[_builtins.str]] = None):
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 hosts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 service: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] host_name: The host name of the database or the SCAN name in case of a RAC database.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] hosts: The list of host names of the ASM instances.
@@ -8616,87 +8616,87 @@ class ExternalDbSystemConnectorConnectionInfoConnectionStringArgs:
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host name of the database or the SCAN name in case of a RAC database.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def hosts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of host names of the ASM instances.
         """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
-    def hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def hosts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "hosts", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port used to connect to the ASM instance.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The protocol used to connect to the ASM instance.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def service(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service name of the ASM instance.
         """
         return pulumi.get(self, "service")
 
     @service.setter
-    def service(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service", value)
 
 
 class ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgsDict(TypedDict):
-    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    credential_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of the credential for tablespace administration tasks.
     """
-    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    named_credential_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
     """
-    password: NotRequired[pulumi.Input[_builtins.str]]
+    password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The database user's password encoded using BASE64 scheme.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the database user.
     """
-    username: NotRequired[pulumi.Input[_builtins.str]]
+    username: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user to connect to the database.
     """
@@ -8704,12 +8704,12 @@ class ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgsDict(TypedDic
 @pulumi.input_type
 class ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs:
     def __init__(__self__, *,
-                 credential_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None):
+                 credential_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 named_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_type: The type of the credential for tablespace administration tasks.
         :param pulumi.Input[_builtins.str] named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
@@ -8733,74 +8733,74 @@ class ExternalDbSystemConnectorConnectionInfoDatabaseCredentialArgs:
 
     @_builtins.property
     @pulumi.getter(name="credentialType")
-    def credential_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the credential for tablespace administration tasks.
         """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
-    def credential_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_type", value)
 
     @_builtins.property
     @pulumi.getter(name="namedCredentialId")
-    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def named_credential_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
         """
         return pulumi.get(self, "named_credential_id")
 
     @named_credential_id.setter
-    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def named_credential_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database user's password encoded using BASE64 scheme.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the database user.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter
-    def username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user to connect to the database.
         """
         return pulumi.get(self, "username")
 
     @username.setter
-    def username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "username", value)
 
 
@@ -8833,201 +8833,201 @@ class ExternalDbSystemDatabaseManagementConfigArgs:
 
 
 class ExternalDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
-    adr_home_directory: NotRequired[pulumi.Input[_builtins.str]]
+    adr_home_directory: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
     """
-    asm_instances: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgsDict']]]]
-    associated_components: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgsDict']]]]
+    asm_instances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs']]]]]
+    associated_components: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]]]]
     """
     The list of associated components.
     """
-    can_enable_all_current_pdbs: NotRequired[pulumi.Input[_builtins.bool]]
+    can_enable_all_current_pdbs: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
     """
-    cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    cluster_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier of the Oracle cluster.
     """
-    cluster_instances: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgsDict']]]]
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    cluster_instances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs']]]]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
     """
-    component_id: NotRequired[pulumi.Input[_builtins.str]]
+    component_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The identifier of the discovered DB system component.
     """
-    component_name: NotRequired[pulumi.Input[_builtins.str]]
+    component_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the discovered DB system component.
     """
-    component_type: NotRequired[pulumi.Input[_builtins.str]]
+    component_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The component type.
     """
-    connectors: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgsDict']]]]
+    connectors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs']]]]]
     """
     The connector details used to connect to the external DB system component.
     """
-    container_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    container_database_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier of the parent Container Database (CDB).
     """
-    cpu_core_count: NotRequired[pulumi.Input[_builtins.float]]
+    cpu_core_count: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The number of CPU cores available on the DB node.
     """
-    crs_base_directory: NotRequired[pulumi.Input[_builtins.str]]
+    crs_base_directory: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Oracle base location of Cluster Ready Services (CRS).
     """
-    db_edition: NotRequired[pulumi.Input[_builtins.str]]
+    db_edition: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Oracle Database edition.
     """
-    db_id: NotRequired[pulumi.Input[_builtins.str]]
+    db_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Oracle Database ID.
     """
-    db_instances: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgsDict']]]]
+    db_instances: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgs']]]]]
     """
     The list of database instances.
     """
-    db_node_name: NotRequired[pulumi.Input[_builtins.str]]
+    db_node_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the DB node.
     """
-    db_packs: NotRequired[pulumi.Input[_builtins.str]]
+    db_packs: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The database packs licensed for the external Oracle Database.
     """
-    db_role: NotRequired[pulumi.Input[_builtins.str]]
+    db_role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the Oracle Database in Oracle Data Guard configuration.
     """
-    db_type: NotRequired[pulumi.Input[_builtins.str]]
+    db_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
     """
-    db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
+    db_unique_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The `DB_UNIQUE_NAME` of the external database.
     """
-    db_version: NotRequired[pulumi.Input[_builtins.str]]
+    db_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Oracle Database version.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
     """
-    endpoints: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgsDict']]]]
+    endpoints: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs']]]]]
     """
     The list of protocol addresses the listener is configured to listen on.
     """
-    grid_home: NotRequired[pulumi.Input[_builtins.str]]
+    grid_home: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The directory in which Oracle Grid Infrastructure is installed.
     """
-    guid: NotRequired[pulumi.Input[_builtins.str]]
+    guid: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier of the PDB.
     """
-    home_directory: NotRequired[pulumi.Input[_builtins.str]]
+    home_directory: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The location of the DB home.
     """
-    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    host_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The host name of the database or the SCAN name in case of a RAC database.
     """
-    instance_name: NotRequired[pulumi.Input[_builtins.str]]
+    instance_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the ASM instance.
     """
-    is_auto_enable_pluggable_database: NotRequired[pulumi.Input[_builtins.bool]]
+    is_auto_enable_pluggable_database: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
     """
-    is_cluster: NotRequired[pulumi.Input[_builtins.bool]]
+    is_cluster: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the Oracle Database is part of a cluster.
     """
-    is_flex_cluster: NotRequired[pulumi.Input[_builtins.bool]]
+    is_flex_cluster: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the cluster is an Oracle Flex Cluster or not.
     """
-    is_flex_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_flex_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether Oracle Flex ASM is enabled or not.
     """
-    is_selected_for_monitoring: NotRequired[pulumi.Input[_builtins.bool]]
+    is_selected_for_monitoring: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
     """
-    listener_alias: NotRequired[pulumi.Input[_builtins.str]]
+    listener_alias: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The listener alias.
     """
-    listener_type: NotRequired[pulumi.Input[_builtins.str]]
+    listener_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of listener.
     """
-    log_directory: NotRequired[pulumi.Input[_builtins.str]]
+    log_directory: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The destination directory of the listener log file.
     """
-    memory_size_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    memory_size_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The total memory in gigabytes (GB) on the DB node.
     """
-    network_configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgsDict']]]]
+    network_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs']]]]]
     """
     The list of network address configurations of the external cluster.
     """
-    node_name: NotRequired[pulumi.Input[_builtins.str]]
+    node_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the node with the VIP.
     """
-    node_role: NotRequired[pulumi.Input[_builtins.str]]
+    node_role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the cluster node.
     """
-    ocr_file_location: NotRequired[pulumi.Input[_builtins.str]]
+    ocr_file_location: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The location of the Oracle Cluster Registry (OCR) file.
     """
-    oracle_home: NotRequired[pulumi.Input[_builtins.str]]
+    oracle_home: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Oracle home location of the DB instance.
     """
-    pluggable_databases: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgsDict']]]]
+    pluggable_databases: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs']]]]]
     """
     The list of Pluggable Databases.
     """
-    resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
     """
-    scan_configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgsDict']]]]
+    scan_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs']]]]]
     """
     The list of Single Client Access Name (SCAN) configurations of the external cluster.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The state of the discovered DB system component.
     """
-    trace_directory: NotRequired[pulumi.Input[_builtins.str]]
+    trace_directory: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The destination directory of the listener trace file.
     """
-    version: NotRequired[pulumi.Input[_builtins.str]]
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The version of Oracle Clusterware running in the cluster.
     """
-    vip_configurations: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgsDict']]]]
+    vip_configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]]]]
     """
     The list of Virtual IP (VIP) configurations of the external cluster.
     """
@@ -9035,57 +9035,57 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgsDict(TypedDict):
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
     def __init__(__self__, *,
-                 adr_home_directory: Optional[pulumi.Input[_builtins.str]] = None,
-                 asm_instances: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs']]]] = None,
-                 associated_components: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]]] = None,
-                 can_enable_all_current_pdbs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_instances: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs']]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 component_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 component_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 component_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 connectors: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs']]]] = None,
-                 container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpu_core_count: Optional[pulumi.Input[_builtins.float]] = None,
-                 crs_base_directory: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_edition: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_instances: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgs']]]] = None,
-                 db_node_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_packs: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_role: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs']]]] = None,
-                 grid_home: Optional[pulumi.Input[_builtins.str]] = None,
-                 guid: Optional[pulumi.Input[_builtins.str]] = None,
-                 home_directory: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_auto_enable_pluggable_database: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_cluster: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_flex_cluster: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_flex_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_selected_for_monitoring: Optional[pulumi.Input[_builtins.bool]] = None,
-                 listener_alias: Optional[pulumi.Input[_builtins.str]] = None,
-                 listener_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_directory: Optional[pulumi.Input[_builtins.str]] = None,
-                 memory_size_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 network_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs']]]] = None,
-                 node_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_role: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocr_file_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 oracle_home: Optional[pulumi.Input[_builtins.str]] = None,
-                 pluggable_databases: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs']]]] = None,
-                 resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 scan_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs']]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 trace_directory: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None,
-                 vip_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]]] = None):
+                 adr_home_directory: pulumi.Input[Optional[_builtins.str]] = None,
+                 asm_instances: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs']]]] = None,
+                 associated_components: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]]] = None,
+                 can_enable_all_current_pdbs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_instances: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs']]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 component_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 component_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 component_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 connectors: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs']]]] = None,
+                 container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpu_core_count: pulumi.Input[Optional[_builtins.float]] = None,
+                 crs_base_directory: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_edition: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_instances: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgs']]]] = None,
+                 db_node_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_packs: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_role: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoints: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs']]]] = None,
+                 grid_home: pulumi.Input[Optional[_builtins.str]] = None,
+                 guid: pulumi.Input[Optional[_builtins.str]] = None,
+                 home_directory: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_auto_enable_pluggable_database: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_flex_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_flex_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_selected_for_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+                 listener_alias: pulumi.Input[Optional[_builtins.str]] = None,
+                 listener_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_directory: pulumi.Input[Optional[_builtins.str]] = None,
+                 memory_size_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 network_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs']]]] = None,
+                 node_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_role: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocr_file_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 oracle_home: pulumi.Input[Optional[_builtins.str]] = None,
+                 pluggable_databases: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs']]]] = None,
+                 resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 scan_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs']]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 trace_directory: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None,
+                 vip_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]] associated_components: The list of associated components.
@@ -9242,621 +9242,621 @@ class ExternalDbSystemDiscoveryDiscoveredComponentArgs:
 
     @_builtins.property
     @pulumi.getter(name="adrHomeDirectory")
-    def adr_home_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def adr_home_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         """
         return pulumi.get(self, "adr_home_directory")
 
     @adr_home_directory.setter
-    def adr_home_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def adr_home_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "adr_home_directory", value)
 
     @_builtins.property
     @pulumi.getter(name="asmInstances")
-    def asm_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs']]]]:
+    def asm_instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs']]]]:
         return pulumi.get(self, "asm_instances")
 
     @asm_instances.setter
-    def asm_instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs']]]]):
+    def asm_instances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs']]]]):
         pulumi.set(self, "asm_instances", value)
 
     @_builtins.property
     @pulumi.getter(name="associatedComponents")
-    def associated_components(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]]]:
+    def associated_components(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]]]:
         """
         The list of associated components.
         """
         return pulumi.get(self, "associated_components")
 
     @associated_components.setter
-    def associated_components(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]]]):
+    def associated_components(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs']]]]):
         pulumi.set(self, "associated_components", value)
 
     @_builtins.property
     @pulumi.getter(name="canEnableAllCurrentPdbs")
-    def can_enable_all_current_pdbs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_enable_all_current_pdbs(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
         """
         return pulumi.get(self, "can_enable_all_current_pdbs")
 
     @can_enable_all_current_pdbs.setter
-    def can_enable_all_current_pdbs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_enable_all_current_pdbs(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_enable_all_current_pdbs", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterId")
-    def cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the Oracle cluster.
         """
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
-    def cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterInstances")
-    def cluster_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs']]]]:
+    def cluster_instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs']]]]:
         return pulumi.get(self, "cluster_instances")
 
     @cluster_instances.setter
-    def cluster_instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs']]]]):
+    def cluster_instances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs']]]]):
         pulumi.set(self, "cluster_instances", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="componentId")
-    def component_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def component_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The identifier of the discovered DB system component.
         """
         return pulumi.get(self, "component_id")
 
     @component_id.setter
-    def component_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def component_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "component_id", value)
 
     @_builtins.property
     @pulumi.getter(name="componentName")
-    def component_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def component_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the discovered DB system component.
         """
         return pulumi.get(self, "component_name")
 
     @component_name.setter
-    def component_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def component_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "component_name", value)
 
     @_builtins.property
     @pulumi.getter(name="componentType")
-    def component_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def component_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The component type.
         """
         return pulumi.get(self, "component_type")
 
     @component_type.setter
-    def component_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def component_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "component_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def connectors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs']]]]:
+    def connectors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs']]]]:
         """
         The connector details used to connect to the external DB system component.
         """
         return pulumi.get(self, "connectors")
 
     @connectors.setter
-    def connectors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs']]]]):
+    def connectors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs']]]]):
         pulumi.set(self, "connectors", value)
 
     @_builtins.property
     @pulumi.getter(name="containerDatabaseId")
-    def container_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def container_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the parent Container Database (CDB).
         """
         return pulumi.get(self, "container_database_id")
 
     @container_database_id.setter
-    def container_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def container_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "container_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="cpuCoreCount")
-    def cpu_core_count(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def cpu_core_count(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The number of CPU cores available on the DB node.
         """
         return pulumi.get(self, "cpu_core_count")
 
     @cpu_core_count.setter
-    def cpu_core_count(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def cpu_core_count(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "cpu_core_count", value)
 
     @_builtins.property
     @pulumi.getter(name="crsBaseDirectory")
-    def crs_base_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crs_base_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle base location of Cluster Ready Services (CRS).
         """
         return pulumi.get(self, "crs_base_directory")
 
     @crs_base_directory.setter
-    def crs_base_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crs_base_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crs_base_directory", value)
 
     @_builtins.property
     @pulumi.getter(name="dbEdition")
-    def db_edition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_edition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle Database edition.
         """
         return pulumi.get(self, "db_edition")
 
     @db_edition.setter
-    def db_edition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_edition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_edition", value)
 
     @_builtins.property
     @pulumi.getter(name="dbId")
-    def db_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle Database ID.
         """
         return pulumi.get(self, "db_id")
 
     @db_id.setter
-    def db_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dbInstances")
-    def db_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgs']]]]:
+    def db_instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgs']]]]:
         """
         The list of database instances.
         """
         return pulumi.get(self, "db_instances")
 
     @db_instances.setter
-    def db_instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgs']]]]):
+    def db_instances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgs']]]]):
         pulumi.set(self, "db_instances", value)
 
     @_builtins.property
     @pulumi.getter(name="dbNodeName")
-    def db_node_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_node_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the DB node.
         """
         return pulumi.get(self, "db_node_name")
 
     @db_node_name.setter
-    def db_node_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_node_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_node_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dbPacks")
-    def db_packs(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_packs(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database packs licensed for the external Oracle Database.
         """
         return pulumi.get(self, "db_packs")
 
     @db_packs.setter
-    def db_packs(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_packs(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_packs", value)
 
     @_builtins.property
     @pulumi.getter(name="dbRole")
-    def db_role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the Oracle Database in Oracle Data Guard configuration.
         """
         return pulumi.get(self, "db_role")
 
     @db_role.setter
-    def db_role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_role", value)
 
     @_builtins.property
     @pulumi.getter(name="dbType")
-    def db_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
         """
         return pulumi.get(self, "db_type")
 
     @db_type.setter
-    def db_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dbUniqueName")
-    def db_unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_unique_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The `DB_UNIQUE_NAME` of the external database.
         """
         return pulumi.get(self, "db_unique_name")
 
     @db_unique_name.setter
-    def db_unique_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_unique_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_unique_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dbVersion")
-    def db_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle Database version.
         """
         return pulumi.get(self, "db_version")
 
     @db_version.setter
-    def db_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_version", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def endpoints(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs']]]]:
+    def endpoints(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs']]]]:
         """
         The list of protocol addresses the listener is configured to listen on.
         """
         return pulumi.get(self, "endpoints")
 
     @endpoints.setter
-    def endpoints(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs']]]]):
+    def endpoints(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs']]]]):
         pulumi.set(self, "endpoints", value)
 
     @_builtins.property
     @pulumi.getter(name="gridHome")
-    def grid_home(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def grid_home(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The directory in which Oracle Grid Infrastructure is installed.
         """
         return pulumi.get(self, "grid_home")
 
     @grid_home.setter
-    def grid_home(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def grid_home(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "grid_home", value)
 
     @_builtins.property
     @pulumi.getter
-    def guid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def guid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the PDB.
         """
         return pulumi.get(self, "guid")
 
     @guid.setter
-    def guid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def guid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "guid", value)
 
     @_builtins.property
     @pulumi.getter(name="homeDirectory")
-    def home_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def home_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The location of the DB home.
         """
         return pulumi.get(self, "home_directory")
 
     @home_directory.setter
-    def home_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def home_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "home_directory", value)
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host name of the database or the SCAN name in case of a RAC database.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceName")
-    def instance_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the ASM instance.
         """
         return pulumi.get(self, "instance_name")
 
     @instance_name.setter
-    def instance_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_name", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoEnablePluggableDatabase")
-    def is_auto_enable_pluggable_database(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_enable_pluggable_database(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         """
         return pulumi.get(self, "is_auto_enable_pluggable_database")
 
     @is_auto_enable_pluggable_database.setter
-    def is_auto_enable_pluggable_database(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_enable_pluggable_database(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_enable_pluggable_database", value)
 
     @_builtins.property
     @pulumi.getter(name="isCluster")
-    def is_cluster(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cluster(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the Oracle Database is part of a cluster.
         """
         return pulumi.get(self, "is_cluster")
 
     @is_cluster.setter
-    def is_cluster(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cluster(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cluster", value)
 
     @_builtins.property
     @pulumi.getter(name="isFlexCluster")
-    def is_flex_cluster(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_flex_cluster(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the cluster is an Oracle Flex Cluster or not.
         """
         return pulumi.get(self, "is_flex_cluster")
 
     @is_flex_cluster.setter
-    def is_flex_cluster(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_flex_cluster(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_flex_cluster", value)
 
     @_builtins.property
     @pulumi.getter(name="isFlexEnabled")
-    def is_flex_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_flex_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether Oracle Flex ASM is enabled or not.
         """
         return pulumi.get(self, "is_flex_enabled")
 
     @is_flex_enabled.setter
-    def is_flex_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_flex_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_flex_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isSelectedForMonitoring")
-    def is_selected_for_monitoring(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_selected_for_monitoring(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
         """
         return pulumi.get(self, "is_selected_for_monitoring")
 
     @is_selected_for_monitoring.setter
-    def is_selected_for_monitoring(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_selected_for_monitoring(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_selected_for_monitoring", value)
 
     @_builtins.property
     @pulumi.getter(name="listenerAlias")
-    def listener_alias(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def listener_alias(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The listener alias.
         """
         return pulumi.get(self, "listener_alias")
 
     @listener_alias.setter
-    def listener_alias(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def listener_alias(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "listener_alias", value)
 
     @_builtins.property
     @pulumi.getter(name="listenerType")
-    def listener_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def listener_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of listener.
         """
         return pulumi.get(self, "listener_type")
 
     @listener_type.setter
-    def listener_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def listener_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "listener_type", value)
 
     @_builtins.property
     @pulumi.getter(name="logDirectory")
-    def log_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def log_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The destination directory of the listener log file.
         """
         return pulumi.get(self, "log_directory")
 
     @log_directory.setter
-    def log_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def log_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "log_directory", value)
 
     @_builtins.property
     @pulumi.getter(name="memorySizeInGbs")
-    def memory_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def memory_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The total memory in gigabytes (GB) on the DB node.
         """
         return pulumi.get(self, "memory_size_in_gbs")
 
     @memory_size_in_gbs.setter
-    def memory_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def memory_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "memory_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="networkConfigurations")
-    def network_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs']]]]:
+    def network_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs']]]]:
         """
         The list of network address configurations of the external cluster.
         """
         return pulumi.get(self, "network_configurations")
 
     @network_configurations.setter
-    def network_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs']]]]):
+    def network_configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs']]]]):
         pulumi.set(self, "network_configurations", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeName")
-    def node_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def node_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the node with the VIP.
         """
         return pulumi.get(self, "node_name")
 
     @node_name.setter
-    def node_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def node_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "node_name", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeRole")
-    def node_role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def node_role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the cluster node.
         """
         return pulumi.get(self, "node_role")
 
     @node_role.setter
-    def node_role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def node_role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "node_role", value)
 
     @_builtins.property
     @pulumi.getter(name="ocrFileLocation")
-    def ocr_file_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ocr_file_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The location of the Oracle Cluster Registry (OCR) file.
         """
         return pulumi.get(self, "ocr_file_location")
 
     @ocr_file_location.setter
-    def ocr_file_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ocr_file_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ocr_file_location", value)
 
     @_builtins.property
     @pulumi.getter(name="oracleHome")
-    def oracle_home(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oracle_home(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle home location of the DB instance.
         """
         return pulumi.get(self, "oracle_home")
 
     @oracle_home.setter
-    def oracle_home(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oracle_home(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oracle_home", value)
 
     @_builtins.property
     @pulumi.getter(name="pluggableDatabases")
-    def pluggable_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs']]]]:
+    def pluggable_databases(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs']]]]:
         """
         The list of Pluggable Databases.
         """
         return pulumi.get(self, "pluggable_databases")
 
     @pluggable_databases.setter
-    def pluggable_databases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs']]]]):
+    def pluggable_databases(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs']]]]):
         pulumi.set(self, "pluggable_databases", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceId")
-    def resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
         """
         return pulumi.get(self, "resource_id")
 
     @resource_id.setter
-    def resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="scanConfigurations")
-    def scan_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs']]]]:
+    def scan_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs']]]]:
         """
         The list of Single Client Access Name (SCAN) configurations of the external cluster.
         """
         return pulumi.get(self, "scan_configurations")
 
     @scan_configurations.setter
-    def scan_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs']]]]):
+    def scan_configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs']]]]):
         pulumi.set(self, "scan_configurations", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The state of the discovered DB system component.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="traceDirectory")
-    def trace_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def trace_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The destination directory of the listener trace file.
         """
         return pulumi.get(self, "trace_directory")
 
     @trace_directory.setter
-    def trace_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def trace_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "trace_directory", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of Oracle Clusterware running in the cluster.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
     @_builtins.property
     @pulumi.getter(name="vipConfigurations")
-    def vip_configurations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]]]:
+    def vip_configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]]]:
         """
         The list of Virtual IP (VIP) configurations of the external cluster.
         """
         return pulumi.get(self, "vip_configurations")
 
     @vip_configurations.setter
-    def vip_configurations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]]]):
+    def vip_configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs']]]]):
         pulumi.set(self, "vip_configurations", value)
 
 
 class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgsDict(TypedDict):
-    adr_home_directory: NotRequired[pulumi.Input[_builtins.str]]
+    adr_home_directory: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
     """
-    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    host_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The host name of the database or the SCAN name in case of a RAC database.
     """
-    instance_name: NotRequired[pulumi.Input[_builtins.str]]
+    instance_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the ASM instance.
     """
@@ -9864,9 +9864,9 @@ class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgsDict(TypedDict)
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs:
     def __init__(__self__, *,
-                 adr_home_directory: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 adr_home_directory: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         :param pulumi.Input[_builtins.str] host_name: The host name of the database or the SCAN name in case of a RAC database.
@@ -9881,51 +9881,51 @@ class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs:
 
     @_builtins.property
     @pulumi.getter(name="adrHomeDirectory")
-    def adr_home_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def adr_home_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         """
         return pulumi.get(self, "adr_home_directory")
 
     @adr_home_directory.setter
-    def adr_home_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def adr_home_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "adr_home_directory", value)
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host name of the database or the SCAN name in case of a RAC database.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceName")
-    def instance_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the ASM instance.
         """
         return pulumi.get(self, "instance_name")
 
     @instance_name.setter
-    def instance_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_name", value)
 
 
 class ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgsDict(TypedDict):
-    association_type: NotRequired[pulumi.Input[_builtins.str]]
+    association_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The association type.
     """
-    component_id: NotRequired[pulumi.Input[_builtins.str]]
+    component_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The identifier of the discovered DB system component.
     """
-    component_type: NotRequired[pulumi.Input[_builtins.str]]
+    component_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The component type.
     """
@@ -9933,9 +9933,9 @@ class ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgsDict(Ty
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs:
     def __init__(__self__, *,
-                 association_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 component_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 component_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 association_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 component_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 component_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] association_type: The association type.
         :param pulumi.Input[_builtins.str] component_id: The identifier of the discovered DB system component.
@@ -9950,63 +9950,63 @@ class ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs:
 
     @_builtins.property
     @pulumi.getter(name="associationType")
-    def association_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def association_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The association type.
         """
         return pulumi.get(self, "association_type")
 
     @association_type.setter
-    def association_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def association_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "association_type", value)
 
     @_builtins.property
     @pulumi.getter(name="componentId")
-    def component_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def component_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The identifier of the discovered DB system component.
         """
         return pulumi.get(self, "component_id")
 
     @component_id.setter
-    def component_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def component_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "component_id", value)
 
     @_builtins.property
     @pulumi.getter(name="componentType")
-    def component_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def component_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The component type.
         """
         return pulumi.get(self, "component_type")
 
     @component_type.setter
-    def component_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def component_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "component_type", value)
 
 
 class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgsDict(TypedDict):
-    adr_home_directory: NotRequired[pulumi.Input[_builtins.str]]
+    adr_home_directory: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
     """
-    cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    cluster_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier of the Oracle cluster.
     """
-    connectors: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgsDict']]]]
+    connectors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs']]]]]
     """
     The connector details used to connect to the external DB system component.
     """
-    crs_base_directory: NotRequired[pulumi.Input[_builtins.str]]
+    crs_base_directory: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Oracle base location of Cluster Ready Services (CRS).
     """
-    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    host_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The host name of the database or the SCAN name in case of a RAC database.
     """
-    node_role: NotRequired[pulumi.Input[_builtins.str]]
+    node_role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the cluster node.
     """
@@ -10014,12 +10014,12 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgsDict(TypedD
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs:
     def __init__(__self__, *,
-                 adr_home_directory: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connectors: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs']]]] = None,
-                 crs_base_directory: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_role: Optional[pulumi.Input[_builtins.str]] = None):
+                 adr_home_directory: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connectors: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs']]]] = None,
+                 crs_base_directory: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_role: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         :param pulumi.Input[_builtins.str] cluster_id: The unique identifier of the Oracle cluster.
@@ -10043,103 +10043,103 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs:
 
     @_builtins.property
     @pulumi.getter(name="adrHomeDirectory")
-    def adr_home_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def adr_home_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         """
         return pulumi.get(self, "adr_home_directory")
 
     @adr_home_directory.setter
-    def adr_home_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def adr_home_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "adr_home_directory", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterId")
-    def cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the Oracle cluster.
         """
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
-    def cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def connectors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs']]]]:
+    def connectors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs']]]]:
         """
         The connector details used to connect to the external DB system component.
         """
         return pulumi.get(self, "connectors")
 
     @connectors.setter
-    def connectors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs']]]]):
+    def connectors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs']]]]):
         pulumi.set(self, "connectors", value)
 
     @_builtins.property
     @pulumi.getter(name="crsBaseDirectory")
-    def crs_base_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crs_base_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle base location of Cluster Ready Services (CRS).
         """
         return pulumi.get(self, "crs_base_directory")
 
     @crs_base_directory.setter
-    def crs_base_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crs_base_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crs_base_directory", value)
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host name of the database or the SCAN name in case of a RAC database.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeRole")
-    def node_role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def node_role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the cluster node.
         """
         return pulumi.get(self, "node_role")
 
     @node_role.setter
-    def node_role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def node_role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "node_role", value)
 
 
 class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgsDict(TypedDict):
-    agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    agent_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
     """
-    connection_failure_message: NotRequired[pulumi.Input[_builtins.str]]
+    connection_failure_message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The error message indicating the reason for connection failure or `null` if the connection was successful.
     """
-    connection_infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgsDict']]]]
+    connection_infos: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs']]]]]
     """
     The connection details required to connect to an external DB system component.
     """
-    connection_status: NotRequired[pulumi.Input[_builtins.str]]
+    connection_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The status of connectivity to the external DB system component.
     """
-    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    connector_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of connector.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
     """
-    time_connection_status_last_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_connection_status_last_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the connectionStatus of the external DB system connector was last updated.
     """
@@ -10147,13 +10147,13 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgsDi
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs:
     def __init__(__self__, *,
-                 agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_failure_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs']]]] = None,
-                 connection_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 connector_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_connection_status_last_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_failure_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_infos: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs']]]] = None,
+                 connection_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_connection_status_last_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
         :param pulumi.Input[_builtins.str] connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
@@ -10180,103 +10180,103 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs:
 
     @_builtins.property
     @pulumi.getter(name="agentId")
-    def agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
         """
         return pulumi.get(self, "agent_id")
 
     @agent_id.setter
-    def agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionFailureMessage")
-    def connection_failure_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_failure_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The error message indicating the reason for connection failure or `null` if the connection was successful.
         """
         return pulumi.get(self, "connection_failure_message")
 
     @connection_failure_message.setter
-    def connection_failure_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_failure_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_failure_message", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionInfos")
-    def connection_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs']]]]:
+    def connection_infos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs']]]]:
         """
         The connection details required to connect to an external DB system component.
         """
         return pulumi.get(self, "connection_infos")
 
     @connection_infos.setter
-    def connection_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs']]]]):
+    def connection_infos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs']]]]):
         pulumi.set(self, "connection_infos", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionStatus")
-    def connection_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of connectivity to the external DB system component.
         """
         return pulumi.get(self, "connection_status")
 
     @connection_status.setter
-    def connection_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_status", value)
 
     @_builtins.property
     @pulumi.getter(name="connectorType")
-    def connector_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connector_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of connector.
         """
         return pulumi.get(self, "connector_type")
 
     @connector_type.setter
-    def connector_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connector_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connector_type", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="timeConnectionStatusLastUpdated")
-    def time_connection_status_last_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_connection_status_last_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the connectionStatus of the external DB system connector was last updated.
         """
         return pulumi.get(self, "time_connection_status_last_updated")
 
     @time_connection_status_last_updated.setter
-    def time_connection_status_last_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_connection_status_last_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_connection_status_last_updated", value)
 
 
 class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgsDict(TypedDict):
-    component_type: NotRequired[pulumi.Input[_builtins.str]]
+    component_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The component type.
     """
-    connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgsDict']]]]
+    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]]]]
     """
     The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgsDict']]]]
+    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]]]]
     """
     The Oracle Database connection string.
     """
-    database_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgsDict']]]]
+    database_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs']]]]]
     """
     The credential to connect to the database to perform tablespace administration tasks.
     """
@@ -10284,10 +10284,10 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs:
     def __init__(__self__, *,
-                 component_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
-                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]]] = None,
-                 database_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs']]]] = None):
+                 component_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_credentials: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
+                 connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]]] = None,
+                 database_credentials: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] component_type: The component type.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]] connection_credentials: The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
@@ -10305,79 +10305,79 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
 
     @_builtins.property
     @pulumi.getter(name="componentType")
-    def component_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def component_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The component type.
         """
         return pulumi.get(self, "component_type")
 
     @component_type.setter
-    def component_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def component_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "component_type", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionCredentials")
-    def connection_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]]]:
+    def connection_credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]]]:
         """
         The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         """
         return pulumi.get(self, "connection_credentials")
 
     @connection_credentials.setter
-    def connection_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]]]):
+    def connection_credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs']]]]):
         pulumi.set(self, "connection_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionStrings")
-    def connection_strings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]]]:
+    def connection_strings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]]]:
         """
         The Oracle Database connection string.
         """
         return pulumi.get(self, "connection_strings")
 
     @connection_strings.setter
-    def connection_strings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]]]):
+    def connection_strings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs']]]]):
         pulumi.set(self, "connection_strings", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseCredentials")
-    def database_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs']]]]:
+    def database_credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs']]]]:
         """
         The credential to connect to the database to perform tablespace administration tasks.
         """
         return pulumi.get(self, "database_credentials")
 
     @database_credentials.setter
-    def database_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs']]]]):
+    def database_credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs']]]]):
         pulumi.set(self, "database_credentials", value)
 
 
 class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgsDict(TypedDict):
-    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    credential_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
     """
-    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    credential_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of the credential for tablespace administration tasks.
     """
-    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    named_credential_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the database user.
     """
-    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    ssl_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
     """
-    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user name used to connect to the ASM instance.
     """
@@ -10385,13 +10385,13 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs:
     def __init__(__self__, *,
-                 credential_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 credential_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 credential_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 credential_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 named_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
         :param pulumi.Input[_builtins.str] credential_type: The type of the credential for tablespace administration tasks.
@@ -10418,107 +10418,107 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
 
     @_builtins.property
     @pulumi.getter(name="credentialName")
-    def credential_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
         """
         return pulumi.get(self, "credential_name")
 
     @credential_name.setter
-    def credential_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_name", value)
 
     @_builtins.property
     @pulumi.getter(name="credentialType")
-    def credential_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the credential for tablespace administration tasks.
         """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
-    def credential_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_type", value)
 
     @_builtins.property
     @pulumi.getter(name="namedCredentialId")
-    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def named_credential_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
         """
         return pulumi.get(self, "named_credential_id")
 
     @named_credential_id.setter
-    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def named_credential_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the database user.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="sslSecretId")
-    def ssl_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
         """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
-    def ssl_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user name used to connect to the ASM instance.
         """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
 
 class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
-    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    host_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The host name of the database or the SCAN name in case of a RAC database.
     """
-    hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    hosts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The list of host names of the ASM instances.
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port used to connect to the ASM instance.
     """
-    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The protocol used to connect to the ASM instance.
     """
-    service: NotRequired[pulumi.Input[_builtins.str]]
+    service: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The service name of the ASM instance.
     """
@@ -10526,11 +10526,11 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs:
     def __init__(__self__, *,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 service: Optional[pulumi.Input[_builtins.str]] = None):
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 hosts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 service: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] host_name: The host name of the database or the SCAN name in case of a RAC database.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] hosts: The list of host names of the ASM instances.
@@ -10551,87 +10551,87 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host name of the database or the SCAN name in case of a RAC database.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def hosts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of host names of the ASM instances.
         """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
-    def hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def hosts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "hosts", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port used to connect to the ASM instance.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The protocol used to connect to the ASM instance.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def service(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service name of the ASM instance.
         """
         return pulumi.get(self, "service")
 
     @service.setter
-    def service(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service", value)
 
 
 class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgsDict(TypedDict):
-    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    credential_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of the credential for tablespace administration tasks.
     """
-    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    named_credential_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
     """
-    password: NotRequired[pulumi.Input[_builtins.str]]
+    password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The database user's password encoded using BASE64 scheme.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the database user.
     """
-    username: NotRequired[pulumi.Input[_builtins.str]]
+    username: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user to connect to the database.
     """
@@ -10639,12 +10639,12 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoDatabaseCredentialArgs:
     def __init__(__self__, *,
-                 credential_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None):
+                 credential_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 named_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_type: The type of the credential for tablespace administration tasks.
         :param pulumi.Input[_builtins.str] named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
@@ -10668,103 +10668,103 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnec
 
     @_builtins.property
     @pulumi.getter(name="credentialType")
-    def credential_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the credential for tablespace administration tasks.
         """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
-    def credential_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_type", value)
 
     @_builtins.property
     @pulumi.getter(name="namedCredentialId")
-    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def named_credential_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
         """
         return pulumi.get(self, "named_credential_id")
 
     @named_credential_id.setter
-    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def named_credential_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database user's password encoded using BASE64 scheme.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the database user.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter
-    def username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user to connect to the database.
         """
         return pulumi.get(self, "username")
 
     @username.setter
-    def username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "username", value)
 
 
 class ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgsDict(TypedDict):
-    agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    agent_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
     """
-    connection_failure_message: NotRequired[pulumi.Input[_builtins.str]]
+    connection_failure_message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The error message indicating the reason for connection failure or `null` if the connection was successful.
     """
-    connection_infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgsDict']]]]
+    connection_infos: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs']]]]]
     """
     The connection details required to connect to an external DB system component.
     """
-    connection_status: NotRequired[pulumi.Input[_builtins.str]]
+    connection_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The status of connectivity to the external DB system component.
     """
-    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    connector_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of connector.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
     """
-    time_connection_status_last_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_connection_status_last_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the connectionStatus of the external DB system connector was last updated.
     """
@@ -10772,13 +10772,13 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgsDict(TypedDict):
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs:
     def __init__(__self__, *,
-                 agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_failure_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs']]]] = None,
-                 connection_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 connector_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_connection_status_last_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_failure_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_infos: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs']]]] = None,
+                 connection_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_connection_status_last_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
         :param pulumi.Input[_builtins.str] connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
@@ -10805,103 +10805,103 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs:
 
     @_builtins.property
     @pulumi.getter(name="agentId")
-    def agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
         """
         return pulumi.get(self, "agent_id")
 
     @agent_id.setter
-    def agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionFailureMessage")
-    def connection_failure_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_failure_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The error message indicating the reason for connection failure or `null` if the connection was successful.
         """
         return pulumi.get(self, "connection_failure_message")
 
     @connection_failure_message.setter
-    def connection_failure_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_failure_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_failure_message", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionInfos")
-    def connection_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs']]]]:
+    def connection_infos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs']]]]:
         """
         The connection details required to connect to an external DB system component.
         """
         return pulumi.get(self, "connection_infos")
 
     @connection_infos.setter
-    def connection_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs']]]]):
+    def connection_infos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs']]]]):
         pulumi.set(self, "connection_infos", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionStatus")
-    def connection_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of connectivity to the external DB system component.
         """
         return pulumi.get(self, "connection_status")
 
     @connection_status.setter
-    def connection_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_status", value)
 
     @_builtins.property
     @pulumi.getter(name="connectorType")
-    def connector_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connector_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of connector.
         """
         return pulumi.get(self, "connector_type")
 
     @connector_type.setter
-    def connector_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connector_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connector_type", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="timeConnectionStatusLastUpdated")
-    def time_connection_status_last_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_connection_status_last_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the connectionStatus of the external DB system connector was last updated.
         """
         return pulumi.get(self, "time_connection_status_last_updated")
 
     @time_connection_status_last_updated.setter
-    def time_connection_status_last_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_connection_status_last_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_connection_status_last_updated", value)
 
 
 class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgsDict(TypedDict):
-    component_type: NotRequired[pulumi.Input[_builtins.str]]
+    component_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The component type.
     """
-    connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgsDict']]]]
+    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]]]]
     """
     The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgsDict']]]]
+    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]]]]
     """
     The Oracle Database connection string.
     """
-    database_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgsDict']]]]
+    database_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs']]]]]
     """
     The credential to connect to the database to perform tablespace administration tasks.
     """
@@ -10909,10 +10909,10 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgsDic
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs:
     def __init__(__self__, *,
-                 component_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
-                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]]] = None,
-                 database_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs']]]] = None):
+                 component_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_credentials: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
+                 connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]]] = None,
+                 database_credentials: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] component_type: The component type.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]] connection_credentials: The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
@@ -10930,79 +10930,79 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs:
 
     @_builtins.property
     @pulumi.getter(name="componentType")
-    def component_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def component_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The component type.
         """
         return pulumi.get(self, "component_type")
 
     @component_type.setter
-    def component_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def component_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "component_type", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionCredentials")
-    def connection_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]]]:
+    def connection_credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]]]:
         """
         The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         """
         return pulumi.get(self, "connection_credentials")
 
     @connection_credentials.setter
-    def connection_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]]]):
+    def connection_credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs']]]]):
         pulumi.set(self, "connection_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionStrings")
-    def connection_strings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]]]:
+    def connection_strings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]]]:
         """
         The Oracle Database connection string.
         """
         return pulumi.get(self, "connection_strings")
 
     @connection_strings.setter
-    def connection_strings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]]]):
+    def connection_strings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs']]]]):
         pulumi.set(self, "connection_strings", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseCredentials")
-    def database_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs']]]]:
+    def database_credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs']]]]:
         """
         The credential to connect to the database to perform tablespace administration tasks.
         """
         return pulumi.get(self, "database_credentials")
 
     @database_credentials.setter
-    def database_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs']]]]):
+    def database_credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs']]]]):
         pulumi.set(self, "database_credentials", value)
 
 
 class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgsDict(TypedDict):
-    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    credential_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
     """
-    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    credential_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of the credential for tablespace administration tasks.
     """
-    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    named_credential_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the database user.
     """
-    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    ssl_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
     """
-    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user name used to connect to the ASM instance.
     """
@@ -11010,13 +11010,13 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs:
     def __init__(__self__, *,
-                 credential_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 credential_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 credential_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 credential_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 named_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
         :param pulumi.Input[_builtins.str] credential_type: The type of the credential for tablespace administration tasks.
@@ -11043,107 +11043,107 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
 
     @_builtins.property
     @pulumi.getter(name="credentialName")
-    def credential_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
         """
         return pulumi.get(self, "credential_name")
 
     @credential_name.setter
-    def credential_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_name", value)
 
     @_builtins.property
     @pulumi.getter(name="credentialType")
-    def credential_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the credential for tablespace administration tasks.
         """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
-    def credential_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_type", value)
 
     @_builtins.property
     @pulumi.getter(name="namedCredentialId")
-    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def named_credential_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
         """
         return pulumi.get(self, "named_credential_id")
 
     @named_credential_id.setter
-    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def named_credential_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the database user.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="sslSecretId")
-    def ssl_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
         """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
-    def ssl_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user name used to connect to the ASM instance.
         """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
 
 class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
-    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    host_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The host name of the database or the SCAN name in case of a RAC database.
     """
-    hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    hosts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The list of host names of the ASM instances.
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port used to connect to the ASM instance.
     """
-    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The protocol used to connect to the ASM instance.
     """
-    service: NotRequired[pulumi.Input[_builtins.str]]
+    service: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The service name of the ASM instance.
     """
@@ -11151,11 +11151,11 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs:
     def __init__(__self__, *,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 service: Optional[pulumi.Input[_builtins.str]] = None):
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 hosts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 service: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] host_name: The host name of the database or the SCAN name in case of a RAC database.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] hosts: The list of host names of the ASM instances.
@@ -11176,87 +11176,87 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnect
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host name of the database or the SCAN name in case of a RAC database.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def hosts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of host names of the ASM instances.
         """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
-    def hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def hosts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "hosts", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port used to connect to the ASM instance.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The protocol used to connect to the ASM instance.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def service(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service name of the ASM instance.
         """
         return pulumi.get(self, "service")
 
     @service.setter
-    def service(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service", value)
 
 
 class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgsDict(TypedDict):
-    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    credential_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of the credential for tablespace administration tasks.
     """
-    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    named_credential_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
     """
-    password: NotRequired[pulumi.Input[_builtins.str]]
+    password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The database user's password encoded using BASE64 scheme.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the database user.
     """
-    username: NotRequired[pulumi.Input[_builtins.str]]
+    username: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user to connect to the database.
     """
@@ -11264,12 +11264,12 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabas
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialArgs:
     def __init__(__self__, *,
-                 credential_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None):
+                 credential_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 named_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_type: The type of the credential for tablespace administration tasks.
         :param pulumi.Input[_builtins.str] named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
@@ -11293,95 +11293,95 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabas
 
     @_builtins.property
     @pulumi.getter(name="credentialType")
-    def credential_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the credential for tablespace administration tasks.
         """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
-    def credential_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_type", value)
 
     @_builtins.property
     @pulumi.getter(name="namedCredentialId")
-    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def named_credential_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
         """
         return pulumi.get(self, "named_credential_id")
 
     @named_credential_id.setter
-    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def named_credential_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database user's password encoded using BASE64 scheme.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the database user.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter
-    def username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user to connect to the database.
         """
         return pulumi.get(self, "username")
 
     @username.setter
-    def username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "username", value)
 
 
 class ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgsDict(TypedDict):
-    adr_home_directory: NotRequired[pulumi.Input[_builtins.str]]
+    adr_home_directory: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
     """
-    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    host_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The host name of the database or the SCAN name in case of a RAC database.
     """
-    instance_name: NotRequired[pulumi.Input[_builtins.str]]
+    instance_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the ASM instance.
     """
-    node_name: NotRequired[pulumi.Input[_builtins.str]]
+    node_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the node with the VIP.
     """
-    oracle_home: NotRequired[pulumi.Input[_builtins.str]]
+    oracle_home: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Oracle home location of the DB instance.
     """
@@ -11389,11 +11389,11 @@ class ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgsDict(TypedDict):
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgs:
     def __init__(__self__, *,
-                 adr_home_directory: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 oracle_home: Optional[pulumi.Input[_builtins.str]] = None):
+                 adr_home_directory: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 oracle_home: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         :param pulumi.Input[_builtins.str] host_name: The host name of the database or the SCAN name in case of a RAC database.
@@ -11414,83 +11414,83 @@ class ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgs:
 
     @_builtins.property
     @pulumi.getter(name="adrHomeDirectory")
-    def adr_home_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def adr_home_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         """
         return pulumi.get(self, "adr_home_directory")
 
     @adr_home_directory.setter
-    def adr_home_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def adr_home_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "adr_home_directory", value)
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host name of the database or the SCAN name in case of a RAC database.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceName")
-    def instance_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the ASM instance.
         """
         return pulumi.get(self, "instance_name")
 
     @instance_name.setter
-    def instance_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_name", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeName")
-    def node_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def node_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the node with the VIP.
         """
         return pulumi.get(self, "node_name")
 
     @node_name.setter
-    def node_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def node_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "node_name", value)
 
     @_builtins.property
     @pulumi.getter(name="oracleHome")
-    def oracle_home(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oracle_home(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle home location of the DB instance.
         """
         return pulumi.get(self, "oracle_home")
 
     @oracle_home.setter
-    def oracle_home(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oracle_home(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oracle_home", value)
 
 
 class ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgsDict(TypedDict):
-    host: NotRequired[pulumi.Input[_builtins.str]]
+    host: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The host name or IP address.
     """
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique name of the service.
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port used to connect to the ASM instance.
     """
-    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The protocol used to connect to the ASM instance.
     """
-    services: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    services: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The list of services registered with the listener.
     """
@@ -11498,11 +11498,11 @@ class ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgsDict(TypedDict):
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs:
     def __init__(__self__, *,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 services: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 services: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] host: The host name or IP address.
         :param pulumi.Input[_builtins.str] key: The unique name of the service.
@@ -11523,75 +11523,75 @@ class ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs:
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host name or IP address.
         """
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique name of the service.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port used to connect to the ASM instance.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The protocol used to connect to the ASM instance.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of services registered with the listener.
         """
         return pulumi.get(self, "services")
 
     @services.setter
-    def services(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def services(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "services", value)
 
 
 class ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgsDict(TypedDict):
-    network_number: NotRequired[pulumi.Input[_builtins.int]]
+    network_number: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The network number from which VIPs are obtained.
     """
-    network_type: NotRequired[pulumi.Input[_builtins.str]]
+    network_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The network type.
     """
-    subnet: NotRequired[pulumi.Input[_builtins.str]]
+    subnet: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The subnet for the network.
     """
@@ -11599,9 +11599,9 @@ class ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgsDict(T
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs:
     def __init__(__self__, *,
-                 network_number: Optional[pulumi.Input[_builtins.int]] = None,
-                 network_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet: Optional[pulumi.Input[_builtins.str]] = None):
+                 network_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 network_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.int] network_number: The network number from which VIPs are obtained.
         :param pulumi.Input[_builtins.str] network_type: The network type.
@@ -11616,55 +11616,55 @@ class ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="networkNumber")
-    def network_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def network_number(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The network number from which VIPs are obtained.
         """
         return pulumi.get(self, "network_number")
 
     @network_number.setter
-    def network_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def network_number(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "network_number", value)
 
     @_builtins.property
     @pulumi.getter(name="networkType")
-    def network_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The network type.
         """
         return pulumi.get(self, "network_type")
 
     @network_type.setter
-    def network_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def subnet(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The subnet for the network.
         """
         return pulumi.get(self, "subnet")
 
     @subnet.setter
-    def subnet(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet", value)
 
 
 class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgsDict(TypedDict):
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
     """
-    connectors: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgsDict']]]]
+    connectors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]]]]
     """
     The connector details used to connect to the external DB system component.
     """
-    container_database_id: NotRequired[pulumi.Input[_builtins.str]]
+    container_database_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier of the parent Container Database (CDB).
     """
-    guid: NotRequired[pulumi.Input[_builtins.str]]
+    guid: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier of the PDB.
     """
@@ -11672,10 +11672,10 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgsDict(Type
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connectors: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]]] = None,
-                 container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 guid: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connectors: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]]] = None,
+                 container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 guid: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]] connectors: The connector details used to connect to the external DB system component.
@@ -11693,79 +11693,79 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def connectors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]]]:
+    def connectors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]]]:
         """
         The connector details used to connect to the external DB system component.
         """
         return pulumi.get(self, "connectors")
 
     @connectors.setter
-    def connectors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]]]):
+    def connectors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs']]]]):
         pulumi.set(self, "connectors", value)
 
     @_builtins.property
     @pulumi.getter(name="containerDatabaseId")
-    def container_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def container_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the parent Container Database (CDB).
         """
         return pulumi.get(self, "container_database_id")
 
     @container_database_id.setter
-    def container_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def container_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "container_database_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def guid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def guid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the PDB.
         """
         return pulumi.get(self, "guid")
 
     @guid.setter
-    def guid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def guid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "guid", value)
 
 
 class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgsDict(TypedDict):
-    agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    agent_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
     """
-    connection_failure_message: NotRequired[pulumi.Input[_builtins.str]]
+    connection_failure_message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The error message indicating the reason for connection failure or `null` if the connection was successful.
     """
-    connection_infos: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgsDict']]]]
+    connection_infos: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs']]]]]
     """
     The connection details required to connect to an external DB system component.
     """
-    connection_status: NotRequired[pulumi.Input[_builtins.str]]
+    connection_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The status of connectivity to the external DB system component.
     """
-    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    connector_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of connector.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
     """
-    time_connection_status_last_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_connection_status_last_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the connectionStatus of the external DB system connector was last updated.
     """
@@ -11773,13 +11773,13 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs:
     def __init__(__self__, *,
-                 agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_failure_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_infos: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs']]]] = None,
-                 connection_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 connector_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_connection_status_last_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_failure_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_infos: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs']]]] = None,
+                 connection_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_connection_status_last_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
         :param pulumi.Input[_builtins.str] connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
@@ -11806,103 +11806,103 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs
 
     @_builtins.property
     @pulumi.getter(name="agentId")
-    def agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
         """
         return pulumi.get(self, "agent_id")
 
     @agent_id.setter
-    def agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionFailureMessage")
-    def connection_failure_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_failure_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The error message indicating the reason for connection failure or `null` if the connection was successful.
         """
         return pulumi.get(self, "connection_failure_message")
 
     @connection_failure_message.setter
-    def connection_failure_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_failure_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_failure_message", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionInfos")
-    def connection_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs']]]]:
+    def connection_infos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs']]]]:
         """
         The connection details required to connect to an external DB system component.
         """
         return pulumi.get(self, "connection_infos")
 
     @connection_infos.setter
-    def connection_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs']]]]):
+    def connection_infos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs']]]]):
         pulumi.set(self, "connection_infos", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionStatus")
-    def connection_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of connectivity to the external DB system component.
         """
         return pulumi.get(self, "connection_status")
 
     @connection_status.setter
-    def connection_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_status", value)
 
     @_builtins.property
     @pulumi.getter(name="connectorType")
-    def connector_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connector_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of connector.
         """
         return pulumi.get(self, "connector_type")
 
     @connector_type.setter
-    def connector_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connector_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connector_type", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="timeConnectionStatusLastUpdated")
-    def time_connection_status_last_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_connection_status_last_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the connectionStatus of the external DB system connector was last updated.
         """
         return pulumi.get(self, "time_connection_status_last_updated")
 
     @time_connection_status_last_updated.setter
-    def time_connection_status_last_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_connection_status_last_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_connection_status_last_updated", value)
 
 
 class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgsDict(TypedDict):
-    component_type: NotRequired[pulumi.Input[_builtins.str]]
+    component_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The component type.
     """
-    connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgsDict']]]]
+    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]]]]
     """
     The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgsDict']]]]
+    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]]]]
     """
     The Oracle Database connection string.
     """
-    database_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgsDict']]]]
+    database_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs']]]]]
     """
     The credential to connect to the database to perform tablespace administration tasks.
     """
@@ -11910,10 +11910,10 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs:
     def __init__(__self__, *,
-                 component_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
-                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]]] = None,
-                 database_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs']]]] = None):
+                 component_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_credentials: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]]] = None,
+                 connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]]] = None,
+                 database_credentials: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] component_type: The component type.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]] connection_credentials: The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
@@ -11931,79 +11931,79 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
 
     @_builtins.property
     @pulumi.getter(name="componentType")
-    def component_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def component_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The component type.
         """
         return pulumi.get(self, "component_type")
 
     @component_type.setter
-    def component_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def component_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "component_type", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionCredentials")
-    def connection_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]]]:
+    def connection_credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]]]:
         """
         The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         """
         return pulumi.get(self, "connection_credentials")
 
     @connection_credentials.setter
-    def connection_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]]]):
+    def connection_credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs']]]]):
         pulumi.set(self, "connection_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionStrings")
-    def connection_strings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]]]:
+    def connection_strings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]]]:
         """
         The Oracle Database connection string.
         """
         return pulumi.get(self, "connection_strings")
 
     @connection_strings.setter
-    def connection_strings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]]]):
+    def connection_strings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs']]]]):
         pulumi.set(self, "connection_strings", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseCredentials")
-    def database_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs']]]]:
+    def database_credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs']]]]:
         """
         The credential to connect to the database to perform tablespace administration tasks.
         """
         return pulumi.get(self, "database_credentials")
 
     @database_credentials.setter
-    def database_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs']]]]):
+    def database_credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs']]]]):
         pulumi.set(self, "database_credentials", value)
 
 
 class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgsDict(TypedDict):
-    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    credential_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
     """
-    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    credential_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of the credential for tablespace administration tasks.
     """
-    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    named_credential_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the database user.
     """
-    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    ssl_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
     """
-    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user name used to connect to the ASM instance.
     """
@@ -12011,13 +12011,13 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs:
     def __init__(__self__, *,
-                 credential_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 credential_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 credential_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 credential_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 named_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
         :param pulumi.Input[_builtins.str] credential_type: The type of the credential for tablespace administration tasks.
@@ -12044,107 +12044,107 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
 
     @_builtins.property
     @pulumi.getter(name="credentialName")
-    def credential_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
         """
         return pulumi.get(self, "credential_name")
 
     @credential_name.setter
-    def credential_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_name", value)
 
     @_builtins.property
     @pulumi.getter(name="credentialType")
-    def credential_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the credential for tablespace administration tasks.
         """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
-    def credential_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_type", value)
 
     @_builtins.property
     @pulumi.getter(name="namedCredentialId")
-    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def named_credential_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
         """
         return pulumi.get(self, "named_credential_id")
 
     @named_credential_id.setter
-    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def named_credential_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the database user.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="sslSecretId")
-    def ssl_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
         """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
-    def ssl_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user name used to connect to the ASM instance.
         """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
 
 class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
-    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    host_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The host name of the database or the SCAN name in case of a RAC database.
     """
-    hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    hosts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The list of host names of the ASM instances.
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port used to connect to the ASM instance.
     """
-    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The protocol used to connect to the ASM instance.
     """
-    service: NotRequired[pulumi.Input[_builtins.str]]
+    service: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The service name of the ASM instance.
     """
@@ -12152,11 +12152,11 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs:
     def __init__(__self__, *,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 service: Optional[pulumi.Input[_builtins.str]] = None):
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 hosts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 service: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] host_name: The host name of the database or the SCAN name in case of a RAC database.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] hosts: The list of host names of the ASM instances.
@@ -12177,87 +12177,87 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host name of the database or the SCAN name in case of a RAC database.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def hosts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of host names of the ASM instances.
         """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
-    def hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def hosts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "hosts", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port used to connect to the ASM instance.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The protocol used to connect to the ASM instance.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def service(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service name of the ASM instance.
         """
         return pulumi.get(self, "service")
 
     @service.setter
-    def service(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service", value)
 
 
 class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgsDict(TypedDict):
-    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    credential_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of the credential for tablespace administration tasks.
     """
-    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    named_credential_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
     """
-    password: NotRequired[pulumi.Input[_builtins.str]]
+    password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The database user's password encoded using BASE64 scheme.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the database user.
     """
-    username: NotRequired[pulumi.Input[_builtins.str]]
+    username: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user to connect to the database.
     """
@@ -12265,12 +12265,12 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoDatabaseCredentialArgs:
     def __init__(__self__, *,
-                 credential_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None):
+                 credential_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 named_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_type: The type of the credential for tablespace administration tasks.
         :param pulumi.Input[_builtins.str] named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
@@ -12294,91 +12294,91 @@ class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConn
 
     @_builtins.property
     @pulumi.getter(name="credentialType")
-    def credential_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the credential for tablespace administration tasks.
         """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
-    def credential_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_type", value)
 
     @_builtins.property
     @pulumi.getter(name="namedCredentialId")
-    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def named_credential_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
         """
         return pulumi.get(self, "named_credential_id")
 
     @named_credential_id.setter
-    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def named_credential_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database user's password encoded using BASE64 scheme.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the database user.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter
-    def username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user to connect to the database.
         """
         return pulumi.get(self, "username")
 
     @username.setter
-    def username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "username", value)
 
 
 class ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgsDict(TypedDict):
-    network_number: NotRequired[pulumi.Input[_builtins.int]]
+    network_number: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The network number from which VIPs are obtained.
     """
-    scan_name: NotRequired[pulumi.Input[_builtins.str]]
+    scan_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the SCAN listener.
     """
-    scan_port: NotRequired[pulumi.Input[_builtins.int]]
+    scan_port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port number of the SCAN listener.
     """
-    scan_protocol: NotRequired[pulumi.Input[_builtins.str]]
+    scan_protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The protocol of the SCAN listener.
     """
@@ -12386,10 +12386,10 @@ class ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgsDict(Type
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs:
     def __init__(__self__, *,
-                 network_number: Optional[pulumi.Input[_builtins.int]] = None,
-                 scan_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 scan_port: Optional[pulumi.Input[_builtins.int]] = None,
-                 scan_protocol: Optional[pulumi.Input[_builtins.str]] = None):
+                 network_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 scan_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 scan_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 scan_protocol: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.int] network_number: The network number from which VIPs are obtained.
         :param pulumi.Input[_builtins.str] scan_name: The name of the SCAN listener.
@@ -12407,63 +12407,63 @@ class ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="networkNumber")
-    def network_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def network_number(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The network number from which VIPs are obtained.
         """
         return pulumi.get(self, "network_number")
 
     @network_number.setter
-    def network_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def network_number(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "network_number", value)
 
     @_builtins.property
     @pulumi.getter(name="scanName")
-    def scan_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scan_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the SCAN listener.
         """
         return pulumi.get(self, "scan_name")
 
     @scan_name.setter
-    def scan_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scan_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scan_name", value)
 
     @_builtins.property
     @pulumi.getter(name="scanPort")
-    def scan_port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def scan_port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port number of the SCAN listener.
         """
         return pulumi.get(self, "scan_port")
 
     @scan_port.setter
-    def scan_port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def scan_port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "scan_port", value)
 
     @_builtins.property
     @pulumi.getter(name="scanProtocol")
-    def scan_protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scan_protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The protocol of the SCAN listener.
         """
         return pulumi.get(self, "scan_protocol")
 
     @scan_protocol.setter
-    def scan_protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scan_protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scan_protocol", value)
 
 
 class ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgsDict(TypedDict):
-    address: NotRequired[pulumi.Input[_builtins.str]]
+    address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The VIP name or IP address.
     """
-    network_number: NotRequired[pulumi.Input[_builtins.int]]
+    network_number: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The network number from which VIPs are obtained.
     """
-    node_name: NotRequired[pulumi.Input[_builtins.str]]
+    node_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the node with the VIP.
     """
@@ -12471,9 +12471,9 @@ class ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgsDict(Typed
 @pulumi.input_type
 class ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs:
     def __init__(__self__, *,
-                 address: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_number: Optional[pulumi.Input[_builtins.int]] = None,
-                 node_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 address: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 node_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] address: The VIP name or IP address.
         :param pulumi.Input[_builtins.int] network_number: The network number from which VIPs are obtained.
@@ -12488,38 +12488,38 @@ class ExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The VIP name or IP address.
         """
         return pulumi.get(self, "address")
 
     @address.setter
-    def address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "address", value)
 
     @_builtins.property
     @pulumi.getter(name="networkNumber")
-    def network_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def network_number(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The network number from which VIPs are obtained.
         """
         return pulumi.get(self, "network_number")
 
     @network_number.setter
-    def network_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def network_number(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "network_number", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeName")
-    def node_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def node_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the node with the VIP.
         """
         return pulumi.get(self, "node_name")
 
     @node_name.setter
-    def node_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def node_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "node_name", value)
 
 
@@ -12532,7 +12532,7 @@ class ExternalDbSystemDiscoveryPatchOperationArgsDict(TypedDict):
     """
     (Updatable)
     """
-    value: NotRequired[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueArgsDict']]
+    value: NotRequired[pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueArgs']]]
     """
     (Updatable) 
 
@@ -12546,7 +12546,7 @@ class ExternalDbSystemDiscoveryPatchOperationArgs:
     def __init__(__self__, *,
                  operation: pulumi.Input[_builtins.str],
                  selection: pulumi.Input[_builtins.str],
-                 value: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueArgs']] = None):
+                 value: pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] operation: (Updatable) The operation can be one of these values: `MERGE`
         :param pulumi.Input[_builtins.str] selection: (Updatable)
@@ -12587,7 +12587,7 @@ class ExternalDbSystemDiscoveryPatchOperationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueArgs']]:
+    def value(self) -> pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueArgs']]:
         """
         (Updatable) 
 
@@ -12598,24 +12598,24 @@ class ExternalDbSystemDiscoveryPatchOperationArgs:
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueArgs']]):
+    def value(self, value: pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueArgs']]):
         pulumi.set(self, "value", value)
 
 
 class ExternalDbSystemDiscoveryPatchOperationValueArgsDict(TypedDict):
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
     """
-    connector: NotRequired[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorArgsDict']]
+    connector: NotRequired[pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs']]]
     """
     The connector details used to connect to the external DB system component.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
     """
-    is_selected_for_monitoring: NotRequired[pulumi.Input[_builtins.bool]]
+    is_selected_for_monitoring: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
     """
@@ -12623,10 +12623,10 @@ class ExternalDbSystemDiscoveryPatchOperationValueArgsDict(TypedDict):
 @pulumi.input_type
 class ExternalDbSystemDiscoveryPatchOperationValueArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connector: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs']] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_selected_for_monitoring: Optional[pulumi.Input[_builtins.bool]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connector: pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs']] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_selected_for_monitoring: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
         :param pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs'] connector: The connector details used to connect to the external DB system component.
@@ -12644,50 +12644,50 @@ class ExternalDbSystemDiscoveryPatchOperationValueArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def connector(self) -> Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs']]:
+    def connector(self) -> pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs']]:
         """
         The connector details used to connect to the external DB system component.
         """
         return pulumi.get(self, "connector")
 
     @connector.setter
-    def connector(self, value: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs']]):
+    def connector(self, value: pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs']]):
         pulumi.set(self, "connector", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="isSelectedForMonitoring")
-    def is_selected_for_monitoring(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_selected_for_monitoring(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
         """
         return pulumi.get(self, "is_selected_for_monitoring")
 
     @is_selected_for_monitoring.setter
-    def is_selected_for_monitoring(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_selected_for_monitoring(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_selected_for_monitoring", value)
 
 
@@ -12700,11 +12700,11 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorArgsDict(TypedDict):
     """
     (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
     """
-    agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    agent_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
     """
-    connection_info: NotRequired[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgsDict']]
+    connection_info: NotRequired[pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs']]]
     """
     The connection details required to connect to an external DB system component.
     """
@@ -12714,8 +12714,8 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs:
     def __init__(__self__, *,
                  connector_type: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
-                 agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_info: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs']] = None):
+                 agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_info: pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] connector_type: The type of connector.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
@@ -12755,26 +12755,26 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorArgs:
 
     @_builtins.property
     @pulumi.getter(name="agentId")
-    def agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
         """
         return pulumi.get(self, "agent_id")
 
     @agent_id.setter
-    def agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionInfo")
-    def connection_info(self) -> Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs']]:
+    def connection_info(self) -> pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs']]:
         """
         The connection details required to connect to an external DB system component.
         """
         return pulumi.get(self, "connection_info")
 
     @connection_info.setter
-    def connection_info(self, value: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs']]):
+    def connection_info(self, value: pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs']]):
         pulumi.set(self, "connection_info", value)
 
 
@@ -12783,11 +12783,11 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgsDic
     """
     The component type.
     """
-    connection_credentials: NotRequired[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgsDict']]
+    connection_credentials: NotRequired[pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs']]]
     """
     The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_string: NotRequired[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgsDict']]
+    connection_string: NotRequired[pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs']]]
     """
     The Oracle Database connection string.
     """
@@ -12796,8 +12796,8 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgsDic
 class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs:
     def __init__(__self__, *,
                  component_type: pulumi.Input[_builtins.str],
-                 connection_credentials: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs']] = None,
-                 connection_string: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs']] = None):
+                 connection_credentials: pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs']] = None,
+                 connection_string: pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] component_type: The component type.
         :param pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs'] connection_credentials: The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
@@ -12823,26 +12823,26 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs:
 
     @_builtins.property
     @pulumi.getter(name="connectionCredentials")
-    def connection_credentials(self) -> Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs']]:
+    def connection_credentials(self) -> pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs']]:
         """
         The credentials used to connect to the ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         """
         return pulumi.get(self, "connection_credentials")
 
     @connection_credentials.setter
-    def connection_credentials(self, value: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs']]):
+    def connection_credentials(self, value: pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs']]):
         pulumi.set(self, "connection_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionString")
-    def connection_string(self) -> Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs']]:
+    def connection_string(self) -> pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs']]:
         """
         The Oracle Database connection string.
         """
         return pulumi.get(self, "connection_string")
 
     @connection_string.setter
-    def connection_string(self, value: Optional[pulumi.Input['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs']]):
+    def connection_string(self, value: pulumi.Input[Optional['ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs']]):
         pulumi.set(self, "connection_string", value)
 
 
@@ -12851,23 +12851,23 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
     """
     The type of the credential for tablespace administration tasks.
     """
-    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    credential_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the database user.
     """
-    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    ssl_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
     """
-    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user name used to connect to the ASM instance.
     """
@@ -12876,11 +12876,11 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
 class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs:
     def __init__(__self__, *,
                  credential_type: pulumi.Input[_builtins.str],
-                 credential_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 credential_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_type: The type of the credential for tablespace administration tasks.
         :param pulumi.Input[_builtins.str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
@@ -12915,83 +12915,83 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
 
     @_builtins.property
     @pulumi.getter(name="credentialName")
-    def credential_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
         """
         return pulumi.get(self, "credential_name")
 
     @credential_name.setter
-    def credential_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_name", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the database user.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="sslSecretId")
-    def ssl_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
         """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
-    def ssl_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user name used to connect to the ASM instance.
         """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
 
 class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgsDict(TypedDict):
-    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    host_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The host name of the database or the SCAN name in case of a RAC database.
     """
-    hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    hosts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The list of host names of the ASM instances.
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port used to connect to the ASM instance.
     """
-    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The protocol used to connect to the ASM instance.
     """
-    service: NotRequired[pulumi.Input[_builtins.str]]
+    service: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The service name of the ASM instance.
     """
@@ -12999,11 +12999,11 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
 @pulumi.input_type
 class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs:
     def __init__(__self__, *,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 service: Optional[pulumi.Input[_builtins.str]] = None):
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 hosts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 service: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] host_name: The host name of the database or the SCAN name in case of a RAC database.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] hosts: The list of host names of the ASM instances.
@@ -13024,62 +13024,62 @@ class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnect
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host name of the database or the SCAN name in case of a RAC database.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def hosts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of host names of the ASM instances.
         """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
-    def hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def hosts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "hosts", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port used to connect to the ASM instance.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The protocol used to connect to the ASM instance.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def service(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service name of the ASM instance.
         """
         return pulumi.get(self, "service")
 
     @service.setter
-    def service(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service", value)
 
 
@@ -13088,7 +13088,7 @@ class ExternalDbSystemStackMonitoringConfigArgsDict(TypedDict):
     """
     The status of the associated service.
     """
-    metadata: NotRequired[pulumi.Input[_builtins.str]]
+    metadata: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The associated service-specific inputs in JSON string format, which Database Management can identify.
 
@@ -13101,7 +13101,7 @@ class ExternalDbSystemStackMonitoringConfigArgsDict(TypedDict):
 class ExternalDbSystemStackMonitoringConfigArgs:
     def __init__(__self__, *,
                  is_enabled: pulumi.Input[_builtins.bool],
-                 metadata: Optional[pulumi.Input[_builtins.str]] = None):
+                 metadata: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_enabled: The status of the associated service.
         :param pulumi.Input[_builtins.str] metadata: The associated service-specific inputs in JSON string format, which Database Management can identify.
@@ -13128,7 +13128,7 @@ class ExternalDbSystemStackMonitoringConfigArgs:
 
     @_builtins.property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metadata(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The associated service-specific inputs in JSON string format, which Database Management can identify.
 
@@ -13139,56 +13139,56 @@ class ExternalDbSystemStackMonitoringConfigArgs:
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metadata(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metadata", value)
 
 
 class ExternalExadataInfrastructureDatabaseSystemArgsDict(TypedDict):
-    additional_details: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    additional_details: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
     """
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the Exadata infrastructure.
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
     """
-    internal_id: NotRequired[pulumi.Input[_builtins.str]]
+    internal_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The internal ID of the Exadata resource.
     """
-    license_model: NotRequired[pulumi.Input[_builtins.str]]
+    license_model: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The Oracle license model that applies to the database management resources.
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The details of the lifecycle state of the Exadata resource.
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current lifecycle state of the database resource.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The status of the Exadata resource.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The timestamp of the creation of the Exadata resource.
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The timestamp of the last update of the Exadata resource.
     """
-    version: NotRequired[pulumi.Input[_builtins.str]]
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The version of the Exadata resource.
     """
@@ -13196,18 +13196,18 @@ class ExternalExadataInfrastructureDatabaseSystemArgsDict(TypedDict):
 @pulumi.input_type
 class ExternalExadataInfrastructureDatabaseSystemArgs:
     def __init__(__self__, *,
-                 additional_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 internal_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 additional_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 internal_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -13249,191 +13249,191 @@ class ExternalExadataInfrastructureDatabaseSystemArgs:
 
     @_builtins.property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def additional_details(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "additional_details")
 
     @additional_details.setter
-    def additional_details(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def additional_details(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "additional_details", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the Exadata infrastructure.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter(name="internalId")
-    def internal_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def internal_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The internal ID of the Exadata resource.
         """
         return pulumi.get(self, "internal_id")
 
     @internal_id.setter
-    def internal_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def internal_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "internal_id", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Oracle license model that applies to the database management resources.
         """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
-    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_model", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The details of the lifecycle state of the Exadata resource.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the database resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the Exadata resource.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The timestamp of the creation of the Exadata resource.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The timestamp of the last update of the Exadata resource.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the Exadata resource.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
 class ExternalExadataInfrastructureStorageGridArgsDict(TypedDict):
-    additional_details: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    additional_details: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the Exadata infrastructure.
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
     """
-    internal_id: NotRequired[pulumi.Input[_builtins.str]]
+    internal_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The internal ID of the Exadata resource.
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The details of the lifecycle state of the Exadata resource.
     """
-    server_count: NotRequired[pulumi.Input[_builtins.float]]
+    server_count: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The number of Exadata storage servers in the Exadata infrastructure.
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current lifecycle state of the database resource.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The status of the Exadata resource.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The timestamp of the creation of the Exadata resource.
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The timestamp of the last update of the Exadata resource.
     """
-    version: NotRequired[pulumi.Input[_builtins.str]]
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The version of the Exadata resource.
     """
@@ -13441,17 +13441,17 @@ class ExternalExadataInfrastructureStorageGridArgsDict(TypedDict):
 @pulumi.input_type
 class ExternalExadataInfrastructureStorageGridArgs:
     def __init__(__self__, *,
-                 additional_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 internal_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 server_count: Optional[pulumi.Input[_builtins.float]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 additional_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 internal_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 server_count: pulumi.Input[Optional[_builtins.float]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name of the Exadata infrastructure.
@@ -13490,134 +13490,134 @@ class ExternalExadataInfrastructureStorageGridArgs:
 
     @_builtins.property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def additional_details(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "additional_details")
 
     @additional_details.setter
-    def additional_details(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def additional_details(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "additional_details", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the Exadata infrastructure.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter(name="internalId")
-    def internal_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def internal_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The internal ID of the Exadata resource.
         """
         return pulumi.get(self, "internal_id")
 
     @internal_id.setter
-    def internal_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def internal_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "internal_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The details of the lifecycle state of the Exadata resource.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="serverCount")
-    def server_count(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def server_count(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The number of Exadata storage servers in the Exadata infrastructure.
         """
         return pulumi.get(self, "server_count")
 
     @server_count.setter
-    def server_count(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def server_count(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "server_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the database resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the Exadata resource.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The timestamp of the creation of the Exadata resource.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The timestamp of the last update of the Exadata resource.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the Exadata resource.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
@@ -13630,15 +13630,15 @@ class ExternalExadataStorageConnectorCredentialInfoArgsDict(TypedDict):
     """
     (Updatable) The name of the user.
     """
-    ssl_trust_store_location: NotRequired[pulumi.Input[_builtins.str]]
+    ssl_trust_store_location: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The full path of the SSL truststore location in the agent.
     """
-    ssl_trust_store_password: NotRequired[pulumi.Input[_builtins.str]]
+    ssl_trust_store_password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The password of the SSL truststore location in the agent.
     """
-    ssl_trust_store_type: NotRequired[pulumi.Input[_builtins.str]]
+    ssl_trust_store_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The SSL truststore type.
     """
@@ -13648,9 +13648,9 @@ class ExternalExadataStorageConnectorCredentialInfoArgs:
     def __init__(__self__, *,
                  password: pulumi.Input[_builtins.str],
                  username: pulumi.Input[_builtins.str],
-                 ssl_trust_store_location: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_trust_store_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_trust_store_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 ssl_trust_store_location: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_trust_store_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_trust_store_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] password: (Updatable) The password of the user.
         :param pulumi.Input[_builtins.str] username: (Updatable) The name of the user.
@@ -13693,63 +13693,63 @@ class ExternalExadataStorageConnectorCredentialInfoArgs:
 
     @_builtins.property
     @pulumi.getter(name="sslTrustStoreLocation")
-    def ssl_trust_store_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_trust_store_location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The full path of the SSL truststore location in the agent.
         """
         return pulumi.get(self, "ssl_trust_store_location")
 
     @ssl_trust_store_location.setter
-    def ssl_trust_store_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_trust_store_location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_trust_store_location", value)
 
     @_builtins.property
     @pulumi.getter(name="sslTrustStorePassword")
-    def ssl_trust_store_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_trust_store_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The password of the SSL truststore location in the agent.
         """
         return pulumi.get(self, "ssl_trust_store_password")
 
     @ssl_trust_store_password.setter
-    def ssl_trust_store_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_trust_store_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_trust_store_password", value)
 
     @_builtins.property
     @pulumi.getter(name="sslTrustStoreType")
-    def ssl_trust_store_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_trust_store_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The SSL truststore type.
         """
         return pulumi.get(self, "ssl_trust_store_type")
 
     @ssl_trust_store_type.setter
-    def ssl_trust_store_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_trust_store_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_trust_store_type", value)
 
 
 class ExternalExadataStorageGridStorageServerArgsDict(TypedDict):
-    additional_details: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    additional_details: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
     """
-    connector_id: NotRequired[pulumi.Input[_builtins.str]]
+    connector_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
     """
-    cpu_count: NotRequired[pulumi.Input[_builtins.float]]
+    cpu_count: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The CPU count of the Exadata storage server.
     """
-    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    defined_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
     """
-    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    freeform_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
 
@@ -13757,71 +13757,71 @@ class ExternalExadataStorageGridStorageServerArgsDict(TypedDict):
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
     """
-    internal_id: NotRequired[pulumi.Input[_builtins.str]]
+    internal_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The internal ID of the Exadata resource.
     """
-    ip_address: NotRequired[pulumi.Input[_builtins.str]]
+    ip_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The IP address of the Exadata storage server.
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The details of the lifecycle state of the Exadata resource.
     """
-    make_model: NotRequired[pulumi.Input[_builtins.str]]
+    make_model: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The make model of the Exadata storage server.
     """
-    max_flash_disk_iops: NotRequired[pulumi.Input[_builtins.int]]
+    max_flash_disk_iops: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The maximum flash disk IO operations per second of the Exadata storage server.
     """
-    max_flash_disk_throughput: NotRequired[pulumi.Input[_builtins.int]]
+    max_flash_disk_throughput: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The maximum flash disk IO throughput in MB/s of the Exadata storage server.
     """
-    max_hard_disk_iops: NotRequired[pulumi.Input[_builtins.int]]
+    max_hard_disk_iops: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The maximum hard disk IO operations per second of the Exadata storage server.
     """
-    max_hard_disk_throughput: NotRequired[pulumi.Input[_builtins.int]]
+    max_hard_disk_throughput: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The maximum hard disk IO throughput in MB/s of the Exadata storage server.
     """
-    memory_gb: NotRequired[pulumi.Input[_builtins.float]]
+    memory_gb: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The Exadata storage server memory size in GB.
     """
-    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    resource_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of Exadata resource.
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current lifecycle state of the database resource.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The status of the Exadata resource.
     """
-    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    system_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The timestamp of the creation of the Exadata resource.
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The timestamp of the last update of the Exadata resource.
     """
-    version: NotRequired[pulumi.Input[_builtins.str]]
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The version of the Exadata resource.
     """
@@ -13829,29 +13829,29 @@ class ExternalExadataStorageGridStorageServerArgsDict(TypedDict):
 @pulumi.input_type
 class ExternalExadataStorageGridStorageServerArgs:
     def __init__(__self__, *,
-                 additional_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpu_count: Optional[pulumi.Input[_builtins.float]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 internal_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 make_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_flash_disk_iops: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_flash_disk_throughput: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_hard_disk_iops: Optional[pulumi.Input[_builtins.int]] = None,
-                 max_hard_disk_throughput: Optional[pulumi.Input[_builtins.int]] = None,
-                 memory_gb: Optional[pulumi.Input[_builtins.float]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 additional_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpu_count: pulumi.Input[Optional[_builtins.float]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 internal_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 make_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_flash_disk_iops: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_flash_disk_throughput: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_hard_disk_iops: pulumi.Input[Optional[_builtins.int]] = None,
+                 max_hard_disk_throughput: pulumi.Input[Optional[_builtins.int]] = None,
+                 memory_gb: pulumi.Input[Optional[_builtins.float]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
@@ -13930,67 +13930,67 @@ class ExternalExadataStorageGridStorageServerArgs:
 
     @_builtins.property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def additional_details(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "additional_details")
 
     @additional_details.setter
-    def additional_details(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def additional_details(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "additional_details", value)
 
     @_builtins.property
     @pulumi.getter(name="connectorId")
-    def connector_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connector_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
         """
         return pulumi.get(self, "connector_id")
 
     @connector_id.setter
-    def connector_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connector_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connector_id", value)
 
     @_builtins.property
     @pulumi.getter(name="cpuCount")
-    def cpu_count(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def cpu_count(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The CPU count of the Exadata storage server.
         """
         return pulumi.get(self, "cpu_count")
 
     @cpu_count.setter
-    def cpu_count(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def cpu_count(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "cpu_count", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
 
@@ -14001,236 +14001,236 @@ class ExternalExadataStorageGridStorageServerArgs:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter(name="internalId")
-    def internal_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def internal_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The internal ID of the Exadata resource.
         """
         return pulumi.get(self, "internal_id")
 
     @internal_id.setter
-    def internal_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def internal_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "internal_id", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IP address of the Exadata storage server.
         """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
-    def ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The details of the lifecycle state of the Exadata resource.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="makeModel")
-    def make_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def make_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The make model of the Exadata storage server.
         """
         return pulumi.get(self, "make_model")
 
     @make_model.setter
-    def make_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def make_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "make_model", value)
 
     @_builtins.property
     @pulumi.getter(name="maxFlashDiskIops")
-    def max_flash_disk_iops(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_flash_disk_iops(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum flash disk IO operations per second of the Exadata storage server.
         """
         return pulumi.get(self, "max_flash_disk_iops")
 
     @max_flash_disk_iops.setter
-    def max_flash_disk_iops(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_flash_disk_iops(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_flash_disk_iops", value)
 
     @_builtins.property
     @pulumi.getter(name="maxFlashDiskThroughput")
-    def max_flash_disk_throughput(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_flash_disk_throughput(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum flash disk IO throughput in MB/s of the Exadata storage server.
         """
         return pulumi.get(self, "max_flash_disk_throughput")
 
     @max_flash_disk_throughput.setter
-    def max_flash_disk_throughput(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_flash_disk_throughput(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_flash_disk_throughput", value)
 
     @_builtins.property
     @pulumi.getter(name="maxHardDiskIops")
-    def max_hard_disk_iops(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_hard_disk_iops(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum hard disk IO operations per second of the Exadata storage server.
         """
         return pulumi.get(self, "max_hard_disk_iops")
 
     @max_hard_disk_iops.setter
-    def max_hard_disk_iops(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_hard_disk_iops(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_hard_disk_iops", value)
 
     @_builtins.property
     @pulumi.getter(name="maxHardDiskThroughput")
-    def max_hard_disk_throughput(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_hard_disk_throughput(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The maximum hard disk IO throughput in MB/s of the Exadata storage server.
         """
         return pulumi.get(self, "max_hard_disk_throughput")
 
     @max_hard_disk_throughput.setter
-    def max_hard_disk_throughput(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_hard_disk_throughput(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_hard_disk_throughput", value)
 
     @_builtins.property
     @pulumi.getter(name="memoryGb")
-    def memory_gb(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def memory_gb(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The Exadata storage server memory size in GB.
         """
         return pulumi.get(self, "memory_gb")
 
     @memory_gb.setter
-    def memory_gb(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def memory_gb(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "memory_gb", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of Exadata resource.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the database resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the Exadata resource.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The timestamp of the creation of the Exadata resource.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The timestamp of the last update of the Exadata resource.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the Exadata resource.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
 class ExternalExadataStorageServerConnectorArgsDict(TypedDict):
-    additional_details: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    additional_details: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
     """
-    agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    agent_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
     """
-    connection_uri: NotRequired[pulumi.Input[_builtins.str]]
+    connection_uri: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
     """
-    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    defined_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
     """
-    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    freeform_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
 
@@ -14238,47 +14238,47 @@ class ExternalExadataStorageServerConnectorArgsDict(TypedDict):
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
     """
-    internal_id: NotRequired[pulumi.Input[_builtins.str]]
+    internal_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The internal ID of the Exadata resource.
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The details of the lifecycle state of the Exadata resource.
     """
-    resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    resource_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of Exadata resource.
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current lifecycle state of the database resource.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The status of the Exadata resource.
     """
-    storage_server_id: NotRequired[pulumi.Input[_builtins.str]]
+    storage_server_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
     """
-    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    system_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The timestamp of the creation of the Exadata resource.
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The timestamp of the last update of the Exadata resource.
     """
-    version: NotRequired[pulumi.Input[_builtins.str]]
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The version of the Exadata resource.
     """
@@ -14286,23 +14286,23 @@ class ExternalExadataStorageServerConnectorArgsDict(TypedDict):
 @pulumi.input_type
 class ExternalExadataStorageServerConnectorArgs:
     def __init__(__self__, *,
-                 additional_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 internal_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_server_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 additional_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 internal_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_server_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] additional_details: The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
@@ -14363,67 +14363,67 @@ class ExternalExadataStorageServerConnectorArgs:
 
     @_builtins.property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def additional_details(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "additional_details")
 
     @additional_details.setter
-    def additional_details(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def additional_details(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "additional_details", value)
 
     @_builtins.property
     @pulumi.getter(name="agentId")
-    def agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
         """
         return pulumi.get(self, "agent_id")
 
     @agent_id.setter
-    def agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionUri")
-    def connection_uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_uri(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique string of the connection. For example, "https://<storage-server-name>/MS/RESTService/".
         """
         return pulumi.get(self, "connection_uri")
 
     @connection_uri.setter
-    def connection_uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_uri(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_uri", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
 
@@ -14434,160 +14434,160 @@ class ExternalExadataStorageServerConnectorArgs:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter(name="internalId")
-    def internal_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def internal_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The internal ID of the Exadata resource.
         """
         return pulumi.get(self, "internal_id")
 
     @internal_id.setter
-    def internal_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def internal_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "internal_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The details of the lifecycle state of the Exadata resource.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of Exadata resource.
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the database resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the Exadata resource.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="storageServerId")
-    def storage_server_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_server_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
         """
         return pulumi.get(self, "storage_server_id")
 
     @storage_server_id.setter
-    def storage_server_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_server_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_server_id", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The timestamp of the creation of the Exadata resource.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The timestamp of the last update of the Exadata resource.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the Exadata resource.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
 class ExternalListenerEndpointArgsDict(TypedDict):
-    host: NotRequired[pulumi.Input[_builtins.str]]
+    host: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The host name or IP address.
     """
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique name of the service.
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port number.
     """
-    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The listener protocol.
     """
-    services: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    services: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The list of services registered with the listener.
     """
@@ -14595,11 +14595,11 @@ class ExternalListenerEndpointArgsDict(TypedDict):
 @pulumi.input_type
 class ExternalListenerEndpointArgs:
     def __init__(__self__, *,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 services: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 services: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] host: The host name or IP address.
         :param pulumi.Input[_builtins.str] key: The unique name of the service.
@@ -14620,75 +14620,75 @@ class ExternalListenerEndpointArgs:
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host name or IP address.
         """
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique name of the service.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port number.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The listener protocol.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def services(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of services registered with the listener.
         """
         return pulumi.get(self, "services")
 
     @services.setter
-    def services(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def services(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "services", value)
 
 
 class ExternalListenerServicedAsmArgsDict(TypedDict):
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user-friendly name for the database. The name does not have to be unique.
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
     """
@@ -14696,9 +14696,9 @@ class ExternalListenerServicedAsmArgsDict(TypedDict):
 @pulumi.input_type
 class ExternalListenerServicedAsmArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
         :param pulumi.Input[_builtins.str] display_name: The user-friendly name for the database. The name does not have to be unique.
@@ -14713,67 +14713,67 @@ class ExternalListenerServicedAsmArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-friendly name for the database. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
 
 class ExternalListenerServicedDatabaseArgsDict(TypedDict):
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
     """
-    database_sub_type: NotRequired[pulumi.Input[_builtins.str]]
+    database_sub_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
     """
-    database_type: NotRequired[pulumi.Input[_builtins.str]]
+    database_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of Oracle Database installation.
     """
-    db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
+    db_unique_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique name of the external database.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user-friendly name for the database. The name does not have to be unique.
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
     """
-    is_managed: NotRequired[pulumi.Input[_builtins.bool]]
+    is_managed: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether the database is a Managed Database or not.
     """
@@ -14781,13 +14781,13 @@ class ExternalListenerServicedDatabaseArgsDict(TypedDict):
 @pulumi.input_type
 class ExternalListenerServicedDatabaseArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_sub_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_managed: Optional[pulumi.Input[_builtins.bool]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_sub_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_managed: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
         :param pulumi.Input[_builtins.str] database_sub_type: The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
@@ -14814,86 +14814,86 @@ class ExternalListenerServicedDatabaseArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseSubType")
-    def database_sub_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_sub_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         """
         return pulumi.get(self, "database_sub_type")
 
     @database_sub_type.setter
-    def database_sub_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_sub_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_sub_type", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseType")
-    def database_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of Oracle Database installation.
         """
         return pulumi.get(self, "database_type")
 
     @database_type.setter
-    def database_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dbUniqueName")
-    def db_unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_unique_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique name of the external database.
         """
         return pulumi.get(self, "db_unique_name")
 
     @db_unique_name.setter
-    def db_unique_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_unique_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_unique_name", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-friendly name for the database. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter(name="isManaged")
-    def is_managed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_managed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the database is a Managed Database or not.
         """
         return pulumi.get(self, "is_managed")
 
     @is_managed.setter
-    def is_managed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_managed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_managed", value)
 
 
@@ -15063,19 +15063,19 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDeta
     """
     The name of the Database Management feature.
     """
-    can_enable_all_current_pdbs: NotRequired[pulumi.Input[_builtins.bool]]
+    can_enable_all_current_pdbs: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
     """
-    connector_details: NotRequired[pulumi.Input['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]
+    connector_details: NotRequired[pulumi.Input[Optional['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]]
     """
     The connector details required to connect to an Oracle cloud database.
     """
-    is_auto_enable_pluggable_database: NotRequired[pulumi.Input[_builtins.bool]]
+    is_auto_enable_pluggable_database: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
     """
-    license_model: NotRequired[pulumi.Input[_builtins.str]]
+    license_model: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Oracle license model that applies to the external database.
     """
@@ -15084,10 +15084,10 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDeta
 class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs:
     def __init__(__self__, *,
                  feature: pulumi.Input[_builtins.str],
-                 can_enable_all_current_pdbs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 connector_details: Optional[pulumi.Input['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']] = None,
-                 is_auto_enable_pluggable_database: Optional[pulumi.Input[_builtins.bool]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None):
+                 can_enable_all_current_pdbs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 connector_details: pulumi.Input[Optional['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']] = None,
+                 is_auto_enable_pluggable_database: pulumi.Input[Optional[_builtins.bool]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] feature: The name of the Database Management feature.
         :param pulumi.Input[_builtins.bool] can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
@@ -15119,55 +15119,55 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDeta
 
     @_builtins.property
     @pulumi.getter(name="canEnableAllCurrentPdbs")
-    def can_enable_all_current_pdbs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_enable_all_current_pdbs(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
         """
         return pulumi.get(self, "can_enable_all_current_pdbs")
 
     @can_enable_all_current_pdbs.setter
-    def can_enable_all_current_pdbs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_enable_all_current_pdbs(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_enable_all_current_pdbs", value)
 
     @_builtins.property
     @pulumi.getter(name="connectorDetails")
-    def connector_details(self) -> Optional[pulumi.Input['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]:
+    def connector_details(self) -> pulumi.Input[Optional['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]:
         """
         The connector details required to connect to an Oracle cloud database.
         """
         return pulumi.get(self, "connector_details")
 
     @connector_details.setter
-    def connector_details(self, value: Optional[pulumi.Input['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]):
+    def connector_details(self, value: pulumi.Input[Optional['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]):
         pulumi.set(self, "connector_details", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoEnablePluggableDatabase")
-    def is_auto_enable_pluggable_database(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_enable_pluggable_database(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         """
         return pulumi.get(self, "is_auto_enable_pluggable_database")
 
     @is_auto_enable_pluggable_database.setter
-    def is_auto_enable_pluggable_database(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_enable_pluggable_database(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_enable_pluggable_database", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle license model that applies to the external database.
         """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
-    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_model", value)
 
 
 class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict(TypedDict):
-    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    connector_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The list of supported connection types:
     * PE: Private endpoint
@@ -15175,15 +15175,15 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDeta
     * EXTERNAL: External database connector
     * DIRECT: Direct connection
     """
-    database_connector_id: NotRequired[pulumi.Input[_builtins.str]]
+    database_connector_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
     """
-    management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    management_agent_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
     """
-    private_end_point_id: NotRequired[pulumi.Input[_builtins.str]]
+    private_end_point_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
     """
@@ -15191,10 +15191,10 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDeta
 @pulumi.input_type
 class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs:
     def __init__(__self__, *,
-                 connector_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_end_point_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_end_point_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] connector_type: The list of supported connection types:
                * PE: Private endpoint
@@ -15216,7 +15216,7 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDeta
 
     @_builtins.property
     @pulumi.getter(name="connectorType")
-    def connector_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connector_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The list of supported connection types:
         * PE: Private endpoint
@@ -15227,43 +15227,43 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDeta
         return pulumi.get(self, "connector_type")
 
     @connector_type.setter
-    def connector_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connector_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connector_type", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseConnectorId")
-    def database_connector_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_connector_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
         """
         return pulumi.get(self, "database_connector_id")
 
     @database_connector_id.setter
-    def database_connector_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_connector_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_connector_id", value)
 
     @_builtins.property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
         """
         return pulumi.get(self, "management_agent_id")
 
     @management_agent_id.setter
-    def management_agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndPointId")
-    def private_end_point_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_end_point_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         """
         return pulumi.get(self, "private_end_point_id")
 
     @private_end_point_id.setter
-    def private_end_point_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_end_point_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_end_point_id", value)
 
 
@@ -15272,19 +15272,19 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatu
     """
     The name of the Database Management feature.
     """
-    can_enable_all_current_pdbs: NotRequired[pulumi.Input[_builtins.bool]]
+    can_enable_all_current_pdbs: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
     """
-    connector_details: NotRequired[pulumi.Input['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]
+    connector_details: NotRequired[pulumi.Input[Optional['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]]
     """
     The connector details required to connect to an Oracle cloud database.
     """
-    is_auto_enable_pluggable_database: NotRequired[pulumi.Input[_builtins.bool]]
+    is_auto_enable_pluggable_database: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
     """
-    license_model: NotRequired[pulumi.Input[_builtins.str]]
+    license_model: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Oracle license model that applies to the external database.
     """
@@ -15293,10 +15293,10 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatu
 class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgs:
     def __init__(__self__, *,
                  feature: pulumi.Input[_builtins.str],
-                 can_enable_all_current_pdbs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 connector_details: Optional[pulumi.Input['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']] = None,
-                 is_auto_enable_pluggable_database: Optional[pulumi.Input[_builtins.bool]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None):
+                 can_enable_all_current_pdbs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 connector_details: pulumi.Input[Optional['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']] = None,
+                 is_auto_enable_pluggable_database: pulumi.Input[Optional[_builtins.bool]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] feature: The name of the Database Management feature.
         :param pulumi.Input[_builtins.bool] can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
@@ -15328,55 +15328,55 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatu
 
     @_builtins.property
     @pulumi.getter(name="canEnableAllCurrentPdbs")
-    def can_enable_all_current_pdbs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_enable_all_current_pdbs(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
         """
         return pulumi.get(self, "can_enable_all_current_pdbs")
 
     @can_enable_all_current_pdbs.setter
-    def can_enable_all_current_pdbs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_enable_all_current_pdbs(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_enable_all_current_pdbs", value)
 
     @_builtins.property
     @pulumi.getter(name="connectorDetails")
-    def connector_details(self) -> Optional[pulumi.Input['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]:
+    def connector_details(self) -> pulumi.Input[Optional['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]:
         """
         The connector details required to connect to an Oracle cloud database.
         """
         return pulumi.get(self, "connector_details")
 
     @connector_details.setter
-    def connector_details(self, value: Optional[pulumi.Input['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]):
+    def connector_details(self, value: pulumi.Input[Optional['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]):
         pulumi.set(self, "connector_details", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoEnablePluggableDatabase")
-    def is_auto_enable_pluggable_database(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_enable_pluggable_database(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         """
         return pulumi.get(self, "is_auto_enable_pluggable_database")
 
     @is_auto_enable_pluggable_database.setter
-    def is_auto_enable_pluggable_database(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_enable_pluggable_database(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_enable_pluggable_database", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle license model that applies to the external database.
         """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
-    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_model", value)
 
 
 class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict(TypedDict):
-    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    connector_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The list of supported connection types:
     * PE: Private endpoint
@@ -15384,15 +15384,15 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatu
     * EXTERNAL: External database connector
     * DIRECT: Direct connection
     """
-    database_connector_id: NotRequired[pulumi.Input[_builtins.str]]
+    database_connector_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
     """
-    management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    management_agent_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
     """
-    private_end_point_id: NotRequired[pulumi.Input[_builtins.str]]
+    private_end_point_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
     """
@@ -15400,10 +15400,10 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatu
 @pulumi.input_type
 class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs:
     def __init__(__self__, *,
-                 connector_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_end_point_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_end_point_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] connector_type: The list of supported connection types:
                * PE: Private endpoint
@@ -15425,7 +15425,7 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatu
 
     @_builtins.property
     @pulumi.getter(name="connectorType")
-    def connector_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connector_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The list of supported connection types:
         * PE: Private endpoint
@@ -15436,43 +15436,43 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatu
         return pulumi.get(self, "connector_type")
 
     @connector_type.setter
-    def connector_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connector_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connector_type", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseConnectorId")
-    def database_connector_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_connector_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
         """
         return pulumi.get(self, "database_connector_id")
 
     @database_connector_id.setter
-    def database_connector_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_connector_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_connector_id", value)
 
     @_builtins.property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
         """
         return pulumi.get(self, "management_agent_id")
 
     @management_agent_id.setter
-    def management_agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndPointId")
-    def private_end_point_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_end_point_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         """
         return pulumi.get(self, "private_end_point_id")
 
     @private_end_point_id.setter
-    def private_end_point_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_end_point_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_end_point_id", value)
 
 
@@ -15481,7 +15481,7 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDeta
     """
     The name of the Database Management feature.
     """
-    connector_details: NotRequired[pulumi.Input['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]
+    connector_details: NotRequired[pulumi.Input[Optional['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]]
     """
     The connector details required to connect to an Oracle cloud database.
     """
@@ -15490,7 +15490,7 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDeta
 class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs:
     def __init__(__self__, *,
                  feature: pulumi.Input[_builtins.str],
-                 connector_details: Optional[pulumi.Input['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']] = None):
+                 connector_details: pulumi.Input[Optional['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] feature: The name of the Database Management feature.
         :param pulumi.Input['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs'] connector_details: The connector details required to connect to an Oracle cloud database.
@@ -15513,19 +15513,19 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDeta
 
     @_builtins.property
     @pulumi.getter(name="connectorDetails")
-    def connector_details(self) -> Optional[pulumi.Input['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]:
+    def connector_details(self) -> pulumi.Input[Optional['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]:
         """
         The connector details required to connect to an Oracle cloud database.
         """
         return pulumi.get(self, "connector_details")
 
     @connector_details.setter
-    def connector_details(self, value: Optional[pulumi.Input['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]):
+    def connector_details(self, value: pulumi.Input[Optional['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]):
         pulumi.set(self, "connector_details", value)
 
 
 class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict(TypedDict):
-    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    connector_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The list of supported connection types:
     * PE: Private endpoint
@@ -15533,15 +15533,15 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDeta
     * EXTERNAL: External database connector
     * DIRECT: Direct connection
     """
-    database_connector_id: NotRequired[pulumi.Input[_builtins.str]]
+    database_connector_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
     """
-    management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    management_agent_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
     """
-    private_end_point_id: NotRequired[pulumi.Input[_builtins.str]]
+    private_end_point_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
     """
@@ -15549,10 +15549,10 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDeta
 @pulumi.input_type
 class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs:
     def __init__(__self__, *,
-                 connector_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_end_point_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_end_point_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] connector_type: The list of supported connection types:
                * PE: Private endpoint
@@ -15574,7 +15574,7 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDeta
 
     @_builtins.property
     @pulumi.getter(name="connectorType")
-    def connector_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connector_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The list of supported connection types:
         * PE: Private endpoint
@@ -15585,64 +15585,64 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDeta
         return pulumi.get(self, "connector_type")
 
     @connector_type.setter
-    def connector_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connector_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connector_type", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseConnectorId")
-    def database_connector_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_connector_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
         """
         return pulumi.get(self, "database_connector_id")
 
     @database_connector_id.setter
-    def database_connector_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_connector_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_connector_id", value)
 
     @_builtins.property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
         """
         return pulumi.get(self, "management_agent_id")
 
     @management_agent_id.setter
-    def management_agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndPointId")
-    def private_end_point_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_end_point_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         """
         return pulumi.get(self, "private_end_point_id")
 
     @private_end_point_id.setter
-    def private_end_point_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_end_point_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_end_point_id", value)
 
 
 class ManagedDatabaseDbmgmtFeatureConfigArgsDict(TypedDict):
-    connector_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigConnectorDetailArgsDict']]]]
+    connector_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigConnectorDetailArgs']]]]]
     """
     The connector details required to connect to an Oracle cloud database.
     """
-    database_connection_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailArgsDict']]]]
+    database_connection_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailArgs']]]]]
     """
     The connection details required to connect to the database.
     """
-    feature: NotRequired[pulumi.Input[_builtins.str]]
+    feature: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the Database Management feature.
     """
-    feature_status: NotRequired[pulumi.Input[_builtins.str]]
+    feature_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The list of statuses for Database Management features.
     """
-    license_model: NotRequired[pulumi.Input[_builtins.str]]
+    license_model: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Oracle license model that applies to the external database.
     """
@@ -15650,11 +15650,11 @@ class ManagedDatabaseDbmgmtFeatureConfigArgsDict(TypedDict):
 @pulumi.input_type
 class ManagedDatabaseDbmgmtFeatureConfigArgs:
     def __init__(__self__, *,
-                 connector_details: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigConnectorDetailArgs']]]] = None,
-                 database_connection_details: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailArgs']]]] = None,
-                 feature: Optional[pulumi.Input[_builtins.str]] = None,
-                 feature_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None):
+                 connector_details: pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigConnectorDetailArgs']]]] = None,
+                 database_connection_details: pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailArgs']]]] = None,
+                 feature: pulumi.Input[Optional[_builtins.str]] = None,
+                 feature_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigConnectorDetailArgs']]] connector_details: The connector details required to connect to an Oracle cloud database.
         :param pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailArgs']]] database_connection_details: The connection details required to connect to the database.
@@ -15675,82 +15675,82 @@ class ManagedDatabaseDbmgmtFeatureConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="connectorDetails")
-    def connector_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigConnectorDetailArgs']]]]:
+    def connector_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigConnectorDetailArgs']]]]:
         """
         The connector details required to connect to an Oracle cloud database.
         """
         return pulumi.get(self, "connector_details")
 
     @connector_details.setter
-    def connector_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigConnectorDetailArgs']]]]):
+    def connector_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigConnectorDetailArgs']]]]):
         pulumi.set(self, "connector_details", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseConnectionDetails")
-    def database_connection_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailArgs']]]]:
+    def database_connection_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailArgs']]]]:
         """
         The connection details required to connect to the database.
         """
         return pulumi.get(self, "database_connection_details")
 
     @database_connection_details.setter
-    def database_connection_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailArgs']]]]):
+    def database_connection_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailArgs']]]]):
         pulumi.set(self, "database_connection_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def feature(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def feature(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Database Management feature.
         """
         return pulumi.get(self, "feature")
 
     @feature.setter
-    def feature(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def feature(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "feature", value)
 
     @_builtins.property
     @pulumi.getter(name="featureStatus")
-    def feature_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def feature_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The list of statuses for Database Management features.
         """
         return pulumi.get(self, "feature_status")
 
     @feature_status.setter
-    def feature_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def feature_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "feature_status", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle license model that applies to the external database.
         """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
-    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_model", value)
 
 
 class ManagedDatabaseDbmgmtFeatureConfigConnectorDetailArgsDict(TypedDict):
-    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    connector_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The list of supported connection types:
     * PE: Private endpoint
     * MACS: Management agent
     * EXTERNAL: External database connector
     """
-    database_connector_id: NotRequired[pulumi.Input[_builtins.str]]
+    database_connector_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
     """
-    management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    management_agent_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
     """
-    private_end_point_id: NotRequired[pulumi.Input[_builtins.str]]
+    private_end_point_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
     """
@@ -15758,10 +15758,10 @@ class ManagedDatabaseDbmgmtFeatureConfigConnectorDetailArgsDict(TypedDict):
 @pulumi.input_type
 class ManagedDatabaseDbmgmtFeatureConfigConnectorDetailArgs:
     def __init__(__self__, *,
-                 connector_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_end_point_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_end_point_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] connector_type: The list of supported connection types:
                * PE: Private endpoint
@@ -15782,7 +15782,7 @@ class ManagedDatabaseDbmgmtFeatureConfigConnectorDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="connectorType")
-    def connector_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connector_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The list of supported connection types:
         * PE: Private endpoint
@@ -15792,52 +15792,52 @@ class ManagedDatabaseDbmgmtFeatureConfigConnectorDetailArgs:
         return pulumi.get(self, "connector_type")
 
     @connector_type.setter
-    def connector_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connector_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connector_type", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseConnectorId")
-    def database_connector_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_connector_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
         """
         return pulumi.get(self, "database_connector_id")
 
     @database_connector_id.setter
-    def database_connector_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_connector_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_connector_id", value)
 
     @_builtins.property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
         """
         return pulumi.get(self, "management_agent_id")
 
     @management_agent_id.setter
-    def management_agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndPointId")
-    def private_end_point_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_end_point_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         """
         return pulumi.get(self, "private_end_point_id")
 
     @private_end_point_id.setter
-    def private_end_point_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_end_point_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_end_point_id", value)
 
 
 class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailArgsDict(TypedDict):
-    connection_credentials: NotRequired[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredentialArgsDict']]]]
+    connection_credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredentialArgs']]]]]
     """
     The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_strings: NotRequired[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionStringArgsDict']]]]
+    connection_strings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionStringArgs']]]]]
     """
     The details of the Oracle Database connection string.
     """
@@ -15845,8 +15845,8 @@ class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailArgsDict(TypedDi
 @pulumi.input_type
 class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailArgs:
     def __init__(__self__, *,
-                 connection_credentials: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredentialArgs']]]] = None,
-                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionStringArgs']]]] = None):
+                 connection_credentials: pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredentialArgs']]]] = None,
+                 connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionStringArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredentialArgs']]] connection_credentials: The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         :param pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionStringArgs']]] connection_strings: The details of the Oracle Database connection string.
@@ -15858,55 +15858,55 @@ class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="connectionCredentials")
-    def connection_credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredentialArgs']]]]:
+    def connection_credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredentialArgs']]]]:
         """
         The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         """
         return pulumi.get(self, "connection_credentials")
 
     @connection_credentials.setter
-    def connection_credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredentialArgs']]]]):
+    def connection_credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredentialArgs']]]]):
         pulumi.set(self, "connection_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionStrings")
-    def connection_strings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionStringArgs']]]]:
+    def connection_strings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionStringArgs']]]]:
         """
         The details of the Oracle Database connection string.
         """
         return pulumi.get(self, "connection_strings")
 
     @connection_strings.setter
-    def connection_strings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionStringArgs']]]]):
+    def connection_strings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionStringArgs']]]]):
         pulumi.set(self, "connection_strings", value)
 
 
 class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredentialArgsDict(TypedDict):
-    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    credential_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
     """
-    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    credential_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of credential used to connect to the database.
     """
-    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    named_credential_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the user connecting to the database.
     """
-    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    ssl_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
     """
-    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user name used to connect to the database.
     """
@@ -15914,13 +15914,13 @@ class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCreden
 @pulumi.input_type
 class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredentialArgs:
     def __init__(__self__, *,
-                 credential_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 credential_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 credential_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 credential_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 named_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
         :param pulumi.Input[_builtins.str] credential_type: The type of credential used to connect to the database.
@@ -15947,104 +15947,104 @@ class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCreden
 
     @_builtins.property
     @pulumi.getter(name="credentialName")
-    def credential_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
         """
         return pulumi.get(self, "credential_name")
 
     @credential_name.setter
-    def credential_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_name", value)
 
     @_builtins.property
     @pulumi.getter(name="credentialType")
-    def credential_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of credential used to connect to the database.
         """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
-    def credential_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_type", value)
 
     @_builtins.property
     @pulumi.getter(name="namedCredentialId")
-    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def named_credential_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
         """
         return pulumi.get(self, "named_credential_id")
 
     @named_credential_id.setter
-    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def named_credential_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the user connecting to the database.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="sslSecretId")
-    def ssl_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
         """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
-    def ssl_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user name used to connect to the database.
         """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
 
 class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionStringArgsDict(TypedDict):
-    connection_type: NotRequired[pulumi.Input[_builtins.str]]
+    connection_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The list of supported connection types:
     * BASIC: Basic connection details
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port number used to connect to the database.
     """
-    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The protocol used to connect to the database.
     """
-    service: NotRequired[pulumi.Input[_builtins.str]]
+    service: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The service name of the database.
     """
@@ -16052,10 +16052,10 @@ class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionString
 @pulumi.input_type
 class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionStringArgs:
     def __init__(__self__, *,
-                 connection_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 service: Optional[pulumi.Input[_builtins.str]] = None):
+                 connection_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 service: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] connection_type: The list of supported connection types:
                * BASIC: Basic connection details
@@ -16074,7 +16074,7 @@ class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionString
 
     @_builtins.property
     @pulumi.getter(name="connectionType")
-    def connection_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The list of supported connection types:
         * BASIC: Basic connection details
@@ -16082,72 +16082,72 @@ class ManagedDatabaseDbmgmtFeatureConfigDatabaseConnectionDetailConnectionString
         return pulumi.get(self, "connection_type")
 
     @connection_type.setter
-    def connection_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port number used to connect to the database.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The protocol used to connect to the database.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def service(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service name of the database.
         """
         return pulumi.get(self, "service")
 
     @service.setter
-    def service(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service", value)
 
 
 class ManagedDatabaseGroupManagedDatabaseArgsDict(TypedDict):
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
     """
-    database_sub_type: NotRequired[pulumi.Input[_builtins.str]]
+    database_sub_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
     """
-    database_type: NotRequired[pulumi.Input[_builtins.str]]
+    database_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of Oracle Database installation.
     """
-    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    defined_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
     """
-    deployment_type: NotRequired[pulumi.Input[_builtins.str]]
+    deployment_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The infrastructure used to deploy the Oracle Database.
     """
-    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    freeform_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group. 
 
@@ -16155,19 +16155,19 @@ class ManagedDatabaseGroupManagedDatabaseArgsDict(TypedDict):
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
     """
-    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    system_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
     """
-    time_added: NotRequired[pulumi.Input[_builtins.str]]
+    time_added: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the Managed Database was added to the group.
     """
-    workload_type: NotRequired[pulumi.Input[_builtins.str]]
+    workload_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The workload type of the Autonomous Database.
     """
@@ -16175,17 +16175,17 @@ class ManagedDatabaseGroupManagedDatabaseArgsDict(TypedDict):
 @pulumi.input_type
 class ManagedDatabaseGroupManagedDatabaseArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_sub_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_added: Optional[pulumi.Input[_builtins.str]] = None,
-                 workload_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_sub_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_added: pulumi.Input[Optional[_builtins.str]] = None,
+                 workload_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
         :param pulumi.Input[_builtins.str] database_sub_type: The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
@@ -16228,79 +16228,79 @@ class ManagedDatabaseGroupManagedDatabaseArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseSubType")
-    def database_sub_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_sub_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
         """
         return pulumi.get(self, "database_sub_type")
 
     @database_sub_type.setter
-    def database_sub_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_sub_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_sub_type", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseType")
-    def database_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of Oracle Database installation.
         """
         return pulumi.get(self, "database_type")
 
     @database_type.setter
-    def database_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_type", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deploymentType")
-    def deployment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deployment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The infrastructure used to deploy the Oracle Database.
         """
         return pulumi.get(self, "deployment_type")
 
     @deployment_type.setter
-    def deployment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deployment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deployment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group. 
 
@@ -16311,68 +16311,68 @@ class ManagedDatabaseGroupManagedDatabaseArgs:
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Managed Database Group. Valid characters are uppercase or lowercase letters, numbers, and "_". The name of the Managed Database Group cannot be modified. It must be unique in the compartment and must begin with an alphabetic character.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeAdded")
-    def time_added(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_added(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Managed Database was added to the group.
         """
         return pulumi.get(self, "time_added")
 
     @time_added.setter
-    def time_added(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_added(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_added", value)
 
     @_builtins.property
     @pulumi.getter(name="workloadType")
-    def workload_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def workload_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The workload type of the Autonomous Database.
         """
         return pulumi.get(self, "workload_type")
 
     @workload_type.setter
-    def workload_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def workload_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "workload_type", value)
 
 
 class ManagedDatabaseManagedDatabaseGroupArgsDict(TypedDict):
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the Managed Database.
     """
@@ -16380,9 +16380,9 @@ class ManagedDatabaseManagedDatabaseGroupArgsDict(TypedDict):
 @pulumi.input_type
 class ManagedDatabaseManagedDatabaseGroupArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
@@ -16397,55 +16397,55 @@ class ManagedDatabaseManagedDatabaseGroupArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Managed Database.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 class ManagedDatabasesChangeDatabaseParameterCredentialsArgsDict(TypedDict):
-    password: NotRequired[pulumi.Input[_builtins.str]]
+    password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The password for the database user name.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the database user. Indicates whether the database user is a normal user or sysdba.
     """
-    secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
     """
-    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The database user name used to perform management activity.
     """
@@ -16453,10 +16453,10 @@ class ManagedDatabasesChangeDatabaseParameterCredentialsArgsDict(TypedDict):
 @pulumi.input_type
 class ManagedDatabasesChangeDatabaseParameterCredentialsArgs:
     def __init__(__self__, *,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] password: The password for the database user name.
         :param pulumi.Input[_builtins.str] role: The role of the database user. Indicates whether the database user is a normal user or sysdba.
@@ -16474,50 +16474,50 @@ class ManagedDatabasesChangeDatabaseParameterCredentialsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The password for the database user name.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the database user. Indicates whether the database user is a normal user or sysdba.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         """
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
-    def secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database user name used to perform management activity.
         """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
 
@@ -16526,23 +16526,23 @@ class ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgsDict(TypedDic
     """
     The type of the credential for tablespace administration tasks.
     """
-    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    named_credential_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
     """
-    password: NotRequired[pulumi.Input[_builtins.str]]
+    password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The database user's password encoded using BASE64 scheme.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the database user.
     """
-    username: NotRequired[pulumi.Input[_builtins.str]]
+    username: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user to connect to the database.
     """
@@ -16551,11 +16551,11 @@ class ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgsDict(TypedDic
 class ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs:
     def __init__(__self__, *,
                  credential_type: pulumi.Input[_builtins.str],
-                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None):
+                 named_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_type: The type of the credential for tablespace administration tasks.
         :param pulumi.Input[_builtins.str] named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
@@ -16590,62 +16590,62 @@ class ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs:
 
     @_builtins.property
     @pulumi.getter(name="namedCredentialId")
-    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def named_credential_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
         """
         return pulumi.get(self, "named_credential_id")
 
     @named_credential_id.setter
-    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def named_credential_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database user's password encoded using BASE64 scheme.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the database user.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter
-    def username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user to connect to the database.
         """
         return pulumi.get(self, "username")
 
     @username.setter
-    def username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "username", value)
 
 
@@ -16658,7 +16658,7 @@ class ManagedDatabasesChangeDatabaseParameterParameterArgsDict(TypedDict):
     """
     The parameter value.
     """
-    update_comment: NotRequired[pulumi.Input[_builtins.str]]
+    update_comment: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A comment string to associate with the change in parameter value. It cannot contain control characters or a line break.
     """
@@ -16668,7 +16668,7 @@ class ManagedDatabasesChangeDatabaseParameterParameterArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[_builtins.str],
                  value: pulumi.Input[_builtins.str],
-                 update_comment: Optional[pulumi.Input[_builtins.str]] = None):
+                 update_comment: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] name: The parameter name.
         :param pulumi.Input[_builtins.str] value: The parameter value.
@@ -16705,31 +16705,31 @@ class ManagedDatabasesChangeDatabaseParameterParameterArgs:
 
     @_builtins.property
     @pulumi.getter(name="updateComment")
-    def update_comment(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def update_comment(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A comment string to associate with the change in parameter value. It cannot contain control characters or a line break.
         """
         return pulumi.get(self, "update_comment")
 
     @update_comment.setter
-    def update_comment(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def update_comment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "update_comment", value)
 
 
 class ManagedDatabasesResetDatabaseParameterCredentialsArgsDict(TypedDict):
-    password: NotRequired[pulumi.Input[_builtins.str]]
+    password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The password for the database user name.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the database user. Indicates whether the database user is a normal user or sysdba.
     """
-    secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
     """
-    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The database user name used to perform management activity.
     """
@@ -16737,10 +16737,10 @@ class ManagedDatabasesResetDatabaseParameterCredentialsArgsDict(TypedDict):
 @pulumi.input_type
 class ManagedDatabasesResetDatabaseParameterCredentialsArgs:
     def __init__(__self__, *,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] password: The password for the database user name.
         :param pulumi.Input[_builtins.str] role: The role of the database user. Indicates whether the database user is a normal user or sysdba.
@@ -16758,50 +16758,50 @@ class ManagedDatabasesResetDatabaseParameterCredentialsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The password for the database user name.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the database user. Indicates whether the database user is a normal user or sysdba.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         """
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
-    def secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database user name used to perform management activity.
         """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
 
@@ -16810,23 +16810,23 @@ class ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgsDict(TypedDict
     """
     The type of the credential for tablespace administration tasks.
     """
-    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    named_credential_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
     """
-    password: NotRequired[pulumi.Input[_builtins.str]]
+    password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The database user's password encoded using BASE64 scheme.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the database user.
     """
-    username: NotRequired[pulumi.Input[_builtins.str]]
+    username: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user to connect to the database.
     """
@@ -16835,11 +16835,11 @@ class ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgsDict(TypedDict
 class ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs:
     def __init__(__self__, *,
                  credential_type: pulumi.Input[_builtins.str],
-                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None):
+                 named_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_type: The type of the credential for tablespace administration tasks.
         :param pulumi.Input[_builtins.str] named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
@@ -16874,62 +16874,62 @@ class ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs:
 
     @_builtins.property
     @pulumi.getter(name="namedCredentialId")
-    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def named_credential_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential where the database password metadata is stored.
         """
         return pulumi.get(self, "named_credential_id")
 
     @named_credential_id.setter
-    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def named_credential_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database user's password encoded using BASE64 scheme.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database password is stored.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the database user.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter
-    def username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user to connect to the database.
         """
         return pulumi.get(self, "username")
 
     @username.setter
-    def username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "username", value)
 
 
@@ -17042,23 +17042,23 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgsD
     """
     The name of the Database Management feature.
     """
-    can_enable_all_current_pdbs: NotRequired[pulumi.Input[_builtins.bool]]
+    can_enable_all_current_pdbs: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
     """
-    connector_details: NotRequired[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict']]
+    connector_details: NotRequired[pulumi.Input[Optional['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]]
     """
     The connector details required to connect to an Oracle cloud database.
     """
-    database_connection_details: NotRequired[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict']]
+    database_connection_details: NotRequired[pulumi.Input[Optional['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']]]
     """
     The connection details required to connect to the database.
     """
-    is_auto_enable_pluggable_database: NotRequired[pulumi.Input[_builtins.bool]]
+    is_auto_enable_pluggable_database: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
     """
-    management_type: NotRequired[pulumi.Input[_builtins.str]]
+    management_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The management type for the database. Use "BASIC" for basic management. Use "ADVANCED" for full management.
     """
@@ -17067,11 +17067,11 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgsD
 class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs:
     def __init__(__self__, *,
                  feature: pulumi.Input[_builtins.str],
-                 can_enable_all_current_pdbs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 connector_details: Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']] = None,
-                 database_connection_details: Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']] = None,
-                 is_auto_enable_pluggable_database: Optional[pulumi.Input[_builtins.bool]] = None,
-                 management_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 can_enable_all_current_pdbs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 connector_details: pulumi.Input[Optional['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']] = None,
+                 database_connection_details: pulumi.Input[Optional['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']] = None,
+                 is_auto_enable_pluggable_database: pulumi.Input[Optional[_builtins.bool]] = None,
+                 management_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] feature: The name of the Database Management feature.
         :param pulumi.Input[_builtins.bool] can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
@@ -17106,67 +17106,67 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="canEnableAllCurrentPdbs")
-    def can_enable_all_current_pdbs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def can_enable_all_current_pdbs(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
         """
         return pulumi.get(self, "can_enable_all_current_pdbs")
 
     @can_enable_all_current_pdbs.setter
-    def can_enable_all_current_pdbs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def can_enable_all_current_pdbs(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "can_enable_all_current_pdbs", value)
 
     @_builtins.property
     @pulumi.getter(name="connectorDetails")
-    def connector_details(self) -> Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]:
+    def connector_details(self) -> pulumi.Input[Optional['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]:
         """
         The connector details required to connect to an Oracle cloud database.
         """
         return pulumi.get(self, "connector_details")
 
     @connector_details.setter
-    def connector_details(self, value: Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]):
+    def connector_details(self, value: pulumi.Input[Optional['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs']]):
         pulumi.set(self, "connector_details", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseConnectionDetails")
-    def database_connection_details(self) -> Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']]:
+    def database_connection_details(self) -> pulumi.Input[Optional['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']]:
         """
         The connection details required to connect to the database.
         """
         return pulumi.get(self, "database_connection_details")
 
     @database_connection_details.setter
-    def database_connection_details(self, value: Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']]):
+    def database_connection_details(self, value: pulumi.Input[Optional['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs']]):
         pulumi.set(self, "database_connection_details", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoEnablePluggableDatabase")
-    def is_auto_enable_pluggable_database(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_enable_pluggable_database(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
         """
         return pulumi.get(self, "is_auto_enable_pluggable_database")
 
     @is_auto_enable_pluggable_database.setter
-    def is_auto_enable_pluggable_database(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_enable_pluggable_database(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_enable_pluggable_database", value)
 
     @_builtins.property
     @pulumi.getter(name="managementType")
-    def management_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The management type for the database. Use "BASIC" for basic management. Use "ADVANCED" for full management.
         """
         return pulumi.get(self, "management_type")
 
     @management_type.setter
-    def management_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_type", value)
 
 
 class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgsDict(TypedDict):
-    connector_type: NotRequired[pulumi.Input[_builtins.str]]
+    connector_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The list of supported connection types:
     * PE: Private endpoint
@@ -17174,15 +17174,15 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConne
     * EXTERNAL: External database connector
     * DIRECT: Direct connection
     """
-    database_connector_id: NotRequired[pulumi.Input[_builtins.str]]
+    database_connector_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
     """
-    management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    management_agent_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
     """
-    private_end_point_id: NotRequired[pulumi.Input[_builtins.str]]
+    private_end_point_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
     """
@@ -17190,10 +17190,10 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConne
 @pulumi.input_type
 class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs:
     def __init__(__self__, *,
-                 connector_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_end_point_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_end_point_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] connector_type: The list of supported connection types:
                * PE: Private endpoint
@@ -17215,7 +17215,7 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConne
 
     @_builtins.property
     @pulumi.getter(name="connectorType")
-    def connector_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connector_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The list of supported connection types:
         * PE: Private endpoint
@@ -17226,52 +17226,52 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConne
         return pulumi.get(self, "connector_type")
 
     @connector_type.setter
-    def connector_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connector_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connector_type", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseConnectorId")
-    def database_connector_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_connector_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
         """
         return pulumi.get(self, "database_connector_id")
 
     @database_connector_id.setter
-    def database_connector_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_connector_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_connector_id", value)
 
     @_builtins.property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
         """
         return pulumi.get(self, "management_agent_id")
 
     @management_agent_id.setter
-    def management_agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndPointId")
-    def private_end_point_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_end_point_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         """
         return pulumi.get(self, "private_end_point_id")
 
     @private_end_point_id.setter
-    def private_end_point_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_end_point_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_end_point_id", value)
 
 
 class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgsDict(TypedDict):
-    connection_credentials: NotRequired[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgsDict']]
+    connection_credentials: NotRequired[pulumi.Input[Optional['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']]]
     """
     The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
     """
-    connection_string: NotRequired[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgsDict']]
+    connection_string: NotRequired[pulumi.Input[Optional['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']]]
     """
     The details of the Oracle Database connection string.
     """
@@ -17279,8 +17279,8 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatab
 @pulumi.input_type
 class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs:
     def __init__(__self__, *,
-                 connection_credentials: Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']] = None,
-                 connection_string: Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']] = None):
+                 connection_credentials: pulumi.Input[Optional['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']] = None,
+                 connection_string: pulumi.Input[Optional['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']] = None):
         """
         :param pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs'] connection_credentials: The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         :param pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs'] connection_string: The details of the Oracle Database connection string.
@@ -17292,57 +17292,57 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatab
 
     @_builtins.property
     @pulumi.getter(name="connectionCredentials")
-    def connection_credentials(self) -> Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']]:
+    def connection_credentials(self) -> pulumi.Input[Optional['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']]:
         """
         The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
         """
         return pulumi.get(self, "connection_credentials")
 
     @connection_credentials.setter
-    def connection_credentials(self, value: Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']]):
+    def connection_credentials(self, value: pulumi.Input[Optional['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs']]):
         pulumi.set(self, "connection_credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionString")
-    def connection_string(self) -> Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']]:
+    def connection_string(self) -> pulumi.Input[Optional['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']]:
         """
         The details of the Oracle Database connection string.
         """
         return pulumi.get(self, "connection_string")
 
     @connection_string.setter
-    def connection_string(self, value: Optional[pulumi.Input['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']]):
+    def connection_string(self, value: pulumi.Input[Optional['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs']]):
         pulumi.set(self, "connection_string", value)
 
 
 class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgsDict(TypedDict):
-    credential_name: NotRequired[pulumi.Input[_builtins.str]]
+    credential_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 
     For example: inventorydb.abc112233445566778899
     """
-    credential_type: NotRequired[pulumi.Input[_builtins.str]]
+    credential_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of credential used to connect to the database.
     """
-    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    named_credential_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The role of the user connecting to the database.
     """
-    ssl_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    ssl_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
     """
-    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user name used to connect to the database.
     """
@@ -17350,13 +17350,13 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatab
 @pulumi.input_type
 class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs:
     def __init__(__self__, *,
-                 credential_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 credential_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 credential_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 credential_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 named_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
                
@@ -17385,7 +17385,7 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatab
 
     @_builtins.property
     @pulumi.getter(name="credentialName")
-    def credential_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
 
@@ -17394,97 +17394,97 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatab
         return pulumi.get(self, "credential_name")
 
     @credential_name.setter
-    def credential_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_name", value)
 
     @_builtins.property
     @pulumi.getter(name="credentialType")
-    def credential_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of credential used to connect to the database.
         """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
-    def credential_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_type", value)
 
     @_builtins.property
     @pulumi.getter(name="namedCredentialId")
-    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def named_credential_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
         """
         return pulumi.get(self, "named_credential_id")
 
     @named_credential_id.setter
-    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def named_credential_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the user connecting to the database.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="sslSecretId")
-    def ssl_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
         """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
-    def ssl_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user name used to connect to the database.
         """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
 
 class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgsDict(TypedDict):
-    connection_type: NotRequired[pulumi.Input[_builtins.str]]
+    connection_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The list of supported connection types:
     * BASIC: Basic connection details
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The port number used to connect to the database.
     """
-    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The protocol used to connect to the database.
     """
-    service: NotRequired[pulumi.Input[_builtins.str]]
+    service: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The service name of the database.
     """
@@ -17492,10 +17492,10 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatab
 @pulumi.input_type
 class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs:
     def __init__(__self__, *,
-                 connection_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 service: Optional[pulumi.Input[_builtins.str]] = None):
+                 connection_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 service: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] connection_type: The list of supported connection types:
                * BASIC: Basic connection details
@@ -17514,7 +17514,7 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatab
 
     @_builtins.property
     @pulumi.getter(name="connectionType")
-    def connection_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def connection_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The list of supported connection types:
         * BASIC: Basic connection details
@@ -17522,43 +17522,43 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatab
         return pulumi.get(self, "connection_type")
 
     @connection_type.setter
-    def connection_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def connection_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port number used to connect to the database.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The protocol used to connect to the database.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def service(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service name of the database.
         """
         return pulumi.get(self, "service")
 
     @service.setter
-    def service(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service", value)
 
 

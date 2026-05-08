@@ -148,7 +148,7 @@ def get_network_security_groups(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_network_security_groups = oci.Core.get_network_security_groups(compartment_id=compartment_id,
+    test_network_security_groups = oci.core.get_network_security_groups(compartment_id=compartment_id,
         display_name=network_security_group_display_name,
         state=network_security_group_state,
         vcn_id=test_vcn["id"],
@@ -181,12 +181,12 @@ def get_network_security_groups(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'),
         vlan_id=pulumi.get(__ret__, 'vlan_id'))
-def get_network_security_groups_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNetworkSecurityGroupsFilterArgs', 'GetNetworkSecurityGroupsFilterArgsDict']]]]] = None,
-                                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       vcn_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       vlan_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_network_security_groups_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNetworkSecurityGroupsFilterArgs', 'GetNetworkSecurityGroupsFilterArgsDict']]]]] = None,
+                                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       vcn_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       vlan_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkSecurityGroupsResult]:
     """
     This data source provides the list of Network Security Groups in Oracle Cloud Infrastructure Core service.
@@ -200,7 +200,7 @@ def get_network_security_groups_output(compartment_id: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_network_security_groups = oci.Core.get_network_security_groups(compartment_id=compartment_id,
+    test_network_security_groups = oci.core.get_network_security_groups(compartment_id=compartment_id,
         display_name=network_security_group_display_name,
         state=network_security_group_state,
         vcn_id=test_vcn["id"],

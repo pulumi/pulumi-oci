@@ -70,11 +70,11 @@ import * as utilities from "../utilities";
  *     },
  *     target: {
  *         kind: serviceConnectorTargetKind,
- *         batchRolloverSizeInMbs: serviceConnectorTargetBatchRolloverSizeInMbs,
- *         batchRolloverTimeInMs: serviceConnectorTargetBatchRolloverTimeInMs,
- *         batchSizeInKbs: serviceConnectorTargetBatchSizeInKbs,
- *         batchSizeInNum: serviceConnectorTargetBatchSizeInNum,
- *         batchTimeInSec: serviceConnectorTargetBatchTimeInSec,
+ *         batchRolloverSizeInMbs: Number(serviceConnectorTargetBatchRolloverSizeInMbs),
+ *         batchRolloverTimeInMs: Number(serviceConnectorTargetBatchRolloverTimeInMs),
+ *         batchSizeInKbs: Number(serviceConnectorTargetBatchSizeInKbs),
+ *         batchSizeInNum: Number(serviceConnectorTargetBatchSizeInNum),
+ *         batchTimeInSec: Number(serviceConnectorTargetBatchTimeInSec),
  *         bucket: serviceConnectorTargetBucket,
  *         compartmentId: compartmentId,
  *         dimensions: [{
@@ -85,7 +85,7 @@ import * as utilities from "../utilities";
  *             },
  *             name: serviceConnectorTargetDimensionsName,
  *         }],
- *         enableFormattedMessaging: serviceConnectorTargetEnableFormattedMessaging,
+ *         enableFormattedMessaging: serviceConnectorTargetEnableFormattedMessaging === "true",
  *         functionId: testFunction.id,
  *         logGroupId: testLogGroup.id,
  *         logSourceIdentifier: serviceConnectorTargetLogSourceIdentifier,
@@ -105,8 +105,8 @@ import * as utilities from "../utilities";
  *     },
  *     tasks: [{
  *         kind: serviceConnectorTasksKind,
- *         batchSizeInKbs: serviceConnectorTasksBatchSizeInKbs,
- *         batchTimeInSec: serviceConnectorTasksBatchTimeInSec,
+ *         batchSizeInKbs: Number(serviceConnectorTasksBatchSizeInKbs),
+ *         batchTimeInSec: Number(serviceConnectorTasksBatchTimeInSec),
  *         condition: serviceConnectorTasksCondition,
  *         functionId: testFunction.id,
  *     }],
@@ -278,35 +278,35 @@ export interface ConnectorState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the comparment to create the connector in.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the resource. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
      */
-    lifecyleDetails?: pulumi.Input<string>;
+    lifecyleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable)
      */
-    source?: pulumi.Input<inputs.Sch.ConnectorSource>;
+    source?: pulumi.Input<inputs.Sch.ConnectorSource | undefined>;
     /**
      * (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
      *
@@ -314,27 +314,27 @@ export interface ConnectorState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable)
      */
-    target?: pulumi.Input<inputs.Sch.ConnectorTarget>;
+    target?: pulumi.Input<inputs.Sch.ConnectorTarget | undefined>;
     /**
      * (Updatable) The list of tasks.
      */
-    tasks?: pulumi.Input<pulumi.Input<inputs.Sch.ConnectorTask>[]>;
+    tasks?: pulumi.Input<pulumi.Input<inputs.Sch.ConnectorTask>[] | undefined>;
     /**
      * The date and time when the connector was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time when the connector was updated. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -348,11 +348,11 @@ export interface ConnectorArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the resource. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.
      */
@@ -360,7 +360,7 @@ export interface ConnectorArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable)
      */
@@ -372,7 +372,7 @@ export interface ConnectorArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable)
      */
@@ -380,5 +380,5 @@ export interface ConnectorArgs {
     /**
      * (Updatable) The list of tasks.
      */
-    tasks?: pulumi.Input<pulumi.Input<inputs.Sch.ConnectorTask>[]>;
+    tasks?: pulumi.Input<pulumi.Input<inputs.Sch.ConnectorTask>[] | undefined>;
 }

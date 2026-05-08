@@ -75,9 +75,9 @@ export class MaskData extends pulumi.CustomResource {
  * Input properties used for looking up and filtering MaskData resources.
  */
 export interface MaskDataState {
-    maskingPolicyId?: pulumi.Input<string>;
-    targetCredentials?: pulumi.Input<inputs.DataSafe.MaskDataTargetCredentials>;
-    targetId?: pulumi.Input<string>;
+    maskingPolicyId?: pulumi.Input<string | undefined>;
+    targetCredentials?: pulumi.Input<inputs.DataSafe.MaskDataTargetCredentials | undefined>;
+    targetId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -85,6 +85,6 @@ export interface MaskDataState {
  */
 export interface MaskDataArgs {
     maskingPolicyId: pulumi.Input<string>;
-    targetCredentials?: pulumi.Input<inputs.DataSafe.MaskDataTargetCredentials>;
+    targetCredentials?: pulumi.Input<inputs.DataSafe.MaskDataTargetCredentials | undefined>;
     targetId: pulumi.Input<string>;
 }

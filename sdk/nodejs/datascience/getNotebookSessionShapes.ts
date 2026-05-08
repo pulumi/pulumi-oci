@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNotebookSessionShapes = oci.DataScience.getNotebookSessionShapes({
+ * const testNotebookSessionShapes = oci.datascience.getNotebookSessionShapes({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetNotebookSessionShapesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNotebookSessionShapes = oci.DataScience.getNotebookSessionShapes({
+ * const testNotebookSessionShapes = oci.datascience.getNotebookSessionShapes({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -88,5 +88,5 @@ export interface GetNotebookSessionShapesOutputArgs {
      * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetNotebookSessionShapesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetNotebookSessionShapesFilterArgs>[] | undefined>;
 }

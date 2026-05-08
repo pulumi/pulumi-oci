@@ -220,55 +220,55 @@ export interface VbInstanceState {
     /**
      * (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
      */
-    alternateCustomEndpoints?: pulumi.Input<pulumi.Input<inputs.VisualBuilder.VbInstanceAlternateCustomEndpoint>[]>;
+    alternateCustomEndpoints?: pulumi.Input<pulumi.Input<inputs.VisualBuilder.VbInstanceAlternateCustomEndpoint>[] | undefined>;
     /**
      * (Updatable) Compartment Identifier.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
      */
-    consumptionModel?: pulumi.Input<string>;
+    consumptionModel?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Details for a custom endpoint for the vb instance (update).
      */
-    customEndpoint?: pulumi.Input<inputs.VisualBuilder.VbInstanceCustomEndpoint>;
+    customEndpoint?: pulumi.Input<inputs.VisualBuilder.VbInstanceCustomEndpoint | undefined>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Vb Instance Identifier.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
      */
-    idcsOpenId?: pulumi.Input<string>;
+    idcsOpenId?: pulumi.Input<string | undefined>;
     /**
      * The Vb Instance URL.
      */
-    instanceUrl?: pulumi.Input<string>;
+    instanceUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Visual Builder is enabled or not.
      */
-    isVisualBuilderEnabled?: pulumi.Input<boolean>;
+    isVisualBuilderEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The NAT gateway IP address for the VB management VCN
      */
-    managementNatGatewayIp?: pulumi.Input<string>;
+    managementNatGatewayIp?: pulumi.Input<string | undefined>;
     /**
      * The Oracle Cloud ID (OCID) of the Visual Builder management VCN
      */
-    managementVcnId?: pulumi.Input<string>;
+    managementVcnId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
      */
-    networkEndpointDetails?: pulumi.Input<inputs.VisualBuilder.VbInstanceNetworkEndpointDetails>;
+    networkEndpointDetails?: pulumi.Input<inputs.VisualBuilder.VbInstanceNetworkEndpointDetails | undefined>;
     /**
      * (Updatable) The number of Nodes
      *
@@ -276,35 +276,35 @@ export interface VbInstanceState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    nodeCount?: pulumi.Input<number>;
+    nodeCount?: pulumi.Input<number | undefined>;
     /**
      * The NAT gateway IP address for the VB service VCN
      */
-    serviceNatGatewayIp?: pulumi.Input<string>;
+    serviceNatGatewayIp?: pulumi.Input<string | undefined>;
     /**
      * The Oracle Cloud ID (OCID) of the Visual Builder service VCN
      */
-    serviceVcnId?: pulumi.Input<string>;
+    serviceVcnId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the vb instance.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    stateMessage?: pulumi.Input<string>;
+    stateMessage?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the the VbInstance was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the VbInstance was updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -314,7 +314,7 @@ export interface VbInstanceArgs {
     /**
      * (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
      */
-    alternateCustomEndpoints?: pulumi.Input<pulumi.Input<inputs.VisualBuilder.VbInstanceAlternateCustomEndpoint>[]>;
+    alternateCustomEndpoints?: pulumi.Input<pulumi.Input<inputs.VisualBuilder.VbInstanceAlternateCustomEndpoint>[] | undefined>;
     /**
      * (Updatable) Compartment Identifier.
      */
@@ -322,15 +322,15 @@ export interface VbInstanceArgs {
     /**
      * Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
      */
-    consumptionModel?: pulumi.Input<string>;
+    consumptionModel?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Details for a custom endpoint for the vb instance (update).
      */
-    customEndpoint?: pulumi.Input<inputs.VisualBuilder.VbInstanceCustomEndpoint>;
+    customEndpoint?: pulumi.Input<inputs.VisualBuilder.VbInstanceCustomEndpoint | undefined>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Vb Instance Identifier.
      */
@@ -338,19 +338,19 @@ export interface VbInstanceArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
      */
-    idcsOpenId?: pulumi.Input<string>;
+    idcsOpenId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Visual Builder is enabled or not.
      */
-    isVisualBuilderEnabled?: pulumi.Input<boolean>;
+    isVisualBuilderEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
      */
-    networkEndpointDetails?: pulumi.Input<inputs.VisualBuilder.VbInstanceNetworkEndpointDetails>;
+    networkEndpointDetails?: pulumi.Input<inputs.VisualBuilder.VbInstanceNetworkEndpointDetails | undefined>;
     /**
      * (Updatable) The number of Nodes
      *

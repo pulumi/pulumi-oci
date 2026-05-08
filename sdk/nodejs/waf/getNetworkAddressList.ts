@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkAddressList = oci.Waf.getNetworkAddressList({
+ * const testNetworkAddressList = oci.waf.getNetworkAddressList({
  *     networkAddressListId: testNetworkAddressListOciWafNetworkAddressList.id,
  * });
  * ```
@@ -108,7 +108,7 @@ export interface GetNetworkAddressListResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkAddressList = oci.Waf.getNetworkAddressList({
+ * const testNetworkAddressList = oci.waf.getNetworkAddressList({
  *     networkAddressListId: testNetworkAddressListOciWafNetworkAddressList.id,
  * });
  * ```

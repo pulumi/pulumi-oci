@@ -126,7 +126,7 @@ def get_knowledgebases(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_knowledge_bases = oci.Adm.get_knowledgebases(compartment_id=compartment_id,
+    test_knowledge_bases = oci.adm.get_knowledgebases(compartment_id=compartment_id,
         display_name=knowledge_base_display_name,
         id=knowledge_base_id,
         state=knowledge_base_state)
@@ -154,11 +154,11 @@ def get_knowledgebases(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         knowledge_base_collections=pulumi.get(__ret__, 'knowledge_base_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_knowledgebases_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetKnowledgebasesFilterArgs', 'GetKnowledgebasesFilterArgsDict']]]]] = None,
-                              id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_knowledgebases_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetKnowledgebasesFilterArgs', 'GetKnowledgebasesFilterArgsDict']]]]] = None,
+                              id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetKnowledgebasesResult]:
     """
     This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure ADM service.
@@ -172,7 +172,7 @@ def get_knowledgebases_output(compartment_id: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_knowledge_bases = oci.Adm.get_knowledgebases(compartment_id=compartment_id,
+    test_knowledge_bases = oci.adm.get_knowledgebases(compartment_id=compartment_id,
         display_name=knowledge_base_display_name,
         id=knowledge_base_id,
         state=knowledge_base_state)

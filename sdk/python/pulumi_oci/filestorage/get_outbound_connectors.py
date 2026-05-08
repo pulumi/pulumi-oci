@@ -138,7 +138,7 @@ def get_outbound_connectors(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_outbound_connectors = oci.FileStorage.get_outbound_connectors(availability_domain=outbound_connector_availability_domain,
+    test_outbound_connectors = oci.filestorage.get_outbound_connectors(availability_domain=outbound_connector_availability_domain,
         compartment_id=compartment_id,
         display_name=outbound_connector_display_name,
         id=outbound_connector_id,
@@ -170,12 +170,12 @@ def get_outbound_connectors(availability_domain: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         outbound_connectors=pulumi.get(__ret__, 'outbound_connectors'),
         state=pulumi.get(__ret__, 'state'))
-def get_outbound_connectors_output(availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                                   compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOutboundConnectorsFilterArgs', 'GetOutboundConnectorsFilterArgsDict']]]]] = None,
-                                   id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_outbound_connectors_output(availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                                   compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOutboundConnectorsFilterArgs', 'GetOutboundConnectorsFilterArgsDict']]]]] = None,
+                                   id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOutboundConnectorsResult]:
     """
     This data source provides the list of Outbound Connectors in Oracle Cloud Infrastructure File Storage service.
@@ -188,7 +188,7 @@ def get_outbound_connectors_output(availability_domain: Optional[pulumi.Input[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_outbound_connectors = oci.FileStorage.get_outbound_connectors(availability_domain=outbound_connector_availability_domain,
+    test_outbound_connectors = oci.filestorage.get_outbound_connectors(availability_domain=outbound_connector_availability_domain,
         compartment_id=compartment_id,
         display_name=outbound_connector_display_name,
         id=outbound_connector_id,

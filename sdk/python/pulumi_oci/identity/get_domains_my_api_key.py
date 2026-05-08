@@ -294,7 +294,7 @@ def get_domains_my_api_key(authorization: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_my_api_key = oci.Identity.get_domains_my_api_key(idcs_endpoint=test_domain["url"],
+    test_my_api_key = oci.identity.get_domains_my_api_key(idcs_endpoint=test_domain["url"],
         my_api_key_id=test_api_key["id"],
         authorization=my_api_key_authorization,
         resource_type_schema_version=my_api_key_resource_type_schema_version)
@@ -336,10 +336,10 @@ def get_domains_my_api_key(authorization: Optional[_builtins.str] = None,
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'),
         users=pulumi.get(__ret__, 'users'))
-def get_domains_my_api_key_output(authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                  my_api_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                  resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_my_api_key_output(authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                  my_api_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsMyApiKeyResult]:
     """
     This data source provides details about a specific My Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -352,7 +352,7 @@ def get_domains_my_api_key_output(authorization: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_my_api_key = oci.Identity.get_domains_my_api_key(idcs_endpoint=test_domain["url"],
+    test_my_api_key = oci.identity.get_domains_my_api_key(idcs_endpoint=test_domain["url"],
         my_api_key_id=test_api_key["id"],
         authorization=my_api_key_authorization,
         resource_type_schema_version=my_api_key_resource_type_schema_version)

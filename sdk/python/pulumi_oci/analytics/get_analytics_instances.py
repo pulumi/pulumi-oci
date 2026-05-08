@@ -150,7 +150,7 @@ def get_analytics_instances(capacity_type: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_analytics_instances = oci.Analytics.get_analytics_instances(compartment_id=compartment_id,
+    test_analytics_instances = oci.analytics.get_analytics_instances(compartment_id=compartment_id,
         capacity_type=analytics_instance_capacity_type,
         feature_set=analytics_instance_feature_set,
         name=analytics_instance_name,
@@ -183,12 +183,12 @@ def get_analytics_instances(capacity_type: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-def get_analytics_instances_output(capacity_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   feature_set: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAnalyticsInstancesFilterArgs', 'GetAnalyticsInstancesFilterArgsDict']]]]] = None,
-                                   name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_analytics_instances_output(capacity_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   feature_set: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAnalyticsInstancesFilterArgs', 'GetAnalyticsInstancesFilterArgsDict']]]]] = None,
+                                   name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAnalyticsInstancesResult]:
     """
     This data source provides the list of Analytics Instances in Oracle Cloud Infrastructure Analytics service.
@@ -201,7 +201,7 @@ def get_analytics_instances_output(capacity_type: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_analytics_instances = oci.Analytics.get_analytics_instances(compartment_id=compartment_id,
+    test_analytics_instances = oci.analytics.get_analytics_instances(compartment_id=compartment_id,
         capacity_type=analytics_instance_capacity_type,
         feature_set=analytics_instance_feature_set,
         name=analytics_instance_name,

@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     tagDefinitionId: testTagDefinition.id,
  *     value: tagDefaultValue,
- *     isRequired: tagDefaultIsRequired,
+ *     isRequired: tagDefaultIsRequired === "true",
  * });
  * ```
  *
@@ -163,7 +163,7 @@ export interface TagDefaultState {
     /**
      * The OCID of the compartment. The tag default will be applied to all new resources created in this compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) If you specify that a value is required, a value is set during resource creation (either by the user creating the resource or another tag defualt). If no value is set, resource creation is blocked.
      * * If the `isRequired` flag is set to "true", the value is set during resource creation.
@@ -171,27 +171,27 @@ export interface TagDefaultState {
      *
      * Example: `false`
      */
-    isRequired?: pulumi.Input<boolean>;
+    isRequired?: pulumi.Input<boolean | undefined>;
     /**
      * The tag default's current state. After creating a `TagDefault`, make sure its `lifecycleState` is ACTIVE before using it.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
      */
-    tagDefinitionId?: pulumi.Input<string>;
+    tagDefinitionId?: pulumi.Input<string | undefined>;
     /**
      * The name used in the tag definition. This field is informational in the context of the tag default.
      */
-    tagDefinitionName?: pulumi.Input<string>;
+    tagDefinitionName?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the tag namespace that contains the tag definition.
      */
-    tagNamespaceId?: pulumi.Input<string>;
+    tagNamespaceId?: pulumi.Input<string | undefined>;
     /**
      * Date and time the `TagDefault` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The default value for the tag definition. This will be applied to all new resources created in the compartment. 
      *
@@ -199,7 +199,7 @@ export interface TagDefaultState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    value?: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -217,7 +217,7 @@ export interface TagDefaultArgs {
      *
      * Example: `false`
      */
-    isRequired?: pulumi.Input<boolean>;
+    isRequired?: pulumi.Input<boolean | undefined>;
     /**
      * The OCID of the tag definition. The tag default will always assign a default value for this tag definition.
      */

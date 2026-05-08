@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTarget = oci.CloudGuard.getGuardTarget({
+ * const testTarget = oci.cloudguard.getGuardTarget({
  *     targetId: testTargetOciCloudGuardTarget.id,
  * });
  * ```
@@ -128,7 +128,7 @@ export interface GetGuardTargetResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTarget = oci.CloudGuard.getGuardTarget({
+ * const testTarget = oci.cloudguard.getGuardTarget({
  *     targetId: testTargetOciCloudGuardTarget.id,
  * });
  * ```

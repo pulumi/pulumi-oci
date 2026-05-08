@@ -190,12 +190,12 @@ def get_recommendations(category_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_recommendations = oci.Optimizer.get_recommendations(compartment_id=compartment_id,
-        compartment_id_in_subtree=recommendation_compartment_id_in_subtree,
+    test_recommendations = oci.optimizer.get_recommendations(compartment_id=compartment_id,
+        compartment_id_in_subtree=recommendation_compartment_id_in_subtree == "true",
         category_id=test_category["id"],
         category_name=test_category["name"],
         child_tenancy_ids=recommendation_child_tenancy_ids,
-        include_organization=recommendation_include_organization,
+        include_organization=recommendation_include_organization == "true",
         name=recommendation_name,
         state=recommendation_state,
         status=recommendation_status)
@@ -251,16 +251,16 @@ def get_recommendations(category_id: Optional[_builtins.str] = None,
         recommendation_collections=pulumi.get(__ret__, 'recommendation_collections'),
         state=pulumi.get(__ret__, 'state'),
         status=pulumi.get(__ret__, 'status'))
-def get_recommendations_output(category_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               category_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               child_tenancy_ids: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                               compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               compartment_id_in_subtree: Optional[pulumi.Input[_builtins.bool]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRecommendationsFilterArgs', 'GetRecommendationsFilterArgsDict']]]]] = None,
-                               include_organization: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                               name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_recommendations_output(category_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               category_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               child_tenancy_ids: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                               compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               compartment_id_in_subtree: pulumi.Input[Optional[_builtins.bool]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRecommendationsFilterArgs', 'GetRecommendationsFilterArgsDict']]]]] = None,
+                               include_organization: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                               name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRecommendationsResult]:
     """
     This data source provides the list of Recommendations in Oracle Cloud Infrastructure Optimizer service.
@@ -273,12 +273,12 @@ def get_recommendations_output(category_id: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_recommendations = oci.Optimizer.get_recommendations(compartment_id=compartment_id,
-        compartment_id_in_subtree=recommendation_compartment_id_in_subtree,
+    test_recommendations = oci.optimizer.get_recommendations(compartment_id=compartment_id,
+        compartment_id_in_subtree=recommendation_compartment_id_in_subtree == "true",
         category_id=test_category["id"],
         category_name=test_category["name"],
         child_tenancy_ids=recommendation_child_tenancy_ids,
-        include_organization=recommendation_include_organization,
+        include_organization=recommendation_include_organization == "true",
         name=recommendation_name,
         state=recommendation_state,
         status=recommendation_status)

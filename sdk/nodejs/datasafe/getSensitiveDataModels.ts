@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveDataModels = oci.DataSafe.getSensitiveDataModels({
+ * const testSensitiveDataModels = oci.datasafe.getSensitiveDataModels({
  *     compartmentId: compartmentId,
  *     accessLevel: sensitiveDataModelAccessLevel,
- *     compartmentIdInSubtree: sensitiveDataModelCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sensitiveDataModelCompartmentIdInSubtree === "true",
  *     displayName: sensitiveDataModelDisplayName,
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     state: sensitiveDataModelState,
@@ -139,10 +139,10 @@ export interface GetSensitiveDataModelsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveDataModels = oci.DataSafe.getSensitiveDataModels({
+ * const testSensitiveDataModels = oci.datasafe.getSensitiveDataModels({
  *     compartmentId: compartmentId,
  *     accessLevel: sensitiveDataModelAccessLevel,
- *     compartmentIdInSubtree: sensitiveDataModelCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sensitiveDataModelCompartmentIdInSubtree === "true",
  *     displayName: sensitiveDataModelDisplayName,
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     state: sensitiveDataModelState,
@@ -175,7 +175,7 @@ export interface GetSensitiveDataModelsOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -183,34 +183,34 @@ export interface GetSensitiveDataModelsOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the specified display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSensitiveDataModelsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSensitiveDataModelsFilterArgs>[] | undefined>;
     /**
      * A filter to return only the resources that match the specified sensitive data model OCID.
      */
-    sensitiveDataModelId?: pulumi.Input<string>;
+    sensitiveDataModelId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that match the specified lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items related to a specific target OCID.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeCreatedLessThan?: pulumi.Input<string>;
+    timeCreatedLessThan?: pulumi.Input<string | undefined>;
 }

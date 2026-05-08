@@ -277,7 +277,7 @@ def get_model(id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         training_datasets=pulumi.get(__ret__, 'training_datasets'),
         version=pulumi.get(__ret__, 'version'))
-def get_model_output(id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_model_output(id: pulumi.Input[Optional[_builtins.str]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetModelResult]:
     """
     This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Language service.

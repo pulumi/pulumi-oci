@@ -127,15 +127,15 @@ export interface LogAnalyticsResourceCategoriesManagementState {
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * The list of categories to be assigned to the resource.
      */
-    resourceCategories?: pulumi.Input<pulumi.Input<string>[]>;
+    resourceCategories?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The resource unique identifier for which catagories are managed.
      */
-    resourceId?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
     /**
      * The resource type of the resource for which categories are managed.
      *
@@ -143,7 +143,7 @@ export interface LogAnalyticsResourceCategoriesManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
 }
 
 /**

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUsagelimits = oci.UsageProxy.getUsagelimits({
+ * const testUsagelimits = oci.usageproxy.getUsagelimits({
  *     compartmentId: compartmentId,
  *     subscriptionId: testSubscription.id,
  *     limitType: usagelimitLimitType,
@@ -98,7 +98,7 @@ export interface GetUsagelimitsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUsagelimits = oci.UsageProxy.getUsagelimits({
+ * const testUsagelimits = oci.usageproxy.getUsagelimits({
  *     compartmentId: compartmentId,
  *     subscriptionId: testSubscription.id,
  *     limitType: usagelimitLimitType,
@@ -127,19 +127,19 @@ export interface GetUsagelimitsOutputArgs {
      * The OCID of the root compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.UsageProxy.GetUsagelimitsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.UsageProxy.GetUsagelimitsFilterArgs>[] | undefined>;
     /**
      * Hard or soft limit. Hard limits lead to breaches, soft to alerts.
      */
-    limitType?: pulumi.Input<string>;
+    limitType?: pulumi.Input<string | undefined>;
     /**
      * Resource Name.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * Service Name.
      */
-    serviceType?: pulumi.Input<string>;
+    serviceType?: pulumi.Input<string | undefined>;
     /**
      * The subscription ID for which rewards information is requested for.
      */

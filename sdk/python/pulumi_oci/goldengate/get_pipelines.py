@@ -137,7 +137,7 @@ def get_pipelines(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pipelines = oci.GoldenGate.get_pipelines(compartment_id=compartment_id,
+    test_pipelines = oci.goldengate.get_pipelines(compartment_id=compartment_id,
         display_name=pipeline_display_name,
         lifecycle_sub_state=pipeline_lifecycle_sub_state,
         state=pipeline_state)
@@ -166,11 +166,11 @@ def get_pipelines(compartment_id: Optional[_builtins.str] = None,
         lifecycle_sub_state=pulumi.get(__ret__, 'lifecycle_sub_state'),
         pipeline_collections=pulumi.get(__ret__, 'pipeline_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_pipelines_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                         display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPipelinesFilterArgs', 'GetPipelinesFilterArgsDict']]]]] = None,
-                         lifecycle_sub_state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_pipelines_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPipelinesFilterArgs', 'GetPipelinesFilterArgsDict']]]]] = None,
+                         lifecycle_sub_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPipelinesResult]:
     """
     This data source provides the list of Pipelines in Oracle Cloud Infrastructure Golden Gate service.
@@ -183,7 +183,7 @@ def get_pipelines_output(compartment_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_pipelines = oci.GoldenGate.get_pipelines(compartment_id=compartment_id,
+    test_pipelines = oci.goldengate.get_pipelines(compartment_id=compartment_id,
         display_name=pipeline_display_name,
         lifecycle_sub_state=pipeline_lifecycle_sub_state,
         state=pipeline_state)

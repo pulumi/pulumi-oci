@@ -24,13 +24,13 @@ import * as utilities from "../utilities";
  *     stackTemplates: stackStackTemplates,
  *     adbs: [{
  *         adminPasswordId: testAdminPassword.id,
- *         dataStorageSizeInTbs: stackAdbDataStorageSizeInTbs,
+ *         dataStorageSizeInTbs: Number(stackAdbDataStorageSizeInTbs),
  *         dbVersion: stackAdbDbVersion,
  *         dbWorkload: stackAdbDbWorkload,
- *         ecpu: stackAdbEcpu,
+ *         ecpu: Number(stackAdbEcpu),
  *         instanceId: stackAdbInstanceId,
- *         isMtlsConnectionRequired: stackAdbIsMtlsConnectionRequired,
- *         isPublic: stackAdbIsPublic,
+ *         isMtlsConnectionRequired: stackAdbIsMtlsConnectionRequired === "true",
+ *         isPublic: stackAdbIsPublic === "true",
  *         subnetId: testSubnet.id,
  *         toolsPublicAccess: stackAdbToolsPublicAccess,
  *         artifactObjectStoragePath: stackAdbArtifactObjectStoragePath,
@@ -49,7 +49,7 @@ import * as utilities from "../utilities";
  *         executorShape: stackDataflowExecutorShape,
  *         instanceId: stackDataflowInstanceId,
  *         logBucketInstanceId: stackObjectstorageInstanceId,
- *         numExecutors: stackDataflowNumExecutors,
+ *         numExecutors: Number(stackDataflowNumExecutors),
  *         sparkVersion: stackDataflowSparkVersion,
  *         connections: {
  *             connectionDetails: {
@@ -62,12 +62,12 @@ import * as utilities from "../utilities";
  *             subnetId: testSubnet.id,
  *         },
  *         driverShapeConfig: {
- *             memoryInGbs: stackDataflowDriverShapeConfigMemoryInGbs,
- *             ocpus: stackDataflowDriverShapeConfigOcpus,
+ *             memoryInGbs: Number(stackDataflowDriverShapeConfigMemoryInGbs),
+ *             ocpus: Number(stackDataflowDriverShapeConfigOcpus),
  *         },
  *         executorShapeConfig: {
- *             memoryInGbs: stackDataflowExecutorShapeConfigMemoryInGbs,
- *             ocpus: stackDataflowExecutorShapeConfigOcpus,
+ *             memoryInGbs: Number(stackDataflowExecutorShapeConfigMemoryInGbs),
+ *             ocpus: Number(stackDataflowExecutorShapeConfigOcpus),
  *         },
  *         privateEndpointId: testPrivateEndpoint.id,
  *         warehouseBucketInstanceId: stackObjectstorageInstanceId,
@@ -85,15 +85,15 @@ import * as utilities from "../utilities";
  *         clusterType: stackGenaiClusterType,
  *         instanceId: stackGenaiInstanceId,
  *         ociRegion: stackGenaiOciRegion,
- *         unitCount: stackGenaiUnitCount,
+ *         unitCount: Number(stackGenaiUnitCount),
  *         endpoints: [{
  *             endpointName: stackGenaiEndpointName,
- *             isContentModerationEnabled: stackGenaiEndpointsIsContentModerationEnabled,
+ *             isContentModerationEnabled: stackGenaiEndpointsIsContentModerationEnabled === "true",
  *         }],
  *     }],
  *     ggcs: [{
  *         instanceId: stackGgcsInstanceId,
- *         ocpu: stackGgcsOcpu,
+ *         ocpu: Number(stackGgcsOcpu),
  *         passwordSecretId: testSecret.id,
  *         subnetId: testSubnet.id,
  *         connections: [{
@@ -117,14 +117,14 @@ import * as utilities from "../utilities";
  *         sources: [{
  *             sourceId: stackGgcsSourcesSourceId,
  *             action: stackGgcsSourcesAction,
- *             shouldStartSourceOperations: stackGgcsSourcesShouldStartSourceOperations,
+ *             shouldStartSourceOperations: stackGgcsSourcesShouldStartSourceOperations === "true",
  *             targetUri: stackGgcsSourcesTargetUri,
  *             targetConnectionName: stackGgcsSourcesTargetConnectionName,
  *         }],
  *         targets: [{
  *             targetId: stackGgcsTargetId,
  *             action: stackGgcsAction,
- *             shouldStartTargetOperations: stackGgcsShouldStartTargetOperations,
+ *             shouldStartTargetOperations: stackGgcsShouldStartTargetOperations === "true",
  *             sourceUri: stackGgcsSourceUri,
  *             sourceConnectionName: stackGgcsSourceConnectionName,
  *         }],
@@ -401,27 +401,27 @@ export interface DifStackState {
     /**
      * (Updatable) ADB details if adb is included in the services.
      */
-    adbs?: pulumi.Input<pulumi.Input<inputs.oci.DifStackAdb>[]>;
+    adbs?: pulumi.Input<pulumi.Input<inputs.oci.DifStackAdb>[] | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Add Service. Could be set to any integer value.
      */
-    addServiceTrigger?: pulumi.Input<number>;
+    addServiceTrigger?: pulumi.Input<number | undefined>;
     /**
      * AI Data Platform Details if aidataplatform is included in services.
      */
-    aidataplatforms?: pulumi.Input<pulumi.Input<inputs.oci.DifStackAidataplatform>[]>;
+    aidataplatforms?: pulumi.Input<pulumi.Input<inputs.oci.DifStackAidataplatform>[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the Stack in.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) DATAFLOW details if dataflow is included in the services.
      */
-    dataflows?: pulumi.Input<pulumi.Input<inputs.oci.DifStackDataflow>[]>;
+    dataflows?: pulumi.Input<pulumi.Input<inputs.oci.DifStackDataflow>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Deploy Artifacts. Could be set to any integer value.
      *
@@ -436,75 +436,75 @@ export interface DifStackState {
      * Mixing any two or more in the same plan/apply is not allowed and will result in a provider error. Split your changes across separate applies.
      * - Additions to services/templates or service blocks require increasing add_service_trigger. Deletions are not permitted.
      */
-    deployArtifactsTrigger?: pulumi.Input<number>;
+    deployArtifactsTrigger?: pulumi.Input<number | undefined>;
     /**
      * A user-friendly name. Should be unique per compartment. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) GenAi Details if genai is included in services.
      */
-    genais?: pulumi.Input<pulumi.Input<inputs.oci.DifStackGenai>[]>;
+    genais?: pulumi.Input<pulumi.Input<inputs.oci.DifStackGenai>[] | undefined>;
     /**
      * (Updatable) GGCS details if ggcs is included in the services.
      */
-    ggcs?: pulumi.Input<pulumi.Input<inputs.oci.DifStackGgc>[]>;
+    ggcs?: pulumi.Input<pulumi.Input<inputs.oci.DifStackGgc>[] | undefined>;
     /**
      * A message that describes the current state of the Stack in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * email id to which the stack notifications would be sent.
      */
-    notificationEmail?: pulumi.Input<string>;
+    notificationEmail?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Object Storage Details if object storage is included in services.
      */
-    objectstorages?: pulumi.Input<pulumi.Input<inputs.oci.DifStackObjectstorage>[]>;
+    objectstorages?: pulumi.Input<pulumi.Input<inputs.oci.DifStackObjectstorage>[] | undefined>;
     /**
      * OKE Details if oke is included in services.
      */
-    okes?: pulumi.Input<pulumi.Input<inputs.oci.DifStackOke>[]>;
+    okes?: pulumi.Input<pulumi.Input<inputs.oci.DifStackOke>[] | undefined>;
     /**
      * OMK Details if omk is included in services.
      */
-    omks?: pulumi.Input<pulumi.Input<inputs.oci.DifStackOmk>[]>;
+    omks?: pulumi.Input<pulumi.Input<inputs.oci.DifStackOmk>[] | undefined>;
     /**
      * Details of the service onboarded for the data intelligence stack.
      */
-    serviceDetails?: pulumi.Input<pulumi.Input<inputs.oci.DifStackServiceDetail>[]>;
+    serviceDetails?: pulumi.Input<pulumi.Input<inputs.oci.DifStackServiceDetail>[] | undefined>;
     /**
      * (Updatable) List of services to be onboarded for the stack.
      */
-    services?: pulumi.Input<pulumi.Input<string>[]>;
+    services?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) List of templates to be onboarded for the stack.
      */
-    stackTemplates?: pulumi.Input<pulumi.Input<string>[]>;
+    stackTemplates?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The current state of the Stack.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Subnet id for the Private Endpoint creation for artifact deployment.
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the Stack was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the Stack was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -514,15 +514,15 @@ export interface DifStackArgs {
     /**
      * (Updatable) ADB details if adb is included in the services.
      */
-    adbs?: pulumi.Input<pulumi.Input<inputs.oci.DifStackAdb>[]>;
+    adbs?: pulumi.Input<pulumi.Input<inputs.oci.DifStackAdb>[] | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Add Service. Could be set to any integer value.
      */
-    addServiceTrigger?: pulumi.Input<number>;
+    addServiceTrigger?: pulumi.Input<number | undefined>;
     /**
      * AI Data Platform Details if aidataplatform is included in services.
      */
-    aidataplatforms?: pulumi.Input<pulumi.Input<inputs.oci.DifStackAidataplatform>[]>;
+    aidataplatforms?: pulumi.Input<pulumi.Input<inputs.oci.DifStackAidataplatform>[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the Stack in.
      */
@@ -530,11 +530,11 @@ export interface DifStackArgs {
     /**
      * (Updatable) DATAFLOW details if dataflow is included in the services.
      */
-    dataflows?: pulumi.Input<pulumi.Input<inputs.oci.DifStackDataflow>[]>;
+    dataflows?: pulumi.Input<pulumi.Input<inputs.oci.DifStackDataflow>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Deploy Artifacts. Could be set to any integer value.
      *
@@ -549,7 +549,7 @@ export interface DifStackArgs {
      * Mixing any two or more in the same plan/apply is not allowed and will result in a provider error. Split your changes across separate applies.
      * - Additions to services/templates or service blocks require increasing add_service_trigger. Deletions are not permitted.
      */
-    deployArtifactsTrigger?: pulumi.Input<number>;
+    deployArtifactsTrigger?: pulumi.Input<number | undefined>;
     /**
      * A user-friendly name. Should be unique per compartment. Avoid entering confidential information.
      */
@@ -557,31 +557,31 @@ export interface DifStackArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) GenAi Details if genai is included in services.
      */
-    genais?: pulumi.Input<pulumi.Input<inputs.oci.DifStackGenai>[]>;
+    genais?: pulumi.Input<pulumi.Input<inputs.oci.DifStackGenai>[] | undefined>;
     /**
      * (Updatable) GGCS details if ggcs is included in the services.
      */
-    ggcs?: pulumi.Input<pulumi.Input<inputs.oci.DifStackGgc>[]>;
+    ggcs?: pulumi.Input<pulumi.Input<inputs.oci.DifStackGgc>[] | undefined>;
     /**
      * email id to which the stack notifications would be sent.
      */
-    notificationEmail?: pulumi.Input<string>;
+    notificationEmail?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Object Storage Details if object storage is included in services.
      */
-    objectstorages?: pulumi.Input<pulumi.Input<inputs.oci.DifStackObjectstorage>[]>;
+    objectstorages?: pulumi.Input<pulumi.Input<inputs.oci.DifStackObjectstorage>[] | undefined>;
     /**
      * OKE Details if oke is included in services.
      */
-    okes?: pulumi.Input<pulumi.Input<inputs.oci.DifStackOke>[]>;
+    okes?: pulumi.Input<pulumi.Input<inputs.oci.DifStackOke>[] | undefined>;
     /**
      * OMK Details if omk is included in services.
      */
-    omks?: pulumi.Input<pulumi.Input<inputs.oci.DifStackOmk>[]>;
+    omks?: pulumi.Input<pulumi.Input<inputs.oci.DifStackOmk>[] | undefined>;
     /**
      * (Updatable) List of services to be onboarded for the stack.
      */
@@ -593,5 +593,5 @@ export interface DifStackArgs {
     /**
      * (Updatable) Subnet id for the Private Endpoint creation for artifact deployment.
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
 }

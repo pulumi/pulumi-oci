@@ -24,13 +24,13 @@ class VaultArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
                  vault_type: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 external_key_manager_metadata: Optional[pulumi.Input['VaultExternalKeyManagerMetadataArgs']] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 restore_from_file: Optional[pulumi.Input['VaultRestoreFromFileArgs']] = None,
-                 restore_from_object_store: Optional[pulumi.Input['VaultRestoreFromObjectStoreArgs']] = None,
-                 restore_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 external_key_manager_metadata: pulumi.Input[Optional['VaultExternalKeyManagerMetadataArgs']] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 restore_from_file: pulumi.Input[Optional['VaultRestoreFromFileArgs']] = None,
+                 restore_from_object_store: pulumi.Input[Optional['VaultRestoreFromObjectStoreArgs']] = None,
+                 restore_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Vault resource.
 
@@ -103,76 +103,76 @@ class VaultArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="externalKeyManagerMetadata")
-    def external_key_manager_metadata(self) -> Optional[pulumi.Input['VaultExternalKeyManagerMetadataArgs']]:
+    def external_key_manager_metadata(self) -> pulumi.Input[Optional['VaultExternalKeyManagerMetadataArgs']]:
         """
         Metadata required for accessing External Key manager
         """
         return pulumi.get(self, "external_key_manager_metadata")
 
     @external_key_manager_metadata.setter
-    def external_key_manager_metadata(self, value: Optional[pulumi.Input['VaultExternalKeyManagerMetadataArgs']]):
+    def external_key_manager_metadata(self, value: pulumi.Input[Optional['VaultExternalKeyManagerMetadataArgs']]):
         pulumi.set(self, "external_key_manager_metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="restoreFromFile")
-    def restore_from_file(self) -> Optional[pulumi.Input['VaultRestoreFromFileArgs']]:
+    def restore_from_file(self) -> pulumi.Input[Optional['VaultRestoreFromFileArgs']]:
         """
         (Updatable) Details where vault was backed up.
         """
         return pulumi.get(self, "restore_from_file")
 
     @restore_from_file.setter
-    def restore_from_file(self, value: Optional[pulumi.Input['VaultRestoreFromFileArgs']]):
+    def restore_from_file(self, value: pulumi.Input[Optional['VaultRestoreFromFileArgs']]):
         pulumi.set(self, "restore_from_file", value)
 
     @_builtins.property
     @pulumi.getter(name="restoreFromObjectStore")
-    def restore_from_object_store(self) -> Optional[pulumi.Input['VaultRestoreFromObjectStoreArgs']]:
+    def restore_from_object_store(self) -> pulumi.Input[Optional['VaultRestoreFromObjectStoreArgs']]:
         """
         (Updatable) Details where vault was backed up
         """
         return pulumi.get(self, "restore_from_object_store")
 
     @restore_from_object_store.setter
-    def restore_from_object_store(self, value: Optional[pulumi.Input['VaultRestoreFromObjectStoreArgs']]):
+    def restore_from_object_store(self, value: pulumi.Input[Optional['VaultRestoreFromObjectStoreArgs']]):
         pulumi.set(self, "restore_from_object_store", value)
 
     @_builtins.property
     @pulumi.getter(name="restoreTrigger")
-    def restore_trigger(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def restore_trigger(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "restore_trigger")
 
     @restore_trigger.setter
-    def restore_trigger(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def restore_trigger(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "restore_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_deletion(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 
@@ -182,32 +182,32 @@ class VaultArgs:
         return pulumi.get(self, "time_of_deletion")
 
     @time_of_deletion.setter
-    def time_of_deletion(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_deletion(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_deletion", value)
 
 
 @pulumi.input_type
 class _VaultState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 crypto_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_key_manager_metadata: Optional[pulumi.Input['VaultExternalKeyManagerMetadataArgs']] = None,
-                 external_key_manager_metadata_summaries: Optional[pulumi.Input[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryArgs']]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_primary: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_vault_replicable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 management_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 replica_details: Optional[pulumi.Input[Sequence[pulumi.Input['VaultReplicaDetailArgs']]]] = None,
-                 restore_from_file: Optional[pulumi.Input['VaultRestoreFromFileArgs']] = None,
-                 restore_from_object_store: Optional[pulumi.Input['VaultRestoreFromObjectStoreArgs']] = None,
-                 restore_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 restored_from_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_key_manager_metadata: pulumi.Input[Optional['VaultExternalKeyManagerMetadataArgs']] = None,
+                 external_key_manager_metadata_summaries: pulumi.Input[Optional[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryArgs']]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_primary: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_vault_replicable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 management_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 replica_details: pulumi.Input[Optional[Sequence[pulumi.Input['VaultReplicaDetailArgs']]]] = None,
+                 restore_from_file: pulumi.Input[Optional['VaultRestoreFromFileArgs']] = None,
+                 restore_from_object_store: pulumi.Input[Optional['VaultRestoreFromObjectStoreArgs']] = None,
+                 restore_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 restored_from_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Vault resources.
 
@@ -274,208 +274,208 @@ class _VaultState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment where you want to create this vault.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="cryptoEndpoint")
-    def crypto_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def crypto_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service endpoint to perform cryptographic operations against. Cryptographic operations include [Encrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) operations.
         """
         return pulumi.get(self, "crypto_endpoint")
 
     @crypto_endpoint.setter
-    def crypto_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def crypto_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "crypto_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="externalKeyManagerMetadata")
-    def external_key_manager_metadata(self) -> Optional[pulumi.Input['VaultExternalKeyManagerMetadataArgs']]:
+    def external_key_manager_metadata(self) -> pulumi.Input[Optional['VaultExternalKeyManagerMetadataArgs']]:
         """
         Metadata required for accessing External Key manager
         """
         return pulumi.get(self, "external_key_manager_metadata")
 
     @external_key_manager_metadata.setter
-    def external_key_manager_metadata(self, value: Optional[pulumi.Input['VaultExternalKeyManagerMetadataArgs']]):
+    def external_key_manager_metadata(self, value: pulumi.Input[Optional['VaultExternalKeyManagerMetadataArgs']]):
         pulumi.set(self, "external_key_manager_metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="externalKeyManagerMetadataSummaries")
-    def external_key_manager_metadata_summaries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryArgs']]]]:
+    def external_key_manager_metadata_summaries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryArgs']]]]:
         """
         Summary about metadata of external key manager to be returned to the customer as a response.
         """
         return pulumi.get(self, "external_key_manager_metadata_summaries")
 
     @external_key_manager_metadata_summaries.setter
-    def external_key_manager_metadata_summaries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryArgs']]]]):
+    def external_key_manager_metadata_summaries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryArgs']]]]):
         pulumi.set(self, "external_key_manager_metadata_summaries", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isPrimary")
-    def is_primary(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_primary(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
         """
         return pulumi.get(self, "is_primary")
 
     @is_primary.setter
-    def is_primary(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_primary(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_primary", value)
 
     @_builtins.property
     @pulumi.getter(name="isVaultReplicable")
-    def is_vault_replicable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_vault_replicable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
         """
         return pulumi.get(self, "is_vault_replicable")
 
     @is_vault_replicable.setter
-    def is_vault_replicable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_vault_replicable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_vault_replicable", value)
 
     @_builtins.property
     @pulumi.getter(name="managementEndpoint")
-    def management_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
         """
         return pulumi.get(self, "management_endpoint")
 
     @management_endpoint.setter
-    def management_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="replicaDetails")
-    def replica_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VaultReplicaDetailArgs']]]]:
+    def replica_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VaultReplicaDetailArgs']]]]:
         """
         Vault replica details
         """
         return pulumi.get(self, "replica_details")
 
     @replica_details.setter
-    def replica_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VaultReplicaDetailArgs']]]]):
+    def replica_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VaultReplicaDetailArgs']]]]):
         pulumi.set(self, "replica_details", value)
 
     @_builtins.property
     @pulumi.getter(name="restoreFromFile")
-    def restore_from_file(self) -> Optional[pulumi.Input['VaultRestoreFromFileArgs']]:
+    def restore_from_file(self) -> pulumi.Input[Optional['VaultRestoreFromFileArgs']]:
         """
         (Updatable) Details where vault was backed up.
         """
         return pulumi.get(self, "restore_from_file")
 
     @restore_from_file.setter
-    def restore_from_file(self, value: Optional[pulumi.Input['VaultRestoreFromFileArgs']]):
+    def restore_from_file(self, value: pulumi.Input[Optional['VaultRestoreFromFileArgs']]):
         pulumi.set(self, "restore_from_file", value)
 
     @_builtins.property
     @pulumi.getter(name="restoreFromObjectStore")
-    def restore_from_object_store(self) -> Optional[pulumi.Input['VaultRestoreFromObjectStoreArgs']]:
+    def restore_from_object_store(self) -> pulumi.Input[Optional['VaultRestoreFromObjectStoreArgs']]:
         """
         (Updatable) Details where vault was backed up
         """
         return pulumi.get(self, "restore_from_object_store")
 
     @restore_from_object_store.setter
-    def restore_from_object_store(self, value: Optional[pulumi.Input['VaultRestoreFromObjectStoreArgs']]):
+    def restore_from_object_store(self, value: pulumi.Input[Optional['VaultRestoreFromObjectStoreArgs']]):
         pulumi.set(self, "restore_from_object_store", value)
 
     @_builtins.property
     @pulumi.getter(name="restoreTrigger")
-    def restore_trigger(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def restore_trigger(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "restore_trigger")
 
     @restore_trigger.setter
-    def restore_trigger(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def restore_trigger(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "restore_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="restoredFromVaultId")
-    def restored_from_vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def restored_from_vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the vault from which this vault was restored, if it was restored from a backup file. If you restore a vault to the same region, the vault retains the same OCID that it had when you backed up the vault.
         """
         return pulumi.get(self, "restored_from_vault_id")
 
     @restored_from_vault_id.setter
-    def restored_from_vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def restored_from_vault_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "restored_from_vault_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The vault's current lifecycle state.  Example: `DELETED`
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time this vault was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_deletion(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional property for the deletion time of the vault, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 
@@ -485,19 +485,19 @@ class _VaultState:
         return pulumi.get(self, "time_of_deletion")
 
     @time_of_deletion.setter
-    def time_of_deletion(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_deletion(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_deletion", value)
 
     @_builtins.property
     @pulumi.getter(name="vaultType")
-    def vault_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vault_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
         """
         return pulumi.get(self, "vault_type")
 
     @vault_type.setter
-    def vault_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vault_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vault_type", value)
 
 
@@ -507,16 +507,16 @@ class Vault(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_key_manager_metadata: Optional[pulumi.Input[Union['VaultExternalKeyManagerMetadataArgs', 'VaultExternalKeyManagerMetadataArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 restore_from_file: Optional[pulumi.Input[Union['VaultRestoreFromFileArgs', 'VaultRestoreFromFileArgsDict']]] = None,
-                 restore_from_object_store: Optional[pulumi.Input[Union['VaultRestoreFromObjectStoreArgs', 'VaultRestoreFromObjectStoreArgsDict']]] = None,
-                 restore_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_key_manager_metadata: pulumi.Input[Optional[Union['VaultExternalKeyManagerMetadataArgs', 'VaultExternalKeyManagerMetadataArgsDict']]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 restore_from_file: pulumi.Input[Optional[Union['VaultRestoreFromFileArgs', 'VaultRestoreFromFileArgsDict']]] = None,
+                 restore_from_object_store: pulumi.Input[Optional[Union['VaultRestoreFromObjectStoreArgs', 'VaultRestoreFromObjectStoreArgsDict']]] = None,
+                 restore_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Vault resource in Oracle Cloud Infrastructure Kms service.
@@ -658,16 +658,16 @@ class Vault(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_key_manager_metadata: Optional[pulumi.Input[Union['VaultExternalKeyManagerMetadataArgs', 'VaultExternalKeyManagerMetadataArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 restore_from_file: Optional[pulumi.Input[Union['VaultRestoreFromFileArgs', 'VaultRestoreFromFileArgsDict']]] = None,
-                 restore_from_object_store: Optional[pulumi.Input[Union['VaultRestoreFromObjectStoreArgs', 'VaultRestoreFromObjectStoreArgsDict']]] = None,
-                 restore_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_key_manager_metadata: pulumi.Input[Optional[Union['VaultExternalKeyManagerMetadataArgs', 'VaultExternalKeyManagerMetadataArgsDict']]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 restore_from_file: pulumi.Input[Optional[Union['VaultRestoreFromFileArgs', 'VaultRestoreFromFileArgsDict']]] = None,
+                 restore_from_object_store: pulumi.Input[Optional[Union['VaultRestoreFromObjectStoreArgs', 'VaultRestoreFromObjectStoreArgsDict']]] = None,
+                 restore_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -712,25 +712,25 @@ class Vault(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            crypto_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            external_key_manager_metadata: Optional[pulumi.Input[Union['VaultExternalKeyManagerMetadataArgs', 'VaultExternalKeyManagerMetadataArgsDict']]] = None,
-            external_key_manager_metadata_summaries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VaultExternalKeyManagerMetadataSummaryArgs', 'VaultExternalKeyManagerMetadataSummaryArgsDict']]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_primary: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_vault_replicable: Optional[pulumi.Input[_builtins.bool]] = None,
-            management_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            replica_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VaultReplicaDetailArgs', 'VaultReplicaDetailArgsDict']]]]] = None,
-            restore_from_file: Optional[pulumi.Input[Union['VaultRestoreFromFileArgs', 'VaultRestoreFromFileArgsDict']]] = None,
-            restore_from_object_store: Optional[pulumi.Input[Union['VaultRestoreFromObjectStoreArgs', 'VaultRestoreFromObjectStoreArgsDict']]] = None,
-            restore_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-            restored_from_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None,
-            vault_type: Optional[pulumi.Input[_builtins.str]] = None) -> 'Vault':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            external_key_manager_metadata: pulumi.Input[Optional[Union['VaultExternalKeyManagerMetadataArgs', 'VaultExternalKeyManagerMetadataArgsDict']]] = None,
+            external_key_manager_metadata_summaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VaultExternalKeyManagerMetadataSummaryArgs', 'VaultExternalKeyManagerMetadataSummaryArgsDict']]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_primary: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_vault_replicable: pulumi.Input[Optional[_builtins.bool]] = None,
+            management_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            replica_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VaultReplicaDetailArgs', 'VaultReplicaDetailArgsDict']]]]] = None,
+            restore_from_file: pulumi.Input[Optional[Union['VaultRestoreFromFileArgs', 'VaultRestoreFromFileArgsDict']]] = None,
+            restore_from_object_store: pulumi.Input[Optional[Union['VaultRestoreFromObjectStoreArgs', 'VaultRestoreFromObjectStoreArgsDict']]] = None,
+            restore_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+            restored_from_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'Vault':
         """
         Get an existing Vault resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -32,8 +32,8 @@ import (
 //			_, err := dataintegration.GetWorkspaceFolders(ctx, &dataintegration.GetWorkspaceFoldersArgs{
 //				WorkspaceId:   testWorkspace.Id,
 //				AggregatorKey: pulumi.StringRef(workspaceFolderAggregatorKey),
-//				Fields:        workspaceFolderFields,
-//				Identifiers:   workspaceFolderIdentifier,
+//				Fields:        pulumi.ToArray(workspaceFolderFields),
+//				Identifiers:   pulumi.ToArray(workspaceFolderIdentifier),
 //				Name:          pulumi.StringRef(workspaceFolderName),
 //				NameContains:  pulumi.StringRef(workspaceFolderNameContains),
 //			}, nil)

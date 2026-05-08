@@ -40,8 +40,8 @@ public final class DataLabellingServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
      * import com.pulumi.oci.DataLabellingService.inputs.GetAnnotationFormatArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -82,8 +82,8 @@ public final class DataLabellingServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
      * import com.pulumi.oci.DataLabellingService.inputs.GetAnnotationFormatArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -124,8 +124,8 @@ public final class DataLabellingServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
      * import com.pulumi.oci.DataLabellingService.inputs.GetAnnotationFormatArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -166,8 +166,8 @@ public final class DataLabellingServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
      * import com.pulumi.oci.DataLabellingService.inputs.GetAnnotationFormatArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -208,8 +208,8 @@ public final class DataLabellingServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
      * import com.pulumi.oci.DataLabellingService.inputs.GetAnnotationFormatArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -250,8 +250,8 @@ public final class DataLabellingServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
      * import com.pulumi.oci.DataLabellingService.inputs.GetAnnotationFormatsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -292,8 +292,8 @@ public final class DataLabellingServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
      * import com.pulumi.oci.DataLabellingService.inputs.GetAnnotationFormatsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -334,8 +334,8 @@ public final class DataLabellingServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
      * import com.pulumi.oci.DataLabellingService.inputs.GetAnnotationFormatsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -376,8 +376,8 @@ public final class DataLabellingServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
      * import com.pulumi.oci.DataLabellingService.inputs.GetAnnotationFormatsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -418,8 +418,8 @@ public final class DataLabellingServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
      * import com.pulumi.oci.DataLabellingService.inputs.GetAnnotationFormatsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -460,8 +460,8 @@ public final class DataLabellingServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
      * import com.pulumi.oci.DataLabellingService.inputs.GetDatasetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -502,8 +502,8 @@ public final class DataLabellingServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
      * import com.pulumi.oci.DataLabellingService.inputs.GetDatasetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -544,8 +544,8 @@ public final class DataLabellingServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
      * import com.pulumi.oci.DataLabellingService.inputs.GetDatasetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -586,8 +586,8 @@ public final class DataLabellingServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
      * import com.pulumi.oci.DataLabellingService.inputs.GetDatasetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -628,8 +628,8 @@ public final class DataLabellingServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
      * import com.pulumi.oci.DataLabellingService.inputs.GetDatasetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -670,8 +670,8 @@ public final class DataLabellingServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
      * import com.pulumi.oci.DataLabellingService.inputs.GetDatasetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -716,8 +716,8 @@ public final class DataLabellingServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
      * import com.pulumi.oci.DataLabellingService.inputs.GetDatasetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -762,8 +762,8 @@ public final class DataLabellingServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
      * import com.pulumi.oci.DataLabellingService.inputs.GetDatasetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -808,8 +808,8 @@ public final class DataLabellingServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
      * import com.pulumi.oci.DataLabellingService.inputs.GetDatasetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -854,8 +854,8 @@ public final class DataLabellingServiceFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataLabellingService.DataLabellingServiceFunctions;
      * import com.pulumi.oci.DataLabellingService.inputs.GetDatasetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

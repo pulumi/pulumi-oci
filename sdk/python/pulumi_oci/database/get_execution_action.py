@@ -276,7 +276,7 @@ def get_execution_action(execution_action_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_execution_action = oci.Database.get_execution_action(execution_action_id=test_execution_action_oci_database_execution_action["id"])
+    test_execution_action = oci.database.get_execution_action(execution_action_id=test_execution_action_oci_database_execution_action["id"])
     ```
 
 
@@ -307,7 +307,7 @@ def get_execution_action(execution_action_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         total_time_taken_in_mins=pulumi.get(__ret__, 'total_time_taken_in_mins'))
-def get_execution_action_output(execution_action_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_execution_action_output(execution_action_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExecutionActionResult]:
     """
     This data source provides details about a specific Execution Action resource in Oracle Cloud Infrastructure Database service.
@@ -320,7 +320,7 @@ def get_execution_action_output(execution_action_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_execution_action = oci.Database.get_execution_action(execution_action_id=test_execution_action_oci_database_execution_action["id"])
+    test_execution_action = oci.database.get_execution_action(execution_action_id=test_execution_action_oci_database_execution_action["id"])
     ```
 
 

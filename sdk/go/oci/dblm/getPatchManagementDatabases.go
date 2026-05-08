@@ -37,7 +37,7 @@ import (
 //				DrifterPatchId:  pulumi.IntRef(testPatch.Id),
 //				ImageCompliance: pulumi.StringRef(patchManagementDatabaseImageCompliance),
 //				ImageId:         pulumi.StringRef(testImage.Id),
-//				SeverityTypes:   patchManagementDatabaseSeverityType,
+//				SeverityTypes:   pulumi.ToArray(patchManagementDatabaseSeverityType),
 //				State:           pulumi.StringRef(patchManagementDatabaseState),
 //			}, nil)
 //			if err != nil {

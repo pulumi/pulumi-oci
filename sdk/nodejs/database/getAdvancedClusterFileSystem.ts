@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAdvancedClusterFileSystem = oci.Database.getAdvancedClusterFileSystem({
+ * const testAdvancedClusterFileSystem = oci.database.getAdvancedClusterFileSystem({
  *     advancedClusterFileSystemId: testAdvancedClusterFileSystemOciDatabaseAdvancedClusterFileSystem.id,
  * });
  * ```
@@ -118,7 +118,7 @@ export interface GetAdvancedClusterFileSystemResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAdvancedClusterFileSystem = oci.Database.getAdvancedClusterFileSystem({
+ * const testAdvancedClusterFileSystem = oci.database.getAdvancedClusterFileSystem({
  *     advancedClusterFileSystemId: testAdvancedClusterFileSystemOciDatabaseAdvancedClusterFileSystem.id,
  * });
  * ```

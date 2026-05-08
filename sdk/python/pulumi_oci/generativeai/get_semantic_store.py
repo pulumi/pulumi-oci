@@ -228,7 +228,7 @@ def get_semantic_store(semantic_store_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_semantic_store = oci.GenerativeAi.get_semantic_store(semantic_store_id=test_semantic_store_oci_generative_ai_semantic_store["id"])
+    test_semantic_store = oci.generativeai.get_semantic_store(semantic_store_id=test_semantic_store_oci_generative_ai_semantic_store["id"])
     ```
 
 
@@ -255,7 +255,7 @@ def get_semantic_store(semantic_store_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_semantic_store_output(semantic_store_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_semantic_store_output(semantic_store_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSemanticStoreResult]:
     """
     This data source provides details about a specific Semantic Store resource in Oracle Cloud Infrastructure Generative AI service.
@@ -268,7 +268,7 @@ def get_semantic_store_output(semantic_store_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_semantic_store = oci.GenerativeAi.get_semantic_store(semantic_store_id=test_semantic_store_oci_generative_ai_semantic_store["id"])
+    test_semantic_store = oci.generativeai.get_semantic_store(semantic_store_id=test_semantic_store_oci_generative_ai_semantic_store["id"])
     ```
 
 

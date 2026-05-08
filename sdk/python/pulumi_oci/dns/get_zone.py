@@ -320,7 +320,7 @@ def get_zone(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    target = oci.Dns.get_zone(zone_name_or_id=zone_ocid,
+    target = oci.dns.get_zone(zone_name_or_id=zone_ocid,
         scope="PRIVATE",
         view_id=test_view["id"])
     ```
@@ -330,7 +330,7 @@ def get_zone(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    target_by_name = oci.Dns.get_zone(zone_name_or_id=f"{test_tenancy['name']}.example.internal.",
+    target_by_name = oci.dns.get_zone(zone_name_or_id=f"{test_tenancy['name']}.example.internal.",
         scope="PRIVATE",
         view_id=test_view["id"])
     ```
@@ -372,10 +372,10 @@ def get_zone(compartment_id: Optional[_builtins.str] = None,
         zone_name_or_id=pulumi.get(__ret__, 'zone_name_or_id'),
         zone_transfer_servers=pulumi.get(__ret__, 'zone_transfer_servers'),
         zone_type=pulumi.get(__ret__, 'zone_type'))
-def get_zone_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                    scope: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                    view_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                    zone_name_or_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_zone_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                    scope: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                    view_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                    zone_name_or_id: pulumi.Input[Optional[_builtins.str]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetZoneResult]:
     """
     This data source provides details about a specific Zone in Oracle Cloud Infrastructure DNS service.
@@ -393,7 +393,7 @@ def get_zone_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    target = oci.Dns.get_zone(zone_name_or_id=zone_ocid,
+    target = oci.dns.get_zone(zone_name_or_id=zone_ocid,
         scope="PRIVATE",
         view_id=test_view["id"])
     ```
@@ -403,7 +403,7 @@ def get_zone_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    target_by_name = oci.Dns.get_zone(zone_name_or_id=f"{test_tenancy['name']}.example.internal.",
+    target_by_name = oci.dns.get_zone(zone_name_or_id=f"{test_tenancy['name']}.example.internal.",
         scope="PRIVATE",
         view_id=test_view["id"])
     ```

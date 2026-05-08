@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulingPolicies = oci.Database.getSchedulingPolicies({
+ * const testSchedulingPolicies = oci.database.getSchedulingPolicies({
  *     compartmentId: compartmentId,
  *     displayName: schedulingPolicyDisplayName,
  *     state: schedulingPolicyState,
@@ -90,7 +90,7 @@ export interface GetSchedulingPoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulingPolicies = oci.Database.getSchedulingPolicies({
+ * const testSchedulingPolicies = oci.database.getSchedulingPolicies({
  *     compartmentId: compartmentId,
  *     displayName: schedulingPolicyDisplayName,
  *     state: schedulingPolicyState,
@@ -118,10 +118,10 @@ export interface GetSchedulingPoliciesOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetSchedulingPoliciesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetSchedulingPoliciesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

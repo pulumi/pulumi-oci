@@ -228,7 +228,7 @@ def get_dynamic_set(dynamic_set_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dynamic_set = oci.OsManagementHub.get_dynamic_set(dynamic_set_id=test_dynamic_set_oci_os_management_hub_dynamic_set["id"])
+    test_dynamic_set = oci.osmanagementhub.get_dynamic_set(dynamic_set_id=test_dynamic_set_oci_os_management_hub_dynamic_set["id"])
     ```
 
 
@@ -255,7 +255,7 @@ def get_dynamic_set(dynamic_set_id: Optional[_builtins.str] = None,
         target_compartments=pulumi.get(__ret__, 'target_compartments'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_dynamic_set_output(dynamic_set_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_dynamic_set_output(dynamic_set_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDynamicSetResult]:
     """
     This data source provides details about a specific Dynamic Set resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -268,7 +268,7 @@ def get_dynamic_set_output(dynamic_set_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_dynamic_set = oci.OsManagementHub.get_dynamic_set(dynamic_set_id=test_dynamic_set_oci_os_management_hub_dynamic_set["id"])
+    test_dynamic_set = oci.osmanagementhub.get_dynamic_set(dynamic_set_id=test_dynamic_set_oci_os_management_hub_dynamic_set["id"])
     ```
 
 

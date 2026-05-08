@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSqlEndpoints = oci.DataFlow.getSqlEndpoints({
+ * const testSqlEndpoints = oci.dataflow.getSqlEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: sqlEndpointDisplayName,
  *     sqlEndpointId: testSqlEndpoint.id,
@@ -102,7 +102,7 @@ export interface GetSqlEndpointsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSqlEndpoints = oci.DataFlow.getSqlEndpoints({
+ * const testSqlEndpoints = oci.dataflow.getSqlEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: sqlEndpointDisplayName,
  *     sqlEndpointId: testSqlEndpoint.id,
@@ -129,18 +129,18 @@ export interface GetSqlEndpointsOutputArgs {
     /**
      * The OCID of the compartment in which to query resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The query parameter for the Spark application name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataFlow.GetSqlEndpointsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataFlow.GetSqlEndpointsFilterArgs>[] | undefined>;
     /**
      * The unique id of the SQL Endpoint.
      */
-    sqlEndpointId?: pulumi.Input<string>;
+    sqlEndpointId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only those resources whose sqlEndpointLifecycleState matches the given sqlEndpointLifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

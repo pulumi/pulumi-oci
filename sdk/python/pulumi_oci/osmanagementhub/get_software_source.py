@@ -542,7 +542,7 @@ def get_software_source(software_source_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source = oci.OsManagementHub.get_software_source(software_source_id=test_software_source_oci_os_management_hub_software_source["id"])
+    test_software_source = oci.osmanagementhub.get_software_source(software_source_id=test_software_source_oci_os_management_hub_software_source["id"])
     ```
 
 
@@ -595,7 +595,7 @@ def get_software_source(software_source_id: Optional[_builtins.str] = None,
         url=pulumi.get(__ret__, 'url'),
         vendor_name=pulumi.get(__ret__, 'vendor_name'),
         vendor_software_sources=pulumi.get(__ret__, 'vendor_software_sources'))
-def get_software_source_output(software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_software_source_output(software_source_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSoftwareSourceResult]:
     """
     This data source provides details about a specific Software Source resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -608,7 +608,7 @@ def get_software_source_output(software_source_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source = oci.OsManagementHub.get_software_source(software_source_id=test_software_source_oci_os_management_hub_software_source["id"])
+    test_software_source = oci.osmanagementhub.get_software_source(software_source_id=test_software_source_oci_os_management_hub_software_source["id"])
     ```
 
 

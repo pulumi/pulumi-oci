@@ -349,7 +349,7 @@ def get_autonomous_container_database_dataguard_association(autonomous_container
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_database_dataguard_association = oci.Database.get_autonomous_container_database_dataguard_association(autonomous_container_database_dataguard_association_id=test_autonomous_container_database_dataguard_association_oci_database_autonomous_container_database_dataguard_association["id"],
+    test_autonomous_container_database_dataguard_association = oci.database.get_autonomous_container_database_dataguard_association(autonomous_container_database_dataguard_association_id=test_autonomous_container_database_dataguard_association_oci_database_autonomous_container_database_dataguard_association["id"],
         autonomous_container_database_id=test_autonomous_container_database["id"])
     ```
 
@@ -391,8 +391,8 @@ def get_autonomous_container_database_dataguard_association(autonomous_container
         time_last_role_changed=pulumi.get(__ret__, 'time_last_role_changed'),
         time_last_synced=pulumi.get(__ret__, 'time_last_synced'),
         transport_lag=pulumi.get(__ret__, 'transport_lag'))
-def get_autonomous_container_database_dataguard_association_output(autonomous_container_database_dataguard_association_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                   autonomous_container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_autonomous_container_database_dataguard_association_output(autonomous_container_database_dataguard_association_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                   autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousContainerDatabaseDataguardAssociationResult]:
     """
     This data source provides details about a specific Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
@@ -405,7 +405,7 @@ def get_autonomous_container_database_dataguard_association_output(autonomous_co
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_database_dataguard_association = oci.Database.get_autonomous_container_database_dataguard_association(autonomous_container_database_dataguard_association_id=test_autonomous_container_database_dataguard_association_oci_database_autonomous_container_database_dataguard_association["id"],
+    test_autonomous_container_database_dataguard_association = oci.database.get_autonomous_container_database_dataguard_association(autonomous_container_database_dataguard_association_id=test_autonomous_container_database_dataguard_association_oci_database_autonomous_container_database_dataguard_association["id"],
         autonomous_container_database_id=test_autonomous_container_database["id"])
     ```
 

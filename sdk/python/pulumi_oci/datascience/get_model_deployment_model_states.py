@@ -157,7 +157,7 @@ def get_model_deployment_model_states(compartment_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_model_deployment_model_states = oci.DataScience.get_model_deployment_model_states(compartment_id=compartment_id,
+    test_model_deployment_model_states = oci.datascience.get_model_deployment_model_states(compartment_id=compartment_id,
         model_deployment_id=test_model_deployment["id"],
         display_name=model_deployment_model_state_display_name,
         inference_key=model_deployment_model_state_inference_key,
@@ -194,13 +194,13 @@ def get_model_deployment_model_states(compartment_id: Optional[_builtins.str] = 
         model_deployment_model_states=pulumi.get(__ret__, 'model_deployment_model_states'),
         model_id=pulumi.get(__ret__, 'model_id'),
         project_id=pulumi.get(__ret__, 'project_id'))
-def get_model_deployment_model_states_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetModelDeploymentModelStatesFilterArgs', 'GetModelDeploymentModelStatesFilterArgsDict']]]]] = None,
-                                             inference_key: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             model_deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             model_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             project_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_model_deployment_model_states_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetModelDeploymentModelStatesFilterArgs', 'GetModelDeploymentModelStatesFilterArgsDict']]]]] = None,
+                                             inference_key: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             model_deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             model_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             project_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetModelDeploymentModelStatesResult]:
     """
     This data source provides the list of Model Deployment Model States in Oracle Cloud Infrastructure Data Science service.
@@ -213,7 +213,7 @@ def get_model_deployment_model_states_output(compartment_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_model_deployment_model_states = oci.DataScience.get_model_deployment_model_states(compartment_id=compartment_id,
+    test_model_deployment_model_states = oci.datascience.get_model_deployment_model_states(compartment_id=compartment_id,
         model_deployment_id=test_model_deployment["id"],
         display_name=model_deployment_model_state_display_name,
         inference_key=model_deployment_model_state_inference_key,

@@ -124,7 +124,7 @@ def get_links(child_tenancy_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_links = oci.Tenantmanagercontrolplane.get_links(child_tenancy_id=test_tenancy["id"],
+    test_links = oci.tenantmanagercontrolplane.get_links(child_tenancy_id=test_tenancy["id"],
         parent_tenancy_id=test_tenancy["id"],
         state=link_state)
     ```
@@ -149,10 +149,10 @@ def get_links(child_tenancy_id: Optional[_builtins.str] = None,
         link_collections=pulumi.get(__ret__, 'link_collections'),
         parent_tenancy_id=pulumi.get(__ret__, 'parent_tenancy_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_links_output(child_tenancy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLinksFilterArgs', 'GetLinksFilterArgsDict']]]]] = None,
-                     parent_tenancy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_links_output(child_tenancy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLinksFilterArgs', 'GetLinksFilterArgsDict']]]]] = None,
+                     parent_tenancy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLinksResult]:
     """
     This data source provides the list of Links in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
@@ -165,7 +165,7 @@ def get_links_output(child_tenancy_id: Optional[pulumi.Input[Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_links = oci.Tenantmanagercontrolplane.get_links(child_tenancy_id=test_tenancy["id"],
+    test_links = oci.tenantmanagercontrolplane.get_links(child_tenancy_id=test_tenancy["id"],
         parent_tenancy_id=test_tenancy["id"],
         state=link_state)
     ```

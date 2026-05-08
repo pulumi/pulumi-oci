@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isCompleted: migrationIsCompleted,
+ *     isCompleted: migrationIsCompleted === "true",
  *     migrationConfig: {
  *         subnetId: testSubnet.id,
  *     },
@@ -191,35 +191,35 @@ export interface MigrationState {
     /**
      * (Updatable) Compartment identifier
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Migration identifier
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Indicates whether migration is marked as complete.
      */
-    isCompleted?: pulumi.Input<boolean>;
+    isCompleted?: pulumi.Input<boolean | undefined>;
     /**
      * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Configuration for a Migration Project.
      */
-    migrationConfig?: pulumi.Input<inputs.CloudMigrations.MigrationMigrationConfig>;
+    migrationConfig?: pulumi.Input<inputs.CloudMigrations.MigrationMigrationConfig | undefined>;
     /**
      * (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
      */
-    migrationType?: pulumi.Input<string>;
+    migrationType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Replication schedule identifier
      *
@@ -227,23 +227,23 @@ export interface MigrationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    replicationScheduleId?: pulumi.Input<string>;
+    replicationScheduleId?: pulumi.Input<string | undefined>;
     /**
      * The current state of migration.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time when the migration project was created. An RFC3339 formatted datetime string
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time when the migration project was updated. An RFC3339 formatted datetime string
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -257,7 +257,7 @@ export interface MigrationArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Migration identifier
      */
@@ -265,19 +265,19 @@ export interface MigrationArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Indicates whether migration is marked as complete.
      */
-    isCompleted?: pulumi.Input<boolean>;
+    isCompleted?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Configuration for a Migration Project.
      */
-    migrationConfig?: pulumi.Input<inputs.CloudMigrations.MigrationMigrationConfig>;
+    migrationConfig?: pulumi.Input<inputs.CloudMigrations.MigrationMigrationConfig | undefined>;
     /**
      * (Updatable) Type of migration project (OCI/OLVM). This determines the target environment for the migration.
      */
-    migrationType?: pulumi.Input<string>;
+    migrationType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Replication schedule identifier
      *
@@ -285,5 +285,5 @@ export interface MigrationArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    replicationScheduleId?: pulumi.Input<string>;
+    replicationScheduleId?: pulumi.Input<string | undefined>;
 }

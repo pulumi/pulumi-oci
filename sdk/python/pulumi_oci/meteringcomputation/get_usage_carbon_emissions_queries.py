@@ -98,7 +98,7 @@ def get_usage_carbon_emissions_queries(compartment_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_usage_carbon_emissions_queries = oci.MeteringComputation.get_usage_carbon_emissions_queries(compartment_id=compartment_id)
+    test_usage_carbon_emissions_queries = oci.meteringcomputation.get_usage_carbon_emissions_queries(compartment_id=compartment_id)
     ```
 
 
@@ -115,8 +115,8 @@ def get_usage_carbon_emissions_queries(compartment_id: Optional[_builtins.str] =
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         usage_carbon_emissions_query_collections=pulumi.get(__ret__, 'usage_carbon_emissions_query_collections'))
-def get_usage_carbon_emissions_queries_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetUsageCarbonEmissionsQueriesFilterArgs', 'GetUsageCarbonEmissionsQueriesFilterArgsDict']]]]] = None,
+def get_usage_carbon_emissions_queries_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUsageCarbonEmissionsQueriesFilterArgs', 'GetUsageCarbonEmissionsQueriesFilterArgsDict']]]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUsageCarbonEmissionsQueriesResult]:
     """
     This data source provides the list of Usage Carbon Emissions Queries in Oracle Cloud Infrastructure Metering Computation service.
@@ -129,7 +129,7 @@ def get_usage_carbon_emissions_queries_output(compartment_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_usage_carbon_emissions_queries = oci.MeteringComputation.get_usage_carbon_emissions_queries(compartment_id=compartment_id)
+    test_usage_carbon_emissions_queries = oci.meteringcomputation.get_usage_carbon_emissions_queries(compartment_id=compartment_id)
     ```
 
 

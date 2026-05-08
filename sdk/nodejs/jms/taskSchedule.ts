@@ -245,43 +245,43 @@ export interface TaskScheduleState {
     /**
      * Name of the task creator.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 UTC, it should be 'DTSTART=20240902T090000Z; RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 UTC, it should be 'DTSTART=20240805T090000Z;RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
      */
-    executionRecurrences?: pulumi.Input<string>;
+    executionRecurrences?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
-    fleetId?: pulumi.Input<string>;
+    fleetId?: pulumi.Input<string | undefined>;
     /**
      * The name of the task schedule.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * All possible status of task schedule.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The minimum details of a task.
      */
-    taskDetails?: pulumi.Input<inputs.Jms.TaskScheduleTaskDetails>;
+    taskDetails?: pulumi.Input<inputs.Jms.TaskScheduleTaskDetails | undefined>;
     /**
      * The date and time the task schedule was created (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the task schedule ran last (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeLastRun?: pulumi.Input<string>;
+    timeLastRun?: pulumi.Input<string | undefined>;
     /**
      * The date and time the task schedule was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeLastUpdated?: pulumi.Input<string>;
+    timeLastUpdated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the task schedule will run next (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeNextRun?: pulumi.Input<string>;
+    timeNextRun?: pulumi.Input<string | undefined>;
 }
 
 /**

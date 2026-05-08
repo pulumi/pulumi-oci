@@ -135,7 +135,7 @@ def get_opensearch_cluster_pipelines(compartment_id: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_opensearch_cluster_pipelines = oci.Opensearch.get_opensearch_cluster_pipelines(compartment_id=compartment_id,
+    test_opensearch_cluster_pipelines = oci.opensearch.get_opensearch_cluster_pipelines(compartment_id=compartment_id,
         display_name=opensearch_cluster_pipeline_display_name,
         id=opensearch_cluster_pipeline_id,
         pipeline_component_id=test_pipeline_component["id"],
@@ -167,12 +167,12 @@ def get_opensearch_cluster_pipelines(compartment_id: Optional[_builtins.str] = N
         opensearch_cluster_pipeline_collections=pulumi.get(__ret__, 'opensearch_cluster_pipeline_collections'),
         pipeline_component_id=pulumi.get(__ret__, 'pipeline_component_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_opensearch_cluster_pipelines_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOpensearchClusterPipelinesFilterArgs', 'GetOpensearchClusterPipelinesFilterArgsDict']]]]] = None,
-                                            id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            pipeline_component_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_opensearch_cluster_pipelines_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetOpensearchClusterPipelinesFilterArgs', 'GetOpensearchClusterPipelinesFilterArgsDict']]]]] = None,
+                                            id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            pipeline_component_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOpensearchClusterPipelinesResult]:
     """
     This data source provides the list of Opensearch Cluster Pipelines in Oracle Cloud Infrastructure Opensearch service.
@@ -185,7 +185,7 @@ def get_opensearch_cluster_pipelines_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_opensearch_cluster_pipelines = oci.Opensearch.get_opensearch_cluster_pipelines(compartment_id=compartment_id,
+    test_opensearch_cluster_pipelines = oci.opensearch.get_opensearch_cluster_pipelines(compartment_id=compartment_id,
         display_name=opensearch_cluster_pipeline_display_name,
         id=opensearch_cluster_pipeline_id,
         pipeline_component_id=test_pipeline_component["id"],

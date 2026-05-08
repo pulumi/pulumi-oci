@@ -212,7 +212,7 @@ def get_assets(asset_class_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_assets = oci.CloudBridge.get_assets(compartment_id=compartment_id,
+    test_assets = oci.cloudbridge.get_assets(compartment_id=compartment_id,
         asset_class_name=asset_asset_class_name,
         asset_class_version=asset_asset_class_version,
         asset_id=test_asset["id"],
@@ -265,17 +265,17 @@ def get_assets(asset_class_name: Optional[_builtins.str] = None,
         inventory_id=pulumi.get(__ret__, 'inventory_id'),
         source_key=pulumi.get(__ret__, 'source_key'),
         state=pulumi.get(__ret__, 'state'))
-def get_assets_output(asset_class_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      asset_class_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      asset_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      asset_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                      display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      external_asset_key: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAssetsFilterArgs', 'GetAssetsFilterArgsDict']]]]] = None,
-                      inventory_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      source_key: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_assets_output(asset_class_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      asset_class_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      asset_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      asset_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      external_asset_key: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAssetsFilterArgs', 'GetAssetsFilterArgsDict']]]]] = None,
+                      inventory_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      source_key: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAssetsResult]:
     """
     This data source provides the list of Assets in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -288,7 +288,7 @@ def get_assets_output(asset_class_name: Optional[pulumi.Input[Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_assets = oci.CloudBridge.get_assets(compartment_id=compartment_id,
+    test_assets = oci.cloudbridge.get_assets(compartment_id=compartment_id,
         asset_class_name=asset_asset_class_name,
         asset_class_version=asset_asset_class_version,
         asset_id=test_asset["id"],

@@ -48,11 +48,11 @@ __all__ = [
 ]
 
 class DesktopPoolAvailabilityPolicyArgsDict(TypedDict):
-    start_schedule: NotRequired[pulumi.Input['DesktopPoolAvailabilityPolicyStartScheduleArgsDict']]
+    start_schedule: NotRequired[pulumi.Input[Optional['DesktopPoolAvailabilityPolicyStartScheduleArgs']]]
     """
     (Updatable) Provides the schedule information for a desktop.
     """
-    stop_schedule: NotRequired[pulumi.Input['DesktopPoolAvailabilityPolicyStopScheduleArgsDict']]
+    stop_schedule: NotRequired[pulumi.Input[Optional['DesktopPoolAvailabilityPolicyStopScheduleArgs']]]
     """
     (Updatable) Provides the schedule information for a desktop.
     """
@@ -60,8 +60,8 @@ class DesktopPoolAvailabilityPolicyArgsDict(TypedDict):
 @pulumi.input_type
 class DesktopPoolAvailabilityPolicyArgs:
     def __init__(__self__, *,
-                 start_schedule: Optional[pulumi.Input['DesktopPoolAvailabilityPolicyStartScheduleArgs']] = None,
-                 stop_schedule: Optional[pulumi.Input['DesktopPoolAvailabilityPolicyStopScheduleArgs']] = None):
+                 start_schedule: pulumi.Input[Optional['DesktopPoolAvailabilityPolicyStartScheduleArgs']] = None,
+                 stop_schedule: pulumi.Input[Optional['DesktopPoolAvailabilityPolicyStopScheduleArgs']] = None):
         """
         :param pulumi.Input['DesktopPoolAvailabilityPolicyStartScheduleArgs'] start_schedule: (Updatable) Provides the schedule information for a desktop.
         :param pulumi.Input['DesktopPoolAvailabilityPolicyStopScheduleArgs'] stop_schedule: (Updatable) Provides the schedule information for a desktop.
@@ -73,26 +73,26 @@ class DesktopPoolAvailabilityPolicyArgs:
 
     @_builtins.property
     @pulumi.getter(name="startSchedule")
-    def start_schedule(self) -> Optional[pulumi.Input['DesktopPoolAvailabilityPolicyStartScheduleArgs']]:
+    def start_schedule(self) -> pulumi.Input[Optional['DesktopPoolAvailabilityPolicyStartScheduleArgs']]:
         """
         (Updatable) Provides the schedule information for a desktop.
         """
         return pulumi.get(self, "start_schedule")
 
     @start_schedule.setter
-    def start_schedule(self, value: Optional[pulumi.Input['DesktopPoolAvailabilityPolicyStartScheduleArgs']]):
+    def start_schedule(self, value: pulumi.Input[Optional['DesktopPoolAvailabilityPolicyStartScheduleArgs']]):
         pulumi.set(self, "start_schedule", value)
 
     @_builtins.property
     @pulumi.getter(name="stopSchedule")
-    def stop_schedule(self) -> Optional[pulumi.Input['DesktopPoolAvailabilityPolicyStopScheduleArgs']]:
+    def stop_schedule(self) -> pulumi.Input[Optional['DesktopPoolAvailabilityPolicyStopScheduleArgs']]:
         """
         (Updatable) Provides the schedule information for a desktop.
         """
         return pulumi.get(self, "stop_schedule")
 
     @stop_schedule.setter
-    def stop_schedule(self, value: Optional[pulumi.Input['DesktopPoolAvailabilityPolicyStopScheduleArgs']]):
+    def stop_schedule(self, value: pulumi.Input[Optional['DesktopPoolAvailabilityPolicyStopScheduleArgs']]):
         pulumi.set(self, "stop_schedule", value)
 
 
@@ -219,7 +219,7 @@ class DesktopPoolDevicePolicyArgsDict(TypedDict):
     """
     (Updatable) Indicates whether printing is enabled.
     """
-    is_video_input_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_video_input_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Indicates whether video input is enabled.
     """
@@ -234,7 +234,7 @@ class DesktopPoolDevicePolicyArgs:
                  is_keyboard_enabled: pulumi.Input[_builtins.bool],
                  is_pointer_enabled: pulumi.Input[_builtins.bool],
                  is_printing_enabled: pulumi.Input[_builtins.bool],
-                 is_video_input_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
+                 is_video_input_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] audio_mode: (Updatable) The audio mode. NONE: No access to the local audio devices is permitted. TODESKTOP: The user may record audio on their desktop.  FROMDESKTOP: The user may play audio on their desktop. FULL: The user may play and record audio on their desktop.
         :param pulumi.Input[_builtins.str] cdm_mode: (Updatable) The client local drive access mode. NONE: No access to local drives permitted. READONLY: The user may read from local drives on their desktop. FULL: The user may read from and write to their local drives on their desktop.
@@ -341,14 +341,14 @@ class DesktopPoolDevicePolicyArgs:
 
     @_builtins.property
     @pulumi.getter(name="isVideoInputEnabled")
-    def is_video_input_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_video_input_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether video input is enabled.
         """
         return pulumi.get(self, "is_video_input_enabled")
 
     @is_video_input_enabled.setter
-    def is_video_input_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_video_input_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_video_input_enabled", value)
 
 
@@ -361,7 +361,7 @@ class DesktopPoolImageArgsDict(TypedDict):
     """
     The name of the desktop image.
     """
-    operating_system: NotRequired[pulumi.Input[_builtins.str]]
+    operating_system: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
     """
@@ -371,7 +371,7 @@ class DesktopPoolImageArgs:
     def __init__(__self__, *,
                  image_id: pulumi.Input[_builtins.str],
                  image_name: pulumi.Input[_builtins.str],
-                 operating_system: Optional[pulumi.Input[_builtins.str]] = None):
+                 operating_system: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] image_id: (Updatable) The OCID of the desktop image.
         :param pulumi.Input[_builtins.str] image_name: The name of the desktop image.
@@ -408,14 +408,14 @@ class DesktopPoolImageArgs:
 
     @_builtins.property
     @pulumi.getter(name="operatingSystem")
-    def operating_system(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operating_system(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
         """
         return pulumi.get(self, "operating_system")
 
     @operating_system.setter
-    def operating_system(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operating_system(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operating_system", value)
 
 
@@ -471,19 +471,19 @@ class DesktopPoolPrivateAccessDetailsArgsDict(TypedDict):
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
     """
-    endpoint_fqdn: NotRequired[pulumi.Input[_builtins.str]]
+    endpoint_fqdn: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
     """
-    nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    nsg_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     A list of network security groups for the private access.
     """
-    private_ip: NotRequired[pulumi.Input[_builtins.str]]
+    private_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
     """
-    vcn_id: NotRequired[pulumi.Input[_builtins.str]]
+    vcn_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
     """
@@ -492,10 +492,10 @@ class DesktopPoolPrivateAccessDetailsArgsDict(TypedDict):
 class DesktopPoolPrivateAccessDetailsArgs:
     def __init__(__self__, *,
                  subnet_id: pulumi.Input[_builtins.str],
-                 endpoint_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 private_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcn_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 endpoint_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcn_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private subnet in the customer VCN where the connectivity will be established.
         :param pulumi.Input[_builtins.str] endpoint_fqdn: The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
@@ -527,59 +527,59 @@ class DesktopPoolPrivateAccessDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="endpointFqdn")
-    def endpoint_fqdn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint_fqdn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's private IP address to access the service (for example, xyz.oraclecloud.com).
         """
         return pulumi.get(self, "endpoint_fqdn")
 
     @endpoint_fqdn.setter
-    def endpoint_fqdn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint_fqdn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint_fqdn", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of network security groups for the private access.
         """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIp")
-    def private_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
         """
         return pulumi.get(self, "private_ip")
 
     @private_ip.setter
-    def private_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vcn_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
         """
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
-    def vcn_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vcn_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vcn_id", value)
 
 
 class DesktopPoolSessionLifecycleActionsArgsDict(TypedDict):
-    disconnect: NotRequired[pulumi.Input['DesktopPoolSessionLifecycleActionsDisconnectArgsDict']]
+    disconnect: NotRequired[pulumi.Input[Optional['DesktopPoolSessionLifecycleActionsDisconnectArgs']]]
     """
     (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availability_policy` schedule.
     """
-    inactivity: NotRequired[pulumi.Input['DesktopPoolSessionLifecycleActionsInactivityArgsDict']]
+    inactivity: NotRequired[pulumi.Input[Optional['DesktopPoolSessionLifecycleActionsInactivityArgs']]]
     """
     (Updatable) Action and grace period for inactivity
     """
@@ -587,8 +587,8 @@ class DesktopPoolSessionLifecycleActionsArgsDict(TypedDict):
 @pulumi.input_type
 class DesktopPoolSessionLifecycleActionsArgs:
     def __init__(__self__, *,
-                 disconnect: Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsDisconnectArgs']] = None,
-                 inactivity: Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsInactivityArgs']] = None):
+                 disconnect: pulumi.Input[Optional['DesktopPoolSessionLifecycleActionsDisconnectArgs']] = None,
+                 inactivity: pulumi.Input[Optional['DesktopPoolSessionLifecycleActionsInactivityArgs']] = None):
         """
         :param pulumi.Input['DesktopPoolSessionLifecycleActionsDisconnectArgs'] disconnect: (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availability_policy` schedule.
         :param pulumi.Input['DesktopPoolSessionLifecycleActionsInactivityArgs'] inactivity: (Updatable) Action and grace period for inactivity
@@ -600,26 +600,26 @@ class DesktopPoolSessionLifecycleActionsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def disconnect(self) -> Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsDisconnectArgs']]:
+    def disconnect(self) -> pulumi.Input[Optional['DesktopPoolSessionLifecycleActionsDisconnectArgs']]:
         """
         (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availability_policy` schedule.
         """
         return pulumi.get(self, "disconnect")
 
     @disconnect.setter
-    def disconnect(self, value: Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsDisconnectArgs']]):
+    def disconnect(self, value: pulumi.Input[Optional['DesktopPoolSessionLifecycleActionsDisconnectArgs']]):
         pulumi.set(self, "disconnect", value)
 
     @_builtins.property
     @pulumi.getter
-    def inactivity(self) -> Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsInactivityArgs']]:
+    def inactivity(self) -> pulumi.Input[Optional['DesktopPoolSessionLifecycleActionsInactivityArgs']]:
         """
         (Updatable) Action and grace period for inactivity
         """
         return pulumi.get(self, "inactivity")
 
     @inactivity.setter
-    def inactivity(self, value: Optional[pulumi.Input['DesktopPoolSessionLifecycleActionsInactivityArgs']]):
+    def inactivity(self, value: pulumi.Input[Optional['DesktopPoolSessionLifecycleActionsInactivityArgs']]):
         pulumi.set(self, "inactivity", value)
 
 
@@ -628,7 +628,7 @@ class DesktopPoolSessionLifecycleActionsDisconnectArgsDict(TypedDict):
     """
     (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
     """
-    grace_period_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+    grace_period_in_minutes: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The period of time (in minutes) after disconnect before any action occurs. If the value is not provided, a default value is used.
     """
@@ -637,7 +637,7 @@ class DesktopPoolSessionLifecycleActionsDisconnectArgsDict(TypedDict):
 class DesktopPoolSessionLifecycleActionsDisconnectArgs:
     def __init__(__self__, *,
                  action: pulumi.Input[_builtins.str],
-                 grace_period_in_minutes: Optional[pulumi.Input[_builtins.int]] = None):
+                 grace_period_in_minutes: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] action: (Updatable) a disconnect action to be triggered. Could be set to NONE or STOP
         :param pulumi.Input[_builtins.int] grace_period_in_minutes: (Updatable) The period of time (in minutes) after disconnect before any action occurs. If the value is not provided, a default value is used.
@@ -660,14 +660,14 @@ class DesktopPoolSessionLifecycleActionsDisconnectArgs:
 
     @_builtins.property
     @pulumi.getter(name="gracePeriodInMinutes")
-    def grace_period_in_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def grace_period_in_minutes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The period of time (in minutes) after disconnect before any action occurs. If the value is not provided, a default value is used.
         """
         return pulumi.get(self, "grace_period_in_minutes")
 
     @grace_period_in_minutes.setter
-    def grace_period_in_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def grace_period_in_minutes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "grace_period_in_minutes", value)
 
 
@@ -676,7 +676,7 @@ class DesktopPoolSessionLifecycleActionsInactivityArgsDict(TypedDict):
     """
     (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
     """
-    grace_period_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+    grace_period_in_minutes: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
     """
@@ -685,7 +685,7 @@ class DesktopPoolSessionLifecycleActionsInactivityArgsDict(TypedDict):
 class DesktopPoolSessionLifecycleActionsInactivityArgs:
     def __init__(__self__, *,
                  action: pulumi.Input[_builtins.str],
-                 grace_period_in_minutes: Optional[pulumi.Input[_builtins.int]] = None):
+                 grace_period_in_minutes: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] action: (Updatable) an inactivity action to be triggered. Could be set to NONE or DISCONNECT.
         :param pulumi.Input[_builtins.int] grace_period_in_minutes: (Updatable) The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
@@ -708,30 +708,30 @@ class DesktopPoolSessionLifecycleActionsInactivityArgs:
 
     @_builtins.property
     @pulumi.getter(name="gracePeriodInMinutes")
-    def grace_period_in_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def grace_period_in_minutes(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The period of time (in minutes) during which the session must remain inactive before any action occurs. If the value is not provided, a default value is used.
         """
         return pulumi.get(self, "grace_period_in_minutes")
 
     @grace_period_in_minutes.setter
-    def grace_period_in_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def grace_period_in_minutes(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "grace_period_in_minutes", value)
 
 
 class DesktopPoolShapeConfigArgsDict(TypedDict):
-    baseline_ocpu_utilization: NotRequired[pulumi.Input[_builtins.str]]
+    baseline_ocpu_utilization: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in the desktop pool. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`. The following values are supported:
     * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
     * `BASELINE_1_2` - baseline usage is 1/2 of an OCPU.
     * `BASELINE_1_1` - baseline usage is the entire OCPU. This represents a non-burstable instance.
     """
-    memory_in_gbs: NotRequired[pulumi.Input[_builtins.str]]
+    memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The total amount of memory available in gigabytes for each desktop compute instance in the desktop pool.
     """
-    ocpus: NotRequired[pulumi.Input[_builtins.str]]
+    ocpus: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The total number of OCPUs available for each desktop compute instance in the desktop pool.
     """
@@ -739,9 +739,9 @@ class DesktopPoolShapeConfigArgsDict(TypedDict):
 @pulumi.input_type
 class DesktopPoolShapeConfigArgs:
     def __init__(__self__, *,
-                 baseline_ocpu_utilization: Optional[pulumi.Input[_builtins.str]] = None,
-                 memory_in_gbs: Optional[pulumi.Input[_builtins.str]] = None,
-                 ocpus: Optional[pulumi.Input[_builtins.str]] = None):
+                 baseline_ocpu_utilization: pulumi.Input[Optional[_builtins.str]] = None,
+                 memory_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 ocpus: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] baseline_ocpu_utilization: The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in the desktop pool. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`. The following values are supported:
                * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
@@ -759,7 +759,7 @@ class DesktopPoolShapeConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="baselineOcpuUtilization")
-    def baseline_ocpu_utilization(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def baseline_ocpu_utilization(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in the desktop pool. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`. The following values are supported:
         * `BASELINE_1_8` - baseline usage is 1/8 of an OCPU.
@@ -769,31 +769,31 @@ class DesktopPoolShapeConfigArgs:
         return pulumi.get(self, "baseline_ocpu_utilization")
 
     @baseline_ocpu_utilization.setter
-    def baseline_ocpu_utilization(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def baseline_ocpu_utilization(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "baseline_ocpu_utilization", value)
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The total amount of memory available in gigabytes for each desktop compute instance in the desktop pool.
         """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
-    def memory_in_gbs(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "memory_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocpus(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ocpus(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The total number of OCPUs available for each desktop compute instance in the desktop pool.
         """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
-    def ocpus(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ocpus(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ocpus", value)
 
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFunctions = oci.Functions.getFunctions({
+ * const testFunctions = oci.functions.getFunctions({
  *     applicationId: testApplication.id,
  *     displayName: functionDisplayName,
  *     id: functionId,
@@ -96,7 +96,7 @@ export interface GetFunctionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFunctions = oci.Functions.getFunctions({
+ * const testFunctions = oci.functions.getFunctions({
  *     applicationId: testApplication.id,
  *     displayName: functionDisplayName,
  *     id: functionId,
@@ -126,14 +126,14 @@ export interface GetFunctionsOutputArgs {
     /**
      * A filter to return only functions with display names that match the display name string. Matching is exact.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Functions.GetFunctionsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Functions.GetFunctionsFilterArgs>[] | undefined>;
     /**
      * A filter to return only functions with the specified OCID.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only functions that match the lifecycle state in this parameter. Example: `Creating`
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

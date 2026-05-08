@@ -121,7 +121,7 @@ def get_managed_kafka_kafka_cluster_config_version(kafka_cluster_config_id: Opti
     import pulumi_oci as oci
 
     test_kafka_cluster_config_version = oci.oci.get_managed_kafka_kafka_cluster_config_version(kafka_cluster_config_id=test_kafka_cluster_config["id"],
-        version_number=kafka_cluster_config_version_version_number)
+        version_number=int(kafka_cluster_config_version_version_number))
     ```
 
 
@@ -141,8 +141,8 @@ def get_managed_kafka_kafka_cluster_config_version(kafka_cluster_config_id: Opti
         properties=pulumi.get(__ret__, 'properties'),
         time_created=pulumi.get(__ret__, 'time_created'),
         version_number=pulumi.get(__ret__, 'version_number'))
-def get_managed_kafka_kafka_cluster_config_version_output(kafka_cluster_config_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                          version_number: Optional[pulumi.Input[_builtins.int]] = None,
+def get_managed_kafka_kafka_cluster_config_version_output(kafka_cluster_config_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                          version_number: pulumi.Input[Optional[_builtins.int]] = None,
                                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedKafkaKafkaClusterConfigVersionResult]:
     """
     This data source provides details about a specific Kafka Cluster Config Version resource in Oracle Cloud Infrastructure Managed Kafka service.
@@ -156,7 +156,7 @@ def get_managed_kafka_kafka_cluster_config_version_output(kafka_cluster_config_i
     import pulumi_oci as oci
 
     test_kafka_cluster_config_version = oci.oci.get_managed_kafka_kafka_cluster_config_version(kafka_cluster_config_id=test_kafka_cluster_config["id"],
-        version_number=kafka_cluster_config_version_version_number)
+        version_number=int(kafka_cluster_config_version_version_number))
     ```
 
 

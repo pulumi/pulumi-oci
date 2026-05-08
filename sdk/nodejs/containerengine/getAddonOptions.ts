@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAddonOptions = oci.ContainerEngine.getAddonOptions({
+ * const testAddonOptions = oci.containerengine.getAddonOptions({
  *     kubernetesVersion: addonOptionKubernetesVersion,
  *     addonName: testAddon.name,
- *     shouldShowAllVersions: addonOptionShouldShowAllVersions,
+ *     shouldShowAllVersions: addonOptionShouldShowAllVersions === "true",
  * });
  * ```
  */
@@ -81,10 +81,10 @@ export interface GetAddonOptionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAddonOptions = oci.ContainerEngine.getAddonOptions({
+ * const testAddonOptions = oci.containerengine.getAddonOptions({
  *     kubernetesVersion: addonOptionKubernetesVersion,
  *     addonName: testAddon.name,
- *     shouldShowAllVersions: addonOptionShouldShowAllVersions,
+ *     shouldShowAllVersions: addonOptionShouldShowAllVersions === "true",
  * });
  * ```
  */
@@ -105,8 +105,8 @@ export interface GetAddonOptionsOutputArgs {
     /**
      * The name of the addon.
      */
-    addonName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.GetAddonOptionsFilterArgs>[]>;
+    addonName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.GetAddonOptionsFilterArgs>[] | undefined>;
     /**
      * The kubernetes version to fetch the addons.
      */
@@ -114,5 +114,5 @@ export interface GetAddonOptionsOutputArgs {
     /**
      * Specifies whether all add-on versions should be displayed. The default value is false. If set to true, the API will return all available add-on versions, including deprecated versions and detailed build numbers. Please note that the use of deprecated versions, as well as the specification of a particular build of a supported version, is not recommended for standard operations.
      */
-    shouldShowAllVersions?: pulumi.Input<boolean>;
+    shouldShowAllVersions?: pulumi.Input<boolean | undefined>;
 }

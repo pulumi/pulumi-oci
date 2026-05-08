@@ -102,7 +102,7 @@ export interface GetVirtualNodePoolsOutputArgs {
     /**
      * The OCID of the cluster.
      */
-    clusterId?: pulumi.Input<string>;
+    clusterId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment.
      */
@@ -110,10 +110,10 @@ export interface GetVirtualNodePoolsOutputArgs {
     /**
      * Display name of the virtual node pool. This is a non-unique value.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.GetVirtualNodePoolsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.GetVirtualNodePoolsFilterArgs>[] | undefined>;
     /**
      * A virtual node pool lifecycle state to filter on. Can have multiple parameters of this name.
      */
-    states?: pulumi.Input<pulumi.Input<string>[]>;
+    states?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

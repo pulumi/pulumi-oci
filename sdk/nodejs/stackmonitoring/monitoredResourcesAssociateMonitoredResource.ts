@@ -168,30 +168,30 @@ export interface MonitoredResourcesAssociateMonitoredResourceState {
     /**
      * Association type to be created between source and destination resources.
      */
-    associationType?: pulumi.Input<string>;
+    associationType?: pulumi.Input<string | undefined>;
     /**
      * Association category. Possible values are:
      * * System created (SYSTEM),
      * * User created using API (USER_API)
      * * User created using tags (USER_TAG_ASSOC).
      */
-    category?: pulumi.Input<string>;
+    category?: pulumi.Input<string | undefined>;
     /**
      * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Association Resource Details.
      */
-    destinationResourceDetails?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail>[]>;
+    destinationResourceDetails?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail>[] | undefined>;
     /**
      * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    destinationResourceId?: pulumi.Input<string>;
+    destinationResourceId?: pulumi.Input<string | undefined>;
     /**
      * Association Resource Details.
      */
-    sourceResourceDetails?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail>[]>;
+    sourceResourceDetails?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail>[] | undefined>;
     /**
      * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). 
      *
@@ -199,15 +199,15 @@ export interface MonitoredResourcesAssociateMonitoredResourceState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    sourceResourceId?: pulumi.Input<string>;
+    sourceResourceId?: pulumi.Input<string | undefined>;
     /**
      * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    tenantId?: pulumi.Input<string>;
+    tenantId?: pulumi.Input<string | undefined>;
     /**
      * The time when the association was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**

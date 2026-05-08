@@ -150,7 +150,7 @@ def get_agents(agent_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_agents = oci.CloudBridge.get_agents(compartment_id=compartment_id,
+    test_agents = oci.cloudbridge.get_agents(compartment_id=compartment_id,
         agent_id=test_agent["id"],
         display_name=agent_display_name,
         environment_id=test_environment["id"],
@@ -183,12 +183,12 @@ def get_agents(agent_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_agents_output(agent_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                      display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      environment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAgentsFilterArgs', 'GetAgentsFilterArgsDict']]]]] = None,
-                      state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_agents_output(agent_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      environment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAgentsFilterArgs', 'GetAgentsFilterArgsDict']]]]] = None,
+                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentsResult]:
     """
     This data source provides the list of Agents in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -201,7 +201,7 @@ def get_agents_output(agent_id: Optional[pulumi.Input[Optional[_builtins.str]]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_agents = oci.CloudBridge.get_agents(compartment_id=compartment_id,
+    test_agents = oci.cloudbridge.get_agents(compartment_id=compartment_id,
         agent_id=test_agent["id"],
         display_name=agent_display_name,
         environment_id=test_environment["id"],

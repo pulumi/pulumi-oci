@@ -165,35 +165,35 @@ export interface SteeringPolicyAttachmentState {
     /**
      * The OCID of the compartment containing the steering policy attachment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name for the steering policy attachment. Does not have to be unique and can be changed. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The attached domain within the attached zone. `domainName` is case insensitive.
      */
-    domainName?: pulumi.Input<string>;
+    domainName?: pulumi.Input<string | undefined>;
     /**
      * The record types covered by the attachment at the domain. The set of record types is determined by aggregating the record types from the answers defined in the steering policy.
      */
-    rtypes?: pulumi.Input<pulumi.Input<string>[]>;
+    rtypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The canonical absolute URL of the resource.
      */
-    self?: pulumi.Input<string>;
+    self?: pulumi.Input<string | undefined>;
     /**
      * The current state of the resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the attached steering policy.
      */
-    steeringPolicyId?: pulumi.Input<string>;
+    steeringPolicyId?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource was created, expressed in RFC 3339 timestamp format.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the attached zone. Must be a public zone.
      *
@@ -201,7 +201,7 @@ export interface SteeringPolicyAttachmentState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    zoneId?: pulumi.Input<string>;
+    zoneId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -211,7 +211,7 @@ export interface SteeringPolicyAttachmentArgs {
     /**
      * (Updatable) A user-friendly name for the steering policy attachment. Does not have to be unique and can be changed. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The attached domain within the attached zone. `domainName` is case insensitive.
      */

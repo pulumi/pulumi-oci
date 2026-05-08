@@ -255,7 +255,7 @@ def get_byoip_range(byoip_range_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_byoip_range = oci.Core.get_byoip_range(byoip_range_id=test_byoip_range_oci_core_byoip_range["id"])
+    test_byoip_range = oci.core.get_byoip_range(byoip_range_id=test_byoip_range_oci_core_byoip_range["id"])
     ```
 
 
@@ -284,7 +284,7 @@ def get_byoip_range(byoip_range_id: Optional[_builtins.str] = None,
         time_validated=pulumi.get(__ret__, 'time_validated'),
         time_withdrawn=pulumi.get(__ret__, 'time_withdrawn'),
         validation_token=pulumi.get(__ret__, 'validation_token'))
-def get_byoip_range_output(byoip_range_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_byoip_range_output(byoip_range_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetByoipRangeResult]:
     """
     This data source provides details about a specific Byoip Range resource in Oracle Cloud Infrastructure Core service.
@@ -297,7 +297,7 @@ def get_byoip_range_output(byoip_range_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_byoip_range = oci.Core.get_byoip_range(byoip_range_id=test_byoip_range_oci_core_byoip_range["id"])
+    test_byoip_range = oci.core.get_byoip_range(byoip_range_id=test_byoip_range_oci_core_byoip_range["id"])
     ```
 
 

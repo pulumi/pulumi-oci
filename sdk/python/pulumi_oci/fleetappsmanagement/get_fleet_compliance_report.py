@@ -121,7 +121,7 @@ def get_fleet_compliance_report(compliance_report_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_compliance_report = oci.FleetAppsManagement.get_fleet_compliance_report(compliance_report_id=test_report["id"],
+    test_fleet_compliance_report = oci.fleetappsmanagement.get_fleet_compliance_report(compliance_report_id=test_report["id"],
         fleet_id=test_fleet["id"])
     ```
 
@@ -142,8 +142,8 @@ def get_fleet_compliance_report(compliance_report_id: Optional[_builtins.str] = 
         id=pulumi.get(__ret__, 'id'),
         percent_compliant=pulumi.get(__ret__, 'percent_compliant'),
         resources=pulumi.get(__ret__, 'resources'))
-def get_fleet_compliance_report_output(compliance_report_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fleet_compliance_report_output(compliance_report_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetComplianceReportResult]:
     """
     This data source provides details about a specific Fleet Compliance Report resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -156,7 +156,7 @@ def get_fleet_compliance_report_output(compliance_report_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_compliance_report = oci.FleetAppsManagement.get_fleet_compliance_report(compliance_report_id=test_report["id"],
+    test_fleet_compliance_report = oci.fleetappsmanagement.get_fleet_compliance_report(compliance_report_id=test_report["id"],
         fleet_id=test_fleet["id"])
     ```
 

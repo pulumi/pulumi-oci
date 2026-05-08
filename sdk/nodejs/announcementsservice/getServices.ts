@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServices = oci.AnnouncementsService.getServices({
+ * const testServices = oci.announcementsservice.getServices({
  *     compartmentId: compartmentId,
  *     commsManagerName: serviceCommsManagerName,
  *     platformType: servicePlatformType,
@@ -87,7 +87,7 @@ export interface GetServicesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServices = oci.AnnouncementsService.getServices({
+ * const testServices = oci.announcementsservice.getServices({
  *     compartmentId: compartmentId,
  *     commsManagerName: serviceCommsManagerName,
  *     platformType: servicePlatformType,
@@ -111,14 +111,14 @@ export interface GetServicesOutputArgs {
     /**
      * Filter by comms manager name
      */
-    commsManagerName?: pulumi.Input<string>;
+    commsManagerName?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the root compartment/tenancy.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.AnnouncementsService.GetServicesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.AnnouncementsService.GetServicesFilterArgs>[] | undefined>;
     /**
      * A filter to return only services underlying a specific platform.
      */
-    platformType?: pulumi.Input<string>;
+    platformType?: pulumi.Input<string | undefined>;
 }

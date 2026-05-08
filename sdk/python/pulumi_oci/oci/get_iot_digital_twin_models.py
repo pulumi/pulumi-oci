@@ -167,12 +167,12 @@ def get_iot_digital_twin_models(display_name: Optional[_builtins.str] = None,
         iot_domain_id=pulumi.get(__ret__, 'iot_domain_id'),
         spec_uri_starts_with=pulumi.get(__ret__, 'spec_uri_starts_with'),
         state=pulumi.get(__ret__, 'state'))
-def get_iot_digital_twin_models_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIotDigitalTwinModelsFilterArgs', 'GetIotDigitalTwinModelsFilterArgsDict']]]]] = None,
-                                       id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       iot_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       spec_uri_starts_with: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_iot_digital_twin_models_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIotDigitalTwinModelsFilterArgs', 'GetIotDigitalTwinModelsFilterArgsDict']]]]] = None,
+                                       id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       spec_uri_starts_with: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIotDigitalTwinModelsResult]:
     """
     This data source provides the list of Digital Twin Models in Oracle Cloud Infrastructure Iot service.

@@ -138,7 +138,7 @@ def get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_compariso
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparision = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparison(execution_id=test_execution["id"],
+    test_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparision = oci.databasemanagement.get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparison(execution_id=test_execution["id"],
         managed_database_id=test_managed_database["id"],
         sql_object_id=test_object["id"],
         sql_tuning_advisor_task_id=test_sql_tuning_advisor_task["id"],
@@ -170,11 +170,11 @@ def get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_compariso
         originals=pulumi.get(__ret__, 'originals'),
         sql_object_id=pulumi.get(__ret__, 'sql_object_id'),
         sql_tuning_advisor_task_id=pulumi.get(__ret__, 'sql_tuning_advisor_task_id'))
-def get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparison_output(execution_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                                         managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                                         opc_named_credential_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                                         sql_object_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                                         sql_tuning_advisor_task_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparison_output(execution_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                                         managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                                         opc_named_credential_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                                         sql_object_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                                         sql_tuning_advisor_task_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult]:
     """
     This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Execution Plan Stats Comparision resource in Oracle Cloud Infrastructure Database Management service.
@@ -189,7 +189,7 @@ def get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_compariso
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparision = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparison(execution_id=test_execution["id"],
+    test_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparision = oci.databasemanagement.get_managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparison(execution_id=test_execution["id"],
         managed_database_id=test_managed_database["id"],
         sql_object_id=test_object["id"],
         sql_tuning_advisor_task_id=test_sql_tuning_advisor_task["id"],

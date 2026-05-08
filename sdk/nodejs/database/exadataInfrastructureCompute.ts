@@ -336,180 +336,180 @@ export interface ExadataInfrastructureComputeState {
     /**
      * The requested number of additional storage servers activated for the Exadata infrastructure.
      */
-    activatedStorageCount?: pulumi.Input<number>;
+    activatedStorageCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
      */
-    activationFile?: pulumi.Input<string>;
+    activationFile?: pulumi.Input<string | undefined>;
     /**
      * The number of additional compute servers for the Exadata infrastructure.
      */
-    additionalComputeCount?: pulumi.Input<number>;
+    additionalComputeCount?: pulumi.Input<number | undefined>;
     /**
      * The requested number of additional compute servers for the Exadata infrastructure.
      */
-    additionalComputeCountComputeManagedResource?: pulumi.Input<number>;
+    additionalComputeCountComputeManagedResource?: pulumi.Input<number | undefined>;
     /**
      * Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
      */
-    additionalComputeSystemModel?: pulumi.Input<string>;
+    additionalComputeSystemModel?: pulumi.Input<string | undefined>;
     /**
      * The requested Oracle Exadata System Model specification for the additional compute servers. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
      */
-    additionalComputeSystemModelComputeManagedResource?: pulumi.Input<string>;
+    additionalComputeSystemModelComputeManagedResource?: pulumi.Input<string | undefined>;
     /**
      * The requested number of additional storage servers for the Exadata infrastructure.
      */
-    additionalStorageCount?: pulumi.Input<number>;
+    additionalStorageCount?: pulumi.Input<number | undefined>;
     /**
      * The CIDR block for the Exadata administration network.
      */
-    adminNetworkCidr?: pulumi.Input<string>;
+    adminNetworkCidr?: pulumi.Input<string | undefined>;
     /**
      * The IP address for the first control plane server.
      */
-    cloudControlPlaneServer1?: pulumi.Input<string>;
+    cloudControlPlaneServer1?: pulumi.Input<string | undefined>;
     /**
      * The IP address for the second control plane server.
      */
-    cloudControlPlaneServer2?: pulumi.Input<string>;
+    cloudControlPlaneServer2?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The number of compute servers for the Exadata infrastructure.
      */
-    computeCount?: pulumi.Input<number>;
+    computeCount?: pulumi.Input<number | undefined>;
     /**
      * The list of contacts for the Exadata infrastructure.
      */
-    contacts?: pulumi.Input<pulumi.Input<inputs.Database.ExadataInfrastructureComputeContact>[]>;
+    contacts?: pulumi.Input<pulumi.Input<inputs.Database.ExadataInfrastructureComputeContact>[] | undefined>;
     /**
      * The corporate network proxy for access to the control plane network.
      */
-    corporateProxy?: pulumi.Input<string>;
+    corporateProxy?: pulumi.Input<string | undefined>;
     /**
      * The number of enabled CPU cores.
      */
-    cpusEnabled?: pulumi.Input<number>;
-    createAsync?: pulumi.Input<boolean>;
+    cpusEnabled?: pulumi.Input<number | undefined>;
+    createAsync?: pulumi.Input<boolean | undefined>;
     /**
      * The CSI Number of the Exadata infrastructure.
      */
-    csiNumber?: pulumi.Input<string>;
+    csiNumber?: pulumi.Input<string | undefined>;
     /**
      * Size, in terabytes, of the DATA disk group.
      */
-    dataStorageSizeInTbs?: pulumi.Input<number>;
+    dataStorageSizeInTbs?: pulumi.Input<number | undefined>;
     /**
      * The local node storage allocated in GBs.
      */
-    dbNodeStorageSizeInGbs?: pulumi.Input<number>;
+    dbNodeStorageSizeInGbs?: pulumi.Input<number | undefined>;
     /**
      * The software version of the database servers (dom0) in the Exadata infrastructure.
      */
-    dbServerVersion?: pulumi.Input<string>;
+    dbServerVersion?: pulumi.Input<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The list of DNS server IP addresses. Maximum of 3 allowed.
      */
-    dnsServers?: pulumi.Input<pulumi.Input<string>[]>;
+    dnsServers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    exadataInfrastructureId?: pulumi.Input<string>;
+    exadataInfrastructureId?: pulumi.Input<string | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The gateway for the control plane network.
      */
-    gateway?: pulumi.Input<string>;
+    gateway?: pulumi.Input<string | undefined>;
     /**
      * The CIDR block for the Exadata InfiniBand interconnect.
      */
-    infiniBandNetworkCidr?: pulumi.Input<string>;
+    infiniBandNetworkCidr?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
      */
-    isCpsOfflineReportEnabled?: pulumi.Input<boolean>;
+    isCpsOfflineReportEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
      */
-    maintenanceSloStatus?: pulumi.Input<string>;
+    maintenanceSloStatus?: pulumi.Input<string | undefined>;
     /**
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Database.ExadataInfrastructureComputeMaintenanceWindow>[]>;
+    maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Database.ExadataInfrastructureComputeMaintenanceWindow>[] | undefined>;
     /**
      * The total number of CPU cores available.
      */
-    maxCpuCount?: pulumi.Input<number>;
+    maxCpuCount?: pulumi.Input<number | undefined>;
     /**
      * The total available DATA disk group size.
      */
-    maxDataStorageInTbs?: pulumi.Input<number>;
+    maxDataStorageInTbs?: pulumi.Input<number | undefined>;
     /**
      * The total local node storage available in GBs.
      */
-    maxDbNodeStorageInGbs?: pulumi.Input<number>;
+    maxDbNodeStorageInGbs?: pulumi.Input<number | undefined>;
     /**
      * The total memory available in GBs.
      */
-    maxMemoryInGbs?: pulumi.Input<number>;
+    maxMemoryInGbs?: pulumi.Input<number | undefined>;
     /**
      * The memory allocated in GBs.
      */
-    memorySizeInGbs?: pulumi.Input<number>;
+    memorySizeInGbs?: pulumi.Input<number | undefined>;
     /**
      * The monthly software version of the database servers (dom0) in the Exadata infrastructure.
      */
-    monthlyDbServerVersion?: pulumi.Input<string>;
+    monthlyDbServerVersion?: pulumi.Input<string | undefined>;
     /**
      * The netmask for the control plane network.
      */
-    netmask?: pulumi.Input<string>;
+    netmask?: pulumi.Input<string | undefined>;
     /**
      * The list of NTP server IP addresses. Maximum of 3 allowed.
      */
-    ntpServers?: pulumi.Input<pulumi.Input<string>[]>;
+    ntpServers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the Exadata infrastructure.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The number of Exadata storage servers for the Exadata infrastructure.
      */
-    storageCount?: pulumi.Input<number>;
+    storageCount?: pulumi.Input<number | undefined>;
     /**
      * The software version of the storage servers (cells) in the Exadata infrastructure.
      */
-    storageServerVersion?: pulumi.Input<string>;
+    storageServerVersion?: pulumi.Input<string | undefined>;
     /**
      * The date and time the Exadata infrastructure was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
-    timeZone?: pulumi.Input<string>;
+    timeZone?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -519,15 +519,15 @@ export interface ExadataInfrastructureComputeArgs {
     /**
      * (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
      */
-    activationFile?: pulumi.Input<string>;
+    activationFile?: pulumi.Input<string | undefined>;
     /**
      * The requested number of additional compute servers for the Exadata infrastructure.
      */
-    additionalComputeCountComputeManagedResource?: pulumi.Input<number>;
+    additionalComputeCountComputeManagedResource?: pulumi.Input<number | undefined>;
     /**
      * The requested Oracle Exadata System Model specification for the additional compute servers. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
      */
-    additionalComputeSystemModelComputeManagedResource?: pulumi.Input<string>;
+    additionalComputeSystemModelComputeManagedResource?: pulumi.Input<string | undefined>;
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

@@ -191,7 +191,7 @@ def get_oda_private_endpoint(oda_private_endpoint_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_private_endpoint = oci.Oda.get_oda_private_endpoint(oda_private_endpoint_id=test_oda_private_endpoint_oci_oda_oda_private_endpoint["id"])
+    test_oda_private_endpoint = oci.oda.get_oda_private_endpoint(oda_private_endpoint_id=test_oda_private_endpoint_oci_oda_oda_private_endpoint["id"])
     ```
 
 
@@ -215,7 +215,7 @@ def get_oda_private_endpoint(oda_private_endpoint_id: Optional[_builtins.str] = 
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_oda_private_endpoint_output(oda_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_oda_private_endpoint_output(oda_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOdaPrivateEndpointResult]:
     """
     This data source provides details about a specific Oda Private Endpoint resource in Oracle Cloud Infrastructure Digital Assistant service.
@@ -228,7 +228,7 @@ def get_oda_private_endpoint_output(oda_private_endpoint_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_private_endpoint = oci.Oda.get_oda_private_endpoint(oda_private_endpoint_id=test_oda_private_endpoint_oci_oda_oda_private_endpoint["id"])
+    test_oda_private_endpoint = oci.oda.get_oda_private_endpoint(oda_private_endpoint_id=test_oda_private_endpoint_oci_oda_oda_private_endpoint["id"])
     ```
 
 

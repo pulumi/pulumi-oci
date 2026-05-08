@@ -135,19 +135,19 @@ export interface OccCustomerGroupOccCustomerState {
     /**
      * (Updatable) The description about the customer group.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name for the customer.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the customer group.
      */
-    occCustomerGroupId?: pulumi.Input<string>;
+    occCustomerGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) To determine whether the customer is enabled/disabled.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the tenancy belonging to the customer.
      *
@@ -155,7 +155,7 @@ export interface OccCustomerGroupOccCustomerState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    tenancyId?: pulumi.Input<string>;
+    tenancyId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -165,7 +165,7 @@ export interface OccCustomerGroupOccCustomerArgs {
     /**
      * (Updatable) The description about the customer group.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name for the customer.
      */
@@ -177,7 +177,7 @@ export interface OccCustomerGroupOccCustomerArgs {
     /**
      * (Updatable) To determine whether the customer is enabled/disabled.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the tenancy belonging to the customer.
      *

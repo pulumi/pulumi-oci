@@ -392,7 +392,7 @@ def get_scheduled_job(scheduled_job_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_job = oci.OsManagementHub.get_scheduled_job(scheduled_job_id=test_scheduled_job_oci_os_management_hub_scheduled_job["id"])
+    test_scheduled_job = oci.osmanagementhub.get_scheduled_job(scheduled_job_id=test_scheduled_job_oci_os_management_hub_scheduled_job["id"])
     ```
 
 
@@ -432,7 +432,7 @@ def get_scheduled_job(scheduled_job_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'),
         work_request_ids=pulumi.get(__ret__, 'work_request_ids'))
-def get_scheduled_job_output(scheduled_job_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_scheduled_job_output(scheduled_job_id: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetScheduledJobResult]:
     """
     This data source provides details about a specific Scheduled Job resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -445,7 +445,7 @@ def get_scheduled_job_output(scheduled_job_id: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_job = oci.OsManagementHub.get_scheduled_job(scheduled_job_id=test_scheduled_job_oci_os_management_hub_scheduled_job["id"])
+    test_scheduled_job = oci.osmanagementhub.get_scheduled_job(scheduled_job_id=test_scheduled_job_oci_os_management_hub_scheduled_job["id"])
     ```
 
 

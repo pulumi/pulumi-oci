@@ -263,7 +263,7 @@ def get_jms_plugin(jms_plugin_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_jms_plugin = oci.Jms.get_jms_plugin(jms_plugin_id=test_jms_plugin_oci_jms_jms_plugin["id"])
+    test_jms_plugin = oci.jms.get_jms_plugin(jms_plugin_id=test_jms_plugin_oci_jms_jms_plugin["id"])
     ```
 
 
@@ -293,7 +293,7 @@ def get_jms_plugin(jms_plugin_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_last_seen=pulumi.get(__ret__, 'time_last_seen'),
         time_registered=pulumi.get(__ret__, 'time_registered'))
-def get_jms_plugin_output(jms_plugin_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_jms_plugin_output(jms_plugin_id: pulumi.Input[Optional[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJmsPluginResult]:
     """
     This data source provides details about a specific Jms Plugin resource in Oracle Cloud Infrastructure Jms service.
@@ -306,7 +306,7 @@ def get_jms_plugin_output(jms_plugin_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_jms_plugin = oci.Jms.get_jms_plugin(jms_plugin_id=test_jms_plugin_oci_jms_jms_plugin["id"])
+    test_jms_plugin = oci.jms.get_jms_plugin(jms_plugin_id=test_jms_plugin_oci_jms_jms_plugin["id"])
     ```
 
 

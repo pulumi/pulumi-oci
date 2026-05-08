@@ -26,13 +26,13 @@ class DatasetArgs:
                  dataset_format_details: pulumi.Input['DatasetDatasetFormatDetailsArgs'],
                  dataset_source_details: pulumi.Input['DatasetDatasetSourceDetailsArgs'],
                  label_set: pulumi.Input['DatasetLabelSetArgs'],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 initial_import_dataset_configuration: Optional[pulumi.Input['DatasetInitialImportDatasetConfigurationArgs']] = None,
-                 initial_record_generation_configuration: Optional[pulumi.Input['DatasetInitialRecordGenerationConfigurationArgs']] = None,
-                 labeling_instructions: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 initial_import_dataset_configuration: pulumi.Input[Optional['DatasetInitialImportDatasetConfigurationArgs']] = None,
+                 initial_record_generation_configuration: pulumi.Input[Optional['DatasetInitialRecordGenerationConfigurationArgs']] = None,
+                 labeling_instructions: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Dataset resource.
 
@@ -135,79 +135,79 @@ class DatasetArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user provided description of the dataset
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly display name for the resource.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="initialImportDatasetConfiguration")
-    def initial_import_dataset_configuration(self) -> Optional[pulumi.Input['DatasetInitialImportDatasetConfigurationArgs']]:
+    def initial_import_dataset_configuration(self) -> pulumi.Input[Optional['DatasetInitialImportDatasetConfigurationArgs']]:
         """
         Initial import dataset configuration. Allows user to create dataset from existing dataset files.
         """
         return pulumi.get(self, "initial_import_dataset_configuration")
 
     @initial_import_dataset_configuration.setter
-    def initial_import_dataset_configuration(self, value: Optional[pulumi.Input['DatasetInitialImportDatasetConfigurationArgs']]):
+    def initial_import_dataset_configuration(self, value: pulumi.Input[Optional['DatasetInitialImportDatasetConfigurationArgs']]):
         pulumi.set(self, "initial_import_dataset_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="initialRecordGenerationConfiguration")
-    def initial_record_generation_configuration(self) -> Optional[pulumi.Input['DatasetInitialRecordGenerationConfigurationArgs']]:
+    def initial_record_generation_configuration(self) -> pulumi.Input[Optional['DatasetInitialRecordGenerationConfigurationArgs']]:
         """
         The initial generate records configuration. It generates records from the dataset's source.
         """
         return pulumi.get(self, "initial_record_generation_configuration")
 
     @initial_record_generation_configuration.setter
-    def initial_record_generation_configuration(self, value: Optional[pulumi.Input['DatasetInitialRecordGenerationConfigurationArgs']]):
+    def initial_record_generation_configuration(self, value: pulumi.Input[Optional['DatasetInitialRecordGenerationConfigurationArgs']]):
         pulumi.set(self, "initial_record_generation_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="labelingInstructions")
-    def labeling_instructions(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def labeling_instructions(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The labeling instructions for human labelers in rich text format
 
@@ -218,31 +218,31 @@ class DatasetArgs:
         return pulumi.get(self, "labeling_instructions")
 
     @labeling_instructions.setter
-    def labeling_instructions(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def labeling_instructions(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "labeling_instructions", value)
 
 
 @pulumi.input_type
 class _DatasetState:
     def __init__(__self__, *,
-                 additional_properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 annotation_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 dataset_format_details: Optional[pulumi.Input['DatasetDatasetFormatDetailsArgs']] = None,
-                 dataset_source_details: Optional[pulumi.Input['DatasetDatasetSourceDetailsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 initial_import_dataset_configuration: Optional[pulumi.Input['DatasetInitialImportDatasetConfigurationArgs']] = None,
-                 initial_record_generation_configuration: Optional[pulumi.Input['DatasetInitialRecordGenerationConfigurationArgs']] = None,
-                 label_set: Optional[pulumi.Input['DatasetLabelSetArgs']] = None,
-                 labeling_instructions: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_substate: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 additional_properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 annotation_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 dataset_format_details: pulumi.Input[Optional['DatasetDatasetFormatDetailsArgs']] = None,
+                 dataset_source_details: pulumi.Input[Optional['DatasetDatasetSourceDetailsArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 initial_import_dataset_configuration: pulumi.Input[Optional['DatasetInitialImportDatasetConfigurationArgs']] = None,
+                 initial_record_generation_configuration: pulumi.Input[Optional['DatasetInitialRecordGenerationConfigurationArgs']] = None,
+                 label_set: pulumi.Input[Optional['DatasetLabelSetArgs']] = None,
+                 labeling_instructions: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_substate: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Dataset resources.
 
@@ -308,151 +308,151 @@ class _DatasetState:
 
     @_builtins.property
     @pulumi.getter(name="additionalProperties")
-    def additional_properties(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def additional_properties(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "additional_properties")
 
     @additional_properties.setter
-    def additional_properties(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def additional_properties(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "additional_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="annotationFormat")
-    def annotation_format(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def annotation_format(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The annotation format name required for labeling records.
         """
         return pulumi.get(self, "annotation_format")
 
     @annotation_format.setter
-    def annotation_format(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def annotation_format(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "annotation_format", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment of the resource.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="datasetFormatDetails")
-    def dataset_format_details(self) -> Optional[pulumi.Input['DatasetDatasetFormatDetailsArgs']]:
+    def dataset_format_details(self) -> pulumi.Input[Optional['DatasetDatasetFormatDetailsArgs']]:
         """
         It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
         """
         return pulumi.get(self, "dataset_format_details")
 
     @dataset_format_details.setter
-    def dataset_format_details(self, value: Optional[pulumi.Input['DatasetDatasetFormatDetailsArgs']]):
+    def dataset_format_details(self, value: pulumi.Input[Optional['DatasetDatasetFormatDetailsArgs']]):
         pulumi.set(self, "dataset_format_details", value)
 
     @_builtins.property
     @pulumi.getter(name="datasetSourceDetails")
-    def dataset_source_details(self) -> Optional[pulumi.Input['DatasetDatasetSourceDetailsArgs']]:
+    def dataset_source_details(self) -> pulumi.Input[Optional['DatasetDatasetSourceDetailsArgs']]:
         """
         This allows the customer to specify the source of the dataset.
         """
         return pulumi.get(self, "dataset_source_details")
 
     @dataset_source_details.setter
-    def dataset_source_details(self, value: Optional[pulumi.Input['DatasetDatasetSourceDetailsArgs']]):
+    def dataset_source_details(self, value: pulumi.Input[Optional['DatasetDatasetSourceDetailsArgs']]):
         pulumi.set(self, "dataset_source_details", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user provided description of the dataset
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly display name for the resource.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="initialImportDatasetConfiguration")
-    def initial_import_dataset_configuration(self) -> Optional[pulumi.Input['DatasetInitialImportDatasetConfigurationArgs']]:
+    def initial_import_dataset_configuration(self) -> pulumi.Input[Optional['DatasetInitialImportDatasetConfigurationArgs']]:
         """
         Initial import dataset configuration. Allows user to create dataset from existing dataset files.
         """
         return pulumi.get(self, "initial_import_dataset_configuration")
 
     @initial_import_dataset_configuration.setter
-    def initial_import_dataset_configuration(self, value: Optional[pulumi.Input['DatasetInitialImportDatasetConfigurationArgs']]):
+    def initial_import_dataset_configuration(self, value: pulumi.Input[Optional['DatasetInitialImportDatasetConfigurationArgs']]):
         pulumi.set(self, "initial_import_dataset_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="initialRecordGenerationConfiguration")
-    def initial_record_generation_configuration(self) -> Optional[pulumi.Input['DatasetInitialRecordGenerationConfigurationArgs']]:
+    def initial_record_generation_configuration(self) -> pulumi.Input[Optional['DatasetInitialRecordGenerationConfigurationArgs']]:
         """
         The initial generate records configuration. It generates records from the dataset's source.
         """
         return pulumi.get(self, "initial_record_generation_configuration")
 
     @initial_record_generation_configuration.setter
-    def initial_record_generation_configuration(self, value: Optional[pulumi.Input['DatasetInitialRecordGenerationConfigurationArgs']]):
+    def initial_record_generation_configuration(self, value: pulumi.Input[Optional['DatasetInitialRecordGenerationConfigurationArgs']]):
         pulumi.set(self, "initial_record_generation_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="labelSet")
-    def label_set(self) -> Optional[pulumi.Input['DatasetLabelSetArgs']]:
+    def label_set(self) -> pulumi.Input[Optional['DatasetLabelSetArgs']]:
         """
         An ordered collection of labels that are unique by name.
         """
         return pulumi.get(self, "label_set")
 
     @label_set.setter
-    def label_set(self, value: Optional[pulumi.Input['DatasetLabelSetArgs']]):
+    def label_set(self, value: pulumi.Input[Optional['DatasetLabelSetArgs']]):
         pulumi.set(self, "label_set", value)
 
     @_builtins.property
     @pulumi.getter(name="labelingInstructions")
-    def labeling_instructions(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def labeling_instructions(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The labeling instructions for human labelers in rich text format
 
@@ -463,67 +463,67 @@ class _DatasetState:
         return pulumi.get(self, "labeling_instructions")
 
     @labeling_instructions.setter
-    def labeling_instructions(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def labeling_instructions(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "labeling_instructions", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleSubstate")
-    def lifecycle_substate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_substate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The sub-state of the dataset. IMPORT_DATASET - The dataset is being imported.
         """
         return pulumi.get(self, "lifecycle_substate")
 
     @lifecycle_substate.setter
-    def lifecycle_substate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_substate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_substate", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The state of a dataset. CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling. ACTIVE   - The dataset is ready for labeling. UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE. NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention. DELETING - The dataset and its related resources are being deleted. DELETED  - The dataset has been deleted and is no longer available. FAILED   - The dataset has failed due to validation or other errors.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the resource was created, in the timestamp format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the resource was last updated, in the timestamp format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -533,18 +533,18 @@ class Dataset(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 annotation_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 dataset_format_details: Optional[pulumi.Input[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict']]] = None,
-                 dataset_source_details: Optional[pulumi.Input[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 initial_import_dataset_configuration: Optional[pulumi.Input[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict']]] = None,
-                 initial_record_generation_configuration: Optional[pulumi.Input[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict']]] = None,
-                 label_set: Optional[pulumi.Input[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict']]] = None,
-                 labeling_instructions: Optional[pulumi.Input[_builtins.str]] = None,
+                 annotation_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 dataset_format_details: pulumi.Input[Optional[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict']]] = None,
+                 dataset_source_details: pulumi.Input[Optional[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 initial_import_dataset_configuration: pulumi.Input[Optional[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict']]] = None,
+                 initial_record_generation_configuration: pulumi.Input[Optional[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict']]] = None,
+                 label_set: pulumi.Input[Optional[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict']]] = None,
+                 labeling_instructions: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Dataset resource in Oracle Cloud Infrastructure Data Labeling Service service.
@@ -566,7 +566,7 @@ class Dataset(pulumi.CustomResource):
             dataset_format_details={
                 "format_type": dataset_dataset_format_details_format_type,
                 "text_file_type_metadata": {
-                    "column_index": dataset_dataset_format_details_text_file_type_metadata_column_index,
+                    "column_index": int(dataset_dataset_format_details_text_file_type_metadata_column_index),
                     "format_type": dataset_dataset_format_details_text_file_type_metadata_format_type,
                     "column_delimiter": dataset_dataset_format_details_text_file_type_metadata_column_delimiter,
                     "column_name": dataset_dataset_format_details_text_file_type_metadata_column_name,
@@ -659,7 +659,7 @@ class Dataset(pulumi.CustomResource):
             dataset_format_details={
                 "format_type": dataset_dataset_format_details_format_type,
                 "text_file_type_metadata": {
-                    "column_index": dataset_dataset_format_details_text_file_type_metadata_column_index,
+                    "column_index": int(dataset_dataset_format_details_text_file_type_metadata_column_index),
                     "format_type": dataset_dataset_format_details_text_file_type_metadata_format_type,
                     "column_delimiter": dataset_dataset_format_details_text_file_type_metadata_column_delimiter,
                     "column_name": dataset_dataset_format_details_text_file_type_metadata_column_name,
@@ -722,18 +722,18 @@ class Dataset(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 annotation_format: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 dataset_format_details: Optional[pulumi.Input[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict']]] = None,
-                 dataset_source_details: Optional[pulumi.Input[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 initial_import_dataset_configuration: Optional[pulumi.Input[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict']]] = None,
-                 initial_record_generation_configuration: Optional[pulumi.Input[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict']]] = None,
-                 label_set: Optional[pulumi.Input[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict']]] = None,
-                 labeling_instructions: Optional[pulumi.Input[_builtins.str]] = None,
+                 annotation_format: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 dataset_format_details: pulumi.Input[Optional[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict']]] = None,
+                 dataset_source_details: pulumi.Input[Optional[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 initial_import_dataset_configuration: pulumi.Input[Optional[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict']]] = None,
+                 initial_record_generation_configuration: pulumi.Input[Optional[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict']]] = None,
+                 label_set: pulumi.Input[Optional[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict']]] = None,
+                 labeling_instructions: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -781,24 +781,24 @@ class Dataset(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            additional_properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            annotation_format: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            dataset_format_details: Optional[pulumi.Input[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict']]] = None,
-            dataset_source_details: Optional[pulumi.Input[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict']]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            initial_import_dataset_configuration: Optional[pulumi.Input[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict']]] = None,
-            initial_record_generation_configuration: Optional[pulumi.Input[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict']]] = None,
-            label_set: Optional[pulumi.Input[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict']]] = None,
-            labeling_instructions: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_substate: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'Dataset':
+            additional_properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            annotation_format: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            dataset_format_details: pulumi.Input[Optional[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict']]] = None,
+            dataset_source_details: pulumi.Input[Optional[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict']]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            initial_import_dataset_configuration: pulumi.Input[Optional[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict']]] = None,
+            initial_record_generation_configuration: pulumi.Input[Optional[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict']]] = None,
+            label_set: pulumi.Input[Optional[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict']]] = None,
+            labeling_instructions: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_substate: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'Dataset':
         """
         Get an existing Dataset resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

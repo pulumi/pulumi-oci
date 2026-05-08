@@ -190,7 +190,7 @@ def get_images(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_images = oci.Core.get_images(compartment_id=compartment_id,
+    test_images = oci.core.get_images(compartment_id=compartment_id,
         display_name=image_display_name,
         operating_system=image_operating_system,
         operating_system_version=image_operating_system_version,
@@ -235,15 +235,15 @@ def get_images(compartment_id: Optional[_builtins.str] = None,
         sort_by=pulumi.get(__ret__, 'sort_by'),
         sort_order=pulumi.get(__ret__, 'sort_order'),
         state=pulumi.get(__ret__, 'state'))
-def get_images_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                      display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetImagesFilterArgs', 'GetImagesFilterArgsDict']]]]] = None,
-                      operating_system: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      operating_system_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      shape: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      sort_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      sort_order: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_images_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetImagesFilterArgs', 'GetImagesFilterArgsDict']]]]] = None,
+                      operating_system: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      operating_system_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      shape: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      sort_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      sort_order: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImagesResult]:
     """
     This data source provides the list of Images in Oracle Cloud Infrastructure Core service.
@@ -266,7 +266,7 @@ def get_images_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_images = oci.Core.get_images(compartment_id=compartment_id,
+    test_images = oci.core.get_images(compartment_id=compartment_id,
         display_name=image_display_name,
         operating_system=image_operating_system,
         operating_system_version=image_operating_system_version,

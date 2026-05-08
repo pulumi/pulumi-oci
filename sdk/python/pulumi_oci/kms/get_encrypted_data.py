@@ -115,7 +115,7 @@ def get_encrypted_data(associated_data: Optional[Mapping[str, _builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_encrypted_data = oci.Kms.get_encrypted_data(crypto_endpoint=encrypted_data_crypto_endpoint,
+    test_encrypted_data = oci.kms.get_encrypted_data(crypto_endpoint=encrypted_data_crypto_endpoint,
         key_id=test_key["id"],
         plaintext=encrypted_data_plaintext,
         associated_data=encrypted_data_associated_data)
@@ -142,10 +142,10 @@ def get_encrypted_data(associated_data: Optional[Mapping[str, _builtins.str]] = 
         id=pulumi.get(__ret__, 'id'),
         key_id=pulumi.get(__ret__, 'key_id'),
         plaintext=pulumi.get(__ret__, 'plaintext'))
-def get_encrypted_data_output(associated_data: Optional[pulumi.Input[Optional[Mapping[str, _builtins.str]]]] = None,
-                              crypto_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                              key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                              plaintext: Optional[pulumi.Input[_builtins.str]] = None,
+def get_encrypted_data_output(associated_data: pulumi.Input[Optional[Optional[Mapping[str, _builtins.str]]]] = None,
+                              crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                              key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                              plaintext: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetEncryptedDataResult]:
     """
     The `Kms.EncryptedData` data source provides details about a specific EncryptedData
@@ -160,7 +160,7 @@ def get_encrypted_data_output(associated_data: Optional[pulumi.Input[Optional[Ma
     import pulumi
     import pulumi_oci as oci
 
-    test_encrypted_data = oci.Kms.get_encrypted_data(crypto_endpoint=encrypted_data_crypto_endpoint,
+    test_encrypted_data = oci.kms.get_encrypted_data(crypto_endpoint=encrypted_data_crypto_endpoint,
         key_id=test_key["id"],
         plaintext=encrypted_data_plaintext,
         associated_data=encrypted_data_associated_data)

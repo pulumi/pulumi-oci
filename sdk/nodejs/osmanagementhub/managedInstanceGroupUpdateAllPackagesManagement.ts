@@ -116,15 +116,15 @@ export interface ManagedInstanceGroupUpdateAllPackagesManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
-    managedInstanceGroupId?: pulumi.Input<string>;
+    managedInstanceGroupId?: pulumi.Input<string | undefined>;
     /**
      * The type of updates to be applied.
      */
-    updateTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    updateTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetails | undefined>;
 }
 
 /**
@@ -138,9 +138,9 @@ export interface ManagedInstanceGroupUpdateAllPackagesManagementArgs {
     /**
      * The type of updates to be applied.
      */
-    updateTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    updateTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetails | undefined>;
 }

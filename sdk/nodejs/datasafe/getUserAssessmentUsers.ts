@@ -20,13 +20,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserAssessmentUsers = oci.DataSafe.getUserAssessmentUsers({
+ * const testUserAssessmentUsers = oci.datasafe.getUserAssessmentUsers({
  *     userAssessmentId: testUserAssessment.id,
  *     accessLevel: userAssessmentUserAccessLevel,
  *     accountStatus: userAssessmentUserAccountStatus,
- *     areAllSchemasAccessible: userAssessmentUserAreAllSchemasAccessible,
+ *     areAllSchemasAccessible: userAssessmentUserAreAllSchemasAccessible === "true",
  *     authenticationType: userAssessmentUserAuthenticationType,
- *     compartmentIdInSubtree: userAssessmentUserCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: userAssessmentUserCompartmentIdInSubtree === "true",
  *     schemaLists: userAssessmentUserSchemaList,
  *     targetId: testTarget.id,
  *     timeLastLoginGreaterThanOrEqualTo: userAssessmentUserTimeLastLoginGreaterThanOrEqualTo,
@@ -255,13 +255,13 @@ export interface GetUserAssessmentUsersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserAssessmentUsers = oci.DataSafe.getUserAssessmentUsers({
+ * const testUserAssessmentUsers = oci.datasafe.getUserAssessmentUsers({
  *     userAssessmentId: testUserAssessment.id,
  *     accessLevel: userAssessmentUserAccessLevel,
  *     accountStatus: userAssessmentUserAccountStatus,
- *     areAllSchemasAccessible: userAssessmentUserAreAllSchemasAccessible,
+ *     areAllSchemasAccessible: userAssessmentUserAreAllSchemasAccessible === "true",
  *     authenticationType: userAssessmentUserAuthenticationType,
- *     compartmentIdInSubtree: userAssessmentUserCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: userAssessmentUserCompartmentIdInSubtree === "true",
  *     schemaLists: userAssessmentUserSchemaList,
  *     targetId: testTarget.id,
  *     timeLastLoginGreaterThanOrEqualTo: userAssessmentUserTimeLastLoginGreaterThanOrEqualTo,
@@ -317,70 +317,70 @@ export interface GetUserAssessmentUsersOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items that match the specified account status.
      */
-    accountStatus?: pulumi.Input<string>;
+    accountStatus?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items that match the criteria that all schemas can be accessed by a user.
      */
-    areAllSchemasAccessible?: pulumi.Input<boolean>;
+    areAllSchemasAccessible?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only items that match the specified authentication type.
      */
-    authenticationType?: pulumi.Input<string>;
+    authenticationType?: pulumi.Input<string | undefined>;
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetUserAssessmentUsersFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetUserAssessmentUsersFilterArgs>[] | undefined>;
     /**
      * A filter to return items that contain the specified schema list.
      */
-    schemaLists?: pulumi.Input<pulumi.Input<string>[]>;
+    schemaLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only items related to a specific target OCID.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return users whose last login time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeLastLoginGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeLastLoginGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A filter to return users whose last login time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeLastLoginLessThan?: pulumi.Input<string>;
+    timeLastLoginLessThan?: pulumi.Input<string | undefined>;
     /**
      * A filter to return users whose password expiry date in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
      */
-    timePasswordExpiryGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timePasswordExpiryGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A filter to return users whose password expiry date in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
      */
-    timePasswordExpiryLessThan?: pulumi.Input<string>;
+    timePasswordExpiryLessThan?: pulumi.Input<string | undefined>;
     /**
      * A filter to return users whose last password change in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timePasswordLastChangedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timePasswordLastChangedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A filter to return users whose last password change in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timePasswordLastChangedLessThan?: pulumi.Input<string>;
+    timePasswordLastChangedLessThan?: pulumi.Input<string | undefined>;
     /**
      * A filter to return users whose creation time in the database is greater than or equal to the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeUserCreatedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeUserCreatedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A filter to return users whose creation time in the database is less than the date and time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeUserCreatedLessThan?: pulumi.Input<string>;
+    timeUserCreatedLessThan?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the user assessment.
      */
@@ -388,23 +388,23 @@ export interface GetUserAssessmentUsersOutputArgs {
     /**
      * A filter to return only items that match the specified user category.
      */
-    userCategory?: pulumi.Input<string>;
+    userCategory?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items that match the specified user key.
      */
-    userKey?: pulumi.Input<string>;
+    userKey?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items that match the specified user name.
      */
-    userName?: pulumi.Input<string>;
+    userName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items that match the specified user profile.
      */
-    userProfile?: pulumi.Input<string>;
+    userProfile?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items that match the specified user role.
      */
-    userRole?: pulumi.Input<string>;
+    userRole?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items that match the specified user type. The possible values can be
      * * ADMIN_PRIVILEGED
@@ -413,5 +413,5 @@ export interface GetUserAssessmentUsersOutputArgs {
      * * SCHEMA
      * * NON_PRIVILEGED as specified by '#/definitions/userTypes'.
      */
-    userType?: pulumi.Input<string>;
+    userType?: pulumi.Input<string | undefined>;
 }

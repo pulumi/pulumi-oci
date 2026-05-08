@@ -120,7 +120,7 @@ def get_log_analytics_entities_summary(compartment_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entities_summary = oci.LogAnalytics.get_log_analytics_entities_summary(compartment_id=compartment_id,
+    test_log_analytics_entities_summary = oci.loganalytics.get_log_analytics_entities_summary(compartment_id=compartment_id,
         namespace=log_analytics_entities_summary_namespace)
     ```
 
@@ -141,8 +141,8 @@ def get_log_analytics_entities_summary(compartment_id: Optional[_builtins.str] =
         entities_with_management_agent_count=pulumi.get(__ret__, 'entities_with_management_agent_count'),
         id=pulumi.get(__ret__, 'id'),
         namespace=pulumi.get(__ret__, 'namespace'))
-def get_log_analytics_entities_summary_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                              namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_log_analytics_entities_summary_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                              namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsEntitiesSummaryResult]:
     """
     This data source provides details about a specific Log Analytics Entities Summary resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -155,7 +155,7 @@ def get_log_analytics_entities_summary_output(compartment_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entities_summary = oci.LogAnalytics.get_log_analytics_entities_summary(compartment_id=compartment_id,
+    test_log_analytics_entities_summary = oci.loganalytics.get_log_analytics_entities_summary(compartment_id=compartment_id,
         namespace=log_analytics_entities_summary_namespace)
     ```
 

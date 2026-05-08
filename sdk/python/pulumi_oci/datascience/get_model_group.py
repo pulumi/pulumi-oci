@@ -321,7 +321,7 @@ def get_model_group(model_group_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model_group = oci.DataScience.get_model_group(model_group_id=test_model_group_oci_datascience_model_group["id"])
+    test_model_group = oci.datascience.get_model_group(model_group_id=test_model_group_oci_datascience_model_group["id"])
     ```
 
 
@@ -356,7 +356,7 @@ def get_model_group(model_group_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version_id=pulumi.get(__ret__, 'version_id'),
         version_label=pulumi.get(__ret__, 'version_label'))
-def get_model_group_output(model_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_model_group_output(model_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetModelGroupResult]:
     """
     This data source provides details about a specific Model Group resource in Oracle Cloud Infrastructure Data Science service.
@@ -369,7 +369,7 @@ def get_model_group_output(model_group_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_model_group = oci.DataScience.get_model_group(model_group_id=test_model_group_oci_datascience_model_group["id"])
+    test_model_group = oci.datascience.get_model_group(model_group_id=test_model_group_oci_datascience_model_group["id"])
     ```
 
 

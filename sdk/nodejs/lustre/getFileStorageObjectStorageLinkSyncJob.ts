@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testObjectStorageLinkSyncJob = oci.Lustre.getFileStorageObjectStorageLinkSyncJob({
+ * const testObjectStorageLinkSyncJob = oci.lustre.getFileStorageObjectStorageLinkSyncJob({
  *     objectStorageLinkId: testObjectStorageLink.id,
  *     syncJobId: testJob.id,
  * });
@@ -129,7 +129,7 @@ export interface GetFileStorageObjectStorageLinkSyncJobResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testObjectStorageLinkSyncJob = oci.Lustre.getFileStorageObjectStorageLinkSyncJob({
+ * const testObjectStorageLinkSyncJob = oci.lustre.getFileStorageObjectStorageLinkSyncJob({
  *     objectStorageLinkId: testObjectStorageLink.id,
  *     syncJobId: testJob.id,
  * });

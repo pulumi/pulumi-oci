@@ -20,7 +20,7 @@ __all__ = ['SoftwareSourceManifestArgs', 'SoftwareSourceManifest']
 class SoftwareSourceManifestArgs:
     def __init__(__self__, *,
                  software_source_id: pulumi.Input[_builtins.str],
-                 content: Optional[pulumi.Input[_builtins.str]] = None):
+                 content: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a SoftwareSourceManifest resource.
 
@@ -52,19 +52,19 @@ class SoftwareSourceManifestArgs:
 
     @_builtins.property
     @pulumi.getter
-    def content(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "content")
 
     @content.setter
-    def content(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content", value)
 
 
 @pulumi.input_type
 class _SoftwareSourceManifestState:
     def __init__(__self__, *,
-                 content: Optional[pulumi.Input[_builtins.str]] = None,
-                 software_source_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 software_source_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SoftwareSourceManifest resources.
 
@@ -81,16 +81,16 @@ class _SoftwareSourceManifestState:
 
     @_builtins.property
     @pulumi.getter
-    def content(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "content")
 
     @content.setter
-    def content(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content", value)
 
     @_builtins.property
     @pulumi.getter(name="softwareSourceId")
-    def software_source_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def software_source_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 
@@ -101,7 +101,7 @@ class _SoftwareSourceManifestState:
         return pulumi.get(self, "software_source_id")
 
     @software_source_id.setter
-    def software_source_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def software_source_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "software_source_id", value)
 
 
@@ -111,8 +111,8 @@ class SoftwareSourceManifest(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 content: Optional[pulumi.Input[_builtins.str]] = None,
-                 software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 software_source_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Software Source Manifest resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -199,8 +199,8 @@ class SoftwareSourceManifest(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 content: Optional[pulumi.Input[_builtins.str]] = None,
-                 software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 software_source_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -224,8 +224,8 @@ class SoftwareSourceManifest(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            content: Optional[pulumi.Input[_builtins.str]] = None,
-            software_source_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'SoftwareSourceManifest':
+            content: pulumi.Input[Optional[_builtins.str]] = None,
+            software_source_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'SoftwareSourceManifest':
         """
         Get an existing SoftwareSourceManifest resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

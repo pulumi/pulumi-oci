@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDynamicGroups = oci.Identity.getDynamicGroups({
+ * const testDynamicGroups = oci.identity.getDynamicGroups({
  *     compartmentId: tenancyOcid,
  *     name: dynamicGroupName,
  *     state: dynamicGroupState,
@@ -94,7 +94,7 @@ export interface GetDynamicGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDynamicGroups = oci.Identity.getDynamicGroups({
+ * const testDynamicGroups = oci.identity.getDynamicGroups({
  *     compartmentId: tenancyOcid,
  *     name: dynamicGroupName,
  *     state: dynamicGroupState,
@@ -119,13 +119,13 @@ export interface GetDynamicGroupsOutputArgs {
      * The OCID of the compartment (remember that the tenancy is simply the root compartment).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetDynamicGroupsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetDynamicGroupsFilterArgs>[] | undefined>;
     /**
      * A filter to only return resources that match the given name exactly.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

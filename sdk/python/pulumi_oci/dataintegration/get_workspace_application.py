@@ -373,7 +373,7 @@ def get_workspace_application(application_key: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application = oci.DataIntegration.get_workspace_application(application_key=workspace_application_application_key,
+    test_workspace_application = oci.dataintegration.get_workspace_application(application_key=workspace_application_application_key,
         workspace_id=test_workspace["id"])
     ```
 
@@ -415,8 +415,8 @@ def get_workspace_application(application_key: Optional[_builtins.str] = None,
         time_patched=pulumi.get(__ret__, 'time_patched'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-def get_workspace_application_output(application_key: Optional[pulumi.Input[_builtins.str]] = None,
-                                     workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_workspace_application_output(application_key: pulumi.Input[Optional[_builtins.str]] = None,
+                                     workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceApplicationResult]:
     """
     This data source provides details about a specific Workspace Application resource in Oracle Cloud Infrastructure Data Integration service.
@@ -429,7 +429,7 @@ def get_workspace_application_output(application_key: Optional[pulumi.Input[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application = oci.DataIntegration.get_workspace_application(application_key=workspace_application_application_key,
+    test_workspace_application = oci.dataintegration.get_workspace_application(application_key=workspace_application_application_key,
         workspace_id=test_workspace["id"])
     ```
 

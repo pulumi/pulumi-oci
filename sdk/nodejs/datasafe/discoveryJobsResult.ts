@@ -220,91 +220,91 @@ export interface DiscoveryJobsResultState {
     /**
      * Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
      */
-    appDefinedChildColumnKeys?: pulumi.Input<pulumi.Input<string>[]>;
+    appDefinedChildColumnKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The name of the application. An application is an entity that is identified by a schema and stores sensitive information for that schema. Its value will be same as schemaName, if no value is passed.
      */
-    appName?: pulumi.Input<string>;
+    appName?: pulumi.Input<string | undefined>;
     /**
      * The name of the sensitive column.
      */
-    columnName?: pulumi.Input<string>;
-    confidenceLevel?: pulumi.Input<string>;
-    confidenceLevelDetails?: pulumi.Input<pulumi.Input<inputs.DataSafe.DiscoveryJobsResultConfidenceLevelDetail>[]>;
+    columnName?: pulumi.Input<string | undefined>;
+    confidenceLevel?: pulumi.Input<string | undefined>;
+    confidenceLevelDetails?: pulumi.Input<pulumi.Input<inputs.DataSafe.DiscoveryJobsResultConfidenceLevelDetail>[] | undefined>;
     /**
      * The data type of the sensitive column.
      */
-    dataType?: pulumi.Input<string>;
+    dataType?: pulumi.Input<string | undefined>;
     /**
      * Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
      */
-    dbDefinedChildColumnKeys?: pulumi.Input<pulumi.Input<string>[]>;
+    dbDefinedChildColumnKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the discovery job.
      *
      * @deprecated The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
      */
-    discoveryJobId?: pulumi.Input<string>;
+    discoveryJobId?: pulumi.Input<string | undefined>;
     /**
      * The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
      *
      * @deprecated The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
      */
-    discoveryType?: pulumi.Input<string>;
+    discoveryType?: pulumi.Input<string | undefined>;
     /**
      * The estimated number of data values the column has in the associated database.
      */
-    estimatedDataValueCount?: pulumi.Input<string>;
+    estimatedDataValueCount?: pulumi.Input<string | undefined>;
     /**
      * Indicates if the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
      */
-    isResultApplied?: pulumi.Input<boolean>;
+    isResultApplied?: pulumi.Input<boolean | undefined>;
     /**
      * The unique key that identifies the discovery result.
      *
      * @deprecated The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * The attributes of a sensitive column that have been modified in the target database. It's populated only in the case of MODIFIED discovery results and shows the new values of the modified attributes.
      */
-    modifiedAttributes?: pulumi.Input<pulumi.Input<inputs.DataSafe.DiscoveryJobsResultModifiedAttribute>[]>;
+    modifiedAttributes?: pulumi.Input<pulumi.Input<inputs.DataSafe.DiscoveryJobsResultModifiedAttribute>[] | undefined>;
     /**
      * The database object that contains the sensitive column.
      */
-    object?: pulumi.Input<string>;
+    object?: pulumi.Input<string | undefined>;
     /**
      * The type of the database object that contains the sensitive column.
      */
-    objectType?: pulumi.Input<string>;
+    objectType?: pulumi.Input<string | undefined>;
     /**
      * Unique keys identifying the columns that are parents of the sensitive column. At present, it tracks a single parent only.
      */
-    parentColumnKeys?: pulumi.Input<pulumi.Input<string>[]>;
+    parentColumnKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Specifies how to process the discovery result. It's set to NONE by default. Use the PatchDiscoveryJobResults operation to update this attribute. You can choose one of the following options: ACCEPT: To accept the discovery result and update the sensitive data model to reflect the changes. REJECT: To reject the discovery result so that it doesn't change the sensitive data model. INVALIDATE: To invalidate a newly discovered column. It adds the column to the sensitive data model but marks it as invalid. It helps track false positives and ensure that they aren't reported by future discovery jobs. After specifying the planned action, you can use the ApplyDiscoveryJobResults operation to automatically process the discovery results.
      */
-    plannedAction?: pulumi.Input<string>;
+    plannedAction?: pulumi.Input<string | undefined>;
     /**
      * The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
      */
-    relationType?: pulumi.Input<string>;
+    relationType?: pulumi.Input<string | undefined>;
     /**
      * Original data values collected for the sensitive column from the associated database. Sample data helps review the column and ensure that it actually contains sensitive data. Note that sample data is retrieved by a data discovery job only if the isSampleDataCollectionEnabled attribute is set to true. At present, only one data value is collected per sensitive column.
      */
-    sampleDataValues?: pulumi.Input<pulumi.Input<string>[]>;
+    sampleDataValues?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The database schema that contains the sensitive column.
      */
-    schemaName?: pulumi.Input<string>;
+    schemaName?: pulumi.Input<string | undefined>;
     /**
      * The unique key that identifies the sensitive column represented by the discovery result.
      */
-    sensitiveColumnkey?: pulumi.Input<string>;
+    sensitiveColumnkey?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the sensitive type associated with the sensitive column.
      */
-    sensitiveTypeId?: pulumi.Input<string>;
+    sensitiveTypeId?: pulumi.Input<string | undefined>;
 }
 
 /**

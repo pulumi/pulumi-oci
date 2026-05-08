@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelType = oci.AiDocument.getModelType({
+ * const testModelType = oci.aidocument.getModelType({
  *     modelType: modelTypeModelType,
  *     compartmentId: compartmentId,
  *     modelSubType: modelTypeModelSubType,
@@ -80,7 +80,7 @@ export interface GetModelTypeResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelType = oci.AiDocument.getModelType({
+ * const testModelType = oci.aidocument.getModelType({
  *     modelType: modelTypeModelType,
  *     compartmentId: compartmentId,
  *     modelSubType: modelTypeModelSubType,
@@ -103,11 +103,11 @@ export interface GetModelTypeOutputArgs {
     /**
      * The ID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The sub type based upon model selected.
      */
-    modelSubType?: pulumi.Input<string>;
+    modelSubType?: pulumi.Input<string | undefined>;
     /**
      * The type of the Document model.
      */

@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulerExecutions = oci.FleetAppsManagement.getSchedulerExecutions({
+ * const testSchedulerExecutions = oci.fleetappsmanagement.getSchedulerExecutions({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: schedulerExecutionCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: schedulerExecutionCompartmentIdInSubtree === "true",
  *     displayName: schedulerExecutionDisplayName,
  *     lifecycleOperation: schedulerExecutionLifecycleOperation,
  *     resourceId: testResource.id,
@@ -163,9 +163,9 @@ export interface GetSchedulerExecutionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSchedulerExecutions = oci.FleetAppsManagement.getSchedulerExecutions({
+ * const testSchedulerExecutions = oci.fleetappsmanagement.getSchedulerExecutions({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: schedulerExecutionCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: schedulerExecutionCompartmentIdInSubtree === "true",
  *     displayName: schedulerExecutionDisplayName,
  *     lifecycleOperation: schedulerExecutionLifecycleOperation,
  *     resourceId: testResource.id,
@@ -206,50 +206,50 @@ export interface GetSchedulerExecutionsOutputArgs {
     /**
      * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetSchedulerExecutionsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetSchedulerExecutionsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources their lifecycleOperation matches the given lifecycleOperation.
      */
-    lifecycleOperation?: pulumi.Input<string>;
+    lifecycleOperation?: pulumi.Input<string | undefined>;
     /**
      * ResourceId filter (Example FleetId)
      */
-    resourceId?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only schedule definitions whose associated runbookId matches the given runbookId.
      */
-    runbookId?: pulumi.Input<string>;
+    runbookId?: pulumi.Input<string | undefined>;
     /**
      * RunbookVersion Name filter
      */
-    runbookVersionName?: pulumi.Input<string>;
+    runbookVersionName?: pulumi.Input<string | undefined>;
     /**
      * SchedulerDefinition identifier
      */
-    schedulerDefintionId?: pulumi.Input<string>;
+    schedulerDefintionId?: pulumi.Input<string | undefined>;
     /**
      * SchedulerJob identifier filter
      */
-    schedulerJobId?: pulumi.Input<string>;
+    schedulerJobId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources their subState matches the given subState.
      */
-    substate?: pulumi.Input<string>;
+    substate?: pulumi.Input<string | undefined>;
     /**
      * Scheduled Time
      */
-    timeScheduledGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeScheduledGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * Scheduled Time
      */
-    timeScheduledLessThan?: pulumi.Input<string>;
+    timeScheduledLessThan?: pulumi.Input<string | undefined>;
 }

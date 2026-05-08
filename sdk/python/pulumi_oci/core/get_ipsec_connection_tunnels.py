@@ -95,7 +95,7 @@ def get_ipsec_connection_tunnels(filters: Optional[Sequence[Union['GetIpsecConne
     import pulumi
     import pulumi_oci as oci
 
-    test_ip_sec_connection_tunnels = oci.Core.get_ipsec_connection_tunnels(ipsec_id=test_ipsec["id"])
+    test_ip_sec_connection_tunnels = oci.core.get_ipsec_connection_tunnels(ipsec_id=test_ipsec["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_ipsec_connection_tunnels(filters: Optional[Sequence[Union['GetIpsecConne
         id=pulumi.get(__ret__, 'id'),
         ip_sec_connection_tunnels=pulumi.get(__ret__, 'ip_sec_connection_tunnels'),
         ipsec_id=pulumi.get(__ret__, 'ipsec_id'))
-def get_ipsec_connection_tunnels_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIpsecConnectionTunnelsFilterArgs', 'GetIpsecConnectionTunnelsFilterArgsDict']]]]] = None,
-                                        ipsec_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_ipsec_connection_tunnels_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIpsecConnectionTunnelsFilterArgs', 'GetIpsecConnectionTunnelsFilterArgsDict']]]]] = None,
+                                        ipsec_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIpsecConnectionTunnelsResult]:
     """
     This data source provides the list of Ip Sec Connection Tunnels in Oracle Cloud Infrastructure Core service.
@@ -126,7 +126,7 @@ def get_ipsec_connection_tunnels_output(filters: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_ip_sec_connection_tunnels = oci.Core.get_ipsec_connection_tunnels(ipsec_id=test_ipsec["id"])
+    test_ip_sec_connection_tunnels = oci.core.get_ipsec_connection_tunnels(ipsec_id=test_ipsec["id"])
     ```
 
 

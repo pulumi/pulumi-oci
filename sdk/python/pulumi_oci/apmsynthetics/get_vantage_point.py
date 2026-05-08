@@ -110,7 +110,7 @@ def get_vantage_point(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_public_vantage_point = oci.ApmSynthetics.get_vantage_point(apm_domain_id=test_apm_domain["id"],
+    test_public_vantage_point = oci.apmsynthetics.get_vantage_point(apm_domain_id=test_apm_domain["id"],
         display_name=public_vantage_point_display_name,
         name=public_vantage_point_name)
     ```
@@ -133,9 +133,9 @@ def get_vantage_point(apm_domain_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'),
         name=pulumi.get(__ret__, 'name'))
-def get_vantage_point_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_vantage_point_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVantagePointResult]:
     """
     This data source provides details about a specific Public Vantage Point resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
@@ -148,7 +148,7 @@ def get_vantage_point_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_public_vantage_point = oci.ApmSynthetics.get_vantage_point(apm_domain_id=test_apm_domain["id"],
+    test_public_vantage_point = oci.apmsynthetics.get_vantage_point(apm_domain_id=test_apm_domain["id"],
         display_name=public_vantage_point_display_name,
         name=public_vantage_point_name)
     ```

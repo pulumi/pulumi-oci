@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAppCatalogListings = oci.Core.getAppCatalogListings({
+ * const testAppCatalogListings = oci.core.getAppCatalogListings({
  *     displayName: appCatalogListingDisplayName,
  *     publisherName: appCatalogListingPublisherName,
  *     publisherType: appCatalogListingPublisherType,
@@ -88,7 +88,7 @@ export interface GetAppCatalogListingsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAppCatalogListings = oci.Core.getAppCatalogListings({
+ * const testAppCatalogListings = oci.core.getAppCatalogListings({
  *     displayName: appCatalogListingDisplayName,
  *     publisherName: appCatalogListingPublisherName,
  *     publisherType: appCatalogListingPublisherType,
@@ -113,14 +113,14 @@ export interface GetAppCatalogListingsOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetAppCatalogListingsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetAppCatalogListingsFilterArgs>[] | undefined>;
     /**
      * A filter to return only the publisher that matches the given publisher name exactly.
      */
-    publisherName?: pulumi.Input<string>;
+    publisherName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only publishers that match the given publisher type exactly. Valid types are OCI, ORACLE, TRUSTED, STANDARD.
      */
-    publisherType?: pulumi.Input<string>;
+    publisherType?: pulumi.Input<string | undefined>;
 }

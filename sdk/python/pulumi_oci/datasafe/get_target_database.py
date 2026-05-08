@@ -273,7 +273,7 @@ def get_target_database(target_database_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_target_database = oci.DataSafe.get_target_database(target_database_id=test_target_database_oci_data_safe_target_database["id"])
+    test_target_database = oci.datasafe.get_target_database(target_database_id=test_target_database_oci_data_safe_target_database["id"])
     ```
 
 
@@ -304,7 +304,7 @@ def get_target_database(target_database_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         tls_configs=pulumi.get(__ret__, 'tls_configs'))
-def get_target_database_output(target_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_target_database_output(target_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTargetDatabaseResult]:
     """
     This data source provides details about a specific Target Database resource in Oracle Cloud Infrastructure Data Safe service.
@@ -317,7 +317,7 @@ def get_target_database_output(target_database_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_target_database = oci.DataSafe.get_target_database(target_database_id=test_target_database_oci_data_safe_target_database["id"])
+    test_target_database = oci.datasafe.get_target_database(target_database_id=test_target_database_oci_data_safe_target_database["id"])
     ```
 
 

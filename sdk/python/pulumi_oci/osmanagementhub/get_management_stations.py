@@ -182,7 +182,7 @@ def get_management_stations(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_management_stations = oci.OsManagementHub.get_management_stations(compartment_id=compartment_id,
+    test_management_stations = oci.osmanagementhub.get_management_stations(compartment_id=compartment_id,
         display_name=management_station_display_name,
         display_name_contains=management_station_display_name_contains,
         health_state=management_station_health_state,
@@ -230,16 +230,16 @@ def get_management_stations(compartment_id: Optional[_builtins.str] = None,
         managed_instance_id=pulumi.get(__ret__, 'managed_instance_id'),
         management_station_collections=pulumi.get(__ret__, 'management_station_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_management_stations_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   display_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagementStationsFilterArgs', 'GetManagementStationsFilterArgsDict']]]]] = None,
-                                   health_state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   location_not_equal_tos: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                   locations: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                   managed_instance_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_management_stations_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagementStationsFilterArgs', 'GetManagementStationsFilterArgsDict']]]]] = None,
+                                   health_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   location_not_equal_tos: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                   locations: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                   managed_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementStationsResult]:
     """
     This data source provides the list of Management Stations in Oracle Cloud Infrastructure Os Management Hub service.
@@ -253,7 +253,7 @@ def get_management_stations_output(compartment_id: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_management_stations = oci.OsManagementHub.get_management_stations(compartment_id=compartment_id,
+    test_management_stations = oci.osmanagementhub.get_management_stations(compartment_id=compartment_id,
         display_name=management_station_display_name,
         display_name_contains=management_station_display_name_contains,
         health_state=management_station_health_state,

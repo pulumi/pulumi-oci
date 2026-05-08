@@ -214,87 +214,87 @@ export interface FleetState {
     /**
      * (Updatable) compartment OCID
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Credentials associated with the Fleet.
      */
-    credentials?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.FleetCredential>[]>;
+    credentials?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.FleetCredential>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Fleet Type
      */
-    details?: pulumi.Input<inputs.FleetAppsManagement.FleetDetails>;
+    details?: pulumi.Input<inputs.FleetAppsManagement.FleetDetails | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      */
-    environmentType?: pulumi.Input<string>;
+    environmentType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
      */
-    isTargetAutoConfirm?: pulumi.Input<boolean>;
+    isTargetAutoConfirm?: pulumi.Input<boolean | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Notification Preferences associated with the Fleet.
      */
-    notificationPreferences?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.FleetNotificationPreference>[]>;
+    notificationPreferences?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.FleetNotificationPreference>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet that would be the parent for this fleet.
      */
-    parentFleetId?: pulumi.Input<string>;
+    parentFleetId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
      */
-    products?: pulumi.Input<pulumi.Input<string>[]>;
+    products?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Properties associated with the Fleet.
      */
-    properties?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.FleetProperty>[]>;
+    properties?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.FleetProperty>[] | undefined>;
     /**
      * Associated region
      */
-    resourceRegion?: pulumi.Input<string>;
+    resourceRegion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Resource Selection Type
      */
-    resourceSelection?: pulumi.Input<inputs.FleetAppsManagement.FleetResourceSelection>;
+    resourceSelection?: pulumi.Input<inputs.FleetAppsManagement.FleetResourceSelection | undefined>;
     /**
      * Resources associated with the Fleet if resourceSelectionType is MANUAL.
      */
-    resources?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.FleetResource>[]>;
+    resources?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.FleetResource>[] | undefined>;
     /**
      * The lifecycle state of the Fleet.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -308,19 +308,19 @@ export interface FleetArgs {
     /**
      * Credentials associated with the Fleet.
      */
-    credentials?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.FleetCredential>[]>;
+    credentials?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.FleetCredential>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Fleet Type
      */
-    details?: pulumi.Input<inputs.FleetAppsManagement.FleetDetails>;
+    details?: pulumi.Input<inputs.FleetAppsManagement.FleetDetails | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
@@ -328,31 +328,31 @@ export interface FleetArgs {
     /**
      * (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      */
-    environmentType?: pulumi.Input<string>;
+    environmentType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
      */
-    isTargetAutoConfirm?: pulumi.Input<boolean>;
+    isTargetAutoConfirm?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Notification Preferences associated with the Fleet.
      */
-    notificationPreferences?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.FleetNotificationPreference>[]>;
+    notificationPreferences?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.FleetNotificationPreference>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet that would be the parent for this fleet.
      */
-    parentFleetId?: pulumi.Input<string>;
+    parentFleetId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
      */
-    products?: pulumi.Input<pulumi.Input<string>[]>;
+    products?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Properties associated with the Fleet.
      */
-    properties?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.FleetProperty>[]>;
+    properties?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.FleetProperty>[] | undefined>;
     /**
      * (Updatable) Resource Selection Type
      */
@@ -360,5 +360,5 @@ export interface FleetArgs {
     /**
      * Resources associated with the Fleet if resourceSelectionType is MANUAL.
      */
-    resources?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.FleetResource>[]>;
+    resources?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.FleetResource>[] | undefined>;
 }

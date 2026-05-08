@@ -125,7 +125,7 @@ def get_stream_sources(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_sources = oci.AiVision.get_stream_sources(compartment_id=compartment_id,
+    test_stream_sources = oci.aivision.get_stream_sources(compartment_id=compartment_id,
         display_name=stream_source_display_name,
         id=stream_source_id,
         state=stream_source_state)
@@ -153,11 +153,11 @@ def get_stream_sources(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         stream_source_collections=pulumi.get(__ret__, 'stream_source_collections'))
-def get_stream_sources_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetStreamSourcesFilterArgs', 'GetStreamSourcesFilterArgsDict']]]]] = None,
-                              id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_stream_sources_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetStreamSourcesFilterArgs', 'GetStreamSourcesFilterArgsDict']]]]] = None,
+                              id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStreamSourcesResult]:
     """
     This data source provides the list of Stream Sources in Oracle Cloud Infrastructure Ai Vision service.
@@ -170,7 +170,7 @@ def get_stream_sources_output(compartment_id: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_sources = oci.AiVision.get_stream_sources(compartment_id=compartment_id,
+    test_stream_sources = oci.aivision.get_stream_sources(compartment_id=compartment_id,
         display_name=stream_source_display_name,
         id=stream_source_id,
         state=stream_source_state)

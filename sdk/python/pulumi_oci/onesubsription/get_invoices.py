@@ -135,7 +135,7 @@ def get_invoices(ar_customer_transaction_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_invoices = oci.OneSubsription.get_invoices(ar_customer_transaction_id=test_ar_customer_transaction["id"],
+    test_invoices = oci.onesubsription.get_invoices(ar_customer_transaction_id=test_ar_customer_transaction["id"],
         compartment_id=compartment_id,
         fields=invoice_fields,
         time_from=invoice_time_from,
@@ -168,12 +168,12 @@ def get_invoices(ar_customer_transaction_id: Optional[_builtins.str] = None,
         invoices=pulumi.get(__ret__, 'invoices'),
         time_from=pulumi.get(__ret__, 'time_from'),
         time_to=pulumi.get(__ret__, 'time_to'))
-def get_invoices_output(ar_customer_transaction_id: Optional[pulumi.Input[_builtins.str]] = None,
-                        compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                        fields: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInvoicesFilterArgs', 'GetInvoicesFilterArgsDict']]]]] = None,
-                        time_from: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        time_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_invoices_output(ar_customer_transaction_id: pulumi.Input[Optional[_builtins.str]] = None,
+                        compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                        fields: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInvoicesFilterArgs', 'GetInvoicesFilterArgsDict']]]]] = None,
+                        time_from: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        time_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInvoicesResult]:
     """
     This data source provides the list of Invoices in Oracle Cloud Infrastructure Onesubscription service.
@@ -186,7 +186,7 @@ def get_invoices_output(ar_customer_transaction_id: Optional[pulumi.Input[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_invoices = oci.OneSubsription.get_invoices(ar_customer_transaction_id=test_ar_customer_transaction["id"],
+    test_invoices = oci.onesubsription.get_invoices(ar_customer_transaction_id=test_ar_customer_transaction["id"],
         compartment_id=compartment_id,
         fields=invoice_fields,
         time_from=invoice_time_from,

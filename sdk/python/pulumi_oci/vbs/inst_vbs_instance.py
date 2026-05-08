@@ -21,12 +21,12 @@ class InstVbsInstanceArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 idcs_access_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_resource_usage_agreement_granted: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_compartment_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 idcs_access_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_resource_usage_agreement_granted: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_compartment_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a InstVbsInstance resource.
 
@@ -84,67 +84,67 @@ class InstVbsInstanceArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsAccessToken")
-    def idcs_access_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_access_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IDCS personal acceess token identifying IDCS user and stripe for the VBS service
         """
         return pulumi.get(self, "idcs_access_token")
 
     @idcs_access_token.setter
-    def idcs_access_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_access_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_access_token", value)
 
     @_builtins.property
     @pulumi.getter(name="isResourceUsageAgreementGranted")
-    def is_resource_usage_agreement_granted(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_resource_usage_agreement_granted(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
         """
         return pulumi.get(self, "is_resource_usage_agreement_granted")
 
     @is_resource_usage_agreement_granted.setter
-    def is_resource_usage_agreement_granted(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_resource_usage_agreement_granted(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_resource_usage_agreement_granted", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Service Instance Name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceCompartmentId")
-    def resource_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Compartment where VBS may create additional resources for the service instance
 
@@ -155,27 +155,27 @@ class InstVbsInstanceArgs:
         return pulumi.get(self, "resource_compartment_id")
 
     @resource_compartment_id.setter
-    def resource_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_compartment_id", value)
 
 
 @pulumi.input_type
 class _InstVbsInstanceState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 idcs_access_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_resource_usage_agreement_granted: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecyle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 vbs_access_url: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 idcs_access_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_resource_usage_agreement_granted: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecyle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 vbs_access_url: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering InstVbsInstance resources.
 
@@ -229,103 +229,103 @@ class _InstVbsInstanceState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Compartment Identifier. It can only be the root compartment
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Display Name
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsAccessToken")
-    def idcs_access_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_access_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IDCS personal acceess token identifying IDCS user and stripe for the VBS service
         """
         return pulumi.get(self, "idcs_access_token")
 
     @idcs_access_token.setter
-    def idcs_access_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_access_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_access_token", value)
 
     @_builtins.property
     @pulumi.getter(name="isResourceUsageAgreementGranted")
-    def is_resource_usage_agreement_granted(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_resource_usage_agreement_granted(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
         """
         return pulumi.get(self, "is_resource_usage_agreement_granted")
 
     @is_resource_usage_agreement_granted.setter
-    def is_resource_usage_agreement_granted(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_resource_usage_agreement_granted(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_resource_usage_agreement_granted", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecyleDetails")
-    def lifecyle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecyle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecyle_details")
 
     @lifecyle_details.setter
-    def lifecyle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecyle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecyle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Service Instance Name
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceCompartmentId")
-    def resource_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Compartment where VBS may create additional resources for the service instance
 
@@ -336,67 +336,67 @@ class _InstVbsInstanceState:
         return pulumi.get(self, "resource_compartment_id")
 
     @resource_compartment_id.setter
-    def resource_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the VbsInstance.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the the VbsInstance was created. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the VbsInstance was updated. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="vbsAccessUrl")
-    def vbs_access_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vbs_access_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Public web URL for accessing the VBS service instance
         """
         return pulumi.get(self, "vbs_access_url")
 
     @vbs_access_url.setter
-    def vbs_access_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vbs_access_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vbs_access_url", value)
 
 
@@ -406,14 +406,14 @@ class InstVbsInstance(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 idcs_access_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_resource_usage_agreement_granted: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 idcs_access_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_resource_usage_agreement_granted: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Vbs Instance resource in Oracle Cloud Infrastructure Vbs Inst service.
@@ -440,7 +440,7 @@ class InstVbsInstance(pulumi.CustomResource):
                 "bar-key": "value",
             },
             idcs_access_token=vbs_instance_idcs_access_token,
-            is_resource_usage_agreement_granted=vbs_instance_is_resource_usage_agreement_granted,
+            is_resource_usage_agreement_granted=vbs_instance_is_resource_usage_agreement_granted == "true",
             resource_compartment_id=resource_compartment_id)
         ```
 
@@ -499,7 +499,7 @@ class InstVbsInstance(pulumi.CustomResource):
                 "bar-key": "value",
             },
             idcs_access_token=vbs_instance_idcs_access_token,
-            is_resource_usage_agreement_granted=vbs_instance_is_resource_usage_agreement_granted,
+            is_resource_usage_agreement_granted=vbs_instance_is_resource_usage_agreement_granted == "true",
             resource_compartment_id=resource_compartment_id)
         ```
 
@@ -527,14 +527,14 @@ class InstVbsInstance(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 idcs_access_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_resource_usage_agreement_granted: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 idcs_access_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_resource_usage_agreement_granted: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -572,20 +572,20 @@ class InstVbsInstance(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            idcs_access_token: Optional[pulumi.Input[_builtins.str]] = None,
-            is_resource_usage_agreement_granted: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecyle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            vbs_access_url: Optional[pulumi.Input[_builtins.str]] = None) -> 'InstVbsInstance':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            idcs_access_token: pulumi.Input[Optional[_builtins.str]] = None,
+            is_resource_usage_agreement_granted: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecyle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            vbs_access_url: pulumi.Input[Optional[_builtins.str]] = None) -> 'InstVbsInstance':
         """
         Get an existing InstVbsInstance resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

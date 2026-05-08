@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaintenanceRunHistories = oci.Database.getDatabaseMaintenanceRunHistories({
+ * const testMaintenanceRunHistories = oci.database.getDatabaseMaintenanceRunHistories({
  *     compartmentId: compartmentId,
  *     availabilityDomain: maintenanceRunHistoryAvailabilityDomain,
  *     maintenanceType: maintenanceRunHistoryMaintenanceType,
@@ -117,7 +117,7 @@ export interface GetDatabaseMaintenanceRunHistoriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaintenanceRunHistories = oci.Database.getDatabaseMaintenanceRunHistories({
+ * const testMaintenanceRunHistories = oci.database.getDatabaseMaintenanceRunHistories({
  *     compartmentId: compartmentId,
  *     availabilityDomain: maintenanceRunHistoryAvailabilityDomain,
  *     maintenanceType: maintenanceRunHistoryMaintenanceType,
@@ -147,26 +147,26 @@ export interface GetDatabaseMaintenanceRunHistoriesOutputArgs {
     /**
      * A filter to return only resources that match the given availability domain exactly.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDatabaseMaintenanceRunHistoriesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDatabaseMaintenanceRunHistoriesFilterArgs>[] | undefined>;
     /**
      * The maintenance type.
      */
-    maintenanceType?: pulumi.Input<string>;
+    maintenanceType?: pulumi.Input<string | undefined>;
     /**
      * The state of the maintenance run history.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The target resource ID.
      */
-    targetResourceId?: pulumi.Input<string>;
+    targetResourceId?: pulumi.Input<string | undefined>;
     /**
      * The type of the target resource.
      */
-    targetResourceType?: pulumi.Input<string>;
+    targetResourceType?: pulumi.Input<string | undefined>;
 }

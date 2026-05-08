@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     importCustomContentFile: logAnalyticsImportCustomContentImportCustomContentFile,
  *     namespace: logAnalyticsImportCustomContentNamespace,
  *     expect: logAnalyticsImportCustomContentExpect,
- *     isOverwrite: logAnalyticsImportCustomContentIsOverwrite,
+ *     isOverwrite: logAnalyticsImportCustomContentIsOverwrite === "true",
  * });
  * ```
  *
@@ -153,11 +153,11 @@ export interface LogAnalyticsImportCustomContentState {
     /**
      * LogAnalyticsImportCustomChangeList
      */
-    changeLists?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.LogAnalyticsImportCustomContentChangeList>[]>;
+    changeLists?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.LogAnalyticsImportCustomContentChangeList>[] | undefined>;
     /**
      * The content name.
      */
-    contentName?: pulumi.Input<string>;
+    contentName?: pulumi.Input<string | undefined>;
     /**
      * A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
      *
@@ -165,31 +165,31 @@ export interface LogAnalyticsImportCustomContentState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    expect?: pulumi.Input<string>;
+    expect?: pulumi.Input<string | undefined>;
     /**
      * The field names.
      */
-    fieldNames?: pulumi.Input<pulumi.Input<string>[]>;
+    fieldNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Path to the file to upload which contains the custom content.
      */
-    importCustomContentFile?: pulumi.Input<string>;
+    importCustomContentFile?: pulumi.Input<string | undefined>;
     /**
      * A flag indicating whether or not to overwrite existing content if a conflict is found during import content operation.
      */
-    isOverwrite?: pulumi.Input<boolean>;
+    isOverwrite?: pulumi.Input<boolean | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * The parser names.
      */
-    parserNames?: pulumi.Input<pulumi.Input<string>[]>;
+    parserNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The source names.
      */
-    sourceNames?: pulumi.Input<pulumi.Input<string>[]>;
+    sourceNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -203,7 +203,7 @@ export interface LogAnalyticsImportCustomContentArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    expect?: pulumi.Input<string>;
+    expect?: pulumi.Input<string | undefined>;
     /**
      * Path to the file to upload which contains the custom content.
      */
@@ -211,7 +211,7 @@ export interface LogAnalyticsImportCustomContentArgs {
     /**
      * A flag indicating whether or not to overwrite existing content if a conflict is found during import content operation.
      */
-    isOverwrite?: pulumi.Input<boolean>;
+    isOverwrite?: pulumi.Input<boolean | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */

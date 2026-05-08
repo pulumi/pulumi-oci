@@ -120,16 +120,16 @@ export class ManagementDashboardsImport extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ManagementDashboardsImport resources.
  */
 export interface ManagementDashboardsImportState {
-    importDetails?: pulumi.Input<string>;
-    importDetailsFile?: pulumi.Input<string>;
+    importDetails?: pulumi.Input<string | undefined>;
+    importDetailsFile?: pulumi.Input<string | undefined>;
     /**
      * If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
      */
-    overrideDashboardCompartmentOcid?: pulumi.Input<string>;
+    overrideDashboardCompartmentOcid?: pulumi.Input<string | undefined>;
     /**
      * By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
      */
-    overrideSameName?: pulumi.Input<string>;
+    overrideSameName?: pulumi.Input<string | undefined>;
     /**
      * If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used. 
      *
@@ -137,23 +137,23 @@ export interface ManagementDashboardsImportState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    overrideSavedSearchCompartmentOcid?: pulumi.Input<string>;
+    overrideSavedSearchCompartmentOcid?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a ManagementDashboardsImport resource.
  */
 export interface ManagementDashboardsImportArgs {
-    importDetails?: pulumi.Input<string>;
-    importDetailsFile?: pulumi.Input<string>;
+    importDetails?: pulumi.Input<string | undefined>;
+    importDetailsFile?: pulumi.Input<string | undefined>;
     /**
      * If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
      */
-    overrideDashboardCompartmentOcid?: pulumi.Input<string>;
+    overrideDashboardCompartmentOcid?: pulumi.Input<string | undefined>;
     /**
      * By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
      */
-    overrideSameName?: pulumi.Input<string>;
+    overrideSameName?: pulumi.Input<string | undefined>;
     /**
      * If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used. 
      *
@@ -161,5 +161,5 @@ export interface ManagementDashboardsImportArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    overrideSavedSearchCompartmentOcid?: pulumi.Input<string>;
+    overrideSavedSearchCompartmentOcid?: pulumi.Input<string | undefined>;
 }

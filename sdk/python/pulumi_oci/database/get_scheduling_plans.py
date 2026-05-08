@@ -151,7 +151,7 @@ def get_scheduling_plans(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduling_plans = oci.Database.get_scheduling_plans(compartment_id=compartment_id,
+    test_scheduling_plans = oci.database.get_scheduling_plans(compartment_id=compartment_id,
         display_name=scheduling_plan_display_name,
         id=scheduling_plan_id,
         resource_id=test_resource["id"],
@@ -187,13 +187,13 @@ def get_scheduling_plans(compartment_id: Optional[_builtins.str] = None,
         scheduling_plan_collections=pulumi.get(__ret__, 'scheduling_plan_collections'),
         scheduling_policy_id=pulumi.get(__ret__, 'scheduling_policy_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_scheduling_plans_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSchedulingPlansFilterArgs', 'GetSchedulingPlansFilterArgsDict']]]]] = None,
-                                id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                scheduling_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_scheduling_plans_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSchedulingPlansFilterArgs', 'GetSchedulingPlansFilterArgsDict']]]]] = None,
+                                id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                scheduling_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSchedulingPlansResult]:
     """
     This data source provides the list of Scheduling Plans in Oracle Cloud Infrastructure Database service.
@@ -206,7 +206,7 @@ def get_scheduling_plans_output(compartment_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduling_plans = oci.Database.get_scheduling_plans(compartment_id=compartment_id,
+    test_scheduling_plans = oci.database.get_scheduling_plans(compartment_id=compartment_id,
         display_name=scheduling_plan_display_name,
         id=scheduling_plan_id,
         resource_id=test_resource["id"],

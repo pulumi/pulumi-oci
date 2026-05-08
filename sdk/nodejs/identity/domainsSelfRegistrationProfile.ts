@@ -21,27 +21,27 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSelfRegistrationProfile = new oci.identity.DomainsSelfRegistrationProfile("test_self_registration_profile", {
- *     activationEmailRequired: selfRegistrationProfileActivationEmailRequired,
- *     consentTextPresent: selfRegistrationProfileConsentTextPresent,
+ *     activationEmailRequired: selfRegistrationProfileActivationEmailRequired === "true",
+ *     consentTextPresent: selfRegistrationProfileConsentTextPresent === "true",
  *     displayNames: [{
  *         locale: selfRegistrationProfileDisplayNameLocale,
  *         value: selfRegistrationProfileDisplayNameValue,
- *         "default": selfRegistrationProfileDisplayNameDefault,
+ *         "default": selfRegistrationProfileDisplayNameDefault === "true",
  *     }],
  *     emailTemplate: {
  *         value: selfRegistrationProfileEmailTemplateValue,
  *     },
  *     idcsEndpoint: testDomain.url,
  *     name: selfRegistrationProfileName,
- *     numberOfDaysRedirectUrlIsValid: selfRegistrationProfileNumberOfDaysRedirectUrlIsValid,
+ *     numberOfDaysRedirectUrlIsValid: Number(selfRegistrationProfileNumberOfDaysRedirectUrlIsValid),
  *     redirectUrl: selfRegistrationProfileRedirectUrl,
  *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:SelfRegistrationProfile"],
- *     showOnLoginPage: selfRegistrationProfileShowOnLoginPage,
- *     active: selfRegistrationProfileActive,
+ *     showOnLoginPage: selfRegistrationProfileShowOnLoginPage === "true",
+ *     active: selfRegistrationProfileActive === "true",
  *     afterSubmitTexts: [{
  *         locale: selfRegistrationProfileAfterSubmitTextLocale,
  *         value: selfRegistrationProfileAfterSubmitTextValue,
- *         "default": selfRegistrationProfileAfterSubmitTextDefault,
+ *         "default": selfRegistrationProfileAfterSubmitTextDefault === "true",
  *     }],
  *     allowedEmailDomains: selfRegistrationProfileAllowedEmailDomains,
  *     attributeSets: ["all"],
@@ -50,7 +50,7 @@ import * as utilities from "../utilities";
  *     consentTexts: [{
  *         locale: selfRegistrationProfileConsentTextLocale,
  *         value: selfRegistrationProfileConsentTextValue,
- *         "default": selfRegistrationProfileConsentTextDefault,
+ *         "default": selfRegistrationProfileConsentTextDefault === "true",
  *     }],
  *     defaultGroups: [{
  *         value: selfRegistrationProfileDefaultGroupsValue,
@@ -61,13 +61,13 @@ import * as utilities from "../utilities";
  *     footerTexts: [{
  *         locale: selfRegistrationProfileFooterTextLocale,
  *         value: selfRegistrationProfileFooterTextValue,
- *         "default": selfRegistrationProfileFooterTextDefault,
+ *         "default": selfRegistrationProfileFooterTextDefault === "true",
  *     }],
  *     headerLogo: selfRegistrationProfileHeaderLogo,
  *     headerTexts: [{
  *         locale: selfRegistrationProfileHeaderTextLocale,
  *         value: selfRegistrationProfileHeaderTextValue,
- *         "default": selfRegistrationProfileHeaderTextDefault,
+ *         "default": selfRegistrationProfileHeaderTextDefault === "true",
  *     }],
  *     id: selfRegistrationProfileId,
  *     ocid: selfRegistrationProfileOcid,
@@ -77,7 +77,7 @@ import * as utilities from "../utilities";
  *         value: selfRegistrationProfileTagsValue,
  *     }],
  *     userAttributes: [{
- *         seqNumber: selfRegistrationProfileUserAttributesSeqNumber,
+ *         seqNumber: Number(selfRegistrationProfileUserAttributesSeqNumber),
  *         value: selfRegistrationProfileUserAttributesValue,
  *         fullyQualifiedAttributeName: selfRegistrationProfileUserAttributesFullyQualifiedAttributeName,
  *     }],
@@ -712,7 +712,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * type: boolean
      * * uniqueness: none A Boolean value that indicates whether Account verification email is required to be sent before login or not
      */
-    activationEmailRequired?: pulumi.Input<boolean>;
+    activationEmailRequired?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A Boolean value that indicates whether the profile is enabled or not
      *
@@ -726,7 +726,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * type: boolean
      * * uniqueness: none
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Text to be displayed on UI after doing self registration
      *
@@ -741,7 +741,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * type: complex
      * * uniqueness: none
      */
-    afterSubmitTexts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileAfterSubmitText>[]>;
+    afterSubmitTexts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileAfterSubmitText>[] | undefined>;
     /**
      * (Updatable) A Multivalue String value for Email domains which are valid for this profile
      *
@@ -755,19 +755,19 @@ export interface DomainsSelfRegistrationProfileState {
      * * type: string
      * * uniqueness: none
      */
-    allowedEmailDomains?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedEmailDomains?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -781,7 +781,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * type: string
      * * uniqueness: none
      */
-    compartmentOcid?: pulumi.Input<string>;
+    compartmentOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A boolean value that indicates whether the consent text is present.
      *
@@ -795,7 +795,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * type: boolean
      * * uniqueness: none
      */
-    consentTextPresent?: pulumi.Input<boolean>;
+    consentTextPresent?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Consent text
      *
@@ -810,7 +810,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * type: complex
      * * uniqueness: none
      */
-    consentTexts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileConsentText>[]>;
+    consentTexts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileConsentText>[] | undefined>;
     /**
      * (Updatable) Default groups assigned to the user
      *
@@ -823,7 +823,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * returned: request
      * * type: complex
      */
-    defaultGroups?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileDefaultGroup>[]>;
+    defaultGroups?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileDefaultGroup>[] | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -837,7 +837,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * type: boolean
      * * uniqueness: none
      */
-    deleteInProgress?: pulumi.Input<boolean>;
+    deleteInProgress?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A Multivalue String Value for Email domains to be handled as exceptions
      *
@@ -851,7 +851,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * type: string
      * * uniqueness: none
      */
-    disallowedEmailDomains?: pulumi.Input<pulumi.Input<string>[]>;
+    disallowedEmailDomains?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Registration page name
      *
@@ -866,7 +866,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * type: complex
      * * uniqueness: none
      */
-    displayNames?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileDisplayName>[]>;
+    displayNames?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileDisplayName>[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -880,7 +880,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * type: string
      * * uniqueness: none
      */
-    domainOcid?: pulumi.Input<string>;
+    domainOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Email template
      *
@@ -892,7 +892,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * returned: request
      * * type: complex
      */
-    emailTemplate?: pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileEmailTemplate>;
+    emailTemplate?: pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileEmailTemplate | undefined>;
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -904,7 +904,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * type: string
      * * uniqueness: none
      */
-    externalId?: pulumi.Input<string>;
+    externalId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) References to footer logo
      *
@@ -916,7 +916,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * returned: default
      * * type: reference
      */
-    footerLogo?: pulumi.Input<string>;
+    footerLogo?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Footer text
      *
@@ -931,7 +931,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * type: complex
      * * uniqueness: none
      */
-    footerTexts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileFooterText>[]>;
+    footerTexts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileFooterText>[] | undefined>;
     /**
      * (Updatable) Reference to header logo
      *
@@ -943,7 +943,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * returned: default
      * * type: reference
      */
-    headerLogo?: pulumi.Input<string>;
+    headerLogo?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Header text
      *
@@ -958,7 +958,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * type: complex
      * * uniqueness: none
      */
-    headerTexts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileHeaderText>[]>;
+    headerTexts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileHeaderText>[] | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -970,11 +970,11 @@ export interface DomainsSelfRegistrationProfileState {
      * * returned: default
      * * type: complex
      */
-    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileIdcsCreatedBy>[]>;
+    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileIdcsCreatedBy>[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
-    idcsEndpoint?: pulumi.Input<string>;
+    idcsEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -986,7 +986,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * returned: default
      * * type: complex
      */
-    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileIdcsLastModifiedBy>[]>;
+    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileIdcsLastModifiedBy>[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -1000,7 +1000,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * type: string
      * * uniqueness: none
      */
-    idcsLastUpgradedInRelease?: pulumi.Input<string>;
+    idcsLastUpgradedInRelease?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -1013,7 +1013,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * type: string
      * * uniqueness: none
      */
-    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[]>;
+    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -1027,7 +1027,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileMeta>[]>;
+    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileMeta>[] | undefined>;
     /**
      * (Updatable) Name of the profile
      *
@@ -1041,7 +1041,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * type: string
      * * uniqueness: global
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Number of days redirect URL is valid
      *
@@ -1054,7 +1054,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * type: integer
      * * uniqueness: none
      */
-    numberOfDaysRedirectUrlIsValid?: pulumi.Input<number>;
+    numberOfDaysRedirectUrlIsValid?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -1068,7 +1068,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This URL will be replaced in email notification sent to user. When activation email required is set to true, user is created in \"pending verification\" state, upon clicking this link user will be able to activate himself. When activation email required is set to false, user is created in \"verified\" state, this link will be used to verify user's email.
      *
@@ -1082,11 +1082,11 @@ export interface DomainsSelfRegistrationProfileState {
      * * type: string
      * * uniqueness: none
      */
-    redirectUrl?: pulumi.Input<string>;
+    redirectUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -1100,7 +1100,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * type: string
      * * uniqueness: none
      */
-    schemas?: pulumi.Input<pulumi.Input<string>[]>;
+    schemas?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A Boolean value that indicates whether the profile should be displayed on login page
      *
@@ -1114,7 +1114,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * type: boolean
      * * uniqueness: none
      */
-    showOnLoginPage?: pulumi.Input<boolean>;
+    showOnLoginPage?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) A list of tags on this resource.
      *
@@ -1128,7 +1128,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileTag>[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -1142,7 +1142,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * type: string
      * * uniqueness: none
      */
-    tenancyOcid?: pulumi.Input<string>;
+    tenancyOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) **SCIM++ Properties:**
      * * idcsCompositeKey: [value]
@@ -1154,7 +1154,7 @@ export interface DomainsSelfRegistrationProfileState {
      * * type: complex
      * * uniqueness: none User Attributes
      */
-    userAttributes?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileUserAttribute>[]>;
+    userAttributes?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileUserAttribute>[] | undefined>;
 }
 
 /**
@@ -1186,7 +1186,7 @@ export interface DomainsSelfRegistrationProfileArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    active?: pulumi.Input<boolean>;
+    active?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Text to be displayed on UI after doing self registration
      *
@@ -1201,7 +1201,7 @@ export interface DomainsSelfRegistrationProfileArgs {
      * * type: complex
      * * uniqueness: none
      */
-    afterSubmitTexts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileAfterSubmitText>[]>;
+    afterSubmitTexts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileAfterSubmitText>[] | undefined>;
     /**
      * (Updatable) A Multivalue String value for Email domains which are valid for this profile
      *
@@ -1215,19 +1215,19 @@ export interface DomainsSelfRegistrationProfileArgs {
      * * type: string
      * * uniqueness: none
      */
-    allowedEmailDomains?: pulumi.Input<pulumi.Input<string>[]>;
+    allowedEmailDomains?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A boolean value that indicates whether the consent text is present.
      *
@@ -1256,7 +1256,7 @@ export interface DomainsSelfRegistrationProfileArgs {
      * * type: complex
      * * uniqueness: none
      */
-    consentTexts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileConsentText>[]>;
+    consentTexts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileConsentText>[] | undefined>;
     /**
      * (Updatable) Default groups assigned to the user
      *
@@ -1269,7 +1269,7 @@ export interface DomainsSelfRegistrationProfileArgs {
      * * returned: request
      * * type: complex
      */
-    defaultGroups?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileDefaultGroup>[]>;
+    defaultGroups?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileDefaultGroup>[] | undefined>;
     /**
      * (Updatable) A Multivalue String Value for Email domains to be handled as exceptions
      *
@@ -1283,7 +1283,7 @@ export interface DomainsSelfRegistrationProfileArgs {
      * * type: string
      * * uniqueness: none
      */
-    disallowedEmailDomains?: pulumi.Input<pulumi.Input<string>[]>;
+    disallowedEmailDomains?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Registration page name
      *
@@ -1322,7 +1322,7 @@ export interface DomainsSelfRegistrationProfileArgs {
      * * type: string
      * * uniqueness: none
      */
-    externalId?: pulumi.Input<string>;
+    externalId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) References to footer logo
      *
@@ -1334,7 +1334,7 @@ export interface DomainsSelfRegistrationProfileArgs {
      * * returned: default
      * * type: reference
      */
-    footerLogo?: pulumi.Input<string>;
+    footerLogo?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Footer text
      *
@@ -1349,7 +1349,7 @@ export interface DomainsSelfRegistrationProfileArgs {
      * * type: complex
      * * uniqueness: none
      */
-    footerTexts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileFooterText>[]>;
+    footerTexts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileFooterText>[] | undefined>;
     /**
      * (Updatable) Reference to header logo
      *
@@ -1361,7 +1361,7 @@ export interface DomainsSelfRegistrationProfileArgs {
      * * returned: default
      * * type: reference
      */
-    headerLogo?: pulumi.Input<string>;
+    headerLogo?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Header text
      *
@@ -1376,7 +1376,7 @@ export interface DomainsSelfRegistrationProfileArgs {
      * * type: complex
      * * uniqueness: none
      */
-    headerTexts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileHeaderText>[]>;
+    headerTexts?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileHeaderText>[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -1394,7 +1394,7 @@ export interface DomainsSelfRegistrationProfileArgs {
      * * type: string
      * * uniqueness: global
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Number of days redirect URL is valid
      *
@@ -1421,7 +1421,7 @@ export interface DomainsSelfRegistrationProfileArgs {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This URL will be replaced in email notification sent to user. When activation email required is set to true, user is created in \"pending verification\" state, upon clicking this link user will be able to activate himself. When activation email required is set to false, user is created in \"verified\" state, this link will be used to verify user's email.
      *
@@ -1439,7 +1439,7 @@ export interface DomainsSelfRegistrationProfileArgs {
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -1481,7 +1481,7 @@ export interface DomainsSelfRegistrationProfileArgs {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileTag>[] | undefined>;
     /**
      * (Updatable) **SCIM++ Properties:**
      * * idcsCompositeKey: [value]
@@ -1493,5 +1493,5 @@ export interface DomainsSelfRegistrationProfileArgs {
      * * type: complex
      * * uniqueness: none User Attributes
      */
-    userAttributes?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileUserAttribute>[]>;
+    userAttributes?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsSelfRegistrationProfileUserAttribute>[] | undefined>;
 }

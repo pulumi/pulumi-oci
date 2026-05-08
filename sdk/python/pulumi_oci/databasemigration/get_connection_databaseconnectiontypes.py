@@ -131,7 +131,7 @@ def get_connection_databaseconnectiontypes(compartment_id: Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_connection_databaseconnectiontypes = oci.DatabaseMigration.get_connection_databaseconnectiontypes(compartment_id=compartment_id,
+    test_connection_databaseconnectiontypes = oci.databasemigration.get_connection_databaseconnectiontypes(compartment_id=compartment_id,
         connection_types=connection_databaseconnectiontype_connection_type,
         source_connection_id=test_connection["id"],
         technology_types=connection_databaseconnectiontype_technology_type)
@@ -160,11 +160,11 @@ def get_connection_databaseconnectiontypes(compartment_id: Optional[_builtins.st
         id=pulumi.get(__ret__, 'id'),
         source_connection_id=pulumi.get(__ret__, 'source_connection_id'),
         technology_types=pulumi.get(__ret__, 'technology_types'))
-def get_connection_databaseconnectiontypes_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                  connection_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetConnectionDatabaseconnectiontypesFilterArgs', 'GetConnectionDatabaseconnectiontypesFilterArgsDict']]]]] = None,
-                                                  source_connection_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  technology_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_connection_databaseconnectiontypes_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                  connection_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConnectionDatabaseconnectiontypesFilterArgs', 'GetConnectionDatabaseconnectiontypesFilterArgsDict']]]]] = None,
+                                                  source_connection_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  technology_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConnectionDatabaseconnectiontypesResult]:
     """
     This data source provides the list of Connection Databaseconnectiontypes in Oracle Cloud Infrastructure Database Migration service.
@@ -177,7 +177,7 @@ def get_connection_databaseconnectiontypes_output(compartment_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_connection_databaseconnectiontypes = oci.DatabaseMigration.get_connection_databaseconnectiontypes(compartment_id=compartment_id,
+    test_connection_databaseconnectiontypes = oci.databasemigration.get_connection_databaseconnectiontypes(compartment_id=compartment_id,
         connection_types=connection_databaseconnectiontype_connection_type,
         source_connection_id=test_connection["id"],
         technology_types=connection_databaseconnectiontype_technology_type)

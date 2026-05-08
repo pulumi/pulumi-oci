@@ -126,7 +126,7 @@ def get_groups(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_groups = oci.Identity.get_groups(compartment_id=tenancy_ocid,
+    test_groups = oci.identity.get_groups(compartment_id=tenancy_ocid,
         name=group_name,
         state=group_state)
     ```
@@ -151,10 +151,10 @@ def get_groups(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-def get_groups_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetGroupsFilterArgs', 'GetGroupsFilterArgsDict']]]]] = None,
-                      name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                      state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_groups_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetGroupsFilterArgs', 'GetGroupsFilterArgsDict']]]]] = None,
+                      name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                      state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGroupsResult]:
     """
     This data source provides the list of Groups in Oracle Cloud Infrastructure Identity service.
@@ -169,7 +169,7 @@ def get_groups_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_groups = oci.Identity.get_groups(compartment_id=tenancy_ocid,
+    test_groups = oci.identity.get_groups(compartment_id=tenancy_ocid,
         name=group_name,
         state=group_state)
     ```

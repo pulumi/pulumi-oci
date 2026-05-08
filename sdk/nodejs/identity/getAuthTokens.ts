@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuthTokens = oci.Identity.getAuthTokens({
+ * const testAuthTokens = oci.identity.getAuthTokens({
  *     userId: testUser.id,
  * });
  * ```
@@ -72,7 +72,7 @@ export interface GetAuthTokensResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuthTokens = oci.Identity.getAuthTokens({
+ * const testAuthTokens = oci.identity.getAuthTokens({
  *     userId: testUser.id,
  * });
  * ```
@@ -89,7 +89,7 @@ export function getAuthTokensOutput(args: GetAuthTokensOutputArgs, opts?: pulumi
  * A collection of arguments for invoking getAuthTokens.
  */
 export interface GetAuthTokensOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetAuthTokensFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetAuthTokensFilterArgs>[] | undefined>;
     /**
      * The OCID of the user.
      */

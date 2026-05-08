@@ -72,8 +72,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetChannelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -116,8 +116,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetChannelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -160,8 +160,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetChannelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -204,8 +204,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetChannelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -248,8 +248,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetChannelArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -290,8 +290,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetChannelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -337,8 +337,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetChannelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -384,8 +384,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetChannelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -431,8 +431,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetChannelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -478,8 +478,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetChannelsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -525,8 +525,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetDbSystemMaintenanceEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -572,8 +572,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetDbSystemMaintenanceEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -619,8 +619,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetDbSystemMaintenanceEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -666,8 +666,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetDbSystemMaintenanceEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -713,8 +713,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetDbSystemMaintenanceEventsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -760,8 +760,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetHeatWaveClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -802,8 +802,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetHeatWaveClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -844,8 +844,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetHeatWaveClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -886,8 +886,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetHeatWaveClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -928,8 +928,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetHeatWaveClusterArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -970,8 +970,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1012,8 +1012,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1054,8 +1054,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1096,8 +1096,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1138,8 +1138,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlBackupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1180,8 +1180,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1228,8 +1228,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1276,8 +1276,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1324,8 +1324,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1372,8 +1372,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlBackupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1420,8 +1420,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1462,8 +1462,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1504,8 +1504,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1546,8 +1546,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1588,8 +1588,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlConfigurationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1637,8 +1637,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1691,8 +1691,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1745,8 +1745,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1799,8 +1799,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1853,8 +1853,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlConfigurationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1900,8 +1900,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlDbSystemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1942,8 +1942,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlDbSystemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1984,8 +1984,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlDbSystemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2026,8 +2026,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlDbSystemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2068,8 +2068,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlDbSystemArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2111,8 +2111,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlDbSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2161,8 +2161,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlDbSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2211,8 +2211,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlDbSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2261,8 +2261,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlDbSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2311,8 +2311,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlDbSystemsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2362,8 +2362,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2406,8 +2406,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2450,8 +2450,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2494,8 +2494,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2538,8 +2538,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetMysqlVersionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2580,8 +2580,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetReplicaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2622,8 +2622,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetReplicaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2664,8 +2664,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetReplicaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2706,8 +2706,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetReplicaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2748,8 +2748,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetReplicaArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2790,8 +2790,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetReplicasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2838,8 +2838,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetReplicasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2886,8 +2886,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetReplicasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2934,8 +2934,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetReplicasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2982,8 +2982,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetReplicasArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3033,8 +3033,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3081,8 +3081,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3129,8 +3129,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3177,8 +3177,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3225,8 +3225,8 @@ public final class MysqlFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Mysql.MysqlFunctions;
      * import com.pulumi.oci.Mysql.inputs.GetShapesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

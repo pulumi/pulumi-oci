@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlTuningAdvisorTasks = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasks({
+ * const testManagedDatabaseSqlTuningAdvisorTasks = oci.databasemanagement.getManagedDatabaseSqlTuningAdvisorTasks({
  *     managedDatabaseId: testManagedDatabase.id,
  *     name: managedDatabaseSqlTuningAdvisorTaskName,
  *     opcNamedCredentialId: managedDatabaseSqlTuningAdvisorTaskOpcNamedCredentialId,
@@ -105,7 +105,7 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlTuningAdvisorTasks = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasks({
+ * const testManagedDatabaseSqlTuningAdvisorTasks = oci.databasemanagement.getManagedDatabaseSqlTuningAdvisorTasks({
  *     managedDatabaseId: testManagedDatabase.id,
  *     name: managedDatabaseSqlTuningAdvisorTaskName,
  *     opcNamedCredentialId: managedDatabaseSqlTuningAdvisorTaskOpcNamedCredentialId,
@@ -132,7 +132,7 @@ export function getManagedDatabaseSqlTuningAdvisorTasksOutput(args: GetManagedDa
  * A collection of arguments for invoking getManagedDatabaseSqlTuningAdvisorTasks.
  */
 export interface GetManagedDatabaseSqlTuningAdvisorTasksOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
@@ -140,21 +140,21 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksOutputArgs {
     /**
      * The optional query parameter to filter the SQL Tuning Advisor task list by name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the Named Credential.
      */
-    opcNamedCredentialId?: pulumi.Input<string>;
+    opcNamedCredentialId?: pulumi.Input<string | undefined>;
     /**
      * The optional query parameter to filter the SQL Tuning Advisor task list by status.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The optional greater than or equal to query parameter to filter the timestamp.
      */
-    timeGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * The optional less than or equal to query parameter to filter the timestamp.
      */
-    timeLessThanOrEqualTo?: pulumi.Input<string>;
+    timeLessThanOrEqualTo?: pulumi.Input<string | undefined>;
 }

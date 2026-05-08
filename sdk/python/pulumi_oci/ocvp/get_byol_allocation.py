@@ -255,7 +255,7 @@ def get_byol_allocation(byol_allocation_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_byol_allocation = oci.Ocvp.get_byol_allocation(byol_allocation_id=test_byol_allocation_oci_ocvp_byol_allocation["id"])
+    test_byol_allocation = oci.ocvp.get_byol_allocation(byol_allocation_id=test_byol_allocation_oci_ocvp_byol_allocation["id"])
     ```
 
 
@@ -284,7 +284,7 @@ def get_byol_allocation(byol_allocation_id: Optional[_builtins.str] = None,
         time_term_end=pulumi.get(__ret__, 'time_term_end'),
         time_term_start=pulumi.get(__ret__, 'time_term_start'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_byol_allocation_output(byol_allocation_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_byol_allocation_output(byol_allocation_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetByolAllocationResult]:
     """
     This data source provides details about a specific Byol Allocation resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -297,7 +297,7 @@ def get_byol_allocation_output(byol_allocation_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_byol_allocation = oci.Ocvp.get_byol_allocation(byol_allocation_id=test_byol_allocation_oci_ocvp_byol_allocation["id"])
+    test_byol_allocation = oci.ocvp.get_byol_allocation(byol_allocation_id=test_byol_allocation_oci_ocvp_byol_allocation["id"])
     ```
 
 

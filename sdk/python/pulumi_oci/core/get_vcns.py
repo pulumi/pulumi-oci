@@ -128,7 +128,7 @@ def get_vcns(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vcns = oci.Core.get_vcns(compartment_id=compartment_id,
+    test_vcns = oci.core.get_vcns(compartment_id=compartment_id,
         display_name=vcn_display_name,
         state=vcn_state)
     ```
@@ -153,10 +153,10 @@ def get_vcns(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         virtual_networks=pulumi.get(__ret__, 'virtual_networks'))
-def get_vcns_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                    display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVcnsFilterArgs', 'GetVcnsFilterArgsDict']]]]] = None,
-                    state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_vcns_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVcnsFilterArgs', 'GetVcnsFilterArgsDict']]]]] = None,
+                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVcnsResult]:
     """
     This data source provides the list of Vcns in Oracle Cloud Infrastructure Core service.
@@ -173,7 +173,7 @@ def get_vcns_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_vcns = oci.Core.get_vcns(compartment_id=compartment_id,
+    test_vcns = oci.core.get_vcns(compartment_id=compartment_id,
         display_name=vcn_display_name,
         state=vcn_state)
     ```

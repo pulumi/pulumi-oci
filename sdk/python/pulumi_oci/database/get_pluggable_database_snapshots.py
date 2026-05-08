@@ -150,7 +150,7 @@ def get_pluggable_database_snapshots(cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pluggable_database_snapshots = oci.Database.get_pluggable_database_snapshots(cluster_id=test_cluster["id"],
+    test_pluggable_database_snapshots = oci.database.get_pluggable_database_snapshots(cluster_id=test_cluster["id"],
         compartment_id=compartment_id,
         name=pluggable_database_snapshot_name,
         pluggable_database_id=test_pluggable_database["id"],
@@ -183,12 +183,12 @@ def get_pluggable_database_snapshots(cluster_id: Optional[_builtins.str] = None,
         pluggable_database_id=pulumi.get(__ret__, 'pluggable_database_id'),
         pluggable_database_snapshots=pulumi.get(__ret__, 'pluggable_database_snapshots'),
         state=pulumi.get(__ret__, 'state'))
-def get_pluggable_database_snapshots_output(cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPluggableDatabaseSnapshotsFilterArgs', 'GetPluggableDatabaseSnapshotsFilterArgsDict']]]]] = None,
-                                            name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            pluggable_database_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_pluggable_database_snapshots_output(cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPluggableDatabaseSnapshotsFilterArgs', 'GetPluggableDatabaseSnapshotsFilterArgsDict']]]]] = None,
+                                            name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            pluggable_database_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPluggableDatabaseSnapshotsResult]:
     """
     This data source provides the list of Pluggable Database Snapshots in Oracle Cloud Infrastructure Database service.
@@ -201,7 +201,7 @@ def get_pluggable_database_snapshots_output(cluster_id: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_pluggable_database_snapshots = oci.Database.get_pluggable_database_snapshots(cluster_id=test_cluster["id"],
+    test_pluggable_database_snapshots = oci.database.get_pluggable_database_snapshots(cluster_id=test_cluster["id"],
         compartment_id=compartment_id,
         name=pluggable_database_snapshot_name,
         pluggable_database_id=test_pluggable_database["id"],

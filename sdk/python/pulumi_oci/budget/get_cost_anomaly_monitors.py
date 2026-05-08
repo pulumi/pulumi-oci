@@ -144,7 +144,7 @@ def get_cost_anomaly_monitors(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cost_anomaly_monitors = oci.Budget.get_cost_anomaly_monitors(compartment_id=compartment_id,
+    test_cost_anomaly_monitors = oci.budget.get_cost_anomaly_monitors(compartment_id=compartment_id,
         name=cost_anomaly_monitor_name,
         regions=cost_anomaly_monitor_region,
         state=cost_anomaly_monitor_state,
@@ -177,12 +177,12 @@ def get_cost_anomaly_monitors(compartment_id: Optional[_builtins.str] = None,
         regions=pulumi.get(__ret__, 'regions'),
         state=pulumi.get(__ret__, 'state'),
         target_tenant_ids=pulumi.get(__ret__, 'target_tenant_ids'))
-def get_cost_anomaly_monitors_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCostAnomalyMonitorsFilterArgs', 'GetCostAnomalyMonitorsFilterArgsDict']]]]] = None,
-                                     name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     regions: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                     state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     target_tenant_ids: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_cost_anomaly_monitors_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCostAnomalyMonitorsFilterArgs', 'GetCostAnomalyMonitorsFilterArgsDict']]]]] = None,
+                                     name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     regions: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     target_tenant_ids: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCostAnomalyMonitorsResult]:
     """
     This data source provides the list of Cost Anomaly Monitors in Oracle Cloud Infrastructure Budget service.
@@ -195,7 +195,7 @@ def get_cost_anomaly_monitors_output(compartment_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_cost_anomaly_monitors = oci.Budget.get_cost_anomaly_monitors(compartment_id=compartment_id,
+    test_cost_anomaly_monitors = oci.budget.get_cost_anomaly_monitors(compartment_id=compartment_id,
         name=cost_anomaly_monitor_name,
         regions=cost_anomaly_monitor_region,
         state=cost_anomaly_monitor_state,

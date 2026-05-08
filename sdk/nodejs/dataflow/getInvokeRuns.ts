@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInvokeRuns = oci.DataFlow.getInvokeRuns({
+ * const testInvokeRuns = oci.dataflow.getInvokeRuns({
  *     compartmentId: compartmentId,
  *     applicationId: testApplication.id,
  *     displayName: invokeRunDisplayName,
@@ -134,7 +134,7 @@ export interface GetInvokeRunsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInvokeRuns = oci.DataFlow.getInvokeRuns({
+ * const testInvokeRuns = oci.dataflow.getInvokeRuns({
  *     compartmentId: compartmentId,
  *     applicationId: testApplication.id,
  *     displayName: invokeRunDisplayName,
@@ -168,7 +168,7 @@ export interface GetInvokeRunsOutputArgs {
     /**
      * The ID of the application.
      */
-    applicationId?: pulumi.Input<string>;
+    applicationId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment.
      */
@@ -176,26 +176,26 @@ export interface GetInvokeRunsOutputArgs {
     /**
      * The query parameter for the Spark application name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The displayName prefix.
      */
-    displayNameStartsWith?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataFlow.GetInvokeRunsFilterArgs>[]>;
+    displayNameStartsWith?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataFlow.GetInvokeRunsFilterArgs>[] | undefined>;
     /**
      * The OCID of the user who created the resource.
      */
-    ownerPrincipalId?: pulumi.Input<string>;
+    ownerPrincipalId?: pulumi.Input<string | undefined>;
     /**
      * The ID of the pool.
      */
-    poolId?: pulumi.Input<string>;
+    poolId?: pulumi.Input<string | undefined>;
     /**
      * The LifecycleState of the run.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The epoch time that the resource was created.
      */
-    timeCreatedGreaterThan?: pulumi.Input<string>;
+    timeCreatedGreaterThan?: pulumi.Input<string | undefined>;
 }

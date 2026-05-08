@@ -282,7 +282,7 @@ def get_dr_plan(dr_plan_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dr_plan = oci.DisasterRecovery.get_dr_plan(dr_plan_id=test_dr_plan_oci_disaster_recovery_dr_plan["id"])
+    test_dr_plan = oci.disasterrecovery.get_dr_plan(dr_plan_id=test_dr_plan_oci_disaster_recovery_dr_plan["id"])
     ```
 
 
@@ -314,7 +314,7 @@ def get_dr_plan(dr_plan_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'),
         verify_trigger=pulumi.get(__ret__, 'verify_trigger'))
-def get_dr_plan_output(dr_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_dr_plan_output(dr_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDrPlanResult]:
     """
     This data source provides details about a specific Dr Plan resource in Oracle Cloud Infrastructure Disaster Recovery service.
@@ -327,7 +327,7 @@ def get_dr_plan_output(dr_plan_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dr_plan = oci.DisasterRecovery.get_dr_plan(dr_plan_id=test_dr_plan_oci_disaster_recovery_dr_plan["id"])
+    test_dr_plan = oci.disasterrecovery.get_dr_plan(dr_plan_id=test_dr_plan_oci_disaster_recovery_dr_plan["id"])
     ```
 
 

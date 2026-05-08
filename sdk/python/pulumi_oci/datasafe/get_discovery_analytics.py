@@ -186,10 +186,10 @@ def get_discovery_analytics(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_analytics = oci.DataSafe.get_discovery_analytics(compartment_id=compartment_id,
-        compartment_id_in_subtree=discovery_analytic_compartment_id_in_subtree,
+    test_discovery_analytics = oci.datasafe.get_discovery_analytics(compartment_id=compartment_id,
+        compartment_id_in_subtree=discovery_analytic_compartment_id_in_subtree == "true",
         group_by=discovery_analytic_group_by,
-        is_common=discovery_analytic_is_common,
+        is_common=discovery_analytic_is_common == "true",
         sensitive_data_model_id=test_sensitive_data_model["id"],
         sensitive_type_group_id=test_sensitive_type_group["id"],
         sensitive_type_id=test_sensitive_type["id"],
@@ -235,16 +235,16 @@ def get_discovery_analytics(compartment_id: Optional[_builtins.str] = None,
         sensitive_type_id=pulumi.get(__ret__, 'sensitive_type_id'),
         target_database_group_id=pulumi.get(__ret__, 'target_database_group_id'),
         target_id=pulumi.get(__ret__, 'target_id'))
-def get_discovery_analytics_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDiscoveryAnalyticsFilterArgs', 'GetDiscoveryAnalyticsFilterArgsDict']]]]] = None,
-                                   group_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   is_common: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                   sensitive_data_model_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   sensitive_type_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   sensitive_type_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   target_database_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_discovery_analytics_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDiscoveryAnalyticsFilterArgs', 'GetDiscoveryAnalyticsFilterArgsDict']]]]] = None,
+                                   group_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   is_common: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                   sensitive_data_model_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   sensitive_type_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   sensitive_type_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   target_database_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDiscoveryAnalyticsResult]:
     """
     This data source provides the list of Discovery Analytics in Oracle Cloud Infrastructure Data Safe service.
@@ -259,10 +259,10 @@ def get_discovery_analytics_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_analytics = oci.DataSafe.get_discovery_analytics(compartment_id=compartment_id,
-        compartment_id_in_subtree=discovery_analytic_compartment_id_in_subtree,
+    test_discovery_analytics = oci.datasafe.get_discovery_analytics(compartment_id=compartment_id,
+        compartment_id_in_subtree=discovery_analytic_compartment_id_in_subtree == "true",
         group_by=discovery_analytic_group_by,
-        is_common=discovery_analytic_is_common,
+        is_common=discovery_analytic_is_common == "true",
         sensitive_data_model_id=test_sensitive_data_model["id"],
         sensitive_type_group_id=test_sensitive_type_group["id"],
         sensitive_type_id=test_sensitive_type["id"],

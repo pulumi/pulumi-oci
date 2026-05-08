@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFastLaunchJobConfigs = oci.DataScience.getFastLaunchJobConfigs({
+ * const testFastLaunchJobConfigs = oci.datascience.getFastLaunchJobConfigs({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetFastLaunchJobConfigsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFastLaunchJobConfigs = oci.DataScience.getFastLaunchJobConfigs({
+ * const testFastLaunchJobConfigs = oci.datascience.getFastLaunchJobConfigs({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -88,5 +88,5 @@ export interface GetFastLaunchJobConfigsOutputArgs {
      * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetFastLaunchJobConfigsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetFastLaunchJobConfigsFilterArgs>[] | undefined>;
 }

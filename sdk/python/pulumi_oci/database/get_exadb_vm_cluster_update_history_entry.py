@@ -177,7 +177,7 @@ def get_exadb_vm_cluster_update_history_entry(exadb_vm_cluster_id: Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_exadb_vm_cluster_update_history_entry = oci.Database.get_exadb_vm_cluster_update_history_entry(exadb_vm_cluster_id=test_exadb_vm_cluster["id"],
+    test_exadb_vm_cluster_update_history_entry = oci.database.get_exadb_vm_cluster_update_history_entry(exadb_vm_cluster_id=test_exadb_vm_cluster["id"],
         update_history_entry_id=test_update_history_entry["id"])
     ```
 
@@ -203,8 +203,8 @@ def get_exadb_vm_cluster_update_history_entry(exadb_vm_cluster_id: Optional[_bui
         update_id=pulumi.get(__ret__, 'update_id'),
         update_type=pulumi.get(__ret__, 'update_type'),
         version=pulumi.get(__ret__, 'version'))
-def get_exadb_vm_cluster_update_history_entry_output(exadb_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     update_history_entry_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_exadb_vm_cluster_update_history_entry_output(exadb_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     update_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExadbVmClusterUpdateHistoryEntryResult]:
     """
     This data source provides details about a specific Exadb Vm Cluster Update History Entry resource in Oracle Cloud Infrastructure Database service.
@@ -217,7 +217,7 @@ def get_exadb_vm_cluster_update_history_entry_output(exadb_vm_cluster_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_exadb_vm_cluster_update_history_entry = oci.Database.get_exadb_vm_cluster_update_history_entry(exadb_vm_cluster_id=test_exadb_vm_cluster["id"],
+    test_exadb_vm_cluster_update_history_entry = oci.database.get_exadb_vm_cluster_update_history_entry(exadb_vm_cluster_id=test_exadb_vm_cluster["id"],
         update_history_entry_id=test_update_history_entry["id"])
     ```
 

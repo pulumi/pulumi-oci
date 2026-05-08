@@ -133,8 +133,8 @@ def get_backend_set_health(backend_set_name: Optional[_builtins.str] = None,
         total_backend_count=pulumi.get(__ret__, 'total_backend_count'),
         unknown_state_backend_names=pulumi.get(__ret__, 'unknown_state_backend_names'),
         warning_state_backend_names=pulumi.get(__ret__, 'warning_state_backend_names'))
-def get_backend_set_health_output(backend_set_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                  network_load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_backend_set_health_output(backend_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                  network_load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBackendSetHealthResult]:
     """
     Use this data source to access information about an existing resource.

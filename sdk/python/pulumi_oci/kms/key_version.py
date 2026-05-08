@@ -23,8 +23,8 @@ class KeyVersionArgs:
     def __init__(__self__, *,
                  key_id: pulumi.Input[_builtins.str],
                  management_endpoint: pulumi.Input[_builtins.str],
-                 external_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None):
+                 external_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a KeyVersion resource.
 
@@ -69,19 +69,19 @@ class KeyVersionArgs:
 
     @_builtins.property
     @pulumi.getter(name="externalKeyVersionId")
-    def external_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_key_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Key version ID associated with the external key.
         """
         return pulumi.get(self, "external_key_version_id")
 
     @external_key_version_id.setter
-    def external_key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_key_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_key_version_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_deletion(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 
@@ -91,29 +91,29 @@ class KeyVersionArgs:
         return pulumi.get(self, "time_of_deletion")
 
     @time_of_deletion.setter
-    def time_of_deletion(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_deletion(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_deletion", value)
 
 
 @pulumi.input_type
 class _KeyVersionState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 external_key_reference_details: Optional[pulumi.Input[Sequence[pulumi.Input['KeyVersionExternalKeyReferenceDetailArgs']]]] = None,
-                 external_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_auto_rotated: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_primary: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 replica_details: Optional[pulumi.Input[Sequence[pulumi.Input['KeyVersionReplicaDetailArgs']]]] = None,
-                 restored_from_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 restored_from_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_key_reference_details: pulumi.Input[Optional[Sequence[pulumi.Input['KeyVersionExternalKeyReferenceDetailArgs']]]] = None,
+                 external_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_auto_rotated: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_primary: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 replica_details: pulumi.Input[Optional[Sequence[pulumi.Input['KeyVersionReplicaDetailArgs']]]] = None,
+                 restored_from_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 restored_from_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering KeyVersion resources.
 
@@ -170,169 +170,169 @@ class _KeyVersionState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment that contains this key version.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="externalKeyReferenceDetails")
-    def external_key_reference_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['KeyVersionExternalKeyReferenceDetailArgs']]]]:
+    def external_key_reference_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['KeyVersionExternalKeyReferenceDetailArgs']]]]:
         """
         Key reference data to be returned to the customer as a response.
         """
         return pulumi.get(self, "external_key_reference_details")
 
     @external_key_reference_details.setter
-    def external_key_reference_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['KeyVersionExternalKeyReferenceDetailArgs']]]]):
+    def external_key_reference_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['KeyVersionExternalKeyReferenceDetailArgs']]]]):
         pulumi.set(self, "external_key_reference_details", value)
 
     @_builtins.property
     @pulumi.getter(name="externalKeyVersionId")
-    def external_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_key_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Key version ID associated with the external key.
         """
         return pulumi.get(self, "external_key_version_id")
 
     @external_key_version_id.setter
-    def external_key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_key_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_key_version_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoRotated")
-    def is_auto_rotated(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_rotated(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         An optional property indicating whether this keyversion is generated from auto rotatation.
         """
         return pulumi.get(self, "is_auto_rotated")
 
     @is_auto_rotated.setter
-    def is_auto_rotated(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_rotated(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_rotated", value)
 
     @_builtins.property
     @pulumi.getter(name="isPrimary")
-    def is_primary(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_primary(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A Boolean value that indicates whether the KeyVersion belongs to primary Vault or replica Vault.
         """
         return pulumi.get(self, "is_primary")
 
     @is_primary.setter
-    def is_primary(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_primary(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_primary", value)
 
     @_builtins.property
     @pulumi.getter(name="keyId")
-    def key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key.
         """
         return pulumi.get(self, "key_id")
 
     @key_id.setter
-    def key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="keyVersionId")
-    def key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "key_version_id")
 
     @key_version_id.setter
-    def key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_version_id", value)
 
     @_builtins.property
     @pulumi.getter(name="managementEndpoint")
-    def management_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
         """
         return pulumi.get(self, "management_endpoint")
 
     @management_endpoint.setter
-    def management_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="publicKey")
-    def public_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The public key in PEM format. (This value pertains only to RSA and ECDSA keys.)
         """
         return pulumi.get(self, "public_key")
 
     @public_key.setter
-    def public_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_key", value)
 
     @_builtins.property
     @pulumi.getter(name="replicaDetails")
-    def replica_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['KeyVersionReplicaDetailArgs']]]]:
+    def replica_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['KeyVersionReplicaDetailArgs']]]]:
         """
         KeyVersion replica details
         """
         return pulumi.get(self, "replica_details")
 
     @replica_details.setter
-    def replica_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['KeyVersionReplicaDetailArgs']]]]):
+    def replica_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['KeyVersionReplicaDetailArgs']]]]):
         pulumi.set(self, "replica_details", value)
 
     @_builtins.property
     @pulumi.getter(name="restoredFromKeyId")
-    def restored_from_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def restored_from_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "restored_from_key_id")
 
     @restored_from_key_id.setter
-    def restored_from_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def restored_from_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "restored_from_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="restoredFromKeyVersionId")
-    def restored_from_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def restored_from_key_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key version from which this key version was restored.
         """
         return pulumi.get(self, "restored_from_key_version_id")
 
     @restored_from_key_version_id.setter
-    def restored_from_key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def restored_from_key_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "restored_from_key_version_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The key version's current lifecycle state.  Example: `ENABLED`
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time this key version was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: "2018-04-03T21:10:29.600Z"
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_deletion(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional property for the deletion time of the key version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 
@@ -342,19 +342,19 @@ class _KeyVersionState:
         return pulumi.get(self, "time_of_deletion")
 
     @time_of_deletion.setter
-    def time_of_deletion(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_deletion(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_deletion", value)
 
     @_builtins.property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the vault that contains this key version.
         """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
-    def vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vault_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vault_id", value)
 
 
@@ -364,10 +364,10 @@ class KeyVersion(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 external_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None,
+                 external_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Key Version resource in Oracle Cloud Infrastructure Kms service.
@@ -446,10 +446,10 @@ class KeyVersion(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 external_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 management_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None,
+                 external_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 management_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -489,22 +489,22 @@ class KeyVersion(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            external_key_reference_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['KeyVersionExternalKeyReferenceDetailArgs', 'KeyVersionExternalKeyReferenceDetailArgsDict']]]]] = None,
-            external_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_auto_rotated: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_primary: Optional[pulumi.Input[_builtins.bool]] = None,
-            key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-            management_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            public_key: Optional[pulumi.Input[_builtins.str]] = None,
-            replica_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['KeyVersionReplicaDetailArgs', 'KeyVersionReplicaDetailArgsDict']]]]] = None,
-            restored_from_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            restored_from_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None,
-            vault_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'KeyVersion':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            external_key_reference_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyVersionExternalKeyReferenceDetailArgs', 'KeyVersionExternalKeyReferenceDetailArgsDict']]]]] = None,
+            external_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_auto_rotated: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_primary: pulumi.Input[Optional[_builtins.bool]] = None,
+            key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            management_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            public_key: pulumi.Input[Optional[_builtins.str]] = None,
+            replica_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyVersionReplicaDetailArgs', 'KeyVersionReplicaDetailArgsDict']]]]] = None,
+            restored_from_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            restored_from_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'KeyVersion':
         """
         Get an existing KeyVersion resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

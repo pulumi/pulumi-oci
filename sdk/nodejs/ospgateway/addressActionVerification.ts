@@ -313,119 +313,119 @@ export interface AddressActionVerificationState {
     /**
      * Address identifier.
      */
-    addressKey?: pulumi.Input<string>;
+    addressKey?: pulumi.Input<string | undefined>;
     /**
      * Address details model.
      */
-    addresses?: pulumi.Input<pulumi.Input<inputs.OspGateway.AddressActionVerificationAddress>[]>;
+    addresses?: pulumi.Input<pulumi.Input<inputs.OspGateway.AddressActionVerificationAddress>[] | undefined>;
     /**
      * Name of the city.
      */
-    city?: pulumi.Input<string>;
+    city?: pulumi.Input<string | undefined>;
     /**
      * Name of the customer company.
      */
-    companyName?: pulumi.Input<string>;
+    companyName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Contributor class of the customer company.
      */
-    contributorClass?: pulumi.Input<string>;
+    contributorClass?: pulumi.Input<string | undefined>;
     /**
      * Country of the address.
      */
-    country?: pulumi.Input<string>;
+    country?: pulumi.Input<string | undefined>;
     /**
      * County of the address.
      */
-    county?: pulumi.Input<string>;
+    county?: pulumi.Input<string | undefined>;
     /**
      * Department name of the customer company.
      */
-    departmentName?: pulumi.Input<string>;
+    departmentName?: pulumi.Input<string | undefined>;
     /**
      * Contact person email address.
      */
-    emailAddress?: pulumi.Input<string>;
+    emailAddress?: pulumi.Input<string | undefined>;
     /**
      * First name of the contact person.
      */
-    firstName?: pulumi.Input<string>;
+    firstName?: pulumi.Input<string | undefined>;
     /**
      * Internal number of the customer company.
      */
-    internalNumber?: pulumi.Input<string>;
+    internalNumber?: pulumi.Input<string | undefined>;
     /**
      * Job title of the contact person.
      */
-    jobTitle?: pulumi.Input<string>;
+    jobTitle?: pulumi.Input<string | undefined>;
     /**
      * Last name of the contact person.
      */
-    lastName?: pulumi.Input<string>;
+    lastName?: pulumi.Input<string | undefined>;
     /**
      * Address line 1.
      */
-    line1?: pulumi.Input<string>;
+    line1?: pulumi.Input<string | undefined>;
     /**
      * Address line 2.
      */
-    line2?: pulumi.Input<string>;
+    line2?: pulumi.Input<string | undefined>;
     /**
      * Address line 3.
      */
-    line3?: pulumi.Input<string>;
+    line3?: pulumi.Input<string | undefined>;
     /**
      * Address line 4.
      */
-    line4?: pulumi.Input<string>;
+    line4?: pulumi.Input<string | undefined>;
     /**
      * Middle name of the contact person.
      */
-    middleName?: pulumi.Input<string>;
+    middleName?: pulumi.Input<string | undefined>;
     /**
      * Municipal Inscription.
      */
-    municipalInscription?: pulumi.Input<string>;
+    municipalInscription?: pulumi.Input<string | undefined>;
     /**
      * The home region's public name of the logged in user.
      */
-    ospHomeRegion?: pulumi.Input<string>;
+    ospHomeRegion?: pulumi.Input<string | undefined>;
     /**
      * Phone country code of the contact person.
      */
-    phoneCountryCode?: pulumi.Input<string>;
+    phoneCountryCode?: pulumi.Input<string | undefined>;
     /**
      * Phone number of the contact person.
      */
-    phoneNumber?: pulumi.Input<string>;
+    phoneNumber?: pulumi.Input<string | undefined>;
     /**
      * Post code of the address.
      */
-    postalCode?: pulumi.Input<string>;
+    postalCode?: pulumi.Input<string | undefined>;
     /**
      * Province of the address.
      */
-    province?: pulumi.Input<string>;
+    province?: pulumi.Input<string | undefined>;
     /**
      * Address quality type.
      */
-    quality?: pulumi.Input<string>;
+    quality?: pulumi.Input<string | undefined>;
     /**
      * State of the address.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * State Inscription.
      */
-    stateInscription?: pulumi.Input<string>;
+    stateInscription?: pulumi.Input<string | undefined>;
     /**
      * Street name of the address.
      */
-    streetName?: pulumi.Input<string>;
+    streetName?: pulumi.Input<string | undefined>;
     /**
      * Street number of the address.
      *
@@ -433,11 +433,11 @@ export interface AddressActionVerificationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    streetNumber?: pulumi.Input<string>;
+    streetNumber?: pulumi.Input<string | undefined>;
     /**
      * Address verification code.
      */
-    verificationCode?: pulumi.Input<string>;
+    verificationCode?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -447,15 +447,15 @@ export interface AddressActionVerificationArgs {
     /**
      * Address identifier.
      */
-    addressKey?: pulumi.Input<string>;
+    addressKey?: pulumi.Input<string | undefined>;
     /**
      * Name of the city.
      */
-    city?: pulumi.Input<string>;
+    city?: pulumi.Input<string | undefined>;
     /**
      * Name of the customer company.
      */
-    companyName?: pulumi.Input<string>;
+    companyName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -463,63 +463,63 @@ export interface AddressActionVerificationArgs {
     /**
      * Contributor class of the customer company.
      */
-    contributorClass?: pulumi.Input<string>;
+    contributorClass?: pulumi.Input<string | undefined>;
     /**
      * Country of the address.
      */
-    country?: pulumi.Input<string>;
+    country?: pulumi.Input<string | undefined>;
     /**
      * County of the address.
      */
-    county?: pulumi.Input<string>;
+    county?: pulumi.Input<string | undefined>;
     /**
      * Department name of the customer company.
      */
-    departmentName?: pulumi.Input<string>;
+    departmentName?: pulumi.Input<string | undefined>;
     /**
      * Contact person email address.
      */
-    emailAddress?: pulumi.Input<string>;
+    emailAddress?: pulumi.Input<string | undefined>;
     /**
      * First name of the contact person.
      */
-    firstName?: pulumi.Input<string>;
+    firstName?: pulumi.Input<string | undefined>;
     /**
      * Internal number of the customer company.
      */
-    internalNumber?: pulumi.Input<string>;
+    internalNumber?: pulumi.Input<string | undefined>;
     /**
      * Job title of the contact person.
      */
-    jobTitle?: pulumi.Input<string>;
+    jobTitle?: pulumi.Input<string | undefined>;
     /**
      * Last name of the contact person.
      */
-    lastName?: pulumi.Input<string>;
+    lastName?: pulumi.Input<string | undefined>;
     /**
      * Address line 1.
      */
-    line1?: pulumi.Input<string>;
+    line1?: pulumi.Input<string | undefined>;
     /**
      * Address line 2.
      */
-    line2?: pulumi.Input<string>;
+    line2?: pulumi.Input<string | undefined>;
     /**
      * Address line 3.
      */
-    line3?: pulumi.Input<string>;
+    line3?: pulumi.Input<string | undefined>;
     /**
      * Address line 4.
      */
-    line4?: pulumi.Input<string>;
+    line4?: pulumi.Input<string | undefined>;
     /**
      * Middle name of the contact person.
      */
-    middleName?: pulumi.Input<string>;
+    middleName?: pulumi.Input<string | undefined>;
     /**
      * Municipal Inscription.
      */
-    municipalInscription?: pulumi.Input<string>;
+    municipalInscription?: pulumi.Input<string | undefined>;
     /**
      * The home region's public name of the logged in user.
      */
@@ -527,31 +527,31 @@ export interface AddressActionVerificationArgs {
     /**
      * Phone country code of the contact person.
      */
-    phoneCountryCode?: pulumi.Input<string>;
+    phoneCountryCode?: pulumi.Input<string | undefined>;
     /**
      * Phone number of the contact person.
      */
-    phoneNumber?: pulumi.Input<string>;
+    phoneNumber?: pulumi.Input<string | undefined>;
     /**
      * Post code of the address.
      */
-    postalCode?: pulumi.Input<string>;
+    postalCode?: pulumi.Input<string | undefined>;
     /**
      * Province of the address.
      */
-    province?: pulumi.Input<string>;
+    province?: pulumi.Input<string | undefined>;
     /**
      * State of the address.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * State Inscription.
      */
-    stateInscription?: pulumi.Input<string>;
+    stateInscription?: pulumi.Input<string | undefined>;
     /**
      * Street name of the address.
      */
-    streetName?: pulumi.Input<string>;
+    streetName?: pulumi.Input<string | undefined>;
     /**
      * Street number of the address.
      *
@@ -559,5 +559,5 @@ export interface AddressActionVerificationArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    streetNumber?: pulumi.Input<string>;
+    streetNumber?: pulumi.Input<string | undefined>;
 }

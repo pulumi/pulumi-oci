@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdentityProviders = oci.Identity.getIdentityProviders({
+ * const testIdentityProviders = oci.identity.getIdentityProviders({
  *     compartmentId: tenancyOcid,
  *     protocol: identityProviderProtocol,
  *     name: identityProviderName,
@@ -110,7 +110,7 @@ export interface GetIdentityProvidersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdentityProviders = oci.Identity.getIdentityProviders({
+ * const testIdentityProviders = oci.identity.getIdentityProviders({
  *     compartmentId: tenancyOcid,
  *     protocol: identityProviderProtocol,
  *     name: identityProviderName,
@@ -137,11 +137,11 @@ export interface GetIdentityProvidersOutputArgs {
      * The OCID of the compartment (remember that the tenancy is simply the root compartment).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetIdentityProvidersFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetIdentityProvidersFilterArgs>[] | undefined>;
     /**
      * A filter to only return resources that match the given name exactly.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The protocol used for federation.
      */
@@ -149,5 +149,5 @@ export interface GetIdentityProvidersOutputArgs {
     /**
      * A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

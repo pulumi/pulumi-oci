@@ -247,7 +247,7 @@ def get_resolver_endpoint(resolver_endpoint_name: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_resolver_endpoint = oci.Dns.get_resolver_endpoint(resolver_endpoint_name=test_resolver_endpoint_oci_dns_resolver_endpoint["name"],
+    test_resolver_endpoint = oci.dns.get_resolver_endpoint(resolver_endpoint_name=test_resolver_endpoint_oci_dns_resolver_endpoint["name"],
         resolver_id=test_resolver["id"],
         scope="PRIVATE")
     ```
@@ -282,9 +282,9 @@ def get_resolver_endpoint(resolver_endpoint_name: Optional[_builtins.str] = None
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_resolver_endpoint_output(resolver_endpoint_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                 resolver_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 scope: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_resolver_endpoint_output(resolver_endpoint_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                 resolver_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 scope: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResolverEndpointResult]:
     """
     This data source provides details about a specific Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.
@@ -300,7 +300,7 @@ def get_resolver_endpoint_output(resolver_endpoint_name: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_resolver_endpoint = oci.Dns.get_resolver_endpoint(resolver_endpoint_name=test_resolver_endpoint_oci_dns_resolver_endpoint["name"],
+    test_resolver_endpoint = oci.dns.get_resolver_endpoint(resolver_endpoint_name=test_resolver_endpoint_oci_dns_resolver_endpoint["name"],
         resolver_id=test_resolver["id"],
         scope="PRIVATE")
     ```

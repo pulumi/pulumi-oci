@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCccInfrastructure = oci.ComputeCloud.getAtCustomerCccInfrastructure({
+ * const testCccInfrastructure = oci.computecloud.getAtCustomerCccInfrastructure({
  *     cccInfrastructureId: testCccInfrastructureOciComputeCloudAtCustomerCccInfrastructure.id,
  * });
  * ```
@@ -142,7 +142,7 @@ export interface GetAtCustomerCccInfrastructureResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCccInfrastructure = oci.ComputeCloud.getAtCustomerCccInfrastructure({
+ * const testCccInfrastructure = oci.computecloud.getAtCustomerCccInfrastructure({
  *     cccInfrastructureId: testCccInfrastructureOciComputeCloudAtCustomerCccInfrastructure.id,
  * });
  * ```

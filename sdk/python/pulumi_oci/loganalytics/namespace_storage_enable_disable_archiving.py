@@ -66,9 +66,9 @@ class NamespaceStorageEnableDisableArchivingArgs:
 @pulumi.input_type
 class _NamespaceStorageEnableDisableArchivingState:
     def __init__(__self__, *,
-                 enable_archiving_tenant: Optional[pulumi.Input[_builtins.bool]] = None,
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None):
+                 enable_archiving_tenant: pulumi.Input[Optional[_builtins.bool]] = None,
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NamespaceStorageEnableDisableArchiving resources.
 
@@ -89,7 +89,7 @@ class _NamespaceStorageEnableDisableArchivingState:
 
     @_builtins.property
     @pulumi.getter(name="enableArchivingTenant")
-    def enable_archiving_tenant(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_archiving_tenant(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 
@@ -100,31 +100,31 @@ class _NamespaceStorageEnableDisableArchivingState:
         return pulumi.get(self, "enable_archiving_tenant")
 
     @enable_archiving_tenant.setter
-    def enable_archiving_tenant(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_archiving_tenant(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_archiving_tenant", value)
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A human-readable success string.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
 
@@ -134,8 +134,8 @@ class NamespaceStorageEnableDisableArchiving(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_archiving_tenant: Optional[pulumi.Input[_builtins.bool]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_archiving_tenant: pulumi.Input[Optional[_builtins.bool]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Namespace Storage Enable Disable Archiving resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -152,7 +152,7 @@ class NamespaceStorageEnableDisableArchiving(pulumi.CustomResource):
 
         test_namespace_storage_enable_disable_archiving = oci.loganalytics.NamespaceStorageEnableDisableArchiving("test_namespace_storage_enable_disable_archiving",
             namespace=namespace_storage_enable_disable_archiving_namespace,
-            enable_archiving_tenant=enable_archiving_tenant)
+            enable_archiving_tenant=enable_archiving_tenant == "true")
         ```
 
 
@@ -186,7 +186,7 @@ class NamespaceStorageEnableDisableArchiving(pulumi.CustomResource):
 
         test_namespace_storage_enable_disable_archiving = oci.loganalytics.NamespaceStorageEnableDisableArchiving("test_namespace_storage_enable_disable_archiving",
             namespace=namespace_storage_enable_disable_archiving_namespace,
-            enable_archiving_tenant=enable_archiving_tenant)
+            enable_archiving_tenant=enable_archiving_tenant == "true")
         ```
 
 
@@ -205,8 +205,8 @@ class NamespaceStorageEnableDisableArchiving(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_archiving_tenant: Optional[pulumi.Input[_builtins.bool]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_archiving_tenant: pulumi.Input[Optional[_builtins.bool]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -233,9 +233,9 @@ class NamespaceStorageEnableDisableArchiving(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enable_archiving_tenant: Optional[pulumi.Input[_builtins.bool]] = None,
-            message: Optional[pulumi.Input[_builtins.str]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None) -> 'NamespaceStorageEnableDisableArchiving':
+            enable_archiving_tenant: pulumi.Input[Optional[_builtins.bool]] = None,
+            message: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None) -> 'NamespaceStorageEnableDisableArchiving':
         """
         Get an existing NamespaceStorageEnableDisableArchiving resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

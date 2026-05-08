@@ -34,8 +34,8 @@ public final class VnMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.VnMonitoring.VnMonitoringFunctions;
      * import com.pulumi.oci.VnMonitoring.inputs.GetPathAnalyzerTestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -76,8 +76,8 @@ public final class VnMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.VnMonitoring.VnMonitoringFunctions;
      * import com.pulumi.oci.VnMonitoring.inputs.GetPathAnalyzerTestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -118,8 +118,8 @@ public final class VnMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.VnMonitoring.VnMonitoringFunctions;
      * import com.pulumi.oci.VnMonitoring.inputs.GetPathAnalyzerTestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -160,8 +160,8 @@ public final class VnMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.VnMonitoring.VnMonitoringFunctions;
      * import com.pulumi.oci.VnMonitoring.inputs.GetPathAnalyzerTestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -202,8 +202,8 @@ public final class VnMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.VnMonitoring.VnMonitoringFunctions;
      * import com.pulumi.oci.VnMonitoring.inputs.GetPathAnalyzerTestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -244,8 +244,8 @@ public final class VnMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.VnMonitoring.VnMonitoringFunctions;
      * import com.pulumi.oci.VnMonitoring.inputs.GetPathAnalyzerTestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -288,8 +288,8 @@ public final class VnMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.VnMonitoring.VnMonitoringFunctions;
      * import com.pulumi.oci.VnMonitoring.inputs.GetPathAnalyzerTestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -332,8 +332,8 @@ public final class VnMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.VnMonitoring.VnMonitoringFunctions;
      * import com.pulumi.oci.VnMonitoring.inputs.GetPathAnalyzerTestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -376,8 +376,8 @@ public final class VnMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.VnMonitoring.VnMonitoringFunctions;
      * import com.pulumi.oci.VnMonitoring.inputs.GetPathAnalyzerTestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -420,8 +420,8 @@ public final class VnMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.VnMonitoring.VnMonitoringFunctions;
      * import com.pulumi.oci.VnMonitoring.inputs.GetPathAnalyzerTestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

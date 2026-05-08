@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseGroups = oci.DatabaseManagement.getManagedDatabaseGroups({
+ * const testManagedDatabaseGroups = oci.databasemanagement.getManagedDatabaseGroups({
  *     compartmentId: compartmentId,
  *     id: managedDatabaseGroupId,
  *     name: managedDatabaseGroupName,
@@ -102,7 +102,7 @@ export interface GetManagedDatabaseGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseGroups = oci.DatabaseManagement.getManagedDatabaseGroups({
+ * const testManagedDatabaseGroups = oci.databasemanagement.getManagedDatabaseGroups({
  *     compartmentId: compartmentId,
  *     id: managedDatabaseGroupId,
  *     name: managedDatabaseGroupName,
@@ -129,17 +129,17 @@ export interface GetManagedDatabaseGroupsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseGroupsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabaseGroupsFilterArgs>[] | undefined>;
     /**
      * The identifier of the resource. Only one of the parameters, id or name should be provided.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire name. Only one of the parameters, id or name should be provided
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of a resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

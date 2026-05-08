@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeploymentEnvironments = oci.GoldenGate.getDeploymentEnvironments({
+ * const testDeploymentEnvironments = oci.goldengate.getDeploymentEnvironments({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetDeploymentEnvironmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeploymentEnvironments = oci.GoldenGate.getDeploymentEnvironments({
+ * const testDeploymentEnvironments = oci.goldengate.getDeploymentEnvironments({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -88,5 +88,5 @@ export interface GetDeploymentEnvironmentsOutputArgs {
      * The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetDeploymentEnvironmentsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetDeploymentEnvironmentsFilterArgs>[] | undefined>;
 }

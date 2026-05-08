@@ -264,7 +264,7 @@ def get_ai_data_platform_ai_data_platform(ai_data_platform_id: Optional[_builtin
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         web_socket_endpoint=pulumi.get(__ret__, 'web_socket_endpoint'))
-def get_ai_data_platform_ai_data_platform_output(ai_data_platform_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_ai_data_platform_ai_data_platform_output(ai_data_platform_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAiDataPlatformAiDataPlatformResult]:
     """
     This data source provides details about a specific Ai Data Platform resource in Oracle Cloud Infrastructure Ai Data Platform service.

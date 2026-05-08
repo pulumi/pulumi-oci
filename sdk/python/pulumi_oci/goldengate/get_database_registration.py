@@ -378,7 +378,7 @@ def get_database_registration(database_registration_id: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_database_registration = oci.GoldenGate.get_database_registration(database_registration_id=test_database_registration_oci_golden_gate_database_registration["id"])
+    test_database_registration = oci.goldengate.get_database_registration(database_registration_id=test_database_registration_oci_golden_gate_database_registration["id"])
     ```
 
 
@@ -418,7 +418,7 @@ def get_database_registration(database_registration_id: Optional[_builtins.str] 
         username=pulumi.get(__ret__, 'username'),
         vault_id=pulumi.get(__ret__, 'vault_id'),
         wallet=pulumi.get(__ret__, 'wallet'))
-def get_database_registration_output(database_registration_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_database_registration_output(database_registration_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseRegistrationResult]:
     """
     This data source provides details about a specific Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -432,7 +432,7 @@ def get_database_registration_output(database_registration_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_database_registration = oci.GoldenGate.get_database_registration(database_registration_id=test_database_registration_oci_golden_gate_database_registration["id"])
+    test_database_registration = oci.goldengate.get_database_registration(database_registration_id=test_database_registration_oci_golden_gate_database_registration["id"])
     ```
 
 

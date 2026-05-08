@@ -23,8 +23,8 @@ class DataPatchArgs:
     def __init__(__self__, *,
                  action: pulumi.Input[_builtins.str],
                  database_id: pulumi.Input[_builtins.str],
-                 data_patch_options: Optional[pulumi.Input[Sequence[pulumi.Input['DataPatchDataPatchOptionArgs']]]] = None,
-                 pluggable_databases: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 data_patch_options: pulumi.Input[Optional[Sequence[pulumi.Input['DataPatchDataPatchOptionArgs']]]] = None,
+                 pluggable_databases: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a DataPatch resource.
         """
@@ -55,30 +55,30 @@ class DataPatchArgs:
 
     @_builtins.property
     @pulumi.getter(name="dataPatchOptions")
-    def data_patch_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DataPatchDataPatchOptionArgs']]]]:
+    def data_patch_options(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DataPatchDataPatchOptionArgs']]]]:
         return pulumi.get(self, "data_patch_options")
 
     @data_patch_options.setter
-    def data_patch_options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DataPatchDataPatchOptionArgs']]]]):
+    def data_patch_options(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DataPatchDataPatchOptionArgs']]]]):
         pulumi.set(self, "data_patch_options", value)
 
     @_builtins.property
     @pulumi.getter(name="pluggableDatabases")
-    def pluggable_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pluggable_databases(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "pluggable_databases")
 
     @pluggable_databases.setter
-    def pluggable_databases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pluggable_databases(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pluggable_databases", value)
 
 
 @pulumi.input_type
 class _DataPatchState:
     def __init__(__self__, *,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_patch_options: Optional[pulumi.Input[Sequence[pulumi.Input['DataPatchDataPatchOptionArgs']]]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pluggable_databases: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_patch_options: pulumi.Input[Optional[Sequence[pulumi.Input['DataPatchDataPatchOptionArgs']]]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pluggable_databases: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering DataPatch resources.
         """
@@ -93,38 +93,38 @@ class _DataPatchState:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter(name="dataPatchOptions")
-    def data_patch_options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DataPatchDataPatchOptionArgs']]]]:
+    def data_patch_options(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DataPatchDataPatchOptionArgs']]]]:
         return pulumi.get(self, "data_patch_options")
 
     @data_patch_options.setter
-    def data_patch_options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DataPatchDataPatchOptionArgs']]]]):
+    def data_patch_options(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DataPatchDataPatchOptionArgs']]]]):
         pulumi.set(self, "data_patch_options", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "database_id")
 
     @database_id.setter
-    def database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="pluggableDatabases")
-    def pluggable_databases(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pluggable_databases(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         return pulumi.get(self, "pluggable_databases")
 
     @pluggable_databases.setter
-    def pluggable_databases(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pluggable_databases(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pluggable_databases", value)
 
 
@@ -134,10 +134,10 @@ class DataPatch(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_patch_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DataPatchDataPatchOptionArgs', 'DataPatchDataPatchOptionArgsDict']]]]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pluggable_databases: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_patch_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataPatchDataPatchOptionArgs', 'DataPatchDataPatchOptionArgsDict']]]]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pluggable_databases: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         Create a DataPatch resource with the given unique name, props, and options.
@@ -169,10 +169,10 @@ class DataPatch(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_patch_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DataPatchDataPatchOptionArgs', 'DataPatchDataPatchOptionArgsDict']]]]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pluggable_databases: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_patch_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataPatchDataPatchOptionArgs', 'DataPatchDataPatchOptionArgsDict']]]]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pluggable_databases: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -200,10 +200,10 @@ class DataPatch(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action: Optional[pulumi.Input[_builtins.str]] = None,
-            data_patch_options: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DataPatchDataPatchOptionArgs', 'DataPatchDataPatchOptionArgsDict']]]]] = None,
-            database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pluggable_databases: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'DataPatch':
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            data_patch_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataPatchDataPatchOptionArgs', 'DataPatchDataPatchOptionArgsDict']]]]] = None,
+            database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pluggable_databases: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'DataPatch':
         """
         Get an existing DataPatch resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

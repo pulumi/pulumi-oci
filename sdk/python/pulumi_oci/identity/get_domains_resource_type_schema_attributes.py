@@ -223,14 +223,14 @@ def get_domains_resource_type_schema_attributes(attribute_sets: Optional[Sequenc
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_type_schema_attributes = oci.Identity.get_domains_resource_type_schema_attributes(idcs_endpoint=test_domain["url"],
-        resource_type_schema_attribute_count=resource_type_schema_attribute_resource_type_schema_attribute_count,
+    test_resource_type_schema_attributes = oci.identity.get_domains_resource_type_schema_attributes(idcs_endpoint=test_domain["url"],
+        resource_type_schema_attribute_count=int(resource_type_schema_attribute_resource_type_schema_attribute_count),
         resource_type_schema_attribute_filter=resource_type_schema_attribute_resource_type_schema_attribute_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=resource_type_schema_attribute_authorization,
         resource_type_schema_version=resource_type_schema_attribute_resource_type_schema_version,
-        start_index=resource_type_schema_attribute_start_index)
+        start_index=int(resource_type_schema_attribute_start_index))
     ```
 
 
@@ -275,17 +275,17 @@ def get_domains_resource_type_schema_attributes(attribute_sets: Optional[Sequenc
         sort_order=pulumi.get(__ret__, 'sort_order'),
         start_index=pulumi.get(__ret__, 'start_index'),
         total_results=pulumi.get(__ret__, 'total_results'))
-def get_domains_resource_type_schema_attributes_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                       attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                       authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                       compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                       idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                                       resource_type_schema_attribute_count: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                                       resource_type_schema_attribute_filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                       resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                       sort_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                       sort_order: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                       start_index: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_domains_resource_type_schema_attributes_output(attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                       attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                       authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                       compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                       idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                                       resource_type_schema_attribute_count: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                                       resource_type_schema_attribute_filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                       resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                       sort_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                       sort_order: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                       start_index: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsResourceTypeSchemaAttributesResult]:
     """
     This data source provides the list of Resource Type Schema Attributes in Oracle Cloud Infrastructure Identity Domains service.
@@ -298,14 +298,14 @@ def get_domains_resource_type_schema_attributes_output(attribute_sets: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_type_schema_attributes = oci.Identity.get_domains_resource_type_schema_attributes(idcs_endpoint=test_domain["url"],
-        resource_type_schema_attribute_count=resource_type_schema_attribute_resource_type_schema_attribute_count,
+    test_resource_type_schema_attributes = oci.identity.get_domains_resource_type_schema_attributes(idcs_endpoint=test_domain["url"],
+        resource_type_schema_attribute_count=int(resource_type_schema_attribute_resource_type_schema_attribute_count),
         resource_type_schema_attribute_filter=resource_type_schema_attribute_resource_type_schema_attribute_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=resource_type_schema_attribute_authorization,
         resource_type_schema_version=resource_type_schema_attribute_resource_type_schema_version,
-        start_index=resource_type_schema_attribute_start_index)
+        start_index=int(resource_type_schema_attribute_start_index))
     ```
 
 

@@ -39,33 +39,33 @@ import * as utilities from "../utilities";
  *         destinationCidr: captureFilterFlowLogCaptureFilterRulesDestinationCidr,
  *         flowLogType: captureFilterFlowLogCaptureFilterRulesFlowLogType,
  *         icmpOptions: {
- *             type: captureFilterFlowLogCaptureFilterRulesIcmpOptionsType,
- *             code: captureFilterFlowLogCaptureFilterRulesIcmpOptionsCode,
+ *             type: Number(captureFilterFlowLogCaptureFilterRulesIcmpOptionsType),
+ *             code: Number(captureFilterFlowLogCaptureFilterRulesIcmpOptionsCode),
  *         },
- *         isEnabled: captureFilterFlowLogCaptureFilterRulesIsEnabled,
- *         priority: captureFilterFlowLogCaptureFilterRulesPriority,
+ *         isEnabled: captureFilterFlowLogCaptureFilterRulesIsEnabled === "true",
+ *         priority: Number(captureFilterFlowLogCaptureFilterRulesPriority),
  *         protocol: captureFilterFlowLogCaptureFilterRulesProtocol,
  *         ruleAction: captureFilterFlowLogCaptureFilterRulesRuleAction,
- *         samplingRate: captureFilterFlowLogCaptureFilterRulesSamplingRate,
+ *         samplingRate: Number(captureFilterFlowLogCaptureFilterRulesSamplingRate),
  *         sourceCidr: captureFilterFlowLogCaptureFilterRulesSourceCidr,
  *         tcpOptions: {
  *             destinationPortRange: {
- *                 max: captureFilterFlowLogCaptureFilterRulesTcpOptionsDestinationPortRangeMax,
- *                 min: captureFilterFlowLogCaptureFilterRulesTcpOptionsDestinationPortRangeMin,
+ *                 max: Number(captureFilterFlowLogCaptureFilterRulesTcpOptionsDestinationPortRangeMax),
+ *                 min: Number(captureFilterFlowLogCaptureFilterRulesTcpOptionsDestinationPortRangeMin),
  *             },
  *             sourcePortRange: {
- *                 max: captureFilterFlowLogCaptureFilterRulesTcpOptionsSourcePortRangeMax,
- *                 min: captureFilterFlowLogCaptureFilterRulesTcpOptionsSourcePortRangeMin,
+ *                 max: Number(captureFilterFlowLogCaptureFilterRulesTcpOptionsSourcePortRangeMax),
+ *                 min: Number(captureFilterFlowLogCaptureFilterRulesTcpOptionsSourcePortRangeMin),
  *             },
  *         },
  *         udpOptions: {
  *             destinationPortRange: {
- *                 max: captureFilterFlowLogCaptureFilterRulesUdpOptionsDestinationPortRangeMax,
- *                 min: captureFilterFlowLogCaptureFilterRulesUdpOptionsDestinationPortRangeMin,
+ *                 max: Number(captureFilterFlowLogCaptureFilterRulesUdpOptionsDestinationPortRangeMax),
+ *                 min: Number(captureFilterFlowLogCaptureFilterRulesUdpOptionsDestinationPortRangeMin),
  *             },
  *             sourcePortRange: {
- *                 max: captureFilterFlowLogCaptureFilterRulesUdpOptionsSourcePortRangeMax,
- *                 min: captureFilterFlowLogCaptureFilterRulesUdpOptionsSourcePortRangeMin,
+ *                 max: Number(captureFilterFlowLogCaptureFilterRulesUdpOptionsSourcePortRangeMax),
+ *                 min: Number(captureFilterFlowLogCaptureFilterRulesUdpOptionsSourcePortRangeMin),
  *             },
  *         },
  *     }],
@@ -76,30 +76,30 @@ import * as utilities from "../utilities";
  *         trafficDirection: captureFilterVtapCaptureFilterRulesTrafficDirection,
  *         destinationCidr: captureFilterVtapCaptureFilterRulesDestinationCidr,
  *         icmpOptions: {
- *             type: captureFilterVtapCaptureFilterRulesIcmpOptionsType,
- *             code: captureFilterVtapCaptureFilterRulesIcmpOptionsCode,
+ *             type: Number(captureFilterVtapCaptureFilterRulesIcmpOptionsType),
+ *             code: Number(captureFilterVtapCaptureFilterRulesIcmpOptionsCode),
  *         },
  *         protocol: captureFilterVtapCaptureFilterRulesProtocol,
  *         ruleAction: captureFilterVtapCaptureFilterRulesRuleAction,
  *         sourceCidr: captureFilterVtapCaptureFilterRulesSourceCidr,
  *         tcpOptions: {
  *             destinationPortRange: {
- *                 max: captureFilterVtapCaptureFilterRulesTcpOptionsDestinationPortRangeMax,
- *                 min: captureFilterVtapCaptureFilterRulesTcpOptionsDestinationPortRangeMin,
+ *                 max: Number(captureFilterVtapCaptureFilterRulesTcpOptionsDestinationPortRangeMax),
+ *                 min: Number(captureFilterVtapCaptureFilterRulesTcpOptionsDestinationPortRangeMin),
  *             },
  *             sourcePortRange: {
- *                 max: captureFilterVtapCaptureFilterRulesTcpOptionsSourcePortRangeMax,
- *                 min: captureFilterVtapCaptureFilterRulesTcpOptionsSourcePortRangeMin,
+ *                 max: Number(captureFilterVtapCaptureFilterRulesTcpOptionsSourcePortRangeMax),
+ *                 min: Number(captureFilterVtapCaptureFilterRulesTcpOptionsSourcePortRangeMin),
  *             },
  *         },
  *         udpOptions: {
  *             destinationPortRange: {
- *                 max: captureFilterVtapCaptureFilterRulesUdpOptionsDestinationPortRangeMax,
- *                 min: captureFilterVtapCaptureFilterRulesUdpOptionsDestinationPortRangeMin,
+ *                 max: Number(captureFilterVtapCaptureFilterRulesUdpOptionsDestinationPortRangeMax),
+ *                 min: Number(captureFilterVtapCaptureFilterRulesUdpOptionsDestinationPortRangeMin),
  *             },
  *             sourcePortRange: {
- *                 max: captureFilterVtapCaptureFilterRulesUdpOptionsSourcePortRangeMax,
- *                 min: captureFilterVtapCaptureFilterRulesUdpOptionsSourcePortRangeMin,
+ *                 max: Number(captureFilterVtapCaptureFilterRulesUdpOptionsSourcePortRangeMax),
+ *                 min: Number(captureFilterVtapCaptureFilterRulesUdpOptionsSourcePortRangeMin),
  *             },
  *         },
  *     }],
@@ -231,39 +231,39 @@ export interface CaptureFilterState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Indicates which service will use this capture filter
      */
-    filterType?: pulumi.Input<string>;
+    filterType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
      */
-    flowLogCaptureFilterRules?: pulumi.Input<pulumi.Input<inputs.Core.CaptureFilterFlowLogCaptureFilterRule>[]>;
+    flowLogCaptureFilterRules?: pulumi.Input<pulumi.Input<inputs.Core.CaptureFilterFlowLogCaptureFilterRule>[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The capture filter's current administrative state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the capture filter was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2021-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The set of rules governing what traffic a VTAP mirrors.
      */
-    vtapCaptureFilterRules?: pulumi.Input<pulumi.Input<inputs.Core.CaptureFilterVtapCaptureFilterRule>[]>;
+    vtapCaptureFilterRules?: pulumi.Input<pulumi.Input<inputs.Core.CaptureFilterVtapCaptureFilterRule>[] | undefined>;
 }
 
 /**
@@ -277,11 +277,11 @@ export interface CaptureFilterArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Indicates which service will use this capture filter
      */
@@ -289,13 +289,13 @@ export interface CaptureFilterArgs {
     /**
      * (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
      */
-    flowLogCaptureFilterRules?: pulumi.Input<pulumi.Input<inputs.Core.CaptureFilterFlowLogCaptureFilterRule>[]>;
+    flowLogCaptureFilterRules?: pulumi.Input<pulumi.Input<inputs.Core.CaptureFilterFlowLogCaptureFilterRule>[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The set of rules governing what traffic a VTAP mirrors.
      */
-    vtapCaptureFilterRules?: pulumi.Input<pulumi.Input<inputs.Core.CaptureFilterVtapCaptureFilterRule>[]>;
+    vtapCaptureFilterRules?: pulumi.Input<pulumi.Input<inputs.Core.CaptureFilterVtapCaptureFilterRule>[] | undefined>;
 }

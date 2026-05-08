@@ -129,9 +129,9 @@ def get_psa_psa_services(display_name: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         psa_service_collections=pulumi.get(__ret__, 'psa_service_collections'),
         service_id=pulumi.get(__ret__, 'service_id'))
-def get_psa_psa_services_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPsaPsaServicesFilterArgs', 'GetPsaPsaServicesFilterArgsDict']]]]] = None,
-                                service_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_psa_psa_services_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPsaPsaServicesFilterArgs', 'GetPsaPsaServicesFilterArgsDict']]]]] = None,
+                                service_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPsaPsaServicesResult]:
     """
     This data source provides the list of Psa Services in Oracle Cloud Infrastructure Psa service.

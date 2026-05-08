@@ -291,7 +291,7 @@ def get_agent(agent_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_agent = oci.CloudBridge.get_agent(agent_id=test_agent_oci_cloud_bridge_agent["id"])
+    test_agent = oci.cloudbridge.get_agent(agent_id=test_agent_oci_cloud_bridge_agent["id"])
     ```
 
 
@@ -323,7 +323,7 @@ def get_agent(agent_id: Optional[_builtins.str] = None,
         time_expire_agent_key_in_ms=pulumi.get(__ret__, 'time_expire_agent_key_in_ms'),
         time_last_sync_received=pulumi.get(__ret__, 'time_last_sync_received'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_agent_output(agent_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_agent_output(agent_id: pulumi.Input[Optional[_builtins.str]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentResult]:
     """
     This data source provides details about a specific Agent resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -336,7 +336,7 @@ def get_agent_output(agent_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_agent = oci.CloudBridge.get_agent(agent_id=test_agent_oci_cloud_bridge_agent["id"])
+    test_agent = oci.cloudbridge.get_agent(agent_id=test_agent_oci_cloud_bridge_agent["id"])
     ```
 
 

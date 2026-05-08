@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrgRouteTableRouteRules = oci.Core.getDrgRouteTableRouteRules({
+ * const testDrgRouteTableRouteRules = oci.core.getDrgRouteTableRouteRules({
  *     drgRouteTableId: testDrgRouteTable.id,
  *     routeType: drgRouteTableRouteRuleRouteType,
  * });
@@ -77,7 +77,7 @@ export interface GetDrgRouteTableRouteRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrgRouteTableRouteRules = oci.Core.getDrgRouteTableRouteRules({
+ * const testDrgRouteTableRouteRules = oci.core.getDrgRouteTableRouteRules({
  *     drgRouteTableId: testDrgRouteTable.id,
  *     routeType: drgRouteTableRouteRuleRouteType,
  * });
@@ -100,9 +100,9 @@ export interface GetDrgRouteTableRouteRulesOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
      */
     drgRouteTableId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetDrgRouteTableRouteRulesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetDrgRouteTableRouteRulesFilterArgs>[] | undefined>;
     /**
      * Static routes are specified through the DRG route table API. Dynamic routes are learned by the DRG from the DRG attachments through various routing protocols.
      */
-    routeType?: pulumi.Input<string>;
+    routeType?: pulumi.Input<string | undefined>;
 }

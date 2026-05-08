@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMysqlDbSystem = oci.Mysql.getMysqlDbSystem({
+ * const testMysqlDbSystem = oci.mysql.getMysqlDbSystem({
  *     dbSystemId: testDbSystem.id,
  * });
  * ```
@@ -254,7 +254,7 @@ export interface GetMysqlDbSystemResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMysqlDbSystem = oci.Mysql.getMysqlDbSystem({
+ * const testMysqlDbSystem = oci.mysql.getMysqlDbSystem({
  *     dbSystemId: testDbSystem.id,
  * });
  * ```

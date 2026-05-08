@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudAsmUsers = oci.DatabaseManagement.getCloudAsmUsers({
+ * const testCloudAsmUsers = oci.databasemanagement.getCloudAsmUsers({
  *     cloudAsmId: testCloudAsm.id,
  *     opcNamedCredentialId: cloudAsmUserOpcNamedCredentialId,
  * });
@@ -74,7 +74,7 @@ export interface GetCloudAsmUsersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudAsmUsers = oci.DatabaseManagement.getCloudAsmUsers({
+ * const testCloudAsmUsers = oci.databasemanagement.getCloudAsmUsers({
  *     cloudAsmId: testCloudAsm.id,
  *     opcNamedCredentialId: cloudAsmUserOpcNamedCredentialId,
  * });
@@ -97,9 +97,9 @@ export interface GetCloudAsmUsersOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud ASM.
      */
     cloudAsmId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetCloudAsmUsersFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetCloudAsmUsersFilterArgs>[] | undefined>;
     /**
      * The OCID of the Named Credential.
      */
-    opcNamedCredentialId?: pulumi.Input<string>;
+    opcNamedCredentialId?: pulumi.Input<string | undefined>;
 }

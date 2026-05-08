@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSessions = oci.Bastion.getSessions({
+ * const testSessions = oci.bastion.getSessions({
  *     bastionId: testBastion.id,
  *     displayName: sessionDisplayName,
  *     sessionId: testSession.id,
@@ -94,7 +94,7 @@ export interface GetSessionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSessions = oci.Bastion.getSessions({
+ * const testSessions = oci.bastion.getSessions({
  *     bastionId: testBastion.id,
  *     displayName: sessionDisplayName,
  *     sessionId: testSession.id,
@@ -124,14 +124,14 @@ export interface GetSessionsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Bastion.GetSessionsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Bastion.GetSessionsFilterArgs>[] | undefined>;
     /**
      * The unique identifier (OCID) of the session in which to list resources.
      */
-    sessionId?: pulumi.Input<string>;
+    sessionId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      */
-    sessionLifecycleState?: pulumi.Input<string>;
+    sessionLifecycleState?: pulumi.Input<string | undefined>;
 }

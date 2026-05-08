@@ -205,7 +205,7 @@ def get_certificate_version(certificate_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate_version = oci.CertificatesManagement.get_certificate_version(certificate_id=test_certificate["id"],
+    test_certificate_version = oci.certificatesmanagement.get_certificate_version(certificate_id=test_certificate["id"],
         certificate_version_number=certificate_version_certificate_version_number)
     ```
 
@@ -233,8 +233,8 @@ def get_certificate_version(certificate_id: Optional[_builtins.str] = None,
         validities=pulumi.get(__ret__, 'validities'),
         version_name=pulumi.get(__ret__, 'version_name'),
         version_number=pulumi.get(__ret__, 'version_number'))
-def get_certificate_version_output(certificate_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   certificate_version_number: Optional[pulumi.Input[_builtins.str]] = None,
+def get_certificate_version_output(certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   certificate_version_number: pulumi.Input[Optional[_builtins.str]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCertificateVersionResult]:
     """
     This data source provides details about a specific Certificate Version resource in Oracle Cloud Infrastructure Certificates Management service.
@@ -247,7 +247,7 @@ def get_certificate_version_output(certificate_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate_version = oci.CertificatesManagement.get_certificate_version(certificate_id=test_certificate["id"],
+    test_certificate_version = oci.certificatesmanagement.get_certificate_version(certificate_id=test_certificate["id"],
         certificate_version_number=certificate_version_certificate_version_number)
     ```
 

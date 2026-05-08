@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalExadataStorageServerOpenAlertHistory = oci.DatabaseManagement.getExternalExadataStorageServerOpenAlertHistory({
+ * const testExternalExadataStorageServerOpenAlertHistory = oci.databasemanagement.getExternalExadataStorageServerOpenAlertHistory({
  *     externalExadataStorageServerId: testExternalExadataStorageServer.id,
  * });
  * ```
@@ -64,7 +64,7 @@ export interface GetExternalExadataStorageServerOpenAlertHistoryResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalExadataStorageServerOpenAlertHistory = oci.DatabaseManagement.getExternalExadataStorageServerOpenAlertHistory({
+ * const testExternalExadataStorageServerOpenAlertHistory = oci.databasemanagement.getExternalExadataStorageServerOpenAlertHistory({
  *     externalExadataStorageServerId: testExternalExadataStorageServer.id,
  * });
  * ```

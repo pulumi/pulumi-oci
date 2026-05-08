@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetAlertPolicyAssociation = oci.DataSafe.getTargetAlertPolicyAssociation({
+ * const testTargetAlertPolicyAssociation = oci.datasafe.getTargetAlertPolicyAssociation({
  *     targetAlertPolicyAssociationId: testTargetAlertPolicyAssociationOciDataSafeTargetAlertPolicyAssociation.id,
  * });
  * ```
@@ -110,7 +110,7 @@ export interface GetTargetAlertPolicyAssociationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetAlertPolicyAssociation = oci.DataSafe.getTargetAlertPolicyAssociation({
+ * const testTargetAlertPolicyAssociation = oci.datasafe.getTargetAlertPolicyAssociation({
  *     targetAlertPolicyAssociationId: testTargetAlertPolicyAssociationOciDataSafeTargetAlertPolicyAssociation.id,
  * });
  * ```

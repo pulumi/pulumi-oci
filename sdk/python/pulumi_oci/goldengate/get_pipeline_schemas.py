@@ -105,7 +105,7 @@ def get_pipeline_schemas(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pipeline_schemas = oci.GoldenGate.get_pipeline_schemas(pipeline_id=test_pipeline["id"],
+    test_pipeline_schemas = oci.goldengate.get_pipeline_schemas(pipeline_id=test_pipeline["id"],
         display_name=pipeline_schema_display_name)
     ```
 
@@ -126,9 +126,9 @@ def get_pipeline_schemas(display_name: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         pipeline_id=pulumi.get(__ret__, 'pipeline_id'),
         pipeline_schema_collections=pulumi.get(__ret__, 'pipeline_schema_collections'))
-def get_pipeline_schemas_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPipelineSchemasFilterArgs', 'GetPipelineSchemasFilterArgsDict']]]]] = None,
-                                pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pipeline_schemas_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPipelineSchemasFilterArgs', 'GetPipelineSchemasFilterArgsDict']]]]] = None,
+                                pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPipelineSchemasResult]:
     """
     This data source provides the list of Pipeline Schemas in Oracle Cloud Infrastructure Golden Gate service.
@@ -141,7 +141,7 @@ def get_pipeline_schemas_output(display_name: Optional[pulumi.Input[Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_pipeline_schemas = oci.GoldenGate.get_pipeline_schemas(pipeline_id=test_pipeline["id"],
+    test_pipeline_schemas = oci.goldengate.get_pipeline_schemas(pipeline_id=test_pipeline["id"],
         display_name=pipeline_schema_display_name)
     ```
 

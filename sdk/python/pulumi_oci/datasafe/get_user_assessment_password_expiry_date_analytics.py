@@ -145,9 +145,9 @@ def get_user_assessment_password_expiry_date_analytics(access_level: Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_password_expiry_date_analytics = oci.DataSafe.get_user_assessment_password_expiry_date_analytics(user_assessment_id=test_user_assessment["id"],
+    test_user_assessment_password_expiry_date_analytics = oci.datasafe.get_user_assessment_password_expiry_date_analytics(user_assessment_id=test_user_assessment["id"],
         access_level=user_assessment_password_expiry_date_analytic_access_level,
-        compartment_id_in_subtree=user_assessment_password_expiry_date_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=user_assessment_password_expiry_date_analytic_compartment_id_in_subtree == "true",
         time_password_expiry_less_than=user_assessment_password_expiry_date_analytic_time_password_expiry_less_than,
         user_category=user_assessment_password_expiry_date_analytic_user_category)
     ```
@@ -178,12 +178,12 @@ def get_user_assessment_password_expiry_date_analytics(access_level: Optional[_b
         user_aggregations=pulumi.get(__ret__, 'user_aggregations'),
         user_assessment_id=pulumi.get(__ret__, 'user_assessment_id'),
         user_category=pulumi.get(__ret__, 'user_category'))
-def get_user_assessment_password_expiry_date_analytics_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                              compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgs', 'GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgsDict']]]]] = None,
-                                                              time_password_expiry_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                              user_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                              user_category: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_user_assessment_password_expiry_date_analytics_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                              compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgs', 'GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgsDict']]]]] = None,
+                                                              time_password_expiry_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                              user_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                              user_category: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserAssessmentPasswordExpiryDateAnalyticsResult]:
     """
     This data source provides the list of User Assessment Password Expiry Date Analytics in Oracle Cloud Infrastructure Data Safe service.
@@ -206,9 +206,9 @@ def get_user_assessment_password_expiry_date_analytics_output(access_level: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_password_expiry_date_analytics = oci.DataSafe.get_user_assessment_password_expiry_date_analytics(user_assessment_id=test_user_assessment["id"],
+    test_user_assessment_password_expiry_date_analytics = oci.datasafe.get_user_assessment_password_expiry_date_analytics(user_assessment_id=test_user_assessment["id"],
         access_level=user_assessment_password_expiry_date_analytic_access_level,
-        compartment_id_in_subtree=user_assessment_password_expiry_date_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=user_assessment_password_expiry_date_analytic_compartment_id_in_subtree == "true",
         time_password_expiry_less_than=user_assessment_password_expiry_date_analytic_time_password_expiry_less_than,
         user_category=user_assessment_password_expiry_date_analytic_user_category)
     ```

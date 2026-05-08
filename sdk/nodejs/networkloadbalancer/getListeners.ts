@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListeners = oci.NetworkLoadBalancer.getListeners({
+ * const testListeners = oci.networkloadbalancer.getListeners({
  *     networkLoadBalancerId: testNetworkLoadBalancer.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetListenersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListeners = oci.NetworkLoadBalancer.getListeners({
+ * const testListeners = oci.networkloadbalancer.getListeners({
  *     networkLoadBalancerId: testNetworkLoadBalancer.id,
  * });
  * ```
@@ -84,7 +84,7 @@ export function getListenersOutput(args: GetListenersOutputArgs, opts?: pulumi.I
  * A collection of arguments for invoking getListeners.
  */
 export interface GetListenersOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.NetworkLoadBalancer.GetListenersFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.NetworkLoadBalancer.GetListenersFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
      */

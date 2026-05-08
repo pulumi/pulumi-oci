@@ -184,66 +184,66 @@ export class RunbookVersion extends pulumi.CustomResource {
  * Input properties used for looking up and filtering RunbookVersion resources.
  */
 export interface RunbookVersionState {
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
      * `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Execution Workflow details.
      * <<<<<<< ours
      */
-    executionWorkflowDetails?: pulumi.Input<inputs.FleetAppsManagement.RunbookVersionExecutionWorkflowDetails>;
+    executionWorkflowDetails?: pulumi.Input<inputs.FleetAppsManagement.RunbookVersionExecutionWorkflowDetails | undefined>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists
      * for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The groups of the runbook.
      */
-    groups?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.RunbookVersionGroup>[]>;
-    isLatest?: pulumi.Input<boolean>;
+    groups?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.RunbookVersionGroup>[] | undefined>;
+    isLatest?: pulumi.Input<boolean | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide
      * actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The name of the task
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Rollback Workflow details.
      */
-    rollbackWorkflowDetails?: pulumi.Input<inputs.FleetAppsManagement.RunbookVersionRollbackWorkflowDetails>;
+    rollbackWorkflowDetails?: pulumi.Input<inputs.FleetAppsManagement.RunbookVersionRollbackWorkflowDetails | undefined>;
     /**
      * The OCID of the resource.
      */
-    runbookId?: pulumi.Input<string>;
+    runbookId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the FleetResource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
      * `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A set of tasks to execute in the runbook.
      * <<<<<<< ours
      */
-    tasks?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.RunbookVersionTask>[]>;
+    tasks?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.RunbookVersionTask>[] | undefined>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -254,7 +254,7 @@ export interface RunbookVersionArgs {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
      * `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Execution Workflow details.
      * <<<<<<< ours
@@ -264,7 +264,7 @@ export interface RunbookVersionArgs {
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists
      * for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The groups of the runbook.
      */
@@ -272,7 +272,7 @@ export interface RunbookVersionArgs {
     /**
      * (Updatable) Rollback Workflow details.
      */
-    rollbackWorkflowDetails?: pulumi.Input<inputs.FleetAppsManagement.RunbookVersionRollbackWorkflowDetails>;
+    rollbackWorkflowDetails?: pulumi.Input<inputs.FleetAppsManagement.RunbookVersionRollbackWorkflowDetails | undefined>;
     /**
      * The OCID of the resource.
      */

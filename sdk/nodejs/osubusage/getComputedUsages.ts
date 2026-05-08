@@ -114,12 +114,12 @@ export interface GetComputedUsagesOutputArgs {
     /**
      * Product part number for Computed Usage .
      */
-    computedProduct?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsubUsage.GetComputedUsagesFilterArgs>[]>;
+    computedProduct?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsubUsage.GetComputedUsagesFilterArgs>[] | undefined>;
     /**
      * Product part number for subscribed service line, called parent product.
      */
-    parentProduct?: pulumi.Input<string>;
+    parentProduct?: pulumi.Input<string | undefined>;
     /**
      * Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
      */
@@ -135,5 +135,5 @@ export interface GetComputedUsagesOutputArgs {
     /**
      * The Oracle Cloud Infrastructure home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
      */
-    xOneOriginRegion?: pulumi.Input<string>;
+    xOneOriginRegion?: pulumi.Input<string | undefined>;
 }

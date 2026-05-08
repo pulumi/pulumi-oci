@@ -120,7 +120,7 @@ def get_cloud_vm_cluster_iorm_config(cloud_vm_cluster_id: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_vm_cluster_iorm_config = oci.Database.get_cloud_vm_cluster_iorm_config(cloud_vm_cluster_id=test_cloud_vm_cluster["id"])
+    test_cloud_vm_cluster_iorm_config = oci.database.get_cloud_vm_cluster_iorm_config(cloud_vm_cluster_id=test_cloud_vm_cluster["id"])
     ```
 
 
@@ -138,7 +138,7 @@ def get_cloud_vm_cluster_iorm_config(cloud_vm_cluster_id: Optional[_builtins.str
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         objective=pulumi.get(__ret__, 'objective'),
         state=pulumi.get(__ret__, 'state'))
-def get_cloud_vm_cluster_iorm_config_output(cloud_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cloud_vm_cluster_iorm_config_output(cloud_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudVmClusterIormConfigResult]:
     """
     This data source provides details about a specific Cloud Vm Cluster Iorm Config resource in Oracle Cloud Infrastructure Database service.
@@ -154,7 +154,7 @@ def get_cloud_vm_cluster_iorm_config_output(cloud_vm_cluster_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_vm_cluster_iorm_config = oci.Database.get_cloud_vm_cluster_iorm_config(cloud_vm_cluster_id=test_cloud_vm_cluster["id"])
+    test_cloud_vm_cluster_iorm_config = oci.database.get_cloud_vm_cluster_iorm_config(cloud_vm_cluster_id=test_cloud_vm_cluster["id"])
     ```
 
 

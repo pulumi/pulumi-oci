@@ -26,8 +26,8 @@ class NamespaceAssociationArgs:
                  log_group_id: pulumi.Input[_builtins.str],
                  namespace: pulumi.Input[_builtins.str],
                  source_name: pulumi.Input[_builtins.str],
-                 association_properties: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceAssociationAssociationPropertyArgs']]]] = None,
-                 is_from_republish: Optional[pulumi.Input[_builtins.bool]] = None):
+                 association_properties: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceAssociationAssociationPropertyArgs']]]] = None,
+                 is_from_republish: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a NamespaceAssociation resource.
 
@@ -119,53 +119,53 @@ class NamespaceAssociationArgs:
 
     @_builtins.property
     @pulumi.getter(name="associationProperties")
-    def association_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceAssociationAssociationPropertyArgs']]]]:
+    def association_properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceAssociationAssociationPropertyArgs']]]]:
         """
         A list of association properties.
         """
         return pulumi.get(self, "association_properties")
 
     @association_properties.setter
-    def association_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceAssociationAssociationPropertyArgs']]]]):
+    def association_properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceAssociationAssociationPropertyArgs']]]]):
         pulumi.set(self, "association_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="isFromRepublish")
-    def is_from_republish(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_from_republish(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         isFromRepublish
         """
         return pulumi.get(self, "is_from_republish")
 
     @is_from_republish.setter
-    def is_from_republish(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_from_republish(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_from_republish", value)
 
 
 @pulumi.input_type
 class _NamespaceAssociationState:
     def __init__(__self__, *,
-                 agent_entity_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 association_properties: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceAssociationAssociationPropertyArgs']]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_type_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_type_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 failure_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_from_republish: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_group_compartment: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 retry_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 source_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_attempted: Optional[pulumi.Input[_builtins.str]] = None):
+                 agent_entity_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 association_properties: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceAssociationAssociationPropertyArgs']]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_type_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_type_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 failure_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_from_republish: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_group_compartment: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 retry_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 source_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_attempted: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NamespaceAssociation resources.
 
@@ -239,184 +239,184 @@ class _NamespaceAssociationState:
 
     @_builtins.property
     @pulumi.getter(name="agentEntityName")
-    def agent_entity_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def agent_entity_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The agent unique identifier.
         """
         return pulumi.get(self, "agent_entity_name")
 
     @agent_entity_name.setter
-    def agent_entity_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def agent_entity_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "agent_entity_name", value)
 
     @_builtins.property
     @pulumi.getter(name="agentId")
-    def agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The agent unique identifier.
         """
         return pulumi.get(self, "agent_id")
 
     @agent_id.setter
-    def agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="associationProperties")
-    def association_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceAssociationAssociationPropertyArgs']]]]:
+    def association_properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceAssociationAssociationPropertyArgs']]]]:
         """
         A list of association properties.
         """
         return pulumi.get(self, "association_properties")
 
     @association_properties.setter
-    def association_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceAssociationAssociationPropertyArgs']]]]):
+    def association_properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NamespaceAssociationAssociationPropertyArgs']]]]):
         pulumi.set(self, "association_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The compartment ID
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="entityId")
-    def entity_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The entity unique identifier.
         """
         return pulumi.get(self, "entity_id")
 
     @entity_id.setter
-    def entity_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_id", value)
 
     @_builtins.property
     @pulumi.getter(name="entityName")
-    def entity_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The entity name.
         """
         return pulumi.get(self, "entity_name")
 
     @entity_name.setter
-    def entity_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_name", value)
 
     @_builtins.property
     @pulumi.getter(name="entityTypeDisplayName")
-    def entity_type_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_type_display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The entity type display name.
         """
         return pulumi.get(self, "entity_type_display_name")
 
     @entity_type_display_name.setter
-    def entity_type_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_type_display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_type_display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="entityTypeName")
-    def entity_type_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_type_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The entity type internal name.
         """
         return pulumi.get(self, "entity_type_name")
 
     @entity_type_name.setter
-    def entity_type_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_type_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_type_name", value)
 
     @_builtins.property
     @pulumi.getter(name="failureMessage")
-    def failure_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def failure_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The failure message.
         """
         return pulumi.get(self, "failure_message")
 
     @failure_message.setter
-    def failure_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def failure_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "failure_message", value)
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The host name.
         """
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter(name="isFromRepublish")
-    def is_from_republish(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_from_republish(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         isFromRepublish
         """
         return pulumi.get(self, "is_from_republish")
 
     @is_from_republish.setter
-    def is_from_republish(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_from_republish(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_from_republish", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleState")
-    def lifecycle_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "lifecycle_state")
 
     @lifecycle_state.setter
-    def lifecycle_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state", value)
 
     @_builtins.property
     @pulumi.getter(name="logGroupCompartment")
-    def log_group_compartment(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def log_group_compartment(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The log group compartment.
         """
         return pulumi.get(self, "log_group_compartment")
 
     @log_group_compartment.setter
-    def log_group_compartment(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def log_group_compartment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "log_group_compartment", value)
 
     @_builtins.property
     @pulumi.getter(name="logGroupId")
-    def log_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def log_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The log group unique identifier.
         """
         return pulumi.get(self, "log_group_id")
 
     @log_group_id.setter
-    def log_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def log_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "log_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="logGroupName")
-    def log_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def log_group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The log group name.
         """
         return pulumi.get(self, "log_group_name")
 
     @log_group_name.setter
-    def log_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def log_group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "log_group_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Logging Analytics namespace used for the request.
 
@@ -427,67 +427,67 @@ class _NamespaceAssociationState:
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="retryCount")
-    def retry_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retry_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of times the association will be attempted before failing.
         """
         return pulumi.get(self, "retry_count")
 
     @retry_count.setter
-    def retry_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retry_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retry_count", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceDisplayName")
-    def source_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The source display name.
         """
         return pulumi.get(self, "source_display_name")
 
     @source_display_name.setter
-    def source_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceName")
-    def source_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The source name.
         """
         return pulumi.get(self, "source_name")
 
     @source_name.setter
-    def source_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_name", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceTypeName")
-    def source_type_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_type_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The source type internal name.
         """
         return pulumi.get(self, "source_type_name")
 
     @source_type_name.setter
-    def source_type_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_type_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_type_name", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastAttempted")
-    def time_last_attempted(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_attempted(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The last attempt date.
         """
         return pulumi.get(self, "time_last_attempted")
 
     @time_last_attempted.setter
-    def time_last_attempted(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_attempted(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_attempted", value)
 
 
@@ -497,13 +497,13 @@ class NamespaceAssociation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 association_properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NamespaceAssociationAssociationPropertyArgs', 'NamespaceAssociationAssociationPropertyArgsDict']]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_from_republish: Optional[pulumi.Input[_builtins.bool]] = None,
-                 log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 association_properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NamespaceAssociationAssociationPropertyArgs', 'NamespaceAssociationAssociationPropertyArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_from_republish: pulumi.Input[Optional[_builtins.bool]] = None,
+                 log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Namespace Association resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -525,7 +525,7 @@ class NamespaceAssociation(pulumi.CustomResource):
             log_group_id=test_log_analytics_log_group["id"],
             namespace=namespace_association_namespace,
             source_name=namespace_association_source_name,
-            is_from_republish=namespace_association_is_from_republish,
+            is_from_republish=namespace_association_is_from_republish == "true",
             association_properties=[{
                 "name": namespace_association_association_properties_name,
                 "patterns": [{
@@ -585,7 +585,7 @@ class NamespaceAssociation(pulumi.CustomResource):
             log_group_id=test_log_analytics_log_group["id"],
             namespace=namespace_association_namespace,
             source_name=namespace_association_source_name,
-            is_from_republish=namespace_association_is_from_republish,
+            is_from_republish=namespace_association_is_from_republish == "true",
             association_properties=[{
                 "name": namespace_association_association_properties_name,
                 "patterns": [{
@@ -620,13 +620,13 @@ class NamespaceAssociation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 association_properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NamespaceAssociationAssociationPropertyArgs', 'NamespaceAssociationAssociationPropertyArgsDict']]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_from_republish: Optional[pulumi.Input[_builtins.bool]] = None,
-                 log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 association_properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NamespaceAssociationAssociationPropertyArgs', 'NamespaceAssociationAssociationPropertyArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_from_republish: pulumi.Input[Optional[_builtins.bool]] = None,
+                 log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -677,27 +677,27 @@ class NamespaceAssociation(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            agent_entity_name: Optional[pulumi.Input[_builtins.str]] = None,
-            agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-            association_properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NamespaceAssociationAssociationPropertyArgs', 'NamespaceAssociationAssociationPropertyArgsDict']]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            entity_id: Optional[pulumi.Input[_builtins.str]] = None,
-            entity_name: Optional[pulumi.Input[_builtins.str]] = None,
-            entity_type_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            entity_type_name: Optional[pulumi.Input[_builtins.str]] = None,
-            failure_message: Optional[pulumi.Input[_builtins.str]] = None,
-            host: Optional[pulumi.Input[_builtins.str]] = None,
-            is_from_republish: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_state: Optional[pulumi.Input[_builtins.str]] = None,
-            log_group_compartment: Optional[pulumi.Input[_builtins.str]] = None,
-            log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            log_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None,
-            retry_count: Optional[pulumi.Input[_builtins.int]] = None,
-            source_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            source_name: Optional[pulumi.Input[_builtins.str]] = None,
-            source_type_name: Optional[pulumi.Input[_builtins.str]] = None,
-            time_last_attempted: Optional[pulumi.Input[_builtins.str]] = None) -> 'NamespaceAssociation':
+            agent_entity_name: pulumi.Input[Optional[_builtins.str]] = None,
+            agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            association_properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NamespaceAssociationAssociationPropertyArgs', 'NamespaceAssociationAssociationPropertyArgsDict']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_name: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_type_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_type_name: pulumi.Input[Optional[_builtins.str]] = None,
+            failure_message: pulumi.Input[Optional[_builtins.str]] = None,
+            host: pulumi.Input[Optional[_builtins.str]] = None,
+            is_from_republish: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            log_group_compartment: pulumi.Input[Optional[_builtins.str]] = None,
+            log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            log_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            retry_count: pulumi.Input[Optional[_builtins.int]] = None,
+            source_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            source_name: pulumi.Input[Optional[_builtins.str]] = None,
+            source_type_name: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_attempted: pulumi.Input[Optional[_builtins.str]] = None) -> 'NamespaceAssociation':
         """
         Get an existing NamespaceAssociation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

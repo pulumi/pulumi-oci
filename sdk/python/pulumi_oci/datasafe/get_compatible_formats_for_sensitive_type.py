@@ -107,9 +107,9 @@ def get_compatible_formats_for_sensitive_type(access_level: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_compatible_formats_for_sensitive_type = oci.DataSafe.get_compatible_formats_for_sensitive_type(compartment_id=compartment_id,
+    test_compatible_formats_for_sensitive_type = oci.datasafe.get_compatible_formats_for_sensitive_type(compartment_id=compartment_id,
         access_level=compatible_formats_for_sensitive_type_access_level,
-        compartment_id_in_subtree=compatible_formats_for_sensitive_type_compartment_id_in_subtree)
+        compartment_id_in_subtree=compatible_formats_for_sensitive_type_compartment_id_in_subtree == "true")
     ```
 
 
@@ -130,9 +130,9 @@ def get_compatible_formats_for_sensitive_type(access_level: Optional[_builtins.s
         compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
         formats_for_sensitive_types=pulumi.get(__ret__, 'formats_for_sensitive_types'),
         id=pulumi.get(__ret__, 'id'))
-def get_compatible_formats_for_sensitive_type_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+def get_compatible_formats_for_sensitive_type_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCompatibleFormatsForSensitiveTypeResult]:
     """
     This data source provides details about a specific Compatible Formats For Sensitive Type resource in Oracle Cloud Infrastructure Data Safe service.
@@ -148,9 +148,9 @@ def get_compatible_formats_for_sensitive_type_output(access_level: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_compatible_formats_for_sensitive_type = oci.DataSafe.get_compatible_formats_for_sensitive_type(compartment_id=compartment_id,
+    test_compatible_formats_for_sensitive_type = oci.datasafe.get_compatible_formats_for_sensitive_type(compartment_id=compartment_id,
         access_level=compatible_formats_for_sensitive_type_access_level,
-        compartment_id_in_subtree=compatible_formats_for_sensitive_type_compartment_id_in_subtree)
+        compartment_id_in_subtree=compatible_formats_for_sensitive_type_compartment_id_in_subtree == "true")
     ```
 
 

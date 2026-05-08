@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCatalogs = oci.DataCatalog.getCatalogs({
+ * const testCatalogs = oci.datacatalog.getCatalogs({
  *     compartmentId: compartmentId,
  *     displayName: catalogDisplayName,
  *     state: catalogState,
@@ -90,7 +90,7 @@ export interface GetCatalogsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCatalogs = oci.DataCatalog.getCatalogs({
+ * const testCatalogs = oci.datacatalog.getCatalogs({
  *     compartmentId: compartmentId,
  *     displayName: catalogDisplayName,
  *     state: catalogState,
@@ -118,10 +118,10 @@ export interface GetCatalogsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataCatalog.GetCatalogsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataCatalog.GetCatalogsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -95,7 +95,7 @@ def get_scheduled_action_params(filters: Optional[Sequence[Union['GetScheduledAc
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_action_params = oci.Database.get_scheduled_action_params(type=scheduled_action_param_type)
+    test_scheduled_action_params = oci.database.get_scheduled_action_params(type=scheduled_action_param_type)
     ```
 
 
@@ -112,8 +112,8 @@ def get_scheduled_action_params(filters: Optional[Sequence[Union['GetScheduledAc
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         type=pulumi.get(__ret__, 'type'))
-def get_scheduled_action_params_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetScheduledActionParamsFilterArgs', 'GetScheduledActionParamsFilterArgsDict']]]]] = None,
-                                       type: Optional[pulumi.Input[_builtins.str]] = None,
+def get_scheduled_action_params_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetScheduledActionParamsFilterArgs', 'GetScheduledActionParamsFilterArgsDict']]]]] = None,
+                                       type: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetScheduledActionParamsResult]:
     """
     This data source provides the list of Scheduled Action Params in Oracle Cloud Infrastructure Database service.
@@ -126,7 +126,7 @@ def get_scheduled_action_params_output(filters: Optional[pulumi.Input[Optional[S
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduled_action_params = oci.Database.get_scheduled_action_params(type=scheduled_action_param_type)
+    test_scheduled_action_params = oci.database.get_scheduled_action_params(type=scheduled_action_param_type)
     ```
 
 

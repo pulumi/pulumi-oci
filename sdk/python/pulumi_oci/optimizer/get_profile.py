@@ -225,7 +225,7 @@ def get_profile(profile_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_profile = oci.Optimizer.get_profile(profile_id=test_profile_oci_optimizer_profile["id"])
+    test_profile = oci.optimizer.get_profile(profile_id=test_profile_oci_optimizer_profile["id"])
     ```
 
 
@@ -252,7 +252,7 @@ def get_profile(profile_id: Optional[_builtins.str] = None,
         target_tags=pulumi.get(__ret__, 'target_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_profile_output(profile_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_profile_output(profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProfileResult]:
     """
     This data source provides details about a specific Profile resource in Oracle Cloud Infrastructure Optimizer service.
@@ -265,7 +265,7 @@ def get_profile_output(profile_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_profile = oci.Optimizer.get_profile(profile_id=test_profile_oci_optimizer_profile["id"])
+    test_profile = oci.optimizer.get_profile(profile_id=test_profile_oci_optimizer_profile["id"])
     ```
 
 

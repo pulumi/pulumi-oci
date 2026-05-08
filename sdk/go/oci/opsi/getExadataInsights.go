@@ -34,10 +34,10 @@ import (
 //				CompartmentId:             pulumi.StringRef(compartmentId),
 //				CompartmentIdInSubtree:    pulumi.BoolRef(exadataInsightCompartmentIdInSubtree),
 //				EnterpriseManagerBridgeId: pulumi.StringRef(testEnterpriseManagerBridge.Id),
-//				ExadataTypes:              exadataInsightExadataType,
+//				ExadataTypes:              pulumi.ToArray(exadataInsightExadataType),
 //				Id:                        pulumi.StringRef(exadataInsightId),
-//				States:                    exadataInsightState,
-//				Statuses:                  exadataInsightStatus,
+//				States:                    pulumi.ToArray(exadataInsightState),
+//				Statuses:                  pulumi.ToArray(exadataInsightStatus),
 //			}, nil)
 //			if err != nil {
 //				return err

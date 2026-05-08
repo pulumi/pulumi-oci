@@ -23,8 +23,8 @@ class LogAnalyticsImportCustomContentArgs:
     def __init__(__self__, *,
                  import_custom_content_file: pulumi.Input[_builtins.str],
                  namespace: pulumi.Input[_builtins.str],
-                 expect: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_overwrite: Optional[pulumi.Input[_builtins.bool]] = None):
+                 expect: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_overwrite: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a LogAnalyticsImportCustomContent resource.
 
@@ -70,7 +70,7 @@ class LogAnalyticsImportCustomContentArgs:
 
     @_builtins.property
     @pulumi.getter
-    def expect(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expect(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
 
@@ -81,34 +81,34 @@ class LogAnalyticsImportCustomContentArgs:
         return pulumi.get(self, "expect")
 
     @expect.setter
-    def expect(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expect(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expect", value)
 
     @_builtins.property
     @pulumi.getter(name="isOverwrite")
-    def is_overwrite(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_overwrite(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A flag indicating whether or not to overwrite existing content if a conflict is found during import content operation.
         """
         return pulumi.get(self, "is_overwrite")
 
     @is_overwrite.setter
-    def is_overwrite(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_overwrite(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_overwrite", value)
 
 
 @pulumi.input_type
 class _LogAnalyticsImportCustomContentState:
     def __init__(__self__, *,
-                 change_lists: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsImportCustomContentChangeListArgs']]]] = None,
-                 content_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 expect: Optional[pulumi.Input[_builtins.str]] = None,
-                 field_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 import_custom_content_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_overwrite: Optional[pulumi.Input[_builtins.bool]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 parser_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 source_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 change_lists: pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsImportCustomContentChangeListArgs']]]] = None,
+                 content_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 expect: pulumi.Input[Optional[_builtins.str]] = None,
+                 field_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 import_custom_content_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_overwrite: pulumi.Input[Optional[_builtins.bool]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 parser_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 source_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering LogAnalyticsImportCustomContent resources.
 
@@ -147,31 +147,31 @@ class _LogAnalyticsImportCustomContentState:
 
     @_builtins.property
     @pulumi.getter(name="changeLists")
-    def change_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsImportCustomContentChangeListArgs']]]]:
+    def change_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsImportCustomContentChangeListArgs']]]]:
         """
         LogAnalyticsImportCustomChangeList
         """
         return pulumi.get(self, "change_lists")
 
     @change_lists.setter
-    def change_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsImportCustomContentChangeListArgs']]]]):
+    def change_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsImportCustomContentChangeListArgs']]]]):
         pulumi.set(self, "change_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="contentName")
-    def content_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The content name.
         """
         return pulumi.get(self, "content_name")
 
     @content_name.setter
-    def content_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def expect(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def expect(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
 
@@ -182,79 +182,79 @@ class _LogAnalyticsImportCustomContentState:
         return pulumi.get(self, "expect")
 
     @expect.setter
-    def expect(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def expect(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "expect", value)
 
     @_builtins.property
     @pulumi.getter(name="fieldNames")
-    def field_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def field_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The field names.
         """
         return pulumi.get(self, "field_names")
 
     @field_names.setter
-    def field_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def field_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "field_names", value)
 
     @_builtins.property
     @pulumi.getter(name="importCustomContentFile")
-    def import_custom_content_file(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def import_custom_content_file(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Path to the file to upload which contains the custom content.
         """
         return pulumi.get(self, "import_custom_content_file")
 
     @import_custom_content_file.setter
-    def import_custom_content_file(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def import_custom_content_file(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "import_custom_content_file", value)
 
     @_builtins.property
     @pulumi.getter(name="isOverwrite")
-    def is_overwrite(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_overwrite(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A flag indicating whether or not to overwrite existing content if a conflict is found during import content operation.
         """
         return pulumi.get(self, "is_overwrite")
 
     @is_overwrite.setter
-    def is_overwrite(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_overwrite(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_overwrite", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="parserNames")
-    def parser_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def parser_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The parser names.
         """
         return pulumi.get(self, "parser_names")
 
     @parser_names.setter
-    def parser_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def parser_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "parser_names", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceNames")
-    def source_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def source_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The source names.
         """
         return pulumi.get(self, "source_names")
 
     @source_names.setter
-    def source_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def source_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "source_names", value)
 
 
@@ -264,10 +264,10 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 expect: Optional[pulumi.Input[_builtins.str]] = None,
-                 import_custom_content_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_overwrite: Optional[pulumi.Input[_builtins.bool]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
+                 expect: pulumi.Input[Optional[_builtins.str]] = None,
+                 import_custom_content_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_overwrite: pulumi.Input[Optional[_builtins.bool]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Log Analytics Import Custom Content resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -287,7 +287,7 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
             import_custom_content_file=log_analytics_import_custom_content_import_custom_content_file,
             namespace=log_analytics_import_custom_content_namespace,
             expect=log_analytics_import_custom_content_expect,
-            is_overwrite=log_analytics_import_custom_content_is_overwrite)
+            is_overwrite=log_analytics_import_custom_content_is_overwrite == "true")
         ```
 
         ## Import
@@ -330,7 +330,7 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
             import_custom_content_file=log_analytics_import_custom_content_import_custom_content_file,
             namespace=log_analytics_import_custom_content_namespace,
             expect=log_analytics_import_custom_content_expect,
-            is_overwrite=log_analytics_import_custom_content_is_overwrite)
+            is_overwrite=log_analytics_import_custom_content_is_overwrite == "true")
         ```
 
         ## Import
@@ -353,10 +353,10 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 expect: Optional[pulumi.Input[_builtins.str]] = None,
-                 import_custom_content_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_overwrite: Optional[pulumi.Input[_builtins.bool]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
+                 expect: pulumi.Input[Optional[_builtins.str]] = None,
+                 import_custom_content_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_overwrite: pulumi.Input[Optional[_builtins.bool]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -389,15 +389,15 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            change_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsImportCustomContentChangeListArgs', 'LogAnalyticsImportCustomContentChangeListArgsDict']]]]] = None,
-            content_name: Optional[pulumi.Input[_builtins.str]] = None,
-            expect: Optional[pulumi.Input[_builtins.str]] = None,
-            field_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            import_custom_content_file: Optional[pulumi.Input[_builtins.str]] = None,
-            is_overwrite: Optional[pulumi.Input[_builtins.bool]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None,
-            parser_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            source_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'LogAnalyticsImportCustomContent':
+            change_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsImportCustomContentChangeListArgs', 'LogAnalyticsImportCustomContentChangeListArgsDict']]]]] = None,
+            content_name: pulumi.Input[Optional[_builtins.str]] = None,
+            expect: pulumi.Input[Optional[_builtins.str]] = None,
+            field_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            import_custom_content_file: pulumi.Input[Optional[_builtins.str]] = None,
+            is_overwrite: pulumi.Input[Optional[_builtins.bool]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            parser_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            source_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'LogAnalyticsImportCustomContent':
         """
         Get an existing LogAnalyticsImportCustomContent resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

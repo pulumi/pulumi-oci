@@ -324,136 +324,136 @@ export interface VmClusterAddVirtualNetworkState {
     /**
      * The name of the availability domain that the VM cluster is located in.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
      */
-    cloudAutomationUpdateDetails?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterAddVirtualNetworkCloudAutomationUpdateDetail>[]>;
+    cloudAutomationUpdateDetails?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterAddVirtualNetworkCloudAutomationUpdateDetail>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The compute model of the Autonomous AI Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      */
-    computeModel?: pulumi.Input<string>;
+    computeModel?: pulumi.Input<string | undefined>;
     /**
      * The number of enabled CPU cores.
      */
-    cpusEnabled?: pulumi.Input<number>;
+    cpusEnabled?: pulumi.Input<number | undefined>;
     /**
      * Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
      */
-    dataCollectionOptions?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterAddVirtualNetworkDataCollectionOption>[]>;
+    dataCollectionOptions?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterAddVirtualNetworkDataCollectionOption>[] | undefined>;
     /**
      * The percentage assigned to DATA storage (user data and database files). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
      */
-    dataStoragePercentage?: pulumi.Input<number>;
+    dataStoragePercentage?: pulumi.Input<number | undefined>;
     /**
      * Size of the DATA disk group in GBs.
      */
-    dataStorageSizeInGb?: pulumi.Input<number>;
+    dataStorageSizeInGb?: pulumi.Input<number | undefined>;
     /**
      * Size, in terabytes, of the DATA disk group.
      */
-    dataStorageSizeInTbs?: pulumi.Input<number>;
+    dataStorageSizeInTbs?: pulumi.Input<number | undefined>;
     /**
      * The local node storage allocated in GBs.
      */
-    dbNodeStorageSizeInGbs?: pulumi.Input<number>;
+    dbNodeStorageSizeInGbs?: pulumi.Input<number | undefined>;
     /**
      * The list of Exacc DB servers for the cluster to be added.
      */
-    dbServers?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterAddVirtualNetworkDbServer>[]>;
+    dbServers?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterAddVirtualNetworkDbServer>[] | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
-    exadataInfrastructureId?: pulumi.Input<string>;
+    exadataInfrastructureId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
      */
-    exascaleDbStorageVaultId?: pulumi.Input<string>;
+    exascaleDbStorageVaultId?: pulumi.Input<string | undefined>;
     /**
      * Details of the file system configuration of the VM cluster.
      */
-    fileSystemConfigurationDetails?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterAddVirtualNetworkFileSystemConfigurationDetail>[]>;
+    fileSystemConfigurationDetails?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterAddVirtualNetworkFileSystemConfigurationDetail>[] | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The Oracle Grid Infrastructure software version for the VM cluster.
      */
-    giVersion?: pulumi.Input<string>;
+    giVersion?: pulumi.Input<string | undefined>;
     /**
      * If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
      */
-    isLocalBackupEnabled?: pulumi.Input<boolean>;
+    isLocalBackupEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * If true, sparse disk group is configured for the VM cluster. If false, sparse disk group is not created.
      */
-    isSparseDiskgroupEnabled?: pulumi.Input<boolean>;
+    isSparseDiskgroupEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
      */
-    lastPatchHistoryEntryId?: pulumi.Input<string>;
+    lastPatchHistoryEntryId?: pulumi.Input<string | undefined>;
     /**
      * The Oracle license model that applies to the VM cluster. The default is LICENSE_INCLUDED.
      */
-    licenseModel?: pulumi.Input<string>;
+    licenseModel?: pulumi.Input<string | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The memory allocated in GBs.
      */
-    memorySizeInGbs?: pulumi.Input<number>;
-    ocpusEnabled?: pulumi.Input<number>;
+    memorySizeInGbs?: pulumi.Input<number | undefined>;
+    ocpusEnabled?: pulumi.Input<number | undefined>;
     /**
      * The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
      */
-    recoStoragePercentage?: pulumi.Input<number>;
+    recoStoragePercentage?: pulumi.Input<number | undefined>;
     /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      */
-    shape?: pulumi.Input<string>;
+    shape?: pulumi.Input<string | undefined>;
     /**
      * The percentage assigned to SPARSE storage (Exadata snapshots). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
      */
-    sparseStoragePercentage?: pulumi.Input<number>;
+    sparseStoragePercentage?: pulumi.Input<number | undefined>;
     /**
      * The public key portion of one or more key pairs used for SSH access to the VM cluster.
      */
-    sshPublicKeys?: pulumi.Input<pulumi.Input<string>[]>;
+    sshPublicKeys?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The current state of the VM cluster.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
      */
-    storageManagementType?: pulumi.Input<string>;
+    storageManagementType?: pulumi.Input<string | undefined>;
     /**
      * Operating system version of the image.
      */
-    systemVersion?: pulumi.Input<string>;
+    systemVersion?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the VM cluster was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
-    timeZone?: pulumi.Input<string>;
+    timeZone?: pulumi.Input<string | undefined>;
     /**
      * The VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
@@ -461,15 +461,15 @@ export interface VmClusterAddVirtualNetworkState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vmClusterId?: pulumi.Input<string>;
+    vmClusterId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
      */
-    vmClusterNetworkId?: pulumi.Input<string>;
+    vmClusterNetworkId?: pulumi.Input<string | undefined>;
     /**
      * The vmcluster type for the VM cluster/Cloud VM cluster.
      */
-    vmClusterType?: pulumi.Input<string>;
+    vmClusterType?: pulumi.Input<string | undefined>;
 }
 
 /**

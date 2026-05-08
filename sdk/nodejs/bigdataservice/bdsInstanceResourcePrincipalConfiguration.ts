@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *     bdsInstanceId: testBdsInstance.id,
  *     clusterAdminPassword: bdsInstanceResourcePrincipalConfigurationClusterAdminPassword,
  *     displayName: bdsInstanceResourcePrincipalConfigurationDisplayName,
- *     sessionTokenLifeSpanDurationInHours: bdsInstanceResourcePrincipalConfigurationSessionTokenLifeSpanDurationInHours,
+ *     sessionTokenLifeSpanDurationInHours: Number(bdsInstanceResourcePrincipalConfigurationSessionTokenLifeSpanDurationInHours),
  * });
  * ```
  *
@@ -162,43 +162,43 @@ export interface BdsInstanceResourcePrincipalConfigurationState {
     /**
      * The OCID of the cluster.
      */
-    bdsInstanceId?: pulumi.Input<string>;
+    bdsInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Base-64 encoded Cluster Admin Password for cluster admin user.
      */
-    clusterAdminPassword?: pulumi.Input<string>;
+    clusterAdminPassword?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Force Refresh Resource Principal. Could be set to any integer value.
      */
-    forceRefreshResourcePrincipalTrigger?: pulumi.Input<number>;
+    forceRefreshResourcePrincipalTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Life span in hours for the resource principal session token.
      */
-    sessionTokenLifeSpanDurationInHours?: pulumi.Input<number>;
+    sessionTokenLifeSpanDurationInHours?: pulumi.Input<number | undefined>;
     /**
      * The state of the ResourcePrincipalConfiguration.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The time the ResourcePrincipalConfiguration was created, shown as an RFC 3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * the time the resource principal session token will expired, shown as an rfc 3339 formatted datetime string.
      */
-    timeTokenExpiry?: pulumi.Input<string>;
+    timeTokenExpiry?: pulumi.Input<string | undefined>;
     /**
      * the time the resource principal session token was refreshed, shown as an rfc 3339 formatted datetime string.
      */
-    timeTokenRefreshed?: pulumi.Input<string>;
+    timeTokenRefreshed?: pulumi.Input<string | undefined>;
     /**
      * The time the ResourcePrincipalConfiguration was updated, shown as an RFC 3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -220,9 +220,9 @@ export interface BdsInstanceResourcePrincipalConfigurationArgs {
     /**
      * (Updatable) An optional property when incremented triggers Force Refresh Resource Principal. Could be set to any integer value.
      */
-    forceRefreshResourcePrincipalTrigger?: pulumi.Input<number>;
+    forceRefreshResourcePrincipalTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Life span in hours for the resource principal session token.
      */
-    sessionTokenLifeSpanDurationInHours?: pulumi.Input<number>;
+    sessionTokenLifeSpanDurationInHours?: pulumi.Input<number | undefined>;
 }

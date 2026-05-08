@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbNode = oci.Database.getDbNode({
+ * const testDbNode = oci.database.getDbNode({
  *     dbNodeId: dbNodeId,
  * });
  * ```
@@ -178,7 +178,7 @@ export interface GetDbNodeResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbNode = oci.Database.getDbNode({
+ * const testDbNode = oci.database.getDbNode({
  *     dbNodeId: dbNodeId,
  * });
  * ```

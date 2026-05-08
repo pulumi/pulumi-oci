@@ -366,7 +366,7 @@ def get_domains_my_pending_approval(authorization: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_my_pending_approval = oci.Identity.get_domains_my_pending_approval(idcs_endpoint=test_domain["url"],
+    test_my_pending_approval = oci.identity.get_domains_my_pending_approval(idcs_endpoint=test_domain["url"],
         my_pending_approval_id=test_my_pending_approval_oci_identity_domains_my_pending_approval["id"],
         authorization=my_pending_approval_authorization,
         resource_type_schema_version=my_pending_approval_resource_type_schema_version)
@@ -414,10 +414,10 @@ def get_domains_my_pending_approval(authorization: Optional[_builtins.str] = Non
         status=pulumi.get(__ret__, 'status'),
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'))
-def get_domains_my_pending_approval_output(authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                           my_pending_approval_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                           resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_my_pending_approval_output(authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                           my_pending_approval_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                           resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsMyPendingApprovalResult]:
     """
     This data source provides details about a specific My Pending Approval resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -430,7 +430,7 @@ def get_domains_my_pending_approval_output(authorization: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_my_pending_approval = oci.Identity.get_domains_my_pending_approval(idcs_endpoint=test_domain["url"],
+    test_my_pending_approval = oci.identity.get_domains_my_pending_approval(idcs_endpoint=test_domain["url"],
         my_pending_approval_id=test_my_pending_approval_oci_identity_domains_my_pending_approval["id"],
         authorization=my_pending_approval_authorization,
         resource_type_schema_version=my_pending_approval_resource_type_schema_version)

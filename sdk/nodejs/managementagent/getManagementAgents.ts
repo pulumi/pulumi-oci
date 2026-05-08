@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgents = oci.ManagementAgent.getManagementAgents({
+ * const testManagementAgents = oci.managementagent.getManagementAgents({
  *     compartmentId: compartmentId,
  *     accessLevel: managementAgentAccessLevel,
  *     availabilityStatus: managementAgentAvailabilityStatus,
- *     compartmentIdInSubtree: managementAgentCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: managementAgentCompartmentIdInSubtree === "true",
  *     dataSourceNames: testManagementAgentDataSource.name,
  *     dataSourceType: managementAgentDataSourceType,
  *     displayName: managementAgentDisplayName,
@@ -31,7 +31,7 @@ import * as utilities from "../utilities";
  *     hostId: testHost.id,
  *     waitForHostId: 10,
  *     installType: managementAgentInstallType,
- *     isCustomerDeployed: managementAgentIsCustomerDeployed,
+ *     isCustomerDeployed: managementAgentIsCustomerDeployed === "true",
  *     platformTypes: managementAgentPlatformType,
  *     pluginNames: managementAgentPluginName,
  *     state: managementAgentState,
@@ -206,11 +206,11 @@ export interface GetManagementAgentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgents = oci.ManagementAgent.getManagementAgents({
+ * const testManagementAgents = oci.managementagent.getManagementAgents({
  *     compartmentId: compartmentId,
  *     accessLevel: managementAgentAccessLevel,
  *     availabilityStatus: managementAgentAvailabilityStatus,
- *     compartmentIdInSubtree: managementAgentCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: managementAgentCompartmentIdInSubtree === "true",
  *     dataSourceNames: testManagementAgentDataSource.name,
  *     dataSourceType: managementAgentDataSourceType,
  *     displayName: managementAgentDisplayName,
@@ -218,7 +218,7 @@ export interface GetManagementAgentsResult {
  *     hostId: testHost.id,
  *     waitForHostId: 10,
  *     installType: managementAgentInstallType,
- *     isCustomerDeployed: managementAgentIsCustomerDeployed,
+ *     isCustomerDeployed: managementAgentIsCustomerDeployed === "true",
  *     platformTypes: managementAgentPlatformType,
  *     pluginNames: managementAgentPluginName,
  *     state: managementAgentState,
@@ -256,11 +256,11 @@ export interface GetManagementAgentsOutputArgs {
     /**
      * When the value is "ACCESSIBLE", insufficient permissions for a compartment will filter out resources in that compartment without rejecting the request.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * Filter to return only Management Agents in the particular availability status.
      */
-    availabilityStatus?: pulumi.Input<string>;
+    availabilityStatus?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment to which a request will be scoped.
      */
@@ -268,54 +268,54 @@ export interface GetManagementAgentsOutputArgs {
     /**
      * if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * Unique name of the dataSource.
      */
-    dataSourceNames?: pulumi.Input<pulumi.Input<string>[]>;
+    dataSourceNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The type of the dataSource.
      */
-    dataSourceType?: pulumi.Input<string>;
+    dataSourceType?: pulumi.Input<string | undefined>;
     /**
      * Filter to return only Management Agents having the particular display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.GetManagementAgentsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.GetManagementAgentsFilterArgs>[] | undefined>;
     /**
      * Filter to return only results having the particular gatewayId.
      */
-    gatewayIds?: pulumi.Input<pulumi.Input<string>[]>;
+    gatewayIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Filter to return only Management Agents having the particular agent host id.
      */
-    hostId?: pulumi.Input<string>;
+    hostId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
      */
-    installType?: pulumi.Input<string>;
+    installType?: pulumi.Input<string | undefined>;
     /**
      * true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
      */
-    isCustomerDeployed?: pulumi.Input<boolean>;
+    isCustomerDeployed?: pulumi.Input<boolean | undefined>;
     /**
      * Array of PlatformTypes to return only results having the particular platform types. Example: ["LINUX"]
      */
-    platformTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    platformTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Array of pluginName to return only Management Agents having the particular Plugins installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed. Example: ["PluginA"]
      */
-    pluginNames?: pulumi.Input<pulumi.Input<string>[]>;
+    pluginNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Filter to return only Management Agents in the particular lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Array of versions to return only Management Agents having the particular agent versions. Example: ["202020.0101","210201.0513"]
      */
-    versions?: pulumi.Input<pulumi.Input<string>[]>;
+    versions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * When hostId argument is set, the data source will wait for the given period of time (in minutes) for this hostId to become available. This can be used when compute instance with Management Agent has been recently created.
      */
-    waitForHostId?: pulumi.Input<number>;
+    waitForHostId?: pulumi.Input<number | undefined>;
 }

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAgentInstallers = oci.Jms.getAgentInstallers({
+ * const testAgentInstallers = oci.jms.getAgentInstallers({
  *     compartmentId: compartmentId,
  *     fleetId: testFleet.id,
  *     osFamily: agentInstallerOsFamily,
@@ -95,7 +95,7 @@ export interface GetAgentInstallersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAgentInstallers = oci.Jms.getAgentInstallers({
+ * const testAgentInstallers = oci.jms.getAgentInstallers({
  *     compartmentId: compartmentId,
  *     fleetId: testFleet.id,
  *     osFamily: agentInstallerOsFamily,
@@ -122,18 +122,18 @@ export interface GetAgentInstallersOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetAgentInstallersFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetAgentInstallersFilterArgs>[] | undefined>;
     /**
      * The ID of the Fleet.
      */
-    fleetId?: pulumi.Input<string>;
+    fleetId?: pulumi.Input<string | undefined>;
     /**
      * The OS family for the agent installer.
      */
-    osFamily?: pulumi.Input<string>;
+    osFamily?: pulumi.Input<string | undefined>;
     /**
      * The platform architecture for the agent installer.
      */
-    platformArchitecture?: pulumi.Input<string>;
+    platformArchitecture?: pulumi.Input<string | undefined>;
 }

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerInstances = oci.ContainerInstances.getContainerInstances({
+ * const testContainerInstances = oci.containerinstances.getContainerInstances({
  *     compartmentId: compartmentId,
  *     availabilityDomain: containerInstanceAvailabilityDomain,
  *     displayName: containerInstanceDisplayName,
@@ -100,7 +100,7 @@ export interface GetContainerInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerInstances = oci.ContainerInstances.getContainerInstances({
+ * const testContainerInstances = oci.containerinstances.getContainerInstances({
  *     compartmentId: compartmentId,
  *     availabilityDomain: containerInstanceAvailabilityDomain,
  *     displayName: containerInstanceDisplayName,
@@ -126,7 +126,7 @@ export interface GetContainerInstancesOutputArgs {
     /**
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
@@ -134,10 +134,10 @@ export interface GetContainerInstancesOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ContainerInstances.GetContainerInstancesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ContainerInstances.GetContainerInstancesFilterArgs>[] | undefined>;
     /**
      * A filter to only return resources that match the given lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

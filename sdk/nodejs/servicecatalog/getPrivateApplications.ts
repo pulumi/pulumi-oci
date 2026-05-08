@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPrivateApplications = oci.ServiceCatalog.getPrivateApplications({
+ * const testPrivateApplications = oci.servicecatalog.getPrivateApplications({
  *     compartmentId: compartmentId,
  *     displayName: privateApplicationDisplayName,
  *     privateApplicationId: testPrivateApplication.id,
@@ -87,7 +87,7 @@ export interface GetPrivateApplicationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPrivateApplications = oci.ServiceCatalog.getPrivateApplications({
+ * const testPrivateApplications = oci.servicecatalog.getPrivateApplications({
  *     compartmentId: compartmentId,
  *     displayName: privateApplicationDisplayName,
  *     privateApplicationId: testPrivateApplication.id,
@@ -115,10 +115,10 @@ export interface GetPrivateApplicationsOutputArgs {
     /**
      * Exact match name filter.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ServiceCatalog.GetPrivateApplicationsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ServiceCatalog.GetPrivateApplicationsFilterArgs>[] | undefined>;
     /**
      * The unique identifier for the private application.
      */
-    privateApplicationId?: pulumi.Input<string>;
+    privateApplicationId?: pulumi.Input<string | undefined>;
 }

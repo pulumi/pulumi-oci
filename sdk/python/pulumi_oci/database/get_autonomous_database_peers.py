@@ -95,7 +95,7 @@ def get_autonomous_database_peers(autonomous_database_id: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_peers = oci.Database.get_autonomous_database_peers(autonomous_database_id=test_autonomous_database["id"])
+    test_autonomous_database_peers = oci.database.get_autonomous_database_peers(autonomous_database_id=test_autonomous_database["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_autonomous_database_peers(autonomous_database_id: Optional[_builtins.str
         autonomous_database_peer_collections=pulumi.get(__ret__, 'autonomous_database_peer_collections'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_autonomous_database_peers_output(autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousDatabasePeersFilterArgs', 'GetAutonomousDatabasePeersFilterArgsDict']]]]] = None,
+def get_autonomous_database_peers_output(autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousDatabasePeersFilterArgs', 'GetAutonomousDatabasePeersFilterArgsDict']]]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabasePeersResult]:
     """
     This data source provides the list of Autonomous Database Peers in Oracle Cloud Infrastructure Database service.
@@ -126,7 +126,7 @@ def get_autonomous_database_peers_output(autonomous_database_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_peers = oci.Database.get_autonomous_database_peers(autonomous_database_id=test_autonomous_database["id"])
+    test_autonomous_database_peers = oci.database.get_autonomous_database_peers(autonomous_database_id=test_autonomous_database["id"])
     ```
 
 

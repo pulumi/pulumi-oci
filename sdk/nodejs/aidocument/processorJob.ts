@@ -43,13 +43,13 @@ import * as utilities from "../utilities";
  *         documentType: processorJobProcessorConfigDocumentType,
  *         features: [{
  *             featureType: processorJobProcessorConfigFeaturesFeatureType,
- *             generateSearchablePdf: processorJobProcessorConfigFeaturesGenerateSearchablePdf,
- *             maxResults: processorJobProcessorConfigFeaturesMaxResults,
+ *             generateSearchablePdf: processorJobProcessorConfigFeaturesGenerateSearchablePdf === "true",
+ *             maxResults: Number(processorJobProcessorConfigFeaturesMaxResults),
  *             modelId: testModel.id,
- *             selectionMarkDetection: processorJobProcessorConfigFeaturesSelectionMarkDetection,
+ *             selectionMarkDetection: processorJobProcessorConfigFeaturesSelectionMarkDetection === "true",
  *             tenancyId: testTenancy.id,
  *         }],
- *         isZipOutputEnabled: processorJobProcessorConfigIsZipOutputEnabled,
+ *         isZipOutputEnabled: processorJobProcessorConfigIsZipOutputEnabled === "true",
  *         language: processorJobProcessorConfigLanguage,
  *         modelId: testModel.id,
  *         normalizationFields: [{
@@ -205,47 +205,47 @@ export interface ProcessorJobState {
     /**
      * The compartment identifier.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The display name of the processor job.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The location of the inputs.
      */
-    inputLocation?: pulumi.Input<inputs.AiDocument.ProcessorJobInputLocation>;
+    inputLocation?: pulumi.Input<inputs.AiDocument.ProcessorJobInputLocation | undefined>;
     /**
      * The detailed status of FAILED state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The object storage location where to store analysis results.
      */
-    outputLocation?: pulumi.Input<inputs.AiDocument.ProcessorJobOutputLocation>;
+    outputLocation?: pulumi.Input<inputs.AiDocument.ProcessorJobOutputLocation | undefined>;
     /**
      * How much progress the operation has made, compared to the total amount of work to be performed.
      */
-    percentComplete?: pulumi.Input<number>;
+    percentComplete?: pulumi.Input<number | undefined>;
     /**
      * The configuration of a processor.
      */
-    processorConfig?: pulumi.Input<inputs.AiDocument.ProcessorJobProcessorConfig>;
+    processorConfig?: pulumi.Input<inputs.AiDocument.ProcessorJobProcessorConfig | undefined>;
     /**
      * The current state of the processor job.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The job acceptance time.
      */
-    timeAccepted?: pulumi.Input<string>;
+    timeAccepted?: pulumi.Input<string | undefined>;
     /**
      * The job finish time.
      */
-    timeFinished?: pulumi.Input<string>;
+    timeFinished?: pulumi.Input<string | undefined>;
     /**
      * The job start time.
      */
-    timeStarted?: pulumi.Input<string>;
+    timeStarted?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -259,7 +259,7 @@ export interface ProcessorJobArgs {
     /**
      * The display name of the processor job.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The location of the inputs.
      */

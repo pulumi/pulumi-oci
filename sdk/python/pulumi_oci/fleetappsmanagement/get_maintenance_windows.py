@@ -136,7 +136,7 @@ def get_maintenance_windows(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_maintenance_windows = oci.FleetAppsManagement.get_maintenance_windows(compartment_id=compartment_id,
+    test_maintenance_windows = oci.fleetappsmanagement.get_maintenance_windows(compartment_id=compartment_id,
         display_name=maintenance_window_display_name,
         id=maintenance_window_id,
         state=maintenance_window_state,
@@ -168,12 +168,12 @@ def get_maintenance_windows(compartment_id: Optional[_builtins.str] = None,
         maintenance_window_collections=pulumi.get(__ret__, 'maintenance_window_collections'),
         state=pulumi.get(__ret__, 'state'),
         time_schedule_start_greater_than_or_equal_to=pulumi.get(__ret__, 'time_schedule_start_greater_than_or_equal_to'))
-def get_maintenance_windows_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaintenanceWindowsFilterArgs', 'GetMaintenanceWindowsFilterArgsDict']]]]] = None,
-                                   id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   time_schedule_start_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_maintenance_windows_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaintenanceWindowsFilterArgs', 'GetMaintenanceWindowsFilterArgsDict']]]]] = None,
+                                   id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   time_schedule_start_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaintenanceWindowsResult]:
     """
     This data source provides the list of Maintenance Windows in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -187,7 +187,7 @@ def get_maintenance_windows_output(compartment_id: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_maintenance_windows = oci.FleetAppsManagement.get_maintenance_windows(compartment_id=compartment_id,
+    test_maintenance_windows = oci.fleetappsmanagement.get_maintenance_windows(compartment_id=compartment_id,
         display_name=maintenance_window_display_name,
         id=maintenance_window_id,
         state=maintenance_window_state,

@@ -75,10 +75,10 @@ export class BdsInstanceExecuteBootstrapScriptAction extends pulumi.CustomResour
  * Input properties used for looking up and filtering BdsInstanceExecuteBootstrapScriptAction resources.
  */
 export interface BdsInstanceExecuteBootstrapScriptActionState {
-    bdsInstanceId?: pulumi.Input<string>;
-    bootstrapScriptUrl?: pulumi.Input<string>;
-    clusterAdminPassword?: pulumi.Input<string>;
-    secretId?: pulumi.Input<string>;
+    bdsInstanceId?: pulumi.Input<string | undefined>;
+    bootstrapScriptUrl?: pulumi.Input<string | undefined>;
+    clusterAdminPassword?: pulumi.Input<string | undefined>;
+    secretId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -86,7 +86,7 @@ export interface BdsInstanceExecuteBootstrapScriptActionState {
  */
 export interface BdsInstanceExecuteBootstrapScriptActionArgs {
     bdsInstanceId: pulumi.Input<string>;
-    bootstrapScriptUrl?: pulumi.Input<string>;
-    clusterAdminPassword?: pulumi.Input<string>;
-    secretId?: pulumi.Input<string>;
+    bootstrapScriptUrl?: pulumi.Input<string | undefined>;
+    clusterAdminPassword?: pulumi.Input<string | undefined>;
+    secretId?: pulumi.Input<string | undefined>;
 }

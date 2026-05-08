@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDomainGovernances = oci.Tenantmanagercontrolplane.getDomainGovernances({
+ * const testDomainGovernances = oci.tenantmanagercontrolplane.getDomainGovernances({
  *     compartmentId: compartmentId,
  *     domainGovernanceId: testDomainGovernance.id,
  *     domainId: testDomain.id,
@@ -101,7 +101,7 @@ export interface GetDomainGovernancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDomainGovernances = oci.Tenantmanagercontrolplane.getDomainGovernances({
+ * const testDomainGovernances = oci.tenantmanagercontrolplane.getDomainGovernances({
  *     compartmentId: compartmentId,
  *     domainGovernanceId: testDomainGovernance.id,
  *     domainId: testDomain.id,
@@ -133,18 +133,18 @@ export interface GetDomainGovernancesOutputArgs {
     /**
      * The domain governance OCID.
      */
-    domainGovernanceId?: pulumi.Input<string>;
+    domainGovernanceId?: pulumi.Input<string | undefined>;
     /**
      * The domain OCID.
      */
-    domainId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Tenantmanagercontrolplane.GetDomainGovernancesFilterArgs>[]>;
+    domainId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Tenantmanagercontrolplane.GetDomainGovernancesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that exactly match the name given.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of the resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

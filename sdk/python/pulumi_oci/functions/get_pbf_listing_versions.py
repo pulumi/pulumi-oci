@@ -148,8 +148,8 @@ def get_pbf_listing_versions(filters: Optional[Sequence[Union['GetPbfListingVers
     import pulumi
     import pulumi_oci as oci
 
-    test_pbf_listing_versions = oci.Functions.get_pbf_listing_versions(pbf_listing_id=test_pbf_listing["id"],
-        is_current_version=pbf_listing_version_is_current_version,
+    test_pbf_listing_versions = oci.functions.get_pbf_listing_versions(pbf_listing_id=test_pbf_listing["id"],
+        is_current_version=pbf_listing_version_is_current_version == "true",
         name=pbf_listing_version_name,
         pbf_listing_version_id=test_pbf_listing_version["id"],
         state=pbf_listing_version_state)
@@ -181,12 +181,12 @@ def get_pbf_listing_versions(filters: Optional[Sequence[Union['GetPbfListingVers
         pbf_listing_version_id=pulumi.get(__ret__, 'pbf_listing_version_id'),
         pbf_listing_versions_collections=pulumi.get(__ret__, 'pbf_listing_versions_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_pbf_listing_versions_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPbfListingVersionsFilterArgs', 'GetPbfListingVersionsFilterArgsDict']]]]] = None,
-                                    is_current_version: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                    name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    pbf_listing_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    pbf_listing_version_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_pbf_listing_versions_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPbfListingVersionsFilterArgs', 'GetPbfListingVersionsFilterArgsDict']]]]] = None,
+                                    is_current_version: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                    name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    pbf_listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    pbf_listing_version_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPbfListingVersionsResult]:
     """
     This data source provides the list of Pbf Listing Versions in Oracle Cloud Infrastructure Functions service.
@@ -203,8 +203,8 @@ def get_pbf_listing_versions_output(filters: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_pbf_listing_versions = oci.Functions.get_pbf_listing_versions(pbf_listing_id=test_pbf_listing["id"],
-        is_current_version=pbf_listing_version_is_current_version,
+    test_pbf_listing_versions = oci.functions.get_pbf_listing_versions(pbf_listing_id=test_pbf_listing["id"],
+        is_current_version=pbf_listing_version_is_current_version == "true",
         name=pbf_listing_version_name,
         pbf_listing_version_id=test_pbf_listing_version["id"],
         state=pbf_listing_version_state)

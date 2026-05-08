@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTrace = oci.ApmTraces.getTrace({
+ * const testTrace = oci.apmtraces.getTrace({
  *     apmDomainId: testApmDomain.id,
  *     traceKey: traceTraceKey,
  *     timeTraceStartedGreaterThanOrEqualTo: traceTimeTraceStartedGreaterThanOrEqualTo,
@@ -167,7 +167,7 @@ export interface GetTraceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTrace = oci.ApmTraces.getTrace({
+ * const testTrace = oci.apmtraces.getTrace({
  *     apmDomainId: testApmDomain.id,
  *     traceKey: traceTraceKey,
  *     timeTraceStartedGreaterThanOrEqualTo: traceTimeTraceStartedGreaterThanOrEqualTo,
@@ -198,11 +198,11 @@ export interface GetTraceOutputArgs {
     /**
      * Include traces that have a minTraceStartTime equal to or greater than this value.
      */
-    timeTraceStartedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeTraceStartedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * Include traces that have a minTraceStartTime less than this value.
      */
-    timeTraceStartedLessThan?: pulumi.Input<string>;
+    timeTraceStartedLessThan?: pulumi.Input<string | undefined>;
     /**
      * Unique Application Performance Monitoring trace identifier (traceId).
      */
@@ -210,5 +210,5 @@ export interface GetTraceOutputArgs {
     /**
      * Name space from which the trace details need to be retrieved.
      */
-    traceNamespace?: pulumi.Input<string>;
+    traceNamespace?: pulumi.Input<string | undefined>;
 }

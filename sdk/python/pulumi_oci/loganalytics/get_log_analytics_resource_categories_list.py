@@ -139,7 +139,7 @@ def get_log_analytics_resource_categories_list(compartment_id: Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_resource_categories_list = oci.LogAnalytics.get_log_analytics_resource_categories_list(namespace=log_analytics_resource_categories_list_namespace,
+    test_log_analytics_resource_categories_list = oci.loganalytics.get_log_analytics_resource_categories_list(namespace=log_analytics_resource_categories_list_namespace,
         compartment_id=log_analytics_resource_categories_compartment_id,
         resource_ids=log_analytics_resource_categories_list_resource_ids,
         resource_types=log_analytics_resource_categories_list_resource_types,
@@ -171,11 +171,11 @@ def get_log_analytics_resource_categories_list(compartment_id: Optional[_builtin
         resource_categories=pulumi.get(__ret__, 'resource_categories'),
         resource_ids=pulumi.get(__ret__, 'resource_ids'),
         resource_types=pulumi.get(__ret__, 'resource_types'))
-def get_log_analytics_resource_categories_list_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                      namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                                                      resource_categories: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                      resource_ids: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                      resource_types: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_log_analytics_resource_categories_list_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                                                      resource_categories: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      resource_ids: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      resource_types: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsResourceCategoriesListResult]:
     """
     This data source provides details about Resource Categories in Oracle Cloud Infrastructure Log Analytics service.
@@ -188,7 +188,7 @@ def get_log_analytics_resource_categories_list_output(compartment_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_resource_categories_list = oci.LogAnalytics.get_log_analytics_resource_categories_list(namespace=log_analytics_resource_categories_list_namespace,
+    test_log_analytics_resource_categories_list = oci.loganalytics.get_log_analytics_resource_categories_list(namespace=log_analytics_resource_categories_list_namespace,
         compartment_id=log_analytics_resource_categories_compartment_id,
         resource_ids=log_analytics_resource_categories_list_resource_ids,
         resource_types=log_analytics_resource_categories_list_resource_types,

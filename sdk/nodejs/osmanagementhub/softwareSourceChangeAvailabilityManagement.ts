@@ -101,7 +101,7 @@ export interface SoftwareSourceChangeAvailabilityManagementState {
     /**
      * List of vendor software sources and their availability statuses.
      */
-    softwareSourceAvailabilities?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailability>[]>;
+    softwareSourceAvailabilities?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailability>[] | undefined>;
 }
 
 /**

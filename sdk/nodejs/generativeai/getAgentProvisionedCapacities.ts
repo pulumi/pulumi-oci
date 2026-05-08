@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProvisionedCapacities = oci.GenerativeAi.getAgentProvisionedCapacities({
+ * const testProvisionedCapacities = oci.generativeai.getAgentProvisionedCapacities({
  *     compartmentId: compartmentId,
  *     displayName: provisionedCapacityDisplayName,
  *     provisionedCapacityId: testProvisionedCapacity.id,
@@ -98,7 +98,7 @@ export interface GetAgentProvisionedCapacitiesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProvisionedCapacities = oci.GenerativeAi.getAgentProvisionedCapacities({
+ * const testProvisionedCapacities = oci.generativeai.getAgentProvisionedCapacities({
  *     compartmentId: compartmentId,
  *     displayName: provisionedCapacityDisplayName,
  *     provisionedCapacityId: testProvisionedCapacity.id,
@@ -125,18 +125,18 @@ export interface GetAgentProvisionedCapacitiesOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.GetAgentProvisionedCapacitiesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.GetAgentProvisionedCapacitiesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provisioned capacity.
      */
-    provisionedCapacityId?: pulumi.Input<string>;
+    provisionedCapacityId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -119,7 +119,7 @@ def get_usage_statement_email_recipients_group(compartment_id: Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_usage_statement_email_recipients_group = oci.MeteringComputation.get_usage_statement_email_recipients_group(compartment_id=compartment_id,
+    test_usage_statement_email_recipients_group = oci.meteringcomputation.get_usage_statement_email_recipients_group(compartment_id=compartment_id,
         email_recipients_group_id=test_group["id"],
         subscription_id=test_subscription["id"])
     ```
@@ -143,9 +143,9 @@ def get_usage_statement_email_recipients_group(compartment_id: Optional[_builtin
         recipients_lists=pulumi.get(__ret__, 'recipients_lists'),
         state=pulumi.get(__ret__, 'state'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'))
-def get_usage_statement_email_recipients_group_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                      email_recipients_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                      subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_usage_statement_email_recipients_group_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                      email_recipients_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                      subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUsageStatementEmailRecipientsGroupResult]:
     """
     This data source provides details about a specific Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -158,7 +158,7 @@ def get_usage_statement_email_recipients_group_output(compartment_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_usage_statement_email_recipients_group = oci.MeteringComputation.get_usage_statement_email_recipients_group(compartment_id=compartment_id,
+    test_usage_statement_email_recipients_group = oci.meteringcomputation.get_usage_statement_email_recipients_group(compartment_id=compartment_id,
         email_recipients_group_id=test_group["id"],
         subscription_id=test_subscription["id"])
     ```

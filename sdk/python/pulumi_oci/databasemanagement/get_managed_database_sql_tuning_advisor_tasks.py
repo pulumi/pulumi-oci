@@ -148,7 +148,7 @@ def get_managed_database_sql_tuning_advisor_tasks(filters: Optional[Sequence[Uni
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks(managed_database_id=test_managed_database["id"],
+    test_managed_database_sql_tuning_advisor_tasks = oci.databasemanagement.get_managed_database_sql_tuning_advisor_tasks(managed_database_id=test_managed_database["id"],
         name=managed_database_sql_tuning_advisor_task_name,
         opc_named_credential_id=managed_database_sql_tuning_advisor_task_opc_named_credential_id,
         status=managed_database_sql_tuning_advisor_task_status,
@@ -185,13 +185,13 @@ def get_managed_database_sql_tuning_advisor_tasks(filters: Optional[Sequence[Uni
         status=pulumi.get(__ret__, 'status'),
         time_greater_than_or_equal_to=pulumi.get(__ret__, 'time_greater_than_or_equal_to'),
         time_less_than_or_equal_to=pulumi.get(__ret__, 'time_less_than_or_equal_to'))
-def get_managed_database_sql_tuning_advisor_tasks_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs', 'GetManagedDatabaseSqlTuningAdvisorTasksFilterArgsDict']]]]] = None,
-                                                         managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                         name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                         opc_named_credential_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                         status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                         time_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                         time_less_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_managed_database_sql_tuning_advisor_tasks_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedDatabaseSqlTuningAdvisorTasksFilterArgs', 'GetManagedDatabaseSqlTuningAdvisorTasksFilterArgsDict']]]]] = None,
+                                                         managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                         name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                         opc_named_credential_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                         status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                         time_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                         time_less_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningAdvisorTasksResult]:
     """
     This data source provides the list of Managed Database Sql Tuning Advisor Tasks in Oracle Cloud Infrastructure Database Management service.
@@ -204,7 +204,7 @@ def get_managed_database_sql_tuning_advisor_tasks_output(filters: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks(managed_database_id=test_managed_database["id"],
+    test_managed_database_sql_tuning_advisor_tasks = oci.databasemanagement.get_managed_database_sql_tuning_advisor_tasks(managed_database_id=test_managed_database["id"],
         name=managed_database_sql_tuning_advisor_task_name,
         opc_named_credential_id=managed_database_sql_tuning_advisor_task_opc_named_credential_id,
         status=managed_database_sql_tuning_advisor_task_status,

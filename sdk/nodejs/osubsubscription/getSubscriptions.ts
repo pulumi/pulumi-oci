@@ -20,10 +20,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptions = oci.OsubSubscription.getSubscriptions({
+ * const testSubscriptions = oci.osubsubscription.getSubscriptions({
  *     compartmentId: compartmentId,
  *     buyerEmail: subscriptionBuyerEmail,
- *     isCommitInfoRequired: subscriptionIsCommitInfoRequired,
+ *     isCommitInfoRequired: subscriptionIsCommitInfoRequired === "true",
  *     planNumber: subscriptionPlanNumber,
  *     subscriptionId: testSubscription.id,
  *     xOneGatewaySubscriptionId: subscriptionXOneGatewaySubscriptionId,
@@ -115,10 +115,10 @@ export interface GetSubscriptionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptions = oci.OsubSubscription.getSubscriptions({
+ * const testSubscriptions = oci.osubsubscription.getSubscriptions({
  *     compartmentId: compartmentId,
  *     buyerEmail: subscriptionBuyerEmail,
- *     isCommitInfoRequired: subscriptionIsCommitInfoRequired,
+ *     isCommitInfoRequired: subscriptionIsCommitInfoRequired === "true",
  *     planNumber: subscriptionPlanNumber,
  *     subscriptionId: testSubscription.id,
  *     xOneGatewaySubscriptionId: subscriptionXOneGatewaySubscriptionId,
@@ -147,30 +147,30 @@ export interface GetSubscriptionsOutputArgs {
     /**
      * Buyer Email Id
      */
-    buyerEmail?: pulumi.Input<string>;
+    buyerEmail?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsubSubscription.GetSubscriptionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsubSubscription.GetSubscriptionsFilterArgs>[] | undefined>;
     /**
      * Boolean value to decide whether commitment services will be shown
      */
-    isCommitInfoRequired?: pulumi.Input<boolean>;
+    isCommitInfoRequired?: pulumi.Input<boolean | undefined>;
     /**
      * The Plan Number
      */
-    planNumber?: pulumi.Input<string>;
+    planNumber?: pulumi.Input<string | undefined>;
     /**
      * Line level Subscription Id
      */
-    subscriptionId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string | undefined>;
     /**
      * This header is meant to be used only for internal purposes and will be ignored on any public request. The purpose of this header is  to help on Gateway to API calls identification.
      */
-    xOneGatewaySubscriptionId?: pulumi.Input<string>;
+    xOneGatewaySubscriptionId?: pulumi.Input<string | undefined>;
     /**
      * The Oracle Cloud Infrastructure home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
      */
-    xOneOriginRegion?: pulumi.Input<string>;
+    xOneOriginRegion?: pulumi.Input<string | undefined>;
 }

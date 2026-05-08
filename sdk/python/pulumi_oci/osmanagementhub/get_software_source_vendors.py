@@ -109,7 +109,7 @@ def get_software_source_vendors(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_vendors = oci.OsManagementHub.get_software_source_vendors(compartment_id=compartment_id,
+    test_software_source_vendors = oci.osmanagementhub.get_software_source_vendors(compartment_id=compartment_id,
         name=software_source_vendor_name)
     ```
 
@@ -130,9 +130,9 @@ def get_software_source_vendors(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         software_source_vendor_collections=pulumi.get(__ret__, 'software_source_vendor_collections'))
-def get_software_source_vendors_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSoftwareSourceVendorsFilterArgs', 'GetSoftwareSourceVendorsFilterArgsDict']]]]] = None,
-                                       name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_software_source_vendors_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSoftwareSourceVendorsFilterArgs', 'GetSoftwareSourceVendorsFilterArgsDict']]]]] = None,
+                                       name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSoftwareSourceVendorsResult]:
     """
     This data source provides the list of Software Source Vendors in Oracle Cloud Infrastructure Os Management Hub service.
@@ -146,7 +146,7 @@ def get_software_source_vendors_output(compartment_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_vendors = oci.OsManagementHub.get_software_source_vendors(compartment_id=compartment_id,
+    test_software_source_vendors = oci.osmanagementhub.get_software_source_vendors(compartment_id=compartment_id,
         name=software_source_vendor_name)
     ```
 

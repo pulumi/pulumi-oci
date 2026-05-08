@@ -154,7 +154,7 @@ def get_workspace_import_requests(filters: Optional[Sequence[Union['GetWorkspace
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_import_requests = oci.DataIntegration.get_workspace_import_requests(workspace_id=test_workspace["id"],
+    test_workspace_import_requests = oci.dataintegration.get_workspace_import_requests(workspace_id=test_workspace["id"],
         import_status=workspace_import_request_import_status,
         name=workspace_import_request_name,
         projection=workspace_import_request_projection,
@@ -191,13 +191,13 @@ def get_workspace_import_requests(filters: Optional[Sequence[Union['GetWorkspace
         time_ended_in_millis=pulumi.get(__ret__, 'time_ended_in_millis'),
         time_started_in_millis=pulumi.get(__ret__, 'time_started_in_millis'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-def get_workspace_import_requests_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkspaceImportRequestsFilterArgs', 'GetWorkspaceImportRequestsFilterArgsDict']]]]] = None,
-                                         import_status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         projection: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         time_ended_in_millis: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         time_started_in_millis: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_workspace_import_requests_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWorkspaceImportRequestsFilterArgs', 'GetWorkspaceImportRequestsFilterArgsDict']]]]] = None,
+                                         import_status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         projection: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         time_ended_in_millis: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         time_started_in_millis: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceImportRequestsResult]:
     """
     This data source provides the list of Workspace Import Requests in Oracle Cloud Infrastructure Data Integration service.
@@ -210,7 +210,7 @@ def get_workspace_import_requests_output(filters: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_import_requests = oci.DataIntegration.get_workspace_import_requests(workspace_id=test_workspace["id"],
+    test_workspace_import_requests = oci.dataintegration.get_workspace_import_requests(workspace_id=test_workspace["id"],
         import_status=workspace_import_request_import_status,
         name=workspace_import_request_name,
         projection=workspace_import_request_projection,

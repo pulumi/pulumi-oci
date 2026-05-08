@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespacePropertiesMetadata = oci.LogAnalytics.getNamespacePropertiesMetadata({
+ * const testNamespacePropertiesMetadata = oci.loganalytics.getNamespacePropertiesMetadata({
  *     namespace: namespacePropertiesMetadataNamespace,
  *     constraints: namespacePropertiesMetadataConstraints,
  *     displayText: namespacePropertiesMetadataDisplayText,
@@ -101,7 +101,7 @@ export interface GetNamespacePropertiesMetadataResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespacePropertiesMetadata = oci.LogAnalytics.getNamespacePropertiesMetadata({
+ * const testNamespacePropertiesMetadata = oci.loganalytics.getNamespacePropertiesMetadata({
  *     namespace: namespacePropertiesMetadataNamespace,
  *     constraints: namespacePropertiesMetadataConstraints,
  *     displayText: namespacePropertiesMetadataDisplayText,
@@ -129,20 +129,20 @@ export interface GetNamespacePropertiesMetadataOutputArgs {
     /**
      * The constraints that apply to the properties at a certain level.
      */
-    constraints?: pulumi.Input<string>;
+    constraints?: pulumi.Input<string | undefined>;
     /**
      * The property display text used for filtering. Only properties matching the specified display name or description will be returned.
      */
-    displayText?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetNamespacePropertiesMetadataFilterArgs>[]>;
+    displayText?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetNamespacePropertiesMetadataFilterArgs>[] | undefined>;
     /**
      * The level for which applicable properties are to be listed.
      */
-    level?: pulumi.Input<string>;
+    level?: pulumi.Input<string | undefined>;
     /**
      * The property name used for filtering.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */

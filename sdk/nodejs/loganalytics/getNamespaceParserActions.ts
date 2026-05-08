@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceParserActions = oci.LogAnalytics.getNamespaceParserActions({
+ * const testNamespaceParserActions = oci.loganalytics.getNamespaceParserActions({
  *     namespace: namespaceParserActionNamespace,
  *     actionDisplayText: namespaceParserActionActionDisplayText,
  *     name: namespaceParserActionName,
@@ -84,7 +84,7 @@ export interface GetNamespaceParserActionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceParserActions = oci.LogAnalytics.getNamespaceParserActions({
+ * const testNamespaceParserActions = oci.loganalytics.getNamespaceParserActions({
  *     namespace: namespaceParserActionNamespace,
  *     actionDisplayText: namespaceParserActionActionDisplayText,
  *     name: namespaceParserActionName,
@@ -108,12 +108,12 @@ export interface GetNamespaceParserActionsOutputArgs {
     /**
      * The parser action display text used for filtering.
      */
-    actionDisplayText?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetNamespaceParserActionsFilterArgs>[]>;
+    actionDisplayText?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.GetNamespaceParserActionsFilterArgs>[] | undefined>;
     /**
      * The parser action name used for filtering.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */

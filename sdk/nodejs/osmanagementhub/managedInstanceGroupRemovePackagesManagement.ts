@@ -119,15 +119,15 @@ export interface ManagedInstanceGroupRemovePackagesManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
-    managedInstanceGroupId?: pulumi.Input<string>;
+    managedInstanceGroupId?: pulumi.Input<string | undefined>;
     /**
      * The list of package names.
      */
-    packageNames?: pulumi.Input<pulumi.Input<string>[]>;
+    packageNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupRemovePackagesManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupRemovePackagesManagementWorkRequestDetails | undefined>;
 }
 
 /**
@@ -145,5 +145,5 @@ export interface ManagedInstanceGroupRemovePackagesManagementArgs {
     /**
      * Provides the name and description of the job.
      */
-    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupRemovePackagesManagementWorkRequestDetails>;
+    workRequestDetails?: pulumi.Input<inputs.OsManagementHub.ManagedInstanceGroupRemovePackagesManagementWorkRequestDetails | undefined>;
 }

@@ -96,7 +96,7 @@ def get_categories(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_categories = oci.Marketplace.get_categories(compartment_id=compartment_id)
+    test_categories = oci.marketplace.get_categories(compartment_id=compartment_id)
     ```
 
 
@@ -113,8 +113,8 @@ def get_categories(compartment_id: Optional[_builtins.str] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_categories_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCategoriesFilterArgs', 'GetCategoriesFilterArgsDict']]]]] = None,
+def get_categories_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCategoriesFilterArgs', 'GetCategoriesFilterArgsDict']]]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCategoriesResult]:
     """
     This data source provides the list of Categories in Oracle Cloud Infrastructure Marketplace service.
@@ -128,7 +128,7 @@ def get_categories_output(compartment_id: Optional[pulumi.Input[Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_categories = oci.Marketplace.get_categories(compartment_id=compartment_id)
+    test_categories = oci.marketplace.get_categories(compartment_id=compartment_id)
     ```
 
 

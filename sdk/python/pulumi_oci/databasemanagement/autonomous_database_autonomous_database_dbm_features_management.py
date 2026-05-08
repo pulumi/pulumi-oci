@@ -23,7 +23,7 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementArgs:
     def __init__(__self__, *,
                  autonomous_database_id: pulumi.Input[_builtins.str],
                  enable_autonomous_database_dbm_feature: pulumi.Input[_builtins.bool],
-                 feature_details: Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs']] = None):
+                 feature_details: pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs']] = None):
         """
         The set of arguments for constructing a AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement resource.
 
@@ -70,23 +70,23 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="featureDetails")
-    def feature_details(self) -> Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs']]:
+    def feature_details(self) -> pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs']]:
         """
         The details required to enable the specified Database Management feature for an Autonomous Database.
         """
         return pulumi.get(self, "feature_details")
 
     @feature_details.setter
-    def feature_details(self, value: Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs']]):
+    def feature_details(self, value: pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs']]):
         pulumi.set(self, "feature_details", value)
 
 
 @pulumi.input_type
 class _AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementState:
     def __init__(__self__, *,
-                 autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_autonomous_database_dbm_feature: Optional[pulumi.Input[_builtins.bool]] = None,
-                 feature_details: Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs']] = None):
+                 autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_autonomous_database_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
+                 feature_details: pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement resources.
 
@@ -107,19 +107,19 @@ class _AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementState:
 
     @_builtins.property
     @pulumi.getter(name="autonomousDatabaseId")
-    def autonomous_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
         """
         return pulumi.get(self, "autonomous_database_id")
 
     @autonomous_database_id.setter
-    def autonomous_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="enableAutonomousDatabaseDbmFeature")
-    def enable_autonomous_database_dbm_feature(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_autonomous_database_dbm_feature(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 
@@ -130,19 +130,19 @@ class _AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementState:
         return pulumi.get(self, "enable_autonomous_database_dbm_feature")
 
     @enable_autonomous_database_dbm_feature.setter
-    def enable_autonomous_database_dbm_feature(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_autonomous_database_dbm_feature(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_autonomous_database_dbm_feature", value)
 
     @_builtins.property
     @pulumi.getter(name="featureDetails")
-    def feature_details(self) -> Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs']]:
+    def feature_details(self) -> pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs']]:
         """
         The details required to enable the specified Database Management feature for an Autonomous Database.
         """
         return pulumi.get(self, "feature_details")
 
     @feature_details.setter
-    def feature_details(self, value: Optional[pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs']]):
+    def feature_details(self, value: pulumi.Input[Optional['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs']]):
         pulumi.set(self, "feature_details", value)
 
 
@@ -152,9 +152,9 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_autonomous_database_dbm_feature: Optional[pulumi.Input[_builtins.bool]] = None,
-                 feature_details: Optional[pulumi.Input[Union['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
+                 autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_autonomous_database_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
+                 feature_details: pulumi.Input[Optional[Union['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Autonomous Database Autonomous Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
@@ -171,7 +171,7 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
 
         test_autonomous_database_autonomous_database_dbm_features_management = oci.databasemanagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement("test_autonomous_database_autonomous_database_dbm_features_management",
             autonomous_database_id=test_autonomous_database["id"],
-            enable_autonomous_database_dbm_feature=enable_autonomous_database_dbm_feature,
+            enable_autonomous_database_dbm_feature=enable_autonomous_database_dbm_feature == "true",
             feature_details={
                 "feature": autonomous_database_autonomous_database_dbm_features_management_feature_details_feature,
                 "enable_autonomous_database_dbm_feature": enable_autonomous_database_dbm_feature,
@@ -186,7 +186,7 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
                     },
                     "connection_string": {
                         "connection_type": autonomous_database_autonomous_database_dbm_features_management_feature_details_database_connection_details_connection_string_connection_type,
-                        "port": autonomous_database_autonomous_database_dbm_features_management_feature_details_database_connection_details_connection_string_port,
+                        "port": int(autonomous_database_autonomous_database_dbm_features_management_feature_details_database_connection_details_connection_string_port),
                         "protocol": autonomous_database_autonomous_database_dbm_features_management_feature_details_database_connection_details_connection_string_protocol,
                         "service": autonomous_database_autonomous_database_dbm_features_management_feature_details_database_connection_details_connection_string_service,
                     },
@@ -232,7 +232,7 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
 
         test_autonomous_database_autonomous_database_dbm_features_management = oci.databasemanagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement("test_autonomous_database_autonomous_database_dbm_features_management",
             autonomous_database_id=test_autonomous_database["id"],
-            enable_autonomous_database_dbm_feature=enable_autonomous_database_dbm_feature,
+            enable_autonomous_database_dbm_feature=enable_autonomous_database_dbm_feature == "true",
             feature_details={
                 "feature": autonomous_database_autonomous_database_dbm_features_management_feature_details_feature,
                 "enable_autonomous_database_dbm_feature": enable_autonomous_database_dbm_feature,
@@ -247,7 +247,7 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
                     },
                     "connection_string": {
                         "connection_type": autonomous_database_autonomous_database_dbm_features_management_feature_details_database_connection_details_connection_string_connection_type,
-                        "port": autonomous_database_autonomous_database_dbm_features_management_feature_details_database_connection_details_connection_string_port,
+                        "port": int(autonomous_database_autonomous_database_dbm_features_management_feature_details_database_connection_details_connection_string_port),
                         "protocol": autonomous_database_autonomous_database_dbm_features_management_feature_details_database_connection_details_connection_string_protocol,
                         "service": autonomous_database_autonomous_database_dbm_features_management_feature_details_database_connection_details_connection_string_service,
                     },
@@ -277,9 +277,9 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_autonomous_database_dbm_feature: Optional[pulumi.Input[_builtins.bool]] = None,
-                 feature_details: Optional[pulumi.Input[Union['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
+                 autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_autonomous_database_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
+                 feature_details: pulumi.Input[Optional[Union['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -306,9 +306,9 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            autonomous_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            enable_autonomous_database_dbm_feature: Optional[pulumi.Input[_builtins.bool]] = None,
-            feature_details: Optional[pulumi.Input[Union['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None) -> 'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement':
+            autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_autonomous_database_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
+            feature_details: pulumi.Input[Optional[Union['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgsDict']]] = None) -> 'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement':
         """
         Get an existing AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

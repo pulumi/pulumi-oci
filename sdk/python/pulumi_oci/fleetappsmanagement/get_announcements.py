@@ -121,7 +121,7 @@ def get_announcements(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_announcements = oci.FleetAppsManagement.get_announcements(compartment_id=compartment_id,
+    test_announcements = oci.fleetappsmanagement.get_announcements(compartment_id=compartment_id,
         display_name=announcement_display_name,
         summary_contains=announcement_summary_contains)
     ```
@@ -146,10 +146,10 @@ def get_announcements(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         summary_contains=pulumi.get(__ret__, 'summary_contains'))
-def get_announcements_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAnnouncementsFilterArgs', 'GetAnnouncementsFilterArgsDict']]]]] = None,
-                             summary_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_announcements_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAnnouncementsFilterArgs', 'GetAnnouncementsFilterArgsDict']]]]] = None,
+                             summary_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAnnouncementsResult]:
     """
     This data source provides the list of Announcements in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -162,7 +162,7 @@ def get_announcements_output(compartment_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_announcements = oci.FleetAppsManagement.get_announcements(compartment_id=compartment_id,
+    test_announcements = oci.fleetappsmanagement.get_announcements(compartment_id=compartment_id,
         display_name=announcement_display_name,
         summary_contains=announcement_summary_contains)
     ```

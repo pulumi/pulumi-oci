@@ -227,7 +227,7 @@ def get_target_alert_policy_association(target_alert_policy_association_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_target_alert_policy_association = oci.DataSafe.get_target_alert_policy_association(target_alert_policy_association_id=test_target_alert_policy_association_oci_data_safe_target_alert_policy_association["id"])
+    test_target_alert_policy_association = oci.datasafe.get_target_alert_policy_association(target_alert_policy_association_id=test_target_alert_policy_association_oci_data_safe_target_alert_policy_association["id"])
     ```
 
 
@@ -254,7 +254,7 @@ def get_target_alert_policy_association(target_alert_policy_association_id: Opti
         target_id=pulumi.get(__ret__, 'target_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_target_alert_policy_association_output(target_alert_policy_association_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_target_alert_policy_association_output(target_alert_policy_association_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTargetAlertPolicyAssociationResult]:
     """
     This data source provides details about a specific Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.
@@ -267,7 +267,7 @@ def get_target_alert_policy_association_output(target_alert_policy_association_i
     import pulumi
     import pulumi_oci as oci
 
-    test_target_alert_policy_association = oci.DataSafe.get_target_alert_policy_association(target_alert_policy_association_id=test_target_alert_policy_association_oci_data_safe_target_alert_policy_association["id"])
+    test_target_alert_policy_association = oci.datasafe.get_target_alert_policy_association(target_alert_policy_association_id=test_target_alert_policy_association_oci_data_safe_target_alert_policy_association["id"])
     ```
 
 

@@ -160,7 +160,7 @@ def get_database_maintenance_run_histories(availability_domain: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_maintenance_run_histories = oci.Database.get_database_maintenance_run_histories(compartment_id=compartment_id,
+    test_maintenance_run_histories = oci.database.get_database_maintenance_run_histories(compartment_id=compartment_id,
         availability_domain=maintenance_run_history_availability_domain,
         maintenance_type=maintenance_run_history_maintenance_type,
         state=maintenance_run_history_state,
@@ -197,13 +197,13 @@ def get_database_maintenance_run_histories(availability_domain: Optional[_builti
         state=pulumi.get(__ret__, 'state'),
         target_resource_id=pulumi.get(__ret__, 'target_resource_id'),
         target_resource_type=pulumi.get(__ret__, 'target_resource_type'))
-def get_database_maintenance_run_histories_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDatabaseMaintenanceRunHistoriesFilterArgs', 'GetDatabaseMaintenanceRunHistoriesFilterArgsDict']]]]] = None,
-                                                  maintenance_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  target_resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  target_resource_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_database_maintenance_run_histories_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabaseMaintenanceRunHistoriesFilterArgs', 'GetDatabaseMaintenanceRunHistoriesFilterArgsDict']]]]] = None,
+                                                  maintenance_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  target_resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  target_resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseMaintenanceRunHistoriesResult]:
     """
     This data source provides the list of Maintenance Run Histories in Oracle Cloud Infrastructure Database service.
@@ -216,7 +216,7 @@ def get_database_maintenance_run_histories_output(availability_domain: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_maintenance_run_histories = oci.Database.get_database_maintenance_run_histories(compartment_id=compartment_id,
+    test_maintenance_run_histories = oci.database.get_database_maintenance_run_histories(compartment_id=compartment_id,
         availability_domain=maintenance_run_history_availability_domain,
         maintenance_type=maintenance_run_history_maintenance_type,
         state=maintenance_run_history_state,

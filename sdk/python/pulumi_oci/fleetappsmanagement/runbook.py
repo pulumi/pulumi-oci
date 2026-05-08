@@ -25,14 +25,14 @@ class RunbookArgs:
                  display_name: pulumi.Input[_builtins.str],
                  operation: pulumi.Input[_builtins.str],
                  runbook_version: pulumi.Input['RunbookRunbookVersionArgs'],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 estimated_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_default: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_sudo_access_needed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 os_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 platform: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 estimated_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_default: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_sudo_access_needed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 os_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 platform: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Runbook resource.
 
@@ -120,125 +120,125 @@ class RunbookArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="estimatedTime")
-    def estimated_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def estimated_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Estimated time to successfully complete the runbook execution.
         """
         return pulumi.get(self, "estimated_time")
 
     @estimated_time.setter
-    def estimated_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def estimated_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "estimated_time", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isDefault")
-    def is_default(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_default(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Is the runbook default?
         """
         return pulumi.get(self, "is_default")
 
     @is_default.setter
-    def is_default(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_default(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_default", value)
 
     @_builtins.property
     @pulumi.getter(name="isSudoAccessNeeded")
-    def is_sudo_access_needed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_sudo_access_needed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Does this runbook need SUDO access to execute?
         """
         return pulumi.get(self, "is_sudo_access_needed")
 
     @is_sudo_access_needed.setter
-    def is_sudo_access_needed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_sudo_access_needed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_sudo_access_needed", value)
 
     @_builtins.property
     @pulumi.getter(name="osType")
-    def os_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def os_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OS type for the runbook.
         """
         return pulumi.get(self, "os_type")
 
     @os_type.setter
-    def os_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def os_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "os_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def platform(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def platform(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The platform of the runbook.
         """
         return pulumi.get(self, "platform")
 
     @platform.setter
-    def platform(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def platform(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "platform", value)
 
 
 @pulumi.input_type
 class _RunbookState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 estimated_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 has_draft_version: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_default: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_sudo_access_needed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 latest_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 operation: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 platform: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 runbook_version: Optional[pulumi.Input['RunbookRunbookVersionArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 estimated_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 has_draft_version: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_default: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_sudo_access_needed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 latest_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 operation: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 platform: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 runbook_version: pulumi.Input[Optional['RunbookRunbookVersionArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Runbook resources.
 
@@ -309,254 +309,254 @@ class _RunbookState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable)
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="estimatedTime")
-    def estimated_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def estimated_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Estimated time to successfully complete the runbook execution.
         """
         return pulumi.get(self, "estimated_time")
 
     @estimated_time.setter
-    def estimated_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def estimated_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "estimated_time", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="hasDraftVersion")
-    def has_draft_version(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def has_draft_version(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Does this runbook has draft versions?
         """
         return pulumi.get(self, "has_draft_version")
 
     @has_draft_version.setter
-    def has_draft_version(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def has_draft_version(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "has_draft_version", value)
 
     @_builtins.property
     @pulumi.getter(name="isDefault")
-    def is_default(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_default(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Is the runbook default?
         """
         return pulumi.get(self, "is_default")
 
     @is_default.setter
-    def is_default(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_default(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_default", value)
 
     @_builtins.property
     @pulumi.getter(name="isSudoAccessNeeded")
-    def is_sudo_access_needed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_sudo_access_needed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Does this runbook need SUDO access to execute?
         """
         return pulumi.get(self, "is_sudo_access_needed")
 
     @is_sudo_access_needed.setter
-    def is_sudo_access_needed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_sudo_access_needed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_sudo_access_needed", value)
 
     @_builtins.property
     @pulumi.getter(name="latestVersion")
-    def latest_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def latest_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Latest runbook version.
         """
         return pulumi.get(self, "latest_version")
 
     @latest_version.setter
-    def latest_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def latest_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "latest_version", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def operation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The lifecycle operation performed by the task.
         """
         return pulumi.get(self, "operation")
 
     @operation.setter
-    def operation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operation", value)
 
     @_builtins.property
     @pulumi.getter(name="osType")
-    def os_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def os_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OS type for the runbook.
         """
         return pulumi.get(self, "os_type")
 
     @os_type.setter
-    def os_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def os_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "os_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def platform(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def platform(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The platform of the runbook.
         """
         return pulumi.get(self, "platform")
 
     @platform.setter
-    def platform(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def platform(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "platform", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceRegion")
-    def resource_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Associated region
         """
         return pulumi.get(self, "resource_region")
 
     @resource_region.setter
-    def resource_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_region", value)
 
     @_builtins.property
     @pulumi.getter(name="runbookVersion")
-    def runbook_version(self) -> Optional[pulumi.Input['RunbookRunbookVersionArgs']]:
+    def runbook_version(self) -> pulumi.Input[Optional['RunbookRunbookVersionArgs']]:
         """
         Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
         """
         return pulumi.get(self, "runbook_version")
 
     @runbook_version.setter
-    def runbook_version(self, value: Optional[pulumi.Input['RunbookRunbookVersionArgs']]):
+    def runbook_version(self, value: pulumi.Input[Optional['RunbookRunbookVersionArgs']]):
         pulumi.set(self, "runbook_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the runbook.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time this resource was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time this resource was last updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the runbook.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -566,18 +566,18 @@ class Runbook(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 estimated_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_default: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_sudo_access_needed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 operation: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 platform: Optional[pulumi.Input[_builtins.str]] = None,
-                 runbook_version: Optional[pulumi.Input[Union['RunbookRunbookVersionArgs', 'RunbookRunbookVersionArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 estimated_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_default: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_sudo_access_needed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 operation: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 platform: pulumi.Input[Optional[_builtins.str]] = None,
+                 runbook_version: pulumi.Input[Optional[Union['RunbookRunbookVersionArgs', 'RunbookRunbookVersionArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Runbook resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -616,13 +616,13 @@ class Runbook(pulumi.CustomResource):
                     "properties": {
                         "action_on_failure": runbook_runbook_version_groups_properties_action_on_failure,
                         "notification_preferences": {
-                            "should_notify_on_pause": runbook_runbook_version_groups_properties_notification_preferences_should_notify_on_pause,
-                            "should_notify_on_task_failure": runbook_runbook_version_groups_properties_notification_preferences_should_notify_on_task_failure,
-                            "should_notify_on_task_success": runbook_runbook_version_groups_properties_notification_preferences_should_notify_on_task_success,
+                            "should_notify_on_pause": runbook_runbook_version_groups_properties_notification_preferences_should_notify_on_pause == "true",
+                            "should_notify_on_task_failure": runbook_runbook_version_groups_properties_notification_preferences_should_notify_on_task_failure == "true",
+                            "should_notify_on_task_success": runbook_runbook_version_groups_properties_notification_preferences_should_notify_on_task_success == "true",
                         },
                         "pause_details": {
                             "kind": runbook_runbook_version_groups_properties_pause_details_kind,
-                            "duration_in_minutes": runbook_runbook_version_groups_properties_pause_details_duration_in_minutes,
+                            "duration_in_minutes": int(runbook_runbook_version_groups_properties_pause_details_duration_in_minutes),
                         },
                         "pre_condition": runbook_runbook_version_groups_properties_pre_condition,
                         "run_on": {
@@ -663,9 +663,9 @@ class Runbook(pulumi.CustomResource):
                                 "id": runbook_runbook_version_tasks_task_record_details_execution_details_credentials_id,
                             }],
                             "endpoint": runbook_runbook_version_tasks_task_record_details_execution_details_endpoint,
-                            "is_executable_content": runbook_runbook_version_tasks_task_record_details_execution_details_is_executable_content,
-                            "is_locked": runbook_runbook_version_tasks_task_record_details_execution_details_is_locked,
-                            "is_read_output_variable_enabled": runbook_runbook_version_tasks_task_record_details_execution_details_is_read_output_variable_enabled,
+                            "is_executable_content": runbook_runbook_version_tasks_task_record_details_execution_details_is_executable_content == "true",
+                            "is_locked": runbook_runbook_version_tasks_task_record_details_execution_details_is_locked == "true",
+                            "is_read_output_variable_enabled": runbook_runbook_version_tasks_task_record_details_execution_details_is_read_output_variable_enabled == "true",
                             "system_variables": runbook_runbook_version_tasks_task_record_details_execution_details_system_variables,
                             "target_compartment_id": test_compartment["id"],
                             "variables": {
@@ -677,15 +677,15 @@ class Runbook(pulumi.CustomResource):
                                 "output_variables": runbook_runbook_version_tasks_task_record_details_execution_details_variables_output_variables,
                             },
                         },
-                        "is_apply_subject_task": runbook_runbook_version_tasks_task_record_details_is_apply_subject_task,
-                        "is_copy_to_library_enabled": runbook_runbook_version_tasks_task_record_details_is_copy_to_library_enabled,
-                        "is_discovery_output_task": runbook_runbook_version_tasks_task_record_details_is_discovery_output_task,
+                        "is_apply_subject_task": runbook_runbook_version_tasks_task_record_details_is_apply_subject_task == "true",
+                        "is_copy_to_library_enabled": runbook_runbook_version_tasks_task_record_details_is_copy_to_library_enabled == "true",
+                        "is_discovery_output_task": runbook_runbook_version_tasks_task_record_details_is_discovery_output_task == "true",
                         "name": runbook_runbook_version_tasks_task_record_details_name,
                         "os_type": runbook_runbook_version_tasks_task_record_details_os_type,
                         "platform": runbook_runbook_version_tasks_task_record_details_platform,
                         "properties": {
-                            "num_retries": runbook_runbook_version_tasks_task_record_details_properties_num_retries,
-                            "timeout_in_seconds": runbook_runbook_version_tasks_task_record_details_properties_timeout_in_seconds,
+                            "num_retries": int(runbook_runbook_version_tasks_task_record_details_properties_num_retries),
+                            "timeout_in_seconds": int(runbook_runbook_version_tasks_task_record_details_properties_timeout_in_seconds),
                         },
                         "task_record_id": test_task_record["id"],
                     },
@@ -699,13 +699,13 @@ class Runbook(pulumi.CustomResource):
                     "step_properties": {
                         "action_on_failure": runbook_runbook_version_tasks_step_properties_action_on_failure,
                         "notification_preferences": {
-                            "should_notify_on_pause": runbook_runbook_version_tasks_step_properties_notification_preferences_should_notify_on_pause,
-                            "should_notify_on_task_failure": runbook_runbook_version_tasks_step_properties_notification_preferences_should_notify_on_task_failure,
-                            "should_notify_on_task_success": runbook_runbook_version_tasks_step_properties_notification_preferences_should_notify_on_task_success,
+                            "should_notify_on_pause": runbook_runbook_version_tasks_step_properties_notification_preferences_should_notify_on_pause == "true",
+                            "should_notify_on_task_failure": runbook_runbook_version_tasks_step_properties_notification_preferences_should_notify_on_task_failure == "true",
+                            "should_notify_on_task_success": runbook_runbook_version_tasks_step_properties_notification_preferences_should_notify_on_task_success == "true",
                         },
                         "pause_details": {
                             "kind": runbook_runbook_version_tasks_step_properties_pause_details_kind,
-                            "duration_in_minutes": runbook_runbook_version_tasks_step_properties_pause_details_duration_in_minutes,
+                            "duration_in_minutes": int(runbook_runbook_version_tasks_step_properties_pause_details_duration_in_minutes),
                         },
                         "pre_condition": runbook_runbook_version_tasks_step_properties_pre_condition,
                         "run_on": {
@@ -723,7 +723,7 @@ class Runbook(pulumi.CustomResource):
                         },
                     },
                 }],
-                "is_latest": runbook_runbook_version_is_latest,
+                "is_latest": runbook_runbook_version_is_latest == "true",
                 "rollback_workflow_details": {
                     "scope": runbook_runbook_version_rollback_workflow_details_scope,
                     "workflows": [{
@@ -747,8 +747,8 @@ class Runbook(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_default=runbook_is_default,
-            is_sudo_access_needed=runbook_is_sudo_access_needed,
+            is_default=runbook_is_default == "true",
+            is_sudo_access_needed=runbook_is_sudo_access_needed == "true",
             os_type=runbook_os_type,
             platform=runbook_platform)
         ```
@@ -820,13 +820,13 @@ class Runbook(pulumi.CustomResource):
                     "properties": {
                         "action_on_failure": runbook_runbook_version_groups_properties_action_on_failure,
                         "notification_preferences": {
-                            "should_notify_on_pause": runbook_runbook_version_groups_properties_notification_preferences_should_notify_on_pause,
-                            "should_notify_on_task_failure": runbook_runbook_version_groups_properties_notification_preferences_should_notify_on_task_failure,
-                            "should_notify_on_task_success": runbook_runbook_version_groups_properties_notification_preferences_should_notify_on_task_success,
+                            "should_notify_on_pause": runbook_runbook_version_groups_properties_notification_preferences_should_notify_on_pause == "true",
+                            "should_notify_on_task_failure": runbook_runbook_version_groups_properties_notification_preferences_should_notify_on_task_failure == "true",
+                            "should_notify_on_task_success": runbook_runbook_version_groups_properties_notification_preferences_should_notify_on_task_success == "true",
                         },
                         "pause_details": {
                             "kind": runbook_runbook_version_groups_properties_pause_details_kind,
-                            "duration_in_minutes": runbook_runbook_version_groups_properties_pause_details_duration_in_minutes,
+                            "duration_in_minutes": int(runbook_runbook_version_groups_properties_pause_details_duration_in_minutes),
                         },
                         "pre_condition": runbook_runbook_version_groups_properties_pre_condition,
                         "run_on": {
@@ -867,9 +867,9 @@ class Runbook(pulumi.CustomResource):
                                 "id": runbook_runbook_version_tasks_task_record_details_execution_details_credentials_id,
                             }],
                             "endpoint": runbook_runbook_version_tasks_task_record_details_execution_details_endpoint,
-                            "is_executable_content": runbook_runbook_version_tasks_task_record_details_execution_details_is_executable_content,
-                            "is_locked": runbook_runbook_version_tasks_task_record_details_execution_details_is_locked,
-                            "is_read_output_variable_enabled": runbook_runbook_version_tasks_task_record_details_execution_details_is_read_output_variable_enabled,
+                            "is_executable_content": runbook_runbook_version_tasks_task_record_details_execution_details_is_executable_content == "true",
+                            "is_locked": runbook_runbook_version_tasks_task_record_details_execution_details_is_locked == "true",
+                            "is_read_output_variable_enabled": runbook_runbook_version_tasks_task_record_details_execution_details_is_read_output_variable_enabled == "true",
                             "system_variables": runbook_runbook_version_tasks_task_record_details_execution_details_system_variables,
                             "target_compartment_id": test_compartment["id"],
                             "variables": {
@@ -881,15 +881,15 @@ class Runbook(pulumi.CustomResource):
                                 "output_variables": runbook_runbook_version_tasks_task_record_details_execution_details_variables_output_variables,
                             },
                         },
-                        "is_apply_subject_task": runbook_runbook_version_tasks_task_record_details_is_apply_subject_task,
-                        "is_copy_to_library_enabled": runbook_runbook_version_tasks_task_record_details_is_copy_to_library_enabled,
-                        "is_discovery_output_task": runbook_runbook_version_tasks_task_record_details_is_discovery_output_task,
+                        "is_apply_subject_task": runbook_runbook_version_tasks_task_record_details_is_apply_subject_task == "true",
+                        "is_copy_to_library_enabled": runbook_runbook_version_tasks_task_record_details_is_copy_to_library_enabled == "true",
+                        "is_discovery_output_task": runbook_runbook_version_tasks_task_record_details_is_discovery_output_task == "true",
                         "name": runbook_runbook_version_tasks_task_record_details_name,
                         "os_type": runbook_runbook_version_tasks_task_record_details_os_type,
                         "platform": runbook_runbook_version_tasks_task_record_details_platform,
                         "properties": {
-                            "num_retries": runbook_runbook_version_tasks_task_record_details_properties_num_retries,
-                            "timeout_in_seconds": runbook_runbook_version_tasks_task_record_details_properties_timeout_in_seconds,
+                            "num_retries": int(runbook_runbook_version_tasks_task_record_details_properties_num_retries),
+                            "timeout_in_seconds": int(runbook_runbook_version_tasks_task_record_details_properties_timeout_in_seconds),
                         },
                         "task_record_id": test_task_record["id"],
                     },
@@ -903,13 +903,13 @@ class Runbook(pulumi.CustomResource):
                     "step_properties": {
                         "action_on_failure": runbook_runbook_version_tasks_step_properties_action_on_failure,
                         "notification_preferences": {
-                            "should_notify_on_pause": runbook_runbook_version_tasks_step_properties_notification_preferences_should_notify_on_pause,
-                            "should_notify_on_task_failure": runbook_runbook_version_tasks_step_properties_notification_preferences_should_notify_on_task_failure,
-                            "should_notify_on_task_success": runbook_runbook_version_tasks_step_properties_notification_preferences_should_notify_on_task_success,
+                            "should_notify_on_pause": runbook_runbook_version_tasks_step_properties_notification_preferences_should_notify_on_pause == "true",
+                            "should_notify_on_task_failure": runbook_runbook_version_tasks_step_properties_notification_preferences_should_notify_on_task_failure == "true",
+                            "should_notify_on_task_success": runbook_runbook_version_tasks_step_properties_notification_preferences_should_notify_on_task_success == "true",
                         },
                         "pause_details": {
                             "kind": runbook_runbook_version_tasks_step_properties_pause_details_kind,
-                            "duration_in_minutes": runbook_runbook_version_tasks_step_properties_pause_details_duration_in_minutes,
+                            "duration_in_minutes": int(runbook_runbook_version_tasks_step_properties_pause_details_duration_in_minutes),
                         },
                         "pre_condition": runbook_runbook_version_tasks_step_properties_pre_condition,
                         "run_on": {
@@ -927,7 +927,7 @@ class Runbook(pulumi.CustomResource):
                         },
                     },
                 }],
-                "is_latest": runbook_runbook_version_is_latest,
+                "is_latest": runbook_runbook_version_is_latest == "true",
                 "rollback_workflow_details": {
                     "scope": runbook_runbook_version_rollback_workflow_details_scope,
                     "workflows": [{
@@ -951,8 +951,8 @@ class Runbook(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_default=runbook_is_default,
-            is_sudo_access_needed=runbook_is_sudo_access_needed,
+            is_default=runbook_is_default == "true",
+            is_sudo_access_needed=runbook_is_sudo_access_needed == "true",
             os_type=runbook_os_type,
             platform=runbook_platform)
         ```
@@ -981,18 +981,18 @@ class Runbook(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 estimated_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_default: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_sudo_access_needed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 operation: Optional[pulumi.Input[_builtins.str]] = None,
-                 os_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 platform: Optional[pulumi.Input[_builtins.str]] = None,
-                 runbook_version: Optional[pulumi.Input[Union['RunbookRunbookVersionArgs', 'RunbookRunbookVersionArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 estimated_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_default: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_sudo_access_needed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 operation: pulumi.Input[Optional[_builtins.str]] = None,
+                 os_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 platform: pulumi.Input[Optional[_builtins.str]] = None,
+                 runbook_version: pulumi.Input[Optional[Union['RunbookRunbookVersionArgs', 'RunbookRunbookVersionArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1041,27 +1041,27 @@ class Runbook(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            estimated_time: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            has_draft_version: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_default: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_sudo_access_needed: Optional[pulumi.Input[_builtins.bool]] = None,
-            latest_version: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            operation: Optional[pulumi.Input[_builtins.str]] = None,
-            os_type: Optional[pulumi.Input[_builtins.str]] = None,
-            platform: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_region: Optional[pulumi.Input[_builtins.str]] = None,
-            runbook_version: Optional[pulumi.Input[Union['RunbookRunbookVersionArgs', 'RunbookRunbookVersionArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'Runbook':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            estimated_time: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            has_draft_version: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_default: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_sudo_access_needed: pulumi.Input[Optional[_builtins.bool]] = None,
+            latest_version: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            operation: pulumi.Input[Optional[_builtins.str]] = None,
+            os_type: pulumi.Input[Optional[_builtins.str]] = None,
+            platform: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_region: pulumi.Input[Optional[_builtins.str]] = None,
+            runbook_version: pulumi.Input[Optional[Union['RunbookRunbookVersionArgs', 'RunbookRunbookVersionArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'Runbook':
         """
         Get an existing Runbook resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

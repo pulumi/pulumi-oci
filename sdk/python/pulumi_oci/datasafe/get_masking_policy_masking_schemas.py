@@ -108,7 +108,7 @@ def get_masking_policy_masking_schemas(filters: Optional[Sequence[Union['GetMask
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policy_masking_schemas = oci.DataSafe.get_masking_policy_masking_schemas(masking_policy_id=test_masking_policy["id"],
+    test_masking_policy_masking_schemas = oci.datasafe.get_masking_policy_masking_schemas(masking_policy_id=test_masking_policy["id"],
         schema_names=masking_policy_masking_schema_schema_name)
     ```
 
@@ -129,9 +129,9 @@ def get_masking_policy_masking_schemas(filters: Optional[Sequence[Union['GetMask
         masking_policy_id=pulumi.get(__ret__, 'masking_policy_id'),
         masking_schema_collections=pulumi.get(__ret__, 'masking_schema_collections'),
         schema_names=pulumi.get(__ret__, 'schema_names'))
-def get_masking_policy_masking_schemas_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaskingPolicyMaskingSchemasFilterArgs', 'GetMaskingPolicyMaskingSchemasFilterArgsDict']]]]] = None,
-                                              masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                              schema_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_masking_policy_masking_schemas_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMaskingPolicyMaskingSchemasFilterArgs', 'GetMaskingPolicyMaskingSchemasFilterArgsDict']]]]] = None,
+                                              masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                              schema_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingPolicyMaskingSchemasResult]:
     """
     This data source provides the list of Masking Policy Masking Schemas in Oracle Cloud Infrastructure Data Safe service.
@@ -144,7 +144,7 @@ def get_masking_policy_masking_schemas_output(filters: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_masking_policy_masking_schemas = oci.DataSafe.get_masking_policy_masking_schemas(masking_policy_id=test_masking_policy["id"],
+    test_masking_policy_masking_schemas = oci.datasafe.get_masking_policy_masking_schemas(masking_policy_id=test_masking_policy["id"],
         schema_names=masking_policy_masking_schema_schema_name)
     ```
 

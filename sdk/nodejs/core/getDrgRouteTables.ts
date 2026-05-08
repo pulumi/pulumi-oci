@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrgRouteTables = oci.Core.getDrgRouteTables({
+ * const testDrgRouteTables = oci.core.getDrgRouteTables({
  *     drgId: testDrg.id,
  *     displayName: drgRouteTableDisplayName,
  *     importDrgRouteDistributionId: testDrgRouteDistribution.id,
@@ -104,7 +104,7 @@ export interface GetDrgRouteTablesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrgRouteTables = oci.Core.getDrgRouteTables({
+ * const testDrgRouteTables = oci.core.getDrgRouteTables({
  *     drgId: testDrg.id,
  *     displayName: drgRouteTableDisplayName,
  *     importDrgRouteDistributionId: testDrgRouteDistribution.id,
@@ -130,18 +130,18 @@ export interface GetDrgRouteTablesOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      */
     drgId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetDrgRouteTablesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetDrgRouteTablesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution.
      */
-    importDrgRouteDistributionId?: pulumi.Input<string>;
+    importDrgRouteDistributionId?: pulumi.Input<string | undefined>;
     /**
      * A filter that only returns matches for the specified lifecycle state. The value is case insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

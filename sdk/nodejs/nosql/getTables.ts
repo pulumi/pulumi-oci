@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTables = oci.Nosql.getTables({
+ * const testTables = oci.nosql.getTables({
  *     compartmentId: compartmentId,
  *     name: tableName,
  *     state: tableState,
@@ -90,7 +90,7 @@ export interface GetTablesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTables = oci.Nosql.getTables({
+ * const testTables = oci.nosql.getTables({
  *     compartmentId: compartmentId,
  *     name: tableName,
  *     state: tableState,
@@ -115,13 +115,13 @@ export interface GetTablesOutputArgs {
      * The ID of a table's compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Nosql.GetTablesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Nosql.GetTablesFilterArgs>[] | undefined>;
     /**
      * A shell-globbing-style (*?[]) filter for names.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Filter list by the lifecycle state of the item.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

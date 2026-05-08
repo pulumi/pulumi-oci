@@ -22,8 +22,8 @@ __all__ = ['MonitoredResourcesListMemberArgs', 'MonitoredResourcesListMember']
 class MonitoredResourcesListMemberArgs:
     def __init__(__self__, *,
                  monitored_resource_id: pulumi.Input[_builtins.str],
-                 destination_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 limit_level: Optional[pulumi.Input[_builtins.int]] = None):
+                 destination_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 limit_level: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a MonitoredResourcesListMember resource.
 
@@ -59,36 +59,36 @@ class MonitoredResourcesListMemberArgs:
 
     @_builtins.property
     @pulumi.getter(name="destinationResourceId")
-    def destination_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def destination_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "destination_resource_id")
 
     @destination_resource_id.setter
-    def destination_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def destination_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "destination_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="limitLevel")
-    def limit_level(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def limit_level(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The field which determines the depth of hierarchy while searching for members.
         """
         return pulumi.get(self, "limit_level")
 
     @limit_level.setter
-    def limit_level(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def limit_level(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "limit_level", value)
 
 
 @pulumi.input_type
 class _MonitoredResourcesListMemberState:
     def __init__(__self__, *,
-                 destination_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesListMemberItemArgs']]]] = None,
-                 limit_level: Optional[pulumi.Input[_builtins.int]] = None,
-                 monitored_resource_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 destination_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourcesListMemberItemArgs']]]] = None,
+                 limit_level: pulumi.Input[Optional[_builtins.int]] = None,
+                 monitored_resource_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MonitoredResourcesListMember resources.
 
@@ -112,43 +112,43 @@ class _MonitoredResourcesListMemberState:
 
     @_builtins.property
     @pulumi.getter(name="destinationResourceId")
-    def destination_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def destination_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "destination_resource_id")
 
     @destination_resource_id.setter
-    def destination_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def destination_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "destination_resource_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesListMemberItemArgs']]]]:
+    def items(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourcesListMemberItemArgs']]]]:
         """
         List of member resources.
         """
         return pulumi.get(self, "items")
 
     @items.setter
-    def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesListMemberItemArgs']]]]):
+    def items(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MonitoredResourcesListMemberItemArgs']]]]):
         pulumi.set(self, "items", value)
 
     @_builtins.property
     @pulumi.getter(name="limitLevel")
-    def limit_level(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def limit_level(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The field which determines the depth of hierarchy while searching for members.
         """
         return pulumi.get(self, "limit_level")
 
     @limit_level.setter
-    def limit_level(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def limit_level(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "limit_level", value)
 
     @_builtins.property
     @pulumi.getter(name="monitoredResourceId")
-    def monitored_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def monitored_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
 
@@ -159,7 +159,7 @@ class _MonitoredResourcesListMemberState:
         return pulumi.get(self, "monitored_resource_id")
 
     @monitored_resource_id.setter
-    def monitored_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def monitored_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "monitored_resource_id", value)
 
 
@@ -169,9 +169,9 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 destination_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 limit_level: Optional[pulumi.Input[_builtins.int]] = None,
-                 monitored_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 destination_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 limit_level: pulumi.Input[Optional[_builtins.int]] = None,
+                 monitored_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Monitored Resources List Member resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -190,7 +190,7 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
         test_monitored_resources_list_member = oci.stackmonitoring.MonitoredResourcesListMember("test_monitored_resources_list_member",
             monitored_resource_id=test_monitored_resource["id"],
             destination_resource_id=test_destination_resource["id"],
-            limit_level=monitored_resources_list_member_limit_level)
+            limit_level=int(monitored_resources_list_member_limit_level))
         ```
 
         ## Import
@@ -235,7 +235,7 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
         test_monitored_resources_list_member = oci.stackmonitoring.MonitoredResourcesListMember("test_monitored_resources_list_member",
             monitored_resource_id=test_monitored_resource["id"],
             destination_resource_id=test_destination_resource["id"],
-            limit_level=monitored_resources_list_member_limit_level)
+            limit_level=int(monitored_resources_list_member_limit_level))
         ```
 
         ## Import
@@ -262,9 +262,9 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 destination_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 limit_level: Optional[pulumi.Input[_builtins.int]] = None,
-                 monitored_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 destination_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 limit_level: pulumi.Input[Optional[_builtins.int]] = None,
+                 monitored_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -290,10 +290,10 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            destination_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-            items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcesListMemberItemArgs', 'MonitoredResourcesListMemberItemArgsDict']]]]] = None,
-            limit_level: Optional[pulumi.Input[_builtins.int]] = None,
-            monitored_resource_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'MonitoredResourcesListMember':
+            destination_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcesListMemberItemArgs', 'MonitoredResourcesListMemberItemArgsDict']]]]] = None,
+            limit_level: pulumi.Input[Optional[_builtins.int]] = None,
+            monitored_resource_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'MonitoredResourcesListMember':
         """
         Get an existing MonitoredResourcesListMember resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

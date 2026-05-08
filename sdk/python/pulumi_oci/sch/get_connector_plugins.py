@@ -124,7 +124,7 @@ def get_connector_plugins(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connector_plugins = oci.Sch.get_connector_plugins(display_name=connector_plugin_display_name,
+    test_connector_plugins = oci.sch.get_connector_plugins(display_name=connector_plugin_display_name,
         name=connector_plugin_name,
         state=connector_plugin_state)
     ```
@@ -149,10 +149,10 @@ def get_connector_plugins(display_name: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-def get_connector_plugins_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetConnectorPluginsFilterArgs', 'GetConnectorPluginsFilterArgsDict']]]]] = None,
-                                 name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_connector_plugins_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConnectorPluginsFilterArgs', 'GetConnectorPluginsFilterArgsDict']]]]] = None,
+                                 name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConnectorPluginsResult]:
     """
     This data source provides the list of Connector Plugins in Oracle Cloud Infrastructure Service Connector Hub service.
@@ -165,7 +165,7 @@ def get_connector_plugins_output(display_name: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_connector_plugins = oci.Sch.get_connector_plugins(display_name=connector_plugin_display_name,
+    test_connector_plugins = oci.sch.get_connector_plugins(display_name=connector_plugin_display_name,
         name=connector_plugin_name,
         state=connector_plugin_state)
     ```

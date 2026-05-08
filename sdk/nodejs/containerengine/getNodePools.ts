@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNodePools = oci.ContainerEngine.getNodePools({
+ * const testNodePools = oci.containerengine.getNodePools({
  *     compartmentId: compartmentId,
  *     clusterId: testCluster.id,
  *     name: nodePoolName,
@@ -100,7 +100,7 @@ export interface GetNodePoolsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNodePools = oci.ContainerEngine.getNodePools({
+ * const testNodePools = oci.containerengine.getNodePools({
  *     compartmentId: compartmentId,
  *     clusterId: testCluster.id,
  *     name: nodePoolName,
@@ -126,18 +126,18 @@ export interface GetNodePoolsOutputArgs {
     /**
      * The OCID of the cluster.
      */
-    clusterId?: pulumi.Input<string>;
+    clusterId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.GetNodePoolsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.GetNodePoolsFilterArgs>[] | undefined>;
     /**
      * The name to filter on.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
      */
-    states?: pulumi.Input<pulumi.Input<string>[]>;
+    states?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

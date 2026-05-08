@@ -49,8 +49,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetHttpMonitorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -91,8 +91,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetHttpMonitorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -133,8 +133,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetHttpMonitorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -175,8 +175,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetHttpMonitorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -217,8 +217,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetHttpMonitorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -259,8 +259,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetHttpMonitorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -303,8 +303,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetHttpMonitorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -347,8 +347,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetHttpMonitorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -391,8 +391,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetHttpMonitorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -435,8 +435,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetHttpMonitorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -481,8 +481,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetHttpProbeResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -528,8 +528,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetHttpProbeResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -575,8 +575,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetHttpProbeResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -622,8 +622,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetHttpProbeResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -669,8 +669,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetHttpProbeResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -714,8 +714,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetPingMonitorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -756,8 +756,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetPingMonitorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -798,8 +798,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetPingMonitorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -840,8 +840,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetPingMonitorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -882,8 +882,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetPingMonitorArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -927,8 +927,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetPingMonitorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -974,8 +974,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetPingMonitorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1021,8 +1021,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetPingMonitorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1068,8 +1068,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetPingMonitorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1115,8 +1115,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetPingMonitorsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1165,8 +1165,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetPingProbeResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1216,8 +1216,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetPingProbeResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1267,8 +1267,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetPingProbeResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1318,8 +1318,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetPingProbeResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1369,8 +1369,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetPingProbeResultsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1414,8 +1414,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetVantagePointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1457,8 +1457,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetVantagePointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1500,8 +1500,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetVantagePointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1543,8 +1543,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetVantagePointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1586,8 +1586,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetVantagePointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1629,8 +1629,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetVantagePointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1672,8 +1672,8 @@ public final class HealthChecksFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.HealthChecks.HealthChecksFunctions;
      * import com.pulumi.oci.HealthChecks.inputs.GetVantagePointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

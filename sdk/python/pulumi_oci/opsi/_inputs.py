@@ -94,7 +94,7 @@ class ChargebackPlanPlanCustomItemArgsDict(TypedDict):
     """
     (Updatable) Value of chargeback plan customization item.
     """
-    is_customizable: NotRequired[pulumi.Input[_builtins.bool]]
+    is_customizable: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Indicates whether the chargeback plan customization item can be customized.
     """
@@ -104,7 +104,7 @@ class ChargebackPlanPlanCustomItemArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[_builtins.str],
                  value: pulumi.Input[_builtins.str],
-                 is_customizable: Optional[pulumi.Input[_builtins.bool]] = None):
+                 is_customizable: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] name: (Updatable) Name of chargeback plan customization item. Example items for Exadata Insights Chargeback are statistic, percentile, infrastructureCost, additionalServerCost etc.
         :param pulumi.Input[_builtins.str] value: (Updatable) Value of chargeback plan customization item.
@@ -141,14 +141,14 @@ class ChargebackPlanPlanCustomItemArgs:
 
     @_builtins.property
     @pulumi.getter(name="isCustomizable")
-    def is_customizable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_customizable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether the chargeback plan customization item can be customized.
         """
         return pulumi.get(self, "is_customizable")
 
     @is_customizable.setter
-    def is_customizable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_customizable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_customizable", value)
 
 
@@ -157,23 +157,23 @@ class DatabaseInsightConnectionCredentialDetailsArgsDict(TypedDict):
     """
     Credential type.
     """
-    credential_source_name: NotRequired[pulumi.Input[_builtins.str]]
+    credential_source_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
     """
-    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    named_credential_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     database user role.
     """
-    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     database user name.
     """
@@ -182,11 +182,11 @@ class DatabaseInsightConnectionCredentialDetailsArgsDict(TypedDict):
 class DatabaseInsightConnectionCredentialDetailsArgs:
     def __init__(__self__, *,
                  credential_type: pulumi.Input[_builtins.str],
-                 credential_source_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 credential_source_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 named_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_type: Credential type.
         :param pulumi.Input[_builtins.str] credential_source_name: Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
@@ -221,83 +221,83 @@ class DatabaseInsightConnectionCredentialDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="credentialSourceName")
-    def credential_source_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_source_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
         """
         return pulumi.get(self, "credential_source_name")
 
     @credential_source_name.setter
-    def credential_source_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_source_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_source_name", value)
 
     @_builtins.property
     @pulumi.getter(name="namedCredentialId")
-    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def named_credential_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
         """
         return pulumi.get(self, "named_credential_id")
 
     @named_credential_id.setter
-    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def named_credential_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         database user role.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         database user name.
         """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
 
 class DatabaseInsightConnectionDetailsArgsDict(TypedDict):
-    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    host_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the listener host that will be used to create the connect string to the database.
     """
-    hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input['DatabaseInsightConnectionDetailsHostArgsDict']]]]
+    hosts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseInsightConnectionDetailsHostArgs']]]]]
     """
     List of hosts and port for private endpoint accessed database resource.
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Listener port number used for connection requests.
     """
-    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Protocol used for connection requests for private endpoint accssed database resource.
     """
-    service_name: NotRequired[pulumi.Input[_builtins.str]]
+    service_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Database service name used for connection requests.
     """
@@ -305,11 +305,11 @@ class DatabaseInsightConnectionDetailsArgsDict(TypedDict):
 @pulumi.input_type
 class DatabaseInsightConnectionDetailsArgs:
     def __init__(__self__, *,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseInsightConnectionDetailsHostArgs']]]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 hosts: pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseInsightConnectionDetailsHostArgs']]]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] host_name: Name of the listener host that will be used to create the connect string to the database.
         :param pulumi.Input[Sequence[pulumi.Input['DatabaseInsightConnectionDetailsHostArgs']]] hosts: List of hosts and port for private endpoint accessed database resource.
@@ -330,71 +330,71 @@ class DatabaseInsightConnectionDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the listener host that will be used to create the connect string to the database.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseInsightConnectionDetailsHostArgs']]]]:
+    def hosts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseInsightConnectionDetailsHostArgs']]]]:
         """
         List of hosts and port for private endpoint accessed database resource.
         """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
-    def hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseInsightConnectionDetailsHostArgs']]]]):
+    def hosts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseInsightConnectionDetailsHostArgs']]]]):
         pulumi.set(self, "hosts", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Listener port number used for connection requests.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Protocol used for connection requests for private endpoint accssed database resource.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceName")
-    def service_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Database service name used for connection requests.
         """
         return pulumi.get(self, "service_name")
 
     @service_name.setter
-    def service_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_name", value)
 
 
 class DatabaseInsightConnectionDetailsHostArgsDict(TypedDict):
-    host_ip: NotRequired[pulumi.Input[_builtins.str]]
+    host_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Host IP used for connection requests for Cloud DB resource.
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Listener port number used for connection requests for rivate endpoint accessed db resource.
     """
@@ -402,8 +402,8 @@ class DatabaseInsightConnectionDetailsHostArgsDict(TypedDict):
 @pulumi.input_type
 class DatabaseInsightConnectionDetailsHostArgs:
     def __init__(__self__, *,
-                 host_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None):
+                 host_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] host_ip: Host IP used for connection requests for Cloud DB resource.
         :param pulumi.Input[_builtins.int] port: Listener port number used for connection requests for rivate endpoint accessed db resource.
@@ -415,26 +415,26 @@ class DatabaseInsightConnectionDetailsHostArgs:
 
     @_builtins.property
     @pulumi.getter(name="hostIp")
-    def host_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Host IP used for connection requests for Cloud DB resource.
         """
         return pulumi.get(self, "host_ip")
 
     @host_ip.setter
-    def host_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_ip", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Listener port number used for connection requests for rivate endpoint accessed db resource.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
 
@@ -443,27 +443,27 @@ class DatabaseInsightCredentialDetailsArgsDict(TypedDict):
     """
     CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
     """
-    credential_source_name: NotRequired[pulumi.Input[_builtins.str]]
+    credential_source_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Credential source name that had been added in Management Agent wallet. This value is only required when credential set by CREDENTIALS_BY_SOURCE and is optional properties for the others.
     """
-    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    named_credential_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in the Management Agent to connect the Autonomous Database.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     database user role.
     """
-    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     database user name.
     """
-    wallet_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    wallet_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
     """
@@ -472,12 +472,12 @@ class DatabaseInsightCredentialDetailsArgsDict(TypedDict):
 class DatabaseInsightCredentialDetailsArgs:
     def __init__(__self__, *,
                  credential_type: pulumi.Input[_builtins.str],
-                 credential_source_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 wallet_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 credential_source_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 named_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 wallet_secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_type: CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
         :param pulumi.Input[_builtins.str] credential_source_name: Credential source name that had been added in Management Agent wallet. This value is only required when credential set by CREDENTIALS_BY_SOURCE and is optional properties for the others.
@@ -515,87 +515,87 @@ class DatabaseInsightCredentialDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="credentialSourceName")
-    def credential_source_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_source_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Credential source name that had been added in Management Agent wallet. This value is only required when credential set by CREDENTIALS_BY_SOURCE and is optional properties for the others.
         """
         return pulumi.get(self, "credential_source_name")
 
     @credential_source_name.setter
-    def credential_source_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_source_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_source_name", value)
 
     @_builtins.property
     @pulumi.getter(name="namedCredentialId")
-    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def named_credential_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in the Management Agent to connect the Autonomous Database.
         """
         return pulumi.get(self, "named_credential_id")
 
     @named_credential_id.setter
-    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def named_credential_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         database user role.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         database user name.
         """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
     @_builtins.property
     @pulumi.getter(name="walletSecretId")
-    def wallet_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def wallet_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
         """
         return pulumi.get(self, "wallet_secret_id")
 
     @wallet_secret_id.setter
-    def wallet_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def wallet_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "wallet_secret_id", value)
 
 
 class ExadataInsightChargebackPlanDetailArgsDict(TypedDict):
-    plan_id: NotRequired[pulumi.Input[_builtins.str]]
+    plan_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI Chargeback plan resource.
     """
-    plan_type: NotRequired[pulumi.Input[_builtins.str]]
+    plan_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
     """
-    time_enabled: NotRequired[pulumi.Input[_builtins.str]]
+    time_enabled: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the chargeback plan was enabled on the resource, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
     """
@@ -603,9 +603,9 @@ class ExadataInsightChargebackPlanDetailArgsDict(TypedDict):
 @pulumi.input_type
 class ExadataInsightChargebackPlanDetailArgs:
     def __init__(__self__, *,
-                 plan_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 plan_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_enabled: Optional[pulumi.Input[_builtins.str]] = None):
+                 plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 plan_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_enabled: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] plan_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI Chargeback plan resource.
         :param pulumi.Input[_builtins.str] plan_type: Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
@@ -620,67 +620,67 @@ class ExadataInsightChargebackPlanDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="planId")
-    def plan_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def plan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI Chargeback plan resource.
         """
         return pulumi.get(self, "plan_id")
 
     @plan_id.setter
-    def plan_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def plan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "plan_id", value)
 
     @_builtins.property
     @pulumi.getter(name="planType")
-    def plan_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def plan_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
         """
         return pulumi.get(self, "plan_type")
 
     @plan_type.setter
-    def plan_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def plan_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "plan_type", value)
 
     @_builtins.property
     @pulumi.getter(name="timeEnabled")
-    def time_enabled(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_enabled(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the chargeback plan was enabled on the resource, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_enabled")
 
     @time_enabled.setter
-    def time_enabled(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_enabled(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_enabled", value)
 
 
 class ExadataInsightMemberVmClusterDetailArgsDict(TypedDict):
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     """
-    dbm_private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    dbm_private_endpoint_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
     """
-    member_autonomous_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgsDict']]]]
+    member_autonomous_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs']]]]]
     """
     The autonomous databases that belong to the Autonomous VM Cluster
     """
-    member_database_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgsDict']]]]
+    member_database_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs']]]]]
     """
     The databases that belong to the VM Cluster
     """
-    opsi_private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    opsi_private_endpoint_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
     """
-    vm_cluster_type: NotRequired[pulumi.Input[_builtins.str]]
+    vm_cluster_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Exadata VMCluster type
     """
-    vmcluster_id: NotRequired[pulumi.Input[_builtins.str]]
+    vmcluster_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
     """
@@ -688,13 +688,13 @@ class ExadataInsightMemberVmClusterDetailArgsDict(TypedDict):
 @pulumi.input_type
 class ExadataInsightMemberVmClusterDetailArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 dbm_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 member_autonomous_details: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs']]]] = None,
-                 member_database_details: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs']]]] = None,
-                 opsi_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_cluster_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 vmcluster_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 dbm_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 member_autonomous_details: pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs']]]] = None,
+                 member_database_details: pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs']]]] = None,
+                 opsi_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 vmcluster_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] dbm_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
@@ -721,143 +721,143 @@ class ExadataInsightMemberVmClusterDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dbmPrivateEndpointId")
-    def dbm_private_endpoint_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dbm_private_endpoint_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
         """
         return pulumi.get(self, "dbm_private_endpoint_id")
 
     @dbm_private_endpoint_id.setter
-    def dbm_private_endpoint_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dbm_private_endpoint_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dbm_private_endpoint_id", value)
 
     @_builtins.property
     @pulumi.getter(name="memberAutonomousDetails")
-    def member_autonomous_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs']]]]:
+    def member_autonomous_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs']]]]:
         """
         The autonomous databases that belong to the Autonomous VM Cluster
         """
         return pulumi.get(self, "member_autonomous_details")
 
     @member_autonomous_details.setter
-    def member_autonomous_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs']]]]):
+    def member_autonomous_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs']]]]):
         pulumi.set(self, "member_autonomous_details", value)
 
     @_builtins.property
     @pulumi.getter(name="memberDatabaseDetails")
-    def member_database_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs']]]]:
+    def member_database_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs']]]]:
         """
         The databases that belong to the VM Cluster
         """
         return pulumi.get(self, "member_database_details")
 
     @member_database_details.setter
-    def member_database_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs']]]]):
+    def member_database_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs']]]]):
         pulumi.set(self, "member_database_details", value)
 
     @_builtins.property
     @pulumi.getter(name="opsiPrivateEndpointId")
-    def opsi_private_endpoint_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def opsi_private_endpoint_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
         """
         return pulumi.get(self, "opsi_private_endpoint_id")
 
     @opsi_private_endpoint_id.setter
-    def opsi_private_endpoint_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def opsi_private_endpoint_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "opsi_private_endpoint_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vmClusterType")
-    def vm_cluster_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vm_cluster_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Exadata VMCluster type
         """
         return pulumi.get(self, "vm_cluster_type")
 
     @vm_cluster_type.setter
-    def vm_cluster_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vm_cluster_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_cluster_type", value)
 
     @_builtins.property
     @pulumi.getter(name="vmclusterId")
-    def vmcluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vmcluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster.
         """
         return pulumi.get(self, "vmcluster_id")
 
     @vmcluster_id.setter
-    def vmcluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vmcluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vmcluster_id", value)
 
 
 class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgsDict(TypedDict):
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Compartment Identifier of database
     """
-    connection_credential_details: NotRequired[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgsDict']]
+    connection_credential_details: NotRequired[pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgs']]]
     """
     User credential details to connect to the database.
     """
-    connection_details: NotRequired[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgsDict']]
+    connection_details: NotRequired[pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgs']]]
     """
     Connection details to connect to the database. HostName, protocol, and port should be specified.
     """
-    credential_details: NotRequired[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgsDict']]
+    credential_details: NotRequired[pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgs']]]
     """
     User credential details to connect to the database.
     """
-    database_id: NotRequired[pulumi.Input[_builtins.str]]
+    database_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
     """
-    database_resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    database_resource_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Oracle Cloud Infrastructure database resource type
     """
-    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    defined_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
     """
-    deployment_type: NotRequired[pulumi.Input[_builtins.str]]
+    deployment_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Database Deployment Type
     """
-    entity_source: NotRequired[pulumi.Input[_builtins.str]]
+    entity_source: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Source of the database entity.
     """
-    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    freeform_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
     """
-    is_advanced_features_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_advanced_features_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Flag is to identify if advanced features for autonomous database is enabled or not
     """
-    management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    management_agent_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
     """
-    opsi_private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    opsi_private_endpoint_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
     """
-    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    system_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
     """
@@ -865,20 +865,20 @@ class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgsDict(TypedDic
 @pulumi.input_type
 class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_credential_details: Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgs']] = None,
-                 connection_details: Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgs']] = None,
-                 credential_details: Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgs']] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_advanced_features_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 opsi_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_credential_details: pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgs']] = None,
+                 connection_details: pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgs']] = None,
+                 credential_details: pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgs']] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_advanced_features_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 opsi_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier of database
         :param pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgs'] connection_credential_details: User credential details to connect to the database.
@@ -926,170 +926,170 @@ class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Compartment Identifier of database
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionCredentialDetails")
-    def connection_credential_details(self) -> Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgs']]:
+    def connection_credential_details(self) -> pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgs']]:
         """
         User credential details to connect to the database.
         """
         return pulumi.get(self, "connection_credential_details")
 
     @connection_credential_details.setter
-    def connection_credential_details(self, value: Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgs']]):
+    def connection_credential_details(self, value: pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgs']]):
         pulumi.set(self, "connection_credential_details", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionDetails")
-    def connection_details(self) -> Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgs']]:
+    def connection_details(self) -> pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgs']]:
         """
         Connection details to connect to the database. HostName, protocol, and port should be specified.
         """
         return pulumi.get(self, "connection_details")
 
     @connection_details.setter
-    def connection_details(self, value: Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgs']]):
+    def connection_details(self, value: pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgs']]):
         pulumi.set(self, "connection_details", value)
 
     @_builtins.property
     @pulumi.getter(name="credentialDetails")
-    def credential_details(self) -> Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgs']]:
+    def credential_details(self) -> pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgs']]:
         """
         User credential details to connect to the database.
         """
         return pulumi.get(self, "credential_details")
 
     @credential_details.setter
-    def credential_details(self, value: Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgs']]):
+    def credential_details(self, value: pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgs']]):
         pulumi.set(self, "credential_details", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
-    def database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseResourceType")
-    def database_resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Oracle Cloud Infrastructure database resource type
         """
         return pulumi.get(self, "database_resource_type")
 
     @database_resource_type.setter
-    def database_resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deploymentType")
-    def deployment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deployment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Database Deployment Type
         """
         return pulumi.get(self, "deployment_type")
 
     @deployment_type.setter
-    def deployment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deployment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deployment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="entitySource")
-    def entity_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Source of the database entity.
         """
         return pulumi.get(self, "entity_source")
 
     @entity_source.setter
-    def entity_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_source", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isAdvancedFeaturesEnabled")
-    def is_advanced_features_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_advanced_features_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Flag is to identify if advanced features for autonomous database is enabled or not
         """
         return pulumi.get(self, "is_advanced_features_enabled")
 
     @is_advanced_features_enabled.setter
-    def is_advanced_features_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_advanced_features_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_advanced_features_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
         """
         return pulumi.get(self, "management_agent_id")
 
     @management_agent_id.setter
-    def management_agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="opsiPrivateEndpointId")
-    def opsi_private_endpoint_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def opsi_private_endpoint_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
         """
         return pulumi.get(self, "opsi_private_endpoint_id")
 
     @opsi_private_endpoint_id.setter
-    def opsi_private_endpoint_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def opsi_private_endpoint_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "opsi_private_endpoint_id", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
 
@@ -1098,27 +1098,27 @@ class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredent
     """
     CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
     """
-    credential_source_name: NotRequired[pulumi.Input[_builtins.str]]
+    credential_source_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
     """
-    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    named_credential_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     database user role.
     """
-    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     database user name.
     """
-    wallet_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    wallet_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
     """
@@ -1127,12 +1127,12 @@ class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredent
 class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgs:
     def __init__(__self__, *,
                  credential_type: pulumi.Input[_builtins.str],
-                 credential_source_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 wallet_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 credential_source_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 named_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 wallet_secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_type: CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
         :param pulumi.Input[_builtins.str] credential_source_name: Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
@@ -1170,91 +1170,91 @@ class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredent
 
     @_builtins.property
     @pulumi.getter(name="credentialSourceName")
-    def credential_source_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_source_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
         """
         return pulumi.get(self, "credential_source_name")
 
     @credential_source_name.setter
-    def credential_source_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_source_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_source_name", value)
 
     @_builtins.property
     @pulumi.getter(name="namedCredentialId")
-    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def named_credential_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
         """
         return pulumi.get(self, "named_credential_id")
 
     @named_credential_id.setter
-    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def named_credential_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         database user role.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         database user name.
         """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
     @_builtins.property
     @pulumi.getter(name="walletSecretId")
-    def wallet_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def wallet_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
         """
         return pulumi.get(self, "wallet_secret_id")
 
     @wallet_secret_id.setter
-    def wallet_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def wallet_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "wallet_secret_id", value)
 
 
 class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgsDict(TypedDict):
-    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    host_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the listener host that will be used to create the connect string to the database.
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Listener port number used for connection requests.
     """
-    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Protocol used for connection requests.
     """
-    service_name: NotRequired[pulumi.Input[_builtins.str]]
+    service_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Database service name used for connection requests.
     """
@@ -1262,10 +1262,10 @@ class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetails
 @pulumi.input_type
 class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgs:
     def __init__(__self__, *,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] host_name: Name of the listener host that will be used to create the connect string to the database.
         :param pulumi.Input[_builtins.int] port: Listener port number used for connection requests.
@@ -1283,50 +1283,50 @@ class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetails
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the listener host that will be used to create the connect string to the database.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Listener port number used for connection requests.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Protocol used for connection requests.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceName")
-    def service_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Database service name used for connection requests.
         """
         return pulumi.get(self, "service_name")
 
     @service_name.setter
-    def service_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_name", value)
 
 
@@ -1335,27 +1335,27 @@ class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetails
     """
     CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
     """
-    credential_source_name: NotRequired[pulumi.Input[_builtins.str]]
+    credential_source_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
     """
-    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    named_credential_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     database user role.
     """
-    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     database user name.
     """
-    wallet_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    wallet_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
     """
@@ -1364,12 +1364,12 @@ class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetails
 class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgs:
     def __init__(__self__, *,
                  credential_type: pulumi.Input[_builtins.str],
-                 credential_source_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 wallet_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 credential_source_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 named_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 wallet_secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_type: CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
         :param pulumi.Input[_builtins.str] credential_source_name: Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
@@ -1407,135 +1407,135 @@ class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetails
 
     @_builtins.property
     @pulumi.getter(name="credentialSourceName")
-    def credential_source_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_source_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
         """
         return pulumi.get(self, "credential_source_name")
 
     @credential_source_name.setter
-    def credential_source_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_source_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_source_name", value)
 
     @_builtins.property
     @pulumi.getter(name="namedCredentialId")
-    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def named_credential_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
         """
         return pulumi.get(self, "named_credential_id")
 
     @named_credential_id.setter
-    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def named_credential_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         database user role.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         database user name.
         """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
     @_builtins.property
     @pulumi.getter(name="walletSecretId")
-    def wallet_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def wallet_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
         """
         return pulumi.get(self, "wallet_secret_id")
 
     @wallet_secret_id.setter
-    def wallet_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def wallet_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "wallet_secret_id", value)
 
 
 class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgsDict(TypedDict):
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Compartment Identifier of database
     """
-    connection_credential_details: NotRequired[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgsDict']]
+    connection_credential_details: NotRequired[pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs']]]
     """
     User credential details to connect to the database.
     """
-    connection_details: NotRequired[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgsDict']]
+    connection_details: NotRequired[pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs']]]
     """
     Connection details to connect to the database. HostName, protocol, and port should be specified.
     """
-    credential_details: NotRequired[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgsDict']]
+    credential_details: NotRequired[pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs']]]
     """
     User credential details to connect to the database.
     """
-    database_id: NotRequired[pulumi.Input[_builtins.str]]
+    database_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
     """
-    database_resource_type: NotRequired[pulumi.Input[_builtins.str]]
+    database_resource_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Oracle Cloud Infrastructure database resource type
     """
-    dbm_private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    dbm_private_endpoint_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
     """
-    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    defined_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
     """
-    deployment_type: NotRequired[pulumi.Input[_builtins.str]]
+    deployment_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Database Deployment Type (EXACS will be supported in the future)
     """
-    entity_source: NotRequired[pulumi.Input[_builtins.str]]
+    entity_source: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Source of the database entity.
     """
-    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    freeform_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
     """
-    management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    management_agent_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
     """
-    opsi_private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+    opsi_private_endpoint_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
     """
-    service_name: NotRequired[pulumi.Input[_builtins.str]]
+    service_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Database service name used for connection requests.
     """
-    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    system_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
     """
@@ -1543,21 +1543,21 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgsDict(TypedDict)
 @pulumi.input_type
 class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_credential_details: Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs']] = None,
-                 connection_details: Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs']] = None,
-                 credential_details: Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs']] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 dbm_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 entity_source: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 opsi_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_credential_details: pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs']] = None,
+                 connection_details: pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs']] = None,
+                 credential_details: pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs']] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 dbm_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 entity_source: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 opsi_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier of database
         :param pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs'] connection_credential_details: User credential details to connect to the database.
@@ -1608,182 +1608,182 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Compartment Identifier of database
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionCredentialDetails")
-    def connection_credential_details(self) -> Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs']]:
+    def connection_credential_details(self) -> pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs']]:
         """
         User credential details to connect to the database.
         """
         return pulumi.get(self, "connection_credential_details")
 
     @connection_credential_details.setter
-    def connection_credential_details(self, value: Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs']]):
+    def connection_credential_details(self, value: pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs']]):
         pulumi.set(self, "connection_credential_details", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionDetails")
-    def connection_details(self) -> Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs']]:
+    def connection_details(self) -> pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs']]:
         """
         Connection details to connect to the database. HostName, protocol, and port should be specified.
         """
         return pulumi.get(self, "connection_details")
 
     @connection_details.setter
-    def connection_details(self, value: Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs']]):
+    def connection_details(self, value: pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs']]):
         pulumi.set(self, "connection_details", value)
 
     @_builtins.property
     @pulumi.getter(name="credentialDetails")
-    def credential_details(self) -> Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs']]:
+    def credential_details(self) -> pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs']]:
         """
         User credential details to connect to the database.
         """
         return pulumi.get(self, "credential_details")
 
     @credential_details.setter
-    def credential_details(self, value: Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs']]):
+    def credential_details(self, value: pulumi.Input[Optional['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs']]):
         pulumi.set(self, "credential_details", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
-    def database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseResourceType")
-    def database_resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Oracle Cloud Infrastructure database resource type
         """
         return pulumi.get(self, "database_resource_type")
 
     @database_resource_type.setter
-    def database_resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dbmPrivateEndpointId")
-    def dbm_private_endpoint_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dbm_private_endpoint_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
         """
         return pulumi.get(self, "dbm_private_endpoint_id")
 
     @dbm_private_endpoint_id.setter
-    def dbm_private_endpoint_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dbm_private_endpoint_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dbm_private_endpoint_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deploymentType")
-    def deployment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deployment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Database Deployment Type (EXACS will be supported in the future)
         """
         return pulumi.get(self, "deployment_type")
 
     @deployment_type.setter
-    def deployment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deployment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deployment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="entitySource")
-    def entity_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def entity_source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Source of the database entity.
         """
         return pulumi.get(self, "entity_source")
 
     @entity_source.setter
-    def entity_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def entity_source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "entity_source", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="managementAgentId")
-    def management_agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
         """
         return pulumi.get(self, "management_agent_id")
 
     @management_agent_id.setter
-    def management_agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="opsiPrivateEndpointId")
-    def opsi_private_endpoint_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def opsi_private_endpoint_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
         """
         return pulumi.get(self, "opsi_private_endpoint_id")
 
     @opsi_private_endpoint_id.setter
-    def opsi_private_endpoint_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def opsi_private_endpoint_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "opsi_private_endpoint_id", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceName")
-    def service_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Database service name used for connection requests.
         """
         return pulumi.get(self, "service_name")
 
     @service_name.setter
-    def service_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_name", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
 
@@ -1792,27 +1792,27 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentia
     """
     CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
     """
-    credential_source_name: NotRequired[pulumi.Input[_builtins.str]]
+    credential_source_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
     """
-    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    named_credential_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     database user role.
     """
-    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     database user name.
     """
-    wallet_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    wallet_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
     """
@@ -1821,12 +1821,12 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentia
 class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs:
     def __init__(__self__, *,
                  credential_type: pulumi.Input[_builtins.str],
-                 credential_source_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 wallet_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 credential_source_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 named_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 wallet_secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_type: CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
         :param pulumi.Input[_builtins.str] credential_source_name: Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
@@ -1864,95 +1864,95 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentia
 
     @_builtins.property
     @pulumi.getter(name="credentialSourceName")
-    def credential_source_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_source_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
         """
         return pulumi.get(self, "credential_source_name")
 
     @credential_source_name.setter
-    def credential_source_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_source_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_source_name", value)
 
     @_builtins.property
     @pulumi.getter(name="namedCredentialId")
-    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def named_credential_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
         """
         return pulumi.get(self, "named_credential_id")
 
     @named_credential_id.setter
-    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def named_credential_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         database user role.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         database user name.
         """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
     @_builtins.property
     @pulumi.getter(name="walletSecretId")
-    def wallet_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def wallet_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
         """
         return pulumi.get(self, "wallet_secret_id")
 
     @wallet_secret_id.setter
-    def wallet_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def wallet_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "wallet_secret_id", value)
 
 
 class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgsDict(TypedDict):
-    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    host_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the listener host that will be used to create the connect string to the database.
     """
-    hosts: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgsDict']]]]
+    hosts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs']]]]]
     """
     List of hosts and port for private endpoint accessed database resource.
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Listener port number used for connection requests.
     """
-    protocol: NotRequired[pulumi.Input[_builtins.str]]
+    protocol: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Protocol used for connection requests for private endpoint accssed database resource.
     """
-    service_name: NotRequired[pulumi.Input[_builtins.str]]
+    service_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Database service name used for connection requests.
     """
@@ -1960,11 +1960,11 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsAr
 @pulumi.input_type
 class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs:
     def __init__(__self__, *,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 hosts: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs']]]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 hosts: pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs']]]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] host_name: Name of the listener host that will be used to create the connect string to the database.
         :param pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs']]] hosts: List of hosts and port for private endpoint accessed database resource.
@@ -1985,71 +1985,71 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsAr
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the listener host that will be used to create the connect string to the database.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def hosts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs']]]]:
+    def hosts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs']]]]:
         """
         List of hosts and port for private endpoint accessed database resource.
         """
         return pulumi.get(self, "hosts")
 
     @hosts.setter
-    def hosts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs']]]]):
+    def hosts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs']]]]):
         pulumi.set(self, "hosts", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Listener port number used for connection requests.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Protocol used for connection requests for private endpoint accssed database resource.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceName")
-    def service_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Database service name used for connection requests.
         """
         return pulumi.get(self, "service_name")
 
     @service_name.setter
-    def service_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_name", value)
 
 
 class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgsDict(TypedDict):
-    host_ip: NotRequired[pulumi.Input[_builtins.str]]
+    host_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Host IP used for connection requests for Cloud DB resource.
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Listener port number used for connection requests for rivate endpoint accessed db resource.
     """
@@ -2057,8 +2057,8 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHo
 @pulumi.input_type
 class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs:
     def __init__(__self__, *,
-                 host_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None):
+                 host_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] host_ip: Host IP used for connection requests for Cloud DB resource.
         :param pulumi.Input[_builtins.int] port: Listener port number used for connection requests for rivate endpoint accessed db resource.
@@ -2070,26 +2070,26 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHo
 
     @_builtins.property
     @pulumi.getter(name="hostIp")
-    def host_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Host IP used for connection requests for Cloud DB resource.
         """
         return pulumi.get(self, "host_ip")
 
     @host_ip.setter
-    def host_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_ip", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Listener port number used for connection requests for rivate endpoint accessed db resource.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
 
@@ -2098,27 +2098,27 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
     """
     CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
     """
-    credential_source_name: NotRequired[pulumi.Input[_builtins.str]]
+    credential_source_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
     """
-    named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+    named_credential_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
     """
-    role: NotRequired[pulumi.Input[_builtins.str]]
+    role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     database user role.
     """
-    user_name: NotRequired[pulumi.Input[_builtins.str]]
+    user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     database user name.
     """
-    wallet_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    wallet_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
     """
@@ -2127,12 +2127,12 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
 class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs:
     def __init__(__self__, *,
                  credential_type: pulumi.Input[_builtins.str],
-                 credential_source_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 wallet_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 credential_source_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 named_credential_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 wallet_secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_type: CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
         :param pulumi.Input[_builtins.str] credential_source_name: Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
@@ -2170,107 +2170,107 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
 
     @_builtins.property
     @pulumi.getter(name="credentialSourceName")
-    def credential_source_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_source_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
         """
         return pulumi.get(self, "credential_source_name")
 
     @credential_source_name.setter
-    def credential_source_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_source_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_source_name", value)
 
     @_builtins.property
     @pulumi.getter(name="namedCredentialId")
-    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def named_credential_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
         """
         return pulumi.get(self, "named_credential_id")
 
     @named_credential_id.setter
-    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def named_credential_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         database user role.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="userName")
-    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         database user name.
         """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
-    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_name", value)
 
     @_builtins.property
     @pulumi.getter(name="walletSecretId")
-    def wallet_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def wallet_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
         """
         return pulumi.get(self, "wallet_secret_id")
 
     @wallet_secret_id.setter
-    def wallet_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def wallet_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "wallet_secret_id", value)
 
 
 class NewsReportContentTypesArgsDict(TypedDict):
-    actionable_insights_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    actionable_insights_resources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Supported resources for actionable insights content type.
     """
-    capacity_planning_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    capacity_planning_resources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Supported resources for capacity planning content type.
     """
-    sql_insights_fleet_analysis_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    sql_insights_fleet_analysis_resources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Supported resources for SQL insights - fleet analysis content type.
     """
-    sql_insights_performance_degradation_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    sql_insights_performance_degradation_resources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Supported resources for SQL insights - performance degradation content type.
     """
-    sql_insights_plan_changes_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    sql_insights_plan_changes_resources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Supported resources for SQL insights - plan changes content type.
     """
-    sql_insights_top_databases_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    sql_insights_top_databases_resources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Supported resources for SQL insights - top databases content type.
     """
-    sql_insights_top_sql_by_insights_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    sql_insights_top_sql_by_insights_resources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Supported resources for SQL insights - top SQL by insights content type.
     """
-    sql_insights_top_sql_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    sql_insights_top_sql_resources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Supported resources for SQL insights - top SQL content type.
     """
@@ -2278,14 +2278,14 @@ class NewsReportContentTypesArgsDict(TypedDict):
 @pulumi.input_type
 class NewsReportContentTypesArgs:
     def __init__(__self__, *,
-                 actionable_insights_resources: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 capacity_planning_resources: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 sql_insights_fleet_analysis_resources: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 sql_insights_performance_degradation_resources: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 sql_insights_plan_changes_resources: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 sql_insights_top_databases_resources: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 sql_insights_top_sql_by_insights_resources: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 sql_insights_top_sql_resources: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 actionable_insights_resources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 capacity_planning_resources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 sql_insights_fleet_analysis_resources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 sql_insights_performance_degradation_resources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 sql_insights_plan_changes_resources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 sql_insights_top_databases_resources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 sql_insights_top_sql_by_insights_resources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 sql_insights_top_sql_resources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] actionable_insights_resources: (Updatable) Supported resources for actionable insights content type.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] capacity_planning_resources: (Updatable) Supported resources for capacity planning content type.
@@ -2315,98 +2315,98 @@ class NewsReportContentTypesArgs:
 
     @_builtins.property
     @pulumi.getter(name="actionableInsightsResources")
-    def actionable_insights_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def actionable_insights_resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Supported resources for actionable insights content type.
         """
         return pulumi.get(self, "actionable_insights_resources")
 
     @actionable_insights_resources.setter
-    def actionable_insights_resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def actionable_insights_resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "actionable_insights_resources", value)
 
     @_builtins.property
     @pulumi.getter(name="capacityPlanningResources")
-    def capacity_planning_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def capacity_planning_resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Supported resources for capacity planning content type.
         """
         return pulumi.get(self, "capacity_planning_resources")
 
     @capacity_planning_resources.setter
-    def capacity_planning_resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def capacity_planning_resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "capacity_planning_resources", value)
 
     @_builtins.property
     @pulumi.getter(name="sqlInsightsFleetAnalysisResources")
-    def sql_insights_fleet_analysis_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def sql_insights_fleet_analysis_resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Supported resources for SQL insights - fleet analysis content type.
         """
         return pulumi.get(self, "sql_insights_fleet_analysis_resources")
 
     @sql_insights_fleet_analysis_resources.setter
-    def sql_insights_fleet_analysis_resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def sql_insights_fleet_analysis_resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "sql_insights_fleet_analysis_resources", value)
 
     @_builtins.property
     @pulumi.getter(name="sqlInsightsPerformanceDegradationResources")
-    def sql_insights_performance_degradation_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def sql_insights_performance_degradation_resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Supported resources for SQL insights - performance degradation content type.
         """
         return pulumi.get(self, "sql_insights_performance_degradation_resources")
 
     @sql_insights_performance_degradation_resources.setter
-    def sql_insights_performance_degradation_resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def sql_insights_performance_degradation_resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "sql_insights_performance_degradation_resources", value)
 
     @_builtins.property
     @pulumi.getter(name="sqlInsightsPlanChangesResources")
-    def sql_insights_plan_changes_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def sql_insights_plan_changes_resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Supported resources for SQL insights - plan changes content type.
         """
         return pulumi.get(self, "sql_insights_plan_changes_resources")
 
     @sql_insights_plan_changes_resources.setter
-    def sql_insights_plan_changes_resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def sql_insights_plan_changes_resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "sql_insights_plan_changes_resources", value)
 
     @_builtins.property
     @pulumi.getter(name="sqlInsightsTopDatabasesResources")
-    def sql_insights_top_databases_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def sql_insights_top_databases_resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Supported resources for SQL insights - top databases content type.
         """
         return pulumi.get(self, "sql_insights_top_databases_resources")
 
     @sql_insights_top_databases_resources.setter
-    def sql_insights_top_databases_resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def sql_insights_top_databases_resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "sql_insights_top_databases_resources", value)
 
     @_builtins.property
     @pulumi.getter(name="sqlInsightsTopSqlByInsightsResources")
-    def sql_insights_top_sql_by_insights_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def sql_insights_top_sql_by_insights_resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Supported resources for SQL insights - top SQL by insights content type.
         """
         return pulumi.get(self, "sql_insights_top_sql_by_insights_resources")
 
     @sql_insights_top_sql_by_insights_resources.setter
-    def sql_insights_top_sql_by_insights_resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def sql_insights_top_sql_by_insights_resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "sql_insights_top_sql_by_insights_resources", value)
 
     @_builtins.property
     @pulumi.getter(name="sqlInsightsTopSqlResources")
-    def sql_insights_top_sql_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def sql_insights_top_sql_resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Supported resources for SQL insights - top SQL content type.
         """
         return pulumi.get(self, "sql_insights_top_sql_resources")
 
     @sql_insights_top_sql_resources.setter
-    def sql_insights_top_sql_resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def sql_insights_top_sql_resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "sql_insights_top_sql_resources", value)
 
 
@@ -2415,23 +2415,23 @@ class OpsiConfigurationConfigItemArgsDict(TypedDict):
     """
     (Updatable) Type of configuration item.
     """
-    applicable_contexts: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    applicable_contexts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     List of contexts in Operations Insights where this configuration item is applicable.
     """
-    default_value: NotRequired[pulumi.Input[_builtins.str]]
+    default_value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Value of configuration item.
     """
-    metadatas: NotRequired[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataArgsDict']]]]
+    metadatas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataArgs']]]]]
     """
     Configuration item metadata.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Name of configuration item.
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Value of configuration item.
     """
@@ -2440,11 +2440,11 @@ class OpsiConfigurationConfigItemArgsDict(TypedDict):
 class OpsiConfigurationConfigItemArgs:
     def __init__(__self__, *,
                  config_item_type: pulumi.Input[_builtins.str],
-                 applicable_contexts: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 default_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 applicable_contexts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 default_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] config_item_type: (Updatable) Type of configuration item.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] applicable_contexts: List of contexts in Operations Insights where this configuration item is applicable.
@@ -2479,87 +2479,87 @@ class OpsiConfigurationConfigItemArgs:
 
     @_builtins.property
     @pulumi.getter(name="applicableContexts")
-    def applicable_contexts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def applicable_contexts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of contexts in Operations Insights where this configuration item is applicable.
         """
         return pulumi.get(self, "applicable_contexts")
 
     @applicable_contexts.setter
-    def applicable_contexts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def applicable_contexts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "applicable_contexts", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultValue")
-    def default_value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Value of configuration item.
         """
         return pulumi.get(self, "default_value")
 
     @default_value.setter
-    def default_value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_value", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataArgs']]]]:
+    def metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataArgs']]]]:
         """
         Configuration item metadata.
         """
         return pulumi.get(self, "metadatas")
 
     @metadatas.setter
-    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataArgs']]]]):
+    def metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataArgs']]]]):
         pulumi.set(self, "metadatas", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of configuration item.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Value of configuration item.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
 class OpsiConfigurationConfigItemMetadataArgsDict(TypedDict):
-    config_item_type: NotRequired[pulumi.Input[_builtins.str]]
+    config_item_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Type of configuration item.
     """
-    data_type: NotRequired[pulumi.Input[_builtins.str]]
+    data_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Description of OPSI configuration.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
     """
-    unit_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataUnitDetailArgsDict']]]]
+    unit_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataUnitDetailArgs']]]]]
     """
     Unit details of configuration item.
     """
-    value_input_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataValueInputDetailArgsDict']]]]
+    value_input_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataValueInputDetailArgs']]]]]
     """
     Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
     """
@@ -2567,12 +2567,12 @@ class OpsiConfigurationConfigItemMetadataArgsDict(TypedDict):
 @pulumi.input_type
 class OpsiConfigurationConfigItemMetadataArgs:
     def __init__(__self__, *,
-                 config_item_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 unit_details: Optional[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataUnitDetailArgs']]]] = None,
-                 value_input_details: Optional[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataValueInputDetailArgs']]]] = None):
+                 config_item_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 unit_details: pulumi.Input[Optional[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataUnitDetailArgs']]]] = None,
+                 value_input_details: pulumi.Input[Optional[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataValueInputDetailArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] config_item_type: Type of configuration item.
         :param pulumi.Input[_builtins.str] data_type: Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
@@ -2596,83 +2596,83 @@ class OpsiConfigurationConfigItemMetadataArgs:
 
     @_builtins.property
     @pulumi.getter(name="configItemType")
-    def config_item_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def config_item_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of configuration item.
         """
         return pulumi.get(self, "config_item_type")
 
     @config_item_type.setter
-    def config_item_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def config_item_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_item_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dataType")
-    def data_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
         """
         return pulumi.get(self, "data_type")
 
     @data_type.setter
-    def data_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description of OPSI configuration.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="unitDetails")
-    def unit_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataUnitDetailArgs']]]]:
+    def unit_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataUnitDetailArgs']]]]:
         """
         Unit details of configuration item.
         """
         return pulumi.get(self, "unit_details")
 
     @unit_details.setter
-    def unit_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataUnitDetailArgs']]]]):
+    def unit_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataUnitDetailArgs']]]]):
         pulumi.set(self, "unit_details", value)
 
     @_builtins.property
     @pulumi.getter(name="valueInputDetails")
-    def value_input_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataValueInputDetailArgs']]]]:
+    def value_input_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataValueInputDetailArgs']]]]:
         """
         Allowed value details of configuration item, to validate what value can be assigned to a configuration item.
         """
         return pulumi.get(self, "value_input_details")
 
     @value_input_details.setter
-    def value_input_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataValueInputDetailArgs']]]]):
+    def value_input_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['OpsiConfigurationConfigItemMetadataValueInputDetailArgs']]]]):
         pulumi.set(self, "value_input_details", value)
 
 
 class OpsiConfigurationConfigItemMetadataUnitDetailArgsDict(TypedDict):
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
     """
-    unit: NotRequired[pulumi.Input[_builtins.str]]
+    unit: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Unit of configuration item.
     """
@@ -2680,8 +2680,8 @@ class OpsiConfigurationConfigItemMetadataUnitDetailArgsDict(TypedDict):
 @pulumi.input_type
 class OpsiConfigurationConfigItemMetadataUnitDetailArgs:
     def __init__(__self__, *,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 unit: Optional[pulumi.Input[_builtins.str]] = None):
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 unit: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] display_name: (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
         :param pulumi.Input[_builtins.str] unit: Unit of configuration item.
@@ -2693,43 +2693,43 @@ class OpsiConfigurationConfigItemMetadataUnitDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def unit(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def unit(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unit of configuration item.
         """
         return pulumi.get(self, "unit")
 
     @unit.setter
-    def unit(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def unit(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "unit", value)
 
 
 class OpsiConfigurationConfigItemMetadataValueInputDetailArgsDict(TypedDict):
-    allowed_value_type: NotRequired[pulumi.Input[_builtins.str]]
+    allowed_value_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Allowed value type of configuration item.
     """
-    max_value: NotRequired[pulumi.Input[_builtins.str]]
+    max_value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Maximum value limit for the configuration item.
     """
-    min_value: NotRequired[pulumi.Input[_builtins.str]]
+    min_value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Minimum value limit for the configuration item.
     """
-    possible_values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    possible_values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     Allowed values to pick for the configuration item.
     """
@@ -2737,10 +2737,10 @@ class OpsiConfigurationConfigItemMetadataValueInputDetailArgsDict(TypedDict):
 @pulumi.input_type
 class OpsiConfigurationConfigItemMetadataValueInputDetailArgs:
     def __init__(__self__, *,
-                 allowed_value_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 min_value: Optional[pulumi.Input[_builtins.str]] = None,
-                 possible_values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 allowed_value_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 min_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 possible_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] allowed_value_type: Allowed value type of configuration item.
         :param pulumi.Input[_builtins.str] max_value: Maximum value limit for the configuration item.
@@ -2758,50 +2758,50 @@ class OpsiConfigurationConfigItemMetadataValueInputDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="allowedValueType")
-    def allowed_value_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def allowed_value_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Allowed value type of configuration item.
         """
         return pulumi.get(self, "allowed_value_type")
 
     @allowed_value_type.setter
-    def allowed_value_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def allowed_value_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "allowed_value_type", value)
 
     @_builtins.property
     @pulumi.getter(name="maxValue")
-    def max_value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def max_value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Maximum value limit for the configuration item.
         """
         return pulumi.get(self, "max_value")
 
     @max_value.setter
-    def max_value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def max_value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "max_value", value)
 
     @_builtins.property
     @pulumi.getter(name="minValue")
-    def min_value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def min_value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Minimum value limit for the configuration item.
         """
         return pulumi.get(self, "min_value")
 
     @min_value.setter
-    def min_value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def min_value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "min_value", value)
 
     @_builtins.property
     @pulumi.getter(name="possibleValues")
-    def possible_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def possible_values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Allowed values to pick for the configuration item.
         """
         return pulumi.get(self, "possible_values")
 
     @possible_values.setter
-    def possible_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def possible_values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "possible_values", value)
 
 

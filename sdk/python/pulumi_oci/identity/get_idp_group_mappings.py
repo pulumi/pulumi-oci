@@ -100,7 +100,7 @@ def get_idp_group_mappings(filters: Optional[Sequence[Union['GetIdpGroupMappings
     import pulumi
     import pulumi_oci as oci
 
-    test_idp_group_mappings = oci.Identity.get_idp_group_mappings(identity_provider_id=test_identity_provider["id"])
+    test_idp_group_mappings = oci.identity.get_idp_group_mappings(identity_provider_id=test_identity_provider["id"])
     ```
 
 
@@ -117,8 +117,8 @@ def get_idp_group_mappings(filters: Optional[Sequence[Union['GetIdpGroupMappings
         id=pulumi.get(__ret__, 'id'),
         identity_provider_id=pulumi.get(__ret__, 'identity_provider_id'),
         idp_group_mappings=pulumi.get(__ret__, 'idp_group_mappings'))
-def get_idp_group_mappings_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIdpGroupMappingsFilterArgs', 'GetIdpGroupMappingsFilterArgsDict']]]]] = None,
-                                  identity_provider_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_idp_group_mappings_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIdpGroupMappingsFilterArgs', 'GetIdpGroupMappingsFilterArgsDict']]]]] = None,
+                                  identity_provider_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIdpGroupMappingsResult]:
     """
     This data source provides the list of Idp Group Mappings in Oracle Cloud Infrastructure Identity service.
@@ -133,7 +133,7 @@ def get_idp_group_mappings_output(filters: Optional[pulumi.Input[Optional[Sequen
     import pulumi
     import pulumi_oci as oci
 
-    test_idp_group_mappings = oci.Identity.get_idp_group_mappings(identity_provider_id=test_identity_provider["id"])
+    test_idp_group_mappings = oci.identity.get_idp_group_mappings(identity_provider_id=test_identity_provider["id"])
     ```
 
 

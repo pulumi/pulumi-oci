@@ -230,7 +230,7 @@ def get_agent_agent(agent_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_agent = oci.GenerativeAi.get_agent_agent(agent_id=test_agent_oci_generative_ai_agent_agent["id"])
+    test_agent = oci.generativeai.get_agent_agent(agent_id=test_agent_oci_generative_ai_agent_agent["id"])
     ```
 
 
@@ -257,7 +257,7 @@ def get_agent_agent(agent_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         welcome_message=pulumi.get(__ret__, 'welcome_message'))
-def get_agent_agent_output(agent_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_agent_agent_output(agent_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentAgentResult]:
     """
     This data source provides details about a specific Agent resource in Oracle Cloud Infrastructure Generative Ai Agent service.
@@ -272,7 +272,7 @@ def get_agent_agent_output(agent_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_agent = oci.GenerativeAi.get_agent_agent(agent_id=test_agent_oci_generative_ai_agent_agent["id"])
+    test_agent = oci.generativeai.get_agent_agent(agent_id=test_agent_oci_generative_ai_agent_agent["id"])
     ```
 
 

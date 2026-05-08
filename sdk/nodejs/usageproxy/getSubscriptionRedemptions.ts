@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptionRedemptions = oci.UsageProxy.getSubscriptionRedemptions({
+ * const testSubscriptionRedemptions = oci.usageproxy.getSubscriptionRedemptions({
  *     subscriptionId: testSubscription.id,
  *     tenancyId: testTenancy.id,
  *     timeRedeemedGreaterThanOrEqualTo: subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo,
@@ -88,7 +88,7 @@ export interface GetSubscriptionRedemptionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptionRedemptions = oci.UsageProxy.getSubscriptionRedemptions({
+ * const testSubscriptionRedemptions = oci.usageproxy.getSubscriptionRedemptions({
  *     subscriptionId: testSubscription.id,
  *     tenancyId: testTenancy.id,
  *     timeRedeemedGreaterThanOrEqualTo: subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo,
@@ -111,7 +111,7 @@ export function getSubscriptionRedemptionsOutput(args: GetSubscriptionRedemption
  * A collection of arguments for invoking getSubscriptionRedemptions.
  */
 export interface GetSubscriptionRedemptionsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.UsageProxy.GetSubscriptionRedemptionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.UsageProxy.GetSubscriptionRedemptionsFilterArgs>[] | undefined>;
     /**
      * The subscription ID for which rewards information is requested for.
      */
@@ -123,9 +123,9 @@ export interface GetSubscriptionRedemptionsOutputArgs {
     /**
      * The starting redeemed date filter for the redemption history.
      */
-    timeRedeemedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeRedeemedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * The ending redeemed date filter for the redemption history.
      */
-    timeRedeemedLessThan?: pulumi.Input<string>;
+    timeRedeemedLessThan?: pulumi.Input<string | undefined>;
 }

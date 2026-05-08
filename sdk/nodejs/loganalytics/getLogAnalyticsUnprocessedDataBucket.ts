@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsUnprocessedDataBucket = oci.LogAnalytics.getLogAnalyticsUnprocessedDataBucket({
+ * const testLogAnalyticsUnprocessedDataBucket = oci.loganalytics.getLogAnalyticsUnprocessedDataBucket({
  *     namespace: logAnalyticsUnprocessedDataBucketNamespace,
  * });
  * ```
@@ -77,7 +77,7 @@ export interface GetLogAnalyticsUnprocessedDataBucketResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsUnprocessedDataBucket = oci.LogAnalytics.getLogAnalyticsUnprocessedDataBucket({
+ * const testLogAnalyticsUnprocessedDataBucket = oci.loganalytics.getLogAnalyticsUnprocessedDataBucket({
  *     namespace: logAnalyticsUnprocessedDataBucketNamespace,
  * });
  * ```

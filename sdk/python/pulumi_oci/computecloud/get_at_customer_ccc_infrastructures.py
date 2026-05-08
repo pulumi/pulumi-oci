@@ -164,10 +164,10 @@ def get_at_customer_ccc_infrastructures(access_level: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_ccc_infrastructures = oci.ComputeCloud.get_at_customer_ccc_infrastructures(access_level=ccc_infrastructure_access_level,
+    test_ccc_infrastructures = oci.computecloud.get_at_customer_ccc_infrastructures(access_level=ccc_infrastructure_access_level,
         ccc_infrastructure_id=test_ccc_infrastructure["id"],
         compartment_id=compartment_id,
-        compartment_id_in_subtree=ccc_infrastructure_compartment_id_in_subtree,
+        compartment_id_in_subtree=ccc_infrastructure_compartment_id_in_subtree == "true",
         display_name=ccc_infrastructure_display_name,
         display_name_contains=ccc_infrastructure_display_name_contains,
         state=ccc_infrastructure_state)
@@ -205,14 +205,14 @@ def get_at_customer_ccc_infrastructures(access_level: Optional[_builtins.str] = 
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_at_customer_ccc_infrastructures_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                               ccc_infrastructure_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                               compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                               compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                               display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                               display_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAtCustomerCccInfrastructuresFilterArgs', 'GetAtCustomerCccInfrastructuresFilterArgsDict']]]]] = None,
-                                               state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_at_customer_ccc_infrastructures_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                               ccc_infrastructure_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                               compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                               compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                               display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                               display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAtCustomerCccInfrastructuresFilterArgs', 'GetAtCustomerCccInfrastructuresFilterArgsDict']]]]] = None,
+                                               state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAtCustomerCccInfrastructuresResult]:
     """
     This data source provides the list of Ccc Infrastructures in Oracle Cloud Infrastructure Compute Cloud At Customer service.
@@ -225,10 +225,10 @@ def get_at_customer_ccc_infrastructures_output(access_level: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_ccc_infrastructures = oci.ComputeCloud.get_at_customer_ccc_infrastructures(access_level=ccc_infrastructure_access_level,
+    test_ccc_infrastructures = oci.computecloud.get_at_customer_ccc_infrastructures(access_level=ccc_infrastructure_access_level,
         ccc_infrastructure_id=test_ccc_infrastructure["id"],
         compartment_id=compartment_id,
-        compartment_id_in_subtree=ccc_infrastructure_compartment_id_in_subtree,
+        compartment_id_in_subtree=ccc_infrastructure_compartment_id_in_subtree == "true",
         display_name=ccc_infrastructure_display_name,
         display_name_contains=ccc_infrastructure_display_name_contains,
         state=ccc_infrastructure_state)

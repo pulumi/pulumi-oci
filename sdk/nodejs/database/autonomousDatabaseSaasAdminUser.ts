@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *     autonomousDatabaseId: testAutonomousDatabase.id,
  *     password: autonomousDatabaseSaasAdminUserPassword,
  *     accessType: autonomousDatabaseSaasAdminUserAccessType,
- *     duration: autonomousDatabaseSaasAdminUserDuration,
+ *     duration: Number(autonomousDatabaseSaasAdminUserDuration),
  * });
  * ```
  *
@@ -135,27 +135,27 @@ export interface AutonomousDatabaseSaasAdminUserState {
     /**
      * The access type for the SaaS administrative user. If no access type is specified, the READ_ONLY access type is used.
      */
-    accessType?: pulumi.Input<string>;
+    accessType?: pulumi.Input<string | undefined>;
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    autonomousDatabaseId?: pulumi.Input<string>;
+    autonomousDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * How long, in hours, the SaaS administrative user will stay enabled. If no duration is specified, the default value 1 will be used.
      */
-    duration?: pulumi.Input<number>;
+    duration?: pulumi.Input<number | undefined>;
     /**
      * A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash).
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
-    secretId?: pulumi.Input<string>;
+    secretId?: pulumi.Input<string | undefined>;
     /**
      * The version of the vault secret. If no version is specified, the latest version will be used.
      */
-    secretVersionNumber?: pulumi.Input<number>;
+    secretVersionNumber?: pulumi.Input<number | undefined>;
     /**
      * The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
      *
@@ -163,7 +163,7 @@ export interface AutonomousDatabaseSaasAdminUserState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeSaasAdminUserEnabled?: pulumi.Input<string>;
+    timeSaasAdminUserEnabled?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -173,7 +173,7 @@ export interface AutonomousDatabaseSaasAdminUserArgs {
     /**
      * The access type for the SaaS administrative user. If no access type is specified, the READ_ONLY access type is used.
      */
-    accessType?: pulumi.Input<string>;
+    accessType?: pulumi.Input<string | undefined>;
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -181,19 +181,19 @@ export interface AutonomousDatabaseSaasAdminUserArgs {
     /**
      * How long, in hours, the SaaS administrative user will stay enabled. If no duration is specified, the default value 1 will be used.
      */
-    duration?: pulumi.Input<number>;
+    duration?: pulumi.Input<number | undefined>;
     /**
      * A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash).
      */
-    password?: pulumi.Input<string>;
+    password?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      */
-    secretId?: pulumi.Input<string>;
+    secretId?: pulumi.Input<string | undefined>;
     /**
      * The version of the vault secret. If no version is specified, the latest version will be used.
      */
-    secretVersionNumber?: pulumi.Input<number>;
+    secretVersionNumber?: pulumi.Input<number | undefined>;
     /**
      * The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
      *
@@ -201,5 +201,5 @@ export interface AutonomousDatabaseSaasAdminUserArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeSaasAdminUserEnabled?: pulumi.Input<string>;
+    timeSaasAdminUserEnabled?: pulumi.Input<string | undefined>;
 }

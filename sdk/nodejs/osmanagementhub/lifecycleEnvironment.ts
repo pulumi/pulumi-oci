@@ -27,7 +27,7 @@ import * as utilities from "../utilities";
  *     osFamily: lifecycleEnvironmentOsFamily,
  *     stages: [{
  *         displayName: lifecycleEnvironmentStagesDisplayName,
- *         rank: lifecycleEnvironmentStagesRank,
+ *         rank: Number(lifecycleEnvironmentStagesRank),
  *         definedTags: {
  *             "Operations.CostCenter": "42",
  *         },
@@ -224,59 +224,59 @@ export interface LifecycleEnvironmentState {
     /**
      * The CPU architecture of the managed instances in the lifecycle environment.
      */
-    archType?: pulumi.Input<string>;
+    archType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle environment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The location of managed instances attached to the lifecycle environment. If no location is provided, the default is 'ON_PREMISE.'
      */
-    location?: pulumi.Input<string>;
+    location?: pulumi.Input<string | undefined>;
     /**
      * The list of managed instances associated with the lifecycle stage.
      */
-    managedInstanceIds?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.LifecycleEnvironmentManagedInstanceId>[]>;
+    managedInstanceIds?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.LifecycleEnvironmentManagedInstanceId>[] | undefined>;
     /**
      * The operating system of the managed instances in the lifecycle environment.
      */
-    osFamily?: pulumi.Input<string>;
+    osFamily?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) User-specified list of ranked lifecycle stages used within the lifecycle environment.
      */
-    stages?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.LifecycleEnvironmentStage>[]>;
+    stages?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.LifecycleEnvironmentStage>[] | undefined>;
     /**
      * The current state of the lifecycle environment.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    timeModified?: pulumi.Input<string>;
+    timeModified?: pulumi.Input<string | undefined>;
     /**
      * The vendor of the operating system used by the managed instances in the lifecycle environment.
      *
@@ -284,7 +284,7 @@ export interface LifecycleEnvironmentState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vendorName?: pulumi.Input<string>;
+    vendorName?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -302,11 +302,11 @@ export interface LifecycleEnvironmentArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      */
@@ -314,11 +314,11 @@ export interface LifecycleEnvironmentArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The location of managed instances attached to the lifecycle environment. If no location is provided, the default is 'ON_PREMISE.'
      */
-    location?: pulumi.Input<string>;
+    location?: pulumi.Input<string | undefined>;
     /**
      * The operating system of the managed instances in the lifecycle environment.
      */

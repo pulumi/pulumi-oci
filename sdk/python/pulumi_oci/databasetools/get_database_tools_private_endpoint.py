@@ -324,7 +324,7 @@ def get_database_tools_private_endpoint(database_tools_private_endpoint_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_private_endpoint = oci.DatabaseTools.get_database_tools_private_endpoint(database_tools_private_endpoint_id=test_database_tools_private_endpoint_oci_database_tools_database_tools_private_endpoint["id"])
+    test_database_tools_private_endpoint = oci.databasetools.get_database_tools_private_endpoint(database_tools_private_endpoint_id=test_database_tools_private_endpoint_oci_database_tools_database_tools_private_endpoint["id"])
     ```
 
 
@@ -359,7 +359,7 @@ def get_database_tools_private_endpoint(database_tools_private_endpoint_id: Opti
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-def get_database_tools_private_endpoint_output(database_tools_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_database_tools_private_endpoint_output(database_tools_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabaseToolsPrivateEndpointResult]:
     """
     This data source provides details about a specific Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.
@@ -372,7 +372,7 @@ def get_database_tools_private_endpoint_output(database_tools_private_endpoint_i
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_private_endpoint = oci.DatabaseTools.get_database_tools_private_endpoint(database_tools_private_endpoint_id=test_database_tools_private_endpoint_oci_database_tools_database_tools_private_endpoint["id"])
+    test_database_tools_private_endpoint = oci.databasetools.get_database_tools_private_endpoint(database_tools_private_endpoint_id=test_database_tools_private_endpoint_oci_database_tools_database_tools_private_endpoint["id"])
     ```
 
 

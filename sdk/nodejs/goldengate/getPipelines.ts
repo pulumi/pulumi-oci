@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPipelines = oci.GoldenGate.getPipelines({
+ * const testPipelines = oci.goldengate.getPipelines({
  *     compartmentId: compartmentId,
  *     displayName: pipelineDisplayName,
  *     lifecycleSubState: pipelineLifecycleSubState,
@@ -100,7 +100,7 @@ export interface GetPipelinesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPipelines = oci.GoldenGate.getPipelines({
+ * const testPipelines = oci.goldengate.getPipelines({
  *     compartmentId: compartmentId,
  *     displayName: pipelineDisplayName,
  *     lifecycleSubState: pipelineLifecycleSubState,
@@ -130,14 +130,14 @@ export interface GetPipelinesOutputArgs {
     /**
      * A filter to return only the resources that match the entire 'displayName' given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetPipelinesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetPipelinesFilterArgs>[] | undefined>;
     /**
      * A filtered list of pipelines to return for a given lifecycleSubState.
      */
-    lifecycleSubState?: pulumi.Input<string>;
+    lifecycleSubState?: pulumi.Input<string | undefined>;
     /**
      * A filtered list of pipelines to return for a given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

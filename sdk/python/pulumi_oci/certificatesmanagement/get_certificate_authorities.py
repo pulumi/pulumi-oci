@@ -151,7 +151,7 @@ def get_certificate_authorities(certificate_authority_id: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate_authorities = oci.CertificatesManagement.get_certificate_authorities(certificate_authority_id=test_certificate_authority["id"],
+    test_certificate_authorities = oci.certificatesmanagement.get_certificate_authorities(certificate_authority_id=test_certificate_authority["id"],
         compartment_id=compartment_id,
         issuer_certificate_authority_id=test_certificate_authority["id"],
         name=certificate_authority_name,
@@ -184,12 +184,12 @@ def get_certificate_authorities(certificate_authority_id: Optional[_builtins.str
         issuer_certificate_authority_id=pulumi.get(__ret__, 'issuer_certificate_authority_id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-def get_certificate_authorities_output(certificate_authority_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCertificateAuthoritiesFilterArgs', 'GetCertificateAuthoritiesFilterArgsDict']]]]] = None,
-                                       issuer_certificate_authority_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_certificate_authorities_output(certificate_authority_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCertificateAuthoritiesFilterArgs', 'GetCertificateAuthoritiesFilterArgsDict']]]]] = None,
+                                       issuer_certificate_authority_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCertificateAuthoritiesResult]:
     """
     This data source provides the list of Certificate Authorities in Oracle Cloud Infrastructure Certificates Management service.
@@ -203,7 +203,7 @@ def get_certificate_authorities_output(certificate_authority_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate_authorities = oci.CertificatesManagement.get_certificate_authorities(certificate_authority_id=test_certificate_authority["id"],
+    test_certificate_authorities = oci.certificatesmanagement.get_certificate_authorities(certificate_authority_id=test_certificate_authority["id"],
         compartment_id=compartment_id,
         issuer_certificate_authority_id=test_certificate_authority["id"],
         name=certificate_authority_name,

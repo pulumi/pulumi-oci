@@ -325,7 +325,7 @@ def get_managed_database(database_platform_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database = oci.DatabaseManagement.get_managed_database(managed_database_id=test_managed_database_oci_database_management_managed_database["id"])
+    test_managed_database = oci.databasemanagement.get_managed_database(managed_database_id=test_managed_database_oci_database_management_managed_database["id"])
     ```
 
 
@@ -362,8 +362,8 @@ def get_managed_database(database_platform_name: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         workload_type=pulumi.get(__ret__, 'workload_type'))
-def get_managed_database_output(database_platform_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_managed_database_output(database_platform_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseResult]:
     """
     This data source provides details about a specific Managed Database resource in Oracle Cloud Infrastructure Database Management service.
@@ -376,7 +376,7 @@ def get_managed_database_output(database_platform_name: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database = oci.DatabaseManagement.get_managed_database(managed_database_id=test_managed_database_oci_database_management_managed_database["id"])
+    test_managed_database = oci.databasemanagement.get_managed_database(managed_database_id=test_managed_database_oci_database_management_managed_database["id"])
     ```
 
 

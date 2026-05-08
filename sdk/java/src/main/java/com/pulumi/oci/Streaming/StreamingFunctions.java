@@ -46,8 +46,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetConnectHarnessArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -88,8 +88,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetConnectHarnessArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -130,8 +130,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetConnectHarnessArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -172,8 +172,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetConnectHarnessArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -214,8 +214,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetConnectHarnessArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -256,8 +256,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetConnectHarnessesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -301,8 +301,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetConnectHarnessesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -346,8 +346,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetConnectHarnessesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -391,8 +391,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetConnectHarnessesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -436,8 +436,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetConnectHarnessesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -481,8 +481,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetStreamArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -523,8 +523,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetStreamArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -565,8 +565,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetStreamArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -607,8 +607,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetStreamArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -649,8 +649,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetStreamArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -691,8 +691,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetStreamPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -733,8 +733,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetStreamPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -775,8 +775,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetStreamPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -817,8 +817,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetStreamPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -859,8 +859,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetStreamPoolArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -901,8 +901,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetStreamPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -946,8 +946,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetStreamPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -991,8 +991,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetStreamPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1036,8 +1036,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetStreamPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1081,8 +1081,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetStreamPoolsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1129,8 +1129,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetStreamsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1178,8 +1178,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetStreamsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1227,8 +1227,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetStreamsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1276,8 +1276,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetStreamsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1325,8 +1325,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetStreamsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1374,8 +1374,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetStreamsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1423,8 +1423,8 @@ public final class StreamingFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Streaming.StreamingFunctions;
      * import com.pulumi.oci.Streaming.inputs.GetStreamsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

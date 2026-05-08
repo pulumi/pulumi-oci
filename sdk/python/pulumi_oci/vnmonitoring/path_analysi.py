@@ -22,14 +22,14 @@ __all__ = ['PathAnalysiArgs', 'PathAnalysi']
 class PathAnalysiArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 cache_control: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination_endpoint: Optional[pulumi.Input['PathAnalysiDestinationEndpointArgs']] = None,
-                 path_analyzer_test_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol_parameters: Optional[pulumi.Input['PathAnalysiProtocolParametersArgs']] = None,
-                 query_options: Optional[pulumi.Input['PathAnalysiQueryOptionsArgs']] = None,
-                 source_endpoint: Optional[pulumi.Input['PathAnalysiSourceEndpointArgs']] = None):
+                 cache_control: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_endpoint: pulumi.Input[Optional['PathAnalysiDestinationEndpointArgs']] = None,
+                 path_analyzer_test_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol_parameters: pulumi.Input[Optional['PathAnalysiProtocolParametersArgs']] = None,
+                 query_options: pulumi.Input[Optional['PathAnalysiQueryOptionsArgs']] = None,
+                 source_endpoint: pulumi.Input[Optional['PathAnalysiSourceEndpointArgs']] = None):
         """
         The set of arguments for constructing a PathAnalysi resource.
 
@@ -83,113 +83,113 @@ class PathAnalysiArgs:
 
     @_builtins.property
     @pulumi.getter(name="cacheControl")
-    def cache_control(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cache_control(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Cache-Control HTTP header holds directives (instructions) for caching in both requests and responses.
         """
         return pulumi.get(self, "cache_control")
 
     @cache_control.setter
-    def cache_control(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cache_control(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cache_control", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="destinationEndpoint")
-    def destination_endpoint(self) -> Optional[pulumi.Input['PathAnalysiDestinationEndpointArgs']]:
+    def destination_endpoint(self) -> pulumi.Input[Optional['PathAnalysiDestinationEndpointArgs']]:
         """
         Information describing a source or destination in a `PathAnalyzerTest` resource.
         """
         return pulumi.get(self, "destination_endpoint")
 
     @destination_endpoint.setter
-    def destination_endpoint(self, value: Optional[pulumi.Input['PathAnalysiDestinationEndpointArgs']]):
+    def destination_endpoint(self, value: pulumi.Input[Optional['PathAnalysiDestinationEndpointArgs']]):
         pulumi.set(self, "destination_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="pathAnalyzerTestId")
-    def path_analyzer_test_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def path_analyzer_test_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.
         """
         return pulumi.get(self, "path_analyzer_test_id")
 
     @path_analyzer_test_id.setter
-    def path_analyzer_test_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def path_analyzer_test_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "path_analyzer_test_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The IP protocol to used for the path analysis.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="protocolParameters")
-    def protocol_parameters(self) -> Optional[pulumi.Input['PathAnalysiProtocolParametersArgs']]:
+    def protocol_parameters(self) -> pulumi.Input[Optional['PathAnalysiProtocolParametersArgs']]:
         """
         Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
         """
         return pulumi.get(self, "protocol_parameters")
 
     @protocol_parameters.setter
-    def protocol_parameters(self, value: Optional[pulumi.Input['PathAnalysiProtocolParametersArgs']]):
+    def protocol_parameters(self, value: pulumi.Input[Optional['PathAnalysiProtocolParametersArgs']]):
         pulumi.set(self, "protocol_parameters", value)
 
     @_builtins.property
     @pulumi.getter(name="queryOptions")
-    def query_options(self) -> Optional[pulumi.Input['PathAnalysiQueryOptionsArgs']]:
+    def query_options(self) -> pulumi.Input[Optional['PathAnalysiQueryOptionsArgs']]:
         """
         Defines the query options required for a `PathAnalyzerTest` resource.
         """
         return pulumi.get(self, "query_options")
 
     @query_options.setter
-    def query_options(self, value: Optional[pulumi.Input['PathAnalysiQueryOptionsArgs']]):
+    def query_options(self, value: pulumi.Input[Optional['PathAnalysiQueryOptionsArgs']]):
         pulumi.set(self, "query_options", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceEndpoint")
-    def source_endpoint(self) -> Optional[pulumi.Input['PathAnalysiSourceEndpointArgs']]:
+    def source_endpoint(self) -> pulumi.Input[Optional['PathAnalysiSourceEndpointArgs']]:
         """
         Information describing a source or destination in a `PathAnalyzerTest` resource.
         """
         return pulumi.get(self, "source_endpoint")
 
     @source_endpoint.setter
-    def source_endpoint(self, value: Optional[pulumi.Input['PathAnalysiSourceEndpointArgs']]):
+    def source_endpoint(self, value: pulumi.Input[Optional['PathAnalysiSourceEndpointArgs']]):
         pulumi.set(self, "source_endpoint", value)
 
 
 @pulumi.input_type
 class _PathAnalysiState:
     def __init__(__self__, *,
-                 cache_control: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination_endpoint: Optional[pulumi.Input['PathAnalysiDestinationEndpointArgs']] = None,
-                 path_analyzer_test_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol_parameters: Optional[pulumi.Input['PathAnalysiProtocolParametersArgs']] = None,
-                 query_options: Optional[pulumi.Input['PathAnalysiQueryOptionsArgs']] = None,
-                 source_endpoint: Optional[pulumi.Input['PathAnalysiSourceEndpointArgs']] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 cache_control: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_endpoint: pulumi.Input[Optional['PathAnalysiDestinationEndpointArgs']] = None,
+                 path_analyzer_test_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol_parameters: pulumi.Input[Optional['PathAnalysiProtocolParametersArgs']] = None,
+                 query_options: pulumi.Input[Optional['PathAnalysiQueryOptionsArgs']] = None,
+                 source_endpoint: pulumi.Input[Optional['PathAnalysiSourceEndpointArgs']] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PathAnalysi resources.
 
@@ -228,103 +228,103 @@ class _PathAnalysiState:
 
     @_builtins.property
     @pulumi.getter(name="cacheControl")
-    def cache_control(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cache_control(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Cache-Control HTTP header holds directives (instructions) for caching in both requests and responses.
         """
         return pulumi.get(self, "cache_control")
 
     @cache_control.setter
-    def cache_control(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cache_control(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cache_control", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="destinationEndpoint")
-    def destination_endpoint(self) -> Optional[pulumi.Input['PathAnalysiDestinationEndpointArgs']]:
+    def destination_endpoint(self) -> pulumi.Input[Optional['PathAnalysiDestinationEndpointArgs']]:
         """
         Information describing a source or destination in a `PathAnalyzerTest` resource.
         """
         return pulumi.get(self, "destination_endpoint")
 
     @destination_endpoint.setter
-    def destination_endpoint(self, value: Optional[pulumi.Input['PathAnalysiDestinationEndpointArgs']]):
+    def destination_endpoint(self, value: pulumi.Input[Optional['PathAnalysiDestinationEndpointArgs']]):
         pulumi.set(self, "destination_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="pathAnalyzerTestId")
-    def path_analyzer_test_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def path_analyzer_test_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.
         """
         return pulumi.get(self, "path_analyzer_test_id")
 
     @path_analyzer_test_id.setter
-    def path_analyzer_test_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def path_analyzer_test_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "path_analyzer_test_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The IP protocol to used for the path analysis.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="protocolParameters")
-    def protocol_parameters(self) -> Optional[pulumi.Input['PathAnalysiProtocolParametersArgs']]:
+    def protocol_parameters(self) -> pulumi.Input[Optional['PathAnalysiProtocolParametersArgs']]:
         """
         Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
         """
         return pulumi.get(self, "protocol_parameters")
 
     @protocol_parameters.setter
-    def protocol_parameters(self, value: Optional[pulumi.Input['PathAnalysiProtocolParametersArgs']]):
+    def protocol_parameters(self, value: pulumi.Input[Optional['PathAnalysiProtocolParametersArgs']]):
         pulumi.set(self, "protocol_parameters", value)
 
     @_builtins.property
     @pulumi.getter(name="queryOptions")
-    def query_options(self) -> Optional[pulumi.Input['PathAnalysiQueryOptionsArgs']]:
+    def query_options(self) -> pulumi.Input[Optional['PathAnalysiQueryOptionsArgs']]:
         """
         Defines the query options required for a `PathAnalyzerTest` resource.
         """
         return pulumi.get(self, "query_options")
 
     @query_options.setter
-    def query_options(self, value: Optional[pulumi.Input['PathAnalysiQueryOptionsArgs']]):
+    def query_options(self, value: pulumi.Input[Optional['PathAnalysiQueryOptionsArgs']]):
         pulumi.set(self, "query_options", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceEndpoint")
-    def source_endpoint(self) -> Optional[pulumi.Input['PathAnalysiSourceEndpointArgs']]:
+    def source_endpoint(self) -> pulumi.Input[Optional['PathAnalysiSourceEndpointArgs']]:
         """
         Information describing a source or destination in a `PathAnalyzerTest` resource.
         """
         return pulumi.get(self, "source_endpoint")
 
     @source_endpoint.setter
-    def source_endpoint(self, value: Optional[pulumi.Input['PathAnalysiSourceEndpointArgs']]):
+    def source_endpoint(self, value: pulumi.Input[Optional['PathAnalysiSourceEndpointArgs']]):
         pulumi.set(self, "source_endpoint", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the `PathAnalysis` query.
 
@@ -335,7 +335,7 @@ class _PathAnalysiState:
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -345,15 +345,15 @@ class PathAnalysi(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cache_control: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination_endpoint: Optional[pulumi.Input[Union['PathAnalysiDestinationEndpointArgs', 'PathAnalysiDestinationEndpointArgsDict']]] = None,
-                 path_analyzer_test_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol_parameters: Optional[pulumi.Input[Union['PathAnalysiProtocolParametersArgs', 'PathAnalysiProtocolParametersArgsDict']]] = None,
-                 query_options: Optional[pulumi.Input[Union['PathAnalysiQueryOptionsArgs', 'PathAnalysiQueryOptionsArgsDict']]] = None,
-                 source_endpoint: Optional[pulumi.Input[Union['PathAnalysiSourceEndpointArgs', 'PathAnalysiSourceEndpointArgsDict']]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 cache_control: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_endpoint: pulumi.Input[Optional[Union['PathAnalysiDestinationEndpointArgs', 'PathAnalysiDestinationEndpointArgsDict']]] = None,
+                 path_analyzer_test_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol_parameters: pulumi.Input[Optional[Union['PathAnalysiProtocolParametersArgs', 'PathAnalysiProtocolParametersArgsDict']]] = None,
+                 query_options: pulumi.Input[Optional[Union['PathAnalysiQueryOptionsArgs', 'PathAnalysiQueryOptionsArgsDict']]] = None,
+                 source_endpoint: pulumi.Input[Optional[Union['PathAnalysiSourceEndpointArgs', 'PathAnalysiSourceEndpointArgsDict']]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Path Analysi resource in Oracle Cloud Infrastructure Vn Monitoring service.
@@ -393,16 +393,16 @@ class PathAnalysi(pulumi.CustomResource):
                 "vnic_id": test_vnic_attachment["id"],
             },
             path_analyzer_test_id=test_path_analyzer_test["id"],
-            protocol=path_analysi_protocol,
+            protocol=int(path_analysi_protocol),
             protocol_parameters={
                 "type": path_analysi_protocol_parameters_type,
-                "destination_port": path_analysi_protocol_parameters_destination_port,
-                "icmp_code": path_analysi_protocol_parameters_icmp_code,
-                "icmp_type": path_analysi_protocol_parameters_icmp_type,
-                "source_port": path_analysi_protocol_parameters_source_port,
+                "destination_port": int(path_analysi_protocol_parameters_destination_port),
+                "icmp_code": int(path_analysi_protocol_parameters_icmp_code),
+                "icmp_type": int(path_analysi_protocol_parameters_icmp_type),
+                "source_port": int(path_analysi_protocol_parameters_source_port),
             },
             query_options={
-                "is_bi_directional_analysis": path_analysi_query_options_is_bi_directional_analysis,
+                "is_bi_directional_analysis": path_analysi_query_options_is_bi_directional_analysis == "true",
             },
             source_endpoint={
                 "type": path_analysi_source_endpoint_type,
@@ -487,16 +487,16 @@ class PathAnalysi(pulumi.CustomResource):
                 "vnic_id": test_vnic_attachment["id"],
             },
             path_analyzer_test_id=test_path_analyzer_test["id"],
-            protocol=path_analysi_protocol,
+            protocol=int(path_analysi_protocol),
             protocol_parameters={
                 "type": path_analysi_protocol_parameters_type,
-                "destination_port": path_analysi_protocol_parameters_destination_port,
-                "icmp_code": path_analysi_protocol_parameters_icmp_code,
-                "icmp_type": path_analysi_protocol_parameters_icmp_type,
-                "source_port": path_analysi_protocol_parameters_source_port,
+                "destination_port": int(path_analysi_protocol_parameters_destination_port),
+                "icmp_code": int(path_analysi_protocol_parameters_icmp_code),
+                "icmp_type": int(path_analysi_protocol_parameters_icmp_type),
+                "source_port": int(path_analysi_protocol_parameters_source_port),
             },
             query_options={
-                "is_bi_directional_analysis": path_analysi_query_options_is_bi_directional_analysis,
+                "is_bi_directional_analysis": path_analysi_query_options_is_bi_directional_analysis == "true",
             },
             source_endpoint={
                 "type": path_analysi_source_endpoint_type,
@@ -536,15 +536,15 @@ class PathAnalysi(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cache_control: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 destination_endpoint: Optional[pulumi.Input[Union['PathAnalysiDestinationEndpointArgs', 'PathAnalysiDestinationEndpointArgsDict']]] = None,
-                 path_analyzer_test_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol_parameters: Optional[pulumi.Input[Union['PathAnalysiProtocolParametersArgs', 'PathAnalysiProtocolParametersArgsDict']]] = None,
-                 query_options: Optional[pulumi.Input[Union['PathAnalysiQueryOptionsArgs', 'PathAnalysiQueryOptionsArgsDict']]] = None,
-                 source_endpoint: Optional[pulumi.Input[Union['PathAnalysiSourceEndpointArgs', 'PathAnalysiSourceEndpointArgsDict']]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 cache_control: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_endpoint: pulumi.Input[Optional[Union['PathAnalysiDestinationEndpointArgs', 'PathAnalysiDestinationEndpointArgsDict']]] = None,
+                 path_analyzer_test_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol_parameters: pulumi.Input[Optional[Union['PathAnalysiProtocolParametersArgs', 'PathAnalysiProtocolParametersArgsDict']]] = None,
+                 query_options: pulumi.Input[Optional[Union['PathAnalysiQueryOptionsArgs', 'PathAnalysiQueryOptionsArgsDict']]] = None,
+                 source_endpoint: pulumi.Input[Optional[Union['PathAnalysiSourceEndpointArgs', 'PathAnalysiSourceEndpointArgsDict']]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -575,15 +575,15 @@ class PathAnalysi(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cache_control: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            destination_endpoint: Optional[pulumi.Input[Union['PathAnalysiDestinationEndpointArgs', 'PathAnalysiDestinationEndpointArgsDict']]] = None,
-            path_analyzer_test_id: Optional[pulumi.Input[_builtins.str]] = None,
-            protocol: Optional[pulumi.Input[_builtins.int]] = None,
-            protocol_parameters: Optional[pulumi.Input[Union['PathAnalysiProtocolParametersArgs', 'PathAnalysiProtocolParametersArgsDict']]] = None,
-            query_options: Optional[pulumi.Input[Union['PathAnalysiQueryOptionsArgs', 'PathAnalysiQueryOptionsArgsDict']]] = None,
-            source_endpoint: Optional[pulumi.Input[Union['PathAnalysiSourceEndpointArgs', 'PathAnalysiSourceEndpointArgsDict']]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'PathAnalysi':
+            cache_control: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            destination_endpoint: pulumi.Input[Optional[Union['PathAnalysiDestinationEndpointArgs', 'PathAnalysiDestinationEndpointArgsDict']]] = None,
+            path_analyzer_test_id: pulumi.Input[Optional[_builtins.str]] = None,
+            protocol: pulumi.Input[Optional[_builtins.int]] = None,
+            protocol_parameters: pulumi.Input[Optional[Union['PathAnalysiProtocolParametersArgs', 'PathAnalysiProtocolParametersArgsDict']]] = None,
+            query_options: pulumi.Input[Optional[Union['PathAnalysiQueryOptionsArgs', 'PathAnalysiQueryOptionsArgsDict']]] = None,
+            source_endpoint: pulumi.Input[Optional[Union['PathAnalysiSourceEndpointArgs', 'PathAnalysiSourceEndpointArgsDict']]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'PathAnalysi':
         """
         Get an existing PathAnalysi resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

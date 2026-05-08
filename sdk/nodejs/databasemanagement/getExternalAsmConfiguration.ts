@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalAsmConfiguration = oci.DatabaseManagement.getExternalAsmConfiguration({
+ * const testExternalAsmConfiguration = oci.databasemanagement.getExternalAsmConfiguration({
  *     externalAsmId: testExternalAsm.id,
  *     opcNamedCredentialId: externalAsmConfigurationOpcNamedCredentialId,
  * });
@@ -71,7 +71,7 @@ export interface GetExternalAsmConfigurationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalAsmConfiguration = oci.DatabaseManagement.getExternalAsmConfiguration({
+ * const testExternalAsmConfiguration = oci.databasemanagement.getExternalAsmConfiguration({
  *     externalAsmId: testExternalAsm.id,
  *     opcNamedCredentialId: externalAsmConfigurationOpcNamedCredentialId,
  * });
@@ -96,5 +96,5 @@ export interface GetExternalAsmConfigurationOutputArgs {
     /**
      * The OCID of the Named Credential.
      */
-    opcNamedCredentialId?: pulumi.Input<string>;
+    opcNamedCredentialId?: pulumi.Input<string | undefined>;
 }

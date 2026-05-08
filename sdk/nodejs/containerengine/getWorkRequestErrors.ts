@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkRequestErrors = oci.ContainerEngine.getWorkRequestErrors({
+ * const testWorkRequestErrors = oci.containerengine.getWorkRequestErrors({
  *     compartmentId: compartmentId,
  *     workRequestId: testWorkRequest.id,
  * });
@@ -74,7 +74,7 @@ export interface GetWorkRequestErrorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkRequestErrors = oci.ContainerEngine.getWorkRequestErrors({
+ * const testWorkRequestErrors = oci.containerengine.getWorkRequestErrors({
  *     compartmentId: compartmentId,
  *     workRequestId: testWorkRequest.id,
  * });
@@ -97,7 +97,7 @@ export interface GetWorkRequestErrorsOutputArgs {
      * The OCID of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.GetWorkRequestErrorsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.GetWorkRequestErrorsFilterArgs>[] | undefined>;
     /**
      * The OCID of the work request.
      */

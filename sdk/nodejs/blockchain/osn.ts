@@ -130,23 +130,23 @@ export interface OsnState {
     /**
      * Availability Domain to place new OSN
      */
-    ad?: pulumi.Input<string>;
+    ad?: pulumi.Input<string | undefined>;
     /**
      * Unique service identifier.
      */
-    blockchainPlatformId?: pulumi.Input<string>;
+    blockchainPlatformId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) OCPU allocation parameter
      */
-    ocpuAllocationParam?: pulumi.Input<inputs.Blockchain.OsnOcpuAllocationParam>;
+    ocpuAllocationParam?: pulumi.Input<inputs.Blockchain.OsnOcpuAllocationParam | undefined>;
     /**
      * OSN identifier
      */
-    osnKey?: pulumi.Input<string>;
+    osnKey?: pulumi.Input<string | undefined>;
     /**
      * The current state of the OSN.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -164,5 +164,5 @@ export interface OsnArgs {
     /**
      * (Updatable) OCPU allocation parameter
      */
-    ocpuAllocationParam?: pulumi.Input<inputs.Blockchain.OsnOcpuAllocationParam>;
+    ocpuAllocationParam?: pulumi.Input<inputs.Blockchain.OsnOcpuAllocationParam | undefined>;
 }

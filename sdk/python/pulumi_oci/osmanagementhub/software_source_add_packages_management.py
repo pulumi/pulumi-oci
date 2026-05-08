@@ -21,7 +21,7 @@ class SoftwareSourceAddPackagesManagementArgs:
     def __init__(__self__, *,
                  packages: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  software_source_id: pulumi.Input[_builtins.str],
-                 is_continue_on_missing_packages: Optional[pulumi.Input[_builtins.bool]] = None):
+                 is_continue_on_missing_packages: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a SoftwareSourceAddPackagesManagement resource.
 
@@ -68,23 +68,23 @@ class SoftwareSourceAddPackagesManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="isContinueOnMissingPackages")
-    def is_continue_on_missing_packages(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_continue_on_missing_packages(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
         """
         return pulumi.get(self, "is_continue_on_missing_packages")
 
     @is_continue_on_missing_packages.setter
-    def is_continue_on_missing_packages(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_continue_on_missing_packages(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_continue_on_missing_packages", value)
 
 
 @pulumi.input_type
 class _SoftwareSourceAddPackagesManagementState:
     def __init__(__self__, *,
-                 is_continue_on_missing_packages: Optional[pulumi.Input[_builtins.bool]] = None,
-                 packages: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 software_source_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 is_continue_on_missing_packages: pulumi.Input[Optional[_builtins.bool]] = None,
+                 packages: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 software_source_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SoftwareSourceAddPackagesManagement resources.
 
@@ -105,31 +105,31 @@ class _SoftwareSourceAddPackagesManagementState:
 
     @_builtins.property
     @pulumi.getter(name="isContinueOnMissingPackages")
-    def is_continue_on_missing_packages(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_continue_on_missing_packages(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
         """
         return pulumi.get(self, "is_continue_on_missing_packages")
 
     @is_continue_on_missing_packages.setter
-    def is_continue_on_missing_packages(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_continue_on_missing_packages(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_continue_on_missing_packages", value)
 
     @_builtins.property
     @pulumi.getter
-    def packages(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def packages(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
         """
         return pulumi.get(self, "packages")
 
     @packages.setter
-    def packages(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def packages(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "packages", value)
 
     @_builtins.property
     @pulumi.getter(name="softwareSourceId")
-    def software_source_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def software_source_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 
@@ -140,7 +140,7 @@ class _SoftwareSourceAddPackagesManagementState:
         return pulumi.get(self, "software_source_id")
 
     @software_source_id.setter
-    def software_source_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def software_source_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "software_source_id", value)
 
 
@@ -150,9 +150,9 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 is_continue_on_missing_packages: Optional[pulumi.Input[_builtins.bool]] = None,
-                 packages: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_continue_on_missing_packages: pulumi.Input[Optional[_builtins.bool]] = None,
+                 packages: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 software_source_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Software Source Add Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -176,7 +176,7 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
         test_software_source_add_packages_management = oci.osmanagementhub.SoftwareSourceAddPackagesManagement("test_software_source_add_packages_management",
             packages=software_source_add_packages_management_packages,
             software_source_id=test_software_source["id"],
-            is_continue_on_missing_packages=software_source_add_packages_management_is_continue_on_missing_packages)
+            is_continue_on_missing_packages=software_source_add_packages_management_is_continue_on_missing_packages == "true")
         ```
 
         ## Import
@@ -226,7 +226,7 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
         test_software_source_add_packages_management = oci.osmanagementhub.SoftwareSourceAddPackagesManagement("test_software_source_add_packages_management",
             packages=software_source_add_packages_management_packages,
             software_source_id=test_software_source["id"],
-            is_continue_on_missing_packages=software_source_add_packages_management_is_continue_on_missing_packages)
+            is_continue_on_missing_packages=software_source_add_packages_management_is_continue_on_missing_packages == "true")
         ```
 
         ## Import
@@ -253,9 +253,9 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 is_continue_on_missing_packages: Optional[pulumi.Input[_builtins.bool]] = None,
-                 packages: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_continue_on_missing_packages: pulumi.Input[Optional[_builtins.bool]] = None,
+                 packages: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 software_source_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -282,9 +282,9 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            is_continue_on_missing_packages: Optional[pulumi.Input[_builtins.bool]] = None,
-            packages: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            software_source_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'SoftwareSourceAddPackagesManagement':
+            is_continue_on_missing_packages: pulumi.Input[Optional[_builtins.bool]] = None,
+            packages: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            software_source_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'SoftwareSourceAddPackagesManagement':
         """
         Get an existing SoftwareSourceAddPackagesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

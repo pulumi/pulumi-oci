@@ -17,10 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlerts = oci.DataSafe.getAlerts({
+ * const testAlerts = oci.datasafe.getAlerts({
  *     compartmentId: compartmentId,
  *     accessLevel: alertAccessLevel,
- *     compartmentIdInSubtree: alertCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: alertCompartmentIdInSubtree === "true",
  *     fields: alertField,
  *     id: alertId,
  *     scimQuery: alertScimQuery,
@@ -106,10 +106,10 @@ export interface GetAlertsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlerts = oci.DataSafe.getAlerts({
+ * const testAlerts = oci.datasafe.getAlerts({
  *     compartmentId: compartmentId,
  *     accessLevel: alertAccessLevel,
- *     compartmentIdInSubtree: alertCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: alertCompartmentIdInSubtree === "true",
  *     fields: alertField,
  *     id: alertId,
  *     scimQuery: alertScimQuery,
@@ -136,7 +136,7 @@ export interface GetAlertsOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -144,20 +144,20 @@ export interface GetAlertsOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies a subset of fields to be returned in the response.
      */
-    fields?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetAlertsFilterArgs>[]>;
+    fields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetAlertsFilterArgs>[] | undefined>;
     /**
      * A filter to return alert by it's OCID.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
      *
      * **Example:** | query=(timeCreated ge "2021-06-04T01:00:26.000Z") and (targetNames eq "target1") query=(featureDetails.userName eq "user") and (targetNames eq "target1") Supported fields: severity status alertType targetIds targetNames operationTime lifecycleState displayName timeCreated timeUpdated featureDetails.* (* can be any field in nestedStrMap in Feature Attributes in Alert Summary. For example -  userName,object,clientHostname,osUserName,clientIPs,clientId,commandText,commandParam,clientProgram,objectType,targetOwner)
      */
-    scimQuery?: pulumi.Input<string>;
+    scimQuery?: pulumi.Input<string | undefined>;
 }

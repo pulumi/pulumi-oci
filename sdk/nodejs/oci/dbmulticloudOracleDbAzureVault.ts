@@ -224,75 +224,75 @@ export class DbmulticloudOracleDbAzureVault extends pulumi.CustomResource {
  * Input properties used for looking up and filtering DbmulticloudOracleDbAzureVault resources.
  */
 export interface DbmulticloudOracleDbAzureVaultState {
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Azure Vault ID.
      */
-    azureVaultId?: pulumi.Input<string>;
+    azureVaultId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Oracle DB Azure Vault resource name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Description of the latest modification of the Oracle DB Azure Vault resource.
      */
-    lastModification?: pulumi.Input<string>;
+    lastModification?: pulumi.Input<string | undefined>;
     /**
      * Description of the current lifecycle state in more detail.
      */
-    lifecycleStateDetails?: pulumi.Input<string>;
+    lifecycleStateDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle DB Azure Vault resource location.
      */
-    location?: pulumi.Input<string>;
+    location?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle DB Azure resource group name.
      */
-    oracleDbAzureResourceGroup?: pulumi.Input<string>;
+    oracleDbAzureResourceGroup?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
      */
-    oracleDbConnectorId?: pulumi.Input<string>;
+    oracleDbConnectorId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) resource's properties.
      */
-    properties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    properties?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Replication metadata, it has information about replication and target region.
      */
-    replicationMetadatas?: pulumi.Input<pulumi.Input<inputs.oci.DbmulticloudOracleDbAzureVaultReplicationMetadata>[]>;
+    replicationMetadatas?: pulumi.Input<pulumi.Input<inputs.oci.DbmulticloudOracleDbAzureVaultReplicationMetadata>[] | undefined>;
     /**
      * The lifecycle state of the Oracle DB Azure Vault resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The target region, where resource is replicated.
      */
-    targetRegion?: pulumi.Input<string>;
+    targetRegion?: pulumi.Input<string | undefined>;
     /**
      * Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle DB Azure Vault resource type.
      *
@@ -300,18 +300,18 @@ export interface DbmulticloudOracleDbAzureVaultState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a DbmulticloudOracleDbAzureVault resource.
  */
 export interface DbmulticloudOracleDbAzureVaultArgs {
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Azure Vault ID.
      */
-    azureVaultId?: pulumi.Input<string>;
+    azureVaultId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
      */
@@ -319,7 +319,7 @@ export interface DbmulticloudOracleDbAzureVaultArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Oracle DB Azure Vault resource name.
      */
@@ -327,15 +327,15 @@ export interface DbmulticloudOracleDbAzureVaultArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Oracle DB Azure Vault resource location.
      */
-    location?: pulumi.Input<string>;
+    location?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle DB Azure resource group name.
      */
-    oracleDbAzureResourceGroup?: pulumi.Input<string>;
+    oracleDbAzureResourceGroup?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
      */
@@ -343,11 +343,11 @@ export interface DbmulticloudOracleDbAzureVaultArgs {
     /**
      * (Updatable) resource's properties.
      */
-    properties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    properties?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The target region, where resource is replicated.
      */
-    targetRegion?: pulumi.Input<string>;
+    targetRegion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle DB Azure Vault resource type.
      *
@@ -355,5 +355,5 @@ export interface DbmulticloudOracleDbAzureVaultArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

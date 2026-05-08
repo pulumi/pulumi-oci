@@ -191,7 +191,7 @@ def get_saved_query(saved_query_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_saved_query = oci.CloudGuard.get_saved_query(saved_query_id=test_saved_query_oci_cloud_guard_saved_query["id"])
+    test_saved_query = oci.cloudguard.get_saved_query(saved_query_id=test_saved_query_oci_cloud_guard_saved_query["id"])
     ```
 
 
@@ -215,7 +215,7 @@ def get_saved_query(saved_query_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_saved_query_output(saved_query_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_saved_query_output(saved_query_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSavedQueryResult]:
     """
     This data source provides details about a specific Saved Query resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -228,7 +228,7 @@ def get_saved_query_output(saved_query_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_saved_query = oci.CloudGuard.get_saved_query(saved_query_id=test_saved_query_oci_cloud_guard_saved_query["id"])
+    test_saved_query = oci.cloudguard.get_saved_query(saved_query_id=test_saved_query_oci_cloud_guard_saved_query["id"])
     ```
 
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryRefs = oci.DevOps.getRepositoryRefs({
+ * const testRepositoryRefs = oci.devops.getRepositoryRefs({
  *     repositoryId: testRepository.id,
  *     commitId: testCommit.id,
  *     refName: repositoryRefRefName,
@@ -100,7 +100,7 @@ export interface GetRepositoryRefsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryRefs = oci.DevOps.getRepositoryRefs({
+ * const testRepositoryRefs = oci.devops.getRepositoryRefs({
  *     repositoryId: testRepository.id,
  *     commitId: testCommit.id,
  *     refName: repositoryRefRefName,
@@ -126,16 +126,16 @@ export interface GetRepositoryRefsOutputArgs {
     /**
      * Commit ID in a repository.
      */
-    commitId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DevOps.GetRepositoryRefsFilterArgs>[]>;
+    commitId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DevOps.GetRepositoryRefsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given reference name.
      */
-    refName?: pulumi.Input<string>;
+    refName?: pulumi.Input<string | undefined>;
     /**
      * Reference type to distinguish between branch and tag. If it is not specified, all references are returned.
      */
-    refType?: pulumi.Input<string>;
+    refType?: pulumi.Input<string | undefined>;
     /**
      * Unique repository identifier.
      */

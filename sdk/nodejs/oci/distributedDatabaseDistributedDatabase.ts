@@ -32,16 +32,16 @@ import * as utilities from "../utilities";
  *         source: distributedDatabaseCatalogDetailsSource,
  *         availabilityDomain: distributedDatabaseCatalogDetailsAvailabilityDomain,
  *         dbStorageVaultDetails: {
- *             additionalFlashCacheInPercent: distributedDatabaseCatalogDetailsDbStorageVaultDetailsAdditionalFlashCacheInPercent,
- *             highCapacityDatabaseStorage: distributedDatabaseCatalogDetailsDbStorageVaultDetailsHighCapacityDatabaseStorage,
+ *             additionalFlashCacheInPercent: Number(distributedDatabaseCatalogDetailsDbStorageVaultDetailsAdditionalFlashCacheInPercent),
+ *             highCapacityDatabaseStorage: Number(distributedDatabaseCatalogDetailsDbStorageVaultDetailsHighCapacityDatabaseStorage),
  *         },
  *         kmsKeyId: testKey.id,
  *         kmsKeyVersionId: testKeyVersion.id,
  *         peerDetails: [{
  *             availabilityDomain: distributedDatabaseCatalogDetailsPeerDetailsAvailabilityDomain,
  *             dbStorageVaultDetails: {
- *                 additionalFlashCacheInPercent: distributedDatabaseCatalogDetailsPeerDetailsDbStorageVaultDetailsAdditionalFlashCacheInPercent,
- *                 highCapacityDatabaseStorage: distributedDatabaseCatalogDetailsPeerDetailsDbStorageVaultDetailsHighCapacityDatabaseStorage,
+ *                 additionalFlashCacheInPercent: Number(distributedDatabaseCatalogDetailsPeerDetailsDbStorageVaultDetailsAdditionalFlashCacheInPercent),
+ *                 highCapacityDatabaseStorage: Number(distributedDatabaseCatalogDetailsPeerDetailsDbStorageVaultDetailsHighCapacityDatabaseStorage),
  *             },
  *             protectionMode: distributedDatabaseCatalogDetailsPeerDetailsProtectionMode,
  *             transportType: distributedDatabaseCatalogDetailsPeerDetailsTransportType,
@@ -49,17 +49,17 @@ import * as utilities from "../utilities";
  *                 backupNetworkNsgIds: distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsBackupNetworkNsgIds,
  *                 backupSubnetId: testSubnet.id,
  *                 domain: distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsDomain,
- *                 enabledEcpuCount: distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsEnabledEcpuCount,
- *                 isDiagnosticsEventsEnabled: distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsIsDiagnosticsEventsEnabled,
- *                 isHealthMonitoringEnabled: distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsIsHealthMonitoringEnabled,
- *                 isIncidentLogsEnabled: distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsIsIncidentLogsEnabled,
+ *                 enabledEcpuCount: Number(distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsEnabledEcpuCount),
+ *                 isDiagnosticsEventsEnabled: distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsIsDiagnosticsEventsEnabled === "true",
+ *                 isHealthMonitoringEnabled: distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsIsHealthMonitoringEnabled === "true",
+ *                 isIncidentLogsEnabled: distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsIsIncidentLogsEnabled === "true",
  *                 licenseModel: distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsLicenseModel,
  *                 nsgIds: distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsNsgIds,
  *                 privateZoneId: testZone.id,
  *                 sshPublicKeys: distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsSshPublicKeys,
  *                 subnetId: testSubnet.id,
- *                 totalEcpuCount: distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsTotalEcpuCount,
- *                 vmFileSystemStorageSize: distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsVmFileSystemStorageSize,
+ *                 totalEcpuCount: Number(distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsTotalEcpuCount),
+ *                 vmFileSystemStorageSize: Number(distributedDatabaseCatalogDetailsPeerDetailsVmClusterDetailsVmFileSystemStorageSize),
  *             },
  *             vmClusterId: testVmCluster.id,
  *         }],
@@ -70,17 +70,17 @@ import * as utilities from "../utilities";
  *             backupNetworkNsgIds: distributedDatabaseCatalogDetailsVmClusterDetailsBackupNetworkNsgIds,
  *             backupSubnetId: testSubnet.id,
  *             domain: distributedDatabaseCatalogDetailsVmClusterDetailsDomain,
- *             enabledEcpuCount: distributedDatabaseCatalogDetailsVmClusterDetailsEnabledEcpuCount,
- *             isDiagnosticsEventsEnabled: distributedDatabaseCatalogDetailsVmClusterDetailsIsDiagnosticsEventsEnabled,
- *             isHealthMonitoringEnabled: distributedDatabaseCatalogDetailsVmClusterDetailsIsHealthMonitoringEnabled,
- *             isIncidentLogsEnabled: distributedDatabaseCatalogDetailsVmClusterDetailsIsIncidentLogsEnabled,
+ *             enabledEcpuCount: Number(distributedDatabaseCatalogDetailsVmClusterDetailsEnabledEcpuCount),
+ *             isDiagnosticsEventsEnabled: distributedDatabaseCatalogDetailsVmClusterDetailsIsDiagnosticsEventsEnabled === "true",
+ *             isHealthMonitoringEnabled: distributedDatabaseCatalogDetailsVmClusterDetailsIsHealthMonitoringEnabled === "true",
+ *             isIncidentLogsEnabled: distributedDatabaseCatalogDetailsVmClusterDetailsIsIncidentLogsEnabled === "true",
  *             licenseModel: distributedDatabaseCatalogDetailsVmClusterDetailsLicenseModel,
  *             nsgIds: distributedDatabaseCatalogDetailsVmClusterDetailsNsgIds,
  *             privateZoneId: testZone.id,
  *             sshPublicKeys: distributedDatabaseCatalogDetailsVmClusterDetailsSshPublicKeys,
  *             subnetId: testSubnet.id,
- *             totalEcpuCount: distributedDatabaseCatalogDetailsVmClusterDetailsTotalEcpuCount,
- *             vmFileSystemStorageSize: distributedDatabaseCatalogDetailsVmClusterDetailsVmFileSystemStorageSize,
+ *             totalEcpuCount: Number(distributedDatabaseCatalogDetailsVmClusterDetailsTotalEcpuCount),
+ *             vmFileSystemStorageSize: Number(distributedDatabaseCatalogDetailsVmClusterDetailsVmFileSystemStorageSize),
  *         },
  *         vmClusterId: testVmCluster.id,
  *     }],
@@ -90,10 +90,10 @@ import * as utilities from "../utilities";
  *     dbDeploymentType: distributedDatabaseDbDeploymentType,
  *     displayName: distributedDatabaseDisplayName,
  *     distributedDatabaseId: distributedDatabaseDistributedDatabaseId,
- *     listenerPort: distributedDatabaseListenerPort,
+ *     listenerPort: Number(distributedDatabaseListenerPort),
  *     ncharacterSet: distributedDatabaseNcharacterSet,
- *     onsPortLocal: distributedDatabaseOnsPortLocal,
- *     onsPortRemote: distributedDatabaseOnsPortRemote,
+ *     onsPortLocal: Number(distributedDatabaseOnsPortLocal),
+ *     onsPortRemote: Number(distributedDatabaseOnsPortRemote),
  *     prefix: distributedDatabasePrefix,
  *     privateEndpointIds: distributedDatabasePrivateEndpointIds,
  *     shardDetails: [{
@@ -101,16 +101,16 @@ import * as utilities from "../utilities";
  *         source: distributedDatabaseShardDetailsSource,
  *         availabilityDomain: distributedDatabaseShardDetailsAvailabilityDomain,
  *         dbStorageVaultDetails: {
- *             additionalFlashCacheInPercent: distributedDatabaseShardDetailsDbStorageVaultDetailsAdditionalFlashCacheInPercent,
- *             highCapacityDatabaseStorage: distributedDatabaseShardDetailsDbStorageVaultDetailsHighCapacityDatabaseStorage,
+ *             additionalFlashCacheInPercent: Number(distributedDatabaseShardDetailsDbStorageVaultDetailsAdditionalFlashCacheInPercent),
+ *             highCapacityDatabaseStorage: Number(distributedDatabaseShardDetailsDbStorageVaultDetailsHighCapacityDatabaseStorage),
  *         },
  *         kmsKeyId: testKey.id,
  *         kmsKeyVersionId: testKeyVersion.id,
  *         peerDetails: [{
  *             availabilityDomain: distributedDatabaseShardDetailsPeerDetailsAvailabilityDomain,
  *             dbStorageVaultDetails: {
- *                 additionalFlashCacheInPercent: distributedDatabaseShardDetailsPeerDetailsDbStorageVaultDetailsAdditionalFlashCacheInPercent,
- *                 highCapacityDatabaseStorage: distributedDatabaseShardDetailsPeerDetailsDbStorageVaultDetailsHighCapacityDatabaseStorage,
+ *                 additionalFlashCacheInPercent: Number(distributedDatabaseShardDetailsPeerDetailsDbStorageVaultDetailsAdditionalFlashCacheInPercent),
+ *                 highCapacityDatabaseStorage: Number(distributedDatabaseShardDetailsPeerDetailsDbStorageVaultDetailsHighCapacityDatabaseStorage),
  *             },
  *             protectionMode: distributedDatabaseShardDetailsPeerDetailsProtectionMode,
  *             transportType: distributedDatabaseShardDetailsPeerDetailsTransportType,
@@ -118,17 +118,17 @@ import * as utilities from "../utilities";
  *                 backupNetworkNsgIds: distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsBackupNetworkNsgIds,
  *                 backupSubnetId: testSubnet.id,
  *                 domain: distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsDomain,
- *                 enabledEcpuCount: distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsEnabledEcpuCount,
- *                 isDiagnosticsEventsEnabled: distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsIsDiagnosticsEventsEnabled,
- *                 isHealthMonitoringEnabled: distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsIsHealthMonitoringEnabled,
- *                 isIncidentLogsEnabled: distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsIsIncidentLogsEnabled,
+ *                 enabledEcpuCount: Number(distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsEnabledEcpuCount),
+ *                 isDiagnosticsEventsEnabled: distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsIsDiagnosticsEventsEnabled === "true",
+ *                 isHealthMonitoringEnabled: distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsIsHealthMonitoringEnabled === "true",
+ *                 isIncidentLogsEnabled: distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsIsIncidentLogsEnabled === "true",
  *                 licenseModel: distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsLicenseModel,
  *                 nsgIds: distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsNsgIds,
  *                 privateZoneId: testZone.id,
  *                 sshPublicKeys: distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsSshPublicKeys,
  *                 subnetId: testSubnet.id,
- *                 totalEcpuCount: distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsTotalEcpuCount,
- *                 vmFileSystemStorageSize: distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsVmFileSystemStorageSize,
+ *                 totalEcpuCount: Number(distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsTotalEcpuCount),
+ *                 vmFileSystemStorageSize: Number(distributedDatabaseShardDetailsPeerDetailsVmClusterDetailsVmFileSystemStorageSize),
  *             },
  *             vmClusterId: testVmCluster.id,
  *         }],
@@ -139,22 +139,22 @@ import * as utilities from "../utilities";
  *             backupNetworkNsgIds: distributedDatabaseShardDetailsVmClusterDetailsBackupNetworkNsgIds,
  *             backupSubnetId: testSubnet.id,
  *             domain: distributedDatabaseShardDetailsVmClusterDetailsDomain,
- *             enabledEcpuCount: distributedDatabaseShardDetailsVmClusterDetailsEnabledEcpuCount,
- *             isDiagnosticsEventsEnabled: distributedDatabaseShardDetailsVmClusterDetailsIsDiagnosticsEventsEnabled,
- *             isHealthMonitoringEnabled: distributedDatabaseShardDetailsVmClusterDetailsIsHealthMonitoringEnabled,
- *             isIncidentLogsEnabled: distributedDatabaseShardDetailsVmClusterDetailsIsIncidentLogsEnabled,
+ *             enabledEcpuCount: Number(distributedDatabaseShardDetailsVmClusterDetailsEnabledEcpuCount),
+ *             isDiagnosticsEventsEnabled: distributedDatabaseShardDetailsVmClusterDetailsIsDiagnosticsEventsEnabled === "true",
+ *             isHealthMonitoringEnabled: distributedDatabaseShardDetailsVmClusterDetailsIsHealthMonitoringEnabled === "true",
+ *             isIncidentLogsEnabled: distributedDatabaseShardDetailsVmClusterDetailsIsIncidentLogsEnabled === "true",
  *             licenseModel: distributedDatabaseShardDetailsVmClusterDetailsLicenseModel,
  *             nsgIds: distributedDatabaseShardDetailsVmClusterDetailsNsgIds,
  *             privateZoneId: testZone.id,
  *             sshPublicKeys: distributedDatabaseShardDetailsVmClusterDetailsSshPublicKeys,
  *             subnetId: testSubnet.id,
- *             totalEcpuCount: distributedDatabaseShardDetailsVmClusterDetailsTotalEcpuCount,
- *             vmFileSystemStorageSize: distributedDatabaseShardDetailsVmClusterDetailsVmFileSystemStorageSize,
+ *             totalEcpuCount: Number(distributedDatabaseShardDetailsVmClusterDetailsTotalEcpuCount),
+ *             vmFileSystemStorageSize: Number(distributedDatabaseShardDetailsVmClusterDetailsVmFileSystemStorageSize),
  *         },
  *         vmClusterId: testVmCluster.id,
  *     }],
  *     shardingMethod: distributedDatabaseShardingMethod,
- *     chunks: distributedDatabaseChunks,
+ *     chunks: Number(distributedDatabaseChunks),
  *     dbBackupConfig: {
  *         autoBackupWindow: distributedDatabaseDbBackupConfigAutoBackupWindow,
  *         autoFullBackupDay: distributedDatabaseDbBackupConfigAutoFullBackupDay,
@@ -165,16 +165,16 @@ import * as utilities from "../utilities";
  *             dbrsPolicyId: testPolicy.id,
  *             id: distributedDatabaseDbBackupConfigBackupDestinationDetailsId,
  *             internetProxy: distributedDatabaseDbBackupConfigBackupDestinationDetailsInternetProxy,
- *             isRemote: distributedDatabaseDbBackupConfigBackupDestinationDetailsIsRemote,
- *             isZeroDataLossEnabled: distributedDatabaseDbBackupConfigBackupDestinationDetailsIsZeroDataLossEnabled,
+ *             isRemote: distributedDatabaseDbBackupConfigBackupDestinationDetailsIsRemote === "true",
+ *             isZeroDataLossEnabled: distributedDatabaseDbBackupConfigBackupDestinationDetailsIsZeroDataLossEnabled === "true",
  *             remoteRegion: distributedDatabaseDbBackupConfigBackupDestinationDetailsRemoteRegion,
  *             vpcPassword: distributedDatabaseDbBackupConfigBackupDestinationDetailsVpcPassword,
  *             vpcUser: distributedDatabaseDbBackupConfigBackupDestinationDetailsVpcUser,
  *         }],
- *         canRunImmediateFullBackup: distributedDatabaseDbBackupConfigCanRunImmediateFullBackup,
- *         isAutoBackupEnabled: distributedDatabaseDbBackupConfigIsAutoBackupEnabled,
- *         isRemoteBackupEnabled: distributedDatabaseDbBackupConfigIsRemoteBackupEnabled,
- *         recoveryWindowInDays: distributedDatabaseDbBackupConfigRecoveryWindowInDays,
+ *         canRunImmediateFullBackup: distributedDatabaseDbBackupConfigCanRunImmediateFullBackup === "true",
+ *         isAutoBackupEnabled: distributedDatabaseDbBackupConfigIsAutoBackupEnabled === "true",
+ *         isRemoteBackupEnabled: distributedDatabaseDbBackupConfigIsRemoteBackupEnabled === "true",
+ *         recoveryWindowInDays: Number(distributedDatabaseDbBackupConfigRecoveryWindowInDays),
  *         remoteRegion: distributedDatabaseDbBackupConfigRemoteRegion,
  *     },
  *     definedTags: {
@@ -184,16 +184,16 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     gsmSshPublicKey: distributedDatabaseGsmSshPublicKey,
- *     listenerPortTls: distributedDatabaseListenerPortTls,
+ *     listenerPortTls: Number(distributedDatabaseListenerPortTls),
  *     patchOperations: [{
  *         operation: distributedDatabasePatchOperationsOperation,
  *         selection: distributedDatabasePatchOperationsSelection,
  *         value: distributedDatabasePatchOperationsValue,
  *     }],
- *     replicationFactor: distributedDatabaseReplicationFactor,
+ *     replicationFactor: Number(distributedDatabaseReplicationFactor),
  *     replicationMethod: distributedDatabaseReplicationMethod,
- *     replicationUnit: distributedDatabaseReplicationUnit,
- *     scanListenerPort: distributedDatabaseScanListenerPort,
+ *     replicationUnit: Number(distributedDatabaseReplicationUnit),
+ *     scanListenerPort: Number(distributedDatabaseScanListenerPort),
  * });
  * ```
  *
@@ -607,192 +607,192 @@ export interface DistributedDatabaseDistributedDatabaseState {
     /**
      * Collection of catalog for the Globally distributed database.
      */
-    catalogDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetail>[]>;
+    catalogDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseCatalogDetail>[] | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Change Db Backup Config. Could be set to any integer value.
      */
-    changeDbBackupConfigTrigger?: pulumi.Input<number>;
+    changeDbBackupConfigTrigger?: pulumi.Input<number | undefined>;
     /**
      * The character set for the database.
      */
-    characterSet?: pulumi.Input<string>;
+    characterSet?: pulumi.Input<string | undefined>;
     /**
      * Number of chunks in a shardspace. The value of chunks must be greater than 2 times the size of the largest shardgroup in any shardspace. Chunks is required to be provided for distributed databases being created with SYSTEM shardingMethod. For USER shardingMethod, chunks should not be set in create payload.
      */
-    chunks?: pulumi.Input<number>;
+    chunks?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed database compartment.
      */
-    compartmentId?: pulumi.Input<string>;
-    configureShardingIsRebalanceRequired?: pulumi.Input<boolean>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    configureShardingIsRebalanceRequired?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Configure Sharding. Could be set to any integer value.
      */
-    configureShardingTrigger?: pulumi.Input<number>;
+    configureShardingTrigger?: pulumi.Input<number | undefined>;
     /**
      * Details of Globally distributed database connection String.
      */
-    connectionStrings?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseConnectionString>[]>;
+    connectionStrings?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseConnectionString>[] | undefined>;
     /**
      * Oracle Database version for the shards and catalog used in Globally distributed database.
      */
-    databaseVersion?: pulumi.Input<string>;
+    databaseVersion?: pulumi.Input<string | undefined>;
     /**
      * Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      */
-    dbBackupConfig?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseDbBackupConfig>;
+    dbBackupConfig?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseDbBackupConfig | undefined>;
     /**
      * The distributed database deployment type.
      */
-    dbDeploymentType?: pulumi.Input<string>;
+    dbDeploymentType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The display name of the Globally distributed database.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Download Gsm Certificate Signing Request. Could be set to any integer value.
      *
      * @deprecated This trigger/action API is deprecated.
      */
-    downloadGsmCertificateSigningRequestTrigger?: pulumi.Input<number>;
+    downloadGsmCertificateSigningRequestTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Generate Gsm Certificate Signing Request. Could be set to any integer value.
      *
      * @deprecated This trigger/action API is deprecated.
      */
-    generateGsmCertificateSigningRequestTrigger?: pulumi.Input<number>;
-    generateWalletDownloadedWalletContentLength?: pulumi.Input<number>;
-    generateWalletDownloadedWalletEtag?: pulumi.Input<string>;
-    generateWalletDownloadedWalletLastModified?: pulumi.Input<string>;
-    generateWalletDownloadedWalletZipBase64?: pulumi.Input<string>;
-    generateWalletPassword?: pulumi.Input<string>;
+    generateGsmCertificateSigningRequestTrigger?: pulumi.Input<number | undefined>;
+    generateWalletDownloadedWalletContentLength?: pulumi.Input<number | undefined>;
+    generateWalletDownloadedWalletEtag?: pulumi.Input<string | undefined>;
+    generateWalletDownloadedWalletLastModified?: pulumi.Input<string | undefined>;
+    generateWalletDownloadedWalletZipBase64?: pulumi.Input<string | undefined>;
+    generateWalletPassword?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Generate Wallet. Could be set to any integer value.
      */
-    generateWalletTrigger?: pulumi.Input<number>;
+    generateWalletTrigger?: pulumi.Input<number | undefined>;
     /**
      * Collection of catalogs associated with the Globally distributed database.
      */
-    gsmDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseGsmDetail>[]>;
+    gsmDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseGsmDetail>[] | undefined>;
     /**
      * The SSH public key for Global service manager instances.
      */
-    gsmSshPublicKey?: pulumi.Input<string>;
+    gsmSshPublicKey?: pulumi.Input<string | undefined>;
     /**
      * The Global service manager image details
      */
-    latestGsmImageDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseLatestGsmImageDetail>[]>;
+    latestGsmImageDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseLatestGsmImageDetail>[] | undefined>;
     /**
      * The lifecycleDetails for the Globally distributed database.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The listener port number for the Globally distributed database. The listener port number has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database.
      */
-    listenerPort?: pulumi.Input<number>;
+    listenerPort?: pulumi.Input<number | undefined>;
     /**
      * The TLS listener port number for the Globally distributed database. The TLS listener port number has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database. For BASE_DB and EXADB_XS based distributed databases, tls is not supported hence the listenerPortTls is not needed to be provided in create payload.
      */
-    listenerPortTls?: pulumi.Input<number>;
+    listenerPortTls?: pulumi.Input<number | undefined>;
     /**
      * Additional metadata related to Globally distributed database resources.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseMetadata>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseMetadata>[] | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
      */
-    moveReplicationUnitTrigger?: pulumi.Input<number>;
+    moveReplicationUnitTrigger?: pulumi.Input<number | undefined>;
     /**
      * The national character set for the database.
      */
-    ncharacterSet?: pulumi.Input<string>;
+    ncharacterSet?: pulumi.Input<string | undefined>;
     /**
      * The ons local port number for the Globally distributed database. The onsPortLocal has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database.
      */
-    onsPortLocal?: pulumi.Input<number>;
+    onsPortLocal?: pulumi.Input<number | undefined>;
     /**
      * The ons remote port number for the Globally distributed database. The onsPortRemote has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database.
      */
-    onsPortRemote?: pulumi.Input<number>;
+    onsPortRemote?: pulumi.Input<number | undefined>;
     /**
      * (Updatable)
      */
-    patchOperations?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabasePatchOperation>[]>;
+    patchOperations?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabasePatchOperation>[] | undefined>;
     /**
      * Unique name prefix for the Globally distributed databases. Only alpha-numeric values are allowed. First character has to be a letter followed by any combination of letter and number.
      */
-    prefix?: pulumi.Input<string>;
+    prefix?: pulumi.Input<string | undefined>;
     /**
      * The collection of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint associated with Globally distributed autonomous database.
      */
-    privateEndpointIds?: pulumi.Input<pulumi.Input<string>[]>;
+    privateEndpointIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
      */
-    recreateFailedResourceTrigger?: pulumi.Input<number>;
+    recreateFailedResourceTrigger?: pulumi.Input<number | undefined>;
     /**
      * The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
      */
-    replicationFactor?: pulumi.Input<number>;
+    replicationFactor?: pulumi.Input<number | undefined>;
     /**
      * The Replication method for Globally distributed database. Use RAFT for Raft based replication. With RAFT replication, shards cannot have peers details set on them. In case shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
      */
-    replicationMethod?: pulumi.Input<string>;
+    replicationMethod?: pulumi.Input<string | undefined>;
     /**
      * The replication unit count for RAFT based distributed database. For RAFT replication based Globally distributed database, the value should be at least twice the number of shards.
      */
-    replicationUnit?: pulumi.Input<number>;
+    replicationUnit?: pulumi.Input<number | undefined>;
     /**
      * The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
      */
-    scanListenerPort?: pulumi.Input<number>;
+    scanListenerPort?: pulumi.Input<number | undefined>;
     /**
      * Collection of shards for the Globally distributed database.
      */
-    shardDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseShardDetail>[]>;
+    shardDetails?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseShardDetail>[] | undefined>;
     /**
      * Sharding Methods for the Globally distributed database.
      */
-    shardingMethod?: pulumi.Input<string>;
+    shardingMethod?: pulumi.Input<string | undefined>;
     /**
      * Increment this value to trigger StartDistributedDatabase action.
      */
-    startDatabaseTrigger?: pulumi.Input<number>;
+    startDatabaseTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The target state for the Distributed Database. Could be set to `ACTIVE` or `INACTIVE`.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Increment this value to trigger StopDistributedDatabase action.
      */
-    stopDatabaseTrigger?: pulumi.Input<number>;
+    stopDatabaseTrigger?: pulumi.Input<number | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the Globally distributed database was created. An RFC3339 formatted datetime string
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the Globally distributed database was last updated. An RFC3339 formatted datetime string
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Upload Signed Certificate And Generate Wallet. Could be set to any integer value.
      *
      * @deprecated This trigger/action API is deprecated.
      */
-    uploadSignedCertificateAndGenerateWalletTrigger?: pulumi.Input<number>;
-    validateNetworkDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseValidateNetworkDetails>;
+    uploadSignedCertificateAndGenerateWalletTrigger?: pulumi.Input<number | undefined>;
+    validateNetworkDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseValidateNetworkDetails | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Validate Network. Could be set to any integer value.
      *
@@ -800,7 +800,7 @@ export interface DistributedDatabaseDistributedDatabaseState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    validateNetworkTrigger?: pulumi.Input<number>;
+    validateNetworkTrigger?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -814,7 +814,7 @@ export interface DistributedDatabaseDistributedDatabaseArgs {
     /**
      * (Updatable) An optional property when incremented triggers Change Db Backup Config. Could be set to any integer value.
      */
-    changeDbBackupConfigTrigger?: pulumi.Input<number>;
+    changeDbBackupConfigTrigger?: pulumi.Input<number | undefined>;
     /**
      * The character set for the database.
      */
@@ -822,16 +822,16 @@ export interface DistributedDatabaseDistributedDatabaseArgs {
     /**
      * Number of chunks in a shardspace. The value of chunks must be greater than 2 times the size of the largest shardgroup in any shardspace. Chunks is required to be provided for distributed databases being created with SYSTEM shardingMethod. For USER shardingMethod, chunks should not be set in create payload.
      */
-    chunks?: pulumi.Input<number>;
+    chunks?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Globally distributed database compartment.
      */
     compartmentId: pulumi.Input<string>;
-    configureShardingIsRebalanceRequired?: pulumi.Input<boolean>;
+    configureShardingIsRebalanceRequired?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Configure Sharding. Could be set to any integer value.
      */
-    configureShardingTrigger?: pulumi.Input<number>;
+    configureShardingTrigger?: pulumi.Input<number | undefined>;
     /**
      * Oracle Database version for the shards and catalog used in Globally distributed database.
      */
@@ -839,7 +839,7 @@ export interface DistributedDatabaseDistributedDatabaseArgs {
     /**
      * Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      */
-    dbBackupConfig?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseDbBackupConfig>;
+    dbBackupConfig?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseDbBackupConfig | undefined>;
     /**
      * The distributed database deployment type.
      */
@@ -847,7 +847,7 @@ export interface DistributedDatabaseDistributedDatabaseArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The display name of the Globally distributed database.
      */
@@ -857,26 +857,26 @@ export interface DistributedDatabaseDistributedDatabaseArgs {
      *
      * @deprecated This trigger/action API is deprecated.
      */
-    downloadGsmCertificateSigningRequestTrigger?: pulumi.Input<number>;
+    downloadGsmCertificateSigningRequestTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Generate Gsm Certificate Signing Request. Could be set to any integer value.
      *
      * @deprecated This trigger/action API is deprecated.
      */
-    generateGsmCertificateSigningRequestTrigger?: pulumi.Input<number>;
-    generateWalletPassword?: pulumi.Input<string>;
+    generateGsmCertificateSigningRequestTrigger?: pulumi.Input<number | undefined>;
+    generateWalletPassword?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Generate Wallet. Could be set to any integer value.
      */
-    generateWalletTrigger?: pulumi.Input<number>;
+    generateWalletTrigger?: pulumi.Input<number | undefined>;
     /**
      * The SSH public key for Global service manager instances.
      */
-    gsmSshPublicKey?: pulumi.Input<string>;
+    gsmSshPublicKey?: pulumi.Input<string | undefined>;
     /**
      * The listener port number for the Globally distributed database. The listener port number has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database.
      */
@@ -884,11 +884,11 @@ export interface DistributedDatabaseDistributedDatabaseArgs {
     /**
      * The TLS listener port number for the Globally distributed database. The TLS listener port number has to be unique for a customer tenancy across all distributed databases. Same port number should not be re-used for any other distributed database. For BASE_DB and EXADB_XS based distributed databases, tls is not supported hence the listenerPortTls is not needed to be provided in create payload.
      */
-    listenerPortTls?: pulumi.Input<number>;
+    listenerPortTls?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Move Replication Unit. Could be set to any integer value.
      */
-    moveReplicationUnitTrigger?: pulumi.Input<number>;
+    moveReplicationUnitTrigger?: pulumi.Input<number | undefined>;
     /**
      * The national character set for the database.
      */
@@ -904,7 +904,7 @@ export interface DistributedDatabaseDistributedDatabaseArgs {
     /**
      * (Updatable)
      */
-    patchOperations?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabasePatchOperation>[]>;
+    patchOperations?: pulumi.Input<pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabasePatchOperation>[] | undefined>;
     /**
      * Unique name prefix for the Globally distributed databases. Only alpha-numeric values are allowed. First character has to be a letter followed by any combination of letter and number.
      */
@@ -916,23 +916,23 @@ export interface DistributedDatabaseDistributedDatabaseArgs {
     /**
      * (Updatable) An optional property when incremented triggers Recreate Failed Resource. Could be set to any integer value.
      */
-    recreateFailedResourceTrigger?: pulumi.Input<number>;
+    recreateFailedResourceTrigger?: pulumi.Input<number | undefined>;
     /**
      * The Replication factor for RAFT replication based Globally distributed database. Currently supported values are 3, 5 and 7.
      */
-    replicationFactor?: pulumi.Input<number>;
+    replicationFactor?: pulumi.Input<number | undefined>;
     /**
      * The Replication method for Globally distributed database. Use RAFT for Raft based replication. With RAFT replication, shards cannot have peers details set on them. In case shards need to have peers, please do not set RAFT replicationMethod. For all non RAFT replication cases (with or without peers), please set replicationMethod as DG or do not set any value for replicationMethod.
      */
-    replicationMethod?: pulumi.Input<string>;
+    replicationMethod?: pulumi.Input<string | undefined>;
     /**
      * The replication unit count for RAFT based distributed database. For RAFT replication based Globally distributed database, the value should be at least twice the number of shards.
      */
-    replicationUnit?: pulumi.Input<number>;
+    replicationUnit?: pulumi.Input<number | undefined>;
     /**
      * The TCP Single Client Access Name (SCAN) port for clusters created for Globally distributed database. The scanListenerPort number should only be provided if shard and catalog have source type NEW_VAULT_AND_CLUSTER. If shard and catalog have source type NEW_VAULT_AND_CLUSTER and scanListenerPort is not provided then the scanListenerPort will default to value 1521.
      */
-    scanListenerPort?: pulumi.Input<number>;
+    scanListenerPort?: pulumi.Input<number | undefined>;
     /**
      * Collection of shards for the Globally distributed database.
      */
@@ -944,22 +944,22 @@ export interface DistributedDatabaseDistributedDatabaseArgs {
     /**
      * Increment this value to trigger StartDistributedDatabase action.
      */
-    startDatabaseTrigger?: pulumi.Input<number>;
+    startDatabaseTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The target state for the Distributed Database. Could be set to `ACTIVE` or `INACTIVE`.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Increment this value to trigger StopDistributedDatabase action.
      */
-    stopDatabaseTrigger?: pulumi.Input<number>;
+    stopDatabaseTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Upload Signed Certificate And Generate Wallet. Could be set to any integer value.
      *
      * @deprecated This trigger/action API is deprecated.
      */
-    uploadSignedCertificateAndGenerateWalletTrigger?: pulumi.Input<number>;
-    validateNetworkDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseValidateNetworkDetails>;
+    uploadSignedCertificateAndGenerateWalletTrigger?: pulumi.Input<number | undefined>;
+    validateNetworkDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseValidateNetworkDetails | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Validate Network. Could be set to any integer value.
      *
@@ -967,5 +967,5 @@ export interface DistributedDatabaseDistributedDatabaseArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    validateNetworkTrigger?: pulumi.Input<number>;
+    validateNetworkTrigger?: pulumi.Input<number | undefined>;
 }

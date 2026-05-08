@@ -241,7 +241,7 @@ def get_monitoring_template_alarm_condition(alarm_condition_id: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_monitoring_template_alarm_condition = oci.StackMonitoring.get_monitoring_template_alarm_condition(alarm_condition_id=test_alarm_condition["id"],
+    test_monitoring_template_alarm_condition = oci.stackmonitoring.get_monitoring_template_alarm_condition(alarm_condition_id=test_alarm_condition["id"],
         monitoring_template_id=test_monitoring_template["id"])
     ```
 
@@ -272,8 +272,8 @@ def get_monitoring_template_alarm_condition(alarm_condition_id: Optional[_builti
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_monitoring_template_alarm_condition_output(alarm_condition_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                   monitoring_template_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_monitoring_template_alarm_condition_output(alarm_condition_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                   monitoring_template_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMonitoringTemplateAlarmConditionResult]:
     """
     This data source provides details about a specific Monitoring Template Alarm Condition resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -286,7 +286,7 @@ def get_monitoring_template_alarm_condition_output(alarm_condition_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_monitoring_template_alarm_condition = oci.StackMonitoring.get_monitoring_template_alarm_condition(alarm_condition_id=test_alarm_condition["id"],
+    test_monitoring_template_alarm_condition = oci.stackmonitoring.get_monitoring_template_alarm_condition(alarm_condition_id=test_alarm_condition["id"],
         monitoring_template_id=test_monitoring_template["id"])
     ```
 

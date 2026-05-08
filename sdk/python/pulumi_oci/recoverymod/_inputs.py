@@ -28,35 +28,35 @@ __all__ = [
 ]
 
 class ProtectedDatabaseMetricArgsDict(TypedDict):
-    backup_space_estimate_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    backup_space_estimate_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
     """
-    backup_space_used_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    backup_space_used_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Backup storage space, in gigabytes, utilized by the protected database. Oracle charges for the total storage used.
     """
-    current_retention_period_in_seconds: NotRequired[pulumi.Input[_builtins.float]]
+    current_retention_period_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Number of seconds backups are currently retained for this database.
     """
-    db_size_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    db_size_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The estimated space, in gigabytes, consumed by the protected database. The database size is based on the size of the data files in the catalog, and does not include archive logs.
     """
-    is_redo_logs_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_redo_logs_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
     """
-    minimum_recovery_needed_in_days: NotRequired[pulumi.Input[_builtins.float]]
+    minimum_recovery_needed_in_days: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     Number of days of redo/archive to be applied to recover database.
     """
-    retention_period_in_days: NotRequired[pulumi.Input[_builtins.float]]
+    retention_period_in_days: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The maximum number of days to retain backups for a protected database.
     """
-    unprotected_window_in_seconds: NotRequired[pulumi.Input[_builtins.float]]
+    unprotected_window_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
     """
@@ -64,14 +64,14 @@ class ProtectedDatabaseMetricArgsDict(TypedDict):
 @pulumi.input_type
 class ProtectedDatabaseMetricArgs:
     def __init__(__self__, *,
-                 backup_space_estimate_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 backup_space_used_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 current_retention_period_in_seconds: Optional[pulumi.Input[_builtins.float]] = None,
-                 db_size_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 is_redo_logs_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 minimum_recovery_needed_in_days: Optional[pulumi.Input[_builtins.float]] = None,
-                 retention_period_in_days: Optional[pulumi.Input[_builtins.float]] = None,
-                 unprotected_window_in_seconds: Optional[pulumi.Input[_builtins.float]] = None):
+                 backup_space_estimate_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 backup_space_used_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 current_retention_period_in_seconds: pulumi.Input[Optional[_builtins.float]] = None,
+                 db_size_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 is_redo_logs_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 minimum_recovery_needed_in_days: pulumi.Input[Optional[_builtins.float]] = None,
+                 retention_period_in_days: pulumi.Input[Optional[_builtins.float]] = None,
+                 unprotected_window_in_seconds: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[_builtins.float] backup_space_estimate_in_gbs: The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
         :param pulumi.Input[_builtins.float] backup_space_used_in_gbs: Backup storage space, in gigabytes, utilized by the protected database. Oracle charges for the total storage used.
@@ -101,98 +101,98 @@ class ProtectedDatabaseMetricArgs:
 
     @_builtins.property
     @pulumi.getter(name="backupSpaceEstimateInGbs")
-    def backup_space_estimate_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def backup_space_estimate_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The estimated backup storage space, in gigabytes, required to meet the recovery window goal, including foot print and backups for the protected database.
         """
         return pulumi.get(self, "backup_space_estimate_in_gbs")
 
     @backup_space_estimate_in_gbs.setter
-    def backup_space_estimate_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def backup_space_estimate_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "backup_space_estimate_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="backupSpaceUsedInGbs")
-    def backup_space_used_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def backup_space_used_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Backup storage space, in gigabytes, utilized by the protected database. Oracle charges for the total storage used.
         """
         return pulumi.get(self, "backup_space_used_in_gbs")
 
     @backup_space_used_in_gbs.setter
-    def backup_space_used_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def backup_space_used_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "backup_space_used_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="currentRetentionPeriodInSeconds")
-    def current_retention_period_in_seconds(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def current_retention_period_in_seconds(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Number of seconds backups are currently retained for this database.
         """
         return pulumi.get(self, "current_retention_period_in_seconds")
 
     @current_retention_period_in_seconds.setter
-    def current_retention_period_in_seconds(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def current_retention_period_in_seconds(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "current_retention_period_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="dbSizeInGbs")
-    def db_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def db_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The estimated space, in gigabytes, consumed by the protected database. The database size is based on the size of the data files in the catalog, and does not include archive logs.
         """
         return pulumi.get(self, "db_size_in_gbs")
 
     @db_size_in_gbs.setter
-    def db_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def db_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "db_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="isRedoLogsEnabled")
-    def is_redo_logs_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_redo_logs_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
         """
         return pulumi.get(self, "is_redo_logs_enabled")
 
     @is_redo_logs_enabled.setter
-    def is_redo_logs_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_redo_logs_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_redo_logs_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="minimumRecoveryNeededInDays")
-    def minimum_recovery_needed_in_days(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def minimum_recovery_needed_in_days(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Number of days of redo/archive to be applied to recover database.
         """
         return pulumi.get(self, "minimum_recovery_needed_in_days")
 
     @minimum_recovery_needed_in_days.setter
-    def minimum_recovery_needed_in_days(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def minimum_recovery_needed_in_days(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "minimum_recovery_needed_in_days", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionPeriodInDays")
-    def retention_period_in_days(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def retention_period_in_days(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The maximum number of days to retain backups for a protected database.
         """
         return pulumi.get(self, "retention_period_in_days")
 
     @retention_period_in_days.setter
-    def retention_period_in_days(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def retention_period_in_days(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "retention_period_in_days", value)
 
     @_builtins.property
     @pulumi.getter(name="unprotectedWindowInSeconds")
-    def unprotected_window_in_seconds(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def unprotected_window_in_seconds(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         This is the time window when there is data loss exposure. The point after which recovery is impossible unless additional redo is available.  This is the time we received the last backup or last redo-log shipped.
         """
         return pulumi.get(self, "unprotected_window_in_seconds")
 
     @unprotected_window_in_seconds.setter
-    def unprotected_window_in_seconds(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def unprotected_window_in_seconds(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "unprotected_window_in_seconds", value)
 
 
@@ -201,7 +201,7 @@ class ProtectedDatabaseRecoveryServiceSubnetArgsDict(TypedDict):
     """
     (Updatable) The recovery service subnet OCID.
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current state of the Protected Database.
     """
@@ -210,7 +210,7 @@ class ProtectedDatabaseRecoveryServiceSubnetArgsDict(TypedDict):
 class ProtectedDatabaseRecoveryServiceSubnetArgs:
     def __init__(__self__, *,
                  recovery_service_subnet_id: pulumi.Input[_builtins.str],
-                 state: Optional[pulumi.Input[_builtins.str]] = None):
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] recovery_service_subnet_id: (Updatable) The recovery service subnet OCID.
         :param pulumi.Input[_builtins.str] state: The current state of the Protected Database.
@@ -233,14 +233,14 @@ class ProtectedDatabaseRecoveryServiceSubnetArgs:
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Protected Database.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
 

@@ -130,19 +130,19 @@ export interface IotIotDomainConfigureDataAccessState {
     /**
      * List of IAM groups of form described in [here](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/mnqmn/#GUID-3634D6C9-A7F1-4875-9925-BAEA2D3C5197) that are allowed to directly connect to the data host.
      */
-    dbAllowListedIdentityGroupNames?: pulumi.Input<pulumi.Input<string>[]>;
+    dbAllowListedIdentityGroupNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Host name of identity domain that is used for authenticating connect to data host via ORDS.
      */
-    dbAllowedIdentityDomainHost?: pulumi.Input<string>;
+    dbAllowedIdentityDomainHost?: pulumi.Input<string | undefined>;
     /**
      * Initial admin password for APEX workspace associated with the IoT domain.
      */
-    dbWorkspaceAdminInitialPassword?: pulumi.Input<string>;
+    dbWorkspaceAdminInitialPassword?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
      */
-    iotDomainId?: pulumi.Input<string>;
+    iotDomainId?: pulumi.Input<string | undefined>;
     /**
      * configuration type
      *
@@ -150,7 +150,7 @@ export interface IotIotDomainConfigureDataAccessState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -160,15 +160,15 @@ export interface IotIotDomainConfigureDataAccessArgs {
     /**
      * List of IAM groups of form described in [here](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/mnqmn/#GUID-3634D6C9-A7F1-4875-9925-BAEA2D3C5197) that are allowed to directly connect to the data host.
      */
-    dbAllowListedIdentityGroupNames?: pulumi.Input<pulumi.Input<string>[]>;
+    dbAllowListedIdentityGroupNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Host name of identity domain that is used for authenticating connect to data host via ORDS.
      */
-    dbAllowedIdentityDomainHost?: pulumi.Input<string>;
+    dbAllowedIdentityDomainHost?: pulumi.Input<string | undefined>;
     /**
      * Initial admin password for APEX workspace associated with the IoT domain.
      */
-    dbWorkspaceAdminInitialPassword?: pulumi.Input<string>;
+    dbWorkspaceAdminInitialPassword?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
      */

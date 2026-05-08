@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIamWorkRequestErrors = oci.Identity.getIamWorkRequestErrors({
+ * const testIamWorkRequestErrors = oci.identity.getIamWorkRequestErrors({
  *     iamWorkRequestId: testIamWorkRequest.id,
  * });
  * ```
@@ -75,7 +75,7 @@ export interface GetIamWorkRequestErrorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIamWorkRequestErrors = oci.Identity.getIamWorkRequestErrors({
+ * const testIamWorkRequestErrors = oci.identity.getIamWorkRequestErrors({
  *     iamWorkRequestId: testIamWorkRequest.id,
  * });
  * ```
@@ -92,7 +92,7 @@ export function getIamWorkRequestErrorsOutput(args: GetIamWorkRequestErrorsOutpu
  * A collection of arguments for invoking getIamWorkRequestErrors.
  */
 export interface GetIamWorkRequestErrorsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetIamWorkRequestErrorsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetIamWorkRequestErrorsFilterArgs>[] | undefined>;
     /**
      * The OCID of the IAM work request.
      */

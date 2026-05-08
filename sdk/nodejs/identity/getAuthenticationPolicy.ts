@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuthenticationPolicy = oci.Identity.getAuthenticationPolicy({
+ * const testAuthenticationPolicy = oci.identity.getAuthenticationPolicy({
  *     compartmentId: tenancyOcid,
  * });
  * ```
@@ -70,7 +70,7 @@ export interface GetAuthenticationPolicyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuthenticationPolicy = oci.Identity.getAuthenticationPolicy({
+ * const testAuthenticationPolicy = oci.identity.getAuthenticationPolicy({
  *     compartmentId: tenancyOcid,
  * });
  * ```

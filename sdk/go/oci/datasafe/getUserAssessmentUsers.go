@@ -39,7 +39,7 @@ import (
 //				AreAllSchemasAccessible:                     pulumi.BoolRef(userAssessmentUserAreAllSchemasAccessible),
 //				AuthenticationType:                          pulumi.StringRef(userAssessmentUserAuthenticationType),
 //				CompartmentIdInSubtree:                      pulumi.BoolRef(userAssessmentUserCompartmentIdInSubtree),
-//				SchemaLists:                                 userAssessmentUserSchemaList,
+//				SchemaLists:                                 pulumi.ToArray(userAssessmentUserSchemaList),
 //				TargetId:                                    pulumi.StringRef(testTarget.Id),
 //				TimeLastLoginGreaterThanOrEqualTo:           pulumi.StringRef(userAssessmentUserTimeLastLoginGreaterThanOrEqualTo),
 //				TimeLastLoginLessThan:                       pulumi.StringRef(userAssessmentUserTimeLastLoginLessThan),

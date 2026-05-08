@@ -20,8 +20,8 @@ __all__ = ['NamespaceMetadataArgs', 'NamespaceMetadata']
 class NamespaceMetadataArgs:
     def __init__(__self__, *,
                  namespace: pulumi.Input[_builtins.str],
-                 default_s3compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_swift_compartment_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 default_s3compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_swift_compartment_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a NamespaceMetadata resource.
         """
@@ -42,29 +42,29 @@ class NamespaceMetadataArgs:
 
     @_builtins.property
     @pulumi.getter(name="defaultS3compartmentId")
-    def default_s3compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_s3compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "default_s3compartment_id")
 
     @default_s3compartment_id.setter
-    def default_s3compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_s3compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_s3compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultSwiftCompartmentId")
-    def default_swift_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_swift_compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "default_swift_compartment_id")
 
     @default_swift_compartment_id.setter
-    def default_swift_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_swift_compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_swift_compartment_id", value)
 
 
 @pulumi.input_type
 class _NamespaceMetadataState:
     def __init__(__self__, *,
-                 default_s3compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_swift_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None):
+                 default_s3compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_swift_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NamespaceMetadata resources.
         """
@@ -77,29 +77,29 @@ class _NamespaceMetadataState:
 
     @_builtins.property
     @pulumi.getter(name="defaultS3compartmentId")
-    def default_s3compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_s3compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "default_s3compartment_id")
 
     @default_s3compartment_id.setter
-    def default_s3compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_s3compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_s3compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultSwiftCompartmentId")
-    def default_swift_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_swift_compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "default_swift_compartment_id")
 
     @default_swift_compartment_id.setter
-    def default_swift_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_swift_compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_swift_compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
 
@@ -109,9 +109,9 @@ class NamespaceMetadata(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 default_s3compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_swift_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
+                 default_s3compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_swift_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a NamespaceMetadata resource with the given unique name, props, and options.
@@ -143,9 +143,9 @@ class NamespaceMetadata(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 default_s3compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_swift_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
+                 default_s3compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_swift_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -170,9 +170,9 @@ class NamespaceMetadata(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            default_s3compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            default_swift_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None) -> 'NamespaceMetadata':
+            default_s3compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            default_swift_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None) -> 'NamespaceMetadata':
         """
         Get an existing NamespaceMetadata resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

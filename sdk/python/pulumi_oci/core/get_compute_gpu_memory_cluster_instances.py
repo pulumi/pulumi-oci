@@ -95,7 +95,7 @@ def get_compute_gpu_memory_cluster_instances(compute_gpu_memory_cluster_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_gpu_memory_cluster_instances = oci.Core.get_compute_gpu_memory_cluster_instances(compute_gpu_memory_cluster_id=test_compute_gpu_memory_cluster["id"])
+    test_compute_gpu_memory_cluster_instances = oci.core.get_compute_gpu_memory_cluster_instances(compute_gpu_memory_cluster_id=test_compute_gpu_memory_cluster["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_compute_gpu_memory_cluster_instances(compute_gpu_memory_cluster_id: Opti
         compute_gpu_memory_cluster_instance_collections=pulumi.get(__ret__, 'compute_gpu_memory_cluster_instance_collections'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_compute_gpu_memory_cluster_instances_output(compute_gpu_memory_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeGpuMemoryClusterInstancesFilterArgs', 'GetComputeGpuMemoryClusterInstancesFilterArgsDict']]]]] = None,
+def get_compute_gpu_memory_cluster_instances_output(compute_gpu_memory_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeGpuMemoryClusterInstancesFilterArgs', 'GetComputeGpuMemoryClusterInstancesFilterArgsDict']]]]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeGpuMemoryClusterInstancesResult]:
     """
     This data source provides the list of Compute Gpu Memory Cluster Instances in Oracle Cloud Infrastructure Core service.
@@ -126,7 +126,7 @@ def get_compute_gpu_memory_cluster_instances_output(compute_gpu_memory_cluster_i
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_gpu_memory_cluster_instances = oci.Core.get_compute_gpu_memory_cluster_instances(compute_gpu_memory_cluster_id=test_compute_gpu_memory_cluster["id"])
+    test_compute_gpu_memory_cluster_instances = oci.core.get_compute_gpu_memory_cluster_instances(compute_gpu_memory_cluster_id=test_compute_gpu_memory_cluster["id"])
     ```
 
 

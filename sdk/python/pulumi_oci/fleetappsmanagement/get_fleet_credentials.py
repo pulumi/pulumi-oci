@@ -174,7 +174,7 @@ def get_fleet_credentials(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_credentials = oci.FleetAppsManagement.get_fleet_credentials(fleet_id=test_fleet["id"],
+    test_fleet_credentials = oci.fleetappsmanagement.get_fleet_credentials(fleet_id=test_fleet["id"],
         credential_level=fleet_credential_credential_level,
         display_name=fleet_credential_display_name,
         id=fleet_credential_id,
@@ -217,15 +217,15 @@ def get_fleet_credentials(compartment_id: Optional[_builtins.str] = None,
         resource_id=pulumi.get(__ret__, 'resource_id'),
         state=pulumi.get(__ret__, 'state'),
         target=pulumi.get(__ret__, 'target'))
-def get_fleet_credentials_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 credential_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetCredentialsFilterArgs', 'GetFleetCredentialsFilterArgsDict']]]]] = None,
-                                 fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 target: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_fleet_credentials_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 credential_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetCredentialsFilterArgs', 'GetFleetCredentialsFilterArgsDict']]]]] = None,
+                                 fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 target: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetCredentialsResult]:
     """
     This data source provides the list of Fleet Credentials in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -238,7 +238,7 @@ def get_fleet_credentials_output(compartment_id: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_credentials = oci.FleetAppsManagement.get_fleet_credentials(fleet_id=test_fleet["id"],
+    test_fleet_credentials = oci.fleetappsmanagement.get_fleet_credentials(fleet_id=test_fleet["id"],
         credential_level=fleet_credential_credential_level,
         display_name=fleet_credential_display_name,
         id=fleet_credential_id,

@@ -23,8 +23,8 @@ class DynamicSetRemovePackagesManagementArgs:
     def __init__(__self__, *,
                  dynamic_set_id: pulumi.Input[_builtins.str],
                  package_names: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
-                 managed_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: Optional[pulumi.Input['DynamicSetRemovePackagesManagementWorkRequestDetailsArgs']] = None):
+                 managed_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 work_request_details: pulumi.Input[Optional['DynamicSetRemovePackagesManagementWorkRequestDetailsArgs']] = None):
         """
         The set of arguments for constructing a DynamicSetRemovePackagesManagement resource.
 
@@ -66,36 +66,36 @@ class DynamicSetRemovePackagesManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="managedInstances")
-    def managed_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def managed_instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of managed instance OCIDs to be attached/detached.
         """
         return pulumi.get(self, "managed_instances")
 
     @managed_instances.setter
-    def managed_instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def managed_instances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "managed_instances", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestDetails")
-    def work_request_details(self) -> Optional[pulumi.Input['DynamicSetRemovePackagesManagementWorkRequestDetailsArgs']]:
+    def work_request_details(self) -> pulumi.Input[Optional['DynamicSetRemovePackagesManagementWorkRequestDetailsArgs']]:
         """
         Provides the name and description of the job.
         """
         return pulumi.get(self, "work_request_details")
 
     @work_request_details.setter
-    def work_request_details(self, value: Optional[pulumi.Input['DynamicSetRemovePackagesManagementWorkRequestDetailsArgs']]):
+    def work_request_details(self, value: pulumi.Input[Optional['DynamicSetRemovePackagesManagementWorkRequestDetailsArgs']]):
         pulumi.set(self, "work_request_details", value)
 
 
 @pulumi.input_type
 class _DynamicSetRemovePackagesManagementState:
     def __init__(__self__, *,
-                 dynamic_set_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 managed_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 package_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: Optional[pulumi.Input['DynamicSetRemovePackagesManagementWorkRequestDetailsArgs']] = None):
+                 dynamic_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 package_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 work_request_details: pulumi.Input[Optional['DynamicSetRemovePackagesManagementWorkRequestDetailsArgs']] = None):
         """
         Input properties used for looking up and filtering DynamicSetRemovePackagesManagement resources.
 
@@ -115,50 +115,50 @@ class _DynamicSetRemovePackagesManagementState:
 
     @_builtins.property
     @pulumi.getter(name="dynamicSetId")
-    def dynamic_set_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dynamic_set_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
         """
         return pulumi.get(self, "dynamic_set_id")
 
     @dynamic_set_id.setter
-    def dynamic_set_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dynamic_set_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dynamic_set_id", value)
 
     @_builtins.property
     @pulumi.getter(name="managedInstances")
-    def managed_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def managed_instances(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of managed instance OCIDs to be attached/detached.
         """
         return pulumi.get(self, "managed_instances")
 
     @managed_instances.setter
-    def managed_instances(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def managed_instances(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "managed_instances", value)
 
     @_builtins.property
     @pulumi.getter(name="packageNames")
-    def package_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def package_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of package names.
         """
         return pulumi.get(self, "package_names")
 
     @package_names.setter
-    def package_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def package_names(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "package_names", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestDetails")
-    def work_request_details(self) -> Optional[pulumi.Input['DynamicSetRemovePackagesManagementWorkRequestDetailsArgs']]:
+    def work_request_details(self) -> pulumi.Input[Optional['DynamicSetRemovePackagesManagementWorkRequestDetailsArgs']]:
         """
         Provides the name and description of the job.
         """
         return pulumi.get(self, "work_request_details")
 
     @work_request_details.setter
-    def work_request_details(self, value: Optional[pulumi.Input['DynamicSetRemovePackagesManagementWorkRequestDetailsArgs']]):
+    def work_request_details(self, value: pulumi.Input[Optional['DynamicSetRemovePackagesManagementWorkRequestDetailsArgs']]):
         pulumi.set(self, "work_request_details", value)
 
 
@@ -168,10 +168,10 @@ class DynamicSetRemovePackagesManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dynamic_set_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 managed_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 package_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: Optional[pulumi.Input[Union['DynamicSetRemovePackagesManagementWorkRequestDetailsArgs', 'DynamicSetRemovePackagesManagementWorkRequestDetailsArgsDict']]] = None,
+                 dynamic_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 package_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['DynamicSetRemovePackagesManagementWorkRequestDetailsArgs', 'DynamicSetRemovePackagesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Dynamic Set Remove Packages Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -267,10 +267,10 @@ class DynamicSetRemovePackagesManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 dynamic_set_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 managed_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 package_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 work_request_details: Optional[pulumi.Input[Union['DynamicSetRemovePackagesManagementWorkRequestDetailsArgs', 'DynamicSetRemovePackagesManagementWorkRequestDetailsArgsDict']]] = None,
+                 dynamic_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 managed_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 package_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 work_request_details: pulumi.Input[Optional[Union['DynamicSetRemovePackagesManagementWorkRequestDetailsArgs', 'DynamicSetRemovePackagesManagementWorkRequestDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -298,10 +298,10 @@ class DynamicSetRemovePackagesManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            dynamic_set_id: Optional[pulumi.Input[_builtins.str]] = None,
-            managed_instances: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            package_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            work_request_details: Optional[pulumi.Input[Union['DynamicSetRemovePackagesManagementWorkRequestDetailsArgs', 'DynamicSetRemovePackagesManagementWorkRequestDetailsArgsDict']]] = None) -> 'DynamicSetRemovePackagesManagement':
+            dynamic_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+            managed_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            package_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            work_request_details: pulumi.Input[Optional[Union['DynamicSetRemovePackagesManagementWorkRequestDetailsArgs', 'DynamicSetRemovePackagesManagementWorkRequestDetailsArgsDict']]] = None) -> 'DynamicSetRemovePackagesManagement':
         """
         Get an existing DynamicSetRemovePackagesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

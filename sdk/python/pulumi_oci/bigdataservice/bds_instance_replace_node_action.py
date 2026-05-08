@@ -23,7 +23,7 @@ class BdsInstanceReplaceNodeActionArgs:
                  cluster_admin_password: pulumi.Input[_builtins.str],
                  node_backup_id: pulumi.Input[_builtins.str],
                  node_host_name: pulumi.Input[_builtins.str],
-                 shape: Optional[pulumi.Input[_builtins.str]] = None):
+                 shape: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a BdsInstanceReplaceNodeAction resource.
 
@@ -94,7 +94,7 @@ class BdsInstanceReplaceNodeActionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
 
@@ -105,18 +105,18 @@ class BdsInstanceReplaceNodeActionArgs:
         return pulumi.get(self, "shape")
 
     @shape.setter
-    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape", value)
 
 
 @pulumi.input_type
 class _BdsInstanceReplaceNodeActionState:
     def __init__(__self__, *,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None):
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering BdsInstanceReplaceNodeAction resources.
 
@@ -143,55 +143,55 @@ class _BdsInstanceReplaceNodeActionState:
 
     @_builtins.property
     @pulumi.getter(name="bdsInstanceId")
-    def bds_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bds_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the cluster.
         """
         return pulumi.get(self, "bds_instance_id")
 
     @bds_instance_id.setter
-    def bds_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bds_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bds_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterAdminPassword")
-    def cluster_admin_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Base-64 encoded password for the cluster admin user.
         """
         return pulumi.get(self, "cluster_admin_password")
 
     @cluster_admin_password.setter
-    def cluster_admin_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_admin_password", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeBackupId")
-    def node_backup_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def node_backup_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The id of the nodeBackup to use for replacing the node.
         """
         return pulumi.get(self, "node_backup_id")
 
     @node_backup_id.setter
-    def node_backup_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def node_backup_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "node_backup_id", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeHostName")
-    def node_host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def node_host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Host name of the node to replace. MASTER, UTILITY and EDGE node are only supported types
         """
         return pulumi.get(self, "node_host_name")
 
     @node_host_name.setter
-    def node_host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def node_host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "node_host_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Shape of the new vm when replacing the node. If not provided, BDS will attempt to replace the node with the shape of current node.
 
@@ -202,7 +202,7 @@ class _BdsInstanceReplaceNodeActionState:
         return pulumi.get(self, "shape")
 
     @shape.setter
-    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape", value)
 
 
@@ -212,11 +212,11 @@ class BdsInstanceReplaceNodeAction(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource replaces the node with the given hostname, in Oracle Cloud Infrastructure Big Data Service cluster.
@@ -291,11 +291,11 @@ class BdsInstanceReplaceNodeAction(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
+                 bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -330,11 +330,11 @@ class BdsInstanceReplaceNodeAction(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-            node_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
-            node_host_name: Optional[pulumi.Input[_builtins.str]] = None,
-            shape: Optional[pulumi.Input[_builtins.str]] = None) -> 'BdsInstanceReplaceNodeAction':
+            bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+            node_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+            node_host_name: pulumi.Input[Optional[_builtins.str]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None) -> 'BdsInstanceReplaceNodeAction':
         """
         Get an existing BdsInstanceReplaceNodeAction resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

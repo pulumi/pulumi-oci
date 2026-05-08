@@ -25,7 +25,7 @@ import * as utilities from "../utilities";
  * const testCloudVmClusterIormConfig = new oci.database.CloudVmClusterIormConfig("test_cloud_vm_cluster_iorm_config", {
  *     dbPlans: [{
  *         dbName: cloudVmClusterIormConfigDbPlansDbName,
- *         share: cloudVmClusterIormConfigDbPlansShare,
+ *         share: Number(cloudVmClusterIormConfigDbPlansShare),
  *     }],
  *     cloudVmClusterId: testCloudVmCluster.id,
  *     objective: "AUTO",
@@ -133,23 +133,23 @@ export interface CloudVmClusterIormConfigState {
     /**
      * The Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    cloudVmClusterId?: pulumi.Input<string>;
+    cloudVmClusterId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Array of IORM Setting for all the database in this Cloud Vm Cluster
      */
-    dbPlans?: pulumi.Input<pulumi.Input<inputs.Database.CloudVmClusterIormConfigDbPlan>[]>;
+    dbPlans?: pulumi.Input<pulumi.Input<inputs.Database.CloudVmClusterIormConfigDbPlan>[] | undefined>;
     /**
      * Additional information about the current `lifecycleState`.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Value for the IORM objective Default is "Auto"
      */
-    objective?: pulumi.Input<string>;
+    objective?: pulumi.Input<string | undefined>;
     /**
      * The current state of IORM configuration for the Exadata DB system.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -167,5 +167,5 @@ export interface CloudVmClusterIormConfigArgs {
     /**
      * (Updatable) Value for the IORM objective Default is "Auto"
      */
-    objective?: pulumi.Input<string>;
+    objective?: pulumi.Input<string | undefined>;
 }

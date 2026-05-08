@@ -24,18 +24,18 @@ class FunctionArgs:
                  application_id: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
                  memory_in_mbs: pulumi.Input[_builtins.str],
-                 config: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 detached_mode_timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 failure_destination: Optional[pulumi.Input['FunctionFailureDestinationArgs']] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
-                 image_digest: Optional[pulumi.Input[_builtins.str]] = None,
-                 provisioned_concurrency_config: Optional[pulumi.Input['FunctionProvisionedConcurrencyConfigArgs']] = None,
-                 source_details: Optional[pulumi.Input['FunctionSourceDetailsArgs']] = None,
-                 success_destination: Optional[pulumi.Input['FunctionSuccessDestinationArgs']] = None,
-                 timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 trace_config: Optional[pulumi.Input['FunctionTraceConfigArgs']] = None):
+                 config: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 detached_mode_timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 failure_destination: pulumi.Input[Optional['FunctionFailureDestinationArgs']] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 image_digest: pulumi.Input[Optional[_builtins.str]] = None,
+                 provisioned_concurrency_config: pulumi.Input[Optional['FunctionProvisionedConcurrencyConfigArgs']] = None,
+                 source_details: pulumi.Input[Optional['FunctionSourceDetailsArgs']] = None,
+                 success_destination: pulumi.Input[Optional['FunctionSuccessDestinationArgs']] = None,
+                 timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 trace_config: pulumi.Input[Optional['FunctionTraceConfigArgs']] = None):
         """
         The set of arguments for constructing a Function resource.
 
@@ -123,7 +123,7 @@ class FunctionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def config(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def config(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
 
@@ -132,166 +132,166 @@ class FunctionArgs:
         return pulumi.get(self, "config")
 
     @config.setter
-    def config(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def config(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "config", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="detachedModeTimeoutInSeconds")
-    def detached_mode_timeout_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def detached_mode_timeout_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Timeout for detached function invocations. Value in seconds.
         """
         return pulumi.get(self, "detached_mode_timeout_in_seconds")
 
     @detached_mode_timeout_in_seconds.setter
-    def detached_mode_timeout_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def detached_mode_timeout_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "detached_mode_timeout_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="failureDestination")
-    def failure_destination(self) -> Optional[pulumi.Input['FunctionFailureDestinationArgs']]:
+    def failure_destination(self) -> pulumi.Input[Optional['FunctionFailureDestinationArgs']]:
         """
         (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
         """
         return pulumi.get(self, "failure_destination")
 
     @failure_destination.setter
-    def failure_destination(self, value: Optional[pulumi.Input['FunctionFailureDestinationArgs']]):
+    def failure_destination(self, value: pulumi.Input[Optional['FunctionFailureDestinationArgs']]):
         pulumi.set(self, "failure_destination", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def image(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def image(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
         """
         return pulumi.get(self, "image")
 
     @image.setter
-    def image(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def image(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "image", value)
 
     @_builtins.property
     @pulumi.getter(name="imageDigest")
-    def image_digest(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def image_digest(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
         """
         return pulumi.get(self, "image_digest")
 
     @image_digest.setter
-    def image_digest(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def image_digest(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "image_digest", value)
 
     @_builtins.property
     @pulumi.getter(name="provisionedConcurrencyConfig")
-    def provisioned_concurrency_config(self) -> Optional[pulumi.Input['FunctionProvisionedConcurrencyConfigArgs']]:
+    def provisioned_concurrency_config(self) -> pulumi.Input[Optional['FunctionProvisionedConcurrencyConfigArgs']]:
         """
         (Updatable) Define the strategy for provisioned concurrency for the function.
         """
         return pulumi.get(self, "provisioned_concurrency_config")
 
     @provisioned_concurrency_config.setter
-    def provisioned_concurrency_config(self, value: Optional[pulumi.Input['FunctionProvisionedConcurrencyConfigArgs']]):
+    def provisioned_concurrency_config(self, value: pulumi.Input[Optional['FunctionProvisionedConcurrencyConfigArgs']]):
         pulumi.set(self, "provisioned_concurrency_config", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceDetails")
-    def source_details(self) -> Optional[pulumi.Input['FunctionSourceDetailsArgs']]:
+    def source_details(self) -> pulumi.Input[Optional['FunctionSourceDetailsArgs']]:
         """
         The source details for the Function. The function can be created from various sources.
         """
         return pulumi.get(self, "source_details")
 
     @source_details.setter
-    def source_details(self, value: Optional[pulumi.Input['FunctionSourceDetailsArgs']]):
+    def source_details(self, value: pulumi.Input[Optional['FunctionSourceDetailsArgs']]):
         pulumi.set(self, "source_details", value)
 
     @_builtins.property
     @pulumi.getter(name="successDestination")
-    def success_destination(self) -> Optional[pulumi.Input['FunctionSuccessDestinationArgs']]:
+    def success_destination(self) -> pulumi.Input[Optional['FunctionSuccessDestinationArgs']]:
         """
         (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
         """
         return pulumi.get(self, "success_destination")
 
     @success_destination.setter
-    def success_destination(self, value: Optional[pulumi.Input['FunctionSuccessDestinationArgs']]):
+    def success_destination(self, value: pulumi.Input[Optional['FunctionSuccessDestinationArgs']]):
         pulumi.set(self, "success_destination", value)
 
     @_builtins.property
     @pulumi.getter(name="timeoutInSeconds")
-    def timeout_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def timeout_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Timeout for executions of the function. Value in seconds.
         """
         return pulumi.get(self, "timeout_in_seconds")
 
     @timeout_in_seconds.setter
-    def timeout_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def timeout_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "timeout_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="traceConfig")
-    def trace_config(self) -> Optional[pulumi.Input['FunctionTraceConfigArgs']]:
+    def trace_config(self) -> pulumi.Input[Optional['FunctionTraceConfigArgs']]:
         """
         (Updatable) Define the tracing configuration for a function.
         """
         return pulumi.get(self, "trace_config")
 
     @trace_config.setter
-    def trace_config(self, value: Optional[pulumi.Input['FunctionTraceConfigArgs']]):
+    def trace_config(self, value: pulumi.Input[Optional['FunctionTraceConfigArgs']]):
         pulumi.set(self, "trace_config", value)
 
 
 @pulumi.input_type
 class _FunctionState:
     def __init__(__self__, *,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 detached_mode_timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 failure_destination: Optional[pulumi.Input['FunctionFailureDestinationArgs']] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
-                 image_digest: Optional[pulumi.Input[_builtins.str]] = None,
-                 invoke_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 memory_in_mbs: Optional[pulumi.Input[_builtins.str]] = None,
-                 provisioned_concurrency_config: Optional[pulumi.Input['FunctionProvisionedConcurrencyConfigArgs']] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_details: Optional[pulumi.Input['FunctionSourceDetailsArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 success_destination: Optional[pulumi.Input['FunctionSuccessDestinationArgs']] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 trace_config: Optional[pulumi.Input['FunctionTraceConfigArgs']] = None):
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 detached_mode_timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 failure_destination: pulumi.Input[Optional['FunctionFailureDestinationArgs']] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 image_digest: pulumi.Input[Optional[_builtins.str]] = None,
+                 invoke_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 memory_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 provisioned_concurrency_config: pulumi.Input[Optional['FunctionProvisionedConcurrencyConfigArgs']] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_details: pulumi.Input[Optional['FunctionSourceDetailsArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 success_destination: pulumi.Input[Optional['FunctionSuccessDestinationArgs']] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 trace_config: pulumi.Input[Optional['FunctionTraceConfigArgs']] = None):
         """
         Input properties used for looking up and filtering Function resources.
 
@@ -364,31 +364,31 @@ class _FunctionState:
 
     @_builtins.property
     @pulumi.getter(name="applicationId")
-    def application_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the application this function belongs to.
         """
         return pulumi.get(self, "application_id")
 
     @application_id.setter
-    def application_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment that contains the function.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def config(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def config(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
 
@@ -397,223 +397,223 @@ class _FunctionState:
         return pulumi.get(self, "config")
 
     @config.setter
-    def config(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def config(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "config", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="detachedModeTimeoutInSeconds")
-    def detached_mode_timeout_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def detached_mode_timeout_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Timeout for detached function invocations. Value in seconds.
         """
         return pulumi.get(self, "detached_mode_timeout_in_seconds")
 
     @detached_mode_timeout_in_seconds.setter
-    def detached_mode_timeout_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def detached_mode_timeout_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "detached_mode_timeout_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The display name of the function. The display name must be unique within the application containing the function. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="failureDestination")
-    def failure_destination(self) -> Optional[pulumi.Input['FunctionFailureDestinationArgs']]:
+    def failure_destination(self) -> pulumi.Input[Optional['FunctionFailureDestinationArgs']]:
         """
         (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the error of the failed detached function invocation. A notification is an example of a failure destination.  Example: `{"kind": "NOTIFICATION", "topicId": "topic_OCID"}`
         """
         return pulumi.get(self, "failure_destination")
 
     @failure_destination.setter
-    def failure_destination(self, value: Optional[pulumi.Input['FunctionFailureDestinationArgs']]):
+    def failure_destination(self, value: pulumi.Input[Optional['FunctionFailureDestinationArgs']]):
         pulumi.set(self, "failure_destination", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def image(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def image(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
         """
         return pulumi.get(self, "image")
 
     @image.setter
-    def image(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def image(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "image", value)
 
     @_builtins.property
     @pulumi.getter(name="imageDigest")
-    def image_digest(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def image_digest(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
         """
         return pulumi.get(self, "image_digest")
 
     @image_digest.setter
-    def image_digest(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def image_digest(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "image_digest", value)
 
     @_builtins.property
     @pulumi.getter(name="invokeEndpoint")
-    def invoke_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def invoke_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
         """
         return pulumi.get(self, "invoke_endpoint")
 
     @invoke_endpoint.setter
-    def invoke_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def invoke_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "invoke_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="memoryInMbs")
-    def memory_in_mbs(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def memory_in_mbs(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Maximum usable memory for the function (MiB).
         """
         return pulumi.get(self, "memory_in_mbs")
 
     @memory_in_mbs.setter
-    def memory_in_mbs(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def memory_in_mbs(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "memory_in_mbs", value)
 
     @_builtins.property
     @pulumi.getter(name="provisionedConcurrencyConfig")
-    def provisioned_concurrency_config(self) -> Optional[pulumi.Input['FunctionProvisionedConcurrencyConfigArgs']]:
+    def provisioned_concurrency_config(self) -> pulumi.Input[Optional['FunctionProvisionedConcurrencyConfigArgs']]:
         """
         (Updatable) Define the strategy for provisioned concurrency for the function.
         """
         return pulumi.get(self, "provisioned_concurrency_config")
 
     @provisioned_concurrency_config.setter
-    def provisioned_concurrency_config(self, value: Optional[pulumi.Input['FunctionProvisionedConcurrencyConfigArgs']]):
+    def provisioned_concurrency_config(self, value: pulumi.Input[Optional['FunctionProvisionedConcurrencyConfigArgs']]):
         pulumi.set(self, "provisioned_concurrency_config", value)
 
     @_builtins.property
     @pulumi.getter
-    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
         """
         return pulumi.get(self, "shape")
 
     @shape.setter
-    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceDetails")
-    def source_details(self) -> Optional[pulumi.Input['FunctionSourceDetailsArgs']]:
+    def source_details(self) -> pulumi.Input[Optional['FunctionSourceDetailsArgs']]:
         """
         The source details for the Function. The function can be created from various sources.
         """
         return pulumi.get(self, "source_details")
 
     @source_details.setter
-    def source_details(self, value: Optional[pulumi.Input['FunctionSourceDetailsArgs']]):
+    def source_details(self, value: pulumi.Input[Optional['FunctionSourceDetailsArgs']]):
         pulumi.set(self, "source_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the function.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="successDestination")
-    def success_destination(self) -> Optional[pulumi.Input['FunctionSuccessDestinationArgs']]:
+    def success_destination(self) -> pulumi.Input[Optional['FunctionSuccessDestinationArgs']]:
         """
         (Updatable) An object that represents the destination to which Oracle Functions will send an invocation record with the details of the successful detached function invocation. A stream is an example of a success destination.  Example: `{"kind": "STREAM", "streamId": "stream_OCID"}`
         """
         return pulumi.get(self, "success_destination")
 
     @success_destination.setter
-    def success_destination(self, value: Optional[pulumi.Input['FunctionSuccessDestinationArgs']]):
+    def success_destination(self, value: pulumi.Input[Optional['FunctionSuccessDestinationArgs']]):
         pulumi.set(self, "success_destination", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="timeoutInSeconds")
-    def timeout_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def timeout_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Timeout for executions of the function. Value in seconds.
         """
         return pulumi.get(self, "timeout_in_seconds")
 
     @timeout_in_seconds.setter
-    def timeout_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def timeout_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "timeout_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="traceConfig")
-    def trace_config(self) -> Optional[pulumi.Input['FunctionTraceConfigArgs']]:
+    def trace_config(self) -> pulumi.Input[Optional['FunctionTraceConfigArgs']]:
         """
         (Updatable) Define the tracing configuration for a function.
         """
         return pulumi.get(self, "trace_config")
 
     @trace_config.setter
-    def trace_config(self, value: Optional[pulumi.Input['FunctionTraceConfigArgs']]):
+    def trace_config(self, value: pulumi.Input[Optional['FunctionTraceConfigArgs']]):
         pulumi.set(self, "trace_config", value)
 
 
@@ -623,21 +623,21 @@ class Function(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 detached_mode_timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 failure_destination: Optional[pulumi.Input[Union['FunctionFailureDestinationArgs', 'FunctionFailureDestinationArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
-                 image_digest: Optional[pulumi.Input[_builtins.str]] = None,
-                 memory_in_mbs: Optional[pulumi.Input[_builtins.str]] = None,
-                 provisioned_concurrency_config: Optional[pulumi.Input[Union['FunctionProvisionedConcurrencyConfigArgs', 'FunctionProvisionedConcurrencyConfigArgsDict']]] = None,
-                 source_details: Optional[pulumi.Input[Union['FunctionSourceDetailsArgs', 'FunctionSourceDetailsArgsDict']]] = None,
-                 success_destination: Optional[pulumi.Input[Union['FunctionSuccessDestinationArgs', 'FunctionSuccessDestinationArgsDict']]] = None,
-                 timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 trace_config: Optional[pulumi.Input[Union['FunctionTraceConfigArgs', 'FunctionTraceConfigArgsDict']]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 detached_mode_timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 failure_destination: pulumi.Input[Optional[Union['FunctionFailureDestinationArgs', 'FunctionFailureDestinationArgsDict']]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 image_digest: pulumi.Input[Optional[_builtins.str]] = None,
+                 memory_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 provisioned_concurrency_config: pulumi.Input[Optional[Union['FunctionProvisionedConcurrencyConfigArgs', 'FunctionProvisionedConcurrencyConfigArgsDict']]] = None,
+                 source_details: pulumi.Input[Optional[Union['FunctionSourceDetailsArgs', 'FunctionSourceDetailsArgsDict']]] = None,
+                 success_destination: pulumi.Input[Optional[Union['FunctionSuccessDestinationArgs', 'FunctionSuccessDestinationArgsDict']]] = None,
+                 timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 trace_config: pulumi.Input[Optional[Union['FunctionTraceConfigArgs', 'FunctionTraceConfigArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Function resource in Oracle Cloud Infrastructure Functions service.
@@ -661,7 +661,7 @@ class Function(pulumi.CustomResource):
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            detached_mode_timeout_in_seconds=function_detached_mode_timeout_in_seconds,
+            detached_mode_timeout_in_seconds=int(function_detached_mode_timeout_in_seconds),
             failure_destination={
                 "kind": function_failure_destination_kind,
                 "channel_id": test_channel["id"],
@@ -676,7 +676,7 @@ class Function(pulumi.CustomResource):
             image_digest=function_image_digest,
             provisioned_concurrency_config={
                 "strategy": function_provisioned_concurrency_config_strategy,
-                "count": function_provisioned_concurrency_config_count,
+                "count": int(function_provisioned_concurrency_config_count),
             },
             source_details={
                 "pbf_listing_id": test_pbf_listing["id"],
@@ -689,9 +689,9 @@ class Function(pulumi.CustomResource):
                 "stream_id": test_stream["id"],
                 "topic_id": test_notification_topic["id"],
             },
-            timeout_in_seconds=function_timeout_in_seconds,
+            timeout_in_seconds=int(function_timeout_in_seconds),
             trace_config={
-                "is_enabled": function_trace_config_is_enabled,
+                "is_enabled": function_trace_config_is_enabled == "true",
             })
         ```
 
@@ -752,7 +752,7 @@ class Function(pulumi.CustomResource):
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            detached_mode_timeout_in_seconds=function_detached_mode_timeout_in_seconds,
+            detached_mode_timeout_in_seconds=int(function_detached_mode_timeout_in_seconds),
             failure_destination={
                 "kind": function_failure_destination_kind,
                 "channel_id": test_channel["id"],
@@ -767,7 +767,7 @@ class Function(pulumi.CustomResource):
             image_digest=function_image_digest,
             provisioned_concurrency_config={
                 "strategy": function_provisioned_concurrency_config_strategy,
-                "count": function_provisioned_concurrency_config_count,
+                "count": int(function_provisioned_concurrency_config_count),
             },
             source_details={
                 "pbf_listing_id": test_pbf_listing["id"],
@@ -780,9 +780,9 @@ class Function(pulumi.CustomResource):
                 "stream_id": test_stream["id"],
                 "topic_id": test_notification_topic["id"],
             },
-            timeout_in_seconds=function_timeout_in_seconds,
+            timeout_in_seconds=int(function_timeout_in_seconds),
             trace_config={
-                "is_enabled": function_trace_config_is_enabled,
+                "is_enabled": function_trace_config_is_enabled == "true",
             })
         ```
 
@@ -810,21 +810,21 @@ class Function(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 config: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 detached_mode_timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 failure_destination: Optional[pulumi.Input[Union['FunctionFailureDestinationArgs', 'FunctionFailureDestinationArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 image: Optional[pulumi.Input[_builtins.str]] = None,
-                 image_digest: Optional[pulumi.Input[_builtins.str]] = None,
-                 memory_in_mbs: Optional[pulumi.Input[_builtins.str]] = None,
-                 provisioned_concurrency_config: Optional[pulumi.Input[Union['FunctionProvisionedConcurrencyConfigArgs', 'FunctionProvisionedConcurrencyConfigArgsDict']]] = None,
-                 source_details: Optional[pulumi.Input[Union['FunctionSourceDetailsArgs', 'FunctionSourceDetailsArgsDict']]] = None,
-                 success_destination: Optional[pulumi.Input[Union['FunctionSuccessDestinationArgs', 'FunctionSuccessDestinationArgsDict']]] = None,
-                 timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 trace_config: Optional[pulumi.Input[Union['FunctionTraceConfigArgs', 'FunctionTraceConfigArgsDict']]] = None,
+                 application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 config: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 detached_mode_timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 failure_destination: pulumi.Input[Optional[Union['FunctionFailureDestinationArgs', 'FunctionFailureDestinationArgsDict']]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 image: pulumi.Input[Optional[_builtins.str]] = None,
+                 image_digest: pulumi.Input[Optional[_builtins.str]] = None,
+                 memory_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 provisioned_concurrency_config: pulumi.Input[Optional[Union['FunctionProvisionedConcurrencyConfigArgs', 'FunctionProvisionedConcurrencyConfigArgsDict']]] = None,
+                 source_details: pulumi.Input[Optional[Union['FunctionSourceDetailsArgs', 'FunctionSourceDetailsArgsDict']]] = None,
+                 success_destination: pulumi.Input[Optional[Union['FunctionSuccessDestinationArgs', 'FunctionSuccessDestinationArgsDict']]] = None,
+                 timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 trace_config: pulumi.Input[Optional[Union['FunctionTraceConfigArgs', 'FunctionTraceConfigArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -871,27 +871,27 @@ class Function(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            application_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            config: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            detached_mode_timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            failure_destination: Optional[pulumi.Input[Union['FunctionFailureDestinationArgs', 'FunctionFailureDestinationArgsDict']]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            image: Optional[pulumi.Input[_builtins.str]] = None,
-            image_digest: Optional[pulumi.Input[_builtins.str]] = None,
-            invoke_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            memory_in_mbs: Optional[pulumi.Input[_builtins.str]] = None,
-            provisioned_concurrency_config: Optional[pulumi.Input[Union['FunctionProvisionedConcurrencyConfigArgs', 'FunctionProvisionedConcurrencyConfigArgsDict']]] = None,
-            shape: Optional[pulumi.Input[_builtins.str]] = None,
-            source_details: Optional[pulumi.Input[Union['FunctionSourceDetailsArgs', 'FunctionSourceDetailsArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            success_destination: Optional[pulumi.Input[Union['FunctionSuccessDestinationArgs', 'FunctionSuccessDestinationArgsDict']]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-            trace_config: Optional[pulumi.Input[Union['FunctionTraceConfigArgs', 'FunctionTraceConfigArgsDict']]] = None) -> 'Function':
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            detached_mode_timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            failure_destination: pulumi.Input[Optional[Union['FunctionFailureDestinationArgs', 'FunctionFailureDestinationArgsDict']]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            image: pulumi.Input[Optional[_builtins.str]] = None,
+            image_digest: pulumi.Input[Optional[_builtins.str]] = None,
+            invoke_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            memory_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
+            provisioned_concurrency_config: pulumi.Input[Optional[Union['FunctionProvisionedConcurrencyConfigArgs', 'FunctionProvisionedConcurrencyConfigArgsDict']]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            source_details: pulumi.Input[Optional[Union['FunctionSourceDetailsArgs', 'FunctionSourceDetailsArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            success_destination: pulumi.Input[Optional[Union['FunctionSuccessDestinationArgs', 'FunctionSuccessDestinationArgsDict']]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            trace_config: pulumi.Input[Optional[Union['FunctionTraceConfigArgs', 'FunctionTraceConfigArgsDict']]] = None) -> 'Function':
         """
         Get an existing Function resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

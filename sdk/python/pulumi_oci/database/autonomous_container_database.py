@@ -23,49 +23,49 @@ class AutonomousContainerDatabaseArgs:
     def __init__(__self__, *,
                  display_name: pulumi.Input[_builtins.str],
                  patch_model: pulumi.Input[_builtins.str],
-                 autonomous_container_database_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_config: Optional[pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs']] = None,
-                 cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseCustomerContactArgs']]]] = None,
-                 database_software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_split_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 distribution_affinity: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption_key_location_details: Optional[pulumi.Input['AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs']] = None,
-                 failover_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_automatic_failover_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_dst_file_update_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key_store_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 maintenance_window_details: Optional[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']] = None,
-                 net_services_architecture: Optional[pulumi.Input[_builtins.str]] = None,
-                 okv_end_point_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_autonomous_container_database_backup_config: Optional[pulumi.Input['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs']] = None,
-                 peer_autonomous_container_database_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_autonomous_container_database_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_autonomous_exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 protection_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 reinstate_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 rotate_key_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 service_level_agreement_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 standby_maintenance_buffer_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 switchover_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_preference: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_failover_reservation: Optional[pulumi.Input[_builtins.int]] = None):
+                 autonomous_container_database_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_config: pulumi.Input[Optional['AutonomousContainerDatabaseBackupConfigArgs']] = None,
+                 cloud_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseCustomerContactArgs']]]] = None,
+                 database_software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_split_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 distribution_affinity: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_key_location_details: pulumi.Input[Optional['AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs']] = None,
+                 failover_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 fast_start_fail_over_lag_limit_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_automatic_failover_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_dst_file_update_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 maintenance_window_details: pulumi.Input[Optional['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']] = None,
+                 net_services_architecture: pulumi.Input[Optional[_builtins.str]] = None,
+                 okv_end_point_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_autonomous_container_database_backup_config: pulumi.Input[Optional['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs']] = None,
+                 peer_autonomous_container_database_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_autonomous_container_database_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_autonomous_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_cloud_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 protection_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 reinstate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 rotate_key_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 service_level_agreement_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 standby_maintenance_buffer_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 switchover_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_preference: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_failover_reservation: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a AutonomousContainerDatabase resource.
 
@@ -232,469 +232,469 @@ class AutonomousContainerDatabaseArgs:
 
     @_builtins.property
     @pulumi.getter(name="autonomousContainerDatabaseBackupId")
-    def autonomous_container_database_backup_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_container_database_backup_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
         """
         return pulumi.get(self, "autonomous_container_database_backup_id")
 
     @autonomous_container_database_backup_id.setter
-    def autonomous_container_database_backup_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_container_database_backup_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_container_database_backup_id", value)
 
     @_builtins.property
     @pulumi.getter(name="autonomousExadataInfrastructureId")
-    def autonomous_exadata_infrastructure_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_exadata_infrastructure_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         """
         return pulumi.get(self, "autonomous_exadata_infrastructure_id")
 
     @autonomous_exadata_infrastructure_id.setter
-    def autonomous_exadata_infrastructure_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_exadata_infrastructure_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_exadata_infrastructure_id", value)
 
     @_builtins.property
     @pulumi.getter(name="autonomousVmClusterId")
-    def autonomous_vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_vm_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the Autonomous VM Cluster.
         """
         return pulumi.get(self, "autonomous_vm_cluster_id")
 
     @autonomous_vm_cluster_id.setter
-    def autonomous_vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_vm_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_vm_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="backupConfig")
-    def backup_config(self) -> Optional[pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs']]:
+    def backup_config(self) -> pulumi.Input[Optional['AutonomousContainerDatabaseBackupConfigArgs']]:
         """
         (Updatable) Backup options for the Autonomous Container Database.
         """
         return pulumi.get(self, "backup_config")
 
     @backup_config.setter
-    def backup_config(self, value: Optional[pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs']]):
+    def backup_config(self, value: pulumi.Input[Optional['AutonomousContainerDatabaseBackupConfigArgs']]):
         pulumi.set(self, "backup_config", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudAutonomousVmClusterId")
-    def cloud_autonomous_vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cloud_autonomous_vm_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         """
         return pulumi.get(self, "cloud_autonomous_vm_cluster_id")
 
     @cloud_autonomous_vm_cluster_id.setter
-    def cloud_autonomous_vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cloud_autonomous_vm_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cloud_autonomous_vm_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="customerContacts")
-    def customer_contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseCustomerContactArgs']]]]:
+    def customer_contacts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseCustomerContactArgs']]]]:
         """
         (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
         """
         return pulumi.get(self, "customer_contacts")
 
     @customer_contacts.setter
-    def customer_contacts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseCustomerContactArgs']]]]):
+    def customer_contacts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseCustomerContactArgs']]]]):
         pulumi.set(self, "customer_contacts", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseSoftwareImageId")
-    def database_software_image_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_software_image_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "database_software_image_id")
 
     @database_software_image_id.setter
-    def database_software_image_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_software_image_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_software_image_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dbName")
-    def db_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         """
         return pulumi.get(self, "db_name")
 
     @db_name.setter
-    def db_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dbSplitThreshold")
-    def db_split_threshold(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def db_split_threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
         """
         return pulumi.get(self, "db_split_threshold")
 
     @db_split_threshold.setter
-    def db_split_threshold(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def db_split_threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "db_split_threshold", value)
 
     @_builtins.property
     @pulumi.getter(name="dbUniqueName")
-    def db_unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_unique_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
         """
         return pulumi.get(self, "db_unique_name")
 
     @db_unique_name.setter
-    def db_unique_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_unique_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_unique_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dbVersion")
-    def db_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The base version for the Autonomous Container Database.
         """
         return pulumi.get(self, "db_version")
 
     @db_version.setter
-    def db_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_version", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="distributionAffinity")
-    def distribution_affinity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def distribution_affinity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
         """
         return pulumi.get(self, "distribution_affinity")
 
     @distribution_affinity.setter
-    def distribution_affinity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def distribution_affinity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "distribution_affinity", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptionKeyLocationDetails")
-    def encryption_key_location_details(self) -> Optional[pulumi.Input['AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs']]:
+    def encryption_key_location_details(self) -> pulumi.Input[Optional['AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs']]:
         """
         Types of providers supported for managing database encryption keys
         """
         return pulumi.get(self, "encryption_key_location_details")
 
     @encryption_key_location_details.setter
-    def encryption_key_location_details(self, value: Optional[pulumi.Input['AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs']]):
+    def encryption_key_location_details(self, value: pulumi.Input[Optional['AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs']]):
         pulumi.set(self, "encryption_key_location_details", value)
 
     @_builtins.property
     @pulumi.getter(name="failoverTrigger")
-    def failover_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def failover_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
         """
         return pulumi.get(self, "failover_trigger")
 
     @failover_trigger.setter
-    def failover_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def failover_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "failover_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
-    def fast_start_fail_over_lag_limit_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def fast_start_fail_over_lag_limit_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The lag time for my preference based on data loss tolerance in seconds.
         """
         return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
 
     @fast_start_fail_over_lag_limit_in_seconds.setter
-    def fast_start_fail_over_lag_limit_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def fast_start_fail_over_lag_limit_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "fast_start_fail_over_lag_limit_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutomaticFailoverEnabled")
-    def is_automatic_failover_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_automatic_failover_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
         """
         return pulumi.get(self, "is_automatic_failover_enabled")
 
     @is_automatic_failover_enabled.setter
-    def is_automatic_failover_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_automatic_failover_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_automatic_failover_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isDstFileUpdateEnabled")
-    def is_dst_file_update_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_dst_file_update_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         """
         return pulumi.get(self, "is_dst_file_update_enabled")
 
     @is_dst_file_update_enabled.setter
-    def is_dst_file_update_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_dst_file_update_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_dst_file_update_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStoreId")
-    def key_store_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         """
         return pulumi.get(self, "key_store_id")
 
     @key_store_id.setter
-    def key_store_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_id", value)
 
     @_builtins.property
     @pulumi.getter(name="keyVersionId")
-    def key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "key_version_id")
 
     @key_version_id.setter
-    def key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_version_id", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
-    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenanceWindowDetails")
-    def maintenance_window_details(self) -> Optional[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']]:
+    def maintenance_window_details(self) -> pulumi.Input[Optional['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']]:
         """
         (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         """
         return pulumi.get(self, "maintenance_window_details")
 
     @maintenance_window_details.setter
-    def maintenance_window_details(self, value: Optional[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']]):
+    def maintenance_window_details(self, value: pulumi.Input[Optional['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']]):
         pulumi.set(self, "maintenance_window_details", value)
 
     @_builtins.property
     @pulumi.getter(name="netServicesArchitecture")
-    def net_services_architecture(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def net_services_architecture(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
         """
         return pulumi.get(self, "net_services_architecture")
 
     @net_services_architecture.setter
-    def net_services_architecture(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def net_services_architecture(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "net_services_architecture", value)
 
     @_builtins.property
     @pulumi.getter(name="okvEndPointGroupName")
-    def okv_end_point_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def okv_end_point_group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OKV End Point Group name for the Autonomous Container Database.
         """
         return pulumi.get(self, "okv_end_point_group_name")
 
     @okv_end_point_group_name.setter
-    def okv_end_point_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def okv_end_point_group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "okv_end_point_group_name", value)
 
     @_builtins.property
     @pulumi.getter(name="peerAutonomousContainerDatabaseBackupConfig")
-    def peer_autonomous_container_database_backup_config(self) -> Optional[pulumi.Input['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs']]:
+    def peer_autonomous_container_database_backup_config(self) -> pulumi.Input[Optional['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs']]:
         """
         Backup options for the standby Autonomous Container Database.
         """
         return pulumi.get(self, "peer_autonomous_container_database_backup_config")
 
     @peer_autonomous_container_database_backup_config.setter
-    def peer_autonomous_container_database_backup_config(self, value: Optional[pulumi.Input['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs']]):
+    def peer_autonomous_container_database_backup_config(self, value: pulumi.Input[Optional['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs']]):
         pulumi.set(self, "peer_autonomous_container_database_backup_config", value)
 
     @_builtins.property
     @pulumi.getter(name="peerAutonomousContainerDatabaseCompartmentId")
-    def peer_autonomous_container_database_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_autonomous_container_database_compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
         """
         return pulumi.get(self, "peer_autonomous_container_database_compartment_id")
 
     @peer_autonomous_container_database_compartment_id.setter
-    def peer_autonomous_container_database_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_autonomous_container_database_compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_autonomous_container_database_compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="peerAutonomousContainerDatabaseDisplayName")
-    def peer_autonomous_container_database_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_autonomous_container_database_display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The display name for the peer Autonomous Container Database.
         """
         return pulumi.get(self, "peer_autonomous_container_database_display_name")
 
     @peer_autonomous_container_database_display_name.setter
-    def peer_autonomous_container_database_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_autonomous_container_database_display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_autonomous_container_database_display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="peerAutonomousExadataInfrastructureId")
-    def peer_autonomous_exadata_infrastructure_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_autonomous_exadata_infrastructure_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         *No longer used.* This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         """
         return pulumi.get(self, "peer_autonomous_exadata_infrastructure_id")
 
     @peer_autonomous_exadata_infrastructure_id.setter
-    def peer_autonomous_exadata_infrastructure_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_autonomous_exadata_infrastructure_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_autonomous_exadata_infrastructure_id", value)
 
     @_builtins.property
     @pulumi.getter(name="peerAutonomousVmClusterId")
-    def peer_autonomous_vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_autonomous_vm_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
         """
         return pulumi.get(self, "peer_autonomous_vm_cluster_id")
 
     @peer_autonomous_vm_cluster_id.setter
-    def peer_autonomous_vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_autonomous_vm_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_autonomous_vm_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="peerCloudAutonomousVmClusterId")
-    def peer_cloud_autonomous_vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_cloud_autonomous_vm_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
         """
         return pulumi.get(self, "peer_cloud_autonomous_vm_cluster_id")
 
     @peer_cloud_autonomous_vm_cluster_id.setter
-    def peer_cloud_autonomous_vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_cloud_autonomous_vm_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_cloud_autonomous_vm_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="peerDbUniqueName")
-    def peer_db_unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_db_unique_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
         """
         return pulumi.get(self, "peer_db_unique_name")
 
     @peer_db_unique_name.setter
-    def peer_db_unique_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_db_unique_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_db_unique_name", value)
 
     @_builtins.property
     @pulumi.getter(name="protectionMode")
-    def protection_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protection_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         """
         return pulumi.get(self, "protection_mode")
 
     @protection_mode.setter
-    def protection_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protection_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protection_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="reinstateTrigger")
-    def reinstate_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def reinstate_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Reinstate. Could be set to any integer value.
         """
         return pulumi.get(self, "reinstate_trigger")
 
     @reinstate_trigger.setter
-    def reinstate_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def reinstate_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "reinstate_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="rotateKeyTrigger")
-    def rotate_key_trigger(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def rotate_key_trigger(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "rotate_key_trigger")
 
     @rotate_key_trigger.setter
-    def rotate_key_trigger(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def rotate_key_trigger(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "rotate_key_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceLevelAgreementType")
-    def service_level_agreement_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_level_agreement_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
         """
         return pulumi.get(self, "service_level_agreement_type")
 
     @service_level_agreement_type.setter
-    def service_level_agreement_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_level_agreement_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_level_agreement_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
         """
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter(name="standbyMaintenanceBufferInDays")
-    def standby_maintenance_buffer_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def standby_maintenance_buffer_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
         """
         return pulumi.get(self, "standby_maintenance_buffer_in_days")
 
     @standby_maintenance_buffer_in_days.setter
-    def standby_maintenance_buffer_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def standby_maintenance_buffer_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "standby_maintenance_buffer_in_days", value)
 
     @_builtins.property
     @pulumi.getter(name="switchoverTrigger")
-    def switchover_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def switchover_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
 
@@ -705,129 +705,129 @@ class AutonomousContainerDatabaseArgs:
         return pulumi.get(self, "switchover_trigger")
 
     @switchover_trigger.setter
-    def switchover_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def switchover_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "switchover_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
-    def vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vault_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vault_id", value)
 
     @_builtins.property
     @pulumi.getter(name="versionPreference")
-    def version_preference(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_preference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The next maintenance version preference.
         """
         return pulumi.get(self, "version_preference")
 
     @version_preference.setter
-    def version_preference(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_preference(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_preference", value)
 
     @_builtins.property
     @pulumi.getter(name="vmFailoverReservation")
-    def vm_failover_reservation(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def vm_failover_reservation(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
         """
         return pulumi.get(self, "vm_failover_reservation")
 
     @vm_failover_reservation.setter
-    def vm_failover_reservation(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def vm_failover_reservation(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "vm_failover_reservation", value)
 
 
 @pulumi.input_type
 class _AutonomousContainerDatabaseState:
     def __init__(__self__, *,
-                 associated_backup_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs']]]] = None,
-                 autonomous_container_database_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 available_cpus: Optional[pulumi.Input[_builtins.float]] = None,
-                 backup_config: Optional[pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs']] = None,
-                 backup_destination_properties_lists: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseBackupDestinationPropertiesListArgs']]]] = None,
-                 cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseCustomerContactArgs']]]] = None,
-                 database_software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 dataguard_group_members: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseDataguardGroupMemberArgs']]]] = None,
-                 dataguards: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseDataguardArgs']]]] = None,
-                 db_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_split_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 distribution_affinity: Optional[pulumi.Input[_builtins.str]] = None,
-                 dst_file_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption_key_location_details: Optional[pulumi.Input['AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs']] = None,
-                 failover_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 infrastructure_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_automatic_failover_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_data_guard_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_dst_file_update_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_multiple_standby: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key_history_entries: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseKeyHistoryEntryArgs']]]] = None,
-                 key_store_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_store_wallet_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 largest_provisionable_autonomous_database_in_cpus: Optional[pulumi.Input[_builtins.float]] = None,
-                 last_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 list_one_off_patches: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 maintenance_window_details: Optional[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']] = None,
-                 maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowArgs']]]] = None,
-                 memory_per_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 net_services_architecture: Optional[pulumi.Input[_builtins.str]] = None,
-                 next_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 okv_end_point_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 patch_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 patch_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_autonomous_container_database_backup_config: Optional[pulumi.Input['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs']] = None,
-                 peer_autonomous_container_database_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_autonomous_container_database_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_autonomous_exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 protection_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 provisionable_cpuses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.float]]]] = None,
-                 provisioned_cpus: Optional[pulumi.Input[_builtins.float]] = None,
-                 reclaimable_cpus: Optional[pulumi.Input[_builtins.float]] = None,
-                 recovery_appliance_details: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseRecoveryApplianceDetailArgs']]]] = None,
-                 reinstate_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 reserved_cpus: Optional[pulumi.Input[_builtins.float]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 rotate_key_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 service_level_agreement_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 standby_maintenance_buffer_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 switchover_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_last_backup: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_snapshot_standby_revert: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_cpus: Optional[pulumi.Input[_builtins.int]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_preference: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_failover_reservation: Optional[pulumi.Input[_builtins.int]] = None):
+                 associated_backup_configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs']]]] = None,
+                 autonomous_container_database_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 available_cpus: pulumi.Input[Optional[_builtins.float]] = None,
+                 backup_config: pulumi.Input[Optional['AutonomousContainerDatabaseBackupConfigArgs']] = None,
+                 backup_destination_properties_lists: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseBackupDestinationPropertiesListArgs']]]] = None,
+                 cloud_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseCustomerContactArgs']]]] = None,
+                 database_software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 dataguard_group_members: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseDataguardGroupMemberArgs']]]] = None,
+                 dataguards: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseDataguardArgs']]]] = None,
+                 db_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_split_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 distribution_affinity: pulumi.Input[Optional[_builtins.str]] = None,
+                 dst_file_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_key_location_details: pulumi.Input[Optional['AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs']] = None,
+                 failover_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 fast_start_fail_over_lag_limit_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 infrastructure_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_automatic_failover_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_dst_file_update_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_multiple_standby: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key_history_entries: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseKeyHistoryEntryArgs']]]] = None,
+                 key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_store_wallet_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 largest_provisionable_autonomous_database_in_cpus: pulumi.Input[Optional[_builtins.float]] = None,
+                 last_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 list_one_off_patches: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 maintenance_window_details: pulumi.Input[Optional['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']] = None,
+                 maintenance_windows: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowArgs']]]] = None,
+                 memory_per_compute_unit_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 memory_per_oracle_compute_unit_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 net_services_architecture: pulumi.Input[Optional[_builtins.str]] = None,
+                 next_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 okv_end_point_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 patch_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 patch_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_autonomous_container_database_backup_config: pulumi.Input[Optional['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs']] = None,
+                 peer_autonomous_container_database_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_autonomous_container_database_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_autonomous_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_cloud_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 protection_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 provisionable_cpuses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.float]]]] = None,
+                 provisioned_cpus: pulumi.Input[Optional[_builtins.float]] = None,
+                 reclaimable_cpus: pulumi.Input[Optional[_builtins.float]] = None,
+                 recovery_appliance_details: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseRecoveryApplianceDetailArgs']]]] = None,
+                 reinstate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 reserved_cpus: pulumi.Input[Optional[_builtins.float]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 rotate_key_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 service_level_agreement_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 standby_maintenance_buffer_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 switchover_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_last_backup: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_snapshot_standby_revert: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_cpus: pulumi.Input[Optional[_builtins.int]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_preference: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_failover_reservation: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering AutonomousContainerDatabase resources.
 
@@ -1077,853 +1077,853 @@ class _AutonomousContainerDatabaseState:
 
     @_builtins.property
     @pulumi.getter(name="associatedBackupConfigurationDetails")
-    def associated_backup_configuration_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs']]]]:
+    def associated_backup_configuration_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs']]]]:
         """
         A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
         """
         return pulumi.get(self, "associated_backup_configuration_details")
 
     @associated_backup_configuration_details.setter
-    def associated_backup_configuration_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs']]]]):
+    def associated_backup_configuration_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs']]]]):
         pulumi.set(self, "associated_backup_configuration_details", value)
 
     @_builtins.property
     @pulumi.getter(name="autonomousContainerDatabaseBackupId")
-    def autonomous_container_database_backup_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_container_database_backup_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
         """
         return pulumi.get(self, "autonomous_container_database_backup_id")
 
     @autonomous_container_database_backup_id.setter
-    def autonomous_container_database_backup_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_container_database_backup_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_container_database_backup_id", value)
 
     @_builtins.property
     @pulumi.getter(name="autonomousExadataInfrastructureId")
-    def autonomous_exadata_infrastructure_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_exadata_infrastructure_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         """
         return pulumi.get(self, "autonomous_exadata_infrastructure_id")
 
     @autonomous_exadata_infrastructure_id.setter
-    def autonomous_exadata_infrastructure_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_exadata_infrastructure_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_exadata_infrastructure_id", value)
 
     @_builtins.property
     @pulumi.getter(name="autonomousVmClusterId")
-    def autonomous_vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def autonomous_vm_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the Autonomous VM Cluster.
         """
         return pulumi.get(self, "autonomous_vm_cluster_id")
 
     @autonomous_vm_cluster_id.setter
-    def autonomous_vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def autonomous_vm_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_vm_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The domain of the Autonomous Container Database
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="availableCpus")
-    def available_cpus(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def available_cpus(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.
         """
         return pulumi.get(self, "available_cpus")
 
     @available_cpus.setter
-    def available_cpus(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def available_cpus(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "available_cpus", value)
 
     @_builtins.property
     @pulumi.getter(name="backupConfig")
-    def backup_config(self) -> Optional[pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs']]:
+    def backup_config(self) -> pulumi.Input[Optional['AutonomousContainerDatabaseBackupConfigArgs']]:
         """
         (Updatable) Backup options for the Autonomous Container Database.
         """
         return pulumi.get(self, "backup_config")
 
     @backup_config.setter
-    def backup_config(self, value: Optional[pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs']]):
+    def backup_config(self, value: pulumi.Input[Optional['AutonomousContainerDatabaseBackupConfigArgs']]):
         pulumi.set(self, "backup_config", value)
 
     @_builtins.property
     @pulumi.getter(name="backupDestinationPropertiesLists")
-    def backup_destination_properties_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseBackupDestinationPropertiesListArgs']]]]:
+    def backup_destination_properties_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseBackupDestinationPropertiesListArgs']]]]:
         """
         This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
         """
         return pulumi.get(self, "backup_destination_properties_lists")
 
     @backup_destination_properties_lists.setter
-    def backup_destination_properties_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseBackupDestinationPropertiesListArgs']]]]):
+    def backup_destination_properties_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseBackupDestinationPropertiesListArgs']]]]):
         pulumi.set(self, "backup_destination_properties_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudAutonomousVmClusterId")
-    def cloud_autonomous_vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cloud_autonomous_vm_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         """
         return pulumi.get(self, "cloud_autonomous_vm_cluster_id")
 
     @cloud_autonomous_vm_cluster_id.setter
-    def cloud_autonomous_vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cloud_autonomous_vm_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cloud_autonomous_vm_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeModel")
-    def compute_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The compute model of the Autonomous Container Database. For Autonomous AI Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "compute_model")
 
     @compute_model.setter
-    def compute_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_model", value)
 
     @_builtins.property
     @pulumi.getter(name="customerContacts")
-    def customer_contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseCustomerContactArgs']]]]:
+    def customer_contacts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseCustomerContactArgs']]]]:
         """
         (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
         """
         return pulumi.get(self, "customer_contacts")
 
     @customer_contacts.setter
-    def customer_contacts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseCustomerContactArgs']]]]):
+    def customer_contacts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseCustomerContactArgs']]]]):
         pulumi.set(self, "customer_contacts", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseSoftwareImageId")
-    def database_software_image_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_software_image_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "database_software_image_id")
 
     @database_software_image_id.setter
-    def database_software_image_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_software_image_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_software_image_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dataguardGroupMembers")
-    def dataguard_group_members(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseDataguardGroupMemberArgs']]]]:
+    def dataguard_group_members(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseDataguardGroupMemberArgs']]]]:
         """
         Array of Dg associations.
         """
         return pulumi.get(self, "dataguard_group_members")
 
     @dataguard_group_members.setter
-    def dataguard_group_members(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseDataguardGroupMemberArgs']]]]):
+    def dataguard_group_members(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseDataguardGroupMemberArgs']]]]):
         pulumi.set(self, "dataguard_group_members", value)
 
     @_builtins.property
     @pulumi.getter
-    def dataguards(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseDataguardArgs']]]]:
+    def dataguards(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseDataguardArgs']]]]:
         """
         The properties that define Autonomous Container Databases Dataguard.
         """
         return pulumi.get(self, "dataguards")
 
     @dataguards.setter
-    def dataguards(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseDataguardArgs']]]]):
+    def dataguards(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseDataguardArgs']]]]):
         pulumi.set(self, "dataguards", value)
 
     @_builtins.property
     @pulumi.getter(name="dbName")
-    def db_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         """
         return pulumi.get(self, "db_name")
 
     @db_name.setter
-    def db_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dbSplitThreshold")
-    def db_split_threshold(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def db_split_threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
         """
         return pulumi.get(self, "db_split_threshold")
 
     @db_split_threshold.setter
-    def db_split_threshold(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def db_split_threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "db_split_threshold", value)
 
     @_builtins.property
     @pulumi.getter(name="dbUniqueName")
-    def db_unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_unique_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
         """
         return pulumi.get(self, "db_unique_name")
 
     @db_unique_name.setter
-    def db_unique_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_unique_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_unique_name", value)
 
     @_builtins.property
     @pulumi.getter(name="dbVersion")
-    def db_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The base version for the Autonomous Container Database.
         """
         return pulumi.get(self, "db_version")
 
     @db_version.setter
-    def db_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_version", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The display name for the Autonomous Container Database.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="distributionAffinity")
-    def distribution_affinity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def distribution_affinity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Determines whether an Autonomous AI Database must be opened across a minimum or maximum of nodes. By default, Minimum nodes is selected.
         """
         return pulumi.get(self, "distribution_affinity")
 
     @distribution_affinity.setter
-    def distribution_affinity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def distribution_affinity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "distribution_affinity", value)
 
     @_builtins.property
     @pulumi.getter(name="dstFileVersion")
-    def dst_file_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dst_file_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         DST Time-Zone File version of the Autonomous Container Database.
         """
         return pulumi.get(self, "dst_file_version")
 
     @dst_file_version.setter
-    def dst_file_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dst_file_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dst_file_version", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptionKeyLocationDetails")
-    def encryption_key_location_details(self) -> Optional[pulumi.Input['AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs']]:
+    def encryption_key_location_details(self) -> pulumi.Input[Optional['AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs']]:
         """
         Types of providers supported for managing database encryption keys
         """
         return pulumi.get(self, "encryption_key_location_details")
 
     @encryption_key_location_details.setter
-    def encryption_key_location_details(self, value: Optional[pulumi.Input['AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs']]):
+    def encryption_key_location_details(self, value: pulumi.Input[Optional['AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs']]):
         pulumi.set(self, "encryption_key_location_details", value)
 
     @_builtins.property
     @pulumi.getter(name="failoverTrigger")
-    def failover_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def failover_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Failover. Could be set to any integer value.
         """
         return pulumi.get(self, "failover_trigger")
 
     @failover_trigger.setter
-    def failover_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def failover_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "failover_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
-    def fast_start_fail_over_lag_limit_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def fast_start_fail_over_lag_limit_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The lag time for my preference based on data loss tolerance in seconds.
         """
         return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
 
     @fast_start_fail_over_lag_limit_in_seconds.setter
-    def fast_start_fail_over_lag_limit_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def fast_start_fail_over_lag_limit_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "fast_start_fail_over_lag_limit_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="infrastructureType")
-    def infrastructure_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def infrastructure_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The infrastructure type this resource belongs to.
         """
         return pulumi.get(self, "infrastructure_type")
 
     @infrastructure_type.setter
-    def infrastructure_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def infrastructure_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "infrastructure_type", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutomaticFailoverEnabled")
-    def is_automatic_failover_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_automatic_failover_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
         """
         return pulumi.get(self, "is_automatic_failover_enabled")
 
     @is_automatic_failover_enabled.setter
-    def is_automatic_failover_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_automatic_failover_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_automatic_failover_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isDataGuardEnabled")
-    def is_data_guard_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_data_guard_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         """
         return pulumi.get(self, "is_data_guard_enabled")
 
     @is_data_guard_enabled.setter
-    def is_data_guard_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_data_guard_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_data_guard_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isDstFileUpdateEnabled")
-    def is_dst_file_update_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_dst_file_update_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         """
         return pulumi.get(self, "is_dst_file_update_enabled")
 
     @is_dst_file_update_enabled.setter
-    def is_dst_file_update_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_dst_file_update_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_dst_file_update_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isMultipleStandby")
-    def is_multiple_standby(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_multiple_standby(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if it is multiple standby Autonomous Dataguard
         """
         return pulumi.get(self, "is_multiple_standby")
 
     @is_multiple_standby.setter
-    def is_multiple_standby(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_multiple_standby(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_multiple_standby", value)
 
     @_builtins.property
     @pulumi.getter(name="keyHistoryEntries")
-    def key_history_entries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseKeyHistoryEntryArgs']]]]:
+    def key_history_entries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseKeyHistoryEntryArgs']]]]:
         """
         Key History Entry.
         """
         return pulumi.get(self, "key_history_entries")
 
     @key_history_entries.setter
-    def key_history_entries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseKeyHistoryEntryArgs']]]]):
+    def key_history_entries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseKeyHistoryEntryArgs']]]]):
         pulumi.set(self, "key_history_entries", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStoreId")
-    def key_store_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         """
         return pulumi.get(self, "key_store_id")
 
     @key_store_id.setter
-    def key_store_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_id", value)
 
     @_builtins.property
     @pulumi.getter(name="keyStoreWalletName")
-    def key_store_wallet_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_store_wallet_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The wallet name for Oracle Key Vault.
         """
         return pulumi.get(self, "key_store_wallet_name")
 
     @key_store_wallet_name.setter
-    def key_store_wallet_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_store_wallet_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_store_wallet_name", value)
 
     @_builtins.property
     @pulumi.getter(name="keyVersionId")
-    def key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "key_version_id")
 
     @key_version_id.setter
-    def key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_version_id", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
-    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyVersionId")
-    def kms_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
     @kms_key_version_id.setter
-    def kms_key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_version_id", value)
 
     @_builtins.property
     @pulumi.getter(name="largestProvisionableAutonomousDatabaseInCpus")
-    def largest_provisionable_autonomous_database_in_cpus(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def largest_provisionable_autonomous_database_in_cpus(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The largest Autonomous AI Database (CPU) that can be created in a new Autonomous Container Database.
         """
         return pulumi.get(self, "largest_provisionable_autonomous_database_in_cpus")
 
     @largest_provisionable_autonomous_database_in_cpus.setter
-    def largest_provisionable_autonomous_database_in_cpus(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def largest_provisionable_autonomous_database_in_cpus(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "largest_provisionable_autonomous_database_in_cpus", value)
 
     @_builtins.property
     @pulumi.getter(name="lastMaintenanceRunId")
-    def last_maintenance_run_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_maintenance_run_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         """
         return pulumi.get(self, "last_maintenance_run_id")
 
     @last_maintenance_run_id.setter
-    def last_maintenance_run_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_maintenance_run_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_maintenance_run_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="listOneOffPatches")
-    def list_one_off_patches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def list_one_off_patches(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of One-Off patches that has been successfully applied to Autonomous Container Database
         """
         return pulumi.get(self, "list_one_off_patches")
 
     @list_one_off_patches.setter
-    def list_one_off_patches(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def list_one_off_patches(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "list_one_off_patches", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenanceWindowDetails")
-    def maintenance_window_details(self) -> Optional[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']]:
+    def maintenance_window_details(self) -> pulumi.Input[Optional['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']]:
         """
         (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         """
         return pulumi.get(self, "maintenance_window_details")
 
     @maintenance_window_details.setter
-    def maintenance_window_details(self, value: Optional[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']]):
+    def maintenance_window_details(self, value: pulumi.Input[Optional['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']]):
         pulumi.set(self, "maintenance_window_details", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenanceWindows")
-    def maintenance_windows(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowArgs']]]]:
+    def maintenance_windows(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowArgs']]]]:
         """
         The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         """
         return pulumi.get(self, "maintenance_windows")
 
     @maintenance_windows.setter
-    def maintenance_windows(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowArgs']]]]):
+    def maintenance_windows(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowArgs']]]]):
         pulumi.set(self, "maintenance_windows", value)
 
     @_builtins.property
     @pulumi.getter(name="memoryPerComputeUnitInGbs")
-    def memory_per_compute_unit_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def memory_per_compute_unit_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         """
         return pulumi.get(self, "memory_per_compute_unit_in_gbs")
 
     @memory_per_compute_unit_in_gbs.setter
-    def memory_per_compute_unit_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def memory_per_compute_unit_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "memory_per_compute_unit_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
-    def memory_per_oracle_compute_unit_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def memory_per_oracle_compute_unit_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU in the Autonomous VM Cluster. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
     @memory_per_oracle_compute_unit_in_gbs.setter
-    def memory_per_oracle_compute_unit_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def memory_per_oracle_compute_unit_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "memory_per_oracle_compute_unit_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="netServicesArchitecture")
-    def net_services_architecture(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def net_services_architecture(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
         """
         return pulumi.get(self, "net_services_architecture")
 
     @net_services_architecture.setter
-    def net_services_architecture(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def net_services_architecture(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "net_services_architecture", value)
 
     @_builtins.property
     @pulumi.getter(name="nextMaintenanceRunId")
-    def next_maintenance_run_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def next_maintenance_run_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         """
         return pulumi.get(self, "next_maintenance_run_id")
 
     @next_maintenance_run_id.setter
-    def next_maintenance_run_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def next_maintenance_run_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "next_maintenance_run_id", value)
 
     @_builtins.property
     @pulumi.getter(name="okvEndPointGroupName")
-    def okv_end_point_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def okv_end_point_group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OKV End Point Group name for the Autonomous Container Database.
         """
         return pulumi.get(self, "okv_end_point_group_name")
 
     @okv_end_point_group_name.setter
-    def okv_end_point_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def okv_end_point_group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "okv_end_point_group_name", value)
 
     @_builtins.property
     @pulumi.getter(name="patchId")
-    def patch_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def patch_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
         """
         return pulumi.get(self, "patch_id")
 
     @patch_id.setter
-    def patch_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def patch_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "patch_id", value)
 
     @_builtins.property
     @pulumi.getter(name="patchModel")
-    def patch_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def patch_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Database Patch model preference.
         """
         return pulumi.get(self, "patch_model")
 
     @patch_model.setter
-    def patch_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def patch_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "patch_model", value)
 
     @_builtins.property
     @pulumi.getter(name="peerAutonomousContainerDatabaseBackupConfig")
-    def peer_autonomous_container_database_backup_config(self) -> Optional[pulumi.Input['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs']]:
+    def peer_autonomous_container_database_backup_config(self) -> pulumi.Input[Optional['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs']]:
         """
         Backup options for the standby Autonomous Container Database.
         """
         return pulumi.get(self, "peer_autonomous_container_database_backup_config")
 
     @peer_autonomous_container_database_backup_config.setter
-    def peer_autonomous_container_database_backup_config(self, value: Optional[pulumi.Input['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs']]):
+    def peer_autonomous_container_database_backup_config(self, value: pulumi.Input[Optional['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs']]):
         pulumi.set(self, "peer_autonomous_container_database_backup_config", value)
 
     @_builtins.property
     @pulumi.getter(name="peerAutonomousContainerDatabaseCompartmentId")
-    def peer_autonomous_container_database_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_autonomous_container_database_compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
         """
         return pulumi.get(self, "peer_autonomous_container_database_compartment_id")
 
     @peer_autonomous_container_database_compartment_id.setter
-    def peer_autonomous_container_database_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_autonomous_container_database_compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_autonomous_container_database_compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="peerAutonomousContainerDatabaseDisplayName")
-    def peer_autonomous_container_database_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_autonomous_container_database_display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The display name for the peer Autonomous Container Database.
         """
         return pulumi.get(self, "peer_autonomous_container_database_display_name")
 
     @peer_autonomous_container_database_display_name.setter
-    def peer_autonomous_container_database_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_autonomous_container_database_display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_autonomous_container_database_display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="peerAutonomousExadataInfrastructureId")
-    def peer_autonomous_exadata_infrastructure_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_autonomous_exadata_infrastructure_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         *No longer used.* This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         """
         return pulumi.get(self, "peer_autonomous_exadata_infrastructure_id")
 
     @peer_autonomous_exadata_infrastructure_id.setter
-    def peer_autonomous_exadata_infrastructure_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_autonomous_exadata_infrastructure_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_autonomous_exadata_infrastructure_id", value)
 
     @_builtins.property
     @pulumi.getter(name="peerAutonomousVmClusterId")
-    def peer_autonomous_vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_autonomous_vm_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
         """
         return pulumi.get(self, "peer_autonomous_vm_cluster_id")
 
     @peer_autonomous_vm_cluster_id.setter
-    def peer_autonomous_vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_autonomous_vm_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_autonomous_vm_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="peerCloudAutonomousVmClusterId")
-    def peer_cloud_autonomous_vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_cloud_autonomous_vm_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
         """
         return pulumi.get(self, "peer_cloud_autonomous_vm_cluster_id")
 
     @peer_cloud_autonomous_vm_cluster_id.setter
-    def peer_cloud_autonomous_vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_cloud_autonomous_vm_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_cloud_autonomous_vm_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="peerDbUniqueName")
-    def peer_db_unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_db_unique_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         **Deprecated.** The `DB_UNIQUE_NAME` of the peer Autonomous Container Database in a Data Guard association is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
         """
         return pulumi.get(self, "peer_db_unique_name")
 
     @peer_db_unique_name.setter
-    def peer_db_unique_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_db_unique_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_db_unique_name", value)
 
     @_builtins.property
     @pulumi.getter(name="protectionMode")
-    def protection_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protection_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         """
         return pulumi.get(self, "protection_mode")
 
     @protection_mode.setter
-    def protection_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protection_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protection_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="provisionableCpuses")
-    def provisionable_cpuses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.float]]]]:
+    def provisionable_cpuses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.float]]]]:
         """
         An array of CPU values that can be used to successfully provision a single Autonomous AI Database.
         """
         return pulumi.get(self, "provisionable_cpuses")
 
     @provisionable_cpuses.setter
-    def provisionable_cpuses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.float]]]]):
+    def provisionable_cpuses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.float]]]]):
         pulumi.set(self, "provisionable_cpuses", value)
 
     @_builtins.property
     @pulumi.getter(name="provisionedCpus")
-    def provisioned_cpus(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def provisioned_cpus(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The number of CPUs provisioned in an Autonomous Container Database.
         """
         return pulumi.get(self, "provisioned_cpus")
 
     @provisioned_cpus.setter
-    def provisioned_cpus(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def provisioned_cpus(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "provisioned_cpus", value)
 
     @_builtins.property
     @pulumi.getter(name="reclaimableCpus")
-    def reclaimable_cpus(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def reclaimable_cpus(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
     @reclaimable_cpus.setter
-    def reclaimable_cpus(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def reclaimable_cpus(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "reclaimable_cpus", value)
 
     @_builtins.property
     @pulumi.getter(name="recoveryApplianceDetails")
-    def recovery_appliance_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseRecoveryApplianceDetailArgs']]]]:
+    def recovery_appliance_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseRecoveryApplianceDetailArgs']]]]:
         """
         Information about the recovery appliance configuration associated with the Autonomous Container Database.
         """
         return pulumi.get(self, "recovery_appliance_details")
 
     @recovery_appliance_details.setter
-    def recovery_appliance_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseRecoveryApplianceDetailArgs']]]]):
+    def recovery_appliance_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseRecoveryApplianceDetailArgs']]]]):
         pulumi.set(self, "recovery_appliance_details", value)
 
     @_builtins.property
     @pulumi.getter(name="reinstateTrigger")
-    def reinstate_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def reinstate_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Reinstate. Could be set to any integer value.
         """
         return pulumi.get(self, "reinstate_trigger")
 
     @reinstate_trigger.setter
-    def reinstate_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def reinstate_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "reinstate_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="reservedCpus")
-    def reserved_cpus(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def reserved_cpus(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The number of CPUs reserved in an Autonomous Container Database.
         """
         return pulumi.get(self, "reserved_cpus")
 
     @reserved_cpus.setter
-    def reserved_cpus(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def reserved_cpus(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "reserved_cpus", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="rotateKeyTrigger")
-    def rotate_key_trigger(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def rotate_key_trigger(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "rotate_key_trigger")
 
     @rotate_key_trigger.setter
-    def rotate_key_trigger(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def rotate_key_trigger(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "rotate_key_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceLevelAgreementType")
-    def service_level_agreement_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_level_agreement_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
         """
         return pulumi.get(self, "service_level_agreement_type")
 
     @service_level_agreement_type.setter
-    def service_level_agreement_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_level_agreement_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_level_agreement_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
         """
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter(name="standbyMaintenanceBufferInDays")
-    def standby_maintenance_buffer_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def standby_maintenance_buffer_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
         """
         return pulumi.get(self, "standby_maintenance_buffer_in_days")
 
     @standby_maintenance_buffer_in_days.setter
-    def standby_maintenance_buffer_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def standby_maintenance_buffer_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "standby_maintenance_buffer_in_days", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Autonomous Container Database.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="switchoverTrigger")
-    def switchover_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def switchover_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
 
@@ -1934,103 +1934,103 @@ class _AutonomousContainerDatabaseState:
         return pulumi.get(self, "switchover_trigger")
 
     @switchover_trigger.setter
-    def switchover_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def switchover_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "switchover_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Autonomous Container Database was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfLastBackup")
-    def time_of_last_backup(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_last_backup(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
         """
         return pulumi.get(self, "time_of_last_backup")
 
     @time_of_last_backup.setter
-    def time_of_last_backup(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_last_backup(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_last_backup", value)
 
     @_builtins.property
     @pulumi.getter(name="timeSnapshotStandbyRevert")
-    def time_snapshot_standby_revert(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_snapshot_standby_revert(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
         """
         return pulumi.get(self, "time_snapshot_standby_revert")
 
     @time_snapshot_standby_revert.setter
-    def time_snapshot_standby_revert(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_snapshot_standby_revert(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_snapshot_standby_revert", value)
 
     @_builtins.property
     @pulumi.getter(name="totalCpus")
-    def total_cpus(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def total_cpus(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of CPUs allocated to the Autonomous VM cluster.
         """
         return pulumi.get(self, "total_cpus")
 
     @total_cpus.setter
-    def total_cpus(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def total_cpus(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "total_cpus", value)
 
     @_builtins.property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
-    def vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vault_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vault_id", value)
 
     @_builtins.property
     @pulumi.getter(name="versionPreference")
-    def version_preference(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version_preference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The next maintenance version preference.
         """
         return pulumi.get(self, "version_preference")
 
     @version_preference.setter
-    def version_preference(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version_preference(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version_preference", value)
 
     @_builtins.property
     @pulumi.getter(name="vmFailoverReservation")
-    def vm_failover_reservation(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def vm_failover_reservation(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
         """
         return pulumi.get(self, "vm_failover_reservation")
 
     @vm_failover_reservation.setter
-    def vm_failover_reservation(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def vm_failover_reservation(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "vm_failover_reservation", value)
 
 
@@ -2040,51 +2040,51 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 autonomous_container_database_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_config: Optional[pulumi.Input[Union['AutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
-                 cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseCustomerContactArgs', 'AutonomousContainerDatabaseCustomerContactArgsDict']]]]] = None,
-                 database_software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_split_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 distribution_affinity: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption_key_location_details: Optional[pulumi.Input[Union['AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs', 'AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgsDict']]] = None,
-                 failover_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_automatic_failover_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_dst_file_update_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key_store_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 maintenance_window_details: Optional[pulumi.Input[Union['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs', 'AutonomousContainerDatabaseMaintenanceWindowDetailsArgsDict']]] = None,
-                 net_services_architecture: Optional[pulumi.Input[_builtins.str]] = None,
-                 okv_end_point_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 patch_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_autonomous_container_database_backup_config: Optional[pulumi.Input[Union['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
-                 peer_autonomous_container_database_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_autonomous_container_database_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_autonomous_exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 protection_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 reinstate_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 rotate_key_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 service_level_agreement_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 standby_maintenance_buffer_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 switchover_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_preference: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_failover_reservation: Optional[pulumi.Input[_builtins.int]] = None,
+                 autonomous_container_database_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_config: pulumi.Input[Optional[Union['AutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
+                 cloud_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseCustomerContactArgs', 'AutonomousContainerDatabaseCustomerContactArgsDict']]]]] = None,
+                 database_software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_split_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 distribution_affinity: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_key_location_details: pulumi.Input[Optional[Union['AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs', 'AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgsDict']]] = None,
+                 failover_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 fast_start_fail_over_lag_limit_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_automatic_failover_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_dst_file_update_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 maintenance_window_details: pulumi.Input[Optional[Union['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs', 'AutonomousContainerDatabaseMaintenanceWindowDetailsArgsDict']]] = None,
+                 net_services_architecture: pulumi.Input[Optional[_builtins.str]] = None,
+                 okv_end_point_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 patch_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_autonomous_container_database_backup_config: pulumi.Input[Optional[Union['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
+                 peer_autonomous_container_database_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_autonomous_container_database_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_autonomous_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_cloud_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 protection_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 reinstate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 rotate_key_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 service_level_agreement_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 standby_maintenance_buffer_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 switchover_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_preference: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_failover_reservation: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         This resource provides the Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.
@@ -2113,13 +2113,13 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                     "dbrs_policy_id": test_policy["id"],
                     "id": autonomous_container_database_backup_config_backup_destination_details_id,
                     "internet_proxy": autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
-                    "is_remote": autonomous_container_database_backup_config_backup_destination_details_is_remote,
-                    "is_retention_lock_enabled": autonomous_container_database_backup_config_backup_destination_details_is_retention_lock_enabled,
+                    "is_remote": autonomous_container_database_backup_config_backup_destination_details_is_remote == "true",
+                    "is_retention_lock_enabled": autonomous_container_database_backup_config_backup_destination_details_is_retention_lock_enabled == "true",
                     "remote_region": autonomous_container_database_backup_config_backup_destination_details_remote_region,
                     "vpc_password": autonomous_container_database_backup_config_backup_destination_details_vpc_password,
                     "vpc_user": autonomous_container_database_backup_config_backup_destination_details_vpc_user,
                 },
-                "recovery_window_in_days": autonomous_container_database_backup_config_recovery_window_in_days,
+                "recovery_window_in_days": int(autonomous_container_database_backup_config_recovery_window_in_days),
             },
             cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster["id"],
             compartment_id=compartment_id,
@@ -2128,7 +2128,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             }],
             database_software_image_id=test_database_software_image["id"],
             db_name=autonomous_container_database_db_name,
-            db_split_threshold=autonomous_container_database_db_split_threshold,
+            db_split_threshold=int(autonomous_container_database_db_split_threshold),
             db_unique_name=autonomous_container_database_db_unique_name,
             db_version=autonomous_container_database_db_version,
             defined_tags={
@@ -2139,24 +2139,24 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                 "provider_type": autonomous_container_database_encryption_key_location_details_provider_type,
                 "aws_encryption_key_id": test_key["id"],
             },
-            fast_start_fail_over_lag_limit_in_seconds=autonomous_container_database_fast_start_fail_over_lag_limit_in_seconds,
+            fast_start_fail_over_lag_limit_in_seconds=int(autonomous_container_database_fast_start_fail_over_lag_limit_in_seconds),
             freeform_tags={
                 "Department": "Finance",
             },
-            is_automatic_failover_enabled=autonomous_container_database_is_automatic_failover_enabled,
-            is_dst_file_update_enabled=autonomous_container_database_is_dst_file_update_enabled,
+            is_automatic_failover_enabled=autonomous_container_database_is_automatic_failover_enabled == "true",
+            is_dst_file_update_enabled=autonomous_container_database_is_dst_file_update_enabled == "true",
             key_store_id=test_key_store["id"],
             kms_key_id=test_key["id"],
             kms_key_version_id=test_key_version["id"],
             maintenance_window_details={
-                "custom_action_timeout_in_mins": autonomous_container_database_maintenance_window_details_custom_action_timeout_in_mins,
+                "custom_action_timeout_in_mins": int(autonomous_container_database_maintenance_window_details_custom_action_timeout_in_mins),
                 "days_of_weeks": [{
                     "name": autonomous_container_database_maintenance_window_details_days_of_week_name,
                 }],
                 "hours_of_days": autonomous_container_database_maintenance_window_details_hours_of_day,
-                "is_custom_action_timeout_enabled": autonomous_container_database_maintenance_window_details_is_custom_action_timeout_enabled,
-                "is_monthly_patching_enabled": autonomous_container_database_maintenance_window_details_is_monthly_patching_enabled,
-                "lead_time_in_weeks": autonomous_container_database_maintenance_window_details_lead_time_in_weeks,
+                "is_custom_action_timeout_enabled": autonomous_container_database_maintenance_window_details_is_custom_action_timeout_enabled == "true",
+                "is_monthly_patching_enabled": autonomous_container_database_maintenance_window_details_is_monthly_patching_enabled == "true",
+                "lead_time_in_weeks": int(autonomous_container_database_maintenance_window_details_lead_time_in_weeks),
                 "months": [{
                     "name": autonomous_container_database_maintenance_window_details_months_name,
                 }],
@@ -2174,13 +2174,13 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                     "dbrs_policy_id": test_policy["id"],
                     "id": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_id,
                     "internet_proxy": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
-                    "is_remote": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_is_remote,
-                    "is_retention_lock_enabled": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_is_retention_lock_enabled,
+                    "is_remote": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_is_remote == "true",
+                    "is_retention_lock_enabled": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_is_retention_lock_enabled == "true",
                     "remote_region": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_remote_region,
                     "vpc_password": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password,
                     "vpc_user": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user,
                 }],
-                "recovery_window_in_days": autonomous_container_database_peer_autonomous_container_database_backup_config_recovery_window_in_days,
+                "recovery_window_in_days": int(autonomous_container_database_peer_autonomous_container_database_backup_config_recovery_window_in_days),
             },
             peer_autonomous_container_database_compartment_id=test_compartment["id"],
             peer_autonomous_container_database_display_name=autonomous_container_database_peer_autonomous_container_database_display_name,
@@ -2191,10 +2191,10 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             protection_mode=autonomous_container_database_protection_mode,
             service_level_agreement_type=autonomous_container_database_service_level_agreement_type,
             source=autonomous_container_database_source,
-            standby_maintenance_buffer_in_days=autonomous_container_database_standby_maintenance_buffer_in_days,
+            standby_maintenance_buffer_in_days=int(autonomous_container_database_standby_maintenance_buffer_in_days),
             vault_id=test_vault["id"],
             version_preference=autonomous_container_database_version_preference,
-            vm_failover_reservation=autonomous_container_database_vm_failover_reservation)
+            vm_failover_reservation=int(autonomous_container_database_vm_failover_reservation))
         ```
 
         ## Import
@@ -2289,13 +2289,13 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                     "dbrs_policy_id": test_policy["id"],
                     "id": autonomous_container_database_backup_config_backup_destination_details_id,
                     "internet_proxy": autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
-                    "is_remote": autonomous_container_database_backup_config_backup_destination_details_is_remote,
-                    "is_retention_lock_enabled": autonomous_container_database_backup_config_backup_destination_details_is_retention_lock_enabled,
+                    "is_remote": autonomous_container_database_backup_config_backup_destination_details_is_remote == "true",
+                    "is_retention_lock_enabled": autonomous_container_database_backup_config_backup_destination_details_is_retention_lock_enabled == "true",
                     "remote_region": autonomous_container_database_backup_config_backup_destination_details_remote_region,
                     "vpc_password": autonomous_container_database_backup_config_backup_destination_details_vpc_password,
                     "vpc_user": autonomous_container_database_backup_config_backup_destination_details_vpc_user,
                 },
-                "recovery_window_in_days": autonomous_container_database_backup_config_recovery_window_in_days,
+                "recovery_window_in_days": int(autonomous_container_database_backup_config_recovery_window_in_days),
             },
             cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster["id"],
             compartment_id=compartment_id,
@@ -2304,7 +2304,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             }],
             database_software_image_id=test_database_software_image["id"],
             db_name=autonomous_container_database_db_name,
-            db_split_threshold=autonomous_container_database_db_split_threshold,
+            db_split_threshold=int(autonomous_container_database_db_split_threshold),
             db_unique_name=autonomous_container_database_db_unique_name,
             db_version=autonomous_container_database_db_version,
             defined_tags={
@@ -2315,24 +2315,24 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                 "provider_type": autonomous_container_database_encryption_key_location_details_provider_type,
                 "aws_encryption_key_id": test_key["id"],
             },
-            fast_start_fail_over_lag_limit_in_seconds=autonomous_container_database_fast_start_fail_over_lag_limit_in_seconds,
+            fast_start_fail_over_lag_limit_in_seconds=int(autonomous_container_database_fast_start_fail_over_lag_limit_in_seconds),
             freeform_tags={
                 "Department": "Finance",
             },
-            is_automatic_failover_enabled=autonomous_container_database_is_automatic_failover_enabled,
-            is_dst_file_update_enabled=autonomous_container_database_is_dst_file_update_enabled,
+            is_automatic_failover_enabled=autonomous_container_database_is_automatic_failover_enabled == "true",
+            is_dst_file_update_enabled=autonomous_container_database_is_dst_file_update_enabled == "true",
             key_store_id=test_key_store["id"],
             kms_key_id=test_key["id"],
             kms_key_version_id=test_key_version["id"],
             maintenance_window_details={
-                "custom_action_timeout_in_mins": autonomous_container_database_maintenance_window_details_custom_action_timeout_in_mins,
+                "custom_action_timeout_in_mins": int(autonomous_container_database_maintenance_window_details_custom_action_timeout_in_mins),
                 "days_of_weeks": [{
                     "name": autonomous_container_database_maintenance_window_details_days_of_week_name,
                 }],
                 "hours_of_days": autonomous_container_database_maintenance_window_details_hours_of_day,
-                "is_custom_action_timeout_enabled": autonomous_container_database_maintenance_window_details_is_custom_action_timeout_enabled,
-                "is_monthly_patching_enabled": autonomous_container_database_maintenance_window_details_is_monthly_patching_enabled,
-                "lead_time_in_weeks": autonomous_container_database_maintenance_window_details_lead_time_in_weeks,
+                "is_custom_action_timeout_enabled": autonomous_container_database_maintenance_window_details_is_custom_action_timeout_enabled == "true",
+                "is_monthly_patching_enabled": autonomous_container_database_maintenance_window_details_is_monthly_patching_enabled == "true",
+                "lead_time_in_weeks": int(autonomous_container_database_maintenance_window_details_lead_time_in_weeks),
                 "months": [{
                     "name": autonomous_container_database_maintenance_window_details_months_name,
                 }],
@@ -2350,13 +2350,13 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                     "dbrs_policy_id": test_policy["id"],
                     "id": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_id,
                     "internet_proxy": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
-                    "is_remote": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_is_remote,
-                    "is_retention_lock_enabled": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_is_retention_lock_enabled,
+                    "is_remote": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_is_remote == "true",
+                    "is_retention_lock_enabled": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_is_retention_lock_enabled == "true",
                     "remote_region": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_remote_region,
                     "vpc_password": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password,
                     "vpc_user": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user,
                 }],
-                "recovery_window_in_days": autonomous_container_database_peer_autonomous_container_database_backup_config_recovery_window_in_days,
+                "recovery_window_in_days": int(autonomous_container_database_peer_autonomous_container_database_backup_config_recovery_window_in_days),
             },
             peer_autonomous_container_database_compartment_id=test_compartment["id"],
             peer_autonomous_container_database_display_name=autonomous_container_database_peer_autonomous_container_database_display_name,
@@ -2367,10 +2367,10 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             protection_mode=autonomous_container_database_protection_mode,
             service_level_agreement_type=autonomous_container_database_service_level_agreement_type,
             source=autonomous_container_database_source,
-            standby_maintenance_buffer_in_days=autonomous_container_database_standby_maintenance_buffer_in_days,
+            standby_maintenance_buffer_in_days=int(autonomous_container_database_standby_maintenance_buffer_in_days),
             vault_id=test_vault["id"],
             version_preference=autonomous_container_database_version_preference,
-            vm_failover_reservation=autonomous_container_database_vm_failover_reservation)
+            vm_failover_reservation=int(autonomous_container_database_vm_failover_reservation))
         ```
 
         ## Import
@@ -2397,51 +2397,51 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 autonomous_container_database_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_config: Optional[pulumi.Input[Union['AutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
-                 cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseCustomerContactArgs', 'AutonomousContainerDatabaseCustomerContactArgsDict']]]]] = None,
-                 database_software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_split_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 distribution_affinity: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption_key_location_details: Optional[pulumi.Input[Union['AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs', 'AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgsDict']]] = None,
-                 failover_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_automatic_failover_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_dst_file_update_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key_store_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 maintenance_window_details: Optional[pulumi.Input[Union['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs', 'AutonomousContainerDatabaseMaintenanceWindowDetailsArgsDict']]] = None,
-                 net_services_architecture: Optional[pulumi.Input[_builtins.str]] = None,
-                 okv_end_point_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 patch_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_autonomous_container_database_backup_config: Optional[pulumi.Input[Union['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
-                 peer_autonomous_container_database_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_autonomous_container_database_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_autonomous_exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 protection_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 reinstate_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 rotate_key_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 service_level_agreement_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 standby_maintenance_buffer_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 switchover_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 version_preference: Optional[pulumi.Input[_builtins.str]] = None,
-                 vm_failover_reservation: Optional[pulumi.Input[_builtins.int]] = None,
+                 autonomous_container_database_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_config: pulumi.Input[Optional[Union['AutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
+                 cloud_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseCustomerContactArgs', 'AutonomousContainerDatabaseCustomerContactArgsDict']]]]] = None,
+                 database_software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_split_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 distribution_affinity: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_key_location_details: pulumi.Input[Optional[Union['AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs', 'AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgsDict']]] = None,
+                 failover_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 fast_start_fail_over_lag_limit_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_automatic_failover_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_dst_file_update_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 maintenance_window_details: pulumi.Input[Optional[Union['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs', 'AutonomousContainerDatabaseMaintenanceWindowDetailsArgsDict']]] = None,
+                 net_services_architecture: pulumi.Input[Optional[_builtins.str]] = None,
+                 okv_end_point_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 patch_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_autonomous_container_database_backup_config: pulumi.Input[Optional[Union['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
+                 peer_autonomous_container_database_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_autonomous_container_database_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_autonomous_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_cloud_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 protection_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 reinstate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 rotate_key_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 service_level_agreement_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 standby_maintenance_buffer_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 switchover_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_preference: pulumi.Input[Optional[_builtins.str]] = None,
+                 vm_failover_reservation: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -2545,86 +2545,86 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            associated_backup_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs', 'AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgsDict']]]]] = None,
-            autonomous_container_database_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
-            autonomous_exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-            autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            available_cpus: Optional[pulumi.Input[_builtins.float]] = None,
-            backup_config: Optional[pulumi.Input[Union['AutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
-            backup_destination_properties_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseBackupDestinationPropertiesListArgs', 'AutonomousContainerDatabaseBackupDestinationPropertiesListArgsDict']]]]] = None,
-            cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compute_model: Optional[pulumi.Input[_builtins.str]] = None,
-            customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseCustomerContactArgs', 'AutonomousContainerDatabaseCustomerContactArgsDict']]]]] = None,
-            database_software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-            dataguard_group_members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseDataguardGroupMemberArgs', 'AutonomousContainerDatabaseDataguardGroupMemberArgsDict']]]]] = None,
-            dataguards: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseDataguardArgs', 'AutonomousContainerDatabaseDataguardArgsDict']]]]] = None,
-            db_name: Optional[pulumi.Input[_builtins.str]] = None,
-            db_split_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-            db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-            db_version: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            distribution_affinity: Optional[pulumi.Input[_builtins.str]] = None,
-            dst_file_version: Optional[pulumi.Input[_builtins.str]] = None,
-            encryption_key_location_details: Optional[pulumi.Input[Union['AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs', 'AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgsDict']]] = None,
-            failover_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            fast_start_fail_over_lag_limit_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            infrastructure_type: Optional[pulumi.Input[_builtins.str]] = None,
-            is_automatic_failover_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_data_guard_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_dst_file_update_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_multiple_standby: Optional[pulumi.Input[_builtins.bool]] = None,
-            key_history_entries: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseKeyHistoryEntryArgs', 'AutonomousContainerDatabaseKeyHistoryEntryArgsDict']]]]] = None,
-            key_store_id: Optional[pulumi.Input[_builtins.str]] = None,
-            key_store_wallet_name: Optional[pulumi.Input[_builtins.str]] = None,
-            key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-            kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-            largest_provisionable_autonomous_database_in_cpus: Optional[pulumi.Input[_builtins.float]] = None,
-            last_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            list_one_off_patches: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            maintenance_window_details: Optional[pulumi.Input[Union['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs', 'AutonomousContainerDatabaseMaintenanceWindowDetailsArgsDict']]] = None,
-            maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseMaintenanceWindowArgs', 'AutonomousContainerDatabaseMaintenanceWindowArgsDict']]]]] = None,
-            memory_per_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-            memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-            net_services_architecture: Optional[pulumi.Input[_builtins.str]] = None,
-            next_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
-            okv_end_point_group_name: Optional[pulumi.Input[_builtins.str]] = None,
-            patch_id: Optional[pulumi.Input[_builtins.str]] = None,
-            patch_model: Optional[pulumi.Input[_builtins.str]] = None,
-            peer_autonomous_container_database_backup_config: Optional[pulumi.Input[Union['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
-            peer_autonomous_container_database_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            peer_autonomous_container_database_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            peer_autonomous_exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-            peer_autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-            peer_cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-            peer_db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-            protection_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            provisionable_cpuses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.float]]]] = None,
-            provisioned_cpus: Optional[pulumi.Input[_builtins.float]] = None,
-            reclaimable_cpus: Optional[pulumi.Input[_builtins.float]] = None,
-            recovery_appliance_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseRecoveryApplianceDetailArgs', 'AutonomousContainerDatabaseRecoveryApplianceDetailArgsDict']]]]] = None,
-            reinstate_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            reserved_cpus: Optional[pulumi.Input[_builtins.float]] = None,
-            role: Optional[pulumi.Input[_builtins.str]] = None,
-            rotate_key_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-            service_level_agreement_type: Optional[pulumi.Input[_builtins.str]] = None,
-            source: Optional[pulumi.Input[_builtins.str]] = None,
-            standby_maintenance_buffer_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            switchover_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_of_last_backup: Optional[pulumi.Input[_builtins.str]] = None,
-            time_snapshot_standby_revert: Optional[pulumi.Input[_builtins.str]] = None,
-            total_cpus: Optional[pulumi.Input[_builtins.int]] = None,
-            vault_id: Optional[pulumi.Input[_builtins.str]] = None,
-            version_preference: Optional[pulumi.Input[_builtins.str]] = None,
-            vm_failover_reservation: Optional[pulumi.Input[_builtins.int]] = None) -> 'AutonomousContainerDatabase':
+            associated_backup_configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs', 'AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgsDict']]]]] = None,
+            autonomous_container_database_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+            autonomous_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+            autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            available_cpus: pulumi.Input[Optional[_builtins.float]] = None,
+            backup_config: pulumi.Input[Optional[Union['AutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
+            backup_destination_properties_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseBackupDestinationPropertiesListArgs', 'AutonomousContainerDatabaseBackupDestinationPropertiesListArgsDict']]]]] = None,
+            cloud_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_model: pulumi.Input[Optional[_builtins.str]] = None,
+            customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseCustomerContactArgs', 'AutonomousContainerDatabaseCustomerContactArgsDict']]]]] = None,
+            database_software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+            dataguard_group_members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseDataguardGroupMemberArgs', 'AutonomousContainerDatabaseDataguardGroupMemberArgsDict']]]]] = None,
+            dataguards: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseDataguardArgs', 'AutonomousContainerDatabaseDataguardArgsDict']]]]] = None,
+            db_name: pulumi.Input[Optional[_builtins.str]] = None,
+            db_split_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+            db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+            db_version: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            distribution_affinity: pulumi.Input[Optional[_builtins.str]] = None,
+            dst_file_version: pulumi.Input[Optional[_builtins.str]] = None,
+            encryption_key_location_details: pulumi.Input[Optional[Union['AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs', 'AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgsDict']]] = None,
+            failover_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            fast_start_fail_over_lag_limit_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            infrastructure_type: pulumi.Input[Optional[_builtins.str]] = None,
+            is_automatic_failover_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_dst_file_update_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_multiple_standby: pulumi.Input[Optional[_builtins.bool]] = None,
+            key_history_entries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseKeyHistoryEntryArgs', 'AutonomousContainerDatabaseKeyHistoryEntryArgsDict']]]]] = None,
+            key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key_store_wallet_name: pulumi.Input[Optional[_builtins.str]] = None,
+            key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            largest_provisionable_autonomous_database_in_cpus: pulumi.Input[Optional[_builtins.float]] = None,
+            last_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            list_one_off_patches: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            maintenance_window_details: pulumi.Input[Optional[Union['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs', 'AutonomousContainerDatabaseMaintenanceWindowDetailsArgsDict']]] = None,
+            maintenance_windows: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseMaintenanceWindowArgs', 'AutonomousContainerDatabaseMaintenanceWindowArgsDict']]]]] = None,
+            memory_per_compute_unit_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+            memory_per_oracle_compute_unit_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            net_services_architecture: pulumi.Input[Optional[_builtins.str]] = None,
+            next_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
+            okv_end_point_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+            patch_id: pulumi.Input[Optional[_builtins.str]] = None,
+            patch_model: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_autonomous_container_database_backup_config: pulumi.Input[Optional[Union['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
+            peer_autonomous_container_database_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_autonomous_container_database_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_autonomous_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_cloud_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+            protection_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            provisionable_cpuses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.float]]]] = None,
+            provisioned_cpus: pulumi.Input[Optional[_builtins.float]] = None,
+            reclaimable_cpus: pulumi.Input[Optional[_builtins.float]] = None,
+            recovery_appliance_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseRecoveryApplianceDetailArgs', 'AutonomousContainerDatabaseRecoveryApplianceDetailArgsDict']]]]] = None,
+            reinstate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            reserved_cpus: pulumi.Input[Optional[_builtins.float]] = None,
+            role: pulumi.Input[Optional[_builtins.str]] = None,
+            rotate_key_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+            service_level_agreement_type: pulumi.Input[Optional[_builtins.str]] = None,
+            source: pulumi.Input[Optional[_builtins.str]] = None,
+            standby_maintenance_buffer_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            switchover_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_last_backup: pulumi.Input[Optional[_builtins.str]] = None,
+            time_snapshot_standby_revert: pulumi.Input[Optional[_builtins.str]] = None,
+            total_cpus: pulumi.Input[Optional[_builtins.int]] = None,
+            vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+            version_preference: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_failover_reservation: pulumi.Input[Optional[_builtins.int]] = None) -> 'AutonomousContainerDatabase':
         """
         Get an existing AutonomousContainerDatabase resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -21,7 +21,7 @@ class CloudExadataInfrastructureManagedexadataManagementArgs:
     def __init__(__self__, *,
                  cloud_exadata_infrastructure_id: pulumi.Input[_builtins.str],
                  enable_managedexadata: pulumi.Input[_builtins.bool],
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None):
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a CloudExadataInfrastructureManagedexadataManagement resource.
 
@@ -68,23 +68,23 @@ class CloudExadataInfrastructureManagedexadataManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle license model that applies to the database management resources.
         """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
-    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_model", value)
 
 
 @pulumi.input_type
 class _CloudExadataInfrastructureManagedexadataManagementState:
     def __init__(__self__, *,
-                 cloud_exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_managedexadata: Optional[pulumi.Input[_builtins.bool]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None):
+                 cloud_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_managedexadata: pulumi.Input[Optional[_builtins.bool]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering CloudExadataInfrastructureManagedexadataManagement resources.
 
@@ -105,19 +105,19 @@ class _CloudExadataInfrastructureManagedexadataManagementState:
 
     @_builtins.property
     @pulumi.getter(name="cloudExadataInfrastructureId")
-    def cloud_exadata_infrastructure_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cloud_exadata_infrastructure_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         """
         return pulumi.get(self, "cloud_exadata_infrastructure_id")
 
     @cloud_exadata_infrastructure_id.setter
-    def cloud_exadata_infrastructure_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cloud_exadata_infrastructure_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cloud_exadata_infrastructure_id", value)
 
     @_builtins.property
     @pulumi.getter(name="enableManagedexadata")
-    def enable_managedexadata(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_managedexadata(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 
@@ -128,19 +128,19 @@ class _CloudExadataInfrastructureManagedexadataManagementState:
         return pulumi.get(self, "enable_managedexadata")
 
     @enable_managedexadata.setter
-    def enable_managedexadata(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_managedexadata(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_managedexadata", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle license model that applies to the database management resources.
         """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
-    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_model", value)
 
 
@@ -150,9 +150,9 @@ class CloudExadataInfrastructureManagedexadataManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cloud_exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_managedexadata: Optional[pulumi.Input[_builtins.bool]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
+                 cloud_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_managedexadata: pulumi.Input[Optional[_builtins.bool]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Cloud Exadata Infrastructure Managedexadata Management resource in Oracle Cloud Infrastructure Database Management service.
@@ -172,7 +172,7 @@ class CloudExadataInfrastructureManagedexadataManagement(pulumi.CustomResource):
 
         test_cloud_exadata_infrastructure_managedexadata_management = oci.databasemanagement.CloudExadataInfrastructureManagedexadataManagement("test_cloud_exadata_infrastructure_managedexadata_management",
             cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
-            enable_managedexadata=enable_managedexadata,
+            enable_managedexadata=enable_managedexadata == "true",
             license_model=cloud_exadata_infrastructure_managedexadata_management_license_model)
         ```
 
@@ -211,7 +211,7 @@ class CloudExadataInfrastructureManagedexadataManagement(pulumi.CustomResource):
 
         test_cloud_exadata_infrastructure_managedexadata_management = oci.databasemanagement.CloudExadataInfrastructureManagedexadataManagement("test_cloud_exadata_infrastructure_managedexadata_management",
             cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
-            enable_managedexadata=enable_managedexadata,
+            enable_managedexadata=enable_managedexadata == "true",
             license_model=cloud_exadata_infrastructure_managedexadata_management_license_model)
         ```
 
@@ -231,9 +231,9 @@ class CloudExadataInfrastructureManagedexadataManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cloud_exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 enable_managedexadata: Optional[pulumi.Input[_builtins.bool]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
+                 cloud_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_managedexadata: pulumi.Input[Optional[_builtins.bool]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -260,9 +260,9 @@ class CloudExadataInfrastructureManagedexadataManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cloud_exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-            enable_managedexadata: Optional[pulumi.Input[_builtins.bool]] = None,
-            license_model: Optional[pulumi.Input[_builtins.str]] = None) -> 'CloudExadataInfrastructureManagedexadataManagement':
+            cloud_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_managedexadata: pulumi.Input[Optional[_builtins.bool]] = None,
+            license_model: pulumi.Input[Optional[_builtins.str]] = None) -> 'CloudExadataInfrastructureManagedexadataManagement':
         """
         Get an existing CloudExadataInfrastructureManagedexadataManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

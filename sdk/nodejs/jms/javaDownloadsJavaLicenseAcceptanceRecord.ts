@@ -170,27 +170,27 @@ export interface JavaDownloadsJavaLicenseAcceptanceRecordState {
     /**
      * The tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user accepting the license.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * An authorized principal.
      */
-    createdBies?: pulumi.Input<pulumi.Input<inputs.Jms.JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy>[]>;
+    createdBies?: pulumi.Input<pulumi.Input<inputs.Jms.JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * An authorized principal.
      */
-    lastUpdatedBies?: pulumi.Input<pulumi.Input<inputs.Jms.JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy>[]>;
+    lastUpdatedBies?: pulumi.Input<pulumi.Input<inputs.Jms.JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy>[] | undefined>;
     /**
      * (Updatable) Status of license acceptance.
      */
-    licenseAcceptanceStatus?: pulumi.Input<string>;
+    licenseAcceptanceStatus?: pulumi.Input<string | undefined>;
     /**
      * License type for the Java version.
      *
@@ -198,23 +198,23 @@ export interface JavaDownloadsJavaLicenseAcceptanceRecordState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    licenseType?: pulumi.Input<string>;
+    licenseType?: pulumi.Input<string | undefined>;
     /**
      * The current state of the JavaLicenseAcceptanceRecord.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeAccepted?: pulumi.Input<string>;
+    timeAccepted?: pulumi.Input<string | undefined>;
     /**
      * The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeLastUpdated?: pulumi.Input<string>;
+    timeLastUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -228,7 +228,7 @@ export interface JavaDownloadsJavaLicenseAcceptanceRecordArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Status of license acceptance.
      */

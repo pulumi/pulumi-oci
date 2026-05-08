@@ -266,16 +266,16 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_databases = oci.Database.get_autonomous_databases(compartment_id=compartment_id,
+    test_autonomous_databases = oci.database.get_autonomous_databases(compartment_id=compartment_id,
         autonomous_container_database_id=test_autonomous_container_database["id"],
         db_version=autonomous_database_db_version,
         db_workload=autonomous_database_db_workload,
         display_name=autonomous_database_display_name,
         infrastructure_type=autonomous_database_infrastructure_type,
-        is_data_guard_enabled=autonomous_database_is_data_guard_enabled,
-        is_free_tier=autonomous_database_is_free_tier,
-        is_refreshable_clone=autonomous_database_is_refreshable_clone,
-        is_resource_pool_leader=autonomous_database_is_resource_pool_leader,
+        is_data_guard_enabled=autonomous_database_is_data_guard_enabled == "true",
+        is_free_tier=autonomous_database_is_free_tier == "true",
+        is_refreshable_clone=autonomous_database_is_refreshable_clone == "true",
+        is_resource_pool_leader=autonomous_database_is_resource_pool_leader == "true",
         lifecycle_state_not_equal_to=autonomous_database_lifecycle_state_not_equal_to,
         resource_pool_leader_id=test_resource_pool_leader["id"],
         state=autonomous_database_state)
@@ -330,20 +330,20 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[_builtin
         lifecycle_state_not_equal_to=pulumi.get(__ret__, 'lifecycle_state_not_equal_to'),
         resource_pool_leader_id=pulumi.get(__ret__, 'resource_pool_leader_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_autonomous_databases_output(autonomous_container_database_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    db_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    db_workload: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousDatabasesFilterArgs', 'GetAutonomousDatabasesFilterArgsDict']]]]] = None,
-                                    infrastructure_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    is_data_guard_enabled: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                    is_free_tier: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                    is_refreshable_clone: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                    is_resource_pool_leader: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                    lifecycle_state_not_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    resource_pool_leader_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_autonomous_databases_output(autonomous_container_database_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    db_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    db_workload: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousDatabasesFilterArgs', 'GetAutonomousDatabasesFilterArgsDict']]]]] = None,
+                                    infrastructure_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    is_data_guard_enabled: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                    is_free_tier: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                    is_refreshable_clone: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                    is_resource_pool_leader: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                    lifecycle_state_not_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    resource_pool_leader_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabasesResult]:
     """
     ## 
@@ -369,16 +369,16 @@ def get_autonomous_databases_output(autonomous_container_database_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_databases = oci.Database.get_autonomous_databases(compartment_id=compartment_id,
+    test_autonomous_databases = oci.database.get_autonomous_databases(compartment_id=compartment_id,
         autonomous_container_database_id=test_autonomous_container_database["id"],
         db_version=autonomous_database_db_version,
         db_workload=autonomous_database_db_workload,
         display_name=autonomous_database_display_name,
         infrastructure_type=autonomous_database_infrastructure_type,
-        is_data_guard_enabled=autonomous_database_is_data_guard_enabled,
-        is_free_tier=autonomous_database_is_free_tier,
-        is_refreshable_clone=autonomous_database_is_refreshable_clone,
-        is_resource_pool_leader=autonomous_database_is_resource_pool_leader,
+        is_data_guard_enabled=autonomous_database_is_data_guard_enabled == "true",
+        is_free_tier=autonomous_database_is_free_tier == "true",
+        is_refreshable_clone=autonomous_database_is_refreshable_clone == "true",
+        is_resource_pool_leader=autonomous_database_is_resource_pool_leader == "true",
         lifecycle_state_not_equal_to=autonomous_database_lifecycle_state_not_equal_to,
         resource_pool_leader_id=test_resource_pool_leader["id"],
         state=autonomous_database_state)

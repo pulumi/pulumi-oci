@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVirtualCircuitAssociatedTunnels = oci.Core.getVirtualCircuitAssociatedTunnels({
+ * const testVirtualCircuitAssociatedTunnels = oci.core.getVirtualCircuitAssociatedTunnels({
  *     virtualCircuitId: testVirtualCircuit.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetVirtualCircuitAssociatedTunnelsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVirtualCircuitAssociatedTunnels = oci.Core.getVirtualCircuitAssociatedTunnels({
+ * const testVirtualCircuitAssociatedTunnels = oci.core.getVirtualCircuitAssociatedTunnels({
  *     virtualCircuitId: testVirtualCircuit.id,
  * });
  * ```
@@ -84,7 +84,7 @@ export function getVirtualCircuitAssociatedTunnelsOutput(args: GetVirtualCircuit
  * A collection of arguments for invoking getVirtualCircuitAssociatedTunnels.
  */
 export interface GetVirtualCircuitAssociatedTunnelsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVirtualCircuitAssociatedTunnelsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVirtualCircuitAssociatedTunnelsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
      */

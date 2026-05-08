@@ -149,10 +149,10 @@ def get_distributed_database_distributed_database_private_endpoints(compartment_
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_distributed_database_distributed_database_private_endpoints_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                           display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDistributedDatabaseDistributedDatabasePrivateEndpointsFilterArgs', 'GetDistributedDatabaseDistributedDatabasePrivateEndpointsFilterArgsDict']]]]] = None,
-                                                                           state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_distributed_database_distributed_database_private_endpoints_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDistributedDatabaseDistributedDatabasePrivateEndpointsFilterArgs', 'GetDistributedDatabaseDistributedDatabasePrivateEndpointsFilterArgsDict']]]]] = None,
+                                                                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDistributedDatabaseDistributedDatabasePrivateEndpointsResult]:
     """
     This data source provides the list of Distributed Database Private Endpoints in Oracle Cloud Infrastructure Distributed Database service.

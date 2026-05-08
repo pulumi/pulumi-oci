@@ -24,8 +24,8 @@ import * as utilities from "../utilities";
  *     schedulingWindowId: testSchedulingWindow.id,
  *     actionMembers: [{
  *         memberId: testMember.id,
- *         memberOrder: scheduledActionActionMembersMemberOrder,
- *         estimatedTimeInMins: scheduledActionActionMembersEstimatedTimeInMins,
+ *         memberOrder: Number(scheduledActionActionMembersMemberOrder),
+ *         estimatedTimeInMins: Number(scheduledActionActionMembersEstimatedTimeInMins),
  *     }],
  *     actionParams: scheduledActionActionParams,
  *     definedTags: scheduledActionDefinedTags,
@@ -206,43 +206,43 @@ export interface ScheduledActionState {
     /**
      * (Updatable) The list of action members in a scheduled action.
      */
-    actionMembers?: pulumi.Input<pulumi.Input<inputs.Database.ScheduledActionActionMember>[]>;
+    actionMembers?: pulumi.Input<pulumi.Input<inputs.Database.ScheduledActionActionMember>[] | undefined>;
     /**
      * The order of the scheduled action.
      */
-    actionOrder?: pulumi.Input<number>;
+    actionOrder?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
      */
-    actionParams?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    actionParams?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The type of the scheduled action being performed
      */
-    actionType?: pulumi.Input<string>;
+    actionType?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The display name of the Scheduled Action.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The estimated patching time for the scheduled action.
      */
-    estimatedTimeInMins?: pulumi.Input<number>;
+    estimatedTimeInMins?: pulumi.Input<number | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Plan.
      */
-    schedulingPlanId?: pulumi.Input<string>;
+    schedulingPlanId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Window.
      *
@@ -250,23 +250,23 @@ export interface ScheduledActionState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    schedulingWindowId?: pulumi.Input<string>;
+    schedulingWindowId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the Scheduled Action. Valid states are CREATING, NEEDS_ATTENTION, AVAILABLE, UPDATING, FAILED, DELETING and DELETED.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the Scheduled Action Resource was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the Scheduled Action Resource was updated.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -276,11 +276,11 @@ export interface ScheduledActionArgs {
     /**
      * (Updatable) The list of action members in a scheduled action.
      */
-    actionMembers?: pulumi.Input<pulumi.Input<inputs.Database.ScheduledActionActionMember>[]>;
+    actionMembers?: pulumi.Input<pulumi.Input<inputs.Database.ScheduledActionActionMember>[] | undefined>;
     /**
      * (Updatable) Map<ParamName, ParamValue> where a key value pair describes the specific action parameter. Example: `{"count": "3"}`
      */
-    actionParams?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    actionParams?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The type of the scheduled action being performed
      */
@@ -292,11 +292,11 @@ export interface ScheduledActionArgs {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Plan.
      */

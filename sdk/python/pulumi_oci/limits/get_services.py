@@ -106,7 +106,7 @@ def get_services(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_services = oci.Limits.get_services(compartment_id=tenancy_ocid,
+    test_services = oci.limits.get_services(compartment_id=tenancy_ocid,
         subscription_id=subscription_ocid)
     ```
 
@@ -127,9 +127,9 @@ def get_services(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         services=pulumi.get(__ret__, 'services'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'))
-def get_services_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetServicesFilterArgs', 'GetServicesFilterArgsDict']]]]] = None,
-                        subscription_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_services_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetServicesFilterArgs', 'GetServicesFilterArgsDict']]]]] = None,
+                        subscription_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServicesResult]:
     """
     This data source provides the list of Services in Oracle Cloud Infrastructure Limits service.
@@ -143,7 +143,7 @@ def get_services_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_services = oci.Limits.get_services(compartment_id=tenancy_ocid,
+    test_services = oci.limits.get_services(compartment_id=tenancy_ocid,
         subscription_id=subscription_ocid)
     ```
 

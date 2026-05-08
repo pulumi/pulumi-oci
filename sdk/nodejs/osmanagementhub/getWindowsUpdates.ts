@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWindowsUpdates = oci.OsManagementHub.getWindowsUpdates({
+ * const testWindowsUpdates = oci.osmanagementhub.getWindowsUpdates({
  *     compartmentId: compartmentId,
  *     classificationTypes: windowsUpdateClassificationType,
  *     displayNameContains: windowsUpdateDisplayNameContains,
@@ -91,7 +91,7 @@ export interface GetWindowsUpdatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWindowsUpdates = oci.OsManagementHub.getWindowsUpdates({
+ * const testWindowsUpdates = oci.osmanagementhub.getWindowsUpdates({
  *     compartmentId: compartmentId,
  *     classificationTypes: windowsUpdateClassificationType,
  *     displayNameContains: windowsUpdateDisplayNameContains,
@@ -117,7 +117,7 @@ export interface GetWindowsUpdatesOutputArgs {
     /**
      * A filter to return only packages that match the given update classification type.
      */
-    classificationTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    classificationTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This parameter is required and returns only resources contained within the specified compartment.
      */
@@ -125,10 +125,10 @@ export interface GetWindowsUpdatesOutputArgs {
     /**
      * A filter to return resources that may partially match the given display name.
      */
-    displayNameContains?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetWindowsUpdatesFilterArgs>[]>;
+    displayNameContains?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetWindowsUpdatesFilterArgs>[] | undefined>;
     /**
      * A filter based on the unique identifier for the Windows update. Note that this is not an OCID, but is a unique identifier assigned by Microsoft.  Example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'
      */
-    names?: pulumi.Input<pulumi.Input<string>[]>;
+    names?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

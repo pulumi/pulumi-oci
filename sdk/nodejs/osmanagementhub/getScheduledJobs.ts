@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScheduledJobs = oci.OsManagementHub.getScheduledJobs({
+ * const testScheduledJobs = oci.osmanagementhub.getScheduledJobs({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: scheduledJobCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: scheduledJobCompartmentIdInSubtree === "true",
  *     displayName: scheduledJobDisplayName,
  *     displayNameContains: scheduledJobDisplayNameContains,
  *     dynamicSetId: testDynamicSet.id,
  *     id: scheduledJobId,
- *     isManagedByAutonomousLinux: scheduledJobIsManagedByAutonomousLinux,
- *     isRestricted: scheduledJobIsRestricted,
+ *     isManagedByAutonomousLinux: scheduledJobIsManagedByAutonomousLinux === "true",
+ *     isRestricted: scheduledJobIsRestricted === "true",
  *     lifecycleStageId: testLifecycleStage.id,
  *     locations: scheduledJobLocation,
  *     locationNotEqualTos: scheduledJobLocationNotEqualTo,
@@ -214,15 +214,15 @@ export interface GetScheduledJobsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testScheduledJobs = oci.OsManagementHub.getScheduledJobs({
+ * const testScheduledJobs = oci.osmanagementhub.getScheduledJobs({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: scheduledJobCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: scheduledJobCompartmentIdInSubtree === "true",
  *     displayName: scheduledJobDisplayName,
  *     displayNameContains: scheduledJobDisplayNameContains,
  *     dynamicSetId: testDynamicSet.id,
  *     id: scheduledJobId,
- *     isManagedByAutonomousLinux: scheduledJobIsManagedByAutonomousLinux,
- *     isRestricted: scheduledJobIsRestricted,
+ *     isManagedByAutonomousLinux: scheduledJobIsManagedByAutonomousLinux === "true",
+ *     isRestricted: scheduledJobIsRestricted === "true",
  *     lifecycleStageId: testLifecycleStage.id,
  *     locations: scheduledJobLocation,
  *     locationNotEqualTos: scheduledJobLocationNotEqualTo,
@@ -271,78 +271,78 @@ export interface GetScheduledJobsOutputArgs {
     /**
      * (Updatable) The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether to include subcompartments in the returned results. Default is false.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return resources that match the given user-friendly name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that may partially match the given display name.
      */
-    displayNameContains?: pulumi.Input<string>;
+    displayNameContains?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
      */
-    dynamicSetId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetScheduledJobsFilterArgs>[]>;
+    dynamicSetId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetScheduledJobsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job. A filter to return the specified job.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether to list only resources managed by the Autonomous Linux service.
      */
-    isManagedByAutonomousLinux?: pulumi.Input<boolean>;
+    isManagedByAutonomousLinux?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only restricted scheduled jobs.
      */
-    isRestricted?: pulumi.Input<boolean>;
+    isRestricted?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage. This resource returns resources associated with this lifecycle stage.
      */
-    lifecycleStageId?: pulumi.Input<string>;
+    lifecycleStageId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose location does not match the given value.
      */
-    locationNotEqualTos?: pulumi.Input<pulumi.Input<string>[]>;
+    locationNotEqualTos?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only resources whose location matches the given value.
      */
-    locations?: pulumi.Input<pulumi.Input<string>[]>;
+    locations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed compartment. This filter returns resources associated with this compartment.
      */
-    managedCompartmentId?: pulumi.Input<string>;
+    managedCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group. This filter returns resources associated with this group.
      */
-    managedInstanceGroupId?: pulumi.Input<string>;
+    managedInstanceGroupId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
      */
-    managedInstanceId?: pulumi.Input<string>;
+    managedInstanceId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only scheduled jobs with the given operation type.
      */
-    operationType?: pulumi.Input<string>;
+    operationType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only scheduled jobs of the given scheduling type (one-time or recurring).
      */
-    scheduleType?: pulumi.Input<string>;
+    scheduleType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only scheduled jobs currently in the given state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources with a date on or before the given value, in ISO 8601 format.  Example: 2017-07-14T02:40:00.000Z
      */
-    timeEnd?: pulumi.Input<string>;
+    timeEnd?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources with a date on or after the given value, in ISO 8601 format.  Example: 2017-07-14T02:40:00.000Z
      */
-    timeStart?: pulumi.Input<string>;
+    timeStart?: pulumi.Input<string | undefined>;
 }

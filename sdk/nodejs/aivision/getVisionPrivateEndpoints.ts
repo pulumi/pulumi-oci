@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVisionPrivateEndpoints = oci.AiVision.getVisionPrivateEndpoints({
+ * const testVisionPrivateEndpoints = oci.aivision.getVisionPrivateEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: visionPrivateEndpointDisplayName,
  *     id: visionPrivateEndpointId,
@@ -97,7 +97,7 @@ export interface GetVisionPrivateEndpointsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVisionPrivateEndpoints = oci.AiVision.getVisionPrivateEndpoints({
+ * const testVisionPrivateEndpoints = oci.aivision.getVisionPrivateEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: visionPrivateEndpointDisplayName,
  *     id: visionPrivateEndpointId,
@@ -124,18 +124,18 @@ export interface GetVisionPrivateEndpointsOutputArgs {
     /**
      * The ID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.AiVision.GetVisionPrivateEndpointsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.AiVision.GetVisionPrivateEndpointsFilterArgs>[] | undefined>;
     /**
      * The filter to find the device with the given identifier.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The filter to match projects with the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

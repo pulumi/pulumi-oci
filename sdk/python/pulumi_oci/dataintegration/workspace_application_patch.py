@@ -24,14 +24,14 @@ class WorkspaceApplicationPatchArgs:
                  application_key: pulumi.Input[_builtins.str],
                  patch_type: pulumi.Input[_builtins.str],
                  workspace_id: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 object_status: Optional[pulumi.Input[_builtins.int]] = None,
-                 registry_metadata: Optional[pulumi.Input['WorkspaceApplicationPatchRegistryMetadataArgs']] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 object_status: pulumi.Input[Optional[_builtins.int]] = None,
+                 registry_metadata: pulumi.Input[Optional['WorkspaceApplicationPatchRegistryMetadataArgs']] = None):
         """
         The set of arguments for constructing a WorkspaceApplicationPatch resource.
 
@@ -113,126 +113,126 @@ class WorkspaceApplicationPatchArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Detailed description for the object.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def identifier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
     @identifier.setter
-    def identifier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identifier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identifier", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The object's key.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter(name="modelVersion")
-    def model_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The object's model version.
         """
         return pulumi.get(self, "model_version")
 
     @model_version.setter
-    def model_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="objectKeys")
-    def object_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def object_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The array of object keys to publish into application.
         """
         return pulumi.get(self, "object_keys")
 
     @object_keys.setter
-    def object_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def object_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "object_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="objectStatus")
-    def object_status(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def object_status(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         """
         return pulumi.get(self, "object_status")
 
     @object_status.setter
-    def object_status(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def object_status(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "object_status", value)
 
     @_builtins.property
     @pulumi.getter(name="registryMetadata")
-    def registry_metadata(self) -> Optional[pulumi.Input['WorkspaceApplicationPatchRegistryMetadataArgs']]:
+    def registry_metadata(self) -> pulumi.Input[Optional['WorkspaceApplicationPatchRegistryMetadataArgs']]:
         """
         Information about the object and its parent.
         """
         return pulumi.get(self, "registry_metadata")
 
     @registry_metadata.setter
-    def registry_metadata(self, value: Optional[pulumi.Input['WorkspaceApplicationPatchRegistryMetadataArgs']]):
+    def registry_metadata(self, value: pulumi.Input[Optional['WorkspaceApplicationPatchRegistryMetadataArgs']]):
         pulumi.set(self, "registry_metadata", value)
 
 
 @pulumi.input_type
 class _WorkspaceApplicationPatchState:
     def __init__(__self__, *,
-                 application_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 application_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 dependent_object_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchDependentObjectMetadataArgs']]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 error_messages: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 key_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchMetadataArgs']]]] = None,
-                 model_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 object_status: Optional[pulumi.Input[_builtins.int]] = None,
-                 object_version: Optional[pulumi.Input[_builtins.int]] = None,
-                 parent_reves: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchParentRefArgs']]]] = None,
-                 patch_object_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchPatchObjectMetadataArgs']]]] = None,
-                 patch_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 patch_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 registry_metadata: Optional[pulumi.Input['WorkspaceApplicationPatchRegistryMetadataArgs']] = None,
-                 time_patched: Optional[pulumi.Input[_builtins.str]] = None,
-                 workspace_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 application_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 application_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 dependent_object_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationPatchDependentObjectMetadataArgs']]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 error_messages: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_map: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationPatchMetadataArgs']]]] = None,
+                 model_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 object_status: pulumi.Input[Optional[_builtins.int]] = None,
+                 object_version: pulumi.Input[Optional[_builtins.int]] = None,
+                 parent_reves: pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationPatchParentRefArgs']]]] = None,
+                 patch_object_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationPatchPatchObjectMetadataArgs']]]] = None,
+                 patch_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 patch_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 registry_metadata: pulumi.Input[Optional['WorkspaceApplicationPatchRegistryMetadataArgs']] = None,
+                 time_patched: pulumi.Input[Optional[_builtins.str]] = None,
+                 workspace_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WorkspaceApplicationPatch resources.
 
@@ -310,259 +310,259 @@ class _WorkspaceApplicationPatchState:
 
     @_builtins.property
     @pulumi.getter(name="applicationKey")
-    def application_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def application_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The application key.
         """
         return pulumi.get(self, "application_key")
 
     @application_key.setter
-    def application_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def application_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "application_key", value)
 
     @_builtins.property
     @pulumi.getter(name="applicationVersion")
-    def application_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def application_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The application version of the patch.
         """
         return pulumi.get(self, "application_version")
 
     @application_version.setter
-    def application_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def application_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "application_version", value)
 
     @_builtins.property
     @pulumi.getter(name="dependentObjectMetadatas")
-    def dependent_object_metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchDependentObjectMetadataArgs']]]]:
+    def dependent_object_metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationPatchDependentObjectMetadataArgs']]]]:
         """
         List of dependent objects in this patch.
         """
         return pulumi.get(self, "dependent_object_metadatas")
 
     @dependent_object_metadatas.setter
-    def dependent_object_metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchDependentObjectMetadataArgs']]]]):
+    def dependent_object_metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationPatchDependentObjectMetadataArgs']]]]):
         pulumi.set(self, "dependent_object_metadatas", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Detailed description for the object.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="errorMessages")
-    def error_messages(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def error_messages(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         The errors encountered while applying the patch, if any.
         """
         return pulumi.get(self, "error_messages")
 
     @error_messages.setter
-    def error_messages(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def error_messages(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "error_messages", value)
 
     @_builtins.property
     @pulumi.getter
-    def identifier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
     @identifier.setter
-    def identifier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identifier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identifier", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The object's key.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter(name="keyMap")
-    def key_map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def key_map(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         """
         return pulumi.get(self, "key_map")
 
     @key_map.setter
-    def key_map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def key_map(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "key_map", value)
 
     @_builtins.property
     @pulumi.getter
-    def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchMetadataArgs']]]]:
+    def metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationPatchMetadataArgs']]]]:
         """
         A summary type containing information about the object including its key, name and when/who created/updated it.
         """
         return pulumi.get(self, "metadatas")
 
     @metadatas.setter
-    def metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchMetadataArgs']]]]):
+    def metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationPatchMetadataArgs']]]]):
         pulumi.set(self, "metadatas", value)
 
     @_builtins.property
     @pulumi.getter(name="modelType")
-    def model_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The object type.
         """
         return pulumi.get(self, "model_type")
 
     @model_type.setter
-    def model_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_type", value)
 
     @_builtins.property
     @pulumi.getter(name="modelVersion")
-    def model_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The object's model version.
         """
         return pulumi.get(self, "model_version")
 
     @model_version.setter
-    def model_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="objectKeys")
-    def object_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def object_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The array of object keys to publish into application.
         """
         return pulumi.get(self, "object_keys")
 
     @object_keys.setter
-    def object_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def object_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "object_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="objectStatus")
-    def object_status(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def object_status(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         """
         return pulumi.get(self, "object_status")
 
     @object_status.setter
-    def object_status(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def object_status(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "object_status", value)
 
     @_builtins.property
     @pulumi.getter(name="objectVersion")
-    def object_version(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def object_version(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The object version.
         """
         return pulumi.get(self, "object_version")
 
     @object_version.setter
-    def object_version(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def object_version(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "object_version", value)
 
     @_builtins.property
     @pulumi.getter(name="parentReves")
-    def parent_reves(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchParentRefArgs']]]]:
+    def parent_reves(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationPatchParentRefArgs']]]]:
         """
         A reference to the object's parent.
         """
         return pulumi.get(self, "parent_reves")
 
     @parent_reves.setter
-    def parent_reves(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchParentRefArgs']]]]):
+    def parent_reves(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationPatchParentRefArgs']]]]):
         pulumi.set(self, "parent_reves", value)
 
     @_builtins.property
     @pulumi.getter(name="patchObjectMetadatas")
-    def patch_object_metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchPatchObjectMetadataArgs']]]]:
+    def patch_object_metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationPatchPatchObjectMetadataArgs']]]]:
         """
         List of objects that are published or unpublished in this patch.
         """
         return pulumi.get(self, "patch_object_metadatas")
 
     @patch_object_metadatas.setter
-    def patch_object_metadatas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchPatchObjectMetadataArgs']]]]):
+    def patch_object_metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceApplicationPatchPatchObjectMetadataArgs']]]]):
         pulumi.set(self, "patch_object_metadatas", value)
 
     @_builtins.property
     @pulumi.getter(name="patchStatus")
-    def patch_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def patch_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Status of the patch applied or being applied on the application
         """
         return pulumi.get(self, "patch_status")
 
     @patch_status.setter
-    def patch_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def patch_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "patch_status", value)
 
     @_builtins.property
     @pulumi.getter(name="patchType")
-    def patch_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def patch_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the patch applied or being applied on the application.
         """
         return pulumi.get(self, "patch_type")
 
     @patch_type.setter
-    def patch_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def patch_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "patch_type", value)
 
     @_builtins.property
     @pulumi.getter(name="registryMetadata")
-    def registry_metadata(self) -> Optional[pulumi.Input['WorkspaceApplicationPatchRegistryMetadataArgs']]:
+    def registry_metadata(self) -> pulumi.Input[Optional['WorkspaceApplicationPatchRegistryMetadataArgs']]:
         """
         Information about the object and its parent.
         """
         return pulumi.get(self, "registry_metadata")
 
     @registry_metadata.setter
-    def registry_metadata(self, value: Optional[pulumi.Input['WorkspaceApplicationPatchRegistryMetadataArgs']]):
+    def registry_metadata(self, value: pulumi.Input[Optional['WorkspaceApplicationPatchRegistryMetadataArgs']]):
         pulumi.set(self, "registry_metadata", value)
 
     @_builtins.property
     @pulumi.getter(name="timePatched")
-    def time_patched(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_patched(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the patch was applied, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_patched")
 
     @time_patched.setter
-    def time_patched(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_patched(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_patched", value)
 
     @_builtins.property
     @pulumi.getter(name="workspaceId")
-    def workspace_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def workspace_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The workspace ID.
 
@@ -573,7 +573,7 @@ class _WorkspaceApplicationPatchState:
         return pulumi.get(self, "workspace_id")
 
     @workspace_id.setter
-    def workspace_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def workspace_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "workspace_id", value)
 
 
@@ -583,17 +583,17 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 object_status: Optional[pulumi.Input[_builtins.int]] = None,
-                 patch_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 registry_metadata: Optional[pulumi.Input[Union['WorkspaceApplicationPatchRegistryMetadataArgs', 'WorkspaceApplicationPatchRegistryMetadataArgsDict']]] = None,
-                 workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 application_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 object_status: pulumi.Input[Optional[_builtins.int]] = None,
+                 patch_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 registry_metadata: pulumi.Input[Optional[Union['WorkspaceApplicationPatchRegistryMetadataArgs', 'WorkspaceApplicationPatchRegistryMetadataArgsDict']]] = None,
+                 workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Workspace Application Patch resource in Oracle Cloud Infrastructure Data Integration service.
@@ -619,13 +619,13 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
             description=workspace_application_patch_description,
             key=workspace_application_patch_key,
             model_version=workspace_application_patch_model_version,
-            object_status=workspace_application_patch_object_status,
+            object_status=int(workspace_application_patch_object_status),
             registry_metadata={
                 "aggregator_key": workspace_application_patch_registry_metadata_aggregator_key,
-                "is_favorite": workspace_application_patch_registry_metadata_is_favorite,
+                "is_favorite": workspace_application_patch_registry_metadata_is_favorite == "true",
                 "key": workspace_application_patch_registry_metadata_key,
                 "labels": workspace_application_patch_registry_metadata_labels,
-                "registry_version": workspace_application_patch_registry_metadata_registry_version,
+                "registry_version": int(workspace_application_patch_registry_metadata_registry_version),
             })
         ```
 
@@ -686,13 +686,13 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
             description=workspace_application_patch_description,
             key=workspace_application_patch_key,
             model_version=workspace_application_patch_model_version,
-            object_status=workspace_application_patch_object_status,
+            object_status=int(workspace_application_patch_object_status),
             registry_metadata={
                 "aggregator_key": workspace_application_patch_registry_metadata_aggregator_key,
-                "is_favorite": workspace_application_patch_registry_metadata_is_favorite,
+                "is_favorite": workspace_application_patch_registry_metadata_is_favorite == "true",
                 "key": workspace_application_patch_registry_metadata_key,
                 "labels": workspace_application_patch_registry_metadata_labels,
-                "registry_version": workspace_application_patch_registry_metadata_registry_version,
+                "registry_version": int(workspace_application_patch_registry_metadata_registry_version),
             })
         ```
 
@@ -720,17 +720,17 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 application_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 identifier: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 object_status: Optional[pulumi.Input[_builtins.int]] = None,
-                 patch_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 registry_metadata: Optional[pulumi.Input[Union['WorkspaceApplicationPatchRegistryMetadataArgs', 'WorkspaceApplicationPatchRegistryMetadataArgsDict']]] = None,
-                 workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 application_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 identifier: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 object_status: pulumi.Input[Optional[_builtins.int]] = None,
+                 patch_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 registry_metadata: pulumi.Input[Optional[Union['WorkspaceApplicationPatchRegistryMetadataArgs', 'WorkspaceApplicationPatchRegistryMetadataArgsDict']]] = None,
+                 workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -778,28 +778,28 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            application_key: Optional[pulumi.Input[_builtins.str]] = None,
-            application_version: Optional[pulumi.Input[_builtins.int]] = None,
-            dependent_object_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationPatchDependentObjectMetadataArgs', 'WorkspaceApplicationPatchDependentObjectMetadataArgsDict']]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            error_messages: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            identifier: Optional[pulumi.Input[_builtins.str]] = None,
-            key: Optional[pulumi.Input[_builtins.str]] = None,
-            key_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationPatchMetadataArgs', 'WorkspaceApplicationPatchMetadataArgsDict']]]]] = None,
-            model_type: Optional[pulumi.Input[_builtins.str]] = None,
-            model_version: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            object_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            object_status: Optional[pulumi.Input[_builtins.int]] = None,
-            object_version: Optional[pulumi.Input[_builtins.int]] = None,
-            parent_reves: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationPatchParentRefArgs', 'WorkspaceApplicationPatchParentRefArgsDict']]]]] = None,
-            patch_object_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationPatchPatchObjectMetadataArgs', 'WorkspaceApplicationPatchPatchObjectMetadataArgsDict']]]]] = None,
-            patch_status: Optional[pulumi.Input[_builtins.str]] = None,
-            patch_type: Optional[pulumi.Input[_builtins.str]] = None,
-            registry_metadata: Optional[pulumi.Input[Union['WorkspaceApplicationPatchRegistryMetadataArgs', 'WorkspaceApplicationPatchRegistryMetadataArgsDict']]] = None,
-            time_patched: Optional[pulumi.Input[_builtins.str]] = None,
-            workspace_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'WorkspaceApplicationPatch':
+            application_key: pulumi.Input[Optional[_builtins.str]] = None,
+            application_version: pulumi.Input[Optional[_builtins.int]] = None,
+            dependent_object_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationPatchDependentObjectMetadataArgs', 'WorkspaceApplicationPatchDependentObjectMetadataArgsDict']]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            error_messages: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            key_map: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationPatchMetadataArgs', 'WorkspaceApplicationPatchMetadataArgsDict']]]]] = None,
+            model_type: pulumi.Input[Optional[_builtins.str]] = None,
+            model_version: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            object_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            object_status: pulumi.Input[Optional[_builtins.int]] = None,
+            object_version: pulumi.Input[Optional[_builtins.int]] = None,
+            parent_reves: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationPatchParentRefArgs', 'WorkspaceApplicationPatchParentRefArgsDict']]]]] = None,
+            patch_object_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationPatchPatchObjectMetadataArgs', 'WorkspaceApplicationPatchPatchObjectMetadataArgsDict']]]]] = None,
+            patch_status: pulumi.Input[Optional[_builtins.str]] = None,
+            patch_type: pulumi.Input[Optional[_builtins.str]] = None,
+            registry_metadata: pulumi.Input[Optional[Union['WorkspaceApplicationPatchRegistryMetadataArgs', 'WorkspaceApplicationPatchRegistryMetadataArgsDict']]] = None,
+            time_patched: pulumi.Input[Optional[_builtins.str]] = None,
+            workspace_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'WorkspaceApplicationPatch':
         """
         Get an existing WorkspaceApplicationPatch resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

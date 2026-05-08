@@ -161,9 +161,9 @@ def get_security_assessment_checks(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_checks = oci.DataSafe.get_security_assessment_checks(security_assessment_id=test_security_assessment["id"],
+    test_security_assessment_checks = oci.datasafe.get_security_assessment_checks(security_assessment_id=test_security_assessment["id"],
         access_level=security_assessment_check_access_level,
-        compartment_id_in_subtree=security_assessment_check_compartment_id_in_subtree,
+        compartment_id_in_subtree=security_assessment_check_compartment_id_in_subtree == "true",
         contains_references=security_assessment_check_contains_references,
         contains_severities=security_assessment_check_contains_severity,
         key=security_assessment_check_key,
@@ -202,14 +202,14 @@ def get_security_assessment_checks(access_level: Optional[_builtins.str] = None,
         key=pulumi.get(__ret__, 'key'),
         security_assessment_id=pulumi.get(__ret__, 'security_assessment_id'),
         suggested_severity=pulumi.get(__ret__, 'suggested_severity'))
-def get_security_assessment_checks_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                          contains_references: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                          contains_severities: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityAssessmentChecksFilterArgs', 'GetSecurityAssessmentChecksFilterArgsDict']]]]] = None,
-                                          key: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                          suggested_severity: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_security_assessment_checks_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                          contains_references: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                          contains_severities: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityAssessmentChecksFilterArgs', 'GetSecurityAssessmentChecksFilterArgsDict']]]]] = None,
+                                          key: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                          suggested_severity: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAssessmentChecksResult]:
     """
     This data source provides the list of Security Assessment Checks in Oracle Cloud Infrastructure Data Safe service.
@@ -222,9 +222,9 @@ def get_security_assessment_checks_output(access_level: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_checks = oci.DataSafe.get_security_assessment_checks(security_assessment_id=test_security_assessment["id"],
+    test_security_assessment_checks = oci.datasafe.get_security_assessment_checks(security_assessment_id=test_security_assessment["id"],
         access_level=security_assessment_check_access_level,
-        compartment_id_in_subtree=security_assessment_check_compartment_id_in_subtree,
+        compartment_id_in_subtree=security_assessment_check_compartment_id_in_subtree == "true",
         contains_references=security_assessment_check_contains_references,
         contains_severities=security_assessment_check_contains_severity,
         key=security_assessment_check_key,

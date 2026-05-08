@@ -285,7 +285,7 @@ def get_cloud_exadata_storage_connector(cloud_exadata_storage_connector_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_storage_connector = oci.DatabaseManagement.get_cloud_exadata_storage_connector(cloud_exadata_storage_connector_id=test_cloud_exadata_storage_connector_oci_database_management_cloud_exadata_storage_connector["id"])
+    test_cloud_exadata_storage_connector = oci.databasemanagement.get_cloud_exadata_storage_connector(cloud_exadata_storage_connector_id=test_cloud_exadata_storage_connector_oci_database_management_cloud_exadata_storage_connector["id"])
     ```
 
 
@@ -317,7 +317,7 @@ def get_cloud_exadata_storage_connector(cloud_exadata_storage_connector_id: Opti
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
-def get_cloud_exadata_storage_connector_output(cloud_exadata_storage_connector_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cloud_exadata_storage_connector_output(cloud_exadata_storage_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudExadataStorageConnectorResult]:
     """
     This data source provides details about a specific Cloud Exadata Storage Connector resource in Oracle Cloud Infrastructure Database Management service.
@@ -330,7 +330,7 @@ def get_cloud_exadata_storage_connector_output(cloud_exadata_storage_connector_i
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_storage_connector = oci.DatabaseManagement.get_cloud_exadata_storage_connector(cloud_exadata_storage_connector_id=test_cloud_exadata_storage_connector_oci_database_management_cloud_exadata_storage_connector["id"])
+    test_cloud_exadata_storage_connector = oci.databasemanagement.get_cloud_exadata_storage_connector(cloud_exadata_storage_connector_id=test_cloud_exadata_storage_connector_oci_database_management_cloud_exadata_storage_connector["id"])
     ```
 
 

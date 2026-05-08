@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseToolsIdentities = oci.DatabaseTools.getDatabaseToolsIdentities({
+ * const testDatabaseToolsIdentities = oci.databasetools.getDatabaseToolsIdentities({
  *     compartmentId: compartmentId,
  *     databaseToolsConnectionId: testDatabaseToolsConnection.id,
  *     displayName: databaseToolsIdentityDisplayName,
@@ -110,7 +110,7 @@ export interface GetDatabaseToolsIdentitiesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseToolsIdentities = oci.DatabaseTools.getDatabaseToolsIdentities({
+ * const testDatabaseToolsIdentities = oci.databasetools.getDatabaseToolsIdentities({
  *     compartmentId: compartmentId,
  *     databaseToolsConnectionId: testDatabaseToolsConnection.id,
  *     displayName: databaseToolsIdentityDisplayName,
@@ -142,18 +142,18 @@ export interface GetDatabaseToolsIdentitiesOutputArgs {
     /**
      * A filter to return only resources when their `databaseToolsConnectionId` matches the specified `databaseToolsConnectionId`.
      */
-    databaseToolsConnectionId?: pulumi.Input<string>;
+    databaseToolsConnectionId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire specified display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.GetDatabaseToolsIdentitiesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.GetDatabaseToolsIdentitiesFilterArgs>[] | undefined>;
     /**
      * A filter to return resources only when their `databaseToolsIdentityLifecycleState` matches the specified `databaseToolsIdentityLifecycleState`.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources with one of the specified type values.
      */
-    types?: pulumi.Input<pulumi.Input<string>[]>;
+    types?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

@@ -27,7 +27,7 @@ import * as utilities from "../utilities";
  *     dedicatedAiClusterId: testDedicatedAiCluster.id,
  *     modelId: testModel.id,
  *     contentModerationConfig: {
- *         isEnabled: endpointContentModerationConfigIsEnabled,
+ *         isEnabled: endpointContentModerationConfigIsEnabled === "true",
  *         mode: endpointContentModerationConfigMode,
  *         modelId: testModel.id,
  *     },
@@ -205,39 +205,39 @@ export interface EndpointState {
     /**
      * (Updatable) The compartment OCID to create the endpoint in.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
      */
-    contentModerationConfig?: pulumi.Input<inputs.GenerativeAi.EndpointContentModerationConfig>;
+    contentModerationConfig?: pulumi.Input<inputs.GenerativeAi.EndpointContentModerationConfig | undefined>;
     /**
      * The OCID of the dedicated AI cluster on which a model will be deployed to.
      */
-    dedicatedAiClusterId?: pulumi.Input<string>;
+    dedicatedAiClusterId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional description of the endpoint.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
      */
-    generativeAiPrivateEndpointId?: pulumi.Input<string>;
+    generativeAiPrivateEndpointId?: pulumi.Input<string | undefined>;
     /**
      * A message describing the current state of the endpoint in more detail that can provide actionable information.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the model that's used to create this endpoint.
      *
@@ -245,23 +245,23 @@ export interface EndpointState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    modelId?: pulumi.Input<string>;
+    modelId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the endpoint.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time that the endpoint was created in the format of an RFC3339 datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -275,7 +275,7 @@ export interface EndpointArgs {
     /**
      * (Updatable) The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses.
      */
-    contentModerationConfig?: pulumi.Input<inputs.GenerativeAi.EndpointContentModerationConfig>;
+    contentModerationConfig?: pulumi.Input<inputs.GenerativeAi.EndpointContentModerationConfig | undefined>;
     /**
      * The OCID of the dedicated AI cluster on which a model will be deployed to.
      */
@@ -283,23 +283,23 @@ export interface EndpointArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional description of the endpoint.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The OCID of the Generative AI private endpoint to which this endpoint is attached to.
      */
-    generativeAiPrivateEndpointId?: pulumi.Input<string>;
+    generativeAiPrivateEndpointId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the model that's used to create this endpoint.
      *

@@ -108,7 +108,7 @@ def get_db_management_private_endpoint_associated_databases(compartment_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_db_management_private_endpoint_associated_databases = oci.DatabaseManagement.get_db_management_private_endpoint_associated_databases(compartment_id=compartment_id,
+    test_db_management_private_endpoint_associated_databases = oci.databasemanagement.get_db_management_private_endpoint_associated_databases(compartment_id=compartment_id,
         db_management_private_endpoint_id=test_db_management_private_endpoint["id"])
     ```
 
@@ -129,9 +129,9 @@ def get_db_management_private_endpoint_associated_databases(compartment_id: Opti
         db_management_private_endpoint_id=pulumi.get(__ret__, 'db_management_private_endpoint_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_db_management_private_endpoint_associated_databases_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                   db_management_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs', 'GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgsDict']]]]] = None,
+def get_db_management_private_endpoint_associated_databases_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                   db_management_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgs', 'GetDbManagementPrivateEndpointAssociatedDatabasesFilterArgsDict']]]]] = None,
                                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbManagementPrivateEndpointAssociatedDatabasesResult]:
     """
     This data source provides the list of Db Management Private Endpoint Associated Databases in Oracle Cloud Infrastructure Database Management service.
@@ -144,7 +144,7 @@ def get_db_management_private_endpoint_associated_databases_output(compartment_i
     import pulumi
     import pulumi_oci as oci
 
-    test_db_management_private_endpoint_associated_databases = oci.DatabaseManagement.get_db_management_private_endpoint_associated_databases(compartment_id=compartment_id,
+    test_db_management_private_endpoint_associated_databases = oci.databasemanagement.get_db_management_private_endpoint_associated_databases(compartment_id=compartment_id,
         db_management_private_endpoint_id=test_db_management_private_endpoint["id"])
     ```
 

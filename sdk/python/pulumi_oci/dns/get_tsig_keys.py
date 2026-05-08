@@ -125,7 +125,7 @@ def get_tsig_keys(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tsig_keys = oci.Dns.get_tsig_keys(compartment_id=compartment_id,
+    test_tsig_keys = oci.dns.get_tsig_keys(compartment_id=compartment_id,
         id=tsig_key_id,
         name=tsig_key_name,
         state=tsig_key_state)
@@ -153,11 +153,11 @@ def get_tsig_keys(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'),
         tsig_keys=pulumi.get(__ret__, 'tsig_keys'))
-def get_tsig_keys_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTsigKeysFilterArgs', 'GetTsigKeysFilterArgsDict']]]]] = None,
-                         id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_tsig_keys_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTsigKeysFilterArgs', 'GetTsigKeysFilterArgsDict']]]]] = None,
+                         id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTsigKeysResult]:
     """
     This data source provides the list of Tsig Keys in Oracle Cloud Infrastructure DNS service.
@@ -170,7 +170,7 @@ def get_tsig_keys_output(compartment_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_tsig_keys = oci.Dns.get_tsig_keys(compartment_id=compartment_id,
+    test_tsig_keys = oci.dns.get_tsig_keys(compartment_id=compartment_id,
         id=tsig_key_id,
         name=tsig_key_name,
         state=tsig_key_state)

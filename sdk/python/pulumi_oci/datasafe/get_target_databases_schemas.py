@@ -131,8 +131,8 @@ def get_target_databases_schemas(filters: Optional[Sequence[Union['GetTargetData
     import pulumi
     import pulumi_oci as oci
 
-    test_target_databases_schemas = oci.DataSafe.get_target_databases_schemas(target_database_id=test_target_database["id"],
-        is_oracle_maintained=target_databases_schema_is_oracle_maintained,
+    test_target_databases_schemas = oci.datasafe.get_target_databases_schemas(target_database_id=test_target_database["id"],
+        is_oracle_maintained=target_databases_schema_is_oracle_maintained == "true",
         schema_names=target_databases_schema_schema_name,
         schema_name_contains=target_databases_schema_schema_name_contains)
     ```
@@ -160,11 +160,11 @@ def get_target_databases_schemas(filters: Optional[Sequence[Union['GetTargetData
         schema_names=pulumi.get(__ret__, 'schema_names'),
         schemas=pulumi.get(__ret__, 'schemas'),
         target_database_id=pulumi.get(__ret__, 'target_database_id'))
-def get_target_databases_schemas_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTargetDatabasesSchemasFilterArgs', 'GetTargetDatabasesSchemasFilterArgsDict']]]]] = None,
-                                        is_oracle_maintained: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                        schema_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        schema_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                        target_database_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_target_databases_schemas_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTargetDatabasesSchemasFilterArgs', 'GetTargetDatabasesSchemasFilterArgsDict']]]]] = None,
+                                        is_oracle_maintained: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                        schema_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        schema_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                        target_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTargetDatabasesSchemasResult]:
     """
     This data source provides the list of Target Databases Schemas in Oracle Cloud Infrastructure Data Safe service.
@@ -177,8 +177,8 @@ def get_target_databases_schemas_output(filters: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_target_databases_schemas = oci.DataSafe.get_target_databases_schemas(target_database_id=test_target_database["id"],
-        is_oracle_maintained=target_databases_schema_is_oracle_maintained,
+    test_target_databases_schemas = oci.datasafe.get_target_databases_schemas(target_database_id=test_target_database["id"],
+        is_oracle_maintained=target_databases_schema_is_oracle_maintained == "true",
         schema_names=target_databases_schema_schema_name,
         schema_name_contains=target_databases_schema_schema_name_contains)
     ```

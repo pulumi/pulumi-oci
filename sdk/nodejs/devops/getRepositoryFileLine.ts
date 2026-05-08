@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryFileLine = oci.DevOps.getRepositoryFileLine({
+ * const testRepositoryFileLine = oci.devops.getRepositoryFileLine({
  *     repositoryId: testRepository.id,
  *     revision: repositoryFileLineRevision,
  *     filePath: repositoryFileLineFilePath,
- *     startLineNumber: repositoryFileLineStartLineNumber,
+ *     startLineNumber: Number(repositoryFileLineStartLineNumber),
  * });
  * ```
  */
@@ -85,11 +85,11 @@ export interface GetRepositoryFileLineResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryFileLine = oci.DevOps.getRepositoryFileLine({
+ * const testRepositoryFileLine = oci.devops.getRepositoryFileLine({
  *     repositoryId: testRepository.id,
  *     revision: repositoryFileLineRevision,
  *     filePath: repositoryFileLineFilePath,
- *     startLineNumber: repositoryFileLineStartLineNumber,
+ *     startLineNumber: Number(repositoryFileLineStartLineNumber),
  * });
  * ```
  */
@@ -122,5 +122,5 @@ export interface GetRepositoryFileLineOutputArgs {
     /**
      * Line number from where to start returning file lines.
      */
-    startLineNumber?: pulumi.Input<number>;
+    startLineNumber?: pulumi.Input<number | undefined>;
 }

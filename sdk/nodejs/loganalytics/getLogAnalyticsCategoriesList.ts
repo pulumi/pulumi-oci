@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsCategoriesList = oci.LogAnalytics.getLogAnalyticsCategoriesList({
+ * const testLogAnalyticsCategoriesList = oci.loganalytics.getLogAnalyticsCategoriesList({
  *     namespace: logAnalyticsCategoriesListNamespace,
  *     categoryDisplayText: logAnalyticsCategoriesListCategoryDisplayText,
  *     categoryType: logAnalyticsCategoriesListCategoryType,
@@ -88,7 +88,7 @@ export interface GetLogAnalyticsCategoriesListResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsCategoriesList = oci.LogAnalytics.getLogAnalyticsCategoriesList({
+ * const testLogAnalyticsCategoriesList = oci.loganalytics.getLogAnalyticsCategoriesList({
  *     namespace: logAnalyticsCategoriesListNamespace,
  *     categoryDisplayText: logAnalyticsCategoriesListCategoryDisplayText,
  *     categoryType: logAnalyticsCategoriesListCategoryType,
@@ -113,15 +113,15 @@ export interface GetLogAnalyticsCategoriesListOutputArgs {
     /**
      * The category display text used for filtering. Only categories matching the specified display name or description will be returned.
      */
-    categoryDisplayText?: pulumi.Input<string>;
+    categoryDisplayText?: pulumi.Input<string | undefined>;
     /**
      * A comma-separated list of category types used for filtering. Only categories of the specified types will be returned.
      */
-    categoryType?: pulumi.Input<string>;
+    categoryType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only log analytics category whose name matches the entire name given. The match is case-insensitive.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Logging Analytics namespace used for the request.
      */

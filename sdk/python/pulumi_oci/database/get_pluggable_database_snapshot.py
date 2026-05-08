@@ -191,7 +191,7 @@ def get_pluggable_database_snapshot(pluggable_database_snapshot_id: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_pluggable_database_snapshot = oci.Database.get_pluggable_database_snapshot(pluggable_database_snapshot_id=test_pluggable_database_snapshot_oci_database_pluggable_database_snapshot["id"])
+    test_pluggable_database_snapshot = oci.database.get_pluggable_database_snapshot(pluggable_database_snapshot_id=test_pluggable_database_snapshot_oci_database_pluggable_database_snapshot["id"])
     ```
 
 
@@ -215,7 +215,7 @@ def get_pluggable_database_snapshot(pluggable_database_snapshot_id: Optional[_bu
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_pluggable_database_snapshot_output(pluggable_database_snapshot_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_pluggable_database_snapshot_output(pluggable_database_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPluggableDatabaseSnapshotResult]:
     """
     This data source provides details about a specific Pluggable Database Snapshot resource in Oracle Cloud Infrastructure Database service.
@@ -228,7 +228,7 @@ def get_pluggable_database_snapshot_output(pluggable_database_snapshot_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_pluggable_database_snapshot = oci.Database.get_pluggable_database_snapshot(pluggable_database_snapshot_id=test_pluggable_database_snapshot_oci_database_pluggable_database_snapshot["id"])
+    test_pluggable_database_snapshot = oci.database.get_pluggable_database_snapshot(pluggable_database_snapshot_id=test_pluggable_database_snapshot_oci_database_pluggable_database_snapshot["id"])
     ```
 
 

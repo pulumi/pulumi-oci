@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTraceAggregatedSnapshotData = oci.ApmTraces.getTraceAggregatedSnapshotData({
+ * const testTraceAggregatedSnapshotData = oci.apmtraces.getTraceAggregatedSnapshotData({
  *     apmDomainId: testApmDomain.id,
  *     traceKey: traceAggregatedSnapshotDataTraceKey,
  *     serverName: traceAggregatedSnapshotDataServerName,
@@ -99,7 +99,7 @@ export interface GetTraceAggregatedSnapshotDataResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTraceAggregatedSnapshotData = oci.ApmTraces.getTraceAggregatedSnapshotData({
+ * const testTraceAggregatedSnapshotData = oci.apmtraces.getTraceAggregatedSnapshotData({
  *     apmDomainId: testApmDomain.id,
  *     traceKey: traceAggregatedSnapshotDataTraceKey,
  *     serverName: traceAggregatedSnapshotDataServerName,
@@ -132,19 +132,19 @@ export interface GetTraceAggregatedSnapshotDataOutputArgs {
     /**
      * Name of the server.
      */
-    serverName?: pulumi.Input<string>;
+    serverName?: pulumi.Input<string | undefined>;
     /**
      * Name associated with the service.
      */
-    serviceName?: pulumi.Input<string>;
+    serviceName?: pulumi.Input<string | undefined>;
     /**
      * Unique Application Performance Monitoring span identifier (spanId).
      */
-    spanKey?: pulumi.Input<string>;
+    spanKey?: pulumi.Input<string | undefined>;
     /**
      * Name of the span associated with the trace.
      */
-    spanName?: pulumi.Input<string>;
+    spanName?: pulumi.Input<string | undefined>;
     /**
      * Unique Application Performance Monitoring trace identifier (traceId).
      */

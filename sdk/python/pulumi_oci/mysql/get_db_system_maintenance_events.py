@@ -165,7 +165,7 @@ def get_db_system_maintenance_events(db_system_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_maintenance_events = oci.Mysql.get_db_system_maintenance_events(db_system_id=test_mysql_db_system["id"],
+    test_db_system_maintenance_events = oci.mysql.get_db_system_maintenance_events(db_system_id=test_mysql_db_system["id"],
         maintenance_action=db_system_maintenance_event_maintenance_action,
         maintenance_status=db_system_maintenance_event_maintenance_status,
         maintenance_type=db_system_maintenance_event_maintenance_type,
@@ -202,13 +202,13 @@ def get_db_system_maintenance_events(db_system_id: Optional[_builtins.str] = Non
         maintenance_type=pulumi.get(__ret__, 'maintenance_type'),
         mysql_version_after_maintenance=pulumi.get(__ret__, 'mysql_version_after_maintenance'),
         mysql_version_before_maintenance=pulumi.get(__ret__, 'mysql_version_before_maintenance'))
-def get_db_system_maintenance_events_output(db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbSystemMaintenanceEventsFilterArgs', 'GetDbSystemMaintenanceEventsFilterArgsDict']]]]] = None,
-                                            maintenance_action: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            maintenance_status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            maintenance_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            mysql_version_after_maintenance: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            mysql_version_before_maintenance: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_db_system_maintenance_events_output(db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbSystemMaintenanceEventsFilterArgs', 'GetDbSystemMaintenanceEventsFilterArgsDict']]]]] = None,
+                                            maintenance_action: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            maintenance_status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            maintenance_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            mysql_version_after_maintenance: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            mysql_version_before_maintenance: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemMaintenanceEventsResult]:
     """
     This data source provides the list of Db System Maintenance Events in Oracle Cloud Infrastructure MySQL Database service.
@@ -221,7 +221,7 @@ def get_db_system_maintenance_events_output(db_system_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_db_system_maintenance_events = oci.Mysql.get_db_system_maintenance_events(db_system_id=test_mysql_db_system["id"],
+    test_db_system_maintenance_events = oci.mysql.get_db_system_maintenance_events(db_system_id=test_mysql_db_system["id"],
         maintenance_action=db_system_maintenance_event_maintenance_action,
         maintenance_status=db_system_maintenance_event_maintenance_status,
         maintenance_type=db_system_maintenance_event_maintenance_type,

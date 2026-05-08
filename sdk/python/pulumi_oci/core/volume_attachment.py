@@ -24,15 +24,15 @@ class VolumeAttachmentArgs:
                  attachment_type: pulumi.Input[_builtins.str],
                  instance_id: pulumi.Input[_builtins.str],
                  volume_id: pulumi.Input[_builtins.str],
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 device: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption_in_transit_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_agent_auto_iscsi_login_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_read_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_shareable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 use_chap: Optional[pulumi.Input[_builtins.bool]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 device: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_in_transit_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_agent_auto_iscsi_login_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_pv_encryption_in_transit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_read_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_shareable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 use_chap: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a VolumeAttachment resource.
 
@@ -121,141 +121,141 @@ class VolumeAttachmentArgs:
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     @_utilities.deprecated("""The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def device(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def device(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
         """
         return pulumi.get(self, "device")
 
     @device.setter
-    def device(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def device(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "device", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptionInTransitType")
-    def encryption_in_transit_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def encryption_in_transit_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Refer the top-level definition of encryptionInTransitType. The default value is NONE.
         """
         return pulumi.get(self, "encryption_in_transit_type")
 
     @encryption_in_transit_type.setter
-    def encryption_in_transit_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def encryption_in_transit_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encryption_in_transit_type", value)
 
     @_builtins.property
     @pulumi.getter(name="isAgentAutoIscsiLoginEnabled")
-    def is_agent_auto_iscsi_login_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_agent_auto_iscsi_login_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
         """
         return pulumi.get(self, "is_agent_auto_iscsi_login_enabled")
 
     @is_agent_auto_iscsi_login_enabled.setter
-    def is_agent_auto_iscsi_login_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_agent_auto_iscsi_login_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_agent_auto_iscsi_login_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
-    def is_pv_encryption_in_transit_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_pv_encryption_in_transit_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
     @is_pv_encryption_in_transit_enabled.setter
-    def is_pv_encryption_in_transit_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_pv_encryption_in_transit_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_pv_encryption_in_transit_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isReadOnly")
-    def is_read_only(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_read_only(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the attachment was created in read-only mode.
         """
         return pulumi.get(self, "is_read_only")
 
     @is_read_only.setter
-    def is_read_only(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_read_only(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_read_only", value)
 
     @_builtins.property
     @pulumi.getter(name="isShareable")
-    def is_shareable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_shareable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
         """
         return pulumi.get(self, "is_shareable")
 
     @is_shareable.setter
-    def is_shareable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_shareable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_shareable", value)
 
     @_builtins.property
     @pulumi.getter(name="useChap")
-    def use_chap(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def use_chap(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to use CHAP authentication for the volume attachment. Defaults to false.
         """
         return pulumi.get(self, "use_chap")
 
     @use_chap.setter
-    def use_chap(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def use_chap(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "use_chap", value)
 
 
 @pulumi.input_type
 class _VolumeAttachmentState:
     def __init__(__self__, *,
-                 attachment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 chap_secret: Optional[pulumi.Input[_builtins.str]] = None,
-                 chap_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 device: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption_in_transit_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv4: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv6: Optional[pulumi.Input[_builtins.str]] = None,
-                 iqn: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_agent_auto_iscsi_login_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_multipath: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_read_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_shareable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_volume_created_during_launch: Optional[pulumi.Input[_builtins.bool]] = None,
-                 iscsi_login_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 multipath_devices: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeAttachmentMultipathDeviceArgs']]]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 use_chap: Optional[pulumi.Input[_builtins.bool]] = None,
-                 volume_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 chap_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 chap_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 device: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_in_transit_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv4: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6: pulumi.Input[Optional[_builtins.str]] = None,
+                 iqn: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_agent_auto_iscsi_login_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_multipath: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_pv_encryption_in_transit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_read_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_shareable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_volume_created_during_launch: pulumi.Input[Optional[_builtins.bool]] = None,
+                 iscsi_login_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 multipath_devices: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeAttachmentMultipathDeviceArgs']]]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_chap: pulumi.Input[Optional[_builtins.bool]] = None,
+                 volume_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VolumeAttachment resources.
 
@@ -345,296 +345,296 @@ class _VolumeAttachmentState:
 
     @_builtins.property
     @pulumi.getter(name="attachmentType")
-    def attachment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attachment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of volume. The only supported values are "iscsi" and "paravirtualized".
         """
         return pulumi.get(self, "attachment_type")
 
     @attachment_type.setter
-    def attachment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attachment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attachment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="chapSecret")
-    def chap_secret(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def chap_secret(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name. (Also called the "CHAP password".)
         """
         return pulumi.get(self, "chap_secret")
 
     @chap_secret.setter
-    def chap_secret(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def chap_secret(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "chap_secret", value)
 
     @_builtins.property
     @pulumi.getter(name="chapUsername")
-    def chap_username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def chap_username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.  Example: `ocid1.volume.oc1.phx.<unique_ID>`
         """
         return pulumi.get(self, "chap_username")
 
     @chap_username.setter
-    def chap_username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def chap_username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "chap_username", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     @_utilities.deprecated("""The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def device(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def device(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
         """
         return pulumi.get(self, "device")
 
     @device.setter
-    def device(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def device(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "device", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="encryptionInTransitType")
-    def encryption_in_transit_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def encryption_in_transit_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Refer the top-level definition of encryptionInTransitType. The default value is NONE.
         """
         return pulumi.get(self, "encryption_in_transit_type")
 
     @encryption_in_transit_type.setter
-    def encryption_in_transit_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def encryption_in_transit_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encryption_in_transit_type", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceId")
-    def instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the instance.
         """
         return pulumi.get(self, "instance_id")
 
     @instance_id.setter
-    def instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def ipv4(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv4(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The volume's iSCSI IP address.  Example: `169.254.2.2`
         """
         return pulumi.get(self, "ipv4")
 
     @ipv4.setter
-    def ipv4(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv4(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv4", value)
 
     @_builtins.property
     @pulumi.getter
-    def ipv6(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv6(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The volume's iSCSI IPv6 address.  Example: `2001:db8::1/64`
         """
         return pulumi.get(self, "ipv6")
 
     @ipv6.setter
-    def ipv6(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv6(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv6", value)
 
     @_builtins.property
     @pulumi.getter
-    def iqn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iqn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
         """
         return pulumi.get(self, "iqn")
 
     @iqn.setter
-    def iqn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iqn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iqn", value)
 
     @_builtins.property
     @pulumi.getter(name="isAgentAutoIscsiLoginEnabled")
-    def is_agent_auto_iscsi_login_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_agent_auto_iscsi_login_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
         """
         return pulumi.get(self, "is_agent_auto_iscsi_login_enabled")
 
     @is_agent_auto_iscsi_login_enabled.setter
-    def is_agent_auto_iscsi_login_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_agent_auto_iscsi_login_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_agent_auto_iscsi_login_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isMultipath")
-    def is_multipath(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_multipath(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
         """
         return pulumi.get(self, "is_multipath")
 
     @is_multipath.setter
-    def is_multipath(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_multipath(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_multipath", value)
 
     @_builtins.property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
-    def is_pv_encryption_in_transit_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_pv_encryption_in_transit_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
     @is_pv_encryption_in_transit_enabled.setter
-    def is_pv_encryption_in_transit_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_pv_encryption_in_transit_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_pv_encryption_in_transit_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isReadOnly")
-    def is_read_only(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_read_only(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the attachment was created in read-only mode.
         """
         return pulumi.get(self, "is_read_only")
 
     @is_read_only.setter
-    def is_read_only(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_read_only(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_read_only", value)
 
     @_builtins.property
     @pulumi.getter(name="isShareable")
-    def is_shareable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_shareable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
         """
         return pulumi.get(self, "is_shareable")
 
     @is_shareable.setter
-    def is_shareable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_shareable(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_shareable", value)
 
     @_builtins.property
     @pulumi.getter(name="isVolumeCreatedDuringLaunch")
-    def is_volume_created_during_launch(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_volume_created_during_launch(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
         """
         return pulumi.get(self, "is_volume_created_during_launch")
 
     @is_volume_created_during_launch.setter
-    def is_volume_created_during_launch(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_volume_created_during_launch(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_volume_created_during_launch", value)
 
     @_builtins.property
     @pulumi.getter(name="iscsiLoginState")
-    def iscsi_login_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def iscsi_login_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
         """
         return pulumi.get(self, "iscsi_login_state")
 
     @iscsi_login_state.setter
-    def iscsi_login_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def iscsi_login_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "iscsi_login_state", value)
 
     @_builtins.property
     @pulumi.getter(name="multipathDevices")
-    def multipath_devices(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VolumeAttachmentMultipathDeviceArgs']]]]:
+    def multipath_devices(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VolumeAttachmentMultipathDeviceArgs']]]]:
         """
         A list of secondary multipath devices
         """
         return pulumi.get(self, "multipath_devices")
 
     @multipath_devices.setter
-    def multipath_devices(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeAttachmentMultipathDeviceArgs']]]]):
+    def multipath_devices(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeAttachmentMultipathDeviceArgs']]]]):
         pulumi.set(self, "multipath_devices", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The volume's iSCSI port, usually port 860 or 3260.  Example: `3260`
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the volume attachment.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="useChap")
-    def use_chap(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def use_chap(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to use CHAP authentication for the volume attachment. Defaults to false.
         """
         return pulumi.get(self, "use_chap")
 
     @use_chap.setter
-    def use_chap(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def use_chap(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "use_chap", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeId")
-    def volume_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the volume.
 
@@ -645,7 +645,7 @@ class _VolumeAttachmentState:
         return pulumi.get(self, "volume_id")
 
     @volume_id.setter
-    def volume_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume_id", value)
 
 
@@ -655,18 +655,18 @@ class VolumeAttachment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attachment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 device: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption_in_transit_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_agent_auto_iscsi_login_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_read_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_shareable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 use_chap: Optional[pulumi.Input[_builtins.bool]] = None,
-                 volume_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 device: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_in_transit_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_agent_auto_iscsi_login_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_pv_encryption_in_transit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_read_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_shareable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 use_chap: pulumi.Input[Optional[_builtins.bool]] = None,
+                 volume_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Volume Attachment resource in Oracle Cloud Infrastructure Core service.
@@ -689,11 +689,11 @@ class VolumeAttachment(pulumi.CustomResource):
             device=volume_attachment_device,
             display_name=volume_attachment_display_name,
             encryption_in_transit_type=volume_attachment_encryption_in_transit_type,
-            is_agent_auto_iscsi_login_enabled=volume_attachment_is_agent_auto_iscsi_login_enabled,
-            is_pv_encryption_in_transit_enabled=volume_attachment_is_pv_encryption_in_transit_enabled,
-            is_read_only=volume_attachment_is_read_only,
-            is_shareable=volume_attachment_is_shareable,
-            use_chap=volume_attachment_use_chap)
+            is_agent_auto_iscsi_login_enabled=volume_attachment_is_agent_auto_iscsi_login_enabled == "true",
+            is_pv_encryption_in_transit_enabled=volume_attachment_is_pv_encryption_in_transit_enabled == "true",
+            is_read_only=volume_attachment_is_read_only == "true",
+            is_shareable=volume_attachment_is_shareable == "true",
+            use_chap=volume_attachment_use_chap == "true")
         ```
 
         ## Import
@@ -751,11 +751,11 @@ class VolumeAttachment(pulumi.CustomResource):
             device=volume_attachment_device,
             display_name=volume_attachment_display_name,
             encryption_in_transit_type=volume_attachment_encryption_in_transit_type,
-            is_agent_auto_iscsi_login_enabled=volume_attachment_is_agent_auto_iscsi_login_enabled,
-            is_pv_encryption_in_transit_enabled=volume_attachment_is_pv_encryption_in_transit_enabled,
-            is_read_only=volume_attachment_is_read_only,
-            is_shareable=volume_attachment_is_shareable,
-            use_chap=volume_attachment_use_chap)
+            is_agent_auto_iscsi_login_enabled=volume_attachment_is_agent_auto_iscsi_login_enabled == "true",
+            is_pv_encryption_in_transit_enabled=volume_attachment_is_pv_encryption_in_transit_enabled == "true",
+            is_read_only=volume_attachment_is_read_only == "true",
+            is_shareable=volume_attachment_is_shareable == "true",
+            use_chap=volume_attachment_use_chap == "true")
         ```
 
         ## Import
@@ -782,18 +782,18 @@ class VolumeAttachment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 attachment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 device: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 encryption_in_transit_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_agent_auto_iscsi_login_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_read_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_shareable: Optional[pulumi.Input[_builtins.bool]] = None,
-                 use_chap: Optional[pulumi.Input[_builtins.bool]] = None,
-                 volume_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 device: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_in_transit_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_agent_auto_iscsi_login_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_pv_encryption_in_transit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_read_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_shareable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 use_chap: pulumi.Input[Optional[_builtins.bool]] = None,
+                 volume_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -844,31 +844,31 @@ class VolumeAttachment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            attachment_type: Optional[pulumi.Input[_builtins.str]] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            chap_secret: Optional[pulumi.Input[_builtins.str]] = None,
-            chap_username: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            device: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            encryption_in_transit_type: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-            ipv4: Optional[pulumi.Input[_builtins.str]] = None,
-            ipv6: Optional[pulumi.Input[_builtins.str]] = None,
-            iqn: Optional[pulumi.Input[_builtins.str]] = None,
-            is_agent_auto_iscsi_login_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_multipath: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_read_only: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_shareable: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_volume_created_during_launch: Optional[pulumi.Input[_builtins.bool]] = None,
-            iscsi_login_state: Optional[pulumi.Input[_builtins.str]] = None,
-            multipath_devices: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeAttachmentMultipathDeviceArgs', 'VolumeAttachmentMultipathDeviceArgsDict']]]]] = None,
-            port: Optional[pulumi.Input[_builtins.int]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            use_chap: Optional[pulumi.Input[_builtins.bool]] = None,
-            volume_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'VolumeAttachment':
+            attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            chap_secret: pulumi.Input[Optional[_builtins.str]] = None,
+            chap_username: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            device: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            encryption_in_transit_type: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ipv4: pulumi.Input[Optional[_builtins.str]] = None,
+            ipv6: pulumi.Input[Optional[_builtins.str]] = None,
+            iqn: pulumi.Input[Optional[_builtins.str]] = None,
+            is_agent_auto_iscsi_login_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_multipath: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_pv_encryption_in_transit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_read_only: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_shareable: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_volume_created_during_launch: pulumi.Input[Optional[_builtins.bool]] = None,
+            iscsi_login_state: pulumi.Input[Optional[_builtins.str]] = None,
+            multipath_devices: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeAttachmentMultipathDeviceArgs', 'VolumeAttachmentMultipathDeviceArgsDict']]]]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            use_chap: pulumi.Input[Optional[_builtins.bool]] = None,
+            volume_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'VolumeAttachment':
         """
         Get an existing VolumeAttachment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -107,7 +107,7 @@ export interface RedisClusterDetachOciCacheUserState {
     /**
      * List of Oracle Cloud Infrastructure cache user unique IDs (OCIDs).
      */
-    ociCacheUsers?: pulumi.Input<pulumi.Input<string>[]>;
+    ociCacheUsers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
      *
@@ -115,7 +115,7 @@ export interface RedisClusterDetachOciCacheUserState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    redisClusterId?: pulumi.Input<string>;
+    redisClusterId?: pulumi.Input<string | undefined>;
 }
 
 /**

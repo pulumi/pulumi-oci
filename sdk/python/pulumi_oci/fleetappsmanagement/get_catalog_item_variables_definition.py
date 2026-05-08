@@ -120,7 +120,7 @@ def get_catalog_item_variables_definition(catalog_item_id: Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog_item_variables_definition = oci.FleetAppsManagement.get_catalog_item_variables_definition(catalog_item_id=test_catalog_item["id"])
+    test_catalog_item_variables_definition = oci.fleetappsmanagement.get_catalog_item_variables_definition(catalog_item_id=test_catalog_item["id"])
     ```
 
 
@@ -138,7 +138,7 @@ def get_catalog_item_variables_definition(catalog_item_id: Optional[_builtins.st
         id=pulumi.get(__ret__, 'id'),
         schema_documents=pulumi.get(__ret__, 'schema_documents'),
         system_tags=pulumi.get(__ret__, 'system_tags'))
-def get_catalog_item_variables_definition_output(catalog_item_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_catalog_item_variables_definition_output(catalog_item_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCatalogItemVariablesDefinitionResult]:
     """
     This data source provides details about a specific Catalog Item Variables Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -151,7 +151,7 @@ def get_catalog_item_variables_definition_output(catalog_item_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog_item_variables_definition = oci.FleetAppsManagement.get_catalog_item_variables_definition(catalog_item_id=test_catalog_item["id"])
+    test_catalog_item_variables_definition = oci.fleetappsmanagement.get_catalog_item_variables_definition(catalog_item_id=test_catalog_item["id"])
     ```
 
 

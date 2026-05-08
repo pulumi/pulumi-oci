@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSuppression = oci.Email.getSuppression({
+ * const testSuppression = oci.email.getSuppression({
  *     suppressionId: testSuppressionOciEmailSuppression.id,
  * });
  * ```
@@ -92,7 +92,7 @@ export interface GetSuppressionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSuppression = oci.Email.getSuppression({
+ * const testSuppression = oci.email.getSuppression({
  *     suppressionId: testSuppressionOciEmailSuppression.id,
  * });
  * ```

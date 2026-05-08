@@ -27,31 +27,31 @@ import * as utilities from "../utilities";
  * const testBackendSet = new oci.loadbalancer.BackendSet("test_backend_set", {
  *     healthChecker: {
  *         protocol: backendSetHealthCheckerProtocol,
- *         intervalMs: backendSetHealthCheckerIntervalMs,
- *         isForcePlainText: backendSetHealthCheckerIsForcePlainText,
- *         port: backendSetHealthCheckerPort,
+ *         intervalMs: Number(backendSetHealthCheckerIntervalMs),
+ *         isForcePlainText: backendSetHealthCheckerIsForcePlainText === "true",
+ *         port: Number(backendSetHealthCheckerPort),
  *         responseBodyRegex: backendSetHealthCheckerResponseBodyRegex,
- *         retries: backendSetHealthCheckerRetries,
- *         returnCode: backendSetHealthCheckerReturnCode,
- *         timeoutInMillis: backendSetHealthCheckerTimeoutInMillis,
+ *         retries: Number(backendSetHealthCheckerRetries),
+ *         returnCode: Number(backendSetHealthCheckerReturnCode),
+ *         timeoutInMillis: Number(backendSetHealthCheckerTimeoutInMillis),
  *         urlPath: backendSetHealthCheckerUrlPath,
  *     },
  *     loadBalancerId: testLoadBalancer.id,
  *     name: backendSetName,
  *     policy: backendSetPolicy,
- *     backendMaxConnections: backendSetBackendMaxConnections,
+ *     backendMaxConnections: Number(backendSetBackendMaxConnections),
  *     lbCookieSessionPersistenceConfiguration: {
  *         cookieName: backendSetLbCookieSessionPersistenceConfigurationCookieName,
- *         disableFallback: backendSetLbCookieSessionPersistenceConfigurationDisableFallback,
+ *         disableFallback: backendSetLbCookieSessionPersistenceConfigurationDisableFallback === "true",
  *         domain: backendSetLbCookieSessionPersistenceConfigurationDomain,
- *         isHttpOnly: backendSetLbCookieSessionPersistenceConfigurationIsHttpOnly,
- *         isSecure: backendSetLbCookieSessionPersistenceConfigurationIsSecure,
- *         maxAgeInSeconds: backendSetLbCookieSessionPersistenceConfigurationMaxAgeInSeconds,
+ *         isHttpOnly: backendSetLbCookieSessionPersistenceConfigurationIsHttpOnly === "true",
+ *         isSecure: backendSetLbCookieSessionPersistenceConfigurationIsSecure === "true",
+ *         maxAgeInSeconds: Number(backendSetLbCookieSessionPersistenceConfigurationMaxAgeInSeconds),
  *         path: backendSetLbCookieSessionPersistenceConfigurationPath,
  *     },
  *     sessionPersistenceConfiguration: {
  *         cookieName: backendSetSessionPersistenceConfigurationCookieName,
- *         disableFallback: backendSetSessionPersistenceConfigurationDisableFallback,
+ *         disableFallback: backendSetSessionPersistenceConfigurationDisableFallback === "true",
  *     },
  *     sslConfiguration: {
  *         certificateIds: backendSetSslConfigurationCertificateIds,
@@ -60,8 +60,8 @@ import * as utilities from "../utilities";
  *         protocols: backendSetSslConfigurationProtocols,
  *         serverOrderPreference: backendSetSslConfigurationServerOrderPreference,
  *         trustedCertificateAuthorityIds: backendSetSslConfigurationTrustedCertificateAuthorityIds,
- *         verifyDepth: backendSetSslConfigurationVerifyDepth,
- *         verifyPeerCertificate: backendSetSslConfigurationVerifyPeerCertificate,
+ *         verifyDepth: Number(backendSetSslConfigurationVerifyDepth),
+ *         verifyPeerCertificate: backendSetSslConfigurationVerifyPeerCertificate === "true",
  *     },
  * });
  * ```
@@ -240,15 +240,15 @@ export interface BackendSetState {
      *
      * Example: `300`
      */
-    backendMaxConnections?: pulumi.Input<number>;
+    backendMaxConnections?: pulumi.Input<number | undefined>;
     /**
      * (Updatable)
      */
-    backends?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.BackendSetBackend>[]>;
+    backends?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.BackendSetBackend>[] | undefined>;
     /**
      * (Updatable) The health check policy's configuration details.
      */
-    healthChecker?: pulumi.Input<inputs.LoadBalancer.BackendSetHealthChecker>;
+    healthChecker?: pulumi.Input<inputs.LoadBalancer.BackendSetHealthChecker | undefined>;
     /**
      * (Updatable) The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
      *
@@ -266,11 +266,11 @@ export interface BackendSetState {
      *
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
-    lbCookieSessionPersistenceConfiguration?: pulumi.Input<inputs.LoadBalancer.BackendSetLbCookieSessionPersistenceConfiguration>;
+    lbCookieSessionPersistenceConfiguration?: pulumi.Input<inputs.LoadBalancer.BackendSetLbCookieSessionPersistenceConfiguration | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a backend set.
      */
-    loadBalancerId?: pulumi.Input<string>;
+    loadBalancerId?: pulumi.Input<string | undefined>;
     /**
      * A friendly name for the backend set. It must be unique and it cannot be changed.
      *
@@ -278,11 +278,11 @@ export interface BackendSetState {
      *
      * Example: `exampleBackendSet`
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The load balancer policy for the backend set. To get a list of available policies, use the [ListPolicies](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies) operation.  Example: `LEAST_CONNECTIONS`
      */
-    policy?: pulumi.Input<string>;
+    policy?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The configuration details for implementing session persistence based on a user-specified cookie name (application cookie stickiness).
      *
@@ -298,14 +298,14 @@ export interface BackendSetState {
      *
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
-    sessionPersistenceConfiguration?: pulumi.Input<inputs.LoadBalancer.BackendSetSessionPersistenceConfiguration>;
+    sessionPersistenceConfiguration?: pulumi.Input<inputs.LoadBalancer.BackendSetSessionPersistenceConfiguration | undefined>;
     /**
      * (Updatable) The load balancer's SSL handling configuration details.
      *
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
-    sslConfiguration?: pulumi.Input<inputs.LoadBalancer.BackendSetSslConfiguration>;
-    state?: pulumi.Input<string>;
+    sslConfiguration?: pulumi.Input<inputs.LoadBalancer.BackendSetSslConfiguration | undefined>;
+    state?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -319,7 +319,7 @@ export interface BackendSetArgs {
      *
      * Example: `300`
      */
-    backendMaxConnections?: pulumi.Input<number>;
+    backendMaxConnections?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The health check policy's configuration details.
      */
@@ -341,7 +341,7 @@ export interface BackendSetArgs {
      *
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
-    lbCookieSessionPersistenceConfiguration?: pulumi.Input<inputs.LoadBalancer.BackendSetLbCookieSessionPersistenceConfiguration>;
+    lbCookieSessionPersistenceConfiguration?: pulumi.Input<inputs.LoadBalancer.BackendSetLbCookieSessionPersistenceConfiguration | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a backend set.
      */
@@ -353,7 +353,7 @@ export interface BackendSetArgs {
      *
      * Example: `exampleBackendSet`
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The load balancer policy for the backend set. To get a list of available policies, use the [ListPolicies](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies) operation.  Example: `LEAST_CONNECTIONS`
      */
@@ -373,11 +373,11 @@ export interface BackendSetArgs {
      *
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
-    sessionPersistenceConfiguration?: pulumi.Input<inputs.LoadBalancer.BackendSetSessionPersistenceConfiguration>;
+    sessionPersistenceConfiguration?: pulumi.Input<inputs.LoadBalancer.BackendSetSessionPersistenceConfiguration | undefined>;
     /**
      * (Updatable) The load balancer's SSL handling configuration details.
      *
      * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      */
-    sslConfiguration?: pulumi.Input<inputs.LoadBalancer.BackendSetSslConfiguration>;
+    sslConfiguration?: pulumi.Input<inputs.LoadBalancer.BackendSetSslConfiguration | undefined>;
 }

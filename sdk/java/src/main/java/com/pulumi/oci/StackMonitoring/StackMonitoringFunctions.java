@@ -103,8 +103,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -145,8 +145,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -187,8 +187,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -229,8 +229,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -271,8 +271,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -313,8 +313,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -361,8 +361,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -409,8 +409,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -457,8 +457,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -505,8 +505,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -553,8 +553,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -601,8 +601,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -649,8 +649,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -703,8 +703,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -757,8 +757,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -811,8 +811,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -865,8 +865,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -919,8 +919,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -961,8 +961,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1003,8 +1003,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1045,8 +1045,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1087,8 +1087,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1129,8 +1129,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1174,8 +1174,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1219,8 +1219,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1264,8 +1264,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1309,8 +1309,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetConfigsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1354,8 +1354,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetDefinedMonitoringTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1398,8 +1398,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetDefinedMonitoringTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1442,8 +1442,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetDefinedMonitoringTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1486,8 +1486,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetDefinedMonitoringTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1530,8 +1530,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetDefinedMonitoringTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1574,8 +1574,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1616,8 +1616,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1658,8 +1658,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1700,8 +1700,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1742,8 +1742,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1784,8 +1784,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1827,8 +1827,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1870,8 +1870,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1913,8 +1913,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1956,8 +1956,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobLogsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1999,8 +1999,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2042,8 +2042,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2085,8 +2085,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2128,8 +2128,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2171,8 +2171,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2214,8 +2214,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMaintenanceWindowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2256,8 +2256,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMaintenanceWindowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2298,8 +2298,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMaintenanceWindowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2340,8 +2340,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMaintenanceWindowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2382,8 +2382,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMaintenanceWindowArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2424,8 +2424,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMaintenanceWindowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2469,8 +2469,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMaintenanceWindowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2514,8 +2514,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMaintenanceWindowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2559,8 +2559,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMaintenanceWindowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2604,8 +2604,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMaintenanceWindowsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2649,8 +2649,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2691,8 +2691,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2733,8 +2733,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2775,8 +2775,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2817,8 +2817,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2859,8 +2859,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2907,8 +2907,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2955,8 +2955,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3003,8 +3003,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3051,8 +3051,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3099,8 +3099,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3147,8 +3147,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMetricExtensionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3195,8 +3195,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3237,8 +3237,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3279,8 +3279,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3321,8 +3321,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3363,8 +3363,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3405,8 +3405,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTaskArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3447,8 +3447,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTaskArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3489,8 +3489,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTaskArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3531,8 +3531,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTaskArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3573,8 +3573,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTaskArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3615,8 +3615,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTasksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3658,8 +3658,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTasksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3701,8 +3701,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTasksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3744,8 +3744,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTasksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3787,8 +3787,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTasksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3830,8 +3830,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3872,8 +3872,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3914,8 +3914,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3956,8 +3956,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3998,8 +3998,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypeArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4045,8 +4045,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4100,8 +4100,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4155,8 +4155,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4210,8 +4210,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4265,8 +4265,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourceTypesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4315,8 +4315,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4360,8 +4360,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4405,8 +4405,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4450,8 +4450,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4495,8 +4495,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoredResourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4540,8 +4540,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4582,8 +4582,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4624,8 +4624,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4666,8 +4666,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4708,8 +4708,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4750,8 +4750,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateAlarmConditionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4793,8 +4793,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateAlarmConditionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4836,8 +4836,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateAlarmConditionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4879,8 +4879,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateAlarmConditionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4922,8 +4922,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateAlarmConditionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4965,8 +4965,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateAlarmConditionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5011,8 +5011,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateAlarmConditionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5057,8 +5057,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateAlarmConditionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5103,8 +5103,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateAlarmConditionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5149,8 +5149,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplateAlarmConditionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5195,8 +5195,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5244,8 +5244,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5293,8 +5293,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5342,8 +5342,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5391,8 +5391,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5440,8 +5440,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5489,8 +5489,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetMonitoringTemplatesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5538,8 +5538,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5580,8 +5580,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5622,8 +5622,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5664,8 +5664,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5706,8 +5706,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5748,8 +5748,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5791,8 +5791,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5834,8 +5834,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5877,8 +5877,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -5920,8 +5920,8 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
      * import com.pulumi.oci.StackMonitoring.inputs.GetProcessSetsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRunLog = oci.DataFlow.getRunLog({
+ * const testRunLog = oci.dataflow.getRunLog({
  *     name: runLogName,
  *     runId: testRun.id,
  * });
@@ -80,7 +80,7 @@ export interface GetRunLogResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRunLog = oci.DataFlow.getRunLog({
+ * const testRunLog = oci.dataflow.getRunLog({
  *     name: runLogName,
  *     runId: testRun.id,
  * });
@@ -103,7 +103,7 @@ export interface GetRunLogOutputArgs {
      * Encodes the downloaded content in base64. It is recommended to set this to `true` for binary content to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
      * If passing the base64 encoded content to a `localFile` resource, please use the `contentBase64` attribute of the `localFile` resource.
      */
-    base64EncodeContent?: pulumi.Input<boolean>;
+    base64EncodeContent?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the log. Avoid entering confidential information.
      */

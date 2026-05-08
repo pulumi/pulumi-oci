@@ -96,7 +96,7 @@ def get_query(query_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_query = oci.MeteringComputation.get_query(query_id=test_query_oci_metering_computation_query["id"])
+    test_query = oci.meteringcomputation.get_query(query_id=test_query_oci_metering_computation_query["id"])
     ```
 
 
@@ -112,7 +112,7 @@ def get_query(query_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         query_definitions=pulumi.get(__ret__, 'query_definitions'),
         query_id=pulumi.get(__ret__, 'query_id'))
-def get_query_output(query_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_query_output(query_id: pulumi.Input[Optional[_builtins.str]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetQueryResult]:
     """
     This data source provides details about a specific Query resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -125,7 +125,7 @@ def get_query_output(query_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_query = oci.MeteringComputation.get_query(query_id=test_query_oci_metering_computation_query["id"])
+    test_query = oci.meteringcomputation.get_query(query_id=test_query_oci_metering_computation_query["id"])
     ```
 
 

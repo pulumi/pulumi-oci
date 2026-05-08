@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  *
  * const testKafkaClusterConfigVersion = oci.oci.getManagedKafkaKafkaClusterConfigVersion({
  *     kafkaClusterConfigId: testKafkaClusterConfig.id,
- *     versionNumber: kafkaClusterConfigVersionVersionNumber,
+ *     versionNumber: Number(kafkaClusterConfigVersionVersionNumber),
  * });
  * ```
  */
@@ -82,7 +82,7 @@ export interface GetManagedKafkaKafkaClusterConfigVersionResult {
  *
  * const testKafkaClusterConfigVersion = oci.oci.getManagedKafkaKafkaClusterConfigVersion({
  *     kafkaClusterConfigId: testKafkaClusterConfig.id,
- *     versionNumber: kafkaClusterConfigVersionVersionNumber,
+ *     versionNumber: Number(kafkaClusterConfigVersionVersionNumber),
  * });
  * ```
  */

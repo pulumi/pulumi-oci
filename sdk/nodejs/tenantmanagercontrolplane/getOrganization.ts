@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOrganization = oci.Tenantmanagercontrolplane.getOrganization({
+ * const testOrganization = oci.tenantmanagercontrolplane.getOrganization({
  *     organizationId: testOrganizationOciTenantmanagercontrolplaneOrganization.id,
  * });
  * ```
@@ -86,7 +86,7 @@ export interface GetOrganizationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOrganization = oci.Tenantmanagercontrolplane.getOrganization({
+ * const testOrganization = oci.tenantmanagercontrolplane.getOrganization({
  *     organizationId: testOrganizationOciTenantmanagercontrolplaneOrganization.id,
  * });
  * ```

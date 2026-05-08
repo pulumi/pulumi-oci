@@ -118,18 +118,18 @@ export interface PublicIpPoolCapacityState {
     /**
      * The OCID of the Byoip Range Id object to which the cidr block belongs.
      */
-    byoipId?: pulumi.Input<string>;
+    byoipId?: pulumi.Input<string | undefined>;
     /**
      * The CIDR IP address range to be added to the Public Ip Pool. Example: `10.0.1.0/24`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    cidrBlock?: pulumi.Input<string>;
+    cidrBlock?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the pool object created by the current tenancy
      */
-    publicIpPoolId?: pulumi.Input<string>;
+    publicIpPoolId?: pulumi.Input<string | undefined>;
 }
 
 /**

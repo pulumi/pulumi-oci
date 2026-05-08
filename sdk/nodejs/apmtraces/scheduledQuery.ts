@@ -194,63 +194,63 @@ export interface ScheduledQueryState {
     /**
      * (Updatable) The APM Domain ID for the intended request.
      */
-    apmDomainId?: pulumi.Input<string>;
+    apmDomainId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not create or modify the resource  and is used only to perform validation on the submitted data.
      */
-    opcDryRun?: pulumi.Input<string>;
+    opcDryRun?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Description for the scheduled query.
      */
-    scheduledQueryDescription?: pulumi.Input<string>;
+    scheduledQueryDescription?: pulumi.Input<string | undefined>;
     /**
      * Scheduled query instances.
      */
-    scheduledQueryInstances?: pulumi.Input<string>;
+    scheduledQueryInstances?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Maximum runtime for the scheduled query in seconds.
      */
-    scheduledQueryMaximumRuntimeInSeconds?: pulumi.Input<string>;
+    scheduledQueryMaximumRuntimeInSeconds?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Name of the scheduled query.
      */
-    scheduledQueryName?: pulumi.Input<string>;
+    scheduledQueryName?: pulumi.Input<string | undefined>;
     /**
      * Next run for the scheduled query.
      */
-    scheduledQueryNextRunInMs?: pulumi.Input<string>;
+    scheduledQueryNextRunInMs?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Definition of the scheduled query processing configuration.
      */
-    scheduledQueryProcessingConfiguration?: pulumi.Input<inputs.ApmTraces.ScheduledQueryScheduledQueryProcessingConfiguration>;
+    scheduledQueryProcessingConfiguration?: pulumi.Input<inputs.ApmTraces.ScheduledQueryScheduledQueryProcessingConfiguration | undefined>;
     /**
      * (Updatable) Processing sub type of the scheduled query.
      */
-    scheduledQueryProcessingSubType?: pulumi.Input<string>;
+    scheduledQueryProcessingSubType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Type of the scheduled query.
      */
-    scheduledQueryProcessingType?: pulumi.Input<string>;
+    scheduledQueryProcessingType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Retention criteria for the scheduled query.
      */
-    scheduledQueryRetentionCriteria?: pulumi.Input<string>;
+    scheduledQueryRetentionCriteria?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Retention period for the scheduled query in milliseconds.
      */
-    scheduledQueryRetentionPeriodInMs?: pulumi.Input<string>;
+    scheduledQueryRetentionPeriodInMs?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Schedule for the scheduled query.
      */
-    scheduledQuerySchedule?: pulumi.Input<string>;
+    scheduledQuerySchedule?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Scheduled query to be run. 
      *
@@ -258,15 +258,15 @@ export interface ScheduledQueryState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    scheduledQueryText?: pulumi.Input<string>;
+    scheduledQueryText?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the Scheduled Query.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }
 
 /**
@@ -280,51 +280,51 @@ export interface ScheduledQueryArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not create or modify the resource  and is used only to perform validation on the submitted data.
      */
-    opcDryRun?: pulumi.Input<string>;
+    opcDryRun?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Description for the scheduled query.
      */
-    scheduledQueryDescription?: pulumi.Input<string>;
+    scheduledQueryDescription?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Maximum runtime for the scheduled query in seconds.
      */
-    scheduledQueryMaximumRuntimeInSeconds?: pulumi.Input<string>;
+    scheduledQueryMaximumRuntimeInSeconds?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Name of the scheduled query.
      */
-    scheduledQueryName?: pulumi.Input<string>;
+    scheduledQueryName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Definition of the scheduled query processing configuration.
      */
-    scheduledQueryProcessingConfiguration?: pulumi.Input<inputs.ApmTraces.ScheduledQueryScheduledQueryProcessingConfiguration>;
+    scheduledQueryProcessingConfiguration?: pulumi.Input<inputs.ApmTraces.ScheduledQueryScheduledQueryProcessingConfiguration | undefined>;
     /**
      * (Updatable) Processing sub type of the scheduled query.
      */
-    scheduledQueryProcessingSubType?: pulumi.Input<string>;
+    scheduledQueryProcessingSubType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Type of the scheduled query.
      */
-    scheduledQueryProcessingType?: pulumi.Input<string>;
+    scheduledQueryProcessingType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Retention criteria for the scheduled query.
      */
-    scheduledQueryRetentionCriteria?: pulumi.Input<string>;
+    scheduledQueryRetentionCriteria?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Retention period for the scheduled query in milliseconds.
      */
-    scheduledQueryRetentionPeriodInMs?: pulumi.Input<string>;
+    scheduledQueryRetentionPeriodInMs?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Schedule for the scheduled query.
      */
-    scheduledQuerySchedule?: pulumi.Input<string>;
+    scheduledQuerySchedule?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Scheduled query to be run. 
      *
@@ -332,5 +332,5 @@ export interface ScheduledQueryArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    scheduledQueryText?: pulumi.Input<string>;
+    scheduledQueryText?: pulumi.Input<string | undefined>;
 }

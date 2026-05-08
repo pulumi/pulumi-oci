@@ -149,7 +149,7 @@ def get_security_policy_deployment_security_policy_entry_states(deployment_statu
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_deployment_security_policy_entry_states = oci.DataSafe.get_security_policy_deployment_security_policy_entry_states(security_policy_deployment_id=test_security_policy_deployment["id"],
+    test_security_policy_deployment_security_policy_entry_states = oci.datasafe.get_security_policy_deployment_security_policy_entry_states(security_policy_deployment_id=test_security_policy_deployment["id"],
         deployment_status=security_policy_deployment_security_policy_entry_state_deployment_status,
         security_policy_entry_id=test_security_policy_entry["id"],
         security_policy_entry_type=security_policy_deployment_security_policy_entry_state_security_policy_entry_type,
@@ -182,12 +182,12 @@ def get_security_policy_deployment_security_policy_entry_states(deployment_statu
         security_policy_entry_state_collections=pulumi.get(__ret__, 'security_policy_entry_state_collections'),
         security_policy_entry_type=pulumi.get(__ret__, 'security_policy_entry_type'),
         target_id=pulumi.get(__ret__, 'target_id'))
-def get_security_policy_deployment_security_policy_entry_states_output(deployment_status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs', 'GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgsDict']]]]] = None,
-                                                                       security_policy_deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                       security_policy_entry_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                       security_policy_entry_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                                       target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_security_policy_deployment_security_policy_entry_states_output(deployment_status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs', 'GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgsDict']]]]] = None,
+                                                                       security_policy_deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                       security_policy_entry_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                       security_policy_entry_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                                       target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult]:
     """
     This data source provides the list of Security Policy Deployment Security Policy Entry States in Oracle Cloud Infrastructure Data Safe service.
@@ -202,7 +202,7 @@ def get_security_policy_deployment_security_policy_entry_states_output(deploymen
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_deployment_security_policy_entry_states = oci.DataSafe.get_security_policy_deployment_security_policy_entry_states(security_policy_deployment_id=test_security_policy_deployment["id"],
+    test_security_policy_deployment_security_policy_entry_states = oci.datasafe.get_security_policy_deployment_security_policy_entry_states(security_policy_deployment_id=test_security_policy_deployment["id"],
         deployment_status=security_policy_deployment_security_policy_entry_state_deployment_status,
         security_policy_entry_id=test_security_policy_entry["id"],
         security_policy_entry_type=security_policy_deployment_security_policy_entry_state_security_policy_entry_type,

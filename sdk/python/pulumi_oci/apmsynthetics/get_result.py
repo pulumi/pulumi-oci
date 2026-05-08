@@ -149,7 +149,7 @@ def get_result(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_result = oci.ApmSynthetics.get_result(apm_domain_id=test_apm_domain["id"],
+    test_result = oci.apmsynthetics.get_result(apm_domain_id=test_apm_domain["id"],
         execution_time=result_execution_time,
         monitor_id=test_monitor["id"],
         result_content_type=result_result_content_type,
@@ -184,12 +184,12 @@ def get_result(apm_domain_id: Optional[_builtins.str] = None,
         result_data_sets=pulumi.get(__ret__, 'result_data_sets'),
         result_type=pulumi.get(__ret__, 'result_type'),
         vantage_point=pulumi.get(__ret__, 'vantage_point'))
-def get_result_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                      execution_time: Optional[pulumi.Input[_builtins.str]] = None,
-                      monitor_id: Optional[pulumi.Input[_builtins.str]] = None,
-                      result_content_type: Optional[pulumi.Input[_builtins.str]] = None,
-                      result_type: Optional[pulumi.Input[_builtins.str]] = None,
-                      vantage_point: Optional[pulumi.Input[_builtins.str]] = None,
+def get_result_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                      execution_time: pulumi.Input[Optional[_builtins.str]] = None,
+                      monitor_id: pulumi.Input[Optional[_builtins.str]] = None,
+                      result_content_type: pulumi.Input[Optional[_builtins.str]] = None,
+                      result_type: pulumi.Input[Optional[_builtins.str]] = None,
+                      vantage_point: pulumi.Input[Optional[_builtins.str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResultResult]:
     """
     This data source provides details about a specific Result resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
@@ -202,7 +202,7 @@ def get_result_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_result = oci.ApmSynthetics.get_result(apm_domain_id=test_apm_domain["id"],
+    test_result = oci.apmsynthetics.get_result(apm_domain_id=test_apm_domain["id"],
         execution_time=result_execution_time,
         monitor_id=test_monitor["id"],
         result_content_type=result_result_content_type,

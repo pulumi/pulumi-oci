@@ -137,7 +137,7 @@ def get_gateways(certificate_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_gateways = oci.ApiGateway.get_gateways(compartment_id=compartment_id,
+    test_gateways = oci.apigateway.get_gateways(compartment_id=compartment_id,
         certificate_id=oci_apigateway_certificate["testCertificate"]["id"],
         display_name=gateway_display_name,
         state=gateway_state)
@@ -166,11 +166,11 @@ def get_gateways(certificate_id: Optional[_builtins.str] = None,
         gateway_collections=pulumi.get(__ret__, 'gateway_collections'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_gateways_output(certificate_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                        display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetGatewaysFilterArgs', 'GetGatewaysFilterArgsDict']]]]] = None,
-                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_gateways_output(certificate_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetGatewaysFilterArgs', 'GetGatewaysFilterArgsDict']]]]] = None,
+                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGatewaysResult]:
     """
     This data source provides the list of Gateways in Oracle Cloud Infrastructure API Gateway service.
@@ -183,7 +183,7 @@ def get_gateways_output(certificate_id: Optional[pulumi.Input[Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_gateways = oci.ApiGateway.get_gateways(compartment_id=compartment_id,
+    test_gateways = oci.apigateway.get_gateways(compartment_id=compartment_id,
         certificate_id=oci_apigateway_certificate["testCertificate"]["id"],
         display_name=gateway_display_name,
         state=gateway_state)

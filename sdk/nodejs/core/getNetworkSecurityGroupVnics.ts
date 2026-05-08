@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkSecurityGroupVnics = oci.Core.getNetworkSecurityGroupVnics({
+ * const testNetworkSecurityGroupVnics = oci.core.getNetworkSecurityGroupVnics({
  *     networkSecurityGroupId: testNetworkSecurityGroup.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetNetworkSecurityGroupVnicsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkSecurityGroupVnics = oci.Core.getNetworkSecurityGroupVnics({
+ * const testNetworkSecurityGroupVnics = oci.core.getNetworkSecurityGroupVnics({
  *     networkSecurityGroupId: testNetworkSecurityGroup.id,
  * });
  * ```
@@ -84,7 +84,7 @@ export function getNetworkSecurityGroupVnicsOutput(args: GetNetworkSecurityGroup
  * A collection of arguments for invoking getNetworkSecurityGroupVnics.
  */
 export interface GetNetworkSecurityGroupVnicsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetNetworkSecurityGroupVnicsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetNetworkSecurityGroupVnicsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
      */

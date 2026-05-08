@@ -112,11 +112,11 @@ export interface UnsetSecurityAssessmentBaselineManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the security assessment.
      */
-    securityAssessmentId?: pulumi.Input<string>;
+    securityAssessmentId?: pulumi.Input<string | undefined>;
 }
 
 /**

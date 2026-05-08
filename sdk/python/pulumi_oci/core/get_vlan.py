@@ -215,7 +215,7 @@ def get_vlan(vlan_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vlan = oci.Core.get_vlan(vlan_id=test_vlan_oci_core_vlan["id"])
+    test_vlan = oci.core.get_vlan(vlan_id=test_vlan_oci_core_vlan["id"])
     ```
 
 
@@ -241,7 +241,7 @@ def get_vlan(vlan_id: Optional[_builtins.str] = None,
         vcn_id=pulumi.get(__ret__, 'vcn_id'),
         vlan_id=pulumi.get(__ret__, 'vlan_id'),
         vlan_tag=pulumi.get(__ret__, 'vlan_tag'))
-def get_vlan_output(vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_vlan_output(vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVlanResult]:
     """
     This data source provides details about a specific Vlan resource in Oracle Cloud Infrastructure Core service.
@@ -254,7 +254,7 @@ def get_vlan_output(vlan_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vlan = oci.Core.get_vlan(vlan_id=test_vlan_oci_core_vlan["id"])
+    test_vlan = oci.core.get_vlan(vlan_id=test_vlan_oci_core_vlan["id"])
     ```
 
 

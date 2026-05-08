@@ -864,7 +864,7 @@ def get_opensearch_cluster(opensearch_cluster_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_opensearch_cluster = oci.Opensearch.get_opensearch_cluster(opensearch_cluster_id=test_opensearch_cluster_oci_opensearch_opensearch_cluster["id"])
+    test_opensearch_cluster = oci.opensearch.get_opensearch_cluster(opensearch_cluster_id=test_opensearch_cluster_oci_opensearch_opensearch_cluster["id"])
     ```
 
 
@@ -944,7 +944,7 @@ def get_opensearch_cluster(opensearch_cluster_id: Optional[_builtins.str] = None
         upgrade_major_version_trigger=pulumi.get(__ret__, 'upgrade_major_version_trigger'),
         vcn_compartment_id=pulumi.get(__ret__, 'vcn_compartment_id'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-def get_opensearch_cluster_output(opensearch_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_opensearch_cluster_output(opensearch_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOpensearchClusterResult]:
     """
     This data source provides details about a specific Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
@@ -966,7 +966,7 @@ def get_opensearch_cluster_output(opensearch_cluster_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_opensearch_cluster = oci.Opensearch.get_opensearch_cluster(opensearch_cluster_id=test_opensearch_cluster_oci_opensearch_opensearch_cluster["id"])
+    test_opensearch_cluster = oci.opensearch.get_opensearch_cluster(opensearch_cluster_id=test_opensearch_cluster_oci_opensearch_opensearch_cluster["id"])
     ```
 
 

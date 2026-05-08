@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingPolicyReferentialRelations = oci.DataSafe.getMaskingPolicyReferentialRelations({
+ * const testMaskingPolicyReferentialRelations = oci.datasafe.getMaskingPolicyReferentialRelations({
  *     maskingPolicyId: testMaskingPolicy.id,
  *     columnNames: maskingPolicyReferentialRelationColumnName,
  *     objects: maskingPolicyReferentialRelationObject,
@@ -107,7 +107,7 @@ export interface GetMaskingPolicyReferentialRelationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingPolicyReferentialRelations = oci.DataSafe.getMaskingPolicyReferentialRelations({
+ * const testMaskingPolicyReferentialRelations = oci.datasafe.getMaskingPolicyReferentialRelations({
  *     maskingPolicyId: testMaskingPolicy.id,
  *     columnNames: maskingPolicyReferentialRelationColumnName,
  *     objects: maskingPolicyReferentialRelationObject,
@@ -135,8 +135,8 @@ export interface GetMaskingPolicyReferentialRelationsOutputArgs {
     /**
      * A filter to return only a specific column based on column name.
      */
-    columnNames?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetMaskingPolicyReferentialRelationsFilterArgs>[]>;
+    columnNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetMaskingPolicyReferentialRelationsFilterArgs>[] | undefined>;
     /**
      * The OCID of the masking policy.
      */
@@ -144,13 +144,13 @@ export interface GetMaskingPolicyReferentialRelationsOutputArgs {
     /**
      * A filter to return only items related to a specific object name.
      */
-    objects?: pulumi.Input<pulumi.Input<string>[]>;
+    objects?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return columns based on their relationship with their parent columns. If set to NONE, it returns the columns that do not have any parent. The response includes the parent columns as well as the independent columns that are not in any relationship. If set to APP_DEFINED, it returns all the child columns that have application-level (non-dictionary) relationship with their parents. If set to DB_DEFINED, it returns all the child columns that have database-level (dictionary-defined) relationship with their parents.
      */
-    relationTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    relationTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only items related to specific schema name.
      */
-    schemaNames?: pulumi.Input<pulumi.Input<string>[]>;
+    schemaNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

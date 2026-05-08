@@ -121,7 +121,7 @@ def get_image_shape(image_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_image_shape = oci.Core.get_image_shape(image_id=test_image["id"],
+    test_image_shape = oci.core.get_image_shape(image_id=test_image["id"],
         shape_name=test_shape["name"])
     ```
 
@@ -142,8 +142,8 @@ def get_image_shape(image_id: Optional[_builtins.str] = None,
         ocpu_constraints=pulumi.get(__ret__, 'ocpu_constraints'),
         shape=pulumi.get(__ret__, 'shape'),
         shape_name=pulumi.get(__ret__, 'shape_name'))
-def get_image_shape_output(image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                           shape_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_image_shape_output(image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                           shape_name: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImageShapeResult]:
     """
     This data source provides details about a specific Image Shape resource in Oracle Cloud Infrastructure Core service.
@@ -156,7 +156,7 @@ def get_image_shape_output(image_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_image_shape = oci.Core.get_image_shape(image_id=test_image["id"],
+    test_image_shape = oci.core.get_image_shape(image_id=test_image["id"],
         shape_name=test_shape["name"])
     ```
 

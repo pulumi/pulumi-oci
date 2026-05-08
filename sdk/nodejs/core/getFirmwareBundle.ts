@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFirmwareBundle = oci.Core.getFirmwareBundle({
+ * const testFirmwareBundle = oci.core.getFirmwareBundle({
  *     firmwareBundleId: testFirmwareBundleOciCoreFirmwareBundle.id,
  * });
  * ```
@@ -89,7 +89,7 @@ export interface GetFirmwareBundleResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFirmwareBundle = oci.Core.getFirmwareBundle({
+ * const testFirmwareBundle = oci.core.getFirmwareBundle({
  *     firmwareBundleId: testFirmwareBundleOciCoreFirmwareBundle.id,
  * });
  * ```

@@ -141,7 +141,7 @@ def get_ipsec_connection_tunnel_error(ipsec_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ipsec_connection_tunnel_error = oci.Core.get_ipsec_connection_tunnel_error(ipsec_id=test_ipsec["id"],
+    test_ipsec_connection_tunnel_error = oci.core.get_ipsec_connection_tunnel_error(ipsec_id=test_ipsec["id"],
         tunnel_id=test_tunnel["id"])
     ```
 
@@ -164,8 +164,8 @@ def get_ipsec_connection_tunnel_error(ipsec_id: Optional[_builtins.str] = None,
         solution=pulumi.get(__ret__, 'solution'),
         timestamp=pulumi.get(__ret__, 'timestamp'),
         tunnel_id=pulumi.get(__ret__, 'tunnel_id'))
-def get_ipsec_connection_tunnel_error_output(ipsec_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             tunnel_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_ipsec_connection_tunnel_error_output(ipsec_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             tunnel_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIpsecConnectionTunnelErrorResult]:
     """
     This data source provides details about a specific Ipsec Connection Tunnel Error resource in Oracle Cloud Infrastructure Core service.
@@ -178,7 +178,7 @@ def get_ipsec_connection_tunnel_error_output(ipsec_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_ipsec_connection_tunnel_error = oci.Core.get_ipsec_connection_tunnel_error(ipsec_id=test_ipsec["id"],
+    test_ipsec_connection_tunnel_error = oci.core.get_ipsec_connection_tunnel_error(ipsec_id=test_ipsec["id"],
         tunnel_id=test_tunnel["id"])
     ```
 

@@ -96,7 +96,7 @@ def get_alert_policy_rules(alert_policy_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alert_policy_rules = oci.DataSafe.get_alert_policy_rules(alert_policy_id=test_alert_policy["id"])
+    test_alert_policy_rules = oci.datasafe.get_alert_policy_rules(alert_policy_id=test_alert_policy["id"])
     ```
 
 
@@ -113,8 +113,8 @@ def get_alert_policy_rules(alert_policy_id: Optional[_builtins.str] = None,
         alert_policy_rule_collections=pulumi.get(__ret__, 'alert_policy_rule_collections'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_alert_policy_rules_output(alert_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAlertPolicyRulesFilterArgs', 'GetAlertPolicyRulesFilterArgsDict']]]]] = None,
+def get_alert_policy_rules_output(alert_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAlertPolicyRulesFilterArgs', 'GetAlertPolicyRulesFilterArgsDict']]]]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAlertPolicyRulesResult]:
     """
     This data source provides the list of Alert Policy Rules in Oracle Cloud Infrastructure Data Safe service.
@@ -128,7 +128,7 @@ def get_alert_policy_rules_output(alert_policy_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_alert_policy_rules = oci.DataSafe.get_alert_policy_rules(alert_policy_id=test_alert_policy["id"])
+    test_alert_policy_rules = oci.datasafe.get_alert_policy_rules(alert_policy_id=test_alert_policy["id"])
     ```
 
 

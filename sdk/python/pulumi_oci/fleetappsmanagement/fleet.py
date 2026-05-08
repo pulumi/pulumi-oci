@@ -24,18 +24,18 @@ class FleetArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
                  resource_selection: pulumi.Input['FleetResourceSelectionArgs'],
-                 credentials: Optional[pulumi.Input[Sequence[pulumi.Input['FleetCredentialArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 details: Optional[pulumi.Input['FleetDetailsArgs']] = None,
-                 environment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_target_auto_confirm: Optional[pulumi.Input[_builtins.bool]] = None,
-                 notification_preferences: Optional[pulumi.Input[Sequence[pulumi.Input['FleetNotificationPreferenceArgs']]]] = None,
-                 parent_fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 products: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 properties: Optional[pulumi.Input[Sequence[pulumi.Input['FleetPropertyArgs']]]] = None,
-                 resources: Optional[pulumi.Input[Sequence[pulumi.Input['FleetResourceArgs']]]] = None):
+                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input['FleetCredentialArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 details: pulumi.Input[Optional['FleetDetailsArgs']] = None,
+                 environment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_target_auto_confirm: pulumi.Input[Optional[_builtins.bool]] = None,
+                 notification_preferences: pulumi.Input[Optional[Sequence[pulumi.Input['FleetNotificationPreferenceArgs']]]] = None,
+                 parent_fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 products: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input['FleetPropertyArgs']]]] = None,
+                 resources: pulumi.Input[Optional[Sequence[pulumi.Input['FleetResourceArgs']]]] = None):
         """
         The set of arguments for constructing a Fleet resource.
 
@@ -121,173 +121,173 @@ class FleetArgs:
 
     @_builtins.property
     @pulumi.getter
-    def credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FleetCredentialArgs']]]]:
+    def credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FleetCredentialArgs']]]]:
         """
         Credentials associated with the Fleet.
         """
         return pulumi.get(self, "credentials")
 
     @credentials.setter
-    def credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FleetCredentialArgs']]]]):
+    def credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FleetCredentialArgs']]]]):
         pulumi.set(self, "credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def details(self) -> Optional[pulumi.Input['FleetDetailsArgs']]:
+    def details(self) -> pulumi.Input[Optional['FleetDetailsArgs']]:
         """
         Fleet Type
         """
         return pulumi.get(self, "details")
 
     @details.setter
-    def details(self, value: Optional[pulumi.Input['FleetDetailsArgs']]):
+    def details(self, value: pulumi.Input[Optional['FleetDetailsArgs']]):
         pulumi.set(self, "details", value)
 
     @_builtins.property
     @pulumi.getter(name="environmentType")
-    def environment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def environment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         """
         return pulumi.get(self, "environment_type")
 
     @environment_type.setter
-    def environment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def environment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "environment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isTargetAutoConfirm")
-    def is_target_auto_confirm(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_target_auto_confirm(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
         """
         return pulumi.get(self, "is_target_auto_confirm")
 
     @is_target_auto_confirm.setter
-    def is_target_auto_confirm(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_target_auto_confirm(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_target_auto_confirm", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationPreferences")
-    def notification_preferences(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FleetNotificationPreferenceArgs']]]]:
+    def notification_preferences(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FleetNotificationPreferenceArgs']]]]:
         """
         (Updatable) Notification Preferences associated with the Fleet.
         """
         return pulumi.get(self, "notification_preferences")
 
     @notification_preferences.setter
-    def notification_preferences(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FleetNotificationPreferenceArgs']]]]):
+    def notification_preferences(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FleetNotificationPreferenceArgs']]]]):
         pulumi.set(self, "notification_preferences", value)
 
     @_builtins.property
     @pulumi.getter(name="parentFleetId")
-    def parent_fleet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parent_fleet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet that would be the parent for this fleet.
         """
         return pulumi.get(self, "parent_fleet_id")
 
     @parent_fleet_id.setter
-    def parent_fleet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parent_fleet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parent_fleet_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def products(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def products(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
         """
         return pulumi.get(self, "products")
 
     @products.setter
-    def products(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def products(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "products", value)
 
     @_builtins.property
     @pulumi.getter
-    def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FleetPropertyArgs']]]]:
+    def properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FleetPropertyArgs']]]]:
         """
         Properties associated with the Fleet.
         """
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FleetPropertyArgs']]]]):
+    def properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FleetPropertyArgs']]]]):
         pulumi.set(self, "properties", value)
 
     @_builtins.property
     @pulumi.getter
-    def resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FleetResourceArgs']]]]:
+    def resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FleetResourceArgs']]]]:
         """
         Resources associated with the Fleet if resourceSelectionType is MANUAL.
         """
         return pulumi.get(self, "resources")
 
     @resources.setter
-    def resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FleetResourceArgs']]]]):
+    def resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FleetResourceArgs']]]]):
         pulumi.set(self, "resources", value)
 
 
 @pulumi.input_type
 class _FleetState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 credentials: Optional[pulumi.Input[Sequence[pulumi.Input['FleetCredentialArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 details: Optional[pulumi.Input['FleetDetailsArgs']] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 environment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_target_auto_confirm: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 notification_preferences: Optional[pulumi.Input[Sequence[pulumi.Input['FleetNotificationPreferenceArgs']]]] = None,
-                 parent_fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 products: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 properties: Optional[pulumi.Input[Sequence[pulumi.Input['FleetPropertyArgs']]]] = None,
-                 resource_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_selection: Optional[pulumi.Input['FleetResourceSelectionArgs']] = None,
-                 resources: Optional[pulumi.Input[Sequence[pulumi.Input['FleetResourceArgs']]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input['FleetCredentialArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 details: pulumi.Input[Optional['FleetDetailsArgs']] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 environment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_target_auto_confirm: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 notification_preferences: pulumi.Input[Optional[Sequence[pulumi.Input['FleetNotificationPreferenceArgs']]]] = None,
+                 parent_fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 products: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input['FleetPropertyArgs']]]] = None,
+                 resource_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_selection: pulumi.Input[Optional['FleetResourceSelectionArgs']] = None,
+                 resources: pulumi.Input[Optional[Sequence[pulumi.Input['FleetResourceArgs']]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Fleet resources.
 
@@ -358,254 +358,254 @@ class _FleetState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) compartment OCID
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def credentials(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FleetCredentialArgs']]]]:
+    def credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FleetCredentialArgs']]]]:
         """
         Credentials associated with the Fleet.
         """
         return pulumi.get(self, "credentials")
 
     @credentials.setter
-    def credentials(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FleetCredentialArgs']]]]):
+    def credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FleetCredentialArgs']]]]):
         pulumi.set(self, "credentials", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def details(self) -> Optional[pulumi.Input['FleetDetailsArgs']]:
+    def details(self) -> pulumi.Input[Optional['FleetDetailsArgs']]:
         """
         Fleet Type
         """
         return pulumi.get(self, "details")
 
     @details.setter
-    def details(self, value: Optional[pulumi.Input['FleetDetailsArgs']]):
+    def details(self, value: pulumi.Input[Optional['FleetDetailsArgs']]):
         pulumi.set(self, "details", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="environmentType")
-    def environment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def environment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
         """
         return pulumi.get(self, "environment_type")
 
     @environment_type.setter
-    def environment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def environment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "environment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isTargetAutoConfirm")
-    def is_target_auto_confirm(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_target_auto_confirm(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A value that represents if auto-confirming of the targets can be enabled. This will allow targets to be auto-confirmed in the fleet without manual intervention.
         """
         return pulumi.get(self, "is_target_auto_confirm")
 
     @is_target_auto_confirm.setter
-    def is_target_auto_confirm(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_target_auto_confirm(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_target_auto_confirm", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="notificationPreferences")
-    def notification_preferences(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FleetNotificationPreferenceArgs']]]]:
+    def notification_preferences(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FleetNotificationPreferenceArgs']]]]:
         """
         (Updatable) Notification Preferences associated with the Fleet.
         """
         return pulumi.get(self, "notification_preferences")
 
     @notification_preferences.setter
-    def notification_preferences(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FleetNotificationPreferenceArgs']]]]):
+    def notification_preferences(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FleetNotificationPreferenceArgs']]]]):
         pulumi.set(self, "notification_preferences", value)
 
     @_builtins.property
     @pulumi.getter(name="parentFleetId")
-    def parent_fleet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parent_fleet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet that would be the parent for this fleet.
         """
         return pulumi.get(self, "parent_fleet_id")
 
     @parent_fleet_id.setter
-    def parent_fleet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parent_fleet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parent_fleet_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def products(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def products(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Products associated with the Fleet. Provide PlatformConfiguration Ids corresponding to all the Products that need to be managed.
         """
         return pulumi.get(self, "products")
 
     @products.setter
-    def products(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def products(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "products", value)
 
     @_builtins.property
     @pulumi.getter
-    def properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FleetPropertyArgs']]]]:
+    def properties(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FleetPropertyArgs']]]]:
         """
         Properties associated with the Fleet.
         """
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FleetPropertyArgs']]]]):
+    def properties(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FleetPropertyArgs']]]]):
         pulumi.set(self, "properties", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceRegion")
-    def resource_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Associated region
         """
         return pulumi.get(self, "resource_region")
 
     @resource_region.setter
-    def resource_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_region", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceSelection")
-    def resource_selection(self) -> Optional[pulumi.Input['FleetResourceSelectionArgs']]:
+    def resource_selection(self) -> pulumi.Input[Optional['FleetResourceSelectionArgs']]:
         """
         (Updatable) Resource Selection Type
         """
         return pulumi.get(self, "resource_selection")
 
     @resource_selection.setter
-    def resource_selection(self, value: Optional[pulumi.Input['FleetResourceSelectionArgs']]):
+    def resource_selection(self, value: pulumi.Input[Optional['FleetResourceSelectionArgs']]):
         pulumi.set(self, "resource_selection", value)
 
     @_builtins.property
     @pulumi.getter
-    def resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FleetResourceArgs']]]]:
+    def resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FleetResourceArgs']]]]:
         """
         Resources associated with the Fleet if resourceSelectionType is MANUAL.
         """
         return pulumi.get(self, "resources")
 
     @resources.setter
-    def resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FleetResourceArgs']]]]):
+    def resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FleetResourceArgs']]]]):
         pulumi.set(self, "resources", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of the Fleet.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time this resource was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time this resource was last updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -615,21 +615,21 @@ class Fleet(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 credentials: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FleetCredentialArgs', 'FleetCredentialArgsDict']]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 details: Optional[pulumi.Input[Union['FleetDetailsArgs', 'FleetDetailsArgsDict']]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 environment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_target_auto_confirm: Optional[pulumi.Input[_builtins.bool]] = None,
-                 notification_preferences: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FleetNotificationPreferenceArgs', 'FleetNotificationPreferenceArgsDict']]]]] = None,
-                 parent_fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 products: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FleetPropertyArgs', 'FleetPropertyArgsDict']]]]] = None,
-                 resource_selection: Optional[pulumi.Input[Union['FleetResourceSelectionArgs', 'FleetResourceSelectionArgsDict']]] = None,
-                 resources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FleetResourceArgs', 'FleetResourceArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetCredentialArgs', 'FleetCredentialArgsDict']]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 details: pulumi.Input[Optional[Union['FleetDetailsArgs', 'FleetDetailsArgsDict']]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 environment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_target_auto_confirm: pulumi.Input[Optional[_builtins.bool]] = None,
+                 notification_preferences: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetNotificationPreferenceArgs', 'FleetNotificationPreferenceArgsDict']]]]] = None,
+                 parent_fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 products: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetPropertyArgs', 'FleetPropertyArgsDict']]]]] = None,
+                 resource_selection: pulumi.Input[Optional[Union['FleetResourceSelectionArgs', 'FleetResourceSelectionArgsDict']]] = None,
+                 resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetResourceArgs', 'FleetResourceArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Fleet resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -704,21 +704,21 @@ class Fleet(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 credentials: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FleetCredentialArgs', 'FleetCredentialArgsDict']]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 details: Optional[pulumi.Input[Union['FleetDetailsArgs', 'FleetDetailsArgsDict']]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 environment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_target_auto_confirm: Optional[pulumi.Input[_builtins.bool]] = None,
-                 notification_preferences: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FleetNotificationPreferenceArgs', 'FleetNotificationPreferenceArgsDict']]]]] = None,
-                 parent_fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 products: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FleetPropertyArgs', 'FleetPropertyArgsDict']]]]] = None,
-                 resource_selection: Optional[pulumi.Input[Union['FleetResourceSelectionArgs', 'FleetResourceSelectionArgsDict']]] = None,
-                 resources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FleetResourceArgs', 'FleetResourceArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetCredentialArgs', 'FleetCredentialArgsDict']]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 details: pulumi.Input[Optional[Union['FleetDetailsArgs', 'FleetDetailsArgsDict']]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 environment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_target_auto_confirm: pulumi.Input[Optional[_builtins.bool]] = None,
+                 notification_preferences: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetNotificationPreferenceArgs', 'FleetNotificationPreferenceArgsDict']]]]] = None,
+                 parent_fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 products: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetPropertyArgs', 'FleetPropertyArgsDict']]]]] = None,
+                 resource_selection: pulumi.Input[Optional[Union['FleetResourceSelectionArgs', 'FleetResourceSelectionArgsDict']]] = None,
+                 resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetResourceArgs', 'FleetResourceArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -765,27 +765,27 @@ class Fleet(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            credentials: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FleetCredentialArgs', 'FleetCredentialArgsDict']]]]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            details: Optional[pulumi.Input[Union['FleetDetailsArgs', 'FleetDetailsArgsDict']]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            environment_type: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_target_auto_confirm: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            notification_preferences: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FleetNotificationPreferenceArgs', 'FleetNotificationPreferenceArgsDict']]]]] = None,
-            parent_fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            products: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FleetPropertyArgs', 'FleetPropertyArgsDict']]]]] = None,
-            resource_region: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_selection: Optional[pulumi.Input[Union['FleetResourceSelectionArgs', 'FleetResourceSelectionArgsDict']]] = None,
-            resources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FleetResourceArgs', 'FleetResourceArgsDict']]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'Fleet':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetCredentialArgs', 'FleetCredentialArgsDict']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            details: pulumi.Input[Optional[Union['FleetDetailsArgs', 'FleetDetailsArgsDict']]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            environment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_target_auto_confirm: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            notification_preferences: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetNotificationPreferenceArgs', 'FleetNotificationPreferenceArgsDict']]]]] = None,
+            parent_fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            products: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetPropertyArgs', 'FleetPropertyArgsDict']]]]] = None,
+            resource_region: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_selection: pulumi.Input[Optional[Union['FleetResourceSelectionArgs', 'FleetResourceSelectionArgsDict']]] = None,
+            resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetResourceArgs', 'FleetResourceArgsDict']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'Fleet':
         """
         Get an existing Fleet resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

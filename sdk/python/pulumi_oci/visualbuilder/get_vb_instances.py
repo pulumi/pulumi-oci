@@ -124,7 +124,7 @@ def get_vb_instances(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vb_instances = oci.VisualBuilder.get_vb_instances(compartment_id=compartment_id,
+    test_vb_instances = oci.visualbuilder.get_vb_instances(compartment_id=compartment_id,
         display_name=vb_instance_display_name,
         state=vb_instance_state)
     ```
@@ -149,10 +149,10 @@ def get_vb_instances(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         vb_instance_summary_collections=pulumi.get(__ret__, 'vb_instance_summary_collections'))
-def get_vb_instances_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                            display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVbInstancesFilterArgs', 'GetVbInstancesFilterArgsDict']]]]] = None,
-                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_vb_instances_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVbInstancesFilterArgs', 'GetVbInstancesFilterArgsDict']]]]] = None,
+                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVbInstancesResult]:
     """
     This data source provides the list of Vb Instances in Oracle Cloud Infrastructure Visual Builder service.
@@ -165,7 +165,7 @@ def get_vb_instances_output(compartment_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_vb_instances = oci.VisualBuilder.get_vb_instances(compartment_id=compartment_id,
+    test_vb_instances = oci.visualbuilder.get_vb_instances(compartment_id=compartment_id,
         display_name=vb_instance_display_name,
         state=vb_instance_state)
     ```

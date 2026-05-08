@@ -200,11 +200,11 @@ def get_unified_audit_policy_definitions(access_level: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_unified_audit_policy_definitions = oci.DataSafe.get_unified_audit_policy_definitions(compartment_id=compartment_id,
+    test_unified_audit_policy_definitions = oci.datasafe.get_unified_audit_policy_definitions(compartment_id=compartment_id,
         access_level=unified_audit_policy_definition_access_level,
-        compartment_id_in_subtree=unified_audit_policy_definition_compartment_id_in_subtree,
+        compartment_id_in_subtree=unified_audit_policy_definition_compartment_id_in_subtree == "true",
         display_name=unified_audit_policy_definition_display_name,
-        is_seeded=unified_audit_policy_definition_is_seeded,
+        is_seeded=unified_audit_policy_definition_is_seeded == "true",
         state=unified_audit_policy_definition_state,
         unified_audit_policy_category=unified_audit_policy_definition_unified_audit_policy_category,
         unified_audit_policy_definition_id=test_unified_audit_policy_definition["id"],
@@ -249,16 +249,16 @@ def get_unified_audit_policy_definitions(access_level: Optional[_builtins.str] =
         unified_audit_policy_definition_collections=pulumi.get(__ret__, 'unified_audit_policy_definition_collections'),
         unified_audit_policy_definition_id=pulumi.get(__ret__, 'unified_audit_policy_definition_id'),
         unified_audit_policy_name=pulumi.get(__ret__, 'unified_audit_policy_name'))
-def get_unified_audit_policy_definitions_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetUnifiedAuditPolicyDefinitionsFilterArgs', 'GetUnifiedAuditPolicyDefinitionsFilterArgsDict']]]]] = None,
-                                                is_seeded: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                unified_audit_policy_category: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                unified_audit_policy_definition_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                unified_audit_policy_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_unified_audit_policy_definitions_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUnifiedAuditPolicyDefinitionsFilterArgs', 'GetUnifiedAuditPolicyDefinitionsFilterArgsDict']]]]] = None,
+                                                is_seeded: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                unified_audit_policy_category: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                unified_audit_policy_definition_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                unified_audit_policy_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUnifiedAuditPolicyDefinitionsResult]:
     """
     This data source provides the list of Unified Audit Policy Definitions in Oracle Cloud Infrastructure Data Safe service.
@@ -284,11 +284,11 @@ def get_unified_audit_policy_definitions_output(access_level: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_unified_audit_policy_definitions = oci.DataSafe.get_unified_audit_policy_definitions(compartment_id=compartment_id,
+    test_unified_audit_policy_definitions = oci.datasafe.get_unified_audit_policy_definitions(compartment_id=compartment_id,
         access_level=unified_audit_policy_definition_access_level,
-        compartment_id_in_subtree=unified_audit_policy_definition_compartment_id_in_subtree,
+        compartment_id_in_subtree=unified_audit_policy_definition_compartment_id_in_subtree == "true",
         display_name=unified_audit_policy_definition_display_name,
-        is_seeded=unified_audit_policy_definition_is_seeded,
+        is_seeded=unified_audit_policy_definition_is_seeded == "true",
         state=unified_audit_policy_definition_state,
         unified_audit_policy_category=unified_audit_policy_definition_unified_audit_policy_category,
         unified_audit_policy_definition_id=test_unified_audit_policy_definition["id"],

@@ -24,14 +24,14 @@ class OperatorControlArgs:
                  is_fully_pre_approved: pulumi.Input[_builtins.bool],
                  operator_control_name: pulumi.Input[_builtins.str],
                  resource_type: pulumi.Input[_builtins.str],
-                 approvers_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 number_of_approvers: Optional[pulumi.Input[_builtins.int]] = None,
-                 pre_approved_op_action_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 system_message: Optional[pulumi.Input[_builtins.str]] = None):
+                 approvers_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_id_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 number_of_approvers: pulumi.Input[Optional[_builtins.int]] = None,
+                 pre_approved_op_action_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 system_message: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a OperatorControl resource.
 
@@ -137,91 +137,91 @@ class OperatorControlArgs:
 
     @_builtins.property
     @pulumi.getter(name="approversLists")
-    def approvers_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def approvers_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of users who can approve an access request associated with a resource governed by this operator control.
         """
         return pulumi.get(self, "approvers_lists")
 
     @approvers_lists.setter
-    def approvers_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def approvers_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "approvers_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description of the operator control.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="emailIdLists")
-    def email_id_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def email_id_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of emailId.
         """
         return pulumi.get(self, "email_id_lists")
 
     @email_id_lists.setter
-    def email_id_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def email_id_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "email_id_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="numberOfApprovers")
-    def number_of_approvers(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def number_of_approvers(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Number of approvers required to approve an access request.
         """
         return pulumi.get(self, "number_of_approvers")
 
     @number_of_approvers.setter
-    def number_of_approvers(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def number_of_approvers(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "number_of_approvers", value)
 
     @_builtins.property
     @pulumi.getter(name="preApprovedOpActionLists")
-    def pre_approved_op_action_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pre_approved_op_action_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be auto-approved if the access request only contain operator actions in the pre-approved list.
         """
         return pulumi.get(self, "pre_approved_op_action_lists")
 
     @pre_approved_op_action_lists.setter
-    def pre_approved_op_action_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pre_approved_op_action_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pre_approved_op_action_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="systemMessage")
-    def system_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def system_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This is the message that will be displayed to the operator users while accessing the system.
 
@@ -232,33 +232,33 @@ class OperatorControlArgs:
         return pulumi.get(self, "system_message")
 
     @system_message.setter
-    def system_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def system_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "system_message", value)
 
 
 @pulumi.input_type
 class _OperatorControlState:
     def __init__(__self__, *,
-                 approval_required_op_action_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 approver_groups_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 approvers_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_default_operator_control: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_fully_pre_approved: Optional[pulumi.Input[_builtins.bool]] = None,
-                 last_modified_info: Optional[pulumi.Input[_builtins.str]] = None,
-                 number_of_approvers: Optional[pulumi.Input[_builtins.int]] = None,
-                 operator_control_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pre_approved_op_action_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_creation: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_modification: Optional[pulumi.Input[_builtins.str]] = None):
+                 approval_required_op_action_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 approver_groups_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 approvers_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_id_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_default_operator_control: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_fully_pre_approved: pulumi.Input[Optional[_builtins.bool]] = None,
+                 last_modified_info: pulumi.Input[Optional[_builtins.str]] = None,
+                 number_of_approvers: pulumi.Input[Optional[_builtins.int]] = None,
+                 operator_control_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pre_approved_op_action_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_creation: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_modification: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering OperatorControl resources.
 
@@ -330,199 +330,199 @@ class _OperatorControlState:
 
     @_builtins.property
     @pulumi.getter(name="approvalRequiredOpActionLists")
-    def approval_required_op_action_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def approval_required_op_action_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         List of operator actions that need explicit approval. Any operator action not in the pre-approved list will require explicit approval. Access requests associated with a resource governed by this operator control will be require explicit approval if the access request contains any operator action in this list.
         """
         return pulumi.get(self, "approval_required_op_action_lists")
 
     @approval_required_op_action_lists.setter
-    def approval_required_op_action_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def approval_required_op_action_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "approval_required_op_action_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="approverGroupsLists")
-    def approver_groups_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def approver_groups_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of user groups who can approve an access request associated with a resource governed by this operator control.
         """
         return pulumi.get(self, "approver_groups_lists")
 
     @approver_groups_lists.setter
-    def approver_groups_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def approver_groups_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "approver_groups_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="approversLists")
-    def approvers_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def approvers_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of users who can approve an access request associated with a resource governed by this operator control.
         """
         return pulumi.get(self, "approvers_lists")
 
     @approvers_lists.setter
-    def approvers_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def approvers_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "approvers_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment that contains this operator control.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description of the operator control.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="emailIdLists")
-    def email_id_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def email_id_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of emailId.
         """
         return pulumi.get(self, "email_id_lists")
 
     @email_id_lists.setter
-    def email_id_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def email_id_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "email_id_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isDefaultOperatorControl")
-    def is_default_operator_control(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_default_operator_control(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the operator control is a default Operator Control.
         """
         return pulumi.get(self, "is_default_operator_control")
 
     @is_default_operator_control.setter
-    def is_default_operator_control(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_default_operator_control(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_default_operator_control", value)
 
     @_builtins.property
     @pulumi.getter(name="isFullyPreApproved")
-    def is_fully_pre_approved(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_fully_pre_approved(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
         """
         return pulumi.get(self, "is_fully_pre_approved")
 
     @is_fully_pre_approved.setter
-    def is_fully_pre_approved(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_fully_pre_approved(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_fully_pre_approved", value)
 
     @_builtins.property
     @pulumi.getter(name="lastModifiedInfo")
-    def last_modified_info(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_modified_info(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description associated with the latest modification of the operator control.
         """
         return pulumi.get(self, "last_modified_info")
 
     @last_modified_info.setter
-    def last_modified_info(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_modified_info(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_modified_info", value)
 
     @_builtins.property
     @pulumi.getter(name="numberOfApprovers")
-    def number_of_approvers(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def number_of_approvers(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Number of approvers required to approve an access request.
         """
         return pulumi.get(self, "number_of_approvers")
 
     @number_of_approvers.setter
-    def number_of_approvers(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def number_of_approvers(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "number_of_approvers", value)
 
     @_builtins.property
     @pulumi.getter(name="operatorControlName")
-    def operator_control_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operator_control_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of the operator control.
         """
         return pulumi.get(self, "operator_control_name")
 
     @operator_control_name.setter
-    def operator_control_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operator_control_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operator_control_name", value)
 
     @_builtins.property
     @pulumi.getter(name="preApprovedOpActionLists")
-    def pre_approved_op_action_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pre_approved_op_action_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be auto-approved if the access request only contain operator actions in the pre-approved list.
         """
         return pulumi.get(self, "pre_approved_op_action_lists")
 
     @pre_approved_op_action_lists.setter
-    def pre_approved_op_action_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pre_approved_op_action_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pre_approved_op_action_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         resourceType for which the OperatorControl is applicable
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the operator control.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemMessage")
-    def system_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def system_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This is the message that will be displayed to the operator users while accessing the system.
 
@@ -533,43 +533,43 @@ class _OperatorControlState:
         return pulumi.get(self, "system_message")
 
     @system_message.setter
-    def system_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def system_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "system_message", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfCreation")
-    def time_of_creation(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_creation(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time when the operator control was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_of_creation")
 
     @time_of_creation.setter
-    def time_of_creation(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_creation(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_creation", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfDeletion")
-    def time_of_deletion(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_deletion(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time when deleted expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'. Note a deleted operator control still stays in the system, so that you can still audit operator actions associated with access requests raised on target resources governed by the deleted operator control.
         """
         return pulumi.get(self, "time_of_deletion")
 
     @time_of_deletion.setter
-    def time_of_deletion(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_deletion(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_deletion", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfModification")
-    def time_of_modification(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_modification(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time when the operator control was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_of_modification")
 
     @time_of_modification.setter
-    def time_of_modification(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_modification(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_modification", value)
 
 
@@ -579,19 +579,19 @@ class OperatorControl(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 approver_groups_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 approvers_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_fully_pre_approved: Optional[pulumi.Input[_builtins.bool]] = None,
-                 number_of_approvers: Optional[pulumi.Input[_builtins.int]] = None,
-                 operator_control_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pre_approved_op_action_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_message: Optional[pulumi.Input[_builtins.str]] = None,
+                 approver_groups_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 approvers_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_id_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_fully_pre_approved: pulumi.Input[Optional[_builtins.bool]] = None,
+                 number_of_approvers: pulumi.Input[Optional[_builtins.int]] = None,
+                 operator_control_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pre_approved_op_action_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_message: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Operator Control resource in Oracle Cloud Infrastructure Operator Access Control service.
@@ -668,19 +668,19 @@ class OperatorControl(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 approver_groups_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 approvers_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_fully_pre_approved: Optional[pulumi.Input[_builtins.bool]] = None,
-                 number_of_approvers: Optional[pulumi.Input[_builtins.int]] = None,
-                 operator_control_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pre_approved_op_action_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_message: Optional[pulumi.Input[_builtins.str]] = None,
+                 approver_groups_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 approvers_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_id_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_fully_pre_approved: pulumi.Input[Optional[_builtins.bool]] = None,
+                 number_of_approvers: pulumi.Input[Optional[_builtins.int]] = None,
+                 operator_control_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pre_approved_op_action_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_message: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -730,26 +730,26 @@ class OperatorControl(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            approval_required_op_action_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            approver_groups_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            approvers_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            email_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_default_operator_control: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_fully_pre_approved: Optional[pulumi.Input[_builtins.bool]] = None,
-            last_modified_info: Optional[pulumi.Input[_builtins.str]] = None,
-            number_of_approvers: Optional[pulumi.Input[_builtins.int]] = None,
-            operator_control_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pre_approved_op_action_lists: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_message: Optional[pulumi.Input[_builtins.str]] = None,
-            time_of_creation: Optional[pulumi.Input[_builtins.str]] = None,
-            time_of_deletion: Optional[pulumi.Input[_builtins.str]] = None,
-            time_of_modification: Optional[pulumi.Input[_builtins.str]] = None) -> 'OperatorControl':
+            approval_required_op_action_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            approver_groups_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            approvers_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            email_id_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_default_operator_control: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_fully_pre_approved: pulumi.Input[Optional[_builtins.bool]] = None,
+            last_modified_info: pulumi.Input[Optional[_builtins.str]] = None,
+            number_of_approvers: pulumi.Input[Optional[_builtins.int]] = None,
+            operator_control_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pre_approved_op_action_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_message: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_creation: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_modification: pulumi.Input[Optional[_builtins.str]] = None) -> 'OperatorControl':
         """
         Get an existing OperatorControl resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

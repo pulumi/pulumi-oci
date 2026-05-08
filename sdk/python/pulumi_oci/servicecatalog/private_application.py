@@ -25,10 +25,10 @@ class PrivateApplicationArgs:
                  display_name: pulumi.Input[_builtins.str],
                  package_details: pulumi.Input['PrivateApplicationPackageDetailsArgs'],
                  short_description: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 logo_file_base64encoded: Optional[pulumi.Input[_builtins.str]] = None,
-                 long_description: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 logo_file_base64encoded: pulumi.Input[Optional[_builtins.str]] = None,
+                 long_description: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a PrivateApplication resource.
 
@@ -112,70 +112,70 @@ class PrivateApplicationArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="logoFileBase64encoded")
-    def logo_file_base64encoded(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def logo_file_base64encoded(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Base64-encoded logo to use as the private application icon. Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
         """
         return pulumi.get(self, "logo_file_base64encoded")
 
     @logo_file_base64encoded.setter
-    def logo_file_base64encoded(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def logo_file_base64encoded(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "logo_file_base64encoded", value)
 
     @_builtins.property
     @pulumi.getter(name="longDescription")
-    def long_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def long_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A long description of the private application.
         """
         return pulumi.get(self, "long_description")
 
     @long_description.setter
-    def long_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def long_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "long_description", value)
 
 
 @pulumi.input_type
 class _PrivateApplicationState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 logo_file_base64encoded: Optional[pulumi.Input[_builtins.str]] = None,
-                 logos: Optional[pulumi.Input[Sequence[pulumi.Input['PrivateApplicationLogoArgs']]]] = None,
-                 long_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 package_details: Optional[pulumi.Input['PrivateApplicationPackageDetailsArgs']] = None,
-                 package_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 short_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 logo_file_base64encoded: pulumi.Input[Optional[_builtins.str]] = None,
+                 logos: pulumi.Input[Optional[Sequence[pulumi.Input['PrivateApplicationLogoArgs']]]] = None,
+                 long_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 package_details: pulumi.Input[Optional['PrivateApplicationPackageDetailsArgs']] = None,
+                 package_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 short_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PrivateApplication resources.
 
@@ -229,115 +229,115 @@ class _PrivateApplicationState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private application.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the private application.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="logoFileBase64encoded")
-    def logo_file_base64encoded(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def logo_file_base64encoded(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Base64-encoded logo to use as the private application icon. Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
         """
         return pulumi.get(self, "logo_file_base64encoded")
 
     @logo_file_base64encoded.setter
-    def logo_file_base64encoded(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def logo_file_base64encoded(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "logo_file_base64encoded", value)
 
     @_builtins.property
     @pulumi.getter
-    def logos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PrivateApplicationLogoArgs']]]]:
+    def logos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PrivateApplicationLogoArgs']]]]:
         """
         The model for uploaded binary data, like logos and images.
         """
         return pulumi.get(self, "logos")
 
     @logos.setter
-    def logos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PrivateApplicationLogoArgs']]]]):
+    def logos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PrivateApplicationLogoArgs']]]]):
         pulumi.set(self, "logos", value)
 
     @_builtins.property
     @pulumi.getter(name="longDescription")
-    def long_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def long_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A long description of the private application.
         """
         return pulumi.get(self, "long_description")
 
     @long_description.setter
-    def long_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def long_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "long_description", value)
 
     @_builtins.property
     @pulumi.getter(name="packageDetails")
-    def package_details(self) -> Optional[pulumi.Input['PrivateApplicationPackageDetailsArgs']]:
+    def package_details(self) -> pulumi.Input[Optional['PrivateApplicationPackageDetailsArgs']]:
         """
         A base object for creating a private application package.
         """
         return pulumi.get(self, "package_details")
 
     @package_details.setter
-    def package_details(self, value: Optional[pulumi.Input['PrivateApplicationPackageDetailsArgs']]):
+    def package_details(self, value: pulumi.Input[Optional['PrivateApplicationPackageDetailsArgs']]):
         pulumi.set(self, "package_details", value)
 
     @_builtins.property
     @pulumi.getter(name="packageType")
-    def package_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def package_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of packages within this private application.
         """
         return pulumi.get(self, "package_type")
 
     @package_type.setter
-    def package_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def package_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "package_type", value)
 
     @_builtins.property
     @pulumi.getter(name="shortDescription")
-    def short_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def short_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A short description of the private application.
 
@@ -348,55 +348,55 @@ class _PrivateApplicationState:
         return pulumi.get(self, "short_description")
 
     @short_description.setter
-    def short_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def short_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "short_description", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lifecycle state of the private application.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -406,14 +406,14 @@ class PrivateApplication(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 logo_file_base64encoded: Optional[pulumi.Input[_builtins.str]] = None,
-                 long_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 package_details: Optional[pulumi.Input[Union['PrivateApplicationPackageDetailsArgs', 'PrivateApplicationPackageDetailsArgsDict']]] = None,
-                 short_description: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 logo_file_base64encoded: pulumi.Input[Optional[_builtins.str]] = None,
+                 long_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 package_details: pulumi.Input[Optional[Union['PrivateApplicationPackageDetailsArgs', 'PrivateApplicationPackageDetailsArgsDict']]] = None,
+                 short_description: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Private Application resource in Oracle Cloud Infrastructure Service Catalog service.
@@ -535,14 +535,14 @@ class PrivateApplication(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 logo_file_base64encoded: Optional[pulumi.Input[_builtins.str]] = None,
-                 long_description: Optional[pulumi.Input[_builtins.str]] = None,
-                 package_details: Optional[pulumi.Input[Union['PrivateApplicationPackageDetailsArgs', 'PrivateApplicationPackageDetailsArgsDict']]] = None,
-                 short_description: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 logo_file_base64encoded: pulumi.Input[Optional[_builtins.str]] = None,
+                 long_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 package_details: pulumi.Input[Optional[Union['PrivateApplicationPackageDetailsArgs', 'PrivateApplicationPackageDetailsArgsDict']]] = None,
+                 short_description: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -584,20 +584,20 @@ class PrivateApplication(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            logo_file_base64encoded: Optional[pulumi.Input[_builtins.str]] = None,
-            logos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PrivateApplicationLogoArgs', 'PrivateApplicationLogoArgsDict']]]]] = None,
-            long_description: Optional[pulumi.Input[_builtins.str]] = None,
-            package_details: Optional[pulumi.Input[Union['PrivateApplicationPackageDetailsArgs', 'PrivateApplicationPackageDetailsArgsDict']]] = None,
-            package_type: Optional[pulumi.Input[_builtins.str]] = None,
-            short_description: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'PrivateApplication':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            logo_file_base64encoded: pulumi.Input[Optional[_builtins.str]] = None,
+            logos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PrivateApplicationLogoArgs', 'PrivateApplicationLogoArgsDict']]]]] = None,
+            long_description: pulumi.Input[Optional[_builtins.str]] = None,
+            package_details: pulumi.Input[Optional[Union['PrivateApplicationPackageDetailsArgs', 'PrivateApplicationPackageDetailsArgsDict']]] = None,
+            package_type: pulumi.Input[Optional[_builtins.str]] = None,
+            short_description: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'PrivateApplication':
         """
         Get an existing PrivateApplication resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

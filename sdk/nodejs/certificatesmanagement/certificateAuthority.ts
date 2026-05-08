@@ -203,55 +203,55 @@ export interface CertificateAuthorityState {
     /**
      * (Updatable) The configuration details for creating a certificate authority (CA).
      */
-    certificateAuthorityConfig?: pulumi.Input<inputs.CertificatesManagement.CertificateAuthorityCertificateAuthorityConfig>;
+    certificateAuthorityConfig?: pulumi.Input<inputs.CertificatesManagement.CertificateAuthorityCertificateAuthorityConfig | undefined>;
     /**
      * (Updatable) A list of rules that control how the CA is used and managed.
      */
-    certificateAuthorityRules?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.CertificateAuthorityCertificateAuthorityRule>[]>;
+    certificateAuthorityRules?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.CertificateAuthorityCertificateAuthorityRule>[] | undefined>;
     /**
      * (Updatable) The details of the certificate revocation list (CRL).
      */
-    certificateRevocationListDetails?: pulumi.Input<inputs.CertificatesManagement.CertificateAuthorityCertificateRevocationListDetails>;
+    certificateRevocationListDetails?: pulumi.Input<inputs.CertificatesManagement.CertificateAuthorityCertificateRevocationListDetails | undefined>;
     /**
      * (Updatable) The compartment in which you want to create the CA.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The origin of the CA.
      */
-    configType?: pulumi.Input<string>;
+    configType?: pulumi.Input<string | undefined>;
     /**
      * The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
      */
-    currentVersions?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.CertificateAuthorityCurrentVersion>[]>;
+    currentVersions?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.CertificateAuthorityCurrentVersion>[] | undefined>;
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A brief description of the CA.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
      */
-    externalKeyDescription?: pulumi.Input<string>;
+    externalKeyDescription?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
      */
-    issuerCertificateAuthorityId?: pulumi.Input<string>;
+    issuerCertificateAuthorityId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * Additional information about the current CA lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      *
@@ -259,27 +259,27 @@ export interface CertificateAuthorityState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The algorithm used to sign public key certificates that the CA issues.
      */
-    signingAlgorithm?: pulumi.Input<string>;
+    signingAlgorithm?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the certificate authority.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The subject of the certificate, which is a distinguished name that identifies the entity that owns the public key in the certificate.
      */
-    subjects?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.CertificateAuthoritySubject>[]>;
+    subjects?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.CertificateAuthoritySubject>[] | undefined>;
     /**
      * A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
-    timeOfDeletion?: pulumi.Input<string>;
+    timeOfDeletion?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -293,11 +293,11 @@ export interface CertificateAuthorityArgs {
     /**
      * (Updatable) A list of rules that control how the CA is used and managed.
      */
-    certificateAuthorityRules?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.CertificateAuthorityCertificateAuthorityRule>[]>;
+    certificateAuthorityRules?: pulumi.Input<pulumi.Input<inputs.CertificatesManagement.CertificateAuthorityCertificateAuthorityRule>[] | undefined>;
     /**
      * (Updatable) The details of the certificate revocation list (CRL).
      */
-    certificateRevocationListDetails?: pulumi.Input<inputs.CertificatesManagement.CertificateAuthorityCertificateRevocationListDetails>;
+    certificateRevocationListDetails?: pulumi.Input<inputs.CertificatesManagement.CertificateAuthorityCertificateRevocationListDetails | undefined>;
     /**
      * (Updatable) The compartment in which you want to create the CA.
      */
@@ -305,23 +305,23 @@ export interface CertificateAuthorityArgs {
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A brief description of the CA.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) For externally managed CAs, a description of the externally managed private key. Avoid entering confidential information.
      */
-    externalKeyDescription?: pulumi.Input<string>;
+    externalKeyDescription?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
      *
@@ -329,5 +329,5 @@ export interface CertificateAuthorityArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

@@ -912,7 +912,7 @@ def get_deploy_stage(deploy_stage_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_stage = oci.DevOps.get_deploy_stage(deploy_stage_id=test_deploy_stage_oci_devops_deploy_stage["id"])
+    test_deploy_stage = oci.devops.get_deploy_stage(deploy_stage_id=test_deploy_stage_oci_devops_deploy_stage["id"])
     ```
 
 
@@ -996,7 +996,7 @@ def get_deploy_stage(deploy_stage_id: Optional[_builtins.str] = None,
         traffic_shift_target=pulumi.get(__ret__, 'traffic_shift_target'),
         values_artifact_ids=pulumi.get(__ret__, 'values_artifact_ids'),
         wait_criterias=pulumi.get(__ret__, 'wait_criterias'))
-def get_deploy_stage_output(deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_deploy_stage_output(deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeployStageResult]:
     """
     This data source provides details about a specific Deploy Stage resource in Oracle Cloud Infrastructure Devops service.
@@ -1009,7 +1009,7 @@ def get_deploy_stage_output(deploy_stage_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_stage = oci.DevOps.get_deploy_stage(deploy_stage_id=test_deploy_stage_oci_devops_deploy_stage["id"])
+    test_deploy_stage = oci.devops.get_deploy_stage(deploy_stage_id=test_deploy_stage_oci_devops_deploy_stage["id"])
     ```
 
 

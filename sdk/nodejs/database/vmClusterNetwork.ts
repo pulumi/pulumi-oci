@@ -28,9 +28,9 @@ import * as utilities from "../utilities";
  *     scans: [{
  *         hostname: vmClusterNetworkScansHostname,
  *         ips: vmClusterNetworkScansIps,
- *         port: vmClusterNetworkScansPort,
- *         scanListenerPortTcp: vmClusterNetworkScansScanListenerPortTcp,
- *         scanListenerPortTcpSsl: vmClusterNetworkScansScanListenerPortTcpSsl,
+ *         port: Number(vmClusterNetworkScansPort),
+ *         scanListenerPortTcp: Number(vmClusterNetworkScansScanListenerPortTcp),
+ *         scanListenerPortTcpSsl: Number(vmClusterNetworkScansScanListenerPortTcpSsl),
  *     }],
  *     vmNetworks: [{
  *         networkType: vmClusterNetworkVmNetworksNetworkType,
@@ -52,14 +52,14 @@ import * as utilities from "../utilities";
  *     drScans: [{
  *         hostname: vmClusterNetworkDrScansHostname,
  *         ips: vmClusterNetworkDrScansIps,
- *         scanListenerPortTcp: vmClusterNetworkDrScansScanListenerPortTcp,
- *         scanListenerPortTcpSsl: vmClusterNetworkDrScansScanListenerPortTcpSsl,
+ *         scanListenerPortTcp: Number(vmClusterNetworkDrScansScanListenerPortTcp),
+ *         scanListenerPortTcpSsl: Number(vmClusterNetworkDrScansScanListenerPortTcpSsl),
  *     }],
  *     freeformTags: {
  *         Department: "Finance",
  *     },
  *     ntps: vmClusterNetworkNtp,
- *     validateVmClusterNetwork: vmClusterNetworkValidateVmClusterNetwork,
+ *     validateVmClusterNetwork: vmClusterNetworkValidateVmClusterNetwork === "true",
  * });
  * ```
  *
@@ -239,78 +239,78 @@ export class VmClusterNetwork extends pulumi.CustomResource {
  * Input properties used for looking up and filtering VmClusterNetwork resources.
  */
 export interface VmClusterNetworkState {
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
      */
-    dns?: pulumi.Input<pulumi.Input<string>[]>;
+    dns?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The SCAN details for DR network
      */
-    drScans?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterNetworkDrScan>[]>;
+    drScans?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterNetworkDrScan>[] | undefined>;
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    exadataInfrastructureId?: pulumi.Input<string>;
+    exadataInfrastructureId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
      */
-    ntps?: pulumi.Input<pulumi.Input<string>[]>;
+    ntps?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The SCAN details.
      */
-    scans?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterNetworkScan>[]>;
+    scans?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterNetworkScan>[] | undefined>;
     /**
      * The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time when the VM cluster network was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster resource puts a VM Cluster Network in `REQUIRES_VALIDATION` state. This results in `After applying this step and refreshing, the plan was not empty` error and users should apply the terraform configuration again to validate the VM Cluster Network.
      */
-    validateVmClusterNetwork?: pulumi.Input<boolean>;
+    validateVmClusterNetwork?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
      */
-    vmClusterId?: pulumi.Input<string>;
+    vmClusterId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Details of the client and backup networks.
      */
-    vmNetworks?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterNetworkVmNetwork>[]>;
+    vmNetworks?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterNetworkVmNetwork>[] | undefined>;
 }
 
 /**
  * The set of arguments for constructing a VmClusterNetwork resource.
  */
 export interface VmClusterNetworkArgs {
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -318,7 +318,7 @@ export interface VmClusterNetworkArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
      */
@@ -326,11 +326,11 @@ export interface VmClusterNetworkArgs {
     /**
      * (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
      */
-    dns?: pulumi.Input<pulumi.Input<string>[]>;
+    dns?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The SCAN details for DR network
      */
-    drScans?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterNetworkDrScan>[]>;
+    drScans?: pulumi.Input<pulumi.Input<inputs.Database.VmClusterNetworkDrScan>[] | undefined>;
     /**
      * The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -338,11 +338,11 @@ export interface VmClusterNetworkArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
      */
-    ntps?: pulumi.Input<pulumi.Input<string>[]>;
+    ntps?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The SCAN details.
      */
@@ -350,7 +350,7 @@ export interface VmClusterNetworkArgs {
     /**
      * (Updatable) A boolean flag indicating whether or not to validate VM cluster network after creation. Updates are not allowed on validated exadata VM cluster network. Note: Deleting a VM Cluster resource puts a VM Cluster Network in `REQUIRES_VALIDATION` state. This results in `After applying this step and refreshing, the plan was not empty` error and users should apply the terraform configuration again to validate the VM Cluster Network.
      */
-    validateVmClusterNetwork?: pulumi.Input<boolean>;
+    validateVmClusterNetwork?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Details of the client and backup networks.
      */

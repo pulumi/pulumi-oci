@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTsigKeys = oci.Dns.getTsigKeys({
+ * const testTsigKeys = oci.dns.getTsigKeys({
  *     compartmentId: compartmentId,
  *     id: tsigKeyId,
  *     name: tsigKeyName,
@@ -96,7 +96,7 @@ export interface GetTsigKeysResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTsigKeys = oci.Dns.getTsigKeys({
+ * const testTsigKeys = oci.dns.getTsigKeys({
  *     compartmentId: compartmentId,
  *     id: tsigKeyId,
  *     name: tsigKeyName,
@@ -123,17 +123,17 @@ export interface GetTsigKeysOutputArgs {
      * The OCID of the compartment the resource belongs to.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Dns.GetTsigKeysFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Dns.GetTsigKeysFilterArgs>[] | undefined>;
     /**
      * The OCID of a resource.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The name of a resource.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The state of a resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

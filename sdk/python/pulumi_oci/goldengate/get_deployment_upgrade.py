@@ -409,7 +409,7 @@ def get_deployment_upgrade(deployment_upgrade_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_upgrade = oci.GoldenGate.get_deployment_upgrade(deployment_upgrade_id=test_deployment_upgrade_oci_golden_gate_deployment_upgrade["id"])
+    test_deployment_upgrade = oci.goldengate.get_deployment_upgrade(deployment_upgrade_id=test_deployment_upgrade_oci_golden_gate_deployment_upgrade["id"])
     ```
 
 
@@ -451,7 +451,7 @@ def get_deployment_upgrade(deployment_upgrade_id: Optional[_builtins.str] = None
         time_snoozed_until=pulumi.get(__ret__, 'time_snoozed_until'),
         time_started=pulumi.get(__ret__, 'time_started'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_deployment_upgrade_output(deployment_upgrade_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_deployment_upgrade_output(deployment_upgrade_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentUpgradeResult]:
     """
     This data source provides details about a specific Deployment Upgrade resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -464,7 +464,7 @@ def get_deployment_upgrade_output(deployment_upgrade_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_upgrade = oci.GoldenGate.get_deployment_upgrade(deployment_upgrade_id=test_deployment_upgrade_oci_golden_gate_deployment_upgrade["id"])
+    test_deployment_upgrade = oci.goldengate.get_deployment_upgrade(deployment_upgrade_id=test_deployment_upgrade_oci_golden_gate_deployment_upgrade["id"])
     ```
 
 

@@ -187,7 +187,7 @@ def get_artifact_by_path(artifact_path: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_artifact_by_path = oci.GenericArtifactsContent.get_artifact_by_path(artifact_path=artifact_by_path_artifact_path,
+    test_artifact_by_path = oci.genericartifactscontent.get_artifact_by_path(artifact_path=artifact_by_path_artifact_path,
         repository_id=test_repository["id"],
         version=artifact_by_path_version)
     ```
@@ -220,9 +220,9 @@ def get_artifact_by_path(artifact_path: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         version=pulumi.get(__ret__, 'version'))
-def get_artifact_by_path_output(artifact_path: Optional[pulumi.Input[_builtins.str]] = None,
-                                repository_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                version: Optional[pulumi.Input[_builtins.str]] = None,
+def get_artifact_by_path_output(artifact_path: pulumi.Input[Optional[_builtins.str]] = None,
+                                repository_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                version: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetArtifactByPathResult]:
     """
     This data source provides details about a specific Artifact By Path resource in Oracle Cloud Infrastructure Generic Artifacts Content service.
@@ -235,7 +235,7 @@ def get_artifact_by_path_output(artifact_path: Optional[pulumi.Input[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_artifact_by_path = oci.GenericArtifactsContent.get_artifact_by_path(artifact_path=artifact_by_path_artifact_path,
+    test_artifact_by_path = oci.genericartifactscontent.get_artifact_by_path(artifact_path=artifact_by_path_artifact_path,
         repository_id=test_repository["id"],
         version=artifact_by_path_version)
     ```

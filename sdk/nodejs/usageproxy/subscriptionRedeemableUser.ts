@@ -134,15 +134,15 @@ export interface SubscriptionRedeemableUserState {
     /**
      * The list of new user to be added to the list of user that can redeem rewards.
      */
-    items?: pulumi.Input<pulumi.Input<inputs.UsageProxy.SubscriptionRedeemableUserItem>[]>;
+    items?: pulumi.Input<pulumi.Input<inputs.UsageProxy.SubscriptionRedeemableUserItem>[] | undefined>;
     /**
      * The subscription ID for which rewards information is requested for.
      */
-    subscriptionId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the tenancy.
      */
-    tenancyId?: pulumi.Input<string>;
+    tenancyId?: pulumi.Input<string | undefined>;
     /**
      * The user ID of the person to send a copy of an email.
      *
@@ -150,7 +150,7 @@ export interface SubscriptionRedeemableUserState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    userId?: pulumi.Input<string>;
+    userId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -176,5 +176,5 @@ export interface SubscriptionRedeemableUserArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    userId?: pulumi.Input<string>;
+    userId?: pulumi.Input<string | undefined>;
 }

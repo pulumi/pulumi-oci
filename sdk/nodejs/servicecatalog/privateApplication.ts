@@ -205,39 +205,39 @@ export interface PrivateApplicationState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private application.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The name of the private application.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Base64-encoded logo to use as the private application icon. Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
      */
-    logoFileBase64encoded?: pulumi.Input<string>;
+    logoFileBase64encoded?: pulumi.Input<string | undefined>;
     /**
      * The model for uploaded binary data, like logos and images.
      */
-    logos?: pulumi.Input<pulumi.Input<inputs.ServiceCatalog.PrivateApplicationLogo>[]>;
+    logos?: pulumi.Input<pulumi.Input<inputs.ServiceCatalog.PrivateApplicationLogo>[] | undefined>;
     /**
      * (Updatable) A long description of the private application.
      */
-    longDescription?: pulumi.Input<string>;
+    longDescription?: pulumi.Input<string | undefined>;
     /**
      * A base object for creating a private application package.
      */
-    packageDetails?: pulumi.Input<inputs.ServiceCatalog.PrivateApplicationPackageDetails>;
+    packageDetails?: pulumi.Input<inputs.ServiceCatalog.PrivateApplicationPackageDetails | undefined>;
     /**
      * Type of packages within this private application.
      */
-    packageType?: pulumi.Input<string>;
+    packageType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A short description of the private application.
      *
@@ -245,23 +245,23 @@ export interface PrivateApplicationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    shortDescription?: pulumi.Input<string>;
+    shortDescription?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of the private application.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the private application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-05-26T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the private application was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2021-12-10T05:10:29.721Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -275,7 +275,7 @@ export interface PrivateApplicationArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The name of the private application.
      */
@@ -283,15 +283,15 @@ export interface PrivateApplicationArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Base64-encoded logo to use as the private application icon. Template icon file requirements: PNG format, 50 KB maximum, 130 x 130 pixels.
      */
-    logoFileBase64encoded?: pulumi.Input<string>;
+    logoFileBase64encoded?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A long description of the private application.
      */
-    longDescription?: pulumi.Input<string>;
+    longDescription?: pulumi.Input<string | undefined>;
     /**
      * A base object for creating a private application package.
      */

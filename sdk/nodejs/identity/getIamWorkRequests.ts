@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIamWorkRequests = oci.Identity.getIamWorkRequests({
+ * const testIamWorkRequests = oci.identity.getIamWorkRequests({
  *     compartmentId: compartmentId,
  *     resourceIdentifier: iamWorkRequestResourceIdentifier,
  * });
@@ -83,7 +83,7 @@ export interface GetIamWorkRequestsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIamWorkRequests = oci.Identity.getIamWorkRequests({
+ * const testIamWorkRequests = oci.identity.getIamWorkRequests({
  *     compartmentId: compartmentId,
  *     resourceIdentifier: iamWorkRequestResourceIdentifier,
  * });
@@ -106,9 +106,9 @@ export interface GetIamWorkRequestsOutputArgs {
      * The OCID of the compartment (remember that the tenancy is simply the root compartment).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetIamWorkRequestsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetIamWorkRequestsFilterArgs>[] | undefined>;
     /**
      * The identifier of the resource the work request affects.
      */
-    resourceIdentifier?: pulumi.Input<string>;
+    resourceIdentifier?: pulumi.Input<string | undefined>;
 }

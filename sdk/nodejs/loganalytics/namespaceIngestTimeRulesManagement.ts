@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testNamespaceIngestTimeRulesManagement = new oci.loganalytics.NamespaceIngestTimeRulesManagement("test_namespace_ingest_time_rules_management", {
  *     ingestTimeRuleId: testRule.id,
  *     namespace: namespaceIngestTimeRulesManagementNamespace,
- *     enableIngestTimeRule: enableIngestTimeRule,
+ *     enableIngestTimeRule: enableIngestTimeRule === "true",
  * });
  * ```
  */
@@ -116,15 +116,15 @@ export interface NamespaceIngestTimeRulesManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    enableIngestTimeRule?: pulumi.Input<boolean>;
+    enableIngestTimeRule?: pulumi.Input<boolean | undefined>;
     /**
      * Unique ocid of the ingest time rule. Ingest time rule ID can be obtained by running 'oci log-analytics ingest-time-rule list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'id' parameter value contains the rule ID.
      */
-    ingestTimeRuleId?: pulumi.Input<string>;
+    ingestTimeRuleId?: pulumi.Input<string | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
 }
 
 /**

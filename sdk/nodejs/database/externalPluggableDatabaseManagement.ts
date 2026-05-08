@@ -111,18 +111,18 @@ export class ExternalPluggableDatabaseManagement extends pulumi.CustomResource {
  * Input properties used for looking up and filtering ExternalPluggableDatabaseManagement resources.
  */
 export interface ExternalPluggableDatabaseManagementState {
-    enableManagement?: pulumi.Input<boolean>;
+    enableManagement?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      */
-    externalDatabaseConnectorId?: pulumi.Input<string>;
+    externalDatabaseConnectorId?: pulumi.Input<string | undefined>;
     /**
      * The ExternalPluggableDatabaseId [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    externalPluggableDatabaseId?: pulumi.Input<string>;
+    externalPluggableDatabaseId?: pulumi.Input<string | undefined>;
 }
 
 /**

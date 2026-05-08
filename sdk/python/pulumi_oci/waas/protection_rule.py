@@ -23,8 +23,8 @@ class ProtectionRuleArgs:
     def __init__(__self__, *,
                  key: pulumi.Input[_builtins.str],
                  waas_policy_id: pulumi.Input[_builtins.str],
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 exclusions: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 exclusions: pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]]] = None):
         """
         The set of arguments for constructing a ProtectionRule resource.
 
@@ -66,40 +66,40 @@ class ProtectionRuleArgs:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter
-    def exclusions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]]]:
+    def exclusions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]]]:
         """
         (Updatable)
         """
         return pulumi.get(self, "exclusions")
 
     @exclusions.setter
-    def exclusions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]]]):
+    def exclusions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]]]):
         pulumi.set(self, "exclusions", value)
 
 
 @pulumi.input_type
 class _ProtectionRuleState:
     def __init__(__self__, *,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 exclusions: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 labels: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 mod_security_rule_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 waas_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 exclusions: pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 labels: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 mod_security_rule_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 waas_policy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProtectionRule resources.
 
@@ -131,98 +131,98 @@ class _ProtectionRuleState:
 
     @_builtins.property
     @pulumi.getter
-    def action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
         """
         return pulumi.get(self, "action")
 
     @action.setter
-    def action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The description of the protection rule.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def exclusions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]]]:
+    def exclusions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]]]:
         """
         (Updatable)
         """
         return pulumi.get(self, "exclusions")
 
     @exclusions.setter
-    def exclusions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]]]):
+    def exclusions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ProtectionRuleExclusionArgs']]]]):
         pulumi.set(self, "exclusions", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The unique key of the protection rule.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def labels(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of labels for the protection rule.
         """
         return pulumi.get(self, "labels")
 
     @labels.setter
-    def labels(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def labels(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "labels", value)
 
     @_builtins.property
     @pulumi.getter(name="modSecurityRuleIds")
-    def mod_security_rule_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def mod_security_rule_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see [Mod Security's documentation](https://www.modsecurity.org/CRS/Documentation/index.html).
         """
         return pulumi.get(self, "mod_security_rule_ids")
 
     @mod_security_rule_ids.setter
-    def mod_security_rule_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def mod_security_rule_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "mod_security_rule_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the protection rule.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="waasPolicyId")
-    def waas_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def waas_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
         """
         return pulumi.get(self, "waas_policy_id")
 
     @waas_policy_id.setter
-    def waas_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def waas_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "waas_policy_id", value)
 
 
@@ -232,10 +232,10 @@ class ProtectionRule(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 exclusions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionRuleExclusionArgs', 'ProtectionRuleExclusionArgsDict']]]]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 waas_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 exclusions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionRuleExclusionArgs', 'ProtectionRuleExclusionArgsDict']]]]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 waas_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Protection Rule resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -333,10 +333,10 @@ class ProtectionRule(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action: Optional[pulumi.Input[_builtins.str]] = None,
-                 exclusions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionRuleExclusionArgs', 'ProtectionRuleExclusionArgsDict']]]]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 waas_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 action: pulumi.Input[Optional[_builtins.str]] = None,
+                 exclusions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionRuleExclusionArgs', 'ProtectionRuleExclusionArgsDict']]]]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 waas_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -368,14 +368,14 @@ class ProtectionRule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            exclusions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProtectionRuleExclusionArgs', 'ProtectionRuleExclusionArgsDict']]]]] = None,
-            key: Optional[pulumi.Input[_builtins.str]] = None,
-            labels: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            mod_security_rule_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            waas_policy_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ProtectionRule':
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            exclusions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectionRuleExclusionArgs', 'ProtectionRuleExclusionArgsDict']]]]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            labels: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            mod_security_rule_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            waas_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ProtectionRule':
         """
         Get an existing ProtectionRule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

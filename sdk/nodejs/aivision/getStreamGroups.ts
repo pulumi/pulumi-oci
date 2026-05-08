@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamGroups = oci.AiVision.getStreamGroups({
+ * const testStreamGroups = oci.aivision.getStreamGroups({
  *     compartmentId: compartmentId,
  *     displayName: streamGroupDisplayName,
  *     id: streamGroupId,
@@ -87,7 +87,7 @@ export interface GetStreamGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamGroups = oci.AiVision.getStreamGroups({
+ * const testStreamGroups = oci.aivision.getStreamGroups({
  *     compartmentId: compartmentId,
  *     displayName: streamGroupDisplayName,
  *     id: streamGroupId,
@@ -112,14 +112,14 @@ export interface GetStreamGroupsOutputArgs {
     /**
      * The ID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.AiVision.GetStreamGroupsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.AiVision.GetStreamGroupsFilterArgs>[] | undefined>;
     /**
      * The filter to find the device with the given identifier.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
 }

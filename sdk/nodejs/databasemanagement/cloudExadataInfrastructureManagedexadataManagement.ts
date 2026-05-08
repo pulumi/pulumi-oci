@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *
  * const testCloudExadataInfrastructureManagedexadataManagement = new oci.databasemanagement.CloudExadataInfrastructureManagedexadataManagement("test_cloud_exadata_infrastructure_managedexadata_management", {
  *     cloudExadataInfrastructureId: testCloudExadataInfrastructure.id,
- *     enableManagedexadata: enableManagedexadata,
+ *     enableManagedexadata: enableManagedexadata === "true",
  *     licenseModel: cloudExadataInfrastructureManagedexadataManagementLicenseModel,
  * });
  * ```
@@ -112,7 +112,7 @@ export interface CloudExadataInfrastructureManagedexadataManagementState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
-    cloudExadataInfrastructureId?: pulumi.Input<string>;
+    cloudExadataInfrastructureId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
@@ -120,11 +120,11 @@ export interface CloudExadataInfrastructureManagedexadataManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    enableManagedexadata?: pulumi.Input<boolean>;
+    enableManagedexadata?: pulumi.Input<boolean | undefined>;
     /**
      * The Oracle license model that applies to the database management resources.
      */
-    licenseModel?: pulumi.Input<string>;
+    licenseModel?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -146,5 +146,5 @@ export interface CloudExadataInfrastructureManagedexadataManagementArgs {
     /**
      * The Oracle license model that applies to the database management resources.
      */
-    licenseModel?: pulumi.Input<string>;
+    licenseModel?: pulumi.Input<string | undefined>;
 }

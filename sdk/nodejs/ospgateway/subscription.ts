@@ -254,75 +254,75 @@ export interface SubscriptionState {
     /**
      * Account type.
      */
-    accountType?: pulumi.Input<string>;
+    accountType?: pulumi.Input<string | undefined>;
     /**
      * Bill to customer Account id.
      */
-    billToCustAccountId?: pulumi.Input<string>;
+    billToCustAccountId?: pulumi.Input<string | undefined>;
     /**
      * Address details model.
      */
-    billingAddresses?: pulumi.Input<pulumi.Input<inputs.OspGateway.SubscriptionBillingAddress>[]>;
+    billingAddresses?: pulumi.Input<pulumi.Input<inputs.OspGateway.SubscriptionBillingAddress>[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Currency code
      */
-    currencyCode?: pulumi.Input<string>;
+    currencyCode?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) User email
      */
-    email?: pulumi.Input<string>;
+    email?: pulumi.Input<string | undefined>;
     /**
      * GSI Subscription external code.
      */
-    gsiOrgCode?: pulumi.Input<string>;
+    gsiOrgCode?: pulumi.Input<string | undefined>;
     /**
      * Corporate conversion allowed status
      */
-    isCorporateConversionAllowed?: pulumi.Input<boolean>;
+    isCorporateConversionAllowed?: pulumi.Input<boolean | undefined>;
     /**
      * Payment intension.
      */
-    isIntentToPay?: pulumi.Input<boolean>;
+    isIntentToPay?: pulumi.Input<boolean | undefined>;
     /**
      * Language short code (en, de, hu, etc)
      */
-    languageCode?: pulumi.Input<string>;
+    languageCode?: pulumi.Input<string | undefined>;
     /**
      * GSI organization external identifier.
      */
-    organizationId?: pulumi.Input<string>;
+    organizationId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The home region's public name of the logged in user.
      */
-    ospHomeRegion?: pulumi.Input<string>;
+    ospHomeRegion?: pulumi.Input<string | undefined>;
     /**
      * Payment gateway details.
      */
-    paymentGateways?: pulumi.Input<pulumi.Input<inputs.OspGateway.SubscriptionPaymentGateway>[]>;
+    paymentGateways?: pulumi.Input<pulumi.Input<inputs.OspGateway.SubscriptionPaymentGateway>[] | undefined>;
     /**
      * Payment option list of a subscription.
      */
-    paymentOptions?: pulumi.Input<pulumi.Input<inputs.OspGateway.SubscriptionPaymentOption>[]>;
+    paymentOptions?: pulumi.Input<pulumi.Input<inputs.OspGateway.SubscriptionPaymentOption>[] | undefined>;
     /**
      * Subscription plan type.
      */
-    planType?: pulumi.Input<string>;
+    planType?: pulumi.Input<string | undefined>;
     /**
      * Ship to customer account role.
      */
-    shipToCustAcctRoleId?: pulumi.Input<string>;
+    shipToCustAcctRoleId?: pulumi.Input<string | undefined>;
     /**
      * Ship to customer account site address id.
      */
-    shipToCustAcctSiteId?: pulumi.Input<string>;
+    shipToCustAcctSiteId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Subscription details object which extends the SubscriptionSummary
      */
-    subscription?: pulumi.Input<inputs.OspGateway.SubscriptionSubscription>;
+    subscription?: pulumi.Input<inputs.OspGateway.SubscriptionSubscription | undefined>;
     /**
      * Subscription id(OCID).
      *
@@ -330,35 +330,35 @@ export interface SubscriptionState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    subscriptionId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string | undefined>;
     /**
      * Subscription plan number.
      */
-    subscriptionPlanNumber?: pulumi.Input<string>;
+    subscriptionPlanNumber?: pulumi.Input<string | undefined>;
     /**
      * Tax details.
      */
-    taxInfos?: pulumi.Input<pulumi.Input<inputs.OspGateway.SubscriptionTaxInfo>[]>;
+    taxInfos?: pulumi.Input<pulumi.Input<inputs.OspGateway.SubscriptionTaxInfo>[] | undefined>;
     /**
      * Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
      */
-    timePersonalToCorporateConv?: pulumi.Input<string>;
+    timePersonalToCorporateConv?: pulumi.Input<string | undefined>;
     /**
      * Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      */
-    timePlanUpgrade?: pulumi.Input<string>;
+    timePlanUpgrade?: pulumi.Input<string | undefined>;
     /**
      * Start date of the subscription.
      */
-    timeStart?: pulumi.Input<string>;
+    timeStart?: pulumi.Input<string | undefined>;
     /**
      * Status of the upgrade.
      */
-    upgradeState?: pulumi.Input<string>;
+    upgradeState?: pulumi.Input<string | undefined>;
     /**
      * This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
      */
-    upgradeStateDetails?: pulumi.Input<string>;
+    upgradeStateDetails?: pulumi.Input<string | undefined>;
 }
 
 /**

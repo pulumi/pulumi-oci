@@ -31,16 +31,16 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserAssessmentProfiles = oci.DataSafe.getUserAssessmentProfiles({
+ * const testUserAssessmentProfiles = oci.datasafe.getUserAssessmentProfiles({
  *     compartmentId: compartmentId,
  *     userAssessmentId: testUserAssessment.id,
  *     accessLevel: userAssessmentProfileAccessLevel,
- *     compartmentIdInSubtree: userAssessmentProfileCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: userAssessmentProfileCompartmentIdInSubtree === "true",
  *     failedLoginAttemptsGreaterThanOrEqual: userAssessmentProfileFailedLoginAttemptsGreaterThanOrEqual,
  *     failedLoginAttemptsLessThan: userAssessmentProfileFailedLoginAttemptsLessThan,
  *     inactiveAccountTimeGreaterThanOrEqual: userAssessmentProfileInactiveAccountTimeGreaterThanOrEqual,
  *     inactiveAccountTimeLessThan: userAssessmentProfileInactiveAccountTimeLessThan,
- *     isUserCreated: userAssessmentProfileIsUserCreated,
+ *     isUserCreated: userAssessmentProfileIsUserCreated === "true",
  *     passwordLockTimeGreaterThanOrEqual: userAssessmentProfilePasswordLockTimeGreaterThanOrEqual,
  *     passwordLockTimeLessThan: userAssessmentProfilePasswordLockTimeLessThan,
  *     passwordVerificationFunction: userAssessmentProfilePasswordVerificationFunction,
@@ -232,16 +232,16 @@ export interface GetUserAssessmentProfilesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserAssessmentProfiles = oci.DataSafe.getUserAssessmentProfiles({
+ * const testUserAssessmentProfiles = oci.datasafe.getUserAssessmentProfiles({
  *     compartmentId: compartmentId,
  *     userAssessmentId: testUserAssessment.id,
  *     accessLevel: userAssessmentProfileAccessLevel,
- *     compartmentIdInSubtree: userAssessmentProfileCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: userAssessmentProfileCompartmentIdInSubtree === "true",
  *     failedLoginAttemptsGreaterThanOrEqual: userAssessmentProfileFailedLoginAttemptsGreaterThanOrEqual,
  *     failedLoginAttemptsLessThan: userAssessmentProfileFailedLoginAttemptsLessThan,
  *     inactiveAccountTimeGreaterThanOrEqual: userAssessmentProfileInactiveAccountTimeGreaterThanOrEqual,
  *     inactiveAccountTimeLessThan: userAssessmentProfileInactiveAccountTimeLessThan,
- *     isUserCreated: userAssessmentProfileIsUserCreated,
+ *     isUserCreated: userAssessmentProfileIsUserCreated === "true",
  *     passwordLockTimeGreaterThanOrEqual: userAssessmentProfilePasswordLockTimeGreaterThanOrEqual,
  *     passwordLockTimeLessThan: userAssessmentProfilePasswordLockTimeLessThan,
  *     passwordVerificationFunction: userAssessmentProfilePasswordVerificationFunction,
@@ -286,7 +286,7 @@ export interface GetUserAssessmentProfilesOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -294,56 +294,56 @@ export interface GetUserAssessmentProfilesOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * An optional filter to return the profiles having allow failed login attempts number greater than or equal to the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
      */
-    failedLoginAttemptsGreaterThanOrEqual?: pulumi.Input<string>;
+    failedLoginAttemptsGreaterThanOrEqual?: pulumi.Input<string | undefined>;
     /**
      * An optional filter to return the profiles having failed login attempts number less than the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
      */
-    failedLoginAttemptsLessThan?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetUserAssessmentProfilesFilterArgs>[]>;
+    failedLoginAttemptsLessThan?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetUserAssessmentProfilesFilterArgs>[] | undefined>;
     /**
      * An optional filter to return the profiles allowing inactive account time in days greater than or equal to the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
      */
-    inactiveAccountTimeGreaterThanOrEqual?: pulumi.Input<string>;
+    inactiveAccountTimeGreaterThanOrEqual?: pulumi.Input<string | undefined>;
     /**
      * An optional filter to return the profiles  allowing inactive account time in days less than the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
      */
-    inactiveAccountTimeLessThan?: pulumi.Input<string>;
+    inactiveAccountTimeLessThan?: pulumi.Input<string | undefined>;
     /**
      * An optional filter to return the user created profiles.
      */
-    isUserCreated?: pulumi.Input<boolean>;
+    isUserCreated?: pulumi.Input<boolean | undefined>;
     /**
      * An optional filter to return the profiles having password lock number greater than or equal to the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
      */
-    passwordLockTimeGreaterThanOrEqual?: pulumi.Input<string>;
+    passwordLockTimeGreaterThanOrEqual?: pulumi.Input<string | undefined>;
     /**
      * An optional filter to return the profiles having password lock number less than the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
      */
-    passwordLockTimeLessThan?: pulumi.Input<string>;
+    passwordLockTimeLessThan?: pulumi.Input<string | undefined>;
     /**
      * An optional filter to filter the profiles based on password verification function.
      */
-    passwordVerificationFunction?: pulumi.Input<string>;
+    passwordVerificationFunction?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items that match the specified profile name.
      */
-    profileName?: pulumi.Input<string>;
+    profileName?: pulumi.Input<string | undefined>;
     /**
      * An optional filter to return the profiles permitting the user to spawn multiple sessions having count. greater than or equal to the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
      */
-    sessionsPerUserGreaterThanOrEqual?: pulumi.Input<string>;
+    sessionsPerUserGreaterThanOrEqual?: pulumi.Input<string | undefined>;
     /**
      * An optional filter to return the profiles permitting the user to spawn multiple sessions having count less than the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
      */
-    sessionsPerUserLessThan?: pulumi.Input<string>;
+    sessionsPerUserLessThan?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items related to a specific target OCID.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the user assessment.
      */
@@ -351,9 +351,9 @@ export interface GetUserAssessmentProfilesOutputArgs {
     /**
      * An optional filter to return the profiles having user count greater than or equal to the provided value.
      */
-    userCountGreaterThanOrEqual?: pulumi.Input<string>;
+    userCountGreaterThanOrEqual?: pulumi.Input<string | undefined>;
     /**
      * An optional filter to return the profiles having user count less than the provided value.
      */
-    userCountLessThan?: pulumi.Input<string>;
+    userCountLessThan?: pulumi.Input<string | undefined>;
 }

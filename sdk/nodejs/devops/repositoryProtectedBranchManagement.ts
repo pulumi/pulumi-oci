@@ -120,15 +120,15 @@ export interface RepositoryProtectedBranchManagementState {
     /**
      * Name of a branch to protect.
      */
-    branchName?: pulumi.Input<string>;
+    branchName?: pulumi.Input<string | undefined>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Level of protection to add on a branch.
      */
-    protectionLevels?: pulumi.Input<pulumi.Input<string>[]>;
+    protectionLevels?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Unique repository identifier.
      *
@@ -136,7 +136,7 @@ export interface RepositoryProtectedBranchManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    repositoryId?: pulumi.Input<string>;
+    repositoryId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -150,7 +150,7 @@ export interface RepositoryProtectedBranchManagementArgs {
     /**
      * Level of protection to add on a branch.
      */
-    protectionLevels?: pulumi.Input<pulumi.Input<string>[]>;
+    protectionLevels?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Unique repository identifier.
      *

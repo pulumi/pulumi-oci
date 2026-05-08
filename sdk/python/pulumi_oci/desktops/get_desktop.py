@@ -192,7 +192,7 @@ def get_desktop(desktop_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_desktop = oci.Desktops.get_desktop(desktop_id=test_desktop_oci_desktops_desktop["id"])
+    test_desktop = oci.desktops.get_desktop(desktop_id=test_desktop_oci_desktops_desktop["id"])
     ```
 
 
@@ -216,7 +216,7 @@ def get_desktop(desktop_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         user_name=pulumi.get(__ret__, 'user_name'))
-def get_desktop_output(desktop_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_desktop_output(desktop_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDesktopResult]:
     """
     This data source provides details about a specific Desktop resource in Oracle Cloud Infrastructure Desktops service.
@@ -229,7 +229,7 @@ def get_desktop_output(desktop_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_desktop = oci.Desktops.get_desktop(desktop_id=test_desktop_oci_desktops_desktop["id"])
+    test_desktop = oci.desktops.get_desktop(desktop_id=test_desktop_oci_desktops_desktop["id"])
     ```
 
 

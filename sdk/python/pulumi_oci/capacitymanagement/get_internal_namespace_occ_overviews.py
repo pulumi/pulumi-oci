@@ -148,7 +148,7 @@ def get_internal_namespace_occ_overviews(compartment_id: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_namespace_occ_overviews = oci.CapacityManagement.get_internal_namespace_occ_overviews(compartment_id=compartment_id,
+    test_internal_namespace_occ_overviews = oci.capacitymanagement.get_internal_namespace_occ_overviews(compartment_id=compartment_id,
         namespace=internal_namespace_occ_overview_namespace,
         occ_customer_group_id=test_occ_customer_group["id"],
         from_=internal_namespace_occ_overview_from,
@@ -185,13 +185,13 @@ def get_internal_namespace_occ_overviews(compartment_id: Optional[_builtins.str]
         occ_overview_collections=pulumi.get(__ret__, 'occ_overview_collections'),
         to=pulumi.get(__ret__, 'to'),
         workload_type=pulumi.get(__ret__, 'workload_type'))
-def get_internal_namespace_occ_overviews_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInternalNamespaceOccOverviewsFilterArgs', 'GetInternalNamespaceOccOverviewsFilterArgsDict']]]]] = None,
-                                                from_: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                                                occ_customer_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                workload_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_internal_namespace_occ_overviews_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInternalNamespaceOccOverviewsFilterArgs', 'GetInternalNamespaceOccOverviewsFilterArgsDict']]]]] = None,
+                                                from_: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                                                occ_customer_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                workload_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInternalNamespaceOccOverviewsResult]:
     """
     This data source provides the list of Internal Namespace Occ Overviews in Oracle Cloud Infrastructure Capacity Management service.
@@ -204,7 +204,7 @@ def get_internal_namespace_occ_overviews_output(compartment_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_internal_namespace_occ_overviews = oci.CapacityManagement.get_internal_namespace_occ_overviews(compartment_id=compartment_id,
+    test_internal_namespace_occ_overviews = oci.capacitymanagement.get_internal_namespace_occ_overviews(compartment_id=compartment_id,
         namespace=internal_namespace_occ_overview_namespace,
         occ_customer_group_id=test_occ_customer_group["id"],
         from_=internal_namespace_occ_overview_from,

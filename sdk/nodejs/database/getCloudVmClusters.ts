@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudVmClusters = oci.Database.getCloudVmClusters({
+ * const testCloudVmClusters = oci.database.getCloudVmClusters({
  *     compartmentId: compartmentId,
  *     cloudExadataInfrastructureId: testCloudExadataInfrastructure.id,
  *     displayName: cloudVmClusterDisplayName,
@@ -110,7 +110,7 @@ export interface GetCloudVmClustersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudVmClusters = oci.Database.getCloudVmClusters({
+ * const testCloudVmClusters = oci.database.getCloudVmClusters({
  *     compartmentId: compartmentId,
  *     cloudExadataInfrastructureId: testCloudExadataInfrastructure.id,
  *     displayName: cloudVmClusterDisplayName,
@@ -138,7 +138,7 @@ export interface GetCloudVmClustersOutputArgs {
     /**
      * If provided, filters the results for the specified cloud Exadata infrastructure.
      */
-    cloudExadataInfrastructureId?: pulumi.Input<string>;
+    cloudExadataInfrastructureId?: pulumi.Input<string | undefined>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -146,14 +146,14 @@ export interface GetCloudVmClustersOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetCloudVmClustersFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetCloudVmClustersFilterArgs>[] | undefined>;
     /**
      * A filter to return only cloud VM clusters that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only cloud vmclusters that match the given cloud vmcluster type exactly.
      */
-    vmClusterType?: pulumi.Input<string>;
+    vmClusterType?: pulumi.Input<string | undefined>;
 }

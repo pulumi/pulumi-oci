@@ -137,7 +137,7 @@ def get_exports(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_exports = oci.FileStorage.get_exports(compartment_id=compartment_id,
+    test_exports = oci.filestorage.get_exports(compartment_id=compartment_id,
         export_set_id=test_export_set["id"],
         file_system_id=test_file_system["id"],
         id=export_id,
@@ -169,12 +169,12 @@ def get_exports(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_exports_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       export_set_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       file_system_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetExportsFilterArgs', 'GetExportsFilterArgsDict']]]]] = None,
-                       id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_exports_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       export_set_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       file_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetExportsFilterArgs', 'GetExportsFilterArgsDict']]]]] = None,
+                       id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExportsResult]:
     """
     This data source provides the list of Exports in Oracle Cloud Infrastructure File Storage service.
@@ -189,7 +189,7 @@ def get_exports_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_exports = oci.FileStorage.get_exports(compartment_id=compartment_id,
+    test_exports = oci.filestorage.get_exports(compartment_id=compartment_id,
         export_set_id=test_export_set["id"],
         file_system_id=test_file_system["id"],
         id=export_id,

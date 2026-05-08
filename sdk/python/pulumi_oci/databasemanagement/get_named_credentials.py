@@ -150,7 +150,7 @@ def get_named_credentials(associated_resource: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_named_credentials = oci.DatabaseManagement.get_named_credentials(compartment_id=compartment_id,
+    test_named_credentials = oci.databasemanagement.get_named_credentials(compartment_id=compartment_id,
         associated_resource=named_credential_associated_resource,
         name=named_credential_name,
         scope=named_credential_scope,
@@ -183,12 +183,12 @@ def get_named_credentials(associated_resource: Optional[_builtins.str] = None,
         named_credential_collections=pulumi.get(__ret__, 'named_credential_collections'),
         scope=pulumi.get(__ret__, 'scope'),
         type=pulumi.get(__ret__, 'type'))
-def get_named_credentials_output(associated_resource: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamedCredentialsFilterArgs', 'GetNamedCredentialsFilterArgsDict']]]]] = None,
-                                 name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 scope: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_named_credentials_output(associated_resource: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamedCredentialsFilterArgs', 'GetNamedCredentialsFilterArgsDict']]]]] = None,
+                                 name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 scope: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamedCredentialsResult]:
     """
     This data source provides the list of Named Credentials in Oracle Cloud Infrastructure Database Management service.
@@ -201,7 +201,7 @@ def get_named_credentials_output(associated_resource: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_named_credentials = oci.DatabaseManagement.get_named_credentials(compartment_id=compartment_id,
+    test_named_credentials = oci.databasemanagement.get_named_credentials(compartment_id=compartment_id,
         associated_resource=named_credential_associated_resource,
         name=named_credential_name,
         scope=named_credential_scope,

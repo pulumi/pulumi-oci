@@ -23,7 +23,7 @@ class RecommendationArgs:
     def __init__(__self__, *,
                  recommendation_id: pulumi.Input[_builtins.str],
                  status: pulumi.Input[_builtins.str],
-                 time_status_end: Optional[pulumi.Input[_builtins.str]] = None):
+                 time_status_end: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Recommendation resource.
 
@@ -68,7 +68,7 @@ class RecommendationArgs:
 
     @_builtins.property
     @pulumi.getter(name="timeStatusEnd")
-    def time_status_end(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_status_end(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The date and time the current status will change. The format is defined by RFC3339.
 
@@ -81,29 +81,29 @@ class RecommendationArgs:
         return pulumi.get(self, "time_status_end")
 
     @time_status_end.setter
-    def time_status_end(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_status_end(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_status_end", value)
 
 
 @pulumi.input_type
 class _RecommendationState:
     def __init__(__self__, *,
-                 category_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 estimated_cost_saving: Optional[pulumi.Input[_builtins.float]] = None,
-                 extended_metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 importance: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 recommendation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_counts: Optional[pulumi.Input[Sequence[pulumi.Input['RecommendationResourceCountArgs']]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 supported_levels: Optional[pulumi.Input[Sequence[pulumi.Input['RecommendationSupportedLevelArgs']]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_status_begin: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_status_end: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 category_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 estimated_cost_saving: pulumi.Input[Optional[_builtins.float]] = None,
+                 extended_metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 importance: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 recommendation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_counts: pulumi.Input[Optional[Sequence[pulumi.Input['RecommendationResourceCountArgs']]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 supported_levels: pulumi.Input[Optional[Sequence[pulumi.Input['RecommendationSupportedLevelArgs']]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_status_begin: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_status_end: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Recommendation resources.
 
@@ -165,175 +165,175 @@ class _RecommendationState:
 
     @_builtins.property
     @pulumi.getter(name="categoryId")
-    def category_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def category_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique OCID associated with the category.
         """
         return pulumi.get(self, "category_id")
 
     @category_id.setter
-    def category_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def category_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "category_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the tenancy. The tenancy is the root compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Text describing the recommendation.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="estimatedCostSaving")
-    def estimated_cost_saving(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def estimated_cost_saving(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The estimated cost savings, in dollars, for the recommendation.
         """
         return pulumi.get(self, "estimated_cost_saving")
 
     @estimated_cost_saving.setter
-    def estimated_cost_saving(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def estimated_cost_saving(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "estimated_cost_saving", value)
 
     @_builtins.property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def extended_metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Additional metadata key/value pairs for the recommendation.
         """
         return pulumi.get(self, "extended_metadata")
 
     @extended_metadata.setter
-    def extended_metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def extended_metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "extended_metadata", value)
 
     @_builtins.property
     @pulumi.getter
-    def importance(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def importance(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The level of importance assigned to the recommendation.
         """
         return pulumi.get(self, "importance")
 
     @importance.setter
-    def importance(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def importance(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "importance", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the profile level.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="recommendationId")
-    def recommendation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def recommendation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique OCID associated with the recommendation.
         """
         return pulumi.get(self, "recommendation_id")
 
     @recommendation_id.setter
-    def recommendation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def recommendation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "recommendation_id", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceCounts")
-    def resource_counts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RecommendationResourceCountArgs']]]]:
+    def resource_counts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RecommendationResourceCountArgs']]]]:
         """
         An array of `ResourceCount` objects grouped by the status of the resource actions.
         """
         return pulumi.get(self, "resource_counts")
 
     @resource_counts.setter
-    def resource_counts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RecommendationResourceCountArgs']]]]):
+    def resource_counts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RecommendationResourceCountArgs']]]]):
         pulumi.set(self, "resource_counts", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The recommendation's current state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The status of the recommendation.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="supportedLevels")
-    def supported_levels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RecommendationSupportedLevelArgs']]]]:
+    def supported_levels(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RecommendationSupportedLevelArgs']]]]:
         """
         Optional. The profile levels supported by a recommendation. For example, profile level values could be `Low`, `Medium`, and `High`. Not all recommendations support this field.
         """
         return pulumi.get(self, "supported_levels")
 
     @supported_levels.setter
-    def supported_levels(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RecommendationSupportedLevelArgs']]]]):
+    def supported_levels(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RecommendationSupportedLevelArgs']]]]):
         pulumi.set(self, "supported_levels", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the recommendation details were created, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStatusBegin")
-    def time_status_begin(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_status_begin(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the recommendation entered its current status. The format is defined by RFC3339.
         """
         return pulumi.get(self, "time_status_begin")
 
     @time_status_begin.setter
-    def time_status_begin(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_status_begin(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_status_begin", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStatusEnd")
-    def time_status_end(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_status_end(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The date and time the current status will change. The format is defined by RFC3339.
 
@@ -346,19 +346,19 @@ class _RecommendationState:
         return pulumi.get(self, "time_status_end")
 
     @time_status_end.setter
-    def time_status_end(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_status_end(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_status_end", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the recommendation details were last updated, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -368,9 +368,9 @@ class Recommendation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 recommendation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_status_end: Optional[pulumi.Input[_builtins.str]] = None,
+                 recommendation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_status_end: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Recommendation resource in Oracle Cloud Infrastructure Optimizer service.
@@ -449,9 +449,9 @@ class Recommendation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 recommendation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_status_end: Optional[pulumi.Input[_builtins.str]] = None,
+                 recommendation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_status_end: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -491,22 +491,22 @@ class Recommendation(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            category_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            estimated_cost_saving: Optional[pulumi.Input[_builtins.float]] = None,
-            extended_metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            importance: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            recommendation_id: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_counts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RecommendationResourceCountArgs', 'RecommendationResourceCountArgsDict']]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            supported_levels: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RecommendationSupportedLevelArgs', 'RecommendationSupportedLevelArgsDict']]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_status_begin: Optional[pulumi.Input[_builtins.str]] = None,
-            time_status_end: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'Recommendation':
+            category_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            estimated_cost_saving: pulumi.Input[Optional[_builtins.float]] = None,
+            extended_metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            importance: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            recommendation_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_counts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecommendationResourceCountArgs', 'RecommendationResourceCountArgsDict']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            supported_levels: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecommendationSupportedLevelArgs', 'RecommendationSupportedLevelArgsDict']]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_status_begin: pulumi.Input[Optional[_builtins.str]] = None,
+            time_status_end: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'Recommendation':
         """
         Get an existing Recommendation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

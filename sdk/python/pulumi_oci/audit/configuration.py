@@ -66,8 +66,8 @@ class ConfigurationArgs:
 @pulumi.input_type
 class _ConfigurationState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_period_days: Optional[pulumi.Input[_builtins.int]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_period_days: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering Configuration resources.
 
@@ -85,19 +85,19 @@ class _ConfigurationState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the root compartment (tenancy)
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="retentionPeriodDays")
-    def retention_period_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def retention_period_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90` 
 
@@ -108,7 +108,7 @@ class _ConfigurationState:
         return pulumi.get(self, "retention_period_days")
 
     @retention_period_days.setter
-    def retention_period_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def retention_period_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retention_period_days", value)
 
 
@@ -118,8 +118,8 @@ class Configuration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_period_days: Optional[pulumi.Input[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_period_days: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         This resource provides the Configuration resource in Oracle Cloud Infrastructure Audit service.
@@ -135,7 +135,7 @@ class Configuration(pulumi.CustomResource):
 
         test_configuration = oci.audit.Configuration("test_configuration",
             compartment_id=tenancy_ocid,
-            retention_period_days=configuration_retention_period_days)
+            retention_period_days=int(configuration_retention_period_days))
         ```
 
         ## Import
@@ -172,7 +172,7 @@ class Configuration(pulumi.CustomResource):
 
         test_configuration = oci.audit.Configuration("test_configuration",
             compartment_id=tenancy_ocid,
-            retention_period_days=configuration_retention_period_days)
+            retention_period_days=int(configuration_retention_period_days))
         ```
 
         ## Import
@@ -195,8 +195,8 @@ class Configuration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 retention_period_days: Optional[pulumi.Input[_builtins.int]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_period_days: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -222,8 +222,8 @@ class Configuration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            retention_period_days: Optional[pulumi.Input[_builtins.int]] = None) -> 'Configuration':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            retention_period_days: pulumi.Input[Optional[_builtins.int]] = None) -> 'Configuration':
         """
         Get an existing Configuration resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

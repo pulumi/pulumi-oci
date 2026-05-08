@@ -106,11 +106,11 @@ export interface GetMediaAssetDistributionChannelAttachmentOutputArgs {
      * Unique DistributionChannel identifier.
      */
     distributionChannelId: pulumi.Input<string>;
-    isLockOverride?: pulumi.Input<boolean>;
+    isLockOverride?: pulumi.Input<boolean | undefined>;
     /**
      * Locks associated with this resource.
      */
-    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.GetMediaAssetDistributionChannelAttachmentLockArgs>[]>;
+    locks?: pulumi.Input<pulumi.Input<inputs.MediaServices.GetMediaAssetDistributionChannelAttachmentLockArgs>[] | undefined>;
     /**
      * Unique MediaAsset identifier
      */

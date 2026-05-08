@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVaultUsage = oci.Kms.getVaultUsage({
+ * const testVaultUsage = oci.kms.getVaultUsage({
  *     vaultId: testVault.id,
  * });
  * ```
@@ -74,7 +74,7 @@ export interface GetVaultUsageResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVaultUsage = oci.Kms.getVaultUsage({
+ * const testVaultUsage = oci.kms.getVaultUsage({
  *     vaultId: testVault.id,
  * });
  * ```

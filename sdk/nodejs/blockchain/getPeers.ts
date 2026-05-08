@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPeers = oci.Blockchain.getPeers({
+ * const testPeers = oci.blockchain.getPeers({
  *     blockchainPlatformId: testBlockchainPlatform.id,
  *     displayName: peerDisplayName,
  * });
@@ -74,7 +74,7 @@ export interface GetPeersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPeers = oci.Blockchain.getPeers({
+ * const testPeers = oci.blockchain.getPeers({
  *     blockchainPlatformId: testBlockchainPlatform.id,
  *     displayName: peerDisplayName,
  * });
@@ -100,6 +100,6 @@ export interface GetPeersOutputArgs {
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Example: `My new resource`
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Blockchain.GetPeersFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Blockchain.GetPeersFilterArgs>[] | undefined>;
 }

@@ -66,8 +66,8 @@ class ProfileAttachLifecycleStageManagementArgs:
 @pulumi.input_type
 class _ProfileAttachLifecycleStageManagementState:
     def __init__(__self__, *,
-                 lifecycle_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 lifecycle_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProfileAttachLifecycleStageManagement resources.
 
@@ -85,19 +85,19 @@ class _ProfileAttachLifecycleStageManagementState:
 
     @_builtins.property
     @pulumi.getter(name="lifecycleStageId")
-    def lifecycle_stage_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_stage_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage that the instance will be associated with.
         """
         return pulumi.get(self, "lifecycle_stage_id")
 
     @lifecycle_stage_id.setter
-    def lifecycle_stage_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_stage_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_stage_id", value)
 
     @_builtins.property
     @pulumi.getter(name="profileId")
-    def profile_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def profile_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
 
@@ -108,7 +108,7 @@ class _ProfileAttachLifecycleStageManagementState:
         return pulumi.get(self, "profile_id")
 
     @profile_id.setter
-    def profile_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def profile_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "profile_id", value)
 
 
@@ -118,8 +118,8 @@ class ProfileAttachLifecycleStageManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 lifecycle_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 lifecycle_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Profile Attach Lifecycle Stage Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -207,8 +207,8 @@ class ProfileAttachLifecycleStageManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 lifecycle_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 profile_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 lifecycle_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 profile_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -234,8 +234,8 @@ class ProfileAttachLifecycleStageManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            lifecycle_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-            profile_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ProfileAttachLifecycleStageManagement':
+            lifecycle_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+            profile_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ProfileAttachLifecycleStageManagement':
         """
         Get an existing ProfileAttachLifecycleStageManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

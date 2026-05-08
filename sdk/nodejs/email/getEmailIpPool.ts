@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEmailIpPool = oci.Email.getEmailIpPool({
+ * const testEmailIpPool = oci.email.getEmailIpPool({
  *     emailIpPoolId: testEmailIpPoolOciEmailEmailIpPool.id,
  * });
  * ```
@@ -113,7 +113,7 @@ export interface GetEmailIpPoolResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEmailIpPool = oci.Email.getEmailIpPool({
+ * const testEmailIpPool = oci.email.getEmailIpPool({
  *     emailIpPoolId: testEmailIpPoolOciEmailEmailIpPool.id,
  * });
  * ```

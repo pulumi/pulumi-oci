@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAvailableOverrideMaintenanceStartTimes = oci.Lustre.getFileStorageAvailableOverrideMaintenanceStartTimes({
+ * const testAvailableOverrideMaintenanceStartTimes = oci.lustre.getFileStorageAvailableOverrideMaintenanceStartTimes({
  *     id: availableOverrideMaintenanceStartTimeId,
  *     date: availableOverrideMaintenanceStartTimeDate,
  * });
@@ -70,7 +70,7 @@ export interface GetFileStorageAvailableOverrideMaintenanceStartTimesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAvailableOverrideMaintenanceStartTimes = oci.Lustre.getFileStorageAvailableOverrideMaintenanceStartTimes({
+ * const testAvailableOverrideMaintenanceStartTimes = oci.lustre.getFileStorageAvailableOverrideMaintenanceStartTimes({
  *     id: availableOverrideMaintenanceStartTimeId,
  *     date: availableOverrideMaintenanceStartTimeDate,
  * });
@@ -92,8 +92,8 @@ export interface GetFileStorageAvailableOverrideMaintenanceStartTimesOutputArgs 
     /**
      * Date in format `YYYY-MM-DD`
      */
-    date?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Lustre.GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgs>[]>;
+    date?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Lustre.GetFileStorageAvailableOverrideMaintenanceStartTimesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Lustre file system.
      */

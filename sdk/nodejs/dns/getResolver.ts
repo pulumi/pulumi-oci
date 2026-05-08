@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResolver = oci.Dns.getResolver({
+ * const testResolver = oci.dns.getResolver({
  *     resolverId: testResolverOciDnsResolver.id,
  *     scope: "PRIVATE",
  * });
@@ -129,7 +129,7 @@ export interface GetResolverResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResolver = oci.Dns.getResolver({
+ * const testResolver = oci.dns.getResolver({
  *     resolverId: testResolverOciDnsResolver.id,
  *     scope: "PRIVATE",
  * });
@@ -154,5 +154,5 @@ export interface GetResolverOutputArgs {
     /**
      * Value must be `PRIVATE` when listing private resolvers.
      */
-    scope?: pulumi.Input<string>;
+    scope?: pulumi.Input<string | undefined>;
 }

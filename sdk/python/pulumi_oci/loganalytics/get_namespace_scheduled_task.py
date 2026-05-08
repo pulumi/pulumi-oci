@@ -277,7 +277,7 @@ def get_namespace_scheduled_task(namespace: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_scheduled_task = oci.LogAnalytics.get_namespace_scheduled_task(namespace=namespace_scheduled_task_namespace,
+    test_namespace_scheduled_task = oci.loganalytics.get_namespace_scheduled_task(namespace=namespace_scheduled_task_namespace,
         scheduled_task_id=test_scheduled_task["id"])
     ```
 
@@ -311,8 +311,8 @@ def get_namespace_scheduled_task(namespace: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
-def get_namespace_scheduled_task_output(namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                                        scheduled_task_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_namespace_scheduled_task_output(namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                                        scheduled_task_id: pulumi.Input[Optional[_builtins.str]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceScheduledTaskResult]:
     """
     This data source provides details about a specific Namespace Scheduled Task resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -325,7 +325,7 @@ def get_namespace_scheduled_task_output(namespace: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_scheduled_task = oci.LogAnalytics.get_namespace_scheduled_task(namespace=namespace_scheduled_task_namespace,
+    test_namespace_scheduled_task = oci.loganalytics.get_namespace_scheduled_task(namespace=namespace_scheduled_task_namespace,
         scheduled_task_id=test_scheduled_task["id"])
     ```
 

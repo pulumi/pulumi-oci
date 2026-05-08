@@ -26,10 +26,10 @@ class PluggableDatabaseManagementsManagementArgs:
                  pluggable_database_id: pulumi.Input[_builtins.str],
                  private_end_point_id: pulumi.Input[_builtins.str],
                  service_name: pulumi.Input[_builtins.str],
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a PluggableDatabaseManagementsManagement resource.
 
@@ -127,77 +127,77 @@ class PluggableDatabaseManagementsManagementArgs:
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port used to connect to the pluggable database.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Protocol used by the database connection.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the user that will be connecting to the pluggable database.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="sslSecretId")
-    def ssl_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
-    def ssl_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_secret_id", value)
 
 
 @pulumi.input_type
 class _PluggableDatabaseManagementsManagementState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseManagementsManagementConnectionStringArgs']]]] = None,
-                 container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 credential_details: Optional[pulumi.Input['PluggableDatabaseManagementsManagementCredentialDetailsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 enable_pluggabledatabasemanagement: Optional[pulumi.Input[_builtins.bool]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_restricted: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 open_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 pdb_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pluggable_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pluggable_database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgs']]]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 private_end_point_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input['PluggableDatabaseManagementsManagementConnectionStringArgs']]]] = None,
+                 container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 credential_details: pulumi.Input[Optional['PluggableDatabaseManagementsManagementCredentialDetailsArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 enable_pluggabledatabasemanagement: pulumi.Input[Optional[_builtins.bool]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_restricted: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 open_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 pdb_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pluggable_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pluggable_database_management_configs: pulumi.Input[Optional[Sequence[pulumi.Input['PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgs']]]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 private_end_point_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PluggableDatabaseManagementsManagement resources.
 
@@ -272,67 +272,67 @@ class _PluggableDatabaseManagementsManagementState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionStrings")
-    def connection_strings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseManagementsManagementConnectionStringArgs']]]]:
+    def connection_strings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PluggableDatabaseManagementsManagementConnectionStringArgs']]]]:
         """
         Connection strings to connect to an Oracle Pluggable Database.
         """
         return pulumi.get(self, "connection_strings")
 
     @connection_strings.setter
-    def connection_strings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseManagementsManagementConnectionStringArgs']]]]):
+    def connection_strings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PluggableDatabaseManagementsManagementConnectionStringArgs']]]]):
         pulumi.set(self, "connection_strings", value)
 
     @_builtins.property
     @pulumi.getter(name="containerDatabaseId")
-    def container_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def container_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
         """
         return pulumi.get(self, "container_database_id")
 
     @container_database_id.setter
-    def container_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def container_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "container_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="credentialDetails")
-    def credential_details(self) -> Optional[pulumi.Input['PluggableDatabaseManagementsManagementCredentialDetailsArgs']]:
+    def credential_details(self) -> pulumi.Input[Optional['PluggableDatabaseManagementsManagementCredentialDetailsArgs']]:
         """
         Data for the credential used to connect to the database.
         """
         return pulumi.get(self, "credential_details")
 
     @credential_details.setter
-    def credential_details(self, value: Optional[pulumi.Input['PluggableDatabaseManagementsManagementCredentialDetailsArgs']]):
+    def credential_details(self, value: pulumi.Input[Optional['PluggableDatabaseManagementsManagementCredentialDetailsArgs']]):
         pulumi.set(self, "credential_details", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="enablePluggabledatabasemanagement")
-    def enable_pluggabledatabasemanagement(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_pluggabledatabasemanagement(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 
@@ -343,187 +343,187 @@ class _PluggableDatabaseManagementsManagementState:
         return pulumi.get(self, "enable_pluggabledatabasemanagement")
 
     @enable_pluggabledatabasemanagement.setter
-    def enable_pluggabledatabasemanagement(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_pluggabledatabasemanagement(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_pluggabledatabasemanagement", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isRestricted")
-    def is_restricted(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_restricted(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
         """
         return pulumi.get(self, "is_restricted")
 
     @is_restricted.setter
-    def is_restricted(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_restricted(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_restricted", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Detailed message for the lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="openMode")
-    def open_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def open_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
         """
         return pulumi.get(self, "open_mode")
 
     @open_mode.setter
-    def open_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def open_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "open_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="pdbName")
-    def pdb_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pdb_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
         """
         return pulumi.get(self, "pdb_name")
 
     @pdb_name.setter
-    def pdb_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pdb_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pdb_name", value)
 
     @_builtins.property
     @pulumi.getter(name="pluggableDatabaseId")
-    def pluggable_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pluggable_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "pluggable_database_id")
 
     @pluggable_database_id.setter
-    def pluggable_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pluggable_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pluggable_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="pluggableDatabaseManagementConfigs")
-    def pluggable_database_management_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgs']]]]:
+    def pluggable_database_management_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgs']]]]:
         """
         The configuration of the Pluggable Database Management service.
         """
         return pulumi.get(self, "pluggable_database_management_configs")
 
     @pluggable_database_management_configs.setter
-    def pluggable_database_management_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgs']]]]):
+    def pluggable_database_management_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgs']]]]):
         pulumi.set(self, "pluggable_database_management_configs", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The port used to connect to the pluggable database.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndPointId")
-    def private_end_point_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_end_point_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         """
         return pulumi.get(self, "private_end_point_id")
 
     @private_end_point_id.setter
-    def private_end_point_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_end_point_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_end_point_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Protocol used by the database connection.
         """
         return pulumi.get(self, "protocol")
 
     @protocol.setter
-    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protocol", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the user that will be connecting to the pluggable database.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceName")
-    def service_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Oracle Database service that will be used to connect to the database.
         """
         return pulumi.get(self, "service_name")
 
     @service_name.setter
-    def service_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_name", value)
 
     @_builtins.property
     @pulumi.getter(name="sslSecretId")
-    def ssl_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ssl_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         return pulumi.get(self, "ssl_secret_id")
 
     @ssl_secret_id.setter
-    def ssl_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ssl_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ssl_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the pluggable database.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the pluggable database was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -533,15 +533,15 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 credential_details: Optional[pulumi.Input[Union['PluggableDatabaseManagementsManagementCredentialDetailsArgs', 'PluggableDatabaseManagementsManagementCredentialDetailsArgsDict']]] = None,
-                 enable_pluggabledatabasemanagement: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pluggable_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 private_end_point_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 credential_details: pulumi.Input[Optional[Union['PluggableDatabaseManagementsManagementCredentialDetailsArgs', 'PluggableDatabaseManagementsManagementCredentialDetailsArgsDict']]] = None,
+                 enable_pluggabledatabasemanagement: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pluggable_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 private_end_point_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Pluggable Database Pluggabledatabasemanagements Management resource in Oracle Cloud Infrastructure Database service.
@@ -558,14 +558,14 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
 
         test_pluggable_database_pluggabledatabasemanagements_management = oci.database.PluggableDatabaseManagementsManagement("test_pluggable_database_pluggabledatabasemanagements_management",
             pluggable_database_id=test_pluggable_database["id"],
-            enable_pluggabledatabasemanagement=enable_pluggabledatabasemanagement,
+            enable_pluggabledatabasemanagement=enable_pluggabledatabasemanagement == "true",
             credential_details={
                 "password_secret_id": test_secret["id"],
                 "user_name": test_user["name"],
             },
             private_end_point_id=test_private_end_point["id"],
             service_name=test_service["name"],
-            port=pluggable_database_pluggabledatabasemanagements_management_port,
+            port=int(pluggable_database_pluggabledatabasemanagements_management_port),
             protocol=pluggable_database_pluggabledatabasemanagements_management_protocol,
             role=pluggable_database_pluggabledatabasemanagements_management_role,
             ssl_secret_id=test_secret["id"])
@@ -609,14 +609,14 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
 
         test_pluggable_database_pluggabledatabasemanagements_management = oci.database.PluggableDatabaseManagementsManagement("test_pluggable_database_pluggabledatabasemanagements_management",
             pluggable_database_id=test_pluggable_database["id"],
-            enable_pluggabledatabasemanagement=enable_pluggabledatabasemanagement,
+            enable_pluggabledatabasemanagement=enable_pluggabledatabasemanagement == "true",
             credential_details={
                 "password_secret_id": test_secret["id"],
                 "user_name": test_user["name"],
             },
             private_end_point_id=test_private_end_point["id"],
             service_name=test_service["name"],
-            port=pluggable_database_pluggabledatabasemanagements_management_port,
+            port=int(pluggable_database_pluggabledatabasemanagements_management_port),
             protocol=pluggable_database_pluggabledatabasemanagements_management_protocol,
             role=pluggable_database_pluggabledatabasemanagements_management_role,
             ssl_secret_id=test_secret["id"])
@@ -638,15 +638,15 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 credential_details: Optional[pulumi.Input[Union['PluggableDatabaseManagementsManagementCredentialDetailsArgs', 'PluggableDatabaseManagementsManagementCredentialDetailsArgsDict']]] = None,
-                 enable_pluggabledatabasemanagement: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pluggable_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 private_end_point_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 credential_details: pulumi.Input[Optional[Union['PluggableDatabaseManagementsManagementCredentialDetailsArgs', 'PluggableDatabaseManagementsManagementCredentialDetailsArgsDict']]] = None,
+                 enable_pluggabledatabasemanagement: pulumi.Input[Optional[_builtins.bool]] = None,
+                 pluggable_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 private_end_point_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -697,27 +697,27 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PluggableDatabaseManagementsManagementConnectionStringArgs', 'PluggableDatabaseManagementsManagementConnectionStringArgsDict']]]]] = None,
-            container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            credential_details: Optional[pulumi.Input[Union['PluggableDatabaseManagementsManagementCredentialDetailsArgs', 'PluggableDatabaseManagementsManagementCredentialDetailsArgsDict']]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            enable_pluggabledatabasemanagement: Optional[pulumi.Input[_builtins.bool]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_restricted: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            open_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            pdb_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pluggable_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            pluggable_database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgs', 'PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgsDict']]]]] = None,
-            port: Optional[pulumi.Input[_builtins.int]] = None,
-            private_end_point_id: Optional[pulumi.Input[_builtins.str]] = None,
-            protocol: Optional[pulumi.Input[_builtins.str]] = None,
-            role: Optional[pulumi.Input[_builtins.str]] = None,
-            service_name: Optional[pulumi.Input[_builtins.str]] = None,
-            ssl_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'PluggableDatabaseManagementsManagement':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PluggableDatabaseManagementsManagementConnectionStringArgs', 'PluggableDatabaseManagementsManagementConnectionStringArgsDict']]]]] = None,
+            container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            credential_details: pulumi.Input[Optional[Union['PluggableDatabaseManagementsManagementCredentialDetailsArgs', 'PluggableDatabaseManagementsManagementCredentialDetailsArgsDict']]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            enable_pluggabledatabasemanagement: pulumi.Input[Optional[_builtins.bool]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_restricted: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            open_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            pdb_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pluggable_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pluggable_database_management_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgs', 'PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgsDict']]]]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            private_end_point_id: pulumi.Input[Optional[_builtins.str]] = None,
+            protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            role: pulumi.Input[Optional[_builtins.str]] = None,
+            service_name: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'PluggableDatabaseManagementsManagement':
         """
         Get an existing PluggableDatabaseManagementsManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

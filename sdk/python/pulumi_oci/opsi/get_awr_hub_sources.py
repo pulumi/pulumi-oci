@@ -170,7 +170,7 @@ def get_awr_hub_sources(awr_hub_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hub_sources = oci.Opsi.get_awr_hub_sources(awr_hub_id=test_awr_hub["id"],
+    test_awr_hub_sources = oci.opsi.get_awr_hub_sources(awr_hub_id=test_awr_hub["id"],
         awr_hub_source_id=test_awr_hub_source["id"],
         compartment_id=compartment_id,
         name=awr_hub_source_name,
@@ -211,14 +211,14 @@ def get_awr_hub_sources(awr_hub_id: Optional[_builtins.str] = None,
         source_types=pulumi.get(__ret__, 'source_types'),
         states=pulumi.get(__ret__, 'states'),
         statuses=pulumi.get(__ret__, 'statuses'))
-def get_awr_hub_sources_output(awr_hub_id: Optional[pulumi.Input[_builtins.str]] = None,
-                               awr_hub_source_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAwrHubSourcesFilterArgs', 'GetAwrHubSourcesFilterArgsDict']]]]] = None,
-                               name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                               source_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                               states: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                               statuses: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_awr_hub_sources_output(awr_hub_id: pulumi.Input[Optional[_builtins.str]] = None,
+                               awr_hub_source_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAwrHubSourcesFilterArgs', 'GetAwrHubSourcesFilterArgsDict']]]]] = None,
+                               name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                               source_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                               states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                               statuses: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAwrHubSourcesResult]:
     """
     This data source provides the list of Awr Hub Sources in Oracle Cloud Infrastructure Opsi service.
@@ -231,7 +231,7 @@ def get_awr_hub_sources_output(awr_hub_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hub_sources = oci.Opsi.get_awr_hub_sources(awr_hub_id=test_awr_hub["id"],
+    test_awr_hub_sources = oci.opsi.get_awr_hub_sources(awr_hub_id=test_awr_hub["id"],
         awr_hub_source_id=test_awr_hub_source["id"],
         compartment_id=compartment_id,
         name=awr_hub_source_name,

@@ -31,11 +31,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserAssessmentProfileAnalytics = oci.DataSafe.getUserAssessmentProfileAnalytics({
+ * const testUserAssessmentProfileAnalytics = oci.datasafe.getUserAssessmentProfileAnalytics({
  *     compartmentId: compartmentId,
  *     userAssessmentId: testUserAssessment.id,
  *     accessLevel: userAssessmentProfileAnalyticAccessLevel,
- *     compartmentIdInSubtree: userAssessmentProfileAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: userAssessmentProfileAnalyticCompartmentIdInSubtree === "true",
  *     profileName: testProfile.name,
  *     targetId: testTarget.id,
  * });
@@ -130,11 +130,11 @@ export interface GetUserAssessmentProfileAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserAssessmentProfileAnalytics = oci.DataSafe.getUserAssessmentProfileAnalytics({
+ * const testUserAssessmentProfileAnalytics = oci.datasafe.getUserAssessmentProfileAnalytics({
  *     compartmentId: compartmentId,
  *     userAssessmentId: testUserAssessment.id,
  *     accessLevel: userAssessmentProfileAnalyticAccessLevel,
- *     compartmentIdInSubtree: userAssessmentProfileAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: userAssessmentProfileAnalyticCompartmentIdInSubtree === "true",
  *     profileName: testProfile.name,
  *     targetId: testTarget.id,
  * });
@@ -160,7 +160,7 @@ export interface GetUserAssessmentProfileAnalyticsOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -168,16 +168,16 @@ export interface GetUserAssessmentProfileAnalyticsOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetUserAssessmentProfileAnalyticsFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetUserAssessmentProfileAnalyticsFilterArgs>[] | undefined>;
     /**
      * A filter to return only items that match the specified profile name.
      */
-    profileName?: pulumi.Input<string>;
+    profileName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items related to a specific target OCID.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the user assessment.
      */

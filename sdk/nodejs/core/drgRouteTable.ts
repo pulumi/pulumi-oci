@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     importDrgRouteDistributionId: testDrgRouteDistribution.id,
- *     isEcmpEnabled: drgRouteTableIsEcmpEnabled,
+ *     isEcmpEnabled: drgRouteTableIsEcmpEnabled === "true",
  * });
  * ```
  *
@@ -165,31 +165,31 @@ export interface DrgRouteTableState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DRG is in. The DRG route table is always in the same compartment as the DRG.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG route table belongs to.
      */
-    drgId?: pulumi.Input<string>;
+    drgId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements through referenced attachments are inserted into the DRG route table.
      */
-    importDrgRouteDistributionId?: pulumi.Input<string>;
+    importDrgRouteDistributionId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) If you want traffic to be routed using ECMP across your virtual circuits or IPSec tunnels to your on-premises networks, enable ECMP on the DRG route table.
      */
-    isEcmpEnabled?: pulumi.Input<boolean>;
+    isEcmpEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An optional property when flipped disables the import of route Distribution by setting importDrgRouteDistributionId to null. 
      *
@@ -197,15 +197,15 @@ export interface DrgRouteTableState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    removeImportTrigger?: pulumi.Input<boolean>;
+    removeImportTrigger?: pulumi.Input<boolean | undefined>;
     /**
      * The DRG route table's current state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the DRG route table was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -215,11 +215,11 @@ export interface DrgRouteTableArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG route table belongs to.
      */
@@ -227,15 +227,15 @@ export interface DrgRouteTableArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements through referenced attachments are inserted into the DRG route table.
      */
-    importDrgRouteDistributionId?: pulumi.Input<string>;
+    importDrgRouteDistributionId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) If you want traffic to be routed using ECMP across your virtual circuits or IPSec tunnels to your on-premises networks, enable ECMP on the DRG route table.
      */
-    isEcmpEnabled?: pulumi.Input<boolean>;
+    isEcmpEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An optional property when flipped disables the import of route Distribution by setting importDrgRouteDistributionId to null. 
      *
@@ -243,5 +243,5 @@ export interface DrgRouteTableArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    removeImportTrigger?: pulumi.Input<boolean>;
+    removeImportTrigger?: pulumi.Input<boolean | undefined>;
 }

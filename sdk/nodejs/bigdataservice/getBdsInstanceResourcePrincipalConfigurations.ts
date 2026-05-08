@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceResourcePrincipalConfigurations = oci.BigDataService.getBdsInstanceResourcePrincipalConfigurations({
+ * const testBdsInstanceResourcePrincipalConfigurations = oci.bigdataservice.getBdsInstanceResourcePrincipalConfigurations({
  *     bdsInstanceId: testBdsInstance.id,
  *     displayName: bdsInstanceResourcePrincipalConfigurationDisplayName,
  *     state: bdsInstanceResourcePrincipalConfigurationState,
@@ -90,7 +90,7 @@ export interface GetBdsInstanceResourcePrincipalConfigurationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceResourcePrincipalConfigurations = oci.BigDataService.getBdsInstanceResourcePrincipalConfigurations({
+ * const testBdsInstanceResourcePrincipalConfigurations = oci.bigdataservice.getBdsInstanceResourcePrincipalConfigurations({
  *     bdsInstanceId: testBdsInstance.id,
  *     displayName: bdsInstanceResourcePrincipalConfigurationDisplayName,
  *     state: bdsInstanceResourcePrincipalConfigurationState,
@@ -118,10 +118,10 @@ export interface GetBdsInstanceResourcePrincipalConfigurationsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.BigDataService.GetBdsInstanceResourcePrincipalConfigurationsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.BigDataService.GetBdsInstanceResourcePrincipalConfigurationsFilterArgs>[] | undefined>;
     /**
      * The state of the ResourcePrincipalConfiguration.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

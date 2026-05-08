@@ -299,7 +299,7 @@ def get_execution_window(execution_window_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_execution_window = oci.Database.get_execution_window(execution_window_id=test_execution_window_oci_database_execution_window["id"])
+    test_execution_window = oci.database.get_execution_window(execution_window_id=test_execution_window_oci_database_execution_window["id"])
     ```
 
 
@@ -332,7 +332,7 @@ def get_execution_window(execution_window_id: Optional[_builtins.str] = None,
         total_time_taken_in_mins=pulumi.get(__ret__, 'total_time_taken_in_mins'),
         window_duration_in_mins=pulumi.get(__ret__, 'window_duration_in_mins'),
         window_type=pulumi.get(__ret__, 'window_type'))
-def get_execution_window_output(execution_window_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_execution_window_output(execution_window_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetExecutionWindowResult]:
     """
     This data source provides details about a specific Execution Window resource in Oracle Cloud Infrastructure Database service.
@@ -345,7 +345,7 @@ def get_execution_window_output(execution_window_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_execution_window = oci.Database.get_execution_window(execution_window_id=test_execution_window_oci_database_execution_window["id"])
+    test_execution_window = oci.database.get_execution_window(execution_window_id=test_execution_window_oci_database_execution_window["id"])
     ```
 
 

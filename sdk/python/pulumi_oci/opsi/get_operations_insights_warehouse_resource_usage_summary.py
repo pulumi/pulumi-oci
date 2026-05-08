@@ -108,7 +108,7 @@ def get_operations_insights_warehouse_resource_usage_summary(operations_insights
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_warehouse_resource_usage_summary = oci.Opsi.get_operations_insights_warehouse_resource_usage_summary(operations_insights_warehouse_id=test_operations_insights_warehouse["id"])
+    test_operations_insights_warehouse_resource_usage_summary = oci.opsi.get_operations_insights_warehouse_resource_usage_summary(operations_insights_warehouse_id=test_operations_insights_warehouse["id"])
     ```
 
 
@@ -125,7 +125,7 @@ def get_operations_insights_warehouse_resource_usage_summary(operations_insights
         operations_insights_warehouse_id=pulumi.get(__ret__, 'operations_insights_warehouse_id'),
         state=pulumi.get(__ret__, 'state'),
         storage_used_in_gbs=pulumi.get(__ret__, 'storage_used_in_gbs'))
-def get_operations_insights_warehouse_resource_usage_summary_output(operations_insights_warehouse_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_operations_insights_warehouse_resource_usage_summary_output(operations_insights_warehouse_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOperationsInsightsWarehouseResourceUsageSummaryResult]:
     """
     This data source provides details about a specific Operations Insights Warehouse Resource Usage Summary resource in Oracle Cloud Infrastructure Opsi service.
@@ -139,7 +139,7 @@ def get_operations_insights_warehouse_resource_usage_summary_output(operations_i
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_warehouse_resource_usage_summary = oci.Opsi.get_operations_insights_warehouse_resource_usage_summary(operations_insights_warehouse_id=test_operations_insights_warehouse["id"])
+    test_operations_insights_warehouse_resource_usage_summary = oci.opsi.get_operations_insights_warehouse_resource_usage_summary(operations_insights_warehouse_id=test_operations_insights_warehouse["id"])
     ```
 
 

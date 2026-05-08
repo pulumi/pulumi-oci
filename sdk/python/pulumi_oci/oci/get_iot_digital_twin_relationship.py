@@ -254,7 +254,7 @@ def get_iot_digital_twin_relationship(digital_twin_relationship_id: Optional[_bu
         target_digital_twin_instance_id=pulumi.get(__ret__, 'target_digital_twin_instance_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_iot_digital_twin_relationship_output(digital_twin_relationship_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_iot_digital_twin_relationship_output(digital_twin_relationship_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIotDigitalTwinRelationshipResult]:
     """
     This data source provides details about a specific Digital Twin Relationship resource in Oracle Cloud Infrastructure Iot service.

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTaskSchedules = oci.Jms.getTaskSchedules({
+ * const testTaskSchedules = oci.jms.getTaskSchedules({
  *     fleetId: "example-fleet-ocid",
  *     id: "example-task-schedule-ocid",
  *     managedInstanceId: "example-managed-instance-ocid",
@@ -103,7 +103,7 @@ export interface GetTaskSchedulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTaskSchedules = oci.Jms.getTaskSchedules({
+ * const testTaskSchedules = oci.jms.getTaskSchedules({
  *     fleetId: "example-fleet-ocid",
  *     id: "example-task-schedule-ocid",
  *     managedInstanceId: "example-managed-instance-ocid",
@@ -128,7 +128,7 @@ export function getTaskSchedulesOutput(args: GetTaskSchedulesOutputArgs, opts?: 
  * A collection of arguments for invoking getTaskSchedules.
  */
 export interface GetTaskSchedulesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetTaskSchedulesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetTaskSchedulesFilterArgs>[] | undefined>;
     /**
      * The ID of the Fleet.
      */
@@ -136,17 +136,17 @@ export interface GetTaskSchedulesOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to identify this task schedule.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The Fleet-unique identifier of the related managed instance.
      */
-    managedInstanceId?: pulumi.Input<string>;
+    managedInstanceId?: pulumi.Input<string | undefined>;
     /**
      * The task name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Filter the list with task schedule name contains the given value.
      */
-    taskScheduleNameContains?: pulumi.Input<string>;
+    taskScheduleNameContains?: pulumi.Input<string | undefined>;
 }

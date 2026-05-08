@@ -32,7 +32,7 @@ class AnnouncementSubscriptionFilterGroupsArgsDict(TypedDict):
     """
     A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
     """
@@ -41,7 +41,7 @@ class AnnouncementSubscriptionFilterGroupsArgsDict(TypedDict):
 class AnnouncementSubscriptionFilterGroupsArgs:
     def __init__(__self__, *,
                  filters: pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionFilterGroupsFilterArgs']]],
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['AnnouncementSubscriptionFilterGroupsFilterArgs']]] filters: A list of filters against which the Announcements service matches announcements. You cannot combine the RESOURCE_ID filter with any other type of filter within a given filter group. For filter types that support multiple values, specify the values individually.
         :param pulumi.Input[_builtins.str] name: The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
@@ -64,14 +64,14 @@ class AnnouncementSubscriptionFilterGroupsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the group. The name must be unique and it cannot be changed. Avoid entering confidential information.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 

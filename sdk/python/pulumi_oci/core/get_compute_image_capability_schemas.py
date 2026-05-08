@@ -124,7 +124,7 @@ def get_compute_image_capability_schemas(compartment_id: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_image_capability_schemas = oci.Core.get_compute_image_capability_schemas(compartment_id=compartment_id,
+    test_compute_image_capability_schemas = oci.core.get_compute_image_capability_schemas(compartment_id=compartment_id,
         display_name=compute_image_capability_schema_display_name,
         image_id=test_image["id"])
     ```
@@ -149,10 +149,10 @@ def get_compute_image_capability_schemas(compartment_id: Optional[_builtins.str]
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         image_id=pulumi.get(__ret__, 'image_id'))
-def get_compute_image_capability_schemas_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetComputeImageCapabilitySchemasFilterArgs', 'GetComputeImageCapabilitySchemasFilterArgsDict']]]]] = None,
-                                                image_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_compute_image_capability_schemas_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetComputeImageCapabilitySchemasFilterArgs', 'GetComputeImageCapabilitySchemasFilterArgsDict']]]]] = None,
+                                                image_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeImageCapabilitySchemasResult]:
     """
     This data source provides the list of Compute Image Capability Schemas in Oracle Cloud Infrastructure Core service.
@@ -165,7 +165,7 @@ def get_compute_image_capability_schemas_output(compartment_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_image_capability_schemas = oci.Core.get_compute_image_capability_schemas(compartment_id=compartment_id,
+    test_compute_image_capability_schemas = oci.core.get_compute_image_capability_schemas(compartment_id=compartment_id,
         display_name=compute_image_capability_schema_display_name,
         image_id=test_image["id"])
     ```

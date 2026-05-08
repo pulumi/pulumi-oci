@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResourceAvailability = oci.Limits.getResourceAvailability({
+ * const testResourceAvailability = oci.limits.getResourceAvailability({
  *     compartmentId: tenancyOcid,
  *     limitName: resourceAvailabilityLimitName,
  *     serviceName: testService.name,
@@ -121,7 +121,7 @@ export interface GetResourceAvailabilityResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResourceAvailability = oci.Limits.getResourceAvailability({
+ * const testResourceAvailability = oci.limits.getResourceAvailability({
  *     compartmentId: tenancyOcid,
  *     limitName: resourceAvailabilityLimitName,
  *     serviceName: testService.name,
@@ -150,7 +150,7 @@ export interface GetResourceAvailabilityOutputArgs {
     /**
      * This field is mandatory if the scopeType of the target resource limit is AD. Otherwise, this field should be omitted. If the above requirements are not met, the API returns a 400 - InvalidParameter response.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment for which data is being fetched.
      */
@@ -158,7 +158,7 @@ export interface GetResourceAvailabilityOutputArgs {
     /**
      * External cloud provider location
      */
-    externalLocation?: pulumi.Input<string>;
+    externalLocation?: pulumi.Input<string | undefined>;
     /**
      * The limit name for which to fetch the data.
      */
@@ -170,5 +170,5 @@ export interface GetResourceAvailabilityOutputArgs {
     /**
      * The subscription OCID assigned to the tenant.
      */
-    subscriptionId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string | undefined>;
 }

@@ -150,7 +150,7 @@ def get_boot_volume_backups(boot_volume_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_boot_volume_backups = oci.Core.get_boot_volume_backups(compartment_id=compartment_id,
+    test_boot_volume_backups = oci.core.get_boot_volume_backups(compartment_id=compartment_id,
         boot_volume_id=test_boot_volume["id"],
         display_name=boot_volume_backup_display_name,
         source_boot_volume_backup_id=test_boot_volume_backup["id"],
@@ -183,12 +183,12 @@ def get_boot_volume_backups(boot_volume_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         source_boot_volume_backup_id=pulumi.get(__ret__, 'source_boot_volume_backup_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_boot_volume_backups_output(boot_volume_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBootVolumeBackupsFilterArgs', 'GetBootVolumeBackupsFilterArgsDict']]]]] = None,
-                                   source_boot_volume_backup_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_boot_volume_backups_output(boot_volume_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBootVolumeBackupsFilterArgs', 'GetBootVolumeBackupsFilterArgsDict']]]]] = None,
+                                   source_boot_volume_backup_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBootVolumeBackupsResult]:
     """
     This data source provides the list of Boot Volume Backups in Oracle Cloud Infrastructure Core service.
@@ -201,7 +201,7 @@ def get_boot_volume_backups_output(boot_volume_id: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_boot_volume_backups = oci.Core.get_boot_volume_backups(compartment_id=compartment_id,
+    test_boot_volume_backups = oci.core.get_boot_volume_backups(compartment_id=compartment_id,
         boot_volume_id=test_boot_volume["id"],
         display_name=boot_volume_backup_display_name,
         source_boot_volume_backup_id=test_boot_volume_backup["id"],

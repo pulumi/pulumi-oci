@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOpaInstances = oci.Opa.getOpaInstances({
+ * const testOpaInstances = oci.opa.getOpaInstances({
  *     compartmentId: compartmentId,
  *     displayName: opaInstanceDisplayName,
  *     id: opaInstanceId,
@@ -97,7 +97,7 @@ export interface GetOpaInstancesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOpaInstances = oci.Opa.getOpaInstances({
+ * const testOpaInstances = oci.opa.getOpaInstances({
  *     compartmentId: compartmentId,
  *     displayName: opaInstanceDisplayName,
  *     id: opaInstanceId,
@@ -124,18 +124,18 @@ export interface GetOpaInstancesOutputArgs {
     /**
      * The ID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Opa.GetOpaInstancesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Opa.GetOpaInstancesFilterArgs>[] | undefined>;
     /**
      * unique OpaInstance identifier
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -151,7 +151,7 @@ def get_build_runs(build_pipeline_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_build_runs = oci.DevOps.get_build_runs(build_pipeline_id=test_build_pipeline["id"],
+    test_build_runs = oci.devops.get_build_runs(build_pipeline_id=test_build_pipeline["id"],
         compartment_id=compartment_id,
         display_name=build_run_display_name,
         id=build_run_id,
@@ -187,13 +187,13 @@ def get_build_runs(build_pipeline_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_build_runs_output(build_pipeline_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBuildRunsFilterArgs', 'GetBuildRunsFilterArgsDict']]]]] = None,
-                          id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          project_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_build_runs_output(build_pipeline_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBuildRunsFilterArgs', 'GetBuildRunsFilterArgsDict']]]]] = None,
+                          id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          project_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBuildRunsResult]:
     """
     This data source provides the list of Build Runs in Oracle Cloud Infrastructure Devops service.
@@ -206,7 +206,7 @@ def get_build_runs_output(build_pipeline_id: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_build_runs = oci.DevOps.get_build_runs(build_pipeline_id=test_build_pipeline["id"],
+    test_build_runs = oci.devops.get_build_runs(build_pipeline_id=test_build_pipeline["id"],
         compartment_id=compartment_id,
         display_name=build_run_display_name,
         id=build_run_id,

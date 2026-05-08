@@ -23,8 +23,8 @@ import * as utilities from "../utilities";
  *     members: [{
  *         memberId: testMember.id,
  *         memberType: automaticDrConfigurationMembersMemberType,
- *         isAutoFailoverEnabled: automaticDrConfigurationMembersIsAutoFailoverEnabled,
- *         isAutoSwitchoverEnabled: automaticDrConfigurationMembersIsAutoSwitchoverEnabled,
+ *         isAutoFailoverEnabled: automaticDrConfigurationMembersIsAutoFailoverEnabled === "true",
+ *         isAutoSwitchoverEnabled: automaticDrConfigurationMembersIsAutoSwitchoverEnabled === "true",
  *     }],
  *     defaultFailoverDrPlanId: testDrPlan.id,
  *     defaultSwitchoverDrPlanId: testDrPlan.id,
@@ -207,67 +207,67 @@ export interface AutomaticDrConfigurationState {
     /**
      * The OCID of the compartment containing the Automatic DR configuration.  Example: `ocid1.compartment.oc1..uniqueID`
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The unique id of a Failover DR Plan.  Example: `ocid1.drplan.oc1..uniqueID`
      */
-    defaultFailoverDrPlanId?: pulumi.Input<string>;
+    defaultFailoverDrPlanId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The unique id of a Switchover DR Plan.  Example: `ocid1.drplan.oc1..uniqueID`
      */
-    defaultSwitchoverDrPlanId?: pulumi.Input<string>;
+    defaultSwitchoverDrPlanId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The display name of the Automatic DR configuration being created.  Example: `Automatic DR Configuration`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the DR protection group to which this Automatic DR configuration belongs.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
-    drProtectionGroupId?: pulumi.Input<string>;
+    drProtectionGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A message describing the result of the most recent attempt made to submit an Automatic DR plan execution.
      */
-    lastAutomaticDrExecutionSubmitDetails?: pulumi.Input<string>;
+    lastAutomaticDrExecutionSubmitDetails?: pulumi.Input<string | undefined>;
     /**
      * The status of most recent attempt to submit Automatic DR plan execution.
      */
-    lastAutomaticDrExecutionSubmitStatus?: pulumi.Input<string>;
+    lastAutomaticDrExecutionSubmitStatus?: pulumi.Input<string | undefined>;
     /**
      * A message describing the Automatic DR configuration's current state in more detail.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of members for Automatic DR configuration.
      */
-    members?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.AutomaticDrConfigurationMember>[]>;
+    members?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.AutomaticDrConfigurationMember>[] | undefined>;
     /**
      * The current state of the Automatic DR configuration.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the Automatic DR configuration was created. An RFC3339 formatted datetime string.  Example: `2024-03-29T09:36:42Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time of the most recent attempt made to submit an Automatic DR plan execution. An RFC3339 formatted datetime string.  Example: `2025-06-30T09:36:42Z`
      */
-    timeLastAutomaticDrExecutionSubmitAttempt?: pulumi.Input<string>;
+    timeLastAutomaticDrExecutionSubmitAttempt?: pulumi.Input<string | undefined>;
     /**
      * The date and time the Automatic DR configuration was updated. An RFC3339 formatted datetime string.  Example: `2024-03-29T09:36:42Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -277,15 +277,15 @@ export interface AutomaticDrConfigurationArgs {
     /**
      * (Updatable) The unique id of a Failover DR Plan.  Example: `ocid1.drplan.oc1..uniqueID`
      */
-    defaultFailoverDrPlanId?: pulumi.Input<string>;
+    defaultFailoverDrPlanId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The unique id of a Switchover DR Plan.  Example: `ocid1.drplan.oc1..uniqueID`
      */
-    defaultSwitchoverDrPlanId?: pulumi.Input<string>;
+    defaultSwitchoverDrPlanId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The display name of the Automatic DR configuration being created.  Example: `Automatic DR Configuration`
      */
@@ -297,7 +297,7 @@ export interface AutomaticDrConfigurationArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A list of members for Automatic DR configuration.
      */

@@ -38,7 +38,7 @@ class AddSdmColumnsArgs:
 @pulumi.input_type
 class _AddSdmColumnsState:
     def __init__(__self__, *,
-                 masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AddSdmColumns resources.
         """
@@ -47,11 +47,11 @@ class _AddSdmColumnsState:
 
     @_builtins.property
     @pulumi.getter(name="maskingPolicyId")
-    def masking_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def masking_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "masking_policy_id")
 
     @masking_policy_id.setter
-    def masking_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def masking_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "masking_policy_id", value)
 
 
@@ -61,7 +61,7 @@ class AddSdmColumns(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Create a AddSdmColumns resource with the given unique name, props, and options.
@@ -93,7 +93,7 @@ class AddSdmColumns(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -116,7 +116,7 @@ class AddSdmColumns(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            masking_policy_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'AddSdmColumns':
+            masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'AddSdmColumns':
         """
         Get an existing AddSdmColumns resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRrsets = oci.Dns.getRrsets({
+ * const testRrsets = oci.dns.getRrsets({
  *     zoneNameOrId: testZone.id,
  *     domain: rrsetDomain,
  *     domainContains: rrsetDomain,
@@ -108,7 +108,7 @@ export interface GetRrsetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRrsets = oci.Dns.getRrsets({
+ * const testRrsets = oci.dns.getRrsets({
  *     zoneNameOrId: testZone.id,
  *     domain: rrsetDomain,
  *     domainContains: rrsetDomain,
@@ -137,21 +137,21 @@ export interface GetRrsetsOutputArgs {
     /**
      * The target fully-qualified domain name (FQDN) within the target zone.
      */
-    domain?: pulumi.Input<string>;
+    domain?: pulumi.Input<string | undefined>;
     /**
      * Matches any rrset whose fully-qualified domain name (FQDN) contains the provided value.
      */
-    domainContains?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Dns.GetRrsetsFilterArgs>[]>;
+    domainContains?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Dns.GetRrsetsFilterArgs>[] | undefined>;
     /**
      * Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
      */
-    rtype?: pulumi.Input<string>;
-    scope?: pulumi.Input<string>;
+    rtype?: pulumi.Input<string | undefined>;
+    scope?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
      */
-    viewId?: pulumi.Input<string>;
+    viewId?: pulumi.Input<string | undefined>;
     /**
      * The name or OCID of the target zone.
      */

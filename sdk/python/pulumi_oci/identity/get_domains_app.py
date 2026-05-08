@@ -1526,7 +1526,7 @@ def get_domains_app(app_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_app = oci.Identity.get_domains_app(app_id=test_app_oci_identity_domains_app["id"],
+    test_app = oci.identity.get_domains_app(app_id=test_app_oci_identity_domains_app["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
@@ -1677,12 +1677,12 @@ def get_domains_app(app_id: Optional[_builtins.str] = None,
         urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_apps=pulumi.get(__ret__, 'urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_apps'),
         urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_apps=pulumi.get(__ret__, 'urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_apps'),
         user_roles=pulumi.get(__ret__, 'user_roles'))
-def get_domains_app_output(app_id: Optional[pulumi.Input[_builtins.str]] = None,
-                           attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                           attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                           resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_app_output(app_id: pulumi.Input[Optional[_builtins.str]] = None,
+                           attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                           attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                           resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsAppResult]:
     """
     This data source provides details about a specific App resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1695,7 +1695,7 @@ def get_domains_app_output(app_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_app = oci.Identity.get_domains_app(app_id=test_app_oci_identity_domains_app["id"],
+    test_app = oci.identity.get_domains_app(app_id=test_app_oci_identity_domains_app["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",

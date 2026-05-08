@@ -25,7 +25,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlarmSuppression = oci.Monitoring.getAlarmSuppression({
+ * const testAlarmSuppression = oci.monitoring.getAlarmSuppression({
  *     alarmSuppressionId: testAlarmSuppressionOciMonitoringAlarmSuppression.id,
  * });
  * ```
@@ -132,7 +132,7 @@ export interface GetAlarmSuppressionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlarmSuppression = oci.Monitoring.getAlarmSuppression({
+ * const testAlarmSuppression = oci.monitoring.getAlarmSuppression({
  *     alarmSuppressionId: testAlarmSuppressionOciMonitoringAlarmSuppression.id,
  * });
  * ```

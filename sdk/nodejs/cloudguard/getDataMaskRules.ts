@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataMaskRules = oci.CloudGuard.getDataMaskRules({
+ * const testDataMaskRules = oci.cloudguard.getDataMaskRules({
  *     compartmentId: compartmentId,
  *     accessLevel: dataMaskRuleAccessLevel,
  *     dataMaskRuleStatus: dataMaskRuleDataMaskRuleStatus,
@@ -131,7 +131,7 @@ export interface GetDataMaskRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataMaskRules = oci.CloudGuard.getDataMaskRules({
+ * const testDataMaskRules = oci.cloudguard.getDataMaskRules({
  *     compartmentId: compartmentId,
  *     accessLevel: dataMaskRuleAccessLevel,
  *     dataMaskRuleStatus: dataMaskRuleDataMaskRuleStatus,
@@ -165,7 +165,7 @@ export interface GetDataMaskRulesOutputArgs {
     /**
      * Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment in which to list resources.
      */
@@ -173,26 +173,26 @@ export interface GetDataMaskRulesOutputArgs {
     /**
      * The status of the data mask rule
      */
-    dataMaskRuleStatus?: pulumi.Input<string>;
+    dataMaskRuleStatus?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CloudGuard.GetDataMaskRulesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CloudGuard.GetDataMaskRulesFilterArgs>[] | undefined>;
     /**
      * OCID of the IAM group
      */
-    iamGroupId?: pulumi.Input<string>;
+    iamGroupId?: pulumi.Input<string | undefined>;
     /**
      * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * OCID of the target
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * Type of target
      */
-    targetType?: pulumi.Input<string>;
+    targetType?: pulumi.Input<string | undefined>;
 }

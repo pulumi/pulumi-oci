@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testShapes = oci.Mysql.getShapes({
+ * const testShapes = oci.mysql.getShapes({
  *     compartmentId: compartmentId,
  *     availabilityDomain: shapeAvailabilityDomain,
  *     isSupportedFors: shapeIsSupportedFor,
@@ -100,7 +100,7 @@ export interface GetShapesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testShapes = oci.Mysql.getShapes({
+ * const testShapes = oci.mysql.getShapes({
  *     compartmentId: compartmentId,
  *     availabilityDomain: shapeAvailabilityDomain,
  *     isSupportedFors: shapeIsSupportedFor,
@@ -126,18 +126,18 @@ export interface GetShapesOutputArgs {
     /**
      * The name of the Availability Domain.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Mysql.GetShapesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Mysql.GetShapesFilterArgs>[] | undefined>;
     /**
      * Return shapes that are supported by the service feature.
      */
-    isSupportedFors?: pulumi.Input<pulumi.Input<string>[]>;
+    isSupportedFors?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

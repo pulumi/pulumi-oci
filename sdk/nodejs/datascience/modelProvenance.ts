@@ -143,27 +143,27 @@ export interface ModelProvenanceState {
     /**
      * (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
      */
-    gitBranch?: pulumi.Input<string>;
+    gitBranch?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) For model reproducibility purposes. Commit ID of the git repository associated with model training.
      */
-    gitCommit?: pulumi.Input<string>;
+    gitCommit?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
      */
-    modelId?: pulumi.Input<string>;
+    modelId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) For model reproducibility purposes. URL of the git repository associated with model training.
      */
-    repositoryUrl?: pulumi.Input<string>;
+    repositoryUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) For model reproducibility purposes. Path to model artifacts.
      */
-    scriptDir?: pulumi.Input<string>;
+    scriptDir?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
      */
-    trainingId?: pulumi.Input<string>;
+    trainingId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
      *
@@ -171,7 +171,7 @@ export interface ModelProvenanceState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    trainingScript?: pulumi.Input<string>;
+    trainingScript?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -181,11 +181,11 @@ export interface ModelProvenanceArgs {
     /**
      * (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
      */
-    gitBranch?: pulumi.Input<string>;
+    gitBranch?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) For model reproducibility purposes. Commit ID of the git repository associated with model training.
      */
-    gitCommit?: pulumi.Input<string>;
+    gitCommit?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
      */
@@ -193,15 +193,15 @@ export interface ModelProvenanceArgs {
     /**
      * (Updatable) For model reproducibility purposes. URL of the git repository associated with model training.
      */
-    repositoryUrl?: pulumi.Input<string>;
+    repositoryUrl?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) For model reproducibility purposes. Path to model artifacts.
      */
-    scriptDir?: pulumi.Input<string>;
+    scriptDir?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a training session(Job or NotebookSession) in which the model was trained. It is used for model reproducibility purposes.
      */
-    trainingId?: pulumi.Input<string>;
+    trainingId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
      *
@@ -209,5 +209,5 @@ export interface ModelProvenanceArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    trainingScript?: pulumi.Input<string>;
+    trainingScript?: pulumi.Input<string | undefined>;
 }

@@ -239,7 +239,7 @@ def get_zones(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_zones = oci.Dns.get_zones(compartment_id=compartment_id,
+    test_zones = oci.dns.get_zones(compartment_id=compartment_id,
         dnssec_state=zone_dnssec_state,
         name=zone_name,
         name_contains=zone_name_contains,
@@ -302,20 +302,20 @@ def get_zones(compartment_id: Optional[_builtins.str] = None,
         view_id=pulumi.get(__ret__, 'view_id'),
         zone_type=pulumi.get(__ret__, 'zone_type'),
         zones=pulumi.get(__ret__, 'zones'))
-def get_zones_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                     dnssec_state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetZonesFilterArgs', 'GetZonesFilterArgsDict']]]]] = None,
-                     name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     scope: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     sort_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     sort_order: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     time_created_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     tsig_key_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     view_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                     zone_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_zones_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                     dnssec_state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetZonesFilterArgs', 'GetZonesFilterArgsDict']]]]] = None,
+                     name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     scope: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     sort_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     sort_order: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     time_created_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     time_created_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     tsig_key_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     view_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                     zone_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetZonesResult]:
     """
     This data source provides the list of Zones in Oracle Cloud Infrastructure DNS service.
@@ -331,7 +331,7 @@ def get_zones_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_zones = oci.Dns.get_zones(compartment_id=compartment_id,
+    test_zones = oci.dns.get_zones(compartment_id=compartment_id,
         dnssec_state=zone_dnssec_state,
         name=zone_name,
         name_contains=zone_name_contains,

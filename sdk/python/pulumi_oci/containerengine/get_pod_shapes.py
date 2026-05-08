@@ -118,7 +118,7 @@ def get_pod_shapes(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pod_shapes = oci.ContainerEngine.get_pod_shapes(compartment_id=compartment_id,
+    test_pod_shapes = oci.containerengine.get_pod_shapes(compartment_id=compartment_id,
         availability_domain=pod_shape_availability_domain,
         name=pod_shape_name)
     ```
@@ -143,10 +143,10 @@ def get_pod_shapes(availability_domain: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         name=pulumi.get(__ret__, 'name'),
         pod_shapes=pulumi.get(__ret__, 'pod_shapes'))
-def get_pod_shapes_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPodShapesFilterArgs', 'GetPodShapesFilterArgsDict']]]]] = None,
-                          name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_pod_shapes_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPodShapesFilterArgs', 'GetPodShapesFilterArgsDict']]]]] = None,
+                          name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPodShapesResult]:
     """
     This data source provides the list of Pod Shapes in Oracle Cloud Infrastructure Container Engine service.
@@ -159,7 +159,7 @@ def get_pod_shapes_output(availability_domain: Optional[pulumi.Input[Optional[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_pod_shapes = oci.ContainerEngine.get_pod_shapes(compartment_id=compartment_id,
+    test_pod_shapes = oci.containerengine.get_pod_shapes(compartment_id=compartment_id,
         availability_domain=pod_shape_availability_domain,
         name=pod_shape_name)
     ```

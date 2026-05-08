@@ -23,38 +23,38 @@ import * as utilities from "../utilities";
  * const testAutoScalingConfiguration = new oci.bigdataservice.AutoScalingConfiguration("test_auto_scaling_configuration", {
  *     bdsInstanceId: testBdsInstance.id,
  *     clusterAdminPassword: autoScalingConfigurationClusterAdminPassword,
- *     isEnabled: autoScalingConfigurationIsEnabled,
+ *     isEnabled: autoScalingConfigurationIsEnabled === "true",
  *     nodeType: autoScalingConfigurationNodeType,
  *     displayName: autoScalingConfigurationDisplayName,
  *     policyDetails: {
  *         policyType: autoScalingConfigurationPolicyDetailsPolicyType,
  *         scaleDownConfig: {
- *             memoryStepSize: autoScalingConfigurationPolicyDetailsScaleDownConfigMemoryStepSize,
+ *             memoryStepSize: Number(autoScalingConfigurationPolicyDetailsScaleDownConfigMemoryStepSize),
  *             metric: {
  *                 metricType: autoScalingConfigurationPolicyDetailsScaleDownConfigMetricMetricType,
  *                 threshold: {
- *                     durationInMinutes: autoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdDurationInMinutes,
+ *                     durationInMinutes: Number(autoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdDurationInMinutes),
  *                     operator: autoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOperator,
- *                     value: autoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdValue,
+ *                     value: Number(autoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdValue),
  *                 },
  *             },
- *             minMemoryPerNode: autoScalingConfigurationPolicyDetailsScaleDownConfigMinMemoryPerNode,
- *             minOcpusPerNode: autoScalingConfigurationPolicyDetailsScaleDownConfigMinOcpusPerNode,
- *             ocpuStepSize: autoScalingConfigurationPolicyDetailsScaleDownConfigOcpuStepSize,
+ *             minMemoryPerNode: Number(autoScalingConfigurationPolicyDetailsScaleDownConfigMinMemoryPerNode),
+ *             minOcpusPerNode: Number(autoScalingConfigurationPolicyDetailsScaleDownConfigMinOcpusPerNode),
+ *             ocpuStepSize: Number(autoScalingConfigurationPolicyDetailsScaleDownConfigOcpuStepSize),
  *         },
  *         scaleUpConfig: {
- *             maxMemoryPerNode: autoScalingConfigurationPolicyDetailsScaleUpConfigMaxMemoryPerNode,
- *             maxOcpusPerNode: autoScalingConfigurationPolicyDetailsScaleUpConfigMaxOcpusPerNode,
- *             memoryStepSize: autoScalingConfigurationPolicyDetailsScaleUpConfigMemoryStepSize,
+ *             maxMemoryPerNode: Number(autoScalingConfigurationPolicyDetailsScaleUpConfigMaxMemoryPerNode),
+ *             maxOcpusPerNode: Number(autoScalingConfigurationPolicyDetailsScaleUpConfigMaxOcpusPerNode),
+ *             memoryStepSize: Number(autoScalingConfigurationPolicyDetailsScaleUpConfigMemoryStepSize),
  *             metric: {
  *                 metricType: autoScalingConfigurationPolicyDetailsScaleUpConfigMetricMetricType,
  *                 threshold: {
- *                     durationInMinutes: autoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdDurationInMinutes,
+ *                     durationInMinutes: Number(autoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdDurationInMinutes),
  *                     operator: autoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOperator,
- *                     value: autoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdValue,
+ *                     value: Number(autoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdValue),
  *                 },
  *             },
- *             ocpuStepSize: autoScalingConfigurationPolicyDetailsScaleUpConfigOcpuStepSize,
+ *             ocpuStepSize: Number(autoScalingConfigurationPolicyDetailsScaleUpConfigOcpuStepSize),
  *         },
  *     },
  * });
@@ -209,27 +209,27 @@ export interface AutoScalingConfigurationState {
     /**
      * The OCID of the cluster.
      */
-    bdsInstanceId?: pulumi.Input<string>;
+    bdsInstanceId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      */
-    clusterAdminPassword?: pulumi.Input<string>;
+    clusterAdminPassword?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether the autoscale configuration is enabled.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * A node type that is managed by an autoscale configuration. The only supported types are WORKER, COMPUTE_ONLY_WORKER and KAFKA_BROKER.
      */
-    nodeType?: pulumi.Input<string>;
+    nodeType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
      */
-    policy?: pulumi.Input<inputs.BigDataService.AutoScalingConfigurationPolicy>;
+    policy?: pulumi.Input<inputs.BigDataService.AutoScalingConfigurationPolicy | undefined>;
     /**
      * (Updatable) Policy definition for the autoscale configuration.
      *
@@ -243,19 +243,19 @@ export interface AutoScalingConfigurationState {
      *
      * An autoscaling configuration can have one of above supported policies.
      */
-    policyDetails?: pulumi.Input<inputs.BigDataService.AutoScalingConfigurationPolicyDetails>;
+    policyDetails?: pulumi.Input<inputs.BigDataService.AutoScalingConfigurationPolicyDetails | undefined>;
     /**
      * The state of the autoscale configuration.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the autoscale configuration was updated, shown as an RFC 3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -273,7 +273,7 @@ export interface AutoScalingConfigurationArgs {
     /**
      * (Updatable) A user-friendly name. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Whether the autoscale configuration is enabled.
      */
@@ -285,7 +285,7 @@ export interface AutoScalingConfigurationArgs {
     /**
      * (Updatable) This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
      */
-    policy?: pulumi.Input<inputs.BigDataService.AutoScalingConfigurationPolicy>;
+    policy?: pulumi.Input<inputs.BigDataService.AutoScalingConfigurationPolicy | undefined>;
     /**
      * (Updatable) Policy definition for the autoscale configuration.
      *
@@ -299,5 +299,5 @@ export interface AutoScalingConfigurationArgs {
      *
      * An autoscaling configuration can have one of above supported policies.
      */
-    policyDetails?: pulumi.Input<inputs.BigDataService.AutoScalingConfigurationPolicyDetails>;
+    policyDetails?: pulumi.Input<inputs.BigDataService.AutoScalingConfigurationPolicyDetails | undefined>;
 }

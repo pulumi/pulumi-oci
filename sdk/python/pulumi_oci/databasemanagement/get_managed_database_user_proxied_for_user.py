@@ -107,7 +107,7 @@ def get_managed_database_user_proxied_for_user(managed_database_id: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user_proxied_for_user = oci.DatabaseManagement.get_managed_database_user_proxied_for_user(managed_database_id=test_managed_database["id"],
+    test_managed_database_user_proxied_for_user = oci.databasemanagement.get_managed_database_user_proxied_for_user(managed_database_id=test_managed_database["id"],
         user_name=test_user["name"],
         name=managed_database_user_proxied_for_user_name)
     ```
@@ -130,9 +130,9 @@ def get_managed_database_user_proxied_for_user(managed_database_id: Optional[_bu
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         name=pulumi.get(__ret__, 'name'),
         user_name=pulumi.get(__ret__, 'user_name'))
-def get_managed_database_user_proxied_for_user_output(managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                      name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                      user_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_managed_database_user_proxied_for_user_output(managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                      name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                      user_name: pulumi.Input[Optional[_builtins.str]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseUserProxiedForUserResult]:
     """
     This data source provides details about a specific Managed Database User Proxied For User resource in Oracle Cloud Infrastructure Database Management service.
@@ -145,7 +145,7 @@ def get_managed_database_user_proxied_for_user_output(managed_database_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user_proxied_for_user = oci.DatabaseManagement.get_managed_database_user_proxied_for_user(managed_database_id=test_managed_database["id"],
+    test_managed_database_user_proxied_for_user = oci.databasemanagement.get_managed_database_user_proxied_for_user(managed_database_id=test_managed_database["id"],
         user_name=test_user["name"],
         name=managed_database_user_proxied_for_user_name)
     ```

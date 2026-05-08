@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingReportMaskingErrors = oci.DataSafe.getMaskingReportMaskingErrors({
+ * const testMaskingReportMaskingErrors = oci.datasafe.getMaskingReportMaskingErrors({
  *     maskingReportId: testMaskingReport.id,
  *     stepName: maskingReportMaskingErrorStepName,
  * });
@@ -77,7 +77,7 @@ export interface GetMaskingReportMaskingErrorsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingReportMaskingErrors = oci.DataSafe.getMaskingReportMaskingErrors({
+ * const testMaskingReportMaskingErrors = oci.datasafe.getMaskingReportMaskingErrors({
  *     maskingReportId: testMaskingReport.id,
  *     stepName: maskingReportMaskingErrorStepName,
  * });
@@ -96,7 +96,7 @@ export function getMaskingReportMaskingErrorsOutput(args: GetMaskingReportMaskin
  * A collection of arguments for invoking getMaskingReportMaskingErrors.
  */
 export interface GetMaskingReportMaskingErrorsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetMaskingReportMaskingErrorsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetMaskingReportMaskingErrorsFilterArgs>[] | undefined>;
     /**
      * The OCID of the masking report.
      */
@@ -104,5 +104,5 @@ export interface GetMaskingReportMaskingErrorsOutputArgs {
     /**
      * A filter to return only masking errors that match the specified step name.
      */
-    stepName?: pulumi.Input<string>;
+    stepName?: pulumi.Input<string | undefined>;
 }

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInvoices = oci.OspGateway.getInvoices({
+ * const testInvoices = oci.ospgateway.getInvoices({
  *     compartmentId: compartmentId,
  *     ospHomeRegion: invoiceOspHomeRegion,
  *     invoiceId: testInvoice.id,
@@ -133,7 +133,7 @@ export interface GetInvoicesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInvoices = oci.OspGateway.getInvoices({
+ * const testInvoices = oci.ospgateway.getInvoices({
  *     compartmentId: compartmentId,
  *     ospHomeRegion: invoiceOspHomeRegion,
  *     invoiceId: testInvoice.id,
@@ -172,11 +172,11 @@ export interface GetInvoicesOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OspGateway.GetInvoicesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OspGateway.GetInvoicesFilterArgs>[] | undefined>;
     /**
      * The invoice query param (not unique).
      */
-    invoiceId?: pulumi.Input<string>;
+    invoiceId?: pulumi.Input<string | undefined>;
     /**
      * The home region's public name of the logged in user.
      */
@@ -184,29 +184,29 @@ export interface GetInvoicesOutputArgs {
     /**
      * A filter to only return resources that match the given value. Looking for partial matches in the following fileds: Invoice No., Reference No. (plan number), Payment Ref, Total Amount(plan number), Balance Due(plan number) and Party/Customer Name
      */
-    searchText?: pulumi.Input<string>;
+    searchText?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return resources that match one of the status elements.
      */
-    statuses?: pulumi.Input<pulumi.Input<string>[]>;
+    statuses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * description: End time (UTC) of the target invoice date range for which to fetch invoice data (exclusive).
      */
-    timeInvoiceEnd?: pulumi.Input<string>;
+    timeInvoiceEnd?: pulumi.Input<string | undefined>;
     /**
      * description: Start time (UTC) of the target invoice date range for which to fetch invoice data (inclusive).
      */
-    timeInvoiceStart?: pulumi.Input<string>;
+    timeInvoiceStart?: pulumi.Input<string | undefined>;
     /**
      * description: End time (UTC) of the target payment date range for which to fetch invoice data (exclusive).
      */
-    timePaymentEnd?: pulumi.Input<string>;
+    timePaymentEnd?: pulumi.Input<string | undefined>;
     /**
      * description: Start time (UTC) of the target payment date range for which to fetch invoice data (inclusive).
      */
-    timePaymentStart?: pulumi.Input<string>;
+    timePaymentStart?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return resources that match the given type exactly.
      */
-    types?: pulumi.Input<pulumi.Input<string>[]>;
+    types?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

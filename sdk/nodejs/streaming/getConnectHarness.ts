@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnectHarness = oci.Streaming.getConnectHarness({
+ * const testConnectHarness = oci.streaming.getConnectHarness({
  *     connectHarnessId: testConnectHarnes.id,
  * });
  * ```
@@ -86,7 +86,7 @@ export interface GetConnectHarnessResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnectHarness = oci.Streaming.getConnectHarness({
+ * const testConnectHarness = oci.streaming.getConnectHarness({
  *     connectHarnessId: testConnectHarnes.id,
  * });
  * ```

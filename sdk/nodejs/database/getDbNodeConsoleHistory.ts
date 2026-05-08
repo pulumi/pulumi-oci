@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbNodeConsoleHistory = oci.Database.getDbNodeConsoleHistory({
+ * const testDbNodeConsoleHistory = oci.database.getDbNodeConsoleHistory({
  *     consoleHistoryId: testConsoleHistory.id,
  *     dbNodeId: testDbNode.id,
  * });
@@ -96,7 +96,7 @@ export interface GetDbNodeConsoleHistoryResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbNodeConsoleHistory = oci.Database.getDbNodeConsoleHistory({
+ * const testDbNodeConsoleHistory = oci.database.getDbNodeConsoleHistory({
  *     consoleHistoryId: testConsoleHistory.id,
  *     dbNodeId: testDbNode.id,
  * });

@@ -108,7 +108,7 @@ export interface SetUserAssessmentBaselineState {
     /**
      * The list of OCIDs for the user assessments that need to be updated while setting the baseline.
      */
-    assessmentIds?: pulumi.Input<pulumi.Input<string>[]>;
+    assessmentIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the user assessment.
      *
@@ -116,7 +116,7 @@ export interface SetUserAssessmentBaselineState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    userAssessmentId?: pulumi.Input<string>;
+    userAssessmentId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -126,7 +126,7 @@ export interface SetUserAssessmentBaselineArgs {
     /**
      * The list of OCIDs for the user assessments that need to be updated while setting the baseline.
      */
-    assessmentIds?: pulumi.Input<pulumi.Input<string>[]>;
+    assessmentIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the user assessment.
      *

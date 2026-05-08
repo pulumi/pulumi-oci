@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamPackagingConfigs = oci.MediaServices.getStreamPackagingConfigs({
+ * const testStreamPackagingConfigs = oci.mediaservices.getStreamPackagingConfigs({
  *     distributionChannelId: testChannel.id,
  *     displayName: streamPackagingConfigDisplayName,
  *     state: streamPackagingConfigState,
@@ -97,7 +97,7 @@ export interface GetStreamPackagingConfigsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamPackagingConfigs = oci.MediaServices.getStreamPackagingConfigs({
+ * const testStreamPackagingConfigs = oci.mediaservices.getStreamPackagingConfigs({
  *     distributionChannelId: testChannel.id,
  *     displayName: streamPackagingConfigDisplayName,
  *     state: streamPackagingConfigState,
@@ -123,18 +123,18 @@ export interface GetStreamPackagingConfigsOutputArgs {
     /**
      * A filter to return only the resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Unique Stream Distribution Channel identifier.
      */
     distributionChannelId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.MediaServices.GetStreamPackagingConfigsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.MediaServices.GetStreamPackagingConfigsFilterArgs>[] | undefined>;
     /**
      * A filter to return only the resources with lifecycleState matching the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Unique Stream Packaging Configuration identifier.
      */
-    streamPackagingConfigId?: pulumi.Input<string>;
+    streamPackagingConfigId?: pulumi.Input<string | undefined>;
 }

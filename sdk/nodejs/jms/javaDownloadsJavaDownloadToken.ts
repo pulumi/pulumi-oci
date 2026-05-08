@@ -34,7 +34,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isDefault: javaDownloadTokenIsDefault,
+ *     isDefault: javaDownloadTokenIsDefault === "true",
  * });
  * ```
  *
@@ -229,59 +229,59 @@ export interface JavaDownloadsJavaDownloadTokenState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy scoped to the JavaDownloadToken.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * An authorized principal.
      */
-    createdBies?: pulumi.Input<pulumi.Input<inputs.Jms.JavaDownloadsJavaDownloadTokenCreatedBy>[]>;
+    createdBies?: pulumi.Input<pulumi.Input<inputs.Jms.JavaDownloadsJavaDownloadTokenCreatedBy>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) User provided description of the JavaDownloadToken.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) User provided display name of the JavaDownloadToken.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The token default attribute.
      */
-    isDefault?: pulumi.Input<boolean>;
+    isDefault?: pulumi.Input<boolean | undefined>;
     /**
      * The Java version associated with the token.
      */
-    javaVersion?: pulumi.Input<string>;
+    javaVersion?: pulumi.Input<string | undefined>;
     /**
      * An authorized principal.
      */
-    lastUpdatedBies?: pulumi.Input<pulumi.Input<inputs.Jms.JavaDownloadsJavaDownloadTokenLastUpdatedBy>[]>;
+    lastUpdatedBies?: pulumi.Input<pulumi.Input<inputs.Jms.JavaDownloadsJavaDownloadTokenLastUpdatedBy>[] | undefined>;
     /**
      * (Updatable) The license type(s) associated with the JavaDownloadToken.
      */
-    licenseTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    licenseTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Possible lifecycle substates.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The current state of the JavaDownloadToken.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Expiry time of the token.
      *
@@ -289,19 +289,19 @@ export interface JavaDownloadsJavaDownloadTokenState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeExpires?: pulumi.Input<string>;
+    timeExpires?: pulumi.Input<string | undefined>;
     /**
      * The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
-    timeLastUsed?: pulumi.Input<string>;
+    timeLastUsed?: pulumi.Input<string | undefined>;
     /**
      * The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * Uniquely generated value for the JavaDownloadToken.
      */
-    value?: pulumi.Input<string>;
+    value?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -315,7 +315,7 @@ export interface JavaDownloadsJavaDownloadTokenArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) User provided description of the JavaDownloadToken.
      */
@@ -327,11 +327,11 @@ export interface JavaDownloadsJavaDownloadTokenArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The token default attribute.
      */
-    isDefault?: pulumi.Input<boolean>;
+    isDefault?: pulumi.Input<boolean | undefined>;
     /**
      * The Java version associated with the token.
      */

@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  *     matchingRule: {
  *         architectures: dynamicSetMatchingRuleArchitectures,
  *         displayNames: dynamicSetMatchingRuleDisplayNames,
- *         isRebootRequired: dynamicSetMatchingRuleIsRebootRequired,
+ *         isRebootRequired: dynamicSetMatchingRuleIsRebootRequired === "true",
  *         locations: dynamicSetMatchingRuleLocations,
  *         managedInstanceGroupIds: dynamicSetMatchingRuleManagedInstanceGroupIds,
  *         managedInstanceIds: dynamicSetMatchingRuleManagedInstanceIds,
@@ -42,7 +42,7 @@ import * as utilities from "../utilities";
  *     },
  *     targetCompartments: [{
  *         compartmentId: compartmentId,
- *         doesIncludeChildren: dynamicSetTargetCompartmentsDoesIncludeChildren,
+ *         doesIncludeChildren: dynamicSetTargetCompartmentsDoesIncludeChildren === "true",
  *     }],
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -210,55 +210,55 @@ export interface DynamicSetState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the dynamic set.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) User-specified description for the dynamic set.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) User-friendly name for the dynamic set.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Include either any or all attributes.
      */
-    matchType?: pulumi.Input<string>;
+    matchType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An object that defines the set of rules that identifies the target instances in a dynamic set.
      */
-    matchingRule?: pulumi.Input<inputs.OsManagementHub.DynamicSetMatchingRule>;
+    matchingRule?: pulumi.Input<inputs.OsManagementHub.DynamicSetMatchingRule | undefined>;
     /**
      * Number of scheduled jobs currently targeting this dynamic set.
      */
-    scheduledJobCount?: pulumi.Input<string>;
+    scheduledJobCount?: pulumi.Input<string | undefined>;
     /**
      * The current state of the event.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The list of compartment details.
      */
-    targetCompartments?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.DynamicSetTargetCompartment>[]>;
+    targetCompartments?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.DynamicSetTargetCompartment>[] | undefined>;
     /**
      * The date and time the dynamic set was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the dynamic set was last updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -272,19 +272,19 @@ export interface DynamicSetArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) User-specified description for the dynamic set.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) User-friendly name for the dynamic set.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Include either any or all attributes.
      */

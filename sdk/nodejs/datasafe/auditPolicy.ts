@@ -200,47 +200,47 @@ export interface AuditPolicyState {
     /**
      * Lists the audit policy provisioning conditions for the target database.
      */
-    auditConditions?: pulumi.Input<pulumi.Input<inputs.DataSafe.AuditPolicyAuditCondition>[]>;
+    auditConditions?: pulumi.Input<pulumi.Input<inputs.DataSafe.AuditPolicyAuditCondition>[] | undefined>;
     /**
      * Unique audit policy identifier.
      */
-    auditPolicyId?: pulumi.Input<string>;
+    auditPolicyId?: pulumi.Input<string | undefined>;
     /**
      * Represents all available audit policy specifications relevant for the target database. For more details on available audit polcies, refer to [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827).
      */
-    auditSpecifications?: pulumi.Input<pulumi.Input<inputs.DataSafe.AuditPolicyAuditSpecification>[]>;
+    auditSpecifications?: pulumi.Input<pulumi.Input<inputs.DataSafe.AuditPolicyAuditSpecification>[] | undefined>;
     /**
      * (Updatable) The OCID of the compartment containing the audit policy.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the audit policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the audit policy. The name does not have to be unique, and it is changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
      */
-    isDataSafeServiceAccountExcluded?: pulumi.Input<boolean>;
+    isDataSafeServiceAccountExcluded?: pulumi.Input<boolean | undefined>;
     /**
      * Details about the current state of the audit policy in Data Safe.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
      */
-    provisionTrigger?: pulumi.Input<number>;
+    provisionTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
      *
@@ -248,35 +248,35 @@ export interface AuditPolicyState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    retrieveFromTargetTrigger?: pulumi.Input<number>;
+    retrieveFromTargetTrigger?: pulumi.Input<number | undefined>;
     /**
      * The current state of the audit policy.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of the target for which the audit policy is created.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * The time the the audit policy was created, in the format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Indicates the last provisioning time of audit policies on the target, in the format defined by RFC3339.
      */
-    timeLastProvisioned?: pulumi.Input<string>;
+    timeLastProvisioned?: pulumi.Input<string | undefined>;
     /**
      * The time when the audit policies was last retrieved from this target, in the format defined by RFC3339.
      */
-    timeLastRetrieved?: pulumi.Input<string>;
+    timeLastRetrieved?: pulumi.Input<string | undefined>;
     /**
      * The last date and time the audit policy was updated, in the format defined by RFC3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -290,27 +290,27 @@ export interface AuditPolicyArgs {
     /**
      * (Updatable) The OCID of the compartment containing the audit policy.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the audit policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the audit policy. The name does not have to be unique, and it is changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
      */
-    provisionTrigger?: pulumi.Input<number>;
+    provisionTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
      *
@@ -318,5 +318,5 @@ export interface AuditPolicyArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    retrieveFromTargetTrigger?: pulumi.Input<number>;
+    retrieveFromTargetTrigger?: pulumi.Input<number | undefined>;
 }

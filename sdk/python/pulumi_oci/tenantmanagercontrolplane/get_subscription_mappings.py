@@ -134,7 +134,7 @@ def get_subscription_mappings(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_mappings = oci.Tenantmanagercontrolplane.get_subscription_mappings(subscription_id=test_subscription["id"],
+    test_subscription_mappings = oci.tenantmanagercontrolplane.get_subscription_mappings(subscription_id=test_subscription["id"],
         compartment_id=compartment_id,
         state=subscription_mapping_state,
         subscription_mapping_id=test_subscription_mapping["id"])
@@ -163,11 +163,11 @@ def get_subscription_mappings(compartment_id: Optional[_builtins.str] = None,
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
         subscription_mapping_collections=pulumi.get(__ret__, 'subscription_mapping_collections'),
         subscription_mapping_id=pulumi.get(__ret__, 'subscription_mapping_id'))
-def get_subscription_mappings_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSubscriptionMappingsFilterArgs', 'GetSubscriptionMappingsFilterArgsDict']]]]] = None,
-                                     state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                     subscription_mapping_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_subscription_mappings_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSubscriptionMappingsFilterArgs', 'GetSubscriptionMappingsFilterArgsDict']]]]] = None,
+                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                     subscription_mapping_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionMappingsResult]:
     """
     This data source provides the list of Subscription Mappings in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
@@ -180,7 +180,7 @@ def get_subscription_mappings_output(compartment_id: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_mappings = oci.Tenantmanagercontrolplane.get_subscription_mappings(subscription_id=test_subscription["id"],
+    test_subscription_mappings = oci.tenantmanagercontrolplane.get_subscription_mappings(subscription_id=test_subscription["id"],
         compartment_id=compartment_id,
         state=subscription_mapping_state,
         subscription_mapping_id=test_subscription_mapping["id"])

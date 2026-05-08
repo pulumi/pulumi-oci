@@ -31,7 +31,7 @@ import * as utilities from "../utilities";
  *     },
  *     connectionString: {
  *         hostname: externalDatabaseConnectorConnectionStringHostname,
- *         port: externalDatabaseConnectorConnectionStringPort,
+ *         port: Number(externalDatabaseConnectorConnectionStringPort),
  *         protocol: externalDatabaseConnectorConnectionStringProtocol,
  *         service: externalDatabaseConnectorConnectionStringService,
  *     },
@@ -220,39 +220,39 @@ export interface ExternalDatabaseConnectorState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
      */
-    connectionCredentials?: pulumi.Input<inputs.Database.ExternalDatabaseConnectorConnectionCredentials>;
+    connectionCredentials?: pulumi.Input<inputs.Database.ExternalDatabaseConnectorConnectionCredentials | undefined>;
     /**
      * The status of connectivity to the external database.
      */
-    connectionStatus?: pulumi.Input<string>;
+    connectionStatus?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Oracle AI Database connection string.
      */
-    connectionString?: pulumi.Input<inputs.Database.ExternalDatabaseConnectorConnectionString>;
+    connectionString?: pulumi.Input<inputs.Database.ExternalDatabaseConnectorConnectionString | undefined>;
     /**
      * The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
      */
-    connectorAgentId?: pulumi.Input<string>;
+    connectorAgentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The type of connector used by the external database resource.
      */
-    connectorType?: pulumi.Input<string>;
+    connectorType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The user-friendly name for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails). The name does not have to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database resource.
      */
-    externalDatabaseId?: pulumi.Input<string>;
+    externalDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
      *
@@ -260,27 +260,27 @@ export interface ExternalDatabaseConnectorState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the external database connector resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the `connectionStatus` of this external connector was last updated.
      */
-    timeConnectionStatusLastUpdated?: pulumi.Input<string>;
+    timeConnectionStatusLastUpdated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the external connector was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -302,11 +302,11 @@ export interface ExternalDatabaseConnectorArgs {
     /**
      * (Updatable) The type of connector used by the external database resource.
      */
-    connectorType?: pulumi.Input<string>;
+    connectorType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The user-friendly name for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails). The name does not have to be unique.
      */
@@ -322,5 +322,5 @@ export interface ExternalDatabaseConnectorArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

@@ -84,7 +84,7 @@ def get_fusion_environment_family_subscription_detail(fusion_environment_family_
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_family_subscription_detail = oci.Functions.get_fusion_environment_family_subscription_detail(fusion_environment_family_id=test_fusion_environment_family["id"])
+    test_fusion_environment_family_subscription_detail = oci.functions.get_fusion_environment_family_subscription_detail(fusion_environment_family_id=test_fusion_environment_family["id"])
     ```
 
 
@@ -99,7 +99,7 @@ def get_fusion_environment_family_subscription_detail(fusion_environment_family_
         fusion_environment_family_id=pulumi.get(__ret__, 'fusion_environment_family_id'),
         id=pulumi.get(__ret__, 'id'),
         subscriptions=pulumi.get(__ret__, 'subscriptions'))
-def get_fusion_environment_family_subscription_detail_output(fusion_environment_family_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fusion_environment_family_subscription_detail_output(fusion_environment_family_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentFamilySubscriptionDetailResult]:
     """
     This data source provides details about a specific Fusion Environment Family Subscription Detail resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -112,7 +112,7 @@ def get_fusion_environment_family_subscription_detail_output(fusion_environment_
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_family_subscription_detail = oci.Functions.get_fusion_environment_family_subscription_detail(fusion_environment_family_id=test_fusion_environment_family["id"])
+    test_fusion_environment_family_subscription_detail = oci.functions.get_fusion_environment_family_subscription_detail(fusion_environment_family_id=test_fusion_environment_family["id"])
     ```
 
 

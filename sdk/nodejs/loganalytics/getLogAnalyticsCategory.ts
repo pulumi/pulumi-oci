@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsCategory = oci.LogAnalytics.getLogAnalyticsCategory({
+ * const testLogAnalyticsCategory = oci.loganalytics.getLogAnalyticsCategory({
  *     name: logAnalyticsCategoryName,
  *     namespace: logAnalyticsCategoryNamespace,
  * });
@@ -84,7 +84,7 @@ export interface GetLogAnalyticsCategoryResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsCategory = oci.LogAnalytics.getLogAnalyticsCategory({
+ * const testLogAnalyticsCategory = oci.loganalytics.getLogAnalyticsCategory({
  *     name: logAnalyticsCategoryName,
  *     namespace: logAnalyticsCategoryNamespace,
  * });

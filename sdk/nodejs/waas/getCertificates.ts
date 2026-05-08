@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCertificates = oci.Waas.getCertificates({
+ * const testCertificates = oci.waas.getCertificates({
  *     compartmentId: compartmentId,
  *     displayNames: certificateDisplayNames,
  *     ids: certificateIds,
@@ -105,7 +105,7 @@ export interface GetCertificatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCertificates = oci.Waas.getCertificates({
+ * const testCertificates = oci.waas.getCertificates({
  *     compartmentId: compartmentId,
  *     displayNames: certificateDisplayNames,
  *     ids: certificateIds,
@@ -139,22 +139,22 @@ export interface GetCertificatesOutputArgs {
     /**
      * Filter certificates using a list of display names.
      */
-    displayNames?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Waas.GetCertificatesFilterArgs>[]>;
+    displayNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Waas.GetCertificatesFilterArgs>[] | undefined>;
     /**
      * Filter certificates using a list of certificates OCIDs.
      */
-    ids?: pulumi.Input<pulumi.Input<string>[]>;
+    ids?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Filter certificates using a list of lifecycle states.
      */
-    states?: pulumi.Input<pulumi.Input<string>[]>;
+    states?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter that matches certificates created on or after the specified date-time.
      */
-    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A filter that matches certificates created before the specified date-time.
      */
-    timeCreatedLessThan?: pulumi.Input<string>;
+    timeCreatedLessThan?: pulumi.Input<string | undefined>;
 }

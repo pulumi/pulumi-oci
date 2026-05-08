@@ -95,7 +95,7 @@ def get_fusion_environment_time_available_for_refreshs(filters: Optional[Sequenc
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_time_available_for_refreshs = oci.Functions.get_fusion_environment_time_available_for_refreshs(fusion_environment_id=test_fusion_environment["id"])
+    test_fusion_environment_time_available_for_refreshs = oci.functions.get_fusion_environment_time_available_for_refreshs(fusion_environment_id=test_fusion_environment["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_fusion_environment_time_available_for_refreshs(filters: Optional[Sequenc
         fusion_environment_id=pulumi.get(__ret__, 'fusion_environment_id'),
         id=pulumi.get(__ret__, 'id'),
         time_available_for_refresh_collections=pulumi.get(__ret__, 'time_available_for_refresh_collections'))
-def get_fusion_environment_time_available_for_refreshs_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs', 'GetFusionEnvironmentTimeAvailableForRefreshsFilterArgsDict']]]]] = None,
-                                                              fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_fusion_environment_time_available_for_refreshs_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFusionEnvironmentTimeAvailableForRefreshsFilterArgs', 'GetFusionEnvironmentTimeAvailableForRefreshsFilterArgsDict']]]]] = None,
+                                                              fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFusionEnvironmentTimeAvailableForRefreshsResult]:
     """
     This data source provides the list of Fusion Environment Time Available For Refreshs in Oracle Cloud Infrastructure Fusion Apps service.
@@ -126,7 +126,7 @@ def get_fusion_environment_time_available_for_refreshs_output(filters: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_time_available_for_refreshs = oci.Functions.get_fusion_environment_time_available_for_refreshs(fusion_environment_id=test_fusion_environment["id"])
+    test_fusion_environment_time_available_for_refreshs = oci.functions.get_fusion_environment_time_available_for_refreshs(fusion_environment_id=test_fusion_environment["id"])
     ```
 
 

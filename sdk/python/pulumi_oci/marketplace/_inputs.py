@@ -50,19 +50,19 @@ __all__ = [
 ]
 
 class PublicationIconArgsDict(TypedDict):
-    content_url: NotRequired[pulumi.Input[_builtins.str]]
+    content_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The content URL of the upload data.
     """
-    file_extension: NotRequired[pulumi.Input[_builtins.str]]
+    file_extension: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The file extension of the upload data.
     """
-    mime_type: NotRequired[pulumi.Input[_builtins.str]]
+    mime_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The MIME type of the upload data.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the publication, which is also used in the listing.
     """
@@ -70,10 +70,10 @@ class PublicationIconArgsDict(TypedDict):
 @pulumi.input_type
 class PublicationIconArgs:
     def __init__(__self__, *,
-                 content_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 file_extension: Optional[pulumi.Input[_builtins.str]] = None,
-                 mime_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 content_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_extension: pulumi.Input[Optional[_builtins.str]] = None,
+                 mime_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] content_url: The content URL of the upload data.
         :param pulumi.Input[_builtins.str] file_extension: The file extension of the upload data.
@@ -91,50 +91,50 @@ class PublicationIconArgs:
 
     @_builtins.property
     @pulumi.getter(name="contentUrl")
-    def content_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The content URL of the upload data.
         """
         return pulumi.get(self, "content_url")
 
     @content_url.setter
-    def content_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_url", value)
 
     @_builtins.property
     @pulumi.getter(name="fileExtension")
-    def file_extension(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def file_extension(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The file extension of the upload data.
         """
         return pulumi.get(self, "file_extension")
 
     @file_extension.setter
-    def file_extension(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def file_extension(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "file_extension", value)
 
     @_builtins.property
     @pulumi.getter(name="mimeType")
-    def mime_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mime_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The MIME type of the upload data.
         """
         return pulumi.get(self, "mime_type")
 
     @mime_type.setter
-    def mime_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mime_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mime_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the publication, which is also used in the listing.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
@@ -155,7 +155,7 @@ class PublicationPackageDetailsArgsDict(TypedDict):
     """
     The package version.
     """
-    image_id: NotRequired[pulumi.Input[_builtins.str]]
+    image_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The unique identifier for the base image of the publication.
     """
@@ -167,7 +167,7 @@ class PublicationPackageDetailsArgs:
                  operating_system: pulumi.Input['PublicationPackageDetailsOperatingSystemArgs'],
                  package_type: pulumi.Input[_builtins.str],
                  package_version: pulumi.Input[_builtins.str],
-                 image_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 image_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['PublicationPackageDetailsEulaArgs']]] eulas: The end user license agreeement (EULA) that consumers of this listing must accept.
         :param pulumi.Input['PublicationPackageDetailsOperatingSystemArgs'] operating_system: The operating system used by the listing.
@@ -232,14 +232,14 @@ class PublicationPackageDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="imageId")
-    def image_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def image_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier for the base image of the publication.
         """
         return pulumi.get(self, "image_id")
 
     @image_id.setter
-    def image_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def image_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "image_id", value)
 
 
@@ -248,7 +248,7 @@ class PublicationPackageDetailsEulaArgsDict(TypedDict):
     """
     The end user license agreement's type.
     """
-    license_text: NotRequired[pulumi.Input[_builtins.str]]
+    license_text: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The text of the end user license agreement.
     """
@@ -257,7 +257,7 @@ class PublicationPackageDetailsEulaArgsDict(TypedDict):
 class PublicationPackageDetailsEulaArgs:
     def __init__(__self__, *,
                  eula_type: pulumi.Input[_builtins.str],
-                 license_text: Optional[pulumi.Input[_builtins.str]] = None):
+                 license_text: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] eula_type: The end user license agreement's type.
         :param pulumi.Input[_builtins.str] license_text: The text of the end user license agreement.
@@ -280,19 +280,19 @@ class PublicationPackageDetailsEulaArgs:
 
     @_builtins.property
     @pulumi.getter(name="licenseText")
-    def license_text(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_text(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The text of the end user license agreement.
         """
         return pulumi.get(self, "license_text")
 
     @license_text.setter
-    def license_text(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_text(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_text", value)
 
 
 class PublicationPackageDetailsOperatingSystemArgsDict(TypedDict):
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the operating system.
     """
@@ -300,7 +300,7 @@ class PublicationPackageDetailsOperatingSystemArgsDict(TypedDict):
 @pulumi.input_type
 class PublicationPackageDetailsOperatingSystemArgs:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] name: The name of the operating system.
         """
@@ -309,31 +309,31 @@ class PublicationPackageDetailsOperatingSystemArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the operating system.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 class PublicationSupportContactArgsDict(TypedDict):
-    email: NotRequired[pulumi.Input[_builtins.str]]
+    email: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The email of the contact.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the contact.
     """
-    phone: NotRequired[pulumi.Input[_builtins.str]]
+    phone: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The phone number of the contact.
     """
-    subject: NotRequired[pulumi.Input[_builtins.str]]
+    subject: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The email subject line to use when contacting support.
 
@@ -345,10 +345,10 @@ class PublicationSupportContactArgsDict(TypedDict):
 @pulumi.input_type
 class PublicationSupportContactArgs:
     def __init__(__self__, *,
-                 email: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 phone: Optional[pulumi.Input[_builtins.str]] = None,
-                 subject: Optional[pulumi.Input[_builtins.str]] = None):
+                 email: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone: pulumi.Input[Optional[_builtins.str]] = None,
+                 subject: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] email: (Updatable) The email of the contact.
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the contact.
@@ -370,43 +370,43 @@ class PublicationSupportContactArgs:
 
     @_builtins.property
     @pulumi.getter
-    def email(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The email of the contact.
         """
         return pulumi.get(self, "email")
 
     @email.setter
-    def email(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def email(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the contact.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def phone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def phone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The phone number of the contact.
         """
         return pulumi.get(self, "phone")
 
     @phone.setter
-    def phone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def phone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "phone", value)
 
     @_builtins.property
     @pulumi.getter
-    def subject(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subject(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The email subject line to use when contacting support.
 
@@ -417,12 +417,12 @@ class PublicationSupportContactArgs:
         return pulumi.get(self, "subject")
 
     @subject.setter
-    def subject(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subject(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subject", value)
 
 
 class PublicationSupportedOperatingSystemArgsDict(TypedDict):
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the publication, which is also used in the listing.
     """
@@ -430,7 +430,7 @@ class PublicationSupportedOperatingSystemArgsDict(TypedDict):
 @pulumi.input_type
 class PublicationSupportedOperatingSystemArgs:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the publication, which is also used in the listing.
         """
@@ -439,14 +439,14 @@ class PublicationSupportedOperatingSystemArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the publication, which is also used in the listing.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 

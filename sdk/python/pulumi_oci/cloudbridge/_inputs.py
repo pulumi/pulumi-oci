@@ -96,39 +96,39 @@ __all__ = [
 ]
 
 class AgentPluginListArgsDict(TypedDict):
-    agent_id: NotRequired[pulumi.Input[_builtins.str]]
+    agent_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Agent identifier.
     """
-    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    defined_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
     """
-    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    freeform_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Plugin identifier, which can be renamed.
     """
-    plugin_version: NotRequired[pulumi.Input[_builtins.str]]
+    plugin_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Plugin version.
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current state of the Agent.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The time when the Agent was created. An RFC3339 formatted datetime string.
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The time when the Agent was updated. An RFC3339 formatted datetime string.
     """
@@ -136,15 +136,15 @@ class AgentPluginListArgsDict(TypedDict):
 @pulumi.input_type
 class AgentPluginListArgs:
     def __init__(__self__, *,
-                 agent_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 plugin_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 plugin_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] agent_id: Agent identifier.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -177,119 +177,119 @@ class AgentPluginListArgs:
 
     @_builtins.property
     @pulumi.getter(name="agentId")
-    def agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def agent_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Agent identifier.
         """
         return pulumi.get(self, "agent_id")
 
     @agent_id.setter
-    def agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def agent_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "agent_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Plugin identifier, which can be renamed.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="pluginVersion")
-    def plugin_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def plugin_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Plugin version.
         """
         return pulumi.get(self, "plugin_version")
 
     @plugin_version.setter
-    def plugin_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def plugin_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "plugin_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Agent.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time when the Agent was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time when the Agent was updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
 class AssetAttachedEbsVolumesCostArgsDict(TypedDict):
-    amount: NotRequired[pulumi.Input[_builtins.float]]
+    amount: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     (Updatable) Monthly costs for maintenance of this asset.
     """
-    currency_code: NotRequired[pulumi.Input[_builtins.str]]
+    currency_code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Currency code
     """
@@ -297,8 +297,8 @@ class AssetAttachedEbsVolumesCostArgsDict(TypedDict):
 @pulumi.input_type
 class AssetAttachedEbsVolumesCostArgs:
     def __init__(__self__, *,
-                 amount: Optional[pulumi.Input[_builtins.float]] = None,
-                 currency_code: Optional[pulumi.Input[_builtins.str]] = None):
+                 amount: pulumi.Input[Optional[_builtins.float]] = None,
+                 currency_code: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.float] amount: (Updatable) Monthly costs for maintenance of this asset.
         :param pulumi.Input[_builtins.str] currency_code: (Updatable) Currency code
@@ -310,71 +310,71 @@ class AssetAttachedEbsVolumesCostArgs:
 
     @_builtins.property
     @pulumi.getter
-    def amount(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def amount(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) Monthly costs for maintenance of this asset.
         """
         return pulumi.get(self, "amount")
 
     @amount.setter
-    def amount(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def amount(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "amount", value)
 
     @_builtins.property
     @pulumi.getter(name="currencyCode")
-    def currency_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def currency_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Currency code
         """
         return pulumi.get(self, "currency_code")
 
     @currency_code.setter
-    def currency_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def currency_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "currency_code", value)
 
 
 class AssetAwsEbsArgsDict(TypedDict):
-    attachments: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetAwsEbsAttachmentArgsDict']]]]
+    attachments: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEbsAttachmentArgs']]]]]
     """
     (Updatable) Information about the volume attachments.
     """
-    availability_zone: NotRequired[pulumi.Input[_builtins.str]]
+    availability_zone: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The Availability Zone for the volume.
     """
-    iops: NotRequired[pulumi.Input[_builtins.int]]
+    iops: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The number of I/O operations per second.
     """
-    is_encrypted: NotRequired[pulumi.Input[_builtins.bool]]
+    is_encrypted: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Indicates whether the volume is encrypted.
     """
-    is_multi_attach_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_multi_attach_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Indicates whether Amazon EBS Multi-Attach is enabled.
     """
-    size_in_gi_bs: NotRequired[pulumi.Input[_builtins.int]]
+    size_in_gi_bs: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The size of the volume, in GiBs.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The volume state.
     """
-    tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetAwsEbsTagArgsDict']]]]
+    tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEbsTagArgs']]]]]
     """
     (Updatable) Any tags assigned to the volume.
     """
-    throughput: NotRequired[pulumi.Input[_builtins.int]]
+    throughput: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The throughput that the volume supports, in MiB/s.
     """
-    volume_key: NotRequired[pulumi.Input[_builtins.str]]
+    volume_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The ID of the volume.
     """
-    volume_type: NotRequired[pulumi.Input[_builtins.str]]
+    volume_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The volume type.
     """
@@ -382,17 +382,17 @@ class AssetAwsEbsArgsDict(TypedDict):
 @pulumi.input_type
 class AssetAwsEbsArgs:
     def __init__(__self__, *,
-                 attachments: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEbsAttachmentArgs']]]] = None,
-                 availability_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 iops: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_encrypted: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_multi_attach_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 size_in_gi_bs: Optional[pulumi.Input[_builtins.int]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEbsTagArgs']]]] = None,
-                 throughput: Optional[pulumi.Input[_builtins.int]] = None,
-                 volume_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 attachments: pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEbsAttachmentArgs']]]] = None,
+                 availability_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 iops: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_encrypted: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_multi_attach_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 size_in_gi_bs: pulumi.Input[Optional[_builtins.int]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEbsTagArgs']]]] = None,
+                 throughput: pulumi.Input[Optional[_builtins.int]] = None,
+                 volume_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['AssetAwsEbsAttachmentArgs']]] attachments: (Updatable) Information about the volume attachments.
         :param pulumi.Input[_builtins.str] availability_zone: (Updatable) The Availability Zone for the volume.
@@ -431,155 +431,155 @@ class AssetAwsEbsArgs:
 
     @_builtins.property
     @pulumi.getter
-    def attachments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEbsAttachmentArgs']]]]:
+    def attachments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEbsAttachmentArgs']]]]:
         """
         (Updatable) Information about the volume attachments.
         """
         return pulumi.get(self, "attachments")
 
     @attachments.setter
-    def attachments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEbsAttachmentArgs']]]]):
+    def attachments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEbsAttachmentArgs']]]]):
         pulumi.set(self, "attachments", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityZone")
-    def availability_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Availability Zone for the volume.
         """
         return pulumi.get(self, "availability_zone")
 
     @availability_zone.setter
-    def availability_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_zone", value)
 
     @_builtins.property
     @pulumi.getter
-    def iops(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def iops(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of I/O operations per second.
         """
         return pulumi.get(self, "iops")
 
     @iops.setter
-    def iops(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def iops(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "iops", value)
 
     @_builtins.property
     @pulumi.getter(name="isEncrypted")
-    def is_encrypted(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_encrypted(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether the volume is encrypted.
         """
         return pulumi.get(self, "is_encrypted")
 
     @is_encrypted.setter
-    def is_encrypted(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_encrypted(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_encrypted", value)
 
     @_builtins.property
     @pulumi.getter(name="isMultiAttachEnabled")
-    def is_multi_attach_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_multi_attach_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether Amazon EBS Multi-Attach is enabled.
         """
         return pulumi.get(self, "is_multi_attach_enabled")
 
     @is_multi_attach_enabled.setter
-    def is_multi_attach_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_multi_attach_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_multi_attach_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="sizeInGiBs")
-    def size_in_gi_bs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def size_in_gi_bs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The size of the volume, in GiBs.
         """
         return pulumi.get(self, "size_in_gi_bs")
 
     @size_in_gi_bs.setter
-    def size_in_gi_bs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def size_in_gi_bs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "size_in_gi_bs", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The volume state.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEbsTagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEbsTagArgs']]]]:
         """
         (Updatable) Any tags assigned to the volume.
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEbsTagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEbsTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def throughput(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def throughput(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The throughput that the volume supports, in MiB/s.
         """
         return pulumi.get(self, "throughput")
 
     @throughput.setter
-    def throughput(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def throughput(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "throughput", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeKey")
-    def volume_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ID of the volume.
         """
         return pulumi.get(self, "volume_key")
 
     @volume_key.setter
-    def volume_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume_key", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeType")
-    def volume_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The volume type.
         """
         return pulumi.get(self, "volume_type")
 
     @volume_type.setter
-    def volume_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume_type", value)
 
 
 class AssetAwsEbsAttachmentArgsDict(TypedDict):
-    device: NotRequired[pulumi.Input[_builtins.str]]
+    device: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The device name.
     """
-    instance_key: NotRequired[pulumi.Input[_builtins.str]]
+    instance_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The ID of the instance.
     """
-    is_delete_on_termination: NotRequired[pulumi.Input[_builtins.bool]]
+    is_delete_on_termination: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Indicates whether the EBS volume is deleted on instance termination.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The attachment state of the volume.
     """
-    volume_key: NotRequired[pulumi.Input[_builtins.str]]
+    volume_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The ID of the volume.
     """
@@ -587,11 +587,11 @@ class AssetAwsEbsAttachmentArgsDict(TypedDict):
 @pulumi.input_type
 class AssetAwsEbsAttachmentArgs:
     def __init__(__self__, *,
-                 device: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_delete_on_termination: Optional[pulumi.Input[_builtins.bool]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_key: Optional[pulumi.Input[_builtins.str]] = None):
+                 device: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_delete_on_termination: pulumi.Input[Optional[_builtins.bool]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_key: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] device: (Updatable) The device name.
         :param pulumi.Input[_builtins.str] instance_key: (Updatable) The ID of the instance.
@@ -612,71 +612,71 @@ class AssetAwsEbsAttachmentArgs:
 
     @_builtins.property
     @pulumi.getter
-    def device(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def device(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The device name.
         """
         return pulumi.get(self, "device")
 
     @device.setter
-    def device(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def device(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "device", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceKey")
-    def instance_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ID of the instance.
         """
         return pulumi.get(self, "instance_key")
 
     @instance_key.setter
-    def instance_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_key", value)
 
     @_builtins.property
     @pulumi.getter(name="isDeleteOnTermination")
-    def is_delete_on_termination(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_delete_on_termination(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether the EBS volume is deleted on instance termination.
         """
         return pulumi.get(self, "is_delete_on_termination")
 
     @is_delete_on_termination.setter
-    def is_delete_on_termination(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_delete_on_termination(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_delete_on_termination", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The attachment state of the volume.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeKey")
-    def volume_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def volume_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ID of the volume.
         """
         return pulumi.get(self, "volume_key")
 
     @volume_key.setter
-    def volume_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def volume_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "volume_key", value)
 
 
 class AssetAwsEbsTagArgsDict(TypedDict):
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The key of the tag.
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The value of the tag.
     """
@@ -684,8 +684,8 @@ class AssetAwsEbsTagArgsDict(TypedDict):
 @pulumi.input_type
 class AssetAwsEbsTagArgs:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] key: (Updatable) The key of the tag.
         :param pulumi.Input[_builtins.str] value: (Updatable) The value of the tag.
@@ -697,159 +697,159 @@ class AssetAwsEbsTagArgs:
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The key of the tag.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The value of the tag.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
 class AssetAwsEc2ArgsDict(TypedDict):
-    architecture: NotRequired[pulumi.Input[_builtins.str]]
+    architecture: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The architecture of the image.
     """
-    are_elastic_inference_accelerators_present: NotRequired[pulumi.Input[_builtins.bool]]
+    are_elastic_inference_accelerators_present: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Indicates if the elastic inference accelerators attached to an instance
     """
-    boot_mode: NotRequired[pulumi.Input[_builtins.str]]
+    boot_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The boot mode of the instance.
     """
-    capacity_reservation_key: NotRequired[pulumi.Input[_builtins.str]]
+    capacity_reservation_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The ID of the Capacity Reservation.
     """
-    image_key: NotRequired[pulumi.Input[_builtins.str]]
+    image_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The ID of the AMI used to launch the instance.
     """
-    instance_key: NotRequired[pulumi.Input[_builtins.str]]
+    instance_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The ID of the instance.
     """
-    instance_lifecycle: NotRequired[pulumi.Input[_builtins.str]]
+    instance_lifecycle: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Indicates whether this is a Spot Instance or a Scheduled Instance.
     """
-    instance_type: NotRequired[pulumi.Input[_builtins.str]]
+    instance_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The instance type.
     """
-    ip_address: NotRequired[pulumi.Input[_builtins.str]]
+    ip_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The public IPv4 address, or the Carrier IP address assigned to the instance.
     """
-    ipv6address: NotRequired[pulumi.Input[_builtins.str]]
+    ipv6address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The IPv6 address assigned to the instance.
     """
-    is_enclave_options: NotRequired[pulumi.Input[_builtins.bool]]
+    is_enclave_options: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Indicates whether the instance is enabled for AWS Nitro Enclaves.
     """
-    is_hibernation_options: NotRequired[pulumi.Input[_builtins.bool]]
+    is_hibernation_options: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Indicates whether the instance is enabled for hibernation.
     """
-    is_source_dest_check: NotRequired[pulumi.Input[_builtins.bool]]
+    is_source_dest_check: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Indicates whether source/destination checking is enabled.
     """
-    is_spot_instance: NotRequired[pulumi.Input[_builtins.bool]]
+    is_spot_instance: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If the request is a Spot Instance request, this value will be true.
     """
-    kernel_key: NotRequired[pulumi.Input[_builtins.str]]
+    kernel_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The kernel associated with this instance, if applicable.
     """
-    licenses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    licenses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The license configurations for the instance.
     """
-    maintenance_options: NotRequired[pulumi.Input[_builtins.str]]
+    maintenance_options: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Provides information on the recovery and maintenance options of your instance.
     """
-    monitoring: NotRequired[pulumi.Input[_builtins.str]]
+    monitoring: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The monitoring for the instance.
     """
-    network_interfaces: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceArgsDict']]]]
+    network_interfaces: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceArgs']]]]]
     """
     (Updatable) The network interfaces for the instance.
     """
-    placement: NotRequired[pulumi.Input['AssetAwsEc2PlacementArgsDict']]
+    placement: NotRequired[pulumi.Input[Optional['AssetAwsEc2PlacementArgs']]]
     """
     (Updatable) Describes the placement of an instance.
     """
-    private_dns_name: NotRequired[pulumi.Input[_builtins.str]]
+    private_dns_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) (IPv4 only) The private DNS hostname name assigned to the instance.
     """
-    private_ip_address: NotRequired[pulumi.Input[_builtins.str]]
+    private_ip_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The private IPv4 address assigned to the instance.
     """
-    root_device_name: NotRequired[pulumi.Input[_builtins.str]]
+    root_device_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The device name of the root device volume.
     """
-    root_device_type: NotRequired[pulumi.Input[_builtins.str]]
+    root_device_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The root device type used by the AMI. The AMI can use an EBS volume or an instance store volume.
     """
-    security_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2SecurityGroupArgsDict']]]]
+    security_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2SecurityGroupArgs']]]]]
     """
     (Updatable) The security groups for the instance.
     """
-    sriov_net_support: NotRequired[pulumi.Input[_builtins.str]]
+    sriov_net_support: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
     """
-    state: NotRequired[pulumi.Input['AssetAwsEc2StateArgsDict']]
+    state: NotRequired[pulumi.Input[Optional['AssetAwsEc2StateArgs']]]
     """
     (Updatable) Describes the current state of an instance.
     """
-    subnet_key: NotRequired[pulumi.Input[_builtins.str]]
+    subnet_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) EC2-VPC The ID of the subnet in which the instance is running.
     """
-    tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2TagArgsDict']]]]
+    tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2TagArgs']]]]]
     """
     (Updatable) Any tags assigned to the instance.
     """
-    time_launch: NotRequired[pulumi.Input[_builtins.str]]
+    time_launch: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The time the instance was launched.
     """
-    tpm_support: NotRequired[pulumi.Input[_builtins.str]]
+    tpm_support: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) If the instance is configured for NitroTPM support, the value is v2.0.
     """
-    virtualization_type: NotRequired[pulumi.Input[_builtins.str]]
+    virtualization_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The virtualization type of the instance.
     """
-    vpc_key: NotRequired[pulumi.Input[_builtins.str]]
+    vpc_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) EC2-VPC The ID of the VPC in which the instance is running.
     """
@@ -857,39 +857,39 @@ class AssetAwsEc2ArgsDict(TypedDict):
 @pulumi.input_type
 class AssetAwsEc2Args:
     def __init__(__self__, *,
-                 architecture: Optional[pulumi.Input[_builtins.str]] = None,
-                 are_elastic_inference_accelerators_present: Optional[pulumi.Input[_builtins.bool]] = None,
-                 boot_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 capacity_reservation_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 image_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_lifecycle: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv6address: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_enclave_options: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_hibernation_options: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_source_dest_check: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_spot_instance: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kernel_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 licenses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 maintenance_options: Optional[pulumi.Input[_builtins.str]] = None,
-                 monitoring: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_interfaces: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceArgs']]]] = None,
-                 placement: Optional[pulumi.Input['AssetAwsEc2PlacementArgs']] = None,
-                 private_dns_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 root_device_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 root_device_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_groups: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2SecurityGroupArgs']]]] = None,
-                 sriov_net_support: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input['AssetAwsEc2StateArgs']] = None,
-                 subnet_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 tags: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2TagArgs']]]] = None,
-                 time_launch: Optional[pulumi.Input[_builtins.str]] = None,
-                 tpm_support: Optional[pulumi.Input[_builtins.str]] = None,
-                 virtualization_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 vpc_key: Optional[pulumi.Input[_builtins.str]] = None):
+                 architecture: pulumi.Input[Optional[_builtins.str]] = None,
+                 are_elastic_inference_accelerators_present: pulumi.Input[Optional[_builtins.bool]] = None,
+                 boot_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 capacity_reservation_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 image_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_lifecycle: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6address: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_enclave_options: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_hibernation_options: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_source_dest_check: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_spot_instance: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kernel_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 licenses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 maintenance_options: pulumi.Input[Optional[_builtins.str]] = None,
+                 monitoring: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceArgs']]]] = None,
+                 placement: pulumi.Input[Optional['AssetAwsEc2PlacementArgs']] = None,
+                 private_dns_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 root_device_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 root_device_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_groups: pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2SecurityGroupArgs']]]] = None,
+                 sriov_net_support: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional['AssetAwsEc2StateArgs']] = None,
+                 subnet_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2TagArgs']]]] = None,
+                 time_launch: pulumi.Input[Optional[_builtins.str]] = None,
+                 tpm_support: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtualization_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc_key: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] architecture: (Updatable) The architecture of the image.
         :param pulumi.Input[_builtins.bool] are_elastic_inference_accelerators_present: (Updatable) Indicates if the elastic inference accelerators attached to an instance
@@ -994,459 +994,459 @@ class AssetAwsEc2Args:
 
     @_builtins.property
     @pulumi.getter
-    def architecture(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def architecture(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The architecture of the image.
         """
         return pulumi.get(self, "architecture")
 
     @architecture.setter
-    def architecture(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def architecture(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "architecture", value)
 
     @_builtins.property
     @pulumi.getter(name="areElasticInferenceAcceleratorsPresent")
-    def are_elastic_inference_accelerators_present(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def are_elastic_inference_accelerators_present(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if the elastic inference accelerators attached to an instance
         """
         return pulumi.get(self, "are_elastic_inference_accelerators_present")
 
     @are_elastic_inference_accelerators_present.setter
-    def are_elastic_inference_accelerators_present(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def are_elastic_inference_accelerators_present(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "are_elastic_inference_accelerators_present", value)
 
     @_builtins.property
     @pulumi.getter(name="bootMode")
-    def boot_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def boot_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The boot mode of the instance.
         """
         return pulumi.get(self, "boot_mode")
 
     @boot_mode.setter
-    def boot_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def boot_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "boot_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="capacityReservationKey")
-    def capacity_reservation_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def capacity_reservation_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ID of the Capacity Reservation.
         """
         return pulumi.get(self, "capacity_reservation_key")
 
     @capacity_reservation_key.setter
-    def capacity_reservation_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def capacity_reservation_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "capacity_reservation_key", value)
 
     @_builtins.property
     @pulumi.getter(name="imageKey")
-    def image_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def image_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ID of the AMI used to launch the instance.
         """
         return pulumi.get(self, "image_key")
 
     @image_key.setter
-    def image_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def image_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "image_key", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceKey")
-    def instance_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ID of the instance.
         """
         return pulumi.get(self, "instance_key")
 
     @instance_key.setter
-    def instance_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_key", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceLifecycle")
-    def instance_lifecycle(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_lifecycle(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Indicates whether this is a Spot Instance or a Scheduled Instance.
         """
         return pulumi.get(self, "instance_lifecycle")
 
     @instance_lifecycle.setter
-    def instance_lifecycle(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_lifecycle(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_lifecycle", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceType")
-    def instance_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The instance type.
         """
         return pulumi.get(self, "instance_type")
 
     @instance_type.setter
-    def instance_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_type", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The public IPv4 address, or the Carrier IP address assigned to the instance.
         """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
-    def ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_address", value)
 
     @_builtins.property
     @pulumi.getter
-    def ipv6address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv6address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The IPv6 address assigned to the instance.
         """
         return pulumi.get(self, "ipv6address")
 
     @ipv6address.setter
-    def ipv6address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv6address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv6address", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnclaveOptions")
-    def is_enclave_options(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enclave_options(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether the instance is enabled for AWS Nitro Enclaves.
         """
         return pulumi.get(self, "is_enclave_options")
 
     @is_enclave_options.setter
-    def is_enclave_options(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enclave_options(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enclave_options", value)
 
     @_builtins.property
     @pulumi.getter(name="isHibernationOptions")
-    def is_hibernation_options(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_hibernation_options(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether the instance is enabled for hibernation.
         """
         return pulumi.get(self, "is_hibernation_options")
 
     @is_hibernation_options.setter
-    def is_hibernation_options(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_hibernation_options(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_hibernation_options", value)
 
     @_builtins.property
     @pulumi.getter(name="isSourceDestCheck")
-    def is_source_dest_check(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_source_dest_check(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether source/destination checking is enabled.
         """
         return pulumi.get(self, "is_source_dest_check")
 
     @is_source_dest_check.setter
-    def is_source_dest_check(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_source_dest_check(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_source_dest_check", value)
 
     @_builtins.property
     @pulumi.getter(name="isSpotInstance")
-    def is_spot_instance(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_spot_instance(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If the request is a Spot Instance request, this value will be true.
         """
         return pulumi.get(self, "is_spot_instance")
 
     @is_spot_instance.setter
-    def is_spot_instance(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_spot_instance(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_spot_instance", value)
 
     @_builtins.property
     @pulumi.getter(name="kernelKey")
-    def kernel_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kernel_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The kernel associated with this instance, if applicable.
         """
         return pulumi.get(self, "kernel_key")
 
     @kernel_key.setter
-    def kernel_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kernel_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kernel_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def licenses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def licenses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The license configurations for the instance.
         """
         return pulumi.get(self, "licenses")
 
     @licenses.setter
-    def licenses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def licenses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "licenses", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenanceOptions")
-    def maintenance_options(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def maintenance_options(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Provides information on the recovery and maintenance options of your instance.
         """
         return pulumi.get(self, "maintenance_options")
 
     @maintenance_options.setter
-    def maintenance_options(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def maintenance_options(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "maintenance_options", value)
 
     @_builtins.property
     @pulumi.getter
-    def monitoring(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def monitoring(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The monitoring for the instance.
         """
         return pulumi.get(self, "monitoring")
 
     @monitoring.setter
-    def monitoring(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def monitoring(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "monitoring", value)
 
     @_builtins.property
     @pulumi.getter(name="networkInterfaces")
-    def network_interfaces(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceArgs']]]]:
+    def network_interfaces(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceArgs']]]]:
         """
         (Updatable) The network interfaces for the instance.
         """
         return pulumi.get(self, "network_interfaces")
 
     @network_interfaces.setter
-    def network_interfaces(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceArgs']]]]):
+    def network_interfaces(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceArgs']]]]):
         pulumi.set(self, "network_interfaces", value)
 
     @_builtins.property
     @pulumi.getter
-    def placement(self) -> Optional[pulumi.Input['AssetAwsEc2PlacementArgs']]:
+    def placement(self) -> pulumi.Input[Optional['AssetAwsEc2PlacementArgs']]:
         """
         (Updatable) Describes the placement of an instance.
         """
         return pulumi.get(self, "placement")
 
     @placement.setter
-    def placement(self, value: Optional[pulumi.Input['AssetAwsEc2PlacementArgs']]):
+    def placement(self, value: pulumi.Input[Optional['AssetAwsEc2PlacementArgs']]):
         pulumi.set(self, "placement", value)
 
     @_builtins.property
     @pulumi.getter(name="privateDnsName")
-    def private_dns_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_dns_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) (IPv4 only) The private DNS hostname name assigned to the instance.
         """
         return pulumi.get(self, "private_dns_name")
 
     @private_dns_name.setter
-    def private_dns_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_dns_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_dns_name", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIpAddress")
-    def private_ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The private IPv4 address assigned to the instance.
         """
         return pulumi.get(self, "private_ip_address")
 
     @private_ip_address.setter
-    def private_ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="rootDeviceName")
-    def root_device_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def root_device_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The device name of the root device volume.
         """
         return pulumi.get(self, "root_device_name")
 
     @root_device_name.setter
-    def root_device_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def root_device_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "root_device_name", value)
 
     @_builtins.property
     @pulumi.getter(name="rootDeviceType")
-    def root_device_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def root_device_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The root device type used by the AMI. The AMI can use an EBS volume or an instance store volume.
         """
         return pulumi.get(self, "root_device_type")
 
     @root_device_type.setter
-    def root_device_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def root_device_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "root_device_type", value)
 
     @_builtins.property
     @pulumi.getter(name="securityGroups")
-    def security_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2SecurityGroupArgs']]]]:
+    def security_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2SecurityGroupArgs']]]]:
         """
         (Updatable) The security groups for the instance.
         """
         return pulumi.get(self, "security_groups")
 
     @security_groups.setter
-    def security_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2SecurityGroupArgs']]]]):
+    def security_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2SecurityGroupArgs']]]]):
         pulumi.set(self, "security_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="sriovNetSupport")
-    def sriov_net_support(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sriov_net_support(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.
         """
         return pulumi.get(self, "sriov_net_support")
 
     @sriov_net_support.setter
-    def sriov_net_support(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sriov_net_support(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sriov_net_support", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input['AssetAwsEc2StateArgs']]:
+    def state(self) -> pulumi.Input[Optional['AssetAwsEc2StateArgs']]:
         """
         (Updatable) Describes the current state of an instance.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input['AssetAwsEc2StateArgs']]):
+    def state(self, value: pulumi.Input[Optional['AssetAwsEc2StateArgs']]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetKey")
-    def subnet_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) EC2-VPC The ID of the subnet in which the instance is running.
         """
         return pulumi.get(self, "subnet_key")
 
     @subnet_key.setter
-    def subnet_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2TagArgs']]]]:
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2TagArgs']]]]:
         """
         (Updatable) Any tags assigned to the instance.
         """
         return pulumi.get(self, "tags")
 
     @tags.setter
-    def tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2TagArgs']]]]):
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2TagArgs']]]]):
         pulumi.set(self, "tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLaunch")
-    def time_launch(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_launch(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The time the instance was launched.
         """
         return pulumi.get(self, "time_launch")
 
     @time_launch.setter
-    def time_launch(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_launch(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_launch", value)
 
     @_builtins.property
     @pulumi.getter(name="tpmSupport")
-    def tpm_support(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tpm_support(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) If the instance is configured for NitroTPM support, the value is v2.0.
         """
         return pulumi.get(self, "tpm_support")
 
     @tpm_support.setter
-    def tpm_support(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tpm_support(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tpm_support", value)
 
     @_builtins.property
     @pulumi.getter(name="virtualizationType")
-    def virtualization_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def virtualization_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The virtualization type of the instance.
         """
         return pulumi.get(self, "virtualization_type")
 
     @virtualization_type.setter
-    def virtualization_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def virtualization_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "virtualization_type", value)
 
     @_builtins.property
     @pulumi.getter(name="vpcKey")
-    def vpc_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vpc_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) EC2-VPC The ID of the VPC in which the instance is running.
         """
         return pulumi.get(self, "vpc_key")
 
     @vpc_key.setter
-    def vpc_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vpc_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vpc_key", value)
 
 
 class AssetAwsEc2NetworkInterfaceArgsDict(TypedDict):
-    association: NotRequired[pulumi.Input['AssetAwsEc2NetworkInterfaceAssociationArgsDict']]
+    association: NotRequired[pulumi.Input[Optional['AssetAwsEc2NetworkInterfaceAssociationArgs']]]
     """
     (Updatable) Describes association information for an Elastic IP address (IPv4).
     """
-    attachment: NotRequired[pulumi.Input['AssetAwsEc2NetworkInterfaceAttachmentArgsDict']]
+    attachment: NotRequired[pulumi.Input[Optional['AssetAwsEc2NetworkInterfaceAttachmentArgs']]]
     """
     (Updatable) Describes a network interface attachment.
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The description.
     """
-    interface_type: NotRequired[pulumi.Input[_builtins.str]]
+    interface_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The type of network interface.
     """
-    ipv4prefixes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    ipv4prefixes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The IPv4 delegated prefixes that are assigned to the network interface.
     """
-    ipv6addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    ipv6addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The IPv6 addresses associated with the network interface.
     """
-    ipv6prefixes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    ipv6prefixes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The IPv6 delegated prefixes that are assigned to the network interface.
     """
-    is_source_dest_check: NotRequired[pulumi.Input[_builtins.bool]]
+    is_source_dest_check: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Indicates whether source/destination checking is enabled.
     """
-    mac_address: NotRequired[pulumi.Input[_builtins.str]]
+    mac_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The MAC address.
     """
-    network_interface_key: NotRequired[pulumi.Input[_builtins.str]]
+    network_interface_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The ID of the network interface.
     """
-    owner_key: NotRequired[pulumi.Input[_builtins.str]]
+    owner_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The ID of the AWS account that created the network interface.
     """
-    private_ip_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfacePrivateIpAddressArgsDict']]]]
+    private_ip_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfacePrivateIpAddressArgs']]]]]
     """
     (Updatable) The private IPv4 addresses associated with the network interface.
     """
-    security_groups: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceSecurityGroupArgsDict']]]]
+    security_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceSecurityGroupArgs']]]]]
     """
     (Updatable) The security groups.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The status of the network interface.
     """
-    subnet_key: NotRequired[pulumi.Input[_builtins.str]]
+    subnet_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The ID of the subnet.
     """
@@ -1454,21 +1454,21 @@ class AssetAwsEc2NetworkInterfaceArgsDict(TypedDict):
 @pulumi.input_type
 class AssetAwsEc2NetworkInterfaceArgs:
     def __init__(__self__, *,
-                 association: Optional[pulumi.Input['AssetAwsEc2NetworkInterfaceAssociationArgs']] = None,
-                 attachment: Optional[pulumi.Input['AssetAwsEc2NetworkInterfaceAttachmentArgs']] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 interface_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv4prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ipv6addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 ipv6prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_source_dest_check: Optional[pulumi.Input[_builtins.bool]] = None,
-                 mac_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_interface_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 owner_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfacePrivateIpAddressArgs']]]] = None,
-                 security_groups: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceSecurityGroupArgs']]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_key: Optional[pulumi.Input[_builtins.str]] = None):
+                 association: pulumi.Input[Optional['AssetAwsEc2NetworkInterfaceAssociationArgs']] = None,
+                 attachment: pulumi.Input[Optional['AssetAwsEc2NetworkInterfaceAttachmentArgs']] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 interface_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv4prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ipv6addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ipv6prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_source_dest_check: pulumi.Input[Optional[_builtins.bool]] = None,
+                 mac_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_interface_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfacePrivateIpAddressArgs']]]] = None,
+                 security_groups: pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceSecurityGroupArgs']]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_key: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input['AssetAwsEc2NetworkInterfaceAssociationArgs'] association: (Updatable) Describes association information for an Elastic IP address (IPv4).
         :param pulumi.Input['AssetAwsEc2NetworkInterfaceAttachmentArgs'] attachment: (Updatable) Describes a network interface attachment.
@@ -1519,203 +1519,203 @@ class AssetAwsEc2NetworkInterfaceArgs:
 
     @_builtins.property
     @pulumi.getter
-    def association(self) -> Optional[pulumi.Input['AssetAwsEc2NetworkInterfaceAssociationArgs']]:
+    def association(self) -> pulumi.Input[Optional['AssetAwsEc2NetworkInterfaceAssociationArgs']]:
         """
         (Updatable) Describes association information for an Elastic IP address (IPv4).
         """
         return pulumi.get(self, "association")
 
     @association.setter
-    def association(self, value: Optional[pulumi.Input['AssetAwsEc2NetworkInterfaceAssociationArgs']]):
+    def association(self, value: pulumi.Input[Optional['AssetAwsEc2NetworkInterfaceAssociationArgs']]):
         pulumi.set(self, "association", value)
 
     @_builtins.property
     @pulumi.getter
-    def attachment(self) -> Optional[pulumi.Input['AssetAwsEc2NetworkInterfaceAttachmentArgs']]:
+    def attachment(self) -> pulumi.Input[Optional['AssetAwsEc2NetworkInterfaceAttachmentArgs']]:
         """
         (Updatable) Describes a network interface attachment.
         """
         return pulumi.get(self, "attachment")
 
     @attachment.setter
-    def attachment(self, value: Optional[pulumi.Input['AssetAwsEc2NetworkInterfaceAttachmentArgs']]):
+    def attachment(self, value: pulumi.Input[Optional['AssetAwsEc2NetworkInterfaceAttachmentArgs']]):
         pulumi.set(self, "attachment", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="interfaceType")
-    def interface_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def interface_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of network interface.
         """
         return pulumi.get(self, "interface_type")
 
     @interface_type.setter
-    def interface_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def interface_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "interface_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def ipv4prefixes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ipv4prefixes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The IPv4 delegated prefixes that are assigned to the network interface.
         """
         return pulumi.get(self, "ipv4prefixes")
 
     @ipv4prefixes.setter
-    def ipv4prefixes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ipv4prefixes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ipv4prefixes", value)
 
     @_builtins.property
     @pulumi.getter
-    def ipv6addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ipv6addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The IPv6 addresses associated with the network interface.
         """
         return pulumi.get(self, "ipv6addresses")
 
     @ipv6addresses.setter
-    def ipv6addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ipv6addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ipv6addresses", value)
 
     @_builtins.property
     @pulumi.getter
-    def ipv6prefixes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ipv6prefixes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The IPv6 delegated prefixes that are assigned to the network interface.
         """
         return pulumi.get(self, "ipv6prefixes")
 
     @ipv6prefixes.setter
-    def ipv6prefixes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ipv6prefixes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ipv6prefixes", value)
 
     @_builtins.property
     @pulumi.getter(name="isSourceDestCheck")
-    def is_source_dest_check(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_source_dest_check(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether source/destination checking is enabled.
         """
         return pulumi.get(self, "is_source_dest_check")
 
     @is_source_dest_check.setter
-    def is_source_dest_check(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_source_dest_check(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_source_dest_check", value)
 
     @_builtins.property
     @pulumi.getter(name="macAddress")
-    def mac_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mac_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The MAC address.
         """
         return pulumi.get(self, "mac_address")
 
     @mac_address.setter
-    def mac_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mac_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mac_address", value)
 
     @_builtins.property
     @pulumi.getter(name="networkInterfaceKey")
-    def network_interface_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_interface_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ID of the network interface.
         """
         return pulumi.get(self, "network_interface_key")
 
     @network_interface_key.setter
-    def network_interface_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_interface_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_interface_key", value)
 
     @_builtins.property
     @pulumi.getter(name="ownerKey")
-    def owner_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def owner_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ID of the AWS account that created the network interface.
         """
         return pulumi.get(self, "owner_key")
 
     @owner_key.setter
-    def owner_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def owner_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "owner_key", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIpAddresses")
-    def private_ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfacePrivateIpAddressArgs']]]]:
+    def private_ip_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfacePrivateIpAddressArgs']]]]:
         """
         (Updatable) The private IPv4 addresses associated with the network interface.
         """
         return pulumi.get(self, "private_ip_addresses")
 
     @private_ip_addresses.setter
-    def private_ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfacePrivateIpAddressArgs']]]]):
+    def private_ip_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfacePrivateIpAddressArgs']]]]):
         pulumi.set(self, "private_ip_addresses", value)
 
     @_builtins.property
     @pulumi.getter(name="securityGroups")
-    def security_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceSecurityGroupArgs']]]]:
+    def security_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceSecurityGroupArgs']]]]:
         """
         (Updatable) The security groups.
         """
         return pulumi.get(self, "security_groups")
 
     @security_groups.setter
-    def security_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceSecurityGroupArgs']]]]):
+    def security_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AssetAwsEc2NetworkInterfaceSecurityGroupArgs']]]]):
         pulumi.set(self, "security_groups", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The status of the network interface.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetKey")
-    def subnet_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ID of the subnet.
         """
         return pulumi.get(self, "subnet_key")
 
     @subnet_key.setter
-    def subnet_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_key", value)
 
 
 class AssetAwsEc2NetworkInterfaceAssociationArgsDict(TypedDict):
-    carrier_ip: NotRequired[pulumi.Input[_builtins.str]]
+    carrier_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The carrier IP address associated with the network interface.
     """
-    customer_owned_ip: NotRequired[pulumi.Input[_builtins.str]]
+    customer_owned_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The customer-owned IP address associated with the network interface.
     """
-    ip_owner_key: NotRequired[pulumi.Input[_builtins.str]]
+    ip_owner_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The ID of the owner of the Elastic IP address.
     """
-    public_dns_name: NotRequired[pulumi.Input[_builtins.str]]
+    public_dns_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The public DNS name.
     """
-    public_ip: NotRequired[pulumi.Input[_builtins.str]]
+    public_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The public IP address or Elastic IP address bound to the network interface.
     """
@@ -1723,11 +1723,11 @@ class AssetAwsEc2NetworkInterfaceAssociationArgsDict(TypedDict):
 @pulumi.input_type
 class AssetAwsEc2NetworkInterfaceAssociationArgs:
     def __init__(__self__, *,
-                 carrier_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 customer_owned_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_owner_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_dns_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_ip: Optional[pulumi.Input[_builtins.str]] = None):
+                 carrier_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 customer_owned_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_owner_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_dns_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_ip: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] carrier_ip: (Updatable) The carrier IP address associated with the network interface.
         :param pulumi.Input[_builtins.str] customer_owned_ip: (Updatable) The customer-owned IP address associated with the network interface.
@@ -1748,87 +1748,87 @@ class AssetAwsEc2NetworkInterfaceAssociationArgs:
 
     @_builtins.property
     @pulumi.getter(name="carrierIp")
-    def carrier_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def carrier_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The carrier IP address associated with the network interface.
         """
         return pulumi.get(self, "carrier_ip")
 
     @carrier_ip.setter
-    def carrier_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def carrier_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "carrier_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="customerOwnedIp")
-    def customer_owned_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def customer_owned_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The customer-owned IP address associated with the network interface.
         """
         return pulumi.get(self, "customer_owned_ip")
 
     @customer_owned_ip.setter
-    def customer_owned_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def customer_owned_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "customer_owned_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="ipOwnerKey")
-    def ip_owner_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_owner_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ID of the owner of the Elastic IP address.
         """
         return pulumi.get(self, "ip_owner_key")
 
     @ip_owner_key.setter
-    def ip_owner_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_owner_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_owner_key", value)
 
     @_builtins.property
     @pulumi.getter(name="publicDnsName")
-    def public_dns_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_dns_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The public DNS name.
         """
         return pulumi.get(self, "public_dns_name")
 
     @public_dns_name.setter
-    def public_dns_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_dns_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_dns_name", value)
 
     @_builtins.property
     @pulumi.getter(name="publicIp")
-    def public_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The public IP address or Elastic IP address bound to the network interface.
         """
         return pulumi.get(self, "public_ip")
 
     @public_ip.setter
-    def public_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_ip", value)
 
 
 class AssetAwsEc2NetworkInterfaceAttachmentArgsDict(TypedDict):
-    attachment_key: NotRequired[pulumi.Input[_builtins.str]]
+    attachment_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The ID of the network interface attachment.
     """
-    device_index: NotRequired[pulumi.Input[_builtins.int]]
+    device_index: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The index of the device on the instance for the network interface attachment.
     """
-    is_delete_on_termination: NotRequired[pulumi.Input[_builtins.bool]]
+    is_delete_on_termination: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Indicates whether the network interface is deleted when the instance is terminated.
     """
-    network_card_index: NotRequired[pulumi.Input[_builtins.int]]
+    network_card_index: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The index of the network card.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The attachment state.
     """
-    time_attach: NotRequired[pulumi.Input[_builtins.str]]
+    time_attach: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The timestamp when the attachment initiated.
     """
@@ -1836,12 +1836,12 @@ class AssetAwsEc2NetworkInterfaceAttachmentArgsDict(TypedDict):
 @pulumi.input_type
 class AssetAwsEc2NetworkInterfaceAttachmentArgs:
     def __init__(__self__, *,
-                 attachment_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 device_index: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_delete_on_termination: Optional[pulumi.Input[_builtins.bool]] = None,
-                 network_card_index: Optional[pulumi.Input[_builtins.int]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_attach: Optional[pulumi.Input[_builtins.str]] = None):
+                 attachment_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 device_index: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_delete_on_termination: pulumi.Input[Optional[_builtins.bool]] = None,
+                 network_card_index: pulumi.Input[Optional[_builtins.int]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_attach: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] attachment_key: (Updatable) The ID of the network interface attachment.
         :param pulumi.Input[_builtins.int] device_index: (Updatable) The index of the device on the instance for the network interface attachment.
@@ -1865,91 +1865,91 @@ class AssetAwsEc2NetworkInterfaceAttachmentArgs:
 
     @_builtins.property
     @pulumi.getter(name="attachmentKey")
-    def attachment_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def attachment_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ID of the network interface attachment.
         """
         return pulumi.get(self, "attachment_key")
 
     @attachment_key.setter
-    def attachment_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def attachment_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "attachment_key", value)
 
     @_builtins.property
     @pulumi.getter(name="deviceIndex")
-    def device_index(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def device_index(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The index of the device on the instance for the network interface attachment.
         """
         return pulumi.get(self, "device_index")
 
     @device_index.setter
-    def device_index(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def device_index(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "device_index", value)
 
     @_builtins.property
     @pulumi.getter(name="isDeleteOnTermination")
-    def is_delete_on_termination(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_delete_on_termination(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether the network interface is deleted when the instance is terminated.
         """
         return pulumi.get(self, "is_delete_on_termination")
 
     @is_delete_on_termination.setter
-    def is_delete_on_termination(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_delete_on_termination(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_delete_on_termination", value)
 
     @_builtins.property
     @pulumi.getter(name="networkCardIndex")
-    def network_card_index(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def network_card_index(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The index of the network card.
         """
         return pulumi.get(self, "network_card_index")
 
     @network_card_index.setter
-    def network_card_index(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def network_card_index(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "network_card_index", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The attachment state.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="timeAttach")
-    def time_attach(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_attach(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The timestamp when the attachment initiated.
         """
         return pulumi.get(self, "time_attach")
 
     @time_attach.setter
-    def time_attach(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_attach(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_attach", value)
 
 
 class AssetAwsEc2NetworkInterfacePrivateIpAddressArgsDict(TypedDict):
-    association: NotRequired[pulumi.Input['AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgsDict']]
+    association: NotRequired[pulumi.Input[Optional['AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs']]]
     """
     (Updatable) Describes association information for an Elastic IP address (IPv4).
     """
-    is_primary: NotRequired[pulumi.Input[_builtins.bool]]
+    is_primary: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Indicates whether this IPv4 address is the primary private IP address of the network interface.
     """
-    private_dns_name: NotRequired[pulumi.Input[_builtins.str]]
+    private_dns_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The private IPv4 DNS name.
     """
-    private_ip_address: NotRequired[pulumi.Input[_builtins.str]]
+    private_ip_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The private IPv4 address of the network interface.
     """
@@ -1957,10 +1957,10 @@ class AssetAwsEc2NetworkInterfacePrivateIpAddressArgsDict(TypedDict):
 @pulumi.input_type
 class AssetAwsEc2NetworkInterfacePrivateIpAddressArgs:
     def __init__(__self__, *,
-                 association: Optional[pulumi.Input['AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs']] = None,
-                 is_primary: Optional[pulumi.Input[_builtins.bool]] = None,
-                 private_dns_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip_address: Optional[pulumi.Input[_builtins.str]] = None):
+                 association: pulumi.Input[Optional['AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs']] = None,
+                 is_primary: pulumi.Input[Optional[_builtins.bool]] = None,
+                 private_dns_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip_address: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input['AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs'] association: (Updatable) Describes association information for an Elastic IP address (IPv4).
         :param pulumi.Input[_builtins.bool] is_primary: (Updatable) Indicates whether this IPv4 address is the primary private IP address of the network interface.
@@ -1978,71 +1978,71 @@ class AssetAwsEc2NetworkInterfacePrivateIpAddressArgs:
 
     @_builtins.property
     @pulumi.getter
-    def association(self) -> Optional[pulumi.Input['AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs']]:
+    def association(self) -> pulumi.Input[Optional['AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs']]:
         """
         (Updatable) Describes association information for an Elastic IP address (IPv4).
         """
         return pulumi.get(self, "association")
 
     @association.setter
-    def association(self, value: Optional[pulumi.Input['AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs']]):
+    def association(self, value: pulumi.Input[Optional['AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs']]):
         pulumi.set(self, "association", value)
 
     @_builtins.property
     @pulumi.getter(name="isPrimary")
-    def is_primary(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_primary(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether this IPv4 address is the primary private IP address of the network interface.
         """
         return pulumi.get(self, "is_primary")
 
     @is_primary.setter
-    def is_primary(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_primary(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_primary", value)
 
     @_builtins.property
     @pulumi.getter(name="privateDnsName")
-    def private_dns_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_dns_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The private IPv4 DNS name.
         """
         return pulumi.get(self, "private_dns_name")
 
     @private_dns_name.setter
-    def private_dns_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_dns_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_dns_name", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIpAddress")
-    def private_ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The private IPv4 address of the network interface.
         """
         return pulumi.get(self, "private_ip_address")
 
     @private_ip_address.setter
-    def private_ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_ip_address", value)
 
 
 class AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgsDict(TypedDict):
-    carrier_ip: NotRequired[pulumi.Input[_builtins.str]]
+    carrier_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The carrier IP address associated with the network interface.
     """
-    customer_owned_ip: NotRequired[pulumi.Input[_builtins.str]]
+    customer_owned_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The customer-owned IP address associated with the network interface.
     """
-    ip_owner_key: NotRequired[pulumi.Input[_builtins.str]]
+    ip_owner_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The ID of the owner of the Elastic IP address.
     """
-    public_dns_name: NotRequired[pulumi.Input[_builtins.str]]
+    public_dns_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The public DNS name.
     """
-    public_ip: NotRequired[pulumi.Input[_builtins.str]]
+    public_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The public IP address or Elastic IP address bound to the network interface.
     """
@@ -2050,11 +2050,11 @@ class AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgsDict(TypedDict):
 @pulumi.input_type
 class AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs:
     def __init__(__self__, *,
-                 carrier_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 customer_owned_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_owner_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_dns_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_ip: Optional[pulumi.Input[_builtins.str]] = None):
+                 carrier_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 customer_owned_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_owner_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_dns_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_ip: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] carrier_ip: (Updatable) The carrier IP address associated with the network interface.
         :param pulumi.Input[_builtins.str] customer_owned_ip: (Updatable) The customer-owned IP address associated with the network interface.
@@ -2075,71 +2075,71 @@ class AssetAwsEc2NetworkInterfacePrivateIpAddressAssociationArgs:
 
     @_builtins.property
     @pulumi.getter(name="carrierIp")
-    def carrier_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def carrier_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The carrier IP address associated with the network interface.
         """
         return pulumi.get(self, "carrier_ip")
 
     @carrier_ip.setter
-    def carrier_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def carrier_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "carrier_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="customerOwnedIp")
-    def customer_owned_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def customer_owned_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The customer-owned IP address associated with the network interface.
         """
         return pulumi.get(self, "customer_owned_ip")
 
     @customer_owned_ip.setter
-    def customer_owned_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def customer_owned_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "customer_owned_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="ipOwnerKey")
-    def ip_owner_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_owner_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ID of the owner of the Elastic IP address.
         """
         return pulumi.get(self, "ip_owner_key")
 
     @ip_owner_key.setter
-    def ip_owner_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_owner_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_owner_key", value)
 
     @_builtins.property
     @pulumi.getter(name="publicDnsName")
-    def public_dns_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_dns_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The public DNS name.
         """
         return pulumi.get(self, "public_dns_name")
 
     @public_dns_name.setter
-    def public_dns_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_dns_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_dns_name", value)
 
     @_builtins.property
     @pulumi.getter(name="publicIp")
-    def public_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The public IP address or Elastic IP address bound to the network interface.
         """
         return pulumi.get(self, "public_ip")
 
     @public_ip.setter
-    def public_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_ip", value)
 
 
 class AssetAwsEc2NetworkInterfaceSecurityGroupArgsDict(TypedDict):
-    group_key: NotRequired[pulumi.Input[_builtins.str]]
+    group_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The ID of the security group.
     """
-    group_name: NotRequired[pulumi.Input[_builtins.str]]
+    group_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the security group.
     """
@@ -2147,8 +2147,8 @@ class AssetAwsEc2NetworkInterfaceSecurityGroupArgsDict(TypedDict):
 @pulumi.input_type
 class AssetAwsEc2NetworkInterfaceSecurityGroupArgs:
     def __init__(__self__, *,
-                 group_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 group_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] group_key: (Updatable) The ID of the security group.
         :param pulumi.Input[_builtins.str] group_name: (Updatable) The name of the security group.
@@ -2160,59 +2160,59 @@ class AssetAwsEc2NetworkInterfaceSecurityGroupArgs:
 
     @_builtins.property
     @pulumi.getter(name="groupKey")
-    def group_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ID of the security group.
         """
         return pulumi.get(self, "group_key")
 
     @group_key.setter
-    def group_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group_key", value)
 
     @_builtins.property
     @pulumi.getter(name="groupName")
-    def group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the security group.
         """
         return pulumi.get(self, "group_name")
 
     @group_name.setter
-    def group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group_name", value)
 
 
 class AssetAwsEc2PlacementArgsDict(TypedDict):
-    affinity: NotRequired[pulumi.Input[_builtins.str]]
+    affinity: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The affinity setting for the instance on the Dedicated Host.
     """
-    availability_zone: NotRequired[pulumi.Input[_builtins.str]]
+    availability_zone: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The Availability Zone of the instance.
     """
-    group_name: NotRequired[pulumi.Input[_builtins.str]]
+    group_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the placement group the instance is in.
     """
-    host_key: NotRequired[pulumi.Input[_builtins.str]]
+    host_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The ID of the Dedicated Host on which the instance resides.
     """
-    host_resource_group_arn: NotRequired[pulumi.Input[_builtins.str]]
+    host_resource_group_arn: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The ARN of the host resource group in which to launch the instances.
     """
-    partition_number: NotRequired[pulumi.Input[_builtins.int]]
+    partition_number: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The number of the partition that the instance is in.
     """
-    spread_domain: NotRequired[pulumi.Input[_builtins.str]]
+    spread_domain: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Reserved for future use.
     """
-    tenancy: NotRequired[pulumi.Input[_builtins.str]]
+    tenancy: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The tenancy of the instance (if the instance is running in a VPC).
     """
@@ -2220,14 +2220,14 @@ class AssetAwsEc2PlacementArgsDict(TypedDict):
 @pulumi.input_type
 class AssetAwsEc2PlacementArgs:
     def __init__(__self__, *,
-                 affinity: Optional[pulumi.Input[_builtins.str]] = None,
-                 availability_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_resource_group_arn: Optional[pulumi.Input[_builtins.str]] = None,
-                 partition_number: Optional[pulumi.Input[_builtins.int]] = None,
-                 spread_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenancy: Optional[pulumi.Input[_builtins.str]] = None):
+                 affinity: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_resource_group_arn: pulumi.Input[Optional[_builtins.str]] = None,
+                 partition_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 spread_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenancy: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] affinity: (Updatable) The affinity setting for the instance on the Dedicated Host.
         :param pulumi.Input[_builtins.str] availability_zone: (Updatable) The Availability Zone of the instance.
@@ -2257,107 +2257,107 @@ class AssetAwsEc2PlacementArgs:
 
     @_builtins.property
     @pulumi.getter
-    def affinity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def affinity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The affinity setting for the instance on the Dedicated Host.
         """
         return pulumi.get(self, "affinity")
 
     @affinity.setter
-    def affinity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def affinity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "affinity", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityZone")
-    def availability_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Availability Zone of the instance.
         """
         return pulumi.get(self, "availability_zone")
 
     @availability_zone.setter
-    def availability_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_zone", value)
 
     @_builtins.property
     @pulumi.getter(name="groupName")
-    def group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the placement group the instance is in.
         """
         return pulumi.get(self, "group_name")
 
     @group_name.setter
-    def group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group_name", value)
 
     @_builtins.property
     @pulumi.getter(name="hostKey")
-    def host_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ID of the Dedicated Host on which the instance resides.
         """
         return pulumi.get(self, "host_key")
 
     @host_key.setter
-    def host_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_key", value)
 
     @_builtins.property
     @pulumi.getter(name="hostResourceGroupArn")
-    def host_resource_group_arn(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_resource_group_arn(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ARN of the host resource group in which to launch the instances.
         """
         return pulumi.get(self, "host_resource_group_arn")
 
     @host_resource_group_arn.setter
-    def host_resource_group_arn(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_resource_group_arn(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_resource_group_arn", value)
 
     @_builtins.property
     @pulumi.getter(name="partitionNumber")
-    def partition_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def partition_number(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of the partition that the instance is in.
         """
         return pulumi.get(self, "partition_number")
 
     @partition_number.setter
-    def partition_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def partition_number(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "partition_number", value)
 
     @_builtins.property
     @pulumi.getter(name="spreadDomain")
-    def spread_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def spread_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Reserved for future use.
         """
         return pulumi.get(self, "spread_domain")
 
     @spread_domain.setter
-    def spread_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def spread_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "spread_domain", value)
 
     @_builtins.property
     @pulumi.getter
-    def tenancy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The tenancy of the instance (if the instance is running in a VPC).
         """
         return pulumi.get(self, "tenancy")
 
     @tenancy.setter
-    def tenancy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy", value)
 
 
 class AssetAwsEc2SecurityGroupArgsDict(TypedDict):
-    group_key: NotRequired[pulumi.Input[_builtins.str]]
+    group_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The ID of the security group.
     """
-    group_name: NotRequired[pulumi.Input[_builtins.str]]
+    group_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the security group.
     """
@@ -2365,8 +2365,8 @@ class AssetAwsEc2SecurityGroupArgsDict(TypedDict):
 @pulumi.input_type
 class AssetAwsEc2SecurityGroupArgs:
     def __init__(__self__, *,
-                 group_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 group_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] group_key: (Updatable) The ID of the security group.
         :param pulumi.Input[_builtins.str] group_name: (Updatable) The name of the security group.
@@ -2378,35 +2378,35 @@ class AssetAwsEc2SecurityGroupArgs:
 
     @_builtins.property
     @pulumi.getter(name="groupKey")
-    def group_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The ID of the security group.
         """
         return pulumi.get(self, "group_key")
 
     @group_key.setter
-    def group_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group_key", value)
 
     @_builtins.property
     @pulumi.getter(name="groupName")
-    def group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def group_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the security group.
         """
         return pulumi.get(self, "group_name")
 
     @group_name.setter
-    def group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def group_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "group_name", value)
 
 
 class AssetAwsEc2StateArgsDict(TypedDict):
-    code: NotRequired[pulumi.Input[_builtins.int]]
+    code: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The state of the instance as a 16-bit unsigned integer.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The current state of the instance.
     """
@@ -2414,8 +2414,8 @@ class AssetAwsEc2StateArgsDict(TypedDict):
 @pulumi.input_type
 class AssetAwsEc2StateArgs:
     def __init__(__self__, *,
-                 code: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 code: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.int] code: (Updatable) The state of the instance as a 16-bit unsigned integer.
         :param pulumi.Input[_builtins.str] name: (Updatable) The current state of the instance.
@@ -2427,35 +2427,35 @@ class AssetAwsEc2StateArgs:
 
     @_builtins.property
     @pulumi.getter
-    def code(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def code(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The state of the instance as a 16-bit unsigned integer.
         """
         return pulumi.get(self, "code")
 
     @code.setter
-    def code(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def code(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "code", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The current state of the instance.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 class AssetAwsEc2TagArgsDict(TypedDict):
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The key of the tag.
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The value of the tag.
     """
@@ -2463,8 +2463,8 @@ class AssetAwsEc2TagArgsDict(TypedDict):
 @pulumi.input_type
 class AssetAwsEc2TagArgs:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] key: (Updatable) The key of the tag.
         :param pulumi.Input[_builtins.str] value: (Updatable) The value of the tag.
@@ -2476,35 +2476,35 @@ class AssetAwsEc2TagArgs:
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The key of the tag.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The value of the tag.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
 class AssetAwsEc2costArgsDict(TypedDict):
-    amount: NotRequired[pulumi.Input[_builtins.float]]
+    amount: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     (Updatable) Monthly costs for maintenance of this asset.
     """
-    currency_code: NotRequired[pulumi.Input[_builtins.str]]
+    currency_code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Currency code
     """
@@ -2512,8 +2512,8 @@ class AssetAwsEc2costArgsDict(TypedDict):
 @pulumi.input_type
 class AssetAwsEc2costArgs:
     def __init__(__self__, *,
-                 amount: Optional[pulumi.Input[_builtins.float]] = None,
-                 currency_code: Optional[pulumi.Input[_builtins.str]] = None):
+                 amount: pulumi.Input[Optional[_builtins.float]] = None,
+                 currency_code: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.float] amount: (Updatable) Monthly costs for maintenance of this asset.
         :param pulumi.Input[_builtins.str] currency_code: (Updatable) Currency code
@@ -2525,143 +2525,143 @@ class AssetAwsEc2costArgs:
 
     @_builtins.property
     @pulumi.getter
-    def amount(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def amount(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) Monthly costs for maintenance of this asset.
         """
         return pulumi.get(self, "amount")
 
     @amount.setter
-    def amount(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def amount(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "amount", value)
 
     @_builtins.property
     @pulumi.getter(name="currencyCode")
-    def currency_code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def currency_code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Currency code
         """
         return pulumi.get(self, "currency_code")
 
     @currency_code.setter
-    def currency_code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def currency_code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "currency_code", value)
 
 
 class AssetComputeArgsDict(TypedDict):
-    connected_networks: NotRequired[pulumi.Input[_builtins.int]]
+    connected_networks: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Number of connected networks.
     """
-    cores_count: NotRequired[pulumi.Input[_builtins.int]]
+    cores_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Number of CPUs.
     """
-    cpu_model: NotRequired[pulumi.Input[_builtins.str]]
+    cpu_model: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) CPU model name.
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Information about the asset.
     """
-    disks: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetComputeDiskArgsDict']]]]
+    disks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetComputeDiskArgs']]]]]
     """
     (Updatable) Lists the set of disks belonging to the virtual machine. This list is unordered.
     """
-    disks_count: NotRequired[pulumi.Input[_builtins.int]]
+    disks_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Number of disks.
     """
-    dns_name: NotRequired[pulumi.Input[_builtins.str]]
+    dns_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Fully Qualified DNS Name.
     """
-    firmware: NotRequired[pulumi.Input[_builtins.str]]
+    firmware: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Information about firmware type for this virtual machine.
     """
-    gpu_devices: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetComputeGpuDeviceArgsDict']]]]
+    gpu_devices: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetComputeGpuDeviceArgs']]]]]
     """
     (Updatable) List of GPU devices attached to a virtual machine.
     """
-    gpu_devices_count: NotRequired[pulumi.Input[_builtins.int]]
+    gpu_devices_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Number of GPU devices.
     """
-    guest_state: NotRequired[pulumi.Input[_builtins.str]]
+    guest_state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Guest state.
     """
-    hardware_version: NotRequired[pulumi.Input[_builtins.str]]
+    hardware_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Hardware version.
     """
-    host_name: NotRequired[pulumi.Input[_builtins.str]]
+    host_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Host name of the VM.
     """
-    is_pmem_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_pmem_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether Pmem is enabled. Decides if NVDIMMs are used as a permanent memory.
     """
-    is_tpm_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_tpm_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether Trusted Platform Module (TPM) is enabled.
     """
-    latency_sensitivity: NotRequired[pulumi.Input[_builtins.str]]
+    latency_sensitivity: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Latency sensitivity.
     """
-    memory_in_mbs: NotRequired[pulumi.Input[_builtins.str]]
+    memory_in_mbs: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Memory size in MBs.
     """
-    nics: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetComputeNicArgsDict']]]]
+    nics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetComputeNicArgs']]]]]
     """
     (Updatable) List of network ethernet cards attached to a virtual machine.
     """
-    nics_count: NotRequired[pulumi.Input[_builtins.int]]
+    nics_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Number of network ethernet cards.
     """
-    nvdimm_controller: NotRequired[pulumi.Input['AssetComputeNvdimmControllerArgsDict']]
+    nvdimm_controller: NotRequired[pulumi.Input[Optional['AssetComputeNvdimmControllerArgs']]]
     """
     (Updatable) The asset's NVDIMM configuration.
     """
-    nvdimms: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetComputeNvdimmArgsDict']]]]
+    nvdimms: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetComputeNvdimmArgs']]]]]
     """
     (Updatable) The properties of the NVDIMMs attached to a virtual machine.
     """
-    operating_system: NotRequired[pulumi.Input[_builtins.str]]
+    operating_system: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Operating system.
     """
-    operating_system_version: NotRequired[pulumi.Input[_builtins.str]]
+    operating_system_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Operating system version.
     """
-    pmem_in_mbs: NotRequired[pulumi.Input[_builtins.str]]
+    pmem_in_mbs: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Pmem size in MBs.
     """
-    power_state: NotRequired[pulumi.Input[_builtins.str]]
+    power_state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The current power state of the virtual machine.
     """
-    primary_ip: NotRequired[pulumi.Input[_builtins.str]]
+    primary_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Primary IP address of the compute instance.
     """
-    scsi_controller: NotRequired[pulumi.Input['AssetComputeScsiControllerArgsDict']]
+    scsi_controller: NotRequired[pulumi.Input[Optional['AssetComputeScsiControllerArgs']]]
     """
     (Updatable) The assets SCSI controller.
     """
-    storage_provisioned_in_mbs: NotRequired[pulumi.Input[_builtins.str]]
+    storage_provisioned_in_mbs: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Provision storage size in MBs.
     """
-    threads_per_core_count: NotRequired[pulumi.Input[_builtins.int]]
+    threads_per_core_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Number of threads per core.
     """
@@ -2669,35 +2669,35 @@ class AssetComputeArgsDict(TypedDict):
 @pulumi.input_type
 class AssetComputeArgs:
     def __init__(__self__, *,
-                 connected_networks: Optional[pulumi.Input[_builtins.int]] = None,
-                 cores_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 cpu_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 disks: Optional[pulumi.Input[Sequence[pulumi.Input['AssetComputeDiskArgs']]]] = None,
-                 disks_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 dns_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 firmware: Optional[pulumi.Input[_builtins.str]] = None,
-                 gpu_devices: Optional[pulumi.Input[Sequence[pulumi.Input['AssetComputeGpuDeviceArgs']]]] = None,
-                 gpu_devices_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 guest_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 hardware_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_pmem_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_tpm_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 latency_sensitivity: Optional[pulumi.Input[_builtins.str]] = None,
-                 memory_in_mbs: Optional[pulumi.Input[_builtins.str]] = None,
-                 nics: Optional[pulumi.Input[Sequence[pulumi.Input['AssetComputeNicArgs']]]] = None,
-                 nics_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 nvdimm_controller: Optional[pulumi.Input['AssetComputeNvdimmControllerArgs']] = None,
-                 nvdimms: Optional[pulumi.Input[Sequence[pulumi.Input['AssetComputeNvdimmArgs']]]] = None,
-                 operating_system: Optional[pulumi.Input[_builtins.str]] = None,
-                 operating_system_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 pmem_in_mbs: Optional[pulumi.Input[_builtins.str]] = None,
-                 power_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 primary_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 scsi_controller: Optional[pulumi.Input['AssetComputeScsiControllerArgs']] = None,
-                 storage_provisioned_in_mbs: Optional[pulumi.Input[_builtins.str]] = None,
-                 threads_per_core_count: Optional[pulumi.Input[_builtins.int]] = None):
+                 connected_networks: pulumi.Input[Optional[_builtins.int]] = None,
+                 cores_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 cpu_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 disks: pulumi.Input[Optional[Sequence[pulumi.Input['AssetComputeDiskArgs']]]] = None,
+                 disks_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 dns_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 firmware: pulumi.Input[Optional[_builtins.str]] = None,
+                 gpu_devices: pulumi.Input[Optional[Sequence[pulumi.Input['AssetComputeGpuDeviceArgs']]]] = None,
+                 gpu_devices_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 guest_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 hardware_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_pmem_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_tpm_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 latency_sensitivity: pulumi.Input[Optional[_builtins.str]] = None,
+                 memory_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 nics: pulumi.Input[Optional[Sequence[pulumi.Input['AssetComputeNicArgs']]]] = None,
+                 nics_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 nvdimm_controller: pulumi.Input[Optional['AssetComputeNvdimmControllerArgs']] = None,
+                 nvdimms: pulumi.Input[Optional[Sequence[pulumi.Input['AssetComputeNvdimmArgs']]]] = None,
+                 operating_system: pulumi.Input[Optional[_builtins.str]] = None,
+                 operating_system_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 pmem_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 power_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 primary_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 scsi_controller: pulumi.Input[Optional['AssetComputeScsiControllerArgs']] = None,
+                 storage_provisioned_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 threads_per_core_count: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] connected_networks: (Updatable) Number of connected networks.
         :param pulumi.Input[_builtins.int] cores_count: (Updatable) Number of CPUs.
@@ -2790,383 +2790,383 @@ class AssetComputeArgs:
 
     @_builtins.property
     @pulumi.getter(name="connectedNetworks")
-    def connected_networks(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def connected_networks(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Number of connected networks.
         """
         return pulumi.get(self, "connected_networks")
 
     @connected_networks.setter
-    def connected_networks(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def connected_networks(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "connected_networks", value)
 
     @_builtins.property
     @pulumi.getter(name="coresCount")
-    def cores_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cores_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Number of CPUs.
         """
         return pulumi.get(self, "cores_count")
 
     @cores_count.setter
-    def cores_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cores_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cores_count", value)
 
     @_builtins.property
     @pulumi.getter(name="cpuModel")
-    def cpu_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cpu_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) CPU model name.
         """
         return pulumi.get(self, "cpu_model")
 
     @cpu_model.setter
-    def cpu_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cpu_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cpu_model", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Information about the asset.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def disks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssetComputeDiskArgs']]]]:
+    def disks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AssetComputeDiskArgs']]]]:
         """
         (Updatable) Lists the set of disks belonging to the virtual machine. This list is unordered.
         """
         return pulumi.get(self, "disks")
 
     @disks.setter
-    def disks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssetComputeDiskArgs']]]]):
+    def disks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AssetComputeDiskArgs']]]]):
         pulumi.set(self, "disks", value)
 
     @_builtins.property
     @pulumi.getter(name="disksCount")
-    def disks_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def disks_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Number of disks.
         """
         return pulumi.get(self, "disks_count")
 
     @disks_count.setter
-    def disks_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def disks_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "disks_count", value)
 
     @_builtins.property
     @pulumi.getter(name="dnsName")
-    def dns_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def dns_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Fully Qualified DNS Name.
         """
         return pulumi.get(self, "dns_name")
 
     @dns_name.setter
-    def dns_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def dns_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "dns_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def firmware(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def firmware(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Information about firmware type for this virtual machine.
         """
         return pulumi.get(self, "firmware")
 
     @firmware.setter
-    def firmware(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def firmware(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "firmware", value)
 
     @_builtins.property
     @pulumi.getter(name="gpuDevices")
-    def gpu_devices(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssetComputeGpuDeviceArgs']]]]:
+    def gpu_devices(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AssetComputeGpuDeviceArgs']]]]:
         """
         (Updatable) List of GPU devices attached to a virtual machine.
         """
         return pulumi.get(self, "gpu_devices")
 
     @gpu_devices.setter
-    def gpu_devices(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssetComputeGpuDeviceArgs']]]]):
+    def gpu_devices(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AssetComputeGpuDeviceArgs']]]]):
         pulumi.set(self, "gpu_devices", value)
 
     @_builtins.property
     @pulumi.getter(name="gpuDevicesCount")
-    def gpu_devices_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def gpu_devices_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Number of GPU devices.
         """
         return pulumi.get(self, "gpu_devices_count")
 
     @gpu_devices_count.setter
-    def gpu_devices_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def gpu_devices_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "gpu_devices_count", value)
 
     @_builtins.property
     @pulumi.getter(name="guestState")
-    def guest_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def guest_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Guest state.
         """
         return pulumi.get(self, "guest_state")
 
     @guest_state.setter
-    def guest_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def guest_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "guest_state", value)
 
     @_builtins.property
     @pulumi.getter(name="hardwareVersion")
-    def hardware_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hardware_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Hardware version.
         """
         return pulumi.get(self, "hardware_version")
 
     @hardware_version.setter
-    def hardware_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hardware_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hardware_version", value)
 
     @_builtins.property
     @pulumi.getter(name="hostName")
-    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Host name of the VM.
         """
         return pulumi.get(self, "host_name")
 
     @host_name.setter
-    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host_name", value)
 
     @_builtins.property
     @pulumi.getter(name="isPmemEnabled")
-    def is_pmem_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_pmem_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether Pmem is enabled. Decides if NVDIMMs are used as a permanent memory.
         """
         return pulumi.get(self, "is_pmem_enabled")
 
     @is_pmem_enabled.setter
-    def is_pmem_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_pmem_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_pmem_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isTpmEnabled")
-    def is_tpm_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_tpm_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether Trusted Platform Module (TPM) is enabled.
         """
         return pulumi.get(self, "is_tpm_enabled")
 
     @is_tpm_enabled.setter
-    def is_tpm_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_tpm_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_tpm_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="latencySensitivity")
-    def latency_sensitivity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def latency_sensitivity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Latency sensitivity.
         """
         return pulumi.get(self, "latency_sensitivity")
 
     @latency_sensitivity.setter
-    def latency_sensitivity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def latency_sensitivity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "latency_sensitivity", value)
 
     @_builtins.property
     @pulumi.getter(name="memoryInMbs")
-    def memory_in_mbs(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def memory_in_mbs(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Memory size in MBs.
         """
         return pulumi.get(self, "memory_in_mbs")
 
     @memory_in_mbs.setter
-    def memory_in_mbs(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def memory_in_mbs(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "memory_in_mbs", value)
 
     @_builtins.property
     @pulumi.getter
-    def nics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssetComputeNicArgs']]]]:
+    def nics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AssetComputeNicArgs']]]]:
         """
         (Updatable) List of network ethernet cards attached to a virtual machine.
         """
         return pulumi.get(self, "nics")
 
     @nics.setter
-    def nics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssetComputeNicArgs']]]]):
+    def nics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AssetComputeNicArgs']]]]):
         pulumi.set(self, "nics", value)
 
     @_builtins.property
     @pulumi.getter(name="nicsCount")
-    def nics_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def nics_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Number of network ethernet cards.
         """
         return pulumi.get(self, "nics_count")
 
     @nics_count.setter
-    def nics_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def nics_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "nics_count", value)
 
     @_builtins.property
     @pulumi.getter(name="nvdimmController")
-    def nvdimm_controller(self) -> Optional[pulumi.Input['AssetComputeNvdimmControllerArgs']]:
+    def nvdimm_controller(self) -> pulumi.Input[Optional['AssetComputeNvdimmControllerArgs']]:
         """
         (Updatable) The asset's NVDIMM configuration.
         """
         return pulumi.get(self, "nvdimm_controller")
 
     @nvdimm_controller.setter
-    def nvdimm_controller(self, value: Optional[pulumi.Input['AssetComputeNvdimmControllerArgs']]):
+    def nvdimm_controller(self, value: pulumi.Input[Optional['AssetComputeNvdimmControllerArgs']]):
         pulumi.set(self, "nvdimm_controller", value)
 
     @_builtins.property
     @pulumi.getter
-    def nvdimms(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssetComputeNvdimmArgs']]]]:
+    def nvdimms(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AssetComputeNvdimmArgs']]]]:
         """
         (Updatable) The properties of the NVDIMMs attached to a virtual machine.
         """
         return pulumi.get(self, "nvdimms")
 
     @nvdimms.setter
-    def nvdimms(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssetComputeNvdimmArgs']]]]):
+    def nvdimms(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AssetComputeNvdimmArgs']]]]):
         pulumi.set(self, "nvdimms", value)
 
     @_builtins.property
     @pulumi.getter(name="operatingSystem")
-    def operating_system(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operating_system(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Operating system.
         """
         return pulumi.get(self, "operating_system")
 
     @operating_system.setter
-    def operating_system(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operating_system(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operating_system", value)
 
     @_builtins.property
     @pulumi.getter(name="operatingSystemVersion")
-    def operating_system_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operating_system_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Operating system version.
         """
         return pulumi.get(self, "operating_system_version")
 
     @operating_system_version.setter
-    def operating_system_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operating_system_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operating_system_version", value)
 
     @_builtins.property
     @pulumi.getter(name="pmemInMbs")
-    def pmem_in_mbs(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pmem_in_mbs(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Pmem size in MBs.
         """
         return pulumi.get(self, "pmem_in_mbs")
 
     @pmem_in_mbs.setter
-    def pmem_in_mbs(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pmem_in_mbs(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pmem_in_mbs", value)
 
     @_builtins.property
     @pulumi.getter(name="powerState")
-    def power_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def power_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The current power state of the virtual machine.
         """
         return pulumi.get(self, "power_state")
 
     @power_state.setter
-    def power_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def power_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "power_state", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryIp")
-    def primary_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def primary_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Primary IP address of the compute instance.
         """
         return pulumi.get(self, "primary_ip")
 
     @primary_ip.setter
-    def primary_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def primary_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "primary_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="scsiController")
-    def scsi_controller(self) -> Optional[pulumi.Input['AssetComputeScsiControllerArgs']]:
+    def scsi_controller(self) -> pulumi.Input[Optional['AssetComputeScsiControllerArgs']]:
         """
         (Updatable) The assets SCSI controller.
         """
         return pulumi.get(self, "scsi_controller")
 
     @scsi_controller.setter
-    def scsi_controller(self, value: Optional[pulumi.Input['AssetComputeScsiControllerArgs']]):
+    def scsi_controller(self, value: pulumi.Input[Optional['AssetComputeScsiControllerArgs']]):
         pulumi.set(self, "scsi_controller", value)
 
     @_builtins.property
     @pulumi.getter(name="storageProvisionedInMbs")
-    def storage_provisioned_in_mbs(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_provisioned_in_mbs(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Provision storage size in MBs.
         """
         return pulumi.get(self, "storage_provisioned_in_mbs")
 
     @storage_provisioned_in_mbs.setter
-    def storage_provisioned_in_mbs(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_provisioned_in_mbs(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_provisioned_in_mbs", value)
 
     @_builtins.property
     @pulumi.getter(name="threadsPerCoreCount")
-    def threads_per_core_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def threads_per_core_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Number of threads per core.
         """
         return pulumi.get(self, "threads_per_core_count")
 
     @threads_per_core_count.setter
-    def threads_per_core_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def threads_per_core_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "threads_per_core_count", value)
 
 
 class AssetComputeDiskArgsDict(TypedDict):
-    boot_order: NotRequired[pulumi.Input[_builtins.int]]
+    boot_order: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Order of boot volumes.
     """
-    is_cbt_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_cbt_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Indicates that CBT (change disk tracking) is enabled for this virtual disk.
     """
-    location: NotRequired[pulumi.Input[_builtins.str]]
+    location: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Location of the boot/data volume.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Disk name.
     """
-    persistent_mode: NotRequired[pulumi.Input[_builtins.str]]
+    persistent_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The disk persistent mode.
     """
-    size_in_mbs: NotRequired[pulumi.Input[_builtins.str]]
+    size_in_mbs: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The size of the volume in MBs.
     """
-    uuid: NotRequired[pulumi.Input[_builtins.str]]
+    uuid: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Disk UUID for the virtual disk, if available.
     """
-    uuid_lun: NotRequired[pulumi.Input[_builtins.str]]
+    uuid_lun: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Disk UUID LUN for the virtual disk, if available.
     """
@@ -3174,14 +3174,14 @@ class AssetComputeDiskArgsDict(TypedDict):
 @pulumi.input_type
 class AssetComputeDiskArgs:
     def __init__(__self__, *,
-                 boot_order: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_cbt_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 location: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 persistent_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 size_in_mbs: Optional[pulumi.Input[_builtins.str]] = None,
-                 uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 uuid_lun: Optional[pulumi.Input[_builtins.str]] = None):
+                 boot_order: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_cbt_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 location: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 persistent_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 size_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 uuid_lun: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.int] boot_order: (Updatable) Order of boot volumes.
         :param pulumi.Input[_builtins.bool] is_cbt_enabled: (Updatable) Indicates that CBT (change disk tracking) is enabled for this virtual disk.
@@ -3211,119 +3211,119 @@ class AssetComputeDiskArgs:
 
     @_builtins.property
     @pulumi.getter(name="bootOrder")
-    def boot_order(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def boot_order(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Order of boot volumes.
         """
         return pulumi.get(self, "boot_order")
 
     @boot_order.setter
-    def boot_order(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def boot_order(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "boot_order", value)
 
     @_builtins.property
     @pulumi.getter(name="isCbtEnabled")
-    def is_cbt_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cbt_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates that CBT (change disk tracking) is enabled for this virtual disk.
         """
         return pulumi.get(self, "is_cbt_enabled")
 
     @is_cbt_enabled.setter
-    def is_cbt_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cbt_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cbt_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def location(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def location(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Location of the boot/data volume.
         """
         return pulumi.get(self, "location")
 
     @location.setter
-    def location(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def location(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "location", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Disk name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="persistentMode")
-    def persistent_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def persistent_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The disk persistent mode.
         """
         return pulumi.get(self, "persistent_mode")
 
     @persistent_mode.setter
-    def persistent_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def persistent_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "persistent_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="sizeInMbs")
-    def size_in_mbs(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def size_in_mbs(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The size of the volume in MBs.
         """
         return pulumi.get(self, "size_in_mbs")
 
     @size_in_mbs.setter
-    def size_in_mbs(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def size_in_mbs(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "size_in_mbs", value)
 
     @_builtins.property
     @pulumi.getter
-    def uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Disk UUID for the virtual disk, if available.
         """
         return pulumi.get(self, "uuid")
 
     @uuid.setter
-    def uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="uuidLun")
-    def uuid_lun(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def uuid_lun(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Disk UUID LUN for the virtual disk, if available.
         """
         return pulumi.get(self, "uuid_lun")
 
     @uuid_lun.setter
-    def uuid_lun(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def uuid_lun(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "uuid_lun", value)
 
 
 class AssetComputeGpuDeviceArgsDict(TypedDict):
-    cores_count: NotRequired[pulumi.Input[_builtins.int]]
+    cores_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Number of GPU cores.
     """
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) GPU device description.
     """
-    manufacturer: NotRequired[pulumi.Input[_builtins.str]]
+    manufacturer: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The manufacturer of GPU.
     """
-    memory_in_mbs: NotRequired[pulumi.Input[_builtins.str]]
+    memory_in_mbs: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) GPU memory size in MBs.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) GPU device name.
     """
@@ -3331,11 +3331,11 @@ class AssetComputeGpuDeviceArgsDict(TypedDict):
 @pulumi.input_type
 class AssetComputeGpuDeviceArgs:
     def __init__(__self__, *,
-                 cores_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 manufacturer: Optional[pulumi.Input[_builtins.str]] = None,
-                 memory_in_mbs: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 cores_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 manufacturer: pulumi.Input[Optional[_builtins.str]] = None,
+                 memory_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.int] cores_count: (Updatable) Number of GPU cores.
         :param pulumi.Input[_builtins.str] description: (Updatable) GPU device description.
@@ -3356,87 +3356,87 @@ class AssetComputeGpuDeviceArgs:
 
     @_builtins.property
     @pulumi.getter(name="coresCount")
-    def cores_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cores_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Number of GPU cores.
         """
         return pulumi.get(self, "cores_count")
 
     @cores_count.setter
-    def cores_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cores_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cores_count", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) GPU device description.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def manufacturer(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def manufacturer(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The manufacturer of GPU.
         """
         return pulumi.get(self, "manufacturer")
 
     @manufacturer.setter
-    def manufacturer(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def manufacturer(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "manufacturer", value)
 
     @_builtins.property
     @pulumi.getter(name="memoryInMbs")
-    def memory_in_mbs(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def memory_in_mbs(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) GPU memory size in MBs.
         """
         return pulumi.get(self, "memory_in_mbs")
 
     @memory_in_mbs.setter
-    def memory_in_mbs(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def memory_in_mbs(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "memory_in_mbs", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) GPU device name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 class AssetComputeNicArgsDict(TypedDict):
-    ip_addresses: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    ip_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) List of IP addresses.
     """
-    label: NotRequired[pulumi.Input[_builtins.str]]
+    label: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Provides a label and summary information for the device.
     """
-    mac_address: NotRequired[pulumi.Input[_builtins.str]]
+    mac_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Mac address of the VM.
     """
-    mac_address_type: NotRequired[pulumi.Input[_builtins.str]]
+    mac_address_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Mac address type.
     """
-    network_name: NotRequired[pulumi.Input[_builtins.str]]
+    network_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Network name.
     """
-    switch_name: NotRequired[pulumi.Input[_builtins.str]]
+    switch_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Switch name.
     """
@@ -3444,12 +3444,12 @@ class AssetComputeNicArgsDict(TypedDict):
 @pulumi.input_type
 class AssetComputeNicArgs:
     def __init__(__self__, *,
-                 ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 label: Optional[pulumi.Input[_builtins.str]] = None,
-                 mac_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 mac_address_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 switch_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 mac_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 mac_address_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 switch_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ip_addresses: (Updatable) List of IP addresses.
         :param pulumi.Input[_builtins.str] label: (Updatable) Provides a label and summary information for the device.
@@ -3473,87 +3473,87 @@ class AssetComputeNicArgs:
 
     @_builtins.property
     @pulumi.getter(name="ipAddresses")
-    def ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ip_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of IP addresses.
         """
         return pulumi.get(self, "ip_addresses")
 
     @ip_addresses.setter
-    def ip_addresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ip_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ip_addresses", value)
 
     @_builtins.property
     @pulumi.getter
-    def label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Provides a label and summary information for the device.
         """
         return pulumi.get(self, "label")
 
     @label.setter
-    def label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "label", value)
 
     @_builtins.property
     @pulumi.getter(name="macAddress")
-    def mac_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mac_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Mac address of the VM.
         """
         return pulumi.get(self, "mac_address")
 
     @mac_address.setter
-    def mac_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mac_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mac_address", value)
 
     @_builtins.property
     @pulumi.getter(name="macAddressType")
-    def mac_address_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mac_address_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Mac address type.
         """
         return pulumi.get(self, "mac_address_type")
 
     @mac_address_type.setter
-    def mac_address_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mac_address_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mac_address_type", value)
 
     @_builtins.property
     @pulumi.getter(name="networkName")
-    def network_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Network name.
         """
         return pulumi.get(self, "network_name")
 
     @network_name.setter
-    def network_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_name", value)
 
     @_builtins.property
     @pulumi.getter(name="switchName")
-    def switch_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def switch_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Switch name.
         """
         return pulumi.get(self, "switch_name")
 
     @switch_name.setter
-    def switch_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def switch_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "switch_name", value)
 
 
 class AssetComputeNvdimmArgsDict(TypedDict):
-    controller_key: NotRequired[pulumi.Input[_builtins.int]]
+    controller_key: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Controller key.
     """
-    label: NotRequired[pulumi.Input[_builtins.str]]
+    label: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Provides a label and summary information for the device.
     """
-    unit_number: NotRequired[pulumi.Input[_builtins.int]]
+    unit_number: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The unit number of NVDIMM.
     """
@@ -3561,9 +3561,9 @@ class AssetComputeNvdimmArgsDict(TypedDict):
 @pulumi.input_type
 class AssetComputeNvdimmArgs:
     def __init__(__self__, *,
-                 controller_key: Optional[pulumi.Input[_builtins.int]] = None,
-                 label: Optional[pulumi.Input[_builtins.str]] = None,
-                 unit_number: Optional[pulumi.Input[_builtins.int]] = None):
+                 controller_key: pulumi.Input[Optional[_builtins.int]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 unit_number: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] controller_key: (Updatable) Controller key.
         :param pulumi.Input[_builtins.str] label: (Updatable) Provides a label and summary information for the device.
@@ -3578,47 +3578,47 @@ class AssetComputeNvdimmArgs:
 
     @_builtins.property
     @pulumi.getter(name="controllerKey")
-    def controller_key(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def controller_key(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Controller key.
         """
         return pulumi.get(self, "controller_key")
 
     @controller_key.setter
-    def controller_key(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def controller_key(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "controller_key", value)
 
     @_builtins.property
     @pulumi.getter
-    def label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Provides a label and summary information for the device.
         """
         return pulumi.get(self, "label")
 
     @label.setter
-    def label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "label", value)
 
     @_builtins.property
     @pulumi.getter(name="unitNumber")
-    def unit_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def unit_number(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The unit number of NVDIMM.
         """
         return pulumi.get(self, "unit_number")
 
     @unit_number.setter
-    def unit_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def unit_number(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "unit_number", value)
 
 
 class AssetComputeNvdimmControllerArgsDict(TypedDict):
-    bus_number: NotRequired[pulumi.Input[_builtins.int]]
+    bus_number: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Bus number.
     """
-    label: NotRequired[pulumi.Input[_builtins.str]]
+    label: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Provides a label and summary information for the device.
     """
@@ -3626,8 +3626,8 @@ class AssetComputeNvdimmControllerArgsDict(TypedDict):
 @pulumi.input_type
 class AssetComputeNvdimmControllerArgs:
     def __init__(__self__, *,
-                 bus_number: Optional[pulumi.Input[_builtins.int]] = None,
-                 label: Optional[pulumi.Input[_builtins.str]] = None):
+                 bus_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.int] bus_number: (Updatable) Bus number.
         :param pulumi.Input[_builtins.str] label: (Updatable) Provides a label and summary information for the device.
@@ -3639,39 +3639,39 @@ class AssetComputeNvdimmControllerArgs:
 
     @_builtins.property
     @pulumi.getter(name="busNumber")
-    def bus_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def bus_number(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Bus number.
         """
         return pulumi.get(self, "bus_number")
 
     @bus_number.setter
-    def bus_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def bus_number(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "bus_number", value)
 
     @_builtins.property
     @pulumi.getter
-    def label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Provides a label and summary information for the device.
         """
         return pulumi.get(self, "label")
 
     @label.setter
-    def label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "label", value)
 
 
 class AssetComputeScsiControllerArgsDict(TypedDict):
-    label: NotRequired[pulumi.Input[_builtins.str]]
+    label: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Provides a label and summary information for the device.
     """
-    shared_bus: NotRequired[pulumi.Input[_builtins.str]]
+    shared_bus: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Shared bus.
     """
-    unit_number: NotRequired[pulumi.Input[_builtins.int]]
+    unit_number: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The unit number of the SCSI controller.
     """
@@ -3679,9 +3679,9 @@ class AssetComputeScsiControllerArgsDict(TypedDict):
 @pulumi.input_type
 class AssetComputeScsiControllerArgs:
     def __init__(__self__, *,
-                 label: Optional[pulumi.Input[_builtins.str]] = None,
-                 shared_bus: Optional[pulumi.Input[_builtins.str]] = None,
-                 unit_number: Optional[pulumi.Input[_builtins.int]] = None):
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 shared_bus: pulumi.Input[Optional[_builtins.str]] = None,
+                 unit_number: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] label: (Updatable) Provides a label and summary information for the device.
         :param pulumi.Input[_builtins.str] shared_bus: (Updatable) Shared bus.
@@ -3696,38 +3696,38 @@ class AssetComputeScsiControllerArgs:
 
     @_builtins.property
     @pulumi.getter
-    def label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Provides a label and summary information for the device.
         """
         return pulumi.get(self, "label")
 
     @label.setter
-    def label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "label", value)
 
     @_builtins.property
     @pulumi.getter(name="sharedBus")
-    def shared_bus(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shared_bus(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Shared bus.
         """
         return pulumi.get(self, "shared_bus")
 
     @shared_bus.setter
-    def shared_bus(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shared_bus(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shared_bus", value)
 
     @_builtins.property
     @pulumi.getter(name="unitNumber")
-    def unit_number(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def unit_number(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The unit number of the SCSI controller.
         """
         return pulumi.get(self, "unit_number")
 
     @unit_number.setter
-    def unit_number(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def unit_number(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "unit_number", value)
 
 
@@ -3826,15 +3826,15 @@ class AssetSourceReplicationCredentialsArgs:
 
 
 class AssetVmArgsDict(TypedDict):
-    hypervisor_host: NotRequired[pulumi.Input[_builtins.str]]
+    hypervisor_host: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Host name/IP address of VM on which the host is running.
     """
-    hypervisor_vendor: NotRequired[pulumi.Input[_builtins.str]]
+    hypervisor_vendor: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Hypervisor vendor.
     """
-    hypervisor_version: NotRequired[pulumi.Input[_builtins.str]]
+    hypervisor_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Hypervisor version.
     """
@@ -3842,9 +3842,9 @@ class AssetVmArgsDict(TypedDict):
 @pulumi.input_type
 class AssetVmArgs:
     def __init__(__self__, *,
-                 hypervisor_host: Optional[pulumi.Input[_builtins.str]] = None,
-                 hypervisor_vendor: Optional[pulumi.Input[_builtins.str]] = None,
-                 hypervisor_version: Optional[pulumi.Input[_builtins.str]] = None):
+                 hypervisor_host: pulumi.Input[Optional[_builtins.str]] = None,
+                 hypervisor_vendor: pulumi.Input[Optional[_builtins.str]] = None,
+                 hypervisor_version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] hypervisor_host: (Updatable) Host name/IP address of VM on which the host is running.
         :param pulumi.Input[_builtins.str] hypervisor_vendor: (Updatable) Hypervisor vendor.
@@ -3859,51 +3859,51 @@ class AssetVmArgs:
 
     @_builtins.property
     @pulumi.getter(name="hypervisorHost")
-    def hypervisor_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hypervisor_host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Host name/IP address of VM on which the host is running.
         """
         return pulumi.get(self, "hypervisor_host")
 
     @hypervisor_host.setter
-    def hypervisor_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hypervisor_host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hypervisor_host", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervisorVendor")
-    def hypervisor_vendor(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hypervisor_vendor(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Hypervisor vendor.
         """
         return pulumi.get(self, "hypervisor_vendor")
 
     @hypervisor_vendor.setter
-    def hypervisor_vendor(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hypervisor_vendor(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hypervisor_vendor", value)
 
     @_builtins.property
     @pulumi.getter(name="hypervisorVersion")
-    def hypervisor_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hypervisor_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Hypervisor version.
         """
         return pulumi.get(self, "hypervisor_version")
 
     @hypervisor_version.setter
-    def hypervisor_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hypervisor_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hypervisor_version", value)
 
 
 class AssetVmwareVcenterArgsDict(TypedDict):
-    data_center: NotRequired[pulumi.Input[_builtins.str]]
+    data_center: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Data center name.
     """
-    vcenter_key: NotRequired[pulumi.Input[_builtins.str]]
+    vcenter_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) vCenter unique key.
     """
-    vcenter_version: NotRequired[pulumi.Input[_builtins.str]]
+    vcenter_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Dot-separated version string.
     """
@@ -3911,9 +3911,9 @@ class AssetVmwareVcenterArgsDict(TypedDict):
 @pulumi.input_type
 class AssetVmwareVcenterArgs:
     def __init__(__self__, *,
-                 data_center: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcenter_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcenter_version: Optional[pulumi.Input[_builtins.str]] = None):
+                 data_center: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcenter_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcenter_version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] data_center: (Updatable) Data center name.
         :param pulumi.Input[_builtins.str] vcenter_key: (Updatable) vCenter unique key.
@@ -3928,83 +3928,83 @@ class AssetVmwareVcenterArgs:
 
     @_builtins.property
     @pulumi.getter(name="dataCenter")
-    def data_center(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data_center(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Data center name.
         """
         return pulumi.get(self, "data_center")
 
     @data_center.setter
-    def data_center(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data_center(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data_center", value)
 
     @_builtins.property
     @pulumi.getter(name="vcenterKey")
-    def vcenter_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vcenter_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) vCenter unique key.
         """
         return pulumi.get(self, "vcenter_key")
 
     @vcenter_key.setter
-    def vcenter_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vcenter_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vcenter_key", value)
 
     @_builtins.property
     @pulumi.getter(name="vcenterVersion")
-    def vcenter_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vcenter_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Dot-separated version string.
         """
         return pulumi.get(self, "vcenter_version")
 
     @vcenter_version.setter
-    def vcenter_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vcenter_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vcenter_version", value)
 
 
 class AssetVmwareVmArgsDict(TypedDict):
-    cluster: NotRequired[pulumi.Input[_builtins.str]]
+    cluster: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Cluster name.
     """
-    customer_fields: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    customer_fields: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Customer fields.
     """
-    customer_tags: NotRequired[pulumi.Input[Sequence[pulumi.Input['AssetVmwareVmCustomerTagArgsDict']]]]
+    customer_tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AssetVmwareVmCustomerTagArgs']]]]]
     """
     (Updatable) Customer defined tags.
     """
-    fault_tolerance_bandwidth: NotRequired[pulumi.Input[_builtins.int]]
+    fault_tolerance_bandwidth: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Fault tolerance bandwidth.
     """
-    fault_tolerance_secondary_latency: NotRequired[pulumi.Input[_builtins.int]]
+    fault_tolerance_secondary_latency: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Fault tolerance to secondary latency.
     """
-    fault_tolerance_state: NotRequired[pulumi.Input[_builtins.str]]
+    fault_tolerance_state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Fault tolerance state.
     """
-    instance_uuid: NotRequired[pulumi.Input[_builtins.str]]
+    instance_uuid: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) vCenter-specific identifier of the virtual machine.
     """
-    is_disks_cbt_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_disks_cbt_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Indicates that change tracking is supported for virtual disks of this virtual machine. However, even if change tracking is supported, it might not be available for all disks of the virtual machine.
     """
-    is_disks_uuid_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_disks_uuid_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether changed block tracking for this VM's disk is active.
     """
-    path: NotRequired[pulumi.Input[_builtins.str]]
+    path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Path directory of the asset.
     """
-    vmware_tools_status: NotRequired[pulumi.Input[_builtins.str]]
+    vmware_tools_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) VMware tools status.
 
@@ -4016,17 +4016,17 @@ class AssetVmwareVmArgsDict(TypedDict):
 @pulumi.input_type
 class AssetVmwareVmArgs:
     def __init__(__self__, *,
-                 cluster: Optional[pulumi.Input[_builtins.str]] = None,
-                 customer_fields: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 customer_tags: Optional[pulumi.Input[Sequence[pulumi.Input['AssetVmwareVmCustomerTagArgs']]]] = None,
-                 fault_tolerance_bandwidth: Optional[pulumi.Input[_builtins.int]] = None,
-                 fault_tolerance_secondary_latency: Optional[pulumi.Input[_builtins.int]] = None,
-                 fault_tolerance_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_uuid: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_disks_cbt_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_disks_uuid_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 path: Optional[pulumi.Input[_builtins.str]] = None,
-                 vmware_tools_status: Optional[pulumi.Input[_builtins.str]] = None):
+                 cluster: pulumi.Input[Optional[_builtins.str]] = None,
+                 customer_fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 customer_tags: pulumi.Input[Optional[Sequence[pulumi.Input['AssetVmwareVmCustomerTagArgs']]]] = None,
+                 fault_tolerance_bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
+                 fault_tolerance_secondary_latency: pulumi.Input[Optional[_builtins.int]] = None,
+                 fault_tolerance_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_disks_cbt_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_disks_uuid_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 path: pulumi.Input[Optional[_builtins.str]] = None,
+                 vmware_tools_status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] cluster: (Updatable) Cluster name.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] customer_fields: (Updatable) Customer fields.
@@ -4069,127 +4069,127 @@ class AssetVmwareVmArgs:
 
     @_builtins.property
     @pulumi.getter
-    def cluster(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Cluster name.
         """
         return pulumi.get(self, "cluster")
 
     @cluster.setter
-    def cluster(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster", value)
 
     @_builtins.property
     @pulumi.getter(name="customerFields")
-    def customer_fields(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def customer_fields(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Customer fields.
         """
         return pulumi.get(self, "customer_fields")
 
     @customer_fields.setter
-    def customer_fields(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def customer_fields(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "customer_fields", value)
 
     @_builtins.property
     @pulumi.getter(name="customerTags")
-    def customer_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AssetVmwareVmCustomerTagArgs']]]]:
+    def customer_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AssetVmwareVmCustomerTagArgs']]]]:
         """
         (Updatable) Customer defined tags.
         """
         return pulumi.get(self, "customer_tags")
 
     @customer_tags.setter
-    def customer_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AssetVmwareVmCustomerTagArgs']]]]):
+    def customer_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AssetVmwareVmCustomerTagArgs']]]]):
         pulumi.set(self, "customer_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="faultToleranceBandwidth")
-    def fault_tolerance_bandwidth(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def fault_tolerance_bandwidth(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Fault tolerance bandwidth.
         """
         return pulumi.get(self, "fault_tolerance_bandwidth")
 
     @fault_tolerance_bandwidth.setter
-    def fault_tolerance_bandwidth(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def fault_tolerance_bandwidth(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "fault_tolerance_bandwidth", value)
 
     @_builtins.property
     @pulumi.getter(name="faultToleranceSecondaryLatency")
-    def fault_tolerance_secondary_latency(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def fault_tolerance_secondary_latency(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Fault tolerance to secondary latency.
         """
         return pulumi.get(self, "fault_tolerance_secondary_latency")
 
     @fault_tolerance_secondary_latency.setter
-    def fault_tolerance_secondary_latency(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def fault_tolerance_secondary_latency(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "fault_tolerance_secondary_latency", value)
 
     @_builtins.property
     @pulumi.getter(name="faultToleranceState")
-    def fault_tolerance_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fault_tolerance_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Fault tolerance state.
         """
         return pulumi.get(self, "fault_tolerance_state")
 
     @fault_tolerance_state.setter
-    def fault_tolerance_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fault_tolerance_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fault_tolerance_state", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceUuid")
-    def instance_uuid(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def instance_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) vCenter-specific identifier of the virtual machine.
         """
         return pulumi.get(self, "instance_uuid")
 
     @instance_uuid.setter
-    def instance_uuid(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def instance_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "instance_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="isDisksCbtEnabled")
-    def is_disks_cbt_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_disks_cbt_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates that change tracking is supported for virtual disks of this virtual machine. However, even if change tracking is supported, it might not be available for all disks of the virtual machine.
         """
         return pulumi.get(self, "is_disks_cbt_enabled")
 
     @is_disks_cbt_enabled.setter
-    def is_disks_cbt_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_disks_cbt_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_disks_cbt_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isDisksUuidEnabled")
-    def is_disks_uuid_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_disks_uuid_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether changed block tracking for this VM's disk is active.
         """
         return pulumi.get(self, "is_disks_uuid_enabled")
 
     @is_disks_uuid_enabled.setter
-    def is_disks_uuid_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_disks_uuid_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_disks_uuid_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Path directory of the asset.
         """
         return pulumi.get(self, "path")
 
     @path.setter
-    def path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "path", value)
 
     @_builtins.property
     @pulumi.getter(name="vmwareToolsStatus")
-    def vmware_tools_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vmware_tools_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) VMware tools status.
 
@@ -4200,16 +4200,16 @@ class AssetVmwareVmArgs:
         return pulumi.get(self, "vmware_tools_status")
 
     @vmware_tools_status.setter
-    def vmware_tools_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vmware_tools_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vmware_tools_status", value)
 
 
 class AssetVmwareVmCustomerTagArgsDict(TypedDict):
-    description: NotRequired[pulumi.Input[_builtins.str]]
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The tag description.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The tag name.
     """
@@ -4217,8 +4217,8 @@ class AssetVmwareVmCustomerTagArgsDict(TypedDict):
 @pulumi.input_type
 class AssetVmwareVmCustomerTagArgs:
     def __init__(__self__, *,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] description: (Updatable) The tag description.
         :param pulumi.Input[_builtins.str] name: (Updatable) The tag name.
@@ -4230,26 +4230,26 @@ class AssetVmwareVmCustomerTagArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The tag description.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The tag name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 

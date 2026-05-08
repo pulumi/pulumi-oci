@@ -377,7 +377,7 @@ def get_node_pool(node_pool_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_node_pool = oci.ContainerEngine.get_node_pool(node_pool_id=test_node_pool_oci_containerengine_node_pool["id"])
+    test_node_pool = oci.containerengine.get_node_pool(node_pool_id=test_node_pool_oci_containerengine_node_pool["id"])
     ```
 
 
@@ -416,7 +416,7 @@ def get_node_pool(node_pool_id: Optional[_builtins.str] = None,
         ssh_public_key=pulumi.get(__ret__, 'ssh_public_key'),
         state=pulumi.get(__ret__, 'state'),
         subnet_ids=pulumi.get(__ret__, 'subnet_ids'))
-def get_node_pool_output(node_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_node_pool_output(node_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNodePoolResult]:
     """
     This data source provides details about a specific Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
@@ -429,7 +429,7 @@ def get_node_pool_output(node_pool_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_node_pool = oci.ContainerEngine.get_node_pool(node_pool_id=test_node_pool_oci_containerengine_node_pool["id"])
+    test_node_pool = oci.containerengine.get_node_pool(node_pool_id=test_node_pool_oci_containerengine_node_pool["id"])
     ```
 
 

@@ -555,7 +555,7 @@ def get_vm_cluster(vm_cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster = oci.Database.get_vm_cluster(vm_cluster_id=test_vm_cluster_oci_database_vm_cluster["id"])
+    test_vm_cluster = oci.database.get_vm_cluster(vm_cluster_id=test_vm_cluster_oci_database_vm_cluster["id"])
     ```
 
 
@@ -610,7 +610,7 @@ def get_vm_cluster(vm_cluster_id: Optional[_builtins.str] = None,
         vm_cluster_network_id=pulumi.get(__ret__, 'vm_cluster_network_id'),
         vm_cluster_type=pulumi.get(__ret__, 'vm_cluster_type'),
         vm_file_system_storage_type=pulumi.get(__ret__, 'vm_file_system_storage_type'))
-def get_vm_cluster_output(vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_vm_cluster_output(vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVmClusterResult]:
     """
     This data source provides details about a specific Vm Cluster resource in Oracle Cloud Infrastructure Database service.
@@ -623,7 +623,7 @@ def get_vm_cluster_output(vm_cluster_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster = oci.Database.get_vm_cluster(vm_cluster_id=test_vm_cluster_oci_database_vm_cluster["id"])
+    test_vm_cluster = oci.database.get_vm_cluster(vm_cluster_id=test_vm_cluster_oci_database_vm_cluster["id"])
     ```
 
 

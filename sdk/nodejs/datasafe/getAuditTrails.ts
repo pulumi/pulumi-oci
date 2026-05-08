@@ -30,11 +30,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditTrails = oci.DataSafe.getAuditTrails({
+ * const testAuditTrails = oci.datasafe.getAuditTrails({
  *     compartmentId: compartmentId,
  *     accessLevel: auditTrailAccessLevel,
  *     auditTrailId: testAuditTrail.id,
- *     compartmentIdInSubtree: auditTrailCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: auditTrailCompartmentIdInSubtree === "true",
  *     displayName: auditTrailDisplayName,
  *     state: auditTrailState,
  *     status: auditTrailStatus,
@@ -164,11 +164,11 @@ export interface GetAuditTrailsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditTrails = oci.DataSafe.getAuditTrails({
+ * const testAuditTrails = oci.datasafe.getAuditTrails({
  *     compartmentId: compartmentId,
  *     accessLevel: auditTrailAccessLevel,
  *     auditTrailId: testAuditTrail.id,
- *     compartmentIdInSubtree: auditTrailCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: auditTrailCompartmentIdInSubtree === "true",
  *     displayName: auditTrailDisplayName,
  *     state: auditTrailState,
  *     status: auditTrailStatus,
@@ -200,11 +200,11 @@ export interface GetAuditTrailsOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A optional filter to return only resources that match the specified id.
      */
-    auditTrailId?: pulumi.Input<string>;
+    auditTrailId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -212,26 +212,26 @@ export interface GetAuditTrailsOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the specified display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetAuditTrailsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetAuditTrailsFilterArgs>[] | undefined>;
     /**
      * A optional filter to return only resources that match the specified lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A optional filter to return only resources that match the specified sub-state of audit trail.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * A filter to return the target database group that matches the specified OCID.
      */
-    targetDatabaseGroupId?: pulumi.Input<string>;
+    targetDatabaseGroupId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items related to a specific target OCID.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
 }

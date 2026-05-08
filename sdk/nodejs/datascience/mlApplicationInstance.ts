@@ -44,7 +44,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isEnabled: mlApplicationInstanceIsEnabled,
+ *     isEnabled: mlApplicationInstanceIsEnabled === "true",
  * });
  * ```
  *
@@ -234,43 +234,43 @@ export interface MlApplicationInstanceState {
     /**
      * AuthN/Z configuration for online prediction
      */
-    authConfiguration?: pulumi.Input<inputs.DataScience.MlApplicationInstanceAuthConfiguration>;
+    authConfiguration?: pulumi.Input<inputs.DataScience.MlApplicationInstanceAuthConfiguration | undefined>;
     /**
      * (Updatable) The OCID of the compartment where the MlApplicationInstance is created.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Data that are used for provisioning of the given MlApplicationInstance. These are validated against configurationSchema defined in referenced MlApplicationImplementation.
      */
-    configurations?: pulumi.Input<pulumi.Input<inputs.DataScience.MlApplicationInstanceConfiguration>[]>;
+    configurations?: pulumi.Input<pulumi.Input<inputs.DataScience.MlApplicationInstanceConfiguration>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The name of MlApplicationInstance. System will generate displayName when not provided.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Defines whether the MlApplicationInstance will be created in ACTIVE (true value) or INACTIVE (false value) lifecycle state.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The current substate of the MlApplicationInstance. The substate has MlApplicationInstance specific values in comparison with lifecycleState which has standard values common for all Oracle Cloud Infrastructure resources. The NEEDS_ATTENTION and FAILED substates are deprecated in favor of (NON_)?RECOVERABLE_(PROVIDER|SERVICE)_ISSUE and will be removed in next release.
      */
-    lifecycleSubstate?: pulumi.Input<string>;
+    lifecycleSubstate?: pulumi.Input<string | undefined>;
     /**
      * The OCID of ML Application. This resource is an instance of ML Application referenced by this OCID.
      */
-    mlApplicationId?: pulumi.Input<string>;
+    mlApplicationId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of ML Application Implementation selected as a certain solution for a given ML problem (ML Application)
      *
@@ -278,35 +278,35 @@ export interface MlApplicationInstanceState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    mlApplicationImplementationId?: pulumi.Input<string>;
+    mlApplicationImplementationId?: pulumi.Input<string | undefined>;
     /**
      * The name of Ml Application Implementation (based on mlApplicationImplementationId)
      */
-    mlApplicationImplementationName?: pulumi.Input<string>;
+    mlApplicationImplementationName?: pulumi.Input<string | undefined>;
     /**
      * The name of ML Application (based on mlApplicationId).
      */
-    mlApplicationName?: pulumi.Input<string>;
+    mlApplicationName?: pulumi.Input<string | undefined>;
     /**
      * Prediction endpoint related information.
      */
-    predictionEndpointDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.MlApplicationInstancePredictionEndpointDetail>[]>;
+    predictionEndpointDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.MlApplicationInstancePredictionEndpointDetail>[] | undefined>;
     /**
      * The current state of the MlApplicationInstance.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time the the MlApplication was created. An RFC3339 formatted datetime string
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Time of last MlApplicationInstance update in the format defined by RFC 3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -316,7 +316,7 @@ export interface MlApplicationInstanceArgs {
     /**
      * AuthN/Z configuration for online prediction
      */
-    authConfiguration?: pulumi.Input<inputs.DataScience.MlApplicationInstanceAuthConfiguration>;
+    authConfiguration?: pulumi.Input<inputs.DataScience.MlApplicationInstanceAuthConfiguration | undefined>;
     /**
      * (Updatable) The OCID of the compartment where the MlApplicationInstance is created.
      */
@@ -324,23 +324,23 @@ export interface MlApplicationInstanceArgs {
     /**
      * (Updatable) Data that are used for provisioning of the given MlApplicationInstance. These are validated against configurationSchema defined in referenced MlApplicationImplementation.
      */
-    configurations?: pulumi.Input<pulumi.Input<inputs.DataScience.MlApplicationInstanceConfiguration>[]>;
+    configurations?: pulumi.Input<pulumi.Input<inputs.DataScience.MlApplicationInstanceConfiguration>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The name of MlApplicationInstance. System will generate displayName when not provided.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Defines whether the MlApplicationInstance will be created in ACTIVE (true value) or INACTIVE (false value) lifecycle state.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The OCID of ML Application. This resource is an instance of ML Application referenced by this OCID.
      */

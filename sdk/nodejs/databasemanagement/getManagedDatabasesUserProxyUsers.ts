@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabasesUserProxyUsers = oci.DatabaseManagement.getManagedDatabasesUserProxyUsers({
+ * const testManagedDatabasesUserProxyUsers = oci.databasemanagement.getManagedDatabasesUserProxyUsers({
  *     managedDatabaseId: testManagedDatabase.id,
  *     userName: testUser.name,
  *     name: managedDatabasesUserProxyUserName,
@@ -91,7 +91,7 @@ export interface GetManagedDatabasesUserProxyUsersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabasesUserProxyUsers = oci.DatabaseManagement.getManagedDatabasesUserProxyUsers({
+ * const testManagedDatabasesUserProxyUsers = oci.databasemanagement.getManagedDatabasesUserProxyUsers({
  *     managedDatabaseId: testManagedDatabase.id,
  *     userName: testUser.name,
  *     name: managedDatabasesUserProxyUserName,
@@ -114,7 +114,7 @@ export function getManagedDatabasesUserProxyUsersOutput(args: GetManagedDatabase
  * A collection of arguments for invoking getManagedDatabasesUserProxyUsers.
  */
 export interface GetManagedDatabasesUserProxyUsersOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabasesUserProxyUsersFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetManagedDatabasesUserProxyUsersFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
@@ -122,11 +122,11 @@ export interface GetManagedDatabasesUserProxyUsersOutputArgs {
     /**
      * A filter to return only resources that match the entire name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the Named Credential.
      */
-    opcNamedCredentialId?: pulumi.Input<string>;
+    opcNamedCredentialId?: pulumi.Input<string | undefined>;
     /**
      * The name of the user whose details are to be viewed.
      */

@@ -33,11 +33,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAdhocQueries = oci.CloudGuard.getAdhocQueries({
+ * const testAdhocQueries = oci.cloudguard.getAdhocQueries({
  *     compartmentId: compartmentId,
  *     accessLevel: adhocQueryAccessLevel,
  *     adhocQueryStatus: adhocQueryAdhocQueryStatus,
- *     compartmentIdInSubtree: adhocQueryCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: adhocQueryCompartmentIdInSubtree === "true",
  *     timeEndedFilterQueryParam: adhocQueryTimeEndedFilterQueryParam,
  *     timeStartedFilterQueryParam: adhocQueryTimeStartedFilterQueryParam,
  * });
@@ -137,11 +137,11 @@ export interface GetAdhocQueriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAdhocQueries = oci.CloudGuard.getAdhocQueries({
+ * const testAdhocQueries = oci.cloudguard.getAdhocQueries({
  *     compartmentId: compartmentId,
  *     accessLevel: adhocQueryAccessLevel,
  *     adhocQueryStatus: adhocQueryAdhocQueryStatus,
- *     compartmentIdInSubtree: adhocQueryCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: adhocQueryCompartmentIdInSubtree === "true",
  *     timeEndedFilterQueryParam: adhocQueryTimeEndedFilterQueryParam,
  *     timeStartedFilterQueryParam: adhocQueryTimeStartedFilterQueryParam,
  * });
@@ -167,11 +167,11 @@ export interface GetAdhocQueriesOutputArgs {
     /**
      * Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * The status of the adhoc query created. Default value for state is provisioning. If no value is specified state is provisioning.
      */
-    adhocQueryStatus?: pulumi.Input<string>;
+    adhocQueryStatus?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment in which to list resources.
      */
@@ -179,14 +179,14 @@ export interface GetAdhocQueriesOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CloudGuard.GetAdhocQueriesFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CloudGuard.GetAdhocQueriesFilterArgs>[] | undefined>;
     /**
      * End time for a filter. If end time is not specified, end time will be set to current time.
      */
-    timeEndedFilterQueryParam?: pulumi.Input<string>;
+    timeEndedFilterQueryParam?: pulumi.Input<string | undefined>;
     /**
      * Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
      */
-    timeStartedFilterQueryParam?: pulumi.Input<string>;
+    timeStartedFilterQueryParam?: pulumi.Input<string | undefined>;
 }

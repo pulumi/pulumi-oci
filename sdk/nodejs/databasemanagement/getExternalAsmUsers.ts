@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalAsmUsers = oci.DatabaseManagement.getExternalAsmUsers({
+ * const testExternalAsmUsers = oci.databasemanagement.getExternalAsmUsers({
  *     externalAsmId: testExternalAsm.id,
  *     opcNamedCredentialId: externalAsmUserOpcNamedCredentialId,
  * });
@@ -74,7 +74,7 @@ export interface GetExternalAsmUsersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalAsmUsers = oci.DatabaseManagement.getExternalAsmUsers({
+ * const testExternalAsmUsers = oci.databasemanagement.getExternalAsmUsers({
  *     externalAsmId: testExternalAsm.id,
  *     opcNamedCredentialId: externalAsmUserOpcNamedCredentialId,
  * });
@@ -97,9 +97,9 @@ export interface GetExternalAsmUsersOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
      */
     externalAsmId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetExternalAsmUsersFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DatabaseManagement.GetExternalAsmUsersFilterArgs>[] | undefined>;
     /**
      * The OCID of the Named Credential.
      */
-    opcNamedCredentialId?: pulumi.Input<string>;
+    opcNamedCredentialId?: pulumi.Input<string | undefined>;
 }

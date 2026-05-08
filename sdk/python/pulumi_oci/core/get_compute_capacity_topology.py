@@ -180,7 +180,7 @@ def get_compute_capacity_topology(compute_capacity_topology_id: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_topology = oci.Core.get_compute_capacity_topology(compute_capacity_topology_id=test_compute_capacity_topology_oci_core_compute_capacity_topology["id"])
+    test_compute_capacity_topology = oci.core.get_compute_capacity_topology(compute_capacity_topology_id=test_compute_capacity_topology_oci_core_compute_capacity_topology["id"])
     ```
 
 
@@ -203,7 +203,7 @@ def get_compute_capacity_topology(compute_capacity_topology_id: Optional[_builti
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_compute_capacity_topology_output(compute_capacity_topology_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_compute_capacity_topology_output(compute_capacity_topology_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeCapacityTopologyResult]:
     """
     This data source provides details about a specific Compute Capacity Topology resource in Oracle Cloud Infrastructure Core service.
@@ -216,7 +216,7 @@ def get_compute_capacity_topology_output(compute_capacity_topology_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_topology = oci.Core.get_compute_capacity_topology(compute_capacity_topology_id=test_compute_capacity_topology_oci_core_compute_capacity_topology["id"])
+    test_compute_capacity_topology = oci.core.get_compute_capacity_topology(compute_capacity_topology_id=test_compute_capacity_topology_oci_core_compute_capacity_topology["id"])
     ```
 
 

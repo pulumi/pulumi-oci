@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlTuningSet = oci.DatabaseManagement.getManagedDatabaseSqlTuningSet({
+ * const testManagedDatabaseSqlTuningSet = oci.databasemanagement.getManagedDatabaseSqlTuningSet({
  *     managedDatabaseId: testManagedDatabase.id,
  *     nameContains: managedDatabaseSqlTuningSetNameContains,
  *     owner: managedDatabaseSqlTuningSetOwner,
@@ -84,7 +84,7 @@ export interface GetManagedDatabaseSqlTuningSetResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseSqlTuningSet = oci.DatabaseManagement.getManagedDatabaseSqlTuningSet({
+ * const testManagedDatabaseSqlTuningSet = oci.databasemanagement.getManagedDatabaseSqlTuningSet({
  *     managedDatabaseId: testManagedDatabase.id,
  *     nameContains: managedDatabaseSqlTuningSetNameContains,
  *     owner: managedDatabaseSqlTuningSetOwner,
@@ -111,9 +111,9 @@ export interface GetManagedDatabaseSqlTuningSetOutputArgs {
     /**
      * Allow searching the name of the SQL tuning set by partial matching. The search is case insensitive.
      */
-    nameContains?: pulumi.Input<string>;
+    nameContains?: pulumi.Input<string | undefined>;
     /**
      * The owner of the SQL tuning set.
      */
-    owner?: pulumi.Input<string>;
+    owner?: pulumi.Input<string | undefined>;
 }

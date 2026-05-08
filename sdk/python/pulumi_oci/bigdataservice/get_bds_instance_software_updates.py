@@ -95,7 +95,7 @@ def get_bds_instance_software_updates(bds_instance_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_software_updates = oci.BigDataService.get_bds_instance_software_updates(bds_instance_id=test_bds_instance["id"])
+    test_bds_instance_software_updates = oci.bigdataservice.get_bds_instance_software_updates(bds_instance_id=test_bds_instance["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_bds_instance_software_updates(bds_instance_id: Optional[_builtins.str] =
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         software_update_collections=pulumi.get(__ret__, 'software_update_collections'))
-def get_bds_instance_software_updates_output(bds_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBdsInstanceSoftwareUpdatesFilterArgs', 'GetBdsInstanceSoftwareUpdatesFilterArgsDict']]]]] = None,
+def get_bds_instance_software_updates_output(bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBdsInstanceSoftwareUpdatesFilterArgs', 'GetBdsInstanceSoftwareUpdatesFilterArgsDict']]]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBdsInstanceSoftwareUpdatesResult]:
     """
     This data source provides the list of Bds Instance Software Updates in Oracle Cloud Infrastructure Big Data Service service.
@@ -126,7 +126,7 @@ def get_bds_instance_software_updates_output(bds_instance_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_bds_instance_software_updates = oci.BigDataService.get_bds_instance_software_updates(bds_instance_id=test_bds_instance["id"])
+    test_bds_instance_software_updates = oci.bigdataservice.get_bds_instance_software_updates(bds_instance_id=test_bds_instance["id"])
     ```
 
 

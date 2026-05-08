@@ -24,10 +24,10 @@ class MaintenanceRunArgs:
                  patch_type: pulumi.Input[_builtins.str],
                  target_resource_id: pulumi.Input[_builtins.str],
                  time_scheduled: pulumi.Input[_builtins.str],
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_dst_file_update_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 patching_mode: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_dst_file_update_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 patching_mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a MaintenanceRun resource.
 
@@ -99,43 +99,43 @@ class MaintenanceRunArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseSoftwareImageId")
-    def database_software_image_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_software_image_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         """
         return pulumi.get(self, "database_software_image_id")
 
     @database_software_image_id.setter
-    def database_software_image_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_software_image_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_software_image_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isDstFileUpdateEnabled")
-    def is_dst_file_update_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_dst_file_update_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         """
         return pulumi.get(self, "is_dst_file_update_enabled")
 
     @is_dst_file_update_enabled.setter
-    def is_dst_file_update_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_dst_file_update_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_dst_file_update_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="patchingMode")
-    def patching_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def patching_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
 
@@ -144,47 +144,47 @@ class MaintenanceRunArgs:
         return pulumi.get(self, "patching_mode")
 
     @patching_mode.setter
-    def patching_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def patching_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "patching_mode", value)
 
 
 @pulumi.input_type
 class _MaintenanceRunState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 current_custom_action_timeout_in_mins: Optional[pulumi.Input[_builtins.int]] = None,
-                 current_patching_component: Optional[pulumi.Input[_builtins.str]] = None,
-                 custom_action_timeout_in_mins: Optional[pulumi.Input[_builtins.int]] = None,
-                 database_software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 estimated_component_patching_start_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 estimated_patching_times: Optional[pulumi.Input[Sequence[pulumi.Input['MaintenanceRunEstimatedPatchingTimeArgs']]]] = None,
-                 is_custom_action_timeout_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_dst_file_update_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_maintenance_run_granular: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 maintenance_subtype: Optional[pulumi.Input[_builtins.str]] = None,
-                 maintenance_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 patch_failure_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 patch_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 patch_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 patching_end_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 patching_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 patching_start_time: Optional[pulumi.Input[_builtins.str]] = None,
-                 patching_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_maintenance_run_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 target_db_server_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_storage_server_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_ended: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_scheduled: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_started: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_time_taken_in_mins: Optional[pulumi.Input[_builtins.int]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_custom_action_timeout_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
+                 current_patching_component: pulumi.Input[Optional[_builtins.str]] = None,
+                 custom_action_timeout_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
+                 database_software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 estimated_component_patching_start_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 estimated_patching_times: pulumi.Input[Optional[Sequence[pulumi.Input['MaintenanceRunEstimatedPatchingTimeArgs']]]] = None,
+                 is_custom_action_timeout_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_dst_file_update_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_maintenance_run_granular: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 maintenance_subtype: pulumi.Input[Optional[_builtins.str]] = None,
+                 maintenance_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 patch_failure_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 patch_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 patch_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 patching_end_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 patching_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 patching_start_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 patching_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_maintenance_run_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_db_server_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_storage_server_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_ended: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_scheduled: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_started: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_time_taken_in_mins: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering MaintenanceRun resources.
 
@@ -300,235 +300,235 @@ class _MaintenanceRunState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="currentCustomActionTimeoutInMins")
-    def current_custom_action_timeout_in_mins(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def current_custom_action_timeout_in_mins(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
         """
         return pulumi.get(self, "current_custom_action_timeout_in_mins")
 
     @current_custom_action_timeout_in_mins.setter
-    def current_custom_action_timeout_in_mins(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def current_custom_action_timeout_in_mins(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "current_custom_action_timeout_in_mins", value)
 
     @_builtins.property
     @pulumi.getter(name="currentPatchingComponent")
-    def current_patching_component(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def current_patching_component(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the current infrastruture component that is getting patched.
         """
         return pulumi.get(self, "current_patching_component")
 
     @current_patching_component.setter
-    def current_patching_component(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def current_patching_component(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_patching_component", value)
 
     @_builtins.property
     @pulumi.getter(name="customActionTimeoutInMins")
-    def custom_action_timeout_in_mins(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def custom_action_timeout_in_mins(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Determines the amount of time the system will wait before the start of each database server patching operation. Specify a number of minutes, from 15 to 120.
         """
         return pulumi.get(self, "custom_action_timeout_in_mins")
 
     @custom_action_timeout_in_mins.setter
-    def custom_action_timeout_in_mins(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def custom_action_timeout_in_mins(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "custom_action_timeout_in_mins", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseSoftwareImageId")
-    def database_software_image_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_software_image_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Autonomous AI Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         """
         return pulumi.get(self, "database_software_image_id")
 
     @database_software_image_id.setter
-    def database_software_image_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_software_image_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_software_image_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Description of the maintenance run.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-friendly name for the maintenance run.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="estimatedComponentPatchingStartTime")
-    def estimated_component_patching_start_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def estimated_component_patching_start_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The estimated start time of the next infrastruture component patching operation.
         """
         return pulumi.get(self, "estimated_component_patching_start_time")
 
     @estimated_component_patching_start_time.setter
-    def estimated_component_patching_start_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def estimated_component_patching_start_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "estimated_component_patching_start_time", value)
 
     @_builtins.property
     @pulumi.getter(name="estimatedPatchingTimes")
-    def estimated_patching_times(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MaintenanceRunEstimatedPatchingTimeArgs']]]]:
+    def estimated_patching_times(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MaintenanceRunEstimatedPatchingTimeArgs']]]]:
         """
         The estimated total time required in minutes for all patching operations (database server, storage server, and network switch patching).
         """
         return pulumi.get(self, "estimated_patching_times")
 
     @estimated_patching_times.setter
-    def estimated_patching_times(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MaintenanceRunEstimatedPatchingTimeArgs']]]]):
+    def estimated_patching_times(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MaintenanceRunEstimatedPatchingTimeArgs']]]]):
         pulumi.set(self, "estimated_patching_times", value)
 
     @_builtins.property
     @pulumi.getter(name="isCustomActionTimeoutEnabled")
-    def is_custom_action_timeout_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_custom_action_timeout_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
         """
         return pulumi.get(self, "is_custom_action_timeout_enabled")
 
     @is_custom_action_timeout_enabled.setter
-    def is_custom_action_timeout_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_custom_action_timeout_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_custom_action_timeout_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isDstFileUpdateEnabled")
-    def is_dst_file_update_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_dst_file_update_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
         """
         return pulumi.get(self, "is_dst_file_update_enabled")
 
     @is_dst_file_update_enabled.setter
-    def is_dst_file_update_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_dst_file_update_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_dst_file_update_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isMaintenanceRunGranular")
-    def is_maintenance_run_granular(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_maintenance_run_granular(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If `FALSE`, the maintenance run doesn't support granular maintenance.
         """
         return pulumi.get(self, "is_maintenance_run_granular")
 
     @is_maintenance_run_granular.setter
-    def is_maintenance_run_granular(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_maintenance_run_granular(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_maintenance_run_granular", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional information about the current lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenanceSubtype")
-    def maintenance_subtype(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def maintenance_subtype(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Maintenance sub-type.
         """
         return pulumi.get(self, "maintenance_subtype")
 
     @maintenance_subtype.setter
-    def maintenance_subtype(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def maintenance_subtype(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "maintenance_subtype", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenanceType")
-    def maintenance_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def maintenance_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Maintenance type.
         """
         return pulumi.get(self, "maintenance_type")
 
     @maintenance_type.setter
-    def maintenance_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def maintenance_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "maintenance_type", value)
 
     @_builtins.property
     @pulumi.getter(name="patchFailureCount")
-    def patch_failure_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def patch_failure_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Contain the patch failure count.
         """
         return pulumi.get(self, "patch_failure_count")
 
     @patch_failure_count.setter
-    def patch_failure_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def patch_failure_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "patch_failure_count", value)
 
     @_builtins.property
     @pulumi.getter(name="patchId")
-    def patch_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def patch_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique identifier of the patch. The identifier string includes the patch type, the Oracle AI Database version, and the patch creation date (using the format YYMMDD). For example, the identifier `ru_patch_19.9.0.0_201030` is used for an RU patch for Oracle AI Database 19.9.0.0 that was released October 30, 2020.
         """
         return pulumi.get(self, "patch_id")
 
     @patch_id.setter
-    def patch_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def patch_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "patch_id", value)
 
     @_builtins.property
     @pulumi.getter(name="patchType")
-    def patch_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def patch_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
         """
         return pulumi.get(self, "patch_type")
 
     @patch_type.setter
-    def patch_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def patch_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "patch_type", value)
 
     @_builtins.property
     @pulumi.getter(name="patchingEndTime")
-    def patching_end_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def patching_end_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time when the patching operation ended.
         """
         return pulumi.get(self, "patching_end_time")
 
     @patching_end_time.setter
-    def patching_end_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def patching_end_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "patching_end_time", value)
 
     @_builtins.property
     @pulumi.getter(name="patchingMode")
-    def patching_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def patching_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
 
@@ -537,144 +537,144 @@ class _MaintenanceRunState:
         return pulumi.get(self, "patching_mode")
 
     @patching_mode.setter
-    def patching_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def patching_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "patching_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="patchingStartTime")
-    def patching_start_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def patching_start_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time when the patching operation started.
         """
         return pulumi.get(self, "patching_start_time")
 
     @patching_start_time.setter
-    def patching_start_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def patching_start_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "patching_start_time", value)
 
     @_builtins.property
     @pulumi.getter(name="patchingStatus")
-    def patching_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def patching_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the patching operation.
         """
         return pulumi.get(self, "patching_status")
 
     @patching_status.setter
-    def patching_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def patching_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "patching_status", value)
 
     @_builtins.property
     @pulumi.getter(name="peerMaintenanceRunId")
-    def peer_maintenance_run_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_maintenance_run_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
         """
         return pulumi.get(self, "peer_maintenance_run_id")
 
     @peer_maintenance_run_id.setter
-    def peer_maintenance_run_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_maintenance_run_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_maintenance_run_id", value)
 
     @_builtins.property
     @pulumi.getter(name="peerMaintenanceRunIds")
-    def peer_maintenance_run_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def peer_maintenance_run_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
         """
         return pulumi.get(self, "peer_maintenance_run_ids")
 
     @peer_maintenance_run_ids.setter
-    def peer_maintenance_run_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def peer_maintenance_run_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "peer_maintenance_run_ids", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the maintenance run. For Autonomous AI Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="targetDbServerVersion")
-    def target_db_server_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_db_server_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The target software version for the database server patching operation.
         """
         return pulumi.get(self, "target_db_server_version")
 
     @target_db_server_version.setter
-    def target_db_server_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_db_server_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_db_server_version", value)
 
     @_builtins.property
     @pulumi.getter(name="targetResourceId")
-    def target_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the target resource for which the maintenance run should be created.
         """
         return pulumi.get(self, "target_resource_id")
 
     @target_resource_id.setter
-    def target_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="targetResourceType")
-    def target_resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the target resource on which the maintenance run occurs.
         """
         return pulumi.get(self, "target_resource_type")
 
     @target_resource_type.setter
-    def target_resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="targetStorageServerVersion")
-    def target_storage_server_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_storage_server_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The target Cell version that is to be patched to.
         """
         return pulumi.get(self, "target_storage_server_version")
 
     @target_storage_server_version.setter
-    def target_storage_server_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_storage_server_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_storage_server_version", value)
 
     @_builtins.property
     @pulumi.getter(name="timeEnded")
-    def time_ended(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_ended(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the maintenance run was completed.
         """
         return pulumi.get(self, "time_ended")
 
     @time_ended.setter
-    def time_ended(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_ended(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_ended", value)
 
     @_builtins.property
     @pulumi.getter(name="timeScheduled")
-    def time_scheduled(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_scheduled(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The date and time that update should be scheduled.
 
@@ -685,31 +685,31 @@ class _MaintenanceRunState:
         return pulumi.get(self, "time_scheduled")
 
     @time_scheduled.setter
-    def time_scheduled(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_scheduled(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_scheduled", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_started(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the maintenance run starts.
         """
         return pulumi.get(self, "time_started")
 
     @time_started.setter
-    def time_started(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_started(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_started", value)
 
     @_builtins.property
     @pulumi.getter(name="totalTimeTakenInMins")
-    def total_time_taken_in_mins(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def total_time_taken_in_mins(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total time taken by corresponding resource activity in minutes.
         """
         return pulumi.get(self, "total_time_taken_in_mins")
 
     @total_time_taken_in_mins.setter
-    def total_time_taken_in_mins(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def total_time_taken_in_mins(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "total_time_taken_in_mins", value)
 
 
@@ -719,13 +719,13 @@ class MaintenanceRun(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_dst_file_update_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 patch_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 patching_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_scheduled: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_dst_file_update_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 patch_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 patching_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_scheduled: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Maintenance Run resource in Oracle Cloud Infrastructure Database service.
@@ -750,7 +750,7 @@ class MaintenanceRun(pulumi.CustomResource):
             time_scheduled=maintenance_run_time_scheduled,
             compartment_id=compartment_id,
             database_software_image_id=test_database_software_image["id"],
-            is_dst_file_update_enabled=maintenance_run_is_dst_file_update_enabled,
+            is_dst_file_update_enabled=maintenance_run_is_dst_file_update_enabled == "true",
             patching_mode=maintenance_run_patching_mode)
         ```
 
@@ -808,7 +808,7 @@ class MaintenanceRun(pulumi.CustomResource):
             time_scheduled=maintenance_run_time_scheduled,
             compartment_id=compartment_id,
             database_software_image_id=test_database_software_image["id"],
-            is_dst_file_update_enabled=maintenance_run_is_dst_file_update_enabled,
+            is_dst_file_update_enabled=maintenance_run_is_dst_file_update_enabled == "true",
             patching_mode=maintenance_run_patching_mode)
         ```
 
@@ -836,13 +836,13 @@ class MaintenanceRun(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_dst_file_update_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 patch_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 patching_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_scheduled: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_dst_file_update_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 patch_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 patching_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_scheduled: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -902,40 +902,40 @@ class MaintenanceRun(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            current_custom_action_timeout_in_mins: Optional[pulumi.Input[_builtins.int]] = None,
-            current_patching_component: Optional[pulumi.Input[_builtins.str]] = None,
-            custom_action_timeout_in_mins: Optional[pulumi.Input[_builtins.int]] = None,
-            database_software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            estimated_component_patching_start_time: Optional[pulumi.Input[_builtins.str]] = None,
-            estimated_patching_times: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MaintenanceRunEstimatedPatchingTimeArgs', 'MaintenanceRunEstimatedPatchingTimeArgsDict']]]]] = None,
-            is_custom_action_timeout_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_dst_file_update_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_maintenance_run_granular: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            maintenance_subtype: Optional[pulumi.Input[_builtins.str]] = None,
-            maintenance_type: Optional[pulumi.Input[_builtins.str]] = None,
-            patch_failure_count: Optional[pulumi.Input[_builtins.int]] = None,
-            patch_id: Optional[pulumi.Input[_builtins.str]] = None,
-            patch_type: Optional[pulumi.Input[_builtins.str]] = None,
-            patching_end_time: Optional[pulumi.Input[_builtins.str]] = None,
-            patching_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            patching_start_time: Optional[pulumi.Input[_builtins.str]] = None,
-            patching_status: Optional[pulumi.Input[_builtins.str]] = None,
-            peer_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
-            peer_maintenance_run_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            target_db_server_version: Optional[pulumi.Input[_builtins.str]] = None,
-            target_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-            target_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            target_storage_server_version: Optional[pulumi.Input[_builtins.str]] = None,
-            time_ended: Optional[pulumi.Input[_builtins.str]] = None,
-            time_scheduled: Optional[pulumi.Input[_builtins.str]] = None,
-            time_started: Optional[pulumi.Input[_builtins.str]] = None,
-            total_time_taken_in_mins: Optional[pulumi.Input[_builtins.int]] = None) -> 'MaintenanceRun':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            current_custom_action_timeout_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
+            current_patching_component: pulumi.Input[Optional[_builtins.str]] = None,
+            custom_action_timeout_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
+            database_software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            estimated_component_patching_start_time: pulumi.Input[Optional[_builtins.str]] = None,
+            estimated_patching_times: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MaintenanceRunEstimatedPatchingTimeArgs', 'MaintenanceRunEstimatedPatchingTimeArgsDict']]]]] = None,
+            is_custom_action_timeout_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_dst_file_update_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_maintenance_run_granular: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            maintenance_subtype: pulumi.Input[Optional[_builtins.str]] = None,
+            maintenance_type: pulumi.Input[Optional[_builtins.str]] = None,
+            patch_failure_count: pulumi.Input[Optional[_builtins.int]] = None,
+            patch_id: pulumi.Input[Optional[_builtins.str]] = None,
+            patch_type: pulumi.Input[Optional[_builtins.str]] = None,
+            patching_end_time: pulumi.Input[Optional[_builtins.str]] = None,
+            patching_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            patching_start_time: pulumi.Input[Optional[_builtins.str]] = None,
+            patching_status: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_maintenance_run_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_db_server_version: pulumi.Input[Optional[_builtins.str]] = None,
+            target_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            target_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            target_storage_server_version: pulumi.Input[Optional[_builtins.str]] = None,
+            time_ended: pulumi.Input[Optional[_builtins.str]] = None,
+            time_scheduled: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started: pulumi.Input[Optional[_builtins.str]] = None,
+            total_time_taken_in_mins: pulumi.Input[Optional[_builtins.int]] = None) -> 'MaintenanceRun':
         """
         Get an existing MaintenanceRun resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

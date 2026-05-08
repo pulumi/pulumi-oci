@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBackup = oci.Psql.getBackup({
+ * const testBackup = oci.psql.getBackup({
  *     backupId: testBackupOciPsqlBackup.id,
  * });
  * ```
@@ -143,7 +143,7 @@ export interface GetBackupResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBackup = oci.Psql.getBackup({
+ * const testBackup = oci.psql.getBackup({
  *     backupId: testBackupOciPsqlBackup.id,
  * });
  * ```

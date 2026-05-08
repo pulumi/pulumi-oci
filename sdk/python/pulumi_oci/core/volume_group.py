@@ -24,16 +24,16 @@ class VolumeGroupArgs:
                  availability_domain: pulumi.Input[_builtins.str],
                  compartment_id: pulumi.Input[_builtins.str],
                  source_details: pulumi.Input['VolumeGroupSourceDetailsArgs'],
-                 backup_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 preserve_volume_replica: Optional[pulumi.Input[_builtins.bool]] = None,
-                 volume_group_replicas: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]]] = None,
-                 volume_group_replicas_deletion: Optional[pulumi.Input[_builtins.bool]] = None,
-                 volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 xrc_kms_key_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 preserve_volume_replica: pulumi.Input[Optional[_builtins.bool]] = None,
+                 volume_group_replicas: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]]] = None,
+                 volume_group_replicas_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
+                 volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 xrc_kms_key_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a VolumeGroup resource.
 
@@ -118,97 +118,97 @@ class VolumeGroupArgs:
     @_builtins.property
     @pulumi.getter(name="backupPolicyId")
     @_utilities.deprecated("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
-    def backup_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a volume group.
         """
         return pulumi.get(self, "backup_policy_id")
 
     @backup_policy_id.setter
-    def backup_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterPlacementGroupId")
-    def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_placement_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The clusterPlacementGroup Id of the volume group for volume group placement.
         """
         return pulumi.get(self, "cluster_placement_group_id")
 
     @cluster_placement_group_id.setter
-    def cluster_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_placement_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="preserveVolumeReplica")
-    def preserve_volume_replica(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def preserve_volume_replica(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "preserve_volume_replica")
 
     @preserve_volume_replica.setter
-    def preserve_volume_replica(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def preserve_volume_replica(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "preserve_volume_replica", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeGroupReplicas")
-    def volume_group_replicas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]]]:
+    def volume_group_replicas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]]]:
         """
         (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
         """
         return pulumi.get(self, "volume_group_replicas")
 
     @volume_group_replicas.setter
-    def volume_group_replicas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]]]):
+    def volume_group_replicas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]]]):
         pulumi.set(self, "volume_group_replicas", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeGroupReplicasDeletion")
-    def volume_group_replicas_deletion(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def volume_group_replicas_deletion(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "volume_group_replicas_deletion")
 
     @volume_group_replicas_deletion.setter
-    def volume_group_replicas_deletion(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def volume_group_replicas_deletion(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "volume_group_replicas_deletion", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeIds")
-    def volume_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def volume_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
 
@@ -218,43 +218,43 @@ class VolumeGroupArgs:
         return pulumi.get(self, "volume_ids")
 
     @volume_ids.setter
-    def volume_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def volume_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "volume_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="xrcKmsKeyId")
-    def xrc_kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def xrc_kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
         """
         return pulumi.get(self, "xrc_kms_key_id")
 
     @xrc_kms_key_id.setter
-    def xrc_kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def xrc_kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "xrc_kms_key_id", value)
 
 
 @pulumi.input_type
 class _VolumeGroupState:
     def __init__(__self__, *,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_hydrated: Optional[pulumi.Input[_builtins.bool]] = None,
-                 preserve_volume_replica: Optional[pulumi.Input[_builtins.bool]] = None,
-                 size_in_gbs: Optional[pulumi.Input[_builtins.str]] = None,
-                 size_in_mbs: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_details: Optional[pulumi.Input['VolumeGroupSourceDetailsArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_group_replicas: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]]] = None,
-                 volume_group_replicas_deletion: Optional[pulumi.Input[_builtins.bool]] = None,
-                 volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 xrc_kms_key_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_hydrated: pulumi.Input[Optional[_builtins.bool]] = None,
+                 preserve_volume_replica: pulumi.Input[Optional[_builtins.bool]] = None,
+                 size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 size_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_details: pulumi.Input[Optional['VolumeGroupSourceDetailsArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_group_replicas: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]]] = None,
+                 volume_group_replicas_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
+                 volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 xrc_kms_key_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VolumeGroup resources.
 
@@ -320,194 +320,194 @@ class _VolumeGroupState:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability domain of the volume group.
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="backupPolicyId")
     @_utilities.deprecated("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
-    def backup_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backup_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a volume group.
         """
         return pulumi.get(self, "backup_policy_id")
 
     @backup_policy_id.setter
-    def backup_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backup_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterPlacementGroupId")
-    def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_placement_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The clusterPlacementGroup Id of the volume group for volume group placement.
         """
         return pulumi.get(self, "cluster_placement_group_id")
 
     @cluster_placement_group_id.setter
-    def cluster_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_placement_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment that contains the volume group.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isHydrated")
-    def is_hydrated(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_hydrated(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether the newly created cloned volume group's data has finished copying from the source volume group or backup.
         """
         return pulumi.get(self, "is_hydrated")
 
     @is_hydrated.setter
-    def is_hydrated(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_hydrated(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_hydrated", value)
 
     @_builtins.property
     @pulumi.getter(name="preserveVolumeReplica")
-    def preserve_volume_replica(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def preserve_volume_replica(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "preserve_volume_replica")
 
     @preserve_volume_replica.setter
-    def preserve_volume_replica(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def preserve_volume_replica(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "preserve_volume_replica", value)
 
     @_builtins.property
     @pulumi.getter(name="sizeInGbs")
-    def size_in_gbs(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def size_in_gbs(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The aggregate size of the volume group in GBs.
         """
         return pulumi.get(self, "size_in_gbs")
 
     @size_in_gbs.setter
-    def size_in_gbs(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def size_in_gbs(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="sizeInMbs")
-    def size_in_mbs(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def size_in_mbs(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The aggregate size of the volume group in MBs.
         """
         return pulumi.get(self, "size_in_mbs")
 
     @size_in_mbs.setter
-    def size_in_mbs(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def size_in_mbs(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "size_in_mbs", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceDetails")
-    def source_details(self) -> Optional[pulumi.Input['VolumeGroupSourceDetailsArgs']]:
+    def source_details(self) -> pulumi.Input[Optional['VolumeGroupSourceDetailsArgs']]:
         """
         Specifies the source for a volume group.
         """
         return pulumi.get(self, "source_details")
 
     @source_details.setter
-    def source_details(self, value: Optional[pulumi.Input['VolumeGroupSourceDetailsArgs']]):
+    def source_details(self, value: pulumi.Input[Optional['VolumeGroupSourceDetailsArgs']]):
         pulumi.set(self, "source_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of a volume group.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the volume group was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeGroupReplicas")
-    def volume_group_replicas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]]]:
+    def volume_group_replicas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]]]:
         """
         (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
         """
         return pulumi.get(self, "volume_group_replicas")
 
     @volume_group_replicas.setter
-    def volume_group_replicas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]]]):
+    def volume_group_replicas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupVolumeGroupReplicaArgs']]]]):
         pulumi.set(self, "volume_group_replicas", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeGroupReplicasDeletion")
-    def volume_group_replicas_deletion(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def volume_group_replicas_deletion(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "volume_group_replicas_deletion")
 
     @volume_group_replicas_deletion.setter
-    def volume_group_replicas_deletion(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def volume_group_replicas_deletion(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "volume_group_replicas_deletion", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeIds")
-    def volume_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def volume_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
 
@@ -517,19 +517,19 @@ class _VolumeGroupState:
         return pulumi.get(self, "volume_ids")
 
     @volume_ids.setter
-    def volume_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def volume_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "volume_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="xrcKmsKeyId")
-    def xrc_kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def xrc_kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
         """
         return pulumi.get(self, "xrc_kms_key_id")
 
     @xrc_kms_key_id.setter
-    def xrc_kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def xrc_kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "xrc_kms_key_id", value)
 
 
@@ -539,19 +539,19 @@ class VolumeGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 preserve_volume_replica: Optional[pulumi.Input[_builtins.bool]] = None,
-                 source_details: Optional[pulumi.Input[Union['VolumeGroupSourceDetailsArgs', 'VolumeGroupSourceDetailsArgsDict']]] = None,
-                 volume_group_replicas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupVolumeGroupReplicaArgs', 'VolumeGroupVolumeGroupReplicaArgsDict']]]]] = None,
-                 volume_group_replicas_deletion: Optional[pulumi.Input[_builtins.bool]] = None,
-                 volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 xrc_kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 preserve_volume_replica: pulumi.Input[Optional[_builtins.bool]] = None,
+                 source_details: pulumi.Input[Optional[Union['VolumeGroupSourceDetailsArgs', 'VolumeGroupSourceDetailsArgsDict']]] = None,
+                 volume_group_replicas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupVolumeGroupReplicaArgs', 'VolumeGroupVolumeGroupReplicaArgsDict']]]]] = None,
+                 volume_group_replicas_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
+                 volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 xrc_kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Volume Group resource in Oracle Cloud Infrastructure Core service.
@@ -703,19 +703,19 @@ class VolumeGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 preserve_volume_replica: Optional[pulumi.Input[_builtins.bool]] = None,
-                 source_details: Optional[pulumi.Input[Union['VolumeGroupSourceDetailsArgs', 'VolumeGroupSourceDetailsArgsDict']]] = None,
-                 volume_group_replicas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupVolumeGroupReplicaArgs', 'VolumeGroupVolumeGroupReplicaArgsDict']]]]] = None,
-                 volume_group_replicas_deletion: Optional[pulumi.Input[_builtins.bool]] = None,
-                 volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 xrc_kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 preserve_volume_replica: pulumi.Input[Optional[_builtins.bool]] = None,
+                 source_details: pulumi.Input[Optional[Union['VolumeGroupSourceDetailsArgs', 'VolumeGroupSourceDetailsArgsDict']]] = None,
+                 volume_group_replicas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupVolumeGroupReplicaArgs', 'VolumeGroupVolumeGroupReplicaArgsDict']]]]] = None,
+                 volume_group_replicas_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
+                 volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 xrc_kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -759,24 +759,24 @@ class VolumeGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            backup_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_hydrated: Optional[pulumi.Input[_builtins.bool]] = None,
-            preserve_volume_replica: Optional[pulumi.Input[_builtins.bool]] = None,
-            size_in_gbs: Optional[pulumi.Input[_builtins.str]] = None,
-            size_in_mbs: Optional[pulumi.Input[_builtins.str]] = None,
-            source_details: Optional[pulumi.Input[Union['VolumeGroupSourceDetailsArgs', 'VolumeGroupSourceDetailsArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            volume_group_replicas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupVolumeGroupReplicaArgs', 'VolumeGroupVolumeGroupReplicaArgsDict']]]]] = None,
-            volume_group_replicas_deletion: Optional[pulumi.Input[_builtins.bool]] = None,
-            volume_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            xrc_kms_key_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'VolumeGroup':
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_hydrated: pulumi.Input[Optional[_builtins.bool]] = None,
+            preserve_volume_replica: pulumi.Input[Optional[_builtins.bool]] = None,
+            size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
+            size_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
+            source_details: pulumi.Input[Optional[Union['VolumeGroupSourceDetailsArgs', 'VolumeGroupSourceDetailsArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            volume_group_replicas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupVolumeGroupReplicaArgs', 'VolumeGroupVolumeGroupReplicaArgsDict']]]]] = None,
+            volume_group_replicas_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
+            volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            xrc_kms_key_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'VolumeGroup':
         """
         Get an existing VolumeGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

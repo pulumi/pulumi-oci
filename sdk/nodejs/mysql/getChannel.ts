@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testChannel = oci.Mysql.getChannel({
+ * const testChannel = oci.mysql.getChannel({
  *     channelId: testChannelOciMysqlChannel.id,
  * });
  * ```
@@ -113,7 +113,7 @@ export interface GetChannelResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testChannel = oci.Mysql.getChannel({
+ * const testChannel = oci.mysql.getChannel({
  *     channelId: testChannelOciMysqlChannel.id,
  * });
  * ```

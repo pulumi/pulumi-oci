@@ -56,7 +56,7 @@ import * as utilities from "../utilities";
  *     macsecProperties: {
  *         state: crossConnectMacsecPropertiesState,
  *         encryptionCipher: crossConnectMacsecPropertiesEncryptionCipher,
- *         isUnprotectedTrafficAllowed: crossConnectMacsecPropertiesIsUnprotectedTrafficAllowed,
+ *         isUnprotectedTrafficAllowed: crossConnectMacsecPropertiesIsUnprotectedTrafficAllowed === "true",
  *         primaryKey: {
  *             connectivityAssociationKeySecretId: testSecret.id,
  *             connectivityAssociationNameSecretId: testSecret.id,
@@ -253,63 +253,63 @@ export interface CrossConnectState {
     /**
      * (Updatable) The OCID of the compartment to contain the cross-connect.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the cross-connect group to put this cross-connect in.
      */
-    crossConnectGroupId?: pulumi.Input<string>;
+    crossConnectGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A reference name or identifier for the physical fiber connection that this cross-connect uses.
      */
-    customerReferenceName?: pulumi.Input<string>;
+    customerReferenceName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on a different router (for the purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
      */
-    farCrossConnectOrCrossConnectGroupId?: pulumi.Input<string>;
+    farCrossConnectOrCrossConnectGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
      */
-    interfaceName?: pulumi.Input<string>;
+    interfaceName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
      */
-    isActive?: pulumi.Input<boolean>;
+    isActive?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
      */
-    locationName?: pulumi.Input<string>;
+    locationName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Properties used to configure MACsec (if capable).
      */
-    macsecProperties?: pulumi.Input<inputs.Core.CrossConnectMacsecProperties>;
+    macsecProperties?: pulumi.Input<inputs.Core.CrossConnectMacsecProperties | undefined>;
     /**
      * If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
      */
-    nearCrossConnectOrCrossConnectGroupId?: pulumi.Input<string>;
+    nearCrossConnectOrCrossConnectGroupId?: pulumi.Input<string | undefined>;
     /**
      * The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
      */
-    ociLogicalDeviceName?: pulumi.Input<string>;
+    ociLogicalDeviceName?: pulumi.Input<string | undefined>;
     /**
      * The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
      */
-    ociPhysicalDeviceName?: pulumi.Input<string>;
+    ociPhysicalDeviceName?: pulumi.Input<string | undefined>;
     /**
      * A string identifying the meet-me room port for this cross-connect.
      */
-    portName?: pulumi.Input<string>;
+    portName?: pulumi.Input<string | undefined>;
     /**
      * The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps` 
      *
@@ -317,15 +317,15 @@ export interface CrossConnectState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    portSpeedShapeName?: pulumi.Input<string>;
+    portSpeedShapeName?: pulumi.Input<string | undefined>;
     /**
      * The cross-connect's current state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -339,35 +339,35 @@ export interface CrossConnectArgs {
     /**
      * The OCID of the cross-connect group to put this cross-connect in.
      */
-    crossConnectGroupId?: pulumi.Input<string>;
+    crossConnectGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A reference name or identifier for the physical fiber connection that this cross-connect uses.
      */
-    customerReferenceName?: pulumi.Input<string>;
+    customerReferenceName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on a different router (for the purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
      */
-    farCrossConnectOrCrossConnectGroupId?: pulumi.Input<string>;
+    farCrossConnectOrCrossConnectGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
      */
-    interfaceName?: pulumi.Input<string>;
+    interfaceName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
      */
-    isActive?: pulumi.Input<boolean>;
+    isActive?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
      */
@@ -375,15 +375,15 @@ export interface CrossConnectArgs {
     /**
      * (Updatable) Properties used to configure MACsec (if capable).
      */
-    macsecProperties?: pulumi.Input<inputs.Core.CrossConnectMacsecProperties>;
+    macsecProperties?: pulumi.Input<inputs.Core.CrossConnectMacsecProperties | undefined>;
     /**
      * If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
      */
-    nearCrossConnectOrCrossConnectGroupId?: pulumi.Input<string>;
+    nearCrossConnectOrCrossConnectGroupId?: pulumi.Input<string | undefined>;
     /**
      * The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
      */
-    ociPhysicalDeviceName?: pulumi.Input<string>;
+    ociPhysicalDeviceName?: pulumi.Input<string | undefined>;
     /**
      * The port speed for this cross-connect. To get a list of the available port speeds, see [ListCrossConnectPortSpeedShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectPortSpeedShape/ListCrossconnectPortSpeedShapes).  Example: `10 Gbps` 
      *

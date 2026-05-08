@@ -134,7 +134,7 @@ def get_indexes(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_indexes = oci.Nosql.get_indexes(table_name_or_id=test_table_name_or["id"],
+    test_indexes = oci.nosql.get_indexes(table_name_or_id=test_table_name_or["id"],
         compartment_id=compartment_id,
         name=index_name,
         state=index_state)
@@ -163,11 +163,11 @@ def get_indexes(compartment_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'),
         table_name_or_id=pulumi.get(__ret__, 'table_name_or_id'))
-def get_indexes_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetIndexesFilterArgs', 'GetIndexesFilterArgsDict']]]]] = None,
-                       name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                       table_name_or_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_indexes_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetIndexesFilterArgs', 'GetIndexesFilterArgsDict']]]]] = None,
+                       name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       table_name_or_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIndexesResult]:
     """
     This data source provides the list of Indexes in Oracle Cloud Infrastructure NoSQL Database service.
@@ -180,7 +180,7 @@ def get_indexes_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_indexes = oci.Nosql.get_indexes(table_name_or_id=test_table_name_or["id"],
+    test_indexes = oci.nosql.get_indexes(table_name_or_id=test_table_name_or["id"],
         compartment_id=compartment_id,
         name=index_name,
         state=index_state)

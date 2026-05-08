@@ -33,7 +33,7 @@ import (
 //				CompartmentId:          compartmentId,
 //				DisplayName:            pulumi.StringRef(webAppFirewallDisplayName),
 //				Id:                     pulumi.StringRef(webAppFirewallId),
-//				States:                 webAppFirewallState,
+//				States:                 pulumi.ToArray(webAppFirewallState),
 //				WebAppFirewallPolicyId: pulumi.StringRef(testWebAppFirewallPolicy.Id),
 //			}, nil)
 //			if err != nil {

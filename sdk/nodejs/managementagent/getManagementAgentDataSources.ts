@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentDataSources = oci.ManagementAgent.getManagementAgentDataSources({
+ * const testManagementAgentDataSources = oci.managementagent.getManagementAgentDataSources({
  *     managementAgentId: testManagementAgent.id,
  *     name: managementAgentDataSourceName,
  * });
@@ -77,7 +77,7 @@ export interface GetManagementAgentDataSourcesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentDataSources = oci.ManagementAgent.getManagementAgentDataSources({
+ * const testManagementAgentDataSources = oci.managementagent.getManagementAgentDataSources({
  *     managementAgentId: testManagementAgent.id,
  *     name: managementAgentDataSourceName,
  * });
@@ -96,7 +96,7 @@ export function getManagementAgentDataSourcesOutput(args: GetManagementAgentData
  * A collection of arguments for invoking getManagementAgentDataSources.
  */
 export interface GetManagementAgentDataSourcesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.GetManagementAgentDataSourcesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.GetManagementAgentDataSourcesFilterArgs>[] | undefined>;
     /**
      * Unique Management Agent identifier
      */
@@ -104,5 +104,5 @@ export interface GetManagementAgentDataSourcesOutputArgs {
     /**
      * Unique name of the dataSource.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

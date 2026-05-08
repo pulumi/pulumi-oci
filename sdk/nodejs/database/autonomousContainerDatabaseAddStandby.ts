@@ -23,8 +23,8 @@ import * as utilities from "../utilities";
  *
  * const testAutonomousContainerDatabaseAddStandby = new oci.database.AutonomousContainerDatabaseAddStandby("test_autonomous_container_database_add_standby", {
  *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
- *     fastStartFailOverLagLimitInSeconds: autonomousContainerDatabaseAddStandbyFastStartFailOverLagLimitInSeconds,
- *     isAutomaticFailoverEnabled: autonomousContainerDatabaseAddStandbyIsAutomaticFailoverEnabled,
+ *     fastStartFailOverLagLimitInSeconds: Number(autonomousContainerDatabaseAddStandbyFastStartFailOverLagLimitInSeconds),
+ *     isAutomaticFailoverEnabled: autonomousContainerDatabaseAddStandbyIsAutomaticFailoverEnabled === "true",
  *     peerAutonomousContainerDatabaseBackupConfig: {
  *         backupDestinationDetails: [{
  *             type: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType,
@@ -33,12 +33,12 @@ import * as utilities from "../utilities";
  *             id: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId,
  *             internetProxy: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy,
  *             isRemote: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote,
- *             isRetentionLockEnabled: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled,
+ *             isRetentionLockEnabled: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled === "true",
  *             remoteRegion: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion,
  *             vpcPassword: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword,
  *             vpcUser: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser,
  *         }],
- *         recoveryWindowInDays: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays,
+ *         recoveryWindowInDays: Number(autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays),
  *     },
  *     peerAutonomousContainerDatabaseCompartmentId: testCompartment.id,
  *     peerAutonomousContainerDatabaseDisplayName: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseDisplayName,
@@ -46,7 +46,7 @@ import * as utilities from "../utilities";
  *     peerCloudAutonomousVmClusterId: testCloudAutonomousVmCluster.id,
  *     peerDbUniqueName: autonomousContainerDatabaseAddStandbyPeerDbUniqueName,
  *     protectionMode: autonomousContainerDatabaseAddStandbyProtectionMode,
- *     standbyMaintenanceBufferInDays: autonomousContainerDatabaseAddStandbyStandbyMaintenanceBufferInDays,
+ *     standbyMaintenanceBufferInDays: Number(autonomousContainerDatabaseAddStandbyStandbyMaintenanceBufferInDays),
  * });
  * ```
  *
@@ -518,231 +518,231 @@ export interface AutonomousContainerDatabaseAddStandbyState {
     /**
      * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    autonomousContainerDatabaseId?: pulumi.Input<string>;
+    autonomousContainerDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
      */
-    autonomousExadataInfrastructureId?: pulumi.Input<string>;
+    autonomousExadataInfrastructureId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the Autonomous VM Cluster.
      */
-    autonomousVmClusterId?: pulumi.Input<string>;
+    autonomousVmClusterId?: pulumi.Input<string | undefined>;
     /**
      * The domain of the Autonomous Container Database
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.
      */
-    availableCpus?: pulumi.Input<number>;
+    availableCpus?: pulumi.Input<number | undefined>;
     /**
      * Backup options for the Autonomous Container Database.
      */
-    backupConfigs?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseAddStandbyBackupConfig>[]>;
+    backupConfigs?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseAddStandbyBackupConfig>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      */
-    cloudAutonomousVmClusterId?: pulumi.Input<string>;
+    cloudAutonomousVmClusterId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The compute model of the Autonomous Container Database. For Autonomous AI Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
-    computeModel?: pulumi.Input<string>;
+    computeModel?: pulumi.Input<string | undefined>;
     /**
      * Array of Dg associations.
      */
-    dataguardGroupMembers?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseAddStandbyDataguardGroupMember>[]>;
+    dataguardGroupMembers?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseAddStandbyDataguardGroupMember>[] | undefined>;
     /**
      * The properties that define Autonomous Container Databases Dataguard.
      */
-    dataguards?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseAddStandbyDataguard>[]>;
+    dataguards?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseAddStandbyDataguard>[] | undefined>;
     /**
      * The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      */
-    dbName?: pulumi.Input<string>;
+    dbName?: pulumi.Input<string | undefined>;
     /**
      * The CPU value beyond which an Autonomous AI Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
      */
-    dbSplitThreshold?: pulumi.Input<number>;
+    dbSplitThreshold?: pulumi.Input<number | undefined>;
     /**
      * **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
      */
-    dbUniqueName?: pulumi.Input<string>;
+    dbUniqueName?: pulumi.Input<string | undefined>;
     /**
      * Oracle AI Database version of the Autonomous Container Database.
      */
-    dbVersion?: pulumi.Input<string>;
+    dbVersion?: pulumi.Input<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The user-provided name for the Autonomous Container Database.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Determines whether an Autonomous AI Database must be opened across the maximum number of nodes or the least number of nodes. By default, Minimum nodes is selected.
      */
-    distributionAffinity?: pulumi.Input<string>;
+    distributionAffinity?: pulumi.Input<string | undefined>;
     /**
      * DST Time-Zone File version of the Autonomous Container Database.
      */
-    dstFileVersion?: pulumi.Input<string>;
+    dstFileVersion?: pulumi.Input<string | undefined>;
     /**
      * Types of providers supported for managing database encryption keys
      */
-    encryptionKeyLocationDetails?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetail>[]>;
+    encryptionKeyLocationDetails?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseAddStandbyEncryptionKeyLocationDetail>[] | undefined>;
     /**
      * The lag time for my preference based on data loss tolerance in seconds.
      */
-    fastStartFailOverLagLimitInSeconds?: pulumi.Input<number>;
+    fastStartFailOverLagLimitInSeconds?: pulumi.Input<number | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The infrastructure type this resource belongs to.
      */
-    infrastructureType?: pulumi.Input<string>;
+    infrastructureType?: pulumi.Input<string | undefined>;
     /**
      * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
      */
-    isAutomaticFailoverEnabled?: pulumi.Input<boolean>;
+    isAutomaticFailoverEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * **Deprecated.** Indicates whether the Autonomous AI Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous AI Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
      */
-    isDataGuardEnabled?: pulumi.Input<boolean>;
+    isDataGuardEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
      */
-    isDstFileUpdateEnabled?: pulumi.Input<boolean>;
+    isDstFileUpdateEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates if it is multiple standby Autonomous Dataguard
      */
-    isMultipleStandby?: pulumi.Input<boolean>;
+    isMultipleStandby?: pulumi.Input<boolean | undefined>;
     /**
      * Key History Entry.
      */
-    keyHistoryEntries?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseAddStandbyKeyHistoryEntry>[]>;
+    keyHistoryEntries?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseAddStandbyKeyHistoryEntry>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      */
-    keyStoreId?: pulumi.Input<string>;
+    keyStoreId?: pulumi.Input<string | undefined>;
     /**
      * The wallet name for Oracle Key Vault.
      */
-    keyStoreWalletName?: pulumi.Input<string>;
+    keyStoreWalletName?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      */
-    kmsKeyVersionId?: pulumi.Input<string>;
+    kmsKeyVersionId?: pulumi.Input<string | undefined>;
     /**
      * The largest Autonomous AI Database (CPU) that can be created in a new Autonomous Container Database.
      */
-    largestProvisionableAutonomousDatabaseInCpus?: pulumi.Input<number>;
+    largestProvisionableAutonomousDatabaseInCpus?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
      */
-    lastMaintenanceRunId?: pulumi.Input<string>;
+    lastMaintenanceRunId?: pulumi.Input<string | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * List of One-Off patches that has been successfully applied to Autonomous Container Database
      */
-    listOneOffPatches?: pulumi.Input<pulumi.Input<string>[]>;
+    listOneOffPatches?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseAddStandbyMaintenanceWindow>[]>;
+    maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseAddStandbyMaintenanceWindow>[] | undefined>;
     /**
      * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      */
-    memoryPerComputeUnitInGbs?: pulumi.Input<number>;
+    memoryPerComputeUnitInGbs?: pulumi.Input<number | undefined>;
     /**
      * The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU in the Autonomous VM Cluster. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
      */
-    memoryPerOracleComputeUnitInGbs?: pulumi.Input<number>;
+    memoryPerOracleComputeUnitInGbs?: pulumi.Input<number | undefined>;
     /**
      * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
      */
-    netServicesArchitecture?: pulumi.Input<string>;
+    netServicesArchitecture?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
-    nextMaintenanceRunId?: pulumi.Input<string>;
+    nextMaintenanceRunId?: pulumi.Input<string | undefined>;
     /**
      * The OKV End Point Group name for the Autonomous Container Database.
      */
-    okvEndPointGroupName?: pulumi.Input<string>;
+    okvEndPointGroupName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
      */
-    patchId?: pulumi.Input<string>;
+    patchId?: pulumi.Input<string | undefined>;
     /**
      * Database patch model preference.
      */
-    patchModel?: pulumi.Input<string>;
+    patchModel?: pulumi.Input<string | undefined>;
     /**
      * Backup options for the standby Autonomous Container Database.
      */
-    peerAutonomousContainerDatabaseBackupConfig?: pulumi.Input<inputs.Database.AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfig>;
+    peerAutonomousContainerDatabaseBackupConfig?: pulumi.Input<inputs.Database.AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfig | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
      */
-    peerAutonomousContainerDatabaseCompartmentId?: pulumi.Input<string>;
+    peerAutonomousContainerDatabaseCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * The display name for the peer Autonomous Container Database.
      */
-    peerAutonomousContainerDatabaseDisplayName?: pulumi.Input<string>;
+    peerAutonomousContainerDatabaseDisplayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
      */
-    peerAutonomousVmClusterId?: pulumi.Input<string>;
+    peerAutonomousVmClusterId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
      */
-    peerCloudAutonomousVmClusterId?: pulumi.Input<string>;
+    peerCloudAutonomousVmClusterId?: pulumi.Input<string | undefined>;
     /**
      * Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
      */
-    peerDbUniqueName?: pulumi.Input<string>;
+    peerDbUniqueName?: pulumi.Input<string | undefined>;
     /**
      * The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      */
-    protectionMode?: pulumi.Input<string>;
+    protectionMode?: pulumi.Input<string | undefined>;
     /**
      * An array of CPU values that can be used to successfully provision a single Autonomous AI Database.
      */
-    provisionableCpuses?: pulumi.Input<pulumi.Input<number>[]>;
+    provisionableCpuses?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * The number of CPUs provisioned in an Autonomous Container Database.
      */
-    provisionedCpus?: pulumi.Input<number>;
+    provisionedCpus?: pulumi.Input<number | undefined>;
     /**
      * CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      */
-    reclaimableCpus?: pulumi.Input<number>;
+    reclaimableCpus?: pulumi.Input<number | undefined>;
     /**
      * The number of CPUs reserved in an Autonomous Container Database.
      */
-    reservedCpus?: pulumi.Input<number>;
+    reservedCpus?: pulumi.Input<number | undefined>;
     /**
      * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      */
-    role?: pulumi.Input<string>;
+    role?: pulumi.Input<string | undefined>;
     /**
      * The service level agreement type of the container database. The default is STANDARD.
      */
-    serviceLevelAgreementType?: pulumi.Input<string>;
+    serviceLevelAgreementType?: pulumi.Input<string | undefined>;
     /**
      * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database. 
      *
@@ -750,39 +750,39 @@ export interface AutonomousContainerDatabaseAddStandbyState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    standbyMaintenanceBufferInDays?: pulumi.Input<number>;
+    standbyMaintenanceBufferInDays?: pulumi.Input<number | undefined>;
     /**
      * The current state of the Autonomous Container Database.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the Autonomous Container Database was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
      */
-    timeOfLastBackup?: pulumi.Input<string>;
+    timeOfLastBackup?: pulumi.Input<string | undefined>;
     /**
      * The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
      */
-    timeSnapshotStandbyRevert?: pulumi.Input<string>;
+    timeSnapshotStandbyRevert?: pulumi.Input<string | undefined>;
     /**
      * The number of CPUs allocated to the Autonomous VM cluster.
      */
-    totalCpus?: pulumi.Input<number>;
+    totalCpus?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      */
-    vaultId?: pulumi.Input<string>;
+    vaultId?: pulumi.Input<string | undefined>;
     /**
      * The next maintenance version preference.
      */
-    versionPreference?: pulumi.Input<string>;
+    versionPreference?: pulumi.Input<string | undefined>;
     /**
      * The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, and 50%, with 50% being the default option.
      */
-    vmFailoverReservation?: pulumi.Input<number>;
+    vmFailoverReservation?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -796,39 +796,39 @@ export interface AutonomousContainerDatabaseAddStandbyArgs {
     /**
      * The lag time for my preference based on data loss tolerance in seconds.
      */
-    fastStartFailOverLagLimitInSeconds?: pulumi.Input<number>;
+    fastStartFailOverLagLimitInSeconds?: pulumi.Input<number | undefined>;
     /**
      * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
      */
-    isAutomaticFailoverEnabled?: pulumi.Input<boolean>;
+    isAutomaticFailoverEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Backup options for the standby Autonomous Container Database.
      */
-    peerAutonomousContainerDatabaseBackupConfig?: pulumi.Input<inputs.Database.AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfig>;
+    peerAutonomousContainerDatabaseBackupConfig?: pulumi.Input<inputs.Database.AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfig | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
      */
-    peerAutonomousContainerDatabaseCompartmentId?: pulumi.Input<string>;
+    peerAutonomousContainerDatabaseCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * The display name for the peer Autonomous Container Database.
      */
-    peerAutonomousContainerDatabaseDisplayName?: pulumi.Input<string>;
+    peerAutonomousContainerDatabaseDisplayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Exadata VM Cluster.
      */
-    peerAutonomousVmClusterId?: pulumi.Input<string>;
+    peerAutonomousVmClusterId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
      */
-    peerCloudAutonomousVmClusterId?: pulumi.Input<string>;
+    peerCloudAutonomousVmClusterId?: pulumi.Input<string | undefined>;
     /**
      * Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
      */
-    peerDbUniqueName?: pulumi.Input<string>;
+    peerDbUniqueName?: pulumi.Input<string | undefined>;
     /**
      * The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
      */
-    protectionMode?: pulumi.Input<string>;
+    protectionMode?: pulumi.Input<string | undefined>;
     /**
      * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database. 
      *
@@ -836,5 +836,5 @@ export interface AutonomousContainerDatabaseAddStandbyArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    standbyMaintenanceBufferInDays?: pulumi.Input<number>;
+    standbyMaintenanceBufferInDays?: pulumi.Input<number | undefined>;
 }

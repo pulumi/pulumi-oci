@@ -21,8 +21,8 @@ import * as utilities from "../utilities";
  * const testManagementAgentInstallKey = new oci.managementagent.ManagementAgentInstallKey("test_management_agent_install_key", {
  *     compartmentId: compartmentId,
  *     displayName: managementAgentInstallKeyDisplayName,
- *     allowedKeyInstallCount: managementAgentInstallKeyAllowedKeyInstallCount,
- *     isUnlimited: managementAgentInstallKeyIsUnlimited,
+ *     allowedKeyInstallCount: Number(managementAgentInstallKeyAllowedKeyInstallCount),
+ *     isUnlimited: managementAgentInstallKeyIsUnlimited === "true",
  *     timeExpires: managementAgentInstallKeyTimeExpires,
  * });
  * ```
@@ -192,55 +192,55 @@ export interface ManagementAgentInstallKeyState {
     /**
      * Total number of install for this keys
      */
-    allowedKeyInstallCount?: pulumi.Input<number>;
+    allowedKeyInstallCount?: pulumi.Input<number | undefined>;
     /**
      * Compartment Identifier
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Principal id of user who created the Agent Install key
      */
-    createdByPrincipalId?: pulumi.Input<string>;
+    createdByPrincipalId?: pulumi.Input<string | undefined>;
     /**
      * Total number of install for this keys
      */
-    currentKeyInstallCount?: pulumi.Input<number>;
+    currentKeyInstallCount?: pulumi.Input<number | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Management Agent install Key Name
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * If set to true, the install key has no expiration date or usage limit. Defaults to false
      */
-    isUnlimited?: pulumi.Input<boolean>;
+    isUnlimited?: pulumi.Input<boolean | undefined>;
     /**
      * Management Agent Install Key
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Status of Key
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time when Management Agent install Key was created. An RFC3339 formatted date time string
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * date after which key would expire after creation
      *
@@ -248,11 +248,11 @@ export interface ManagementAgentInstallKeyState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeExpires?: pulumi.Input<string>;
+    timeExpires?: pulumi.Input<string | undefined>;
     /**
      * The time when Management Agent install Key was updated. An RFC3339 formatted date time string
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -262,7 +262,7 @@ export interface ManagementAgentInstallKeyArgs {
     /**
      * Total number of install for this keys
      */
-    allowedKeyInstallCount?: pulumi.Input<number>;
+    allowedKeyInstallCount?: pulumi.Input<number | undefined>;
     /**
      * Compartment Identifier
      */
@@ -274,7 +274,7 @@ export interface ManagementAgentInstallKeyArgs {
     /**
      * If set to true, the install key has no expiration date or usage limit. Defaults to false
      */
-    isUnlimited?: pulumi.Input<boolean>;
+    isUnlimited?: pulumi.Input<boolean | undefined>;
     /**
      * date after which key would expire after creation
      *
@@ -282,5 +282,5 @@ export interface ManagementAgentInstallKeyArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeExpires?: pulumi.Input<string>;
+    timeExpires?: pulumi.Input<string | undefined>;
 }

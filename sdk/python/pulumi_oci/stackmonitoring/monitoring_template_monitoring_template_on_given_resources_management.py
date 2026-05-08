@@ -66,8 +66,8 @@ class MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementArgs:
 @pulumi.input_type
 class _MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementState:
     def __init__(__self__, *,
-                 enable_monitoring_template_on_given_resources: Optional[pulumi.Input[_builtins.bool]] = None,
-                 monitoring_template_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 enable_monitoring_template_on_given_resources: pulumi.Input[Optional[_builtins.bool]] = None,
+                 monitoring_template_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement resources.
 
@@ -85,7 +85,7 @@ class _MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementState:
 
     @_builtins.property
     @pulumi.getter(name="enableMonitoringTemplateOnGivenResources")
-    def enable_monitoring_template_on_given_resources(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_monitoring_template_on_given_resources(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 
@@ -96,19 +96,19 @@ class _MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementState:
         return pulumi.get(self, "enable_monitoring_template_on_given_resources")
 
     @enable_monitoring_template_on_given_resources.setter
-    def enable_monitoring_template_on_given_resources(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_monitoring_template_on_given_resources(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_monitoring_template_on_given_resources", value)
 
     @_builtins.property
     @pulumi.getter(name="monitoringTemplateId")
-    def monitoring_template_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def monitoring_template_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitoring template.
         """
         return pulumi.get(self, "monitoring_template_id")
 
     @monitoring_template_id.setter
-    def monitoring_template_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def monitoring_template_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "monitoring_template_id", value)
 
 
@@ -118,8 +118,8 @@ class MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement(pulumi.Cust
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_monitoring_template_on_given_resources: Optional[pulumi.Input[_builtins.bool]] = None,
-                 monitoring_template_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_monitoring_template_on_given_resources: pulumi.Input[Optional[_builtins.bool]] = None,
+                 monitoring_template_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Monitoring Template Monitoring Template On Given Resources Management resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -136,7 +136,7 @@ class MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement(pulumi.Cust
 
         test_monitoring_template_monitoring_template_on_given_resources_management = oci.stackmonitoring.MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement("test_monitoring_template_monitoring_template_on_given_resources_management",
             monitoring_template_id=test_monitoring_template["id"],
-            enable_monitoring_template_on_given_resources=enable_monitoring_template_on_given_resources)
+            enable_monitoring_template_on_given_resources=enable_monitoring_template_on_given_resources == "true")
         ```
 
 
@@ -170,7 +170,7 @@ class MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement(pulumi.Cust
 
         test_monitoring_template_monitoring_template_on_given_resources_management = oci.stackmonitoring.MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement("test_monitoring_template_monitoring_template_on_given_resources_management",
             monitoring_template_id=test_monitoring_template["id"],
-            enable_monitoring_template_on_given_resources=enable_monitoring_template_on_given_resources)
+            enable_monitoring_template_on_given_resources=enable_monitoring_template_on_given_resources == "true")
         ```
 
 
@@ -189,8 +189,8 @@ class MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement(pulumi.Cust
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_monitoring_template_on_given_resources: Optional[pulumi.Input[_builtins.bool]] = None,
-                 monitoring_template_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_monitoring_template_on_given_resources: pulumi.Input[Optional[_builtins.bool]] = None,
+                 monitoring_template_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -216,8 +216,8 @@ class MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement(pulumi.Cust
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enable_monitoring_template_on_given_resources: Optional[pulumi.Input[_builtins.bool]] = None,
-            monitoring_template_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement':
+            enable_monitoring_template_on_given_resources: pulumi.Input[Optional[_builtins.bool]] = None,
+            monitoring_template_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement':
         """
         Get an existing MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

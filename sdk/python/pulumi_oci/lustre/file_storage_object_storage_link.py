@@ -25,13 +25,13 @@ class FileStorageObjectStorageLinkArgs:
                  is_overwrite: pulumi.Input[_builtins.bool],
                  lustre_file_system_id: pulumi.Input[_builtins.str],
                  object_storage_prefix: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 start_export_to_object_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 start_import_from_object_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 stop_export_to_object_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 stop_import_from_object_trigger: Optional[pulumi.Input[_builtins.int]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 start_export_to_object_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 start_import_from_object_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 stop_export_to_object_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 stop_import_from_object_trigger: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a FileStorageObjectStorageLink resource.
 
@@ -148,79 +148,79 @@ class FileStorageObjectStorageLinkArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My Object Storage Link`
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="startExportToObjectTrigger")
-    def start_export_to_object_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def start_export_to_object_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Start Export To Object. Could be set to any integer value.
         """
         return pulumi.get(self, "start_export_to_object_trigger")
 
     @start_export_to_object_trigger.setter
-    def start_export_to_object_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def start_export_to_object_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "start_export_to_object_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="startImportFromObjectTrigger")
-    def start_import_from_object_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def start_import_from_object_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Start Import From Object. Could be set to any integer value.
         """
         return pulumi.get(self, "start_import_from_object_trigger")
 
     @start_import_from_object_trigger.setter
-    def start_import_from_object_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def start_import_from_object_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "start_import_from_object_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="stopExportToObjectTrigger")
-    def stop_export_to_object_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def stop_export_to_object_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Stop Export To Object. Could be set to any integer value.
         """
         return pulumi.get(self, "stop_export_to_object_trigger")
 
     @stop_export_to_object_trigger.setter
-    def stop_export_to_object_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def stop_export_to_object_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "stop_export_to_object_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="stopImportFromObjectTrigger")
-    def stop_import_from_object_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def stop_import_from_object_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Stop Import From Object. Could be set to any integer value.
 
@@ -231,33 +231,33 @@ class FileStorageObjectStorageLinkArgs:
         return pulumi.get(self, "stop_import_from_object_trigger")
 
     @stop_import_from_object_trigger.setter
-    def stop_import_from_object_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def stop_import_from_object_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "stop_import_from_object_trigger", value)
 
 
 @pulumi.input_type
 class _FileStorageObjectStorageLinkState:
     def __init__(__self__, *,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 current_job_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 file_system_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_overwrite: Optional[pulumi.Input[_builtins.bool]] = None,
-                 last_job_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 lustre_file_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_storage_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 start_export_to_object_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 start_import_from_object_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 stop_export_to_object_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 stop_import_from_object_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_job_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_system_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_overwrite: pulumi.Input[Optional[_builtins.bool]] = None,
+                 last_job_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 lustre_file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_storage_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 start_export_to_object_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 start_import_from_object_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 stop_export_to_object_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 stop_import_from_object_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FileStorageObjectStorageLink resources.
 
@@ -329,199 +329,199 @@ class _FileStorageObjectStorageLinkState:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability domain that the Lustre file system is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Object Storage link.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="currentJobId")
-    def current_job_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def current_job_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of currently running sync job. If no sync job is running, then this will be empty.
         """
         return pulumi.get(self, "current_job_id")
 
     @current_job_id.setter
-    def current_job_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def current_job_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_job_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My Object Storage Link`
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="fileSystemPath")
-    def file_system_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def file_system_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The path in the Lustre file system used for this Object Storage link.  Example: `myFileSystem/mount/myDirectory`
         """
         return pulumi.get(self, "file_system_path")
 
     @file_system_path.setter
-    def file_system_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def file_system_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "file_system_path", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isOverwrite")
-    def is_overwrite(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_overwrite(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) The flag is an identifier to tell whether the job run has overwrite enabled. If `isOverwrite` is false, the file to be imported or exported will be skipped if it already exists. If `isOverwrite` is true, the file to be imported or exported will be overwritten if it already exists.
         """
         return pulumi.get(self, "is_overwrite")
 
     @is_overwrite.setter
-    def is_overwrite(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_overwrite(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_overwrite", value)
 
     @_builtins.property
     @pulumi.getter(name="lastJobId")
-    def last_job_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_job_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last succeeded sync job. If no sync job has previously run, then this will be empty.
         """
         return pulumi.get(self, "last_job_id")
 
     @last_job_id.setter
-    def last_job_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_job_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_job_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message that describes the current state of the Object Storage link in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="lustreFileSystemId")
-    def lustre_file_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lustre_file_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated Lustre file system.
         """
         return pulumi.get(self, "lustre_file_system_id")
 
     @lustre_file_system_id.setter
-    def lustre_file_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lustre_file_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lustre_file_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="objectStoragePrefix")
-    def object_storage_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_storage_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Object Storage namespace and bucket name, including optional object prefix string, to use as the source for imports or destination for exports.  Example: `objectStorageNamespace:/bucketName/optionalFolder/optionalPrefix`
         """
         return pulumi.get(self, "object_storage_prefix")
 
     @object_storage_prefix.setter
-    def object_storage_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_storage_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_storage_prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="startExportToObjectTrigger")
-    def start_export_to_object_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def start_export_to_object_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Start Export To Object. Could be set to any integer value.
         """
         return pulumi.get(self, "start_export_to_object_trigger")
 
     @start_export_to_object_trigger.setter
-    def start_export_to_object_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def start_export_to_object_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "start_export_to_object_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="startImportFromObjectTrigger")
-    def start_import_from_object_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def start_import_from_object_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Start Import From Object. Could be set to any integer value.
         """
         return pulumi.get(self, "start_import_from_object_trigger")
 
     @start_import_from_object_trigger.setter
-    def start_import_from_object_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def start_import_from_object_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "start_import_from_object_trigger", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Object Storage link.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="stopExportToObjectTrigger")
-    def stop_export_to_object_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def stop_export_to_object_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Stop Export To Object. Could be set to any integer value.
         """
         return pulumi.get(self, "stop_export_to_object_trigger")
 
     @stop_export_to_object_trigger.setter
-    def stop_export_to_object_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def stop_export_to_object_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "stop_export_to_object_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="stopImportFromObjectTrigger")
-    def stop_import_from_object_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def stop_import_from_object_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Stop Import From Object. Could be set to any integer value.
 
@@ -532,43 +532,43 @@ class _FileStorageObjectStorageLinkState:
         return pulumi.get(self, "stop_import_from_object_trigger")
 
     @stop_import_from_object_trigger.setter
-    def stop_import_from_object_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def stop_import_from_object_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "stop_import_from_object_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Lustre file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2024-04-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Object Storage link was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2024-04-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -578,19 +578,19 @@ class FileStorageObjectStorageLink(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 file_system_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_overwrite: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lustre_file_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_storage_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 start_export_to_object_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 start_import_from_object_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 stop_export_to_object_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 stop_import_from_object_trigger: Optional[pulumi.Input[_builtins.int]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_system_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_overwrite: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lustre_file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_storage_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 start_export_to_object_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 start_import_from_object_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 stop_export_to_object_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 stop_import_from_object_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         This resource provides the Object Storage Link resource in Oracle Cloud Infrastructure Lustre File Storage service.
@@ -607,7 +607,7 @@ class FileStorageObjectStorageLink(pulumi.CustomResource):
             availability_domain=object_storage_link_availability_domain,
             compartment_id=compartment_id,
             file_system_path=object_storage_link_file_system_path,
-            is_overwrite=object_storage_link_is_overwrite,
+            is_overwrite=object_storage_link_is_overwrite == "true",
             lustre_file_system_id=test_lustre_file_system["id"],
             object_storage_prefix=object_storage_link_object_storage_prefix,
             defined_tags={
@@ -669,7 +669,7 @@ class FileStorageObjectStorageLink(pulumi.CustomResource):
             availability_domain=object_storage_link_availability_domain,
             compartment_id=compartment_id,
             file_system_path=object_storage_link_file_system_path,
-            is_overwrite=object_storage_link_is_overwrite,
+            is_overwrite=object_storage_link_is_overwrite == "true",
             lustre_file_system_id=test_lustre_file_system["id"],
             object_storage_prefix=object_storage_link_object_storage_prefix,
             defined_tags={
@@ -705,19 +705,19 @@ class FileStorageObjectStorageLink(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 file_system_path: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_overwrite: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lustre_file_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_storage_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 start_export_to_object_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 start_import_from_object_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 stop_export_to_object_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 stop_import_from_object_trigger: Optional[pulumi.Input[_builtins.int]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_system_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_overwrite: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lustre_file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_storage_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 start_export_to_object_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 start_import_from_object_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 stop_export_to_object_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 stop_import_from_object_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -769,26 +769,26 @@ class FileStorageObjectStorageLink(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            current_job_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            file_system_path: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_overwrite: Optional[pulumi.Input[_builtins.bool]] = None,
-            last_job_id: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            lustre_file_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-            object_storage_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-            start_export_to_object_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            start_import_from_object_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            stop_export_to_object_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            stop_import_from_object_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'FileStorageObjectStorageLink':
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            current_job_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            file_system_path: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_overwrite: pulumi.Input[Optional[_builtins.bool]] = None,
+            last_job_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            lustre_file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            object_storage_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+            start_export_to_object_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            start_import_from_object_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            stop_export_to_object_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            stop_import_from_object_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'FileStorageObjectStorageLink':
         """
         Get an existing FileStorageObjectStorageLink resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCustomProtectionRules = oci.Waas.getCustomProtectionRules({
+ * const testCustomProtectionRules = oci.waas.getCustomProtectionRules({
  *     compartmentId: compartmentId,
  *     displayNames: customProtectionRuleDisplayNames,
  *     ids: customProtectionRuleIds,
@@ -105,7 +105,7 @@ export interface GetCustomProtectionRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCustomProtectionRules = oci.Waas.getCustomProtectionRules({
+ * const testCustomProtectionRules = oci.waas.getCustomProtectionRules({
  *     compartmentId: compartmentId,
  *     displayNames: customProtectionRuleDisplayNames,
  *     ids: customProtectionRuleIds,
@@ -139,22 +139,22 @@ export interface GetCustomProtectionRulesOutputArgs {
     /**
      * Filter custom protection rules using a list of display names.
      */
-    displayNames?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Waas.GetCustomProtectionRulesFilterArgs>[]>;
+    displayNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Waas.GetCustomProtectionRulesFilterArgs>[] | undefined>;
     /**
      * Filter custom protection rules using a list of custom protection rule OCIDs.
      */
-    ids?: pulumi.Input<pulumi.Input<string>[]>;
+    ids?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Filter Custom Protection rules using a list of lifecycle states.
      */
-    states?: pulumi.Input<pulumi.Input<string>[]>;
+    states?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter that matches Custom Protection rules created on or after the specified date-time.
      */
-    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A filter that matches custom protection rules created before the specified date-time.
      */
-    timeCreatedLessThan?: pulumi.Input<string>;
+    timeCreatedLessThan?: pulumi.Input<string | undefined>;
 }

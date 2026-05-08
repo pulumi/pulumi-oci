@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeCapacityTopologies = oci.Core.getComputeCapacityTopologies({
+ * const testComputeCapacityTopologies = oci.core.getComputeCapacityTopologies({
  *     compartmentId: compartmentId,
  *     availabilityDomain: computeCapacityTopologyAvailabilityDomain,
  *     displayName: computeCapacityTopologyDisplayName,
@@ -92,7 +92,7 @@ export interface GetComputeCapacityTopologiesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeCapacityTopologies = oci.Core.getComputeCapacityTopologies({
+ * const testComputeCapacityTopologies = oci.core.getComputeCapacityTopologies({
  *     compartmentId: compartmentId,
  *     availabilityDomain: computeCapacityTopologyAvailabilityDomain,
  *     displayName: computeCapacityTopologyDisplayName,
@@ -116,7 +116,7 @@ export interface GetComputeCapacityTopologiesOutputArgs {
     /**
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -124,6 +124,6 @@ export interface GetComputeCapacityTopologiesOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetComputeCapacityTopologiesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetComputeCapacityTopologiesFilterArgs>[] | undefined>;
 }

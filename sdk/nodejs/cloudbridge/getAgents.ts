@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAgents = oci.CloudBridge.getAgents({
+ * const testAgents = oci.cloudbridge.getAgents({
  *     compartmentId: compartmentId,
  *     agentId: testAgent.id,
  *     displayName: agentDisplayName,
@@ -110,7 +110,7 @@ export interface GetAgentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAgents = oci.CloudBridge.getAgents({
+ * const testAgents = oci.cloudbridge.getAgents({
  *     compartmentId: compartmentId,
  *     agentId: testAgent.id,
  *     displayName: agentDisplayName,
@@ -138,7 +138,7 @@ export interface GetAgentsOutputArgs {
     /**
      * A filter to return only resources that match the given Agent ID.
      */
-    agentId?: pulumi.Input<string>;
+    agentId?: pulumi.Input<string | undefined>;
     /**
      * The ID of the compartment in which to list resources.
      */
@@ -146,14 +146,14 @@ export interface GetAgentsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given environment ID.
      */
-    environmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.CloudBridge.GetAgentsFilterArgs>[]>;
+    environmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.CloudBridge.GetAgentsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

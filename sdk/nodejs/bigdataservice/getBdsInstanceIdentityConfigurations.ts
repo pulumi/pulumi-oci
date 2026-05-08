@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceIdentityConfigurations = oci.BigDataService.getBdsInstanceIdentityConfigurations({
+ * const testBdsInstanceIdentityConfigurations = oci.bigdataservice.getBdsInstanceIdentityConfigurations({
  *     bdsInstanceId: testBdsInstance.id,
  *     compartmentId: compartmentId,
  *     displayName: bdsInstanceIdentityConfigurationDisplayName,
@@ -94,7 +94,7 @@ export interface GetBdsInstanceIdentityConfigurationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceIdentityConfigurations = oci.BigDataService.getBdsInstanceIdentityConfigurations({
+ * const testBdsInstanceIdentityConfigurations = oci.bigdataservice.getBdsInstanceIdentityConfigurations({
  *     bdsInstanceId: testBdsInstance.id,
  *     compartmentId: compartmentId,
  *     displayName: bdsInstanceIdentityConfigurationDisplayName,
@@ -128,10 +128,10 @@ export interface GetBdsInstanceIdentityConfigurationsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.BigDataService.GetBdsInstanceIdentityConfigurationsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.BigDataService.GetBdsInstanceIdentityConfigurationsFilterArgs>[] | undefined>;
     /**
      * The state of the identity config
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

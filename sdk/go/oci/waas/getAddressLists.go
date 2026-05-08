@@ -31,9 +31,9 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := waas.GetAddressLists(ctx, &waas.GetAddressListsArgs{
 //				CompartmentId:                   compartmentId,
-//				Ids:                             addressListIds,
-//				Names:                           addressListNames,
-//				States:                          addressListStates,
+//				Ids:                             pulumi.ToArray(addressListIds),
+//				Names:                           pulumi.ToArray(addressListNames),
+//				States:                          pulumi.ToArray(addressListStates),
 //				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(addressListTimeCreatedGreaterThanOrEqualTo),
 //				TimeCreatedLessThan:             pulumi.StringRef(addressListTimeCreatedLessThan),
 //			}, nil)

@@ -179,7 +179,7 @@ def get_windows_update(windows_update_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_windows_update = oci.OsManagementHub.get_windows_update(windows_update_id=test_windows_update_oci_os_management_hub_windows_update["id"])
+    test_windows_update = oci.osmanagementhub.get_windows_update(windows_update_id=test_windows_update_oci_os_management_hub_windows_update["id"])
     ```
 
 
@@ -202,7 +202,7 @@ def get_windows_update(windows_update_id: Optional[_builtins.str] = None,
         update_id=pulumi.get(__ret__, 'update_id'),
         update_type=pulumi.get(__ret__, 'update_type'),
         windows_update_id=pulumi.get(__ret__, 'windows_update_id'))
-def get_windows_update_output(windows_update_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_windows_update_output(windows_update_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWindowsUpdateResult]:
     """
     This data source provides details about a specific Windows Update resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -215,7 +215,7 @@ def get_windows_update_output(windows_update_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_windows_update = oci.OsManagementHub.get_windows_update(windows_update_id=test_windows_update_oci_os_management_hub_windows_update["id"])
+    test_windows_update = oci.osmanagementhub.get_windows_update(windows_update_id=test_windows_update_oci_os_management_hub_windows_update["id"])
     ```
 
 

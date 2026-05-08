@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserGroupMemberships = oci.Identity.getUserGroupMemberships({
+ * const testUserGroupMemberships = oci.identity.getUserGroupMemberships({
  *     compartmentId: tenancyOcid,
  *     groupId: testGroup.id,
  *     userId: testUser.id,
@@ -108,7 +108,7 @@ export interface GetUserGroupMembershipsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserGroupMemberships = oci.Identity.getUserGroupMemberships({
+ * const testUserGroupMemberships = oci.identity.getUserGroupMemberships({
  *     compartmentId: tenancyOcid,
  *     groupId: testGroup.id,
  *     userId: testUser.id,
@@ -133,13 +133,13 @@ export interface GetUserGroupMembershipsOutputArgs {
      * The OCID of the compartment (remember that the tenancy is simply the root compartment).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetUserGroupMembershipsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetUserGroupMembershipsFilterArgs>[] | undefined>;
     /**
      * The OCID of the group.
      */
-    groupId?: pulumi.Input<string>;
+    groupId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the user.
      */
-    userId?: pulumi.Input<string>;
+    userId?: pulumi.Input<string | undefined>;
 }

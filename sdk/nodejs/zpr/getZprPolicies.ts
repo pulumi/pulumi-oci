@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testZprPolicies = oci.Zpr.getZprPolicies({
+ * const testZprPolicies = oci.zpr.getZprPolicies({
  *     compartmentId: tenancyOcid,
  *     name: zprPolicyName,
  *     state: zprPolicyState,
@@ -91,7 +91,7 @@ export interface GetZprPoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testZprPolicies = oci.Zpr.getZprPolicies({
+ * const testZprPolicies = oci.zpr.getZprPolicies({
  *     compartmentId: tenancyOcid,
  *     name: zprPolicyName,
  *     state: zprPolicyState,
@@ -116,14 +116,14 @@ export interface GetZprPoliciesOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Zpr.GetZprPoliciesFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Zpr.GetZprPoliciesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

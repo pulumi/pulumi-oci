@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceNodeBackups = oci.BigDataService.getBdsInstanceNodeBackups({
+ * const testBdsInstanceNodeBackups = oci.bigdataservice.getBdsInstanceNodeBackups({
  *     bdsInstanceId: testBdsInstance.id,
  *     displayName: bdsInstanceNodeBackupDisplayName,
  *     nodeHostName: bdsInstanceNodeBackupNodeHostName,
@@ -97,7 +97,7 @@ export interface GetBdsInstanceNodeBackupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceNodeBackups = oci.BigDataService.getBdsInstanceNodeBackups({
+ * const testBdsInstanceNodeBackups = oci.bigdataservice.getBdsInstanceNodeBackups({
  *     bdsInstanceId: testBdsInstance.id,
  *     displayName: bdsInstanceNodeBackupDisplayName,
  *     nodeHostName: bdsInstanceNodeBackupNodeHostName,
@@ -127,14 +127,14 @@ export interface GetBdsInstanceNodeBackupsOutputArgs {
     /**
      * The display name belonged to the node backup.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.BigDataService.GetBdsInstanceNodeBackupsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.BigDataService.GetBdsInstanceNodeBackupsFilterArgs>[] | undefined>;
     /**
      * The node host name belonged to a node that has a node backup.
      */
-    nodeHostName?: pulumi.Input<string>;
+    nodeHostName?: pulumi.Input<string | undefined>;
     /**
      * The state of the Node's Backup.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -22,11 +22,11 @@ class AwrHubSourceArgs:
                  awr_hub_id: pulumi.Input[_builtins.str],
                  compartment_id: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 associated_opsi_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 associated_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 associated_opsi_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 associated_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AwrHubSource resource.
 
@@ -99,90 +99,90 @@ class AwrHubSourceArgs:
 
     @_builtins.property
     @pulumi.getter(name="associatedOpsiId")
-    def associated_opsi_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def associated_opsi_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database id.
         """
         return pulumi.get(self, "associated_opsi_id")
 
     @associated_opsi_id.setter
-    def associated_opsi_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def associated_opsi_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "associated_opsi_id", value)
 
     @_builtins.property
     @pulumi.getter(name="associatedResourceId")
-    def associated_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def associated_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database id.
         """
         return pulumi.get(self, "associated_resource_id")
 
     @associated_resource_id.setter
-    def associated_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def associated_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "associated_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Awr Hub source database.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _AwrHubSourceState:
     def __init__(__self__, *,
-                 associated_opsi_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 associated_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 awr_hub_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 awr_hub_opsi_source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 awr_source_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hours_since_last_import: Optional[pulumi.Input[_builtins.float]] = None,
-                 is_registered_with_awr_hub: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_snapshot_identifier: Optional[pulumi.Input[_builtins.float]] = None,
-                 min_snapshot_identifier: Optional[pulumi.Input[_builtins.float]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_mail_box_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_first_snapshot_generated: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_snapshot_generated: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 associated_opsi_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 associated_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 awr_hub_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 awr_hub_opsi_source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 awr_source_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hours_since_last_import: pulumi.Input[Optional[_builtins.float]] = None,
+                 is_registered_with_awr_hub: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_snapshot_identifier: pulumi.Input[Optional[_builtins.float]] = None,
+                 min_snapshot_identifier: pulumi.Input[Optional[_builtins.float]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_mail_box_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_first_snapshot_generated: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_snapshot_generated: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AwrHubSource resources.
 
@@ -260,259 +260,259 @@ class _AwrHubSourceState:
 
     @_builtins.property
     @pulumi.getter(name="associatedOpsiId")
-    def associated_opsi_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def associated_opsi_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database id.
         """
         return pulumi.get(self, "associated_opsi_id")
 
     @associated_opsi_id.setter
-    def associated_opsi_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def associated_opsi_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "associated_opsi_id", value)
 
     @_builtins.property
     @pulumi.getter(name="associatedResourceId")
-    def associated_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def associated_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database id.
         """
         return pulumi.get(self, "associated_resource_id")
 
     @associated_resource_id.setter
-    def associated_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def associated_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "associated_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="awrHubId")
-    def awr_hub_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def awr_hub_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         AWR Hub OCID
         """
         return pulumi.get(self, "awr_hub_id")
 
     @awr_hub_id.setter
-    def awr_hub_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def awr_hub_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "awr_hub_id", value)
 
     @_builtins.property
     @pulumi.getter(name="awrHubOpsiSourceId")
-    def awr_hub_opsi_source_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def awr_hub_opsi_source_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The shorted string of the Awr Hub source database identifier.
         """
         return pulumi.get(self, "awr_hub_opsi_source_id")
 
     @awr_hub_opsi_source_id.setter
-    def awr_hub_opsi_source_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def awr_hub_opsi_source_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "awr_hub_opsi_source_id", value)
 
     @_builtins.property
     @pulumi.getter(name="awrSourceDatabaseId")
-    def awr_source_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def awr_source_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
         """
         return pulumi.get(self, "awr_source_database_id")
 
     @awr_source_database_id.setter
-    def awr_source_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def awr_source_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "awr_source_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="hoursSinceLastImport")
-    def hours_since_last_import(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def hours_since_last_import(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Number of hours since last AWR snapshots import happened from the Source database.
         """
         return pulumi.get(self, "hours_since_last_import")
 
     @hours_since_last_import.setter
-    def hours_since_last_import(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def hours_since_last_import(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "hours_since_last_import", value)
 
     @_builtins.property
     @pulumi.getter(name="isRegisteredWithAwrHub")
-    def is_registered_with_awr_hub(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_registered_with_awr_hub(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This is `true` if the source databse is registered with a Awr Hub, otherwise `false`
         """
         return pulumi.get(self, "is_registered_with_awr_hub")
 
     @is_registered_with_awr_hub.setter
-    def is_registered_with_awr_hub(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_registered_with_awr_hub(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_registered_with_awr_hub", value)
 
     @_builtins.property
     @pulumi.getter(name="maxSnapshotIdentifier")
-    def max_snapshot_identifier(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def max_snapshot_identifier(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The maximum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
         """
         return pulumi.get(self, "max_snapshot_identifier")
 
     @max_snapshot_identifier.setter
-    def max_snapshot_identifier(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def max_snapshot_identifier(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "max_snapshot_identifier", value)
 
     @_builtins.property
     @pulumi.getter(name="minSnapshotIdentifier")
-    def min_snapshot_identifier(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def min_snapshot_identifier(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The minimum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
         """
         return pulumi.get(self, "min_snapshot_identifier")
 
     @min_snapshot_identifier.setter
-    def min_snapshot_identifier(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def min_snapshot_identifier(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "min_snapshot_identifier", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the Awr Hub source database.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceMailBoxUrl")
-    def source_mail_box_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_mail_box_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Opsi Mailbox URL based on the Awr Hub and Awr Hub source.
         """
         return pulumi.get(self, "source_mail_box_url")
 
     @source_mail_box_url.setter
-    def source_mail_box_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_mail_box_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_mail_box_url", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         the current state of the source database
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Indicates the status of a source database in Operations Insights
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time at which the resource was first created. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeFirstSnapshotGenerated")
-    def time_first_snapshot_generated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_first_snapshot_generated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time at which the earliest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_first_snapshot_generated")
 
     @time_first_snapshot_generated.setter
-    def time_first_snapshot_generated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_first_snapshot_generated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_first_snapshot_generated", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastSnapshotGenerated")
-    def time_last_snapshot_generated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_snapshot_generated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time at which the latest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_last_snapshot_generated")
 
     @time_last_snapshot_generated.setter
-    def time_last_snapshot_generated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_snapshot_generated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_snapshot_generated", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time at which the resource was last updated. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) source type of the database
 
@@ -523,7 +523,7 @@ class _AwrHubSourceState:
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -533,14 +533,14 @@ class AwrHubSource(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 associated_opsi_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 associated_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 awr_hub_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 associated_opsi_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 associated_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 awr_hub_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Awr Hub Source resource in Oracle Cloud Infrastructure Opsi service.
@@ -654,14 +654,14 @@ class AwrHubSource(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 associated_opsi_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 associated_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 awr_hub_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 associated_opsi_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 associated_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 awr_hub_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -709,28 +709,28 @@ class AwrHubSource(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            associated_opsi_id: Optional[pulumi.Input[_builtins.str]] = None,
-            associated_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-            awr_hub_id: Optional[pulumi.Input[_builtins.str]] = None,
-            awr_hub_opsi_source_id: Optional[pulumi.Input[_builtins.str]] = None,
-            awr_source_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            hours_since_last_import: Optional[pulumi.Input[_builtins.float]] = None,
-            is_registered_with_awr_hub: Optional[pulumi.Input[_builtins.bool]] = None,
-            max_snapshot_identifier: Optional[pulumi.Input[_builtins.float]] = None,
-            min_snapshot_identifier: Optional[pulumi.Input[_builtins.float]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            source_mail_box_url: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_first_snapshot_generated: Optional[pulumi.Input[_builtins.str]] = None,
-            time_last_snapshot_generated: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'AwrHubSource':
+            associated_opsi_id: pulumi.Input[Optional[_builtins.str]] = None,
+            associated_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            awr_hub_id: pulumi.Input[Optional[_builtins.str]] = None,
+            awr_hub_opsi_source_id: pulumi.Input[Optional[_builtins.str]] = None,
+            awr_source_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            hours_since_last_import: pulumi.Input[Optional[_builtins.float]] = None,
+            is_registered_with_awr_hub: pulumi.Input[Optional[_builtins.bool]] = None,
+            max_snapshot_identifier: pulumi.Input[Optional[_builtins.float]] = None,
+            min_snapshot_identifier: pulumi.Input[Optional[_builtins.float]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            source_mail_box_url: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_first_snapshot_generated: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_snapshot_generated: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'AwrHubSource':
         """
         Get an existing AwrHubSource resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPrivateEndpoints = oci.DataFlow.getPrivateEndpoints({
+ * const testPrivateEndpoints = oci.dataflow.getPrivateEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: privateEndpointDisplayName,
  *     displayNameStartsWith: privateEndpointDisplayNameStartsWith,
@@ -107,7 +107,7 @@ export interface GetPrivateEndpointsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPrivateEndpoints = oci.DataFlow.getPrivateEndpoints({
+ * const testPrivateEndpoints = oci.dataflow.getPrivateEndpoints({
  *     compartmentId: compartmentId,
  *     displayName: privateEndpointDisplayName,
  *     displayNameStartsWith: privateEndpointDisplayNameStartsWith,
@@ -139,18 +139,18 @@ export interface GetPrivateEndpointsOutputArgs {
     /**
      * The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartmentId` to get the list of Private Endpoint resources.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The displayName prefix.
      */
-    displayNameStartsWith?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataFlow.GetPrivateEndpointsFilterArgs>[]>;
+    displayNameStartsWith?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataFlow.GetPrivateEndpointsFilterArgs>[] | undefined>;
     /**
      * The OCID of the user who created the resource.
      */
-    ownerPrincipalId?: pulumi.Input<string>;
+    ownerPrincipalId?: pulumi.Input<string | undefined>;
     /**
      * The LifecycleState of the private endpoint.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testKnowledgeBases = oci.Adm.getKnowledgebases({
+ * const testKnowledgeBases = oci.adm.getKnowledgebases({
  *     compartmentId: compartmentId,
  *     displayName: knowledgeBaseDisplayName,
  *     id: knowledgeBaseId,
@@ -99,7 +99,7 @@ export interface GetKnowledgebasesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testKnowledgeBases = oci.Adm.getKnowledgebases({
+ * const testKnowledgeBases = oci.adm.getKnowledgebases({
  *     compartmentId: compartmentId,
  *     displayName: knowledgeBaseDisplayName,
  *     id: knowledgeBaseId,
@@ -126,18 +126,18 @@ export interface GetKnowledgebasesOutputArgs {
     /**
      * A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Adm.GetKnowledgebasesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Adm.GetKnowledgebasesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only Knowledge Bases that match the specified lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

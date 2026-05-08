@@ -138,7 +138,7 @@ def get_recovery_service_subnets(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_recovery_service_subnets = oci.RecoveryMod.get_recovery_service_subnets(compartment_id=compartment_id,
+    test_recovery_service_subnets = oci.recoverymod.get_recovery_service_subnets(compartment_id=compartment_id,
         display_name=recovery_service_subnet_display_name,
         id=recovery_service_subnet_id,
         state=recovery_service_subnet_state,
@@ -170,12 +170,12 @@ def get_recovery_service_subnets(compartment_id: Optional[_builtins.str] = None,
         recovery_service_subnet_collections=pulumi.get(__ret__, 'recovery_service_subnet_collections'),
         state=pulumi.get(__ret__, 'state'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-def get_recovery_service_subnets_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                        display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetRecoveryServiceSubnetsFilterArgs', 'GetRecoveryServiceSubnetsFilterArgsDict']]]]] = None,
-                                        id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                        vcn_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_recovery_service_subnets_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetRecoveryServiceSubnetsFilterArgs', 'GetRecoveryServiceSubnetsFilterArgsDict']]]]] = None,
+                                        id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                        vcn_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRecoveryServiceSubnetsResult]:
     """
     This data source provides the list of Recovery Service Subnets in Oracle Cloud Infrastructure Recovery service.
@@ -188,7 +188,7 @@ def get_recovery_service_subnets_output(compartment_id: Optional[pulumi.Input[_b
     import pulumi
     import pulumi_oci as oci
 
-    test_recovery_service_subnets = oci.RecoveryMod.get_recovery_service_subnets(compartment_id=compartment_id,
+    test_recovery_service_subnets = oci.recoverymod.get_recovery_service_subnets(compartment_id=compartment_id,
         display_name=recovery_service_subnet_display_name,
         id=recovery_service_subnet_id,
         state=recovery_service_subnet_state,

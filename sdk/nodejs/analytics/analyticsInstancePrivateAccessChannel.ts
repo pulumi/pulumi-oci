@@ -33,7 +33,7 @@ import * as utilities from "../utilities";
  *     networkSecurityGroupIds: analyticsInstancePrivateAccessChannelNetworkSecurityGroupIds,
  *     privateSourceScanHosts: [{
  *         scanHostname: analyticsInstancePrivateAccessChannelPrivateSourceScanHostsScanHostname,
- *         scanPort: analyticsInstancePrivateAccessChannelPrivateSourceScanHostsScanPort,
+ *         scanPort: Number(analyticsInstancePrivateAccessChannelPrivateSourceScanHostsScanPort),
  *         description: analyticsInstancePrivateAccessChannelPrivateSourceScanHostsDescription,
  *     }],
  * });
@@ -183,39 +183,39 @@ export interface AnalyticsInstancePrivateAccessChannelState {
     /**
      * The OCID of the AnalyticsInstance.
      */
-    analyticsInstanceId?: pulumi.Input<string>;
+    analyticsInstanceId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Display Name of the Private Access Channel.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to Private Sources.
      */
-    egressSourceIpAddresses?: pulumi.Input<pulumi.Input<string>[]>;
+    egressSourceIpAddresses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * IP Address of the Private Access channel.
      */
-    ipAddress?: pulumi.Input<string>;
+    ipAddress?: pulumi.Input<string | undefined>;
     /**
      * Private Access Channel unique identifier key.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Network Security Group OCIDs for an Analytics instance.
      */
-    networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+    networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
      */
-    privateSourceDnsZones?: pulumi.Input<pulumi.Input<inputs.Analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone>[]>;
+    privateSourceDnsZones?: pulumi.Input<pulumi.Input<inputs.Analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone>[] | undefined>;
     /**
      * (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
      */
-    privateSourceScanHosts?: pulumi.Input<pulumi.Input<inputs.Analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost>[]>;
+    privateSourceScanHosts?: pulumi.Input<pulumi.Input<inputs.Analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost>[] | undefined>;
     /**
      * (Updatable) OCID of the customer subnet connected to private access channel.
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) OCID of the customer VCN peered with private access channel. 
      *
@@ -223,7 +223,7 @@ export interface AnalyticsInstancePrivateAccessChannelState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vcnId?: pulumi.Input<string>;
+    vcnId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -241,7 +241,7 @@ export interface AnalyticsInstancePrivateAccessChannelArgs {
     /**
      * (Updatable) Network Security Group OCIDs for an Analytics instance.
      */
-    networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+    networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
      */
@@ -249,7 +249,7 @@ export interface AnalyticsInstancePrivateAccessChannelArgs {
     /**
      * (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
      */
-    privateSourceScanHosts?: pulumi.Input<pulumi.Input<inputs.Analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost>[]>;
+    privateSourceScanHosts?: pulumi.Input<pulumi.Input<inputs.Analytics.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost>[] | undefined>;
     /**
      * (Updatable) OCID of the customer subnet connected to private access channel.
      */

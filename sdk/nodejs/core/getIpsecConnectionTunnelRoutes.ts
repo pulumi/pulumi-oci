@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpsecConnectionTunnelRoutes = oci.Core.getIpsecConnectionTunnelRoutes({
+ * const testIpsecConnectionTunnelRoutes = oci.core.getIpsecConnectionTunnelRoutes({
  *     ipsecId: testIpsec.id,
  *     tunnelId: testTunnel.id,
  *     advertiser: ipsecConnectionTunnelRouteAdvertiser,
@@ -84,7 +84,7 @@ export interface GetIpsecConnectionTunnelRoutesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpsecConnectionTunnelRoutes = oci.Core.getIpsecConnectionTunnelRoutes({
+ * const testIpsecConnectionTunnelRoutes = oci.core.getIpsecConnectionTunnelRoutes({
  *     ipsecId: testIpsec.id,
  *     tunnelId: testTunnel.id,
  *     advertiser: ipsecConnectionTunnelRouteAdvertiser,
@@ -108,8 +108,8 @@ export interface GetIpsecConnectionTunnelRoutesOutputArgs {
     /**
      * Specifies the advertiser of the routes. If set to `ORACLE`, this returns only the routes advertised by Oracle. When set to `CUSTOMER`, this returns only the routes advertised by the CPE.
      */
-    advertiser?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetIpsecConnectionTunnelRoutesFilterArgs>[]>;
+    advertiser?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetIpsecConnectionTunnelRoutesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
      */

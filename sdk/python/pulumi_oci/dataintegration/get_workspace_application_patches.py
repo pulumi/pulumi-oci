@@ -141,7 +141,7 @@ def get_workspace_application_patches(application_key: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application_patches = oci.DataIntegration.get_workspace_application_patches(application_key=workspace_application_patch_application_key,
+    test_workspace_application_patches = oci.dataintegration.get_workspace_application_patches(application_key=workspace_application_patch_application_key,
         workspace_id=test_workspace["id"],
         fields=workspace_application_patch_fields,
         identifiers=workspace_application_patch_identifier,
@@ -174,12 +174,12 @@ def get_workspace_application_patches(application_key: Optional[_builtins.str] =
         name=pulumi.get(__ret__, 'name'),
         patch_summary_collections=pulumi.get(__ret__, 'patch_summary_collections'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-def get_workspace_application_patches_output(application_key: Optional[pulumi.Input[_builtins.str]] = None,
-                                             fields: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkspaceApplicationPatchesFilterArgs', 'GetWorkspaceApplicationPatchesFilterArgsDict']]]]] = None,
-                                             identifiers: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                             name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_workspace_application_patches_output(application_key: pulumi.Input[Optional[_builtins.str]] = None,
+                                             fields: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWorkspaceApplicationPatchesFilterArgs', 'GetWorkspaceApplicationPatchesFilterArgsDict']]]]] = None,
+                                             identifiers: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                             name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceApplicationPatchesResult]:
     """
     This data source provides the list of Workspace Application Patches in Oracle Cloud Infrastructure Data Integration service.
@@ -192,7 +192,7 @@ def get_workspace_application_patches_output(application_key: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application_patches = oci.DataIntegration.get_workspace_application_patches(application_key=workspace_application_patch_application_key,
+    test_workspace_application_patches = oci.dataintegration.get_workspace_application_patches(application_key=workspace_application_patch_application_key,
         workspace_id=test_workspace["id"],
         fields=workspace_application_patch_fields,
         identifiers=workspace_application_patch_identifier,

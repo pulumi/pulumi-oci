@@ -24,7 +24,7 @@ class UsageStatementEmailRecipientsGroupArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  recipients_lists: pulumi.Input[Sequence[pulumi.Input['UsageStatementEmailRecipientsGroupRecipientsListArgs']]],
                  subscription_id: pulumi.Input[_builtins.str],
-                 email_recipients_group_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 email_recipients_group_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a UsageStatementEmailRecipientsGroup resource.
 
@@ -84,22 +84,22 @@ class UsageStatementEmailRecipientsGroupArgs:
 
     @_builtins.property
     @pulumi.getter(name="emailRecipientsGroupId")
-    def email_recipients_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email_recipients_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "email_recipients_group_id")
 
     @email_recipients_group_id.setter
-    def email_recipients_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def email_recipients_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email_recipients_group_id", value)
 
 
 @pulumi.input_type
 class _UsageStatementEmailRecipientsGroupState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_recipients_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 recipients_lists: Optional[pulumi.Input[Sequence[pulumi.Input['UsageStatementEmailRecipientsGroupRecipientsListArgs']]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_recipients_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 recipients_lists: pulumi.Input[Optional[Sequence[pulumi.Input['UsageStatementEmailRecipientsGroupRecipientsListArgs']]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UsageStatementEmailRecipientsGroup resources.
 
@@ -125,52 +125,52 @@ class _UsageStatementEmailRecipientsGroupState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The customer tenancy.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="emailRecipientsGroupId")
-    def email_recipients_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def email_recipients_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "email_recipients_group_id")
 
     @email_recipients_group_id.setter
-    def email_recipients_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def email_recipients_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email_recipients_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="recipientsLists")
-    def recipients_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UsageStatementEmailRecipientsGroupRecipientsListArgs']]]]:
+    def recipients_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UsageStatementEmailRecipientsGroupRecipientsListArgs']]]]:
         """
         (Updatable) The list of recipients that will receive usage statement emails.
         """
         return pulumi.get(self, "recipients_lists")
 
     @recipients_lists.setter
-    def recipients_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UsageStatementEmailRecipientsGroupRecipientsListArgs']]]]):
+    def recipients_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UsageStatementEmailRecipientsGroupRecipientsListArgs']]]]):
         pulumi.set(self, "recipients_lists", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The email recipients group lifecycle state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The usage statement subscription unique OCID.
 
@@ -181,7 +181,7 @@ class _UsageStatementEmailRecipientsGroupState:
         return pulumi.get(self, "subscription_id")
 
     @subscription_id.setter
-    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subscription_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subscription_id", value)
 
 
@@ -191,10 +191,10 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_recipients_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 recipients_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UsageStatementEmailRecipientsGroupRecipientsListArgs', 'UsageStatementEmailRecipientsGroupRecipientsListArgsDict']]]]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_recipients_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 recipients_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageStatementEmailRecipientsGroupRecipientsListArgs', 'UsageStatementEmailRecipientsGroupRecipientsListArgsDict']]]]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -295,10 +295,10 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 email_recipients_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 recipients_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UsageStatementEmailRecipientsGroupRecipientsListArgs', 'UsageStatementEmailRecipientsGroupRecipientsListArgsDict']]]]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_recipients_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 recipients_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageStatementEmailRecipientsGroupRecipientsListArgs', 'UsageStatementEmailRecipientsGroupRecipientsListArgsDict']]]]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -329,11 +329,11 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            email_recipients_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            recipients_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UsageStatementEmailRecipientsGroupRecipientsListArgs', 'UsageStatementEmailRecipientsGroupRecipientsListArgsDict']]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            subscription_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'UsageStatementEmailRecipientsGroup':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            email_recipients_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            recipients_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageStatementEmailRecipientsGroupRecipientsListArgs', 'UsageStatementEmailRecipientsGroupRecipientsListArgsDict']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subscription_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'UsageStatementEmailRecipientsGroup':
         """
         Get an existing UsageStatementEmailRecipientsGroup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

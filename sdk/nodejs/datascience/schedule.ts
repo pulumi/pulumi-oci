@@ -46,8 +46,8 @@ import * as utilities from "../utilities";
  *                 },
  *                 jobId: testJob.id,
  *                 jobLogConfigurationOverrideDetails: {
- *                     enableAutoLogCreation: scheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsEnableAutoLogCreation,
- *                     enableLogging: scheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsEnableLogging,
+ *                     enableAutoLogCreation: scheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsEnableAutoLogCreation === "true",
+ *                     enableLogging: scheduleActionActionDetailsCreateJobRunDetailsJobLogConfigurationOverrideDetailsEnableLogging === "true",
  *                     logGroupId: testLogGroup.id,
  *                     logId: testLog.id,
  *                 },
@@ -69,8 +69,8 @@ import * as utilities from "../utilities";
  *                     Department: "Finance",
  *                 },
  *                 logConfigurationOverrideDetails: {
- *                     enableAutoLogCreation: scheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsEnableAutoLogCreation,
- *                     enableLogging: scheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsEnableLogging,
+ *                     enableAutoLogCreation: scheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsEnableAutoLogCreation === "true",
+ *                     enableLogging: scheduleActionActionDetailsCreatePipelineRunDetailsLogConfigurationOverrideDetailsEnableLogging === "true",
  *                     logGroupId: testLogGroup.id,
  *                     logId: testLog.id,
  *                 },
@@ -112,8 +112,8 @@ import * as utilities from "../utilities";
  *         triggerType: scheduleTriggerTriggerType,
  *         cronExpression: scheduleTriggerCronExpression,
  *         frequency: scheduleTriggerFrequency,
- *         interval: scheduleTriggerInterval,
- *         isRandomStartTime: scheduleTriggerIsRandomStartTime,
+ *         interval: Number(scheduleTriggerInterval),
+ *         isRandomStartTime: scheduleTriggerIsRandomStartTime === "true",
  *         recurrence: scheduleTriggerRecurrence,
  *         timeEnd: scheduleTriggerTimeEnd,
  *         timeStart: scheduleTriggerTimeStart,
@@ -320,75 +320,75 @@ export interface ScheduleState {
     /**
      * (Updatable) The schedule action
      */
-    action?: pulumi.Input<inputs.DataScience.ScheduleAction>;
+    action?: pulumi.Input<inputs.DataScience.ScheduleAction | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the schedule.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the schedule.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A short description of the schedule.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Details about the action performed by the last schedule execution. Example: `Invoked ML Application trigger.`
      */
-    lastScheduleRunDetails?: pulumi.Input<string>;
+    lastScheduleRunDetails?: pulumi.Input<string | undefined>;
     /**
      * A message describing the current state in more detail.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Custom logging details for schedule execution.
      */
-    logDetails?: pulumi.Input<inputs.DataScience.ScheduleLogDetails>;
+    logDetails?: pulumi.Input<inputs.DataScience.ScheduleLogDetails | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the schedule with.
      */
-    projectId?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the schedule.           Example: `ACTIVE`
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the schedule was created. Format is defined by RFC3339.           Example: `2022-08-05T01:02:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The last schedule execution time. Format is defined by RFC3339. Example: `2022-08-05T01:02:29.600Z`
      */
-    timeLastScheduleRun?: pulumi.Input<string>;
+    timeLastScheduleRun?: pulumi.Input<string | undefined>;
     /**
      * The next scheduled execution time for the schedule. Format is defined by RFC3339. Example: `2022-08-05T01:02:29.600Z`
      */
-    timeNextScheduledRun?: pulumi.Input<string>;
+    timeNextScheduledRun?: pulumi.Input<string | undefined>;
     /**
      * The date and time the schedule was updated. Format is defined by RFC3339.           Example: `2022-09-05T01:02:29.600Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The trigger of the schedule can be UNIX cron or iCal expression or simple interval
      */
-    trigger?: pulumi.Input<inputs.DataScience.ScheduleTrigger>;
+    trigger?: pulumi.Input<inputs.DataScience.ScheduleTrigger | undefined>;
 }
 
 /**
@@ -406,11 +406,11 @@ export interface ScheduleArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A short description of the schedule.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Avoid entering confidential information.
      */
@@ -418,11 +418,11 @@ export interface ScheduleArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Custom logging details for schedule execution.
      */
-    logDetails?: pulumi.Input<inputs.DataScience.ScheduleLogDetails>;
+    logDetails?: pulumi.Input<inputs.DataScience.ScheduleLogDetails | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the schedule with.
      */

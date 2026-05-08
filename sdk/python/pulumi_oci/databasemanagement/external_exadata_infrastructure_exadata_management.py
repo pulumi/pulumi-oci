@@ -21,7 +21,7 @@ class ExternalExadataInfrastructureExadataManagementArgs:
     def __init__(__self__, *,
                  enable_exadata: pulumi.Input[_builtins.bool],
                  external_exadata_infrastructure_id: pulumi.Input[_builtins.str],
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None):
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ExternalExadataInfrastructureExadataManagement resource.
 
@@ -68,23 +68,23 @@ class ExternalExadataInfrastructureExadataManagementArgs:
 
     @_builtins.property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle license model.
         """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
-    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_model", value)
 
 
 @pulumi.input_type
 class _ExternalExadataInfrastructureExadataManagementState:
     def __init__(__self__, *,
-                 enable_exadata: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None):
+                 enable_exadata: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ExternalExadataInfrastructureExadataManagement resources.
 
@@ -105,7 +105,7 @@ class _ExternalExadataInfrastructureExadataManagementState:
 
     @_builtins.property
     @pulumi.getter(name="enableExadata")
-    def enable_exadata(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_exadata(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 
@@ -116,31 +116,31 @@ class _ExternalExadataInfrastructureExadataManagementState:
         return pulumi.get(self, "enable_exadata")
 
     @enable_exadata.setter
-    def enable_exadata(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_exadata(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_exadata", value)
 
     @_builtins.property
     @pulumi.getter(name="externalExadataInfrastructureId")
-    def external_exadata_infrastructure_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def external_exadata_infrastructure_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         """
         return pulumi.get(self, "external_exadata_infrastructure_id")
 
     @external_exadata_infrastructure_id.setter
-    def external_exadata_infrastructure_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def external_exadata_infrastructure_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "external_exadata_infrastructure_id", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle license model.
         """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
-    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_model", value)
 
 
@@ -150,9 +150,9 @@ class ExternalExadataInfrastructureExadataManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_exadata: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_exadata: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the External Exadata Infrastructure Exadata Management resource in Oracle Cloud Infrastructure Database Management service.
@@ -174,7 +174,7 @@ class ExternalExadataInfrastructureExadataManagement(pulumi.CustomResource):
 
         test_external_exadata_infrastructure_exadata_management = oci.databasemanagement.ExternalExadataInfrastructureExadataManagement("test_external_exadata_infrastructure_exadata_management",
             external_exadata_infrastructure_id=test_external_exadata_infrastructure["id"],
-            enable_exadata=enable_exadata,
+            enable_exadata=enable_exadata == "true",
             license_model=external_exadata_infrastructure_exadata_management_license_model)
         ```
 
@@ -215,7 +215,7 @@ class ExternalExadataInfrastructureExadataManagement(pulumi.CustomResource):
 
         test_external_exadata_infrastructure_exadata_management = oci.databasemanagement.ExternalExadataInfrastructureExadataManagement("test_external_exadata_infrastructure_exadata_management",
             external_exadata_infrastructure_id=test_external_exadata_infrastructure["id"],
-            enable_exadata=enable_exadata,
+            enable_exadata=enable_exadata == "true",
             license_model=external_exadata_infrastructure_exadata_management_license_model)
         ```
 
@@ -235,9 +235,9 @@ class ExternalExadataInfrastructureExadataManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_exadata: Optional[pulumi.Input[_builtins.bool]] = None,
-                 external_exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_exadata: pulumi.Input[Optional[_builtins.bool]] = None,
+                 external_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -264,9 +264,9 @@ class ExternalExadataInfrastructureExadataManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enable_exadata: Optional[pulumi.Input[_builtins.bool]] = None,
-            external_exadata_infrastructure_id: Optional[pulumi.Input[_builtins.str]] = None,
-            license_model: Optional[pulumi.Input[_builtins.str]] = None) -> 'ExternalExadataInfrastructureExadataManagement':
+            enable_exadata: pulumi.Input[Optional[_builtins.bool]] = None,
+            external_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+            license_model: pulumi.Input[Optional[_builtins.str]] = None) -> 'ExternalExadataInfrastructureExadataManagement':
         """
         Get an existing ExternalExadataInfrastructureExadataManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

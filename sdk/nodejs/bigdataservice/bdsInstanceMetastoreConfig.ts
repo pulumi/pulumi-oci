@@ -184,47 +184,47 @@ export interface BdsInstanceMetastoreConfigState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    activateTrigger?: pulumi.Input<number>;
+    activateTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The ID of BDS Api Key used for Data Catalog metastore integration.
      */
-    bdsApiKeyId?: pulumi.Input<string>;
+    bdsApiKeyId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Base-64 encoded passphrase of the BDS Api Key.
      */
-    bdsApiKeyPassphrase?: pulumi.Input<string>;
+    bdsApiKeyPassphrase?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the cluster.
      */
-    bdsInstanceId?: pulumi.Input<string>;
+    bdsInstanceId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Base-64 encoded password for the cluster admin user.
      */
-    clusterAdminPassword?: pulumi.Input<string>;
+    clusterAdminPassword?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the metastore configuration
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the Data Catalog metastore.
      */
-    metastoreId?: pulumi.Input<string>;
+    metastoreId?: pulumi.Input<string | undefined>;
     /**
      * The type of the metastore in the metastore configuration.
      */
-    metastoreType?: pulumi.Input<string>;
+    metastoreType?: pulumi.Input<string | undefined>;
     /**
      * the lifecycle state of the metastore configuration.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The time when the configuration was created, shown as an RFC 3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time when the configuration was updated, shown as an RFC 3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -238,7 +238,7 @@ export interface BdsInstanceMetastoreConfigArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    activateTrigger?: pulumi.Input<number>;
+    activateTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The ID of BDS Api Key used for Data Catalog metastore integration.
      */
@@ -258,7 +258,7 @@ export interface BdsInstanceMetastoreConfigArgs {
     /**
      * (Updatable) The display name of the metastore configuration
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the Data Catalog metastore.
      */

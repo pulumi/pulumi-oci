@@ -264,7 +264,7 @@ def get_ml_application_implementation_version(ml_application_implementation_vers
     import pulumi
     import pulumi_oci as oci
 
-    test_ml_application_implementation_version = oci.DataScience.get_ml_application_implementation_version(ml_application_implementation_version_id=test_ml_application_implementation_version_oci_datascience_ml_application_implementation_version["id"])
+    test_ml_application_implementation_version = oci.datascience.get_ml_application_implementation_version(ml_application_implementation_version_id=test_ml_application_implementation_version_oci_datascience_ml_application_implementation_version["id"])
     ```
 
 
@@ -294,7 +294,7 @@ def get_ml_application_implementation_version(ml_application_implementation_vers
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_ml_application_implementation_version_output(ml_application_implementation_version_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_ml_application_implementation_version_output(ml_application_implementation_version_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMlApplicationImplementationVersionResult]:
     """
     This data source provides details about a specific Ml Application Implementation Version resource in Oracle Cloud Infrastructure Data Science service.
@@ -307,7 +307,7 @@ def get_ml_application_implementation_version_output(ml_application_implementati
     import pulumi
     import pulumi_oci as oci
 
-    test_ml_application_implementation_version = oci.DataScience.get_ml_application_implementation_version(ml_application_implementation_version_id=test_ml_application_implementation_version_oci_datascience_ml_application_implementation_version["id"])
+    test_ml_application_implementation_version = oci.datascience.get_ml_application_implementation_version(ml_application_implementation_version_id=test_ml_application_implementation_version_oci_datascience_ml_application_implementation_version["id"])
     ```
 
 

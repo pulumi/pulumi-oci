@@ -138,7 +138,7 @@ def get_security_lists(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_security_lists = oci.Core.get_security_lists(compartment_id=compartment_id,
+    test_security_lists = oci.core.get_security_lists(compartment_id=compartment_id,
         display_name=security_list_display_name,
         state=security_list_state,
         vcn_id=test_vcn["id"])
@@ -167,11 +167,11 @@ def get_security_lists(compartment_id: Optional[_builtins.str] = None,
         security_lists=pulumi.get(__ret__, 'security_lists'),
         state=pulumi.get(__ret__, 'state'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-def get_security_lists_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                              display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityListsFilterArgs', 'GetSecurityListsFilterArgsDict']]]]] = None,
-                              state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              vcn_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_security_lists_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSecurityListsFilterArgs', 'GetSecurityListsFilterArgsDict']]]]] = None,
+                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              vcn_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityListsResult]:
     """
     This data source provides the list of Security Lists in Oracle Cloud Infrastructure Core service.
@@ -185,7 +185,7 @@ def get_security_lists_output(compartment_id: Optional[pulumi.Input[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_security_lists = oci.Core.get_security_lists(compartment_id=compartment_id,
+    test_security_lists = oci.core.get_security_lists(compartment_id=compartment_id,
         display_name=security_list_display_name,
         state=security_list_state,
         vcn_id=test_vcn["id"])

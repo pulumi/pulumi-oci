@@ -109,7 +109,7 @@ def get_configuration(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_configuration = oci.Nosql.get_configuration(compartment_id=compartment_id)
+    test_configuration = oci.nosql.get_configuration(compartment_id=compartment_id)
     ```
 
 
@@ -126,7 +126,7 @@ def get_configuration(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         is_opc_dry_run=pulumi.get(__ret__, 'is_opc_dry_run'),
         kms_keys=pulumi.get(__ret__, 'kms_keys'))
-def get_configuration_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_configuration_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConfigurationResult]:
     """
     This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure NoSQL Database service.
@@ -143,7 +143,7 @@ def get_configuration_output(compartment_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_configuration = oci.Nosql.get_configuration(compartment_id=compartment_id)
+    test_configuration = oci.nosql.get_configuration(compartment_id=compartment_id)
     ```
 
 

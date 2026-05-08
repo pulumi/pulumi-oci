@@ -121,7 +121,7 @@ def get_vm_cluster_updates(filters: Optional[Sequence[Union['GetVmClusterUpdates
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_updates = oci.Database.get_vm_cluster_updates(vm_cluster_id=test_vm_cluster["id"],
+    test_vm_cluster_updates = oci.database.get_vm_cluster_updates(vm_cluster_id=test_vm_cluster["id"],
         state=vm_cluster_update_state,
         update_type=vm_cluster_update_update_type)
     ```
@@ -146,10 +146,10 @@ def get_vm_cluster_updates(filters: Optional[Sequence[Union['GetVmClusterUpdates
         update_type=pulumi.get(__ret__, 'update_type'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'),
         vm_cluster_updates=pulumi.get(__ret__, 'vm_cluster_updates'))
-def get_vm_cluster_updates_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVmClusterUpdatesFilterArgs', 'GetVmClusterUpdatesFilterArgsDict']]]]] = None,
-                                  state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  update_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                  vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_vm_cluster_updates_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVmClusterUpdatesFilterArgs', 'GetVmClusterUpdatesFilterArgsDict']]]]] = None,
+                                  state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  update_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                  vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVmClusterUpdatesResult]:
     """
     This data source provides the list of Vm Cluster Updates in Oracle Cloud Infrastructure Database service.
@@ -162,7 +162,7 @@ def get_vm_cluster_updates_output(filters: Optional[pulumi.Input[Optional[Sequen
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_updates = oci.Database.get_vm_cluster_updates(vm_cluster_id=test_vm_cluster["id"],
+    test_vm_cluster_updates = oci.database.get_vm_cluster_updates(vm_cluster_id=test_vm_cluster["id"],
         state=vm_cluster_update_state,
         update_type=vm_cluster_update_update_type)
     ```

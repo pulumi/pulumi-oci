@@ -235,8 +235,8 @@ def get_certificate_authority_version(certificate_authority_id: Optional[_builti
         validities=pulumi.get(__ret__, 'validities'),
         version_name=pulumi.get(__ret__, 'version_name'),
         version_number=pulumi.get(__ret__, 'version_number'))
-def get_certificate_authority_version_output(certificate_authority_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             certificate_authority_version_number: Optional[pulumi.Input[_builtins.str]] = None,
+def get_certificate_authority_version_output(certificate_authority_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             certificate_authority_version_number: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCertificateAuthorityVersionResult]:
     """
     This data source provides details about a specific Certificate Authority Version resource in Oracle Cloud Infrastructure Certificates Management service.

@@ -142,11 +142,11 @@ def get_managed_instance_group_available_packages(compartment_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_group_available_packages = oci.OsManagementHub.get_managed_instance_group_available_packages(managed_instance_group_id=test_managed_instance_group["id"],
+    test_managed_instance_group_available_packages = oci.osmanagementhub.get_managed_instance_group_available_packages(managed_instance_group_id=test_managed_instance_group["id"],
         compartment_id=compartment_id,
         display_names=managed_instance_group_available_package_display_name,
         display_name_contains=managed_instance_group_available_package_display_name_contains,
-        is_latest=managed_instance_group_available_package_is_latest)
+        is_latest=managed_instance_group_available_package_is_latest == "true")
     ```
 
 
@@ -175,12 +175,12 @@ def get_managed_instance_group_available_packages(compartment_id: Optional[_buil
         is_latest=pulumi.get(__ret__, 'is_latest'),
         managed_instance_group_available_package_collections=pulumi.get(__ret__, 'managed_instance_group_available_package_collections'),
         managed_instance_group_id=pulumi.get(__ret__, 'managed_instance_group_id'))
-def get_managed_instance_group_available_packages_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                         display_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                         display_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceGroupAvailablePackagesFilterArgs', 'GetManagedInstanceGroupAvailablePackagesFilterArgsDict']]]]] = None,
-                                                         is_latest: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                         managed_instance_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_managed_instance_group_available_packages_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                         display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                         display_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedInstanceGroupAvailablePackagesFilterArgs', 'GetManagedInstanceGroupAvailablePackagesFilterArgsDict']]]]] = None,
+                                                         is_latest: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                         managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceGroupAvailablePackagesResult]:
     """
     This data source provides the list of Managed Instance Group Available Packages in Oracle Cloud Infrastructure Os Management Hub service.
@@ -194,11 +194,11 @@ def get_managed_instance_group_available_packages_output(compartment_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_group_available_packages = oci.OsManagementHub.get_managed_instance_group_available_packages(managed_instance_group_id=test_managed_instance_group["id"],
+    test_managed_instance_group_available_packages = oci.osmanagementhub.get_managed_instance_group_available_packages(managed_instance_group_id=test_managed_instance_group["id"],
         compartment_id=compartment_id,
         display_names=managed_instance_group_available_package_display_name,
         display_name_contains=managed_instance_group_available_package_display_name_contains,
-        is_latest=managed_instance_group_available_package_is_latest)
+        is_latest=managed_instance_group_available_package_is_latest == "true")
     ```
 
 

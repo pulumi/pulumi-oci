@@ -171,8 +171,8 @@ def get_network_firewall_policy_mapped_secret(name: Optional[_builtins.str] = No
         type=pulumi.get(__ret__, 'type'),
         vault_secret_id=pulumi.get(__ret__, 'vault_secret_id'),
         version_number=pulumi.get(__ret__, 'version_number'))
-def get_network_firewall_policy_mapped_secret_output(name: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_network_firewall_policy_mapped_secret_output(name: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNetworkFirewallPolicyMappedSecretResult]:
     """
     This data source provides details about a specific Network Firewall Policy Mapped Secret resource in Oracle Cloud Infrastructure Network Firewall service.

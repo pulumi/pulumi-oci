@@ -25,15 +25,15 @@ class ConfigurationArgs:
                  db_configuration_overrides: pulumi.Input['ConfigurationDbConfigurationOverridesArgs'],
                  db_version: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
-                 compatible_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 instance_memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 instance_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_flexible: Optional[pulumi.Input[_builtins.bool]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 compatible_shapes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 instance_memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 instance_ocpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_flexible: pulumi.Input[Optional[_builtins.bool]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Configuration resource.
 
@@ -134,55 +134,55 @@ class ConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="compatibleShapes")
-    def compatible_shapes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def compatible_shapes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Indicates the collection of compatible shapes for this configuration.
         """
         return pulumi.get(self, "compatible_shapes")
 
     @compatible_shapes.setter
-    def compatible_shapes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def compatible_shapes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "compatible_shapes", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Details about the configuration set.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceMemorySizeInGbs")
-    def instance_memory_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def instance_memory_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Memory size in gigabytes with 1GB increment.
 
@@ -191,12 +191,12 @@ class ConfigurationArgs:
         return pulumi.get(self, "instance_memory_size_in_gbs")
 
     @instance_memory_size_in_gbs.setter
-    def instance_memory_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def instance_memory_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "instance_memory_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceOcpuCount")
-    def instance_ocpu_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def instance_ocpu_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         CPU core count.
 
@@ -205,24 +205,24 @@ class ConfigurationArgs:
         return pulumi.get(self, "instance_ocpu_count")
 
     @instance_ocpu_count.setter
-    def instance_ocpu_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def instance_ocpu_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "instance_ocpu_count", value)
 
     @_builtins.property
     @pulumi.getter(name="isFlexible")
-    def is_flexible(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_flexible(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the configuration supports flexible shapes.
         """
         return pulumi.get(self, "is_flexible")
 
     @is_flexible.setter
-    def is_flexible(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_flexible(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_flexible", value)
 
     @_builtins.property
     @pulumi.getter
-    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the shape for the configuration. 
 
@@ -231,12 +231,12 @@ class ConfigurationArgs:
         return pulumi.get(self, "shape")
 
     @shape.setter
-    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
 
@@ -247,32 +247,32 @@ class ConfigurationArgs:
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
 
 @pulumi.input_type
 class _ConfigurationState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compatible_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 config_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigurationConfigurationDetailArgs']]]] = None,
-                 db_configuration_overrides: Optional[pulumi.Input['ConfigurationDbConfigurationOverridesArgs']] = None,
-                 db_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 default_config_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 instance_memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 instance_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_flexible: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compatible_shapes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 config_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigurationConfigurationDetailArgs']]]] = None,
+                 db_configuration_overrides: pulumi.Input[Optional['ConfigurationDbConfigurationOverridesArgs']] = None,
+                 db_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 default_config_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 instance_memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 instance_ocpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_flexible: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Configuration resources.
 
@@ -347,139 +347,139 @@ class _ConfigurationState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compatibleShapes")
-    def compatible_shapes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def compatible_shapes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Indicates the collection of compatible shapes for this configuration.
         """
         return pulumi.get(self, "compatible_shapes")
 
     @compatible_shapes.setter
-    def compatible_shapes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def compatible_shapes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "compatible_shapes", value)
 
     @_builtins.property
     @pulumi.getter(name="configType")
-    def config_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def config_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of configuration. Either user-created or a default configuration.
         """
         return pulumi.get(self, "config_type")
 
     @config_type.setter
-    def config_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def config_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "config_type", value)
 
     @_builtins.property
     @pulumi.getter(name="configurationDetails")
-    def configuration_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigurationConfigurationDetailArgs']]]]:
+    def configuration_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConfigurationConfigurationDetailArgs']]]]:
         """
         List of configuration details.
         """
         return pulumi.get(self, "configuration_details")
 
     @configuration_details.setter
-    def configuration_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigurationConfigurationDetailArgs']]]]):
+    def configuration_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigurationConfigurationDetailArgs']]]]):
         pulumi.set(self, "configuration_details", value)
 
     @_builtins.property
     @pulumi.getter(name="dbConfigurationOverrides")
-    def db_configuration_overrides(self) -> Optional[pulumi.Input['ConfigurationDbConfigurationOverridesArgs']]:
+    def db_configuration_overrides(self) -> pulumi.Input[Optional['ConfigurationDbConfigurationOverridesArgs']]:
         """
         Configuration overrides for a PostgreSQL instance.
         """
         return pulumi.get(self, "db_configuration_overrides")
 
     @db_configuration_overrides.setter
-    def db_configuration_overrides(self, value: Optional[pulumi.Input['ConfigurationDbConfigurationOverridesArgs']]):
+    def db_configuration_overrides(self, value: pulumi.Input[Optional['ConfigurationDbConfigurationOverridesArgs']]):
         pulumi.set(self, "db_configuration_overrides", value)
 
     @_builtins.property
     @pulumi.getter(name="dbVersion")
-    def db_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def db_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Version of the PostgreSQL database.
         """
         return pulumi.get(self, "db_version")
 
     @db_version.setter
-    def db_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def db_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "db_version", value)
 
     @_builtins.property
     @pulumi.getter(name="defaultConfigId")
-    def default_config_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def default_config_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Default configuration used for this configuration.
         """
         return pulumi.get(self, "default_config_id")
 
     @default_config_id.setter
-    def default_config_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def default_config_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "default_config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Details about the configuration set.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceMemorySizeInGbs")
-    def instance_memory_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def instance_memory_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Memory size in gigabytes with 1GB increment.
 
@@ -488,12 +488,12 @@ class _ConfigurationState:
         return pulumi.get(self, "instance_memory_size_in_gbs")
 
     @instance_memory_size_in_gbs.setter
-    def instance_memory_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def instance_memory_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "instance_memory_size_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceOcpuCount")
-    def instance_ocpu_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def instance_ocpu_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         CPU core count.
 
@@ -502,36 +502,36 @@ class _ConfigurationState:
         return pulumi.get(self, "instance_ocpu_count")
 
     @instance_ocpu_count.setter
-    def instance_ocpu_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def instance_ocpu_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "instance_ocpu_count", value)
 
     @_builtins.property
     @pulumi.getter(name="isFlexible")
-    def is_flexible(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_flexible(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the configuration supports flexible shapes.
         """
         return pulumi.get(self, "is_flexible")
 
     @is_flexible.setter
-    def is_flexible(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_flexible(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_flexible", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the shape for the configuration. 
 
@@ -540,24 +540,24 @@ class _ConfigurationState:
         return pulumi.get(self, "shape")
 
     @shape.setter
-    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the configuration.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
 
@@ -568,19 +568,19 @@ class _ConfigurationState:
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -590,19 +590,19 @@ class Configuration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compatible_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 db_configuration_overrides: Optional[pulumi.Input[Union['ConfigurationDbConfigurationOverridesArgs', 'ConfigurationDbConfigurationOverridesArgsDict']]] = None,
-                 db_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 instance_memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 instance_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_flexible: Optional[pulumi.Input[_builtins.bool]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compatible_shapes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 db_configuration_overrides: pulumi.Input[Optional[Union['ConfigurationDbConfigurationOverridesArgs', 'ConfigurationDbConfigurationOverridesArgsDict']]] = None,
+                 db_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 instance_memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 instance_ocpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_flexible: pulumi.Input[Optional[_builtins.bool]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         This resource provides the Configuration resource in Oracle Cloud Infrastructure Psql service.
@@ -636,9 +636,9 @@ class Configuration(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            instance_memory_size_in_gbs=configuration_instance_memory_size_in_gbs,
-            instance_ocpu_count=configuration_instance_ocpu_count,
-            is_flexible=configuration_is_flexible,
+            instance_memory_size_in_gbs=int(configuration_instance_memory_size_in_gbs),
+            instance_ocpu_count=int(configuration_instance_ocpu_count),
+            is_flexible=configuration_is_flexible == "true",
             shape=configuration_shape,
             system_tags=configuration_system_tags)
         ```
@@ -716,9 +716,9 @@ class Configuration(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            instance_memory_size_in_gbs=configuration_instance_memory_size_in_gbs,
-            instance_ocpu_count=configuration_instance_ocpu_count,
-            is_flexible=configuration_is_flexible,
+            instance_memory_size_in_gbs=int(configuration_instance_memory_size_in_gbs),
+            instance_ocpu_count=int(configuration_instance_ocpu_count),
+            is_flexible=configuration_is_flexible == "true",
             shape=configuration_shape,
             system_tags=configuration_system_tags)
         ```
@@ -747,19 +747,19 @@ class Configuration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compatible_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 db_configuration_overrides: Optional[pulumi.Input[Union['ConfigurationDbConfigurationOverridesArgs', 'ConfigurationDbConfigurationOverridesArgsDict']]] = None,
-                 db_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 instance_memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-                 instance_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_flexible: Optional[pulumi.Input[_builtins.bool]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compatible_shapes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 db_configuration_overrides: pulumi.Input[Optional[Union['ConfigurationDbConfigurationOverridesArgs', 'ConfigurationDbConfigurationOverridesArgsDict']]] = None,
+                 db_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 instance_memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 instance_ocpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_flexible: pulumi.Input[Optional[_builtins.bool]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -806,25 +806,25 @@ class Configuration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compatible_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            config_type: Optional[pulumi.Input[_builtins.str]] = None,
-            configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigurationConfigurationDetailArgs', 'ConfigurationConfigurationDetailArgsDict']]]]] = None,
-            db_configuration_overrides: Optional[pulumi.Input[Union['ConfigurationDbConfigurationOverridesArgs', 'ConfigurationDbConfigurationOverridesArgsDict']]] = None,
-            db_version: Optional[pulumi.Input[_builtins.str]] = None,
-            default_config_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            instance_memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
-            instance_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
-            is_flexible: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            shape: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'Configuration':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compatible_shapes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            config_type: pulumi.Input[Optional[_builtins.str]] = None,
+            configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigurationConfigurationDetailArgs', 'ConfigurationConfigurationDetailArgsDict']]]]] = None,
+            db_configuration_overrides: pulumi.Input[Optional[Union['ConfigurationDbConfigurationOverridesArgs', 'ConfigurationDbConfigurationOverridesArgsDict']]] = None,
+            db_version: pulumi.Input[Optional[_builtins.str]] = None,
+            default_config_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            instance_memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            instance_ocpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+            is_flexible: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'Configuration':
         """
         Get an existing Configuration resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

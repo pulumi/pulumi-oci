@@ -408,7 +408,7 @@ def get_mysql_backup(backup_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_backup = oci.Mysql.get_mysql_backup(backup_id=test_backup["id"])
+    test_mysql_backup = oci.mysql.get_mysql_backup(backup_id=test_backup["id"])
     ```
 
 
@@ -451,7 +451,7 @@ def get_mysql_backup(backup_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         validate_backup_details=pulumi.get(__ret__, 'validate_backup_details'),
         validate_trigger=pulumi.get(__ret__, 'validate_trigger'))
-def get_mysql_backup_output(backup_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_mysql_backup_output(backup_id: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMysqlBackupResult]:
     """
     This data source provides details about a specific Mysql Backup resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -464,7 +464,7 @@ def get_mysql_backup_output(backup_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_backup = oci.Mysql.get_mysql_backup(backup_id=test_backup["id"])
+    test_mysql_backup = oci.mysql.get_mysql_backup(backup_id=test_backup["id"])
     ```
 
 

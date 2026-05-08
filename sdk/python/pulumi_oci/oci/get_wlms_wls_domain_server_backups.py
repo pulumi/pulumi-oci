@@ -128,9 +128,9 @@ def get_wlms_wls_domain_server_backups(filters: Optional[Sequence[Union['GetWlms
         id=pulumi.get(__ret__, 'id'),
         server_id=pulumi.get(__ret__, 'server_id'),
         wls_domain_id=pulumi.get(__ret__, 'wls_domain_id'))
-def get_wlms_wls_domain_server_backups_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWlmsWlsDomainServerBackupsFilterArgs', 'GetWlmsWlsDomainServerBackupsFilterArgsDict']]]]] = None,
-                                              server_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                              wls_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_wlms_wls_domain_server_backups_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWlmsWlsDomainServerBackupsFilterArgs', 'GetWlmsWlsDomainServerBackupsFilterArgsDict']]]]] = None,
+                                              server_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                              wls_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWlmsWlsDomainServerBackupsResult]:
     """
     This data source provides the list of Wls Domain Server Backups in Oracle Cloud Infrastructure Wlms service.

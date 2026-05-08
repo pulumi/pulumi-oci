@@ -173,8 +173,8 @@ def get_alarm_statuses(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alarm_statuses = oci.Monitoring.get_alarm_statuses(compartment_id=compartment_id,
-        compartment_id_in_subtree=alarm_status_compartment_id_in_subtree,
+    test_alarm_statuses = oci.monitoring.get_alarm_statuses(compartment_id=compartment_id,
+        compartment_id_in_subtree=alarm_status_compartment_id_in_subtree == "true",
         display_name=alarm_status_display_name,
         entity_id=test_entity["id"],
         resource_id=test_resource["id"],
@@ -214,14 +214,14 @@ def get_alarm_statuses(compartment_id: Optional[_builtins.str] = None,
         resource_id=pulumi.get(__ret__, 'resource_id'),
         service_name=pulumi.get(__ret__, 'service_name'),
         status=pulumi.get(__ret__, 'status'))
-def get_alarm_statuses_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                              compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                              display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              entity_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAlarmStatusesFilterArgs', 'GetAlarmStatusesFilterArgsDict']]]]] = None,
-                              resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              service_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                              status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_alarm_statuses_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                              compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              entity_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAlarmStatusesFilterArgs', 'GetAlarmStatusesFilterArgsDict']]]]] = None,
+                              resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              service_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                              status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAlarmStatusesResult]:
     """
     This data source provides the list of Alarm Statuses in Oracle Cloud Infrastructure Monitoring service.
@@ -246,8 +246,8 @@ def get_alarm_statuses_output(compartment_id: Optional[pulumi.Input[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_alarm_statuses = oci.Monitoring.get_alarm_statuses(compartment_id=compartment_id,
-        compartment_id_in_subtree=alarm_status_compartment_id_in_subtree,
+    test_alarm_statuses = oci.monitoring.get_alarm_statuses(compartment_id=compartment_id,
+        compartment_id_in_subtree=alarm_status_compartment_id_in_subtree == "true",
         display_name=alarm_status_display_name,
         entity_id=test_entity["id"],
         resource_id=test_resource["id"],

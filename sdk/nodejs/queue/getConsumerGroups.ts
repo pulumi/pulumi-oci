@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConsumerGroups = oci.Queue.getConsumerGroups({
+ * const testConsumerGroups = oci.queue.getConsumerGroups({
  *     displayName: consumerGroupDisplayName,
  *     id: consumerGroupId,
  *     queueId: testQueue.id,
@@ -97,7 +97,7 @@ export interface GetConsumerGroupsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConsumerGroups = oci.Queue.getConsumerGroups({
+ * const testConsumerGroups = oci.queue.getConsumerGroups({
  *     displayName: consumerGroupDisplayName,
  *     id: consumerGroupId,
  *     queueId: testQueue.id,
@@ -124,18 +124,18 @@ export interface GetConsumerGroupsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Queue.GetConsumerGroupsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Queue.GetConsumerGroupsFilterArgs>[] | undefined>;
     /**
      * The unique consumer group identifier.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The unique queue identifier.
      */
-    queueId?: pulumi.Input<string>;
+    queueId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

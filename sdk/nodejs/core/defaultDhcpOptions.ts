@@ -93,26 +93,26 @@ export class DefaultDhcpOptions extends pulumi.CustomResource {
  * Input properties used for looking up and filtering DefaultDhcpOptions resources.
  */
 export interface DefaultDhcpOptionsState {
-    compartmentId?: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    displayName?: pulumi.Input<string>;
-    domainNameType?: pulumi.Input<string>;
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    manageDefaultResourceId?: pulumi.Input<string>;
-    options?: pulumi.Input<pulumi.Input<inputs.Core.DefaultDhcpOptionsOption>[]>;
-    state?: pulumi.Input<string>;
-    timeCreated?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    displayName?: pulumi.Input<string | undefined>;
+    domainNameType?: pulumi.Input<string | undefined>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    manageDefaultResourceId?: pulumi.Input<string | undefined>;
+    options?: pulumi.Input<pulumi.Input<inputs.Core.DefaultDhcpOptionsOption>[] | undefined>;
+    state?: pulumi.Input<string | undefined>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
  * The set of arguments for constructing a DefaultDhcpOptions resource.
  */
 export interface DefaultDhcpOptionsArgs {
-    compartmentId?: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    displayName?: pulumi.Input<string>;
-    domainNameType?: pulumi.Input<string>;
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    displayName?: pulumi.Input<string | undefined>;
+    domainNameType?: pulumi.Input<string | undefined>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     manageDefaultResourceId: pulumi.Input<string>;
     options: pulumi.Input<pulumi.Input<inputs.Core.DefaultDhcpOptionsOption>[]>;
 }

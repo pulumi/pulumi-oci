@@ -127,7 +127,7 @@ def get_ping_monitors(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ping_monitors = oci.HealthChecks.get_ping_monitors(compartment_id=compartment_id,
+    test_ping_monitors = oci.healthchecks.get_ping_monitors(compartment_id=compartment_id,
         display_name=ping_monitor_display_name,
         home_region=ping_monitor_home_region)
     ```
@@ -152,10 +152,10 @@ def get_ping_monitors(compartment_id: Optional[_builtins.str] = None,
         home_region=pulumi.get(__ret__, 'home_region'),
         id=pulumi.get(__ret__, 'id'),
         ping_monitors=pulumi.get(__ret__, 'ping_monitors'))
-def get_ping_monitors_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPingMonitorsFilterArgs', 'GetPingMonitorsFilterArgsDict']]]]] = None,
-                             home_region: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_ping_monitors_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPingMonitorsFilterArgs', 'GetPingMonitorsFilterArgsDict']]]]] = None,
+                             home_region: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPingMonitorsResult]:
     """
     This data source provides the list of Ping Monitors in Oracle Cloud Infrastructure Health Checks service.
@@ -171,7 +171,7 @@ def get_ping_monitors_output(compartment_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_ping_monitors = oci.HealthChecks.get_ping_monitors(compartment_id=compartment_id,
+    test_ping_monitors = oci.healthchecks.get_ping_monitors(compartment_id=compartment_id,
         display_name=ping_monitor_display_name,
         home_region=ping_monitor_home_region)
     ```

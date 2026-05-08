@@ -489,7 +489,7 @@ export interface DomainsOauthPartnerCertificateState {
     /**
      * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Certificate end date
      *
@@ -502,7 +502,7 @@ export interface DomainsOauthPartnerCertificateState {
      * * returned: default
      * * uniqueness: none
      */
-    certEndDate?: pulumi.Input<string>;
+    certEndDate?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Certificate start date
      *
@@ -515,7 +515,7 @@ export interface DomainsOauthPartnerCertificateState {
      * * returned: default
      * * uniqueness: none
      */
-    certStartDate?: pulumi.Input<string>;
+    certStartDate?: pulumi.Input<string | undefined>;
     /**
      * Certificate alias
      *
@@ -529,7 +529,7 @@ export interface DomainsOauthPartnerCertificateState {
      * * uniqueness: none
      * * idcsSearchable: true
      */
-    certificateAlias?: pulumi.Input<string>;
+    certificateAlias?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -543,7 +543,7 @@ export interface DomainsOauthPartnerCertificateState {
      * * type: string
      * * uniqueness: none
      */
-    compartmentOcid?: pulumi.Input<string>;
+    compartmentOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -557,7 +557,7 @@ export interface DomainsOauthPartnerCertificateState {
      * * type: boolean
      * * uniqueness: none
      */
-    deleteInProgress?: pulumi.Input<boolean>;
+    deleteInProgress?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -571,7 +571,7 @@ export interface DomainsOauthPartnerCertificateState {
      * * type: string
      * * uniqueness: none
      */
-    domainOcid?: pulumi.Input<string>;
+    domainOcid?: pulumi.Input<string | undefined>;
     /**
      * An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
      *
@@ -584,7 +584,7 @@ export interface DomainsOauthPartnerCertificateState {
      * * returned: default
      * * uniqueness: none
      */
-    externalId?: pulumi.Input<string>;
+    externalId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -596,11 +596,11 @@ export interface DomainsOauthPartnerCertificateState {
      * * returned: default
      * * type: complex
      */
-    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsOauthPartnerCertificateIdcsCreatedBy>[]>;
+    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsOauthPartnerCertificateIdcsCreatedBy>[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
-    idcsEndpoint?: pulumi.Input<string>;
+    idcsEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -612,7 +612,7 @@ export interface DomainsOauthPartnerCertificateState {
      * * returned: default
      * * type: complex
      */
-    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsOauthPartnerCertificateIdcsLastModifiedBy>[]>;
+    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsOauthPartnerCertificateIdcsLastModifiedBy>[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -626,7 +626,7 @@ export interface DomainsOauthPartnerCertificateState {
      * * type: string
      * * uniqueness: none
      */
-    idcsLastUpgradedInRelease?: pulumi.Input<string>;
+    idcsLastUpgradedInRelease?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -639,7 +639,7 @@ export interface DomainsOauthPartnerCertificateState {
      * * type: string
      * * uniqueness: none
      */
-    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[]>;
+    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Key store ID
      *
@@ -652,7 +652,7 @@ export interface DomainsOauthPartnerCertificateState {
      * * uniqueness: none
      * * idcsSearchable: true
      */
-    keyStoreId?: pulumi.Input<string>;
+    keyStoreId?: pulumi.Input<string | undefined>;
     /**
      * Key store name
      *
@@ -664,7 +664,7 @@ export interface DomainsOauthPartnerCertificateState {
      * * returned: always
      * * uniqueness: none
      */
-    keyStoreName?: pulumi.Input<string>;
+    keyStoreName?: pulumi.Input<string | undefined>;
     /**
      * Key store password
      *
@@ -677,7 +677,7 @@ export interface DomainsOauthPartnerCertificateState {
      * * returned: never
      * * uniqueness: none
      */
-    keyStorePassword?: pulumi.Input<string>;
+    keyStorePassword?: pulumi.Input<string | undefined>;
     /**
      * Map
      *
@@ -689,7 +689,7 @@ export interface DomainsOauthPartnerCertificateState {
      * * returned: always
      * * uniqueness: none
      */
-    map?: pulumi.Input<string>;
+    map?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -703,7 +703,7 @@ export interface DomainsOauthPartnerCertificateState {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsOauthPartnerCertificateMeta>[]>;
+    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsOauthPartnerCertificateMeta>[] | undefined>;
     /**
      * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -717,11 +717,11 @@ export interface DomainsOauthPartnerCertificateState {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -735,7 +735,7 @@ export interface DomainsOauthPartnerCertificateState {
      * * type: string
      * * uniqueness: none
      */
-    schemas?: pulumi.Input<pulumi.Input<string>[]>;
+    schemas?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) SHA-1 Thumbprint
      *
@@ -748,7 +748,7 @@ export interface DomainsOauthPartnerCertificateState {
      * * idcsSearchable: true
      * * uniqueness: none
      */
-    sha1thumbprint?: pulumi.Input<string>;
+    sha1thumbprint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) SHA-256 Thumbprint
      *
@@ -761,7 +761,7 @@ export interface DomainsOauthPartnerCertificateState {
      * * idcsSearchable: true
      * * uniqueness: none
      */
-    sha256thumbprint?: pulumi.Input<string>;
+    sha256thumbprint?: pulumi.Input<string | undefined>;
     /**
      * A list of tags on this resource.
      *
@@ -775,7 +775,7 @@ export interface DomainsOauthPartnerCertificateState {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsOauthPartnerCertificateTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsOauthPartnerCertificateTag>[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -789,7 +789,7 @@ export interface DomainsOauthPartnerCertificateState {
      * * type: string
      * * uniqueness: none
      */
-    tenancyOcid?: pulumi.Input<string>;
+    tenancyOcid?: pulumi.Input<string | undefined>;
     /**
      * Base 64Key data attribute
      *
@@ -806,7 +806,7 @@ export interface DomainsOauthPartnerCertificateState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    x509base64certificate?: pulumi.Input<string>;
+    x509base64certificate?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -816,7 +816,7 @@ export interface DomainsOauthPartnerCertificateArgs {
     /**
      * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * Certificate alias
      *
@@ -843,7 +843,7 @@ export interface DomainsOauthPartnerCertificateArgs {
      * * returned: default
      * * uniqueness: none
      */
-    externalId?: pulumi.Input<string>;
+    externalId?: pulumi.Input<string | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -860,7 +860,7 @@ export interface DomainsOauthPartnerCertificateArgs {
      * * uniqueness: none
      * * idcsSearchable: true
      */
-    keyStoreId?: pulumi.Input<string>;
+    keyStoreId?: pulumi.Input<string | undefined>;
     /**
      * Key store name
      *
@@ -872,7 +872,7 @@ export interface DomainsOauthPartnerCertificateArgs {
      * * returned: always
      * * uniqueness: none
      */
-    keyStoreName?: pulumi.Input<string>;
+    keyStoreName?: pulumi.Input<string | undefined>;
     /**
      * Key store password
      *
@@ -885,7 +885,7 @@ export interface DomainsOauthPartnerCertificateArgs {
      * * returned: never
      * * uniqueness: none
      */
-    keyStorePassword?: pulumi.Input<string>;
+    keyStorePassword?: pulumi.Input<string | undefined>;
     /**
      * Map
      *
@@ -897,7 +897,7 @@ export interface DomainsOauthPartnerCertificateArgs {
      * * returned: always
      * * uniqueness: none
      */
-    map?: pulumi.Input<string>;
+    map?: pulumi.Input<string | undefined>;
     /**
      * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -911,11 +911,11 @@ export interface DomainsOauthPartnerCertificateArgs {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -943,7 +943,7 @@ export interface DomainsOauthPartnerCertificateArgs {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsOauthPartnerCertificateTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsOauthPartnerCertificateTag>[] | undefined>;
     /**
      * Base 64Key data attribute
      *
@@ -960,5 +960,5 @@ export interface DomainsOauthPartnerCertificateArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    x509base64certificate?: pulumi.Input<string>;
+    x509base64certificate?: pulumi.Input<string | undefined>;
 }

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLicenseRecords = oci.LicenseManager.getLicenseRecords({
+ * const testLicenseRecords = oci.licensemanager.getLicenseRecords({
  *     productLicenseId: testProductLicense.id,
  * });
  * ```
@@ -70,7 +70,7 @@ export interface GetLicenseRecordsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLicenseRecords = oci.LicenseManager.getLicenseRecords({
+ * const testLicenseRecords = oci.licensemanager.getLicenseRecords({
  *     productLicenseId: testProductLicense.id,
  * });
  * ```
@@ -87,7 +87,7 @@ export function getLicenseRecordsOutput(args: GetLicenseRecordsOutputArgs, opts?
  * A collection of arguments for invoking getLicenseRecords.
  */
 export interface GetLicenseRecordsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.LicenseManager.GetLicenseRecordsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LicenseManager.GetLicenseRecordsFilterArgs>[] | undefined>;
     /**
      * Unique product license identifier.
      */

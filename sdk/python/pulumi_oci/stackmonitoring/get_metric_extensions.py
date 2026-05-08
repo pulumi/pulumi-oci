@@ -170,7 +170,7 @@ def get_metric_extensions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_metric_extensions = oci.StackMonitoring.get_metric_extensions(compartment_id=compartment_id,
+    test_metric_extensions = oci.stackmonitoring.get_metric_extensions(compartment_id=compartment_id,
         enabled_on_resource_id=test_resource["id"],
         metric_extension_id=test_metric_extension["id"],
         name=metric_extension_name,
@@ -211,14 +211,14 @@ def get_metric_extensions(compartment_id: Optional[_builtins.str] = None,
         resource_type=pulumi.get(__ret__, 'resource_type'),
         state=pulumi.get(__ret__, 'state'),
         status=pulumi.get(__ret__, 'status'))
-def get_metric_extensions_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 enabled_on_resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMetricExtensionsFilterArgs', 'GetMetricExtensionsFilterArgsDict']]]]] = None,
-                                 metric_extension_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 resource_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_metric_extensions_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 enabled_on_resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMetricExtensionsFilterArgs', 'GetMetricExtensionsFilterArgsDict']]]]] = None,
+                                 metric_extension_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMetricExtensionsResult]:
     """
     This data source provides the list of Metric Extensions in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -231,7 +231,7 @@ def get_metric_extensions_output(compartment_id: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_metric_extensions = oci.StackMonitoring.get_metric_extensions(compartment_id=compartment_id,
+    test_metric_extensions = oci.stackmonitoring.get_metric_extensions(compartment_id=compartment_id,
         enabled_on_resource_id=test_resource["id"],
         metric_extension_id=test_metric_extension["id"],
         name=metric_extension_name,

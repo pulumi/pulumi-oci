@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDkims = oci.Email.getDkims({
+ * const testDkims = oci.email.getDkims({
  *     emailDomainId: testEmailDomain.id,
  *     id: dkimId,
  *     name: dkimName,
@@ -96,7 +96,7 @@ export interface GetDkimsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDkims = oci.Email.getDkims({
+ * const testDkims = oci.email.getDkims({
  *     emailDomainId: testEmailDomain.id,
  *     id: dkimId,
  *     name: dkimName,
@@ -123,17 +123,17 @@ export interface GetDkimsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain to which this DKIM belongs.
      */
     emailDomainId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Email.GetDkimsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Email.GetDkimsFilterArgs>[] | undefined>;
     /**
      * A filter to only return resources that match the given id exactly.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to only return resources that match the given name exactly.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Filter returned list by specified lifecycle state. This parameter is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

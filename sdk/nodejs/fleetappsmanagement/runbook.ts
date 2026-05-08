@@ -43,13 +43,13 @@ import * as utilities from "../utilities";
  *             properties: {
  *                 actionOnFailure: runbookRunbookVersionGroupsPropertiesActionOnFailure,
  *                 notificationPreferences: {
- *                     shouldNotifyOnPause: runbookRunbookVersionGroupsPropertiesNotificationPreferencesShouldNotifyOnPause,
- *                     shouldNotifyOnTaskFailure: runbookRunbookVersionGroupsPropertiesNotificationPreferencesShouldNotifyOnTaskFailure,
- *                     shouldNotifyOnTaskSuccess: runbookRunbookVersionGroupsPropertiesNotificationPreferencesShouldNotifyOnTaskSuccess,
+ *                     shouldNotifyOnPause: runbookRunbookVersionGroupsPropertiesNotificationPreferencesShouldNotifyOnPause === "true",
+ *                     shouldNotifyOnTaskFailure: runbookRunbookVersionGroupsPropertiesNotificationPreferencesShouldNotifyOnTaskFailure === "true",
+ *                     shouldNotifyOnTaskSuccess: runbookRunbookVersionGroupsPropertiesNotificationPreferencesShouldNotifyOnTaskSuccess === "true",
  *                 },
  *                 pauseDetails: {
  *                     kind: runbookRunbookVersionGroupsPropertiesPauseDetailsKind,
- *                     durationInMinutes: runbookRunbookVersionGroupsPropertiesPauseDetailsDurationInMinutes,
+ *                     durationInMinutes: Number(runbookRunbookVersionGroupsPropertiesPauseDetailsDurationInMinutes),
  *                 },
  *                 preCondition: runbookRunbookVersionGroupsPropertiesPreCondition,
  *                 runOn: {
@@ -90,9 +90,9 @@ import * as utilities from "../utilities";
  *                         id: runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsCredentialsId,
  *                     }],
  *                     endpoint: runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsEndpoint,
- *                     isExecutableContent: runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsIsExecutableContent,
- *                     isLocked: runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsIsLocked,
- *                     isReadOutputVariableEnabled: runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsIsReadOutputVariableEnabled,
+ *                     isExecutableContent: runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsIsExecutableContent === "true",
+ *                     isLocked: runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsIsLocked === "true",
+ *                     isReadOutputVariableEnabled: runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsIsReadOutputVariableEnabled === "true",
  *                     systemVariables: runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsSystemVariables,
  *                     targetCompartmentId: testCompartment.id,
  *                     variables: {
@@ -104,15 +104,15 @@ import * as utilities from "../utilities";
  *                         outputVariables: runbookRunbookVersionTasksTaskRecordDetailsExecutionDetailsVariablesOutputVariables,
  *                     },
  *                 },
- *                 isApplySubjectTask: runbookRunbookVersionTasksTaskRecordDetailsIsApplySubjectTask,
- *                 isCopyToLibraryEnabled: runbookRunbookVersionTasksTaskRecordDetailsIsCopyToLibraryEnabled,
- *                 isDiscoveryOutputTask: runbookRunbookVersionTasksTaskRecordDetailsIsDiscoveryOutputTask,
+ *                 isApplySubjectTask: runbookRunbookVersionTasksTaskRecordDetailsIsApplySubjectTask === "true",
+ *                 isCopyToLibraryEnabled: runbookRunbookVersionTasksTaskRecordDetailsIsCopyToLibraryEnabled === "true",
+ *                 isDiscoveryOutputTask: runbookRunbookVersionTasksTaskRecordDetailsIsDiscoveryOutputTask === "true",
  *                 name: runbookRunbookVersionTasksTaskRecordDetailsName,
  *                 osType: runbookRunbookVersionTasksTaskRecordDetailsOsType,
  *                 platform: runbookRunbookVersionTasksTaskRecordDetailsPlatform,
  *                 properties: {
- *                     numRetries: runbookRunbookVersionTasksTaskRecordDetailsPropertiesNumRetries,
- *                     timeoutInSeconds: runbookRunbookVersionTasksTaskRecordDetailsPropertiesTimeoutInSeconds,
+ *                     numRetries: Number(runbookRunbookVersionTasksTaskRecordDetailsPropertiesNumRetries),
+ *                     timeoutInSeconds: Number(runbookRunbookVersionTasksTaskRecordDetailsPropertiesTimeoutInSeconds),
  *                 },
  *                 taskRecordId: testTaskRecord.id,
  *             },
@@ -126,13 +126,13 @@ import * as utilities from "../utilities";
  *             stepProperties: {
  *                 actionOnFailure: runbookRunbookVersionTasksStepPropertiesActionOnFailure,
  *                 notificationPreferences: {
- *                     shouldNotifyOnPause: runbookRunbookVersionTasksStepPropertiesNotificationPreferencesShouldNotifyOnPause,
- *                     shouldNotifyOnTaskFailure: runbookRunbookVersionTasksStepPropertiesNotificationPreferencesShouldNotifyOnTaskFailure,
- *                     shouldNotifyOnTaskSuccess: runbookRunbookVersionTasksStepPropertiesNotificationPreferencesShouldNotifyOnTaskSuccess,
+ *                     shouldNotifyOnPause: runbookRunbookVersionTasksStepPropertiesNotificationPreferencesShouldNotifyOnPause === "true",
+ *                     shouldNotifyOnTaskFailure: runbookRunbookVersionTasksStepPropertiesNotificationPreferencesShouldNotifyOnTaskFailure === "true",
+ *                     shouldNotifyOnTaskSuccess: runbookRunbookVersionTasksStepPropertiesNotificationPreferencesShouldNotifyOnTaskSuccess === "true",
  *                 },
  *                 pauseDetails: {
  *                     kind: runbookRunbookVersionTasksStepPropertiesPauseDetailsKind,
- *                     durationInMinutes: runbookRunbookVersionTasksStepPropertiesPauseDetailsDurationInMinutes,
+ *                     durationInMinutes: Number(runbookRunbookVersionTasksStepPropertiesPauseDetailsDurationInMinutes),
  *                 },
  *                 preCondition: runbookRunbookVersionTasksStepPropertiesPreCondition,
  *                 runOn: {
@@ -150,7 +150,7 @@ import * as utilities from "../utilities";
  *                 },
  *             },
  *         }],
- *         isLatest: runbookRunbookVersionIsLatest,
+ *         isLatest: runbookRunbookVersionIsLatest === "true",
  *         rollbackWorkflowDetails: {
  *             scope: runbookRunbookVersionRollbackWorkflowDetailsScope,
  *             workflows: [{
@@ -174,8 +174,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isDefault: runbookIsDefault,
- *     isSudoAccessNeeded: runbookIsSudoAccessNeeded,
+ *     isDefault: runbookIsDefault === "true",
+ *     isSudoAccessNeeded: runbookIsSudoAccessNeeded === "true",
  *     osType: runbookOsType,
  *     platform: runbookPlatform,
  * });
@@ -384,87 +384,87 @@ export interface RunbookState {
     /**
      * (Updatable)
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Estimated time to successfully complete the runbook execution.
      */
-    estimatedTime?: pulumi.Input<string>;
+    estimatedTime?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Does this runbook has draft versions?
      */
-    hasDraftVersion?: pulumi.Input<boolean>;
+    hasDraftVersion?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Is the runbook default?
      */
-    isDefault?: pulumi.Input<boolean>;
+    isDefault?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Does this runbook need SUDO access to execute?
      */
-    isSudoAccessNeeded?: pulumi.Input<boolean>;
+    isSudoAccessNeeded?: pulumi.Input<boolean | undefined>;
     /**
      * Latest runbook version.
      */
-    latestVersion?: pulumi.Input<string>;
+    latestVersion?: pulumi.Input<string | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The lifecycle operation performed by the task.
      */
-    operation?: pulumi.Input<string>;
+    operation?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OS type for the runbook.
      */
-    osType?: pulumi.Input<string>;
+    osType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The platform of the runbook.
      */
-    platform?: pulumi.Input<string>;
+    platform?: pulumi.Input<string | undefined>;
     /**
      * Associated region
      */
-    resourceRegion?: pulumi.Input<string>;
+    resourceRegion?: pulumi.Input<string | undefined>;
     /**
      * Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
      */
-    runbookVersion?: pulumi.Input<inputs.FleetAppsManagement.RunbookRunbookVersion>;
+    runbookVersion?: pulumi.Input<inputs.FleetAppsManagement.RunbookRunbookVersion | undefined>;
     /**
      * The current state of the runbook.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The type of the runbook.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -478,11 +478,11 @@ export interface RunbookArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
@@ -490,19 +490,19 @@ export interface RunbookArgs {
     /**
      * (Updatable) Estimated time to successfully complete the runbook execution.
      */
-    estimatedTime?: pulumi.Input<string>;
+    estimatedTime?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Is the runbook default?
      */
-    isDefault?: pulumi.Input<boolean>;
+    isDefault?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Does this runbook need SUDO access to execute?
      */
-    isSudoAccessNeeded?: pulumi.Input<boolean>;
+    isSudoAccessNeeded?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The lifecycle operation performed by the task.
      */
@@ -510,11 +510,11 @@ export interface RunbookArgs {
     /**
      * (Updatable) The OS type for the runbook.
      */
-    osType?: pulumi.Input<string>;
+    osType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The platform of the runbook.
      */
-    platform?: pulumi.Input<string>;
+    platform?: pulumi.Input<string | undefined>;
     /**
      * Version for the runbook. Versioning runbooks in Fleet Application Management involve assigning unique identifiers or version numbers to different iterations of the runbook to track changes, improvements, and updates over time.
      */

@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplicationSchedule = oci.CloudMigrations.getReplicationSchedule({
+ * const testReplicationSchedule = oci.cloudmigrations.getReplicationSchedule({
  *     replicationScheduleId: testReplicationScheduleOciCloudMigrationsReplicationSchedule.id,
  * });
  * ```
@@ -98,7 +98,7 @@ export interface GetReplicationScheduleResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplicationSchedule = oci.CloudMigrations.getReplicationSchedule({
+ * const testReplicationSchedule = oci.cloudmigrations.getReplicationSchedule({
  *     replicationScheduleId: testReplicationScheduleOciCloudMigrationsReplicationSchedule.id,
  * });
  * ```

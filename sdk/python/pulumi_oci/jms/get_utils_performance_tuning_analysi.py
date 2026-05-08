@@ -205,7 +205,7 @@ def get_utils_performance_tuning_analysi(compartment_id: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_performance_tuning_analysi = oci.Jms.get_utils_performance_tuning_analysi(performance_tuning_analysis_id=test_performance_tuning_analysi_oci_jms_utils_performance_tuning_analysi["id"])
+    test_performance_tuning_analysi = oci.jms.get_utils_performance_tuning_analysi(performance_tuning_analysis_id=test_performance_tuning_analysi_oci_jms_utils_performance_tuning_analysi["id"])
     ```
 
 
@@ -232,8 +232,8 @@ def get_utils_performance_tuning_analysi(compartment_id: Optional[_builtins.str]
         time_started=pulumi.get(__ret__, 'time_started'),
         warning_count=pulumi.get(__ret__, 'warning_count'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
-def get_utils_performance_tuning_analysi_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                performance_tuning_analysis_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_utils_performance_tuning_analysi_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                performance_tuning_analysis_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUtilsPerformanceTuningAnalysiResult]:
     """
     This data source provides details about a specific Performance Tuning Analysi resource in Oracle Cloud Infrastructure Jms Utils service.
@@ -246,7 +246,7 @@ def get_utils_performance_tuning_analysi_output(compartment_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_performance_tuning_analysi = oci.Jms.get_utils_performance_tuning_analysi(performance_tuning_analysis_id=test_performance_tuning_analysi_oci_jms_utils_performance_tuning_analysi["id"])
+    test_performance_tuning_analysi = oci.jms.get_utils_performance_tuning_analysi(performance_tuning_analysis_id=test_performance_tuning_analysi_oci_jms_utils_performance_tuning_analysi["id"])
     ```
 
 

@@ -142,7 +142,7 @@ def get_software_source_package_groups(compartment_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_package_groups = oci.OsManagementHub.get_software_source_package_groups(software_source_id=test_software_source["id"],
+    test_software_source_package_groups = oci.osmanagementhub.get_software_source_package_groups(software_source_id=test_software_source["id"],
         compartment_id=compartment_id,
         group_types=software_source_package_group_group_type,
         name=software_source_package_group_name,
@@ -175,12 +175,12 @@ def get_software_source_package_groups(compartment_id: Optional[_builtins.str] =
         name_contains=pulumi.get(__ret__, 'name_contains'),
         package_group_collections=pulumi.get(__ret__, 'package_group_collections'),
         software_source_id=pulumi.get(__ret__, 'software_source_id'))
-def get_software_source_package_groups_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSoftwareSourcePackageGroupsFilterArgs', 'GetSoftwareSourcePackageGroupsFilterArgsDict']]]]] = None,
-                                              group_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                              name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_software_source_package_groups_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSoftwareSourcePackageGroupsFilterArgs', 'GetSoftwareSourcePackageGroupsFilterArgsDict']]]]] = None,
+                                              group_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                              name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              software_source_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSoftwareSourcePackageGroupsResult]:
     """
     This data source provides the list of Software Source Package Groups in Oracle Cloud Infrastructure Os Management Hub service.
@@ -194,7 +194,7 @@ def get_software_source_package_groups_output(compartment_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_package_groups = oci.OsManagementHub.get_software_source_package_groups(software_source_id=test_software_source["id"],
+    test_software_source_package_groups = oci.osmanagementhub.get_software_source_package_groups(software_source_id=test_software_source["id"],
         compartment_id=compartment_id,
         group_types=software_source_package_group_group_type,
         name=software_source_package_group_name,

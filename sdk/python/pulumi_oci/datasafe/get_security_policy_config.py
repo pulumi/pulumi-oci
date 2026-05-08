@@ -228,7 +228,7 @@ def get_security_policy_config(security_policy_config_id: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_config = oci.DataSafe.get_security_policy_config(security_policy_config_id=test_security_policy_config_oci_data_safe_security_policy_config["id"])
+    test_security_policy_config = oci.datasafe.get_security_policy_config(security_policy_config_id=test_security_policy_config_oci_data_safe_security_policy_config["id"])
     ```
 
 
@@ -255,7 +255,7 @@ def get_security_policy_config(security_policy_config_id: Optional[_builtins.str
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         unified_audit_policy_configs=pulumi.get(__ret__, 'unified_audit_policy_configs'))
-def get_security_policy_config_output(security_policy_config_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_security_policy_config_output(security_policy_config_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityPolicyConfigResult]:
     """
     This data source provides details about a specific Security Policy Config resource in Oracle Cloud Infrastructure Data Safe service.
@@ -268,7 +268,7 @@ def get_security_policy_config_output(security_policy_config_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_config = oci.DataSafe.get_security_policy_config(security_policy_config_id=test_security_policy_config_oci_data_safe_security_policy_config["id"])
+    test_security_policy_config = oci.datasafe.get_security_policy_config(security_policy_config_id=test_security_policy_config_oci_data_safe_security_policy_config["id"])
     ```
 
 

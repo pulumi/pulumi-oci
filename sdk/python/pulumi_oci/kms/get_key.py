@@ -345,7 +345,7 @@ def get_key(key_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_key = oci.Kms.get_key(key_id=test_key_oci_kms_key["id"],
+    test_key = oci.kms.get_key(key_id=test_key_oci_kms_key["id"],
         management_endpoint=key_management_endpoint)
     ```
 
@@ -385,8 +385,8 @@ def get_key(key_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_of_deletion=pulumi.get(__ret__, 'time_of_deletion'),
         vault_id=pulumi.get(__ret__, 'vault_id'))
-def get_key_output(key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                   management_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
+def get_key_output(key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                   management_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetKeyResult]:
     """
     This data source provides details about a specific Key resource in Oracle Cloud Infrastructure Kms service.
@@ -404,7 +404,7 @@ def get_key_output(key_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_key = oci.Kms.get_key(key_id=test_key_oci_kms_key["id"],
+    test_key = oci.kms.get_key(key_id=test_key_oci_kms_key["id"],
         management_endpoint=key_management_endpoint)
     ```
 

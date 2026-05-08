@@ -27,9 +27,9 @@ class MetricExtensionArgs:
                  metric_lists: pulumi.Input[Sequence[pulumi.Input['MetricExtensionMetricListArgs']]],
                  query_properties: pulumi.Input['MetricExtensionQueryPropertiesArgs'],
                  resource_type: pulumi.Input[_builtins.str],
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 publish_trigger: Optional[pulumi.Input[_builtins.bool]] = None):
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 publish_trigger: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a MetricExtension resource.
 
@@ -134,31 +134,31 @@ class MetricExtensionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description of the metric extension.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Metric Extension Resource name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="publishTrigger")
-    def publish_trigger(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def publish_trigger(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publish_trigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publish_trigger is updated to `true`.
 
@@ -169,33 +169,33 @@ class MetricExtensionArgs:
         return pulumi.get(self, "publish_trigger")
 
     @publish_trigger.setter
-    def publish_trigger(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def publish_trigger(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "publish_trigger", value)
 
 
 @pulumi.input_type
 class _MetricExtensionState:
     def __init__(__self__, *,
-                 collection_method: Optional[pulumi.Input[_builtins.str]] = None,
-                 collection_recurrences: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 enabled_on_resources: Optional[pulumi.Input[Sequence[pulumi.Input['MetricExtensionEnabledOnResourceArgs']]]] = None,
-                 enabled_on_resources_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 last_updated_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_lists: Optional[pulumi.Input[Sequence[pulumi.Input['MetricExtensionMetricListArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 publish_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 query_properties: Optional[pulumi.Input['MetricExtensionQueryPropertiesArgs']] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_uri: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 collection_method: pulumi.Input[Optional[_builtins.str]] = None,
+                 collection_recurrences: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled_on_resources: pulumi.Input[Optional[Sequence[pulumi.Input['MetricExtensionEnabledOnResourceArgs']]]] = None,
+                 enabled_on_resources_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 last_updated_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_lists: pulumi.Input[Optional[Sequence[pulumi.Input['MetricExtensionMetricListArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 publish_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 query_properties: pulumi.Input[Optional['MetricExtensionQueryPropertiesArgs']] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_uri: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MetricExtension resources.
 
@@ -267,139 +267,139 @@ class _MetricExtensionState:
 
     @_builtins.property
     @pulumi.getter(name="collectionMethod")
-    def collection_method(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def collection_method(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of possible collection methods.
         """
         return pulumi.get(self, "collection_method")
 
     @collection_method.setter
-    def collection_method(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def collection_method(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "collection_method", value)
 
     @_builtins.property
     @pulumi.getter(name="collectionRecurrences")
-    def collection_recurrences(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def collection_recurrences(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Schedule of metric extension should use RFC 5545 format i.e. recur-rule-part = "FREQ";INTERVAL where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
         """
         return pulumi.get(self, "collection_recurrences")
 
     @collection_recurrences.setter
-    def collection_recurrences(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def collection_recurrences(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "collection_recurrences", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Created by user
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description of the metric extension.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Metric Extension display name.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="enabledOnResources")
-    def enabled_on_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MetricExtensionEnabledOnResourceArgs']]]]:
+    def enabled_on_resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MetricExtensionEnabledOnResourceArgs']]]]:
         """
         List of resource details objects having resourceIds on which this metric extension is enabled.
         """
         return pulumi.get(self, "enabled_on_resources")
 
     @enabled_on_resources.setter
-    def enabled_on_resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MetricExtensionEnabledOnResourceArgs']]]]):
+    def enabled_on_resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MetricExtensionEnabledOnResourceArgs']]]]):
         pulumi.set(self, "enabled_on_resources", value)
 
     @_builtins.property
     @pulumi.getter(name="enabledOnResourcesCount")
-    def enabled_on_resources_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def enabled_on_resources_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Count of resources on which this metric extension is enabled.
         """
         return pulumi.get(self, "enabled_on_resources_count")
 
     @enabled_on_resources_count.setter
-    def enabled_on_resources_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def enabled_on_resources_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "enabled_on_resources_count", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdatedBy")
-    def last_updated_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_updated_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Last updated by user
         """
         return pulumi.get(self, "last_updated_by")
 
     @last_updated_by.setter
-    def last_updated_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_updated_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_updated_by", value)
 
     @_builtins.property
     @pulumi.getter(name="metricLists")
-    def metric_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MetricExtensionMetricListArgs']]]]:
+    def metric_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MetricExtensionMetricListArgs']]]]:
         """
         (Updatable) List of metrics which are part of this metric extension
         """
         return pulumi.get(self, "metric_lists")
 
     @metric_lists.setter
-    def metric_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MetricExtensionMetricListArgs']]]]):
+    def metric_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MetricExtensionMetricListArgs']]]]):
         pulumi.set(self, "metric_lists", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Metric Extension Resource name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="publishTrigger")
-    def publish_trigger(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def publish_trigger(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publish_trigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publish_trigger is updated to `true`.
 
@@ -410,103 +410,103 @@ class _MetricExtensionState:
         return pulumi.get(self, "publish_trigger")
 
     @publish_trigger.setter
-    def publish_trigger(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def publish_trigger(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "publish_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="queryProperties")
-    def query_properties(self) -> Optional[pulumi.Input['MetricExtensionQueryPropertiesArgs']]:
+    def query_properties(self) -> pulumi.Input[Optional['MetricExtensionQueryPropertiesArgs']]:
         """
         (Updatable) Collection method and query properties details of metric extension
         """
         return pulumi.get(self, "query_properties")
 
     @query_properties.setter
-    def query_properties(self, value: Optional[pulumi.Input['MetricExtensionQueryPropertiesArgs']]):
+    def query_properties(self, value: pulumi.Input[Optional['MetricExtensionQueryPropertiesArgs']]):
         pulumi.set(self, "query_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceType")
-    def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Resource type to which Metric Extension applies
         """
         return pulumi.get(self, "resource_type")
 
     @resource_type.setter
-    def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceUri")
-    def resource_uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_uri(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The URI path that the user can do a GET on to access the metric extension metadata
         """
         return pulumi.get(self, "resource_uri")
 
     @resource_uri.setter
-    def resource_uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_uri(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_uri", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current lifecycle state of the metric extension
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current status of the metric extension i.e. whether it is Draft or Published
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Metric Extension creation time. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Metric Extension update time. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -516,15 +516,15 @@ class MetricExtension(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 collection_recurrences: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MetricExtensionMetricListArgs', 'MetricExtensionMetricListArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 publish_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 query_properties: Optional[pulumi.Input[Union['MetricExtensionQueryPropertiesArgs', 'MetricExtensionQueryPropertiesArgsDict']]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 collection_recurrences: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MetricExtensionMetricListArgs', 'MetricExtensionMetricListArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 publish_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 query_properties: pulumi.Input[Optional[Union['MetricExtensionQueryPropertiesArgs', 'MetricExtensionQueryPropertiesArgsDict']]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Metric Extension resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -549,8 +549,8 @@ class MetricExtension(pulumi.CustomResource):
                 "name": metric_extension_metric_list_name,
                 "compute_expression": metric_extension_metric_list_compute_expression,
                 "display_name": metric_extension_metric_list_display_name,
-                "is_dimension": metric_extension_metric_list_is_dimension,
-                "is_hidden": metric_extension_metric_list_is_hidden,
+                "is_dimension": metric_extension_metric_list_is_dimension == "true",
+                "is_hidden": metric_extension_metric_list_is_hidden == "true",
                 "metric_category": metric_extension_metric_list_metric_category,
                 "unit": metric_extension_metric_list_unit,
             }],
@@ -563,15 +563,15 @@ class MetricExtension(pulumi.CustomResource):
                 "delimiter": metric_extension_query_properties_delimiter,
                 "identity_metric": metric_extension_query_properties_identity_metric,
                 "in_param_details": [{
-                    "in_param_position": metric_extension_query_properties_in_param_details_in_param_position,
+                    "in_param_position": int(metric_extension_query_properties_in_param_details_in_param_position),
                     "in_param_value": metric_extension_query_properties_in_param_details_in_param_value,
                 }],
-                "is_metric_service_enabled": metric_extension_query_properties_is_metric_service_enabled,
+                "is_metric_service_enabled": metric_extension_query_properties_is_metric_service_enabled == "true",
                 "jmx_attributes": metric_extension_query_properties_jmx_attributes,
                 "managed_bean_query": metric_extension_query_properties_managed_bean_query,
                 "out_param_details": {
                     "out_param_name": metric_extension_query_properties_out_param_details_out_param_name,
-                    "out_param_position": metric_extension_query_properties_out_param_details_out_param_position,
+                    "out_param_position": int(metric_extension_query_properties_out_param_details_out_param_position),
                     "out_param_type": metric_extension_query_properties_out_param_details_out_param_type,
                 },
                 "protocol_type": metric_extension_query_properties_protocol_type,
@@ -646,8 +646,8 @@ class MetricExtension(pulumi.CustomResource):
                 "name": metric_extension_metric_list_name,
                 "compute_expression": metric_extension_metric_list_compute_expression,
                 "display_name": metric_extension_metric_list_display_name,
-                "is_dimension": metric_extension_metric_list_is_dimension,
-                "is_hidden": metric_extension_metric_list_is_hidden,
+                "is_dimension": metric_extension_metric_list_is_dimension == "true",
+                "is_hidden": metric_extension_metric_list_is_hidden == "true",
                 "metric_category": metric_extension_metric_list_metric_category,
                 "unit": metric_extension_metric_list_unit,
             }],
@@ -660,15 +660,15 @@ class MetricExtension(pulumi.CustomResource):
                 "delimiter": metric_extension_query_properties_delimiter,
                 "identity_metric": metric_extension_query_properties_identity_metric,
                 "in_param_details": [{
-                    "in_param_position": metric_extension_query_properties_in_param_details_in_param_position,
+                    "in_param_position": int(metric_extension_query_properties_in_param_details_in_param_position),
                     "in_param_value": metric_extension_query_properties_in_param_details_in_param_value,
                 }],
-                "is_metric_service_enabled": metric_extension_query_properties_is_metric_service_enabled,
+                "is_metric_service_enabled": metric_extension_query_properties_is_metric_service_enabled == "true",
                 "jmx_attributes": metric_extension_query_properties_jmx_attributes,
                 "managed_bean_query": metric_extension_query_properties_managed_bean_query,
                 "out_param_details": {
                     "out_param_name": metric_extension_query_properties_out_param_details_out_param_name,
-                    "out_param_position": metric_extension_query_properties_out_param_details_out_param_position,
+                    "out_param_position": int(metric_extension_query_properties_out_param_details_out_param_position),
                     "out_param_type": metric_extension_query_properties_out_param_details_out_param_type,
                 },
                 "protocol_type": metric_extension_query_properties_protocol_type,
@@ -713,15 +713,15 @@ class MetricExtension(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 collection_recurrences: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MetricExtensionMetricListArgs', 'MetricExtensionMetricListArgsDict']]]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 publish_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 query_properties: Optional[pulumi.Input[Union['MetricExtensionQueryPropertiesArgs', 'MetricExtensionQueryPropertiesArgsDict']]] = None,
-                 resource_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 collection_recurrences: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MetricExtensionMetricListArgs', 'MetricExtensionMetricListArgsDict']]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 publish_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 query_properties: pulumi.Input[Optional[Union['MetricExtensionQueryPropertiesArgs', 'MetricExtensionQueryPropertiesArgsDict']]] = None,
+                 resource_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -773,26 +773,26 @@ class MetricExtension(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            collection_method: Optional[pulumi.Input[_builtins.str]] = None,
-            collection_recurrences: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            enabled_on_resources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MetricExtensionEnabledOnResourceArgs', 'MetricExtensionEnabledOnResourceArgsDict']]]]] = None,
-            enabled_on_resources_count: Optional[pulumi.Input[_builtins.int]] = None,
-            last_updated_by: Optional[pulumi.Input[_builtins.str]] = None,
-            metric_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MetricExtensionMetricListArgs', 'MetricExtensionMetricListArgsDict']]]]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            publish_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-            query_properties: Optional[pulumi.Input[Union['MetricExtensionQueryPropertiesArgs', 'MetricExtensionQueryPropertiesArgsDict']]] = None,
-            resource_type: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_uri: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'MetricExtension':
+            collection_method: pulumi.Input[Optional[_builtins.str]] = None,
+            collection_recurrences: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled_on_resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MetricExtensionEnabledOnResourceArgs', 'MetricExtensionEnabledOnResourceArgsDict']]]]] = None,
+            enabled_on_resources_count: pulumi.Input[Optional[_builtins.int]] = None,
+            last_updated_by: pulumi.Input[Optional[_builtins.str]] = None,
+            metric_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MetricExtensionMetricListArgs', 'MetricExtensionMetricListArgsDict']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            publish_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+            query_properties: pulumi.Input[Optional[Union['MetricExtensionQueryPropertiesArgs', 'MetricExtensionQueryPropertiesArgsDict']]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_uri: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'MetricExtension':
         """
         Get an existing MetricExtension resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -148,8 +148,8 @@ def get_software_source_module_streams(filters: Optional[Sequence[Union['GetSoft
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_module_streams = oci.OsManagementHub.get_software_source_module_streams(software_source_id=test_software_source["id"],
-        is_latest=software_source_module_stream_is_latest,
+    test_software_source_module_streams = oci.osmanagementhub.get_software_source_module_streams(software_source_id=test_software_source["id"],
+        is_latest=software_source_module_stream_is_latest == "true",
         module_name=software_source_module_stream_module_name,
         module_name_contains=software_source_module_stream_module_name_contains,
         name=software_source_module_stream_name)
@@ -181,12 +181,12 @@ def get_software_source_module_streams(filters: Optional[Sequence[Union['GetSoft
         module_stream_collections=pulumi.get(__ret__, 'module_stream_collections'),
         name=pulumi.get(__ret__, 'name'),
         software_source_id=pulumi.get(__ret__, 'software_source_id'))
-def get_software_source_module_streams_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSoftwareSourceModuleStreamsFilterArgs', 'GetSoftwareSourceModuleStreamsFilterArgsDict']]]]] = None,
-                                              is_latest: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                              module_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              module_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              software_source_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_software_source_module_streams_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSoftwareSourceModuleStreamsFilterArgs', 'GetSoftwareSourceModuleStreamsFilterArgsDict']]]]] = None,
+                                              is_latest: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                              module_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              module_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              software_source_id: pulumi.Input[Optional[_builtins.str]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSoftwareSourceModuleStreamsResult]:
     """
     This data source provides the list of Software Source Module Streams in Oracle Cloud Infrastructure Os Management Hub service.
@@ -200,8 +200,8 @@ def get_software_source_module_streams_output(filters: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_module_streams = oci.OsManagementHub.get_software_source_module_streams(software_source_id=test_software_source["id"],
-        is_latest=software_source_module_stream_is_latest,
+    test_software_source_module_streams = oci.osmanagementhub.get_software_source_module_streams(software_source_id=test_software_source["id"],
+        is_latest=software_source_module_stream_is_latest == "true",
         module_name=software_source_module_stream_module_name,
         module_name_contains=software_source_module_stream_module_name_contains,
         name=software_source_module_stream_name)

@@ -106,11 +106,11 @@ __all__ = [
 ]
 
 class ConnectionAdditionalAttributeArgsDict(TypedDict):
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the property entry.
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The value of the property entry.
     """
@@ -118,8 +118,8 @@ class ConnectionAdditionalAttributeArgsDict(TypedDict):
 @pulumi.input_type
 class ConnectionAdditionalAttributeArgs:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the property entry.
         :param pulumi.Input[_builtins.str] value: (Updatable) The value of the property entry.
@@ -131,39 +131,39 @@ class ConnectionAdditionalAttributeArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the property entry.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The value of the property entry.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
 class ConnectionBootstrapServerArgsDict(TypedDict):
-    host: NotRequired[pulumi.Input[_builtins.str]]
+    host: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name or address of a host.
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The port of an endpoint usually specified for a connection.
     """
-    private_ip: NotRequired[pulumi.Input[_builtins.str]]
+    private_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
     """
@@ -171,9 +171,9 @@ class ConnectionBootstrapServerArgsDict(TypedDict):
 @pulumi.input_type
 class ConnectionBootstrapServerArgs:
     def __init__(__self__, *,
-                 host: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 private_ip: Optional[pulumi.Input[_builtins.str]] = None):
+                 host: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 private_ip: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] host: (Updatable) The name or address of a host.
         :param pulumi.Input[_builtins.int] port: (Updatable) The port of an endpoint usually specified for a connection.
@@ -188,38 +188,38 @@ class ConnectionBootstrapServerArgs:
 
     @_builtins.property
     @pulumi.getter
-    def host(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name or address of a host.
         """
         return pulumi.get(self, "host")
 
     @host.setter
-    def host(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "host", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The port of an endpoint usually specified for a connection.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIp")
-    def private_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         This property is not available when creating connections. For existing deprecated connections having this value set, the value cannot be updated; set it to empty.
         """
         return pulumi.get(self, "private_ip")
 
     @private_ip.setter
-    def private_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_ip", value)
 
 
@@ -228,43 +228,43 @@ class ConnectionCatalogArgsDict(TypedDict):
     """
     (Updatable) The catalog type.
     """
-    branch: NotRequired[pulumi.Input[_builtins.str]]
+    branch: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The active branch of the Nessie catalog from which Iceberg reads and writes table metadata.
     """
-    client_id: NotRequired[pulumi.Input[_builtins.str]]
+    client_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OAuth client ID used for authentication.
     """
-    client_secret: NotRequired[pulumi.Input[_builtins.str]]
+    client_secret: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Client secret required to connect to Polaris.
     """
-    client_secret_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    client_secret_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
     """
-    glue_id: NotRequired[pulumi.Input[_builtins.str]]
+    glue_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The AWS Glue Catalog ID where Iceberg tables are registered.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The catalog name within Polaris where Iceberg tables are registered.
     """
-    principal_role: NotRequired[pulumi.Input[_builtins.str]]
+    principal_role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The Snowflake role used to access Polaris.
     """
-    properties: NotRequired[pulumi.Input[_builtins.str]]
+    properties: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
     """
-    properties_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    properties_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
     """
-    uri: NotRequired[pulumi.Input[_builtins.str]]
+    uri: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
     """
@@ -273,16 +273,16 @@ class ConnectionCatalogArgsDict(TypedDict):
 class ConnectionCatalogArgs:
     def __init__(__self__, *,
                  catalog_type: pulumi.Input[_builtins.str],
-                 branch: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_secret: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_secret_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 glue_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 principal_role: Optional[pulumi.Input[_builtins.str]] = None,
-                 properties: Optional[pulumi.Input[_builtins.str]] = None,
-                 properties_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 uri: Optional[pulumi.Input[_builtins.str]] = None):
+                 branch: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_secret_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 glue_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 principal_role: pulumi.Input[Optional[_builtins.str]] = None,
+                 properties: pulumi.Input[Optional[_builtins.str]] = None,
+                 properties_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 uri: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] catalog_type: (Updatable) The catalog type.
         :param pulumi.Input[_builtins.str] branch: (Updatable) The active branch of the Nessie catalog from which Iceberg reads and writes table metadata.
@@ -338,129 +338,129 @@ class ConnectionCatalogArgs:
 
     @_builtins.property
     @pulumi.getter
-    def branch(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def branch(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The active branch of the Nessie catalog from which Iceberg reads and writes table metadata.
         """
         return pulumi.get(self, "branch")
 
     @branch.setter
-    def branch(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def branch(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "branch", value)
 
     @_builtins.property
     @pulumi.getter(name="clientId")
-    def client_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OAuth client ID used for authentication.
         """
         return pulumi.get(self, "client_id")
 
     @client_id.setter
-    def client_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_id", value)
 
     @_builtins.property
     @pulumi.getter(name="clientSecret")
     @_utilities.deprecated("""The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.""")
-    def client_secret(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_secret(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Client secret required to connect to Polaris.
         """
         return pulumi.get(self, "client_secret")
 
     @client_secret.setter
-    def client_secret(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_secret(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_secret", value)
 
     @_builtins.property
     @pulumi.getter(name="clientSecretSecretId")
-    def client_secret_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_secret_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
         """
         return pulumi.get(self, "client_secret_secret_id")
 
     @client_secret_secret_id.setter
-    def client_secret_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_secret_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_secret_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="glueId")
-    def glue_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def glue_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The AWS Glue Catalog ID where Iceberg tables are registered.
         """
         return pulumi.get(self, "glue_id")
 
     @glue_id.setter
-    def glue_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def glue_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "glue_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The catalog name within Polaris where Iceberg tables are registered.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="principalRole")
-    def principal_role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def principal_role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Snowflake role used to access Polaris.
         """
         return pulumi.get(self, "principal_role")
 
     @principal_role.setter
-    def principal_role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def principal_role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "principal_role", value)
 
     @_builtins.property
     @pulumi.getter
     @_utilities.deprecated("""The 'properties' field has been deprecated. Please use 'properties_secret_id' instead.""")
-    def properties(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def properties(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
         """
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def properties(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "properties", value)
 
     @_builtins.property
     @pulumi.getter(name="propertiesSecretId")
-    def properties_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def properties_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         """
         return pulumi.get(self, "properties_secret_id")
 
     @properties_secret_id.setter
-    def properties_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def properties_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "properties_secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def uri(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
         """
         return pulumi.get(self, "uri")
 
     @uri.setter
-    def uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def uri(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "uri", value)
 
 
 class ConnectionIngressIpArgsDict(TypedDict):
-    ingress_ip: NotRequired[pulumi.Input[_builtins.str]]
+    ingress_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
     """
@@ -468,7 +468,7 @@ class ConnectionIngressIpArgsDict(TypedDict):
 @pulumi.input_type
 class ConnectionIngressIpArgs:
     def __init__(__self__, *,
-                 ingress_ip: Optional[pulumi.Input[_builtins.str]] = None):
+                 ingress_ip: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
         """
@@ -477,14 +477,14 @@ class ConnectionIngressIpArgs:
 
     @_builtins.property
     @pulumi.getter(name="ingressIp")
-    def ingress_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ingress_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
         """
         return pulumi.get(self, "ingress_ip")
 
     @ingress_ip.setter
-    def ingress_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ingress_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ingress_ip", value)
 
 
@@ -493,15 +493,15 @@ class ConnectionLockArgsDict(TypedDict):
     """
     Type of the lock.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
     """
@@ -510,9 +510,9 @@ class ConnectionLockArgsDict(TypedDict):
 class ConnectionLockArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Type of the lock.
         :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
@@ -541,38 +541,38 @@ class ConnectionLockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -581,59 +581,59 @@ class ConnectionStorageArgsDict(TypedDict):
     """
     (Updatable) The storage type used in the Iceberg connection.
     """
-    access_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    access_key_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Access key ID to access the Amazon S3 bucket.
     """
-    account_key: NotRequired[pulumi.Input[_builtins.str]]
+    account_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
     """
-    account_key_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    account_key_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
     """
-    account_name: NotRequired[pulumi.Input[_builtins.str]]
+    account_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Sets the Azure storage account name.
     """
-    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Google Cloud Storage bucket where Iceberg stores metadata and data files.
     """
-    container: NotRequired[pulumi.Input[_builtins.str]]
+    container: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The Azure Blob Storage container where Iceberg tables are stored.
     """
-    endpoint: NotRequired[pulumi.Input[_builtins.str]]
+    endpoint: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
     """
-    project_id: NotRequired[pulumi.Input[_builtins.str]]
+    project_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The Google Cloud Project where the bucket exists.
     """
-    region: NotRequired[pulumi.Input[_builtins.str]]
+    region: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
     """
-    scheme_type: NotRequired[pulumi.Input[_builtins.str]]
+    scheme_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The scheme of the storage.
     """
-    secret_access_key: NotRequired[pulumi.Input[_builtins.str]]
+    secret_access_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
     """
-    secret_access_key_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    secret_access_key_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
     """
-    service_account_key_file: NotRequired[pulumi.Input[_builtins.str]]
+    service_account_key_file: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
     """
-    service_account_key_file_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    service_account_key_file_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
     """
@@ -642,20 +642,20 @@ class ConnectionStorageArgsDict(TypedDict):
 class ConnectionStorageArgs:
     def __init__(__self__, *,
                  storage_type: pulumi.Input[_builtins.str],
-                 access_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 account_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 account_key_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 account_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 container: Optional[pulumi.Input[_builtins.str]] = None,
-                 endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 region: Optional[pulumi.Input[_builtins.str]] = None,
-                 scheme_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_access_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_access_key_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_account_key_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_account_key_file_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 access_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 account_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 container: pulumi.Input[Optional[_builtins.str]] = None,
+                 endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 scheme_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_access_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_access_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_account_key_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_account_key_file_secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] storage_type: (Updatable) The storage type used in the Iceberg connection.
         :param pulumi.Input[_builtins.str] access_key_id: (Updatable) Access key ID to access the Amazon S3 bucket.
@@ -726,173 +726,173 @@ class ConnectionStorageArgs:
 
     @_builtins.property
     @pulumi.getter(name="accessKeyId")
-    def access_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def access_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Access key ID to access the Amazon S3 bucket.
         """
         return pulumi.get(self, "access_key_id")
 
     @access_key_id.setter
-    def access_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def access_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "access_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="accountKey")
     @_utilities.deprecated("""The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.""")
-    def account_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "account_key")
 
     @account_key.setter
-    def account_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_key", value)
 
     @_builtins.property
     @pulumi.getter(name="accountKeySecretId")
-    def account_key_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_key_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
         """
         return pulumi.get(self, "account_key_secret_id")
 
     @account_key_secret_id.setter
-    def account_key_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_key_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_key_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="accountName")
-    def account_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def account_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Sets the Azure storage account name.
         """
         return pulumi.get(self, "account_name")
 
     @account_name.setter
-    def account_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def account_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "account_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Google Cloud Storage bucket where Iceberg stores metadata and data files.
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter
-    def container(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def container(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Azure Blob Storage container where Iceberg tables are stored.
         """
         return pulumi.get(self, "container")
 
     @container.setter
-    def container(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def container(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "container", value)
 
     @_builtins.property
     @pulumi.getter
-    def endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
         """
         return pulumi.get(self, "endpoint")
 
     @endpoint.setter
-    def endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def project_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Google Cloud Project where the bucket exists.
         """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
-    def project_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def project_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "project_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
         """
         return pulumi.get(self, "region")
 
     @region.setter
-    def region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "region", value)
 
     @_builtins.property
     @pulumi.getter(name="schemeType")
-    def scheme_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheme_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The scheme of the storage.
         """
         return pulumi.get(self, "scheme_type")
 
     @scheme_type.setter
-    def scheme_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheme_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheme_type", value)
 
     @_builtins.property
     @pulumi.getter(name="secretAccessKey")
     @_utilities.deprecated("""The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.""")
-    def secret_access_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_access_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "secret_access_key")
 
     @secret_access_key.setter
-    def secret_access_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_access_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_access_key", value)
 
     @_builtins.property
     @pulumi.getter(name="secretAccessKeySecretId")
-    def secret_access_key_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_access_key_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
         """
         return pulumi.get(self, "secret_access_key_secret_id")
 
     @secret_access_key_secret_id.setter
-    def secret_access_key_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_access_key_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_access_key_secret_id", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceAccountKeyFile")
     @_utilities.deprecated("""The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.""")
-    def service_account_key_file(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_account_key_file(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "service_account_key_file")
 
     @service_account_key_file.setter
-    def service_account_key_file(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_account_key_file(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_account_key_file", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceAccountKeyFileSecretId")
-    def service_account_key_file_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_account_key_file_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
         """
         return pulumi.get(self, "service_account_key_file_secret_id")
 
     @service_account_key_file_secret_id.setter
-    def service_account_key_file_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_account_key_file_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_account_key_file_secret_id", value)
 
 
@@ -901,15 +901,15 @@ class DeploymentBackupLockArgsDict(TypedDict):
     """
     Type of the lock.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
     """
@@ -918,9 +918,9 @@ class DeploymentBackupLockArgsDict(TypedDict):
 class DeploymentBackupLockArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Type of the lock.
         :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
@@ -949,38 +949,38 @@ class DeploymentBackupLockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -1108,27 +1108,27 @@ class DeploymentBackupScheduleArgs:
 
 
 class DeploymentDeploymentDiagnosticDataArgsDict(TypedDict):
-    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the bucket where the object is to be uploaded in the object storage
     """
-    diagnostic_state: NotRequired[pulumi.Input[_builtins.str]]
+    diagnostic_state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The state of the deployment diagnostic collection.
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of namespace that serves as a container for all of your buckets
     """
-    object: NotRequired[pulumi.Input[_builtins.str]]
+    object: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the diagnostic collected and uploaded to object storage
     """
-    time_diagnostic_end: NotRequired[pulumi.Input[_builtins.str]]
+    time_diagnostic_end: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
     """
-    time_diagnostic_start: NotRequired[pulumi.Input[_builtins.str]]
+    time_diagnostic_start: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
     """
@@ -1136,12 +1136,12 @@ class DeploymentDeploymentDiagnosticDataArgsDict(TypedDict):
 @pulumi.input_type
 class DeploymentDeploymentDiagnosticDataArgs:
     def __init__(__self__, *,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 diagnostic_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_diagnostic_end: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_diagnostic_start: Optional[pulumi.Input[_builtins.str]] = None):
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 diagnostic_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_diagnostic_end: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_diagnostic_start: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] bucket: Name of the bucket where the object is to be uploaded in the object storage
         :param pulumi.Input[_builtins.str] diagnostic_state: The state of the deployment diagnostic collection.
@@ -1165,79 +1165,79 @@ class DeploymentDeploymentDiagnosticDataArgs:
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the bucket where the object is to be uploaded in the object storage
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter(name="diagnosticState")
-    def diagnostic_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def diagnostic_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The state of the deployment diagnostic collection.
         """
         return pulumi.get(self, "diagnostic_state")
 
     @diagnostic_state.setter
-    def diagnostic_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def diagnostic_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "diagnostic_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of namespace that serves as a container for all of your buckets
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def object(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the diagnostic collected and uploaded to object storage
         """
         return pulumi.get(self, "object")
 
     @object.setter
-    def object(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object", value)
 
     @_builtins.property
     @pulumi.getter(name="timeDiagnosticEnd")
-    def time_diagnostic_end(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_diagnostic_end(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_diagnostic_end")
 
     @time_diagnostic_end.setter
-    def time_diagnostic_end(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_diagnostic_end(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_diagnostic_end", value)
 
     @_builtins.property
     @pulumi.getter(name="timeDiagnosticStart")
-    def time_diagnostic_start(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_diagnostic_start(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_diagnostic_start")
 
     @time_diagnostic_start.setter
-    def time_diagnostic_start(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_diagnostic_start(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_diagnostic_start", value)
 
 
 class DeploymentIngressIpArgsDict(TypedDict):
-    ingress_ip: NotRequired[pulumi.Input[_builtins.str]]
+    ingress_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
     """
@@ -1245,7 +1245,7 @@ class DeploymentIngressIpArgsDict(TypedDict):
 @pulumi.input_type
 class DeploymentIngressIpArgs:
     def __init__(__self__, *,
-                 ingress_ip: Optional[pulumi.Input[_builtins.str]] = None):
+                 ingress_ip: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
         """
@@ -1254,14 +1254,14 @@ class DeploymentIngressIpArgs:
 
     @_builtins.property
     @pulumi.getter(name="ingressIp")
-    def ingress_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ingress_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
         """
         return pulumi.get(self, "ingress_ip")
 
     @ingress_ip.setter
-    def ingress_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ingress_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ingress_ip", value)
 
 
@@ -1270,15 +1270,15 @@ class DeploymentLockArgsDict(TypedDict):
     """
     Type of the lock.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
     """
@@ -1287,9 +1287,9 @@ class DeploymentLockArgsDict(TypedDict):
 class DeploymentLockArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Type of the lock.
         :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
@@ -1318,59 +1318,59 @@ class DeploymentLockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
 class DeploymentMaintenanceConfigurationArgsDict(TypedDict):
-    bundle_release_upgrade_period_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    bundle_release_upgrade_period_in_days: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
     """
-    interim_release_upgrade_period_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    interim_release_upgrade_period_in_days: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
     """
-    is_interim_release_auto_upgrade_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_interim_release_auto_upgrade_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
     """
-    major_release_upgrade_period_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    major_release_upgrade_period_in_days: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
     """
-    security_patch_upgrade_period_in_days: NotRequired[pulumi.Input[_builtins.int]]
+    security_patch_upgrade_period_in_days: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
     """
@@ -1378,11 +1378,11 @@ class DeploymentMaintenanceConfigurationArgsDict(TypedDict):
 @pulumi.input_type
 class DeploymentMaintenanceConfigurationArgs:
     def __init__(__self__, *,
-                 bundle_release_upgrade_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 interim_release_upgrade_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_interim_release_auto_upgrade_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 major_release_upgrade_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_patch_upgrade_period_in_days: Optional[pulumi.Input[_builtins.int]] = None):
+                 bundle_release_upgrade_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 interim_release_upgrade_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_interim_release_auto_upgrade_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 major_release_upgrade_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_patch_upgrade_period_in_days: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.int] bundle_release_upgrade_period_in_days: (Updatable) Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
         :param pulumi.Input[_builtins.int] interim_release_upgrade_period_in_days: (Updatable) Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
@@ -1403,62 +1403,62 @@ class DeploymentMaintenanceConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="bundleReleaseUpgradePeriodInDays")
-    def bundle_release_upgrade_period_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def bundle_release_upgrade_period_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
         """
         return pulumi.get(self, "bundle_release_upgrade_period_in_days")
 
     @bundle_release_upgrade_period_in_days.setter
-    def bundle_release_upgrade_period_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def bundle_release_upgrade_period_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "bundle_release_upgrade_period_in_days", value)
 
     @_builtins.property
     @pulumi.getter(name="interimReleaseUpgradePeriodInDays")
-    def interim_release_upgrade_period_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def interim_release_upgrade_period_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
         """
         return pulumi.get(self, "interim_release_upgrade_period_in_days")
 
     @interim_release_upgrade_period_in_days.setter
-    def interim_release_upgrade_period_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def interim_release_upgrade_period_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "interim_release_upgrade_period_in_days", value)
 
     @_builtins.property
     @pulumi.getter(name="isInterimReleaseAutoUpgradeEnabled")
-    def is_interim_release_auto_upgrade_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_interim_release_auto_upgrade_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,  you have to specify interimReleaseUpgradePeriodInDays too.
         """
         return pulumi.get(self, "is_interim_release_auto_upgrade_enabled")
 
     @is_interim_release_auto_upgrade_enabled.setter
-    def is_interim_release_auto_upgrade_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_interim_release_auto_upgrade_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_interim_release_auto_upgrade_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="majorReleaseUpgradePeriodInDays")
-    def major_release_upgrade_period_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def major_release_upgrade_period_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases. Not passing this field during create will equate to using the service default.
         """
         return pulumi.get(self, "major_release_upgrade_period_in_days")
 
     @major_release_upgrade_period_in_days.setter
-    def major_release_upgrade_period_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def major_release_upgrade_period_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "major_release_upgrade_period_in_days", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPatchUpgradePeriodInDays")
-    def security_patch_upgrade_period_in_days(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def security_patch_upgrade_period_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases. Not passing this field during create will equate to using the service default.
         """
         return pulumi.get(self, "security_patch_upgrade_period_in_days")
 
     @security_patch_upgrade_period_in_days.setter
-    def security_patch_upgrade_period_in_days(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def security_patch_upgrade_period_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "security_patch_upgrade_period_in_days", value)
 
 
@@ -1514,39 +1514,39 @@ class DeploymentOggDataArgsDict(TypedDict):
     """
     The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
     """
-    admin_password: NotRequired[pulumi.Input[_builtins.str]]
+    admin_password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed. This field will be deprecated and replaced by "passwordSecretId".
     """
-    admin_username: NotRequired[pulumi.Input[_builtins.str]]
+    admin_username: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The GoldenGate deployment console username.
     """
-    certificate: NotRequired[pulumi.Input[_builtins.str]]
+    certificate: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
     """
-    credential_store: NotRequired[pulumi.Input[_builtins.str]]
+    credential_store: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The type of credential store for OGG.
     """
-    group_to_roles_mapping: NotRequired[pulumi.Input['DeploymentOggDataGroupToRolesMappingArgsDict']]
+    group_to_roles_mapping: NotRequired[pulumi.Input[Optional['DeploymentOggDataGroupToRolesMappingArgs']]]
     """
     (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
     """
-    identity_domain_id: NotRequired[pulumi.Input[_builtins.str]]
+    identity_domain_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
     """
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The base64 encoded content of the PEM file containing the private key.
     """
-    ogg_version: NotRequired[pulumi.Input[_builtins.str]]
+    ogg_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Version of OGG
     """
-    password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    password_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
     """
@@ -1555,15 +1555,15 @@ class DeploymentOggDataArgsDict(TypedDict):
 class DeploymentOggDataArgs:
     def __init__(__self__, *,
                  deployment_name: pulumi.Input[_builtins.str],
-                 admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 admin_username: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 credential_store: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_to_roles_mapping: Optional[pulumi.Input['DeploymentOggDataGroupToRolesMappingArgs']] = None,
-                 identity_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 ogg_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 admin_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 credential_store: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_to_roles_mapping: pulumi.Input[Optional['DeploymentOggDataGroupToRolesMappingArgs']] = None,
+                 identity_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 ogg_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 password_secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
         :param pulumi.Input[_builtins.str] admin_password: (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed. This field will be deprecated and replaced by "passwordSecretId".
@@ -1614,110 +1614,110 @@ class DeploymentOggDataArgs:
     @_builtins.property
     @pulumi.getter(name="adminPassword")
     @_utilities.deprecated("""The 'admin_password' field has been deprecated. Please use 'password_secret_id' instead.""")
-    def admin_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as '$', '^', or '?' are not allowed. This field will be deprecated and replaced by "passwordSecretId".
         """
         return pulumi.get(self, "admin_password")
 
     @admin_password.setter
-    def admin_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "admin_password", value)
 
     @_builtins.property
     @pulumi.getter(name="adminUsername")
-    def admin_username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def admin_username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The GoldenGate deployment console username.
         """
         return pulumi.get(self, "admin_username")
 
     @admin_username.setter
-    def admin_username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def admin_username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "admin_username", value)
 
     @_builtins.property
     @pulumi.getter
-    def certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
         """
         return pulumi.get(self, "certificate")
 
     @certificate.setter
-    def certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate", value)
 
     @_builtins.property
     @pulumi.getter(name="credentialStore")
-    def credential_store(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def credential_store(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The type of credential store for OGG.
         """
         return pulumi.get(self, "credential_store")
 
     @credential_store.setter
-    def credential_store(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def credential_store(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credential_store", value)
 
     @_builtins.property
     @pulumi.getter(name="groupToRolesMapping")
-    def group_to_roles_mapping(self) -> Optional[pulumi.Input['DeploymentOggDataGroupToRolesMappingArgs']]:
+    def group_to_roles_mapping(self) -> pulumi.Input[Optional['DeploymentOggDataGroupToRolesMappingArgs']]:
         """
         (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
         """
         return pulumi.get(self, "group_to_roles_mapping")
 
     @group_to_roles_mapping.setter
-    def group_to_roles_mapping(self, value: Optional[pulumi.Input['DeploymentOggDataGroupToRolesMappingArgs']]):
+    def group_to_roles_mapping(self, value: pulumi.Input[Optional['DeploymentOggDataGroupToRolesMappingArgs']]):
         pulumi.set(self, "group_to_roles_mapping", value)
 
     @_builtins.property
     @pulumi.getter(name="identityDomainId")
-    def identity_domain_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def identity_domain_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
         """
         return pulumi.get(self, "identity_domain_id")
 
     @identity_domain_id.setter
-    def identity_domain_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def identity_domain_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "identity_domain_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The base64 encoded content of the PEM file containing the private key.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter(name="oggVersion")
-    def ogg_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ogg_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Version of OGG
         """
         return pulumi.get(self, "ogg_version")
 
     @ogg_version.setter
-    def ogg_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ogg_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ogg_version", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
-    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
         """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
-    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password_secret_id", value)
 
 
@@ -1726,15 +1726,15 @@ class DeploymentOggDataGroupToRolesMappingArgsDict(TypedDict):
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup. It grants administration of security related objects and invoke security related service requests. This role has full privileges.
     """
-    administrator_group_id: NotRequired[pulumi.Input[_builtins.str]]
+    administrator_group_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup. It grants full access to the user, including the ability to alter general, non-security related operational parameters and profiles of the server.
     """
-    operator_group_id: NotRequired[pulumi.Input[_builtins.str]]
+    operator_group_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup. It allows users to perform only operational actions, like starting and stopping resources. Operators cannot alter the operational parameters or profiles of the MA server.
     """
-    user_group_id: NotRequired[pulumi.Input[_builtins.str]]
+    user_group_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
     """
@@ -1743,9 +1743,9 @@ class DeploymentOggDataGroupToRolesMappingArgsDict(TypedDict):
 class DeploymentOggDataGroupToRolesMappingArgs:
     def __init__(__self__, *,
                  security_group_id: pulumi.Input[_builtins.str],
-                 administrator_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 operator_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_group_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 administrator_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 operator_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_group_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] security_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role securityGroup. It grants administration of security related objects and invoke security related service requests. This role has full privileges.
         :param pulumi.Input[_builtins.str] administrator_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup. It grants full access to the user, including the ability to alter general, non-security related operational parameters and profiles of the server.
@@ -1774,47 +1774,47 @@ class DeploymentOggDataGroupToRolesMappingArgs:
 
     @_builtins.property
     @pulumi.getter(name="administratorGroupId")
-    def administrator_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def administrator_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role administratorGroup. It grants full access to the user, including the ability to alter general, non-security related operational parameters and profiles of the server.
         """
         return pulumi.get(self, "administrator_group_id")
 
     @administrator_group_id.setter
-    def administrator_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def administrator_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "administrator_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="operatorGroupId")
-    def operator_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operator_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role operatorGroup. It allows users to perform only operational actions, like starting and stopping resources. Operators cannot alter the operational parameters or profiles of the MA server.
         """
         return pulumi.get(self, "operator_group_id")
 
     @operator_group_id.setter
-    def operator_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operator_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operator_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="userGroupId")
-    def user_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IDP group which will be mapped to goldengate role userGroup. It allows information-only service requests, which do not alter or affect the operation of either the MA. Examples of query and read-only information include performance metric information and resource status and monitoring information
         """
         return pulumi.get(self, "user_group_id")
 
     @user_group_id.setter
-    def user_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_group_id", value)
 
 
 class DeploymentPlacementArgsDict(TypedDict):
-    availability_domain: NotRequired[pulumi.Input[_builtins.str]]
+    availability_domain: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The availability domain of a placement.
     """
-    fault_domain: NotRequired[pulumi.Input[_builtins.str]]
+    fault_domain: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The fault domain of a placement.
     """
@@ -1822,8 +1822,8 @@ class DeploymentPlacementArgsDict(TypedDict):
 @pulumi.input_type
 class DeploymentPlacementArgs:
     def __init__(__self__, *,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 fault_domain: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 fault_domain: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] availability_domain: (Updatable) The availability domain of a placement.
         :param pulumi.Input[_builtins.str] fault_domain: (Updatable) The fault domain of a placement.
@@ -1835,31 +1835,31 @@ class DeploymentPlacementArgs:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The availability domain of a placement.
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="faultDomain")
-    def fault_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fault_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The fault domain of a placement.
         """
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
-    def fault_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fault_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fault_domain", value)
 
 
 class PipelineIngressIpArgsDict(TypedDict):
-    ingress_ip: NotRequired[pulumi.Input[_builtins.str]]
+    ingress_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
     """
@@ -1867,7 +1867,7 @@ class PipelineIngressIpArgsDict(TypedDict):
 @pulumi.input_type
 class PipelineIngressIpArgs:
     def __init__(__self__, *,
-                 ingress_ip: Optional[pulumi.Input[_builtins.str]] = None):
+                 ingress_ip: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
         """
@@ -1876,14 +1876,14 @@ class PipelineIngressIpArgs:
 
     @_builtins.property
     @pulumi.getter(name="ingressIp")
-    def ingress_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ingress_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
         """
         return pulumi.get(self, "ingress_ip")
 
     @ingress_ip.setter
-    def ingress_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ingress_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ingress_ip", value)
 
 
@@ -1892,15 +1892,15 @@ class PipelineLockArgsDict(TypedDict):
     """
     Type of the lock.
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
     """
-    related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+    related_resource_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     When the lock was created.
     """
@@ -1909,9 +1909,9 @@ class PipelineLockArgsDict(TypedDict):
 class PipelineLockArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 related_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: Type of the lock.
         :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
@@ -1940,51 +1940,51 @@ class PipelineLockArgs:
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
-    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def related_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
-    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def related_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "related_resource_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the lock was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
 class PipelineMappingRuleArgsDict(TypedDict):
-    mapping_type: NotRequired[pulumi.Input[_builtins.str]]
+    mapping_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
     """
-    source: NotRequired[pulumi.Input[_builtins.str]]
+    source: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The source schema/table combination for replication to target.
     """
-    target: NotRequired[pulumi.Input[_builtins.str]]
+    target: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The target schema/table combination for replication from the source.
     """
@@ -1992,9 +1992,9 @@ class PipelineMappingRuleArgsDict(TypedDict):
 @pulumi.input_type
 class PipelineMappingRuleArgs:
     def __init__(__self__, *,
-                 mapping_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 source: Optional[pulumi.Input[_builtins.str]] = None,
-                 target: Optional[pulumi.Input[_builtins.str]] = None):
+                 mapping_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None,
+                 target: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] mapping_type: Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
         :param pulumi.Input[_builtins.str] source: The source schema/table combination for replication to target.
@@ -2009,59 +2009,59 @@ class PipelineMappingRuleArgs:
 
     @_builtins.property
     @pulumi.getter(name="mappingType")
-    def mapping_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def mapping_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
         """
         return pulumi.get(self, "mapping_type")
 
     @mapping_type.setter
-    def mapping_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def mapping_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mapping_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def source(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The source schema/table combination for replication to target.
         """
         return pulumi.get(self, "source")
 
     @source.setter
-    def source(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
 
     @_builtins.property
     @pulumi.getter
-    def target(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The target schema/table combination for replication from the source.
         """
         return pulumi.get(self, "target")
 
     @target.setter
-    def target(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target", value)
 
 
 class PipelinePipelineDiagnosticDataArgsDict(TypedDict):
-    bucket: NotRequired[pulumi.Input[_builtins.str]]
+    bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the bucket where the object is to be uploaded in the object storage
     """
-    diagnostic_state: NotRequired[pulumi.Input[_builtins.str]]
+    diagnostic_state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The state of the pipeline diagnostics collection.
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of namespace that serves as a container for all of your buckets
     """
-    object: NotRequired[pulumi.Input[_builtins.str]]
+    object: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the diagnostic collected and uploaded to object storage
     """
-    time_last_collected: NotRequired[pulumi.Input[_builtins.str]]
+    time_last_collected: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The date and time the diagnostic data was last collected for the pipeline. The format is defined by  [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
     """
@@ -2069,11 +2069,11 @@ class PipelinePipelineDiagnosticDataArgsDict(TypedDict):
 @pulumi.input_type
 class PipelinePipelineDiagnosticDataArgs:
     def __init__(__self__, *,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 diagnostic_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_collected: Optional[pulumi.Input[_builtins.str]] = None):
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 diagnostic_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 object: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_collected: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] bucket: Name of the bucket where the object is to be uploaded in the object storage
         :param pulumi.Input[_builtins.str] diagnostic_state: The state of the pipeline diagnostics collection.
@@ -2094,62 +2094,62 @@ class PipelinePipelineDiagnosticDataArgs:
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the bucket where the object is to be uploaded in the object storage
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter(name="diagnosticState")
-    def diagnostic_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def diagnostic_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The state of the pipeline diagnostics collection.
         """
         return pulumi.get(self, "diagnostic_state")
 
     @diagnostic_state.setter
-    def diagnostic_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def diagnostic_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "diagnostic_state", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of namespace that serves as a container for all of your buckets
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter
-    def object(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the diagnostic collected and uploaded to object storage
         """
         return pulumi.get(self, "object")
 
     @object.setter
-    def object(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastCollected")
-    def time_last_collected(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_collected(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the diagnostic data was last collected for the pipeline. The format is defined by  [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2024-07-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_last_collected")
 
     @time_last_collected.setter
-    def time_last_collected(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_collected(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_collected", value)
 
 
@@ -2166,7 +2166,7 @@ class PipelineProcessOptionsArgsDict(TypedDict):
     """
     (Updatable) If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
     """
-    start_using_default_mapping: NotRequired[pulumi.Input[_builtins.str]]
+    start_using_default_mapping: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
     """
@@ -2177,7 +2177,7 @@ class PipelineProcessOptionsArgs:
                  initial_data_load: pulumi.Input['PipelineProcessOptionsInitialDataLoadArgs'],
                  replicate_schema_change: pulumi.Input['PipelineProcessOptionsReplicateSchemaChangeArgs'],
                  should_restart_on_failure: pulumi.Input[_builtins.str],
-                 start_using_default_mapping: Optional[pulumi.Input[_builtins.str]] = None):
+                 start_using_default_mapping: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input['PipelineProcessOptionsInitialDataLoadArgs'] initial_data_load: (Updatable) Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
         :param pulumi.Input['PipelineProcessOptionsReplicateSchemaChangeArgs'] replicate_schema_change: (Updatable) Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
@@ -2228,14 +2228,14 @@ class PipelineProcessOptionsArgs:
 
     @_builtins.property
     @pulumi.getter(name="startUsingDefaultMapping")
-    def start_using_default_mapping(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def start_using_default_mapping(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
         """
         return pulumi.get(self, "start_using_default_mapping")
 
     @start_using_default_mapping.setter
-    def start_using_default_mapping(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def start_using_default_mapping(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "start_using_default_mapping", value)
 
 
@@ -2244,7 +2244,7 @@ class PipelineProcessOptionsInitialDataLoadArgsDict(TypedDict):
     """
     (Updatable) If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
     """
-    action_on_existing_table: NotRequired[pulumi.Input[_builtins.str]]
+    action_on_existing_table: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
     """
@@ -2253,7 +2253,7 @@ class PipelineProcessOptionsInitialDataLoadArgsDict(TypedDict):
 class PipelineProcessOptionsInitialDataLoadArgs:
     def __init__(__self__, *,
                  is_initial_load: pulumi.Input[_builtins.str],
-                 action_on_existing_table: Optional[pulumi.Input[_builtins.str]] = None):
+                 action_on_existing_table: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] is_initial_load: (Updatable) If ENABLED, then existing source data is also synchronized to the target when creating or updating the pipeline.
         :param pulumi.Input[_builtins.str] action_on_existing_table: (Updatable) Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
@@ -2276,14 +2276,14 @@ class PipelineProcessOptionsInitialDataLoadArgs:
 
     @_builtins.property
     @pulumi.getter(name="actionOnExistingTable")
-    def action_on_existing_table(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_on_existing_table(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Action upon existing tables in target when initial Data Load is set i.e., isInitialLoad=true.
         """
         return pulumi.get(self, "action_on_existing_table")
 
     @action_on_existing_table.setter
-    def action_on_existing_table(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_on_existing_table(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_on_existing_table", value)
 
 
@@ -2292,11 +2292,11 @@ class PipelineProcessOptionsReplicateSchemaChangeArgsDict(TypedDict):
     """
     (Updatable) If ENABLED, then addition or removal of schema is also replicated, apart from individual tables and records when creating or updating the pipeline.
     """
-    action_on_ddl_error: NotRequired[pulumi.Input[_builtins.str]]
+    action_on_ddl_error: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Action upon DDL Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
     """
-    action_on_dml_error: NotRequired[pulumi.Input[_builtins.str]]
+    action_on_dml_error: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Action upon DML Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
     """
@@ -2305,8 +2305,8 @@ class PipelineProcessOptionsReplicateSchemaChangeArgsDict(TypedDict):
 class PipelineProcessOptionsReplicateSchemaChangeArgs:
     def __init__(__self__, *,
                  can_replicate_schema_change: pulumi.Input[_builtins.str],
-                 action_on_ddl_error: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_on_dml_error: Optional[pulumi.Input[_builtins.str]] = None):
+                 action_on_ddl_error: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_on_dml_error: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] can_replicate_schema_change: (Updatable) If ENABLED, then addition or removal of schema is also replicated, apart from individual tables and records when creating or updating the pipeline.
         :param pulumi.Input[_builtins.str] action_on_ddl_error: (Updatable) Action upon DDL Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
@@ -2332,26 +2332,26 @@ class PipelineProcessOptionsReplicateSchemaChangeArgs:
 
     @_builtins.property
     @pulumi.getter(name="actionOnDdlError")
-    def action_on_ddl_error(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_on_ddl_error(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Action upon DDL Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
         """
         return pulumi.get(self, "action_on_ddl_error")
 
     @action_on_ddl_error.setter
-    def action_on_ddl_error(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_on_ddl_error(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_on_ddl_error", value)
 
     @_builtins.property
     @pulumi.getter(name="actionOnDmlError")
-    def action_on_dml_error(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_on_dml_error(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Action upon DML Error (active only if 'Replicate schema changes (DDL)' is selected) i.e canReplicateSchemaChange=true
         """
         return pulumi.get(self, "action_on_dml_error")
 
     @action_on_dml_error.setter
-    def action_on_dml_error(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_on_dml_error(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_on_dml_error", value)
 
 

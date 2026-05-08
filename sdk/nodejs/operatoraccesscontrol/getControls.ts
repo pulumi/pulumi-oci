@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperatorControls = oci.OperatorAccessControl.getControls({
+ * const testOperatorControls = oci.operatoraccesscontrol.getControls({
  *     compartmentId: compartmentId,
  *     displayName: operatorControlDisplayName,
  *     resourceType: operatorControlResourceType,
@@ -97,7 +97,7 @@ export interface GetControlsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperatorControls = oci.OperatorAccessControl.getControls({
+ * const testOperatorControls = oci.operatoraccesscontrol.getControls({
  *     compartmentId: compartmentId,
  *     displayName: operatorControlDisplayName,
  *     resourceType: operatorControlResourceType,
@@ -127,14 +127,14 @@ export interface GetControlsOutputArgs {
     /**
      * A filter to return OperatorControl that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OperatorAccessControl.GetControlsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OperatorAccessControl.GetControlsFilterArgs>[] | undefined>;
     /**
      * A filter to return only lists of resources that match the entire given service type.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose lifecycleState matches the given OperatorControl lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -252,7 +252,7 @@ def get_schedule(schedule_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_schedule = oci.MeteringComputation.get_schedule(schedule_id=test_schedule_oci_metering_computation_schedule["id"])
+    test_schedule = oci.meteringcomputation.get_schedule(schedule_id=test_schedule_oci_metering_computation_schedule["id"])
     ```
 
 
@@ -281,7 +281,7 @@ def get_schedule(schedule_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_next_run=pulumi.get(__ret__, 'time_next_run'),
         time_scheduled=pulumi.get(__ret__, 'time_scheduled'))
-def get_schedule_output(schedule_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_schedule_output(schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetScheduleResult]:
     """
     This data source provides details about a specific Schedule resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -294,7 +294,7 @@ def get_schedule_output(schedule_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_schedule = oci.MeteringComputation.get_schedule(schedule_id=test_schedule_oci_metering_computation_schedule["id"])
+    test_schedule = oci.meteringcomputation.get_schedule(schedule_id=test_schedule_oci_metering_computation_schedule["id"])
     ```
 
 

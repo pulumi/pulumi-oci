@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlertPolicies = oci.DataSafe.getAlertPolicies({
+ * const testAlertPolicies = oci.datasafe.getAlertPolicies({
  *     compartmentId: compartmentId,
  *     accessLevel: alertPolicyAccessLevel,
  *     alertPolicyId: testAlertPolicy.id,
- *     compartmentIdInSubtree: alertPolicyCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: alertPolicyCompartmentIdInSubtree === "true",
  *     displayName: alertPolicyDisplayName,
- *     isUserDefined: alertPolicyIsUserDefined,
+ *     isUserDefined: alertPolicyIsUserDefined === "true",
  *     state: alertPolicyState,
  *     timeCreatedGreaterThanOrEqualTo: alertPolicyTimeCreatedGreaterThanOrEqualTo,
  *     timeCreatedLessThan: alertPolicyTimeCreatedLessThan,
@@ -146,13 +146,13 @@ export interface GetAlertPoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlertPolicies = oci.DataSafe.getAlertPolicies({
+ * const testAlertPolicies = oci.datasafe.getAlertPolicies({
  *     compartmentId: compartmentId,
  *     accessLevel: alertPolicyAccessLevel,
  *     alertPolicyId: testAlertPolicy.id,
- *     compartmentIdInSubtree: alertPolicyCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: alertPolicyCompartmentIdInSubtree === "true",
  *     displayName: alertPolicyDisplayName,
- *     isUserDefined: alertPolicyIsUserDefined,
+ *     isUserDefined: alertPolicyIsUserDefined === "true",
  *     state: alertPolicyState,
  *     timeCreatedGreaterThanOrEqualTo: alertPolicyTimeCreatedGreaterThanOrEqualTo,
  *     timeCreatedLessThan: alertPolicyTimeCreatedLessThan,
@@ -184,11 +184,11 @@ export interface GetAlertPoliciesOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return policy by it's OCID.
      */
-    alertPolicyId?: pulumi.Input<string>;
+    alertPolicyId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -196,34 +196,34 @@ export interface GetAlertPoliciesOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the specified display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetAlertPoliciesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetAlertPoliciesFilterArgs>[] | undefined>;
     /**
      * An optional filter to return only alert policies that are user-defined or not.
      */
-    isUserDefined?: pulumi.Input<boolean>;
+    isUserDefined?: pulumi.Input<boolean | undefined>;
     /**
      * An optional filter to return only alert policies that have the given life-cycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeCreatedLessThan?: pulumi.Input<string>;
+    timeCreatedLessThan?: pulumi.Input<string | undefined>;
     /**
      * An optional filter to return only alert policies of a certain type.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

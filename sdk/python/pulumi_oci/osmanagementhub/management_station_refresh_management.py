@@ -51,7 +51,7 @@ class ManagementStationRefreshManagementArgs:
 @pulumi.input_type
 class _ManagementStationRefreshManagementState:
     def __init__(__self__, *,
-                 management_station_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 management_station_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagementStationRefreshManagement resources.
 
@@ -66,7 +66,7 @@ class _ManagementStationRefreshManagementState:
 
     @_builtins.property
     @pulumi.getter(name="managementStationId")
-    def management_station_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def management_station_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
 
@@ -77,7 +77,7 @@ class _ManagementStationRefreshManagementState:
         return pulumi.get(self, "management_station_id")
 
     @management_station_id.setter
-    def management_station_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def management_station_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "management_station_id", value)
 
 
@@ -87,7 +87,7 @@ class ManagementStationRefreshManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 management_station_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 management_station_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Management Station Refresh Management resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -170,7 +170,7 @@ class ManagementStationRefreshManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 management_station_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 management_station_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -193,7 +193,7 @@ class ManagementStationRefreshManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            management_station_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ManagementStationRefreshManagement':
+            management_station_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ManagementStationRefreshManagement':
         """
         Get an existing ManagementStationRefreshManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

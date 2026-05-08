@@ -216,7 +216,7 @@ def get_agent_tool(tool_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tool = oci.GenerativeAi.get_agent_tool(tool_id=test_tool_oci_generative_ai_agent_tool["id"])
+    test_tool = oci.generativeai.get_agent_tool(tool_id=test_tool_oci_generative_ai_agent_tool["id"])
     ```
 
 
@@ -242,7 +242,7 @@ def get_agent_tool(tool_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         tool_configs=pulumi.get(__ret__, 'tool_configs'),
         tool_id=pulumi.get(__ret__, 'tool_id'))
-def get_agent_tool_output(tool_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_agent_tool_output(tool_id: pulumi.Input[Optional[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentToolResult]:
     """
     This data source provides details about a specific Tool resource in Oracle Cloud Infrastructure Generative Ai Agent service.
@@ -255,7 +255,7 @@ def get_agent_tool_output(tool_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tool = oci.GenerativeAi.get_agent_tool(tool_id=test_tool_oci_generative_ai_agent_tool["id"])
+    test_tool = oci.generativeai.get_agent_tool(tool_id=test_tool_oci_generative_ai_agent_tool["id"])
     ```
 
 

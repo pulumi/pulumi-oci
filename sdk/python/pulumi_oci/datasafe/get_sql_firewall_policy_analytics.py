@@ -182,9 +182,9 @@ def get_sql_firewall_policy_analytics(access_level: Optional[_builtins.str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_firewall_policy_analytics = oci.DataSafe.get_sql_firewall_policy_analytics(compartment_id=compartment_id,
+    test_sql_firewall_policy_analytics = oci.datasafe.get_sql_firewall_policy_analytics(compartment_id=compartment_id,
         access_level=sql_firewall_policy_analytic_access_level,
-        compartment_id_in_subtree=sql_firewall_policy_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=sql_firewall_policy_analytic_compartment_id_in_subtree == "true",
         group_bies=sql_firewall_policy_analytic_group_by,
         security_policy_id=test_security_policy["id"],
         state=sql_firewall_policy_analytic_state,
@@ -227,15 +227,15 @@ def get_sql_firewall_policy_analytics(access_level: Optional[_builtins.str] = No
         state=pulumi.get(__ret__, 'state'),
         time_ended=pulumi.get(__ret__, 'time_ended'),
         time_started=pulumi.get(__ret__, 'time_started'))
-def get_sql_firewall_policy_analytics_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSqlFirewallPolicyAnalyticsFilterArgs', 'GetSqlFirewallPolicyAnalyticsFilterArgsDict']]]]] = None,
-                                             group_bies: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                             security_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             time_ended: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             time_started: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_sql_firewall_policy_analytics_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSqlFirewallPolicyAnalyticsFilterArgs', 'GetSqlFirewallPolicyAnalyticsFilterArgsDict']]]]] = None,
+                                             group_bies: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                             security_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             time_ended: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             time_started: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSqlFirewallPolicyAnalyticsResult]:
     """
     This data source provides the list of Sql Firewall Policy Analytics in Oracle Cloud Infrastructure Data Safe service.
@@ -259,9 +259,9 @@ def get_sql_firewall_policy_analytics_output(access_level: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_firewall_policy_analytics = oci.DataSafe.get_sql_firewall_policy_analytics(compartment_id=compartment_id,
+    test_sql_firewall_policy_analytics = oci.datasafe.get_sql_firewall_policy_analytics(compartment_id=compartment_id,
         access_level=sql_firewall_policy_analytic_access_level,
-        compartment_id_in_subtree=sql_firewall_policy_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=sql_firewall_policy_analytic_compartment_id_in_subtree == "true",
         group_bies=sql_firewall_policy_analytic_group_by,
         security_policy_id=test_security_policy["id"],
         state=sql_firewall_policy_analytic_state,

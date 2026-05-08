@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseSoftwareImages = oci.Database.getDatabaseSoftwareImages({
+ * const testDatabaseSoftwareImages = oci.database.getDatabaseSoftwareImages({
  *     compartmentId: compartmentId,
  *     dbSystemId: testDbSystem.id,
  *     displayName: databaseSoftwareImageDisplayName,
  *     imageShapeFamily: databaseSoftwareImageImageShapeFamily,
  *     imageType: databaseSoftwareImageImageType,
- *     isUpgradeSupported: databaseSoftwareImageIsUpgradeSupported,
+ *     isUpgradeSupported: databaseSoftwareImageIsUpgradeSupported === "true",
  *     state: databaseSoftwareImageState,
  * });
  * ```
@@ -127,13 +127,13 @@ export interface GetDatabaseSoftwareImagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseSoftwareImages = oci.Database.getDatabaseSoftwareImages({
+ * const testDatabaseSoftwareImages = oci.database.getDatabaseSoftwareImages({
  *     compartmentId: compartmentId,
  *     dbSystemId: testDbSystem.id,
  *     displayName: databaseSoftwareImageDisplayName,
  *     imageShapeFamily: databaseSoftwareImageImageShapeFamily,
  *     imageType: databaseSoftwareImageImageType,
- *     isUpgradeSupported: databaseSoftwareImageIsUpgradeSupported,
+ *     isUpgradeSupported: databaseSoftwareImageIsUpgradeSupported === "true",
  *     state: databaseSoftwareImageState,
  * });
  * ```
@@ -163,26 +163,26 @@ export interface GetDatabaseSoftwareImagesOutputArgs {
     /**
      * The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
      */
-    dbSystemId?: pulumi.Input<string>;
+    dbSystemId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDatabaseSoftwareImagesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDatabaseSoftwareImagesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given image shape family exactly.
      */
-    imageShapeFamily?: pulumi.Input<string>;
+    imageShapeFamily?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given image type exactly.
      */
-    imageType?: pulumi.Input<string>;
+    imageType?: pulumi.Input<string | undefined>;
     /**
      * If provided, filters the results to the set of database versions which are supported for Upgrade.
      */
-    isUpgradeSupported?: pulumi.Input<boolean>;
+    isUpgradeSupported?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

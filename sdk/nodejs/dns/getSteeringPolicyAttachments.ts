@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSteeringPolicyAttachments = oci.Dns.getSteeringPolicyAttachments({
+ * const testSteeringPolicyAttachments = oci.dns.getSteeringPolicyAttachments({
  *     compartmentId: compartmentId,
  *     displayName: steeringPolicyAttachmentDisplayName,
  *     domain: steeringPolicyAttachmentDomain,
@@ -144,7 +144,7 @@ export interface GetSteeringPolicyAttachmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSteeringPolicyAttachments = oci.Dns.getSteeringPolicyAttachments({
+ * const testSteeringPolicyAttachments = oci.dns.getSteeringPolicyAttachments({
  *     compartmentId: compartmentId,
  *     displayName: steeringPolicyAttachmentDisplayName,
  *     domain: steeringPolicyAttachmentDomain,
@@ -186,38 +186,38 @@ export interface GetSteeringPolicyAttachmentsOutputArgs {
     /**
      * The displayName of a resource.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Search by domain. Will match any record whose domain (case-insensitive) equals the provided value.
      */
-    domain?: pulumi.Input<string>;
+    domain?: pulumi.Input<string | undefined>;
     /**
      * Search by domain. Will match any record whose domain (case-insensitive) contains the provided value.
      */
-    domainContains?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Dns.GetSteeringPolicyAttachmentsFilterArgs>[]>;
+    domainContains?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Dns.GetSteeringPolicyAttachmentsFilterArgs>[] | undefined>;
     /**
      * The OCID of a resource.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The state of a resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Search by steering policy OCID. Will match any resource whose steering policy ID matches the provided value.
      */
-    steeringPolicyId?: pulumi.Input<string>;
+    steeringPolicyId?: pulumi.Input<string | undefined>;
     /**
      * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned resources were created on or after the indicated time.
      */
-    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned resources were created before the indicated time.
      */
-    timeCreatedLessThan?: pulumi.Input<string>;
+    timeCreatedLessThan?: pulumi.Input<string | undefined>;
     /**
      * Search by zone OCID. Will match any resource whose zone ID matches the provided value.
      */
-    zoneId?: pulumi.Input<string>;
+    zoneId?: pulumi.Input<string | undefined>;
 }

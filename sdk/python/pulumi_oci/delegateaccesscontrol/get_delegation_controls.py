@@ -147,7 +147,7 @@ def get_delegation_controls(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_delegation_controls = oci.DelegateAccessControl.get_delegation_controls(compartment_id=compartment_id,
+    test_delegation_controls = oci.delegateaccesscontrol.get_delegation_controls(compartment_id=compartment_id,
         display_name=delegation_control_display_name,
         resource_id=test_resource["id"],
         resource_type=delegation_control_resource_type,
@@ -180,12 +180,12 @@ def get_delegation_controls(compartment_id: Optional[_builtins.str] = None,
         resource_id=pulumi.get(__ret__, 'resource_id'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
         state=pulumi.get(__ret__, 'state'))
-def get_delegation_controls_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDelegationControlsFilterArgs', 'GetDelegationControlsFilterArgsDict']]]]] = None,
-                                   resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   resource_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_delegation_controls_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDelegationControlsFilterArgs', 'GetDelegationControlsFilterArgsDict']]]]] = None,
+                                   resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDelegationControlsResult]:
     """
     This data source provides the list of Delegation Controls in Oracle Cloud Infrastructure Delegate Access Control service.
@@ -198,7 +198,7 @@ def get_delegation_controls_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_delegation_controls = oci.DelegateAccessControl.get_delegation_controls(compartment_id=compartment_id,
+    test_delegation_controls = oci.delegateaccesscontrol.get_delegation_controls(compartment_id=compartment_id,
         display_name=delegation_control_display_name,
         resource_id=test_resource["id"],
         resource_type=delegation_control_resource_type,

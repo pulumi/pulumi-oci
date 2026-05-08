@@ -23,18 +23,18 @@ class PluggableDatabaseArgs:
     def __init__(__self__, *,
                  container_database_id: pulumi.Input[_builtins.str],
                  pdb_name: pulumi.Input[_builtins.str],
-                 container_database_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 convert_to_regular_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pdb_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 pdb_creation_type_details: Optional[pulumi.Input['PluggableDatabasePdbCreationTypeDetailsArgs']] = None,
-                 refresh_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 rotate_key_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 should_create_pdb_backup: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_pdb_admin_account_be_locked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tde_wallet_password: Optional[pulumi.Input[_builtins.str]] = None):
+                 container_database_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 convert_to_regular_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pdb_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 pdb_creation_type_details: pulumi.Input[Optional['PluggableDatabasePdbCreationTypeDetailsArgs']] = None,
+                 refresh_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 rotate_key_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 should_create_pdb_backup: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_pdb_admin_account_be_locked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tde_wallet_password: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a PluggableDatabase resource.
 
@@ -110,103 +110,103 @@ class PluggableDatabaseArgs:
 
     @_builtins.property
     @pulumi.getter(name="containerDatabaseAdminPassword")
-    def container_database_admin_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def container_database_admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The DB system administrator password of the Container Database.
         """
         return pulumi.get(self, "container_database_admin_password")
 
     @container_database_admin_password.setter
-    def container_database_admin_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def container_database_admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "container_database_admin_password", value)
 
     @_builtins.property
     @pulumi.getter(name="convertToRegularTrigger")
-    def convert_to_regular_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def convert_to_regular_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Convert To Regular. Could be set to any integer value.
         """
         return pulumi.get(self, "convert_to_regular_trigger")
 
     @convert_to_regular_trigger.setter
-    def convert_to_regular_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def convert_to_regular_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "convert_to_regular_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyVersionId")
-    def kms_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
     @kms_key_version_id.setter
-    def kms_key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_version_id", value)
 
     @_builtins.property
     @pulumi.getter(name="pdbAdminPassword")
-    def pdb_admin_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pdb_admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
         """
         return pulumi.get(self, "pdb_admin_password")
 
     @pdb_admin_password.setter
-    def pdb_admin_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pdb_admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pdb_admin_password", value)
 
     @_builtins.property
     @pulumi.getter(name="pdbCreationTypeDetails")
-    def pdb_creation_type_details(self) -> Optional[pulumi.Input['PluggableDatabasePdbCreationTypeDetailsArgs']]:
+    def pdb_creation_type_details(self) -> pulumi.Input[Optional['PluggableDatabasePdbCreationTypeDetailsArgs']]:
         """
         The Pluggable Database creation type. Use `LOCAL_CLONE_PDB` for creating a new PDB using Local Clone on Source Pluggable Database. This will Clone and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation. isThinClone options are supported for Exadata VM cluster on Exascale Infrastructure, Exadata Cloud@Customer VM Cluster on Exadata Cloud@Customer infrastructure, and Exadata Cloud VM cluster on cloud Exadata infrastructure Use `REMOTE_CLONE_PDB` for creating a new PDB using Remote Clone on Source Pluggable Database. This will Clone a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone. For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone. isThinClone options are supported for Exadata VM cluster on Exascale Infrastructure, Exadata Cloud@Customer VM Cluster on Exadata Cloud@Customer infrastructure, and Exadata Cloud VM cluster on cloud Exadata infrastructure. Use `RELOCATE_PDB` for relocating the Pluggable Database from Source CDB and creating it in target CDB. This will relocate a pluggable database (PDB) to a different database from the source PDB. The source PDB must be in the `READ_WRITE` openMode when performing the relocate.
         """
         return pulumi.get(self, "pdb_creation_type_details")
 
     @pdb_creation_type_details.setter
-    def pdb_creation_type_details(self, value: Optional[pulumi.Input['PluggableDatabasePdbCreationTypeDetailsArgs']]):
+    def pdb_creation_type_details(self, value: pulumi.Input[Optional['PluggableDatabasePdbCreationTypeDetailsArgs']]):
         pulumi.set(self, "pdb_creation_type_details", value)
 
     @_builtins.property
     @pulumi.getter(name="refreshTrigger")
-    def refresh_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def refresh_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
         """
         return pulumi.get(self, "refresh_trigger")
 
     @refresh_trigger.setter
-    def refresh_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def refresh_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "refresh_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="rotateKeyTrigger")
-    def rotate_key_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def rotate_key_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
 
@@ -217,75 +217,75 @@ class PluggableDatabaseArgs:
         return pulumi.get(self, "rotate_key_trigger")
 
     @rotate_key_trigger.setter
-    def rotate_key_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def rotate_key_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "rotate_key_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldCreatePdbBackup")
-    def should_create_pdb_backup(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_create_pdb_backup(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to take Pluggable Database Backup after the operation.
         """
         return pulumi.get(self, "should_create_pdb_backup")
 
     @should_create_pdb_backup.setter
-    def should_create_pdb_backup(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_create_pdb_backup(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_create_pdb_backup", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldPdbAdminAccountBeLocked")
-    def should_pdb_admin_account_be_locked(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_pdb_admin_account_be_locked(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
         """
         return pulumi.get(self, "should_pdb_admin_account_be_locked")
 
     @should_pdb_admin_account_be_locked.setter
-    def should_pdb_admin_account_be_locked(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_pdb_admin_account_be_locked(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_pdb_admin_account_be_locked", value)
 
     @_builtins.property
     @pulumi.getter(name="tdeWalletPassword")
-    def tde_wallet_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tde_wallet_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The existing TDE wallet password of the CDB.
         """
         return pulumi.get(self, "tde_wallet_password")
 
     @tde_wallet_password.setter
-    def tde_wallet_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tde_wallet_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tde_wallet_password", value)
 
 
 @pulumi.input_type
 class _PluggableDatabaseState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseConnectionStringArgs']]]] = None,
-                 container_database_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 convert_to_regular_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_restricted: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 open_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 patch_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 pdb_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 pdb_creation_type_details: Optional[pulumi.Input['PluggableDatabasePdbCreationTypeDetailsArgs']] = None,
-                 pdb_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 pdb_node_level_details: Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabasePdbNodeLevelDetailArgs']]]] = None,
-                 pluggable_database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabasePluggableDatabaseManagementConfigArgs']]]] = None,
-                 refresh_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 refreshable_clone_configs: Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseRefreshableCloneConfigArgs']]]] = None,
-                 rotate_key_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 should_create_pdb_backup: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_pdb_admin_account_be_locked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 tde_wallet_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input['PluggableDatabaseConnectionStringArgs']]]] = None,
+                 container_database_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 convert_to_regular_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_restricted: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 open_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 patch_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 pdb_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 pdb_creation_type_details: pulumi.Input[Optional['PluggableDatabasePdbCreationTypeDetailsArgs']] = None,
+                 pdb_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 pdb_node_level_details: pulumi.Input[Optional[Sequence[pulumi.Input['PluggableDatabasePdbNodeLevelDetailArgs']]]] = None,
+                 pluggable_database_management_configs: pulumi.Input[Optional[Sequence[pulumi.Input['PluggableDatabasePluggableDatabaseManagementConfigArgs']]]] = None,
+                 refresh_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 refreshable_clone_configs: pulumi.Input[Optional[Sequence[pulumi.Input['PluggableDatabaseRefreshableCloneConfigArgs']]]] = None,
+                 rotate_key_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 should_create_pdb_backup: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_pdb_admin_account_be_locked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 tde_wallet_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PluggableDatabase resources.
 
@@ -375,235 +375,235 @@ class _PluggableDatabaseState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionStrings")
-    def connection_strings(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseConnectionStringArgs']]]]:
+    def connection_strings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PluggableDatabaseConnectionStringArgs']]]]:
         """
         Connection strings to connect to an Oracle Pluggable Database.
         """
         return pulumi.get(self, "connection_strings")
 
     @connection_strings.setter
-    def connection_strings(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseConnectionStringArgs']]]]):
+    def connection_strings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PluggableDatabaseConnectionStringArgs']]]]):
         pulumi.set(self, "connection_strings", value)
 
     @_builtins.property
     @pulumi.getter(name="containerDatabaseAdminPassword")
-    def container_database_admin_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def container_database_admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The DB system administrator password of the Container Database.
         """
         return pulumi.get(self, "container_database_admin_password")
 
     @container_database_admin_password.setter
-    def container_database_admin_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def container_database_admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "container_database_admin_password", value)
 
     @_builtins.property
     @pulumi.getter(name="containerDatabaseId")
-    def container_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def container_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB
         """
         return pulumi.get(self, "container_database_id")
 
     @container_database_id.setter
-    def container_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def container_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "container_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="convertToRegularTrigger")
-    def convert_to_regular_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def convert_to_regular_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Convert To Regular. Could be set to any integer value.
         """
         return pulumi.get(self, "convert_to_regular_trigger")
 
     @convert_to_regular_trigger.setter
-    def convert_to_regular_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def convert_to_regular_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "convert_to_regular_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isRestricted")
-    def is_restricted(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_restricted(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
         """
         return pulumi.get(self, "is_restricted")
 
     @is_restricted.setter
-    def is_restricted(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_restricted(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_restricted", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyVersionId")
-    def kms_key_version_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
     @kms_key_version_id.setter
-    def kms_key_version_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_version_id", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Detailed message for the lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="openMode")
-    def open_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def open_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
         """
         return pulumi.get(self, "open_mode")
 
     @open_mode.setter
-    def open_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def open_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "open_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="patchVersion")
-    def patch_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def patch_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The patch version of the pluggable database.
         """
         return pulumi.get(self, "patch_version")
 
     @patch_version.setter
-    def patch_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def patch_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "patch_version", value)
 
     @_builtins.property
     @pulumi.getter(name="pdbAdminPassword")
-    def pdb_admin_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pdb_admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
         """
         return pulumi.get(self, "pdb_admin_password")
 
     @pdb_admin_password.setter
-    def pdb_admin_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pdb_admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pdb_admin_password", value)
 
     @_builtins.property
     @pulumi.getter(name="pdbCreationTypeDetails")
-    def pdb_creation_type_details(self) -> Optional[pulumi.Input['PluggableDatabasePdbCreationTypeDetailsArgs']]:
+    def pdb_creation_type_details(self) -> pulumi.Input[Optional['PluggableDatabasePdbCreationTypeDetailsArgs']]:
         """
         The Pluggable Database creation type. Use `LOCAL_CLONE_PDB` for creating a new PDB using Local Clone on Source Pluggable Database. This will Clone and starts a pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the `READ_WRITE` openMode to perform the clone operation. isThinClone options are supported for Exadata VM cluster on Exascale Infrastructure, Exadata Cloud@Customer VM Cluster on Exadata Cloud@Customer infrastructure, and Exadata Cloud VM cluster on cloud Exadata infrastructure Use `REMOTE_CLONE_PDB` for creating a new PDB using Remote Clone on Source Pluggable Database. This will Clone a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone. For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone. isThinClone options are supported for Exadata VM cluster on Exascale Infrastructure, Exadata Cloud@Customer VM Cluster on Exadata Cloud@Customer infrastructure, and Exadata Cloud VM cluster on cloud Exadata infrastructure. Use `RELOCATE_PDB` for relocating the Pluggable Database from Source CDB and creating it in target CDB. This will relocate a pluggable database (PDB) to a different database from the source PDB. The source PDB must be in the `READ_WRITE` openMode when performing the relocate.
         """
         return pulumi.get(self, "pdb_creation_type_details")
 
     @pdb_creation_type_details.setter
-    def pdb_creation_type_details(self, value: Optional[pulumi.Input['PluggableDatabasePdbCreationTypeDetailsArgs']]):
+    def pdb_creation_type_details(self, value: pulumi.Input[Optional['PluggableDatabasePdbCreationTypeDetailsArgs']]):
         pulumi.set(self, "pdb_creation_type_details", value)
 
     @_builtins.property
     @pulumi.getter(name="pdbName")
-    def pdb_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pdb_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
         """
         return pulumi.get(self, "pdb_name")
 
     @pdb_name.setter
-    def pdb_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pdb_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pdb_name", value)
 
     @_builtins.property
     @pulumi.getter(name="pdbNodeLevelDetails")
-    def pdb_node_level_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabasePdbNodeLevelDetailArgs']]]]:
+    def pdb_node_level_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PluggableDatabasePdbNodeLevelDetailArgs']]]]:
         """
         Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
         """
         return pulumi.get(self, "pdb_node_level_details")
 
     @pdb_node_level_details.setter
-    def pdb_node_level_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabasePdbNodeLevelDetailArgs']]]]):
+    def pdb_node_level_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PluggableDatabasePdbNodeLevelDetailArgs']]]]):
         pulumi.set(self, "pdb_node_level_details", value)
 
     @_builtins.property
     @pulumi.getter(name="pluggableDatabaseManagementConfigs")
-    def pluggable_database_management_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabasePluggableDatabaseManagementConfigArgs']]]]:
+    def pluggable_database_management_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PluggableDatabasePluggableDatabaseManagementConfigArgs']]]]:
         """
         The configuration of the Pluggable Database Management service.
         """
         return pulumi.get(self, "pluggable_database_management_configs")
 
     @pluggable_database_management_configs.setter
-    def pluggable_database_management_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabasePluggableDatabaseManagementConfigArgs']]]]):
+    def pluggable_database_management_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PluggableDatabasePluggableDatabaseManagementConfigArgs']]]]):
         pulumi.set(self, "pluggable_database_management_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="refreshTrigger")
-    def refresh_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def refresh_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
         """
         return pulumi.get(self, "refresh_trigger")
 
     @refresh_trigger.setter
-    def refresh_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def refresh_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "refresh_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="refreshableCloneConfigs")
-    def refreshable_clone_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseRefreshableCloneConfigArgs']]]]:
+    def refreshable_clone_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PluggableDatabaseRefreshableCloneConfigArgs']]]]:
         """
         Pluggable Database Refreshable Clone Configuration.
         """
         return pulumi.get(self, "refreshable_clone_configs")
 
     @refreshable_clone_configs.setter
-    def refreshable_clone_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseRefreshableCloneConfigArgs']]]]):
+    def refreshable_clone_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PluggableDatabaseRefreshableCloneConfigArgs']]]]):
         pulumi.set(self, "refreshable_clone_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="rotateKeyTrigger")
-    def rotate_key_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def rotate_key_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
 
@@ -614,79 +614,79 @@ class _PluggableDatabaseState:
         return pulumi.get(self, "rotate_key_trigger")
 
     @rotate_key_trigger.setter
-    def rotate_key_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def rotate_key_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "rotate_key_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldCreatePdbBackup")
-    def should_create_pdb_backup(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_create_pdb_backup(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether to take Pluggable Database Backup after the operation.
         """
         return pulumi.get(self, "should_create_pdb_backup")
 
     @should_create_pdb_backup.setter
-    def should_create_pdb_backup(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_create_pdb_backup(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_create_pdb_backup", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldPdbAdminAccountBeLocked")
-    def should_pdb_admin_account_be_locked(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_pdb_admin_account_be_locked(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
         """
         return pulumi.get(self, "should_pdb_admin_account_be_locked")
 
     @should_pdb_admin_account_be_locked.setter
-    def should_pdb_admin_account_be_locked(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_pdb_admin_account_be_locked(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_pdb_admin_account_be_locked", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the pluggable database.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="tdeWalletPassword")
-    def tde_wallet_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tde_wallet_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The existing TDE wallet password of the CDB.
         """
         return pulumi.get(self, "tde_wallet_password")
 
     @tde_wallet_password.setter
-    def tde_wallet_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tde_wallet_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tde_wallet_password", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the pluggable database was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -696,20 +696,20 @@ class PluggableDatabase(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 container_database_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 convert_to_regular_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pdb_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 pdb_creation_type_details: Optional[pulumi.Input[Union['PluggableDatabasePdbCreationTypeDetailsArgs', 'PluggableDatabasePdbCreationTypeDetailsArgsDict']]] = None,
-                 pdb_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 refresh_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 rotate_key_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 should_create_pdb_backup: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_pdb_admin_account_be_locked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tde_wallet_password: Optional[pulumi.Input[_builtins.str]] = None,
+                 container_database_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 convert_to_regular_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pdb_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 pdb_creation_type_details: pulumi.Input[Optional[Union['PluggableDatabasePdbCreationTypeDetailsArgs', 'PluggableDatabasePdbCreationTypeDetailsArgsDict']]] = None,
+                 pdb_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 refresh_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 rotate_key_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 should_create_pdb_backup: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_pdb_admin_account_be_locked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tde_wallet_password: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Pluggable Database resource in Oracle Cloud Infrastructure Database service.
@@ -791,20 +791,20 @@ class PluggableDatabase(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 container_database_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 convert_to_regular_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 pdb_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 pdb_creation_type_details: Optional[pulumi.Input[Union['PluggableDatabasePdbCreationTypeDetailsArgs', 'PluggableDatabasePdbCreationTypeDetailsArgsDict']]] = None,
-                 pdb_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 refresh_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 rotate_key_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 should_create_pdb_backup: Optional[pulumi.Input[_builtins.bool]] = None,
-                 should_pdb_admin_account_be_locked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tde_wallet_password: Optional[pulumi.Input[_builtins.str]] = None,
+                 container_database_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 convert_to_regular_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 pdb_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 pdb_creation_type_details: pulumi.Input[Optional[Union['PluggableDatabasePdbCreationTypeDetailsArgs', 'PluggableDatabasePdbCreationTypeDetailsArgsDict']]] = None,
+                 pdb_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 refresh_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 rotate_key_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 should_create_pdb_backup: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_pdb_admin_account_be_locked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tde_wallet_password: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -856,32 +856,32 @@ class PluggableDatabase(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            connection_strings: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PluggableDatabaseConnectionStringArgs', 'PluggableDatabaseConnectionStringArgsDict']]]]] = None,
-            container_database_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-            container_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            convert_to_regular_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_restricted: Optional[pulumi.Input[_builtins.bool]] = None,
-            kms_key_version_id: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            open_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            patch_version: Optional[pulumi.Input[_builtins.str]] = None,
-            pdb_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-            pdb_creation_type_details: Optional[pulumi.Input[Union['PluggableDatabasePdbCreationTypeDetailsArgs', 'PluggableDatabasePdbCreationTypeDetailsArgsDict']]] = None,
-            pdb_name: Optional[pulumi.Input[_builtins.str]] = None,
-            pdb_node_level_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PluggableDatabasePdbNodeLevelDetailArgs', 'PluggableDatabasePdbNodeLevelDetailArgsDict']]]]] = None,
-            pluggable_database_management_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PluggableDatabasePluggableDatabaseManagementConfigArgs', 'PluggableDatabasePluggableDatabaseManagementConfigArgsDict']]]]] = None,
-            refresh_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            refreshable_clone_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PluggableDatabaseRefreshableCloneConfigArgs', 'PluggableDatabaseRefreshableCloneConfigArgsDict']]]]] = None,
-            rotate_key_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            should_create_pdb_backup: Optional[pulumi.Input[_builtins.bool]] = None,
-            should_pdb_admin_account_be_locked: Optional[pulumi.Input[_builtins.bool]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            tde_wallet_password: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'PluggableDatabase':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PluggableDatabaseConnectionStringArgs', 'PluggableDatabaseConnectionStringArgsDict']]]]] = None,
+            container_database_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+            container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            convert_to_regular_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_restricted: pulumi.Input[Optional[_builtins.bool]] = None,
+            kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            open_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            patch_version: pulumi.Input[Optional[_builtins.str]] = None,
+            pdb_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+            pdb_creation_type_details: pulumi.Input[Optional[Union['PluggableDatabasePdbCreationTypeDetailsArgs', 'PluggableDatabasePdbCreationTypeDetailsArgsDict']]] = None,
+            pdb_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pdb_node_level_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PluggableDatabasePdbNodeLevelDetailArgs', 'PluggableDatabasePdbNodeLevelDetailArgsDict']]]]] = None,
+            pluggable_database_management_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PluggableDatabasePluggableDatabaseManagementConfigArgs', 'PluggableDatabasePluggableDatabaseManagementConfigArgsDict']]]]] = None,
+            refresh_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            refreshable_clone_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PluggableDatabaseRefreshableCloneConfigArgs', 'PluggableDatabaseRefreshableCloneConfigArgsDict']]]]] = None,
+            rotate_key_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            should_create_pdb_backup: pulumi.Input[Optional[_builtins.bool]] = None,
+            should_pdb_admin_account_be_locked: pulumi.Input[Optional[_builtins.bool]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tde_wallet_password: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'PluggableDatabase':
         """
         Get an existing PluggableDatabase resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

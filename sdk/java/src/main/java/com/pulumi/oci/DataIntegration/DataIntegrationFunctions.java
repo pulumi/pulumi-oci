@@ -88,8 +88,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -130,8 +130,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -172,8 +172,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -214,8 +214,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -256,8 +256,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -298,8 +298,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -341,8 +341,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -384,8 +384,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -427,8 +427,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -470,8 +470,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -513,8 +513,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -557,8 +557,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -601,8 +601,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -645,8 +645,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -689,8 +689,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -733,8 +733,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -779,8 +779,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -825,8 +825,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -871,8 +871,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -917,8 +917,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationPatchesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -963,8 +963,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1007,8 +1007,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1051,8 +1051,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1095,8 +1095,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1139,8 +1139,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1183,8 +1183,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1230,8 +1230,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1277,8 +1277,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1324,8 +1324,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1371,8 +1371,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1418,8 +1418,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationTaskScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1462,8 +1462,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationTaskScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1506,8 +1506,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationTaskScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1550,8 +1550,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationTaskScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1594,8 +1594,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationTaskScheduleArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1638,8 +1638,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationTaskSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1686,8 +1686,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationTaskSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1734,8 +1734,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationTaskSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1782,8 +1782,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationTaskSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1830,8 +1830,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationTaskSchedulesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1878,8 +1878,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1924,8 +1924,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1970,8 +1970,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2016,8 +2016,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2062,8 +2062,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceApplicationsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2108,8 +2108,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceExportRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2151,8 +2151,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceExportRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2194,8 +2194,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceExportRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2237,8 +2237,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceExportRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2280,8 +2280,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceExportRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2323,8 +2323,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceExportRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2370,8 +2370,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceExportRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2417,8 +2417,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceExportRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2464,8 +2464,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceExportRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2511,8 +2511,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceExportRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2558,8 +2558,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceFolderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2601,8 +2601,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceFolderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2644,8 +2644,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceFolderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2687,8 +2687,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceFolderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2730,8 +2730,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceFolderArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2773,8 +2773,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceFoldersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2820,8 +2820,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceFoldersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2867,8 +2867,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceFoldersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2914,8 +2914,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceFoldersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2961,8 +2961,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceFoldersArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3008,8 +3008,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceImportRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3051,8 +3051,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceImportRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3094,8 +3094,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceImportRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3137,8 +3137,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceImportRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3180,8 +3180,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceImportRequestArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3223,8 +3223,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceImportRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3270,8 +3270,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceImportRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3317,8 +3317,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceImportRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3364,8 +3364,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceImportRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3411,8 +3411,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceImportRequestsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3458,8 +3458,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceProjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3501,8 +3501,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceProjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3544,8 +3544,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceProjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3587,8 +3587,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceProjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3630,8 +3630,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceProjectArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3673,8 +3673,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3719,8 +3719,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3765,8 +3765,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3811,8 +3811,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3857,8 +3857,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceProjectsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3958,8 +3958,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceTasksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4006,8 +4006,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceTasksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4054,8 +4054,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceTasksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4102,8 +4102,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceTasksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4150,8 +4150,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspaceTasksArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4198,8 +4198,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspacesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4242,8 +4242,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspacesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4286,8 +4286,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspacesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4330,8 +4330,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspacesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -4374,8 +4374,8 @@ public final class DataIntegrationFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DataIntegration.DataIntegrationFunctions;
      * import com.pulumi.oci.DataIntegration.inputs.GetWorkspacesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

@@ -28,10 +28,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSqlFirewallPolicyAnalytics = oci.DataSafe.getSqlFirewallPolicyAnalytics({
+ * const testSqlFirewallPolicyAnalytics = oci.datasafe.getSqlFirewallPolicyAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlFirewallPolicyAnalyticAccessLevel,
- *     compartmentIdInSubtree: sqlFirewallPolicyAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sqlFirewallPolicyAnalyticCompartmentIdInSubtree === "true",
  *     groupBies: sqlFirewallPolicyAnalyticGroupBy,
  *     securityPolicyId: testSecurityPolicy.id,
  *     state: sqlFirewallPolicyAnalyticState,
@@ -144,10 +144,10 @@ export interface GetSqlFirewallPolicyAnalyticsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSqlFirewallPolicyAnalytics = oci.DataSafe.getSqlFirewallPolicyAnalytics({
+ * const testSqlFirewallPolicyAnalytics = oci.datasafe.getSqlFirewallPolicyAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlFirewallPolicyAnalyticAccessLevel,
- *     compartmentIdInSubtree: sqlFirewallPolicyAnalyticCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: sqlFirewallPolicyAnalyticCompartmentIdInSubtree === "true",
  *     groupBies: sqlFirewallPolicyAnalyticGroupBy,
  *     securityPolicyId: testSecurityPolicy.id,
  *     state: sqlFirewallPolicyAnalyticState,
@@ -178,7 +178,7 @@ export interface GetSqlFirewallPolicyAnalyticsOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -186,26 +186,26 @@ export interface GetSqlFirewallPolicyAnalyticsOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSqlFirewallPolicyAnalyticsFilterArgs>[]>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSqlFirewallPolicyAnalyticsFilterArgs>[] | undefined>;
     /**
      * The group by parameter to summarize SQL Firewall policy aggregation.
      */
-    groupBies?: pulumi.Input<pulumi.Input<string>[]>;
+    groupBies?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * An optional filter to return only resources that match the specified OCID of the security policy resource.
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the SQL Firewall policy.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * An optional filter to return the summary of the SQL Firewall policies created before the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeEnded?: pulumi.Input<string>;
+    timeEnded?: pulumi.Input<string | undefined>;
     /**
      * An optional filter to return the summary of the SQL Firewall policies created after the date-time specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeStarted?: pulumi.Input<string>;
+    timeStarted?: pulumi.Input<string | undefined>;
 }

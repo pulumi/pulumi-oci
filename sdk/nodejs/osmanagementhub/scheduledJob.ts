@@ -27,7 +27,7 @@ import * as utilities from "../utilities";
  *         installSnapDetails: {
  *             name: scheduledJobOperationsInstallSnapDetailsName,
  *             channel: scheduledJobOperationsInstallSnapDetailsChannel,
- *             isSigned: scheduledJobOperationsInstallSnapDetailsIsSigned,
+ *             isSigned: scheduledJobOperationsInstallSnapDetailsIsSigned === "true",
  *             mode: scheduledJobOperationsInstallSnapDetailsMode,
  *             revision: scheduledJobOperationsInstallSnapDetailsRevision,
  *         },
@@ -56,7 +56,7 @@ import * as utilities from "../utilities";
  *             }],
  *         },
  *         packageNames: scheduledJobOperationsPackageNames,
- *         rebootTimeoutInMins: scheduledJobOperationsRebootTimeoutInMins,
+ *         rebootTimeoutInMins: Number(scheduledJobOperationsRebootTimeoutInMins),
  *         removeSnapDetails: {
  *             name: scheduledJobOperationsRemoveSnapDetailsName,
  *             revision: scheduledJobOperationsRemoveSnapDetailsRevision,
@@ -84,8 +84,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isManagedByAutonomousLinux: scheduledJobIsManagedByAutonomousLinux,
- *     isSubcompartmentIncluded: scheduledJobIsSubcompartmentIncluded,
+ *     isManagedByAutonomousLinux: scheduledJobIsManagedByAutonomousLinux === "true",
+ *     isSubcompartmentIncluded: scheduledJobIsSubcompartmentIncluded === "true",
  *     lifecycleStageIds: scheduledJobLifecycleStageIds,
  *     locations: scheduledJobLocations,
  *     managedCompartmentIds: scheduledJobManagedCompartmentIds,
@@ -342,59 +342,59 @@ export interface ScheduledJobState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) User-specified description of the scheduled job. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) User-friendly name for the scheduled job. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The dynamic set [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on. A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, lifecycleStageIds, managedCompartmentIds.
      */
-    dynamicSetIds?: pulumi.Input<pulumi.Input<string>[]>;
+    dynamicSetIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Indicates whether this scheduled job is managed by the Autonomous Linux service.
      */
-    isManagedByAutonomousLinux?: pulumi.Input<boolean>;
+    isManagedByAutonomousLinux?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates if the schedule job has restricted update and deletion capabilities. For restricted scheduled jobs,  you can update only the timeNextExecution, recurringRule, and tags.
      */
-    isRestricted?: pulumi.Input<boolean>;
+    isRestricted?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether to apply the scheduled job to all compartments in the tenancy when managedCompartmentIds specifies  the tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (root compartment).
      */
-    isSubcompartmentIncluded?: pulumi.Input<boolean>;
+    isSubcompartmentIncluded?: pulumi.Input<boolean | undefined>;
     /**
      * The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,  or managedInstanceGroupIds, or managedCompartmentIds, or dynamicSetIds.
      */
-    lifecycleStageIds?: pulumi.Input<pulumi.Input<string>[]>;
+    lifecycleStageIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The list of locations this scheduled job should operate on for a job targeting on compartments. (Empty list means apply to all locations). This can only be set when managedCompartmentIds is not empty.
      */
-    locations?: pulumi.Input<pulumi.Input<string>[]>;
+    locations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set  isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must  supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds, or dynamicSetIds.
      */
-    managedCompartmentIds?: pulumi.Input<pulumi.Input<string>[]>;
+    managedCompartmentIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
      */
-    managedInstanceGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+    managedInstanceGroupIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or  managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
      */
-    managedInstanceIds?: pulumi.Input<pulumi.Input<string>[]>;
+    managedInstanceIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The list of operations this scheduled job needs to perform. A scheduled job supports only one operation type, unless it is one of the following:
      * * UPDATE_PACKAGES
@@ -406,43 +406,43 @@ export interface ScheduledJobState {
      * * UPDATE_KSPLICE_USERSPACE
      * * UPDATE_KSPLICE_KERNEL
      */
-    operations?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ScheduledJobOperation>[]>;
+    operations?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.ScheduledJobOperation>[] | undefined>;
     /**
      * (Updatable) The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format. Note: Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported. In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
      */
-    recurringRule?: pulumi.Input<string>;
+    recurringRule?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically  retry a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the initial execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service  waits 5 minutes and then retries. If that fails, the service waits 10 minutes and then retries.
      */
-    retryIntervals?: pulumi.Input<pulumi.Input<number>[]>;
+    retryIntervals?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * (Updatable) The type of scheduling frequency for the scheduled job.
      */
-    scheduleType?: pulumi.Input<string>;
+    scheduleType?: pulumi.Input<string | undefined>;
     /**
      * The current state of the scheduled job.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time this scheduled job was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time of the last execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    timeLastExecution?: pulumi.Input<string>;
+    timeLastExecution?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The desired time of the next execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    timeNextExecution?: pulumi.Input<string>;
+    timeNextExecution?: pulumi.Input<string | undefined>;
     /**
      * The time this scheduled job was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the work request that will be rerun.
      *
@@ -450,11 +450,11 @@ export interface ScheduledJobState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    workRequestId?: pulumi.Input<string>;
+    workRequestId?: pulumi.Input<string | undefined>;
     /**
      * The list of work request [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this scheduled job.
      */
-    workRequestIds?: pulumi.Input<pulumi.Input<string>[]>;
+    workRequestIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -468,51 +468,51 @@ export interface ScheduledJobArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) User-specified description of the scheduled job. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) User-friendly name for the scheduled job. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The dynamic set [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on. A scheduled job can only operate on one type of target. therefore this parameter is mutually exclusive with  managedInstanceIds, managedInstanceGroupIds, lifecycleStageIds, managedCompartmentIds.
      */
-    dynamicSetIds?: pulumi.Input<pulumi.Input<string>[]>;
+    dynamicSetIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Indicates whether this scheduled job is managed by the Autonomous Linux service.
      */
-    isManagedByAutonomousLinux?: pulumi.Input<boolean>;
+    isManagedByAutonomousLinux?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether to apply the scheduled job to all compartments in the tenancy when managedCompartmentIds specifies  the tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (root compartment).
      */
-    isSubcompartmentIncluded?: pulumi.Input<boolean>;
+    isSubcompartmentIncluded?: pulumi.Input<boolean | undefined>;
     /**
      * The lifecycle stage [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds,  or managedInstanceGroupIds, or managedCompartmentIds, or dynamicSetIds.
      */
-    lifecycleStageIds?: pulumi.Input<pulumi.Input<string>[]>;
+    lifecycleStageIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The list of locations this scheduled job should operate on for a job targeting on compartments. (Empty list means apply to all locations). This can only be set when managedCompartmentIds is not empty.
      */
-    locations?: pulumi.Input<pulumi.Input<string>[]>;
+    locations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The compartment [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  To apply the job to all compartments in the tenancy, set this to the tenancy OCID (root compartment) and set  isSubcompartmentIncluded to true. A scheduled job can only operate on one type of target, therefore you must  supply either this or managedInstanceIds, or managedInstanceGroupIds, or lifecycleStageIds, or dynamicSetIds.
      */
-    managedCompartmentIds?: pulumi.Input<pulumi.Input<string>[]>;
+    managedCompartmentIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The managed instance group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or managedInstanceIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
      */
-    managedInstanceGroupIds?: pulumi.Input<pulumi.Input<string>[]>;
+    managedInstanceGroupIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that this scheduled job operates on.  A scheduled job can only operate on one type of target, therefore you must supply either this or  managedInstanceGroupIds, or managedCompartmentIds, or lifecycleStageIds, or dynamicSetIds.
      */
-    managedInstanceIds?: pulumi.Input<pulumi.Input<string>[]>;
+    managedInstanceIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The list of operations this scheduled job needs to perform. A scheduled job supports only one operation type, unless it is one of the following:
      * * UPDATE_PACKAGES
@@ -528,11 +528,11 @@ export interface ScheduledJobArgs {
     /**
      * (Updatable) The frequency schedule for a recurring scheduled job in the [RFC5535](https://www.rfc-editor.org/rfc/rfc5535) format. Note: Currently, only FREQ/INTERVAL/BYMONTHDAY/BYDAY/BYSETPOS/BYMONTH/BYHOUR/BYMINUTE/BYSECOND rules are supported. In FREQ, only YEARLY, MONTHLY, WEEKLY, DAILY", HOURLY are supported.
      */
-    recurringRule?: pulumi.Input<string>;
+    recurringRule?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The amount of time in minutes to wait until retrying the scheduled job. If set, the service will automatically  retry a failed scheduled job after the interval. For example, you could set the interval to [2,5,10]. If the initial execution of the job fails, the service waits 2 minutes and then retries. If that fails, the service  waits 5 minutes and then retries. If that fails, the service waits 10 minutes and then retries.
      */
-    retryIntervals?: pulumi.Input<pulumi.Input<number>[]>;
+    retryIntervals?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     /**
      * (Updatable) The type of scheduling frequency for the scheduled job.
      */
@@ -548,5 +548,5 @@ export interface ScheduledJobArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    workRequestId?: pulumi.Input<string>;
+    workRequestId?: pulumi.Input<string | undefined>;
 }

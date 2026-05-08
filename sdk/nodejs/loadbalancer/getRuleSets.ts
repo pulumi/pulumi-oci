@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRuleSets = oci.LoadBalancer.getRuleSets({
+ * const testRuleSets = oci.loadbalancer.getRuleSets({
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
@@ -67,7 +67,7 @@ export interface GetRuleSetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRuleSets = oci.LoadBalancer.getRuleSets({
+ * const testRuleSets = oci.loadbalancer.getRuleSets({
  *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
@@ -84,7 +84,7 @@ export function getRuleSetsOutput(args: GetRuleSetsOutputArgs, opts?: pulumi.Inv
  * A collection of arguments for invoking getRuleSets.
  */
 export interface GetRuleSetsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.GetRuleSetsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.LoadBalancer.GetRuleSetsFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer.
      */

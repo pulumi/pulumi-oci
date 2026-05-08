@@ -32,7 +32,7 @@ import * as utilities from "../utilities";
  *     },
  *     notebookSessionConfigDetails: {
  *         shape: notebookSessionNotebookSessionConfigDetailsShape,
- *         blockStorageSizeInGbs: notebookSessionNotebookSessionConfigDetailsBlockStorageSizeInGbs,
+ *         blockStorageSizeInGbs: Number(notebookSessionNotebookSessionConfigDetailsBlockStorageSizeInGbs),
  *         notebookSessionShapeConfigDetails: {
  *             cpuBaseline: notebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsCpuBaseline,
  *             memoryInGbs: notebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsMemoryInGbs,
@@ -44,7 +44,7 @@ import * as utilities from "../utilities";
  *     notebookSessionConfigurationDetails: {
  *         shape: notebookSessionNotebookSessionConfigurationDetailsShape,
  *         subnetId: testSubnet.id,
- *         blockStorageSizeInGbs: notebookSessionNotebookSessionConfigurationDetailsBlockStorageSizeInGbs,
+ *         blockStorageSizeInGbs: Number(notebookSessionNotebookSessionConfigurationDetailsBlockStorageSizeInGbs),
  *         notebookSessionShapeConfigDetails: {
  *             cpuBaseline: notebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsCpuBaseline,
  *             memoryInGbs: notebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsMemoryInGbs,
@@ -232,47 +232,47 @@ export interface NotebookSessionState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the notebook session.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the notebook session.
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Details about the state of the notebook session.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Details for the notebook session configuration.
      */
-    notebookSessionConfigDetails?: pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionConfigDetails>;
+    notebookSessionConfigDetails?: pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionConfigDetails | undefined>;
     /**
      * (Updatable) Details for the notebook session configuration.
      */
-    notebookSessionConfigurationDetails?: pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionConfigurationDetails>;
+    notebookSessionConfigurationDetails?: pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionConfigurationDetails | undefined>;
     /**
      * (Updatable) Notebook Session runtime configuration details.
      */
-    notebookSessionRuntimeConfigDetails?: pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionRuntimeConfigDetails>;
+    notebookSessionRuntimeConfigDetails?: pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionRuntimeConfigDetails | undefined>;
     /**
      * (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
      */
-    notebookSessionStorageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionStorageMountConfigurationDetailsList>[]>;
+    notebookSessionStorageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionStorageMountConfigurationDetailsList>[] | undefined>;
     /**
      * The URL to interact with the notebook session.
      */
-    notebookSessionUrl?: pulumi.Input<string>;
+    notebookSessionUrl?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
      *
@@ -280,15 +280,15 @@ export interface NotebookSessionState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    projectId?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
     /**
      * The state of the notebook session.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -302,31 +302,31 @@ export interface NotebookSessionArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Details for the notebook session configuration.
      */
-    notebookSessionConfigDetails?: pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionConfigDetails>;
+    notebookSessionConfigDetails?: pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionConfigDetails | undefined>;
     /**
      * (Updatable) Details for the notebook session configuration.
      */
-    notebookSessionConfigurationDetails?: pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionConfigurationDetails>;
+    notebookSessionConfigurationDetails?: pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionConfigurationDetails | undefined>;
     /**
      * (Updatable) Notebook Session runtime configuration details.
      */
-    notebookSessionRuntimeConfigDetails?: pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionRuntimeConfigDetails>;
+    notebookSessionRuntimeConfigDetails?: pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionRuntimeConfigDetails | undefined>;
     /**
      * (Updatable) Collection of NotebookSessionStorageMountConfigurationDetails.
      */
-    notebookSessionStorageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionStorageMountConfigurationDetailsList>[]>;
+    notebookSessionStorageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.NotebookSessionNotebookSessionStorageMountConfigurationDetailsList>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the notebook session.
      *
@@ -338,5 +338,5 @@ export interface NotebookSessionArgs {
     /**
      * The state of the notebook session.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

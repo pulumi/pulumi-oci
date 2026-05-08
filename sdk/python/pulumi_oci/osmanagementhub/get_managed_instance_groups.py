@@ -216,11 +216,11 @@ def get_managed_instance_groups(arch_type: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_groups = oci.OsManagementHub.get_managed_instance_groups(arch_type=managed_instance_group_arch_type,
+    test_managed_instance_groups = oci.osmanagementhub.get_managed_instance_groups(arch_type=managed_instance_group_arch_type,
         compartment_id=compartment_id,
         display_names=managed_instance_group_display_name,
         display_name_contains=managed_instance_group_display_name_contains,
-        is_managed_by_autonomous_linux=managed_instance_group_is_managed_by_autonomous_linux,
+        is_managed_by_autonomous_linux=managed_instance_group_is_managed_by_autonomous_linux == "true",
         locations=managed_instance_group_location,
         location_not_equal_tos=managed_instance_group_location_not_equal_to,
         managed_instance_group_id=test_managed_instance_group["id"],
@@ -273,18 +273,18 @@ def get_managed_instance_groups(arch_type: Optional[_builtins.str] = None,
         os_family=pulumi.get(__ret__, 'os_family'),
         software_source_id=pulumi.get(__ret__, 'software_source_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_managed_instance_groups_output(arch_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       display_name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       display_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedInstanceGroupsFilterArgs', 'GetManagedInstanceGroupsFilterArgsDict']]]]] = None,
-                                       is_managed_by_autonomous_linux: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                       location_not_equal_tos: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                       locations: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                       managed_instance_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       os_family: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       software_source_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_managed_instance_groups_output(arch_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       display_name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       display_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedInstanceGroupsFilterArgs', 'GetManagedInstanceGroupsFilterArgsDict']]]]] = None,
+                                       is_managed_by_autonomous_linux: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                       location_not_equal_tos: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                       locations: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                       managed_instance_group_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       os_family: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       software_source_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceGroupsResult]:
     """
     This data source provides the list of Managed Instance Groups in Oracle Cloud Infrastructure Os Management Hub service.
@@ -297,11 +297,11 @@ def get_managed_instance_groups_output(arch_type: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_groups = oci.OsManagementHub.get_managed_instance_groups(arch_type=managed_instance_group_arch_type,
+    test_managed_instance_groups = oci.osmanagementhub.get_managed_instance_groups(arch_type=managed_instance_group_arch_type,
         compartment_id=compartment_id,
         display_names=managed_instance_group_display_name,
         display_name_contains=managed_instance_group_display_name_contains,
-        is_managed_by_autonomous_linux=managed_instance_group_is_managed_by_autonomous_linux,
+        is_managed_by_autonomous_linux=managed_instance_group_is_managed_by_autonomous_linux == "true",
         locations=managed_instance_group_location,
         location_not_equal_tos=managed_instance_group_location_not_equal_to,
         managed_instance_group_id=test_managed_instance_group["id"],

@@ -266,71 +266,71 @@ export interface FsuCollectionState {
     /**
      * Active Exadata Fleet Update Cycle resource for this Collection. Object would be null if there is no active Cycle.
      */
-    activeFsuCycles?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuCollectionActiveFsuCycle>[]>;
+    activeFsuCycles?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuCollectionActiveFsuCycle>[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Details of components in an Exadata software stack.
      */
-    components?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuCollectionComponent>[]>;
+    components?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuCollectionComponent>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
      */
-    fleetDiscovery?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCollectionFleetDiscovery>;
+    fleetDiscovery?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCollectionFleetDiscovery | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
      */
-    fleetSoftwareUpdateFsuCollectionId?: pulumi.Input<string>;
+    fleetSoftwareUpdateFsuCollectionId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
      */
-    lastCompletedFsuCycleId?: pulumi.Input<string>;
+    lastCompletedFsuCycleId?: pulumi.Input<string | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Exadata service type for the target resource members.
      */
-    serviceType?: pulumi.Input<string>;
+    serviceType?: pulumi.Input<string | undefined>;
     /**
      * Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose 'systemVersion' is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
      */
-    sourceMajorVersion?: pulumi.Input<string>;
+    sourceMajorVersion?: pulumi.Input<string | undefined>;
     /**
      * The current state of the Exadata Fleet Update Collection.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Number of targets that are members of this Collection.
      */
-    targetCount?: pulumi.Input<number>;
+    targetCount?: pulumi.Input<number | undefined>;
     /**
      * The time the Exadata Fleet Update Collection was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the Exadata Fleet Update Collection was updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * Collection type. DB: Only Database entity type resources allowed. GI: CloudVMCluster and VMCluster entity type resources allowed. GUEST_OS: CloudVmCluster and VmCluster entity type resources are allowed. EXADB_STACK: CloudVmCluster and VmCluster entity type resources are allowed. 
      *
@@ -338,7 +338,7 @@ export interface FsuCollectionState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -352,27 +352,27 @@ export interface FsuCollectionArgs {
     /**
      * Details of components in an Exadata software stack.
      */
-    components?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuCollectionComponent>[]>;
+    components?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuCollectionComponent>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The user-friendly name for the Exadata Fleet Update Collection.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Fleet discovery strategies for a 'GUEST_OS' collection of Exadata VM Clusters. If specified for an UpdateCollection request, discovery for Exadata VM Clusters will be rerun.
      */
-    fleetDiscovery?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCollectionFleetDiscovery>;
+    fleetDiscovery?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCollectionFleetDiscovery | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Fleet Update Collection.
      */
-    fleetSoftwareUpdateFsuCollectionId?: pulumi.Input<string>;
+    fleetSoftwareUpdateFsuCollectionId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Exadata service type for the target resource members.
      */
@@ -380,7 +380,7 @@ export interface FsuCollectionArgs {
     /**
      * Major version of Exadata Image (Guest OS) release for Exadata VM Cluster targets to be included in the Exadata Fleet Update Collection. Only Exadata VM Clusters whose 'systemVersion' is related to the major version will be added to the Exadata Fleet Update Collection. For more details, refer to [Oracle document 2075007.1](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2075007_1.html)
      */
-    sourceMajorVersion?: pulumi.Input<string>;
+    sourceMajorVersion?: pulumi.Input<string | undefined>;
     /**
      * Collection type. DB: Only Database entity type resources allowed. GI: CloudVMCluster and VMCluster entity type resources allowed. GUEST_OS: CloudVmCluster and VmCluster entity type resources are allowed. EXADB_STACK: CloudVmCluster and VmCluster entity type resources are allowed. 
      *

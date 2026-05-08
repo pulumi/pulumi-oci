@@ -51,7 +51,7 @@ class ClusterCompleteCredentialRotationManagementArgs:
 @pulumi.input_type
 class _ClusterCompleteCredentialRotationManagementState:
     def __init__(__self__, *,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ClusterCompleteCredentialRotationManagement resources.
 
@@ -66,7 +66,7 @@ class _ClusterCompleteCredentialRotationManagementState:
 
     @_builtins.property
     @pulumi.getter(name="clusterId")
-    def cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the cluster.
 
@@ -77,7 +77,7 @@ class _ClusterCompleteCredentialRotationManagementState:
         return pulumi.get(self, "cluster_id")
 
     @cluster_id.setter
-    def cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_id", value)
 
 
@@ -87,7 +87,7 @@ class ClusterCompleteCredentialRotationManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Cluster Complete Credential Rotation Management resource in Oracle Cloud Infrastructure Container Engine service.
@@ -158,7 +158,7 @@ class ClusterCompleteCredentialRotationManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -181,7 +181,7 @@ class ClusterCompleteCredentialRotationManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cluster_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ClusterCompleteCredentialRotationManagement':
+            cluster_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ClusterCompleteCredentialRotationManagement':
         """
         Get an existing ClusterCompleteCredentialRotationManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

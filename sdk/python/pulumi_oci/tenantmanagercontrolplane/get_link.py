@@ -143,7 +143,7 @@ def get_link(link_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_link = oci.Tenantmanagercontrolplane.get_link(link_id=test_link_oci_tenantmanagercontrolplane_link["id"])
+    test_link = oci.tenantmanagercontrolplane.get_link(link_id=test_link_oci_tenantmanagercontrolplane_link["id"])
     ```
 
 
@@ -163,7 +163,7 @@ def get_link(link_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_terminated=pulumi.get(__ret__, 'time_terminated'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_link_output(link_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_link_output(link_id: pulumi.Input[Optional[_builtins.str]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLinkResult]:
     """
     This data source provides details about a specific Link resource in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
@@ -176,7 +176,7 @@ def get_link_output(link_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_link = oci.Tenantmanagercontrolplane.get_link(link_id=test_link_oci_tenantmanagercontrolplane_link["id"])
+    test_link = oci.tenantmanagercontrolplane.get_link(link_id=test_link_oci_tenantmanagercontrolplane_link["id"])
     ```
 
 

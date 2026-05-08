@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProtectionCapabilities = oci.Waf.getProtectionCapabilities({
+ * const testProtectionCapabilities = oci.waf.getProtectionCapabilities({
  *     compartmentId: compartmentId,
  *     displayName: protectionCapabilityDisplayName,
  *     groupTags: protectionCapabilityGroupTag,
@@ -116,7 +116,7 @@ export interface GetProtectionCapabilitiesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProtectionCapabilities = oci.Waf.getProtectionCapabilities({
+ * const testProtectionCapabilities = oci.waf.getProtectionCapabilities({
  *     compartmentId: compartmentId,
  *     displayName: protectionCapabilityDisplayName,
  *     groupTags: protectionCapabilityGroupTag,
@@ -150,22 +150,22 @@ export interface GetProtectionCapabilitiesOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Waf.GetProtectionCapabilitiesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Waf.GetProtectionCapabilitiesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that are accociated given group tag.
      */
-    groupTags?: pulumi.Input<pulumi.Input<string>[]>;
+    groupTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only resources that matches given isLatestVersion.
      */
-    isLatestVersions?: pulumi.Input<pulumi.Input<boolean>[]>;
+    isLatestVersions?: pulumi.Input<pulumi.Input<boolean>[] | undefined>;
     /**
      * The unique key of protection capability to filter by.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that matches given type.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

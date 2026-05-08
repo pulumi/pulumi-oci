@@ -32,19 +32,19 @@ __all__ = [
 ]
 
 class CostAnomalyMonitorCostAlertSubscriptionMapArgsDict(TypedDict):
-    cost_alert_subscription_id: NotRequired[pulumi.Input[_builtins.str]]
+    cost_alert_subscription_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The costAlertSubscription ocid which the cost monitor alert maps to.
     """
-    operator: NotRequired[pulumi.Input[_builtins.str]]
+    operator: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The filter operator. Example: 'AND', 'OR'.
     """
-    threshold_absolute_value: NotRequired[pulumi.Input[_builtins.int]]
+    threshold_absolute_value: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The absolute threshold value.
     """
-    threshold_relative_percent: NotRequired[pulumi.Input[_builtins.int]]
+    threshold_relative_percent: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The relative percentage threshold value.
     """
@@ -52,10 +52,10 @@ class CostAnomalyMonitorCostAlertSubscriptionMapArgsDict(TypedDict):
 @pulumi.input_type
 class CostAnomalyMonitorCostAlertSubscriptionMapArgs:
     def __init__(__self__, *,
-                 cost_alert_subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 operator: Optional[pulumi.Input[_builtins.str]] = None,
-                 threshold_absolute_value: Optional[pulumi.Input[_builtins.int]] = None,
-                 threshold_relative_percent: Optional[pulumi.Input[_builtins.int]] = None):
+                 cost_alert_subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 operator: pulumi.Input[Optional[_builtins.str]] = None,
+                 threshold_absolute_value: pulumi.Input[Optional[_builtins.int]] = None,
+                 threshold_relative_percent: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] cost_alert_subscription_id: (Updatable) The costAlertSubscription ocid which the cost monitor alert maps to.
         :param pulumi.Input[_builtins.str] operator: (Updatable) The filter operator. Example: 'AND', 'OR'.
@@ -73,50 +73,50 @@ class CostAnomalyMonitorCostAlertSubscriptionMapArgs:
 
     @_builtins.property
     @pulumi.getter(name="costAlertSubscriptionId")
-    def cost_alert_subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cost_alert_subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The costAlertSubscription ocid which the cost monitor alert maps to.
         """
         return pulumi.get(self, "cost_alert_subscription_id")
 
     @cost_alert_subscription_id.setter
-    def cost_alert_subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cost_alert_subscription_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cost_alert_subscription_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def operator(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def operator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The filter operator. Example: 'AND', 'OR'.
         """
         return pulumi.get(self, "operator")
 
     @operator.setter
-    def operator(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def operator(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "operator", value)
 
     @_builtins.property
     @pulumi.getter(name="thresholdAbsoluteValue")
-    def threshold_absolute_value(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def threshold_absolute_value(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The absolute threshold value.
         """
         return pulumi.get(self, "threshold_absolute_value")
 
     @threshold_absolute_value.setter
-    def threshold_absolute_value(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def threshold_absolute_value(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "threshold_absolute_value", value)
 
     @_builtins.property
     @pulumi.getter(name="thresholdRelativePercent")
-    def threshold_relative_percent(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def threshold_relative_percent(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The relative percentage threshold value.
         """
         return pulumi.get(self, "threshold_relative_percent")
 
     @threshold_relative_percent.setter
-    def threshold_relative_percent(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def threshold_relative_percent(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "threshold_relative_percent", value)
 
 

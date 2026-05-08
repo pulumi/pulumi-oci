@@ -141,7 +141,7 @@ def get_work_requests(cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_work_requests = oci.ContainerEngine.get_work_requests(compartment_id=compartment_id,
+    test_work_requests = oci.containerengine.get_work_requests(compartment_id=compartment_id,
         cluster_id=test_cluster["id"],
         resource_id=test_resource["id"],
         resource_type=work_request_resource_type,
@@ -174,12 +174,12 @@ def get_work_requests(cluster_id: Optional[_builtins.str] = None,
         resource_type=pulumi.get(__ret__, 'resource_type'),
         statuses=pulumi.get(__ret__, 'statuses'),
         work_requests=pulumi.get(__ret__, 'work_requests'))
-def get_work_requests_output(cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkRequestsFilterArgs', 'GetWorkRequestsFilterArgsDict']]]]] = None,
-                             resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             resource_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             statuses: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_work_requests_output(cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWorkRequestsFilterArgs', 'GetWorkRequestsFilterArgsDict']]]]] = None,
+                             resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             statuses: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkRequestsResult]:
     """
     This data source provides the list of Work Requests in Oracle Cloud Infrastructure Container Engine service.
@@ -192,7 +192,7 @@ def get_work_requests_output(cluster_id: Optional[pulumi.Input[Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_work_requests = oci.ContainerEngine.get_work_requests(compartment_id=compartment_id,
+    test_work_requests = oci.containerengine.get_work_requests(compartment_id=compartment_id,
         cluster_id=test_cluster["id"],
         resource_id=test_resource["id"],
         resource_type=work_request_resource_type,

@@ -31,9 +31,9 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := datasafe.GetMaskingPolicyMaskingObjects(ctx, &datasafe.GetMaskingPolicyMaskingObjectsArgs{
 //				MaskingPolicyId: testMaskingPolicy.Id,
-//				Objects:         maskingPolicyMaskingObjectObject,
-//				ObjectTypes:     maskingPolicyMaskingObjectObjectType,
-//				SchemaNames:     maskingPolicyMaskingObjectSchemaName,
+//				Objects:         pulumi.ToArray(maskingPolicyMaskingObjectObject),
+//				ObjectTypes:     pulumi.ToArray(maskingPolicyMaskingObjectObjectType),
+//				SchemaNames:     pulumi.ToArray(maskingPolicyMaskingObjectSchemaName),
 //			}, nil)
 //			if err != nil {
 //				return err

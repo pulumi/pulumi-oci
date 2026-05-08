@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseToolsEndpointService = oci.DatabaseTools.getDatabaseToolsEndpointService({
+ * const testDatabaseToolsEndpointService = oci.databasetools.getDatabaseToolsEndpointService({
  *     databaseToolsEndpointServiceId: testDatabaseToolsEndpointServiceOciDatabaseToolsDatabaseToolsEndpointService.id,
  * });
  * ```
@@ -102,7 +102,7 @@ export interface GetDatabaseToolsEndpointServiceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseToolsEndpointService = oci.DatabaseTools.getDatabaseToolsEndpointService({
+ * const testDatabaseToolsEndpointService = oci.databasetools.getDatabaseToolsEndpointService({
  *     databaseToolsEndpointServiceId: testDatabaseToolsEndpointServiceOciDatabaseToolsDatabaseToolsEndpointService.id,
  * });
  * ```

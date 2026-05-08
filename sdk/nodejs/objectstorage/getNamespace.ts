@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespace = oci.ObjectStorage.getNamespace({
+ * const testNamespace = oci.objectstorage.getNamespace({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -75,7 +75,7 @@ export interface GetNamespaceResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespace = oci.ObjectStorage.getNamespace({
+ * const testNamespace = oci.objectstorage.getNamespace({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -95,5 +95,5 @@ export interface GetNamespaceOutputArgs {
     /**
      * This is an optional field representing either the tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or the compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) within the tenancy whose Object Storage namespace is to be retrieved.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
 }

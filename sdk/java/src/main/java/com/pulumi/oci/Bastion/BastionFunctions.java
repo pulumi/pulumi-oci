@@ -40,8 +40,8 @@ public final class BastionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Bastion.BastionFunctions;
      * import com.pulumi.oci.Bastion.inputs.GetBastionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -82,8 +82,8 @@ public final class BastionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Bastion.BastionFunctions;
      * import com.pulumi.oci.Bastion.inputs.GetBastionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -124,8 +124,8 @@ public final class BastionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Bastion.BastionFunctions;
      * import com.pulumi.oci.Bastion.inputs.GetBastionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -166,8 +166,8 @@ public final class BastionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Bastion.BastionFunctions;
      * import com.pulumi.oci.Bastion.inputs.GetBastionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -208,8 +208,8 @@ public final class BastionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Bastion.BastionFunctions;
      * import com.pulumi.oci.Bastion.inputs.GetBastionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -250,8 +250,8 @@ public final class BastionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Bastion.BastionFunctions;
      * import com.pulumi.oci.Bastion.inputs.GetBastionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -295,8 +295,8 @@ public final class BastionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Bastion.BastionFunctions;
      * import com.pulumi.oci.Bastion.inputs.GetBastionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -340,8 +340,8 @@ public final class BastionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Bastion.BastionFunctions;
      * import com.pulumi.oci.Bastion.inputs.GetBastionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -385,8 +385,8 @@ public final class BastionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Bastion.BastionFunctions;
      * import com.pulumi.oci.Bastion.inputs.GetBastionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -430,8 +430,8 @@ public final class BastionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Bastion.BastionFunctions;
      * import com.pulumi.oci.Bastion.inputs.GetBastionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -475,8 +475,8 @@ public final class BastionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Bastion.BastionFunctions;
      * import com.pulumi.oci.Bastion.inputs.GetSessionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -517,8 +517,8 @@ public final class BastionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Bastion.BastionFunctions;
      * import com.pulumi.oci.Bastion.inputs.GetSessionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -559,8 +559,8 @@ public final class BastionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Bastion.BastionFunctions;
      * import com.pulumi.oci.Bastion.inputs.GetSessionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -601,8 +601,8 @@ public final class BastionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Bastion.BastionFunctions;
      * import com.pulumi.oci.Bastion.inputs.GetSessionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -643,8 +643,8 @@ public final class BastionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Bastion.BastionFunctions;
      * import com.pulumi.oci.Bastion.inputs.GetSessionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -685,8 +685,8 @@ public final class BastionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Bastion.BastionFunctions;
      * import com.pulumi.oci.Bastion.inputs.GetSessionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -730,8 +730,8 @@ public final class BastionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Bastion.BastionFunctions;
      * import com.pulumi.oci.Bastion.inputs.GetSessionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -775,8 +775,8 @@ public final class BastionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Bastion.BastionFunctions;
      * import com.pulumi.oci.Bastion.inputs.GetSessionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -820,8 +820,8 @@ public final class BastionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Bastion.BastionFunctions;
      * import com.pulumi.oci.Bastion.inputs.GetSessionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -865,8 +865,8 @@ public final class BastionFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Bastion.BastionFunctions;
      * import com.pulumi.oci.Bastion.inputs.GetSessionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

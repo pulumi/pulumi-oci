@@ -26,17 +26,17 @@ class BlockchainPlatformArgs:
                  display_name: pulumi.Input[_builtins.str],
                  idcs_access_token: pulumi.Input[_builtins.str],
                  platform_role: pulumi.Input[_builtins.str],
-                 ca_cert_archive_text: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 federated_user_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_byol: Optional[pulumi.Input[_builtins.bool]] = None,
-                 load_balancer_shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 platform_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 replicas: Optional[pulumi.Input['BlockchainPlatformReplicasArgs']] = None,
-                 storage_size_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 total_ocpu_capacity: Optional[pulumi.Input[_builtins.int]] = None):
+                 ca_cert_archive_text: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 federated_user_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_byol: pulumi.Input[Optional[_builtins.bool]] = None,
+                 load_balancer_shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 platform_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 replicas: pulumi.Input[Optional['BlockchainPlatformReplicasArgs']] = None,
+                 storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 total_ocpu_capacity: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a BlockchainPlatform resource.
 
@@ -151,79 +151,79 @@ class BlockchainPlatformArgs:
 
     @_builtins.property
     @pulumi.getter(name="caCertArchiveText")
-    def ca_cert_archive_text(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ca_cert_archive_text(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file. The Archive file is a zip file containing third part CA Certificates, the ca key and certificate files used when issuing enrollment certificates (ECerts) and transaction certificates (TCerts). The chainfile (if it exists) contains the certificate chain which should be trusted for this CA, where the 1st in the chain is always the root CA certificate. File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
         """
         return pulumi.get(self, "ca_cert_archive_text")
 
     @ca_cert_archive_text.setter
-    def ca_cert_archive_text(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ca_cert_archive_text(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ca_cert_archive_text", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Platform Instance Description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="federatedUserId")
-    def federated_user_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def federated_user_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Identifier for a federated user
         """
         return pulumi.get(self, "federated_user_id")
 
     @federated_user_id.setter
-    def federated_user_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def federated_user_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "federated_user_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isByol")
-    def is_byol(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_byol(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Bring your own license
         """
         return pulumi.get(self, "is_byol")
 
     @is_byol.setter
-    def is_byol(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_byol(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_byol", value)
 
     @_builtins.property
     @pulumi.getter(name="loadBalancerShape")
-    def load_balancer_shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def load_balancer_shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
 
@@ -234,88 +234,88 @@ class BlockchainPlatformArgs:
         return pulumi.get(self, "load_balancer_shape")
 
     @load_balancer_shape.setter
-    def load_balancer_shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def load_balancer_shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "load_balancer_shape", value)
 
     @_builtins.property
     @pulumi.getter(name="platformVersion")
-    def platform_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def platform_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Platform version
         """
         return pulumi.get(self, "platform_version")
 
     @platform_version.setter
-    def platform_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def platform_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "platform_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def replicas(self) -> Optional[pulumi.Input['BlockchainPlatformReplicasArgs']]:
+    def replicas(self) -> pulumi.Input[Optional['BlockchainPlatformReplicasArgs']]:
         """
         Number of replicas of service components like Rest Proxy, CA and Console
         """
         return pulumi.get(self, "replicas")
 
     @replicas.setter
-    def replicas(self, value: Optional[pulumi.Input['BlockchainPlatformReplicasArgs']]):
+    def replicas(self, value: pulumi.Input[Optional['BlockchainPlatformReplicasArgs']]):
         pulumi.set(self, "replicas", value)
 
     @_builtins.property
     @pulumi.getter(name="storageSizeInTbs")
-    def storage_size_in_tbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def storage_size_in_tbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Storage size in TBs
         """
         return pulumi.get(self, "storage_size_in_tbs")
 
     @storage_size_in_tbs.setter
-    def storage_size_in_tbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def storage_size_in_tbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "storage_size_in_tbs", value)
 
     @_builtins.property
     @pulumi.getter(name="totalOcpuCapacity")
-    def total_ocpu_capacity(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def total_ocpu_capacity(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of total OCPUs allocated to the platform cluster
         """
         return pulumi.get(self, "total_ocpu_capacity")
 
     @total_ocpu_capacity.setter
-    def total_ocpu_capacity(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def total_ocpu_capacity(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "total_ocpu_capacity", value)
 
 
 @pulumi.input_type
 class _BlockchainPlatformState:
     def __init__(__self__, *,
-                 ca_cert_archive_text: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 component_details: Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailArgs']]]] = None,
-                 compute_shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 federated_user_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 host_ocpu_utilization_infos: Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformHostOcpuUtilizationInfoArgs']]]] = None,
-                 idcs_access_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_byol: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_multi_ad: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 load_balancer_shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 platform_role: Optional[pulumi.Input[_builtins.str]] = None,
-                 platform_shape_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 platform_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 replicas: Optional[pulumi.Input['BlockchainPlatformReplicasArgs']] = None,
-                 service_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 service_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_size_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 storage_used_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_ocpu_capacity: Optional[pulumi.Input[_builtins.int]] = None):
+                 ca_cert_archive_text: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 component_details: pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailArgs']]]] = None,
+                 compute_shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 federated_user_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 host_ocpu_utilization_infos: pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformHostOcpuUtilizationInfoArgs']]]] = None,
+                 idcs_access_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_byol: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_multi_ad: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 load_balancer_shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 platform_role: pulumi.Input[Optional[_builtins.str]] = None,
+                 platform_shape_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 platform_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 replicas: pulumi.Input[Optional['BlockchainPlatformReplicasArgs']] = None,
+                 service_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 service_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 storage_used_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_ocpu_capacity: pulumi.Input[Optional[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering BlockchainPlatform resources.
 
@@ -408,175 +408,175 @@ class _BlockchainPlatformState:
 
     @_builtins.property
     @pulumi.getter(name="caCertArchiveText")
-    def ca_cert_archive_text(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ca_cert_archive_text(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file. The Archive file is a zip file containing third part CA Certificates, the ca key and certificate files used when issuing enrollment certificates (ECerts) and transaction certificates (TCerts). The chainfile (if it exists) contains the certificate chain which should be trusted for this CA, where the 1st in the chain is always the root CA certificate. File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
         """
         return pulumi.get(self, "ca_cert_archive_text")
 
     @ca_cert_archive_text.setter
-    def ca_cert_archive_text(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ca_cert_archive_text(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ca_cert_archive_text", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Compartment Identifier
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="componentDetails")
-    def component_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailArgs']]]]:
+    def component_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailArgs']]]]:
         """
         Blockchain Platform component details.
         """
         return pulumi.get(self, "component_details")
 
     @component_details.setter
-    def component_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformComponentDetailArgs']]]]):
+    def component_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformComponentDetailArgs']]]]):
         pulumi.set(self, "component_details", value)
 
     @_builtins.property
     @pulumi.getter(name="computeShape")
-    def compute_shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
         """
         return pulumi.get(self, "compute_shape")
 
     @compute_shape.setter
-    def compute_shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_shape", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Platform Instance Description
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Platform Instance Display name, can be renamed
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="federatedUserId")
-    def federated_user_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def federated_user_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Identifier for a federated user
         """
         return pulumi.get(self, "federated_user_id")
 
     @federated_user_id.setter
-    def federated_user_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def federated_user_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "federated_user_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="hostOcpuUtilizationInfos")
-    def host_ocpu_utilization_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformHostOcpuUtilizationInfoArgs']]]]:
+    def host_ocpu_utilization_infos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformHostOcpuUtilizationInfoArgs']]]]:
         """
         List of OcpuUtilization for all hosts
         """
         return pulumi.get(self, "host_ocpu_utilization_infos")
 
     @host_ocpu_utilization_infos.setter
-    def host_ocpu_utilization_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BlockchainPlatformHostOcpuUtilizationInfoArgs']]]]):
+    def host_ocpu_utilization_infos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['BlockchainPlatformHostOcpuUtilizationInfoArgs']]]]):
         pulumi.set(self, "host_ocpu_utilization_infos", value)
 
     @_builtins.property
     @pulumi.getter(name="idcsAccessToken")
-    def idcs_access_token(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idcs_access_token(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         IDCS access token with Identity Domain Administrator role
         """
         return pulumi.get(self, "idcs_access_token")
 
     @idcs_access_token.setter
-    def idcs_access_token(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idcs_access_token(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idcs_access_token", value)
 
     @_builtins.property
     @pulumi.getter(name="isByol")
-    def is_byol(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_byol(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Bring your own license
         """
         return pulumi.get(self, "is_byol")
 
     @is_byol.setter
-    def is_byol(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_byol(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_byol", value)
 
     @_builtins.property
     @pulumi.getter(name="isMultiAd")
-    def is_multi_ad(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_multi_ad(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         True for multi-AD blockchain plaforms, false for single-AD
         """
         return pulumi.get(self, "is_multi_ad")
 
     @is_multi_ad.setter
-    def is_multi_ad(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_multi_ad(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_multi_ad", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="loadBalancerShape")
-    def load_balancer_shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def load_balancer_shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
 
@@ -587,151 +587,151 @@ class _BlockchainPlatformState:
         return pulumi.get(self, "load_balancer_shape")
 
     @load_balancer_shape.setter
-    def load_balancer_shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def load_balancer_shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "load_balancer_shape", value)
 
     @_builtins.property
     @pulumi.getter(name="platformRole")
-    def platform_role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def platform_role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Role of platform - founder or participant
         """
         return pulumi.get(self, "platform_role")
 
     @platform_role.setter
-    def platform_role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def platform_role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "platform_role", value)
 
     @_builtins.property
     @pulumi.getter(name="platformShapeType")
-    def platform_shape_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def platform_shape_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of Platform shape - DEFAULT or CUSTOM
         """
         return pulumi.get(self, "platform_shape_type")
 
     @platform_shape_type.setter
-    def platform_shape_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def platform_shape_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "platform_shape_type", value)
 
     @_builtins.property
     @pulumi.getter(name="platformVersion")
-    def platform_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def platform_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Platform version
         """
         return pulumi.get(self, "platform_version")
 
     @platform_version.setter
-    def platform_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def platform_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "platform_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def replicas(self) -> Optional[pulumi.Input['BlockchainPlatformReplicasArgs']]:
+    def replicas(self) -> pulumi.Input[Optional['BlockchainPlatformReplicasArgs']]:
         """
         Number of replicas of service components like Rest Proxy, CA and Console
         """
         return pulumi.get(self, "replicas")
 
     @replicas.setter
-    def replicas(self, value: Optional[pulumi.Input['BlockchainPlatformReplicasArgs']]):
+    def replicas(self, value: pulumi.Input[Optional['BlockchainPlatformReplicasArgs']]):
         pulumi.set(self, "replicas", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceEndpoint")
-    def service_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Service endpoint URL, valid post-provisioning
         """
         return pulumi.get(self, "service_endpoint")
 
     @service_endpoint.setter
-    def service_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceVersion")
-    def service_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the Platform Instance.
         """
         return pulumi.get(self, "service_version")
 
     @service_version.setter
-    def service_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_version", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Platform Instance.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="storageSizeInTbs")
-    def storage_size_in_tbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def storage_size_in_tbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Storage size in TBs
         """
         return pulumi.get(self, "storage_size_in_tbs")
 
     @storage_size_in_tbs.setter
-    def storage_size_in_tbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def storage_size_in_tbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "storage_size_in_tbs", value)
 
     @_builtins.property
     @pulumi.getter(name="storageUsedInTbs")
-    def storage_used_in_tbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def storage_used_in_tbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Storage used in TBs
         """
         return pulumi.get(self, "storage_used_in_tbs")
 
     @storage_used_in_tbs.setter
-    def storage_used_in_tbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def storage_used_in_tbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "storage_used_in_tbs", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the the Platform Instance was created. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the Platform Instance was updated. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="totalOcpuCapacity")
-    def total_ocpu_capacity(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def total_ocpu_capacity(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of total OCPUs allocated to the platform cluster
         """
         return pulumi.get(self, "total_ocpu_capacity")
 
     @total_ocpu_capacity.setter
-    def total_ocpu_capacity(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def total_ocpu_capacity(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "total_ocpu_capacity", value)
 
 
@@ -741,22 +741,22 @@ class BlockchainPlatform(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ca_cert_archive_text: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 federated_user_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 idcs_access_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_byol: Optional[pulumi.Input[_builtins.bool]] = None,
-                 load_balancer_shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 platform_role: Optional[pulumi.Input[_builtins.str]] = None,
-                 platform_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 replicas: Optional[pulumi.Input[Union['BlockchainPlatformReplicasArgs', 'BlockchainPlatformReplicasArgsDict']]] = None,
-                 storage_size_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 total_ocpu_capacity: Optional[pulumi.Input[_builtins.int]] = None,
+                 ca_cert_archive_text: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 federated_user_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 idcs_access_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_byol: pulumi.Input[Optional[_builtins.bool]] = None,
+                 load_balancer_shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 platform_role: pulumi.Input[Optional[_builtins.str]] = None,
+                 platform_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 replicas: pulumi.Input[Optional[Union['BlockchainPlatformReplicasArgs', 'BlockchainPlatformReplicasArgsDict']]] = None,
+                 storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 total_ocpu_capacity: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         This resource provides the Blockchain Platform resource in Oracle Cloud Infrastructure Blockchain service.
@@ -787,7 +787,7 @@ class BlockchainPlatform(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_byol=blockchain_platform_is_byol,
+            is_byol=blockchain_platform_is_byol == "true",
             platform_version=blockchain_platform_platform_version)
         ```
 
@@ -858,7 +858,7 @@ class BlockchainPlatform(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_byol=blockchain_platform_is_byol,
+            is_byol=blockchain_platform_is_byol == "true",
             platform_version=blockchain_platform_platform_version)
         ```
 
@@ -886,22 +886,22 @@ class BlockchainPlatform(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 ca_cert_archive_text: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 federated_user_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 idcs_access_token: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_byol: Optional[pulumi.Input[_builtins.bool]] = None,
-                 load_balancer_shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 platform_role: Optional[pulumi.Input[_builtins.str]] = None,
-                 platform_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 replicas: Optional[pulumi.Input[Union['BlockchainPlatformReplicasArgs', 'BlockchainPlatformReplicasArgsDict']]] = None,
-                 storage_size_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 total_ocpu_capacity: Optional[pulumi.Input[_builtins.int]] = None,
+                 ca_cert_archive_text: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 federated_user_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 idcs_access_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_byol: pulumi.Input[Optional[_builtins.bool]] = None,
+                 load_balancer_shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 platform_role: pulumi.Input[Optional[_builtins.str]] = None,
+                 platform_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 replicas: pulumi.Input[Optional[Union['BlockchainPlatformReplicasArgs', 'BlockchainPlatformReplicasArgsDict']]] = None,
+                 storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 total_ocpu_capacity: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -960,33 +960,33 @@ class BlockchainPlatform(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            ca_cert_archive_text: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            component_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BlockchainPlatformComponentDetailArgs', 'BlockchainPlatformComponentDetailArgsDict']]]]] = None,
-            compute_shape: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            federated_user_id: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            host_ocpu_utilization_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['BlockchainPlatformHostOcpuUtilizationInfoArgs', 'BlockchainPlatformHostOcpuUtilizationInfoArgsDict']]]]] = None,
-            idcs_access_token: Optional[pulumi.Input[_builtins.str]] = None,
-            is_byol: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_multi_ad: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            load_balancer_shape: Optional[pulumi.Input[_builtins.str]] = None,
-            platform_role: Optional[pulumi.Input[_builtins.str]] = None,
-            platform_shape_type: Optional[pulumi.Input[_builtins.str]] = None,
-            platform_version: Optional[pulumi.Input[_builtins.str]] = None,
-            replicas: Optional[pulumi.Input[Union['BlockchainPlatformReplicasArgs', 'BlockchainPlatformReplicasArgsDict']]] = None,
-            service_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-            service_version: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            storage_size_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
-            storage_used_in_tbs: Optional[pulumi.Input[_builtins.float]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            total_ocpu_capacity: Optional[pulumi.Input[_builtins.int]] = None) -> 'BlockchainPlatform':
+            ca_cert_archive_text: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            component_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BlockchainPlatformComponentDetailArgs', 'BlockchainPlatformComponentDetailArgsDict']]]]] = None,
+            compute_shape: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            federated_user_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            host_ocpu_utilization_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BlockchainPlatformHostOcpuUtilizationInfoArgs', 'BlockchainPlatformHostOcpuUtilizationInfoArgsDict']]]]] = None,
+            idcs_access_token: pulumi.Input[Optional[_builtins.str]] = None,
+            is_byol: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_multi_ad: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            load_balancer_shape: pulumi.Input[Optional[_builtins.str]] = None,
+            platform_role: pulumi.Input[Optional[_builtins.str]] = None,
+            platform_shape_type: pulumi.Input[Optional[_builtins.str]] = None,
+            platform_version: pulumi.Input[Optional[_builtins.str]] = None,
+            replicas: pulumi.Input[Optional[Union['BlockchainPlatformReplicasArgs', 'BlockchainPlatformReplicasArgsDict']]] = None,
+            service_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            service_version: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+            storage_used_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            total_ocpu_capacity: pulumi.Input[Optional[_builtins.int]] = None) -> 'BlockchainPlatform':
         """
         Get an existing BlockchainPlatform resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

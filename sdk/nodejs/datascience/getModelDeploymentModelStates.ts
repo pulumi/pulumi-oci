@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelDeploymentModelStates = oci.DataScience.getModelDeploymentModelStates({
+ * const testModelDeploymentModelStates = oci.datascience.getModelDeploymentModelStates({
  *     compartmentId: compartmentId,
  *     modelDeploymentId: testModelDeployment.id,
  *     displayName: modelDeploymentModelStateDisplayName,
@@ -114,7 +114,7 @@ export interface GetModelDeploymentModelStatesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelDeploymentModelStates = oci.DataScience.getModelDeploymentModelStates({
+ * const testModelDeploymentModelStates = oci.datascience.getModelDeploymentModelStates({
  *     compartmentId: compartmentId,
  *     modelDeploymentId: testModelDeployment.id,
  *     displayName: modelDeploymentModelStateDisplayName,
@@ -148,12 +148,12 @@ export interface GetModelDeploymentModelStatesOutputArgs {
     /**
      * <b>Filter</b> results by its user-friendly name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetModelDeploymentModelStatesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataScience.GetModelDeploymentModelStatesFilterArgs>[] | undefined>;
     /**
      * <b>Filter</b> results by the inference key.
      */
-    inferenceKey?: pulumi.Input<string>;
+    inferenceKey?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment.
      */
@@ -161,9 +161,9 @@ export interface GetModelDeploymentModelStatesOutputArgs {
     /**
      * <b>Filter</b> results by the model ocid.
      */
-    modelId?: pulumi.Input<string>;
+    modelId?: pulumi.Input<string | undefined>;
     /**
      * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      */
-    projectId?: pulumi.Input<string>;
+    projectId?: pulumi.Input<string | undefined>;
 }

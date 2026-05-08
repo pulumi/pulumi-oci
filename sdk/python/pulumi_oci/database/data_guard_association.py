@@ -27,41 +27,41 @@ class DataGuardAssociationArgs:
                  delete_standby_db_home_on_delete: pulumi.Input[_builtins.str],
                  protection_mode: pulumi.Input[_builtins.str],
                  transport_type: pulumi.Input[_builtins.str],
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 compute_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 create_async: Optional[pulumi.Input[_builtins.bool]] = None,
-                 data_collection_options: Optional[pulumi.Input['DataGuardAssociationDataCollectionOptionsArgs']] = None,
-                 database_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 database_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 database_software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_system_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 db_system_security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_active_data_guard_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 migrate_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 node_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 peer_db_home_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_sid_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip_v6: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_volume_performance_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_network_nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 compute_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 create_async: pulumi.Input[Optional[_builtins.bool]] = None,
+                 data_collection_options: pulumi.Input[Optional['DataGuardAssociationDataCollectionOptionsArgs']] = None,
+                 database_defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 database_freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 database_software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_system_defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 db_system_freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 db_system_security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 fault_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_active_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 migrate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 node_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 peer_db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_sid_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip_v6: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_volume_performance_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a DataGuardAssociation resource.
 
@@ -307,193 +307,193 @@ class DataGuardAssociationArgs:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="backupNetworkNsgIds")
-    def backup_network_nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def backup_network_nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         """
         return pulumi.get(self, "backup_network_nsg_ids")
 
     @backup_network_nsg_ids.setter
-    def backup_network_nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def backup_network_nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "backup_network_nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterPlacementGroupId")
-    def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_placement_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "cluster_placement_group_id")
 
     @cluster_placement_group_id.setter
-    def cluster_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_placement_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeCount")
-    def compute_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def compute_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of compute servers for the DB system.
         """
         return pulumi.get(self, "compute_count")
 
     @compute_count.setter
-    def compute_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def compute_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "compute_count", value)
 
     @_builtins.property
     @pulumi.getter(name="computeModel")
-    def compute_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
         """
         return pulumi.get(self, "compute_model")
 
     @compute_model.setter
-    def compute_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_model", value)
 
     @_builtins.property
     @pulumi.getter(name="cpuCoreCount")
-    def cpu_core_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cpu_core_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of CPU cores available for AMD-based virtual machine DB systems.
         """
         return pulumi.get(self, "cpu_core_count")
 
     @cpu_core_count.setter
-    def cpu_core_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cpu_core_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cpu_core_count", value)
 
     @_builtins.property
     @pulumi.getter(name="createAsync")
-    def create_async(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def create_async(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "create_async")
 
     @create_async.setter
-    def create_async(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def create_async(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "create_async", value)
 
     @_builtins.property
     @pulumi.getter(name="dataCollectionOptions")
-    def data_collection_options(self) -> Optional[pulumi.Input['DataGuardAssociationDataCollectionOptionsArgs']]:
+    def data_collection_options(self) -> pulumi.Input[Optional['DataGuardAssociationDataCollectionOptionsArgs']]:
         """
         Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         """
         return pulumi.get(self, "data_collection_options")
 
     @data_collection_options.setter
-    def data_collection_options(self, value: Optional[pulumi.Input['DataGuardAssociationDataCollectionOptionsArgs']]):
+    def data_collection_options(self, value: pulumi.Input[Optional['DataGuardAssociationDataCollectionOptionsArgs']]):
         pulumi.set(self, "data_collection_options", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseDefinedTags")
-    def database_defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def database_defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "database_defined_tags")
 
     @database_defined_tags.setter
-    def database_defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def database_defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "database_defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseFreeformTags")
-    def database_freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def database_freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "database_freeform_tags")
 
     @database_freeform_tags.setter
-    def database_freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def database_freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "database_freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseSoftwareImageId")
-    def database_software_image_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_software_image_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Applicable only when creationType=`ExistingDbSystem` and when the existing database has Exadata shape.
         """
         return pulumi.get(self, "database_software_image_id")
 
     @database_software_image_id.setter
-    def database_software_image_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_software_image_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_software_image_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dbSystemDefinedTags")
-    def db_system_defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def db_system_defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "db_system_defined_tags")
 
     @db_system_defined_tags.setter
-    def db_system_defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def db_system_defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "db_system_defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="dbSystemFreeformTags")
-    def db_system_freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def db_system_freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "db_system_freeform_tags")
 
     @db_system_freeform_tags.setter
-    def db_system_freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def db_system_freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "db_system_freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="dbSystemSecurityAttributes")
-    def db_system_security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def db_system_security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         """
         return pulumi.get(self, "db_system_security_attributes")
 
     @db_system_security_attributes.setter
-    def db_system_security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def db_system_security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "db_system_security_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
         """
         return pulumi.get(self, "domain")
 
     @domain.setter
-    def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain", value)
 
     @_builtins.property
     @pulumi.getter(name="faultDomains")
-    def fault_domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def fault_domains(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
 
@@ -508,48 +508,48 @@ class DataGuardAssociationArgs:
         return pulumi.get(self, "fault_domains")
 
     @fault_domains.setter
-    def fault_domains(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def fault_domains(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "fault_domains", value)
 
     @_builtins.property
     @pulumi.getter
-    def hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The hostname for the DB node.
         """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
-    def hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hostname", value)
 
     @_builtins.property
     @pulumi.getter(name="isActiveDataGuardEnabled")
-    def is_active_data_guard_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_active_data_guard_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) True if active Data Guard is enabled.
         """
         return pulumi.get(self, "is_active_data_guard_enabled")
 
     @is_active_data_guard_enabled.setter
-    def is_active_data_guard_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_active_data_guard_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_active_data_guard_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
         """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
-    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_model", value)
 
     @_builtins.property
     @pulumi.getter(name="migrateTrigger")
-    def migrate_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def migrate_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
 
@@ -560,24 +560,24 @@ class DataGuardAssociationArgs:
         return pulumi.get(self, "migrate_trigger")
 
     @migrate_trigger.setter
-    def migrate_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def migrate_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "migrate_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeCount")
-    def node_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def node_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
         """
         return pulumi.get(self, "node_count")
 
     @node_count.setter
-    def node_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def node_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "node_count", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
         * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
@@ -585,96 +585,96 @@ class DataGuardAssociationArgs:
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="peerDbHomeId")
-    def peer_db_home_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_db_home_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database. You must supply this value to create standby database with an existing DB home
         """
         return pulumi.get(self, "peer_db_home_id")
 
     @peer_db_home_id.setter
-    def peer_db_home_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_db_home_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_db_home_id", value)
 
     @_builtins.property
     @pulumi.getter(name="peerDbSystemId")
-    def peer_db_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_db_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system in which to create the standby database. You must supply this value if creationType is `ExistingDbSystem`.
         """
         return pulumi.get(self, "peer_db_system_id")
 
     @peer_db_system_id.setter
-    def peer_db_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_db_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_db_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="peerDbUniqueName")
-    def peer_db_unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_db_unique_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
         """
         return pulumi.get(self, "peer_db_unique_name")
 
     @peer_db_unique_name.setter
-    def peer_db_unique_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_db_unique_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_db_unique_name", value)
 
     @_builtins.property
     @pulumi.getter(name="peerSidPrefix")
-    def peer_sid_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_sid_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies a prefix for the `Oracle SID` of the database to be created.
         """
         return pulumi.get(self, "peer_sid_prefix")
 
     @peer_sid_prefix.setter
-    def peer_sid_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_sid_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_sid_prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="peerVmClusterId")
-    def peer_vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_vm_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database. You must supply this value if creationType is `ExistingVmCluster`.
         """
         return pulumi.get(self, "peer_vm_cluster_id")
 
     @peer_vm_cluster_id.setter
-    def peer_vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_vm_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_vm_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIp")
-    def private_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
         """
         return pulumi.get(self, "private_ip")
 
     @private_ip.setter
-    def private_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIpV6")
-    def private_ip_v6(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_ip_v6(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
         """
         return pulumi.get(self, "private_ip_v6")
 
     @private_ip_v6.setter
-    def private_ip_v6(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_ip_v6(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_ip_v6", value)
 
     @_builtins.property
     @pulumi.getter
-    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system. Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
 
@@ -683,24 +683,24 @@ class DataGuardAssociationArgs:
         return pulumi.get(self, "shape")
 
     @shape.setter
-    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape", value)
 
     @_builtins.property
     @pulumi.getter(name="storageVolumePerformanceMode")
-    def storage_volume_performance_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_volume_performance_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
         """
         return pulumi.get(self, "storage_volume_performance_mode")
 
     @storage_volume_performance_mode.setter
-    def storage_volume_performance_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_volume_performance_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_volume_performance_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
         * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
@@ -710,84 +710,84 @@ class DataGuardAssociationArgs:
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "subscription_id")
 
     @subscription_id.setter
-    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subscription_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subscription_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
-    def time_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_zone", value)
 
 
 @pulumi.input_type
 class _DataGuardAssociationState:
     def __init__(__self__, *,
-                 apply_lag: Optional[pulumi.Input[_builtins.str]] = None,
-                 apply_rate: Optional[pulumi.Input[_builtins.str]] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 compute_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 create_async: Optional[pulumi.Input[_builtins.bool]] = None,
-                 creation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_collection_options: Optional[pulumi.Input['DataGuardAssociationDataCollectionOptionsArgs']] = None,
-                 database_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 database_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_system_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 db_system_security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 delete_standby_db_home_on_delete: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_active_data_guard_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 migrate_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 node_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 peer_data_guard_association_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_db_home_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_role: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_sid_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip_v6: Optional[pulumi.Input[_builtins.str]] = None,
-                 protection_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 role: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_volume_performance_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 transport_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 apply_lag: pulumi.Input[Optional[_builtins.str]] = None,
+                 apply_rate: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_network_nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 compute_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 create_async: pulumi.Input[Optional[_builtins.bool]] = None,
+                 creation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_collection_options: pulumi.Input[Optional['DataGuardAssociationDataCollectionOptionsArgs']] = None,
+                 database_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 database_freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_system_defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 db_system_freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 db_system_security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 delete_standby_db_home_on_delete: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 fault_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_active_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 migrate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 node_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 peer_data_guard_association_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_role: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_sid_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip_v6: pulumi.Input[Optional[_builtins.str]] = None,
+                 protection_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_volume_performance_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 transport_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DataGuardAssociation resources.
 
@@ -977,133 +977,133 @@ class _DataGuardAssociationState:
 
     @_builtins.property
     @pulumi.getter(name="applyLag")
-    def apply_lag(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def apply_lag(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
         """
         return pulumi.get(self, "apply_lag")
 
     @apply_lag.setter
-    def apply_lag(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def apply_lag(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "apply_lag", value)
 
     @_builtins.property
     @pulumi.getter(name="applyRate")
-    def apply_rate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def apply_rate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
         """
         return pulumi.get(self, "apply_rate")
 
     @apply_rate.setter
-    def apply_rate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def apply_rate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "apply_rate", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="backupNetworkNsgIds")
-    def backup_network_nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def backup_network_nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         """
         return pulumi.get(self, "backup_network_nsg_ids")
 
     @backup_network_nsg_ids.setter
-    def backup_network_nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def backup_network_nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "backup_network_nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="clusterPlacementGroupId")
-    def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def cluster_placement_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "cluster_placement_group_id")
 
     @cluster_placement_group_id.setter
-    def cluster_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def cluster_placement_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "cluster_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeCount")
-    def compute_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def compute_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of compute servers for the DB system.
         """
         return pulumi.get(self, "compute_count")
 
     @compute_count.setter
-    def compute_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def compute_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "compute_count", value)
 
     @_builtins.property
     @pulumi.getter(name="computeModel")
-    def compute_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compute_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
         """
         return pulumi.get(self, "compute_model")
 
     @compute_model.setter
-    def compute_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compute_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compute_model", value)
 
     @_builtins.property
     @pulumi.getter(name="cpuCoreCount")
-    def cpu_core_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def cpu_core_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of CPU cores available for AMD-based virtual machine DB systems.
         """
         return pulumi.get(self, "cpu_core_count")
 
     @cpu_core_count.setter
-    def cpu_core_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def cpu_core_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "cpu_core_count", value)
 
     @_builtins.property
     @pulumi.getter(name="createAsync")
-    def create_async(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def create_async(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "create_async")
 
     @create_async.setter
-    def create_async(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def create_async(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "create_async", value)
 
     @_builtins.property
     @pulumi.getter(name="creationType")
-    def creation_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def creation_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies whether to create the peer database in an existing DB system or in a new DB system.
         """
         return pulumi.get(self, "creation_type")
 
     @creation_type.setter
-    def creation_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def creation_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "creation_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dataCollectionOptions")
-    def data_collection_options(self) -> Optional[pulumi.Input['DataGuardAssociationDataCollectionOptionsArgs']]:
+    def data_collection_options(self) -> pulumi.Input[Optional['DataGuardAssociationDataCollectionOptionsArgs']]:
         """
         Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         """
         return pulumi.get(self, "data_collection_options")
 
     @data_collection_options.setter
-    def data_collection_options(self, value: Optional[pulumi.Input['DataGuardAssociationDataCollectionOptionsArgs']]):
+    def data_collection_options(self, value: pulumi.Input[Optional['DataGuardAssociationDataCollectionOptionsArgs']]):
         pulumi.set(self, "data_collection_options", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseAdminPassword")
-    def database_admin_password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_admin_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A strong password for the `SYS`, `SYSTEM`, and `PDB Admin` users to apply during standby creation.
 
@@ -1118,132 +1118,132 @@ class _DataGuardAssociationState:
         return pulumi.get(self, "database_admin_password")
 
     @database_admin_password.setter
-    def database_admin_password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_admin_password", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseDefinedTags")
-    def database_defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def database_defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "database_defined_tags")
 
     @database_defined_tags.setter
-    def database_defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def database_defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "database_defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseFreeformTags")
-    def database_freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def database_freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "database_freeform_tags")
 
     @database_freeform_tags.setter
-    def database_freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def database_freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "database_freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseId")
-    def database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "database_id")
 
     @database_id.setter
-    def database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseSoftwareImageId")
-    def database_software_image_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def database_software_image_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Applicable only when creationType=`ExistingDbSystem` and when the existing database has Exadata shape.
         """
         return pulumi.get(self, "database_software_image_id")
 
     @database_software_image_id.setter
-    def database_software_image_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def database_software_image_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "database_software_image_id", value)
 
     @_builtins.property
     @pulumi.getter(name="dbSystemDefinedTags")
-    def db_system_defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def db_system_defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "db_system_defined_tags")
 
     @db_system_defined_tags.setter
-    def db_system_defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def db_system_defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "db_system_defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="dbSystemFreeformTags")
-    def db_system_freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def db_system_freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "db_system_freeform_tags")
 
     @db_system_freeform_tags.setter
-    def db_system_freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def db_system_freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "db_system_freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="dbSystemSecurityAttributes")
-    def db_system_security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def db_system_security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         """
         return pulumi.get(self, "db_system_security_attributes")
 
     @db_system_security_attributes.setter
-    def db_system_security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def db_system_security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "db_system_security_attributes", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteStandbyDbHomeOnDelete")
-    def delete_standby_db_home_on_delete(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def delete_standby_db_home_on_delete(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) if set to true the destroy operation will destroy the standby dbHome/dbSystem that is referenced in the Data Guard Association. The Data Guard Association gets destroyed when standby dbHome/dbSystem is terminated. Only `true` is supported at this time. If you change an argument that is used during the delete operation you must run `pulumi up` first so that that the change in the value is registered in the statefile before running `terraform destroy`. `terraform destroy` only looks at what is currently on the statefile and ignores the terraform configuration files.
         """
         return pulumi.get(self, "delete_standby_db_home_on_delete")
 
     @delete_standby_db_home_on_delete.setter
-    def delete_standby_db_home_on_delete(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def delete_standby_db_home_on_delete(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "delete_standby_db_home_on_delete", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
         """
         return pulumi.get(self, "domain")
 
     @domain.setter
-    def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "domain", value)
 
     @_builtins.property
     @pulumi.getter(name="faultDomains")
-    def fault_domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def fault_domains(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
 
@@ -1258,60 +1258,60 @@ class _DataGuardAssociationState:
         return pulumi.get(self, "fault_domains")
 
     @fault_domains.setter
-    def fault_domains(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def fault_domains(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "fault_domains", value)
 
     @_builtins.property
     @pulumi.getter
-    def hostname(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The hostname for the DB node.
         """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
-    def hostname(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hostname", value)
 
     @_builtins.property
     @pulumi.getter(name="isActiveDataGuardEnabled")
-    def is_active_data_guard_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_active_data_guard_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) True if active Data Guard is enabled.
         """
         return pulumi.get(self, "is_active_data_guard_enabled")
 
     @is_active_data_guard_enabled.setter
-    def is_active_data_guard_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_active_data_guard_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_active_data_guard_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def license_model(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
         """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
-    def license_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def license_model(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "license_model", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional information about the current lifecycleState, if available.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="migrateTrigger")
-    def migrate_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def migrate_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
 
@@ -1322,24 +1322,24 @@ class _DataGuardAssociationState:
         return pulumi.get(self, "migrate_trigger")
 
     @migrate_trigger.setter
-    def migrate_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def migrate_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "migrate_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="nodeCount")
-    def node_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def node_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
         """
         return pulumi.get(self, "node_count")
 
     @node_count.setter
-    def node_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def node_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "node_count", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
         * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
@@ -1347,132 +1347,132 @@ class _DataGuardAssociationState:
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="peerDataGuardAssociationId")
-    def peer_data_guard_association_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_data_guard_association_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer database's Data Guard association.
         """
         return pulumi.get(self, "peer_data_guard_association_id")
 
     @peer_data_guard_association_id.setter
-    def peer_data_guard_association_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_data_guard_association_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_data_guard_association_id", value)
 
     @_builtins.property
     @pulumi.getter(name="peerDatabaseId")
-    def peer_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated peer database.
         """
         return pulumi.get(self, "peer_database_id")
 
     @peer_database_id.setter
-    def peer_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="peerDbHomeId")
-    def peer_db_home_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_db_home_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database. You must supply this value to create standby database with an existing DB home
         """
         return pulumi.get(self, "peer_db_home_id")
 
     @peer_db_home_id.setter
-    def peer_db_home_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_db_home_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_db_home_id", value)
 
     @_builtins.property
     @pulumi.getter(name="peerDbSystemId")
-    def peer_db_system_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_db_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system in which to create the standby database. You must supply this value if creationType is `ExistingDbSystem`.
         """
         return pulumi.get(self, "peer_db_system_id")
 
     @peer_db_system_id.setter
-    def peer_db_system_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_db_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_db_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="peerDbUniqueName")
-    def peer_db_unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_db_unique_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
         """
         return pulumi.get(self, "peer_db_unique_name")
 
     @peer_db_unique_name.setter
-    def peer_db_unique_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_db_unique_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_db_unique_name", value)
 
     @_builtins.property
     @pulumi.getter(name="peerRole")
-    def peer_role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the peer database in this Data Guard association.
         """
         return pulumi.get(self, "peer_role")
 
     @peer_role.setter
-    def peer_role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_role", value)
 
     @_builtins.property
     @pulumi.getter(name="peerSidPrefix")
-    def peer_sid_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_sid_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies a prefix for the `Oracle SID` of the database to be created.
         """
         return pulumi.get(self, "peer_sid_prefix")
 
     @peer_sid_prefix.setter
-    def peer_sid_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_sid_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_sid_prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="peerVmClusterId")
-    def peer_vm_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def peer_vm_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database. You must supply this value if creationType is `ExistingVmCluster`.
         """
         return pulumi.get(self, "peer_vm_cluster_id")
 
     @peer_vm_cluster_id.setter
-    def peer_vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def peer_vm_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "peer_vm_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIp")
-    def private_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IPv4 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv4 address from the subnet.
         """
         return pulumi.get(self, "private_ip")
 
     @private_ip.setter
-    def private_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIpV6")
-    def private_ip_v6(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_ip_v6(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IPv6 address from the provided Oracle Cloud Infrastructure subnet which needs to be assigned to the VNIC. If not provided, it will be auto-assigned with an available IPv6 address from the subnet.
         """
         return pulumi.get(self, "private_ip_v6")
 
     @private_ip_v6.setter
-    def private_ip_v6(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_ip_v6(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_ip_v6", value)
 
     @_builtins.property
     @pulumi.getter(name="protectionMode")
-    def protection_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def protection_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The protection mode to set up between the primary and standby databases. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 
@@ -1481,24 +1481,24 @@ class _DataGuardAssociationState:
         return pulumi.get(self, "protection_mode")
 
     @protection_mode.setter
-    def protection_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def protection_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "protection_mode", value)
 
     @_builtins.property
     @pulumi.getter
-    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The role of the reporting database in this Data Guard association.
         """
         return pulumi.get(self, "role")
 
     @role.setter
-    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
 
     @_builtins.property
     @pulumi.getter
-    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The virtual machine DB system shape to launch for the standby database in the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system. Only virtual machine shapes are valid options. If you do not supply this parameter, the default shape is the shape of the primary DB system.
 
@@ -1507,36 +1507,36 @@ class _DataGuardAssociationState:
         return pulumi.get(self, "shape")
 
     @shape.setter
-    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def shape(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "shape", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Data Guard association.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="storageVolumePerformanceMode")
-    def storage_volume_performance_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def storage_volume_performance_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
         """
         return pulumi.get(self, "storage_volume_performance_mode")
 
     @storage_volume_performance_mode.setter
-    def storage_volume_performance_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def storage_volume_performance_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "storage_volume_performance_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the subnet the DB system is associated with. **Subnet Restrictions:**
         * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
@@ -1546,45 +1546,45 @@ class _DataGuardAssociationState:
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="subscriptionId")
-    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "subscription_id")
 
     @subscription_id.setter
-    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subscription_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subscription_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the Data Guard association was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
-    def time_zone(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_zone", value)
 
     @_builtins.property
     @pulumi.getter(name="transportType")
-    def transport_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def transport_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
         * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
@@ -1598,7 +1598,7 @@ class _DataGuardAssociationState:
         return pulumi.get(self, "transport_type")
 
     @transport_type.setter
-    def transport_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def transport_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "transport_type", value)
 
 
@@ -1608,47 +1608,47 @@ class DataGuardAssociation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 compute_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 create_async: Optional[pulumi.Input[_builtins.bool]] = None,
-                 creation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_collection_options: Optional[pulumi.Input[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict']]] = None,
-                 database_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 database_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_system_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 db_system_security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 delete_standby_db_home_on_delete: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_active_data_guard_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 migrate_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 node_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 peer_db_home_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_sid_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip_v6: Optional[pulumi.Input[_builtins.str]] = None,
-                 protection_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_volume_performance_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 transport_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_network_nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 compute_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 create_async: pulumi.Input[Optional[_builtins.bool]] = None,
+                 creation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_collection_options: pulumi.Input[Optional[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict']]] = None,
+                 database_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 database_freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_system_defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 db_system_freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 db_system_security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 delete_standby_db_home_on_delete: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 fault_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_active_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 migrate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 node_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 peer_db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_sid_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip_v6: pulumi.Input[Optional[_builtins.str]] = None,
+                 protection_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_volume_performance_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 transport_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Data Guard Association resource in Oracle Cloud Infrastructure Database service.
@@ -1680,15 +1680,15 @@ class DataGuardAssociation(pulumi.CustomResource):
             transport_type=data_guard_association_transport_type,
             availability_domain=data_guard_association_availability_domain,
             backup_network_nsg_ids=data_guard_association_backup_network_nsg_ids,
-            compute_count=data_guard_association_compute_count,
+            compute_count=int(data_guard_association_compute_count),
             compute_model=data_guard_association_compute_model,
-            cpu_core_count=data_guard_association_cpu_core_count,
+            cpu_core_count=int(data_guard_association_cpu_core_count),
             database_defined_tags=data_guard_association_database_defined_tags,
             database_freeform_tags=data_guard_association_database_freeform_tags,
             data_collection_options={
-                "is_diagnostics_events_enabled": data_guard_association_data_collection_options_is_diagnostics_events_enabled,
-                "is_health_monitoring_enabled": data_guard_association_data_collection_options_is_health_monitoring_enabled,
-                "is_incident_logs_enabled": data_guard_association_data_collection_options_is_incident_logs_enabled,
+                "is_diagnostics_events_enabled": data_guard_association_data_collection_options_is_diagnostics_events_enabled == "true",
+                "is_health_monitoring_enabled": data_guard_association_data_collection_options_is_health_monitoring_enabled == "true",
+                "is_incident_logs_enabled": data_guard_association_data_collection_options_is_incident_logs_enabled == "true",
             },
             database_software_image_id=test_database_software_image["id"],
             db_system_defined_tags=data_guard_association_db_system_defined_tags,
@@ -1698,9 +1698,9 @@ class DataGuardAssociation(pulumi.CustomResource):
             domain=data_guard_association_domain,
             fault_domains=data_guard_association_fault_domains,
             hostname=data_guard_association_hostname,
-            is_active_data_guard_enabled=data_guard_association_is_active_data_guard_enabled,
+            is_active_data_guard_enabled=data_guard_association_is_active_data_guard_enabled == "true",
             license_model=data_guard_association_license_model,
-            node_count=data_guard_association_node_count,
+            node_count=int(data_guard_association_node_count),
             nsg_ids=data_guard_association_nsg_ids,
             peer_db_home_id=test_db_home["id"],
             peer_db_system_id=test_db_system["id"],
@@ -1832,15 +1832,15 @@ class DataGuardAssociation(pulumi.CustomResource):
             transport_type=data_guard_association_transport_type,
             availability_domain=data_guard_association_availability_domain,
             backup_network_nsg_ids=data_guard_association_backup_network_nsg_ids,
-            compute_count=data_guard_association_compute_count,
+            compute_count=int(data_guard_association_compute_count),
             compute_model=data_guard_association_compute_model,
-            cpu_core_count=data_guard_association_cpu_core_count,
+            cpu_core_count=int(data_guard_association_cpu_core_count),
             database_defined_tags=data_guard_association_database_defined_tags,
             database_freeform_tags=data_guard_association_database_freeform_tags,
             data_collection_options={
-                "is_diagnostics_events_enabled": data_guard_association_data_collection_options_is_diagnostics_events_enabled,
-                "is_health_monitoring_enabled": data_guard_association_data_collection_options_is_health_monitoring_enabled,
-                "is_incident_logs_enabled": data_guard_association_data_collection_options_is_incident_logs_enabled,
+                "is_diagnostics_events_enabled": data_guard_association_data_collection_options_is_diagnostics_events_enabled == "true",
+                "is_health_monitoring_enabled": data_guard_association_data_collection_options_is_health_monitoring_enabled == "true",
+                "is_incident_logs_enabled": data_guard_association_data_collection_options_is_incident_logs_enabled == "true",
             },
             database_software_image_id=test_database_software_image["id"],
             db_system_defined_tags=data_guard_association_db_system_defined_tags,
@@ -1850,9 +1850,9 @@ class DataGuardAssociation(pulumi.CustomResource):
             domain=data_guard_association_domain,
             fault_domains=data_guard_association_fault_domains,
             hostname=data_guard_association_hostname,
-            is_active_data_guard_enabled=data_guard_association_is_active_data_guard_enabled,
+            is_active_data_guard_enabled=data_guard_association_is_active_data_guard_enabled == "true",
             license_model=data_guard_association_license_model,
-            node_count=data_guard_association_node_count,
+            node_count=int(data_guard_association_node_count),
             nsg_ids=data_guard_association_nsg_ids,
             peer_db_home_id=test_db_home["id"],
             peer_db_system_id=test_db_system["id"],
@@ -1887,47 +1887,47 @@ class DataGuardAssociation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compute_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 compute_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 create_async: Optional[pulumi.Input[_builtins.bool]] = None,
-                 creation_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 data_collection_options: Optional[pulumi.Input[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict']]] = None,
-                 database_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 database_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 database_software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 db_system_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 db_system_security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 delete_standby_db_home_on_delete: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 hostname: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_active_data_guard_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 license_model: Optional[pulumi.Input[_builtins.str]] = None,
-                 migrate_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-                 node_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 peer_db_home_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_sid_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 peer_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip_v6: Optional[pulumi.Input[_builtins.str]] = None,
-                 protection_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape: Optional[pulumi.Input[_builtins.str]] = None,
-                 storage_volume_performance_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-                 transport_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_network_nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compute_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 compute_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 create_async: pulumi.Input[Optional[_builtins.bool]] = None,
+                 creation_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_collection_options: pulumi.Input[Optional[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict']]] = None,
+                 database_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 database_freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 database_software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_system_defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 db_system_freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 db_system_security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 delete_standby_db_home_on_delete: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 fault_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 hostname: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_active_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 license_model: pulumi.Input[Optional[_builtins.str]] = None,
+                 migrate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 node_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 peer_db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_sid_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 peer_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip_v6: pulumi.Input[Optional[_builtins.str]] = None,
+                 protection_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_volume_performance_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 transport_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -2011,56 +2011,56 @@ class DataGuardAssociation(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            apply_lag: Optional[pulumi.Input[_builtins.str]] = None,
-            apply_rate: Optional[pulumi.Input[_builtins.str]] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compute_count: Optional[pulumi.Input[_builtins.int]] = None,
-            compute_model: Optional[pulumi.Input[_builtins.str]] = None,
-            cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
-            create_async: Optional[pulumi.Input[_builtins.bool]] = None,
-            creation_type: Optional[pulumi.Input[_builtins.str]] = None,
-            data_collection_options: Optional[pulumi.Input[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict']]] = None,
-            database_admin_password: Optional[pulumi.Input[_builtins.str]] = None,
-            database_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            database_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            database_software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
-            db_system_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            db_system_security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            delete_standby_db_home_on_delete: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            domain: Optional[pulumi.Input[_builtins.str]] = None,
-            fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            hostname: Optional[pulumi.Input[_builtins.str]] = None,
-            is_active_data_guard_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            license_model: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            migrate_trigger: Optional[pulumi.Input[_builtins.int]] = None,
-            node_count: Optional[pulumi.Input[_builtins.int]] = None,
-            nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            peer_data_guard_association_id: Optional[pulumi.Input[_builtins.str]] = None,
-            peer_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-            peer_db_home_id: Optional[pulumi.Input[_builtins.str]] = None,
-            peer_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
-            peer_db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
-            peer_role: Optional[pulumi.Input[_builtins.str]] = None,
-            peer_sid_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-            peer_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-            private_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            private_ip_v6: Optional[pulumi.Input[_builtins.str]] = None,
-            protection_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            role: Optional[pulumi.Input[_builtins.str]] = None,
-            shape: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            storage_volume_performance_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_zone: Optional[pulumi.Input[_builtins.str]] = None,
-            transport_type: Optional[pulumi.Input[_builtins.str]] = None) -> 'DataGuardAssociation':
+            apply_lag: pulumi.Input[Optional[_builtins.str]] = None,
+            apply_rate: pulumi.Input[Optional[_builtins.str]] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_network_nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_count: pulumi.Input[Optional[_builtins.int]] = None,
+            compute_model: pulumi.Input[Optional[_builtins.str]] = None,
+            cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
+            create_async: pulumi.Input[Optional[_builtins.bool]] = None,
+            creation_type: pulumi.Input[Optional[_builtins.str]] = None,
+            data_collection_options: pulumi.Input[Optional[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict']]] = None,
+            database_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+            database_defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            database_freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+            db_system_defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            db_system_freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            db_system_security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            delete_standby_db_home_on_delete: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            domain: pulumi.Input[Optional[_builtins.str]] = None,
+            fault_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            is_active_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            license_model: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            migrate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            node_count: pulumi.Input[Optional[_builtins.int]] = None,
+            nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            peer_data_guard_association_id: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_role: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_sid_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            private_ip_v6: pulumi.Input[Optional[_builtins.str]] = None,
+            protection_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            role: pulumi.Input[Optional[_builtins.str]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_volume_performance_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            transport_type: pulumi.Input[Optional[_builtins.str]] = None) -> 'DataGuardAssociation':
         """
         Get an existing DataGuardAssociation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

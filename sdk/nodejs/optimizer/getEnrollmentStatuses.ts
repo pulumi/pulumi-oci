@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEnrollmentStatuses = oci.Optimizer.getEnrollmentStatuses({
+ * const testEnrollmentStatuses = oci.optimizer.getEnrollmentStatuses({
  *     compartmentId: compartmentId,
  *     state: enrollmentStatusState,
  *     status: enrollmentStatusStatus,
@@ -90,7 +90,7 @@ export interface GetEnrollmentStatusesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEnrollmentStatuses = oci.Optimizer.getEnrollmentStatuses({
+ * const testEnrollmentStatuses = oci.optimizer.getEnrollmentStatuses({
  *     compartmentId: compartmentId,
  *     state: enrollmentStatusState,
  *     status: enrollmentStatusStatus,
@@ -115,13 +115,13 @@ export interface GetEnrollmentStatusesOutputArgs {
      * The OCID of the compartment.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Optimizer.GetEnrollmentStatusesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Optimizer.GetEnrollmentStatusesFilterArgs>[] | undefined>;
     /**
      * A filter that returns results that match the lifecycle state specified.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns results that match the Cloud Advisor enrollment status specified.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

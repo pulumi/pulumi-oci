@@ -51,9 +51,9 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isDropTempTablesEnabled: maskingPolicyIsDropTempTablesEnabled,
- *     isRedoLoggingEnabled: maskingPolicyIsRedoLoggingEnabled,
- *     isRefreshStatsEnabled: maskingPolicyIsRefreshStatsEnabled,
+ *     isDropTempTablesEnabled: maskingPolicyIsDropTempTablesEnabled === "true",
+ *     isRedoLoggingEnabled: maskingPolicyIsRedoLoggingEnabled === "true",
+ *     isRefreshStatsEnabled: maskingPolicyIsRefreshStatsEnabled === "true",
  *     parallelDegree: maskingPolicyParallelDegree,
  *     postMaskingScript: maskingPolicyPostMaskingScript,
  *     preMaskingScript: maskingPolicyPreMaskingScript,
@@ -250,35 +250,35 @@ export interface MaskingPolicyState {
     /**
      * (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
      */
-    addMaskingColumnsFromSdmTrigger?: pulumi.Input<number>;
+    addMaskingColumnsFromSdmTrigger?: pulumi.Input<number | undefined>;
     /**
      * Specifies whether target database credentials are required to perform masking with this policy
      */
-    areTargetCredentialsRequired?: pulumi.Input<boolean>;
+    areTargetCredentialsRequired?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Details to associate a column source with a masking policy.
      */
-    columnSources?: pulumi.Input<pulumi.Input<inputs.DataSafe.MaskingPolicyColumnSource>[]>;
+    columnSources?: pulumi.Input<pulumi.Input<inputs.DataSafe.MaskingPolicyColumnSource>[] | undefined>;
     /**
      * (Updatable) The OCID of the compartment where the masking policy should be created.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the masking policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
      *
@@ -286,47 +286,47 @@ export interface MaskingPolicyState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    generateHealthReportTrigger?: pulumi.Input<number>;
+    generateHealthReportTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
      */
-    isDropTempTablesEnabled?: pulumi.Input<boolean>;
+    isDropTempTablesEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
      */
-    isRedoLoggingEnabled?: pulumi.Input<boolean>;
+    isRedoLoggingEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
      */
-    isRefreshStatsEnabled?: pulumi.Input<boolean>;
+    isRefreshStatsEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
      */
-    parallelDegree?: pulumi.Input<string>;
+    parallelDegree?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A post-masking script, which can contain SQL and PL/SQL statements. It's executed after the core masking script generated using the masking policy. It's usually used to perform additional transformation or cleanup work after masking.
      */
-    postMaskingScript?: pulumi.Input<string>;
+    postMaskingScript?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before  the core masking script generated using the masking policy. It's usually used to perform any preparation or prerequisite work before masking data.
      */
-    preMaskingScript?: pulumi.Input<string>;
+    preMaskingScript?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
      */
-    recompile?: pulumi.Input<string>;
+    recompile?: pulumi.Input<string | undefined>;
     /**
      * The current state of the masking policy.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the masking policy was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the masking policy was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -336,7 +336,7 @@ export interface MaskingPolicyArgs {
     /**
      * (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
      */
-    addMaskingColumnsFromSdmTrigger?: pulumi.Input<number>;
+    addMaskingColumnsFromSdmTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Details to associate a column source with a masking policy.
      */
@@ -348,19 +348,19 @@ export interface MaskingPolicyArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description of the masking policy.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
      *
@@ -368,33 +368,33 @@ export interface MaskingPolicyArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    generateHealthReportTrigger?: pulumi.Input<number>;
+    generateHealthReportTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
      */
-    isDropTempTablesEnabled?: pulumi.Input<boolean>;
+    isDropTempTablesEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Indicates if redo logging is enabled during a masking operation. It's disabled by default. Set this attribute to true to enable redo logging. By default, masking disables redo logging and flashback logging to purge any original unmasked  data from logs. However, in certain circumstances when you only want to test masking, rollback changes, and retry masking, you could enable logging and use a flashback database to retrieve the original unmasked data after it has been masked.
      */
-    isRedoLoggingEnabled?: pulumi.Input<boolean>;
+    isRedoLoggingEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Indicates if statistics gathering is enabled. It's enabled by default. Set this attribute to false to disable statistics gathering. The masking process gathers statistics on masked database tables after masking completes.
      */
-    isRefreshStatsEnabled?: pulumi.Input<boolean>;
+    isRefreshStatsEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Specifies options to enable parallel execution when running data masking. Allowed values are 'NONE' (no parallelism), 'DEFAULT' (the Oracle Database computes the optimum degree of parallelism) or an integer value to be used as the degree of parallelism. Parallel execution helps effectively use multiple CPUs and improve masking performance. Refer to the Oracle Database parallel execution framework when choosing an explicit degree of parallelism.
      */
-    parallelDegree?: pulumi.Input<string>;
+    parallelDegree?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A post-masking script, which can contain SQL and PL/SQL statements. It's executed after the core masking script generated using the masking policy. It's usually used to perform additional transformation or cleanup work after masking.
      */
-    postMaskingScript?: pulumi.Input<string>;
+    postMaskingScript?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A pre-masking script, which can contain SQL and PL/SQL statements. It's executed before  the core masking script generated using the masking policy. It's usually used to perform any preparation or prerequisite work before masking data.
      */
-    preMaskingScript?: pulumi.Input<string>;
+    preMaskingScript?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specifies how to recompile invalid objects post data masking. Allowed values are 'SERIAL' (recompile in serial),  'PARALLEL' (recompile in parallel), 'NONE' (do not recompile). If it's set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
      */
-    recompile?: pulumi.Input<string>;
+    recompile?: pulumi.Input<string | undefined>;
 }

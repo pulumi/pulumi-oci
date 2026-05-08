@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabasePdbConversionHistoryEntries = oci.Database.getDatabasePdbConversionHistoryEntries({
+ * const testDatabasePdbConversionHistoryEntries = oci.database.getDatabasePdbConversionHistoryEntries({
  *     databaseId: testDatabase.id,
  *     pdbConversionAction: databasePdbConversionHistoryEntryPdbConversionAction,
  *     state: databasePdbConversionHistoryEntryState,
@@ -84,7 +84,7 @@ export interface GetDatabasePdbConversionHistoryEntriesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabasePdbConversionHistoryEntries = oci.Database.getDatabasePdbConversionHistoryEntries({
+ * const testDatabasePdbConversionHistoryEntries = oci.database.getDatabasePdbConversionHistoryEntries({
  *     databaseId: testDatabase.id,
  *     pdbConversionAction: databasePdbConversionHistoryEntryPdbConversionAction,
  *     state: databasePdbConversionHistoryEntryState,
@@ -109,13 +109,13 @@ export interface GetDatabasePdbConversionHistoryEntriesOutputArgs {
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     databaseId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDatabasePdbConversionHistoryEntriesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDatabasePdbConversionHistoryEntriesFilterArgs>[] | undefined>;
     /**
      * A filter to return only the pluggable database conversion history entries that match the specified conversion action. For example, you can use this filter to return only entries for the precheck operation.
      */
-    pdbConversionAction?: pulumi.Input<string>;
+    pdbConversionAction?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the pluggable database conversion history entries that match the specified lifecycle state. For example, you can use this filter to return only entries in the "failed" lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

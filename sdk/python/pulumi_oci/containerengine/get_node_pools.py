@@ -137,7 +137,7 @@ def get_node_pools(cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_node_pools = oci.ContainerEngine.get_node_pools(compartment_id=compartment_id,
+    test_node_pools = oci.containerengine.get_node_pools(compartment_id=compartment_id,
         cluster_id=test_cluster["id"],
         name=node_pool_name,
         states=node_pool_state)
@@ -166,11 +166,11 @@ def get_node_pools(cluster_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         node_pools=pulumi.get(__ret__, 'node_pools'),
         states=pulumi.get(__ret__, 'states'))
-def get_node_pools_output(cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                          filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNodePoolsFilterArgs', 'GetNodePoolsFilterArgsDict']]]]] = None,
-                          name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                          states: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_node_pools_output(cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNodePoolsFilterArgs', 'GetNodePoolsFilterArgsDict']]]]] = None,
+                          name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                          states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNodePoolsResult]:
     """
     This data source provides the list of Node Pools in Oracle Cloud Infrastructure Container Engine service.
@@ -183,7 +183,7 @@ def get_node_pools_output(cluster_id: Optional[pulumi.Input[Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_node_pools = oci.ContainerEngine.get_node_pools(compartment_id=compartment_id,
+    test_node_pools = oci.containerengine.get_node_pools(compartment_id=compartment_id,
         cluster_id=test_cluster["id"],
         name=node_pool_name,
         states=node_pool_state)

@@ -24,10 +24,10 @@ class ClusterNetworkArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  instance_pools: pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolArgs']]],
                  placement_configuration: pulumi.Input['ClusterNetworkPlacementConfigurationArgs'],
-                 cluster_configuration: Optional[pulumi.Input['ClusterNetworkClusterConfigurationArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 cluster_configuration: pulumi.Input[Optional['ClusterNetworkClusterConfigurationArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ClusterNetwork resource.
 
@@ -95,7 +95,7 @@ class ClusterNetworkArgs:
 
     @_builtins.property
     @pulumi.getter(name="clusterConfiguration")
-    def cluster_configuration(self) -> Optional[pulumi.Input['ClusterNetworkClusterConfigurationArgs']]:
+    def cluster_configuration(self) -> pulumi.Input[Optional['ClusterNetworkClusterConfigurationArgs']]:
         """
         The HPC cluster configuration requested when launching instances of a cluster network.
 
@@ -104,61 +104,61 @@ class ClusterNetworkArgs:
         return pulumi.get(self, "cluster_configuration")
 
     @cluster_configuration.setter
-    def cluster_configuration(self, value: Optional[pulumi.Input['ClusterNetworkClusterConfigurationArgs']]):
+    def cluster_configuration(self, value: pulumi.Input[Optional['ClusterNetworkClusterConfigurationArgs']]):
         pulumi.set(self, "cluster_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
 
 @pulumi.input_type
 class _ClusterNetworkState:
     def __init__(__self__, *,
-                 cluster_configuration: Optional[pulumi.Input['ClusterNetworkClusterConfigurationArgs']] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hpc_island_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 instance_pools: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolArgs']]]] = None,
-                 network_block_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 placement_configuration: Optional[pulumi.Input['ClusterNetworkPlacementConfigurationArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 cluster_configuration: pulumi.Input[Optional['ClusterNetworkClusterConfigurationArgs']] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hpc_island_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_pools: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolArgs']]]] = None,
+                 network_block_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 placement_configuration: pulumi.Input[Optional['ClusterNetworkPlacementConfigurationArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ClusterNetwork resources.
 
@@ -206,7 +206,7 @@ class _ClusterNetworkState:
 
     @_builtins.property
     @pulumi.getter(name="clusterConfiguration")
-    def cluster_configuration(self) -> Optional[pulumi.Input['ClusterNetworkClusterConfigurationArgs']]:
+    def cluster_configuration(self) -> pulumi.Input[Optional['ClusterNetworkClusterConfigurationArgs']]:
         """
         The HPC cluster configuration requested when launching instances of a cluster network.
 
@@ -215,72 +215,72 @@ class _ClusterNetworkState:
         return pulumi.get(self, "cluster_configuration")
 
     @cluster_configuration.setter
-    def cluster_configuration(self, value: Optional[pulumi.Input['ClusterNetworkClusterConfigurationArgs']]):
+    def cluster_configuration(self, value: pulumi.Input[Optional['ClusterNetworkClusterConfigurationArgs']]):
         pulumi.set(self, "cluster_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="hpcIslandId")
-    def hpc_island_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hpc_island_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
         """
         return pulumi.get(self, "hpc_island_id")
 
     @hpc_island_id.setter
-    def hpc_island_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hpc_island_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hpc_island_id", value)
 
     @_builtins.property
     @pulumi.getter(name="instancePools")
-    def instance_pools(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolArgs']]]]:
+    def instance_pools(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolArgs']]]]:
         """
         (Updatable) The data to create the instance pools in the cluster network.
 
@@ -289,67 +289,67 @@ class _ClusterNetworkState:
         return pulumi.get(self, "instance_pools")
 
     @instance_pools.setter
-    def instance_pools(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolArgs']]]]):
+    def instance_pools(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolArgs']]]]):
         pulumi.set(self, "instance_pools", value)
 
     @_builtins.property
     @pulumi.getter(name="networkBlockIds")
-    def network_block_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def network_block_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of network block OCIDs of the HPC island.
         """
         return pulumi.get(self, "network_block_ids")
 
     @network_block_ids.setter
-    def network_block_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def network_block_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "network_block_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="placementConfiguration")
-    def placement_configuration(self) -> Optional[pulumi.Input['ClusterNetworkPlacementConfigurationArgs']]:
+    def placement_configuration(self) -> pulumi.Input[Optional['ClusterNetworkPlacementConfigurationArgs']]:
         """
         The location for where the instance pools in a cluster network will place instances.
         """
         return pulumi.get(self, "placement_configuration")
 
     @placement_configuration.setter
-    def placement_configuration(self, value: Optional[pulumi.Input['ClusterNetworkPlacementConfigurationArgs']]):
+    def placement_configuration(self, value: pulumi.Input[Optional['ClusterNetworkPlacementConfigurationArgs']]):
         pulumi.set(self, "placement_configuration", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the cluster network.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the resource was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -359,13 +359,13 @@ class ClusterNetwork(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_configuration: Optional[pulumi.Input[Union['ClusterNetworkClusterConfigurationArgs', 'ClusterNetworkClusterConfigurationArgsDict']]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 instance_pools: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterNetworkInstancePoolArgs', 'ClusterNetworkInstancePoolArgsDict']]]]] = None,
-                 placement_configuration: Optional[pulumi.Input[Union['ClusterNetworkPlacementConfigurationArgs', 'ClusterNetworkPlacementConfigurationArgsDict']]] = None,
+                 cluster_configuration: pulumi.Input[Optional[Union['ClusterNetworkClusterConfigurationArgs', 'ClusterNetworkClusterConfigurationArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 instance_pools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterNetworkInstancePoolArgs', 'ClusterNetworkInstancePoolArgsDict']]]]] = None,
+                 placement_configuration: pulumi.Input[Optional[Union['ClusterNetworkPlacementConfigurationArgs', 'ClusterNetworkPlacementConfigurationArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Cluster Network resource in Oracle Cloud Infrastructure Core service.
@@ -399,7 +399,7 @@ class ClusterNetwork(pulumi.CustomResource):
             compartment_id=compartment_id,
             instance_pools=[{
                 "instance_configuration_id": test_instance_configuration["id"],
-                "size": cluster_network_instance_pools_size,
+                "size": int(cluster_network_instance_pools_size),
                 "defined_tags": {
                     "Operations.CostCenter": "42",
                 },
@@ -415,7 +415,7 @@ class ClusterNetwork(pulumi.CustomResource):
                     "ipv6address_ipv6subnet_cidr_pair_details": [{
                         "ipv6subnet_cidr": cluster_network_placement_configuration_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     }],
-                    "is_assign_ipv6ip": cluster_network_placement_configuration_primary_vnic_subnets_is_assign_ipv6ip,
+                    "is_assign_ipv6ip": cluster_network_placement_configuration_primary_vnic_subnets_is_assign_ipv6ip == "true",
                 },
                 "secondary_vnic_subnets": [{
                     "subnet_id": test_subnet["id"],
@@ -423,7 +423,7 @@ class ClusterNetwork(pulumi.CustomResource):
                     "ipv6address_ipv6subnet_cidr_pair_details": [{
                         "ipv6subnet_cidr": cluster_network_placement_configuration_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     }],
-                    "is_assign_ipv6ip": cluster_network_placement_configuration_secondary_vnic_subnets_is_assign_ipv6ip,
+                    "is_assign_ipv6ip": cluster_network_placement_configuration_secondary_vnic_subnets_is_assign_ipv6ip == "true",
                 }],
             },
             cluster_configuration={
@@ -500,7 +500,7 @@ class ClusterNetwork(pulumi.CustomResource):
             compartment_id=compartment_id,
             instance_pools=[{
                 "instance_configuration_id": test_instance_configuration["id"],
-                "size": cluster_network_instance_pools_size,
+                "size": int(cluster_network_instance_pools_size),
                 "defined_tags": {
                     "Operations.CostCenter": "42",
                 },
@@ -516,7 +516,7 @@ class ClusterNetwork(pulumi.CustomResource):
                     "ipv6address_ipv6subnet_cidr_pair_details": [{
                         "ipv6subnet_cidr": cluster_network_placement_configuration_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     }],
-                    "is_assign_ipv6ip": cluster_network_placement_configuration_primary_vnic_subnets_is_assign_ipv6ip,
+                    "is_assign_ipv6ip": cluster_network_placement_configuration_primary_vnic_subnets_is_assign_ipv6ip == "true",
                 },
                 "secondary_vnic_subnets": [{
                     "subnet_id": test_subnet["id"],
@@ -524,7 +524,7 @@ class ClusterNetwork(pulumi.CustomResource):
                     "ipv6address_ipv6subnet_cidr_pair_details": [{
                         "ipv6subnet_cidr": cluster_network_placement_configuration_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     }],
-                    "is_assign_ipv6ip": cluster_network_placement_configuration_secondary_vnic_subnets_is_assign_ipv6ip,
+                    "is_assign_ipv6ip": cluster_network_placement_configuration_secondary_vnic_subnets_is_assign_ipv6ip == "true",
                 }],
             },
             cluster_configuration={
@@ -564,13 +564,13 @@ class ClusterNetwork(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 cluster_configuration: Optional[pulumi.Input[Union['ClusterNetworkClusterConfigurationArgs', 'ClusterNetworkClusterConfigurationArgsDict']]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 instance_pools: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterNetworkInstancePoolArgs', 'ClusterNetworkInstancePoolArgsDict']]]]] = None,
-                 placement_configuration: Optional[pulumi.Input[Union['ClusterNetworkPlacementConfigurationArgs', 'ClusterNetworkPlacementConfigurationArgsDict']]] = None,
+                 cluster_configuration: pulumi.Input[Optional[Union['ClusterNetworkClusterConfigurationArgs', 'ClusterNetworkClusterConfigurationArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 instance_pools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterNetworkInstancePoolArgs', 'ClusterNetworkInstancePoolArgsDict']]]]] = None,
+                 placement_configuration: pulumi.Input[Optional[Union['ClusterNetworkPlacementConfigurationArgs', 'ClusterNetworkPlacementConfigurationArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -608,18 +608,18 @@ class ClusterNetwork(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            cluster_configuration: Optional[pulumi.Input[Union['ClusterNetworkClusterConfigurationArgs', 'ClusterNetworkClusterConfigurationArgsDict']]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            hpc_island_id: Optional[pulumi.Input[_builtins.str]] = None,
-            instance_pools: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ClusterNetworkInstancePoolArgs', 'ClusterNetworkInstancePoolArgsDict']]]]] = None,
-            network_block_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            placement_configuration: Optional[pulumi.Input[Union['ClusterNetworkPlacementConfigurationArgs', 'ClusterNetworkPlacementConfigurationArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'ClusterNetwork':
+            cluster_configuration: pulumi.Input[Optional[Union['ClusterNetworkClusterConfigurationArgs', 'ClusterNetworkClusterConfigurationArgsDict']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            hpc_island_id: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_pools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterNetworkInstancePoolArgs', 'ClusterNetworkInstancePoolArgsDict']]]]] = None,
+            network_block_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            placement_configuration: pulumi.Input[Optional[Union['ClusterNetworkPlacementConfigurationArgs', 'ClusterNetworkPlacementConfigurationArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'ClusterNetwork':
         """
         Get an existing ClusterNetwork resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

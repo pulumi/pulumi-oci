@@ -235,54 +235,54 @@ export interface UserState {
     /**
      * Properties indicating how the user is allowed to authenticate.
      */
-    capabilities?: pulumi.Input<pulumi.Input<inputs.Identity.UserCapability>[]>;
+    capabilities?: pulumi.Input<pulumi.Input<inputs.Identity.UserCapability>[] | undefined>;
     /**
      * The OCID of the tenancy containing the user.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * DB username of the DB credential. Has to be unique across the tenancy.
      */
-    dbUserName?: pulumi.Input<string>;
+    dbUserName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description you assign to the user during creation. Does not have to be unique, and it's changeable.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The email you assign to the user. Has to be unique across the tenancy.
      */
-    email?: pulumi.Input<string>;
+    email?: pulumi.Input<string | undefined>;
     /**
      * Whether the email address has been validated.
      */
-    emailVerified?: pulumi.Input<boolean>;
+    emailVerified?: pulumi.Input<boolean | undefined>;
     /**
      * Identifier of the user in the identity provider
      */
-    externalIdentifier?: pulumi.Input<string>;
+    externalIdentifier?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of the `IdentityProvider` this user belongs to.
      */
-    identityProviderId?: pulumi.Input<string>;
+    identityProviderId?: pulumi.Input<string | undefined>;
     /**
      * Returned only if the user's `lifecycleState` is INACTIVE. A 16-bit value showing the reason why the user is inactive:
      * * bit 0: SUSPENDED (reserved for future use)
      * * bit 1: DISABLED (reserved for future use)
      * * bit 2: BLOCKED (the user has exceeded the maximum number of failed login attempts for the Console)
      */
-    inactiveState?: pulumi.Input<string>;
+    inactiveState?: pulumi.Input<string | undefined>;
     /**
      * The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
      */
-    lastSuccessfulLoginTime?: pulumi.Input<string>;
+    lastSuccessfulLoginTime?: pulumi.Input<string | undefined>;
     /**
      * The name you assign to the user during creation. This is the user's login for the Console. The name must be unique across all users in the tenancy and cannot be changed. 
      *
@@ -290,19 +290,19 @@ export interface UserState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The date and time of when the user most recently logged in the format defined by RFC3339 (ex. `2016-08-25T21:10:29.600Z`). If there is no login history, this field is null.
      */
-    previousSuccessfulLoginTime?: pulumi.Input<string>;
+    previousSuccessfulLoginTime?: pulumi.Input<string | undefined>;
     /**
      * The user's current state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Date and time the user was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -312,11 +312,11 @@ export interface UserArgs {
     /**
      * The OCID of the tenancy containing the user.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The description you assign to the user during creation. Does not have to be unique, and it's changeable.
      */
@@ -324,11 +324,11 @@ export interface UserArgs {
     /**
      * (Updatable) The email you assign to the user. Has to be unique across the tenancy.
      */
-    email?: pulumi.Input<string>;
+    email?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The name you assign to the user during creation. This is the user's login for the Console. The name must be unique across all users in the tenancy and cannot be changed. 
      *
@@ -336,5 +336,5 @@ export interface UserArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

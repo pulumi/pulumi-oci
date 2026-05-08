@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalExadataStorageConnector = oci.DatabaseManagement.getExternalExadataStorageConnector({
+ * const testExternalExadataStorageConnector = oci.databasemanagement.getExternalExadataStorageConnector({
  *     externalExadataStorageConnectorId: testExternalExadataStorageConnectorOciDatabaseManagementExternalExadataStorageConnector.id,
  * });
  * ```
@@ -126,7 +126,7 @@ export interface GetExternalExadataStorageConnectorResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalExadataStorageConnector = oci.DatabaseManagement.getExternalExadataStorageConnector({
+ * const testExternalExadataStorageConnector = oci.databasemanagement.getExternalExadataStorageConnector({
  *     externalExadataStorageConnectorId: testExternalExadataStorageConnectorOciDatabaseManagementExternalExadataStorageConnector.id,
  * });
  * ```

@@ -165,7 +165,7 @@ def get_log_analytics_log_group(log_analytics_log_group_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_log_group = oci.LogAnalytics.get_log_analytics_log_group(log_analytics_log_group_id=test_log_analytics_log_group_oci_log_analytics_log_analytics_log_group["id"],
+    test_log_analytics_log_group = oci.loganalytics.get_log_analytics_log_group(log_analytics_log_group_id=test_log_analytics_log_group_oci_log_analytics_log_analytics_log_group["id"],
         namespace=log_analytics_log_group_namespace)
     ```
 
@@ -190,8 +190,8 @@ def get_log_analytics_log_group(log_analytics_log_group_id: Optional[_builtins.s
         namespace=pulumi.get(__ret__, 'namespace'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_log_analytics_log_group_output(log_analytics_log_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_log_analytics_log_group_output(log_analytics_log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLogAnalyticsLogGroupResult]:
     """
     This data source provides details about a specific Log Analytics Log Group resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -204,7 +204,7 @@ def get_log_analytics_log_group_output(log_analytics_log_group_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_log_group = oci.LogAnalytics.get_log_analytics_log_group(log_analytics_log_group_id=test_log_analytics_log_group_oci_log_analytics_log_analytics_log_group["id"],
+    test_log_analytics_log_group = oci.loganalytics.get_log_analytics_log_group(log_analytics_log_group_id=test_log_analytics_log_group_oci_log_analytics_log_analytics_log_group["id"],
         namespace=log_analytics_log_group_namespace)
     ```
 

@@ -24,22 +24,22 @@ class ModelArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  model_type: pulumi.Input[_builtins.str],
                  project_id: pulumi.Input[_builtins.str],
-                 component_models: Optional[pulumi.Input[Sequence[pulumi.Input['ModelComponentModelArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 inference_units: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_quick_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-                 language: Optional[pulumi.Input[_builtins.str]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['ModelLockArgs']]]] = None,
-                 max_training_time_in_hours: Optional[pulumi.Input[_builtins.float]] = None,
-                 model_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_sub_type: Optional[pulumi.Input['ModelModelSubTypeArgs']] = None,
-                 model_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 testing_dataset: Optional[pulumi.Input['ModelTestingDatasetArgs']] = None,
-                 training_dataset: Optional[pulumi.Input['ModelTrainingDatasetArgs']] = None,
-                 validation_dataset: Optional[pulumi.Input['ModelValidationDatasetArgs']] = None):
+                 component_models: pulumi.Input[Optional[Sequence[pulumi.Input['ModelComponentModelArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 inference_units: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_quick_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 language: pulumi.Input[Optional[_builtins.str]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input['ModelLockArgs']]]] = None,
+                 max_training_time_in_hours: pulumi.Input[Optional[_builtins.float]] = None,
+                 model_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_sub_type: pulumi.Input[Optional['ModelModelSubTypeArgs']] = None,
+                 model_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 testing_dataset: pulumi.Input[Optional['ModelTestingDatasetArgs']] = None,
+                 training_dataset: pulumi.Input[Optional['ModelTrainingDatasetArgs']] = None,
+                 validation_dataset: pulumi.Input[Optional['ModelValidationDatasetArgs']] = None):
         """
         The set of arguments for constructing a Model resource.
 
@@ -136,226 +136,226 @@ class ModelArgs:
 
     @_builtins.property
     @pulumi.getter(name="componentModels")
-    def component_models(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelComponentModelArgs']]]]:
+    def component_models(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ModelComponentModelArgs']]]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
         """
         return pulumi.get(self, "component_models")
 
     @component_models.setter
-    def component_models(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ModelComponentModelArgs']]]]):
+    def component_models(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ModelComponentModelArgs']]]]):
         pulumi.set(self, "component_models", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional description of the model.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A human-friendly name for the model, which can be changed.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="inferenceUnits")
-    def inference_units(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def inference_units(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Number of replicas required for this model.
         """
         return pulumi.get(self, "inference_units")
 
     @inference_units.setter
-    def inference_units(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def inference_units(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "inference_units", value)
 
     @_builtins.property
     @pulumi.getter(name="isQuickMode")
-    def is_quick_mode(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_quick_mode(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
         """
         return pulumi.get(self, "is_quick_mode")
 
     @is_quick_mode.setter
-    def is_quick_mode(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_quick_mode(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_quick_mode", value)
 
     @_builtins.property
     @pulumi.getter
-    def language(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def language(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The document language for model training, abbreviated according to the BCP 47 syntax.
         """
         return pulumi.get(self, "language")
 
     @language.setter
-    def language(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def language(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "language", value)
 
     @_builtins.property
     @pulumi.getter
-    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelLockArgs']]]]:
+    def locks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ModelLockArgs']]]]:
         """
         Locks associated with this resource.
         """
         return pulumi.get(self, "locks")
 
     @locks.setter
-    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ModelLockArgs']]]]):
+    def locks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ModelLockArgs']]]]):
         pulumi.set(self, "locks", value)
 
     @_builtins.property
     @pulumi.getter(name="maxTrainingTimeInHours")
-    def max_training_time_in_hours(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def max_training_time_in_hours(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The maximum model training time in hours, expressed as a decimal fraction.
         """
         return pulumi.get(self, "max_training_time_in_hours")
 
     @max_training_time_in_hours.setter
-    def max_training_time_in_hours(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def max_training_time_in_hours(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "max_training_time_in_hours", value)
 
     @_builtins.property
     @pulumi.getter(name="modelId")
-    def model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "model_id")
 
     @model_id.setter
-    def model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_id", value)
 
     @_builtins.property
     @pulumi.getter(name="modelSubType")
-    def model_sub_type(self) -> Optional[pulumi.Input['ModelModelSubTypeArgs']]:
+    def model_sub_type(self) -> pulumi.Input[Optional['ModelModelSubTypeArgs']]:
         """
         Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
         """
         return pulumi.get(self, "model_sub_type")
 
     @model_sub_type.setter
-    def model_sub_type(self, value: Optional[pulumi.Input['ModelModelSubTypeArgs']]):
+    def model_sub_type(self, value: pulumi.Input[Optional['ModelModelSubTypeArgs']]):
         pulumi.set(self, "model_sub_type", value)
 
     @_builtins.property
     @pulumi.getter(name="modelVersion")
-    def model_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The model version
         """
         return pulumi.get(self, "model_version")
 
     @model_version.setter
-    def model_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_version", value)
 
     @_builtins.property
     @pulumi.getter(name="testingDataset")
-    def testing_dataset(self) -> Optional[pulumi.Input['ModelTestingDatasetArgs']]:
+    def testing_dataset(self) -> pulumi.Input[Optional['ModelTestingDatasetArgs']]:
         """
         The base entity which is the input for creating and training a model.
         """
         return pulumi.get(self, "testing_dataset")
 
     @testing_dataset.setter
-    def testing_dataset(self, value: Optional[pulumi.Input['ModelTestingDatasetArgs']]):
+    def testing_dataset(self, value: pulumi.Input[Optional['ModelTestingDatasetArgs']]):
         pulumi.set(self, "testing_dataset", value)
 
     @_builtins.property
     @pulumi.getter(name="trainingDataset")
-    def training_dataset(self) -> Optional[pulumi.Input['ModelTrainingDatasetArgs']]:
+    def training_dataset(self) -> pulumi.Input[Optional['ModelTrainingDatasetArgs']]:
         """
         The base entity which is the input for creating and training a model.
         """
         return pulumi.get(self, "training_dataset")
 
     @training_dataset.setter
-    def training_dataset(self, value: Optional[pulumi.Input['ModelTrainingDatasetArgs']]):
+    def training_dataset(self, value: pulumi.Input[Optional['ModelTrainingDatasetArgs']]):
         pulumi.set(self, "training_dataset", value)
 
     @_builtins.property
     @pulumi.getter(name="validationDataset")
-    def validation_dataset(self) -> Optional[pulumi.Input['ModelValidationDatasetArgs']]:
+    def validation_dataset(self) -> pulumi.Input[Optional['ModelValidationDatasetArgs']]:
         """
         The base entity which is the input for creating and training a model.
         """
         return pulumi.get(self, "validation_dataset")
 
     @validation_dataset.setter
-    def validation_dataset(self, value: Optional[pulumi.Input['ModelValidationDatasetArgs']]):
+    def validation_dataset(self, value: pulumi.Input[Optional['ModelValidationDatasetArgs']]):
         pulumi.set(self, "validation_dataset", value)
 
 
 @pulumi.input_type
 class _ModelState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 component_models: Optional[pulumi.Input[Sequence[pulumi.Input['ModelComponentModelArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 inference_units: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_composed_model: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_quick_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-                 labels: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 language: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['ModelLockArgs']]]] = None,
-                 max_training_time_in_hours: Optional[pulumi.Input[_builtins.float]] = None,
-                 metrics: Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricArgs']]]] = None,
-                 model_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_sub_type: Optional[pulumi.Input['ModelModelSubTypeArgs']] = None,
-                 model_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 testing_dataset: Optional[pulumi.Input['ModelTestingDatasetArgs']] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 trained_time_in_hours: Optional[pulumi.Input[_builtins.float]] = None,
-                 training_dataset: Optional[pulumi.Input['ModelTrainingDatasetArgs']] = None,
-                 validation_dataset: Optional[pulumi.Input['ModelValidationDatasetArgs']] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 component_models: pulumi.Input[Optional[Sequence[pulumi.Input['ModelComponentModelArgs']]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 inference_units: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_composed_model: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_quick_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 labels: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 language: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input['ModelLockArgs']]]] = None,
+                 max_training_time_in_hours: pulumi.Input[Optional[_builtins.float]] = None,
+                 metrics: pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricArgs']]]] = None,
+                 model_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_sub_type: pulumi.Input[Optional['ModelModelSubTypeArgs']] = None,
+                 model_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 testing_dataset: pulumi.Input[Optional['ModelTestingDatasetArgs']] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 trained_time_in_hours: pulumi.Input[Optional[_builtins.float]] = None,
+                 training_dataset: pulumi.Input[Optional['ModelTrainingDatasetArgs']] = None,
+                 validation_dataset: pulumi.Input[Optional['ModelValidationDatasetArgs']] = None):
         """
         Input properties used for looking up and filtering Model resources.
 
@@ -449,347 +449,347 @@ class _ModelState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The compartment identifier.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="componentModels")
-    def component_models(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelComponentModelArgs']]]]:
+    def component_models(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ModelComponentModelArgs']]]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
         """
         return pulumi.get(self, "component_models")
 
     @component_models.setter
-    def component_models(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ModelComponentModelArgs']]]]):
+    def component_models(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ModelComponentModelArgs']]]]):
         pulumi.set(self, "component_models", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An optional description of the model.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A human-friendly name for the model, which can be changed.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="inferenceUnits")
-    def inference_units(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def inference_units(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Number of replicas required for this model.
         """
         return pulumi.get(self, "inference_units")
 
     @inference_units.setter
-    def inference_units(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def inference_units(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "inference_units", value)
 
     @_builtins.property
     @pulumi.getter(name="isComposedModel")
-    def is_composed_model(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_composed_model(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Set to true when the model is created by using multiple key value extraction models.
         """
         return pulumi.get(self, "is_composed_model")
 
     @is_composed_model.setter
-    def is_composed_model(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_composed_model(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_composed_model", value)
 
     @_builtins.property
     @pulumi.getter(name="isQuickMode")
-    def is_quick_mode(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_quick_mode(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
         """
         return pulumi.get(self, "is_quick_mode")
 
     @is_quick_mode.setter
-    def is_quick_mode(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_quick_mode(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_quick_mode", value)
 
     @_builtins.property
     @pulumi.getter
-    def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def labels(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The collection of labels used to train the custom model.
         """
         return pulumi.get(self, "labels")
 
     @labels.setter
-    def labels(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def labels(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "labels", value)
 
     @_builtins.property
     @pulumi.getter
-    def language(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def language(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The document language for model training, abbreviated according to the BCP 47 syntax.
         """
         return pulumi.get(self, "language")
 
     @language.setter
-    def language(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def language(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "language", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail, that can provide actionable information if training failed.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelLockArgs']]]]:
+    def locks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ModelLockArgs']]]]:
         """
         Locks associated with this resource.
         """
         return pulumi.get(self, "locks")
 
     @locks.setter
-    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ModelLockArgs']]]]):
+    def locks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ModelLockArgs']]]]):
         pulumi.set(self, "locks", value)
 
     @_builtins.property
     @pulumi.getter(name="maxTrainingTimeInHours")
-    def max_training_time_in_hours(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def max_training_time_in_hours(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The maximum model training time in hours, expressed as a decimal fraction.
         """
         return pulumi.get(self, "max_training_time_in_hours")
 
     @max_training_time_in_hours.setter
-    def max_training_time_in_hours(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def max_training_time_in_hours(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "max_training_time_in_hours", value)
 
     @_builtins.property
     @pulumi.getter
-    def metrics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricArgs']]]]:
+    def metrics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricArgs']]]]:
         """
         Trained Model Metrics.
         """
         return pulumi.get(self, "metrics")
 
     @metrics.setter
-    def metrics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricArgs']]]]):
+    def metrics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ModelMetricArgs']]]]):
         pulumi.set(self, "metrics", value)
 
     @_builtins.property
     @pulumi.getter(name="modelId")
-    def model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "model_id")
 
     @model_id.setter
-    def model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_id", value)
 
     @_builtins.property
     @pulumi.getter(name="modelSubType")
-    def model_sub_type(self) -> Optional[pulumi.Input['ModelModelSubTypeArgs']]:
+    def model_sub_type(self) -> pulumi.Input[Optional['ModelModelSubTypeArgs']]:
         """
         Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
         """
         return pulumi.get(self, "model_sub_type")
 
     @model_sub_type.setter
-    def model_sub_type(self, value: Optional[pulumi.Input['ModelModelSubTypeArgs']]):
+    def model_sub_type(self, value: pulumi.Input[Optional['ModelModelSubTypeArgs']]):
         pulumi.set(self, "model_sub_type", value)
 
     @_builtins.property
     @pulumi.getter(name="modelType")
-    def model_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the Document model.
         """
         return pulumi.get(self, "model_type")
 
     @model_type.setter
-    def model_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_type", value)
 
     @_builtins.property
     @pulumi.getter(name="modelVersion")
-    def model_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The model version
         """
         return pulumi.get(self, "model_version")
 
     @model_version.setter
-    def model_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_version", value)
 
     @_builtins.property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def project_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
         """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
-    def project_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def project_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "project_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the model.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyId")
-    def tenancy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenancy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The tenancy id of the model.
         """
         return pulumi.get(self, "tenancy_id")
 
     @tenancy_id.setter
-    def tenancy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenancy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenancy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="testingDataset")
-    def testing_dataset(self) -> Optional[pulumi.Input['ModelTestingDatasetArgs']]:
+    def testing_dataset(self) -> pulumi.Input[Optional['ModelTestingDatasetArgs']]:
         """
         The base entity which is the input for creating and training a model.
         """
         return pulumi.get(self, "testing_dataset")
 
     @testing_dataset.setter
-    def testing_dataset(self, value: Optional[pulumi.Input['ModelTestingDatasetArgs']]):
+    def testing_dataset(self, value: pulumi.Input[Optional['ModelTestingDatasetArgs']]):
         pulumi.set(self, "testing_dataset", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the model was created, as an RFC3339 datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         When the model was updated, as an RFC3339 datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="trainedTimeInHours")
-    def trained_time_in_hours(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def trained_time_in_hours(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The total hours actually used for model training.
         """
         return pulumi.get(self, "trained_time_in_hours")
 
     @trained_time_in_hours.setter
-    def trained_time_in_hours(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def trained_time_in_hours(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "trained_time_in_hours", value)
 
     @_builtins.property
     @pulumi.getter(name="trainingDataset")
-    def training_dataset(self) -> Optional[pulumi.Input['ModelTrainingDatasetArgs']]:
+    def training_dataset(self) -> pulumi.Input[Optional['ModelTrainingDatasetArgs']]:
         """
         The base entity which is the input for creating and training a model.
         """
         return pulumi.get(self, "training_dataset")
 
     @training_dataset.setter
-    def training_dataset(self, value: Optional[pulumi.Input['ModelTrainingDatasetArgs']]):
+    def training_dataset(self, value: pulumi.Input[Optional['ModelTrainingDatasetArgs']]):
         pulumi.set(self, "training_dataset", value)
 
     @_builtins.property
     @pulumi.getter(name="validationDataset")
-    def validation_dataset(self) -> Optional[pulumi.Input['ModelValidationDatasetArgs']]:
+    def validation_dataset(self) -> pulumi.Input[Optional['ModelValidationDatasetArgs']]:
         """
         The base entity which is the input for creating and training a model.
         """
         return pulumi.get(self, "validation_dataset")
 
     @validation_dataset.setter
-    def validation_dataset(self, value: Optional[pulumi.Input['ModelValidationDatasetArgs']]):
+    def validation_dataset(self, value: pulumi.Input[Optional['ModelValidationDatasetArgs']]):
         pulumi.set(self, "validation_dataset", value)
 
 
@@ -799,25 +799,25 @@ class Model(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 component_models: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict']]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 inference_units: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_quick_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-                 language: Optional[pulumi.Input[_builtins.str]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelLockArgs', 'ModelLockArgsDict']]]]] = None,
-                 max_training_time_in_hours: Optional[pulumi.Input[_builtins.float]] = None,
-                 model_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_sub_type: Optional[pulumi.Input[Union['ModelModelSubTypeArgs', 'ModelModelSubTypeArgsDict']]] = None,
-                 model_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 testing_dataset: Optional[pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']]] = None,
-                 training_dataset: Optional[pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
-                 validation_dataset: Optional[pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 component_models: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict']]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 inference_units: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_quick_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 language: pulumi.Input[Optional[_builtins.str]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelLockArgs', 'ModelLockArgsDict']]]]] = None,
+                 max_training_time_in_hours: pulumi.Input[Optional[_builtins.float]] = None,
+                 model_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_sub_type: pulumi.Input[Optional[Union['ModelModelSubTypeArgs', 'ModelModelSubTypeArgsDict']]] = None,
+                 model_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 testing_dataset: pulumi.Input[Optional[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']]] = None,
+                 training_dataset: pulumi.Input[Optional[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
+                 validation_dataset: pulumi.Input[Optional[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Model resource in Oracle Cloud Infrastructure Ai Document service.
@@ -899,25 +899,25 @@ class Model(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 component_models: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict']]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 inference_units: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_quick_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-                 language: Optional[pulumi.Input[_builtins.str]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelLockArgs', 'ModelLockArgsDict']]]]] = None,
-                 max_training_time_in_hours: Optional[pulumi.Input[_builtins.float]] = None,
-                 model_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_sub_type: Optional[pulumi.Input[Union['ModelModelSubTypeArgs', 'ModelModelSubTypeArgsDict']]] = None,
-                 model_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 testing_dataset: Optional[pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']]] = None,
-                 training_dataset: Optional[pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
-                 validation_dataset: Optional[pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 component_models: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict']]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 inference_units: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_quick_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 language: pulumi.Input[Optional[_builtins.str]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelLockArgs', 'ModelLockArgsDict']]]]] = None,
+                 max_training_time_in_hours: pulumi.Input[Optional[_builtins.float]] = None,
+                 model_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_sub_type: pulumi.Input[Optional[Union['ModelModelSubTypeArgs', 'ModelModelSubTypeArgsDict']]] = None,
+                 model_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 testing_dataset: pulumi.Input[Optional[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']]] = None,
+                 training_dataset: pulumi.Input[Optional[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
+                 validation_dataset: pulumi.Input[Optional[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -972,35 +972,35 @@ class Model(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            component_models: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict']]]]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            inference_units: Optional[pulumi.Input[_builtins.int]] = None,
-            is_composed_model: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_quick_mode: Optional[pulumi.Input[_builtins.bool]] = None,
-            labels: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            language: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelLockArgs', 'ModelLockArgsDict']]]]] = None,
-            max_training_time_in_hours: Optional[pulumi.Input[_builtins.float]] = None,
-            metrics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelMetricArgs', 'ModelMetricArgsDict']]]]] = None,
-            model_id: Optional[pulumi.Input[_builtins.str]] = None,
-            model_sub_type: Optional[pulumi.Input[Union['ModelModelSubTypeArgs', 'ModelModelSubTypeArgsDict']]] = None,
-            model_type: Optional[pulumi.Input[_builtins.str]] = None,
-            model_version: Optional[pulumi.Input[_builtins.str]] = None,
-            project_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            testing_dataset: Optional[pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            trained_time_in_hours: Optional[pulumi.Input[_builtins.float]] = None,
-            training_dataset: Optional[pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
-            validation_dataset: Optional[pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']]] = None) -> 'Model':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            component_models: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            inference_units: pulumi.Input[Optional[_builtins.int]] = None,
+            is_composed_model: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_quick_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+            labels: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            language: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelLockArgs', 'ModelLockArgsDict']]]]] = None,
+            max_training_time_in_hours: pulumi.Input[Optional[_builtins.float]] = None,
+            metrics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelMetricArgs', 'ModelMetricArgsDict']]]]] = None,
+            model_id: pulumi.Input[Optional[_builtins.str]] = None,
+            model_sub_type: pulumi.Input[Optional[Union['ModelModelSubTypeArgs', 'ModelModelSubTypeArgsDict']]] = None,
+            model_type: pulumi.Input[Optional[_builtins.str]] = None,
+            model_version: pulumi.Input[Optional[_builtins.str]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            testing_dataset: pulumi.Input[Optional[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            trained_time_in_hours: pulumi.Input[Optional[_builtins.float]] = None,
+            training_dataset: pulumi.Input[Optional[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']]] = None,
+            validation_dataset: pulumi.Input[Optional[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']]] = None) -> 'Model':
         """
         Get an existing Model resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

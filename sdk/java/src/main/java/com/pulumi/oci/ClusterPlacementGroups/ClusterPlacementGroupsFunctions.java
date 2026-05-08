@@ -34,8 +34,8 @@ public final class ClusterPlacementGroupsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ClusterPlacementGroups.ClusterPlacementGroupsFunctions;
      * import com.pulumi.oci.ClusterPlacementGroups.inputs.GetClusterPlacementGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -76,8 +76,8 @@ public final class ClusterPlacementGroupsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ClusterPlacementGroups.ClusterPlacementGroupsFunctions;
      * import com.pulumi.oci.ClusterPlacementGroups.inputs.GetClusterPlacementGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -118,8 +118,8 @@ public final class ClusterPlacementGroupsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ClusterPlacementGroups.ClusterPlacementGroupsFunctions;
      * import com.pulumi.oci.ClusterPlacementGroups.inputs.GetClusterPlacementGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -160,8 +160,8 @@ public final class ClusterPlacementGroupsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ClusterPlacementGroups.ClusterPlacementGroupsFunctions;
      * import com.pulumi.oci.ClusterPlacementGroups.inputs.GetClusterPlacementGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -202,8 +202,8 @@ public final class ClusterPlacementGroupsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ClusterPlacementGroups.ClusterPlacementGroupsFunctions;
      * import com.pulumi.oci.ClusterPlacementGroups.inputs.GetClusterPlacementGroupArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -244,8 +244,8 @@ public final class ClusterPlacementGroupsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ClusterPlacementGroups.ClusterPlacementGroupsFunctions;
      * import com.pulumi.oci.ClusterPlacementGroups.inputs.GetClusterPlacementGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -291,8 +291,8 @@ public final class ClusterPlacementGroupsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ClusterPlacementGroups.ClusterPlacementGroupsFunctions;
      * import com.pulumi.oci.ClusterPlacementGroups.inputs.GetClusterPlacementGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -338,8 +338,8 @@ public final class ClusterPlacementGroupsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ClusterPlacementGroups.ClusterPlacementGroupsFunctions;
      * import com.pulumi.oci.ClusterPlacementGroups.inputs.GetClusterPlacementGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -385,8 +385,8 @@ public final class ClusterPlacementGroupsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ClusterPlacementGroups.ClusterPlacementGroupsFunctions;
      * import com.pulumi.oci.ClusterPlacementGroups.inputs.GetClusterPlacementGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -432,8 +432,8 @@ public final class ClusterPlacementGroupsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ClusterPlacementGroups.ClusterPlacementGroupsFunctions;
      * import com.pulumi.oci.ClusterPlacementGroups.inputs.GetClusterPlacementGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -479,8 +479,8 @@ public final class ClusterPlacementGroupsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ClusterPlacementGroups.ClusterPlacementGroupsFunctions;
      * import com.pulumi.oci.ClusterPlacementGroups.inputs.GetClusterPlacementGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -526,8 +526,8 @@ public final class ClusterPlacementGroupsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ClusterPlacementGroups.ClusterPlacementGroupsFunctions;
      * import com.pulumi.oci.ClusterPlacementGroups.inputs.GetClusterPlacementGroupsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDedicatedAiClusters = oci.GenerativeAi.getDedicatedAiClusters({
+ * const testDedicatedAiClusters = oci.generativeai.getDedicatedAiClusters({
  *     compartmentId: compartmentId,
  *     displayName: dedicatedAiClusterDisplayName,
  *     id: dedicatedAiClusterId,
@@ -96,7 +96,7 @@ export interface GetDedicatedAiClustersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDedicatedAiClusters = oci.GenerativeAi.getDedicatedAiClusters({
+ * const testDedicatedAiClusters = oci.generativeai.getDedicatedAiClusters({
  *     compartmentId: compartmentId,
  *     displayName: dedicatedAiClusterDisplayName,
  *     id: dedicatedAiClusterId,
@@ -126,14 +126,14 @@ export interface GetDedicatedAiClustersOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.GetDedicatedAiClustersFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.GetDedicatedAiClustersFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the dedicated AI clusters that their lifecycle state matches the given lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -228,7 +228,7 @@ def get_recovery_service_subnet(recovery_service_subnet_id: Optional[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_recovery_service_subnet = oci.RecoveryMod.get_recovery_service_subnet(recovery_service_subnet_id=test_recovery_service_subnet_oci_recovery_recovery_service_subnet["id"])
+    test_recovery_service_subnet = oci.recoverymod.get_recovery_service_subnet(recovery_service_subnet_id=test_recovery_service_subnet_oci_recovery_recovery_service_subnet["id"])
     ```
 
 
@@ -255,7 +255,7 @@ def get_recovery_service_subnet(recovery_service_subnet_id: Optional[_builtins.s
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-def get_recovery_service_subnet_output(recovery_service_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_recovery_service_subnet_output(recovery_service_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRecoveryServiceSubnetResult]:
     """
     This data source provides details about a specific Recovery Service Subnet resource in Oracle Cloud Infrastructure Recovery service.
@@ -268,7 +268,7 @@ def get_recovery_service_subnet_output(recovery_service_subnet_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_recovery_service_subnet = oci.RecoveryMod.get_recovery_service_subnet(recovery_service_subnet_id=test_recovery_service_subnet_oci_recovery_recovery_service_subnet["id"])
+    test_recovery_service_subnet = oci.recoverymod.get_recovery_service_subnet(recovery_service_subnet_id=test_recovery_service_subnet_oci_recovery_recovery_service_subnet["id"])
     ```
 
 

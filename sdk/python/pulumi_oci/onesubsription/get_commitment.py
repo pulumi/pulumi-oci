@@ -155,7 +155,7 @@ def get_commitment(commitment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_commitment = oci.OneSubsription.get_commitment(commitment_id=test_commitment_oci_onesubscription_commitment["id"])
+    test_commitment = oci.onesubsription.get_commitment(commitment_id=test_commitment_oci_onesubscription_commitment["id"])
     ```
 
 
@@ -176,7 +176,7 @@ def get_commitment(commitment_id: Optional[_builtins.str] = None,
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'),
         used_amount=pulumi.get(__ret__, 'used_amount'))
-def get_commitment_output(commitment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_commitment_output(commitment_id: pulumi.Input[Optional[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCommitmentResult]:
     """
     This data source provides details about a specific Commitment resource in Oracle Cloud Infrastructure Onesubscription service.
@@ -189,7 +189,7 @@ def get_commitment_output(commitment_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_commitment = oci.OneSubsription.get_commitment(commitment_id=test_commitment_oci_onesubscription_commitment["id"])
+    test_commitment = oci.onesubsription.get_commitment(commitment_id=test_commitment_oci_onesubscription_commitment["id"])
     ```
 
 

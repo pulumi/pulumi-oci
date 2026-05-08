@@ -32,7 +32,7 @@ import * as utilities from "../utilities";
  *     domain: recordItemsDomain,
  *     rtype: recordItemsRtype,
  *     rdata: recordItemsRdata,
- *     ttl: recordItemsTtl,
+ *     ttl: Number(recordItemsTtl),
  * });
  * ```
  *
@@ -170,39 +170,39 @@ export interface RecordState {
     /**
      * (Updatable) The OCID of the compartment the resource belongs to. If supplied, it must match the Zone's compartment ocid.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The fully qualified domain name where the record can be located. Domain value is case insensitive.
      *
      * @deprecated The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.
      */
-    domain?: pulumi.Input<string>;
+    domain?: pulumi.Input<string | undefined>;
     /**
      * A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
      */
-    isProtected?: pulumi.Input<boolean>;
+    isProtected?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
      */
-    rdata?: pulumi.Input<string>;
+    rdata?: pulumi.Input<string | undefined>;
     /**
      * A unique identifier for the record within its zone.
      */
-    recordHash?: pulumi.Input<string>;
+    recordHash?: pulumi.Input<string | undefined>;
     /**
      * The latest version of the record's zone in which its RRSet differs from the preceding version.
      */
-    rrsetVersion?: pulumi.Input<string>;
+    rrsetVersion?: pulumi.Input<string | undefined>;
     /**
      * The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      *
      * @deprecated The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.
      */
-    rtype?: pulumi.Input<string>;
+    rtype?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The Time To Live for the record, in seconds.
      */
-    ttl?: pulumi.Input<number>;
+    ttl?: pulumi.Input<number | undefined>;
     /**
      * The name or OCID of the target zone.
      *
@@ -212,7 +212,7 @@ export interface RecordState {
      *
      * @deprecated The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.
      */
-    zoneNameOrId?: pulumi.Input<string>;
+    zoneNameOrId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -222,7 +222,7 @@ export interface RecordArgs {
     /**
      * (Updatable) The OCID of the compartment the resource belongs to. If supplied, it must match the Zone's compartment ocid.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The fully qualified domain name where the record can be located. Domain value is case insensitive.
      *
@@ -232,7 +232,7 @@ export interface RecordArgs {
     /**
      * (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
      */
-    rdata?: pulumi.Input<string>;
+    rdata?: pulumi.Input<string | undefined>;
     /**
      * The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      *
@@ -242,7 +242,7 @@ export interface RecordArgs {
     /**
      * (Updatable) The Time To Live for the record, in seconds.
      */
-    ttl?: pulumi.Input<number>;
+    ttl?: pulumi.Input<number | undefined>;
     /**
      * The name or OCID of the target zone.
      *

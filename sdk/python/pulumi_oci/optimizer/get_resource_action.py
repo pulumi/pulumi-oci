@@ -286,8 +286,8 @@ def get_resource_action(include_resource_metadata: Optional[_builtins.bool] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_action = oci.Optimizer.get_resource_action(resource_action_id=test_resource_action_oci_optimizer_resource_action["id"],
-        include_resource_metadata=resource_action_include_resource_metadata)
+    test_resource_action = oci.optimizer.get_resource_action(resource_action_id=test_resource_action_oci_optimizer_resource_action["id"],
+        include_resource_metadata=resource_action_include_resource_metadata == "true")
     ```
 
 
@@ -321,8 +321,8 @@ def get_resource_action(include_resource_metadata: Optional[_builtins.bool] = No
         time_status_begin=pulumi.get(__ret__, 'time_status_begin'),
         time_status_end=pulumi.get(__ret__, 'time_status_end'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_resource_action_output(include_resource_metadata: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                               resource_action_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_resource_action_output(include_resource_metadata: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                               resource_action_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetResourceActionResult]:
     """
     This data source provides details about a specific Resource Action resource in Oracle Cloud Infrastructure Optimizer service.
@@ -335,8 +335,8 @@ def get_resource_action_output(include_resource_metadata: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_action = oci.Optimizer.get_resource_action(resource_action_id=test_resource_action_oci_optimizer_resource_action["id"],
-        include_resource_metadata=resource_action_include_resource_metadata)
+    test_resource_action = oci.optimizer.get_resource_action(resource_action_id=test_resource_action_oci_optimizer_resource_action["id"],
+        include_resource_metadata=resource_action_include_resource_metadata == "true")
     ```
 
 

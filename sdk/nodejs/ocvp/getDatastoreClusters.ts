@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatastoreClusters = oci.Ocvp.getDatastoreClusters({
+ * const testDatastoreClusters = oci.ocvp.getDatastoreClusters({
  *     compartmentId: compartmentId,
  *     clusterId: testCluster.id,
  *     datastoreClusterId: testDatastoreCluster.id,
@@ -109,7 +109,7 @@ export interface GetDatastoreClustersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatastoreClusters = oci.Ocvp.getDatastoreClusters({
+ * const testDatastoreClusters = oci.ocvp.getDatastoreClusters({
  *     compartmentId: compartmentId,
  *     clusterId: testCluster.id,
  *     datastoreClusterId: testDatastoreCluster.id,
@@ -137,7 +137,7 @@ export interface GetDatastoreClustersOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC Cluster.
      */
-    clusterId?: pulumi.Input<string>;
+    clusterId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -145,14 +145,14 @@ export interface GetDatastoreClustersOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Datastore Cluster.
      */
-    datastoreClusterId?: pulumi.Input<string>;
+    datastoreClusterId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Ocvp.GetDatastoreClustersFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Ocvp.GetDatastoreClustersFilterArgs>[] | undefined>;
     /**
      * The lifecycle state of the resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

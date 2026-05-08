@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoveryJobLogs = oci.StackMonitoring.getDiscoveryJobLogs({
+ * const testDiscoveryJobLogs = oci.stackmonitoring.getDiscoveryJobLogs({
  *     discoveryJobId: testDiscoveryJob.id,
  *     logType: discoveryJobLogLogType,
  * });
@@ -77,7 +77,7 @@ export interface GetDiscoveryJobLogsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoveryJobLogs = oci.StackMonitoring.getDiscoveryJobLogs({
+ * const testDiscoveryJobLogs = oci.stackmonitoring.getDiscoveryJobLogs({
  *     discoveryJobId: testDiscoveryJob.id,
  *     logType: discoveryJobLogLogType,
  * });
@@ -100,9 +100,9 @@ export interface GetDiscoveryJobLogsOutputArgs {
      * The Discovery Job ID
      */
     discoveryJobId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetDiscoveryJobLogsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetDiscoveryJobLogsFilterArgs>[] | undefined>;
     /**
      * The log type like INFO, WARNING, ERROR, SUCCESS
      */
-    logType?: pulumi.Input<string>;
+    logType?: pulumi.Input<string | undefined>;
 }

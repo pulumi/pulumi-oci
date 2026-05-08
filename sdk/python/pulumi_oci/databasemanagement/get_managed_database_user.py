@@ -379,7 +379,7 @@ def get_managed_database_user(managed_database_id: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user = oci.DatabaseManagement.get_managed_database_user(managed_database_id=test_managed_database["id"],
+    test_managed_database_user = oci.databasemanagement.get_managed_database_user(managed_database_id=test_managed_database["id"],
         user_name=test_user["name"],
         opc_named_credential_id=managed_database_user_opc_named_credential_id)
     ```
@@ -425,9 +425,9 @@ def get_managed_database_user(managed_database_id: Optional[_builtins.str] = Non
         time_locked=pulumi.get(__ret__, 'time_locked'),
         time_password_changed=pulumi.get(__ret__, 'time_password_changed'),
         user_name=pulumi.get(__ret__, 'user_name'))
-def get_managed_database_user_output(managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                     opc_named_credential_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     user_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_managed_database_user_output(managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                     opc_named_credential_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     user_name: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseUserResult]:
     """
     This data source provides details about a specific Managed Database User resource in Oracle Cloud Infrastructure Database Management service.
@@ -440,7 +440,7 @@ def get_managed_database_user_output(managed_database_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user = oci.DatabaseManagement.get_managed_database_user(managed_database_id=test_managed_database["id"],
+    test_managed_database_user = oci.databasemanagement.get_managed_database_user(managed_database_id=test_managed_database["id"],
         user_name=test_user["name"],
         opc_named_credential_id=managed_database_user_opc_named_credential_id)
     ```

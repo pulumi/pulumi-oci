@@ -151,7 +151,7 @@ def get_protected_databases(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_protected_databases = oci.RecoveryMod.get_protected_databases(compartment_id=compartment_id,
+    test_protected_databases = oci.recoverymod.get_protected_databases(compartment_id=compartment_id,
         display_name=protected_database_display_name,
         id=protected_database_id,
         protection_policy_id=test_protection_policy["id"],
@@ -187,13 +187,13 @@ def get_protected_databases(compartment_id: Optional[_builtins.str] = None,
         protection_policy_id=pulumi.get(__ret__, 'protection_policy_id'),
         recovery_service_subnet_id=pulumi.get(__ret__, 'recovery_service_subnet_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_protected_databases_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                   display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProtectedDatabasesFilterArgs', 'GetProtectedDatabasesFilterArgsDict']]]]] = None,
-                                   id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   protection_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   recovery_service_subnet_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                   state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_protected_databases_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                   display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProtectedDatabasesFilterArgs', 'GetProtectedDatabasesFilterArgsDict']]]]] = None,
+                                   id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   protection_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   recovery_service_subnet_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                   state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectedDatabasesResult]:
     """
     This data source provides the list of Protected Databases in Oracle Cloud Infrastructure Recovery service.
@@ -206,7 +206,7 @@ def get_protected_databases_output(compartment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_protected_databases = oci.RecoveryMod.get_protected_databases(compartment_id=compartment_id,
+    test_protected_databases = oci.recoverymod.get_protected_databases(compartment_id=compartment_id,
         display_name=protected_database_display_name,
         id=protected_database_id,
         protection_policy_id=test_protection_policy["id"],

@@ -96,7 +96,7 @@ def get_private_endpoint_reachable_ip(private_endpoint_id: Optional[_builtins.st
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoint_reachable_ip = oci.ResourceManager.get_private_endpoint_reachable_ip(private_endpoint_id=test_private_endpoint["id"],
+    test_private_endpoint_reachable_ip = oci.resourcemanager.get_private_endpoint_reachable_ip(private_endpoint_id=test_private_endpoint["id"],
         private_ip=private_endpoint_reachable_ip_private_ip)
     ```
 
@@ -115,8 +115,8 @@ def get_private_endpoint_reachable_ip(private_endpoint_id: Optional[_builtins.st
         ip_address=pulumi.get(__ret__, 'ip_address'),
         private_endpoint_id=pulumi.get(__ret__, 'private_endpoint_id'),
         private_ip=pulumi.get(__ret__, 'private_ip'))
-def get_private_endpoint_reachable_ip_output(private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             private_ip: Optional[pulumi.Input[_builtins.str]] = None,
+def get_private_endpoint_reachable_ip_output(private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             private_ip: pulumi.Input[Optional[_builtins.str]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateEndpointReachableIpResult]:
     """
     This data source provides details about a specific Private Endpoint Reachable Ip resource in Oracle Cloud Infrastructure Resource Manager service.
@@ -132,7 +132,7 @@ def get_private_endpoint_reachable_ip_output(private_endpoint_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoint_reachable_ip = oci.ResourceManager.get_private_endpoint_reachable_ip(private_endpoint_id=test_private_endpoint["id"],
+    test_private_endpoint_reachable_ip = oci.resourcemanager.get_private_endpoint_reachable_ip(private_endpoint_id=test_private_endpoint["id"],
         private_ip=private_endpoint_reachable_ip_private_ip)
     ```
 

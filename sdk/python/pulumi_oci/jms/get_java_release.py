@@ -231,7 +231,7 @@ def get_java_release(release_version: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_java_release = oci.Jms.get_java_release(release_version=java_release_release_version)
+    test_java_release = oci.jms.get_java_release(release_version=java_release_release_version)
     ```
 
 
@@ -258,7 +258,7 @@ def get_java_release(release_version: Optional[_builtins.str] = None,
         release_type=pulumi.get(__ret__, 'release_type'),
         release_version=pulumi.get(__ret__, 'release_version'),
         security_status=pulumi.get(__ret__, 'security_status'))
-def get_java_release_output(release_version: Optional[pulumi.Input[_builtins.str]] = None,
+def get_java_release_output(release_version: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJavaReleaseResult]:
     """
     This data source provides details about a specific Java Release resource in Oracle Cloud Infrastructure Jms service.
@@ -271,7 +271,7 @@ def get_java_release_output(release_version: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_java_release = oci.Jms.get_java_release(release_version=java_release_release_version)
+    test_java_release = oci.jms.get_java_release(release_version=java_release_release_version)
     ```
 
 

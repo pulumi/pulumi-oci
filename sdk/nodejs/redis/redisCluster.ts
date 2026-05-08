@@ -25,7 +25,7 @@ import * as utilities from "../utilities";
  * const testRedisCluster = new oci.redis.RedisCluster("test_redis_cluster", {
  *     compartmentId: compartmentId,
  *     displayName: redisClusterDisplayName,
- *     nodeCount: redisClusterNodeCount,
+ *     nodeCount: Number(redisClusterNodeCount),
  *     nodeMemoryInGbs: redisClusterNodeMemoryInGbs,
  *     softwareVersion: redisClusterSoftwareVersion,
  *     subnetId: testSubnet.id,
@@ -47,7 +47,7 @@ import * as utilities from "../utilities";
  *     nsgIds: redisClusterNsgIds,
  *     ociCacheConfigSetId: testOciCacheConfigSet.id,
  *     securityAttributes: redisClusterSecurityAttributes,
- *     shardCount: redisClusterShardCount,
+ *     shardCount: Number(redisClusterShardCount),
  * });
  * ```
  *
@@ -300,95 +300,95 @@ export interface RedisClusterState {
     /**
      * The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
      */
-    backupId?: pulumi.Input<string>;
+    backupId?: pulumi.Input<string | undefined>;
     /**
      * Specifies whether the cluster is sharded or non-sharded.
      */
-    clusterMode?: pulumi.Input<string>;
+    clusterMode?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The private IP address of the API endpoint for sharded cluster discovery.
      */
-    discoveryEndpointIpAddress?: pulumi.Input<string>;
+    discoveryEndpointIpAddress?: pulumi.Input<string | undefined>;
     /**
      * The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
      */
-    discoveryFqdn?: pulumi.Input<string>;
+    discoveryFqdn?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
      */
-    importFromObjectStorageDetails?: pulumi.Input<inputs.Redis.RedisClusterImportFromObjectStorageDetails>;
+    importFromObjectStorageDetails?: pulumi.Input<inputs.Redis.RedisClusterImportFromObjectStorageDetails | undefined>;
     /**
      * A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The collection of  cluster nodes.
      */
-    nodeCollections?: pulumi.Input<pulumi.Input<inputs.Redis.RedisClusterNodeCollection>[]>;
+    nodeCollections?: pulumi.Input<pulumi.Input<inputs.Redis.RedisClusterNodeCollection>[] | undefined>;
     /**
      * (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
      */
-    nodeCount?: pulumi.Input<number>;
+    nodeCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The amount of memory allocated to the cluster's nodes, in gigabytes.
      */
-    nodeMemoryInGbs?: pulumi.Input<number>;
+    nodeMemoryInGbs?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
      */
-    ociCacheConfigSetId?: pulumi.Input<string>;
+    ociCacheConfigSetId?: pulumi.Input<string | undefined>;
     /**
      * The private IP address of the API endpoint for the cluster's primary node.
      */
-    primaryEndpointIpAddress?: pulumi.Input<string>;
+    primaryEndpointIpAddress?: pulumi.Input<string | undefined>;
     /**
      * The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
      */
-    primaryFqdn?: pulumi.Input<string>;
+    primaryFqdn?: pulumi.Input<string | undefined>;
     /**
      * The private IP address of the API endpoint for the cluster's replica nodes.
      */
-    replicasEndpointIpAddress?: pulumi.Input<string>;
+    replicasEndpointIpAddress?: pulumi.Input<string | undefined>;
     /**
      * The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
      */
-    replicasFqdn?: pulumi.Input<string>;
+    replicasFqdn?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
      */
-    shardCount?: pulumi.Input<number>;
+    shardCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
      */
-    softwareVersion?: pulumi.Input<string>;
+    softwareVersion?: pulumi.Input<string | undefined>;
     /**
      * The current state of the cluster.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
      *
@@ -396,19 +396,19 @@ export interface RedisClusterState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    subnetId?: pulumi.Input<string>;
+    subnetId?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the cluster was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the cluster was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -418,11 +418,11 @@ export interface RedisClusterArgs {
     /**
      * The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
      */
-    backupId?: pulumi.Input<string>;
+    backupId?: pulumi.Input<string | undefined>;
     /**
      * Specifies whether the cluster is sharded or non-sharded.
      */
-    clusterMode?: pulumi.Input<string>;
+    clusterMode?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
      */
@@ -430,7 +430,7 @@ export interface RedisClusterArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -438,11 +438,11 @@ export interface RedisClusterArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Details for importing Oracle Cloud Infrastructure Cache data from Object Storage RDB file(s) during cluster creation.
      */
-    importFromObjectStorageDetails?: pulumi.Input<inputs.Redis.RedisClusterImportFromObjectStorageDetails>;
+    importFromObjectStorageDetails?: pulumi.Input<inputs.Redis.RedisClusterImportFromObjectStorageDetails | undefined>;
     /**
      * (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
      */
@@ -454,19 +454,19 @@ export interface RedisClusterArgs {
     /**
      * (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
      */
-    ociCacheConfigSetId?: pulumi.Input<string>;
+    ociCacheConfigSetId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Security attributes for redis cluster resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
      */
-    shardCount?: pulumi.Input<number>;
+    shardCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
      */

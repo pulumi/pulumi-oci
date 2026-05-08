@@ -106,7 +106,7 @@ def get_namespace_field_usage(field_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_field_usage = oci.LogAnalytics.get_namespace_field_usage(field_name=namespace_field_usage_field_name,
+    test_namespace_field_usage = oci.loganalytics.get_namespace_field_usage(field_name=namespace_field_usage_field_name,
         namespace=namespace_field_usage_namespace)
     ```
 
@@ -126,8 +126,8 @@ def get_namespace_field_usage(field_name: Optional[_builtins.str] = None,
         field_name=pulumi.get(__ret__, 'field_name'),
         id=pulumi.get(__ret__, 'id'),
         namespace=pulumi.get(__ret__, 'namespace'))
-def get_namespace_field_usage_output(field_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                     namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_namespace_field_usage_output(field_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                     namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceFieldUsageResult]:
     """
     This data source provides details about a specific Namespace Field Usage resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -140,7 +140,7 @@ def get_namespace_field_usage_output(field_name: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_field_usage = oci.LogAnalytics.get_namespace_field_usage(field_name=namespace_field_usage_field_name,
+    test_namespace_field_usage = oci.loganalytics.get_namespace_field_usage(field_name=namespace_field_usage_field_name,
         namespace=namespace_field_usage_namespace)
     ```
 

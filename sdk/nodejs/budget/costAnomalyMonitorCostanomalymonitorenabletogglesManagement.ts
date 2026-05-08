@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  *
  * const testCostAnomalyMonitorCostanomalymonitorenabletogglesManagement = new oci.budget.CostAnomalyMonitorCostanomalymonitorenabletogglesManagement("test_cost_anomaly_monitor_costanomalymonitorenabletoggles_management", {
  *     costAnomalyMonitorId: testCostAnomalyMonitor.id,
- *     enableCostanomalymonitorenabletoggle: enableCostanomalymonitorenabletoggle,
+ *     enableCostanomalymonitorenabletoggle: enableCostanomalymonitorenabletoggle === "true",
  * });
  * ```
  */
@@ -103,7 +103,7 @@ export interface CostAnomalyMonitorCostanomalymonitorenabletogglesManagementStat
     /**
      * The unique costAnomalyMonitor OCID.
      */
-    costAnomalyMonitorId?: pulumi.Input<string>;
+    costAnomalyMonitorId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
@@ -111,7 +111,7 @@ export interface CostAnomalyMonitorCostanomalymonitorenabletogglesManagementStat
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    enableCostanomalymonitorenabletoggle?: pulumi.Input<boolean>;
+    enableCostanomalymonitorenabletoggle?: pulumi.Input<boolean | undefined>;
 }
 
 /**

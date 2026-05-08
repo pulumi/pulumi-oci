@@ -112,7 +112,7 @@ def get_stream_groups(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_groups = oci.AiVision.get_stream_groups(compartment_id=compartment_id,
+    test_stream_groups = oci.aivision.get_stream_groups(compartment_id=compartment_id,
         display_name=stream_group_display_name,
         id=stream_group_id)
     ```
@@ -136,10 +136,10 @@ def get_stream_groups(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         stream_group_collections=pulumi.get(__ret__, 'stream_group_collections'))
-def get_stream_groups_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetStreamGroupsFilterArgs', 'GetStreamGroupsFilterArgsDict']]]]] = None,
-                             id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_stream_groups_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetStreamGroupsFilterArgs', 'GetStreamGroupsFilterArgsDict']]]]] = None,
+                             id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetStreamGroupsResult]:
     """
     This data source provides the list of Stream Groups in Oracle Cloud Infrastructure Ai Vision service.
@@ -152,7 +152,7 @@ def get_stream_groups_output(compartment_id: Optional[pulumi.Input[Optional[_bui
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_groups = oci.AiVision.get_stream_groups(compartment_id=compartment_id,
+    test_stream_groups = oci.aivision.get_stream_groups(compartment_id=compartment_id,
         display_name=stream_group_display_name,
         id=stream_group_id)
     ```

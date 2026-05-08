@@ -22,10 +22,10 @@ __all__ = ['OnboardingArgs', 'Onboarding']
 class OnboardingArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_cost_tracking_tag_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_fams_tag_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_cost_tracking_tag_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_fams_tag_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a Onboarding resource.
 
@@ -68,31 +68,31 @@ class OnboardingArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isCostTrackingTagEnabled")
-    def is_cost_tracking_tag_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cost_tracking_tag_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A value determining if the cost tracking tag is enabled or not. Allow
         Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
@@ -100,12 +100,12 @@ class OnboardingArgs:
         return pulumi.get(self, "is_cost_tracking_tag_enabled")
 
     @is_cost_tracking_tag_enabled.setter
-    def is_cost_tracking_tag_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cost_tracking_tag_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cost_tracking_tag_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isFamsTagEnabled")
-    def is_fams_tag_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_fams_tag_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A value determining if the Fleet Application Management tagging is enabled or not.
         Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
@@ -118,26 +118,26 @@ class OnboardingArgs:
         return pulumi.get(self, "is_fams_tag_enabled")
 
     @is_fams_tag_enabled.setter
-    def is_fams_tag_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_fams_tag_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_fams_tag_enabled", value)
 
 
 @pulumi.input_type
 class _OnboardingState:
     def __init__(__self__, *,
-                 applied_policies: Optional[pulumi.Input[Sequence[pulumi.Input['OnboardingAppliedPolicyArgs']]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 discovery_frequency: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_cost_tracking_tag_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_fams_tag_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 resource_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 applied_policies: pulumi.Input[Optional[Sequence[pulumi.Input['OnboardingAppliedPolicyArgs']]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 discovery_frequency: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_cost_tracking_tag_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_fams_tag_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 resource_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Onboarding resources.
 
@@ -193,19 +193,19 @@ class _OnboardingState:
 
     @_builtins.property
     @pulumi.getter(name="appliedPolicies")
-    def applied_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['OnboardingAppliedPolicyArgs']]]]:
+    def applied_policies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['OnboardingAppliedPolicyArgs']]]]:
         """
         Summary of the Fleet Application Management Onboard Policy.
         """
         return pulumi.get(self, "applied_policies")
 
     @applied_policies.setter
-    def applied_policies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['OnboardingAppliedPolicyArgs']]]]):
+    def applied_policies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['OnboardingAppliedPolicyArgs']]]]):
         pulumi.set(self, "applied_policies", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Tenancy OCID
         <<<<<<< ours
@@ -213,48 +213,48 @@ class _OnboardingState:
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="discoveryFrequency")
-    def discovery_frequency(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def discovery_frequency(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Provide discovery frequency.
         """
         return pulumi.get(self, "discovery_frequency")
 
     @discovery_frequency.setter
-    def discovery_frequency(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def discovery_frequency(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "discovery_frequency", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isCostTrackingTagEnabled")
-    def is_cost_tracking_tag_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cost_tracking_tag_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A value determining if the cost tracking tag is enabled or not. Allow
         Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
@@ -262,12 +262,12 @@ class _OnboardingState:
         return pulumi.get(self, "is_cost_tracking_tag_enabled")
 
     @is_cost_tracking_tag_enabled.setter
-    def is_cost_tracking_tag_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cost_tracking_tag_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cost_tracking_tag_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isFamsTagEnabled")
-    def is_fams_tag_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_fams_tag_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A value determining if the Fleet Application Management tagging is enabled or not.
         Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
@@ -280,36 +280,36 @@ class _OnboardingState:
         return pulumi.get(self, "is_fams_tag_enabled")
 
     @is_fams_tag_enabled.setter
-    def is_fams_tag_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_fams_tag_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_fams_tag_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceRegion")
-    def resource_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Associated region
         """
         return pulumi.get(self, "resource_region")
 
     @resource_region.setter
-    def resource_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_region", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the Onboarding.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example:
         `{"orcl-cloud.free-tier-retained": "true"}`
@@ -317,43 +317,43 @@ class _OnboardingState:
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time this resource was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time this resource was last updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of Fleet Application Management that the tenant is onboarded to.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
@@ -363,11 +363,11 @@ class Onboarding(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_cost_tracking_tag_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_fams_tag_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_cost_tracking_tag_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_fams_tag_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         This resource provides the Onboarding resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -444,11 +444,11 @@ class Onboarding(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_cost_tracking_tag_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_fams_tag_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_cost_tracking_tag_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_fams_tag_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -483,19 +483,19 @@ class Onboarding(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            applied_policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OnboardingAppliedPolicyArgs', 'OnboardingAppliedPolicyArgsDict']]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            discovery_frequency: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_cost_tracking_tag_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_fams_tag_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            resource_region: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None) -> 'Onboarding':
+            applied_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OnboardingAppliedPolicyArgs', 'OnboardingAppliedPolicyArgsDict']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            discovery_frequency: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_cost_tracking_tag_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_fams_tag_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            resource_region: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> 'Onboarding':
         """
         Get an existing Onboarding resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMediaAsset = oci.MediaServices.getMediaAsset({
+ * const testMediaAsset = oci.mediaservices.getMediaAsset({
  *     mediaAssetId: testMediaAssetOciMediaServicesMediaAsset.id,
  * });
  * ```
@@ -153,7 +153,7 @@ export interface GetMediaAssetResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMediaAsset = oci.MediaServices.getMediaAsset({
+ * const testMediaAsset = oci.mediaservices.getMediaAsset({
  *     mediaAssetId: testMediaAssetOciMediaServicesMediaAsset.id,
  * });
  * ```

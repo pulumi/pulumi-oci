@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDecryptedData = oci.Kms.getDecryptedData({
+ * const testDecryptedData = oci.kms.getDecryptedData({
  *     ciphertext: decryptedDataCiphertext,
  *     cryptoEndpoint: decryptedDataCryptoEndpoint,
  *     keyId: testKey.id,
@@ -87,7 +87,7 @@ export interface GetDecryptedDataResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDecryptedData = oci.Kms.getDecryptedData({
+ * const testDecryptedData = oci.kms.getDecryptedData({
  *     ciphertext: decryptedDataCiphertext,
  *     cryptoEndpoint: decryptedDataCryptoEndpoint,
  *     keyId: testKey.id,
@@ -112,7 +112,7 @@ export interface GetDecryptedDataOutputArgs {
     /**
      * Information that can be used to provide an encryption context for the  encrypted data. The length of the string representation of the associatedData must be fewer than 4096 characters.
      */
-    associatedData?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    associatedData?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The encrypted data to decrypt.
      */

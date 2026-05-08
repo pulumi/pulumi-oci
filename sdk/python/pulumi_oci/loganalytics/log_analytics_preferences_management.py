@@ -22,7 +22,7 @@ __all__ = ['LogAnalyticsPreferencesManagementArgs', 'LogAnalyticsPreferencesMana
 class LogAnalyticsPreferencesManagementArgs:
     def __init__(__self__, *,
                  namespace: pulumi.Input[_builtins.str],
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsPreferencesManagementItemArgs']]]] = None):
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsPreferencesManagementItemArgs']]]] = None):
         """
         The set of arguments for constructing a LogAnalyticsPreferencesManagement resource.
 
@@ -55,22 +55,22 @@ class LogAnalyticsPreferencesManagementArgs:
 
     @_builtins.property
     @pulumi.getter
-    def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsPreferencesManagementItemArgs']]]]:
+    def items(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsPreferencesManagementItemArgs']]]]:
         """
         An array of tenant preference details.
         """
         return pulumi.get(self, "items")
 
     @items.setter
-    def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsPreferencesManagementItemArgs']]]]):
+    def items(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsPreferencesManagementItemArgs']]]]):
         pulumi.set(self, "items", value)
 
 
 @pulumi.input_type
 class _LogAnalyticsPreferencesManagementState:
     def __init__(__self__, *,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsPreferencesManagementItemArgs']]]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None):
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsPreferencesManagementItemArgs']]]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering LogAnalyticsPreferencesManagement resources.
 
@@ -88,19 +88,19 @@ class _LogAnalyticsPreferencesManagementState:
 
     @_builtins.property
     @pulumi.getter
-    def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsPreferencesManagementItemArgs']]]]:
+    def items(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsPreferencesManagementItemArgs']]]]:
         """
         An array of tenant preference details.
         """
         return pulumi.get(self, "items")
 
     @items.setter
-    def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsPreferencesManagementItemArgs']]]]):
+    def items(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['LogAnalyticsPreferencesManagementItemArgs']]]]):
         pulumi.set(self, "items", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
 
@@ -111,7 +111,7 @@ class _LogAnalyticsPreferencesManagementState:
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
 
@@ -121,8 +121,8 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsPreferencesManagementItemArgs', 'LogAnalyticsPreferencesManagementItemArgsDict']]]]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsPreferencesManagementItemArgs', 'LogAnalyticsPreferencesManagementItemArgsDict']]]]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Log Analytics Preferences Management resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -208,8 +208,8 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsPreferencesManagementItemArgs', 'LogAnalyticsPreferencesManagementItemArgsDict']]]]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsPreferencesManagementItemArgs', 'LogAnalyticsPreferencesManagementItemArgsDict']]]]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -233,8 +233,8 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsPreferencesManagementItemArgs', 'LogAnalyticsPreferencesManagementItemArgsDict']]]]] = None,
-            namespace: Optional[pulumi.Input[_builtins.str]] = None) -> 'LogAnalyticsPreferencesManagement':
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsPreferencesManagementItemArgs', 'LogAnalyticsPreferencesManagementItemArgsDict']]]]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None) -> 'LogAnalyticsPreferencesManagement':
         """
         Get an existing LogAnalyticsPreferencesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

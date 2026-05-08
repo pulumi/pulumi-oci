@@ -52,8 +52,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -94,8 +94,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -136,8 +136,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -178,8 +178,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -220,8 +220,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -262,8 +262,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -310,8 +310,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -358,8 +358,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -406,8 +406,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -454,8 +454,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsConnectionsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -502,8 +502,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServiceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -544,8 +544,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServiceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -586,8 +586,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServiceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -628,8 +628,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServiceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -670,8 +670,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServiceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -712,8 +712,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -757,8 +757,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -802,8 +802,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -847,8 +847,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -892,8 +892,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsEndpointServicesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -937,8 +937,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -983,8 +983,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1029,8 +1029,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1075,8 +1075,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1121,8 +1121,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentitiesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1167,8 +1167,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1209,8 +1209,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1251,8 +1251,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1293,8 +1293,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1335,8 +1335,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsIdentityArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1377,8 +1377,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1419,8 +1419,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1461,8 +1461,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1503,8 +1503,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1545,8 +1545,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1587,8 +1587,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1633,8 +1633,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1679,8 +1679,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1725,8 +1725,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1771,8 +1771,8 @@ public final class DatabaseToolsFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseTools.DatabaseToolsFunctions;
      * import com.pulumi.oci.DatabaseTools.inputs.GetDatabaseToolsPrivateEndpointsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

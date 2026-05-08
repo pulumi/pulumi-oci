@@ -26,10 +26,10 @@ import * as utilities from "../utilities";
  *     name: workspaceTaskName,
  *     registryMetadata: {
  *         aggregatorKey: workspaceTaskRegistryMetadataAggregatorKey,
- *         isFavorite: workspaceTaskRegistryMetadataIsFavorite,
+ *         isFavorite: workspaceTaskRegistryMetadataIsFavorite === "true",
  *         key: workspaceTaskRegistryMetadataKey,
  *         labels: workspaceTaskRegistryMetadataLabels,
- *         registryVersion: workspaceTaskRegistryMetadataRegistryVersion,
+ *         registryVersion: Number(workspaceTaskRegistryMetadataRegistryVersion),
  *     },
  *     workspaceId: testWorkspace.id,
  *     apiCallMode: workspaceTaskApiCallMode,
@@ -374,7 +374,7 @@ import * as utilities from "../utilities";
  *         modelType: workspaceTaskInputPortsModelType,
  *         configValues: {
  *             configParamValues: {
- *                 intValue: workspaceTaskInputPortsConfigValuesConfigParamValuesIntValue,
+ *                 intValue: Number(workspaceTaskInputPortsConfigValuesConfigParamValuesIntValue),
  *                 objectValue: workspaceTaskInputPortsConfigValuesConfigParamValuesObjectValue,
  *                 parameterValue: workspaceTaskInputPortsConfigValuesConfigParamValuesParameterValue,
  *                 refValue: workspaceTaskInputPortsConfigValuesConfigParamValuesRefValue,
@@ -391,19 +391,19 @@ import * as utilities from "../utilities";
  *         key: workspaceTaskInputPortsKey,
  *         modelVersion: workspaceTaskInputPortsModelVersion,
  *         name: workspaceTaskInputPortsName,
- *         objectStatus: workspaceTaskInputPortsObjectStatus,
+ *         objectStatus: Number(workspaceTaskInputPortsObjectStatus),
  *         parentRef: {
  *             parent: workspaceTaskInputPortsParentRefParent,
  *             rootDocId: testRootDoc.id,
  *         },
  *         portType: workspaceTaskInputPortsPortType,
  *     }],
- *     isSingleLoad: workspaceTaskIsSingleLoad,
+ *     isSingleLoad: workspaceTaskIsSingleLoad === "true",
  *     jsonData: workspaceTaskJsonData,
  *     key: workspaceTaskKey,
  *     methodType: workspaceTaskMethodType,
  *     modelVersion: workspaceTaskModelVersion,
- *     objectStatus: workspaceTaskObjectStatus,
+ *     objectStatus: Number(workspaceTaskObjectStatus),
  *     opConfigValues: {
  *         configParamValues: {
  *             intValue: workspaceTaskOpConfigValuesConfigParamValuesIntValue,
@@ -423,7 +423,7 @@ import * as utilities from "../utilities";
  *         modelType: workspaceTaskOutputPortsModelType,
  *         configValues: {
  *             configParamValues: {
- *                 intValue: workspaceTaskOutputPortsConfigValuesConfigParamValuesIntValue,
+ *                 intValue: Number(workspaceTaskOutputPortsConfigValuesConfigParamValuesIntValue),
  *                 objectValue: workspaceTaskOutputPortsConfigValuesConfigParamValuesObjectValue,
  *                 parameterValue: workspaceTaskOutputPortsConfigValuesConfigParamValuesParameterValue,
  *                 refValue: workspaceTaskOutputPortsConfigValuesConfigParamValuesRefValue,
@@ -440,14 +440,14 @@ import * as utilities from "../utilities";
  *         key: workspaceTaskOutputPortsKey,
  *         modelVersion: workspaceTaskOutputPortsModelVersion,
  *         name: workspaceTaskOutputPortsName,
- *         objectStatus: workspaceTaskOutputPortsObjectStatus,
+ *         objectStatus: Number(workspaceTaskOutputPortsObjectStatus),
  *         parentRef: {
  *             parent: workspaceTaskOutputPortsParentRefParent,
  *             rootDocId: testRootDoc.id,
  *         },
  *         portType: workspaceTaskOutputPortsPortType,
  *     }],
- *     parallelLoadLimit: workspaceTaskParallelLoadLimit,
+ *     parallelLoadLimit: Number(workspaceTaskParallelLoadLimit),
  *     parameters: [{
  *         modelType: workspaceTaskParametersModelType,
  *         configValues: {
@@ -466,12 +466,12 @@ import * as utilities from "../utilities";
  *         },
  *         defaultValue: workspaceTaskParametersDefaultValue,
  *         description: workspaceTaskParametersDescription,
- *         isInput: workspaceTaskParametersIsInput,
- *         isOutput: workspaceTaskParametersIsOutput,
+ *         isInput: workspaceTaskParametersIsInput === "true",
+ *         isOutput: workspaceTaskParametersIsOutput === "true",
  *         key: workspaceTaskParametersKey,
  *         modelVersion: workspaceTaskParametersModelVersion,
  *         name: workspaceTaskParametersName,
- *         objectStatus: workspaceTaskParametersObjectStatus,
+ *         objectStatus: Number(workspaceTaskParametersObjectStatus),
  *         outputAggregationType: workspaceTaskParametersOutputAggregationType,
  *         parentRef: {
  *             parent: workspaceTaskParametersParentRefParent,
@@ -710,7 +710,7 @@ import * as utilities from "../utilities";
  *         modelType: workspaceTaskTypedExpressionsModelType,
  *         modelVersion: workspaceTaskTypedExpressionsModelVersion,
  *         name: workspaceTaskTypedExpressionsName,
- *         objectStatus: workspaceTaskTypedExpressionsObjectStatus,
+ *         objectStatus: Number(workspaceTaskTypedExpressionsObjectStatus),
  *         parentRef: {
  *             parent: workspaceTaskTypedExpressionsParentRefParent,
  *             rootDocId: testRootDoc.id,
@@ -963,107 +963,107 @@ export interface WorkspaceTaskState {
     /**
      * (Updatable) The REST invocation pattern to use. ASYNC_OCI_WORKREQUEST is being deprecated as well as cancelEndpoint/MethodType.
      */
-    apiCallMode?: pulumi.Input<string>;
+    apiCallMode?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Authentication configuration for Generic REST invocation.
      */
-    authConfig?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskAuthConfig>;
+    authConfig?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskAuthConfig | undefined>;
     /**
      * (Updatable) The REST API configuration for cancelling the task.
      */
-    cancelRestCallConfig?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskCancelRestCallConfig>;
+    cancelRestCallConfig?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskCancelRestCallConfig | undefined>;
     /**
      * (Updatable) The type to create a config provider.
      */
-    configProviderDelegate?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskConfigProviderDelegate>;
+    configProviderDelegate?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskConfigProviderDelegate | undefined>;
     /**
      * (Updatable) Detailed description for the object.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The REST API configuration for execution.
      */
-    executeRestCallConfig?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskExecuteRestCallConfig>;
+    executeRestCallConfig?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskExecuteRestCallConfig | undefined>;
     /**
      * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
-    identifier?: pulumi.Input<string>;
+    identifier?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An array of input ports.
      */
-    inputPorts?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskInputPort>[]>;
+    inputPorts?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskInputPort>[] | undefined>;
     /**
      * (Updatable) Defines whether Data Loader task is used for single load or multiple
      */
-    isSingleLoad?: pulumi.Input<boolean>;
+    isSingleLoad?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      */
-    keyMap?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    keyMap?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskMetadata>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskMetadata>[] | undefined>;
     /**
      * (Updatable) The type of the task.
      */
-    modelType?: pulumi.Input<string>;
+    modelType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The object's model version.
      */
-    modelVersion?: pulumi.Input<string>;
+    modelVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      */
-    objectStatus?: pulumi.Input<number>;
+    objectStatus?: pulumi.Input<number | undefined>;
     /**
      * This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
      */
-    objectVersion?: pulumi.Input<number>;
+    objectVersion?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Configuration values can be string, objects, or parameters.
      */
-    opConfigValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskOpConfigValues>;
+    opConfigValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskOpConfigValues | undefined>;
     /**
      * (Updatable) Describes the shape of the execution result
      */
-    operation?: pulumi.Input<string>;
+    operation?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An array of output ports.
      */
-    outputPorts?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskOutputPort>[]>;
+    outputPorts?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskOutputPort>[] | undefined>;
     /**
      * (Updatable) Defines the number of entities being loaded in parallel at a time for a Data Loader task
      */
-    parallelLoadLimit?: pulumi.Input<number>;
+    parallelLoadLimit?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) An array of parameters.
      */
-    parameters?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskParameter>[]>;
+    parameters?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskParameter>[] | undefined>;
     /**
      * (Updatable) A reference to the object's parent.
      */
-    parentRef?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskParentRef>;
+    parentRef?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskParentRef | undefined>;
     /**
      * (Updatable) The REST API configuration for polling.
      */
-    pollRestCallConfig?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskPollRestCallConfig>;
+    pollRestCallConfig?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskPollRestCallConfig | undefined>;
     /**
      * (Updatable) Information about the object and its parent.
      */
-    registryMetadata?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskRegistryMetadata>;
+    registryMetadata?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskRegistryMetadata | undefined>;
     /**
      * (Updatable) List of typed expressions.
      */
-    typedExpressions?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskTypedExpression>[]>;
+    typedExpressions?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskTypedExpression>[] | undefined>;
     /**
      * The workspace ID.
      *
@@ -1071,7 +1071,7 @@ export interface WorkspaceTaskState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    workspaceId?: pulumi.Input<string>;
+    workspaceId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -1081,27 +1081,27 @@ export interface WorkspaceTaskArgs {
     /**
      * (Updatable) The REST invocation pattern to use. ASYNC_OCI_WORKREQUEST is being deprecated as well as cancelEndpoint/MethodType.
      */
-    apiCallMode?: pulumi.Input<string>;
+    apiCallMode?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Authentication configuration for Generic REST invocation.
      */
-    authConfig?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskAuthConfig>;
+    authConfig?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskAuthConfig | undefined>;
     /**
      * (Updatable) The REST API configuration for cancelling the task.
      */
-    cancelRestCallConfig?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskCancelRestCallConfig>;
+    cancelRestCallConfig?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskCancelRestCallConfig | undefined>;
     /**
      * (Updatable) The type to create a config provider.
      */
-    configProviderDelegate?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskConfigProviderDelegate>;
+    configProviderDelegate?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskConfigProviderDelegate | undefined>;
     /**
      * (Updatable) Detailed description for the object.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The REST API configuration for execution.
      */
-    executeRestCallConfig?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskExecuteRestCallConfig>;
+    executeRestCallConfig?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskExecuteRestCallConfig | undefined>;
     /**
      * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
@@ -1109,15 +1109,15 @@ export interface WorkspaceTaskArgs {
     /**
      * (Updatable) An array of input ports.
      */
-    inputPorts?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskInputPort>[]>;
+    inputPorts?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskInputPort>[] | undefined>;
     /**
      * (Updatable) Defines whether Data Loader task is used for single load or multiple
      */
-    isSingleLoad?: pulumi.Input<boolean>;
+    isSingleLoad?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The type of the task.
      */
@@ -1125,43 +1125,43 @@ export interface WorkspaceTaskArgs {
     /**
      * (Updatable) The object's model version.
      */
-    modelVersion?: pulumi.Input<string>;
+    modelVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      */
-    objectStatus?: pulumi.Input<number>;
+    objectStatus?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Configuration values can be string, objects, or parameters.
      */
-    opConfigValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskOpConfigValues>;
+    opConfigValues?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskOpConfigValues | undefined>;
     /**
      * (Updatable) Describes the shape of the execution result
      */
-    operation?: pulumi.Input<string>;
+    operation?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An array of output ports.
      */
-    outputPorts?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskOutputPort>[]>;
+    outputPorts?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskOutputPort>[] | undefined>;
     /**
      * (Updatable) Defines the number of entities being loaded in parallel at a time for a Data Loader task
      */
-    parallelLoadLimit?: pulumi.Input<number>;
+    parallelLoadLimit?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) An array of parameters.
      */
-    parameters?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskParameter>[]>;
+    parameters?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskParameter>[] | undefined>;
     /**
      * (Updatable) A reference to the object's parent.
      */
-    parentRef?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskParentRef>;
+    parentRef?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskParentRef | undefined>;
     /**
      * (Updatable) The REST API configuration for polling.
      */
-    pollRestCallConfig?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskPollRestCallConfig>;
+    pollRestCallConfig?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskPollRestCallConfig | undefined>;
     /**
      * (Updatable) Information about the object and its parent.
      */
@@ -1169,7 +1169,7 @@ export interface WorkspaceTaskArgs {
     /**
      * (Updatable) List of typed expressions.
      */
-    typedExpressions?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskTypedExpression>[]>;
+    typedExpressions?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceTaskTypedExpression>[] | undefined>;
     /**
      * The workspace ID.
      *

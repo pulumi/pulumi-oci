@@ -124,7 +124,7 @@ def get_autonomous_virtual_machines(autonomous_vm_cluster_id: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_virtual_machines = oci.Database.get_autonomous_virtual_machines(autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
+    test_autonomous_virtual_machines = oci.database.get_autonomous_virtual_machines(autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
         compartment_id=compartment_id,
         state=autonomous_virtual_machine_state)
     ```
@@ -149,10 +149,10 @@ def get_autonomous_virtual_machines(autonomous_vm_cluster_id: Optional[_builtins
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_autonomous_virtual_machines_output(autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                           compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAutonomousVirtualMachinesFilterArgs', 'GetAutonomousVirtualMachinesFilterArgsDict']]]]] = None,
-                                           state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_autonomous_virtual_machines_output(autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                           compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousVirtualMachinesFilterArgs', 'GetAutonomousVirtualMachinesFilterArgsDict']]]]] = None,
+                                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousVirtualMachinesResult]:
     """
     This data source provides the list of Autonomous Virtual Machines in Oracle Cloud Infrastructure Database service.
@@ -165,7 +165,7 @@ def get_autonomous_virtual_machines_output(autonomous_vm_cluster_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_virtual_machines = oci.Database.get_autonomous_virtual_machines(autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
+    test_autonomous_virtual_machines = oci.database.get_autonomous_virtual_machines(autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
         compartment_id=compartment_id,
         state=autonomous_virtual_machine_state)
     ```

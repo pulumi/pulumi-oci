@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeploymentTypes = oci.GoldenGate.getDeploymentTypes({
+ * const testDeploymentTypes = oci.goldengate.getDeploymentTypes({
  *     compartmentId: compartmentId,
  *     deploymentType: deploymentTypeDeploymentType,
  *     displayName: deploymentTypeDisplayName,
@@ -97,7 +97,7 @@ export interface GetDeploymentTypesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeploymentTypes = oci.GoldenGate.getDeploymentTypes({
+ * const testDeploymentTypes = oci.goldengate.getDeploymentTypes({
  *     compartmentId: compartmentId,
  *     deploymentType: deploymentTypeDeploymentType,
  *     displayName: deploymentTypeDisplayName,
@@ -127,14 +127,14 @@ export interface GetDeploymentTypesOutputArgs {
     /**
      * The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
      */
-    deploymentType?: pulumi.Input<string>;
+    deploymentType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that match the entire 'displayName' given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetDeploymentTypesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.GoldenGate.GetDeploymentTypesFilterArgs>[] | undefined>;
     /**
      * Allows to query by a specific GoldenGate version.
      */
-    oggVersion?: pulumi.Input<string>;
+    oggVersion?: pulumi.Input<string | undefined>;
 }

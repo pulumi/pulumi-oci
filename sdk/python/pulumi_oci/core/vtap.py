@@ -23,20 +23,20 @@ class VtapArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  source_id: pulumi.Input[_builtins.str],
                  vcn_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 encapsulation_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_vtap_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_packet_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 source_private_endpoint_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_private_endpoint_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 traffic_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 vxlan_network_identifier: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 encapsulation_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_vtap_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_packet_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 source_private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_private_endpoint_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 traffic_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 vxlan_network_identifier: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Vtap resource.
 
@@ -148,55 +148,55 @@ class VtapArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="encapsulationProtocol")
-    def encapsulation_protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def encapsulation_protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Defines an encapsulation header type for the VTAP's mirrored traffic.
         """
         return pulumi.get(self, "encapsulation_protocol")
 
     @encapsulation_protocol.setter
-    def encapsulation_protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def encapsulation_protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encapsulation_protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isVtapEnabled")
-    def is_vtap_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_vtap_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Used to start or stop a `Vtap` resource.
         * `TRUE` directs the VTAP to start mirroring traffic.
@@ -205,108 +205,108 @@ class VtapArgs:
         return pulumi.get(self, "is_vtap_enabled")
 
     @is_vtap_enabled.setter
-    def is_vtap_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_vtap_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_vtap_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="maxPacketSize")
-    def max_packet_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_packet_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum size of the packets to be included in the filter.
         """
         return pulumi.get(self, "max_packet_size")
 
     @max_packet_size.setter
-    def max_packet_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_packet_size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_packet_size", value)
 
     @_builtins.property
     @pulumi.getter(name="sourcePrivateEndpointIp")
-    def source_private_endpoint_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_private_endpoint_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The IP Address of the source private endpoint.
         """
         return pulumi.get(self, "source_private_endpoint_ip")
 
     @source_private_endpoint_ip.setter
-    def source_private_endpoint_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_private_endpoint_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_private_endpoint_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="sourcePrivateEndpointSubnetId")
-    def source_private_endpoint_subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_private_endpoint_subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
         """
         return pulumi.get(self, "source_private_endpoint_subnet_id")
 
     @source_private_endpoint_subnet_id.setter
-    def source_private_endpoint_subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_private_endpoint_subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_private_endpoint_subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceType")
-    def source_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The source type for the VTAP.
         """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
-    def source_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_type", value)
 
     @_builtins.property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the destination resource where mirrored packets are sent.
         """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
-    def target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_id", value)
 
     @_builtins.property
     @pulumi.getter(name="targetIp")
-    def target_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The IP address of the destination resource where mirrored packets are sent.
         """
         return pulumi.get(self, "target_ip")
 
     @target_ip.setter
-    def target_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="targetType")
-    def target_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target type for the VTAP.
         """
         return pulumi.get(self, "target_type")
 
     @target_type.setter
-    def target_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_type", value)
 
     @_builtins.property
     @pulumi.getter(name="trafficMode")
-    def traffic_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def traffic_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
         """
         return pulumi.get(self, "traffic_mode")
 
     @traffic_mode.setter
-    def traffic_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def traffic_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "traffic_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="vxlanNetworkIdentifier")
-    def vxlan_network_identifier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vxlan_network_identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN. 
 
@@ -317,34 +317,34 @@ class VtapArgs:
         return pulumi.get(self, "vxlan_network_identifier")
 
     @vxlan_network_identifier.setter
-    def vxlan_network_identifier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vxlan_network_identifier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vxlan_network_identifier", value)
 
 
 @pulumi.input_type
 class _VtapState:
     def __init__(__self__, *,
-                 capture_filter_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 encapsulation_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_vtap_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_state_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 max_packet_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_private_endpoint_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_private_endpoint_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 traffic_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vxlan_network_identifier: Optional[pulumi.Input[_builtins.str]] = None):
+                 capture_filter_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 encapsulation_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_vtap_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 max_packet_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_private_endpoint_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 traffic_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vxlan_network_identifier: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Vtap resources.
 
@@ -421,79 +421,79 @@ class _VtapState:
 
     @_builtins.property
     @pulumi.getter(name="captureFilterId")
-    def capture_filter_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def capture_filter_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         """
         return pulumi.get(self, "capture_filter_id")
 
     @capture_filter_id.setter
-    def capture_filter_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def capture_filter_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "capture_filter_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the `Vtap` resource.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="encapsulationProtocol")
-    def encapsulation_protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def encapsulation_protocol(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Defines an encapsulation header type for the VTAP's mirrored traffic.
         """
         return pulumi.get(self, "encapsulation_protocol")
 
     @encapsulation_protocol.setter
-    def encapsulation_protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def encapsulation_protocol(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "encapsulation_protocol", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isVtapEnabled")
-    def is_vtap_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_vtap_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Used to start or stop a `Vtap` resource.
         * `TRUE` directs the VTAP to start mirroring traffic.
@@ -502,168 +502,168 @@ class _VtapState:
         return pulumi.get(self, "is_vtap_enabled")
 
     @is_vtap_enabled.setter
-    def is_vtap_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_vtap_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_vtap_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleStateDetails")
-    def lifecycle_state_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_state_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The VTAP's current running state.
         """
         return pulumi.get(self, "lifecycle_state_details")
 
     @lifecycle_state_details.setter
-    def lifecycle_state_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_state_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_state_details", value)
 
     @_builtins.property
     @pulumi.getter(name="maxPacketSize")
-    def max_packet_size(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_packet_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The maximum size of the packets to be included in the filter.
         """
         return pulumi.get(self, "max_packet_size")
 
     @max_packet_size.setter
-    def max_packet_size(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_packet_size(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_packet_size", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceId")
-    def source_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
         """
         return pulumi.get(self, "source_id")
 
     @source_id.setter
-    def source_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sourcePrivateEndpointIp")
-    def source_private_endpoint_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_private_endpoint_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The IP Address of the source private endpoint.
         """
         return pulumi.get(self, "source_private_endpoint_ip")
 
     @source_private_endpoint_ip.setter
-    def source_private_endpoint_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_private_endpoint_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_private_endpoint_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="sourcePrivateEndpointSubnetId")
-    def source_private_endpoint_subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_private_endpoint_subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
         """
         return pulumi.get(self, "source_private_endpoint_subnet_id")
 
     @source_private_endpoint_subnet_id.setter
-    def source_private_endpoint_subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_private_endpoint_subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_private_endpoint_subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceType")
-    def source_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The source type for the VTAP.
         """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
-    def source_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The VTAP's administrative lifecycle state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the destination resource where mirrored packets are sent.
         """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
-    def target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_id", value)
 
     @_builtins.property
     @pulumi.getter(name="targetIp")
-    def target_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The IP address of the destination resource where mirrored packets are sent.
         """
         return pulumi.get(self, "target_ip")
 
     @target_ip.setter
-    def target_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="targetType")
-    def target_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target type for the VTAP.
         """
         return pulumi.get(self, "target_type")
 
     @target_type.setter
-    def target_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_type", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the VTAP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2020-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="trafficMode")
-    def traffic_mode(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def traffic_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
         """
         return pulumi.get(self, "traffic_mode")
 
     @traffic_mode.setter
-    def traffic_mode(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def traffic_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "traffic_mode", value)
 
     @_builtins.property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vcn_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN containing the `Vtap` resource.
         """
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
-    def vcn_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vcn_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vcn_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vxlanNetworkIdentifier")
-    def vxlan_network_identifier(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vxlan_network_identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN. 
 
@@ -674,7 +674,7 @@ class _VtapState:
         return pulumi.get(self, "vxlan_network_identifier")
 
     @vxlan_network_identifier.setter
-    def vxlan_network_identifier(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vxlan_network_identifier(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vxlan_network_identifier", value)
 
 
@@ -684,24 +684,24 @@ class Vtap(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 capture_filter_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 encapsulation_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_vtap_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_packet_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_private_endpoint_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_private_endpoint_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 traffic_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vxlan_network_identifier: Optional[pulumi.Input[_builtins.str]] = None,
+                 capture_filter_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 encapsulation_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_vtap_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_packet_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_private_endpoint_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 traffic_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vxlan_network_identifier: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Vtap resource in Oracle Cloud Infrastructure Core service.
@@ -738,8 +738,8 @@ class Vtap(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_vtap_enabled=vtap_is_vtap_enabled,
-            max_packet_size=vtap_max_packet_size,
+            is_vtap_enabled=vtap_is_vtap_enabled == "true",
+            max_packet_size=int(vtap_max_packet_size),
             source_private_endpoint_ip=vtap_source_private_endpoint_ip,
             source_private_endpoint_subnet_id=test_subnet["id"],
             source_type=vtap_source_type,
@@ -827,8 +827,8 @@ class Vtap(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_vtap_enabled=vtap_is_vtap_enabled,
-            max_packet_size=vtap_max_packet_size,
+            is_vtap_enabled=vtap_is_vtap_enabled == "true",
+            max_packet_size=int(vtap_max_packet_size),
             source_private_endpoint_ip=vtap_source_private_endpoint_ip,
             source_private_endpoint_subnet_id=test_subnet["id"],
             source_type=vtap_source_type,
@@ -863,24 +863,24 @@ class Vtap(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 capture_filter_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 encapsulation_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_vtap_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 max_packet_size: Optional[pulumi.Input[_builtins.int]] = None,
-                 source_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_private_endpoint_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_private_endpoint_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 traffic_mode: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vxlan_network_identifier: Optional[pulumi.Input[_builtins.str]] = None,
+                 capture_filter_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 encapsulation_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_vtap_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 max_packet_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 source_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_private_endpoint_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 traffic_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vxlan_network_identifier: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -929,27 +929,27 @@ class Vtap(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            capture_filter_id: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            encapsulation_protocol: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_vtap_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_state_details: Optional[pulumi.Input[_builtins.str]] = None,
-            max_packet_size: Optional[pulumi.Input[_builtins.int]] = None,
-            source_id: Optional[pulumi.Input[_builtins.str]] = None,
-            source_private_endpoint_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            source_private_endpoint_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            source_type: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            target_id: Optional[pulumi.Input[_builtins.str]] = None,
-            target_ip: Optional[pulumi.Input[_builtins.str]] = None,
-            target_type: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            traffic_mode: Optional[pulumi.Input[_builtins.str]] = None,
-            vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
-            vxlan_network_identifier: Optional[pulumi.Input[_builtins.str]] = None) -> 'Vtap':
+            capture_filter_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            encapsulation_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_vtap_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
+            max_packet_size: pulumi.Input[Optional[_builtins.int]] = None,
+            source_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source_private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            source_private_endpoint_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            target_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            target_type: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            traffic_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vxlan_network_identifier: pulumi.Input[Optional[_builtins.str]] = None) -> 'Vtap':
         """
         Get an existing Vtap resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -37,8 +37,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isEnabled: logAnalyticsObjectCollectionRuleIsEnabled,
- *     isForceHistoricCollection: logAnalyticsObjectCollectionRuleIsForceHistoricCollection,
+ *     isEnabled: logAnalyticsObjectCollectionRuleIsEnabled === "true",
+ *     isForceHistoricCollection: logAnalyticsObjectCollectionRuleIsForceHistoricCollection === "true",
  *     logSet: logAnalyticsObjectCollectionRuleLogSet,
  *     logSetExtRegex: logAnalyticsObjectCollectionRuleLogSetExtRegex,
  *     logSetKey: logAnalyticsObjectCollectionRuleLogSetKey,
@@ -331,127 +331,127 @@ export interface LogAnalyticsObjectCollectionRuleState {
     /**
      * (Updatable) An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
      */
-    charEncoding?: pulumi.Input<string>;
+    charEncoding?: pulumi.Input<string | undefined>;
     /**
      * The type of collection. Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
      */
-    collectionType?: pulumi.Input<string>;
+    collectionType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
      */
-    entityId?: pulumi.Input<string>;
+    entityId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Whether or not this rule is currently enabled.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
      */
-    isForceHistoricCollection?: pulumi.Input<boolean>;
+    isForceHistoricCollection?: pulumi.Input<boolean | undefined>;
     /**
      * Last Collected Object for the rule
      */
-    lastCollectedObject?: pulumi.Input<string>;
+    lastCollectedObject?: pulumi.Input<string | undefined>;
     /**
      * A detailed status of the life cycle state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Log Analytics Log group OCID to associate the processed logs with.
      */
-    logGroupId?: pulumi.Input<string>;
+    logGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
      */
-    logSet?: pulumi.Input<string>;
+    logSet?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
      */
-    logSetExtRegex?: pulumi.Input<string>;
+    logSetExtRegex?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
      */
-    logSetKey?: pulumi.Input<string>;
+    logSetKey?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Name of the Log Analytics Source to use for the processing.
      */
-    logSourceName?: pulumi.Input<string>;
+    logSourceName?: pulumi.Input<string | undefined>;
     /**
      * Type of files/objects in this object collection rule.
      */
-    logType?: pulumi.Input<string>;
+    logType?: pulumi.Input<string | undefined>;
     /**
      * A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
-    namespace?: pulumi.Input<string>;
+    namespace?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
      */
-    objectNameFilters?: pulumi.Input<pulumi.Input<string>[]>;
+    objectNameFilters?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Name of the Object Storage bucket.
      */
-    osBucketName?: pulumi.Input<string>;
+    osBucketName?: pulumi.Input<string | undefined>;
     /**
      * Object Storage namespace.
      */
-    osNamespace?: pulumi.Input<string>;
+    osNamespace?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
      */
-    overrides?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.LogAnalyticsObjectCollectionRuleOverride>[]>;
+    overrides?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.LogAnalyticsObjectCollectionRuleOverride>[] | undefined>;
     /**
      * The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
      */
-    pollSince?: pulumi.Input<string>;
+    pollSince?: pulumi.Input<string | undefined>;
     /**
      * The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
      */
-    pollTill?: pulumi.Input<string>;
+    pollTill?: pulumi.Input<string | undefined>;
     /**
      * The current state of the rule.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The time from which to consume the objects, if streamCursorType is AT_TIME.
      */
-    streamCursorTime?: pulumi.Input<string>;
+    streamCursorTime?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
      */
-    streamCursorType?: pulumi.Input<string>;
+    streamCursorType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
      */
-    streamId?: pulumi.Input<string>;
+    streamId?: pulumi.Input<string | undefined>;
     /**
      * The time when this rule was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time when this rule was last updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used. 
      *
@@ -459,7 +459,7 @@ export interface LogAnalyticsObjectCollectionRuleState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timezone?: pulumi.Input<string>;
+    timezone?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -469,11 +469,11 @@ export interface LogAnalyticsObjectCollectionRuleArgs {
     /**
      * (Updatable) An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
      */
-    charEncoding?: pulumi.Input<string>;
+    charEncoding?: pulumi.Input<string | undefined>;
     /**
      * The type of collection. Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
      */
-    collectionType?: pulumi.Input<string>;
+    collectionType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
      */
@@ -481,27 +481,27 @@ export interface LogAnalyticsObjectCollectionRuleArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Log Analytics entity OCID. Associates the processed logs with the given entity (optional).
      */
-    entityId?: pulumi.Input<string>;
+    entityId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Whether or not this rule is currently enabled.
      */
-    isEnabled?: pulumi.Input<boolean>;
+    isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
      */
-    isForceHistoricCollection?: pulumi.Input<boolean>;
+    isForceHistoricCollection?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Log Analytics Log group OCID to associate the processed logs with.
      */
@@ -509,27 +509,27 @@ export interface LogAnalyticsObjectCollectionRuleArgs {
     /**
      * (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
      */
-    logSet?: pulumi.Input<string>;
+    logSet?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
      */
-    logSetExtRegex?: pulumi.Input<string>;
+    logSetExtRegex?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
      */
-    logSetKey?: pulumi.Input<string>;
+    logSetKey?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Name of the Log Analytics Source to use for the processing.
      */
-    logSourceName?: pulumi.Input<string>;
+    logSourceName?: pulumi.Input<string | undefined>;
     /**
      * Type of files/objects in this object collection rule.
      */
-    logType?: pulumi.Input<string>;
+    logType?: pulumi.Input<string | undefined>;
     /**
      * A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      */
@@ -537,7 +537,7 @@ export interface LogAnalyticsObjectCollectionRuleArgs {
     /**
      * (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
      */
-    objectNameFilters?: pulumi.Input<pulumi.Input<string>[]>;
+    objectNameFilters?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Name of the Object Storage bucket.
      */
@@ -549,27 +549,27 @@ export interface LogAnalyticsObjectCollectionRuleArgs {
     /**
      * (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
      */
-    overrides?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.LogAnalyticsObjectCollectionRuleOverride>[]>;
+    overrides?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.LogAnalyticsObjectCollectionRuleOverride>[] | undefined>;
     /**
      * The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
      */
-    pollSince?: pulumi.Input<string>;
+    pollSince?: pulumi.Input<string | undefined>;
     /**
      * The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
      */
-    pollTill?: pulumi.Input<string>;
+    pollTill?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The time from which to consume the objects, if streamCursorType is AT_TIME.
      */
-    streamCursorTime?: pulumi.Input<string>;
+    streamCursorTime?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Cursor type used to fetch messages from stream. When the streamCursorType is set to DEFAULT, the existing cursor position will be used if already set by any previous objection collection rule(s) using the same stream.  Otherwise, the behaviour is to consume from the oldest available message in the stream.  When the streamCursorType is set to TRIM_HORIZON, the behaviour is to start consuming from the oldest available message in the stream.  When the streamCursorType is set to LATEST, the behavior is to start consuming messages that were published after the creation of this rule.  When the streamCursorType is set to AT_TIME, the behavior is to start consuming from a given time.  For more information on cursor types, see [Stream Consumer Groups](https://docs.oracle.com/en-us/iaas/Content/Streaming/Tasks/using_consumer_groups.htm).
      */
-    streamCursorType?: pulumi.Input<string>;
+    streamCursorType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A Stream OCID is required for Object Collection rules of type LIVE or HISTORIC_LIVE, which will be used by Log Analytics while creating Event Rule and consume the event notifications created by the Object Storage.
      */
-    streamId?: pulumi.Input<string>;
+    streamId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used. 
      *
@@ -577,5 +577,5 @@ export interface LogAnalyticsObjectCollectionRuleArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timezone?: pulumi.Input<string>;
+    timezone?: pulumi.Input<string | undefined>;
 }

@@ -148,9 +148,9 @@ def get_sql_firewall_allowed_sql_analytics(access_level: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_firewall_allowed_sql_analytics = oci.DataSafe.get_sql_firewall_allowed_sql_analytics(compartment_id=compartment_id,
+    test_sql_firewall_allowed_sql_analytics = oci.datasafe.get_sql_firewall_allowed_sql_analytics(compartment_id=compartment_id,
         access_level=sql_firewall_allowed_sql_analytic_access_level,
-        compartment_id_in_subtree=sql_firewall_allowed_sql_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=sql_firewall_allowed_sql_analytic_compartment_id_in_subtree == "true",
         group_bies=sql_firewall_allowed_sql_analytic_group_by,
         scim_query=sql_firewall_allowed_sql_analytic_scim_query)
     ```
@@ -183,12 +183,12 @@ def get_sql_firewall_allowed_sql_analytics(access_level: Optional[_builtins.str]
         id=pulumi.get(__ret__, 'id'),
         scim_query=pulumi.get(__ret__, 'scim_query'),
         sql_firewall_allowed_sql_analytics_collections=pulumi.get(__ret__, 'sql_firewall_allowed_sql_analytics_collections'))
-def get_sql_firewall_allowed_sql_analytics_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                  compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSqlFirewallAllowedSqlAnalyticsFilterArgs', 'GetSqlFirewallAllowedSqlAnalyticsFilterArgsDict']]]]] = None,
-                                                  group_bies: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                  scim_query: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_sql_firewall_allowed_sql_analytics_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                  compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                  filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSqlFirewallAllowedSqlAnalyticsFilterArgs', 'GetSqlFirewallAllowedSqlAnalyticsFilterArgsDict']]]]] = None,
+                                                  group_bies: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                  scim_query: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSqlFirewallAllowedSqlAnalyticsResult]:
     """
     This data source provides the list of Sql Firewall Allowed Sql Analytics in Oracle Cloud Infrastructure Data Safe service.
@@ -214,9 +214,9 @@ def get_sql_firewall_allowed_sql_analytics_output(access_level: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_firewall_allowed_sql_analytics = oci.DataSafe.get_sql_firewall_allowed_sql_analytics(compartment_id=compartment_id,
+    test_sql_firewall_allowed_sql_analytics = oci.datasafe.get_sql_firewall_allowed_sql_analytics(compartment_id=compartment_id,
         access_level=sql_firewall_allowed_sql_analytic_access_level,
-        compartment_id_in_subtree=sql_firewall_allowed_sql_analytic_compartment_id_in_subtree,
+        compartment_id_in_subtree=sql_firewall_allowed_sql_analytic_compartment_id_in_subtree == "true",
         group_bies=sql_firewall_allowed_sql_analytic_group_by,
         scim_query=sql_firewall_allowed_sql_analytic_scim_query)
     ```

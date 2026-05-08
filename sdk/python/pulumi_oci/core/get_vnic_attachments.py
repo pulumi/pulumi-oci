@@ -139,7 +139,7 @@ def get_vnic_attachments(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vnic_attachments = oci.Core.get_vnic_attachments(compartment_id=compartment_id,
+    test_vnic_attachments = oci.core.get_vnic_attachments(compartment_id=compartment_id,
         availability_domain=vnic_attachment_availability_domain,
         instance_id=test_instance["id"],
         vnic_id=test_vnic["id"])
@@ -168,11 +168,11 @@ def get_vnic_attachments(availability_domain: Optional[_builtins.str] = None,
         instance_id=pulumi.get(__ret__, 'instance_id'),
         vnic_attachments=pulumi.get(__ret__, 'vnic_attachments'),
         vnic_id=pulumi.get(__ret__, 'vnic_id'))
-def get_vnic_attachments_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetVnicAttachmentsFilterArgs', 'GetVnicAttachmentsFilterArgsDict']]]]] = None,
-                                instance_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                vnic_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_vnic_attachments_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetVnicAttachmentsFilterArgs', 'GetVnicAttachmentsFilterArgsDict']]]]] = None,
+                                instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                vnic_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVnicAttachmentsResult]:
     """
     This data source provides the list of Vnic Attachments in Oracle Cloud Infrastructure Core service.
@@ -187,7 +187,7 @@ def get_vnic_attachments_output(availability_domain: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_vnic_attachments = oci.Core.get_vnic_attachments(compartment_id=compartment_id,
+    test_vnic_attachments = oci.core.get_vnic_attachments(compartment_id=compartment_id,
         availability_domain=vnic_attachment_availability_domain,
         instance_id=test_instance["id"],
         vnic_id=test_vnic["id"])

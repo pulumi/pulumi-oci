@@ -292,7 +292,7 @@ def get_management_agent_data_source(data_source_key: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_data_source = oci.ManagementAgent.get_management_agent_data_source(data_source_key=management_agent_data_source_data_source_key,
+    test_management_agent_data_source = oci.managementagent.get_management_agent_data_source(data_source_key=management_agent_data_source_data_source_key,
         management_agent_id=test_management_agent["id"])
     ```
 
@@ -328,8 +328,8 @@ def get_management_agent_data_source(data_source_key: Optional[_builtins.str] = 
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'),
         url=pulumi.get(__ret__, 'url'))
-def get_management_agent_data_source_output(data_source_key: Optional[pulumi.Input[_builtins.str]] = None,
-                                            management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_management_agent_data_source_output(data_source_key: pulumi.Input[Optional[_builtins.str]] = None,
+                                            management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagementAgentDataSourceResult]:
     """
     This data source provides details about a specific Management Agent Data Source resource in Oracle Cloud Infrastructure Management Agent service.
@@ -342,7 +342,7 @@ def get_management_agent_data_source_output(data_source_key: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_data_source = oci.ManagementAgent.get_management_agent_data_source(data_source_key=management_agent_data_source_data_source_key,
+    test_management_agent_data_source = oci.managementagent.get_management_agent_data_source(data_source_key=management_agent_data_source_data_source_key,
         management_agent_id=test_management_agent["id"])
     ```
 

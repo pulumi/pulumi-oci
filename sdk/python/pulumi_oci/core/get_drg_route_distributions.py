@@ -127,7 +127,7 @@ def get_drg_route_distributions(display_name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_drg_route_distributions = oci.Core.get_drg_route_distributions(drg_id=test_drg["id"],
+    test_drg_route_distributions = oci.core.get_drg_route_distributions(drg_id=test_drg["id"],
         display_name=drg_route_distribution_display_name,
         state=drg_route_distribution_state)
     ```
@@ -152,10 +152,10 @@ def get_drg_route_distributions(display_name: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_drg_route_distributions_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                       drg_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDrgRouteDistributionsFilterArgs', 'GetDrgRouteDistributionsFilterArgsDict']]]]] = None,
-                                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_drg_route_distributions_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                       drg_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDrgRouteDistributionsFilterArgs', 'GetDrgRouteDistributionsFilterArgsDict']]]]] = None,
+                                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDrgRouteDistributionsResult]:
     """
     This data source provides the list of Drg Route Distributions in Oracle Cloud Infrastructure Core service.
@@ -171,7 +171,7 @@ def get_drg_route_distributions_output(display_name: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_drg_route_distributions = oci.Core.get_drg_route_distributions(drg_id=test_drg["id"],
+    test_drg_route_distributions = oci.core.get_drg_route_distributions(drg_id=test_drg["id"],
         display_name=drg_route_distribution_display_name,
         state=drg_route_distribution_state)
     ```

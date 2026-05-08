@@ -239,7 +239,7 @@ def get_data_safe_private_endpoint(data_safe_private_endpoint_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_data_safe_private_endpoint = oci.DataSafe.get_data_safe_private_endpoint(data_safe_private_endpoint_id=test_data_safe_private_endpoint_oci_data_safe_data_safe_private_endpoint["id"])
+    test_data_safe_private_endpoint = oci.datasafe.get_data_safe_private_endpoint(data_safe_private_endpoint_id=test_data_safe_private_endpoint_oci_data_safe_data_safe_private_endpoint["id"])
     ```
 
 
@@ -267,7 +267,7 @@ def get_data_safe_private_endpoint(data_safe_private_endpoint_id: Optional[_buil
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-def get_data_safe_private_endpoint_output(data_safe_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_data_safe_private_endpoint_output(data_safe_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataSafePrivateEndpointResult]:
     """
     This data source provides details about a specific Data Safe Private Endpoint resource in Oracle Cloud Infrastructure Data Safe service.
@@ -280,7 +280,7 @@ def get_data_safe_private_endpoint_output(data_safe_private_endpoint_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_data_safe_private_endpoint = oci.DataSafe.get_data_safe_private_endpoint(data_safe_private_endpoint_id=test_data_safe_private_endpoint_oci_data_safe_data_safe_private_endpoint["id"])
+    test_data_safe_private_endpoint = oci.datasafe.get_data_safe_private_endpoint(data_safe_private_endpoint_id=test_data_safe_private_endpoint_oci_data_safe_data_safe_private_endpoint["id"])
     ```
 
 

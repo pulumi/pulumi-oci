@@ -66,9 +66,9 @@ class ImportStandardTagsManagementArgs:
 @pulumi.input_type
 class _ImportStandardTagsManagementState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 standard_tag_namespace_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 work_request_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 standard_tag_namespace_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 work_request_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ImportStandardTagsManagement resources.
 
@@ -88,19 +88,19 @@ class _ImportStandardTagsManagementState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="standardTagNamespaceName")
-    def standard_tag_namespace_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def standard_tag_namespace_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of standard tag namespace that will be imported in bulk 
 
@@ -111,16 +111,16 @@ class _ImportStandardTagsManagementState:
         return pulumi.get(self, "standard_tag_namespace_name")
 
     @standard_tag_namespace_name.setter
-    def standard_tag_namespace_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def standard_tag_namespace_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "standard_tag_namespace_name", value)
 
     @_builtins.property
     @pulumi.getter(name="workRequestId")
-    def work_request_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def work_request_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "work_request_id")
 
     @work_request_id.setter
-    def work_request_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def work_request_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "work_request_id", value)
 
 
@@ -130,8 +130,8 @@ class ImportStandardTagsManagement(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 standard_tag_namespace_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 standard_tag_namespace_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Import Standard Tags Management resource in Oracle Cloud Infrastructure Identity service.
@@ -221,8 +221,8 @@ class ImportStandardTagsManagement(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 standard_tag_namespace_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 standard_tag_namespace_name: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -249,9 +249,9 @@ class ImportStandardTagsManagement(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            standard_tag_namespace_name: Optional[pulumi.Input[_builtins.str]] = None,
-            work_request_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ImportStandardTagsManagement':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            standard_tag_namespace_name: pulumi.Input[Optional[_builtins.str]] = None,
+            work_request_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ImportStandardTagsManagement':
         """
         Get an existing ImportStandardTagsManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

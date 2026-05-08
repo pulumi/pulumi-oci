@@ -187,9 +187,9 @@ def get_sensitive_data_models(access_level: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_models = oci.DataSafe.get_sensitive_data_models(compartment_id=compartment_id,
+    test_sensitive_data_models = oci.datasafe.get_sensitive_data_models(compartment_id=compartment_id,
         access_level=sensitive_data_model_access_level,
-        compartment_id_in_subtree=sensitive_data_model_compartment_id_in_subtree,
+        compartment_id_in_subtree=sensitive_data_model_compartment_id_in_subtree == "true",
         display_name=sensitive_data_model_display_name,
         sensitive_data_model_id=test_sensitive_data_model["id"],
         state=sensitive_data_model_state,
@@ -240,16 +240,16 @@ def get_sensitive_data_models(access_level: Optional[_builtins.str] = None,
         target_id=pulumi.get(__ret__, 'target_id'),
         time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
-def get_sensitive_data_models_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                     compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                     display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSensitiveDataModelsFilterArgs', 'GetSensitiveDataModelsFilterArgsDict']]]]] = None,
-                                     sensitive_data_model_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     time_created_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_sensitive_data_models_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                     compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSensitiveDataModelsFilterArgs', 'GetSensitiveDataModelsFilterArgsDict']]]]] = None,
+                                     sensitive_data_model_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     time_created_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     time_created_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSensitiveDataModelsResult]:
     """
     This data source provides the list of Sensitive Data Models in Oracle Cloud Infrastructure Data Safe service.
@@ -262,9 +262,9 @@ def get_sensitive_data_models_output(access_level: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_models = oci.DataSafe.get_sensitive_data_models(compartment_id=compartment_id,
+    test_sensitive_data_models = oci.datasafe.get_sensitive_data_models(compartment_id=compartment_id,
         access_level=sensitive_data_model_access_level,
-        compartment_id_in_subtree=sensitive_data_model_compartment_id_in_subtree,
+        compartment_id_in_subtree=sensitive_data_model_compartment_id_in_subtree == "true",
         display_name=sensitive_data_model_display_name,
         sensitive_data_model_id=test_sensitive_data_model["id"],
         state=sensitive_data_model_state,

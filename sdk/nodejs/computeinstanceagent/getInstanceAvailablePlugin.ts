@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceAvailablePlugins = oci.ComputeInstanceAgent.getInstanceAvailablePlugin({
+ * const testInstanceAvailablePlugins = oci.computeinstanceagent.getInstanceAvailablePlugin({
  *     osName: instanceAvailablePluginOsName,
  *     osVersion: instanceAvailablePluginOsVersion,
  *     name: instanceAvailablePluginName,
@@ -87,7 +87,7 @@ export interface GetInstanceAvailablePluginResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInstanceAvailablePlugins = oci.ComputeInstanceAgent.getInstanceAvailablePlugin({
+ * const testInstanceAvailablePlugins = oci.computeinstanceagent.getInstanceAvailablePlugin({
  *     osName: instanceAvailablePluginOsName,
  *     osVersion: instanceAvailablePluginOsVersion,
  *     name: instanceAvailablePluginName,
@@ -110,11 +110,11 @@ export function getInstanceAvailablePluginOutput(args: GetInstanceAvailablePlugi
  */
 export interface GetInstanceAvailablePluginOutputArgs {
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.ComputeInstanceAgent.GetInstanceAvailablePluginFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.ComputeInstanceAgent.GetInstanceAvailablePluginFilterArgs>[] | undefined>;
     /**
      * The plugin name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The OS for which the plugin is supported. Examples of OperatingSystemQueryParam:OperatingSystemVersionQueryParam are as follows: 'CentOS' '6.10' , 'CentOS Linux' '7', 'CentOS Linux' '8', 'Oracle Linux Server' '6.10', 'Oracle Linux Server' '8.0', 'Red Hat Enterprise Linux Server' '7.8', 'Windows' '10', 'Windows' '2008ServerR2', 'Windows' '2012ServerR2', 'Windows' '7', 'Windows' '8.1'
      */

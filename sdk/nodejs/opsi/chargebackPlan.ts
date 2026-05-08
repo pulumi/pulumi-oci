@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *     planCustomItems: [{
  *         name: chargebackPlanPlanCustomItemsName,
  *         value: chargebackPlanPlanCustomItemsValue,
- *         isCustomizable: chargebackPlanPlanCustomItemsIsCustomizable,
+ *         isCustomizable: chargebackPlanPlanCustomItemsIsCustomizable === "true",
  *     }],
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
@@ -217,43 +217,43 @@ export interface ChargebackPlanState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Source of the chargeback plan.
      */
-    entitySource?: pulumi.Input<string>;
+    entitySource?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Indicates whether the chargeback plan customization item can be customized.
      */
-    isCustomizable?: pulumi.Input<boolean>;
+    isCustomizable?: pulumi.Input<boolean | undefined>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Chargeback Plan category of the chargeback entity. It can be OOB, or CUSTOM.
      */
-    planCategory?: pulumi.Input<string>;
+    planCategory?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of chargeback plan customizations. At least one item is required.
      */
-    planCustomItems?: pulumi.Input<pulumi.Input<inputs.Opsi.ChargebackPlanPlanCustomItem>[]>;
+    planCustomItems?: pulumi.Input<pulumi.Input<inputs.Opsi.ChargebackPlanPlanCustomItem>[] | undefined>;
     /**
      * (Updatable) Description of OPSI Chargeback Plan.
      */
-    planDescription?: pulumi.Input<string>;
+    planDescription?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Name for the OPSI Chargeback plan.
      */
-    planName?: pulumi.Input<string>;
+    planName?: pulumi.Input<string | undefined>;
     /**
      * Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
      *
@@ -261,23 +261,23 @@ export interface ChargebackPlanState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    planType?: pulumi.Input<string>;
+    planType?: pulumi.Input<string | undefined>;
     /**
      * Chargeback Plan lifecycle states
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the chargeback plan was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time chargeback plan was updated. An RFC3339 formatted datetime string
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -291,7 +291,7 @@ export interface ChargebackPlanArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Source of the chargeback plan.
      */
@@ -299,7 +299,7 @@ export interface ChargebackPlanArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) List of chargeback plan customizations. At least one item is required.
      */

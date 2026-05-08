@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEmailReturnPath = oci.Email.getEmailReturnPath({
+ * const testEmailReturnPath = oci.email.getEmailReturnPath({
  *     emailReturnPathId: testEmailReturnPathOciEmailEmailReturnPath.id,
  * });
  * ```
@@ -116,7 +116,7 @@ export interface GetEmailReturnPathResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEmailReturnPath = oci.Email.getEmailReturnPath({
+ * const testEmailReturnPath = oci.email.getEmailReturnPath({
  *     emailReturnPathId: testEmailReturnPathOciEmailEmailReturnPath.id,
  * });
  * ```

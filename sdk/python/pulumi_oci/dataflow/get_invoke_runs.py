@@ -183,7 +183,7 @@ def get_invoke_runs(application_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_invoke_runs = oci.DataFlow.get_invoke_runs(compartment_id=compartment_id,
+    test_invoke_runs = oci.dataflow.get_invoke_runs(compartment_id=compartment_id,
         application_id=test_application["id"],
         display_name=invoke_run_display_name,
         display_name_starts_with=invoke_run_display_name_starts_with,
@@ -228,15 +228,15 @@ def get_invoke_runs(application_id: Optional[_builtins.str] = None,
         runs=pulumi.get(__ret__, 'runs'),
         state=pulumi.get(__ret__, 'state'),
         time_created_greater_than=pulumi.get(__ret__, 'time_created_greater_than'))
-def get_invoke_runs_output(application_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                           display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           display_name_starts_with: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInvokeRunsFilterArgs', 'GetInvokeRunsFilterArgsDict']]]]] = None,
-                           owner_principal_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           pool_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           time_created_greater_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_invoke_runs_output(application_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                           display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           display_name_starts_with: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInvokeRunsFilterArgs', 'GetInvokeRunsFilterArgsDict']]]]] = None,
+                           owner_principal_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           pool_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           time_created_greater_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInvokeRunsResult]:
     """
     This data source provides the list of Invoke Runs in Oracle Cloud Infrastructure Data Flow service.
@@ -249,7 +249,7 @@ def get_invoke_runs_output(application_id: Optional[pulumi.Input[Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_invoke_runs = oci.DataFlow.get_invoke_runs(compartment_id=compartment_id,
+    test_invoke_runs = oci.dataflow.get_invoke_runs(compartment_id=compartment_id,
         application_id=test_application["id"],
         display_name=invoke_run_display_name,
         display_name_starts_with=invoke_run_display_name_starts_with,

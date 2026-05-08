@@ -22,8 +22,8 @@ import * as utilities from "../utilities";
  *
  * const testManagementAppliance = new oci.ocvp.ManagementAppliance("test_management_appliance", {
  *     configuration: {
- *         isLogIngestionEnabled: managementApplianceConfigurationIsLogIngestionEnabled,
- *         isMetricsCollectionEnabled: managementApplianceConfigurationIsMetricsCollectionEnabled,
+ *         isLogIngestionEnabled: managementApplianceConfigurationIsLogIngestionEnabled === "true",
+ *         isMetricsCollectionEnabled: managementApplianceConfigurationIsMetricsCollectionEnabled === "true",
  *         metrics: managementApplianceConfigurationMetrics,
  *         supportBundleBucketId: testBucket.id,
  *     },
@@ -238,51 +238,51 @@ export interface ManagementApplianceState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of compartment in OCI, that this appliance is going to be created in.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of compute instance of management appliance in OCI.
      */
-    computeInstanceId?: pulumi.Input<string>;
+    computeInstanceId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Configuration of management appliance.
      */
-    configuration?: pulumi.Input<inputs.Ocvp.ManagementApplianceConfiguration>;
+    configuration?: pulumi.Input<inputs.Ocvp.ManagementApplianceConfiguration | undefined>;
     /**
      * (Updatable) Array of connections for management appliance.
      */
-    connections?: pulumi.Input<pulumi.Input<inputs.Ocvp.ManagementApplianceConnection>[]>;
+    connections?: pulumi.Input<pulumi.Input<inputs.Ocvp.ManagementApplianceConnection>[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A descriptive name for the management appliance. It must be unique, start with a letter, and contain only letters, digits, whitespaces, dashes and underscores. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Current states of connections.
      */
-    heartbeatConnectionStates?: pulumi.Input<pulumi.Input<inputs.Ocvp.ManagementApplianceHeartbeatConnectionState>[]>;
+    heartbeatConnectionStates?: pulumi.Input<pulumi.Input<inputs.Ocvp.ManagementApplianceHeartbeatConnectionState>[] | undefined>;
     /**
      * Information about current lifecycleState. For FAILED and NEEDS_ATTENTION contains explanations. For other states may contain some details about their progress.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of management agent, that this appliance is running in.
      */
-    managementAgentId?: pulumi.Input<string>;
+    managementAgentId?: pulumi.Input<string | undefined>;
     /**
      * Current version of OCVS management plugin installed by Management Agent.  As soon as OCVS service team publishes a new version OCVS management plugin (ocvs-ma-plugin-<version>.zip) to Management Agent service,  the service distributes it to Management Appliances owned by customers.  This field shows which version of the OCVS management plugin is currently installed and running for this customer.
      */
-    pluginVersion?: pulumi.Input<string>;
+    pluginVersion?: pulumi.Input<string | undefined>;
     /**
      * One or more public SSH keys to be included in `~/.ssh/authorized_keys` file for Management Appliance compute instance. Several public SSH keys must be separate by newline character.
      */
-    publicSshKeys?: pulumi.Input<string>;
+    publicSshKeys?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in. 
      *
@@ -290,31 +290,31 @@ export interface ManagementApplianceState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    sddcId?: pulumi.Input<string>;
+    sddcId?: pulumi.Input<string | undefined>;
     /**
      * Current state of the management appliance.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the configuration of management appliance was last updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeConfigurationUpdated?: pulumi.Input<string>;
+    timeConfigurationUpdated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the management appliance was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the management appliance has last received heartbeat in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeLastHeartbeat?: pulumi.Input<string>;
+    timeLastHeartbeat?: pulumi.Input<string | undefined>;
     /**
      * The date and time the management appliance was last updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -332,7 +332,7 @@ export interface ManagementApplianceArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A descriptive name for the management appliance. It must be unique, start with a letter, and contain only letters, digits, whitespaces, dashes and underscores. Avoid entering confidential information.
      */
@@ -340,11 +340,11 @@ export interface ManagementApplianceArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * One or more public SSH keys to be included in `~/.ssh/authorized_keys` file for Management Appliance compute instance. Several public SSH keys must be separate by newline character.
      */
-    publicSshKeys?: pulumi.Input<string>;
+    publicSshKeys?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of SDDC in OCI, that this appliance is going to be registered in. 
      *

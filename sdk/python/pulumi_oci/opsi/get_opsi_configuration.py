@@ -258,7 +258,7 @@ def get_opsi_configuration(config_item_custom_statuses: Optional[Sequence[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_opsi_configuration = oci.Opsi.get_opsi_configuration(opsi_configuration_id=test_opsi_configuration_oci_opsi_opsi_configuration["id"],
+    test_opsi_configuration = oci.opsi.get_opsi_configuration(opsi_configuration_id=test_opsi_configuration_oci_opsi_opsi_configuration["id"],
         config_item_custom_statuses=opsi_configuration_config_item_custom_status,
         config_item_fields=opsi_configuration_config_item_field,
         config_items_applicable_contexts=opsi_configuration_config_items_applicable_context,
@@ -300,11 +300,11 @@ def get_opsi_configuration(config_item_custom_statuses: Optional[Sequence[_built
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_opsi_configuration_output(config_item_custom_statuses: Optional[pulumi.Input[Sequence[_builtins.str]]] = None,
-                                  config_item_fields: Optional[pulumi.Input[Sequence[_builtins.str]]] = None,
-                                  config_items_applicable_contexts: Optional[pulumi.Input[Sequence[_builtins.str]]] = None,
-                                  opsi_config_fields: Optional[pulumi.Input[Sequence[_builtins.str]]] = None,
-                                  opsi_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_opsi_configuration_output(config_item_custom_statuses: pulumi.Input[Optional[Sequence[_builtins.str]]] = None,
+                                  config_item_fields: pulumi.Input[Optional[Sequence[_builtins.str]]] = None,
+                                  config_items_applicable_contexts: pulumi.Input[Optional[Sequence[_builtins.str]]] = None,
+                                  opsi_config_fields: pulumi.Input[Optional[Sequence[_builtins.str]]] = None,
+                                  opsi_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOpsiConfigurationResult]:
     """
     This data source provides details about a specific Opsi Configuration resource in Oracle Cloud Infrastructure Opsi service.
@@ -319,7 +319,7 @@ def get_opsi_configuration_output(config_item_custom_statuses: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_opsi_configuration = oci.Opsi.get_opsi_configuration(opsi_configuration_id=test_opsi_configuration_oci_opsi_opsi_configuration["id"],
+    test_opsi_configuration = oci.opsi.get_opsi_configuration(opsi_configuration_id=test_opsi_configuration_oci_opsi_opsi_configuration["id"],
         config_item_custom_statuses=opsi_configuration_config_item_custom_status,
         config_item_fields=opsi_configuration_config_item_field,
         config_items_applicable_contexts=opsi_configuration_config_items_applicable_context,

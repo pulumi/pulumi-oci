@@ -27,11 +27,11 @@ import * as utilities from "../utilities";
  *     device: volumeAttachmentDevice,
  *     displayName: volumeAttachmentDisplayName,
  *     encryptionInTransitType: volumeAttachmentEncryptionInTransitType,
- *     isAgentAutoIscsiLoginEnabled: volumeAttachmentIsAgentAutoIscsiLoginEnabled,
- *     isPvEncryptionInTransitEnabled: volumeAttachmentIsPvEncryptionInTransitEnabled,
- *     isReadOnly: volumeAttachmentIsReadOnly,
- *     isShareable: volumeAttachmentIsShareable,
- *     useChap: volumeAttachmentUseChap,
+ *     isAgentAutoIscsiLoginEnabled: volumeAttachmentIsAgentAutoIscsiLoginEnabled === "true",
+ *     isPvEncryptionInTransitEnabled: volumeAttachmentIsPvEncryptionInTransitEnabled === "true",
+ *     isReadOnly: volumeAttachmentIsReadOnly === "true",
+ *     isShareable: volumeAttachmentIsShareable === "true",
+ *     useChap: volumeAttachmentUseChap === "true",
  * });
  * ```
  *
@@ -265,101 +265,101 @@ export interface VolumeAttachmentState {
     /**
      * The type of volume. The only supported values are "iscsi" and "paravirtualized".
      */
-    attachmentType?: pulumi.Input<string>;
+    attachmentType?: pulumi.Input<string | undefined>;
     /**
      * The availability domain of an instance.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name. (Also called the "CHAP password".)
      */
-    chapSecret?: pulumi.Input<string>;
+    chapSecret?: pulumi.Input<string | undefined>;
     /**
      * The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name. See [RFC 1994](https://tools.ietf.org/html/rfc1994) for more on CHAP.  Example: `ocid1.volume.oc1.phx.<unique_ID>`
      */
-    chapUsername?: pulumi.Input<string>;
+    chapUsername?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment.
      *
      * @deprecated The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
      */
-    device?: pulumi.Input<string>;
+    device?: pulumi.Input<string | undefined>;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Refer the top-level definition of encryptionInTransitType. The default value is NONE.
      */
-    encryptionInTransitType?: pulumi.Input<string>;
+    encryptionInTransitType?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the instance.
      */
-    instanceId?: pulumi.Input<string>;
+    instanceId?: pulumi.Input<string | undefined>;
     /**
      * The volume's iSCSI IP address.  Example: `169.254.2.2`
      */
-    ipv4?: pulumi.Input<string>;
+    ipv4?: pulumi.Input<string | undefined>;
     /**
      * The volume's iSCSI IPv6 address.  Example: `2001:db8::1/64`
      */
-    ipv6?: pulumi.Input<string>;
+    ipv6?: pulumi.Input<string | undefined>;
     /**
      * The target volume's iSCSI Qualified Name in the format defined by [RFC 3720](https://tools.ietf.org/html/rfc3720#page-32).  Example: `iqn.2015-12.com.oracleiaas:40b7ee03-883f-46c6-a951-63d2841d2195`
      */
-    iqn?: pulumi.Input<string>;
+    iqn?: pulumi.Input<string | undefined>;
     /**
      * Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
      */
-    isAgentAutoIscsiLoginEnabled?: pulumi.Input<boolean>;
+    isAgentAutoIscsiLoginEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
      */
-    isMultipath?: pulumi.Input<boolean>;
+    isMultipath?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
      */
-    isPvEncryptionInTransitEnabled?: pulumi.Input<boolean>;
+    isPvEncryptionInTransitEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Whether the attachment was created in read-only mode.
      */
-    isReadOnly?: pulumi.Input<boolean>;
+    isReadOnly?: pulumi.Input<boolean | undefined>;
     /**
      * Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
      */
-    isShareable?: pulumi.Input<boolean>;
+    isShareable?: pulumi.Input<boolean | undefined>;
     /**
      * Flag indicating if this volume was created for the customer as part of a simplified launch. Used to determine whether the volume requires deletion on instance termination.
      */
-    isVolumeCreatedDuringLaunch?: pulumi.Input<boolean>;
+    isVolumeCreatedDuringLaunch?: pulumi.Input<boolean | undefined>;
     /**
      * The iscsi login state of the volume attachment. For a Iscsi volume attachment, all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
      */
-    iscsiLoginState?: pulumi.Input<string>;
+    iscsiLoginState?: pulumi.Input<string | undefined>;
     /**
      * A list of secondary multipath devices
      */
-    multipathDevices?: pulumi.Input<pulumi.Input<inputs.Core.VolumeAttachmentMultipathDevice>[]>;
+    multipathDevices?: pulumi.Input<pulumi.Input<inputs.Core.VolumeAttachmentMultipathDevice>[] | undefined>;
     /**
      * The volume's iSCSI port, usually port 860 or 3260.  Example: `3260`
      */
-    port?: pulumi.Input<number>;
+    port?: pulumi.Input<number | undefined>;
     /**
      * The current state of the volume attachment.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the volume was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Whether to use CHAP authentication for the volume attachment. Defaults to false.
      */
-    useChap?: pulumi.Input<boolean>;
+    useChap?: pulumi.Input<boolean | undefined>;
     /**
      * The OCID of the volume.
      *
@@ -367,7 +367,7 @@ export interface VolumeAttachmentState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    volumeId?: pulumi.Input<string>;
+    volumeId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -383,19 +383,19 @@ export interface VolumeAttachmentArgs {
      *
      * @deprecated The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The device name. To retrieve a list of devices for a given instance, see [ListInstanceDevices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Device/ListInstanceDevices).
      */
-    device?: pulumi.Input<string>;
+    device?: pulumi.Input<string | undefined>;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Refer the top-level definition of encryptionInTransitType. The default value is NONE.
      */
-    encryptionInTransitType?: pulumi.Input<string>;
+    encryptionInTransitType?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the instance.
      */
@@ -403,23 +403,23 @@ export interface VolumeAttachmentArgs {
     /**
      * Whether to enable Oracle Cloud Agent to perform the iSCSI login and logout commands after the volume attach or detach operations for non multipath-enabled iSCSI attachments.
      */
-    isAgentAutoIscsiLoginEnabled?: pulumi.Input<boolean>;
+    isAgentAutoIscsiLoginEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
      */
-    isPvEncryptionInTransitEnabled?: pulumi.Input<boolean>;
+    isPvEncryptionInTransitEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Whether the attachment was created in read-only mode.
      */
-    isReadOnly?: pulumi.Input<boolean>;
+    isReadOnly?: pulumi.Input<boolean | undefined>;
     /**
      * Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
      */
-    isShareable?: pulumi.Input<boolean>;
+    isShareable?: pulumi.Input<boolean | undefined>;
     /**
      * Whether to use CHAP authentication for the volume attachment. Defaults to false.
      */
-    useChap?: pulumi.Input<boolean>;
+    useChap?: pulumi.Input<boolean | undefined>;
     /**
      * The OCID of the volume.
      *

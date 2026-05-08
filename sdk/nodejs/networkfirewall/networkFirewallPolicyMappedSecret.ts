@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     source: networkFirewallPolicyMappedSecretSource,
  *     type: networkFirewallPolicyMappedSecretType,
  *     vaultSecretId: testSecret.id,
- *     versionNumber: networkFirewallPolicyMappedSecretVersionNumber,
+ *     versionNumber: Number(networkFirewallPolicyMappedSecretVersionNumber),
  *     description: networkFirewallPolicyMappedSecretDescription,
  * });
  * ```
@@ -163,33 +163,33 @@ export interface NetworkFirewallPolicyMappedSecretState {
     /**
      * (Updatable) The description of the mapped secret. This field can be used to add additional info.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Unique name to identify the group of urls to be used in the policy rules.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */
-    networkFirewallPolicyId?: pulumi.Input<string>;
+    networkFirewallPolicyId?: pulumi.Input<string | undefined>;
     /**
      * OCID of the Network Firewall Policy this Mapped Secret belongs to.
      */
-    parentResourceId?: pulumi.Input<string>;
+    parentResourceId?: pulumi.Input<string | undefined>;
     /**
      * Source of the secrets, where the secrets are stored. The only accepted value is `OCI_VAULT`
      */
-    source?: pulumi.Input<string>;
+    source?: pulumi.Input<string | undefined>;
     /**
      * Type of the secrets mapped based on the policy.
      * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
      * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) OCID for the Vault Secret to be used.
      */
-    vaultSecretId?: pulumi.Input<string>;
+    vaultSecretId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Version number of the secret to be used.
      *
@@ -197,7 +197,7 @@ export interface NetworkFirewallPolicyMappedSecretState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    versionNumber?: pulumi.Input<number>;
+    versionNumber?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -207,11 +207,11 @@ export interface NetworkFirewallPolicyMappedSecretArgs {
     /**
      * (Updatable) The description of the mapped secret. This field can be used to add additional info.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Unique name to identify the group of urls to be used in the policy rules.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */

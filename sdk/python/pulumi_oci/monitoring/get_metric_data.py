@@ -185,10 +185,10 @@ def get_metric_data(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_metric_data = oci.Monitoring.get_metric_data(compartment_id=compartment_id,
+    test_metric_data = oci.monitoring.get_metric_data(compartment_id=compartment_id,
         namespace=metric_data_namespace,
         query=metric_data_query,
-        compartment_id_in_subtree=metric_data_compartment_id_in_subtree,
+        compartment_id_in_subtree=metric_data_compartment_id_in_subtree == "true",
         end_time=metric_data_end_time,
         resolution=metric_data_resolution,
         resource_group=metric_data_resource_group,
@@ -238,15 +238,15 @@ def get_metric_data(compartment_id: Optional[_builtins.str] = None,
         resolution=pulumi.get(__ret__, 'resolution'),
         resource_group=pulumi.get(__ret__, 'resource_group'),
         start_time=pulumi.get(__ret__, 'start_time'))
-def get_metric_data_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                           compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                           end_time: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMetricDataFilterArgs', 'GetMetricDataFilterArgsDict']]]]] = None,
-                           namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                           query: Optional[pulumi.Input[_builtins.str]] = None,
-                           resolution: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           resource_group: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                           start_time: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_metric_data_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                           compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                           end_time: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           filters: pulumi.Input[Optional[Optional[Sequence[Union['GetMetricDataFilterArgs', 'GetMetricDataFilterArgsDict']]]]] = None,
+                           namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                           query: pulumi.Input[Optional[_builtins.str]] = None,
+                           resolution: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           resource_group: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                           start_time: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMetricDataResult]:
     """
     This data source provides the list of Metric Data in Oracle Cloud Infrastructure Monitoring service.
@@ -267,10 +267,10 @@ def get_metric_data_output(compartment_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_metric_data = oci.Monitoring.get_metric_data(compartment_id=compartment_id,
+    test_metric_data = oci.monitoring.get_metric_data(compartment_id=compartment_id,
         namespace=metric_data_namespace,
         query=metric_data_query,
-        compartment_id_in_subtree=metric_data_compartment_id_in_subtree,
+        compartment_id_in_subtree=metric_data_compartment_id_in_subtree == "true",
         end_time=metric_data_end_time,
         resolution=metric_data_resolution,
         resource_group=metric_data_resource_group,

@@ -120,68 +120,68 @@ export interface ProviderArgs {
     /**
      * (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
      */
-    auth?: pulumi.Input<string>;
+    auth?: pulumi.Input<string | undefined>;
     /**
      * (Optional) The profile name to be used from config file, if not set it will be DEFAULT.
      */
-    configFileProfile?: pulumi.Input<string>;
+    configFileProfile?: pulumi.Input<string | undefined>;
     /**
      * (Optional) Disable automatic retries for retriable errors.
      * Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
      */
-    disableAutoRetries?: pulumi.Input<boolean>;
+    disableAutoRetries?: pulumi.Input<boolean | undefined>;
     /**
      * (Optional) flags to enable Dual Stack endpoint.
      */
-    dualStackEndpointEnabled?: pulumi.Input<boolean>;
+    dualStackEndpointEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
      */
-    fingerprint?: pulumi.Input<string>;
+    fingerprint?: pulumi.Input<string | undefined>;
     /**
      * (Optional) List of defined tags keys that Terraform should ignore when planning creates and updates to the associated remote object
      */
-    ignoreDefinedTags?: pulumi.Input<pulumi.Input<string>[]>;
+    ignoreDefinedTags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Optional) A PEM formatted RSA private key for the user.
      * A privateKey or a privateKeyPath must be provided if auth is set to 'ApiKey', ignored otherwise.
      */
-    privateKey?: pulumi.Input<string>;
+    privateKey?: pulumi.Input<string | undefined>;
     /**
      * (Optional) The password used to secure the private key.
      */
-    privateKeyPassword?: pulumi.Input<string>;
+    privateKeyPassword?: pulumi.Input<string | undefined>;
     /**
      * (Optional) The path to the user's PEM formatted private key.
      * A privateKey or a privateKeyPath must be provided if auth is set to 'ApiKey', ignored otherwise.
      */
-    privateKeyPath?: pulumi.Input<string>;
+    privateKeyPath?: pulumi.Input<string | undefined>;
     /**
      * (Optional) flags to enable realm specific service endpoint.
      */
-    realmSpecificServiceEndpointTemplateEnabled?: pulumi.Input<boolean>;
+    realmSpecificServiceEndpointTemplateEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Required) The region for API connections (e.g. us-ashburn-1).
      */
-    region?: pulumi.Input<string>;
+    region?: pulumi.Input<string | undefined>;
     /**
      * (Optional) Config file which has the configuration for 4xx and 5xx retries in JSON format
      */
-    retriesConfigFile?: pulumi.Input<string>;
+    retriesConfigFile?: pulumi.Input<string | undefined>;
     /**
      * (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
      * The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disableAutoRetries` field is set to true.
      */
-    retryDurationSeconds?: pulumi.Input<number>;
+    retryDurationSeconds?: pulumi.Input<number | undefined>;
     /**
      * (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
      */
-    tenancyOcid?: pulumi.Input<string>;
-    testTimeMaintenanceRebootDue?: pulumi.Input<string>;
+    tenancyOcid?: pulumi.Input<string | undefined>;
+    testTimeMaintenanceRebootDue?: pulumi.Input<string | undefined>;
     /**
      * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
      */
-    userOcid?: pulumi.Input<string>;
+    userOcid?: pulumi.Input<string | undefined>;
 }
 
 export namespace Provider {

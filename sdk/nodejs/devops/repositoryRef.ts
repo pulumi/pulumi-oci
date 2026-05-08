@@ -153,31 +153,31 @@ export interface RepositoryRefState {
     /**
      * (Updatable) Commit ID pointed to by the new branch.
      */
-    commitId?: pulumi.Input<string>;
+    commitId?: pulumi.Input<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Unique full reference name inside a repository.
      */
-    fullRefName?: pulumi.Input<string>;
+    fullRefName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) SHA-1 hash value of the object pointed to by the tag.
      */
-    objectId?: pulumi.Input<string>;
+    objectId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given reference name.
      */
-    refName?: pulumi.Input<string>;
+    refName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The type of reference (BRANCH or TAG).
      */
-    refType?: pulumi.Input<string>;
+    refType?: pulumi.Input<string | undefined>;
     /**
      * Unique repository identifier.
      *
@@ -185,7 +185,7 @@ export interface RepositoryRefState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    repositoryId?: pulumi.Input<string>;
+    repositoryId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -195,11 +195,11 @@ export interface RepositoryRefArgs {
     /**
      * (Updatable) Commit ID pointed to by the new branch.
      */
-    commitId?: pulumi.Input<string>;
+    commitId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) SHA-1 hash value of the object pointed to by the tag.
      */
-    objectId?: pulumi.Input<string>;
+    objectId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given reference name.
      */

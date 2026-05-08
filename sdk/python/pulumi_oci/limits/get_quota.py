@@ -189,7 +189,7 @@ def get_quota(quota_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_quota = oci.Limits.get_quota(quota_id=test_quota_oci_limits_quota["id"])
+    test_quota = oci.limits.get_quota(quota_id=test_quota_oci_limits_quota["id"])
     ```
 
 
@@ -213,7 +213,7 @@ def get_quota(quota_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         statements=pulumi.get(__ret__, 'statements'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_quota_output(quota_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_quota_output(quota_id: pulumi.Input[Optional[_builtins.str]] = None,
                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetQuotaResult]:
     """
     This data source provides details about a specific Quota resource in Oracle Cloud Infrastructure Limits service.
@@ -226,7 +226,7 @@ def get_quota_output(quota_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_quota = oci.Limits.get_quota(quota_id=test_quota_oci_limits_quota["id"])
+    test_quota = oci.limits.get_quota(quota_id=test_quota_oci_limits_quota["id"])
     ```
 
 

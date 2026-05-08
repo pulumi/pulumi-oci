@@ -139,18 +139,18 @@ export interface GetDbmulticloudOracleDbGcpKeysOutputArgs {
     /**
      * A filter to return Oracle DB Google Cloud Key resources that match the specified display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDbmulticloudOracleDbGcpKeysFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDbmulticloudOracleDbGcpKeysFilterArgs>[] | undefined>;
     /**
      * A filter to return Oracle DB Google Cloud Key resources.
      */
-    oracleDbGcpKeyId?: pulumi.Input<string>;
+    oracleDbGcpKeyId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return Oracle DB GCP Key Rings.
      */
-    oracleDbGcpKeyRingId?: pulumi.Input<string>;
+    oracleDbGcpKeyRingId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

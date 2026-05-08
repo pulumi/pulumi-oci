@@ -195,7 +195,7 @@ def get_managed_database_optimizer_statistics_advisor_execution(execution_name: 
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_optimizer_statistics_advisor_execution = oci.DatabaseManagement.get_managed_database_optimizer_statistics_advisor_execution(execution_name=managed_database_optimizer_statistics_advisor_execution_execution_name,
+    test_managed_database_optimizer_statistics_advisor_execution = oci.databasemanagement.get_managed_database_optimizer_statistics_advisor_execution(execution_name=managed_database_optimizer_statistics_advisor_execution_execution_name,
         managed_database_id=test_managed_database["id"],
         task_name=managed_database_optimizer_statistics_advisor_execution_task_name)
     ```
@@ -225,9 +225,9 @@ def get_managed_database_optimizer_statistics_advisor_execution(execution_name: 
         task_name=pulumi.get(__ret__, 'task_name'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-def get_managed_database_optimizer_statistics_advisor_execution_output(execution_name: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                       managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                       task_name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_managed_database_optimizer_statistics_advisor_execution_output(execution_name: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                       managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                       task_name: pulumi.Input[Optional[_builtins.str]] = None,
                                                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult]:
     """
     This data source provides details about a specific Managed Database Optimizer Statistics Advisor Execution resource in Oracle Cloud Infrastructure Database Management service.
@@ -241,7 +241,7 @@ def get_managed_database_optimizer_statistics_advisor_execution_output(execution
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_optimizer_statistics_advisor_execution = oci.DatabaseManagement.get_managed_database_optimizer_statistics_advisor_execution(execution_name=managed_database_optimizer_statistics_advisor_execution_execution_name,
+    test_managed_database_optimizer_statistics_advisor_execution = oci.databasemanagement.get_managed_database_optimizer_statistics_advisor_execution(execution_name=managed_database_optimizer_statistics_advisor_execution_execution_name,
         managed_database_id=test_managed_database["id"],
         task_name=managed_database_optimizer_statistics_advisor_execution_task_name)
     ```

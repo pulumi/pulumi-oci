@@ -29,8 +29,8 @@ import * as utilities from "../utilities";
  *         name: metricExtensionMetricListName,
  *         computeExpression: metricExtensionMetricListComputeExpression,
  *         displayName: metricExtensionMetricListDisplayName,
- *         isDimension: metricExtensionMetricListIsDimension,
- *         isHidden: metricExtensionMetricListIsHidden,
+ *         isDimension: metricExtensionMetricListIsDimension === "true",
+ *         isHidden: metricExtensionMetricListIsHidden === "true",
  *         metricCategory: metricExtensionMetricListMetricCategory,
  *         unit: metricExtensionMetricListUnit,
  *     }],
@@ -43,15 +43,15 @@ import * as utilities from "../utilities";
  *         delimiter: metricExtensionQueryPropertiesDelimiter,
  *         identityMetric: metricExtensionQueryPropertiesIdentityMetric,
  *         inParamDetails: [{
- *             inParamPosition: metricExtensionQueryPropertiesInParamDetailsInParamPosition,
+ *             inParamPosition: Number(metricExtensionQueryPropertiesInParamDetailsInParamPosition),
  *             inParamValue: metricExtensionQueryPropertiesInParamDetailsInParamValue,
  *         }],
- *         isMetricServiceEnabled: metricExtensionQueryPropertiesIsMetricServiceEnabled,
+ *         isMetricServiceEnabled: metricExtensionQueryPropertiesIsMetricServiceEnabled === "true",
  *         jmxAttributes: metricExtensionQueryPropertiesJmxAttributes,
  *         managedBeanQuery: metricExtensionQueryPropertiesManagedBeanQuery,
  *         outParamDetails: {
  *             outParamName: metricExtensionQueryPropertiesOutParamDetailsOutParamName,
- *             outParamPosition: metricExtensionQueryPropertiesOutParamDetailsOutParamPosition,
+ *             outParamPosition: Number(metricExtensionQueryPropertiesOutParamDetailsOutParamPosition),
  *             outParamType: metricExtensionQueryPropertiesOutParamDetailsOutParamType,
  *         },
  *         protocolType: metricExtensionQueryPropertiesProtocolType,
@@ -280,47 +280,47 @@ export interface MetricExtensionState {
     /**
      * Type of possible collection methods.
      */
-    collectionMethod?: pulumi.Input<string>;
+    collectionMethod?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Schedule of metric extension should use RFC 5545 format i.e. recur-rule-part = "FREQ";INTERVAL where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
      */
-    collectionRecurrences?: pulumi.Input<string>;
+    collectionRecurrences?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Created by user
      */
-    createdBy?: pulumi.Input<string>;
+    createdBy?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Description of the metric extension.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Metric Extension display name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * List of resource details objects having resourceIds on which this metric extension is enabled.
      */
-    enabledOnResources?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MetricExtensionEnabledOnResource>[]>;
+    enabledOnResources?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MetricExtensionEnabledOnResource>[] | undefined>;
     /**
      * Count of resources on which this metric extension is enabled.
      */
-    enabledOnResourcesCount?: pulumi.Input<number>;
+    enabledOnResourcesCount?: pulumi.Input<number | undefined>;
     /**
      * Last updated by user
      */
-    lastUpdatedBy?: pulumi.Input<string>;
+    lastUpdatedBy?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of metrics which are part of this metric extension
      */
-    metricLists?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MetricExtensionMetricList>[]>;
+    metricLists?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MetricExtensionMetricList>[] | undefined>;
     /**
      * Metric Extension Resource name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publishTrigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publishTrigger is updated to `true`.
      *
@@ -328,39 +328,39 @@ export interface MetricExtensionState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    publishTrigger?: pulumi.Input<boolean>;
+    publishTrigger?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Collection method and query properties details of metric extension
      */
-    queryProperties?: pulumi.Input<inputs.StackMonitoring.MetricExtensionQueryProperties>;
+    queryProperties?: pulumi.Input<inputs.StackMonitoring.MetricExtensionQueryProperties | undefined>;
     /**
      * Resource type to which Metric Extension applies
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The URI path that the user can do a GET on to access the metric extension metadata
      */
-    resourceUri?: pulumi.Input<string>;
+    resourceUri?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the metric extension
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The current status of the metric extension i.e. whether it is Draft or Published
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * Tenant Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
-    tenantId?: pulumi.Input<string>;
+    tenantId?: pulumi.Input<string | undefined>;
     /**
      * Metric Extension creation time. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Metric Extension update time. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -378,7 +378,7 @@ export interface MetricExtensionArgs {
     /**
      * (Updatable) Description of the metric extension.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Metric Extension display name.
      */
@@ -390,7 +390,7 @@ export interface MetricExtensionArgs {
     /**
      * Metric Extension Resource name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publishTrigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publishTrigger is updated to `true`.
      *
@@ -398,7 +398,7 @@ export interface MetricExtensionArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    publishTrigger?: pulumi.Input<boolean>;
+    publishTrigger?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Collection method and query properties details of metric extension
      */

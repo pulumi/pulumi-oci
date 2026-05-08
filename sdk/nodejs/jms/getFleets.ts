@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleets = oci.Jms.getFleets({
+ * const testFleets = oci.jms.getFleets({
  *     compartmentId: compartmentId,
  *     displayName: fleetDisplayName,
  *     displayNameContains: fleetDisplayNameContains,
@@ -106,7 +106,7 @@ export interface GetFleetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleets = oci.Jms.getFleets({
+ * const testFleets = oci.jms.getFleets({
  *     compartmentId: compartmentId,
  *     displayName: fleetDisplayName,
  *     displayNameContains: fleetDisplayNameContains,
@@ -135,22 +135,22 @@ export interface GetFleetsOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The display name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Filter the list with displayName contains the given value.
      */
-    displayNameContains?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetsFilterArgs>[]>;
+    displayNameContains?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetsFilterArgs>[] | undefined>;
     /**
      * The ID.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * The state of the lifecycle.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

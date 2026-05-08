@@ -24,18 +24,18 @@ class PipelineRunArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  pipeline_id: pulumi.Input[_builtins.str],
                  project_id: pulumi.Input[_builtins.str],
-                 configuration_override_details: Optional[pulumi.Input['PipelineRunConfigurationOverrideDetailsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 delete_related_job_runs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 infrastructure_configuration_override_details: Optional[pulumi.Input['PipelineRunInfrastructureConfigurationOverrideDetailsArgs']] = None,
-                 log_configuration_override_details: Optional[pulumi.Input['PipelineRunLogConfigurationOverrideDetailsArgs']] = None,
-                 opc_parent_rpt_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 parameters_override: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 step_override_details: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]]] = None,
-                 storage_mount_configuration_override_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStorageMountConfigurationOverrideDetailsListArgs']]]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 configuration_override_details: pulumi.Input[Optional['PipelineRunConfigurationOverrideDetailsArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 delete_related_job_runs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 infrastructure_configuration_override_details: pulumi.Input[Optional['PipelineRunInfrastructureConfigurationOverrideDetailsArgs']] = None,
+                 log_configuration_override_details: pulumi.Input[Optional['PipelineRunLogConfigurationOverrideDetailsArgs']] = None,
+                 opc_parent_rpt_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 parameters_override: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 step_override_details: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]]] = None,
+                 storage_mount_configuration_override_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunStorageMountConfigurationOverrideDetailsListArgs']]]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a PipelineRun resource.
 
@@ -124,136 +124,136 @@ class PipelineRunArgs:
 
     @_builtins.property
     @pulumi.getter(name="configurationOverrideDetails")
-    def configuration_override_details(self) -> Optional[pulumi.Input['PipelineRunConfigurationOverrideDetailsArgs']]:
+    def configuration_override_details(self) -> pulumi.Input[Optional['PipelineRunConfigurationOverrideDetailsArgs']]:
         """
         The configuration details of a pipeline.
         """
         return pulumi.get(self, "configuration_override_details")
 
     @configuration_override_details.setter
-    def configuration_override_details(self, value: Optional[pulumi.Input['PipelineRunConfigurationOverrideDetailsArgs']]):
+    def configuration_override_details(self, value: pulumi.Input[Optional['PipelineRunConfigurationOverrideDetailsArgs']]):
         pulumi.set(self, "configuration_override_details", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteRelatedJobRuns")
-    def delete_related_job_runs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_related_job_runs(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "delete_related_job_runs")
 
     @delete_related_job_runs.setter
-    def delete_related_job_runs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_related_job_runs(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_related_job_runs", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly display name for the resource.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="infrastructureConfigurationOverrideDetails")
-    def infrastructure_configuration_override_details(self) -> Optional[pulumi.Input['PipelineRunInfrastructureConfigurationOverrideDetailsArgs']]:
+    def infrastructure_configuration_override_details(self) -> pulumi.Input[Optional['PipelineRunInfrastructureConfigurationOverrideDetailsArgs']]:
         """
         The infrastructure configuration details of a pipeline or a step.
         """
         return pulumi.get(self, "infrastructure_configuration_override_details")
 
     @infrastructure_configuration_override_details.setter
-    def infrastructure_configuration_override_details(self, value: Optional[pulumi.Input['PipelineRunInfrastructureConfigurationOverrideDetailsArgs']]):
+    def infrastructure_configuration_override_details(self, value: pulumi.Input[Optional['PipelineRunInfrastructureConfigurationOverrideDetailsArgs']]):
         pulumi.set(self, "infrastructure_configuration_override_details", value)
 
     @_builtins.property
     @pulumi.getter(name="logConfigurationOverrideDetails")
-    def log_configuration_override_details(self) -> Optional[pulumi.Input['PipelineRunLogConfigurationOverrideDetailsArgs']]:
+    def log_configuration_override_details(self) -> pulumi.Input[Optional['PipelineRunLogConfigurationOverrideDetailsArgs']]:
         """
         The pipeline log configuration details.
         """
         return pulumi.get(self, "log_configuration_override_details")
 
     @log_configuration_override_details.setter
-    def log_configuration_override_details(self, value: Optional[pulumi.Input['PipelineRunLogConfigurationOverrideDetailsArgs']]):
+    def log_configuration_override_details(self, value: pulumi.Input[Optional['PipelineRunLogConfigurationOverrideDetailsArgs']]):
         pulumi.set(self, "log_configuration_override_details", value)
 
     @_builtins.property
     @pulumi.getter(name="opcParentRptUrl")
-    def opc_parent_rpt_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def opc_parent_rpt_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         URL to fetch the Resource Principal Token from the parent resource.
         """
         return pulumi.get(self, "opc_parent_rpt_url")
 
     @opc_parent_rpt_url.setter
-    def opc_parent_rpt_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def opc_parent_rpt_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "opc_parent_rpt_url", value)
 
     @_builtins.property
     @pulumi.getter(name="parametersOverride")
-    def parameters_override(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def parameters_override(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Parameters override used in the pipeline run.
         """
         return pulumi.get(self, "parameters_override")
 
     @parameters_override.setter
-    def parameters_override(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def parameters_override(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "parameters_override", value)
 
     @_builtins.property
     @pulumi.getter(name="stepOverrideDetails")
-    def step_override_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]]]:
+    def step_override_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]]]:
         """
         Array of step override details. Only Step Configuration is allowed to be overridden.
         """
         return pulumi.get(self, "step_override_details")
 
     @step_override_details.setter
-    def step_override_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]]]):
+    def step_override_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]]]):
         pulumi.set(self, "step_override_details", value)
 
     @_builtins.property
     @pulumi.getter(name="storageMountConfigurationOverrideDetailsLists")
-    def storage_mount_configuration_override_details_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStorageMountConfigurationOverrideDetailsListArgs']]]]:
+    def storage_mount_configuration_override_details_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunStorageMountConfigurationOverrideDetailsListArgs']]]]:
         """
         The storage mount override details to mount to the instance running the pipeline step.
         """
         return pulumi.get(self, "storage_mount_configuration_override_details_lists")
 
     @storage_mount_configuration_override_details_lists.setter
-    def storage_mount_configuration_override_details_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStorageMountConfigurationOverrideDetailsListArgs']]]]):
+    def storage_mount_configuration_override_details_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunStorageMountConfigurationOverrideDetailsListArgs']]]]):
         pulumi.set(self, "storage_mount_configuration_override_details_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
 
@@ -264,38 +264,38 @@ class PipelineRunArgs:
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
 
 @pulumi.input_type
 class _PipelineRunState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunConfigurationDetailArgs']]]] = None,
-                 configuration_override_details: Optional[pulumi.Input['PipelineRunConfigurationOverrideDetailsArgs']] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 delete_related_job_runs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 infrastructure_configuration_override_details: Optional[pulumi.Input['PipelineRunInfrastructureConfigurationOverrideDetailsArgs']] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 log_configuration_override_details: Optional[pulumi.Input['PipelineRunLogConfigurationOverrideDetailsArgs']] = None,
-                 log_details: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunLogDetailArgs']]]] = None,
-                 opc_parent_rpt_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 parameters_override: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 step_override_details: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]]] = None,
-                 step_runs: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStepRunArgs']]]] = None,
-                 storage_mount_configuration_override_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStorageMountConfigurationOverrideDetailsListArgs']]]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_accepted: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_finished: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_started: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunConfigurationDetailArgs']]]] = None,
+                 configuration_override_details: pulumi.Input[Optional['PipelineRunConfigurationOverrideDetailsArgs']] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 delete_related_job_runs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 infrastructure_configuration_override_details: pulumi.Input[Optional['PipelineRunInfrastructureConfigurationOverrideDetailsArgs']] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 log_configuration_override_details: pulumi.Input[Optional['PipelineRunLogConfigurationOverrideDetailsArgs']] = None,
+                 log_details: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunLogDetailArgs']]]] = None,
+                 opc_parent_rpt_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 parameters_override: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 step_override_details: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]]] = None,
+                 step_runs: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunStepRunArgs']]]] = None,
+                 storage_mount_configuration_override_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunStorageMountConfigurationOverrideDetailsListArgs']]]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_accepted: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_finished: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_started: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PipelineRun resources.
 
@@ -381,244 +381,244 @@ class _PipelineRunState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="configurationDetails")
-    def configuration_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunConfigurationDetailArgs']]]]:
+    def configuration_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunConfigurationDetailArgs']]]]:
         """
         The configuration details of a pipeline.
         """
         return pulumi.get(self, "configuration_details")
 
     @configuration_details.setter
-    def configuration_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunConfigurationDetailArgs']]]]):
+    def configuration_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunConfigurationDetailArgs']]]]):
         pulumi.set(self, "configuration_details", value)
 
     @_builtins.property
     @pulumi.getter(name="configurationOverrideDetails")
-    def configuration_override_details(self) -> Optional[pulumi.Input['PipelineRunConfigurationOverrideDetailsArgs']]:
+    def configuration_override_details(self) -> pulumi.Input[Optional['PipelineRunConfigurationOverrideDetailsArgs']]:
         """
         The configuration details of a pipeline.
         """
         return pulumi.get(self, "configuration_override_details")
 
     @configuration_override_details.setter
-    def configuration_override_details(self, value: Optional[pulumi.Input['PipelineRunConfigurationOverrideDetailsArgs']]):
+    def configuration_override_details(self, value: pulumi.Input[Optional['PipelineRunConfigurationOverrideDetailsArgs']]):
         pulumi.set(self, "configuration_override_details", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline run.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deleteRelatedJobRuns")
-    def delete_related_job_runs(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def delete_related_job_runs(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "delete_related_job_runs")
 
     @delete_related_job_runs.setter
-    def delete_related_job_runs(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def delete_related_job_runs(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "delete_related_job_runs", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly display name for the resource.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="infrastructureConfigurationOverrideDetails")
-    def infrastructure_configuration_override_details(self) -> Optional[pulumi.Input['PipelineRunInfrastructureConfigurationOverrideDetailsArgs']]:
+    def infrastructure_configuration_override_details(self) -> pulumi.Input[Optional['PipelineRunInfrastructureConfigurationOverrideDetailsArgs']]:
         """
         The infrastructure configuration details of a pipeline or a step.
         """
         return pulumi.get(self, "infrastructure_configuration_override_details")
 
     @infrastructure_configuration_override_details.setter
-    def infrastructure_configuration_override_details(self, value: Optional[pulumi.Input['PipelineRunInfrastructureConfigurationOverrideDetailsArgs']]):
+    def infrastructure_configuration_override_details(self, value: pulumi.Input[Optional['PipelineRunInfrastructureConfigurationOverrideDetailsArgs']]):
         pulumi.set(self, "infrastructure_configuration_override_details", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Details of the state of the step run.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="logConfigurationOverrideDetails")
-    def log_configuration_override_details(self) -> Optional[pulumi.Input['PipelineRunLogConfigurationOverrideDetailsArgs']]:
+    def log_configuration_override_details(self) -> pulumi.Input[Optional['PipelineRunLogConfigurationOverrideDetailsArgs']]:
         """
         The pipeline log configuration details.
         """
         return pulumi.get(self, "log_configuration_override_details")
 
     @log_configuration_override_details.setter
-    def log_configuration_override_details(self, value: Optional[pulumi.Input['PipelineRunLogConfigurationOverrideDetailsArgs']]):
+    def log_configuration_override_details(self, value: pulumi.Input[Optional['PipelineRunLogConfigurationOverrideDetailsArgs']]):
         pulumi.set(self, "log_configuration_override_details", value)
 
     @_builtins.property
     @pulumi.getter(name="logDetails")
-    def log_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunLogDetailArgs']]]]:
+    def log_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunLogDetailArgs']]]]:
         """
         Customer logging details for pipeline run.
         """
         return pulumi.get(self, "log_details")
 
     @log_details.setter
-    def log_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunLogDetailArgs']]]]):
+    def log_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunLogDetailArgs']]]]):
         pulumi.set(self, "log_details", value)
 
     @_builtins.property
     @pulumi.getter(name="opcParentRptUrl")
-    def opc_parent_rpt_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def opc_parent_rpt_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         URL to fetch the Resource Principal Token from the parent resource.
         """
         return pulumi.get(self, "opc_parent_rpt_url")
 
     @opc_parent_rpt_url.setter
-    def opc_parent_rpt_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def opc_parent_rpt_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "opc_parent_rpt_url", value)
 
     @_builtins.property
     @pulumi.getter(name="parametersOverride")
-    def parameters_override(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def parameters_override(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Parameters override used in the pipeline run.
         """
         return pulumi.get(self, "parameters_override")
 
     @parameters_override.setter
-    def parameters_override(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def parameters_override(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "parameters_override", value)
 
     @_builtins.property
     @pulumi.getter(name="pipelineId")
-    def pipeline_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pipeline_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
         """
         return pulumi.get(self, "pipeline_id")
 
     @pipeline_id.setter
-    def pipeline_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pipeline_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pipeline_id", value)
 
     @_builtins.property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def project_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
         """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
-    def project_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def project_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "project_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The state of the step run.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="stepOverrideDetails")
-    def step_override_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]]]:
+    def step_override_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]]]:
         """
         Array of step override details. Only Step Configuration is allowed to be overridden.
         """
         return pulumi.get(self, "step_override_details")
 
     @step_override_details.setter
-    def step_override_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]]]):
+    def step_override_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]]]):
         pulumi.set(self, "step_override_details", value)
 
     @_builtins.property
     @pulumi.getter(name="stepRuns")
-    def step_runs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStepRunArgs']]]]:
+    def step_runs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunStepRunArgs']]]]:
         """
         Array of StepRun object for each step.
         """
         return pulumi.get(self, "step_runs")
 
     @step_runs.setter
-    def step_runs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStepRunArgs']]]]):
+    def step_runs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunStepRunArgs']]]]):
         pulumi.set(self, "step_runs", value)
 
     @_builtins.property
     @pulumi.getter(name="storageMountConfigurationOverrideDetailsLists")
-    def storage_mount_configuration_override_details_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStorageMountConfigurationOverrideDetailsListArgs']]]]:
+    def storage_mount_configuration_override_details_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunStorageMountConfigurationOverrideDetailsListArgs']]]]:
         """
         The storage mount override details to mount to the instance running the pipeline step.
         """
         return pulumi.get(self, "storage_mount_configuration_override_details_lists")
 
     @storage_mount_configuration_override_details_lists.setter
-    def storage_mount_configuration_override_details_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStorageMountConfigurationOverrideDetailsListArgs']]]]):
+    def storage_mount_configuration_override_details_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['PipelineRunStorageMountConfigurationOverrideDetailsListArgs']]]]):
         pulumi.set(self, "storage_mount_configuration_override_details_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
 
@@ -629,55 +629,55 @@ class _PipelineRunState:
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeAccepted")
-    def time_accepted(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_accepted(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_accepted")
 
     @time_accepted.setter
-    def time_accepted(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_accepted(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_accepted", value)
 
     @_builtins.property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_finished(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_finished")
 
     @time_finished.setter
-    def time_finished(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_finished(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_finished", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_started(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_started")
 
     @time_started.setter
-    def time_started(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_started(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_started", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the pipeline run was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -687,21 +687,21 @@ class PipelineRun(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configuration_override_details: Optional[pulumi.Input[Union['PipelineRunConfigurationOverrideDetailsArgs', 'PipelineRunConfigurationOverrideDetailsArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 delete_related_job_runs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 infrastructure_configuration_override_details: Optional[pulumi.Input[Union['PipelineRunInfrastructureConfigurationOverrideDetailsArgs', 'PipelineRunInfrastructureConfigurationOverrideDetailsArgsDict']]] = None,
-                 log_configuration_override_details: Optional[pulumi.Input[Union['PipelineRunLogConfigurationOverrideDetailsArgs', 'PipelineRunLogConfigurationOverrideDetailsArgsDict']]] = None,
-                 opc_parent_rpt_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 parameters_override: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 step_override_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunStepOverrideDetailArgs', 'PipelineRunStepOverrideDetailArgsDict']]]]] = None,
-                 storage_mount_configuration_override_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunStorageMountConfigurationOverrideDetailsListArgs', 'PipelineRunStorageMountConfigurationOverrideDetailsListArgsDict']]]]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configuration_override_details: pulumi.Input[Optional[Union['PipelineRunConfigurationOverrideDetailsArgs', 'PipelineRunConfigurationOverrideDetailsArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 delete_related_job_runs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 infrastructure_configuration_override_details: pulumi.Input[Optional[Union['PipelineRunInfrastructureConfigurationOverrideDetailsArgs', 'PipelineRunInfrastructureConfigurationOverrideDetailsArgsDict']]] = None,
+                 log_configuration_override_details: pulumi.Input[Optional[Union['PipelineRunLogConfigurationOverrideDetailsArgs', 'PipelineRunLogConfigurationOverrideDetailsArgsDict']]] = None,
+                 opc_parent_rpt_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 parameters_override: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 step_override_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineRunStepOverrideDetailArgs', 'PipelineRunStepOverrideDetailArgsDict']]]]] = None,
+                 storage_mount_configuration_override_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineRunStorageMountConfigurationOverrideDetailsListArgs', 'PipelineRunStorageMountConfigurationOverrideDetailsListArgsDict']]]]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         This resource provides the Pipeline Run resource in Oracle Cloud Infrastructure Data Science service.
@@ -734,7 +734,7 @@ class PipelineRun(pulumi.CustomResource):
                 "Department": "Finance",
             },
             infrastructure_configuration_override_details={
-                "block_storage_size_in_gbs": pipeline_run_infrastructure_configuration_override_details_block_storage_size_in_gbs,
+                "block_storage_size_in_gbs": int(pipeline_run_infrastructure_configuration_override_details_block_storage_size_in_gbs),
                 "shape_name": test_shape["name"],
                 "block_storage_size_in_gbs_parameterized": pipeline_run_infrastructure_configuration_override_details_block_storage_size_in_gbs_parameterized,
                 "shape_config_details": {
@@ -746,8 +746,8 @@ class PipelineRun(pulumi.CustomResource):
                 "subnet_id": test_subnet["id"],
             },
             log_configuration_override_details={
-                "enable_auto_log_creation": pipeline_run_log_configuration_override_details_enable_auto_log_creation,
-                "enable_logging": pipeline_run_log_configuration_override_details_enable_logging,
+                "enable_auto_log_creation": pipeline_run_log_configuration_override_details_enable_auto_log_creation == "true",
+                "enable_logging": pipeline_run_log_configuration_override_details_enable_logging == "true",
                 "log_group_id": test_log_group["id"],
                 "log_id": test_log["id"],
             },
@@ -788,11 +788,11 @@ class PipelineRun(pulumi.CustomResource):
                         "ocpus_parameterized": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_ocpus_parameterized,
                     },
                     "logs_bucket_uri": pipeline_run_step_override_details_step_dataflow_configuration_details_logs_bucket_uri,
-                    "num_executors": pipeline_run_step_override_details_step_dataflow_configuration_details_num_executors,
+                    "num_executors": int(pipeline_run_step_override_details_step_dataflow_configuration_details_num_executors),
                     "warehouse_bucket_uri": pipeline_run_step_override_details_step_dataflow_configuration_details_warehouse_bucket_uri,
                 },
                 "step_infrastructure_configuration_details": {
-                    "block_storage_size_in_gbs": pipeline_run_step_override_details_step_infrastructure_configuration_details_block_storage_size_in_gbs,
+                    "block_storage_size_in_gbs": int(pipeline_run_step_override_details_step_infrastructure_configuration_details_block_storage_size_in_gbs),
                     "shape_name": test_shape["name"],
                     "block_storage_size_in_gbs_parameterized": pipeline_run_step_override_details_step_infrastructure_configuration_details_block_storage_size_in_gbs_parameterized,
                     "shape_config_details": {
@@ -894,7 +894,7 @@ class PipelineRun(pulumi.CustomResource):
                 "Department": "Finance",
             },
             infrastructure_configuration_override_details={
-                "block_storage_size_in_gbs": pipeline_run_infrastructure_configuration_override_details_block_storage_size_in_gbs,
+                "block_storage_size_in_gbs": int(pipeline_run_infrastructure_configuration_override_details_block_storage_size_in_gbs),
                 "shape_name": test_shape["name"],
                 "block_storage_size_in_gbs_parameterized": pipeline_run_infrastructure_configuration_override_details_block_storage_size_in_gbs_parameterized,
                 "shape_config_details": {
@@ -906,8 +906,8 @@ class PipelineRun(pulumi.CustomResource):
                 "subnet_id": test_subnet["id"],
             },
             log_configuration_override_details={
-                "enable_auto_log_creation": pipeline_run_log_configuration_override_details_enable_auto_log_creation,
-                "enable_logging": pipeline_run_log_configuration_override_details_enable_logging,
+                "enable_auto_log_creation": pipeline_run_log_configuration_override_details_enable_auto_log_creation == "true",
+                "enable_logging": pipeline_run_log_configuration_override_details_enable_logging == "true",
                 "log_group_id": test_log_group["id"],
                 "log_id": test_log["id"],
             },
@@ -948,11 +948,11 @@ class PipelineRun(pulumi.CustomResource):
                         "ocpus_parameterized": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_ocpus_parameterized,
                     },
                     "logs_bucket_uri": pipeline_run_step_override_details_step_dataflow_configuration_details_logs_bucket_uri,
-                    "num_executors": pipeline_run_step_override_details_step_dataflow_configuration_details_num_executors,
+                    "num_executors": int(pipeline_run_step_override_details_step_dataflow_configuration_details_num_executors),
                     "warehouse_bucket_uri": pipeline_run_step_override_details_step_dataflow_configuration_details_warehouse_bucket_uri,
                 },
                 "step_infrastructure_configuration_details": {
-                    "block_storage_size_in_gbs": pipeline_run_step_override_details_step_infrastructure_configuration_details_block_storage_size_in_gbs,
+                    "block_storage_size_in_gbs": int(pipeline_run_step_override_details_step_infrastructure_configuration_details_block_storage_size_in_gbs),
                     "shape_name": test_shape["name"],
                     "block_storage_size_in_gbs_parameterized": pipeline_run_step_override_details_step_infrastructure_configuration_details_block_storage_size_in_gbs_parameterized,
                     "shape_config_details": {
@@ -1011,21 +1011,21 @@ class PipelineRun(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configuration_override_details: Optional[pulumi.Input[Union['PipelineRunConfigurationOverrideDetailsArgs', 'PipelineRunConfigurationOverrideDetailsArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 delete_related_job_runs: Optional[pulumi.Input[_builtins.bool]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 infrastructure_configuration_override_details: Optional[pulumi.Input[Union['PipelineRunInfrastructureConfigurationOverrideDetailsArgs', 'PipelineRunInfrastructureConfigurationOverrideDetailsArgsDict']]] = None,
-                 log_configuration_override_details: Optional[pulumi.Input[Union['PipelineRunLogConfigurationOverrideDetailsArgs', 'PipelineRunLogConfigurationOverrideDetailsArgsDict']]] = None,
-                 opc_parent_rpt_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 parameters_override: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 step_override_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunStepOverrideDetailArgs', 'PipelineRunStepOverrideDetailArgsDict']]]]] = None,
-                 storage_mount_configuration_override_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunStorageMountConfigurationOverrideDetailsListArgs', 'PipelineRunStorageMountConfigurationOverrideDetailsListArgsDict']]]]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configuration_override_details: pulumi.Input[Optional[Union['PipelineRunConfigurationOverrideDetailsArgs', 'PipelineRunConfigurationOverrideDetailsArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 delete_related_job_runs: pulumi.Input[Optional[_builtins.bool]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 infrastructure_configuration_override_details: pulumi.Input[Optional[Union['PipelineRunInfrastructureConfigurationOverrideDetailsArgs', 'PipelineRunInfrastructureConfigurationOverrideDetailsArgsDict']]] = None,
+                 log_configuration_override_details: pulumi.Input[Optional[Union['PipelineRunLogConfigurationOverrideDetailsArgs', 'PipelineRunLogConfigurationOverrideDetailsArgsDict']]] = None,
+                 opc_parent_rpt_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 parameters_override: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 step_override_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineRunStepOverrideDetailArgs', 'PipelineRunStepOverrideDetailArgsDict']]]]] = None,
+                 storage_mount_configuration_override_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineRunStorageMountConfigurationOverrideDetailsListArgs', 'PipelineRunStorageMountConfigurationOverrideDetailsListArgsDict']]]]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1076,31 +1076,31 @@ class PipelineRun(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunConfigurationDetailArgs', 'PipelineRunConfigurationDetailArgsDict']]]]] = None,
-            configuration_override_details: Optional[pulumi.Input[Union['PipelineRunConfigurationOverrideDetailsArgs', 'PipelineRunConfigurationOverrideDetailsArgsDict']]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            delete_related_job_runs: Optional[pulumi.Input[_builtins.bool]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            infrastructure_configuration_override_details: Optional[pulumi.Input[Union['PipelineRunInfrastructureConfigurationOverrideDetailsArgs', 'PipelineRunInfrastructureConfigurationOverrideDetailsArgsDict']]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            log_configuration_override_details: Optional[pulumi.Input[Union['PipelineRunLogConfigurationOverrideDetailsArgs', 'PipelineRunLogConfigurationOverrideDetailsArgsDict']]] = None,
-            log_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunLogDetailArgs', 'PipelineRunLogDetailArgsDict']]]]] = None,
-            opc_parent_rpt_url: Optional[pulumi.Input[_builtins.str]] = None,
-            parameters_override: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
-            project_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            step_override_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunStepOverrideDetailArgs', 'PipelineRunStepOverrideDetailArgsDict']]]]] = None,
-            step_runs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunStepRunArgs', 'PipelineRunStepRunArgsDict']]]]] = None,
-            storage_mount_configuration_override_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunStorageMountConfigurationOverrideDetailsListArgs', 'PipelineRunStorageMountConfigurationOverrideDetailsListArgsDict']]]]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_accepted: Optional[pulumi.Input[_builtins.str]] = None,
-            time_finished: Optional[pulumi.Input[_builtins.str]] = None,
-            time_started: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'PipelineRun':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineRunConfigurationDetailArgs', 'PipelineRunConfigurationDetailArgsDict']]]]] = None,
+            configuration_override_details: pulumi.Input[Optional[Union['PipelineRunConfigurationOverrideDetailsArgs', 'PipelineRunConfigurationOverrideDetailsArgsDict']]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            delete_related_job_runs: pulumi.Input[Optional[_builtins.bool]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            infrastructure_configuration_override_details: pulumi.Input[Optional[Union['PipelineRunInfrastructureConfigurationOverrideDetailsArgs', 'PipelineRunInfrastructureConfigurationOverrideDetailsArgsDict']]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            log_configuration_override_details: pulumi.Input[Optional[Union['PipelineRunLogConfigurationOverrideDetailsArgs', 'PipelineRunLogConfigurationOverrideDetailsArgsDict']]] = None,
+            log_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineRunLogDetailArgs', 'PipelineRunLogDetailArgsDict']]]]] = None,
+            opc_parent_rpt_url: pulumi.Input[Optional[_builtins.str]] = None,
+            parameters_override: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            step_override_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineRunStepOverrideDetailArgs', 'PipelineRunStepOverrideDetailArgsDict']]]]] = None,
+            step_runs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineRunStepRunArgs', 'PipelineRunStepRunArgsDict']]]]] = None,
+            storage_mount_configuration_override_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineRunStorageMountConfigurationOverrideDetailsListArgs', 'PipelineRunStorageMountConfigurationOverrideDetailsListArgsDict']]]]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_accepted: pulumi.Input[Optional[_builtins.str]] = None,
+            time_finished: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'PipelineRun':
         """
         Get an existing PipelineRun resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

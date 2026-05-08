@@ -192,44 +192,44 @@ export interface GetSecurityAssessmentFindingsOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * The category of the finding.
      */
-    category?: pulumi.Input<string>;
+    category?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * An optional filter to return only findings that match the specified references. Use containsReferences param if need to filter by multiple references.
      */
-    containsReferences?: pulumi.Input<pulumi.Input<string>[]>;
+    containsReferences?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return only findings that match the specified risk level(s). Use containsSeverity parameter if need to filter by multiple risk levels.
      */
-    containsSeverities?: pulumi.Input<pulumi.Input<string>[]>;
+    containsSeverities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Specifies a subset of fields to be returned in the response.
      */
-    fields?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityAssessmentFindingsFilterArgs>[]>;
+    fields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityAssessmentFindingsFilterArgs>[] | undefined>;
     /**
      * Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
      */
-    findingKey?: pulumi.Input<string>;
+    findingKey?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the findings that are marked as top findings.
      */
-    isTopFinding?: pulumi.Input<boolean>;
+    isTopFinding?: pulumi.Input<boolean | undefined>;
     /**
      * An optional filter to return only findings that match the specified reference.
      */
-    references?: pulumi.Input<string>;
+    references?: pulumi.Input<string | undefined>;
     /**
      * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
      *
@@ -237,7 +237,7 @@ export interface GetSecurityAssessmentFindingsOutputArgs {
      *
      * Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
      */
-    scimQuery?: pulumi.Input<string>;
+    scimQuery?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the security assessment.
      */
@@ -245,17 +245,17 @@ export interface GetSecurityAssessmentFindingsOutputArgs {
     /**
      * A filter to return only findings of a particular risk level.
      */
-    severity?: pulumi.Input<string>;
+    severity?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the findings that match the specified lifecycle states.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items related to a specific target OCID.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * An optional filter to return only findings that match the specified target ids. Use this parameter to filter by multiple target ids.
      */
-    targetIds?: pulumi.Input<pulumi.Input<string>[]>;
+    targetIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

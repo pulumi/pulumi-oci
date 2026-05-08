@@ -237,98 +237,98 @@ export interface KeyState {
     /**
      * (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
      */
-    autoKeyRotationDetails?: pulumi.Input<inputs.Kms.KeyAutoKeyRotationDetails>;
+    autoKeyRotationDetails?: pulumi.Input<inputs.Kms.KeyAutoKeyRotationDetails | undefined>;
     /**
      * (Updatable) The OCID of the compartment where you want to create the master encryption key.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
      */
-    currentKeyVersion?: pulumi.Input<string>;
+    currentKeyVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
      */
-    desiredState?: pulumi.Input<string>;
+    desiredState?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A reference to the key on external key manager.
      */
-    externalKeyReference?: pulumi.Input<inputs.Kms.KeyExternalKeyReference>;
+    externalKeyReference?: pulumi.Input<inputs.Kms.KeyExternalKeyReference | undefined>;
     /**
      * Key reference data to be returned to the customer as a response.
      */
-    externalKeyReferenceDetails?: pulumi.Input<pulumi.Input<inputs.Kms.KeyExternalKeyReferenceDetail>[]>;
+    externalKeyReferenceDetails?: pulumi.Input<pulumi.Input<inputs.Kms.KeyExternalKeyReferenceDetail>[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
      */
-    isAutoRotationEnabled?: pulumi.Input<boolean>;
+    isAutoRotationEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
      */
-    isPrimary?: pulumi.Input<boolean>;
+    isPrimary?: pulumi.Input<boolean | undefined>;
     /**
      * The cryptographic properties of a key.
      */
-    keyShape?: pulumi.Input<inputs.Kms.KeyKeyShape>;
+    keyShape?: pulumi.Input<inputs.Kms.KeyKeyShape | undefined>;
     /**
      * The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
      */
-    managementEndpoint?: pulumi.Input<string>;
+    managementEndpoint?: pulumi.Input<string | undefined>;
     /**
      * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
      */
-    protectionMode?: pulumi.Input<string>;
+    protectionMode?: pulumi.Input<string | undefined>;
     /**
      * Key replica details
      */
-    replicaDetails?: pulumi.Input<pulumi.Input<inputs.Kms.KeyReplicaDetail>[]>;
+    replicaDetails?: pulumi.Input<pulumi.Input<inputs.Kms.KeyReplicaDetail>[] | undefined>;
     /**
      * (Updatable) Details where key was backed up.
      */
-    restoreFromFile?: pulumi.Input<inputs.Kms.KeyRestoreFromFile>;
+    restoreFromFile?: pulumi.Input<inputs.Kms.KeyRestoreFromFile | undefined>;
     /**
      * (Updatable) Details where key was backed up
      */
-    restoreFromObjectStore?: pulumi.Input<inputs.Kms.KeyRestoreFromObjectStore>;
+    restoreFromObjectStore?: pulumi.Input<inputs.Kms.KeyRestoreFromObjectStore | undefined>;
     /**
      * (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
      */
-    restoreTrigger?: pulumi.Input<boolean>;
+    restoreTrigger?: pulumi.Input<boolean | undefined>;
     /**
      * The OCID of the key from which this key was restored.
      */
-    restoredFromKeyId?: pulumi.Input<string>;
+    restoredFromKeyId?: pulumi.Input<string | undefined>;
     /**
      * The key's current lifecycle state.  Example: `ENABLED`
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the key was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-04-03T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property for the deletion time of the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeOfDeletion?: pulumi.Input<string>;
+    timeOfDeletion?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the vault that contains this key.
      */
-    vaultId?: pulumi.Input<string>;
+    vaultId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -338,7 +338,7 @@ export interface KeyArgs {
     /**
      * (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
      */
-    autoKeyRotationDetails?: pulumi.Input<inputs.Kms.KeyAutoKeyRotationDetails>;
+    autoKeyRotationDetails?: pulumi.Input<inputs.Kms.KeyAutoKeyRotationDetails | undefined>;
     /**
      * (Updatable) The OCID of the compartment where you want to create the master encryption key.
      */
@@ -346,11 +346,11 @@ export interface KeyArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
      */
-    desiredState?: pulumi.Input<string>;
+    desiredState?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
      */
@@ -358,15 +358,15 @@ export interface KeyArgs {
     /**
      * A reference to the key on external key manager.
      */
-    externalKeyReference?: pulumi.Input<inputs.Kms.KeyExternalKeyReference>;
+    externalKeyReference?: pulumi.Input<inputs.Kms.KeyExternalKeyReference | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
      */
-    isAutoRotationEnabled?: pulumi.Input<boolean>;
+    isAutoRotationEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The cryptographic properties of a key.
      */
@@ -378,24 +378,24 @@ export interface KeyArgs {
     /**
      * The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
      */
-    protectionMode?: pulumi.Input<string>;
+    protectionMode?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Details where key was backed up.
      */
-    restoreFromFile?: pulumi.Input<inputs.Kms.KeyRestoreFromFile>;
+    restoreFromFile?: pulumi.Input<inputs.Kms.KeyRestoreFromFile | undefined>;
     /**
      * (Updatable) Details where key was backed up
      */
-    restoreFromObjectStore?: pulumi.Input<inputs.Kms.KeyRestoreFromObjectStore>;
+    restoreFromObjectStore?: pulumi.Input<inputs.Kms.KeyRestoreFromObjectStore | undefined>;
     /**
      * (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
      */
-    restoreTrigger?: pulumi.Input<boolean>;
+    restoreTrigger?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An optional property for the deletion time of the key, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeOfDeletion?: pulumi.Input<string>;
+    timeOfDeletion?: pulumi.Input<string | undefined>;
 }

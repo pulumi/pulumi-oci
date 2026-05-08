@@ -204,67 +204,67 @@ export interface ResourceActionState {
     /**
      * Details about the recommended action.
      */
-    actions?: pulumi.Input<pulumi.Input<inputs.Optimizer.ResourceActionAction>[]>;
+    actions?: pulumi.Input<pulumi.Input<inputs.Optimizer.ResourceActionAction>[] | undefined>;
     /**
      * The unique OCID associated with the category.
      */
-    categoryId?: pulumi.Input<string>;
+    categoryId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The name associated with the compartment.
      */
-    compartmentName?: pulumi.Input<string>;
+    compartmentName?: pulumi.Input<string | undefined>;
     /**
      * The estimated cost savings, in dollars, for the resource action.
      */
-    estimatedCostSaving?: pulumi.Input<number>;
+    estimatedCostSaving?: pulumi.Input<number | undefined>;
     /**
      * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      */
-    extendedMetadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    extendedMetadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Custom metadata key/value pairs for the resource action.
      */
-    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The name assigned to the resource.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The unique OCID associated with the recommendation.
      */
-    recommendationId?: pulumi.Input<string>;
+    recommendationId?: pulumi.Input<string | undefined>;
     /**
      * The unique OCID associated with the resource action.
      */
-    resourceActionId?: pulumi.Input<string>;
+    resourceActionId?: pulumi.Input<string | undefined>;
     /**
      * The unique OCID associated with the resource.
      */
-    resourceId?: pulumi.Input<string>;
+    resourceId?: pulumi.Input<string | undefined>;
     /**
      * The kind of resource.
      */
-    resourceType?: pulumi.Input<string>;
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The resource action's current state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The status of the resource action.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource action details were created, in the format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time that the resource action entered its current status. The format is defined by RFC3339.
      */
-    timeStatusBegin?: pulumi.Input<string>;
+    timeStatusBegin?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The date and time the current status will change. The format is defined by RFC3339.
      *
@@ -274,11 +274,11 @@ export interface ResourceActionState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeStatusEnd?: pulumi.Input<string>;
+    timeStatusEnd?: pulumi.Input<string | undefined>;
     /**
      * The date and time the resource action details were last updated, in the format defined by RFC3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -302,5 +302,5 @@ export interface ResourceActionArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeStatusEnd?: pulumi.Input<string>;
+    timeStatusEnd?: pulumi.Input<string | undefined>;
 }

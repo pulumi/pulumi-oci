@@ -80,7 +80,7 @@ def get_configuration(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_configuration = oci.Audit.get_configuration(compartment_id=tenancy_ocid)
+    test_configuration = oci.audit.get_configuration(compartment_id=tenancy_ocid)
     ```
 
 
@@ -95,7 +95,7 @@ def get_configuration(compartment_id: Optional[_builtins.str] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         id=pulumi.get(__ret__, 'id'),
         retention_period_days=pulumi.get(__ret__, 'retention_period_days'))
-def get_configuration_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_configuration_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConfigurationResult]:
     """
     This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Audit service.
@@ -108,7 +108,7 @@ def get_configuration_output(compartment_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_configuration = oci.Audit.get_configuration(compartment_id=tenancy_ocid)
+    test_configuration = oci.audit.get_configuration(compartment_id=tenancy_ocid)
     ```
 
 

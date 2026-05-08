@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentServiceAttachments = oci.Functions.getFusionEnvironmentServiceAttachments({
+ * const testFusionEnvironmentServiceAttachments = oci.functions.getFusionEnvironmentServiceAttachments({
  *     fusionEnvironmentId: testFusionEnvironment.id,
  *     displayName: fusionEnvironmentServiceAttachmentDisplayName,
  *     serviceInstanceType: fusionEnvironmentServiceAttachmentServiceInstanceType,
@@ -97,7 +97,7 @@ export interface GetFusionEnvironmentServiceAttachmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironmentServiceAttachments = oci.Functions.getFusionEnvironmentServiceAttachments({
+ * const testFusionEnvironmentServiceAttachments = oci.functions.getFusionEnvironmentServiceAttachments({
  *     fusionEnvironmentId: testFusionEnvironment.id,
  *     displayName: fusionEnvironmentServiceAttachmentDisplayName,
  *     serviceInstanceType: fusionEnvironmentServiceAttachmentServiceInstanceType,
@@ -123,8 +123,8 @@ export interface GetFusionEnvironmentServiceAttachmentsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Functions.GetFusionEnvironmentServiceAttachmentsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Functions.GetFusionEnvironmentServiceAttachmentsFilterArgs>[] | undefined>;
     /**
      * unique FusionEnvironment identifier
      */
@@ -132,9 +132,9 @@ export interface GetFusionEnvironmentServiceAttachmentsOutputArgs {
     /**
      * A filter that returns all resources that match the specified lifecycle state.
      */
-    serviceInstanceType?: pulumi.Input<string>;
+    serviceInstanceType?: pulumi.Input<string | undefined>;
     /**
      * A filter that returns all resources that match the specified lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseSoftwareImages = oci.Database.getAutonomousDatabaseSoftwareImages({
+ * const testAutonomousDatabaseSoftwareImages = oci.database.getAutonomousDatabaseSoftwareImages({
  *     compartmentId: compartmentId,
  *     imageShapeFamily: autonomousDatabaseSoftwareImageImageShapeFamily,
  *     displayName: autonomousDatabaseSoftwareImageDisplayName,
@@ -100,7 +100,7 @@ export interface GetAutonomousDatabaseSoftwareImagesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseSoftwareImages = oci.Database.getAutonomousDatabaseSoftwareImages({
+ * const testAutonomousDatabaseSoftwareImages = oci.database.getAutonomousDatabaseSoftwareImages({
  *     compartmentId: compartmentId,
  *     imageShapeFamily: autonomousDatabaseSoftwareImageImageShapeFamily,
  *     displayName: autonomousDatabaseSoftwareImageDisplayName,
@@ -130,8 +130,8 @@ export interface GetAutonomousDatabaseSoftwareImagesOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousDatabaseSoftwareImagesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetAutonomousDatabaseSoftwareImagesFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given image shape family exactly.
      */
@@ -139,5 +139,5 @@ export interface GetAutonomousDatabaseSoftwareImagesOutputArgs {
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

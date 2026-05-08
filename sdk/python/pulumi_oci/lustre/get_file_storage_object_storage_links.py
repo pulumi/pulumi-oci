@@ -151,7 +151,7 @@ def get_file_storage_object_storage_links(availability_domain: Optional[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_object_storage_links = oci.Lustre.get_file_storage_object_storage_links(availability_domain=object_storage_link_availability_domain,
+    test_object_storage_links = oci.lustre.get_file_storage_object_storage_links(availability_domain=object_storage_link_availability_domain,
         compartment_id=compartment_id,
         display_name=object_storage_link_display_name,
         id=object_storage_link_id,
@@ -187,13 +187,13 @@ def get_file_storage_object_storage_links(availability_domain: Optional[_builtin
         lustre_file_system_id=pulumi.get(__ret__, 'lustre_file_system_id'),
         object_storage_link_collections=pulumi.get(__ret__, 'object_storage_link_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_file_storage_object_storage_links_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFileStorageObjectStorageLinksFilterArgs', 'GetFileStorageObjectStorageLinksFilterArgsDict']]]]] = None,
-                                                 id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 lustre_file_system_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                 state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_file_storage_object_storage_links_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFileStorageObjectStorageLinksFilterArgs', 'GetFileStorageObjectStorageLinksFilterArgsDict']]]]] = None,
+                                                 id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 lustre_file_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFileStorageObjectStorageLinksResult]:
     """
     This data source provides the list of Object Storage Links in Oracle Cloud Infrastructure Lustre File Storage service.
@@ -206,7 +206,7 @@ def get_file_storage_object_storage_links_output(availability_domain: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_object_storage_links = oci.Lustre.get_file_storage_object_storage_links(availability_domain=object_storage_link_availability_domain,
+    test_object_storage_links = oci.lustre.get_file_storage_object_storage_links(availability_domain=object_storage_link_availability_domain,
         compartment_id=compartment_id,
         display_name=object_storage_link_display_name,
         id=object_storage_link_id,

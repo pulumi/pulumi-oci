@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAppCatalogListing = oci.Core.getAppCatalogListing({
+ * const testAppCatalogListing = oci.core.getAppCatalogListing({
  *     listingId: testListing.id,
  * });
  * ```
@@ -89,7 +89,7 @@ export interface GetAppCatalogListingResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAppCatalogListing = oci.Core.getAppCatalogListing({
+ * const testAppCatalogListing = oci.core.getAppCatalogListing({
  *     listingId: testListing.id,
  * });
  * ```

@@ -31,13 +31,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessments = oci.DataSafe.getSecurityAssessments({
+ * const testSecurityAssessments = oci.datasafe.getSecurityAssessments({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAssessmentCompartmentIdInSubtree === "true",
  *     displayName: securityAssessmentDisplayName,
- *     isBaseline: securityAssessmentIsBaseline,
- *     isScheduleAssessment: securityAssessmentIsScheduleAssessment,
+ *     isBaseline: securityAssessmentIsBaseline === "true",
+ *     isScheduleAssessment: securityAssessmentIsScheduleAssessment === "true",
  *     scheduleAssessmentId: testScheduleAssessment.id,
  *     state: securityAssessmentState,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
@@ -231,13 +231,13 @@ export interface GetSecurityAssessmentsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityAssessments = oci.DataSafe.getSecurityAssessments({
+ * const testSecurityAssessments = oci.datasafe.getSecurityAssessments({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentCompartmentIdInSubtree,
+ *     compartmentIdInSubtree: securityAssessmentCompartmentIdInSubtree === "true",
  *     displayName: securityAssessmentDisplayName,
- *     isBaseline: securityAssessmentIsBaseline,
- *     isScheduleAssessment: securityAssessmentIsScheduleAssessment,
+ *     isBaseline: securityAssessmentIsBaseline === "true",
+ *     isScheduleAssessment: securityAssessmentIsScheduleAssessment === "true",
  *     scheduleAssessmentId: testScheduleAssessment.id,
  *     state: securityAssessmentState,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
@@ -281,7 +281,7 @@ export interface GetSecurityAssessmentsOutputArgs {
     /**
      * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
      */
-    accessLevel?: pulumi.Input<string>;
+    accessLevel?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified compartment OCID.
      */
@@ -289,62 +289,62 @@ export interface GetSecurityAssessmentsOutputArgs {
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
-    compartmentIdInSubtree?: pulumi.Input<boolean>;
+    compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that match the specified display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityAssessmentsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityAssessmentsFilterArgs>[] | undefined>;
     /**
      * A filter to return only the security assessments that are set as a baseline.
      */
-    isBaseline?: pulumi.Input<boolean>;
+    isBaseline?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only security assessments of type save schedule.
      */
-    isScheduleAssessment?: pulumi.Input<boolean>;
+    isScheduleAssessment?: pulumi.Input<boolean | undefined>;
     /**
      * The OCID of the security assessment of type SAVE_SCHEDULE.
      */
-    scheduleAssessmentId?: pulumi.Input<string>;
+    scheduleAssessmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the specified lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return the target database group that matches the specified OCID.
      */
-    targetDatabaseGroupId?: pulumi.Input<string>;
+    targetDatabaseGroupId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items related to a specific target OCID.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only only target database resources or target database group resources.
      */
-    targetType?: pulumi.Input<string>;
+    targetType?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the security assessment of type TEMPLATE.
      */
-    templateAssessmentId?: pulumi.Input<string>;
+    templateAssessmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
      *
      * **Example:** 2016-12-19T16:39:57.600Z
      */
-    timeCreatedLessThan?: pulumi.Input<string>;
+    timeCreatedLessThan?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only security assessments that were created by either user or system.
      */
-    triggeredBy?: pulumi.Input<string>;
+    triggeredBy?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only items that match the specified security assessment type.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

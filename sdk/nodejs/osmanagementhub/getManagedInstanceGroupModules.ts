@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceGroupModules = oci.OsManagementHub.getManagedInstanceGroupModules({
+ * const testManagedInstanceGroupModules = oci.osmanagementhub.getManagedInstanceGroupModules({
  *     managedInstanceGroupId: testManagedInstanceGroup.id,
  *     compartmentId: compartmentId,
  *     name: managedInstanceGroupModuleName,
@@ -138,7 +138,7 @@ export interface GetManagedInstanceGroupModulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceGroupModules = oci.OsManagementHub.getManagedInstanceGroupModules({
+ * const testManagedInstanceGroupModules = oci.osmanagementhub.getManagedInstanceGroupModules({
  *     managedInstanceGroupId: testManagedInstanceGroup.id,
  *     compartmentId: compartmentId,
  *     name: managedInstanceGroupModuleName,
@@ -166,8 +166,8 @@ export interface GetManagedInstanceGroupModulesOutputArgs {
     /**
      * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagedInstanceGroupModulesFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.OsManagementHub.GetManagedInstanceGroupModulesFilterArgs>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
      */
@@ -175,13 +175,13 @@ export interface GetManagedInstanceGroupModulesOutputArgs {
     /**
      * The resource name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * A filter to return resources that may partially match the name given.
      */
-    nameContains?: pulumi.Input<string>;
+    nameContains?: pulumi.Input<string | undefined>;
     /**
      * The name of the module stream. This parameter is required if a profile name is specified.
      */
-    streamName?: pulumi.Input<string>;
+    streamName?: pulumi.Input<string | undefined>;
 }

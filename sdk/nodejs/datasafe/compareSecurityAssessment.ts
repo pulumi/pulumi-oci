@@ -112,7 +112,7 @@ export interface CompareSecurityAssessmentState {
     /**
      * The OCID of the security assessment. In this case a security assessment can be another security assessment, a latest assessment or a baseline.
      */
-    comparisonSecurityAssessmentId?: pulumi.Input<string>;
+    comparisonSecurityAssessmentId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the security assessment.
      *
@@ -120,7 +120,7 @@ export interface CompareSecurityAssessmentState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    securityAssessmentId?: pulumi.Input<string>;
+    securityAssessmentId?: pulumi.Input<string | undefined>;
 }
 
 /**

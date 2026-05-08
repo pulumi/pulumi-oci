@@ -194,27 +194,27 @@ export interface DbNodeSnapshotState {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      */
-    clusterId?: pulumi.Input<string>;
+    clusterId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The Exadata Database Node Snapshot [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    dbnodeSnapshotId?: pulumi.Input<string>;
+    dbnodeSnapshotId?: pulumi.Input<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Additional information about the current lifecycle state of the Exadata Database Node Snapshot.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node to which the snapshot will be mounted. Set `mountDbnodeId` to `"null"` (string, not `null`) to unmount the Db Node Snapshot.
      *
@@ -222,35 +222,35 @@ export interface DbNodeSnapshotState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    mountDbnodeId?: pulumi.Input<string>;
+    mountDbnodeId?: pulumi.Input<string | undefined>;
     /**
      * Details of the mount points
      */
-    mountPoints?: pulumi.Input<pulumi.Input<inputs.Database.DbNodeSnapshotMountPoint>[]>;
+    mountPoints?: pulumi.Input<pulumi.Input<inputs.Database.DbNodeSnapshotMountPoint>[] | undefined>;
     /**
      * Volume Name
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node.
      */
-    sourceDbnodeId?: pulumi.Input<string>;
+    sourceDbnodeId?: pulumi.Input<string | undefined>;
     /**
      * The current state of the Exadata Database Node Snapshot.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time that the Exadata Database Node Snapshot was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * Details of the volumes
      */
-    volumes?: pulumi.Input<pulumi.Input<inputs.Database.DbNodeSnapshotVolume>[]>;
+    volumes?: pulumi.Input<pulumi.Input<inputs.Database.DbNodeSnapshotVolume>[] | undefined>;
 }
 
 /**

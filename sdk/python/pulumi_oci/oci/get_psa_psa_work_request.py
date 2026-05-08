@@ -203,7 +203,7 @@ def get_psa_psa_work_request(work_request_id: Optional[_builtins.str] = None,
         time_started=pulumi.get(__ret__, 'time_started'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
-def get_psa_psa_work_request_output(work_request_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_psa_psa_work_request_output(work_request_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPsaPsaWorkRequestResult]:
     """
     This data source provides details about a specific Psa Work Request resource in Oracle Cloud Infrastructure Psa service.

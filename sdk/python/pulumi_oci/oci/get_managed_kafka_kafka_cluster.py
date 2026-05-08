@@ -333,7 +333,7 @@ def get_managed_kafka_kafka_cluster(kafka_cluster_id: Optional[_builtins.str] = 
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_managed_kafka_kafka_cluster_output(kafka_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_managed_kafka_kafka_cluster_output(kafka_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedKafkaKafkaClusterResult]:
     """
     This data source provides details about a specific Kafka Cluster resource in Oracle Cloud Infrastructure Managed Kafka service.

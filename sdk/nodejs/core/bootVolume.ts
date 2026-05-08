@@ -51,7 +51,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isAutoTuneEnabled: bootVolumeIsAutoTuneEnabled,
+ *     isAutoTuneEnabled: bootVolumeIsAutoTuneEnabled === "true",
  *     kmsKeyId: testKey.id,
  *     sizeInGbs: bootVolumeSizeInGbs,
  *     vpusPerGb: bootVolumeVpusPerGb,
@@ -280,93 +280,93 @@ export interface BootVolumeState {
     /**
      * The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
      */
-    autoTunedVpusPerGb?: pulumi.Input<string>;
+    autoTunedVpusPerGb?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The list of autotune policies to be enabled for this volume.
      */
-    autotunePolicies?: pulumi.Input<pulumi.Input<inputs.Core.BootVolumeAutotunePolicy>[]>;
+    autotunePolicies?: pulumi.Input<pulumi.Input<inputs.Core.BootVolumeAutotunePolicy>[] | undefined>;
     /**
      * The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned. This field is deprecated. Use the `oci.Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a boot volume.
      *
      * @deprecated The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
      */
-    backupPolicyId?: pulumi.Input<string>;
+    backupPolicyId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
      */
-    bootVolumeReplicas?: pulumi.Input<pulumi.Input<inputs.Core.BootVolumeBootVolumeReplica>[]>;
-    bootVolumeReplicasDeletion?: pulumi.Input<boolean>;
+    bootVolumeReplicas?: pulumi.Input<pulumi.Input<inputs.Core.BootVolumeBootVolumeReplica>[] | undefined>;
+    bootVolumeReplicasDeletion?: pulumi.Input<boolean | undefined>;
     /**
      * The clusterPlacementGroup Id of the volume for volume placement.
      */
-    clusterPlacementGroupId?: pulumi.Input<string>;
+    clusterPlacementGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment that contains the boot volume.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The image OCID used to create the boot volume.
      */
-    imageId?: pulumi.Input<string>;
+    imageId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      */
-    isAutoTuneEnabled?: pulumi.Input<boolean>;
+    isAutoTuneEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies whether the boot volume's data has finished copying from the source boot volume or boot volume backup.
      */
-    isHydrated?: pulumi.Input<boolean>;
+    isHydrated?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The size of the volume in GBs.
      */
-    sizeInGbs?: pulumi.Input<string>;
+    sizeInGbs?: pulumi.Input<string | undefined>;
     /**
      * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
      */
-    sizeInMbs?: pulumi.Input<string>;
-    sourceDetails?: pulumi.Input<inputs.Core.BootVolumeSourceDetails>;
+    sizeInMbs?: pulumi.Input<string | undefined>;
+    sourceDetails?: pulumi.Input<inputs.Core.BootVolumeSourceDetails | undefined>;
     /**
      * The current state of a boot volume.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the boot volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the source volume group.
      */
-    volumeGroupId?: pulumi.Input<string>;
+    volumeGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      *
      * Allowed values:
      */
-    vpusPerGb?: pulumi.Input<string>;
+    vpusPerGb?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the Vault service key which is the master encryption key for the boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
      *
@@ -374,7 +374,7 @@ export interface BootVolumeState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    xrcKmsKeyId?: pulumi.Input<string>;
+    xrcKmsKeyId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -384,7 +384,7 @@ export interface BootVolumeArgs {
     /**
      * (Updatable) The list of autotune policies to be enabled for this volume.
      */
-    autotunePolicies?: pulumi.Input<pulumi.Input<inputs.Core.BootVolumeAutotunePolicy>[]>;
+    autotunePolicies?: pulumi.Input<pulumi.Input<inputs.Core.BootVolumeAutotunePolicy>[] | undefined>;
     /**
      * The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
      */
@@ -394,16 +394,16 @@ export interface BootVolumeArgs {
      *
      * @deprecated The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
      */
-    backupPolicyId?: pulumi.Input<string>;
+    backupPolicyId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The list of boot volume replicas to be enabled for this boot volume in the specified destination availability domains.
      */
-    bootVolumeReplicas?: pulumi.Input<pulumi.Input<inputs.Core.BootVolumeBootVolumeReplica>[]>;
-    bootVolumeReplicasDeletion?: pulumi.Input<boolean>;
+    bootVolumeReplicas?: pulumi.Input<pulumi.Input<inputs.Core.BootVolumeBootVolumeReplica>[] | undefined>;
+    bootVolumeReplicasDeletion?: pulumi.Input<boolean | undefined>;
     /**
      * The clusterPlacementGroup Id of the volume for volume placement.
      */
-    clusterPlacementGroupId?: pulumi.Input<string>;
+    clusterPlacementGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment that contains the boot volume.
      */
@@ -411,34 +411,34 @@ export interface BootVolumeArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      */
-    isAutoTuneEnabled?: pulumi.Input<boolean>;
+    isAutoTuneEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The size of the volume in GBs.
      */
-    sizeInGbs?: pulumi.Input<string>;
+    sizeInGbs?: pulumi.Input<string | undefined>;
     sourceDetails: pulumi.Input<inputs.Core.BootVolumeSourceDetails>;
     /**
      * (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      *
      * Allowed values:
      */
-    vpusPerGb?: pulumi.Input<string>;
+    vpusPerGb?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the Vault service key which is the master encryption key for the boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm). 
      *
@@ -446,5 +446,5 @@ export interface BootVolumeArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    xrcKmsKeyId?: pulumi.Input<string>;
+    xrcKmsKeyId?: pulumi.Input<string | undefined>;
 }

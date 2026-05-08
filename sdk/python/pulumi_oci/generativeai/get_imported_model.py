@@ -213,7 +213,7 @@ def get_imported_model(imported_model_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_imported_model = oci.GenerativeAi.get_imported_model(imported_model_id=test_imported_model_oci_generative_ai_imported_model["id"])
+    test_imported_model = oci.generativeai.get_imported_model(imported_model_id=test_imported_model_oci_generative_ai_imported_model["id"])
     ```
 
 
@@ -242,7 +242,7 @@ def get_imported_model(imported_model_id: Optional[_builtins.str] = None,
         time_updated=pulumi.get(__ret__, 'time_updated'),
         vendor=pulumi.get(__ret__, 'vendor'),
         version=pulumi.get(__ret__, 'version'))
-def get_imported_model_output(imported_model_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_imported_model_output(imported_model_id: pulumi.Input[Optional[_builtins.str]] = None,
                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetImportedModelResult]:
     """
     This data source provides details about a specific Imported Model resource in Oracle Cloud Infrastructure Generative AI service.
@@ -255,7 +255,7 @@ def get_imported_model_output(imported_model_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_imported_model = oci.GenerativeAi.get_imported_model(imported_model_id=test_imported_model_oci_generative_ai_imported_model["id"])
+    test_imported_model = oci.generativeai.get_imported_model(imported_model_id=test_imported_model_oci_generative_ai_imported_model["id"])
     ```
 
 

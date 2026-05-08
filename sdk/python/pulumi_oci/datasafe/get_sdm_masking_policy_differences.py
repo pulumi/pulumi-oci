@@ -170,8 +170,8 @@ def get_sdm_masking_policy_differences(compartment_id: Optional[_builtins.str] =
     import pulumi
     import pulumi_oci as oci
 
-    test_sdm_masking_policy_differences = oci.DataSafe.get_sdm_masking_policy_differences(compartment_id=compartment_id,
-        compartment_id_in_subtree=sdm_masking_policy_difference_compartment_id_in_subtree,
+    test_sdm_masking_policy_differences = oci.datasafe.get_sdm_masking_policy_differences(compartment_id=compartment_id,
+        compartment_id_in_subtree=sdm_masking_policy_difference_compartment_id_in_subtree == "true",
         difference_access_level=sdm_masking_policy_difference_difference_access_level,
         display_name=sdm_masking_policy_difference_display_name,
         masking_policy_id=test_masking_policy["id"],
@@ -211,14 +211,14 @@ def get_sdm_masking_policy_differences(compartment_id: Optional[_builtins.str] =
         sdm_masking_policy_difference_collections=pulumi.get(__ret__, 'sdm_masking_policy_difference_collections'),
         sensitive_data_model_id=pulumi.get(__ret__, 'sensitive_data_model_id'),
         state=pulumi.get(__ret__, 'state'))
-def get_sdm_masking_policy_differences_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                              compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                              difference_access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSdmMaskingPolicyDifferencesFilterArgs', 'GetSdmMaskingPolicyDifferencesFilterArgsDict']]]]] = None,
-                                              masking_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              sensitive_data_model_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_sdm_masking_policy_differences_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                              compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                              difference_access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSdmMaskingPolicyDifferencesFilterArgs', 'GetSdmMaskingPolicyDifferencesFilterArgsDict']]]]] = None,
+                                              masking_policy_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              sensitive_data_model_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSdmMaskingPolicyDifferencesResult]:
     """
     This data source provides the list of Sdm Masking Policy Differences in Oracle Cloud Infrastructure Data Safe service.
@@ -231,8 +231,8 @@ def get_sdm_masking_policy_differences_output(compartment_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_sdm_masking_policy_differences = oci.DataSafe.get_sdm_masking_policy_differences(compartment_id=compartment_id,
-        compartment_id_in_subtree=sdm_masking_policy_difference_compartment_id_in_subtree,
+    test_sdm_masking_policy_differences = oci.datasafe.get_sdm_masking_policy_differences(compartment_id=compartment_id,
+        compartment_id_in_subtree=sdm_masking_policy_difference_compartment_id_in_subtree == "true",
         difference_access_level=sdm_masking_policy_difference_difference_access_level,
         display_name=sdm_masking_policy_difference_display_name,
         masking_policy_id=test_masking_policy["id"],

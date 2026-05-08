@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExecutionActions = oci.Database.getExecutionActions({
+ * const testExecutionActions = oci.database.getExecutionActions({
  *     compartmentId: compartmentId,
  *     displayName: executionActionDisplayName,
  *     executionWindowId: testExecutionWindow.id,
@@ -100,7 +100,7 @@ export interface GetExecutionActionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExecutionActions = oci.Database.getExecutionActions({
+ * const testExecutionActions = oci.database.getExecutionActions({
  *     compartmentId: compartmentId,
  *     displayName: executionActionDisplayName,
  *     executionWindowId: testExecutionWindow.id,
@@ -130,14 +130,14 @@ export interface GetExecutionActionsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given execution wondow id.
      */
-    executionWindowId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetExecutionActionsFilterArgs>[]>;
+    executionWindowId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Database.GetExecutionActionsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

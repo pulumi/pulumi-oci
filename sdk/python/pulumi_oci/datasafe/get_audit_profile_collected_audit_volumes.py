@@ -128,7 +128,7 @@ def get_audit_profile_collected_audit_volumes(audit_profile_id: Optional[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_profile_collected_audit_volumes = oci.DataSafe.get_audit_profile_collected_audit_volumes(audit_profile_id=test_audit_profile["id"],
+    test_audit_profile_collected_audit_volumes = oci.datasafe.get_audit_profile_collected_audit_volumes(audit_profile_id=test_audit_profile["id"],
         work_request_id=test_work_request["id"],
         month_in_consideration_greater_than=audit_profile_collected_audit_volume_month_in_consideration_greater_than,
         month_in_consideration_less_than=audit_profile_collected_audit_volume_month_in_consideration_less_than)
@@ -161,11 +161,11 @@ def get_audit_profile_collected_audit_volumes(audit_profile_id: Optional[_builti
         month_in_consideration_greater_than=pulumi.get(__ret__, 'month_in_consideration_greater_than'),
         month_in_consideration_less_than=pulumi.get(__ret__, 'month_in_consideration_less_than'),
         work_request_id=pulumi.get(__ret__, 'work_request_id'))
-def get_audit_profile_collected_audit_volumes_output(audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAuditProfileCollectedAuditVolumesFilterArgs', 'GetAuditProfileCollectedAuditVolumesFilterArgsDict']]]]] = None,
-                                                     month_in_consideration_greater_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     month_in_consideration_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                     work_request_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_audit_profile_collected_audit_volumes_output(audit_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAuditProfileCollectedAuditVolumesFilterArgs', 'GetAuditProfileCollectedAuditVolumesFilterArgsDict']]]]] = None,
+                                                     month_in_consideration_greater_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     month_in_consideration_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                     work_request_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuditProfileCollectedAuditVolumesResult]:
     """
     This data source provides the list of Audit Profile Collected Audit Volumes in Oracle Cloud Infrastructure Data Safe service.
@@ -178,7 +178,7 @@ def get_audit_profile_collected_audit_volumes_output(audit_profile_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_profile_collected_audit_volumes = oci.DataSafe.get_audit_profile_collected_audit_volumes(audit_profile_id=test_audit_profile["id"],
+    test_audit_profile_collected_audit_volumes = oci.datasafe.get_audit_profile_collected_audit_volumes(audit_profile_id=test_audit_profile["id"],
         work_request_id=test_work_request["id"],
         month_in_consideration_greater_than=audit_profile_collected_audit_volume_month_in_consideration_greater_than,
         month_in_consideration_less_than=audit_profile_collected_audit_volume_month_in_consideration_less_than)

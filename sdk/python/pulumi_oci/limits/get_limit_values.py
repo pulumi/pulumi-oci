@@ -165,7 +165,7 @@ def get_limit_values(availability_domain: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_limit_values = oci.Limits.get_limit_values(compartment_id=tenancy_ocid,
+    test_limit_values = oci.limits.get_limit_values(compartment_id=tenancy_ocid,
         service_name=test_service["name"],
         availability_domain=limit_value_availability_domain,
         external_location=limit_value_external_location,
@@ -206,14 +206,14 @@ def get_limit_values(availability_domain: Optional[_builtins.str] = None,
         scope_type=pulumi.get(__ret__, 'scope_type'),
         service_name=pulumi.get(__ret__, 'service_name'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'))
-def get_limit_values_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                            external_location: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetLimitValuesFilterArgs', 'GetLimitValuesFilterArgsDict']]]]] = None,
-                            name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            scope_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                            subscription_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_limit_values_output(availability_domain: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                            external_location: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetLimitValuesFilterArgs', 'GetLimitValuesFilterArgsDict']]]]] = None,
+                            name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            scope_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                            subscription_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetLimitValuesResult]:
     """
     This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
@@ -227,7 +227,7 @@ def get_limit_values_output(availability_domain: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_limit_values = oci.Limits.get_limit_values(compartment_id=tenancy_ocid,
+    test_limit_values = oci.limits.get_limit_values(compartment_id=tenancy_ocid,
         service_name=test_service["name"],
         availability_domain=limit_value_availability_domain,
         external_location=limit_value_external_location,

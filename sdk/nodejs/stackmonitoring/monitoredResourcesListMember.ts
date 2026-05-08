@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * const testMonitoredResourcesListMember = new oci.stackmonitoring.MonitoredResourcesListMember("test_monitored_resources_list_member", {
  *     monitoredResourceId: testMonitoredResource.id,
  *     destinationResourceId: testDestinationResource.id,
- *     limitLevel: monitoredResourcesListMemberLimitLevel,
+ *     limitLevel: Number(monitoredResourcesListMemberLimitLevel),
  * });
  * ```
  *
@@ -123,15 +123,15 @@ export interface MonitoredResourcesListMemberState {
     /**
      * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    destinationResourceId?: pulumi.Input<string>;
+    destinationResourceId?: pulumi.Input<string | undefined>;
     /**
      * List of member resources.
      */
-    items?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourcesListMemberItem>[]>;
+    items?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourcesListMemberItem>[] | undefined>;
     /**
      * The field which determines the depth of hierarchy while searching for members.
      */
-    limitLevel?: pulumi.Input<number>;
+    limitLevel?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
      *
@@ -139,7 +139,7 @@ export interface MonitoredResourcesListMemberState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    monitoredResourceId?: pulumi.Input<string>;
+    monitoredResourceId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -149,11 +149,11 @@ export interface MonitoredResourcesListMemberArgs {
     /**
      * Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    destinationResourceId?: pulumi.Input<string>;
+    destinationResourceId?: pulumi.Input<string | undefined>;
     /**
      * The field which determines the depth of hierarchy while searching for members.
      */
-    limitLevel?: pulumi.Input<number>;
+    limitLevel?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
      *

@@ -240,7 +240,7 @@ def get_deploy_pipeline(deploy_pipeline_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_pipeline = oci.DevOps.get_deploy_pipeline(deploy_pipeline_id=test_deploy_pipeline_oci_devops_deploy_pipeline["id"])
+    test_deploy_pipeline = oci.devops.get_deploy_pipeline(deploy_pipeline_id=test_deploy_pipeline_oci_devops_deploy_pipeline["id"])
     ```
 
 
@@ -268,7 +268,7 @@ def get_deploy_pipeline(deploy_pipeline_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_deploy_pipeline_output(deploy_pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_deploy_pipeline_output(deploy_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeployPipelineResult]:
     """
     This data source provides details about a specific Deploy Pipeline resource in Oracle Cloud Infrastructure Devops service.
@@ -281,7 +281,7 @@ def get_deploy_pipeline_output(deploy_pipeline_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_pipeline = oci.DevOps.get_deploy_pipeline(deploy_pipeline_id=test_deploy_pipeline_oci_devops_deploy_pipeline["id"])
+    test_deploy_pipeline = oci.devops.get_deploy_pipeline(deploy_pipeline_id=test_deploy_pipeline_oci_devops_deploy_pipeline["id"])
     ```
 
 

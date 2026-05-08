@@ -110,7 +110,7 @@ def get_awr_hub_awr_sources_summary(awr_hub_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hub_awr_sources_summary = oci.Opsi.get_awr_hub_awr_sources_summary(awr_hub_id=test_awr_hub["id"],
+    test_awr_hub_awr_sources_summary = oci.opsi.get_awr_hub_awr_sources_summary(awr_hub_id=test_awr_hub["id"],
         compartment_id=compartment_id,
         name=awr_hub_awr_sources_summary_name)
     ```
@@ -133,9 +133,9 @@ def get_awr_hub_awr_sources_summary(awr_hub_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         items=pulumi.get(__ret__, 'items'),
         name=pulumi.get(__ret__, 'name'))
-def get_awr_hub_awr_sources_summary_output(awr_hub_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                           compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                           name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_awr_hub_awr_sources_summary_output(awr_hub_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                           compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAwrHubAwrSourcesSummaryResult]:
     """
     This data source provides details about a specific Awr Hub Awr Sources Summary resource in Oracle Cloud Infrastructure Opsi service.
@@ -148,7 +148,7 @@ def get_awr_hub_awr_sources_summary_output(awr_hub_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hub_awr_sources_summary = oci.Opsi.get_awr_hub_awr_sources_summary(awr_hub_id=test_awr_hub["id"],
+    test_awr_hub_awr_sources_summary = oci.opsi.get_awr_hub_awr_sources_summary(awr_hub_id=test_awr_hub["id"],
         compartment_id=compartment_id,
         name=awr_hub_awr_sources_summary_name)
     ```

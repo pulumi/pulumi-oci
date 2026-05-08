@@ -231,92 +231,92 @@ export interface SecurityAssessmentFindingState {
     /**
      * The OCID of the assessment that generated this finding.
      */
-    assessmentId?: pulumi.Input<string>;
+    assessmentId?: pulumi.Input<string | undefined>;
     /**
      * The category to which the finding belongs to.
      */
-    category?: pulumi.Input<string>;
+    category?: pulumi.Input<string | undefined>;
     /**
      * The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
      */
-    details?: pulumi.Input<pulumi.Input<string>[]>;
+    details?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
      */
-    hasTargetDbRiskLevelChanged?: pulumi.Input<boolean>;
+    hasTargetDbRiskLevelChanged?: pulumi.Input<boolean | undefined>;
     /**
      * Determines if this risk level was modified by user.
      */
-    isRiskModified?: pulumi.Input<boolean>;
+    isRiskModified?: pulumi.Input<boolean | undefined>;
     /**
      * Indicates whether a given finding is marked as topFinding or not.
      */
-    isTopFinding?: pulumi.Input<boolean>;
+    isTopFinding?: pulumi.Input<boolean | undefined>;
     /**
      * User provided reason for accepting or modifying this finding if they choose to do so.
      */
-    justification?: pulumi.Input<string>;
+    justification?: pulumi.Input<string | undefined>;
     /**
      * The unique finding key. This is a system-generated identifier. To get the finding key for a finding, use ListFindings.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * Details about the current state of the finding.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Provides a recommended approach to take to remediate the finding reported.
      */
-    oneline?: pulumi.Input<string>;
+    oneline?: pulumi.Input<string | undefined>;
     /**
      * The severity of the finding as determined by security assessment. This cannot be modified by user.
      */
-    oracleDefinedSeverity?: pulumi.Input<string>;
+    oracleDefinedSeverity?: pulumi.Input<string | undefined>;
     /**
      * (Updatable)
      */
-    patchOperations?: pulumi.Input<pulumi.Input<inputs.DataSafe.SecurityAssessmentFindingPatchOperation>[]>;
+    patchOperations?: pulumi.Input<pulumi.Input<inputs.DataSafe.SecurityAssessmentFindingPatchOperation>[] | undefined>;
     /**
      * Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
      */
-    references?: pulumi.Input<pulumi.Input<inputs.DataSafe.SecurityAssessmentFindingReference>[]>;
+    references?: pulumi.Input<pulumi.Input<inputs.DataSafe.SecurityAssessmentFindingReference>[] | undefined>;
     /**
      * The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
      */
-    remarks?: pulumi.Input<string>;
+    remarks?: pulumi.Input<string | undefined>;
     /**
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    securityAssessmentId?: pulumi.Input<string>;
+    securityAssessmentId?: pulumi.Input<string | undefined>;
     /**
      * The severity of the finding as determined by security assessment and is same as oracleDefinedSeverity, unless modified by user.
      */
-    severity?: pulumi.Input<string>;
+    severity?: pulumi.Input<string | undefined>;
     /**
      * The current state of the finding.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
      */
-    summary?: pulumi.Input<string>;
+    summary?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the target database.
      */
-    targetId?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string | undefined>;
     /**
      * The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The time until which the change in severity(deferred / modified) of this finding is valid.
      */
-    timeValidUntil?: pulumi.Input<string>;
+    timeValidUntil?: pulumi.Input<string | undefined>;
     /**
      * The short title for the finding.
      */
-    title?: pulumi.Input<string>;
+    title?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -326,7 +326,7 @@ export interface SecurityAssessmentFindingArgs {
     /**
      * (Updatable)
      */
-    patchOperations?: pulumi.Input<pulumi.Input<inputs.DataSafe.SecurityAssessmentFindingPatchOperation>[]>;
+    patchOperations?: pulumi.Input<pulumi.Input<inputs.DataSafe.SecurityAssessmentFindingPatchOperation>[] | undefined>;
     /**
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -95,7 +95,7 @@ def get_addons(cluster_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_addons = oci.ContainerEngine.get_addons(cluster_id=test_cluster["id"])
+    test_addons = oci.containerengine.get_addons(cluster_id=test_cluster["id"])
     ```
 
 
@@ -112,8 +112,8 @@ def get_addons(cluster_id: Optional[_builtins.str] = None,
         cluster_id=pulumi.get(__ret__, 'cluster_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_addons_output(cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
-                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAddonsFilterArgs', 'GetAddonsFilterArgsDict']]]]] = None,
+def get_addons_output(cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAddonsFilterArgs', 'GetAddonsFilterArgsDict']]]]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAddonsResult]:
     """
     This data source provides the list of Addons in Oracle Cloud Infrastructure Container Engine service.
@@ -126,7 +126,7 @@ def get_addons_output(cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_addons = oci.ContainerEngine.get_addons(cluster_id=test_cluster["id"])
+    test_addons = oci.containerengine.get_addons(cluster_id=test_cluster["id"])
     ```
 
 

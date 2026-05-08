@@ -24,19 +24,19 @@ class MountTargetArgs:
                  availability_domain: pulumi.Input[_builtins.str],
                  compartment_id: pulumi.Input[_builtins.str],
                  subnet_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 idmap_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kerberos: Optional[pulumi.Input['MountTargetKerberosArgs']] = None,
-                 ldap_idmap: Optional[pulumi.Input['MountTargetLdapIdmapArgs']] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['MountTargetLockArgs']]]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 requested_throughput: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 idmap_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kerberos: pulumi.Input[Optional['MountTargetKerberosArgs']] = None,
+                 ldap_idmap: pulumi.Input[Optional['MountTargetLdapIdmapArgs']] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input['MountTargetLockArgs']]]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 requested_throughput: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a MountTarget resource.
 
@@ -141,43 +141,43 @@ class MountTargetArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My mount target`
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="hostnameLabel")
-    def hostname_label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hostname_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The hostname for the mount target's IP address, used for DNS resolution. The value is the hostname portion of the private IP address's fully qualified domain name (FQDN). For example, `files-1` in the FQDN `files-1.subnet123.vcn1.oraclevcn.com`. Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
 
@@ -192,147 +192,147 @@ class MountTargetArgs:
         return pulumi.get(self, "hostname_label")
 
     @hostname_label.setter
-    def hostname_label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hostname_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hostname_label", value)
 
     @_builtins.property
     @pulumi.getter(name="idmapType")
-    def idmap_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idmap_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The method used to map a Unix UID to secondary groups, if any.
         """
         return pulumi.get(self, "idmap_type")
 
     @idmap_type.setter
-    def idmap_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idmap_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idmap_type", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
         """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
-    def ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="isLockOverride")
-    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_lock_override(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to override locks (if any exist).
         """
         return pulumi.get(self, "is_lock_override")
 
     @is_lock_override.setter
-    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_lock_override(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_lock_override", value)
 
     @_builtins.property
     @pulumi.getter
-    def kerberos(self) -> Optional[pulumi.Input['MountTargetKerberosArgs']]:
+    def kerberos(self) -> pulumi.Input[Optional['MountTargetKerberosArgs']]:
         """
         (Updatable) Kerberos details needed to create configuration.
         """
         return pulumi.get(self, "kerberos")
 
     @kerberos.setter
-    def kerberos(self, value: Optional[pulumi.Input['MountTargetKerberosArgs']]):
+    def kerberos(self, value: pulumi.Input[Optional['MountTargetKerberosArgs']]):
         pulumi.set(self, "kerberos", value)
 
     @_builtins.property
     @pulumi.getter(name="ldapIdmap")
-    def ldap_idmap(self) -> Optional[pulumi.Input['MountTargetLdapIdmapArgs']]:
+    def ldap_idmap(self) -> pulumi.Input[Optional['MountTargetLdapIdmapArgs']]:
         """
         (Updatable) Mount target details about the LDAP ID mapping configuration.
         """
         return pulumi.get(self, "ldap_idmap")
 
     @ldap_idmap.setter
-    def ldap_idmap(self, value: Optional[pulumi.Input['MountTargetLdapIdmapArgs']]):
+    def ldap_idmap(self, value: pulumi.Input[Optional['MountTargetLdapIdmapArgs']]):
         pulumi.set(self, "ldap_idmap", value)
 
     @_builtins.property
     @pulumi.getter
-    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MountTargetLockArgs']]]]:
+    def locks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MountTargetLockArgs']]]]:
         """
         Locks associated with this resource.
         """
         return pulumi.get(self, "locks")
 
     @locks.setter
-    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MountTargetLockArgs']]]]):
+    def locks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MountTargetLockArgs']]]]):
         pulumi.set(self, "locks", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="requestedThroughput")
-    def requested_throughput(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def requested_throughput(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
         """
         return pulumi.get(self, "requested_throughput")
 
     @requested_throughput.setter
-    def requested_throughput(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def requested_throughput(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "requested_throughput", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
-    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         """
         return pulumi.get(self, "security_attributes")
 
     @security_attributes.setter
-    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
 
 
 @pulumi.input_type
 class _MountTargetState:
     def __init__(__self__, *,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 export_set_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 idmap_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kerberos: Optional[pulumi.Input['MountTargetKerberosArgs']] = None,
-                 ldap_idmap: Optional[pulumi.Input['MountTargetLdapIdmapArgs']] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['MountTargetLockArgs']]]] = None,
-                 mount_target_ipv6ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 observed_throughput: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 requested_throughput: Optional[pulumi.Input[_builtins.str]] = None,
-                 reserved_storage_capacity: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_billing_cycle_end: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 export_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 idmap_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kerberos: pulumi.Input[Optional['MountTargetKerberosArgs']] = None,
+                 ldap_idmap: pulumi.Input[Optional['MountTargetLdapIdmapArgs']] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input['MountTargetLockArgs']]]] = None,
+                 mount_target_ipv6ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 observed_throughput: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 requested_throughput: pulumi.Input[Optional[_builtins.str]] = None,
+                 reserved_storage_capacity: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_billing_cycle_end: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MountTarget resources.
 
@@ -430,79 +430,79 @@ class _MountTargetState:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability domain in which to create the mount target.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the mount target.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My mount target`
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="exportSetId")
-    def export_set_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def export_set_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated export set. Controls what file systems will be exported through Network File System (NFS) protocol on this mount target.
         """
         return pulumi.get(self, "export_set_id")
 
     @export_set_id.setter
-    def export_set_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def export_set_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "export_set_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="hostnameLabel")
-    def hostname_label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hostname_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The hostname for the mount target's IP address, used for DNS resolution. The value is the hostname portion of the private IP address's fully qualified domain name (FQDN). For example, `files-1` in the FQDN `files-1.subnet123.vcn1.oraclevcn.com`. Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
 
@@ -517,192 +517,192 @@ class _MountTargetState:
         return pulumi.get(self, "hostname_label")
 
     @hostname_label.setter
-    def hostname_label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hostname_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hostname_label", value)
 
     @_builtins.property
     @pulumi.getter(name="idmapType")
-    def idmap_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def idmap_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The method used to map a Unix UID to secondary groups, if any.
         """
         return pulumi.get(self, "idmap_type")
 
     @idmap_type.setter
-    def idmap_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def idmap_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "idmap_type", value)
 
     @_builtins.property
     @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A private IP address of your choice. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.  Example: `10.0.3.3`
         """
         return pulumi.get(self, "ip_address")
 
     @ip_address.setter
-    def ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ip_address", value)
 
     @_builtins.property
     @pulumi.getter(name="isLockOverride")
-    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_lock_override(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to override locks (if any exist).
         """
         return pulumi.get(self, "is_lock_override")
 
     @is_lock_override.setter
-    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_lock_override(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_lock_override", value)
 
     @_builtins.property
     @pulumi.getter
-    def kerberos(self) -> Optional[pulumi.Input['MountTargetKerberosArgs']]:
+    def kerberos(self) -> pulumi.Input[Optional['MountTargetKerberosArgs']]:
         """
         (Updatable) Kerberos details needed to create configuration.
         """
         return pulumi.get(self, "kerberos")
 
     @kerberos.setter
-    def kerberos(self, value: Optional[pulumi.Input['MountTargetKerberosArgs']]):
+    def kerberos(self, value: pulumi.Input[Optional['MountTargetKerberosArgs']]):
         pulumi.set(self, "kerberos", value)
 
     @_builtins.property
     @pulumi.getter(name="ldapIdmap")
-    def ldap_idmap(self) -> Optional[pulumi.Input['MountTargetLdapIdmapArgs']]:
+    def ldap_idmap(self) -> pulumi.Input[Optional['MountTargetLdapIdmapArgs']]:
         """
         (Updatable) Mount target details about the LDAP ID mapping configuration.
         """
         return pulumi.get(self, "ldap_idmap")
 
     @ldap_idmap.setter
-    def ldap_idmap(self, value: Optional[pulumi.Input['MountTargetLdapIdmapArgs']]):
+    def ldap_idmap(self, value: pulumi.Input[Optional['MountTargetLdapIdmapArgs']]):
         pulumi.set(self, "ldap_idmap", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Additional information about the current 'lifecycleState'.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MountTargetLockArgs']]]]:
+    def locks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['MountTargetLockArgs']]]]:
         """
         Locks associated with this resource.
         """
         return pulumi.get(self, "locks")
 
     @locks.setter
-    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MountTargetLockArgs']]]]):
+    def locks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['MountTargetLockArgs']]]]):
         pulumi.set(self, "locks", value)
 
     @_builtins.property
     @pulumi.getter(name="mountTargetIpv6ids")
-    def mount_target_ipv6ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def mount_target_ipv6ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The OCIDs of the IPv6 addresses associated with this mount target.
         """
         return pulumi.get(self, "mount_target_ipv6ids")
 
     @mount_target_ipv6ids.setter
-    def mount_target_ipv6ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def mount_target_ipv6ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "mount_target_ipv6ids", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="observedThroughput")
-    def observed_throughput(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def observed_throughput(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
         """
         return pulumi.get(self, "observed_throughput")
 
     @observed_throughput.setter
-    def observed_throughput(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def observed_throughput(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "observed_throughput", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIpIds")
-    def private_ip_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def private_ip_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The OCIDs of the private IP addresses associated with this mount target.
         """
         return pulumi.get(self, "private_ip_ids")
 
     @private_ip_ids.setter
-    def private_ip_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def private_ip_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "private_ip_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="requestedThroughput")
-    def requested_throughput(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def requested_throughput(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
         """
         return pulumi.get(self, "requested_throughput")
 
     @requested_throughput.setter
-    def requested_throughput(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def requested_throughput(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "requested_throughput", value)
 
     @_builtins.property
     @pulumi.getter(name="reservedStorageCapacity")
-    def reserved_storage_capacity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def reserved_storage_capacity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         * Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
         """
         return pulumi.get(self, "reserved_storage_capacity")
 
     @reserved_storage_capacity.setter
-    def reserved_storage_capacity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def reserved_storage_capacity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "reserved_storage_capacity", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")
-    def security_attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         """
         return pulumi.get(self, "security_attributes")
 
     @security_attributes.setter
-    def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the mount target.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which to create the mount target.
 
@@ -713,43 +713,43 @@ class _MountTargetState:
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. System tags are applied to resources by internal Oracle Cloud Infrastructure services.
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeBillingCycleEnd")
-    def time_billing_cycle_end(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_billing_cycle_end(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the mount target current billing cycle will end, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated automatically to next timestamp which is after 30 days.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_billing_cycle_end")
 
     @time_billing_cycle_end.setter
-    def time_billing_cycle_end(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_billing_cycle_end(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_billing_cycle_end", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the mount target was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -759,22 +759,22 @@ class MountTarget(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 idmap_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kerberos: Optional[pulumi.Input[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict']]] = None,
-                 ldap_idmap: Optional[pulumi.Input[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict']]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MountTargetLockArgs', 'MountTargetLockArgsDict']]]]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 requested_throughput: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 idmap_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kerberos: pulumi.Input[Optional[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict']]] = None,
+                 ldap_idmap: pulumi.Input[Optional[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict']]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MountTargetLockArgs', 'MountTargetLockArgsDict']]]]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 requested_throughput: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Mount Target resource in Oracle Cloud Infrastructure File Storage service.
@@ -835,19 +835,19 @@ class MountTarget(pulumi.CustomResource):
             hostname_label=mount_target_hostname_label,
             idmap_type=mount_target_idmap_type,
             ip_address=mount_target_ip_address,
-            is_lock_override=mount_target_is_lock_override,
+            is_lock_override=mount_target_is_lock_override == "true",
             kerberos={
                 "kerberos_realm": mount_target_kerberos_kerberos_realm,
-                "backup_key_tab_secret_version": mount_target_kerberos_backup_key_tab_secret_version,
-                "current_key_tab_secret_version": mount_target_kerberos_current_key_tab_secret_version,
-                "is_kerberos_enabled": mount_target_kerberos_is_kerberos_enabled,
+                "backup_key_tab_secret_version": int(mount_target_kerberos_backup_key_tab_secret_version),
+                "current_key_tab_secret_version": int(mount_target_kerberos_current_key_tab_secret_version),
+                "is_kerberos_enabled": mount_target_kerberos_is_kerberos_enabled == "true",
                 "key_tab_secret_id": test_secret["id"],
             },
             ldap_idmap={
-                "cache_lifetime_seconds": mount_target_ldap_idmap_cache_lifetime_seconds,
-                "cache_refresh_interval_seconds": mount_target_ldap_idmap_cache_refresh_interval_seconds,
+                "cache_lifetime_seconds": int(mount_target_ldap_idmap_cache_lifetime_seconds),
+                "cache_refresh_interval_seconds": int(mount_target_ldap_idmap_cache_refresh_interval_seconds),
                 "group_search_base": mount_target_ldap_idmap_group_search_base,
-                "negative_cache_lifetime_seconds": mount_target_ldap_idmap_negative_cache_lifetime_seconds,
+                "negative_cache_lifetime_seconds": int(mount_target_ldap_idmap_negative_cache_lifetime_seconds),
                 "outbound_connector1id": test_outbound_connector1["id"],
                 "outbound_connector2id": test_outbound_connector2["id"],
                 "schema_type": mount_target_ldap_idmap_schema_type,
@@ -969,19 +969,19 @@ class MountTarget(pulumi.CustomResource):
             hostname_label=mount_target_hostname_label,
             idmap_type=mount_target_idmap_type,
             ip_address=mount_target_ip_address,
-            is_lock_override=mount_target_is_lock_override,
+            is_lock_override=mount_target_is_lock_override == "true",
             kerberos={
                 "kerberos_realm": mount_target_kerberos_kerberos_realm,
-                "backup_key_tab_secret_version": mount_target_kerberos_backup_key_tab_secret_version,
-                "current_key_tab_secret_version": mount_target_kerberos_current_key_tab_secret_version,
-                "is_kerberos_enabled": mount_target_kerberos_is_kerberos_enabled,
+                "backup_key_tab_secret_version": int(mount_target_kerberos_backup_key_tab_secret_version),
+                "current_key_tab_secret_version": int(mount_target_kerberos_current_key_tab_secret_version),
+                "is_kerberos_enabled": mount_target_kerberos_is_kerberos_enabled == "true",
                 "key_tab_secret_id": test_secret["id"],
             },
             ldap_idmap={
-                "cache_lifetime_seconds": mount_target_ldap_idmap_cache_lifetime_seconds,
-                "cache_refresh_interval_seconds": mount_target_ldap_idmap_cache_refresh_interval_seconds,
+                "cache_lifetime_seconds": int(mount_target_ldap_idmap_cache_lifetime_seconds),
+                "cache_refresh_interval_seconds": int(mount_target_ldap_idmap_cache_refresh_interval_seconds),
                 "group_search_base": mount_target_ldap_idmap_group_search_base,
-                "negative_cache_lifetime_seconds": mount_target_ldap_idmap_negative_cache_lifetime_seconds,
+                "negative_cache_lifetime_seconds": int(mount_target_ldap_idmap_negative_cache_lifetime_seconds),
                 "outbound_connector1id": test_outbound_connector1["id"],
                 "outbound_connector2id": test_outbound_connector2["id"],
                 "schema_type": mount_target_ldap_idmap_schema_type,
@@ -1022,22 +1022,22 @@ class MountTarget(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 idmap_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kerberos: Optional[pulumi.Input[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict']]] = None,
-                 ldap_idmap: Optional[pulumi.Input[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict']]] = None,
-                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MountTargetLockArgs', 'MountTargetLockArgsDict']]]]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 requested_throughput: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 idmap_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kerberos: pulumi.Input[Optional[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict']]] = None,
+                 ldap_idmap: pulumi.Input[Optional[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict']]] = None,
+                 locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MountTargetLockArgs', 'MountTargetLockArgsDict']]]]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 requested_throughput: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1089,32 +1089,32 @@ class MountTarget(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            export_set_id: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
-            idmap_type: Optional[pulumi.Input[_builtins.str]] = None,
-            ip_address: Optional[pulumi.Input[_builtins.str]] = None,
-            is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-            kerberos: Optional[pulumi.Input[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict']]] = None,
-            ldap_idmap: Optional[pulumi.Input[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict']]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MountTargetLockArgs', 'MountTargetLockArgsDict']]]]] = None,
-            mount_target_ipv6ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            observed_throughput: Optional[pulumi.Input[_builtins.str]] = None,
-            private_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            requested_throughput: Optional[pulumi.Input[_builtins.str]] = None,
-            reserved_storage_capacity: Optional[pulumi.Input[_builtins.str]] = None,
-            security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_billing_cycle_end: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'MountTarget':
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            export_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
+            idmap_type: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+            kerberos: pulumi.Input[Optional[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict']]] = None,
+            ldap_idmap: pulumi.Input[Optional[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict']]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MountTargetLockArgs', 'MountTargetLockArgsDict']]]]] = None,
+            mount_target_ipv6ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            observed_throughput: pulumi.Input[Optional[_builtins.str]] = None,
+            private_ip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            requested_throughput: pulumi.Input[Optional[_builtins.str]] = None,
+            reserved_storage_capacity: pulumi.Input[Optional[_builtins.str]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_billing_cycle_end: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'MountTarget':
         """
         Get an existing MountTarget resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

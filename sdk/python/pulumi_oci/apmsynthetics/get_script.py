@@ -226,7 +226,7 @@ def get_script(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_script = oci.ApmSynthetics.get_script(apm_domain_id=test_apm_domain["id"],
+    test_script = oci.apmsynthetics.get_script(apm_domain_id=test_apm_domain["id"],
         script_id=test_script_oci_apm_synthetics_script["id"])
     ```
 
@@ -256,8 +256,8 @@ def get_script(apm_domain_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         time_uploaded=pulumi.get(__ret__, 'time_uploaded'))
-def get_script_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                      script_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_script_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                      script_id: pulumi.Input[Optional[_builtins.str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetScriptResult]:
     """
     This data source provides details about a specific Script resource in Oracle Cloud Infrastructure APM Availability Monitoring service (aka APM Synthetics Service).
@@ -270,7 +270,7 @@ def get_script_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_script = oci.ApmSynthetics.get_script(apm_domain_id=test_apm_domain["id"],
+    test_script = oci.apmsynthetics.get_script(apm_domain_id=test_apm_domain["id"],
         script_id=test_script_oci_apm_synthetics_script["id"])
     ```
 

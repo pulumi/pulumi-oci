@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceIdentityConfiguration = oci.BigDataService.getBdsInstanceIdentityConfiguration({
+ * const testBdsInstanceIdentityConfiguration = oci.bigdataservice.getBdsInstanceIdentityConfiguration({
  *     bdsInstanceId: testBdsInstance.id,
  *     identityConfigurationId: testConfiguration.id,
  * });
@@ -106,7 +106,7 @@ export interface GetBdsInstanceIdentityConfigurationResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceIdentityConfiguration = oci.BigDataService.getBdsInstanceIdentityConfiguration({
+ * const testBdsInstanceIdentityConfiguration = oci.bigdataservice.getBdsInstanceIdentityConfiguration({
  *     bdsInstanceId: testBdsInstance.id,
  *     identityConfigurationId: testConfiguration.id,
  * });

@@ -205,7 +205,7 @@ def get_scheduling_policy_scheduling_window(scheduling_policy_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduling_policy_scheduling_window = oci.Database.get_scheduling_policy_scheduling_window(scheduling_policy_id=test_scheduling_policy["id"],
+    test_scheduling_policy_scheduling_window = oci.database.get_scheduling_policy_scheduling_window(scheduling_policy_id=test_scheduling_policy["id"],
         scheduling_window_id=test_scheduling_window["id"])
     ```
 
@@ -233,8 +233,8 @@ def get_scheduling_policy_scheduling_window(scheduling_policy_id: Optional[_buil
         time_next_scheduling_window_starts=pulumi.get(__ret__, 'time_next_scheduling_window_starts'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         window_preferences=pulumi.get(__ret__, 'window_preferences'))
-def get_scheduling_policy_scheduling_window_output(scheduling_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                   scheduling_window_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_scheduling_policy_scheduling_window_output(scheduling_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                   scheduling_window_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSchedulingPolicySchedulingWindowResult]:
     """
     This data source provides details about a specific Scheduling Policy Scheduling Window resource in Oracle Cloud Infrastructure Database service.
@@ -247,7 +247,7 @@ def get_scheduling_policy_scheduling_window_output(scheduling_policy_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduling_policy_scheduling_window = oci.Database.get_scheduling_policy_scheduling_window(scheduling_policy_id=test_scheduling_policy["id"],
+    test_scheduling_policy_scheduling_window = oci.database.get_scheduling_policy_scheduling_window(scheduling_policy_id=test_scheduling_policy["id"],
         scheduling_window_id=test_scheduling_window["id"])
     ```
 

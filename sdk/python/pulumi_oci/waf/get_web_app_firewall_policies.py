@@ -125,7 +125,7 @@ def get_web_app_firewall_policies(compartment_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_firewall_policies = oci.Waf.get_web_app_firewall_policies(compartment_id=compartment_id,
+    test_web_app_firewall_policies = oci.waf.get_web_app_firewall_policies(compartment_id=compartment_id,
         display_name=web_app_firewall_policy_display_name,
         id=web_app_firewall_policy_id,
         states=web_app_firewall_policy_state)
@@ -153,11 +153,11 @@ def get_web_app_firewall_policies(compartment_id: Optional[_builtins.str] = None
         id=pulumi.get(__ret__, 'id'),
         states=pulumi.get(__ret__, 'states'),
         web_app_firewall_policy_collections=pulumi.get(__ret__, 'web_app_firewall_policy_collections'))
-def get_web_app_firewall_policies_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWebAppFirewallPoliciesFilterArgs', 'GetWebAppFirewallPoliciesFilterArgsDict']]]]] = None,
-                                         id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         states: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_web_app_firewall_policies_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWebAppFirewallPoliciesFilterArgs', 'GetWebAppFirewallPoliciesFilterArgsDict']]]]] = None,
+                                         id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWebAppFirewallPoliciesResult]:
     """
     This data source provides the list of Web App Firewall Policies in Oracle Cloud Infrastructure Waf service.
@@ -170,7 +170,7 @@ def get_web_app_firewall_policies_output(compartment_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_firewall_policies = oci.Waf.get_web_app_firewall_policies(compartment_id=compartment_id,
+    test_web_app_firewall_policies = oci.waf.get_web_app_firewall_policies(compartment_id=compartment_id,
         display_name=web_app_firewall_policy_display_name,
         id=web_app_firewall_policy_id,
         states=web_app_firewall_policy_state)

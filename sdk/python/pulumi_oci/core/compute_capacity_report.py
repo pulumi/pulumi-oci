@@ -75,10 +75,10 @@ class ComputeCapacityReportArgs:
 @pulumi.input_type
 class _ComputeCapacityReportState:
     def __init__(__self__, *,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReportShapeAvailabilityArgs']]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeCapacityReportShapeAvailabilityArgs']]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ComputeCapacityReport resources.
 
@@ -98,50 +98,50 @@ class _ComputeCapacityReportState:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability domain for the capacity report.  Example: `Uocm:PHX-AD-1`
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="shapeAvailabilities")
-    def shape_availabilities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReportShapeAvailabilityArgs']]]]:
+    def shape_availabilities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ComputeCapacityReportShapeAvailabilityArgs']]]]:
         """
         Information about the shapes in the capacity report.
         """
         return pulumi.get(self, "shape_availabilities")
 
     @shape_availabilities.setter
-    def shape_availabilities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeCapacityReportShapeAvailabilityArgs']]]]):
+    def shape_availabilities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ComputeCapacityReportShapeAvailabilityArgs']]]]):
         pulumi.set(self, "shape_availabilities", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the capacity report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
 
@@ -151,9 +151,9 @@ class ComputeCapacityReport(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ComputeCapacityReportShapeAvailabilityArgs', 'ComputeCapacityReportShapeAvailabilityArgsDict']]]]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeCapacityReportShapeAvailabilityArgs', 'ComputeCapacityReportShapeAvailabilityArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Compute Capacity Report resource in Oracle Cloud Infrastructure Core service.
@@ -183,7 +183,7 @@ class ComputeCapacityReport(pulumi.CustomResource):
                 "instance_shape_config": {
                     "baseline_ocpu_utilization": compute_capacity_report_shape_availabilities_instance_shape_config_baseline_ocpu_utilization,
                     "memory_in_gbs": compute_capacity_report_shape_availabilities_instance_shape_config_memory_in_gbs,
-                    "nvmes": compute_capacity_report_shape_availabilities_instance_shape_config_nvmes,
+                    "nvmes": int(compute_capacity_report_shape_availabilities_instance_shape_config_nvmes),
                     "ocpus": compute_capacity_report_shape_availabilities_instance_shape_config_ocpus,
                 },
             }])
@@ -238,7 +238,7 @@ class ComputeCapacityReport(pulumi.CustomResource):
                 "instance_shape_config": {
                     "baseline_ocpu_utilization": compute_capacity_report_shape_availabilities_instance_shape_config_baseline_ocpu_utilization,
                     "memory_in_gbs": compute_capacity_report_shape_availabilities_instance_shape_config_memory_in_gbs,
-                    "nvmes": compute_capacity_report_shape_availabilities_instance_shape_config_nvmes,
+                    "nvmes": int(compute_capacity_report_shape_availabilities_instance_shape_config_nvmes),
                     "ocpus": compute_capacity_report_shape_availabilities_instance_shape_config_ocpus,
                 },
             }])
@@ -268,9 +268,9 @@ class ComputeCapacityReport(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 shape_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ComputeCapacityReportShapeAvailabilityArgs', 'ComputeCapacityReportShapeAvailabilityArgsDict']]]]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 shape_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeCapacityReportShapeAvailabilityArgs', 'ComputeCapacityReportShapeAvailabilityArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -300,10 +300,10 @@ class ComputeCapacityReport(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            shape_availabilities: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ComputeCapacityReportShapeAvailabilityArgs', 'ComputeCapacityReportShapeAvailabilityArgsDict']]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'ComputeCapacityReport':
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            shape_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeCapacityReportShapeAvailabilityArgs', 'ComputeCapacityReportShapeAvailabilityArgsDict']]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'ComputeCapacityReport':
         """
         Get an existing ComputeCapacityReport resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAssignedSubscriptions = oci.Tenantmanagercontrolplane.getAssignedSubscriptions({
+ * const testAssignedSubscriptions = oci.tenantmanagercontrolplane.getAssignedSubscriptions({
  *     compartmentId: compartmentId,
  *     entityVersion: assignedSubscriptionEntityVersion,
  *     subscriptionId: testSubscription.id,
@@ -87,7 +87,7 @@ export interface GetAssignedSubscriptionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAssignedSubscriptions = oci.Tenantmanagercontrolplane.getAssignedSubscriptions({
+ * const testAssignedSubscriptions = oci.tenantmanagercontrolplane.getAssignedSubscriptions({
  *     compartmentId: compartmentId,
  *     entityVersion: assignedSubscriptionEntityVersion,
  *     subscriptionId: testSubscription.id,
@@ -115,10 +115,10 @@ export interface GetAssignedSubscriptionsOutputArgs {
     /**
      * The version of the subscription entity.
      */
-    entityVersion?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Tenantmanagercontrolplane.GetAssignedSubscriptionsFilterArgs>[]>;
+    entityVersion?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Tenantmanagercontrolplane.GetAssignedSubscriptionsFilterArgs>[] | undefined>;
     /**
      * The ID of the subscription to which the tenancy is associated.
      */
-    subscriptionId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string | undefined>;
 }

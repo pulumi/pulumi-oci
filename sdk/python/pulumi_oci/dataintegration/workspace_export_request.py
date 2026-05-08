@@ -23,13 +23,13 @@ class WorkspaceExportRequestArgs:
     def __init__(__self__, *,
                  bucket: pulumi.Input[_builtins.str],
                  workspace_id: pulumi.Input[_builtins.str],
-                 are_references_included: Optional[pulumi.Input[_builtins.bool]] = None,
-                 file_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 filters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_object_overwrite_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 object_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 object_storage_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_storage_tenancy_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 are_references_included: pulumi.Input[Optional[_builtins.bool]] = None,
+                 file_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_object_overwrite_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 object_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 object_storage_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_storage_tenancy_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a WorkspaceExportRequest resource.
 
@@ -94,111 +94,111 @@ class WorkspaceExportRequestArgs:
 
     @_builtins.property
     @pulumi.getter(name="areReferencesIncluded")
-    def are_references_included(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def are_references_included(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This field controls if the references will be exported along with the objects
         """
         return pulumi.get(self, "are_references_included")
 
     @are_references_included.setter
-    def are_references_included(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def are_references_included(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "are_references_included", value)
 
     @_builtins.property
     @pulumi.getter(name="fileName")
-    def file_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def file_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the exported zip file.
         """
         return pulumi.get(self, "file_name")
 
     @file_name.setter
-    def file_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def file_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "file_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def filters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Filters for exported objects
         """
         return pulumi.get(self, "filters")
 
     @filters.setter
-    def filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def filters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "filters", value)
 
     @_builtins.property
     @pulumi.getter(name="isObjectOverwriteEnabled")
-    def is_object_overwrite_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_object_overwrite_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Flag to control whether to overwrite the object if it is already present at the provided object storage location.
         """
         return pulumi.get(self, "is_object_overwrite_enabled")
 
     @is_object_overwrite_enabled.setter
-    def is_object_overwrite_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_object_overwrite_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_object_overwrite_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="objectKeys")
-    def object_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def object_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Field is used to specify which object keys to export
         """
         return pulumi.get(self, "object_keys")
 
     @object_keys.setter
-    def object_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def object_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "object_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="objectStorageRegion")
-    def object_storage_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_storage_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Region of the object storage (if using object storage of different region)
         """
         return pulumi.get(self, "object_storage_region")
 
     @object_storage_region.setter
-    def object_storage_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_storage_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_storage_region", value)
 
     @_builtins.property
     @pulumi.getter(name="objectStorageTenancyId")
-    def object_storage_tenancy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_storage_tenancy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
         """
         return pulumi.get(self, "object_storage_tenancy_id")
 
     @object_storage_tenancy_id.setter
-    def object_storage_tenancy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_storage_tenancy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_storage_tenancy_id", value)
 
 
 @pulumi.input_type
 class _WorkspaceExportRequestState:
     def __init__(__self__, *,
-                 are_references_included: Optional[pulumi.Input[_builtins.bool]] = None,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 error_messages: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 exported_items: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceExportRequestExportedItemArgs']]]] = None,
-                 file_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 filters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_object_overwrite_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 object_storage_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_storage_tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 referenced_items: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_ended_in_millis: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_started_in_millis: Optional[pulumi.Input[_builtins.str]] = None,
-                 total_exported_object_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 workspace_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 are_references_included: pulumi.Input[Optional[_builtins.bool]] = None,
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 error_messages: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 exported_items: pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceExportRequestExportedItemArgs']]]] = None,
+                 file_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_object_overwrite_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 object_storage_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_storage_tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 referenced_items: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_ended_in_millis: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_started_in_millis: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_exported_object_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 workspace_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering WorkspaceExportRequest resources.
 
@@ -267,223 +267,223 @@ class _WorkspaceExportRequestState:
 
     @_builtins.property
     @pulumi.getter(name="areReferencesIncluded")
-    def are_references_included(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def are_references_included(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         This field controls if the references will be exported along with the objects
         """
         return pulumi.get(self, "are_references_included")
 
     @are_references_included.setter
-    def are_references_included(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def are_references_included(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "are_references_included", value)
 
     @_builtins.property
     @pulumi.getter
-    def bucket(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the Object Storage bucket where the object will be exported.
         """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
-    def bucket(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "bucket", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the user who initiated export request.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="errorMessages")
-    def error_messages(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def error_messages(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Contains key of the error
         """
         return pulumi.get(self, "error_messages")
 
     @error_messages.setter
-    def error_messages(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def error_messages(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "error_messages", value)
 
     @_builtins.property
     @pulumi.getter(name="exportedItems")
-    def exported_items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceExportRequestExportedItemArgs']]]]:
+    def exported_items(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceExportRequestExportedItemArgs']]]]:
         """
         The array of exported object details.
         """
         return pulumi.get(self, "exported_items")
 
     @exported_items.setter
-    def exported_items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceExportRequestExportedItemArgs']]]]):
+    def exported_items(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['WorkspaceExportRequestExportedItemArgs']]]]):
         pulumi.set(self, "exported_items", value)
 
     @_builtins.property
     @pulumi.getter(name="fileName")
-    def file_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def file_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the exported zip file.
         """
         return pulumi.get(self, "file_name")
 
     @file_name.setter
-    def file_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def file_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "file_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def filters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def filters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Filters for exported objects
         """
         return pulumi.get(self, "filters")
 
     @filters.setter
-    def filters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def filters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "filters", value)
 
     @_builtins.property
     @pulumi.getter(name="isObjectOverwriteEnabled")
-    def is_object_overwrite_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_object_overwrite_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Flag to control whether to overwrite the object if it is already present at the provided object storage location.
         """
         return pulumi.get(self, "is_object_overwrite_enabled")
 
     @is_object_overwrite_enabled.setter
-    def is_object_overwrite_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_object_overwrite_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_object_overwrite_enabled", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Export object request key
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the export request.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="objectKeys")
-    def object_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def object_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Field is used to specify which object keys to export
         """
         return pulumi.get(self, "object_keys")
 
     @object_keys.setter
-    def object_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def object_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "object_keys", value)
 
     @_builtins.property
     @pulumi.getter(name="objectStorageRegion")
-    def object_storage_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_storage_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Region of the object storage (if using object storage of different region)
         """
         return pulumi.get(self, "object_storage_region")
 
     @object_storage_region.setter
-    def object_storage_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_storage_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_storage_region", value)
 
     @_builtins.property
     @pulumi.getter(name="objectStorageTenancyId")
-    def object_storage_tenancy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def object_storage_tenancy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
         """
         return pulumi.get(self, "object_storage_tenancy_id")
 
     @object_storage_tenancy_id.setter
-    def object_storage_tenancy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def object_storage_tenancy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "object_storage_tenancy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="referencedItems")
-    def referenced_items(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def referenced_items(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The array of exported referenced objects.
         """
         return pulumi.get(self, "referenced_items")
 
     @referenced_items.setter
-    def referenced_items(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def referenced_items(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "referenced_items", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Export Objects request status.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="timeEndedInMillis")
-    def time_ended_in_millis(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_ended_in_millis(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time at which the request was completely processed.
         """
         return pulumi.get(self, "time_ended_in_millis")
 
     @time_ended_in_millis.setter
-    def time_ended_in_millis(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_ended_in_millis(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_ended_in_millis", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStartedInMillis")
-    def time_started_in_millis(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_started_in_millis(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time at which the request started getting processed.
         """
         return pulumi.get(self, "time_started_in_millis")
 
     @time_started_in_millis.setter
-    def time_started_in_millis(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_started_in_millis(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_started_in_millis", value)
 
     @_builtins.property
     @pulumi.getter(name="totalExportedObjectCount")
-    def total_exported_object_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def total_exported_object_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of objects that are exported.
         """
         return pulumi.get(self, "total_exported_object_count")
 
     @total_exported_object_count.setter
-    def total_exported_object_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def total_exported_object_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "total_exported_object_count", value)
 
     @_builtins.property
     @pulumi.getter(name="workspaceId")
-    def workspace_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def workspace_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The workspace ID.
 
@@ -494,7 +494,7 @@ class _WorkspaceExportRequestState:
         return pulumi.get(self, "workspace_id")
 
     @workspace_id.setter
-    def workspace_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def workspace_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "workspace_id", value)
 
 
@@ -504,15 +504,15 @@ class WorkspaceExportRequest(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 are_references_included: Optional[pulumi.Input[_builtins.bool]] = None,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 file_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 filters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_object_overwrite_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 object_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 object_storage_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_storage_tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 are_references_included: pulumi.Input[Optional[_builtins.bool]] = None,
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_object_overwrite_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 object_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 object_storage_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_storage_tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Workspace Export Request resource in Oracle Cloud Infrastructure Data Integration service.
@@ -531,10 +531,10 @@ class WorkspaceExportRequest(pulumi.CustomResource):
         test_workspace_export_request = oci.dataintegration.WorkspaceExportRequest("test_workspace_export_request",
             bucket=workspace_export_request_bucket,
             workspace_id=test_workspace["id"],
-            are_references_included=workspace_export_request_are_references_included,
+            are_references_included=workspace_export_request_are_references_included == "true",
             file_name=workspace_export_request_file_name,
             filters=workspace_export_request_filters,
-            is_object_overwrite_enabled=workspace_export_request_is_object_overwrite_enabled,
+            is_object_overwrite_enabled=workspace_export_request_is_object_overwrite_enabled == "true",
             object_keys=workspace_export_request_object_keys,
             object_storage_region=workspace_export_request_object_storage_region,
             object_storage_tenancy_id=test_tenancy["id"])
@@ -588,10 +588,10 @@ class WorkspaceExportRequest(pulumi.CustomResource):
         test_workspace_export_request = oci.dataintegration.WorkspaceExportRequest("test_workspace_export_request",
             bucket=workspace_export_request_bucket,
             workspace_id=test_workspace["id"],
-            are_references_included=workspace_export_request_are_references_included,
+            are_references_included=workspace_export_request_are_references_included == "true",
             file_name=workspace_export_request_file_name,
             filters=workspace_export_request_filters,
-            is_object_overwrite_enabled=workspace_export_request_is_object_overwrite_enabled,
+            is_object_overwrite_enabled=workspace_export_request_is_object_overwrite_enabled == "true",
             object_keys=workspace_export_request_object_keys,
             object_storage_region=workspace_export_request_object_storage_region,
             object_storage_tenancy_id=test_tenancy["id"])
@@ -621,15 +621,15 @@ class WorkspaceExportRequest(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 are_references_included: Optional[pulumi.Input[_builtins.bool]] = None,
-                 bucket: Optional[pulumi.Input[_builtins.str]] = None,
-                 file_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 filters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_object_overwrite_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 object_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 object_storage_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_storage_tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 are_references_included: pulumi.Input[Optional[_builtins.bool]] = None,
+                 bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_object_overwrite_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 object_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 object_storage_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 object_storage_tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -672,25 +672,25 @@ class WorkspaceExportRequest(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            are_references_included: Optional[pulumi.Input[_builtins.bool]] = None,
-            bucket: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            error_messages: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            exported_items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceExportRequestExportedItemArgs', 'WorkspaceExportRequestExportedItemArgsDict']]]]] = None,
-            file_name: Optional[pulumi.Input[_builtins.str]] = None,
-            filters: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            is_object_overwrite_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            key: Optional[pulumi.Input[_builtins.str]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            object_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            object_storage_region: Optional[pulumi.Input[_builtins.str]] = None,
-            object_storage_tenancy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            referenced_items: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            time_ended_in_millis: Optional[pulumi.Input[_builtins.str]] = None,
-            time_started_in_millis: Optional[pulumi.Input[_builtins.str]] = None,
-            total_exported_object_count: Optional[pulumi.Input[_builtins.int]] = None,
-            workspace_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'WorkspaceExportRequest':
+            are_references_included: pulumi.Input[Optional[_builtins.bool]] = None,
+            bucket: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            error_messages: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            exported_items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceExportRequestExportedItemArgs', 'WorkspaceExportRequestExportedItemArgsDict']]]]] = None,
+            file_name: pulumi.Input[Optional[_builtins.str]] = None,
+            filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            is_object_overwrite_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            object_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            object_storage_region: pulumi.Input[Optional[_builtins.str]] = None,
+            object_storage_tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            referenced_items: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            time_ended_in_millis: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started_in_millis: pulumi.Input[Optional[_builtins.str]] = None,
+            total_exported_object_count: pulumi.Input[Optional[_builtins.int]] = None,
+            workspace_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'WorkspaceExportRequest':
         """
         Get an existing WorkspaceExportRequest resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

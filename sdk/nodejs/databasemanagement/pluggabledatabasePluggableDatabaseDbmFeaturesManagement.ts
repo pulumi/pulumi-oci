@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  *
  * const testPluggabledatabasePluggableDatabaseDbmFeaturesManagement = new oci.databasemanagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagement("test_pluggabledatabase_pluggable_database_dbm_features_management", {
  *     pluggableDatabaseId: testPluggableDatabase.id,
- *     enablePluggableDatabaseDbmFeature: enablePluggableDatabaseDbmFeature,
+ *     enablePluggableDatabaseDbmFeature: enablePluggableDatabaseDbmFeature === "true",
  *     featureDetails: {
  *         feature: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsFeature,
  *         enablePluggableDatabaseDbmFeature: enablePluggableDatabaseDbmFeature,
@@ -43,13 +43,13 @@ import * as utilities from "../utilities";
  *             },
  *             connectionString: {
  *                 connectionType: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringConnectionType,
- *                 port: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringPort,
+ *                 port: Number(pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringPort),
  *                 protocol: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringProtocol,
  *                 service: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringService,
  *             },
  *         },
- *         canEnableAllCurrentPdbs: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs,
- *         isAutoEnablePluggableDatabase: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase,
+ *         canEnableAllCurrentPdbs: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs === "true",
+ *         isAutoEnablePluggableDatabase: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase === "true",
  *         managementType: pluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsManagementType,
  *     },
  * });
@@ -150,17 +150,17 @@ export interface PluggabledatabasePluggableDatabaseDbmFeaturesManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    enablePluggableDatabaseDbmFeature?: pulumi.Input<boolean>;
-    feature?: pulumi.Input<string>;
+    enablePluggableDatabaseDbmFeature?: pulumi.Input<boolean | undefined>;
+    feature?: pulumi.Input<string | undefined>;
     /**
      * The details required to enable the specified Database Management feature.
      */
-    featureDetails?: pulumi.Input<inputs.DatabaseManagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails>;
-    modifyPluggableDatabaseDbmFeature?: pulumi.Input<boolean>;
+    featureDetails?: pulumi.Input<inputs.DatabaseManagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails | undefined>;
+    modifyPluggableDatabaseDbmFeature?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle cloud pluggable database.
      */
-    pluggableDatabaseId?: pulumi.Input<string>;
+    pluggableDatabaseId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -175,12 +175,12 @@ export interface PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     enablePluggableDatabaseDbmFeature: pulumi.Input<boolean>;
-    feature?: pulumi.Input<string>;
+    feature?: pulumi.Input<string | undefined>;
     /**
      * The details required to enable the specified Database Management feature.
      */
-    featureDetails?: pulumi.Input<inputs.DatabaseManagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails>;
-    modifyPluggableDatabaseDbmFeature?: pulumi.Input<boolean>;
+    featureDetails?: pulumi.Input<inputs.DatabaseManagement.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails | undefined>;
+    modifyPluggableDatabaseDbmFeature?: pulumi.Input<boolean | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle cloud pluggable database.
      */

@@ -345,7 +345,7 @@ def get_security_policy_report_database_table_access_entry(database_table_access
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_report_database_table_access_entry = oci.DataSafe.get_security_policy_report_database_table_access_entry(database_table_access_entry_key=security_policy_report_database_table_access_entry_database_table_access_entry_key,
+    test_security_policy_report_database_table_access_entry = oci.datasafe.get_security_policy_report_database_table_access_entry(database_table_access_entry_key=security_policy_report_database_table_access_entry_database_table_access_entry_key,
         security_policy_report_id=test_security_policy_report["id"])
     ```
 
@@ -385,8 +385,8 @@ def get_security_policy_report_database_table_access_entry(database_table_access
         table_name=pulumi.get(__ret__, 'table_name'),
         table_schema=pulumi.get(__ret__, 'table_schema'),
         target_id=pulumi.get(__ret__, 'target_id'))
-def get_security_policy_report_database_table_access_entry_output(database_table_access_entry_key: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                  security_policy_report_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_security_policy_report_database_table_access_entry_output(database_table_access_entry_key: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                  security_policy_report_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityPolicyReportDatabaseTableAccessEntryResult]:
     """
     This data source provides details about a specific Security Policy Report Database Table Access Entry resource in Oracle Cloud Infrastructure Data Safe service.
@@ -399,7 +399,7 @@ def get_security_policy_report_database_table_access_entry_output(database_table
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_report_database_table_access_entry = oci.DataSafe.get_security_policy_report_database_table_access_entry(database_table_access_entry_key=security_policy_report_database_table_access_entry_database_table_access_entry_key,
+    test_security_policy_report_database_table_access_entry = oci.datasafe.get_security_policy_report_database_table_access_entry(database_table_access_entry_key=security_policy_report_database_table_access_entry_database_table_access_entry_key,
         security_policy_report_id=test_security_policy_report["id"])
     ```
 

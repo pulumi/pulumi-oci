@@ -115,7 +115,7 @@ export interface SoftwareSourceRemovePackagesManagementState {
     /**
      * List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
      */
-    packages?: pulumi.Input<pulumi.Input<string>[]>;
+    packages?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      *
@@ -123,7 +123,7 @@ export interface SoftwareSourceRemovePackagesManagementState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    softwareSourceId?: pulumi.Input<string>;
+    softwareSourceId?: pulumi.Input<string | undefined>;
 }
 
 /**

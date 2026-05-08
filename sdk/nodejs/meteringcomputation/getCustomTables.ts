@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCustomTables = oci.MeteringComputation.getCustomTables({
+ * const testCustomTables = oci.meteringcomputation.getCustomTables({
  *     compartmentId: compartmentId,
  *     savedReportId: testSavedReport.id,
  * });
@@ -80,7 +80,7 @@ export interface GetCustomTablesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCustomTables = oci.MeteringComputation.getCustomTables({
+ * const testCustomTables = oci.meteringcomputation.getCustomTables({
  *     compartmentId: compartmentId,
  *     savedReportId: testSavedReport.id,
  * });
@@ -103,7 +103,7 @@ export interface GetCustomTablesOutputArgs {
      * The compartment ID in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.GetCustomTablesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.GetCustomTablesFilterArgs>[] | undefined>;
     /**
      * The saved report ID in which to list resources.
      */

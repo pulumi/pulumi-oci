@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSslCipherSuite = oci.LoadBalancer.getSslCipherSuite({
+ * const testSslCipherSuite = oci.loadbalancer.getSslCipherSuite({
  *     loadBalancerId: testLoadBalancer.id,
  *     name: sslCipherSuiteName,
  * });
@@ -72,7 +72,7 @@ export interface GetSslCipherSuiteResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSslCipherSuite = oci.LoadBalancer.getSslCipherSuite({
+ * const testSslCipherSuite = oci.loadbalancer.getSslCipherSuite({
  *     loadBalancerId: testLoadBalancer.id,
  *     name: sslCipherSuiteName,
  * });

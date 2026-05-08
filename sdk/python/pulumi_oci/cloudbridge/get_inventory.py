@@ -179,7 +179,7 @@ def get_inventory(inventory_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_inventory = oci.CloudBridge.get_inventory(inventory_id=test_inventory_oci_cloud_bridge_inventory["id"])
+    test_inventory = oci.cloudbridge.get_inventory(inventory_id=test_inventory_oci_cloud_bridge_inventory["id"])
     ```
 
 
@@ -202,7 +202,7 @@ def get_inventory(inventory_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_inventory_output(inventory_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_inventory_output(inventory_id: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInventoryResult]:
     """
     This data source provides details about a specific Inventory resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -215,7 +215,7 @@ def get_inventory_output(inventory_id: Optional[pulumi.Input[_builtins.str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_inventory = oci.CloudBridge.get_inventory(inventory_id=test_inventory_oci_cloud_bridge_inventory["id"])
+    test_inventory = oci.cloudbridge.get_inventory(inventory_id=test_inventory_oci_cloud_bridge_inventory["id"])
     ```
 
 

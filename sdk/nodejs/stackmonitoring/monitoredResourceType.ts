@@ -235,55 +235,55 @@ export interface MonitoredResourceTypeState {
     /**
      * Key/Value pair for additional namespaces used by stack monitoring services for SYSTEM (SMB) resource types.
      */
-    additionalNamespaceMap?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    additionalNamespaceMap?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Availability metrics details.
      */
-    availabilityMetricsConfigs?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourceTypeAvailabilityMetricsConfig>[]>;
+    availabilityMetricsConfigs?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourceTypeAvailabilityMetricsConfig>[] | undefined>;
     /**
      * Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A friendly description.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Monitored resource type display name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Specific resource mapping configurations for Agent Extension Handlers.
      */
-    handlerConfigs?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourceTypeHandlerConfig>[]>;
+    handlerConfigs?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourceTypeHandlerConfig>[] | undefined>;
     /**
      * If boolean flag is true, then the resource type cannot be modified or deleted.
      */
-    isSystemDefined?: pulumi.Input<boolean>;
+    isSystemDefined?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The metadata details for resource type.
      */
-    metadata?: pulumi.Input<inputs.StackMonitoring.MonitoredResourceTypeMetadata>;
+    metadata?: pulumi.Input<inputs.StackMonitoring.MonitoredResourceTypeMetadata | undefined>;
     /**
      * (Updatable) Metric namespace for resource type.
      */
-    metricNamespace?: pulumi.Input<string>;
+    metricNamespace?: pulumi.Input<string | undefined>;
     /**
      * A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Resource Category to indicate the kind of resource type.
      */
-    resourceCategory?: pulumi.Input<string>;
+    resourceCategory?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc. 
      *
@@ -291,27 +291,27 @@ export interface MonitoredResourceTypeState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    sourceType?: pulumi.Input<string>;
+    sourceType?: pulumi.Input<string | undefined>;
     /**
      * Lifecycle state of the monitored resource type.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
-    tenancyId?: pulumi.Input<string>;
+    tenancyId?: pulumi.Input<string | undefined>;
     /**
      * The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -325,35 +325,35 @@ export interface MonitoredResourceTypeArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A friendly description.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Monitored resource type display name.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The metadata details for resource type.
      */
-    metadata?: pulumi.Input<inputs.StackMonitoring.MonitoredResourceTypeMetadata>;
+    metadata?: pulumi.Input<inputs.StackMonitoring.MonitoredResourceTypeMetadata | undefined>;
     /**
      * (Updatable) Metric namespace for resource type.
      */
-    metricNamespace?: pulumi.Input<string>;
+    metricNamespace?: pulumi.Input<string | undefined>;
     /**
      * A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Resource Category to indicate the kind of resource type.
      */
-    resourceCategory?: pulumi.Input<string>;
+    resourceCategory?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc. 
      *
@@ -361,5 +361,5 @@ export interface MonitoredResourceTypeArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    sourceType?: pulumi.Input<string>;
+    sourceType?: pulumi.Input<string | undefined>;
 }

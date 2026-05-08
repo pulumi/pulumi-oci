@@ -384,7 +384,7 @@ export interface DomainsMyAuthTokenState {
     /**
      * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -398,7 +398,7 @@ export interface DomainsMyAuthTokenState {
      * * type: string
      * * uniqueness: none
      */
-    compartmentOcid?: pulumi.Input<string>;
+    compartmentOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -412,7 +412,7 @@ export interface DomainsMyAuthTokenState {
      * * type: boolean
      * * uniqueness: none
      */
-    deleteInProgress?: pulumi.Input<boolean>;
+    deleteInProgress?: pulumi.Input<boolean | undefined>;
     /**
      * Description
      *
@@ -425,7 +425,7 @@ export interface DomainsMyAuthTokenState {
      * * required: false
      * * returned: default
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -439,7 +439,7 @@ export interface DomainsMyAuthTokenState {
      * * type: string
      * * uniqueness: none
      */
-    domainOcid?: pulumi.Input<string>;
+    domainOcid?: pulumi.Input<string | undefined>;
     /**
      * When the user's credential expire.
      *
@@ -455,7 +455,7 @@ export interface DomainsMyAuthTokenState {
      * * type: dateTime
      * * uniqueness: none
      */
-    expiresOn?: pulumi.Input<string>;
+    expiresOn?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -467,11 +467,11 @@ export interface DomainsMyAuthTokenState {
      * * returned: default
      * * type: complex
      */
-    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsMyAuthTokenIdcsCreatedBy>[]>;
+    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsMyAuthTokenIdcsCreatedBy>[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
-    idcsEndpoint?: pulumi.Input<string>;
+    idcsEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -483,7 +483,7 @@ export interface DomainsMyAuthTokenState {
      * * returned: default
      * * type: complex
      */
-    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsMyAuthTokenIdcsLastModifiedBy>[]>;
+    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsMyAuthTokenIdcsLastModifiedBy>[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -497,7 +497,7 @@ export interface DomainsMyAuthTokenState {
      * * type: string
      * * uniqueness: none
      */
-    idcsLastUpgradedInRelease?: pulumi.Input<string>;
+    idcsLastUpgradedInRelease?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -510,7 +510,7 @@ export interface DomainsMyAuthTokenState {
      * * type: string
      * * uniqueness: none
      */
-    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[]>;
+    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -524,7 +524,7 @@ export interface DomainsMyAuthTokenState {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsMyAuthTokenMeta>[]>;
+    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsMyAuthTokenMeta>[] | undefined>;
     /**
      * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -538,11 +538,11 @@ export interface DomainsMyAuthTokenState {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -556,7 +556,7 @@ export interface DomainsMyAuthTokenState {
      * * type: string
      * * uniqueness: none
      */
-    schemas?: pulumi.Input<pulumi.Input<string>[]>;
+    schemas?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The user's credential status.
      *
@@ -572,7 +572,7 @@ export interface DomainsMyAuthTokenState {
      * * type: string
      * * uniqueness: none
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * A list of tags on this resource.
      *
@@ -586,7 +586,7 @@ export interface DomainsMyAuthTokenState {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsMyAuthTokenTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsMyAuthTokenTag>[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -600,7 +600,7 @@ export interface DomainsMyAuthTokenState {
      * * type: string
      * * uniqueness: none
      */
-    tenancyOcid?: pulumi.Input<string>;
+    tenancyOcid?: pulumi.Input<string | undefined>;
     /**
      * The user linked to the Auth token.
      *
@@ -614,7 +614,7 @@ export interface DomainsMyAuthTokenState {
      * * type: complex
      * * uniqueness: none
      */
-    user?: pulumi.Input<inputs.Identity.DomainsMyAuthTokenUser>;
+    user?: pulumi.Input<inputs.Identity.DomainsMyAuthTokenUser | undefined>;
 }
 
 /**
@@ -624,7 +624,7 @@ export interface DomainsMyAuthTokenArgs {
     /**
      * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * Description
      *
@@ -637,7 +637,7 @@ export interface DomainsMyAuthTokenArgs {
      * * required: false
      * * returned: default
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * When the user's credential expire.
      *
@@ -653,7 +653,7 @@ export interface DomainsMyAuthTokenArgs {
      * * type: dateTime
      * * uniqueness: none
      */
-    expiresOn?: pulumi.Input<string>;
+    expiresOn?: pulumi.Input<string | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
@@ -671,11 +671,11 @@ export interface DomainsMyAuthTokenArgs {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -705,7 +705,7 @@ export interface DomainsMyAuthTokenArgs {
      * * type: string
      * * uniqueness: none
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * A list of tags on this resource.
      *
@@ -719,7 +719,7 @@ export interface DomainsMyAuthTokenArgs {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsMyAuthTokenTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsMyAuthTokenTag>[] | undefined>;
     /**
      * The user linked to the Auth token.
      *
@@ -733,5 +733,5 @@ export interface DomainsMyAuthTokenArgs {
      * * type: complex
      * * uniqueness: none
      */
-    user?: pulumi.Input<inputs.Identity.DomainsMyAuthTokenUser>;
+    user?: pulumi.Input<inputs.Identity.DomainsMyAuthTokenUser | undefined>;
 }

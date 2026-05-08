@@ -102,7 +102,7 @@ def get_ssl_cipher_suite(load_balancer_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ssl_cipher_suite = oci.LoadBalancer.get_ssl_cipher_suite(load_balancer_id=test_load_balancer["id"],
+    test_ssl_cipher_suite = oci.loadbalancer.get_ssl_cipher_suite(load_balancer_id=test_load_balancer["id"],
         name=ssl_cipher_suite_name)
     ```
 
@@ -124,8 +124,8 @@ def get_ssl_cipher_suite(load_balancer_id: Optional[_builtins.str] = None,
         load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'))
-def get_ssl_cipher_suite_output(load_balancer_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                name: Optional[pulumi.Input[_builtins.str]] = None,
+def get_ssl_cipher_suite_output(load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                name: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSslCipherSuiteResult]:
     """
     This data source provides details about a specific Ssl Cipher Suite resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -138,7 +138,7 @@ def get_ssl_cipher_suite_output(load_balancer_id: Optional[pulumi.Input[_builtin
     import pulumi
     import pulumi_oci as oci
 
-    test_ssl_cipher_suite = oci.LoadBalancer.get_ssl_cipher_suite(load_balancer_id=test_load_balancer["id"],
+    test_ssl_cipher_suite = oci.loadbalancer.get_ssl_cipher_suite(load_balancer_id=test_load_balancer["id"],
         name=ssl_cipher_suite_name)
     ```
 

@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubnet = oci.Core.getSubnet({
+ * const testSubnet = oci.core.getSubnet({
  *     subnetId: testSubnetOciCoreSubnet.id,
  * });
  * ```
@@ -149,7 +149,7 @@ export interface GetSubnetResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubnet = oci.Core.getSubnet({
+ * const testSubnet = oci.core.getSubnet({
  *     subnetId: testSubnetOciCoreSubnet.id,
  * });
  * ```

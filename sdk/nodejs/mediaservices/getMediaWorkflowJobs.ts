@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMediaWorkflowJobs = oci.MediaServices.getMediaWorkflowJobs({
+ * const testMediaWorkflowJobs = oci.mediaservices.getMediaWorkflowJobs({
  *     compartmentId: compartmentId,
  *     displayName: mediaWorkflowJobDisplayName,
  *     id: mediaWorkflowJobId,
@@ -107,7 +107,7 @@ export interface GetMediaWorkflowJobsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMediaWorkflowJobs = oci.MediaServices.getMediaWorkflowJobs({
+ * const testMediaWorkflowJobs = oci.mediaservices.getMediaWorkflowJobs({
  *     compartmentId: compartmentId,
  *     displayName: mediaWorkflowJobDisplayName,
  *     id: mediaWorkflowJobId,
@@ -136,22 +136,22 @@ export interface GetMediaWorkflowJobsOutputArgs {
     /**
      * The ID of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.MediaServices.GetMediaWorkflowJobsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.MediaServices.GetMediaWorkflowJobsFilterArgs>[] | undefined>;
     /**
      * unique MediaWorkflowJob identifier
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * Unique MediaWorkflow identifier.
      */
-    mediaWorkflowId?: pulumi.Input<string>;
+    mediaWorkflowId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources with lifecycleState matching the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -23,11 +23,11 @@ class DiscoveryJobArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[_builtins.str],
                  discovery_details: pulumi.Input['DiscoveryJobDiscoveryDetailsArgs'],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 discovery_client: Optional[pulumi.Input[_builtins.str]] = None,
-                 discovery_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 should_propagate_tags_to_discovered_resources: Optional[pulumi.Input[_builtins.bool]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 discovery_client: pulumi.Input[Optional[_builtins.str]] = None,
+                 discovery_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 should_propagate_tags_to_discovered_resources: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a DiscoveryJob resource.
 
@@ -82,55 +82,55 @@ class DiscoveryJobArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="discoveryClient")
-    def discovery_client(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def discovery_client(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Client who submits discovery job.
         """
         return pulumi.get(self, "discovery_client")
 
     @discovery_client.setter
-    def discovery_client(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def discovery_client(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "discovery_client", value)
 
     @_builtins.property
     @pulumi.getter(name="discoveryType")
-    def discovery_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def discovery_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
         """
         return pulumi.get(self, "discovery_type")
 
     @discovery_type.setter
-    def discovery_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def discovery_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "discovery_type", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldPropagateTagsToDiscoveredResources")
-    def should_propagate_tags_to_discovered_resources(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_propagate_tags_to_discovered_resources(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
 
@@ -141,27 +141,27 @@ class DiscoveryJobArgs:
         return pulumi.get(self, "should_propagate_tags_to_discovered_resources")
 
     @should_propagate_tags_to_discovered_resources.setter
-    def should_propagate_tags_to_discovered_resources(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_propagate_tags_to_discovered_resources(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_propagate_tags_to_discovered_resources", value)
 
 
 @pulumi.input_type
 class _DiscoveryJobState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 discovery_client: Optional[pulumi.Input[_builtins.str]] = None,
-                 discovery_details: Optional[pulumi.Input['DiscoveryJobDiscoveryDetailsArgs']] = None,
-                 discovery_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 should_propagate_tags_to_discovered_resources: Optional[pulumi.Input[_builtins.bool]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 user_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 discovery_client: pulumi.Input[Optional[_builtins.str]] = None,
+                 discovery_details: pulumi.Input[Optional['DiscoveryJobDiscoveryDetailsArgs']] = None,
+                 discovery_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 should_propagate_tags_to_discovered_resources: pulumi.Input[Optional[_builtins.bool]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DiscoveryJob resources.
 
@@ -215,79 +215,79 @@ class _DiscoveryJobState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of Compartment
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="discoveryClient")
-    def discovery_client(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def discovery_client(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Client who submits discovery job.
         """
         return pulumi.get(self, "discovery_client")
 
     @discovery_client.setter
-    def discovery_client(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def discovery_client(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "discovery_client", value)
 
     @_builtins.property
     @pulumi.getter(name="discoveryDetails")
-    def discovery_details(self) -> Optional[pulumi.Input['DiscoveryJobDiscoveryDetailsArgs']]:
+    def discovery_details(self) -> pulumi.Input[Optional['DiscoveryJobDiscoveryDetailsArgs']]:
         """
         The request of DiscoveryJob Resource details.
         """
         return pulumi.get(self, "discovery_details")
 
     @discovery_details.setter
-    def discovery_details(self, value: Optional[pulumi.Input['DiscoveryJobDiscoveryDetailsArgs']]):
+    def discovery_details(self, value: pulumi.Input[Optional['DiscoveryJobDiscoveryDetailsArgs']]):
         pulumi.set(self, "discovery_details", value)
 
     @_builtins.property
     @pulumi.getter(name="discoveryType")
-    def discovery_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def discovery_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
         """
         return pulumi.get(self, "discovery_type")
 
     @discovery_type.setter
-    def discovery_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def discovery_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "discovery_type", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="shouldPropagateTagsToDiscoveredResources")
-    def should_propagate_tags_to_discovered_resources(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def should_propagate_tags_to_discovered_resources(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
 
@@ -298,91 +298,91 @@ class _DiscoveryJobState:
         return pulumi.get(self, "should_propagate_tags_to_discovered_resources")
 
     @should_propagate_tags_to_discovered_resources.setter
-    def should_propagate_tags_to_discovered_resources(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def should_propagate_tags_to_discovered_resources(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_propagate_tags_to_discovered_resources", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the DiscoveryJob Resource.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the status of the discovery job
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="statusMessage")
-    def status_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The short summary of the status of the discovery job
         """
         return pulumi.get(self, "status_message")
 
     @status_message.setter
-    def status_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status_message", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of Tenant
         """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the discovery Job was updated.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="userId")
-    def user_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def user_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of user in which the job is submitted
         """
         return pulumi.get(self, "user_id")
 
     @user_id.setter
-    def user_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def user_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_id", value)
 
 
@@ -392,13 +392,13 @@ class DiscoveryJob(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 discovery_client: Optional[pulumi.Input[_builtins.str]] = None,
-                 discovery_details: Optional[pulumi.Input[Union['DiscoveryJobDiscoveryDetailsArgs', 'DiscoveryJobDiscoveryDetailsArgsDict']]] = None,
-                 discovery_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 should_propagate_tags_to_discovered_resources: Optional[pulumi.Input[_builtins.bool]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 discovery_client: pulumi.Input[Optional[_builtins.str]] = None,
+                 discovery_details: pulumi.Input[Optional[Union['DiscoveryJobDiscoveryDetailsArgs', 'DiscoveryJobDiscoveryDetailsArgsDict']]] = None,
+                 discovery_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 should_propagate_tags_to_discovered_resources: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         This resource provides the Discovery Job resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -445,7 +445,7 @@ class DiscoveryJob(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            should_propagate_tags_to_discovered_resources=discovery_job_should_propagate_tags_to_discovered_resources)
+            should_propagate_tags_to_discovered_resources=discovery_job_should_propagate_tags_to_discovered_resources == "true")
         ```
 
         ## Import
@@ -522,7 +522,7 @@ class DiscoveryJob(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            should_propagate_tags_to_discovered_resources=discovery_job_should_propagate_tags_to_discovered_resources)
+            should_propagate_tags_to_discovered_resources=discovery_job_should_propagate_tags_to_discovered_resources == "true")
         ```
 
         ## Import
@@ -549,13 +549,13 @@ class DiscoveryJob(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 discovery_client: Optional[pulumi.Input[_builtins.str]] = None,
-                 discovery_details: Optional[pulumi.Input[Union['DiscoveryJobDiscoveryDetailsArgs', 'DiscoveryJobDiscoveryDetailsArgsDict']]] = None,
-                 discovery_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 should_propagate_tags_to_discovered_resources: Optional[pulumi.Input[_builtins.bool]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 discovery_client: pulumi.Input[Optional[_builtins.str]] = None,
+                 discovery_details: pulumi.Input[Optional[Union['DiscoveryJobDiscoveryDetailsArgs', 'DiscoveryJobDiscoveryDetailsArgsDict']]] = None,
+                 discovery_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 should_propagate_tags_to_discovered_resources: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -593,20 +593,20 @@ class DiscoveryJob(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            discovery_client: Optional[pulumi.Input[_builtins.str]] = None,
-            discovery_details: Optional[pulumi.Input[Union['DiscoveryJobDiscoveryDetailsArgs', 'DiscoveryJobDiscoveryDetailsArgsDict']]] = None,
-            discovery_type: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            should_propagate_tags_to_discovered_resources: Optional[pulumi.Input[_builtins.bool]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            status_message: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            user_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'DiscoveryJob':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            discovery_client: pulumi.Input[Optional[_builtins.str]] = None,
+            discovery_details: pulumi.Input[Optional[Union['DiscoveryJobDiscoveryDetailsArgs', 'DiscoveryJobDiscoveryDetailsArgsDict']]] = None,
+            discovery_type: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            should_propagate_tags_to_discovered_resources: pulumi.Input[Optional[_builtins.bool]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            status_message: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            user_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'DiscoveryJob':
         """
         Get an existing DiscoveryJob resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testKeyStore = oci.Database.getKeyStore({
+ * const testKeyStore = oci.database.getKeyStore({
  *     keyStoreId: testKeyStoreOciDatabaseKeyStore.id,
  * });
  * ```
@@ -109,7 +109,7 @@ export interface GetKeyStoreResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testKeyStore = oci.Database.getKeyStore({
+ * const testKeyStore = oci.database.getKeyStore({
  *     keyStoreId: testKeyStoreOciDatabaseKeyStore.id,
  * });
  * ```

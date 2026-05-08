@@ -15,7 +15,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAddress = oci.OspGateway.getAddress({
+ * const testAddress = oci.ospgateway.getAddress({
  *     addressId: testAddres.id,
  *     compartmentId: compartmentId,
  *     ospHomeRegion: addressOspHomeRegion,
@@ -176,7 +176,7 @@ export interface GetAddressResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAddress = oci.OspGateway.getAddress({
+ * const testAddress = oci.ospgateway.getAddress({
  *     addressId: testAddres.id,
  *     compartmentId: compartmentId,
  *     ospHomeRegion: addressOspHomeRegion,

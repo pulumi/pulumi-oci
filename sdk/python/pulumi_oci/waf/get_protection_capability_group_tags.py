@@ -118,7 +118,7 @@ def get_protection_capability_group_tags(compartment_id: Optional[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_capability_group_tags = oci.Waf.get_protection_capability_group_tags(compartment_id=compartment_id,
+    test_protection_capability_group_tags = oci.waf.get_protection_capability_group_tags(compartment_id=compartment_id,
         name=protection_capability_group_tag_name,
         type=protection_capability_group_tag_type)
     ```
@@ -143,10 +143,10 @@ def get_protection_capability_group_tags(compartment_id: Optional[_builtins.str]
         name=pulumi.get(__ret__, 'name'),
         protection_capability_group_tag_collections=pulumi.get(__ret__, 'protection_capability_group_tag_collections'),
         type=pulumi.get(__ret__, 'type'))
-def get_protection_capability_group_tags_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetProtectionCapabilityGroupTagsFilterArgs', 'GetProtectionCapabilityGroupTagsFilterArgsDict']]]]] = None,
-                                                name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_protection_capability_group_tags_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetProtectionCapabilityGroupTagsFilterArgs', 'GetProtectionCapabilityGroupTagsFilterArgsDict']]]]] = None,
+                                                name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProtectionCapabilityGroupTagsResult]:
     """
     This data source provides the list of Protection Capability Group Tags in Oracle Cloud Infrastructure Waf service.
@@ -159,7 +159,7 @@ def get_protection_capability_group_tags_output(compartment_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_protection_capability_group_tags = oci.Waf.get_protection_capability_group_tags(compartment_id=compartment_id,
+    test_protection_capability_group_tags = oci.waf.get_protection_capability_group_tags(compartment_id=compartment_id,
         name=protection_capability_group_tag_name,
         type=protection_capability_group_tag_type)
     ```

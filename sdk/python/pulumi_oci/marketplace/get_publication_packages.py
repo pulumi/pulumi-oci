@@ -118,7 +118,7 @@ def get_publication_packages(filters: Optional[Sequence[Union['GetPublicationPac
     import pulumi
     import pulumi_oci as oci
 
-    test_publication_packages = oci.Marketplace.get_publication_packages(publication_id=test_publication["id"],
+    test_publication_packages = oci.marketplace.get_publication_packages(publication_id=test_publication["id"],
         package_type=publication_package_package_type,
         package_version=publication_package_package_version)
     ```
@@ -143,10 +143,10 @@ def get_publication_packages(filters: Optional[Sequence[Union['GetPublicationPac
         package_version=pulumi.get(__ret__, 'package_version'),
         publication_id=pulumi.get(__ret__, 'publication_id'),
         publication_packages=pulumi.get(__ret__, 'publication_packages'))
-def get_publication_packages_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPublicationPackagesFilterArgs', 'GetPublicationPackagesFilterArgsDict']]]]] = None,
-                                    package_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    package_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    publication_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_publication_packages_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPublicationPackagesFilterArgs', 'GetPublicationPackagesFilterArgsDict']]]]] = None,
+                                    package_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    package_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    publication_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPublicationPackagesResult]:
     """
     This data source provides the list of Publication Packages in Oracle Cloud Infrastructure Marketplace service.
@@ -159,7 +159,7 @@ def get_publication_packages_output(filters: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_publication_packages = oci.Marketplace.get_publication_packages(publication_id=test_publication["id"],
+    test_publication_packages = oci.marketplace.get_publication_packages(publication_id=test_publication["id"],
         package_type=publication_package_package_type,
         package_version=publication_package_package_version)
     ```

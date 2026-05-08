@@ -386,7 +386,7 @@ def get_domains_cloud_gate_mapping(attribute_sets: Optional[Sequence[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_gate_mapping = oci.Identity.get_domains_cloud_gate_mapping(cloud_gate_mapping_id=test_cloud_gate_mapping_oci_identity_domains_cloud_gate_mapping["id"],
+    test_cloud_gate_mapping = oci.identity.get_domains_cloud_gate_mapping(cloud_gate_mapping_id=test_cloud_gate_mapping_oci_identity_domains_cloud_gate_mapping["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
@@ -442,12 +442,12 @@ def get_domains_cloud_gate_mapping(attribute_sets: Optional[Sequence[_builtins.s
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'),
         upstream_server_groups=pulumi.get(__ret__, 'upstream_server_groups'))
-def get_domains_cloud_gate_mapping_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                          attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          cloud_gate_mapping_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                          idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                          resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_cloud_gate_mapping_output(attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                          attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          cloud_gate_mapping_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                          idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                          resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsCloudGateMappingResult]:
     """
     This data source provides details about a specific Cloud Gate Mapping resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -460,7 +460,7 @@ def get_domains_cloud_gate_mapping_output(attribute_sets: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_gate_mapping = oci.Identity.get_domains_cloud_gate_mapping(cloud_gate_mapping_id=test_cloud_gate_mapping_oci_identity_domains_cloud_gate_mapping["id"],
+    test_cloud_gate_mapping = oci.identity.get_domains_cloud_gate_mapping(cloud_gate_mapping_id=test_cloud_gate_mapping_oci_identity_domains_cloud_gate_mapping["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",

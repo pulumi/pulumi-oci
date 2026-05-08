@@ -264,7 +264,7 @@ def get_cloud_exadata_storage_grid(cloud_exadata_storage_grid_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_storage_grid = oci.DatabaseManagement.get_cloud_exadata_storage_grid(cloud_exadata_storage_grid_id=test_cloud_exadata_storage_grid_oci_database_management_cloud_exadata_storage_grid["id"])
+    test_cloud_exadata_storage_grid = oci.databasemanagement.get_cloud_exadata_storage_grid(cloud_exadata_storage_grid_id=test_cloud_exadata_storage_grid_oci_database_management_cloud_exadata_storage_grid["id"])
     ```
 
 
@@ -294,7 +294,7 @@ def get_cloud_exadata_storage_grid(cloud_exadata_storage_grid_id: Optional[_buil
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         version=pulumi.get(__ret__, 'version'))
-def get_cloud_exadata_storage_grid_output(cloud_exadata_storage_grid_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_cloud_exadata_storage_grid_output(cloud_exadata_storage_grid_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCloudExadataStorageGridResult]:
     """
     This data source provides details about a specific Cloud Exadata Storage Grid resource in Oracle Cloud Infrastructure Database Management service.
@@ -307,7 +307,7 @@ def get_cloud_exadata_storage_grid_output(cloud_exadata_storage_grid_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_storage_grid = oci.DatabaseManagement.get_cloud_exadata_storage_grid(cloud_exadata_storage_grid_id=test_cloud_exadata_storage_grid_oci_database_management_cloud_exadata_storage_grid["id"])
+    test_cloud_exadata_storage_grid = oci.databasemanagement.get_cloud_exadata_storage_grid(cloud_exadata_storage_grid_id=test_cloud_exadata_storage_grid_oci_database_management_cloud_exadata_storage_grid["id"])
     ```
 
 

@@ -45,7 +45,7 @@ import * as utilities from "../utilities";
  *         subnetId: testSubnet.id,
  *         nsgIds: virtualNodePoolPodConfigurationNsgIds,
  *     },
- *     size: virtualNodePoolSize,
+ *     size: Number(virtualNodePoolSize),
  *     taints: [{
  *         effect: virtualNodePoolTaintsEffect,
  *         key: virtualNodePoolTaintsKey,
@@ -253,75 +253,75 @@ export interface VirtualNodePoolState {
     /**
      * The cluster the virtual node pool is associated with. A virtual node pool can only be associated with one cluster.
      */
-    clusterId?: pulumi.Input<string>;
+    clusterId?: pulumi.Input<string | undefined>;
     /**
      * Compartment of the virtual node pool.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Display name of the virtual node pool. This is a non-unique value.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
      */
-    initialVirtualNodeLabels?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.VirtualNodePoolInitialVirtualNodeLabel>[]>;
+    initialVirtualNodeLabels?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.VirtualNodePoolInitialVirtualNodeLabel>[] | undefined>;
     /**
      * The version of Kubernetes running on the nodes in the node pool.
      */
-    kubernetesVersion?: pulumi.Input<string>;
+    kubernetesVersion?: pulumi.Input<string | undefined>;
     /**
      * Details about the state of the Virtual Node Pool.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) List of network security group id's applied to the Virtual Node VNIC.
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
      */
-    placementConfigurations?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.VirtualNodePoolPlacementConfiguration>[]>;
+    placementConfigurations?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.VirtualNodePoolPlacementConfiguration>[] | undefined>;
     /**
      * (Updatable) The pod configuration for pods run on virtual nodes of this virtual node pool.
      */
-    podConfiguration?: pulumi.Input<inputs.ContainerEngine.VirtualNodePoolPodConfiguration>;
+    podConfiguration?: pulumi.Input<inputs.ContainerEngine.VirtualNodePoolPodConfiguration | undefined>;
     /**
      * (Updatable) The number of Virtual Nodes that should be in the Virtual Node Pool. The placement configurations determine where these virtual nodes are placed.
      */
-    size?: pulumi.Input<number>;
+    size?: pulumi.Input<number | undefined>;
     /**
      * The state of the Virtual Node Pool.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
      */
-    taints?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.VirtualNodePoolTaint>[]>;
+    taints?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.VirtualNodePoolTaint>[] | undefined>;
     /**
      * The time the virtual node pool was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the virtual node pool was updated.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The tags associated to the virtual nodes in this virtual node pool.
      */
-    virtualNodeTags?: pulumi.Input<inputs.ContainerEngine.VirtualNodePoolVirtualNodeTags>;
+    virtualNodeTags?: pulumi.Input<inputs.ContainerEngine.VirtualNodePoolVirtualNodeTags | undefined>;
 }
 
 /**
@@ -339,7 +339,7 @@ export interface VirtualNodePoolArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Display name of the virtual node pool. This is a non-unique value.
      */
@@ -347,15 +347,15 @@ export interface VirtualNodePoolArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
      */
-    initialVirtualNodeLabels?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.VirtualNodePoolInitialVirtualNodeLabel>[]>;
+    initialVirtualNodeLabels?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.VirtualNodePoolInitialVirtualNodeLabel>[] | undefined>;
     /**
      * (Updatable) List of network security group id's applied to the Virtual Node VNIC.
      */
-    nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
      */
@@ -371,9 +371,9 @@ export interface VirtualNodePoolArgs {
     /**
      * (Updatable) A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
      */
-    taints?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.VirtualNodePoolTaint>[]>;
+    taints?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.VirtualNodePoolTaint>[] | undefined>;
     /**
      * (Updatable) The tags associated to the virtual nodes in this virtual node pool.
      */
-    virtualNodeTags?: pulumi.Input<inputs.ContainerEngine.VirtualNodePoolVirtualNodeTags>;
+    virtualNodeTags?: pulumi.Input<inputs.ContainerEngine.VirtualNodePoolVirtualNodeTags | undefined>;
 }

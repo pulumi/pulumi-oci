@@ -31,12 +31,12 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := dataintegration.GetWorkspaceTasks(ctx, &dataintegration.GetWorkspaceTasksArgs{
 //				WorkspaceId: testWorkspace.Id,
-//				Fields:      workspaceTaskFields,
+//				Fields:      pulumi.ToArray(workspaceTaskFields),
 //				FolderId:    pulumi.StringRef(testFolder.Id),
-//				Identifiers: workspaceTaskIdentifier,
-//				Keys:        workspaceTaskKey,
+//				Identifiers: pulumi.ToArray(workspaceTaskIdentifier),
+//				Keys:        pulumi.ToArray(workspaceTaskKey),
 //				Name:        pulumi.StringRef(workspaceTaskName),
-//				Types:       workspaceTaskType,
+//				Types:       pulumi.ToArray(workspaceTaskType),
 //			}, nil)
 //			if err != nil {
 //				return err

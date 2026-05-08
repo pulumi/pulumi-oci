@@ -170,10 +170,10 @@ def get_workspace_application_task_schedules(application_key: Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application_task_schedules = oci.DataIntegration.get_workspace_application_task_schedules(application_key=workspace_application_task_schedule_application_key,
+    test_workspace_application_task_schedules = oci.dataintegration.get_workspace_application_task_schedules(application_key=workspace_application_task_schedule_application_key,
         workspace_id=test_workspace["id"],
         identifiers=workspace_application_task_schedule_identifier,
-        is_enabled=workspace_application_task_schedule_is_enabled,
+        is_enabled=workspace_application_task_schedule_is_enabled == "true",
         keys=workspace_application_task_schedule_key,
         name=workspace_application_task_schedule_name,
         types=workspace_application_task_schedule_type)
@@ -211,14 +211,14 @@ def get_workspace_application_task_schedules(application_key: Optional[_builtins
         task_schedule_summary_collections=pulumi.get(__ret__, 'task_schedule_summary_collections'),
         types=pulumi.get(__ret__, 'types'),
         workspace_id=pulumi.get(__ret__, 'workspace_id'))
-def get_workspace_application_task_schedules_output(application_key: Optional[pulumi.Input[_builtins.str]] = None,
-                                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetWorkspaceApplicationTaskSchedulesFilterArgs', 'GetWorkspaceApplicationTaskSchedulesFilterArgsDict']]]]] = None,
-                                                    identifiers: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                    is_enabled: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                                    keys: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                    name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                                    types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                    workspace_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_workspace_application_task_schedules_output(application_key: pulumi.Input[Optional[_builtins.str]] = None,
+                                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetWorkspaceApplicationTaskSchedulesFilterArgs', 'GetWorkspaceApplicationTaskSchedulesFilterArgsDict']]]]] = None,
+                                                    identifiers: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                    is_enabled: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                                    keys: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                    name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                    types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                    workspace_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWorkspaceApplicationTaskSchedulesResult]:
     """
     This data source provides the list of Workspace Application Task Schedules in Oracle Cloud Infrastructure Data Integration service.
@@ -231,10 +231,10 @@ def get_workspace_application_task_schedules_output(application_key: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application_task_schedules = oci.DataIntegration.get_workspace_application_task_schedules(application_key=workspace_application_task_schedule_application_key,
+    test_workspace_application_task_schedules = oci.dataintegration.get_workspace_application_task_schedules(application_key=workspace_application_task_schedule_application_key,
         workspace_id=test_workspace["id"],
         identifiers=workspace_application_task_schedule_identifier,
-        is_enabled=workspace_application_task_schedule_is_enabled,
+        is_enabled=workspace_application_task_schedule_is_enabled == "true",
         keys=workspace_application_task_schedule_key,
         name=workspace_application_task_schedule_name,
         types=workspace_application_task_schedule_type)

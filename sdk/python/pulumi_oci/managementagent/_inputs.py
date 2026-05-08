@@ -46,75 +46,75 @@ __all__ = [
 ]
 
 class ManagementAgentDataSourceListArgsDict(TypedDict):
-    allow_metrics: NotRequired[pulumi.Input[_builtins.str]]
+    allow_metrics: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
     """
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Compartment owning this DataSource.
     """
-    connection_timeout: NotRequired[pulumi.Input[_builtins.int]]
+    connection_timeout: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
     """
-    is_daemon_set: NotRequired[pulumi.Input[_builtins.bool]]
+    is_daemon_set: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     If the Kubernetes cluster type is Daemon set then this will be set to true.
     """
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
     """
-    metric_dimensions: NotRequired[pulumi.Input[Sequence[pulumi.Input['ManagementAgentDataSourceListMetricDimensionArgsDict']]]]
+    metric_dimensions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ManagementAgentDataSourceListMetricDimensionArgs']]]]]
     """
     The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the property
     """
-    namespace: NotRequired[pulumi.Input[_builtins.str]]
+    namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
     """
-    proxy_url: NotRequired[pulumi.Input[_builtins.str]]
+    proxy_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
     """
-    read_data_limit: NotRequired[pulumi.Input[_builtins.int]]
+    read_data_limit: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
     """
-    read_timeout: NotRequired[pulumi.Input[_builtins.int]]
+    read_timeout: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
     """
-    resource_group: NotRequired[pulumi.Input[_builtins.str]]
+    resource_group: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
     """
-    schedule_mins: NotRequired[pulumi.Input[_builtins.int]]
+    schedule_mins: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Number in minutes. The scraping occurs at the specified interval.
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current state of managementAgent
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The time the Management Agent was created. An RFC3339 formatted datetime string
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The time the Management Agent was last updated. An RFC3339 formatted datetime string
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of the DataSource.
     """
-    url: NotRequired[pulumi.Input[_builtins.str]]
+    url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The url through which the Prometheus Exporter publishes its metrics. (http only)
     """
@@ -122,24 +122,24 @@ class ManagementAgentDataSourceListArgsDict(TypedDict):
 @pulumi.input_type
 class ManagementAgentDataSourceListArgs:
     def __init__(__self__, *,
-                 allow_metrics: Optional[pulumi.Input[_builtins.str]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 connection_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 is_daemon_set: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 metric_dimensions: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentDataSourceListMetricDimensionArgs']]]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 proxy_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 read_data_limit: Optional[pulumi.Input[_builtins.int]] = None,
-                 read_timeout: Optional[pulumi.Input[_builtins.int]] = None,
-                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
-                 schedule_mins: Optional[pulumi.Input[_builtins.int]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
-                 url: Optional[pulumi.Input[_builtins.str]] = None):
+                 allow_metrics: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_daemon_set: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 metric_dimensions: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementAgentDataSourceListMetricDimensionArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                 proxy_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 read_data_limit: pulumi.Input[Optional[_builtins.int]] = None,
+                 read_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 schedule_mins: pulumi.Input[Optional[_builtins.int]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] allow_metrics: Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
         :param pulumi.Input[_builtins.str] compartment_id: Compartment owning this DataSource.
@@ -199,227 +199,227 @@ class ManagementAgentDataSourceListArgs:
 
     @_builtins.property
     @pulumi.getter(name="allowMetrics")
-    def allow_metrics(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def allow_metrics(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
         """
         return pulumi.get(self, "allow_metrics")
 
     @allow_metrics.setter
-    def allow_metrics(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def allow_metrics(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "allow_metrics", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Compartment owning this DataSource.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="connectionTimeout")
-    def connection_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def connection_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number in milliseconds. The timeout for connecting to the Prometheus Exporter's endpoint.
         """
         return pulumi.get(self, "connection_timeout")
 
     @connection_timeout.setter
-    def connection_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def connection_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "connection_timeout", value)
 
     @_builtins.property
     @pulumi.getter(name="isDaemonSet")
-    def is_daemon_set(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_daemon_set(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If the Kubernetes cluster type is Daemon set then this will be set to true.
         """
         return pulumi.get(self, "is_daemon_set")
 
     @is_daemon_set.setter
-    def is_daemon_set(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_daemon_set(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_daemon_set", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter(name="metricDimensions")
-    def metric_dimensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentDataSourceListMetricDimensionArgs']]]]:
+    def metric_dimensions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ManagementAgentDataSourceListMetricDimensionArgs']]]]:
         """
         The names of other user-supplied properties expressed as fixed values to be used as dimensions for every uploaded datapoint.
         """
         return pulumi.get(self, "metric_dimensions")
 
     @metric_dimensions.setter
-    def metric_dimensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentDataSourceListMetricDimensionArgs']]]]):
+    def metric_dimensions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ManagementAgentDataSourceListMetricDimensionArgs']]]]):
         pulumi.set(self, "metric_dimensions", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the property
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle Cloud Infrastructure monitoring namespace to which scraped metrics should be uploaded.
         """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
-    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "namespace", value)
 
     @_builtins.property
     @pulumi.getter(name="proxyUrl")
-    def proxy_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def proxy_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The url of the network proxy that provides access to the Prometheus Exporter's endpoint (url required property).
         """
         return pulumi.get(self, "proxy_url")
 
     @proxy_url.setter
-    def proxy_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def proxy_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "proxy_url", value)
 
     @_builtins.property
     @pulumi.getter(name="readDataLimit")
-    def read_data_limit(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def read_data_limit(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
         """
         return pulumi.get(self, "read_data_limit")
 
     @read_data_limit.setter
-    def read_data_limit(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def read_data_limit(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "read_data_limit", value)
 
     @_builtins.property
     @pulumi.getter(name="readTimeout")
-    def read_timeout(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def read_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
         """
         return pulumi.get(self, "read_timeout")
 
     @read_timeout.setter
-    def read_timeout(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def read_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "read_timeout", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_group(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
         """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
-    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_group(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter(name="scheduleMins")
-    def schedule_mins(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def schedule_mins(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number in minutes. The scraping occurs at the specified interval.
         """
         return pulumi.get(self, "schedule_mins")
 
     @schedule_mins.setter
-    def schedule_mins(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def schedule_mins(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "schedule_mins", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of managementAgent
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the Management Agent was created. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the Management Agent was last updated. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the DataSource.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
     @_builtins.property
     @pulumi.getter
-    def url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The url through which the Prometheus Exporter publishes its metrics. (http only)
         """
         return pulumi.get(self, "url")
 
     @url.setter
-    def url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "url", value)
 
 
 class ManagementAgentDataSourceListMetricDimensionArgsDict(TypedDict):
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the property
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Value of the metric dimension
     """
@@ -427,8 +427,8 @@ class ManagementAgentDataSourceListMetricDimensionArgsDict(TypedDict):
 @pulumi.input_type
 class ManagementAgentDataSourceListMetricDimensionArgs:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] name: Name of the property
         :param pulumi.Input[_builtins.str] value: Value of the metric dimension
@@ -440,26 +440,26 @@ class ManagementAgentDataSourceListMetricDimensionArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the property
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Value of the metric dimension
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
@@ -511,19 +511,19 @@ class ManagementAgentDataSourceMetricDimensionArgs:
 
 
 class ManagementAgentDataSourceSummaryListArgsDict(TypedDict):
-    is_daemon_set: NotRequired[pulumi.Input[_builtins.bool]]
+    is_daemon_set: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     If the Kubernetes cluster type is Daemon set then this will be set to true.
     """
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the property
     """
-    type: NotRequired[pulumi.Input[_builtins.str]]
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of the DataSource.
     """
@@ -531,10 +531,10 @@ class ManagementAgentDataSourceSummaryListArgsDict(TypedDict):
 @pulumi.input_type
 class ManagementAgentDataSourceSummaryListArgs:
     def __init__(__self__, *,
-                 is_daemon_set: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 is_daemon_set: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_daemon_set: If the Kubernetes cluster type is Daemon set then this will be set to true.
         :param pulumi.Input[_builtins.str] key: Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
@@ -552,63 +552,63 @@ class ManagementAgentDataSourceSummaryListArgs:
 
     @_builtins.property
     @pulumi.getter(name="isDaemonSet")
-    def is_daemon_set(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_daemon_set(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         If the Kubernetes cluster type is Daemon set then this will be set to true.
         """
         return pulumi.get(self, "is_daemon_set")
 
     @is_daemon_set.setter
-    def is_daemon_set(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_daemon_set(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_daemon_set", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Identifier for DataSource. This represents the type and name for the data source associated with the Management Agent.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the property
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of the DataSource.
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
 class ManagementAgentManagementAgentPropertyArgsDict(TypedDict):
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the property
     """
-    units: NotRequired[pulumi.Input[_builtins.str]]
+    units: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Unit for the property
     """
-    values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     Values of the property
     """
@@ -616,9 +616,9 @@ class ManagementAgentManagementAgentPropertyArgsDict(TypedDict):
 @pulumi.input_type
 class ManagementAgentManagementAgentPropertyArgs:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 units: Optional[pulumi.Input[_builtins.str]] = None,
-                 values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 units: pulumi.Input[Optional[_builtins.str]] = None,
+                 values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] name: Name of the property
         :param pulumi.Input[_builtins.str] units: Unit for the property
@@ -633,67 +633,67 @@ class ManagementAgentManagementAgentPropertyArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the property
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def units(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def units(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unit for the property
         """
         return pulumi.get(self, "units")
 
     @units.setter
-    def units(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def units(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "units", value)
 
     @_builtins.property
     @pulumi.getter
-    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Values of the property
         """
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "values", value)
 
 
 class ManagementAgentPluginListArgsDict(TypedDict):
-    is_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     flag indicating whether the plugin is in enabled mode or disabled mode.
     """
-    plugin_display_name: NotRequired[pulumi.Input[_builtins.str]]
+    plugin_display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Management Agent Plugin Identifier, can be renamed
     """
-    plugin_id: NotRequired[pulumi.Input[_builtins.str]]
+    plugin_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Plugin Id
     """
-    plugin_name: NotRequired[pulumi.Input[_builtins.str]]
+    plugin_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Management Agent Plugin Name
     """
-    plugin_status: NotRequired[pulumi.Input[_builtins.str]]
+    plugin_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Plugin Status
     """
-    plugin_status_message: NotRequired[pulumi.Input[_builtins.str]]
+    plugin_status_message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Status message of the Plugin
     """
-    plugin_version: NotRequired[pulumi.Input[_builtins.str]]
+    plugin_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Plugin Version
     """
@@ -701,13 +701,13 @@ class ManagementAgentPluginListArgsDict(TypedDict):
 @pulumi.input_type
 class ManagementAgentPluginListArgs:
     def __init__(__self__, *,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 plugin_display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 plugin_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 plugin_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 plugin_status: Optional[pulumi.Input[_builtins.str]] = None,
-                 plugin_status_message: Optional[pulumi.Input[_builtins.str]] = None,
-                 plugin_version: Optional[pulumi.Input[_builtins.str]] = None):
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 plugin_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 plugin_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 plugin_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 plugin_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 plugin_status_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 plugin_version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_enabled: flag indicating whether the plugin is in enabled mode or disabled mode.
         :param pulumi.Input[_builtins.str] plugin_display_name: Management Agent Plugin Identifier, can be renamed
@@ -734,86 +734,86 @@ class ManagementAgentPluginListArgs:
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         flag indicating whether the plugin is in enabled mode or disabled mode.
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="pluginDisplayName")
-    def plugin_display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def plugin_display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Management Agent Plugin Identifier, can be renamed
         """
         return pulumi.get(self, "plugin_display_name")
 
     @plugin_display_name.setter
-    def plugin_display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def plugin_display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "plugin_display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="pluginId")
-    def plugin_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def plugin_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Plugin Id
         """
         return pulumi.get(self, "plugin_id")
 
     @plugin_id.setter
-    def plugin_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def plugin_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "plugin_id", value)
 
     @_builtins.property
     @pulumi.getter(name="pluginName")
-    def plugin_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def plugin_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Management Agent Plugin Name
         """
         return pulumi.get(self, "plugin_name")
 
     @plugin_name.setter
-    def plugin_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def plugin_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "plugin_name", value)
 
     @_builtins.property
     @pulumi.getter(name="pluginStatus")
-    def plugin_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def plugin_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Plugin Status
         """
         return pulumi.get(self, "plugin_status")
 
     @plugin_status.setter
-    def plugin_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def plugin_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "plugin_status", value)
 
     @_builtins.property
     @pulumi.getter(name="pluginStatusMessage")
-    def plugin_status_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def plugin_status_message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Status message of the Plugin
         """
         return pulumi.get(self, "plugin_status_message")
 
     @plugin_status_message.setter
-    def plugin_status_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def plugin_status_message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "plugin_status_message", value)
 
     @_builtins.property
     @pulumi.getter(name="pluginVersion")
-    def plugin_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def plugin_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Plugin Version
         """
         return pulumi.get(self, "plugin_version")
 
     @plugin_version.setter
-    def plugin_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def plugin_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "plugin_version", value)
 
 

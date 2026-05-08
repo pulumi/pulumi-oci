@@ -76,8 +76,8 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     ipv6privateCidrBlocks: vcnIpv6privateCidrBlocks,
- *     isIpv6enabled: vcnIsIpv6enabled,
- *     isOracleGuaAllocationEnabled: vcnIsOracleGuaAllocationEnabled,
+ *     isIpv6enabled: vcnIsIpv6enabled === "true",
+ *     isOracleGuaAllocationEnabled: vcnIsOracleGuaAllocationEnabled === "true",
  *     securityAttributes: vcnSecurityAttributes,
  * });
  * ```
@@ -287,15 +287,15 @@ export interface VcnState {
     /**
      * The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
      */
-    byoipv6cidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
+    byoipv6cidrBlocks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
      */
-    byoipv6cidrDetails?: pulumi.Input<pulumi.Input<inputs.Core.VcnByoipv6cidrDetail>[]>;
+    byoipv6cidrDetails?: pulumi.Input<pulumi.Input<inputs.Core.VcnByoipv6cidrDetail>[] | undefined>;
     /**
      * **Deprecated.** Do *not* set this value. Use `cidrBlocks` instead. Example: `10.0.0.0/16`
      */
-    cidrBlock?: pulumi.Input<string>;
+    cidrBlock?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
      * * The CIDR blocks must be valid.
@@ -303,31 +303,31 @@ export interface VcnState {
      * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidr_blocks. Note: cidrBlocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidrBlock to be added must be placed at the end of the list. Once you migrate to using `cidrBlocks` from `cidrBlock`, you will not be able to switch back.
      * **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
      */
-    cidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
+    cidrBlocks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the VCN.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default set of DHCP options.
      */
-    defaultDhcpOptionsId?: pulumi.Input<string>;
+    defaultDhcpOptionsId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default route table.
      */
-    defaultRouteTableId?: pulumi.Input<string>;
+    defaultRouteTableId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default security list.
      */
-    defaultSecurityListId?: pulumi.Input<string>;
+    defaultSecurityListId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it's a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
      * You must set this value if you want instances to be able to use hostnames to resolve other instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
@@ -336,15 +336,15 @@ export interface VcnState {
      *
      * Example: `vcn1`
      */
-    dnsLabel?: pulumi.Input<string>;
+    dnsLabel?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space. The prefixes are provided by Oracle and the sizes are always /56.
      */
-    ipv6cidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
+    ipv6cidrBlocks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
      * * The CIDR blocks must be valid.
@@ -353,34 +353,34 @@ export interface VcnState {
      *
      * **Important:** Do *not* specify a value for `ipv6cidrBlock`. Use this parameter instead.
      */
-    ipv6privateCidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
+    ipv6privateCidrBlocks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
      */
-    isIpv6enabled?: pulumi.Input<boolean>;
+    isIpv6enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
      */
-    isOracleGuaAllocationEnabled?: pulumi.Input<boolean>;
+    isOracleGuaAllocationEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The VCN's current state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The VCN's domain name, which consists of the VCN's DNS label, and the `oraclevcn.com` domain.
      */
-    vcnDomainName?: pulumi.Input<string>;
+    vcnDomainName?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -390,11 +390,11 @@ export interface VcnArgs {
     /**
      * The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
      */
-    byoipv6cidrDetails?: pulumi.Input<pulumi.Input<inputs.Core.VcnByoipv6cidrDetail>[]>;
+    byoipv6cidrDetails?: pulumi.Input<pulumi.Input<inputs.Core.VcnByoipv6cidrDetail>[] | undefined>;
     /**
      * **Deprecated.** Do *not* set this value. Use `cidrBlocks` instead. Example: `10.0.0.0/16`
      */
-    cidrBlock?: pulumi.Input<string>;
+    cidrBlock?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The list of one or more IPv4 CIDR blocks for the VCN that meet the following criteria:
      * * The CIDR blocks must be valid.
@@ -402,7 +402,7 @@ export interface VcnArgs {
      * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidr_blocks. Note: cidrBlocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidrBlock to be added must be placed at the end of the list. Once you migrate to using `cidrBlocks` from `cidrBlock`, you will not be able to switch back.
      * **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
      */
-    cidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
+    cidrBlocks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the VCN.
      */
@@ -410,11 +410,11 @@ export interface VcnArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Not required to be unique, but it's a best practice to set unique DNS labels for VCNs in your tenancy. Must be an alphanumeric string that begins with a letter. The value cannot be changed.
      * You must set this value if you want instances to be able to use hostnames to resolve other instances in the VCN. Otherwise the Internet and VCN Resolver will not work.
@@ -423,11 +423,11 @@ export interface VcnArgs {
      *
      * Example: `vcn1`
      */
-    dnsLabel?: pulumi.Input<string>;
+    dnsLabel?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The list of one or more ULA or Private IPv6 CIDR blocks for the vcn that meets the following criteria:
      * * The CIDR blocks must be valid.
@@ -436,20 +436,20 @@ export interface VcnArgs {
      *
      * **Important:** Do *not* specify a value for `ipv6cidrBlock`. Use this parameter instead.
      */
-    ipv6privateCidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
+    ipv6privateCidrBlocks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Whether IPv6 is enabled for the VCN. Default is `false`. If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block. You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`. For important details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `true`
      */
-    isIpv6enabled?: pulumi.Input<boolean>;
+    isIpv6enabled?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies whether to skip Oracle allocated IPv6 GUA. By default, Oracle will allocate one GUA of /56 size for an IPv6 enabled VCN.
      */
-    isOracleGuaAllocationEnabled?: pulumi.Input<boolean>;
+    isOracleGuaAllocationEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.  Example: `{"Oracle-DataSecurity-ZPR.MaxEgressCount.value": "42", "Oracle-DataSecurity-ZPR.MaxEgressCount.mode": "audit"}`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }

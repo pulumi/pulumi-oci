@@ -325,7 +325,7 @@ def get_vtap(vtap_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vtap = oci.Core.get_vtap(vtap_id=test_vtap_oci_core_vtap["id"])
+    test_vtap = oci.core.get_vtap(vtap_id=test_vtap_oci_core_vtap["id"])
     ```
 
 
@@ -360,7 +360,7 @@ def get_vtap(vtap_id: Optional[_builtins.str] = None,
         vcn_id=pulumi.get(__ret__, 'vcn_id'),
         vtap_id=pulumi.get(__ret__, 'vtap_id'),
         vxlan_network_identifier=pulumi.get(__ret__, 'vxlan_network_identifier'))
-def get_vtap_output(vtap_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_vtap_output(vtap_id: pulumi.Input[Optional[_builtins.str]] = None,
                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetVtapResult]:
     """
     This data source provides details about a specific Vtap resource in Oracle Cloud Infrastructure Core service.
@@ -373,7 +373,7 @@ def get_vtap_output(vtap_id: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vtap = oci.Core.get_vtap(vtap_id=test_vtap_oci_core_vtap["id"])
+    test_vtap = oci.core.get_vtap(vtap_id=test_vtap_oci_core_vtap["id"])
     ```
 
 

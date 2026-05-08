@@ -337,7 +337,7 @@ def get_bucket(name: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_bucket = oci.ObjectStorage.get_bucket(name=bucket_name,
+    test_bucket = oci.objectstorage.get_bucket(name=bucket_name,
         namespace=bucket_namespace)
     ```
 
@@ -376,8 +376,8 @@ def get_bucket(name: Optional[_builtins.str] = None,
         storage_tier=pulumi.get(__ret__, 'storage_tier'),
         time_created=pulumi.get(__ret__, 'time_created'),
         versioning=pulumi.get(__ret__, 'versioning'))
-def get_bucket_output(name: Optional[pulumi.Input[_builtins.str]] = None,
-                      namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_bucket_output(name: pulumi.Input[Optional[_builtins.str]] = None,
+                      namespace: pulumi.Input[Optional[_builtins.str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBucketResult]:
     """
     This data source provides details about a specific Bucket resource in Oracle Cloud Infrastructure Object Storage service.
@@ -390,7 +390,7 @@ def get_bucket_output(name: Optional[pulumi.Input[_builtins.str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_bucket = oci.ObjectStorage.get_bucket(name=bucket_name,
+    test_bucket = oci.objectstorage.get_bucket(name=bucket_name,
         namespace=bucket_namespace)
     ```
 

@@ -324,7 +324,7 @@ def get_managed_instance_group(managed_instance_group_id: Optional[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_group = oci.OsManagementHub.get_managed_instance_group(managed_instance_group_id=test_managed_instance_group_oci_os_management_hub_managed_instance_group["id"])
+    test_managed_instance_group = oci.osmanagementhub.get_managed_instance_group(managed_instance_group_id=test_managed_instance_group_oci_os_management_hub_managed_instance_group["id"])
     ```
 
 
@@ -359,7 +359,7 @@ def get_managed_instance_group(managed_instance_group_id: Optional[_builtins.str
         time_created=pulumi.get(__ret__, 'time_created'),
         time_modified=pulumi.get(__ret__, 'time_modified'),
         vendor_name=pulumi.get(__ret__, 'vendor_name'))
-def get_managed_instance_group_output(managed_instance_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_managed_instance_group_output(managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedInstanceGroupResult]:
     """
     This data source provides details about a specific Managed Instance Group resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -372,7 +372,7 @@ def get_managed_instance_group_output(managed_instance_group_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_group = oci.OsManagementHub.get_managed_instance_group(managed_instance_group_id=test_managed_instance_group_oci_os_management_hub_managed_instance_group["id"])
+    test_managed_instance_group = oci.osmanagementhub.get_managed_instance_group(managed_instance_group_id=test_managed_instance_group_oci_os_management_hub_managed_instance_group["id"])
     ```
 
 

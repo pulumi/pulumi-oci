@@ -235,74 +235,74 @@ export interface VolumeGroupState {
     /**
      * The availability domain of the volume group.
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `oci.Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume group.
      *
      * @deprecated The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
      */
-    backupPolicyId?: pulumi.Input<string>;
+    backupPolicyId?: pulumi.Input<string | undefined>;
     /**
      * The clusterPlacementGroup Id of the volume group for volume group placement.
      */
-    clusterPlacementGroupId?: pulumi.Input<string>;
+    clusterPlacementGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment that contains the volume group.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Specifies whether the newly created cloned volume group's data has finished copying from the source volume group or backup.
      */
-    isHydrated?: pulumi.Input<boolean>;
-    preserveVolumeReplica?: pulumi.Input<boolean>;
+    isHydrated?: pulumi.Input<boolean | undefined>;
+    preserveVolumeReplica?: pulumi.Input<boolean | undefined>;
     /**
      * The aggregate size of the volume group in GBs.
      */
-    sizeInGbs?: pulumi.Input<string>;
+    sizeInGbs?: pulumi.Input<string | undefined>;
     /**
      * The aggregate size of the volume group in MBs.
      */
-    sizeInMbs?: pulumi.Input<string>;
+    sizeInMbs?: pulumi.Input<string | undefined>;
     /**
      * Specifies the source for a volume group.
      */
-    sourceDetails?: pulumi.Input<inputs.Core.VolumeGroupSourceDetails>;
+    sourceDetails?: pulumi.Input<inputs.Core.VolumeGroupSourceDetails | undefined>;
     /**
      * The current state of a volume group.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The date and time the volume group was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
      */
-    volumeGroupReplicas?: pulumi.Input<pulumi.Input<inputs.Core.VolumeGroupVolumeGroupReplica>[]>;
-    volumeGroupReplicasDeletion?: pulumi.Input<boolean>;
+    volumeGroupReplicas?: pulumi.Input<pulumi.Input<inputs.Core.VolumeGroupVolumeGroupReplica>[] | undefined>;
+    volumeGroupReplicasDeletion?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volumeIds` under `sourceDetails`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    volumeIds?: pulumi.Input<pulumi.Input<string>[]>;
+    volumeIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      */
-    xrcKmsKeyId?: pulumi.Input<string>;
+    xrcKmsKeyId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -318,11 +318,11 @@ export interface VolumeGroupArgs {
      *
      * @deprecated The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.
      */
-    backupPolicyId?: pulumi.Input<string>;
+    backupPolicyId?: pulumi.Input<string | undefined>;
     /**
      * The clusterPlacementGroup Id of the volume group for volume group placement.
      */
-    clusterPlacementGroupId?: pulumi.Input<string>;
+    clusterPlacementGroupId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the compartment that contains the volume group.
      */
@@ -330,16 +330,16 @@ export interface VolumeGroupArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    preserveVolumeReplica?: pulumi.Input<boolean>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    preserveVolumeReplica?: pulumi.Input<boolean | undefined>;
     /**
      * Specifies the source for a volume group.
      */
@@ -347,17 +347,17 @@ export interface VolumeGroupArgs {
     /**
      * (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
      */
-    volumeGroupReplicas?: pulumi.Input<pulumi.Input<inputs.Core.VolumeGroupVolumeGroupReplica>[]>;
-    volumeGroupReplicasDeletion?: pulumi.Input<boolean>;
+    volumeGroupReplicas?: pulumi.Input<pulumi.Input<inputs.Core.VolumeGroupVolumeGroupReplica>[] | undefined>;
+    volumeGroupReplicasDeletion?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volumeIds` under `sourceDetails`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    volumeIds?: pulumi.Input<pulumi.Input<string>[]>;
+    volumeIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      */
-    xrcKmsKeyId?: pulumi.Input<string>;
+    xrcKmsKeyId?: pulumi.Input<string | undefined>;
 }

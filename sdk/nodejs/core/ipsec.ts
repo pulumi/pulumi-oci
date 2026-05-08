@@ -275,11 +275,11 @@ export interface IpsecState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [Cpe](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/) object.
      */
-    cpeId?: pulumi.Input<string>;
+    cpeId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the fully qualified domain name (FQDN)). The type of identifier you provide here must correspond to the value for `cpeLocalIdentifierType`.
      *
@@ -291,31 +291,31 @@ export interface IpsecState {
      *
      * Example hostname: `cpe.example.com`
      */
-    cpeLocalIdentifier?: pulumi.Input<string>;
+    cpeLocalIdentifier?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The type of identifier for your CPE device. The value you provide here must correspond to the value for `cpeLocalIdentifier`.
      */
-    cpeLocalIdentifierType?: pulumi.Input<string>;
+    cpeLocalIdentifierType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      */
-    drgId?: pulumi.Input<string>;
+    drgId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The IPSec connection's current state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address.
      *
@@ -323,15 +323,15 @@ export interface IpsecState {
      *
      * Example: `10.0.1.0/24`
      */
-    staticRoutes?: pulumi.Input<pulumi.Input<string>[]>;
+    staticRoutes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The transport type used for the IPSec connection.
      */
-    transportType?: pulumi.Input<string>;
+    transportType?: pulumi.Input<string | undefined>;
     /**
      * (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
      *
@@ -346,7 +346,7 @@ export interface IpsecState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    tunnelConfigurations?: pulumi.Input<pulumi.Input<inputs.Core.IpsecTunnelConfiguration>[]>;
+    tunnelConfigurations?: pulumi.Input<pulumi.Input<inputs.Core.IpsecTunnelConfiguration>[] | undefined>;
 }
 
 /**
@@ -372,19 +372,19 @@ export interface IpsecArgs {
      *
      * Example hostname: `cpe.example.com`
      */
-    cpeLocalIdentifier?: pulumi.Input<string>;
+    cpeLocalIdentifier?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The type of identifier for your CPE device. The value you provide here must correspond to the value for `cpeLocalIdentifier`.
      */
-    cpeLocalIdentifierType?: pulumi.Input<string>;
+    cpeLocalIdentifierType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      */
@@ -392,7 +392,7 @@ export interface IpsecArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address.
      *
@@ -415,5 +415,5 @@ export interface IpsecArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    tunnelConfigurations?: pulumi.Input<pulumi.Input<inputs.Core.IpsecTunnelConfiguration>[]>;
+    tunnelConfigurations?: pulumi.Input<pulumi.Input<inputs.Core.IpsecTunnelConfiguration>[] | undefined>;
 }

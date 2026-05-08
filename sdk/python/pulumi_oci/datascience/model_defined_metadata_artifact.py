@@ -23,7 +23,7 @@ class ModelDefinedMetadataArtifactArgs:
                  metadatum_key_name: pulumi.Input[_builtins.str],
                  model_defined_metadatum_artifact: pulumi.Input[_builtins.str],
                  model_id: pulumi.Input[_builtins.str],
-                 content_disposition: Optional[pulumi.Input[_builtins.str]] = None):
+                 content_disposition: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ModelDefinedMetadataArtifact resource.
 
@@ -98,25 +98,25 @@ class ModelDefinedMetadataArtifactArgs:
 
     @_builtins.property
     @pulumi.getter(name="contentDisposition")
-    def content_disposition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_disposition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. If this optional field is not populated in the request, then the OCID of the model is used for the file name when downloading. Example: `{"Content-Disposition": "attachment" "filename"="model.tar.gz" "Content-Length": "2347" "Content-Type": "application/gzip"}`
         """
         return pulumi.get(self, "content_disposition")
 
     @content_disposition.setter
-    def content_disposition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_disposition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_disposition", value)
 
 
 @pulumi.input_type
 class _ModelDefinedMetadataArtifactState:
     def __init__(__self__, *,
-                 content_disposition: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_length: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadatum_key_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_defined_metadatum_artifact: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 content_disposition: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_length: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadatum_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_defined_metadatum_artifact: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ModelDefinedMetadataArtifact resources.
 
@@ -143,55 +143,55 @@ class _ModelDefinedMetadataArtifactState:
 
     @_builtins.property
     @pulumi.getter(name="contentDisposition")
-    def content_disposition(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_disposition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. If this optional field is not populated in the request, then the OCID of the model is used for the file name when downloading. Example: `{"Content-Disposition": "attachment" "filename"="model.tar.gz" "Content-Length": "2347" "Content-Type": "application/gzip"}`
         """
         return pulumi.get(self, "content_disposition")
 
     @content_disposition.setter
-    def content_disposition(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_disposition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_disposition", value)
 
     @_builtins.property
     @pulumi.getter(name="contentLength")
-    def content_length(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_length(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The content length of the body.
         """
         return pulumi.get(self, "content_length")
 
     @content_length.setter
-    def content_length(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_length(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_length", value)
 
     @_builtins.property
     @pulumi.getter(name="metadatumKeyName")
-    def metadatum_key_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metadatum_key_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the model metadatum in the metadata.
         """
         return pulumi.get(self, "metadatum_key_name")
 
     @metadatum_key_name.setter
-    def metadatum_key_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metadatum_key_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metadatum_key_name", value)
 
     @_builtins.property
     @pulumi.getter(name="modelDefinedMetadatumArtifact")
-    def model_defined_metadatum_artifact(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_defined_metadatum_artifact(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The model defined metadata artifact to upload.
         """
         return pulumi.get(self, "model_defined_metadatum_artifact")
 
     @model_defined_metadatum_artifact.setter
-    def model_defined_metadatum_artifact(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_defined_metadatum_artifact(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_defined_metadatum_artifact", value)
 
     @_builtins.property
     @pulumi.getter(name="modelId")
-    def model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def model_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
 
@@ -202,7 +202,7 @@ class _ModelDefinedMetadataArtifactState:
         return pulumi.get(self, "model_id")
 
     @model_id.setter
-    def model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def model_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "model_id", value)
 
 
@@ -212,11 +212,11 @@ class ModelDefinedMetadataArtifact(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 content_disposition: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_length: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadatum_key_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_defined_metadatum_artifact: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 content_disposition: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_length: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadatum_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_defined_metadatum_artifact: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Model Defined Metadata Artifact resource in Oracle Cloud Infrastructure Data Science service.
@@ -307,11 +307,11 @@ class ModelDefinedMetadataArtifact(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 content_disposition: Optional[pulumi.Input[_builtins.str]] = None,
-                 content_length: Optional[pulumi.Input[_builtins.str]] = None,
-                 metadatum_key_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_defined_metadatum_artifact: Optional[pulumi.Input[_builtins.str]] = None,
-                 model_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 content_disposition: pulumi.Input[Optional[_builtins.str]] = None,
+                 content_length: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadatum_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_defined_metadatum_artifact: pulumi.Input[Optional[_builtins.str]] = None,
+                 model_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -344,11 +344,11 @@ class ModelDefinedMetadataArtifact(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            content_disposition: Optional[pulumi.Input[_builtins.str]] = None,
-            content_length: Optional[pulumi.Input[_builtins.str]] = None,
-            metadatum_key_name: Optional[pulumi.Input[_builtins.str]] = None,
-            model_defined_metadatum_artifact: Optional[pulumi.Input[_builtins.str]] = None,
-            model_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'ModelDefinedMetadataArtifact':
+            content_disposition: pulumi.Input[Optional[_builtins.str]] = None,
+            content_length: pulumi.Input[Optional[_builtins.str]] = None,
+            metadatum_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+            model_defined_metadatum_artifact: pulumi.Input[Optional[_builtins.str]] = None,
+            model_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ModelDefinedMetadataArtifact':
         """
         Get an existing ModelDefinedMetadataArtifact resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

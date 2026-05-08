@@ -27,18 +27,18 @@ import * as utilities from "../utilities";
  *     displayName: appRoleDisplayName,
  *     idcsEndpoint: testDomain.url,
  *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:AppRole"],
- *     adminRole: appRoleAdminRole,
+ *     adminRole: appRoleAdminRole === "true",
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: appRoleAuthorization,
- *     availableToClients: appRoleAvailableToClients,
- *     availableToGroups: appRoleAvailableToGroups,
- *     availableToUsers: appRoleAvailableToUsers,
+ *     availableToClients: appRoleAvailableToClients === "true",
+ *     availableToGroups: appRoleAvailableToGroups === "true",
+ *     availableToUsers: appRoleAvailableToUsers === "true",
  *     description: appRoleDescription,
  *     id: appRoleId,
  *     legacyGroupName: "legacyGroupName",
  *     ocid: appRoleOcid,
- *     "public": appRolePublic,
+ *     "public": appRolePublic === "true",
  *     resourceTypeSchemaVersion: appRoleResourceTypeSchemaVersion,
  *     tags: [{
  *         key: appRoleTagsKey,
@@ -563,7 +563,7 @@ export interface DomainsAppRoleState {
      * * type: boolean
      * * uniqueness: none
      */
-    adminRole?: pulumi.Input<boolean>;
+    adminRole?: pulumi.Input<boolean | undefined>;
     /**
      * A unique identifier for the application that references this role.
      *
@@ -577,19 +577,19 @@ export interface DomainsAppRoleState {
      * * type: complex
      * * uniqueness: none
      */
-    app?: pulumi.Input<inputs.Identity.DomainsAppRoleApp>;
+    app?: pulumi.Input<inputs.Identity.DomainsAppRoleApp | undefined>;
     /**
      * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * If true, this AppRole can be granted to Apps.
      *
@@ -602,7 +602,7 @@ export interface DomainsAppRoleState {
      * * type: boolean
      * * uniqueness: none
      */
-    availableToClients?: pulumi.Input<boolean>;
+    availableToClients?: pulumi.Input<boolean | undefined>;
     /**
      * If true, this AppRole can be granted to Groups.
      *
@@ -615,7 +615,7 @@ export interface DomainsAppRoleState {
      * * type: boolean
      * * uniqueness: none
      */
-    availableToGroups?: pulumi.Input<boolean>;
+    availableToGroups?: pulumi.Input<boolean | undefined>;
     /**
      * If true, this AppRole can be granted to Users.
      *
@@ -628,7 +628,7 @@ export interface DomainsAppRoleState {
      * * type: boolean
      * * uniqueness: none
      */
-    availableToUsers?: pulumi.Input<boolean>;
+    availableToUsers?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      *
@@ -642,7 +642,7 @@ export interface DomainsAppRoleState {
      * * type: string
      * * uniqueness: none
      */
-    compartmentOcid?: pulumi.Input<string>;
+    compartmentOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      *
@@ -656,7 +656,7 @@ export interface DomainsAppRoleState {
      * * type: boolean
      * * uniqueness: none
      */
-    deleteInProgress?: pulumi.Input<boolean>;
+    deleteInProgress?: pulumi.Input<boolean | undefined>;
     /**
      * AppRole description
      *
@@ -670,7 +670,7 @@ export interface DomainsAppRoleState {
      * * type: string
      * * uniqueness: none
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * AppRole name
      *
@@ -686,7 +686,7 @@ export interface DomainsAppRoleState {
      * * type: string
      * * uniqueness: none
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      *
@@ -700,7 +700,7 @@ export interface DomainsAppRoleState {
      * * type: string
      * * uniqueness: none
      */
-    domainOcid?: pulumi.Input<string>;
+    domainOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -712,11 +712,11 @@ export interface DomainsAppRoleState {
      * * returned: default
      * * type: complex
      */
-    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppRoleIdcsCreatedBy>[]>;
+    idcsCreatedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppRoleIdcsCreatedBy>[] | undefined>;
     /**
      * The basic endpoint for the identity domain
      */
-    idcsEndpoint?: pulumi.Input<string>;
+    idcsEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The User or App who modified the Resource
      *
@@ -728,7 +728,7 @@ export interface DomainsAppRoleState {
      * * returned: default
      * * type: complex
      */
-    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppRoleIdcsLastModifiedBy>[]>;
+    idcsLastModifiedBies?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppRoleIdcsLastModifiedBy>[] | undefined>;
     /**
      * (Updatable) The release number when the resource was upgraded.
      *
@@ -742,7 +742,7 @@ export interface DomainsAppRoleState {
      * * type: string
      * * uniqueness: none
      */
-    idcsLastUpgradedInRelease?: pulumi.Input<string>;
+    idcsLastUpgradedInRelease?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      *
@@ -755,7 +755,7 @@ export interface DomainsAppRoleState {
      * * type: string
      * * uniqueness: none
      */
-    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[]>;
+    idcsPreventedOperations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The name of the legacy group associated with this AppRole.
      *
@@ -769,7 +769,7 @@ export interface DomainsAppRoleState {
      * * type: string
      * * uniqueness: server
      */
-    legacyGroupName?: pulumi.Input<string>;
+    legacyGroupName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) If true, indicates that this Oracle Identity Cloud Service AppRole can be granted to a delegated administrator whose scope is limited to users that are members of one or more groups.
      *
@@ -784,7 +784,7 @@ export interface DomainsAppRoleState {
      * * type: boolean
      * * uniqueness: none
      */
-    limitedToOneOrMoreGroups?: pulumi.Input<boolean>;
+    limitedToOneOrMoreGroups?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) AppRole localization name
      *
@@ -800,7 +800,7 @@ export interface DomainsAppRoleState {
      * * type: string
      * * uniqueness: none
      */
-    localizedDisplayName?: pulumi.Input<string>;
+    localizedDisplayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) AppRole members - when requesting members attribute, it is recommended to use startIndex and count to return members in pages instead of in a single response, eg : #attributes=members[startIndex=1%26count=10]
      *
@@ -816,7 +816,7 @@ export interface DomainsAppRoleState {
      * * type: complex
      * * uniqueness: none
      */
-    members?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppRoleMember>[]>;
+    members?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppRoleMember>[] | undefined>;
     /**
      * (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      *
@@ -830,7 +830,7 @@ export interface DomainsAppRoleState {
      * * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
      * * type: complex
      */
-    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppRoleMeta>[]>;
+    metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppRoleMeta>[] | undefined>;
     /**
      * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -844,7 +844,7 @@ export interface DomainsAppRoleState {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * If true, this AppRole is available automatically to every Oracle Identity Cloud Service User in this tenancy. There is no need to grant it to individual Users or Groups.
      *
@@ -857,11 +857,11 @@ export interface DomainsAppRoleState {
      * * type: boolean
      * * uniqueness: none
      */
-    public?: pulumi.Input<boolean>;
+    public?: pulumi.Input<boolean | undefined>;
     /**
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -875,7 +875,7 @@ export interface DomainsAppRoleState {
      * * type: string
      * * uniqueness: none
      */
-    schemas?: pulumi.Input<pulumi.Input<string>[]>;
+    schemas?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A list of tags on this resource.
      *
@@ -889,7 +889,7 @@ export interface DomainsAppRoleState {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppRoleTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppRoleTag>[] | undefined>;
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      *
@@ -903,7 +903,7 @@ export interface DomainsAppRoleState {
      * * type: string
      * * uniqueness: none
      */
-    tenancyOcid?: pulumi.Input<string>;
+    tenancyOcid?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) AppRole unique name
      *
@@ -920,7 +920,7 @@ export interface DomainsAppRoleState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    uniqueName?: pulumi.Input<string>;
+    uniqueName?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -939,7 +939,7 @@ export interface DomainsAppRoleArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    adminRole?: pulumi.Input<boolean>;
+    adminRole?: pulumi.Input<boolean | undefined>;
     /**
      * A unique identifier for the application that references this role.
      *
@@ -957,15 +957,15 @@ export interface DomainsAppRoleArgs {
     /**
      * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
-    attributeSets?: pulumi.Input<pulumi.Input<string>[]>;
+    attributeSets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
-    attributes?: pulumi.Input<string>;
+    attributes?: pulumi.Input<string | undefined>;
     /**
      * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
-    authorization?: pulumi.Input<string>;
+    authorization?: pulumi.Input<string | undefined>;
     /**
      * If true, this AppRole can be granted to Apps.
      *
@@ -978,7 +978,7 @@ export interface DomainsAppRoleArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    availableToClients?: pulumi.Input<boolean>;
+    availableToClients?: pulumi.Input<boolean | undefined>;
     /**
      * If true, this AppRole can be granted to Groups.
      *
@@ -991,7 +991,7 @@ export interface DomainsAppRoleArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    availableToGroups?: pulumi.Input<boolean>;
+    availableToGroups?: pulumi.Input<boolean | undefined>;
     /**
      * If true, this AppRole can be granted to Users.
      *
@@ -1004,7 +1004,7 @@ export interface DomainsAppRoleArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    availableToUsers?: pulumi.Input<boolean>;
+    availableToUsers?: pulumi.Input<boolean | undefined>;
     /**
      * AppRole description
      *
@@ -1018,7 +1018,7 @@ export interface DomainsAppRoleArgs {
      * * type: string
      * * uniqueness: none
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * AppRole name
      *
@@ -1052,7 +1052,7 @@ export interface DomainsAppRoleArgs {
      * * type: string
      * * uniqueness: server
      */
-    legacyGroupName?: pulumi.Input<string>;
+    legacyGroupName?: pulumi.Input<string | undefined>;
     /**
      * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
@@ -1066,7 +1066,7 @@ export interface DomainsAppRoleArgs {
      * * type: string
      * * uniqueness: global
      */
-    ocid?: pulumi.Input<string>;
+    ocid?: pulumi.Input<string | undefined>;
     /**
      * If true, this AppRole is available automatically to every Oracle Identity Cloud Service User in this tenancy. There is no need to grant it to individual Users or Groups.
      *
@@ -1079,11 +1079,11 @@ export interface DomainsAppRoleArgs {
      * * type: boolean
      * * uniqueness: none
      */
-    public?: pulumi.Input<boolean>;
+    public?: pulumi.Input<boolean | undefined>;
     /**
      * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
-    resourceTypeSchemaVersion?: pulumi.Input<string>;
+    resourceTypeSchemaVersion?: pulumi.Input<string | undefined>;
     /**
      * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \"enterprise\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      *
@@ -1111,5 +1111,5 @@ export interface DomainsAppRoleArgs {
      * * type: complex
      * * uniqueness: none
      */
-    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppRoleTag>[]>;
+    tags?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsAppRoleTag>[] | undefined>;
 }

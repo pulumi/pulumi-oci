@@ -25,7 +25,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlarmHistoryCollection = oci.Monitoring.getAlarmHistoryCollection({
+ * const testAlarmHistoryCollection = oci.monitoring.getAlarmHistoryCollection({
  *     alarmId: testAlarm.id,
  *     alarmHistorytype: alarmHistoryCollectionAlarmHistorytype,
  *     timestampGreaterThanOrEqualTo: alarmHistoryCollectionTimestampGreaterThanOrEqualTo,
@@ -108,7 +108,7 @@ export interface GetAlarmHistoryCollectionResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlarmHistoryCollection = oci.Monitoring.getAlarmHistoryCollection({
+ * const testAlarmHistoryCollection = oci.monitoring.getAlarmHistoryCollection({
  *     alarmId: testAlarm.id,
  *     alarmHistorytype: alarmHistoryCollectionAlarmHistorytype,
  *     timestampGreaterThanOrEqualTo: alarmHistoryCollectionTimestampGreaterThanOrEqualTo,
@@ -133,7 +133,7 @@ export interface GetAlarmHistoryCollectionOutputArgs {
     /**
      * The type of history entries to retrieve. State history (STATE_HISTORY), state transition history (STATE_TRANSITION_HISTORY), rule history (RULE_HISTORY) or rule transition history (RULE_TRANSITION_HISTORY). If not specified, entries of all types are retrieved.  Example: `STATE_HISTORY`
      */
-    alarmHistorytype?: pulumi.Input<string>;
+    alarmHistorytype?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
      */
@@ -141,9 +141,9 @@ export interface GetAlarmHistoryCollectionOutputArgs {
     /**
      * A filter to return only alarm history entries with timestamps occurring on or after the specified date and time. Format defined by RFC3339.  Example: `2023-01-01T01:00:00.789Z`
      */
-    timestampGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timestampGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only alarm history entries with timestamps occurring before the specified date and time. Format defined by RFC3339.  Example: `2023-01-02T01:00:00.789Z`
      */
-    timestampLessThan?: pulumi.Input<string>;
+    timestampLessThan?: pulumi.Input<string | undefined>;
 }

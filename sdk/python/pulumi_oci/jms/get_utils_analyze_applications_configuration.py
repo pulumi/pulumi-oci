@@ -92,7 +92,7 @@ def get_utils_analyze_applications_configuration(compartment_id: Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_analyze_applications_configuration = oci.Jms.get_utils_analyze_applications_configuration(compartment_id=compartment_id)
+    test_analyze_applications_configuration = oci.jms.get_utils_analyze_applications_configuration(compartment_id=compartment_id)
     ```
 
 
@@ -108,7 +108,7 @@ def get_utils_analyze_applications_configuration(compartment_id: Optional[_built
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         id=pulumi.get(__ret__, 'id'),
         namespace=pulumi.get(__ret__, 'namespace'))
-def get_utils_analyze_applications_configuration_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_utils_analyze_applications_configuration_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUtilsAnalyzeApplicationsConfigurationResult]:
     """
     This data source provides details about a specific Analyze Applications Configuration resource in Oracle Cloud Infrastructure Jms Utils service.
@@ -121,7 +121,7 @@ def get_utils_analyze_applications_configuration_output(compartment_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_analyze_applications_configuration = oci.Jms.get_utils_analyze_applications_configuration(compartment_id=compartment_id)
+    test_analyze_applications_configuration = oci.jms.get_utils_analyze_applications_configuration(compartment_id=compartment_id)
     ```
 
 

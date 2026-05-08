@@ -134,7 +134,7 @@ def get_private_application_packages(display_name: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_private_application_packages = oci.ServiceCatalog.get_private_application_packages(private_application_id=test_private_application["id"],
+    test_private_application_packages = oci.servicecatalog.get_private_application_packages(private_application_id=test_private_application["id"],
         display_name=private_application_package_display_name,
         package_types=private_application_package_package_type,
         private_application_package_id=test_private_application_package["id"])
@@ -163,11 +163,11 @@ def get_private_application_packages(display_name: Optional[_builtins.str] = Non
         private_application_id=pulumi.get(__ret__, 'private_application_id'),
         private_application_package_collections=pulumi.get(__ret__, 'private_application_package_collections'),
         private_application_package_id=pulumi.get(__ret__, 'private_application_package_id'))
-def get_private_application_packages_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPrivateApplicationPackagesFilterArgs', 'GetPrivateApplicationPackagesFilterArgsDict']]]]] = None,
-                                            package_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                            private_application_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            private_application_package_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_private_application_packages_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPrivateApplicationPackagesFilterArgs', 'GetPrivateApplicationPackagesFilterArgsDict']]]]] = None,
+                                            package_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                            private_application_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            private_application_package_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateApplicationPackagesResult]:
     """
     This data source provides the list of Private Application Packages in Oracle Cloud Infrastructure Service Catalog service.
@@ -180,7 +180,7 @@ def get_private_application_packages_output(display_name: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_private_application_packages = oci.ServiceCatalog.get_private_application_packages(private_application_id=test_private_application["id"],
+    test_private_application_packages = oci.servicecatalog.get_private_application_packages(private_application_id=test_private_application["id"],
         display_name=private_application_package_display_name,
         package_types=private_application_package_package_type,
         private_application_package_id=test_private_application_package["id"])

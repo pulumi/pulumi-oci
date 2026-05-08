@@ -36,7 +36,7 @@ import (
 //				NameStartsWith: pulumi.StringRef(pbfListingNameStartsWith),
 //				PbfListingId:   pulumi.StringRef(testPbfListing.Id),
 //				State:          pulumi.StringRef(pbfListingState),
-//				Triggers:       pbfListingTrigger,
+//				Triggers:       pulumi.ToArray(pbfListingTrigger),
 //			}, nil)
 //			if err != nil {
 //				return err

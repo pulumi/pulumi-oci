@@ -22,7 +22,7 @@ __all__ = ['SensitiveTypeGroupGroupedSensitiveTypeArgs', 'SensitiveTypeGroupGrou
 class SensitiveTypeGroupGroupedSensitiveTypeArgs:
     def __init__(__self__, *,
                  sensitive_type_group_id: pulumi.Input[_builtins.str],
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs']]]] = None):
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs']]]] = None):
         """
         The set of arguments for constructing a SensitiveTypeGroupGroupedSensitiveType resource.
 
@@ -49,23 +49,23 @@ class SensitiveTypeGroupGroupedSensitiveTypeArgs:
 
     @_builtins.property
     @pulumi.getter(name="patchOperations")
-    def patch_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs']]]]:
+    def patch_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs']]]]:
         """
         (Updatable)
         """
         return pulumi.get(self, "patch_operations")
 
     @patch_operations.setter
-    def patch_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs']]]]):
+    def patch_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs']]]]):
         pulumi.set(self, "patch_operations", value)
 
 
 @pulumi.input_type
 class _SensitiveTypeGroupGroupedSensitiveTypeState:
     def __init__(__self__, *,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input['SensitiveTypeGroupGroupedSensitiveTypeItemArgs']]]] = None,
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs']]]] = None,
-                 sensitive_type_group_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input['SensitiveTypeGroupGroupedSensitiveTypeItemArgs']]]] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs']]]] = None,
+                 sensitive_type_group_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SensitiveTypeGroupGroupedSensitiveType resources.
 
@@ -83,31 +83,31 @@ class _SensitiveTypeGroupGroupedSensitiveTypeState:
 
     @_builtins.property
     @pulumi.getter
-    def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SensitiveTypeGroupGroupedSensitiveTypeItemArgs']]]]:
+    def items(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SensitiveTypeGroupGroupedSensitiveTypeItemArgs']]]]:
         """
         List of sensitive type id summary objects present in the sensitive type group.
         """
         return pulumi.get(self, "items")
 
     @items.setter
-    def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SensitiveTypeGroupGroupedSensitiveTypeItemArgs']]]]):
+    def items(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SensitiveTypeGroupGroupedSensitiveTypeItemArgs']]]]):
         pulumi.set(self, "items", value)
 
     @_builtins.property
     @pulumi.getter(name="patchOperations")
-    def patch_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs']]]]:
+    def patch_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs']]]]:
         """
         (Updatable)
         """
         return pulumi.get(self, "patch_operations")
 
     @patch_operations.setter
-    def patch_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs']]]]):
+    def patch_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs']]]]):
         pulumi.set(self, "patch_operations", value)
 
     @_builtins.property
     @pulumi.getter(name="sensitiveTypeGroupId")
-    def sensitive_type_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sensitive_type_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -115,7 +115,7 @@ class _SensitiveTypeGroupGroupedSensitiveTypeState:
         return pulumi.get(self, "sensitive_type_group_id")
 
     @sensitive_type_group_id.setter
-    def sensitive_type_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sensitive_type_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sensitive_type_group_id", value)
 
 
@@ -125,8 +125,8 @@ class SensitiveTypeGroupGroupedSensitiveType(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs', 'SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgsDict']]]]] = None,
-                 sensitive_type_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs', 'SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgsDict']]]]] = None,
+                 sensitive_type_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Sensitive Type Group Grouped Sensitive Type resource in Oracle Cloud Infrastructure Data Safe service.
@@ -221,8 +221,8 @@ class SensitiveTypeGroupGroupedSensitiveType(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs', 'SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgsDict']]]]] = None,
-                 sensitive_type_group_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs', 'SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgsDict']]]]] = None,
+                 sensitive_type_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -247,9 +247,9 @@ class SensitiveTypeGroupGroupedSensitiveType(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SensitiveTypeGroupGroupedSensitiveTypeItemArgs', 'SensitiveTypeGroupGroupedSensitiveTypeItemArgsDict']]]]] = None,
-            patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs', 'SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgsDict']]]]] = None,
-            sensitive_type_group_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'SensitiveTypeGroupGroupedSensitiveType':
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SensitiveTypeGroupGroupedSensitiveTypeItemArgs', 'SensitiveTypeGroupGroupedSensitiveTypeItemArgsDict']]]]] = None,
+            patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs', 'SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgsDict']]]]] = None,
+            sensitive_type_group_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'SensitiveTypeGroupGroupedSensitiveType':
         """
         Get an existing SensitiveTypeGroupGroupedSensitiveType resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

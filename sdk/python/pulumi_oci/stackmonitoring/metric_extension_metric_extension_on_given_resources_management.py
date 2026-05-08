@@ -81,9 +81,9 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagementArgs:
 @pulumi.input_type
 class _MetricExtensionMetricExtensionOnGivenResourcesManagementState:
     def __init__(__self__, *,
-                 enable_metric_extension_on_given_resources: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metric_extension_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_ids: Optional[pulumi.Input[_builtins.str]] = None):
+                 enable_metric_extension_on_given_resources: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metric_extension_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_ids: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering MetricExtensionMetricExtensionOnGivenResourcesManagement resources.
 
@@ -104,7 +104,7 @@ class _MetricExtensionMetricExtensionOnGivenResourcesManagementState:
 
     @_builtins.property
     @pulumi.getter(name="enableMetricExtensionOnGivenResources")
-    def enable_metric_extension_on_given_resources(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def enable_metric_extension_on_given_resources(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 
@@ -115,31 +115,31 @@ class _MetricExtensionMetricExtensionOnGivenResourcesManagementState:
         return pulumi.get(self, "enable_metric_extension_on_given_resources")
 
     @enable_metric_extension_on_given_resources.setter
-    def enable_metric_extension_on_given_resources(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def enable_metric_extension_on_given_resources(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_metric_extension_on_given_resources", value)
 
     @_builtins.property
     @pulumi.getter(name="metricExtensionId")
-    def metric_extension_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def metric_extension_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
         """
         return pulumi.get(self, "metric_extension_id")
 
     @metric_extension_id.setter
-    def metric_extension_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def metric_extension_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "metric_extension_id", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceIds")
-    def resource_ids(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_ids(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         List of Resource IDs [OCIDs]. Currently, supports only one resource id per request.
         """
         return pulumi.get(self, "resource_ids")
 
     @resource_ids.setter
-    def resource_ids(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_ids(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_ids", value)
 
 
@@ -149,9 +149,9 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagement(pulumi.CustomReso
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_metric_extension_on_given_resources: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metric_extension_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_ids: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_metric_extension_on_given_resources: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metric_extension_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_ids: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Metric Extension Metric Extension On Given Resources Management resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -169,7 +169,7 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagement(pulumi.CustomReso
         test_metric_extension_metric_extension_on_given_resources_management = oci.stackmonitoring.MetricExtensionMetricExtensionOnGivenResourcesManagement("test_metric_extension_metric_extension_on_given_resources_management",
             metric_extension_id=test_metric_extension["id"],
             resource_ids=metric_extension_metric_extension_on_given_resources_management_resource_ids[0],
-            enable_metric_extension_on_given_resources=enable_metric_extension_on_given_resources)
+            enable_metric_extension_on_given_resources=enable_metric_extension_on_given_resources == "true")
         ```
 
 
@@ -205,7 +205,7 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagement(pulumi.CustomReso
         test_metric_extension_metric_extension_on_given_resources_management = oci.stackmonitoring.MetricExtensionMetricExtensionOnGivenResourcesManagement("test_metric_extension_metric_extension_on_given_resources_management",
             metric_extension_id=test_metric_extension["id"],
             resource_ids=metric_extension_metric_extension_on_given_resources_management_resource_ids[0],
-            enable_metric_extension_on_given_resources=enable_metric_extension_on_given_resources)
+            enable_metric_extension_on_given_resources=enable_metric_extension_on_given_resources == "true")
         ```
 
 
@@ -224,9 +224,9 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagement(pulumi.CustomReso
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 enable_metric_extension_on_given_resources: Optional[pulumi.Input[_builtins.bool]] = None,
-                 metric_extension_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_ids: Optional[pulumi.Input[_builtins.str]] = None,
+                 enable_metric_extension_on_given_resources: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metric_extension_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_ids: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -255,9 +255,9 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagement(pulumi.CustomReso
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            enable_metric_extension_on_given_resources: Optional[pulumi.Input[_builtins.bool]] = None,
-            metric_extension_id: Optional[pulumi.Input[_builtins.str]] = None,
-            resource_ids: Optional[pulumi.Input[_builtins.str]] = None) -> 'MetricExtensionMetricExtensionOnGivenResourcesManagement':
+            enable_metric_extension_on_given_resources: pulumi.Input[Optional[_builtins.bool]] = None,
+            metric_extension_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_ids: pulumi.Input[Optional[_builtins.str]] = None) -> 'MetricExtensionMetricExtensionOnGivenResourcesManagement':
         """
         Get an existing MetricExtensionMetricExtensionOnGivenResourcesManagement resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

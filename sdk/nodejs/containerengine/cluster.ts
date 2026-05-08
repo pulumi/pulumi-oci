@@ -32,7 +32,7 @@ import * as utilities from "../utilities";
  *         "Operations.CostCenter": "42",
  *     },
  *     endpointConfig: {
- *         isPublicIpEnabled: clusterEndpointConfigIsPublicIpEnabled,
+ *         isPublicIpEnabled: clusterEndpointConfigIsPublicIpEnabled === "true",
  *         nsgIds: clusterEndpointConfigNsgIds,
  *         subnetId: testSubnet.id,
  *     },
@@ -40,7 +40,7 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     imagePolicyConfig: {
- *         isPolicyEnabled: clusterImagePolicyConfigIsPolicyEnabled,
+ *         isPolicyEnabled: clusterImagePolicyConfigIsPolicyEnabled === "true",
  *         keyDetails: [{
  *             kmsKeyId: testKey.id,
  *         }],
@@ -48,11 +48,11 @@ import * as utilities from "../utilities";
  *     kmsKeyId: testKey.id,
  *     options: {
  *         addOns: {
- *             isKubernetesDashboardEnabled: clusterOptionsAddOnsIsKubernetesDashboardEnabled,
- *             isTillerEnabled: clusterOptionsAddOnsIsTillerEnabled,
+ *             isKubernetesDashboardEnabled: clusterOptionsAddOnsIsKubernetesDashboardEnabled === "true",
+ *             isTillerEnabled: clusterOptionsAddOnsIsTillerEnabled === "true",
  *         },
  *         admissionControllerOptions: {
- *             isPodSecurityPolicyEnabled: clusterOptionsAdmissionControllerOptionsIsPodSecurityPolicyEnabled,
+ *             isPodSecurityPolicyEnabled: clusterOptionsAdmissionControllerOptionsIsPodSecurityPolicyEnabled === "true",
  *         },
  *         ipFamilies: clusterOptionsIpFamilies,
  *         kubernetesNetworkConfig: {
@@ -60,7 +60,7 @@ import * as utilities from "../utilities";
  *             servicesCidr: clusterOptionsKubernetesNetworkConfigServicesCidr,
  *         },
  *         openIdConnectTokenAuthenticationConfig: {
- *             isOpenIdConnectAuthEnabled: clusterOptionsOpenIdConnectTokenAuthenticationConfigIsOpenIdConnectAuthEnabled,
+ *             isOpenIdConnectAuthEnabled: clusterOptionsOpenIdConnectTokenAuthenticationConfigIsOpenIdConnectAuthEnabled === "true",
  *             caCertificate: clusterOptionsOpenIdConnectTokenAuthenticationConfigCaCertificate,
  *             clientId: testClient.id,
  *             configurationFile: clusterOptionsOpenIdConnectTokenAuthenticationConfigConfigurationFile,
@@ -76,7 +76,7 @@ import * as utilities from "../utilities";
  *             usernamePrefix: clusterOptionsOpenIdConnectTokenAuthenticationConfigUsernamePrefix,
  *         },
  *         openIdConnectDiscovery: {
- *             isOpenIdConnectDiscoveryEnabled: clusterOptionsOpenIdConnectDiscoveryIsOpenIdConnectDiscoveryEnabled,
+ *             isOpenIdConnectDiscoveryEnabled: clusterOptionsOpenIdConnectDiscoveryIsOpenIdConnectDiscoveryEnabled === "true",
  *         },
  *         persistentVolumeConfig: {
  *             definedTags: {
@@ -293,75 +293,75 @@ export interface ClusterState {
     /**
      * Available Kubernetes versions to which the clusters masters may be upgraded.
      */
-    availableKubernetesUpgrades?: pulumi.Input<pulumi.Input<string>[]>;
+    availableKubernetesUpgrades?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Available CNIs and network options for existing and new node pools of the cluster
      */
-    clusterPodNetworkOptions?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ClusterClusterPodNetworkOption>[]>;
+    clusterPodNetworkOptions?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ClusterClusterPodNetworkOption>[] | undefined>;
     /**
      * The OCID of the compartment in which to create the cluster.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The network configuration for access to the Cluster control plane.
      */
-    endpointConfig?: pulumi.Input<inputs.ContainerEngine.ClusterEndpointConfig>;
+    endpointConfig?: pulumi.Input<inputs.ContainerEngine.ClusterEndpointConfig | undefined>;
     /**
      * Endpoints served up by the cluster masters.
      */
-    endpoints?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ClusterEndpoint>[]>;
+    endpoints?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ClusterEndpoint>[] | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
      */
-    imagePolicyConfig?: pulumi.Input<inputs.ContainerEngine.ClusterImagePolicyConfig>;
+    imagePolicyConfig?: pulumi.Input<inputs.ContainerEngine.ClusterImagePolicyConfig | undefined>;
     /**
      * The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The version of Kubernetes to install into the cluster masters.
      */
-    kubernetesVersion?: pulumi.Input<string>;
+    kubernetesVersion?: pulumi.Input<string | undefined>;
     /**
      * Details about the state of the cluster masters.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Metadata about the cluster.
      */
-    metadatas?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ClusterMetadata>[]>;
+    metadatas?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ClusterMetadata>[] | undefined>;
     /**
      * (Updatable) The name of the cluster. Avoid entering confidential information.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The cluster-specific OpenID Connect Discovery endpoint
      */
-    openIdConnectDiscoveryEndpoint?: pulumi.Input<string>;
+    openIdConnectDiscoveryEndpoint?: pulumi.Input<string | undefined>;
     /**
      * The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
      */
-    openIdConnectDiscoveryKey?: pulumi.Input<string>;
+    openIdConnectDiscoveryKey?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Optional attributes for the cluster.
      */
-    options?: pulumi.Input<inputs.ContainerEngine.ClusterOptions>;
+    options?: pulumi.Input<inputs.ContainerEngine.ClusterOptions | undefined>;
     /**
      * The state of the cluster masters.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Type of cluster
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the virtual cloud network (VCN) in which to create the cluster.
      *
@@ -369,7 +369,7 @@ export interface ClusterState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vcnId?: pulumi.Input<string>;
+    vcnId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -379,7 +379,7 @@ export interface ClusterArgs {
     /**
      * Available CNIs and network options for existing and new node pools of the cluster
      */
-    clusterPodNetworkOptions?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ClusterClusterPodNetworkOption>[]>;
+    clusterPodNetworkOptions?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ClusterClusterPodNetworkOption>[] | undefined>;
     /**
      * The OCID of the compartment in which to create the cluster.
      */
@@ -387,23 +387,23 @@ export interface ClusterArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The network configuration for access to the Cluster control plane.
      */
-    endpointConfig?: pulumi.Input<inputs.ContainerEngine.ClusterEndpointConfig>;
+    endpointConfig?: pulumi.Input<inputs.ContainerEngine.ClusterEndpointConfig | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
      */
-    imagePolicyConfig?: pulumi.Input<inputs.ContainerEngine.ClusterImagePolicyConfig>;
+    imagePolicyConfig?: pulumi.Input<inputs.ContainerEngine.ClusterImagePolicyConfig | undefined>;
     /**
      * The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
      */
-    kmsKeyId?: pulumi.Input<string>;
+    kmsKeyId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The version of Kubernetes to install into the cluster masters.
      */
@@ -411,15 +411,15 @@ export interface ClusterArgs {
     /**
      * (Updatable) The name of the cluster. Avoid entering confidential information.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Optional attributes for the cluster.
      */
-    options?: pulumi.Input<inputs.ContainerEngine.ClusterOptions>;
+    options?: pulumi.Input<inputs.ContainerEngine.ClusterOptions | undefined>;
     /**
      * (Updatable) Type of cluster
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the virtual cloud network (VCN) in which to create the cluster.
      *

@@ -138,7 +138,7 @@ def get_internet_gateways(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_internet_gateways = oci.Core.get_internet_gateways(compartment_id=compartment_id,
+    test_internet_gateways = oci.core.get_internet_gateways(compartment_id=compartment_id,
         display_name=internet_gateway_display_name,
         state=internet_gateway_state,
         vcn_id=test_vcn["id"])
@@ -167,11 +167,11 @@ def get_internet_gateways(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
-def get_internet_gateways_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                 display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetInternetGatewaysFilterArgs', 'GetInternetGatewaysFilterArgsDict']]]]] = None,
-                                 state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 vcn_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_internet_gateways_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                 display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 filters: pulumi.Input[Optional[Optional[Sequence[Union['GetInternetGatewaysFilterArgs', 'GetInternetGatewaysFilterArgsDict']]]]] = None,
+                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 vcn_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetInternetGatewaysResult]:
     """
     This data source provides the list of Internet Gateways in Oracle Cloud Infrastructure Core service.
@@ -185,7 +185,7 @@ def get_internet_gateways_output(compartment_id: Optional[pulumi.Input[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_internet_gateways = oci.Core.get_internet_gateways(compartment_id=compartment_id,
+    test_internet_gateways = oci.core.get_internet_gateways(compartment_id=compartment_id,
         display_name=internet_gateway_display_name,
         state=internet_gateway_state,
         vcn_id=test_vcn["id"])

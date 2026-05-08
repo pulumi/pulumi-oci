@@ -299,7 +299,7 @@ def get_file_storage_object_storage_link(object_storage_link_id: Optional[_built
     import pulumi
     import pulumi_oci as oci
 
-    test_object_storage_link = oci.Lustre.get_file_storage_object_storage_link(object_storage_link_id=test_object_storage_link_oci_lustre_file_storage_object_storage_link["id"])
+    test_object_storage_link = oci.lustre.get_file_storage_object_storage_link(object_storage_link_id=test_object_storage_link_oci_lustre_file_storage_object_storage_link["id"])
     ```
 
 
@@ -333,7 +333,7 @@ def get_file_storage_object_storage_link(object_storage_link_id: Optional[_built
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_file_storage_object_storage_link_output(object_storage_link_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_file_storage_object_storage_link_output(object_storage_link_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFileStorageObjectStorageLinkResult]:
     """
     This data source provides details about a specific Object Storage Link resource in Oracle Cloud Infrastructure Lustre File Storage service.
@@ -346,7 +346,7 @@ def get_file_storage_object_storage_link_output(object_storage_link_id: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_object_storage_link = oci.Lustre.get_file_storage_object_storage_link(object_storage_link_id=test_object_storage_link_oci_lustre_file_storage_object_storage_link["id"])
+    test_object_storage_link = oci.lustre.get_file_storage_object_storage_link(object_storage_link_id=test_object_storage_link_oci_lustre_file_storage_object_storage_link["id"])
     ```
 
 

@@ -214,14 +214,14 @@ def get_domains_cloud_gate_servers(attribute_sets: Optional[Sequence[_builtins.s
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_gate_servers = oci.Identity.get_domains_cloud_gate_servers(idcs_endpoint=test_domain["url"],
-        cloud_gate_server_count=cloud_gate_server_cloud_gate_server_count,
+    test_cloud_gate_servers = oci.identity.get_domains_cloud_gate_servers(idcs_endpoint=test_domain["url"],
+        cloud_gate_server_count=int(cloud_gate_server_cloud_gate_server_count),
         cloud_gate_server_filter=cloud_gate_server_cloud_gate_server_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=cloud_gate_server_authorization,
         resource_type_schema_version=cloud_gate_server_resource_type_schema_version,
-        start_index=cloud_gate_server_start_index)
+        start_index=int(cloud_gate_server_start_index))
     ```
 
 
@@ -265,17 +265,17 @@ def get_domains_cloud_gate_servers(attribute_sets: Optional[Sequence[_builtins.s
         sort_order=pulumi.get(__ret__, 'sort_order'),
         start_index=pulumi.get(__ret__, 'start_index'),
         total_results=pulumi.get(__ret__, 'total_results'))
-def get_domains_cloud_gate_servers_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                          attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          cloud_gate_server_count: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                          cloud_gate_server_filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                          resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          sort_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          sort_order: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                          start_index: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+def get_domains_cloud_gate_servers_output(attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                          attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          cloud_gate_server_count: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                          cloud_gate_server_filter: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                          resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          sort_by: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          sort_order: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                          start_index: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsCloudGateServersResult]:
     """
     This data source provides the list of Cloud Gate Servers in Oracle Cloud Infrastructure Identity Domains service.
@@ -288,14 +288,14 @@ def get_domains_cloud_gate_servers_output(attribute_sets: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_gate_servers = oci.Identity.get_domains_cloud_gate_servers(idcs_endpoint=test_domain["url"],
-        cloud_gate_server_count=cloud_gate_server_cloud_gate_server_count,
+    test_cloud_gate_servers = oci.identity.get_domains_cloud_gate_servers(idcs_endpoint=test_domain["url"],
+        cloud_gate_server_count=int(cloud_gate_server_cloud_gate_server_count),
         cloud_gate_server_filter=cloud_gate_server_cloud_gate_server_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=cloud_gate_server_authorization,
         resource_type_schema_version=cloud_gate_server_resource_type_schema_version,
-        start_index=cloud_gate_server_start_index)
+        start_index=int(cloud_gate_server_start_index))
     ```
 
 

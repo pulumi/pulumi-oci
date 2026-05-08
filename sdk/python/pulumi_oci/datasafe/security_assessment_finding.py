@@ -22,7 +22,7 @@ __all__ = ['SecurityAssessmentFindingArgs', 'SecurityAssessmentFinding']
 class SecurityAssessmentFindingArgs:
     def __init__(__self__, *,
                  security_assessment_id: pulumi.Input[_builtins.str],
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentFindingPatchOperationArgs']]]] = None):
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentFindingPatchOperationArgs']]]] = None):
         """
         The set of arguments for constructing a SecurityAssessmentFinding resource.
 
@@ -49,42 +49,42 @@ class SecurityAssessmentFindingArgs:
 
     @_builtins.property
     @pulumi.getter(name="patchOperations")
-    def patch_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentFindingPatchOperationArgs']]]]:
+    def patch_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentFindingPatchOperationArgs']]]]:
         """
         (Updatable)
         """
         return pulumi.get(self, "patch_operations")
 
     @patch_operations.setter
-    def patch_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentFindingPatchOperationArgs']]]]):
+    def patch_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentFindingPatchOperationArgs']]]]):
         pulumi.set(self, "patch_operations", value)
 
 
 @pulumi.input_type
 class _SecurityAssessmentFindingState:
     def __init__(__self__, *,
-                 assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 category: Optional[pulumi.Input[_builtins.str]] = None,
-                 details: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 has_target_db_risk_level_changed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_risk_modified: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_top_finding: Optional[pulumi.Input[_builtins.bool]] = None,
-                 justification: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 oneline: Optional[pulumi.Input[_builtins.str]] = None,
-                 oracle_defined_severity: Optional[pulumi.Input[_builtins.str]] = None,
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentFindingPatchOperationArgs']]]] = None,
-                 references: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentFindingReferenceArgs']]]] = None,
-                 remarks: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 severity: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 summary: Optional[pulumi.Input[_builtins.str]] = None,
-                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_valid_until: Optional[pulumi.Input[_builtins.str]] = None,
-                 title: Optional[pulumi.Input[_builtins.str]] = None):
+                 assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 category: pulumi.Input[Optional[_builtins.str]] = None,
+                 details: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 has_target_db_risk_level_changed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_risk_modified: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_top_finding: pulumi.Input[Optional[_builtins.bool]] = None,
+                 justification: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 oneline: pulumi.Input[Optional[_builtins.str]] = None,
+                 oracle_defined_severity: pulumi.Input[Optional[_builtins.str]] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentFindingPatchOperationArgs']]]] = None,
+                 references: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentFindingReferenceArgs']]]] = None,
+                 remarks: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 severity: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 summary: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_valid_until: pulumi.Input[Optional[_builtins.str]] = None,
+                 title: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SecurityAssessmentFinding resources.
 
@@ -159,175 +159,175 @@ class _SecurityAssessmentFindingState:
 
     @_builtins.property
     @pulumi.getter(name="assessmentId")
-    def assessment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def assessment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the assessment that generated this finding.
         """
         return pulumi.get(self, "assessment_id")
 
     @assessment_id.setter
-    def assessment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def assessment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "assessment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def category(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def category(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The category to which the finding belongs to.
         """
         return pulumi.get(self, "category")
 
     @category.setter
-    def category(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def category(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "category", value)
 
     @_builtins.property
     @pulumi.getter
-    def details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
         """
         return pulumi.get(self, "details")
 
     @details.setter
-    def details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "details", value)
 
     @_builtins.property
     @pulumi.getter(name="hasTargetDbRiskLevelChanged")
-    def has_target_db_risk_level_changed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def has_target_db_risk_level_changed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
         """
         return pulumi.get(self, "has_target_db_risk_level_changed")
 
     @has_target_db_risk_level_changed.setter
-    def has_target_db_risk_level_changed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def has_target_db_risk_level_changed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "has_target_db_risk_level_changed", value)
 
     @_builtins.property
     @pulumi.getter(name="isRiskModified")
-    def is_risk_modified(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_risk_modified(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Determines if this risk level was modified by user.
         """
         return pulumi.get(self, "is_risk_modified")
 
     @is_risk_modified.setter
-    def is_risk_modified(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_risk_modified(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_risk_modified", value)
 
     @_builtins.property
     @pulumi.getter(name="isTopFinding")
-    def is_top_finding(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_top_finding(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether a given finding is marked as topFinding or not.
         """
         return pulumi.get(self, "is_top_finding")
 
     @is_top_finding.setter
-    def is_top_finding(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_top_finding(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_top_finding", value)
 
     @_builtins.property
     @pulumi.getter
-    def justification(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def justification(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         User provided reason for accepting or modifying this finding if they choose to do so.
         """
         return pulumi.get(self, "justification")
 
     @justification.setter
-    def justification(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def justification(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "justification", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The unique finding key. This is a system-generated identifier. To get the finding key for a finding, use ListFindings.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Details about the current state of the finding.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def oneline(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oneline(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Provides a recommended approach to take to remediate the finding reported.
         """
         return pulumi.get(self, "oneline")
 
     @oneline.setter
-    def oneline(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oneline(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oneline", value)
 
     @_builtins.property
     @pulumi.getter(name="oracleDefinedSeverity")
-    def oracle_defined_severity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def oracle_defined_severity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The severity of the finding as determined by security assessment. This cannot be modified by user.
         """
         return pulumi.get(self, "oracle_defined_severity")
 
     @oracle_defined_severity.setter
-    def oracle_defined_severity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def oracle_defined_severity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "oracle_defined_severity", value)
 
     @_builtins.property
     @pulumi.getter(name="patchOperations")
-    def patch_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentFindingPatchOperationArgs']]]]:
+    def patch_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentFindingPatchOperationArgs']]]]:
         """
         (Updatable)
         """
         return pulumi.get(self, "patch_operations")
 
     @patch_operations.setter
-    def patch_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentFindingPatchOperationArgs']]]]):
+    def patch_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentFindingPatchOperationArgs']]]]):
         pulumi.set(self, "patch_operations", value)
 
     @_builtins.property
     @pulumi.getter
-    def references(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentFindingReferenceArgs']]]]:
+    def references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentFindingReferenceArgs']]]]:
         """
         Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
         """
         return pulumi.get(self, "references")
 
     @references.setter
-    def references(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentFindingReferenceArgs']]]]):
+    def references(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SecurityAssessmentFindingReferenceArgs']]]]):
         pulumi.set(self, "references", value)
 
     @_builtins.property
     @pulumi.getter
-    def remarks(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def remarks(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
         """
         return pulumi.get(self, "remarks")
 
     @remarks.setter
-    def remarks(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def remarks(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "remarks", value)
 
     @_builtins.property
     @pulumi.getter(name="securityAssessmentId")
-    def security_assessment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_assessment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -335,91 +335,91 @@ class _SecurityAssessmentFindingState:
         return pulumi.get(self, "security_assessment_id")
 
     @security_assessment_id.setter
-    def security_assessment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_assessment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_assessment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def severity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def severity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The severity of the finding as determined by security assessment and is same as oracleDefinedSeverity, unless modified by user.
         """
         return pulumi.get(self, "severity")
 
     @severity.setter
-    def severity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def severity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "severity", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the finding.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def summary(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def summary(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
         """
         return pulumi.get(self, "summary")
 
     @summary.setter
-    def summary(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def summary(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "summary", value)
 
     @_builtins.property
     @pulumi.getter(name="targetId")
-    def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the target database.
         """
         return pulumi.get(self, "target_id")
 
     @target_id.setter
-    def target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="timeValidUntil")
-    def time_valid_until(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_valid_until(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time until which the change in severity(deferred / modified) of this finding is valid.
         """
         return pulumi.get(self, "time_valid_until")
 
     @time_valid_until.setter
-    def time_valid_until(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_valid_until(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_valid_until", value)
 
     @_builtins.property
     @pulumi.getter
-    def title(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def title(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The short title for the finding.
         """
         return pulumi.get(self, "title")
 
     @title.setter
-    def title(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def title(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "title", value)
 
 
@@ -429,8 +429,8 @@ class SecurityAssessmentFinding(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentFindingPatchOperationArgs', 'SecurityAssessmentFindingPatchOperationArgsDict']]]]] = None,
-                 security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentFindingPatchOperationArgs', 'SecurityAssessmentFindingPatchOperationArgsDict']]]]] = None,
+                 security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Security Assessment Finding resource in Oracle Cloud Infrastructure Data Safe service.
@@ -523,8 +523,8 @@ class SecurityAssessmentFinding(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentFindingPatchOperationArgs', 'SecurityAssessmentFindingPatchOperationArgsDict']]]]] = None,
-                 security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentFindingPatchOperationArgs', 'SecurityAssessmentFindingPatchOperationArgsDict']]]]] = None,
+                 security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -568,28 +568,28 @@ class SecurityAssessmentFinding(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            category: Optional[pulumi.Input[_builtins.str]] = None,
-            details: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            has_target_db_risk_level_changed: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_risk_modified: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_top_finding: Optional[pulumi.Input[_builtins.bool]] = None,
-            justification: Optional[pulumi.Input[_builtins.str]] = None,
-            key: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            oneline: Optional[pulumi.Input[_builtins.str]] = None,
-            oracle_defined_severity: Optional[pulumi.Input[_builtins.str]] = None,
-            patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentFindingPatchOperationArgs', 'SecurityAssessmentFindingPatchOperationArgsDict']]]]] = None,
-            references: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SecurityAssessmentFindingReferenceArgs', 'SecurityAssessmentFindingReferenceArgsDict']]]]] = None,
-            remarks: Optional[pulumi.Input[_builtins.str]] = None,
-            security_assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            severity: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            summary: Optional[pulumi.Input[_builtins.str]] = None,
-            target_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            time_valid_until: Optional[pulumi.Input[_builtins.str]] = None,
-            title: Optional[pulumi.Input[_builtins.str]] = None) -> 'SecurityAssessmentFinding':
+            assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            category: pulumi.Input[Optional[_builtins.str]] = None,
+            details: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            has_target_db_risk_level_changed: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_risk_modified: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_top_finding: pulumi.Input[Optional[_builtins.bool]] = None,
+            justification: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            oneline: pulumi.Input[Optional[_builtins.str]] = None,
+            oracle_defined_severity: pulumi.Input[Optional[_builtins.str]] = None,
+            patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentFindingPatchOperationArgs', 'SecurityAssessmentFindingPatchOperationArgsDict']]]]] = None,
+            references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentFindingReferenceArgs', 'SecurityAssessmentFindingReferenceArgsDict']]]]] = None,
+            remarks: pulumi.Input[Optional[_builtins.str]] = None,
+            security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            severity: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            summary: pulumi.Input[Optional[_builtins.str]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            time_valid_until: pulumi.Input[Optional[_builtins.str]] = None,
+            title: pulumi.Input[Optional[_builtins.str]] = None) -> 'SecurityAssessmentFinding':
         """
         Get an existing SecurityAssessmentFinding resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

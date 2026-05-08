@@ -203,14 +203,14 @@ def get_fleet_crypto_analysis_results(aggregation_mode: Optional[_builtins.str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_crypto_analysis_results = oci.Jms.get_fleet_crypto_analysis_results(fleet_id=test_fleet["id"],
+    test_fleet_crypto_analysis_results = oci.jms.get_fleet_crypto_analysis_results(fleet_id=test_fleet["id"],
         aggregation_mode=fleet_crypto_analysis_result_aggregation_mode,
-        finding_count=fleet_crypto_analysis_result_finding_count,
-        finding_count_greater_than=fleet_crypto_analysis_result_finding_count_greater_than,
+        finding_count=int(fleet_crypto_analysis_result_finding_count),
+        finding_count_greater_than=int(fleet_crypto_analysis_result_finding_count_greater_than),
         host_name=fleet_crypto_analysis_result_host_name,
         managed_instance_id=fleet_crypto_analysis_result_managed_instance_ocid,
-        non_compliant_finding_count=fleet_crypto_analysis_result_non_compliant_finding_count,
-        non_compliant_finding_count_greater_than=fleet_crypto_analysis_result_non_compliant_finding_count_greater_than,
+        non_compliant_finding_count=int(fleet_crypto_analysis_result_non_compliant_finding_count),
+        non_compliant_finding_count_greater_than=int(fleet_crypto_analysis_result_non_compliant_finding_count_greater_than),
         time_end=fleet_crypto_analysis_result_time_end,
         time_start=fleet_crypto_analysis_result_time_start)
     ```
@@ -256,17 +256,17 @@ def get_fleet_crypto_analysis_results(aggregation_mode: Optional[_builtins.str] 
         non_compliant_finding_count_greater_than=pulumi.get(__ret__, 'non_compliant_finding_count_greater_than'),
         time_end=pulumi.get(__ret__, 'time_end'),
         time_start=pulumi.get(__ret__, 'time_start'))
-def get_fleet_crypto_analysis_results_output(aggregation_mode: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetFleetCryptoAnalysisResultsFilterArgs', 'GetFleetCryptoAnalysisResultsFilterArgsDict']]]]] = None,
-                                             finding_count: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                             finding_count_greater_than: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                             fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             host_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             managed_instance_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             non_compliant_finding_count: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                             non_compliant_finding_count_greater_than: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
-                                             time_end: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             time_start: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_fleet_crypto_analysis_results_output(aggregation_mode: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetFleetCryptoAnalysisResultsFilterArgs', 'GetFleetCryptoAnalysisResultsFilterArgsDict']]]]] = None,
+                                             finding_count: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                             finding_count_greater_than: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                             fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             host_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             managed_instance_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             non_compliant_finding_count: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                             non_compliant_finding_count_greater_than: pulumi.Input[Optional[Optional[_builtins.int]]] = None,
+                                             time_end: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             time_start: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFleetCryptoAnalysisResultsResult]:
     """
     This data source provides the list of Fleet Crypto Analysis Results in Oracle Cloud Infrastructure Jms service.
@@ -279,14 +279,14 @@ def get_fleet_crypto_analysis_results_output(aggregation_mode: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_crypto_analysis_results = oci.Jms.get_fleet_crypto_analysis_results(fleet_id=test_fleet["id"],
+    test_fleet_crypto_analysis_results = oci.jms.get_fleet_crypto_analysis_results(fleet_id=test_fleet["id"],
         aggregation_mode=fleet_crypto_analysis_result_aggregation_mode,
-        finding_count=fleet_crypto_analysis_result_finding_count,
-        finding_count_greater_than=fleet_crypto_analysis_result_finding_count_greater_than,
+        finding_count=int(fleet_crypto_analysis_result_finding_count),
+        finding_count_greater_than=int(fleet_crypto_analysis_result_finding_count_greater_than),
         host_name=fleet_crypto_analysis_result_host_name,
         managed_instance_id=fleet_crypto_analysis_result_managed_instance_ocid,
-        non_compliant_finding_count=fleet_crypto_analysis_result_non_compliant_finding_count,
-        non_compliant_finding_count_greater_than=fleet_crypto_analysis_result_non_compliant_finding_count_greater_than,
+        non_compliant_finding_count=int(fleet_crypto_analysis_result_non_compliant_finding_count),
+        non_compliant_finding_count_greater_than=int(fleet_crypto_analysis_result_non_compliant_finding_count_greater_than),
         time_end=fleet_crypto_analysis_result_time_end,
         time_start=fleet_crypto_analysis_result_time_start)
     ```

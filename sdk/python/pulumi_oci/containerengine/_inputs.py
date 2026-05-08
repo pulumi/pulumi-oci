@@ -140,15 +140,15 @@ __all__ = [
 ]
 
 class AddonAddonErrorArgsDict(TypedDict):
-    code: NotRequired[pulumi.Input[_builtins.str]]
+    code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A human-readable error string of the upstream error.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The status of the HTTP response encountered in the upstream error.
     """
@@ -156,9 +156,9 @@ class AddonAddonErrorArgsDict(TypedDict):
 @pulumi.input_type
 class AddonAddonErrorArgs:
     def __init__(__self__, *,
-                 code: Optional[pulumi.Input[_builtins.str]] = None,
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None):
+                 code: pulumi.Input[Optional[_builtins.str]] = None,
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] code: A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
         :param pulumi.Input[_builtins.str] message: A human-readable error string of the upstream error.
@@ -173,47 +173,47 @@ class AddonAddonErrorArgs:
 
     @_builtins.property
     @pulumi.getter
-    def code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
         """
         return pulumi.get(self, "code")
 
     @code.setter
-    def code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "code", value)
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A human-readable error string of the upstream error.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the HTTP response encountered in the upstream error.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
 
 class AddonConfigurationArgsDict(TypedDict):
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) configuration key name
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) configuration value name
     """
@@ -221,8 +221,8 @@ class AddonConfigurationArgsDict(TypedDict):
 @pulumi.input_type
 class AddonConfigurationArgs:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] key: (Updatable) configuration key name
         :param pulumi.Input[_builtins.str] value: (Updatable) configuration value name
@@ -234,26 +234,26 @@ class AddonConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) configuration key name
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) configuration value name
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
@@ -286,23 +286,23 @@ class ClusterClusterPodNetworkOptionArgs:
 
 
 class ClusterEndpointArgsDict(TypedDict):
-    ipv6endpoint: NotRequired[pulumi.Input[_builtins.str]]
+    ipv6endpoint: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The IPv6 networking Kubernetes API server endpoint.
     """
-    kubernetes: NotRequired[pulumi.Input[_builtins.str]]
+    kubernetes: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The non-native networking Kubernetes API server endpoint.
     """
-    private_endpoint: NotRequired[pulumi.Input[_builtins.str]]
+    private_endpoint: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The private native networking Kubernetes API server endpoint.
     """
-    public_endpoint: NotRequired[pulumi.Input[_builtins.str]]
+    public_endpoint: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The public native networking Kubernetes API server endpoint, if one was requested.
     """
-    vcn_hostname_endpoint: NotRequired[pulumi.Input[_builtins.str]]
+    vcn_hostname_endpoint: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The FQDN assigned to the Kubernetes API private endpoint. Example: 'https://yourVcnHostnameEndpoint'
     """
@@ -310,11 +310,11 @@ class ClusterEndpointArgsDict(TypedDict):
 @pulumi.input_type
 class ClusterEndpointArgs:
     def __init__(__self__, *,
-                 ipv6endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 kubernetes: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcn_hostname_endpoint: Optional[pulumi.Input[_builtins.str]] = None):
+                 ipv6endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 kubernetes: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcn_hostname_endpoint: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] ipv6endpoint: The IPv6 networking Kubernetes API server endpoint.
         :param pulumi.Input[_builtins.str] kubernetes: The non-native networking Kubernetes API server endpoint.
@@ -335,62 +335,62 @@ class ClusterEndpointArgs:
 
     @_builtins.property
     @pulumi.getter
-    def ipv6endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv6endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The IPv6 networking Kubernetes API server endpoint.
         """
         return pulumi.get(self, "ipv6endpoint")
 
     @ipv6endpoint.setter
-    def ipv6endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv6endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv6endpoint", value)
 
     @_builtins.property
     @pulumi.getter
-    def kubernetes(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kubernetes(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The non-native networking Kubernetes API server endpoint.
         """
         return pulumi.get(self, "kubernetes")
 
     @kubernetes.setter
-    def kubernetes(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kubernetes(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kubernetes", value)
 
     @_builtins.property
     @pulumi.getter(name="privateEndpoint")
-    def private_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The private native networking Kubernetes API server endpoint.
         """
         return pulumi.get(self, "private_endpoint")
 
     @private_endpoint.setter
-    def private_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="publicEndpoint")
-    def public_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The public native networking Kubernetes API server endpoint, if one was requested.
         """
         return pulumi.get(self, "public_endpoint")
 
     @public_endpoint.setter
-    def public_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_endpoint", value)
 
     @_builtins.property
     @pulumi.getter(name="vcnHostnameEndpoint")
-    def vcn_hostname_endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vcn_hostname_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The FQDN assigned to the Kubernetes API private endpoint. Example: 'https://yourVcnHostnameEndpoint'
         """
         return pulumi.get(self, "vcn_hostname_endpoint")
 
     @vcn_hostname_endpoint.setter
-    def vcn_hostname_endpoint(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vcn_hostname_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vcn_hostname_endpoint", value)
 
 
@@ -399,11 +399,11 @@ class ClusterEndpointConfigArgsDict(TypedDict):
     """
     The OCID of the regional subnet in which to place the Cluster endpoint.
     """
-    is_public_ip_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_public_ip_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
     """
-    nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    nsg_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
     """
@@ -412,8 +412,8 @@ class ClusterEndpointConfigArgsDict(TypedDict):
 class ClusterEndpointConfigArgs:
     def __init__(__self__, *,
                  subnet_id: pulumi.Input[_builtins.str],
-                 is_public_ip_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 is_public_ip_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of the regional subnet in which to place the Cluster endpoint.
         :param pulumi.Input[_builtins.bool] is_public_ip_enabled: Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
@@ -439,35 +439,35 @@ class ClusterEndpointConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="isPublicIpEnabled")
-    def is_public_ip_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_public_ip_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the cluster should be assigned a public IP address. Defaults to false. If set to true on a private subnet, the cluster provisioning will fail.
         """
         return pulumi.get(self, "is_public_ip_enabled")
 
     @is_public_ip_enabled.setter
-    def is_public_ip_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_public_ip_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_public_ip_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of the OCIDs of the network security groups (NSGs) to apply to the cluster endpoint. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
 
 class ClusterImagePolicyConfigArgsDict(TypedDict):
-    is_policy_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_policy_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
     """
-    key_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ClusterImagePolicyConfigKeyDetailArgsDict']]]]
+    key_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterImagePolicyConfigKeyDetailArgs']]]]]
     """
     (Updatable) A list of KMS key details.
     """
@@ -475,8 +475,8 @@ class ClusterImagePolicyConfigArgsDict(TypedDict):
 @pulumi.input_type
 class ClusterImagePolicyConfigArgs:
     def __init__(__self__, *,
-                 is_policy_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key_details: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterImagePolicyConfigKeyDetailArgs']]]] = None):
+                 is_policy_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key_details: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterImagePolicyConfigKeyDetailArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_policy_enabled: (Updatable) Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterImagePolicyConfigKeyDetailArgs']]] key_details: (Updatable) A list of KMS key details.
@@ -488,31 +488,31 @@ class ClusterImagePolicyConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="isPolicyEnabled")
-    def is_policy_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_policy_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the image verification policy is enabled. Defaults to false. If set to true, the images will be verified against the policy at runtime.
         """
         return pulumi.get(self, "is_policy_enabled")
 
     @is_policy_enabled.setter
-    def is_policy_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_policy_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_policy_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="keyDetails")
-    def key_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterImagePolicyConfigKeyDetailArgs']]]]:
+    def key_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterImagePolicyConfigKeyDetailArgs']]]]:
         """
         (Updatable) A list of KMS key details.
         """
         return pulumi.get(self, "key_details")
 
     @key_details.setter
-    def key_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterImagePolicyConfigKeyDetailArgs']]]]):
+    def key_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterImagePolicyConfigKeyDetailArgs']]]]):
         pulumi.set(self, "key_details", value)
 
 
 class ClusterImagePolicyConfigKeyDetailArgsDict(TypedDict):
-    kms_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    kms_key_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCIDs of the KMS key that will be used to verify whether the images are signed by an approved source.
     """
@@ -520,7 +520,7 @@ class ClusterImagePolicyConfigKeyDetailArgsDict(TypedDict):
 @pulumi.input_type
 class ClusterImagePolicyConfigKeyDetailArgs:
     def __init__(__self__, *,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The OCIDs of the KMS key that will be used to verify whether the images are signed by an approved source.
         """
@@ -529,55 +529,55 @@ class ClusterImagePolicyConfigKeyDetailArgs:
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCIDs of the KMS key that will be used to verify whether the images are signed by an approved source.
         """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
-    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
 
 
 class ClusterMetadataArgsDict(TypedDict):
-    created_by_user_id: NotRequired[pulumi.Input[_builtins.str]]
+    created_by_user_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user who created the cluster.
     """
-    created_by_work_request_id: NotRequired[pulumi.Input[_builtins.str]]
+    created_by_work_request_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the work request which created the cluster.
     """
-    deleted_by_user_id: NotRequired[pulumi.Input[_builtins.str]]
+    deleted_by_user_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user who deleted the cluster.
     """
-    deleted_by_work_request_id: NotRequired[pulumi.Input[_builtins.str]]
+    deleted_by_work_request_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the work request which deleted the cluster.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The time the cluster was created.
     """
-    time_credential_expiration: NotRequired[pulumi.Input[_builtins.str]]
+    time_credential_expiration: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The time until which the cluster credential is valid.
     """
-    time_deleted: NotRequired[pulumi.Input[_builtins.str]]
+    time_deleted: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The time the cluster was deleted.
     """
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The time the cluster was updated.
     """
-    updated_by_user_id: NotRequired[pulumi.Input[_builtins.str]]
+    updated_by_user_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user who updated the cluster.
     """
-    updated_by_work_request_id: NotRequired[pulumi.Input[_builtins.str]]
+    updated_by_work_request_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the work request which updated the cluster.
     """
@@ -585,16 +585,16 @@ class ClusterMetadataArgsDict(TypedDict):
 @pulumi.input_type
 class ClusterMetadataArgs:
     def __init__(__self__, *,
-                 created_by_user_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by_work_request_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 deleted_by_user_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 deleted_by_work_request_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_credential_expiration: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_deleted: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 updated_by_user_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 updated_by_work_request_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 created_by_user_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by_work_request_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 deleted_by_user_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 deleted_by_work_request_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_credential_expiration: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_deleted: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 updated_by_user_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 updated_by_work_request_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] created_by_user_id: The user who created the cluster.
         :param pulumi.Input[_builtins.str] created_by_work_request_id: The OCID of the work request which created the cluster.
@@ -630,159 +630,159 @@ class ClusterMetadataArgs:
 
     @_builtins.property
     @pulumi.getter(name="createdByUserId")
-    def created_by_user_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by_user_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user who created the cluster.
         """
         return pulumi.get(self, "created_by_user_id")
 
     @created_by_user_id.setter
-    def created_by_user_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by_user_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by_user_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createdByWorkRequestId")
-    def created_by_work_request_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by_work_request_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the work request which created the cluster.
         """
         return pulumi.get(self, "created_by_work_request_id")
 
     @created_by_work_request_id.setter
-    def created_by_work_request_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by_work_request_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by_work_request_id", value)
 
     @_builtins.property
     @pulumi.getter(name="deletedByUserId")
-    def deleted_by_user_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deleted_by_user_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user who deleted the cluster.
         """
         return pulumi.get(self, "deleted_by_user_id")
 
     @deleted_by_user_id.setter
-    def deleted_by_user_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deleted_by_user_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deleted_by_user_id", value)
 
     @_builtins.property
     @pulumi.getter(name="deletedByWorkRequestId")
-    def deleted_by_work_request_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deleted_by_work_request_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the work request which deleted the cluster.
         """
         return pulumi.get(self, "deleted_by_work_request_id")
 
     @deleted_by_work_request_id.setter
-    def deleted_by_work_request_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deleted_by_work_request_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deleted_by_work_request_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the cluster was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCredentialExpiration")
-    def time_credential_expiration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_credential_expiration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time until which the cluster credential is valid.
         """
         return pulumi.get(self, "time_credential_expiration")
 
     @time_credential_expiration.setter
-    def time_credential_expiration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_credential_expiration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_credential_expiration", value)
 
     @_builtins.property
     @pulumi.getter(name="timeDeleted")
-    def time_deleted(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_deleted(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the cluster was deleted.
         """
         return pulumi.get(self, "time_deleted")
 
     @time_deleted.setter
-    def time_deleted(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_deleted(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_deleted", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the cluster was updated.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="updatedByUserId")
-    def updated_by_user_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def updated_by_user_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user who updated the cluster.
         """
         return pulumi.get(self, "updated_by_user_id")
 
     @updated_by_user_id.setter
-    def updated_by_user_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def updated_by_user_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "updated_by_user_id", value)
 
     @_builtins.property
     @pulumi.getter(name="updatedByWorkRequestId")
-    def updated_by_work_request_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def updated_by_work_request_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the work request which updated the cluster.
         """
         return pulumi.get(self, "updated_by_work_request_id")
 
     @updated_by_work_request_id.setter
-    def updated_by_work_request_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def updated_by_work_request_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "updated_by_work_request_id", value)
 
 
 class ClusterOptionsArgsDict(TypedDict):
-    add_ons: NotRequired[pulumi.Input['ClusterOptionsAddOnsArgsDict']]
+    add_ons: NotRequired[pulumi.Input[Optional['ClusterOptionsAddOnsArgs']]]
     """
     Configurable cluster add-ons
     """
-    admission_controller_options: NotRequired[pulumi.Input['ClusterOptionsAdmissionControllerOptionsArgsDict']]
+    admission_controller_options: NotRequired[pulumi.Input[Optional['ClusterOptionsAdmissionControllerOptionsArgs']]]
     """
     (Updatable) Configurable cluster admission controllers
     """
-    ip_families: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    ip_families: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
     """
-    kubernetes_network_config: NotRequired[pulumi.Input['ClusterOptionsKubernetesNetworkConfigArgsDict']]
+    kubernetes_network_config: NotRequired[pulumi.Input[Optional['ClusterOptionsKubernetesNetworkConfigArgs']]]
     """
     Network configuration for Kubernetes.
     """
-    open_id_connect_discovery: NotRequired[pulumi.Input['ClusterOptionsOpenIdConnectDiscoveryArgsDict']]
+    open_id_connect_discovery: NotRequired[pulumi.Input[Optional['ClusterOptionsOpenIdConnectDiscoveryArgs']]]
     """
     (Updatable) The property that define the status of the OIDC Discovery feature for a cluster.
     """
-    open_id_connect_token_authentication_config: NotRequired[pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgsDict']]
+    open_id_connect_token_authentication_config: NotRequired[pulumi.Input[Optional['ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs']]]
     """
     (Updatable) The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
     """
-    persistent_volume_config: NotRequired[pulumi.Input['ClusterOptionsPersistentVolumeConfigArgsDict']]
+    persistent_volume_config: NotRequired[pulumi.Input[Optional['ClusterOptionsPersistentVolumeConfigArgs']]]
     """
     (Updatable) Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
     """
-    service_lb_config: NotRequired[pulumi.Input['ClusterOptionsServiceLbConfigArgsDict']]
+    service_lb_config: NotRequired[pulumi.Input[Optional['ClusterOptionsServiceLbConfigArgs']]]
     """
     (Updatable) Configuration to be applied to load balancers created by Kubernetes services
     """
-    service_lb_subnet_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    service_lb_subnet_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     The OCIDs of the subnets used for Kubernetes services load balancers.
     """
@@ -790,15 +790,15 @@ class ClusterOptionsArgsDict(TypedDict):
 @pulumi.input_type
 class ClusterOptionsArgs:
     def __init__(__self__, *,
-                 add_ons: Optional[pulumi.Input['ClusterOptionsAddOnsArgs']] = None,
-                 admission_controller_options: Optional[pulumi.Input['ClusterOptionsAdmissionControllerOptionsArgs']] = None,
-                 ip_families: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 kubernetes_network_config: Optional[pulumi.Input['ClusterOptionsKubernetesNetworkConfigArgs']] = None,
-                 open_id_connect_discovery: Optional[pulumi.Input['ClusterOptionsOpenIdConnectDiscoveryArgs']] = None,
-                 open_id_connect_token_authentication_config: Optional[pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs']] = None,
-                 persistent_volume_config: Optional[pulumi.Input['ClusterOptionsPersistentVolumeConfigArgs']] = None,
-                 service_lb_config: Optional[pulumi.Input['ClusterOptionsServiceLbConfigArgs']] = None,
-                 service_lb_subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 add_ons: pulumi.Input[Optional['ClusterOptionsAddOnsArgs']] = None,
+                 admission_controller_options: pulumi.Input[Optional['ClusterOptionsAdmissionControllerOptionsArgs']] = None,
+                 ip_families: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 kubernetes_network_config: pulumi.Input[Optional['ClusterOptionsKubernetesNetworkConfigArgs']] = None,
+                 open_id_connect_discovery: pulumi.Input[Optional['ClusterOptionsOpenIdConnectDiscoveryArgs']] = None,
+                 open_id_connect_token_authentication_config: pulumi.Input[Optional['ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs']] = None,
+                 persistent_volume_config: pulumi.Input[Optional['ClusterOptionsPersistentVolumeConfigArgs']] = None,
+                 service_lb_config: pulumi.Input[Optional['ClusterOptionsServiceLbConfigArgs']] = None,
+                 service_lb_subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input['ClusterOptionsAddOnsArgs'] add_ons: Configurable cluster add-ons
         :param pulumi.Input['ClusterOptionsAdmissionControllerOptionsArgs'] admission_controller_options: (Updatable) Configurable cluster admission controllers
@@ -831,119 +831,119 @@ class ClusterOptionsArgs:
 
     @_builtins.property
     @pulumi.getter(name="addOns")
-    def add_ons(self) -> Optional[pulumi.Input['ClusterOptionsAddOnsArgs']]:
+    def add_ons(self) -> pulumi.Input[Optional['ClusterOptionsAddOnsArgs']]:
         """
         Configurable cluster add-ons
         """
         return pulumi.get(self, "add_ons")
 
     @add_ons.setter
-    def add_ons(self, value: Optional[pulumi.Input['ClusterOptionsAddOnsArgs']]):
+    def add_ons(self, value: pulumi.Input[Optional['ClusterOptionsAddOnsArgs']]):
         pulumi.set(self, "add_ons", value)
 
     @_builtins.property
     @pulumi.getter(name="admissionControllerOptions")
-    def admission_controller_options(self) -> Optional[pulumi.Input['ClusterOptionsAdmissionControllerOptionsArgs']]:
+    def admission_controller_options(self) -> pulumi.Input[Optional['ClusterOptionsAdmissionControllerOptionsArgs']]:
         """
         (Updatable) Configurable cluster admission controllers
         """
         return pulumi.get(self, "admission_controller_options")
 
     @admission_controller_options.setter
-    def admission_controller_options(self, value: Optional[pulumi.Input['ClusterOptionsAdmissionControllerOptionsArgs']]):
+    def admission_controller_options(self, value: pulumi.Input[Optional['ClusterOptionsAdmissionControllerOptionsArgs']]):
         pulumi.set(self, "admission_controller_options", value)
 
     @_builtins.property
     @pulumi.getter(name="ipFamilies")
-    def ip_families(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def ip_families(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         IP family to use for single stack or define the order of IP families for dual-stack. Available values are [] (defaults to IPv4), [IPv4] (IPv4), [IPv4, IPv6] (IPv4 preferred dual stack).
         """
         return pulumi.get(self, "ip_families")
 
     @ip_families.setter
-    def ip_families(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def ip_families(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "ip_families", value)
 
     @_builtins.property
     @pulumi.getter(name="kubernetesNetworkConfig")
-    def kubernetes_network_config(self) -> Optional[pulumi.Input['ClusterOptionsKubernetesNetworkConfigArgs']]:
+    def kubernetes_network_config(self) -> pulumi.Input[Optional['ClusterOptionsKubernetesNetworkConfigArgs']]:
         """
         Network configuration for Kubernetes.
         """
         return pulumi.get(self, "kubernetes_network_config")
 
     @kubernetes_network_config.setter
-    def kubernetes_network_config(self, value: Optional[pulumi.Input['ClusterOptionsKubernetesNetworkConfigArgs']]):
+    def kubernetes_network_config(self, value: pulumi.Input[Optional['ClusterOptionsKubernetesNetworkConfigArgs']]):
         pulumi.set(self, "kubernetes_network_config", value)
 
     @_builtins.property
     @pulumi.getter(name="openIdConnectDiscovery")
-    def open_id_connect_discovery(self) -> Optional[pulumi.Input['ClusterOptionsOpenIdConnectDiscoveryArgs']]:
+    def open_id_connect_discovery(self) -> pulumi.Input[Optional['ClusterOptionsOpenIdConnectDiscoveryArgs']]:
         """
         (Updatable) The property that define the status of the OIDC Discovery feature for a cluster.
         """
         return pulumi.get(self, "open_id_connect_discovery")
 
     @open_id_connect_discovery.setter
-    def open_id_connect_discovery(self, value: Optional[pulumi.Input['ClusterOptionsOpenIdConnectDiscoveryArgs']]):
+    def open_id_connect_discovery(self, value: pulumi.Input[Optional['ClusterOptionsOpenIdConnectDiscoveryArgs']]):
         pulumi.set(self, "open_id_connect_discovery", value)
 
     @_builtins.property
     @pulumi.getter(name="openIdConnectTokenAuthenticationConfig")
-    def open_id_connect_token_authentication_config(self) -> Optional[pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs']]:
+    def open_id_connect_token_authentication_config(self) -> pulumi.Input[Optional['ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs']]:
         """
         (Updatable) The properties that configure OIDC token authentication in kube-apiserver. For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
         """
         return pulumi.get(self, "open_id_connect_token_authentication_config")
 
     @open_id_connect_token_authentication_config.setter
-    def open_id_connect_token_authentication_config(self, value: Optional[pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs']]):
+    def open_id_connect_token_authentication_config(self, value: pulumi.Input[Optional['ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs']]):
         pulumi.set(self, "open_id_connect_token_authentication_config", value)
 
     @_builtins.property
     @pulumi.getter(name="persistentVolumeConfig")
-    def persistent_volume_config(self) -> Optional[pulumi.Input['ClusterOptionsPersistentVolumeConfigArgs']]:
+    def persistent_volume_config(self) -> pulumi.Input[Optional['ClusterOptionsPersistentVolumeConfigArgs']]:
         """
         (Updatable) Configuration to be applied to block volumes created by Kubernetes Persistent Volume Claims (PVC)
         """
         return pulumi.get(self, "persistent_volume_config")
 
     @persistent_volume_config.setter
-    def persistent_volume_config(self, value: Optional[pulumi.Input['ClusterOptionsPersistentVolumeConfigArgs']]):
+    def persistent_volume_config(self, value: pulumi.Input[Optional['ClusterOptionsPersistentVolumeConfigArgs']]):
         pulumi.set(self, "persistent_volume_config", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceLbConfig")
-    def service_lb_config(self) -> Optional[pulumi.Input['ClusterOptionsServiceLbConfigArgs']]:
+    def service_lb_config(self) -> pulumi.Input[Optional['ClusterOptionsServiceLbConfigArgs']]:
         """
         (Updatable) Configuration to be applied to load balancers created by Kubernetes services
         """
         return pulumi.get(self, "service_lb_config")
 
     @service_lb_config.setter
-    def service_lb_config(self, value: Optional[pulumi.Input['ClusterOptionsServiceLbConfigArgs']]):
+    def service_lb_config(self, value: pulumi.Input[Optional['ClusterOptionsServiceLbConfigArgs']]):
         pulumi.set(self, "service_lb_config", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceLbSubnetIds")
-    def service_lb_subnet_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def service_lb_subnet_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The OCIDs of the subnets used for Kubernetes services load balancers.
         """
         return pulumi.get(self, "service_lb_subnet_ids")
 
     @service_lb_subnet_ids.setter
-    def service_lb_subnet_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def service_lb_subnet_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "service_lb_subnet_ids", value)
 
 
 class ClusterOptionsAddOnsArgsDict(TypedDict):
-    is_kubernetes_dashboard_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_kubernetes_dashboard_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Whether or not to enable the Kubernetes Dashboard add-on.
     """
-    is_tiller_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_tiller_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Whether or not to enable the Tiller add-on.
     """
@@ -951,8 +951,8 @@ class ClusterOptionsAddOnsArgsDict(TypedDict):
 @pulumi.input_type
 class ClusterOptionsAddOnsArgs:
     def __init__(__self__, *,
-                 is_kubernetes_dashboard_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_tiller_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
+                 is_kubernetes_dashboard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_tiller_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_kubernetes_dashboard_enabled: Whether or not to enable the Kubernetes Dashboard add-on.
         :param pulumi.Input[_builtins.bool] is_tiller_enabled: Whether or not to enable the Tiller add-on.
@@ -964,31 +964,31 @@ class ClusterOptionsAddOnsArgs:
 
     @_builtins.property
     @pulumi.getter(name="isKubernetesDashboardEnabled")
-    def is_kubernetes_dashboard_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_kubernetes_dashboard_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether or not to enable the Kubernetes Dashboard add-on.
         """
         return pulumi.get(self, "is_kubernetes_dashboard_enabled")
 
     @is_kubernetes_dashboard_enabled.setter
-    def is_kubernetes_dashboard_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_kubernetes_dashboard_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_kubernetes_dashboard_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isTillerEnabled")
-    def is_tiller_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_tiller_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether or not to enable the Tiller add-on.
         """
         return pulumi.get(self, "is_tiller_enabled")
 
     @is_tiller_enabled.setter
-    def is_tiller_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_tiller_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_tiller_enabled", value)
 
 
 class ClusterOptionsAdmissionControllerOptionsArgsDict(TypedDict):
-    is_pod_security_policy_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_pod_security_policy_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether or not to enable the Pod Security Policy admission controller.
     """
@@ -996,7 +996,7 @@ class ClusterOptionsAdmissionControllerOptionsArgsDict(TypedDict):
 @pulumi.input_type
 class ClusterOptionsAdmissionControllerOptionsArgs:
     def __init__(__self__, *,
-                 is_pod_security_policy_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
+                 is_pod_security_policy_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_pod_security_policy_enabled: (Updatable) Whether or not to enable the Pod Security Policy admission controller.
         """
@@ -1005,23 +1005,23 @@ class ClusterOptionsAdmissionControllerOptionsArgs:
 
     @_builtins.property
     @pulumi.getter(name="isPodSecurityPolicyEnabled")
-    def is_pod_security_policy_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_pod_security_policy_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether or not to enable the Pod Security Policy admission controller.
         """
         return pulumi.get(self, "is_pod_security_policy_enabled")
 
     @is_pod_security_policy_enabled.setter
-    def is_pod_security_policy_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_pod_security_policy_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_pod_security_policy_enabled", value)
 
 
 class ClusterOptionsKubernetesNetworkConfigArgsDict(TypedDict):
-    pods_cidr: NotRequired[pulumi.Input[_builtins.str]]
+    pods_cidr: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
     """
-    services_cidr: NotRequired[pulumi.Input[_builtins.str]]
+    services_cidr: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
     """
@@ -1029,8 +1029,8 @@ class ClusterOptionsKubernetesNetworkConfigArgsDict(TypedDict):
 @pulumi.input_type
 class ClusterOptionsKubernetesNetworkConfigArgs:
     def __init__(__self__, *,
-                 pods_cidr: Optional[pulumi.Input[_builtins.str]] = None,
-                 services_cidr: Optional[pulumi.Input[_builtins.str]] = None):
+                 pods_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+                 services_cidr: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] pods_cidr: The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
         :param pulumi.Input[_builtins.str] services_cidr: The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
@@ -1042,31 +1042,31 @@ class ClusterOptionsKubernetesNetworkConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="podsCidr")
-    def pods_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def pods_cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CIDR block for Kubernetes pods. Optional. For ipv4, defaults to 10.244.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0000::/96.
         """
         return pulumi.get(self, "pods_cidr")
 
     @pods_cidr.setter
-    def pods_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def pods_cidr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pods_cidr", value)
 
     @_builtins.property
     @pulumi.getter(name="servicesCidr")
-    def services_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def services_cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The CIDR block for Kubernetes services. Optional. For ipv4, defaults to 10.96.0.0/16. For ipv6, defaults to fd00:eeee:eeee:0001::/108.
         """
         return pulumi.get(self, "services_cidr")
 
     @services_cidr.setter
-    def services_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def services_cidr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "services_cidr", value)
 
 
 class ClusterOptionsOpenIdConnectDiscoveryArgsDict(TypedDict):
-    is_open_id_connect_discovery_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_open_id_connect_discovery_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether the cluster has OIDC Discovery enabled. Defaults to false. If set to true, the cluster will be assigned a public OIDC Discovery endpoint.
     """
@@ -1074,7 +1074,7 @@ class ClusterOptionsOpenIdConnectDiscoveryArgsDict(TypedDict):
 @pulumi.input_type
 class ClusterOptionsOpenIdConnectDiscoveryArgs:
     def __init__(__self__, *,
-                 is_open_id_connect_discovery_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
+                 is_open_id_connect_discovery_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_open_id_connect_discovery_enabled: (Updatable) Whether the cluster has OIDC Discovery enabled. Defaults to false. If set to true, the cluster will be assigned a public OIDC Discovery endpoint.
         """
@@ -1083,14 +1083,14 @@ class ClusterOptionsOpenIdConnectDiscoveryArgs:
 
     @_builtins.property
     @pulumi.getter(name="isOpenIdConnectDiscoveryEnabled")
-    def is_open_id_connect_discovery_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_open_id_connect_discovery_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the cluster has OIDC Discovery enabled. Defaults to false. If set to true, the cluster will be assigned a public OIDC Discovery endpoint.
         """
         return pulumi.get(self, "is_open_id_connect_discovery_enabled")
 
     @is_open_id_connect_discovery_enabled.setter
-    def is_open_id_connect_discovery_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_open_id_connect_discovery_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_open_id_connect_discovery_enabled", value)
 
 
@@ -1099,43 +1099,43 @@ class ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgsDict(TypedDict):
     """
     (Updatable) Whether the cluster has OIDC Auth Config enabled. Defaults to false.
     """
-    ca_certificate: NotRequired[pulumi.Input[_builtins.str]]
+    ca_certificate: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
     """
-    client_id: NotRequired[pulumi.Input[_builtins.str]]
+    client_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A client id that all tokens must be issued for.
     """
-    configuration_file: NotRequired[pulumi.Input[_builtins.str]]
+    configuration_file: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
     """
-    groups_claim: NotRequired[pulumi.Input[_builtins.str]]
+    groups_claim: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) JWT claim to use as the user's group. If the claim is present it must be an array of strings.
     """
-    groups_prefix: NotRequired[pulumi.Input[_builtins.str]]
+    groups_prefix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
     """
-    issuer_url: NotRequired[pulumi.Input[_builtins.str]]
+    issuer_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) URL of the provider that allows the API server to discover public signing keys.  Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,  changed to have an empty path.
     """
-    required_claims: NotRequired[pulumi.Input[Sequence[pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgsDict']]]]
+    required_claims: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs']]]]]
     """
     (Updatable) A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present  in the ID Token with a matching value. Repeat this flag to specify multiple claims.
     """
-    signing_algorithms: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    signing_algorithms: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The signing algorithms accepted. Default is ["RS256"].
     """
-    username_claim: NotRequired[pulumi.Input[_builtins.str]]
+    username_claim: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) JWT claim to use as the user name. By default sub, which is expected to be a unique identifier of the end  user. Admins can choose other claims, such as email or name, depending on their provider. However, claims  other than email will be prefixed with the issuer URL to prevent naming clashes with other plugins.
     """
-    username_prefix: NotRequired[pulumi.Input[_builtins.str]]
+    username_prefix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Prefix prepended to username claims to prevent clashes with existing names (such as system:users).  For example, the value oidc: will create usernames like oidc:jane.doe. If this flag isn't provided and  --oidc-username-claim is a value other than email the prefix defaults to ( Issuer URL )# where  ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be used to disable all prefixing.
     """
@@ -1144,16 +1144,16 @@ class ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgsDict(TypedDict):
 class ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs:
     def __init__(__self__, *,
                  is_open_id_connect_auth_enabled: pulumi.Input[_builtins.bool],
-                 ca_certificate: Optional[pulumi.Input[_builtins.str]] = None,
-                 client_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configuration_file: Optional[pulumi.Input[_builtins.str]] = None,
-                 groups_claim: Optional[pulumi.Input[_builtins.str]] = None,
-                 groups_prefix: Optional[pulumi.Input[_builtins.str]] = None,
-                 issuer_url: Optional[pulumi.Input[_builtins.str]] = None,
-                 required_claims: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs']]]] = None,
-                 signing_algorithms: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 username_claim: Optional[pulumi.Input[_builtins.str]] = None,
-                 username_prefix: Optional[pulumi.Input[_builtins.str]] = None):
+                 ca_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configuration_file: pulumi.Input[Optional[_builtins.str]] = None,
+                 groups_claim: pulumi.Input[Optional[_builtins.str]] = None,
+                 groups_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 issuer_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 required_claims: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs']]]] = None,
+                 signing_algorithms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 username_claim: pulumi.Input[Optional[_builtins.str]] = None,
+                 username_prefix: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.bool] is_open_id_connect_auth_enabled: (Updatable) Whether the cluster has OIDC Auth Config enabled. Defaults to false.
         :param pulumi.Input[_builtins.str] ca_certificate: (Updatable) A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
@@ -1203,131 +1203,131 @@ class ClusterOptionsOpenIdConnectTokenAuthenticationConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="caCertificate")
-    def ca_certificate(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ca_certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
         """
         return pulumi.get(self, "ca_certificate")
 
     @ca_certificate.setter
-    def ca_certificate(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ca_certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ca_certificate", value)
 
     @_builtins.property
     @pulumi.getter(name="clientId")
-    def client_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def client_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A client id that all tokens must be issued for.
         """
         return pulumi.get(self, "client_id")
 
     @client_id.setter
-    def client_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def client_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "client_id", value)
 
     @_builtins.property
     @pulumi.getter(name="configurationFile")
-    def configuration_file(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def configuration_file(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
         """
         return pulumi.get(self, "configuration_file")
 
     @configuration_file.setter
-    def configuration_file(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def configuration_file(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "configuration_file", value)
 
     @_builtins.property
     @pulumi.getter(name="groupsClaim")
-    def groups_claim(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def groups_claim(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) JWT claim to use as the user's group. If the claim is present it must be an array of strings.
         """
         return pulumi.get(self, "groups_claim")
 
     @groups_claim.setter
-    def groups_claim(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def groups_claim(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "groups_claim", value)
 
     @_builtins.property
     @pulumi.getter(name="groupsPrefix")
-    def groups_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def groups_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
         """
         return pulumi.get(self, "groups_prefix")
 
     @groups_prefix.setter
-    def groups_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def groups_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "groups_prefix", value)
 
     @_builtins.property
     @pulumi.getter(name="issuerUrl")
-    def issuer_url(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def issuer_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) URL of the provider that allows the API server to discover public signing keys.  Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,  changed to have an empty path.
         """
         return pulumi.get(self, "issuer_url")
 
     @issuer_url.setter
-    def issuer_url(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def issuer_url(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "issuer_url", value)
 
     @_builtins.property
     @pulumi.getter(name="requiredClaims")
-    def required_claims(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs']]]]:
+    def required_claims(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs']]]]:
         """
         (Updatable) A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present  in the ID Token with a matching value. Repeat this flag to specify multiple claims.
         """
         return pulumi.get(self, "required_claims")
 
     @required_claims.setter
-    def required_claims(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs']]]]):
+    def required_claims(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs']]]]):
         pulumi.set(self, "required_claims", value)
 
     @_builtins.property
     @pulumi.getter(name="signingAlgorithms")
-    def signing_algorithms(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def signing_algorithms(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The signing algorithms accepted. Default is ["RS256"].
         """
         return pulumi.get(self, "signing_algorithms")
 
     @signing_algorithms.setter
-    def signing_algorithms(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def signing_algorithms(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "signing_algorithms", value)
 
     @_builtins.property
     @pulumi.getter(name="usernameClaim")
-    def username_claim(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def username_claim(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) JWT claim to use as the user name. By default sub, which is expected to be a unique identifier of the end  user. Admins can choose other claims, such as email or name, depending on their provider. However, claims  other than email will be prefixed with the issuer URL to prevent naming clashes with other plugins.
         """
         return pulumi.get(self, "username_claim")
 
     @username_claim.setter
-    def username_claim(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def username_claim(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "username_claim", value)
 
     @_builtins.property
     @pulumi.getter(name="usernamePrefix")
-    def username_prefix(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def username_prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Prefix prepended to username claims to prevent clashes with existing names (such as system:users).  For example, the value oidc: will create usernames like oidc:jane.doe. If this flag isn't provided and  --oidc-username-claim is a value other than email the prefix defaults to ( Issuer URL )# where  ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be used to disable all prefixing.
         """
         return pulumi.get(self, "username_prefix")
 
     @username_prefix.setter
-    def username_prefix(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def username_prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "username_prefix", value)
 
 
 class ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgsDict(TypedDict):
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The key of the pair.
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The value of the pair.
     """
@@ -1335,8 +1335,8 @@ class ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgsDict(
 @pulumi.input_type
 class ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] key: (Updatable) The key of the pair.
         :param pulumi.Input[_builtins.str] value: (Updatable) The value of the pair.
@@ -1348,35 +1348,35 @@ class ClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimArgs:
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The key of the pair.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The value of the pair.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
 class ClusterOptionsPersistentVolumeConfigArgsDict(TypedDict):
-    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    defined_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
     """
-    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    freeform_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
     """
@@ -1384,8 +1384,8 @@ class ClusterOptionsPersistentVolumeConfigArgsDict(TypedDict):
 @pulumi.input_type
 class ClusterOptionsPersistentVolumeConfigArgs:
     def __init__(__self__, *,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -1397,39 +1397,39 @@ class ClusterOptionsPersistentVolumeConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
 
 class ClusterOptionsServiceLbConfigArgsDict(TypedDict):
-    backend_nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    backend_nsg_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
     """
-    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    defined_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
     """
-    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    freeform_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
     """
@@ -1437,9 +1437,9 @@ class ClusterOptionsServiceLbConfigArgsDict(TypedDict):
 @pulumi.input_type
 class ClusterOptionsServiceLbConfigArgs:
     def __init__(__self__, *,
-                 backend_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 backend_nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] backend_nsg_ids: (Updatable) A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -1454,38 +1454,38 @@ class ClusterOptionsServiceLbConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="backendNsgIds")
-    def backend_nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def backend_nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A list of the OCIDs of the network security groups (NSGs) associated to backends to LBs (pods/nodes/virtual pods, etc.). Rules necessary for LB to backend communication would be added when rule management mode is set to NSG via annotations. see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         """
         return pulumi.get(self, "backend_nsg_ids")
 
     @backend_nsg_ids.setter
-    def backend_nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def backend_nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "backend_nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
 
@@ -1498,7 +1498,7 @@ class ContainerInstanceContainerArgsDict(TypedDict):
 
     The registry used for container image must be reachable over the Container Instance's VNIC.
     """
-    arguments: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    arguments: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     A list of string arguments for a container's ENTRYPOINT process.
 
@@ -1506,69 +1506,69 @@ class ContainerInstanceContainerArgsDict(TypedDict):
 
     The total size of all arguments combined must be 64 KB or smaller.
     """
-    availability_domain: NotRequired[pulumi.Input[_builtins.str]]
+    availability_domain: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The availability domain where the container instance runs.
     """
-    commands: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    commands: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     An optional command that overrides the ENTRYPOINT process. If you do not provide a value, the existing ENTRYPOINT process defined in the image is used.
     """
-    compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+    compartment_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The compartment OCID.
     """
-    container_id: NotRequired[pulumi.Input[_builtins.str]]
+    container_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the container.
     """
-    container_instance_id: NotRequired[pulumi.Input[_builtins.str]]
-    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    container_instance_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    defined_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
     """
-    environment_variables: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    environment_variables: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     A map of additional environment variables to set in the environment of the container's ENTRYPOINT process. These variables are in addition to any variables already defined in the container's image.
 
     The total size of all environment variables combined, name and values, must be 64 KB or smaller.
     """
-    exit_code: NotRequired[pulumi.Input[_builtins.int]]
-    fault_domain: NotRequired[pulumi.Input[_builtins.str]]
+    exit_code: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    fault_domain: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The fault domain where the container instance runs.
     """
-    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    freeform_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
     """
-    health_checks: NotRequired[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckArgsDict']]]]
+    health_checks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckArgs']]]]]
     """
     list of container health checks to check container status and take appropriate action if container status is failed. There are two types of health checks that we currently support HTTP and TCP.
     """
-    is_resource_principal_disabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_resource_principal_disabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Determines if the container will have access to the container instance resource principal.
 
     This method utilizes resource principal version 2.2. For information on how to use the exposed resource principal elements, see https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal.
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A message that describes the current state of the container in more detail. Can be used to provide actionable information.
     """
-    resource_config: NotRequired[pulumi.Input['ContainerInstanceContainerResourceConfigArgsDict']]
+    resource_config: NotRequired[pulumi.Input[Optional['ContainerInstanceContainerResourceConfigArgs']]]
     """
     The size and amount of resources available to the container.
     """
-    security_context: NotRequired[pulumi.Input['ContainerInstanceContainerSecurityContextArgsDict']]
+    security_context: NotRequired[pulumi.Input[Optional['ContainerInstanceContainerSecurityContextArgs']]]
     """
     Security context for container.
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
 
@@ -1576,24 +1576,24 @@ class ContainerInstanceContainerArgsDict(TypedDict):
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
-    system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    system_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
     """
-    time_created: NotRequired[pulumi.Input[_builtins.str]]
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
     """
-    time_terminated: NotRequired[pulumi.Input[_builtins.str]]
-    time_updated: NotRequired[pulumi.Input[_builtins.str]]
+    time_terminated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
     """
-    volume_mounts: NotRequired[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerVolumeMountArgsDict']]]]
+    volume_mounts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceContainerVolumeMountArgs']]]]]
     """
     List of the volume mounts.
     """
-    working_directory: NotRequired[pulumi.Input[_builtins.str]]
+    working_directory: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The working directory within the container's filesystem for the container process. If not specified, the default working directory from the image is used.
     """
@@ -1602,30 +1602,30 @@ class ContainerInstanceContainerArgsDict(TypedDict):
 class ContainerInstanceContainerArgs:
     def __init__(__self__, *,
                  image_url: pulumi.Input[_builtins.str],
-                 arguments: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 commands: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 container_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 container_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 environment_variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 exit_code: Optional[pulumi.Input[_builtins.int]] = None,
-                 fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 health_checks: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckArgs']]]] = None,
-                 is_resource_principal_disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 resource_config: Optional[pulumi.Input['ContainerInstanceContainerResourceConfigArgs']] = None,
-                 security_context: Optional[pulumi.Input['ContainerInstanceContainerSecurityContextArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_terminated: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 volume_mounts: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerVolumeMountArgs']]]] = None,
-                 working_directory: Optional[pulumi.Input[_builtins.str]] = None):
+                 arguments: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 commands: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 container_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 container_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 environment_variables: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 exit_code: pulumi.Input[Optional[_builtins.int]] = None,
+                 fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 health_checks: pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckArgs']]]] = None,
+                 is_resource_principal_disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_config: pulumi.Input[Optional['ContainerInstanceContainerResourceConfigArgs']] = None,
+                 security_context: pulumi.Input[Optional['ContainerInstanceContainerSecurityContextArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_terminated: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_mounts: pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceContainerVolumeMountArgs']]]] = None,
+                 working_directory: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] image_url: A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
                
@@ -1734,7 +1734,7 @@ class ContainerInstanceContainerArgs:
 
     @_builtins.property
     @pulumi.getter
-    def arguments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def arguments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of string arguments for a container's ENTRYPOINT process.
 
@@ -1745,93 +1745,93 @@ class ContainerInstanceContainerArgs:
         return pulumi.get(self, "arguments")
 
     @arguments.setter
-    def arguments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def arguments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "arguments", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The availability domain where the container instance runs.
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter
-    def commands(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def commands(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         An optional command that overrides the ENTRYPOINT process. If you do not provide a value, the existing ENTRYPOINT process defined in the image is used.
         """
         return pulumi.get(self, "commands")
 
     @commands.setter
-    def commands(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def commands(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "commands", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The compartment OCID.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="containerId")
-    def container_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def container_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the container.
         """
         return pulumi.get(self, "container_id")
 
     @container_id.setter
-    def container_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def container_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "container_id", value)
 
     @_builtins.property
     @pulumi.getter(name="containerInstanceId")
-    def container_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def container_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "container_instance_id")
 
     @container_instance_id.setter
-    def container_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def container_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "container_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def environment_variables(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         A map of additional environment variables to set in the environment of the container's ENTRYPOINT process. These variables are in addition to any variables already defined in the container's image.
 
@@ -1840,57 +1840,57 @@ class ContainerInstanceContainerArgs:
         return pulumi.get(self, "environment_variables")
 
     @environment_variables.setter
-    def environment_variables(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def environment_variables(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "environment_variables", value)
 
     @_builtins.property
     @pulumi.getter(name="exitCode")
-    def exit_code(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def exit_code(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "exit_code")
 
     @exit_code.setter
-    def exit_code(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def exit_code(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "exit_code", value)
 
     @_builtins.property
     @pulumi.getter(name="faultDomain")
-    def fault_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fault_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The fault domain where the container instance runs.
         """
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
-    def fault_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fault_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fault_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="healthChecks")
-    def health_checks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckArgs']]]]:
+    def health_checks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckArgs']]]]:
         """
         list of container health checks to check container status and take appropriate action if container status is failed. There are two types of health checks that we currently support HTTP and TCP.
         """
         return pulumi.get(self, "health_checks")
 
     @health_checks.setter
-    def health_checks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckArgs']]]]):
+    def health_checks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckArgs']]]]):
         pulumi.set(self, "health_checks", value)
 
     @_builtins.property
     @pulumi.getter(name="isResourcePrincipalDisabled")
-    def is_resource_principal_disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_resource_principal_disabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Determines if the container will have access to the container instance resource principal.
 
@@ -1899,48 +1899,48 @@ class ContainerInstanceContainerArgs:
         return pulumi.get(self, "is_resource_principal_disabled")
 
     @is_resource_principal_disabled.setter
-    def is_resource_principal_disabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_resource_principal_disabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_resource_principal_disabled", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceConfig")
-    def resource_config(self) -> Optional[pulumi.Input['ContainerInstanceContainerResourceConfigArgs']]:
+    def resource_config(self) -> pulumi.Input[Optional['ContainerInstanceContainerResourceConfigArgs']]:
         """
         The size and amount of resources available to the container.
         """
         return pulumi.get(self, "resource_config")
 
     @resource_config.setter
-    def resource_config(self, value: Optional[pulumi.Input['ContainerInstanceContainerResourceConfigArgs']]):
+    def resource_config(self, value: pulumi.Input[Optional['ContainerInstanceContainerResourceConfigArgs']]):
         pulumi.set(self, "resource_config", value)
 
     @_builtins.property
     @pulumi.getter(name="securityContext")
-    def security_context(self) -> Optional[pulumi.Input['ContainerInstanceContainerSecurityContextArgs']]:
+    def security_context(self) -> pulumi.Input[Optional['ContainerInstanceContainerSecurityContextArgs']]:
         """
         Security context for container.
         """
         return pulumi.get(self, "security_context")
 
     @security_context.setter
-    def security_context(self, value: Optional[pulumi.Input['ContainerInstanceContainerSecurityContextArgs']]):
+    def security_context(self, value: pulumi.Input[Optional['ContainerInstanceContainerSecurityContextArgs']]):
         pulumi.set(self, "security_context", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
 
@@ -1951,76 +1951,76 @@ class ContainerInstanceContainerArgs:
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeTerminated")
-    def time_terminated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_terminated(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "time_terminated")
 
     @time_terminated.setter
-    def time_terminated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_terminated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_terminated", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="volumeMounts")
-    def volume_mounts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerVolumeMountArgs']]]]:
+    def volume_mounts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceContainerVolumeMountArgs']]]]:
         """
         List of the volume mounts.
         """
         return pulumi.get(self, "volume_mounts")
 
     @volume_mounts.setter
-    def volume_mounts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerVolumeMountArgs']]]]):
+    def volume_mounts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceContainerVolumeMountArgs']]]]):
         pulumi.set(self, "volume_mounts", value)
 
     @_builtins.property
     @pulumi.getter(name="workingDirectory")
-    def working_directory(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def working_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The working directory within the container's filesystem for the container process. If not specified, the default working directory from the image is used.
         """
         return pulumi.get(self, "working_directory")
 
     @working_directory.setter
-    def working_directory(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def working_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "working_directory", value)
 
 
@@ -2029,45 +2029,45 @@ class ContainerInstanceContainerHealthCheckArgsDict(TypedDict):
     """
     Container health check type.
     """
-    failure_action: NotRequired[pulumi.Input[_builtins.str]]
+    failure_action: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
     """
-    failure_threshold: NotRequired[pulumi.Input[_builtins.int]]
+    failure_threshold: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Number of consecutive failures at which we consider the check failed.
     """
-    headers: NotRequired[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckHeaderArgsDict']]]]
+    headers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckHeaderArgs']]]]]
     """
     Container health check HTTP headers.
     """
-    initial_delay_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    initial_delay_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The initial delay in seconds before start checking container health status.
     """
-    interval_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    interval_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Number of seconds between two consecutive runs for checking container health.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Health check name.
     """
-    path: NotRequired[pulumi.Input[_builtins.str]]
+    path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Container health check HTTP path.
     """
-    port: NotRequired[pulumi.Input[_builtins.int]]
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Container health check HTTP port.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
-    status_details: NotRequired[pulumi.Input[_builtins.str]]
-    success_threshold: NotRequired[pulumi.Input[_builtins.int]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    status_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    success_threshold: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Number of consecutive successes at which we consider the check succeeded again after it was in failure state.
     """
-    timeout_in_seconds: NotRequired[pulumi.Input[_builtins.int]]
+    timeout_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     Length of waiting time in seconds before marking health check failed.
     """
@@ -2076,18 +2076,18 @@ class ContainerInstanceContainerHealthCheckArgsDict(TypedDict):
 class ContainerInstanceContainerHealthCheckArgs:
     def __init__(__self__, *,
                  health_check_type: pulumi.Input[_builtins.str],
-                 failure_action: Optional[pulumi.Input[_builtins.str]] = None,
-                 failure_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 headers: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckHeaderArgs']]]] = None,
-                 initial_delay_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 interval_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 path: Optional[pulumi.Input[_builtins.str]] = None,
-                 port: Optional[pulumi.Input[_builtins.int]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 status_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 success_threshold: Optional[pulumi.Input[_builtins.int]] = None,
-                 timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None):
+                 failure_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 failure_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 headers: pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckHeaderArgs']]]] = None,
+                 initial_delay_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 interval_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 path: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 status_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 success_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[_builtins.str] health_check_type: Container health check type.
         :param pulumi.Input[_builtins.str] failure_action: The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
@@ -2141,149 +2141,149 @@ class ContainerInstanceContainerHealthCheckArgs:
 
     @_builtins.property
     @pulumi.getter(name="failureAction")
-    def failure_action(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def failure_action(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
         """
         return pulumi.get(self, "failure_action")
 
     @failure_action.setter
-    def failure_action(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def failure_action(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "failure_action", value)
 
     @_builtins.property
     @pulumi.getter(name="failureThreshold")
-    def failure_threshold(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def failure_threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of consecutive failures at which we consider the check failed.
         """
         return pulumi.get(self, "failure_threshold")
 
     @failure_threshold.setter
-    def failure_threshold(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def failure_threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "failure_threshold", value)
 
     @_builtins.property
     @pulumi.getter
-    def headers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckHeaderArgs']]]]:
+    def headers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckHeaderArgs']]]]:
         """
         Container health check HTTP headers.
         """
         return pulumi.get(self, "headers")
 
     @headers.setter
-    def headers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckHeaderArgs']]]]):
+    def headers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceContainerHealthCheckHeaderArgs']]]]):
         pulumi.set(self, "headers", value)
 
     @_builtins.property
     @pulumi.getter(name="initialDelayInSeconds")
-    def initial_delay_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def initial_delay_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The initial delay in seconds before start checking container health status.
         """
         return pulumi.get(self, "initial_delay_in_seconds")
 
     @initial_delay_in_seconds.setter
-    def initial_delay_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def initial_delay_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "initial_delay_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="intervalInSeconds")
-    def interval_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def interval_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of seconds between two consecutive runs for checking container health.
         """
         return pulumi.get(self, "interval_in_seconds")
 
     @interval_in_seconds.setter
-    def interval_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def interval_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "interval_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Health check name.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Container health check HTTP path.
         """
         return pulumi.get(self, "path")
 
     @path.setter
-    def path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "path", value)
 
     @_builtins.property
     @pulumi.getter
-    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Container health check HTTP port.
         """
         return pulumi.get(self, "port")
 
     @port.setter
-    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "port", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter(name="statusDetails")
-    def status_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "status_details")
 
     @status_details.setter
-    def status_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status_details", value)
 
     @_builtins.property
     @pulumi.getter(name="successThreshold")
-    def success_threshold(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def success_threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of consecutive successes at which we consider the check succeeded again after it was in failure state.
         """
         return pulumi.get(self, "success_threshold")
 
     @success_threshold.setter
-    def success_threshold(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def success_threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "success_threshold", value)
 
     @_builtins.property
     @pulumi.getter(name="timeoutInSeconds")
-    def timeout_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def timeout_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Length of waiting time in seconds before marking health check failed.
         """
         return pulumi.get(self, "timeout_in_seconds")
 
     @timeout_in_seconds.setter
-    def timeout_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def timeout_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "timeout_in_seconds", value)
 
 
 class ContainerInstanceContainerHealthCheckHeaderArgsDict(TypedDict):
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Container HTTP header Key.
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Container HTTP header value.
     """
@@ -2291,8 +2291,8 @@ class ContainerInstanceContainerHealthCheckHeaderArgsDict(TypedDict):
 @pulumi.input_type
 class ContainerInstanceContainerHealthCheckHeaderArgs:
     def __init__(__self__, *,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] name: Container HTTP header Key.
         :param pulumi.Input[_builtins.str] value: Container HTTP header value.
@@ -2304,37 +2304,37 @@ class ContainerInstanceContainerHealthCheckHeaderArgs:
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Container HTTP header Key.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Container HTTP header value.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
 class ContainerInstanceContainerResourceConfigArgsDict(TypedDict):
-    memory_limit_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    memory_limit_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The maximum amount of memory that can be consumed by the container's process.
 
     If you do not set a value, then the process may use all available memory on the instance.
     """
-    vcpus_limit: NotRequired[pulumi.Input[_builtins.float]]
+    vcpus_limit: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The maximum amount of CPUs that can be consumed by the container's process.
 
@@ -2348,8 +2348,8 @@ class ContainerInstanceContainerResourceConfigArgsDict(TypedDict):
 @pulumi.input_type
 class ContainerInstanceContainerResourceConfigArgs:
     def __init__(__self__, *,
-                 memory_limit_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 vcpus_limit: Optional[pulumi.Input[_builtins.float]] = None):
+                 memory_limit_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 vcpus_limit: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[_builtins.float] memory_limit_in_gbs: The maximum amount of memory that can be consumed by the container's process.
                
@@ -2369,7 +2369,7 @@ class ContainerInstanceContainerResourceConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="memoryLimitInGbs")
-    def memory_limit_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def memory_limit_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The maximum amount of memory that can be consumed by the container's process.
 
@@ -2378,12 +2378,12 @@ class ContainerInstanceContainerResourceConfigArgs:
         return pulumi.get(self, "memory_limit_in_gbs")
 
     @memory_limit_in_gbs.setter
-    def memory_limit_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def memory_limit_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "memory_limit_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="vcpusLimit")
-    def vcpus_limit(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def vcpus_limit(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The maximum amount of CPUs that can be consumed by the container's process.
 
@@ -2396,32 +2396,32 @@ class ContainerInstanceContainerResourceConfigArgs:
         return pulumi.get(self, "vcpus_limit")
 
     @vcpus_limit.setter
-    def vcpus_limit(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def vcpus_limit(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "vcpus_limit", value)
 
 
 class ContainerInstanceContainerSecurityContextArgsDict(TypedDict):
-    capabilities: NotRequired[pulumi.Input['ContainerInstanceContainerSecurityContextCapabilitiesArgsDict']]
+    capabilities: NotRequired[pulumi.Input[Optional['ContainerInstanceContainerSecurityContextCapabilitiesArgs']]]
     """
     Linux Container capabilities to configure capabilities of container.
     """
-    is_non_root_user_check_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_non_root_user_check_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
     """
-    is_root_file_system_readonly: NotRequired[pulumi.Input[_builtins.bool]]
+    is_root_file_system_readonly: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Determines if the container will have a read-only root file system. Default value is false.
     """
-    run_as_group: NotRequired[pulumi.Input[_builtins.int]]
+    run_as_group: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The group ID (GID) to run the entrypoint process of the container. Uses runtime default if not provided.
     """
-    run_as_user: NotRequired[pulumi.Input[_builtins.int]]
+    run_as_user: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The user ID (UID) to run the entrypoint process of the container. Defaults to user specified UID in container image metadata if not provided. This must be provided if runAsGroup is provided.
     """
-    security_context_type: NotRequired[pulumi.Input[_builtins.str]]
+    security_context_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The type of security context
     """
@@ -2429,12 +2429,12 @@ class ContainerInstanceContainerSecurityContextArgsDict(TypedDict):
 @pulumi.input_type
 class ContainerInstanceContainerSecurityContextArgs:
     def __init__(__self__, *,
-                 capabilities: Optional[pulumi.Input['ContainerInstanceContainerSecurityContextCapabilitiesArgs']] = None,
-                 is_non_root_user_check_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_root_file_system_readonly: Optional[pulumi.Input[_builtins.bool]] = None,
-                 run_as_group: Optional[pulumi.Input[_builtins.int]] = None,
-                 run_as_user: Optional[pulumi.Input[_builtins.int]] = None,
-                 security_context_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 capabilities: pulumi.Input[Optional['ContainerInstanceContainerSecurityContextCapabilitiesArgs']] = None,
+                 is_non_root_user_check_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_root_file_system_readonly: pulumi.Input[Optional[_builtins.bool]] = None,
+                 run_as_group: pulumi.Input[Optional[_builtins.int]] = None,
+                 run_as_user: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_context_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input['ContainerInstanceContainerSecurityContextCapabilitiesArgs'] capabilities: Linux Container capabilities to configure capabilities of container.
         :param pulumi.Input[_builtins.bool] is_non_root_user_check_enabled: Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
@@ -2458,83 +2458,83 @@ class ContainerInstanceContainerSecurityContextArgs:
 
     @_builtins.property
     @pulumi.getter
-    def capabilities(self) -> Optional[pulumi.Input['ContainerInstanceContainerSecurityContextCapabilitiesArgs']]:
+    def capabilities(self) -> pulumi.Input[Optional['ContainerInstanceContainerSecurityContextCapabilitiesArgs']]:
         """
         Linux Container capabilities to configure capabilities of container.
         """
         return pulumi.get(self, "capabilities")
 
     @capabilities.setter
-    def capabilities(self, value: Optional[pulumi.Input['ContainerInstanceContainerSecurityContextCapabilitiesArgs']]):
+    def capabilities(self, value: pulumi.Input[Optional['ContainerInstanceContainerSecurityContextCapabilitiesArgs']]):
         pulumi.set(self, "capabilities", value)
 
     @_builtins.property
     @pulumi.getter(name="isNonRootUserCheckEnabled")
-    def is_non_root_user_check_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_non_root_user_check_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
         """
         return pulumi.get(self, "is_non_root_user_check_enabled")
 
     @is_non_root_user_check_enabled.setter
-    def is_non_root_user_check_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_non_root_user_check_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_non_root_user_check_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isRootFileSystemReadonly")
-    def is_root_file_system_readonly(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_root_file_system_readonly(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Determines if the container will have a read-only root file system. Default value is false.
         """
         return pulumi.get(self, "is_root_file_system_readonly")
 
     @is_root_file_system_readonly.setter
-    def is_root_file_system_readonly(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_root_file_system_readonly(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_root_file_system_readonly", value)
 
     @_builtins.property
     @pulumi.getter(name="runAsGroup")
-    def run_as_group(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def run_as_group(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The group ID (GID) to run the entrypoint process of the container. Uses runtime default if not provided.
         """
         return pulumi.get(self, "run_as_group")
 
     @run_as_group.setter
-    def run_as_group(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def run_as_group(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "run_as_group", value)
 
     @_builtins.property
     @pulumi.getter(name="runAsUser")
-    def run_as_user(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def run_as_user(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The user ID (UID) to run the entrypoint process of the container. Defaults to user specified UID in container image metadata if not provided. This must be provided if runAsGroup is provided.
         """
         return pulumi.get(self, "run_as_user")
 
     @run_as_user.setter
-    def run_as_user(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def run_as_user(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "run_as_user", value)
 
     @_builtins.property
     @pulumi.getter(name="securityContextType")
-    def security_context_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def security_context_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The type of security context
         """
         return pulumi.get(self, "security_context_type")
 
     @security_context_type.setter
-    def security_context_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def security_context_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "security_context_type", value)
 
 
 class ContainerInstanceContainerSecurityContextCapabilitiesArgsDict(TypedDict):
-    add_capabilities: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    add_capabilities: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     A list of additional configurable container capabilities.
     """
-    drop_capabilities: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    drop_capabilities: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     A list of container capabilities that can be dropped.
     """
@@ -2542,8 +2542,8 @@ class ContainerInstanceContainerSecurityContextCapabilitiesArgsDict(TypedDict):
 @pulumi.input_type
 class ContainerInstanceContainerSecurityContextCapabilitiesArgs:
     def __init__(__self__, *,
-                 add_capabilities: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 drop_capabilities: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 add_capabilities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 drop_capabilities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] add_capabilities: A list of additional configurable container capabilities.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] drop_capabilities: A list of container capabilities that can be dropped.
@@ -2555,26 +2555,26 @@ class ContainerInstanceContainerSecurityContextCapabilitiesArgs:
 
     @_builtins.property
     @pulumi.getter(name="addCapabilities")
-    def add_capabilities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def add_capabilities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of additional configurable container capabilities.
         """
         return pulumi.get(self, "add_capabilities")
 
     @add_capabilities.setter
-    def add_capabilities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def add_capabilities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "add_capabilities", value)
 
     @_builtins.property
     @pulumi.getter(name="dropCapabilities")
-    def drop_capabilities(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def drop_capabilities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of container capabilities that can be dropped.
         """
         return pulumi.get(self, "drop_capabilities")
 
     @drop_capabilities.setter
-    def drop_capabilities(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def drop_capabilities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "drop_capabilities", value)
 
 
@@ -2587,15 +2587,15 @@ class ContainerInstanceContainerVolumeMountArgsDict(TypedDict):
     """
     The name of the volume. Avoid entering confidential information.
     """
-    is_read_only: NotRequired[pulumi.Input[_builtins.bool]]
+    is_read_only: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
     """
-    partition: NotRequired[pulumi.Input[_builtins.int]]
+    partition: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     If there is more than one partition in the volume, reference this number of partitions. Here is an example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
     """
-    sub_path: NotRequired[pulumi.Input[_builtins.str]]
+    sub_path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A subpath inside the referenced volume.
     """
@@ -2605,9 +2605,9 @@ class ContainerInstanceContainerVolumeMountArgs:
     def __init__(__self__, *,
                  mount_path: pulumi.Input[_builtins.str],
                  volume_name: pulumi.Input[_builtins.str],
-                 is_read_only: Optional[pulumi.Input[_builtins.bool]] = None,
-                 partition: Optional[pulumi.Input[_builtins.int]] = None,
-                 sub_path: Optional[pulumi.Input[_builtins.str]] = None):
+                 is_read_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 partition: pulumi.Input[Optional[_builtins.int]] = None,
+                 sub_path: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] mount_path: The volume access path.
         :param pulumi.Input[_builtins.str] volume_name: The name of the volume. Avoid entering confidential information.
@@ -2650,51 +2650,51 @@ class ContainerInstanceContainerVolumeMountArgs:
 
     @_builtins.property
     @pulumi.getter(name="isReadOnly")
-    def is_read_only(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_read_only(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the volume was mounted in read-only mode. By default, the volume is not read-only.
         """
         return pulumi.get(self, "is_read_only")
 
     @is_read_only.setter
-    def is_read_only(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_read_only(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_read_only", value)
 
     @_builtins.property
     @pulumi.getter
-    def partition(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def partition(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         If there is more than one partition in the volume, reference this number of partitions. Here is an example: Number  Start   End     Size    File system  Name                  Flags 1      1049kB  106MB   105MB   fat16        EFI System Partition  boot, esp 2      106MB   1180MB  1074MB  xfs 3      1180MB  50.0GB  48.8GB                                     lvm
         """
         return pulumi.get(self, "partition")
 
     @partition.setter
-    def partition(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def partition(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "partition", value)
 
     @_builtins.property
     @pulumi.getter(name="subPath")
-    def sub_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sub_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A subpath inside the referenced volume.
         """
         return pulumi.get(self, "sub_path")
 
     @sub_path.setter
-    def sub_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sub_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sub_path", value)
 
 
 class ContainerInstanceDnsConfigArgsDict(TypedDict):
-    nameservers: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    nameservers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses nameservers from subnet dhcpDnsOptions.
     """
-    options: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    options: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
     """
-    searches: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    searches: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     Search list for host-name lookup. If null, we will use searches from subnet dhcpDnsOptios.
     """
@@ -2702,9 +2702,9 @@ class ContainerInstanceDnsConfigArgsDict(TypedDict):
 @pulumi.input_type
 class ContainerInstanceDnsConfigArgs:
     def __init__(__self__, *,
-                 nameservers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 options: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 searches: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 nameservers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 options: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 searches: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nameservers: IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses nameservers from subnet dhcpDnsOptions.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] options: Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
@@ -2719,38 +2719,38 @@ class ContainerInstanceDnsConfigArgs:
 
     @_builtins.property
     @pulumi.getter
-    def nameservers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nameservers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         IP address of a name server that the resolver should query, either an IPv4 address (in dot notation), or an IPv6 address in colon (and possibly dot) notation. If null, uses nameservers from subnet dhcpDnsOptions.
         """
         return pulumi.get(self, "nameservers")
 
     @nameservers.setter
-    def nameservers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nameservers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nameservers", value)
 
     @_builtins.property
     @pulumi.getter
-    def options(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def options(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Options allows certain internal resolver variables to be modified. Options are a list of objects in https://man7.org/linux/man-pages/man5/resolv.conf.5.html. Examples: ["ndots:n", "edns0"].
         """
         return pulumi.get(self, "options")
 
     @options.setter
-    def options(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def options(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "options", value)
 
     @_builtins.property
     @pulumi.getter
-    def searches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def searches(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Search list for host-name lookup. If null, we will use searches from subnet dhcpDnsOptios.
         """
         return pulumi.get(self, "searches")
 
     @searches.setter
-    def searches(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def searches(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "searches", value)
 
 
@@ -2763,15 +2763,15 @@ class ContainerInstanceImagePullSecretArgsDict(TypedDict):
     """
     The type of ImagePullSecret.
     """
-    password: NotRequired[pulumi.Input[_builtins.str]]
+    password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The password which should be used with the registry for authentication. The value is expected in base64 format.
     """
-    secret_id: NotRequired[pulumi.Input[_builtins.str]]
+    secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the secret for registry credentials.
     """
-    username: NotRequired[pulumi.Input[_builtins.str]]
+    username: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The username which should be used with the registry for authentication. The value is expected in base64 format.
     """
@@ -2781,9 +2781,9 @@ class ContainerInstanceImagePullSecretArgs:
     def __init__(__self__, *,
                  registry_endpoint: pulumi.Input[_builtins.str],
                  secret_type: pulumi.Input[_builtins.str],
-                 password: Optional[pulumi.Input[_builtins.str]] = None,
-                 secret_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 username: Optional[pulumi.Input[_builtins.str]] = None):
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] registry_endpoint: The registry endpoint of the container image.
         :param pulumi.Input[_builtins.str] secret_type: The type of ImagePullSecret.
@@ -2826,38 +2826,38 @@ class ContainerInstanceImagePullSecretArgs:
 
     @_builtins.property
     @pulumi.getter
-    def password(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The password which should be used with the registry for authentication. The value is expected in base64 format.
         """
         return pulumi.get(self, "password")
 
     @password.setter
-    def password(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "password", value)
 
     @_builtins.property
     @pulumi.getter(name="secretId")
-    def secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the secret for registry credentials.
         """
         return pulumi.get(self, "secret_id")
 
     @secret_id.setter
-    def secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def username(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The username which should be used with the registry for authentication. The value is expected in base64 format.
         """
         return pulumi.get(self, "username")
 
     @username.setter
-    def username(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "username", value)
 
 
@@ -2866,15 +2866,15 @@ class ContainerInstanceShapeConfigArgsDict(TypedDict):
     """
     The total number of OCPUs available to the container instance.
     """
-    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The total amount of memory available to the container instance (GB).
     """
-    networking_bandwidth_in_gbps: NotRequired[pulumi.Input[_builtins.float]]
+    networking_bandwidth_in_gbps: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     The networking bandwidth available to the container instance, in gigabits per second.
     """
-    processor_description: NotRequired[pulumi.Input[_builtins.str]]
+    processor_description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A short description of the container instance's processor (CPU).
     """
@@ -2883,9 +2883,9 @@ class ContainerInstanceShapeConfigArgsDict(TypedDict):
 class ContainerInstanceShapeConfigArgs:
     def __init__(__self__, *,
                  ocpus: pulumi.Input[_builtins.float],
-                 memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 networking_bandwidth_in_gbps: Optional[pulumi.Input[_builtins.float]] = None,
-                 processor_description: Optional[pulumi.Input[_builtins.str]] = None):
+                 memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 networking_bandwidth_in_gbps: pulumi.Input[Optional[_builtins.float]] = None,
+                 processor_description: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.float] ocpus: The total number of OCPUs available to the container instance.
         :param pulumi.Input[_builtins.float] memory_in_gbs: The total amount of memory available to the container instance (GB).
@@ -2914,38 +2914,38 @@ class ContainerInstanceShapeConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The total amount of memory available to the container instance (GB).
         """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
-    def memory_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "memory_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter(name="networkingBandwidthInGbps")
-    def networking_bandwidth_in_gbps(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def networking_bandwidth_in_gbps(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         The networking bandwidth available to the container instance, in gigabits per second.
         """
         return pulumi.get(self, "networking_bandwidth_in_gbps")
 
     @networking_bandwidth_in_gbps.setter
-    def networking_bandwidth_in_gbps(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def networking_bandwidth_in_gbps(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "networking_bandwidth_in_gbps", value)
 
     @_builtins.property
     @pulumi.getter(name="processorDescription")
-    def processor_description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def processor_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A short description of the container instance's processor (CPU).
         """
         return pulumi.get(self, "processor_description")
 
     @processor_description.setter
-    def processor_description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def processor_description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "processor_description", value)
 
 
@@ -2954,39 +2954,39 @@ class ContainerInstanceVnicArgsDict(TypedDict):
     """
     The OCID of the subnet to create the VNIC in.
     """
-    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    defined_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
     """
-    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    freeform_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
     """
-    hostname_label: NotRequired[pulumi.Input[_builtins.str]]
+    hostname_label: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The hostname for the VNIC's primary private IP. Used for DNS.
     """
-    is_public_ip_assigned: NotRequired[pulumi.Input[_builtins.bool]]
+    is_public_ip_assigned: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Whether the VNIC should be assigned a public IP address.
     """
-    nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    nsg_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     A list of the OCIDs of the network security groups (NSGs) to add the VNIC to.
     """
-    private_ip: NotRequired[pulumi.Input[_builtins.str]]
+    private_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR.
     """
-    skip_source_dest_check: NotRequired[pulumi.Input[_builtins.bool]]
+    skip_source_dest_check: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Whether the source/destination check is disabled on the VNIC.
     """
-    vnic_id: NotRequired[pulumi.Input[_builtins.str]]
+    vnic_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
     """
@@ -2995,15 +2995,15 @@ class ContainerInstanceVnicArgsDict(TypedDict):
 class ContainerInstanceVnicArgs:
     def __init__(__self__, *,
                  subnet_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 hostname_label: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_public_ip_assigned: Optional[pulumi.Input[_builtins.bool]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 private_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 skip_source_dest_check: Optional[pulumi.Input[_builtins.bool]] = None,
-                 vnic_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_public_ip_assigned: pulumi.Input[Optional[_builtins.bool]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 skip_source_dest_check: pulumi.Input[Optional[_builtins.bool]] = None,
+                 vnic_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet to create the VNIC in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
@@ -3050,110 +3050,110 @@ class ContainerInstanceVnicArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="hostnameLabel")
-    def hostname_label(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def hostname_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The hostname for the VNIC's primary private IP. Used for DNS.
         """
         return pulumi.get(self, "hostname_label")
 
     @hostname_label.setter
-    def hostname_label(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def hostname_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "hostname_label", value)
 
     @_builtins.property
     @pulumi.getter(name="isPublicIpAssigned")
-    def is_public_ip_assigned(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_public_ip_assigned(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the VNIC should be assigned a public IP address.
         """
         return pulumi.get(self, "is_public_ip_assigned")
 
     @is_public_ip_assigned.setter
-    def is_public_ip_assigned(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_public_ip_assigned(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_public_ip_assigned", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         A list of the OCIDs of the network security groups (NSGs) to add the VNIC to.
         """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIp")
-    def private_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR.
         """
         return pulumi.get(self, "private_ip")
 
     @private_ip.setter
-    def private_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="skipSourceDestCheck")
-    def skip_source_dest_check(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def skip_source_dest_check(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether the source/destination check is disabled on the VNIC.
         """
         return pulumi.get(self, "skip_source_dest_check")
 
     @skip_source_dest_check.setter
-    def skip_source_dest_check(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def skip_source_dest_check(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "skip_source_dest_check", value)
 
     @_builtins.property
     @pulumi.getter(name="vnicId")
-    def vnic_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vnic_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
         """
         return pulumi.get(self, "vnic_id")
 
     @vnic_id.setter
-    def vnic_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vnic_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vnic_id", value)
 
 
@@ -3166,11 +3166,11 @@ class ContainerInstanceVolumeArgsDict(TypedDict):
     """
     The type of volume.
     """
-    backing_store: NotRequired[pulumi.Input[_builtins.str]]
+    backing_store: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The volume type of the empty directory, can be either File Storage or Memory.
     """
-    configs: NotRequired[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVolumeConfigArgsDict']]]]
+    configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceVolumeConfigArgs']]]]]
     """
     Contains key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
     """
@@ -3180,8 +3180,8 @@ class ContainerInstanceVolumeArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[_builtins.str],
                  volume_type: pulumi.Input[_builtins.str],
-                 backing_store: Optional[pulumi.Input[_builtins.str]] = None,
-                 configs: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVolumeConfigArgs']]]] = None):
+                 backing_store: pulumi.Input[Optional[_builtins.str]] = None,
+                 configs: pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceVolumeConfigArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] name: The name of the volume. This must be unique within a single container instance.
         :param pulumi.Input[_builtins.str] volume_type: The type of volume.
@@ -3221,39 +3221,39 @@ class ContainerInstanceVolumeArgs:
 
     @_builtins.property
     @pulumi.getter(name="backingStore")
-    def backing_store(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def backing_store(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The volume type of the empty directory, can be either File Storage or Memory.
         """
         return pulumi.get(self, "backing_store")
 
     @backing_store.setter
-    def backing_store(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def backing_store(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backing_store", value)
 
     @_builtins.property
     @pulumi.getter
-    def configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVolumeConfigArgs']]]]:
+    def configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceVolumeConfigArgs']]]]:
         """
         Contains key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
         """
         return pulumi.get(self, "configs")
 
     @configs.setter
-    def configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVolumeConfigArgs']]]]):
+    def configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceVolumeConfigArgs']]]]):
         pulumi.set(self, "configs", value)
 
 
 class ContainerInstanceVolumeConfigArgsDict(TypedDict):
-    data: NotRequired[pulumi.Input[_builtins.str]]
+    data: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The base64 encoded contents of the file. The contents are decoded to plain text before mounted as a file to a container inside container instance.
     """
-    file_name: NotRequired[pulumi.Input[_builtins.str]]
+    file_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the file. The fileName should be unique across the volume.
     """
-    path: NotRequired[pulumi.Input[_builtins.str]]
+    path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
     """
@@ -3261,9 +3261,9 @@ class ContainerInstanceVolumeConfigArgsDict(TypedDict):
 @pulumi.input_type
 class ContainerInstanceVolumeConfigArgs:
     def __init__(__self__, *,
-                 data: Optional[pulumi.Input[_builtins.str]] = None,
-                 file_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 path: Optional[pulumi.Input[_builtins.str]] = None):
+                 data: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 path: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] data: The base64 encoded contents of the file. The contents are decoded to plain text before mounted as a file to a container inside container instance.
         :param pulumi.Input[_builtins.str] file_name: The name of the file. The fileName should be unique across the volume.
@@ -3278,47 +3278,47 @@ class ContainerInstanceVolumeConfigArgs:
 
     @_builtins.property
     @pulumi.getter
-    def data(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def data(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The base64 encoded contents of the file. The contents are decoded to plain text before mounted as a file to a container inside container instance.
         """
         return pulumi.get(self, "data")
 
     @data.setter
-    def data(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def data(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "data", value)
 
     @_builtins.property
     @pulumi.getter(name="fileName")
-    def file_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def file_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the file. The fileName should be unique across the volume.
         """
         return pulumi.get(self, "file_name")
 
     @file_name.setter
-    def file_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def file_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "file_name", value)
 
     @_builtins.property
     @pulumi.getter
-    def path(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
         """
         return pulumi.get(self, "path")
 
     @path.setter
-    def path(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "path", value)
 
 
 class NodePoolInitialNodeLabelArgsDict(TypedDict):
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The key of the pair.
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The value of the pair.
     """
@@ -3326,8 +3326,8 @@ class NodePoolInitialNodeLabelArgsDict(TypedDict):
 @pulumi.input_type
 class NodePoolInitialNodeLabelArgs:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] key: (Updatable) The key of the pair.
         :param pulumi.Input[_builtins.str] value: (Updatable) The value of the pair.
@@ -3339,83 +3339,83 @@ class NodePoolInitialNodeLabelArgs:
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The key of the pair.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The value of the pair.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
 class NodePoolNodeArgsDict(TypedDict):
-    availability_domain: NotRequired[pulumi.Input[_builtins.str]]
+    availability_domain: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The name of the availability domain in which this node is placed.
     """
-    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    defined_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
     """
-    errors: NotRequired[pulumi.Input[Sequence[pulumi.Input['NodePoolNodeErrorArgsDict']]]]
+    errors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NodePoolNodeErrorArgs']]]]]
     """
     An error that may be associated with the node.
     """
-    fault_domain: NotRequired[pulumi.Input[_builtins.str]]
+    fault_domain: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The fault domain of this node.
     """
-    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    freeform_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
     """
-    id: NotRequired[pulumi.Input[_builtins.str]]
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the compute instance backing this node.
     """
-    kubernetes_version: NotRequired[pulumi.Input[_builtins.str]]
+    kubernetes_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The version of Kubernetes to install on the nodes in the node pool.
     """
-    lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+    lifecycle_details: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Details about the state of the node.
     """
-    name: NotRequired[pulumi.Input[_builtins.str]]
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The name of the node pool. Avoid entering confidential information.
     """
-    node_pool_id: NotRequired[pulumi.Input[_builtins.str]]
+    node_pool_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the node pool to which this node belongs.
     """
-    private_ip: NotRequired[pulumi.Input[_builtins.str]]
+    private_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The private IP address of this node.
     """
-    public_ip: NotRequired[pulumi.Input[_builtins.str]]
+    public_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The public IP address of this node.
     """
-    state: NotRequired[pulumi.Input[_builtins.str]]
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
     """
-    subnet_id: NotRequired[pulumi.Input[_builtins.str]]
+    subnet_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     the ocid of the subnet to create the vnic in
     """
@@ -3423,20 +3423,20 @@ class NodePoolNodeArgsDict(TypedDict):
 @pulumi.input_type
 class NodePoolNodeArgs:
     def __init__(__self__, *,
-                 availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 errors: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolNodeErrorArgs']]]] = None,
-                 fault_domain: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 id: Optional[pulumi.Input[_builtins.str]] = None,
-                 kubernetes_version: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_pool_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 private_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_ip: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subnet_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 errors: pulumi.Input[Optional[Sequence[pulumi.Input['NodePoolNodeErrorArgs']]]] = None,
+                 fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 kubernetes_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain in which this node is placed.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -3484,170 +3484,170 @@ class NodePoolNodeArgs:
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the availability domain in which this node is placed.
         """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
-    def availability_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def errors(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolNodeErrorArgs']]]]:
+    def errors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NodePoolNodeErrorArgs']]]]:
         """
         An error that may be associated with the node.
         """
         return pulumi.get(self, "errors")
 
     @errors.setter
-    def errors(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolNodeErrorArgs']]]]):
+    def errors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NodePoolNodeErrorArgs']]]]):
         pulumi.set(self, "errors", value)
 
     @_builtins.property
     @pulumi.getter(name="faultDomain")
-    def fault_domain(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fault_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The fault domain of this node.
         """
         return pulumi.get(self, "fault_domain")
 
     @fault_domain.setter
-    def fault_domain(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fault_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fault_domain", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the compute instance backing this node.
         """
         return pulumi.get(self, "id")
 
     @id.setter
-    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
 
     @_builtins.property
     @pulumi.getter(name="kubernetesVersion")
-    def kubernetes_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kubernetes_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The version of Kubernetes to install on the nodes in the node pool.
         """
         return pulumi.get(self, "kubernetes_version")
 
     @kubernetes_version.setter
-    def kubernetes_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kubernetes_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kubernetes_version", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Details about the state of the node.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the node pool. Avoid entering confidential information.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="nodePoolId")
-    def node_pool_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def node_pool_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the node pool to which this node belongs.
         """
         return pulumi.get(self, "node_pool_id")
 
     @node_pool_id.setter
-    def node_pool_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def node_pool_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "node_pool_id", value)
 
     @_builtins.property
     @pulumi.getter(name="privateIp")
-    def private_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def private_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The private IP address of this node.
         """
         return pulumi.get(self, "private_ip")
 
     @private_ip.setter
-    def private_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def private_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="publicIp")
-    def public_ip(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The public IP address of this node.
         """
         return pulumi.get(self, "public_ip")
 
     @public_ip.setter
-    def public_ip(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_ip", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         the ocid of the subnet to create the vnic in
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
-    def subnet_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subnet_id", value)
 
 
@@ -3662,27 +3662,27 @@ class NodePoolNodeConfigDetailsArgsDict(TypedDict):
     """
     (Updatable) The number of nodes that should be in the node pool.
     """
-    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    defined_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
     """
-    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    freeform_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
     """
-    is_pv_encryption_in_transit_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_pv_encryption_in_transit_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
     """
-    kms_key_id: NotRequired[pulumi.Input[_builtins.str]]
+    kms_key_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the Key Management Service key assigned to the boot volume.
     """
-    node_pool_pod_network_option_details: NotRequired[pulumi.Input['NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgsDict']]
+    node_pool_pod_network_option_details: NotRequired[pulumi.Input[Optional['NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs']]]
     """
     (Updatable) The CNI related configuration of pods in the node pool.
     """
-    nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    nsg_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
     """
@@ -3692,12 +3692,12 @@ class NodePoolNodeConfigDetailsArgs:
     def __init__(__self__, *,
                  placement_configs: pulumi.Input[Sequence[pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigArgs']]],
                  size: pulumi.Input[_builtins.int],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 node_pool_pod_network_option_details: Optional[pulumi.Input['NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs']] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_pv_encryption_in_transit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 node_pool_pod_network_option_details: pulumi.Input[Optional['NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs']] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigArgs']]] placement_configs: (Updatable) The placement configurations for the node pool. Provide one placement configuration for each availability domain in which you intend to launch a node.
                
@@ -3753,74 +3753,74 @@ class NodePoolNodeConfigDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isPvEncryptionInTransitEnabled")
-    def is_pv_encryption_in_transit_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_pv_encryption_in_transit_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
         """
         return pulumi.get(self, "is_pv_encryption_in_transit_enabled")
 
     @is_pv_encryption_in_transit_enabled.setter
-    def is_pv_encryption_in_transit_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_pv_encryption_in_transit_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_pv_encryption_in_transit_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the Key Management Service key assigned to the boot volume.
         """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
-    def kms_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="nodePoolPodNetworkOptionDetails")
-    def node_pool_pod_network_option_details(self) -> Optional[pulumi.Input['NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs']]:
+    def node_pool_pod_network_option_details(self) -> pulumi.Input[Optional['NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs']]:
         """
         (Updatable) The CNI related configuration of pods in the node pool.
         """
         return pulumi.get(self, "node_pool_pod_network_option_details")
 
     @node_pool_pod_network_option_details.setter
-    def node_pool_pod_network_option_details(self, value: Optional[pulumi.Input['NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs']]):
+    def node_pool_pod_network_option_details(self, value: pulumi.Input[Optional['NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs']]):
         pulumi.set(self, "node_pool_pod_network_option_details", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The OCIDs of the Network Security Group(s) to associate nodes for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
 
@@ -3829,15 +3829,15 @@ class NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgsDict(TypedDict
     """
     (Updatable) The CNI plugin used by this node pool
     """
-    max_pods_per_node: NotRequired[pulumi.Input[_builtins.int]]
+    max_pods_per_node: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
     """
-    pod_nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    pod_nsg_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
     """
-    pod_subnet_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    pod_subnet_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
     """
@@ -3846,9 +3846,9 @@ class NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgsDict(TypedDict
 class NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs:
     def __init__(__self__, *,
                  cni_type: pulumi.Input[_builtins.str],
-                 max_pods_per_node: Optional[pulumi.Input[_builtins.int]] = None,
-                 pod_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 pod_subnet_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 max_pods_per_node: pulumi.Input[Optional[_builtins.int]] = None,
+                 pod_nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 pod_subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] cni_type: (Updatable) The CNI plugin used by this node pool
         :param pulumi.Input[_builtins.int] max_pods_per_node: (Updatable) The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
@@ -3877,38 +3877,38 @@ class NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="maxPodsPerNode")
-    def max_pods_per_node(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def max_pods_per_node(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The max number of pods per node in the node pool. This value will be limited by the number of VNICs attachable to the node pool shape
         """
         return pulumi.get(self, "max_pods_per_node")
 
     @max_pods_per_node.setter
-    def max_pods_per_node(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def max_pods_per_node(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "max_pods_per_node", value)
 
     @_builtins.property
     @pulumi.getter(name="podNsgIds")
-    def pod_nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pod_nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The OCIDs of the Network Security Group(s) to associate pods for this node pool with. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         """
         return pulumi.get(self, "pod_nsg_ids")
 
     @pod_nsg_ids.setter
-    def pod_nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pod_nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pod_nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="podSubnetIds")
-    def pod_subnet_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def pod_subnet_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The OCIDs of the subnets in which to place pods for this node pool. This can be one of the node pool subnet IDs
         """
         return pulumi.get(self, "pod_subnet_ids")
 
     @pod_subnet_ids.setter
-    def pod_subnet_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def pod_subnet_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "pod_subnet_ids", value)
 
 
@@ -3921,15 +3921,15 @@ class NodePoolNodeConfigDetailsPlacementConfigArgsDict(TypedDict):
     """
     (Updatable) The OCID of the subnet in which to place nodes.
     """
-    capacity_reservation_id: NotRequired[pulumi.Input[_builtins.str]]
+    capacity_reservation_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The OCID of the compute capacity reservation in which to place the compute instance.
     """
-    fault_domains: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    fault_domains: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) A list of fault domains in which to place nodes.
     """
-    preemptible_node_config: NotRequired[pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgsDict']]
+    preemptible_node_config: NotRequired[pulumi.Input[Optional['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs']]]
     """
     (Updatable) Configuration options for preemptible nodes.
     """
@@ -3939,9 +3939,9 @@ class NodePoolNodeConfigDetailsPlacementConfigArgs:
     def __init__(__self__, *,
                  availability_domain: pulumi.Input[_builtins.str],
                  subnet_id: pulumi.Input[_builtins.str],
-                 capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 preemptible_node_config: Optional[pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs']] = None):
+                 capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 fault_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 preemptible_node_config: pulumi.Input[Optional['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] availability_domain: (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The OCID of the subnet in which to place nodes.
@@ -3984,38 +3984,38 @@ class NodePoolNodeConfigDetailsPlacementConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="capacityReservationId")
-    def capacity_reservation_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def capacity_reservation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compute capacity reservation in which to place the compute instance.
         """
         return pulumi.get(self, "capacity_reservation_id")
 
     @capacity_reservation_id.setter
-    def capacity_reservation_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def capacity_reservation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "capacity_reservation_id", value)
 
     @_builtins.property
     @pulumi.getter(name="faultDomains")
-    def fault_domains(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def fault_domains(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A list of fault domains in which to place nodes.
         """
         return pulumi.get(self, "fault_domains")
 
     @fault_domains.setter
-    def fault_domains(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def fault_domains(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "fault_domains", value)
 
     @_builtins.property
     @pulumi.getter(name="preemptibleNodeConfig")
-    def preemptible_node_config(self) -> Optional[pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs']]:
+    def preemptible_node_config(self) -> pulumi.Input[Optional['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs']]:
         """
         (Updatable) Configuration options for preemptible nodes.
         """
         return pulumi.get(self, "preemptible_node_config")
 
     @preemptible_node_config.setter
-    def preemptible_node_config(self, value: Optional[pulumi.Input['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs']]):
+    def preemptible_node_config(self, value: pulumi.Input[Optional['NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs']]):
         pulumi.set(self, "preemptible_node_config", value)
 
 
@@ -4052,7 +4052,7 @@ class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAct
     """
     (Updatable) The type of action to run when the instance is interrupted for eviction.
     """
-    is_preserve_boot_volume: NotRequired[pulumi.Input[_builtins.bool]]
+    is_preserve_boot_volume: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
     """
@@ -4061,7 +4061,7 @@ class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAct
 class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[_builtins.str],
-                 is_preserve_boot_volume: Optional[pulumi.Input[_builtins.bool]] = None):
+                 is_preserve_boot_volume: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of action to run when the instance is interrupted for eviction.
         :param pulumi.Input[_builtins.bool] is_preserve_boot_volume: (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
@@ -4084,27 +4084,27 @@ class NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionAct
 
     @_builtins.property
     @pulumi.getter(name="isPreserveBootVolume")
-    def is_preserve_boot_volume(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_preserve_boot_volume(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         """
         return pulumi.get(self, "is_preserve_boot_volume")
 
     @is_preserve_boot_volume.setter
-    def is_preserve_boot_volume(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_preserve_boot_volume(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_preserve_boot_volume", value)
 
 
 class NodePoolNodeErrorArgsDict(TypedDict):
-    code: NotRequired[pulumi.Input[_builtins.str]]
+    code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
     """
-    message: NotRequired[pulumi.Input[_builtins.str]]
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A human-readable error string of the upstream error.
     """
-    status: NotRequired[pulumi.Input[_builtins.str]]
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The status of the HTTP response encountered in the upstream error.
     """
@@ -4112,9 +4112,9 @@ class NodePoolNodeErrorArgsDict(TypedDict):
 @pulumi.input_type
 class NodePoolNodeErrorArgs:
     def __init__(__self__, *,
-                 code: Optional[pulumi.Input[_builtins.str]] = None,
-                 message: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None):
+                 code: pulumi.Input[Optional[_builtins.str]] = None,
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] code: A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
         :param pulumi.Input[_builtins.str] message: A human-readable error string of the upstream error.
@@ -4129,51 +4129,51 @@ class NodePoolNodeErrorArgs:
 
     @_builtins.property
     @pulumi.getter
-    def code(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def code(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm).
         """
         return pulumi.get(self, "code")
 
     @code.setter
-    def code(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def code(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "code", value)
 
     @_builtins.property
     @pulumi.getter
-    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A human-readable error string of the upstream error.
         """
         return pulumi.get(self, "message")
 
     @message.setter
-    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "message", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The status of the HTTP response encountered in the upstream error.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
 
 class NodePoolNodeEvictionNodePoolSettingsArgsDict(TypedDict):
-    eviction_grace_duration: NotRequired[pulumi.Input[_builtins.str]]
+    eviction_grace_duration: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
     """
-    is_force_action_after_grace_duration: NotRequired[pulumi.Input[_builtins.bool]]
+    is_force_action_after_grace_duration: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If the node action should be performed if not all the pods can be evicted in the grace period
     """
-    is_force_delete_after_grace_duration: NotRequired[pulumi.Input[_builtins.bool]]
+    is_force_delete_after_grace_duration: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
     """
@@ -4181,9 +4181,9 @@ class NodePoolNodeEvictionNodePoolSettingsArgsDict(TypedDict):
 @pulumi.input_type
 class NodePoolNodeEvictionNodePoolSettingsArgs:
     def __init__(__self__, *,
-                 eviction_grace_duration: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_force_action_after_grace_duration: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_force_delete_after_grace_duration: Optional[pulumi.Input[_builtins.bool]] = None):
+                 eviction_grace_duration: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_force_action_after_grace_duration: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_force_delete_after_grace_duration: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] eviction_grace_duration: (Updatable) Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
         :param pulumi.Input[_builtins.bool] is_force_action_after_grace_duration: (Updatable) If the node action should be performed if not all the pods can be evicted in the grace period
@@ -4198,55 +4198,55 @@ class NodePoolNodeEvictionNodePoolSettingsArgs:
 
     @_builtins.property
     @pulumi.getter(name="evictionGraceDuration")
-    def eviction_grace_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def eviction_grace_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Duration after which OKE will give up eviction of the pods on the node. PT0M will indicate you want to delete the node without cordon and drain. Default PT60M, Min PT0M, Max: PT60M. Format ISO 8601 e.g PT30M
         """
         return pulumi.get(self, "eviction_grace_duration")
 
     @eviction_grace_duration.setter
-    def eviction_grace_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def eviction_grace_duration(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "eviction_grace_duration", value)
 
     @_builtins.property
     @pulumi.getter(name="isForceActionAfterGraceDuration")
-    def is_force_action_after_grace_duration(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_force_action_after_grace_duration(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If the node action should be performed if not all the pods can be evicted in the grace period
         """
         return pulumi.get(self, "is_force_action_after_grace_duration")
 
     @is_force_action_after_grace_duration.setter
-    def is_force_action_after_grace_duration(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_force_action_after_grace_duration(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_force_action_after_grace_duration", value)
 
     @_builtins.property
     @pulumi.getter(name="isForceDeleteAfterGraceDuration")
-    def is_force_delete_after_grace_duration(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_force_delete_after_grace_duration(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If the underlying compute instance should be deleted if you cannot evict all the pods in grace period
         """
         return pulumi.get(self, "is_force_delete_after_grace_duration")
 
     @is_force_delete_after_grace_duration.setter
-    def is_force_delete_after_grace_duration(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_force_delete_after_grace_duration(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_force_delete_after_grace_duration", value)
 
 
 class NodePoolNodePoolCyclingDetailsArgsDict(TypedDict):
-    cycle_modes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    cycle_modes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) An ordered list of cycle modes that should be performed on the OKE nodes.
     """
-    is_node_cycling_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+    is_node_cycling_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) If cycling operation should be performed on the nodes in the node pool.
     """
-    maximum_surge: NotRequired[pulumi.Input[_builtins.str]]
+    maximum_surge: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
     """
-    maximum_unavailable: NotRequired[pulumi.Input[_builtins.str]]
+    maximum_unavailable: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
     """
@@ -4254,10 +4254,10 @@ class NodePoolNodePoolCyclingDetailsArgsDict(TypedDict):
 @pulumi.input_type
 class NodePoolNodePoolCyclingDetailsArgs:
     def __init__(__self__, *,
-                 cycle_modes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 is_node_cycling_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 maximum_surge: Optional[pulumi.Input[_builtins.str]] = None,
-                 maximum_unavailable: Optional[pulumi.Input[_builtins.str]] = None):
+                 cycle_modes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_node_cycling_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 maximum_surge: pulumi.Input[Optional[_builtins.str]] = None,
+                 maximum_unavailable: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cycle_modes: (Updatable) An ordered list of cycle modes that should be performed on the OKE nodes.
         :param pulumi.Input[_builtins.bool] is_node_cycling_enabled: (Updatable) If cycling operation should be performed on the nodes in the node pool.
@@ -4275,59 +4275,59 @@ class NodePoolNodePoolCyclingDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="cycleModes")
-    def cycle_modes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def cycle_modes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) An ordered list of cycle modes that should be performed on the OKE nodes.
         """
         return pulumi.get(self, "cycle_modes")
 
     @cycle_modes.setter
-    def cycle_modes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def cycle_modes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "cycle_modes", value)
 
     @_builtins.property
     @pulumi.getter(name="isNodeCyclingEnabled")
-    def is_node_cycling_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_node_cycling_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If cycling operation should be performed on the nodes in the node pool.
         """
         return pulumi.get(self, "is_node_cycling_enabled")
 
     @is_node_cycling_enabled.setter
-    def is_node_cycling_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_node_cycling_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_node_cycling_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="maximumSurge")
-    def maximum_surge(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def maximum_surge(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Maximum additional new compute instances that would be temporarily created and added to nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Nodepool size or 0% to 100%
         """
         return pulumi.get(self, "maximum_surge")
 
     @maximum_surge.setter
-    def maximum_surge(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def maximum_surge(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "maximum_surge", value)
 
     @_builtins.property
     @pulumi.getter(name="maximumUnavailable")
-    def maximum_unavailable(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def maximum_unavailable(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Maximum active nodes that would be terminated from nodepool during the cycling nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Nodepool size or 0% to 100%
         """
         return pulumi.get(self, "maximum_unavailable")
 
     @maximum_unavailable.setter
-    def maximum_unavailable(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def maximum_unavailable(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "maximum_unavailable", value)
 
 
 class NodePoolNodeShapeConfigArgsDict(TypedDict):
-    memory_in_gbs: NotRequired[pulumi.Input[_builtins.float]]
+    memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     (Updatable) The total amount of memory available to each node, in gigabytes.
     """
-    ocpus: NotRequired[pulumi.Input[_builtins.float]]
+    ocpus: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
     (Updatable) The total number of OCPUs available to each node in the node pool. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
     """
@@ -4335,8 +4335,8 @@ class NodePoolNodeShapeConfigArgsDict(TypedDict):
 @pulumi.input_type
 class NodePoolNodeShapeConfigArgs:
     def __init__(__self__, *,
-                 memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
-                 ocpus: Optional[pulumi.Input[_builtins.float]] = None):
+                 memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 ocpus: pulumi.Input[Optional[_builtins.float]] = None):
         """
         :param pulumi.Input[_builtins.float] memory_in_gbs: (Updatable) The total amount of memory available to each node, in gigabytes.
         :param pulumi.Input[_builtins.float] ocpus: (Updatable) The total number of OCPUs available to each node in the node pool. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
@@ -4348,39 +4348,39 @@ class NodePoolNodeShapeConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
-    def memory_in_gbs(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) The total amount of memory available to each node, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
 
     @memory_in_gbs.setter
-    def memory_in_gbs(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "memory_in_gbs", value)
 
     @_builtins.property
     @pulumi.getter
-    def ocpus(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         (Updatable) The total number of OCPUs available to each node in the node pool. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
         """
         return pulumi.get(self, "ocpus")
 
     @ocpus.setter
-    def ocpus(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def ocpus(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "ocpus", value)
 
 
 class NodePoolNodeSourceArgsDict(TypedDict):
-    image_id: NotRequired[pulumi.Input[_builtins.str]]
+    image_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The OCID of the image used to boot the node.
     """
-    source_name: NotRequired[pulumi.Input[_builtins.str]]
+    source_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The user-friendly name of the entity corresponding to the OCID.
     """
-    source_type: NotRequired[pulumi.Input[_builtins.str]]
+    source_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The source type for the node. Use `IMAGE` when specifying an OCID of an image.
     """
@@ -4388,9 +4388,9 @@ class NodePoolNodeSourceArgsDict(TypedDict):
 @pulumi.input_type
 class NodePoolNodeSourceArgs:
     def __init__(__self__, *,
-                 image_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] image_id: The OCID of the image used to boot the node.
         :param pulumi.Input[_builtins.str] source_name: The user-friendly name of the entity corresponding to the OCID.
@@ -4405,38 +4405,38 @@ class NodePoolNodeSourceArgs:
 
     @_builtins.property
     @pulumi.getter(name="imageId")
-    def image_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def image_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the image used to boot the node.
         """
         return pulumi.get(self, "image_id")
 
     @image_id.setter
-    def image_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def image_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "image_id", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceName")
-    def source_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user-friendly name of the entity corresponding to the OCID.
         """
         return pulumi.get(self, "source_name")
 
     @source_name.setter
-    def source_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_name", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceType")
-    def source_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The source type for the node. Use `IMAGE` when specifying an OCID of an image.
         """
         return pulumi.get(self, "source_type")
 
     @source_type.setter
-    def source_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_type", value)
 
 
@@ -4449,7 +4449,7 @@ class NodePoolNodeSourceDetailsArgsDict(TypedDict):
     """
     (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
     """
-    boot_volume_size_in_gbs: NotRequired[pulumi.Input[_builtins.str]]
+    boot_volume_size_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
     """
@@ -4459,7 +4459,7 @@ class NodePoolNodeSourceDetailsArgs:
     def __init__(__self__, *,
                  image_id: pulumi.Input[_builtins.str],
                  source_type: pulumi.Input[_builtins.str],
-                 boot_volume_size_in_gbs: Optional[pulumi.Input[_builtins.str]] = None):
+                 boot_volume_size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] image_id: (Updatable) The OCID of the image used to boot the node.
         :param pulumi.Input[_builtins.str] source_type: (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
@@ -4496,14 +4496,14 @@ class NodePoolNodeSourceDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="bootVolumeSizeInGbs")
-    def boot_volume_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def boot_volume_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The size of the boot volume in GBs. Minimum value is 50 GB. See [here](https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm) for max custom boot volume sizing and OS-specific requirements.
         """
         return pulumi.get(self, "boot_volume_size_in_gbs")
 
     @boot_volume_size_in_gbs.setter
-    def boot_volume_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def boot_volume_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "boot_volume_size_in_gbs", value)
 
 
@@ -4512,11 +4512,11 @@ class NodePoolSecondaryVnicArgsDict(TypedDict):
     """
     (Updatable) The properties of the secondary vnics
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Display name for vnic attachment
     """
-    nic_index: NotRequired[pulumi.Input[_builtins.int]]
+    nic_index: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) Which physical network interface card (NIC) the VNIC will use
     """
@@ -4525,8 +4525,8 @@ class NodePoolSecondaryVnicArgsDict(TypedDict):
 class NodePoolSecondaryVnicArgs:
     def __init__(__self__, *,
                  create_vnic_details: pulumi.Input['NodePoolSecondaryVnicCreateVnicDetailsArgs'],
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 nic_index: Optional[pulumi.Input[_builtins.int]] = None):
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 nic_index: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input['NodePoolSecondaryVnicCreateVnicDetailsArgs'] create_vnic_details: (Updatable) The properties of the secondary vnics
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name for vnic attachment
@@ -4552,26 +4552,26 @@ class NodePoolSecondaryVnicArgs:
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Display name for vnic attachment
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="nicIndex")
-    def nic_index(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def nic_index(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Which physical network interface card (NIC) the VNIC will use
         """
         return pulumi.get(self, "nic_index")
 
     @nic_index.setter
-    def nic_index(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def nic_index(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "nic_index", value)
 
 
@@ -4580,43 +4580,43 @@ class NodePoolSecondaryVnicCreateVnicDetailsArgsDict(TypedDict):
     """
     (Updatable) the ocid of the subnet to create the vnic in
     """
-    application_resources: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    application_resources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) The application resource that corresponds to this secondary vnic. Used to map pods to this specific vnic for scheduling
     """
-    assign_ipv6ip: NotRequired[pulumi.Input[_builtins.bool]]
+    assign_ipv6ip: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet
     """
-    assign_public_ip: NotRequired[pulumi.Input[_builtins.bool]]
+    assign_public_ip: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether the VNIC should be assigned a public IP address
     """
-    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    defined_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
     """
-    display_name: NotRequired[pulumi.Input[_builtins.str]]
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Display name for secondary vnic
     """
-    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    freeform_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
     """
-    ip_count: NotRequired[pulumi.Input[_builtins.int]]
+    ip_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The number of ip addresses to attach to secondary vnic
     """
-    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgsDict']]]]
+    ipv6address_ipv6subnet_cidr_pair_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]]
     """
     (Updatable) A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix  and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty  and instead provide the specific IPv6 address that should be used from within that range.
     """
-    nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    nsg_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
     """
-    skip_source_dest_check: NotRequired[pulumi.Input[_builtins.bool]]
+    skip_source_dest_check: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     (Updatable) Whether the source/destination check is disabled on the VNIC
     """
@@ -4625,16 +4625,16 @@ class NodePoolSecondaryVnicCreateVnicDetailsArgsDict(TypedDict):
 class NodePoolSecondaryVnicCreateVnicDetailsArgs:
     def __init__(__self__, *,
                  subnet_id: pulumi.Input[_builtins.str],
-                 application_resources: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 assign_ipv6ip: Optional[pulumi.Input[_builtins.bool]] = None,
-                 assign_public_ip: Optional[pulumi.Input[_builtins.bool]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 ip_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 ipv6address_ipv6subnet_cidr_pair_details: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 skip_source_dest_check: Optional[pulumi.Input[_builtins.bool]] = None):
+                 application_resources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 assign_ipv6ip: pulumi.Input[Optional[_builtins.bool]] = None,
+                 assign_public_ip: pulumi.Input[Optional[_builtins.bool]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ip_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 ipv6address_ipv6subnet_cidr_pair_details: pulumi.Input[Optional[Sequence[pulumi.Input['NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]] = None,
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 skip_source_dest_check: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) the ocid of the subnet to create the vnic in
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] application_resources: (Updatable) The application resource that corresponds to this secondary vnic. Used to map pods to this specific vnic for scheduling
@@ -4684,131 +4684,131 @@ class NodePoolSecondaryVnicCreateVnicDetailsArgs:
 
     @_builtins.property
     @pulumi.getter(name="applicationResources")
-    def application_resources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def application_resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The application resource that corresponds to this secondary vnic. Used to map pods to this specific vnic for scheduling
         """
         return pulumi.get(self, "application_resources")
 
     @application_resources.setter
-    def application_resources(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def application_resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "application_resources", value)
 
     @_builtins.property
     @pulumi.getter(name="assignIpv6ip")
-    def assign_ipv6ip(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def assign_ipv6ip(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet
         """
         return pulumi.get(self, "assign_ipv6ip")
 
     @assign_ipv6ip.setter
-    def assign_ipv6ip(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def assign_ipv6ip(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "assign_ipv6ip", value)
 
     @_builtins.property
     @pulumi.getter(name="assignPublicIp")
-    def assign_public_ip(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def assign_public_ip(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the VNIC should be assigned a public IP address
         """
         return pulumi.get(self, "assign_public_ip")
 
     @assign_public_ip.setter
-    def assign_public_ip(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def assign_public_ip(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "assign_public_ip", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Display name for secondary vnic
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="ipCount")
-    def ip_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def ip_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) The number of ip addresses to attach to secondary vnic
         """
         return pulumi.get(self, "ip_count")
 
     @ip_count.setter
-    def ip_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def ip_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "ip_count", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv6addressIpv6subnetCidrPairDetails")
-    def ipv6address_ipv6subnet_cidr_pair_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
+    def ipv6address_ipv6subnet_cidr_pair_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]:
         """
         (Updatable) A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address. You can provide only the prefix  and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty  and instead provide the specific IPv6 address that should be used from within that range.
         """
         return pulumi.get(self, "ipv6address_ipv6subnet_cidr_pair_details")
 
     @ipv6address_ipv6subnet_cidr_pair_details.setter
-    def ipv6address_ipv6subnet_cidr_pair_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]):
+    def ipv6address_ipv6subnet_cidr_pair_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs']]]]):
         pulumi.set(self, "ipv6address_ipv6subnet_cidr_pair_details", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) A list of the OCIDs of the network security groups (NSGs) to add the VNIC to
         """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
     @pulumi.getter(name="skipSourceDestCheck")
-    def skip_source_dest_check(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def skip_source_dest_check(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether the source/destination check is disabled on the VNIC
         """
         return pulumi.get(self, "skip_source_dest_check")
 
     @skip_source_dest_check.setter
-    def skip_source_dest_check(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def skip_source_dest_check(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "skip_source_dest_check", value)
 
 
 class NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgsDict(TypedDict):
-    ipv6address: NotRequired[pulumi.Input[_builtins.str]]
+    ipv6address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix
     """
-    ipv6subnet_cidr: NotRequired[pulumi.Input[_builtins.str]]
+    ipv6subnet_cidr: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The IPv6 prefix allocated to the subnet
     """
@@ -4816,8 +4816,8 @@ class NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailA
 @pulumi.input_type
 class NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs:
     def __init__(__self__, *,
-                 ipv6address: Optional[pulumi.Input[_builtins.str]] = None,
-                 ipv6subnet_cidr: Optional[pulumi.Input[_builtins.str]] = None):
+                 ipv6address: pulumi.Input[Optional[_builtins.str]] = None,
+                 ipv6subnet_cidr: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] ipv6address: (Updatable) An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix
         :param pulumi.Input[_builtins.str] ipv6subnet_cidr: (Updatable) The IPv6 prefix allocated to the subnet
@@ -4829,35 +4829,35 @@ class NodePoolSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailA
 
     @_builtins.property
     @pulumi.getter
-    def ipv6address(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv6address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) An IPv6 address of your choice. Must be an available IPv6 address within the subnet's prefix
         """
         return pulumi.get(self, "ipv6address")
 
     @ipv6address.setter
-    def ipv6address(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv6address(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv6address", value)
 
     @_builtins.property
     @pulumi.getter(name="ipv6subnetCidr")
-    def ipv6subnet_cidr(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def ipv6subnet_cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The IPv6 prefix allocated to the subnet
         """
         return pulumi.get(self, "ipv6subnet_cidr")
 
     @ipv6subnet_cidr.setter
-    def ipv6subnet_cidr(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def ipv6subnet_cidr(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ipv6subnet_cidr", value)
 
 
 class VirtualNodePoolInitialVirtualNodeLabelArgsDict(TypedDict):
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The key of the pair.
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The value of the pair.
     """
@@ -4865,8 +4865,8 @@ class VirtualNodePoolInitialVirtualNodeLabelArgsDict(TypedDict):
 @pulumi.input_type
 class VirtualNodePoolInitialVirtualNodeLabelArgs:
     def __init__(__self__, *,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] key: (Updatable) The key of the pair.
         :param pulumi.Input[_builtins.str] value: (Updatable) The value of the pair.
@@ -4878,26 +4878,26 @@ class VirtualNodePoolInitialVirtualNodeLabelArgs:
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The key of the pair.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The value of the pair.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
@@ -4976,7 +4976,7 @@ class VirtualNodePoolPodConfigurationArgsDict(TypedDict):
     """
     (Updatable) The regional subnet where pods' VNIC will be placed.
     """
-    nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+    nsg_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) List of network security group IDs applied to the Pod VNIC.
     """
@@ -4986,7 +4986,7 @@ class VirtualNodePoolPodConfigurationArgs:
     def __init__(__self__, *,
                  shape: pulumi.Input[_builtins.str],
                  subnet_id: pulumi.Input[_builtins.str],
-                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] shape: (Updatable) Shape of the pods.
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The regional subnet where pods' VNIC will be placed.
@@ -5023,27 +5023,27 @@ class VirtualNodePoolPodConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of network security group IDs applied to the Pod VNIC.
         """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
-    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def nsg_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
 
 
 class VirtualNodePoolTaintArgsDict(TypedDict):
-    effect: NotRequired[pulumi.Input[_builtins.str]]
+    effect: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The effect of the pair.
     """
-    key: NotRequired[pulumi.Input[_builtins.str]]
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The key of the pair.
     """
-    value: NotRequired[pulumi.Input[_builtins.str]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The value of the pair.
     """
@@ -5051,9 +5051,9 @@ class VirtualNodePoolTaintArgsDict(TypedDict):
 @pulumi.input_type
 class VirtualNodePoolTaintArgs:
     def __init__(__self__, *,
-                 effect: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 value: Optional[pulumi.Input[_builtins.str]] = None):
+                 effect: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] effect: (Updatable) The effect of the pair.
         :param pulumi.Input[_builtins.str] key: (Updatable) The key of the pair.
@@ -5068,47 +5068,47 @@ class VirtualNodePoolTaintArgs:
 
     @_builtins.property
     @pulumi.getter
-    def effect(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def effect(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The effect of the pair.
         """
         return pulumi.get(self, "effect")
 
     @effect.setter
-    def effect(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def effect(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "effect", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The key of the pair.
         """
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The value of the pair.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
 
 
 class VirtualNodePoolVirtualNodeTagsArgsDict(TypedDict):
-    defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    defined_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
     """
-    freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+    freeform_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
     """
     (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 
@@ -5120,8 +5120,8 @@ class VirtualNodePoolVirtualNodeTagsArgsDict(TypedDict):
 @pulumi.input_type
 class VirtualNodePoolVirtualNodeTagsArgs:
     def __init__(__self__, *,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
@@ -5137,19 +5137,19 @@ class VirtualNodePoolVirtualNodeTagsArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 
@@ -5160,7 +5160,7 @@ class VirtualNodePoolVirtualNodeTagsArgs:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
 

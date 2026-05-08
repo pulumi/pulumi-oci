@@ -240,7 +240,7 @@ def get_notebook_session(notebook_session_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_notebook_session = oci.DataScience.get_notebook_session(notebook_session_id=test_notebook_session_oci_datascience_notebook_session["id"])
+    test_notebook_session = oci.datascience.get_notebook_session(notebook_session_id=test_notebook_session_oci_datascience_notebook_session["id"])
     ```
 
 
@@ -268,7 +268,7 @@ def get_notebook_session(notebook_session_id: Optional[_builtins.str] = None,
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_notebook_session_output(notebook_session_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_notebook_session_output(notebook_session_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNotebookSessionResult]:
     """
     This data source provides details about a specific Notebook Session resource in Oracle Cloud Infrastructure Data Science service.
@@ -281,7 +281,7 @@ def get_notebook_session_output(notebook_session_id: Optional[pulumi.Input[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_notebook_session = oci.DataScience.get_notebook_session(notebook_session_id=test_notebook_session_oci_datascience_notebook_session["id"])
+    test_notebook_session = oci.datascience.get_notebook_session(notebook_session_id=test_notebook_session_oci_datascience_notebook_session["id"])
     ```
 
 

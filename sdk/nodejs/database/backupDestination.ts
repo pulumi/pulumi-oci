@@ -252,89 +252,89 @@ export interface BackupDestinationState {
     /**
      * List of databases associated with the backup destination.
      */
-    associatedDatabases?: pulumi.Input<pulumi.Input<inputs.Database.BackupDestinationAssociatedDatabase>[]>;
+    associatedDatabases?: pulumi.Input<pulumi.Input<inputs.Database.BackupDestinationAssociatedDatabase>[] | undefined>;
     /**
      * Indicates the number of long term backups of Autonomous Databases associated with this backup destination.
      */
-    associatedLongTermBackupCount?: pulumi.Input<number>;
+    associatedLongTermBackupCount?: pulumi.Input<number | undefined>;
     /**
      * List of long term backups of Autonomous Databases associated with this backup destination.The maximum associated number of long term backup listed here would be 1024.
      */
-    associatedLongTermBackups?: pulumi.Input<pulumi.Input<inputs.Database.BackupDestinationAssociatedLongTermBackup>[]>;
+    associatedLongTermBackups?: pulumi.Input<pulumi.Input<inputs.Database.BackupDestinationAssociatedLongTermBackup>[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The connection string for connecting to the Recovery Appliance.
      */
-    connectionString?: pulumi.Input<string>;
+    connectionString?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The user-provided name of the backup destination.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A descriptive text associated with the lifecycleState. Typically contains additional displayable text
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes. This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
      *
      * @deprecated The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.
      */
-    localMountPointPath?: pulumi.Input<string>;
+    localMountPointPath?: pulumi.Input<string | undefined>;
     /**
      * Mount type details for backup destination.
      */
-    mountTypeDetails?: pulumi.Input<inputs.Database.BackupDestinationMountTypeDetails>;
+    mountTypeDetails?: pulumi.Input<inputs.Database.BackupDestinationMountTypeDetails | undefined>;
     /**
      * NFS Mount type for backup destination.
      */
-    nfsMountType?: pulumi.Input<string>;
+    nfsMountType?: pulumi.Input<string | undefined>;
     /**
      * Specifies the directory on which to mount the file system
      */
-    nfsServerExport?: pulumi.Input<string>;
+    nfsServerExport?: pulumi.Input<string | undefined>;
     /**
      * Host names or IP addresses for NFS Auto mount.
      */
-    nfsServers?: pulumi.Input<pulumi.Input<string>[]>;
+    nfsServers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The current lifecycle state of the backup destination.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The time when the total storage size and the utilized storage size of the backup destination are updated.
      */
-    timeAtWhichStorageDetailsAreUpdated?: pulumi.Input<string>;
+    timeAtWhichStorageDetailsAreUpdated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the backup destination was created.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The total storage size of the backup destination in GBs, rounded to the nearest integer.
      */
-    totalStorageSizeInGbs?: pulumi.Input<number>;
+    totalStorageSizeInGbs?: pulumi.Input<number | undefined>;
     /**
      * Type of the backup destination.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
      */
-    utilizedStorageSizeInGbs?: pulumi.Input<number>;
+    utilizedStorageSizeInGbs?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
      *
@@ -342,7 +342,7 @@ export interface BackupDestinationState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vpcUsers?: pulumi.Input<pulumi.Input<string>[]>;
+    vpcUsers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -356,11 +356,11 @@ export interface BackupDestinationArgs {
     /**
      * (Updatable) The connection string for connecting to the Recovery Appliance.
      */
-    connectionString?: pulumi.Input<string>;
+    connectionString?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The user-provided name of the backup destination.
      */
@@ -368,17 +368,17 @@ export interface BackupDestinationArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes. This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
      *
      * @deprecated The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.
      */
-    localMountPointPath?: pulumi.Input<string>;
+    localMountPointPath?: pulumi.Input<string | undefined>;
     /**
      * Mount type details for backup destination.
      */
-    mountTypeDetails?: pulumi.Input<inputs.Database.BackupDestinationMountTypeDetails>;
+    mountTypeDetails?: pulumi.Input<inputs.Database.BackupDestinationMountTypeDetails | undefined>;
     /**
      * Type of the backup destination.
      */
@@ -390,5 +390,5 @@ export interface BackupDestinationArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    vpcUsers?: pulumi.Input<pulumi.Input<string>[]>;
+    vpcUsers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

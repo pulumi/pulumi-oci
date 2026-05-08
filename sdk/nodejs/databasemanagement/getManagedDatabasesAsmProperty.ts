@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabasesAsmProperty = oci.DatabaseManagement.getManagedDatabasesAsmProperty({
+ * const testManagedDatabasesAsmProperty = oci.databasemanagement.getManagedDatabasesAsmProperty({
  *     managedDatabaseId: testManagedDatabase.id,
  *     name: managedDatabasesAsmPropertyName,
  * });
@@ -71,7 +71,7 @@ export interface GetManagedDatabasesAsmPropertyResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabasesAsmProperty = oci.DatabaseManagement.getManagedDatabasesAsmProperty({
+ * const testManagedDatabasesAsmProperty = oci.databasemanagement.getManagedDatabasesAsmProperty({
  *     managedDatabaseId: testManagedDatabase.id,
  *     name: managedDatabasesAsmPropertyName,
  * });
@@ -96,5 +96,5 @@ export interface GetManagedDatabasesAsmPropertyOutputArgs {
     /**
      * A filter to return only resources that match the entire name.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

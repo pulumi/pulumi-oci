@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNatGateways = oci.Core.getNatGateways({
+ * const testNatGateways = oci.core.getNatGateways({
  *     compartmentId: compartmentId,
  *     displayName: natGatewayDisplayName,
  *     state: natGatewayState,
@@ -102,7 +102,7 @@ export interface GetNatGatewaysResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNatGateways = oci.Core.getNatGateways({
+ * const testNatGateways = oci.core.getNatGateways({
  *     compartmentId: compartmentId,
  *     displayName: natGatewayDisplayName,
  *     state: natGatewayState,
@@ -132,14 +132,14 @@ export interface GetNatGatewaysOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetNatGatewaysFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetNatGatewaysFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
      */
-    vcnId?: pulumi.Input<string>;
+    vcnId?: pulumi.Input<string | undefined>;
 }

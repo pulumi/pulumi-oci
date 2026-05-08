@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrPlanExecutions = oci.DisasterRecovery.getDrPlanExecutions({
+ * const testDrPlanExecutions = oci.disasterrecovery.getDrPlanExecutions({
  *     drProtectionGroupId: testDrProtectionGroup.id,
  *     displayName: drPlanExecutionDisplayName,
  *     drPlanExecutionId: testDrPlanExecution.id,
@@ -97,7 +97,7 @@ export interface GetDrPlanExecutionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrPlanExecutions = oci.DisasterRecovery.getDrPlanExecutions({
+ * const testDrPlanExecutions = oci.disasterrecovery.getDrPlanExecutions({
  *     drProtectionGroupId: testDrProtectionGroup.id,
  *     displayName: drPlanExecutionDisplayName,
  *     drPlanExecutionId: testDrPlanExecution.id,
@@ -123,18 +123,18 @@ export interface GetDrPlanExecutionsOutputArgs {
     /**
      * A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
      */
-    drPlanExecutionId?: pulumi.Input<string>;
+    drPlanExecutionId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
     drProtectionGroupId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.GetDrPlanExecutionsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.GetDrPlanExecutionsFilterArgs>[] | undefined>;
     /**
      * A filter to return only DR plan executions that match the given lifecycle state.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

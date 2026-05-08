@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitoringTemplateAlarmConditions = oci.StackMonitoring.getMonitoringTemplateAlarmConditions({
+ * const testMonitoringTemplateAlarmConditions = oci.stackmonitoring.getMonitoringTemplateAlarmConditions({
  *     monitoringTemplateId: testMonitoringTemplate.id,
  *     metricNames: testMetric.name,
  *     resourceTypes: monitoringTemplateAlarmConditionResourceTypes,
@@ -113,7 +113,7 @@ export interface GetMonitoringTemplateAlarmConditionsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitoringTemplateAlarmConditions = oci.StackMonitoring.getMonitoringTemplateAlarmConditions({
+ * const testMonitoringTemplateAlarmConditions = oci.stackmonitoring.getMonitoringTemplateAlarmConditions({
  *     monitoringTemplateId: testMonitoringTemplate.id,
  *     metricNames: testMetric.name,
  *     resourceTypes: monitoringTemplateAlarmConditionResourceTypes,
@@ -141,12 +141,12 @@ export function getMonitoringTemplateAlarmConditionsOutput(args: GetMonitoringTe
  */
 export interface GetMonitoringTemplateAlarmConditionsOutputArgs {
     alarmConditionId: pulumi.Input<string>;
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetMonitoringTemplateAlarmConditionsFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.GetMonitoringTemplateAlarmConditionsFilterArgs>[] | undefined>;
     /**
      * metricName filter.
      */
-    metricNames?: pulumi.Input<pulumi.Input<string>[]>;
+    metricNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitoring template.
      */
@@ -154,13 +154,13 @@ export interface GetMonitoringTemplateAlarmConditionsOutputArgs {
     /**
      * Multiple resource types filter.
      */
-    resourceTypes?: pulumi.Input<pulumi.Input<string>[]>;
+    resourceTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter to return alarm condition based on Lifecycle State.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * A filter to return alarm condition based on input status.
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

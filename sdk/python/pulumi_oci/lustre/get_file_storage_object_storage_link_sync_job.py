@@ -273,7 +273,7 @@ def get_file_storage_object_storage_link_sync_job(object_storage_link_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_object_storage_link_sync_job = oci.Lustre.get_file_storage_object_storage_link_sync_job(object_storage_link_id=test_object_storage_link["id"],
+    test_object_storage_link_sync_job = oci.lustre.get_file_storage_object_storage_link_sync_job(object_storage_link_id=test_object_storage_link["id"],
         sync_job_id=test_job["id"])
     ```
 
@@ -307,8 +307,8 @@ def get_file_storage_object_storage_link_sync_job(object_storage_link_id: Option
         time_finished=pulumi.get(__ret__, 'time_finished'),
         time_started=pulumi.get(__ret__, 'time_started'),
         total_objects_scanned=pulumi.get(__ret__, 'total_objects_scanned'))
-def get_file_storage_object_storage_link_sync_job_output(object_storage_link_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                         sync_job_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_file_storage_object_storage_link_sync_job_output(object_storage_link_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                         sync_job_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFileStorageObjectStorageLinkSyncJobResult]:
     """
     This data source provides details about a specific Object Storage Link Sync Job resource in Oracle Cloud Infrastructure Lustre File Storage service.
@@ -321,7 +321,7 @@ def get_file_storage_object_storage_link_sync_job_output(object_storage_link_id:
     import pulumi
     import pulumi_oci as oci
 
-    test_object_storage_link_sync_job = oci.Lustre.get_file_storage_object_storage_link_sync_job(object_storage_link_id=test_object_storage_link["id"],
+    test_object_storage_link_sync_job = oci.lustre.get_file_storage_object_storage_link_sync_job(object_storage_link_id=test_object_storage_link["id"],
         sync_job_id=test_job["id"])
     ```
 

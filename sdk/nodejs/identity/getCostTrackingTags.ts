@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCostTrackingTags = oci.Identity.getCostTrackingTags({
+ * const testCostTrackingTags = oci.identity.getCostTrackingTags({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -72,7 +72,7 @@ export interface GetCostTrackingTagsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCostTrackingTags = oci.Identity.getCostTrackingTags({
+ * const testCostTrackingTags = oci.identity.getCostTrackingTags({
  *     compartmentId: compartmentId,
  * });
  * ```
@@ -93,5 +93,5 @@ export interface GetCostTrackingTagsOutputArgs {
      * The OCID of the compartment (remember that the tenancy is simply the root compartment).
      */
     compartmentId: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetCostTrackingTagsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Identity.GetCostTrackingTagsFilterArgs>[] | undefined>;
 }

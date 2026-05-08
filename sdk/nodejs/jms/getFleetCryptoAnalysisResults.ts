@@ -17,15 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetCryptoAnalysisResults = oci.Jms.getFleetCryptoAnalysisResults({
+ * const testFleetCryptoAnalysisResults = oci.jms.getFleetCryptoAnalysisResults({
  *     fleetId: testFleet.id,
  *     aggregationMode: fleetCryptoAnalysisResultAggregationMode,
- *     findingCount: fleetCryptoAnalysisResultFindingCount,
- *     findingCountGreaterThan: fleetCryptoAnalysisResultFindingCountGreaterThan,
+ *     findingCount: Number(fleetCryptoAnalysisResultFindingCount),
+ *     findingCountGreaterThan: Number(fleetCryptoAnalysisResultFindingCountGreaterThan),
  *     hostName: fleetCryptoAnalysisResultHostName,
  *     managedInstanceId: fleetCryptoAnalysisResultManagedInstanceOcid,
- *     nonCompliantFindingCount: fleetCryptoAnalysisResultNonCompliantFindingCount,
- *     nonCompliantFindingCountGreaterThan: fleetCryptoAnalysisResultNonCompliantFindingCountGreaterThan,
+ *     nonCompliantFindingCount: Number(fleetCryptoAnalysisResultNonCompliantFindingCount),
+ *     nonCompliantFindingCountGreaterThan: Number(fleetCryptoAnalysisResultNonCompliantFindingCountGreaterThan),
  *     timeEnd: fleetCryptoAnalysisResultTimeEnd,
  *     timeStart: fleetCryptoAnalysisResultTimeStart,
  * });
@@ -148,15 +148,15 @@ export interface GetFleetCryptoAnalysisResultsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleetCryptoAnalysisResults = oci.Jms.getFleetCryptoAnalysisResults({
+ * const testFleetCryptoAnalysisResults = oci.jms.getFleetCryptoAnalysisResults({
  *     fleetId: testFleet.id,
  *     aggregationMode: fleetCryptoAnalysisResultAggregationMode,
- *     findingCount: fleetCryptoAnalysisResultFindingCount,
- *     findingCountGreaterThan: fleetCryptoAnalysisResultFindingCountGreaterThan,
+ *     findingCount: Number(fleetCryptoAnalysisResultFindingCount),
+ *     findingCountGreaterThan: Number(fleetCryptoAnalysisResultFindingCountGreaterThan),
  *     hostName: fleetCryptoAnalysisResultHostName,
  *     managedInstanceId: fleetCryptoAnalysisResultManagedInstanceOcid,
- *     nonCompliantFindingCount: fleetCryptoAnalysisResultNonCompliantFindingCount,
- *     nonCompliantFindingCountGreaterThan: fleetCryptoAnalysisResultNonCompliantFindingCountGreaterThan,
+ *     nonCompliantFindingCount: Number(fleetCryptoAnalysisResultNonCompliantFindingCount),
+ *     nonCompliantFindingCountGreaterThan: Number(fleetCryptoAnalysisResultNonCompliantFindingCountGreaterThan),
  *     timeEnd: fleetCryptoAnalysisResultTimeEnd,
  *     timeStart: fleetCryptoAnalysisResultTimeStart,
  * });
@@ -186,16 +186,16 @@ export interface GetFleetCryptoAnalysisResultsOutputArgs {
     /**
      * The aggregation mode of the crypto event analysis result.
      */
-    aggregationMode?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetCryptoAnalysisResultsFilterArgs>[]>;
+    aggregationMode?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetFleetCryptoAnalysisResultsFilterArgs>[] | undefined>;
     /**
      * FindingCount of CryptoAnalysis Report.
      */
-    findingCount?: pulumi.Input<number>;
+    findingCount?: pulumi.Input<number | undefined>;
     /**
      * FindingCount of CryptoAnalysis Report.
      */
-    findingCountGreaterThan?: pulumi.Input<number>;
+    findingCountGreaterThan?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
@@ -203,25 +203,25 @@ export interface GetFleetCryptoAnalysisResultsOutputArgs {
     /**
      * The host [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
-    hostName?: pulumi.Input<string>;
+    hostName?: pulumi.Input<string | undefined>;
     /**
      * The Fleet-unique identifier of the related managed instance.
      */
-    managedInstanceId?: pulumi.Input<string>;
+    managedInstanceId?: pulumi.Input<string | undefined>;
     /**
      * Non Compliant Finding Count of CryptoAnalysis Report.
      */
-    nonCompliantFindingCount?: pulumi.Input<number>;
+    nonCompliantFindingCount?: pulumi.Input<number | undefined>;
     /**
      * Non Compliant Finding Count of CryptoAnalysis Report.
      */
-    nonCompliantFindingCountGreaterThan?: pulumi.Input<number>;
+    nonCompliantFindingCountGreaterThan?: pulumi.Input<number | undefined>;
     /**
      * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeEnd?: pulumi.Input<string>;
+    timeEnd?: pulumi.Input<string | undefined>;
     /**
      * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeStart?: pulumi.Input<string>;
+    timeStart?: pulumi.Input<string | undefined>;
 }

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRules = oci.Events.getRules({
+ * const testRules = oci.events.getRules({
  *     compartmentId: compartmentId,
  *     displayName: ruleDisplayName,
  *     state: ruleState,
@@ -90,7 +90,7 @@ export interface GetRulesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRules = oci.Events.getRules({
+ * const testRules = oci.events.getRules({
  *     compartmentId: compartmentId,
  *     displayName: ruleDisplayName,
  *     state: ruleState,
@@ -118,10 +118,10 @@ export interface GetRulesOutputArgs {
     /**
      * A filter to return only rules with descriptions that match the displayName string in this parameter.  Example: `"This rule sends a notification upon completion of DbaaS backup."`
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Events.GetRulesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Events.GetRulesFilterArgs>[] | undefined>;
     /**
      * A filter to return only rules that match the lifecycle state in this parameter.  Example: `Creating`
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

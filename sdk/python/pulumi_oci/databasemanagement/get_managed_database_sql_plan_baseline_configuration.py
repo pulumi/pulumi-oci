@@ -204,7 +204,7 @@ def get_managed_database_sql_plan_baseline_configuration(managed_database_id: Op
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_plan_baseline_configuration = oci.DatabaseManagement.get_managed_database_sql_plan_baseline_configuration(managed_database_id=test_managed_database["id"],
+    test_managed_database_sql_plan_baseline_configuration = oci.databasemanagement.get_managed_database_sql_plan_baseline_configuration(managed_database_id=test_managed_database["id"],
         opc_named_credential_id=managed_database_sql_plan_baseline_configuration_opc_named_credential_id)
     ```
 
@@ -232,8 +232,8 @@ def get_managed_database_sql_plan_baseline_configuration(managed_database_id: Op
         space_budget_mb=pulumi.get(__ret__, 'space_budget_mb'),
         space_budget_percent=pulumi.get(__ret__, 'space_budget_percent'),
         space_used_mb=pulumi.get(__ret__, 'space_used_mb'))
-def get_managed_database_sql_plan_baseline_configuration_output(managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                                                opc_named_credential_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_managed_database_sql_plan_baseline_configuration_output(managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                                                opc_named_credential_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseSqlPlanBaselineConfigurationResult]:
     """
     This data source provides details about a specific Managed Database Sql Plan Baseline Configuration resource in Oracle Cloud Infrastructure Database Management service.
@@ -248,7 +248,7 @@ def get_managed_database_sql_plan_baseline_configuration_output(managed_database
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_plan_baseline_configuration = oci.DatabaseManagement.get_managed_database_sql_plan_baseline_configuration(managed_database_id=test_managed_database["id"],
+    test_managed_database_sql_plan_baseline_configuration = oci.databasemanagement.get_managed_database_sql_plan_baseline_configuration(managed_database_id=test_managed_database["id"],
         opc_named_credential_id=managed_database_sql_plan_baseline_configuration_opc_named_credential_id)
     ```
 

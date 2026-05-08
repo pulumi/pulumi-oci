@@ -338,7 +338,7 @@ def get_domains_dynamic_resource_group(attribute_sets: Optional[Sequence[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_dynamic_resource_group = oci.Identity.get_domains_dynamic_resource_group(dynamic_resource_group_id=test_group["id"],
+    test_dynamic_resource_group = oci.identity.get_domains_dynamic_resource_group(dynamic_resource_group_id=test_group["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=[],
         attributes="",
@@ -390,12 +390,12 @@ def get_domains_dynamic_resource_group(attribute_sets: Optional[Sequence[_builti
         tags=pulumi.get(__ret__, 'tags'),
         tenancy_ocid=pulumi.get(__ret__, 'tenancy_ocid'),
         urnietfparamsscimschemasoracleidcsextension_oci_tags=pulumi.get(__ret__, 'urnietfparamsscimschemasoracleidcsextension_oci_tags'))
-def get_domains_dynamic_resource_group_output(attribute_sets: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                              attributes: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              authorization: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                              dynamic_resource_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                              idcs_endpoint: Optional[pulumi.Input[_builtins.str]] = None,
-                                              resource_type_schema_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_domains_dynamic_resource_group_output(attribute_sets: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                              attributes: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              authorization: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                              dynamic_resource_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                              idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                                              resource_type_schema_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                               opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDomainsDynamicResourceGroupResult]:
     """
     This data source provides details about a specific Dynamic Resource Group resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -408,7 +408,7 @@ def get_domains_dynamic_resource_group_output(attribute_sets: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_dynamic_resource_group = oci.Identity.get_domains_dynamic_resource_group(dynamic_resource_group_id=test_group["id"],
+    test_dynamic_resource_group = oci.identity.get_domains_dynamic_resource_group(dynamic_resource_group_id=test_group["id"],
         idcs_endpoint=test_domain["url"],
         attribute_sets=[],
         attributes="",

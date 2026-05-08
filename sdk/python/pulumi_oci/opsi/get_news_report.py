@@ -300,7 +300,7 @@ def get_news_report(news_report_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_news_report = oci.Opsi.get_news_report(news_report_id=test_news_report_oci_opsi_news_report["id"])
+    test_news_report = oci.opsi.get_news_report(news_report_id=test_news_report_oci_opsi_news_report["id"])
     ```
 
 
@@ -333,7 +333,7 @@ def get_news_report(news_report_id: Optional[_builtins.str] = None,
         tag_filters=pulumi.get(__ret__, 'tag_filters'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_news_report_output(news_report_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_news_report_output(news_report_id: pulumi.Input[Optional[_builtins.str]] = None,
                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNewsReportResult]:
     """
     This data source provides details about a specific News Report resource in Oracle Cloud Infrastructure Opsi service.
@@ -346,7 +346,7 @@ def get_news_report_output(news_report_id: Optional[pulumi.Input[_builtins.str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_news_report = oci.Opsi.get_news_report(news_report_id=test_news_report_oci_opsi_news_report["id"])
+    test_news_report = oci.opsi.get_news_report(news_report_id=test_news_report_oci_opsi_news_report["id"])
     ```
 
 

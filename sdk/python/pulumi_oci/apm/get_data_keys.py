@@ -106,7 +106,7 @@ def get_data_keys(apm_domain_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_keys = oci.Apm.get_data_keys(apm_domain_id=test_apm_domain["id"],
+    test_data_keys = oci.apm.get_data_keys(apm_domain_id=test_apm_domain["id"],
         data_key_type=data_key_data_key_type)
     ```
 
@@ -127,9 +127,9 @@ def get_data_keys(apm_domain_id: Optional[_builtins.str] = None,
         data_keys=pulumi.get(__ret__, 'data_keys'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_data_keys_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                         data_key_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDataKeysFilterArgs', 'GetDataKeysFilterArgsDict']]]]] = None,
+def get_data_keys_output(apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                         data_key_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDataKeysFilterArgs', 'GetDataKeysFilterArgsDict']]]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDataKeysResult]:
     """
     This data source provides the list of Data Keys in Oracle Cloud Infrastructure Apm service.
@@ -143,7 +143,7 @@ def get_data_keys_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_data_keys = oci.Apm.get_data_keys(apm_domain_id=test_apm_domain["id"],
+    test_data_keys = oci.apm.get_data_keys(apm_domain_id=test_apm_domain["id"],
         data_key_type=data_key_data_key_type)
     ```
 

@@ -21,17 +21,17 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
     def __init__(__self__, *,
                  network_firewall_policy_id: pulumi.Input[_builtins.str],
                  type: pulumi.Input[_builtins.str],
-                 are_certificate_extensions_restricted: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_auto_include_alt_name: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_expired_certificate_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_out_of_capacity_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_revocation_status_timeout_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_unknown_revocation_status_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_unsupported_cipher_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_unsupported_version_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_untrusted_issuer_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None):
+                 are_certificate_extensions_restricted: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_auto_include_alt_name: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_expired_certificate_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_out_of_capacity_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_revocation_status_timeout_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_unknown_revocation_status_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_unsupported_cipher_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_unsupported_version_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_untrusted_issuer_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a NetworkFirewallPolicyDecryptionProfile resource.
 
@@ -108,154 +108,154 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
 
     @_builtins.property
     @pulumi.getter(name="areCertificateExtensionsRestricted")
-    def are_certificate_extensions_restricted(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def are_certificate_extensions_restricted(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
         """
         return pulumi.get(self, "are_certificate_extensions_restricted")
 
     @are_certificate_extensions_restricted.setter
-    def are_certificate_extensions_restricted(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def are_certificate_extensions_restricted(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "are_certificate_extensions_restricted", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the decryption profile. This field can be used to add additional info.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoIncludeAltName")
-    def is_auto_include_alt_name(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_include_alt_name(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
         """
         return pulumi.get(self, "is_auto_include_alt_name")
 
     @is_auto_include_alt_name.setter
-    def is_auto_include_alt_name(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_include_alt_name(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_include_alt_name", value)
 
     @_builtins.property
     @pulumi.getter(name="isExpiredCertificateBlocked")
-    def is_expired_certificate_blocked(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_expired_certificate_blocked(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to block sessions if server's certificate is expired.
         """
         return pulumi.get(self, "is_expired_certificate_blocked")
 
     @is_expired_certificate_blocked.setter
-    def is_expired_certificate_blocked(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_expired_certificate_blocked(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_expired_certificate_blocked", value)
 
     @_builtins.property
     @pulumi.getter(name="isOutOfCapacityBlocked")
-    def is_out_of_capacity_blocked(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_out_of_capacity_blocked(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
         """
         return pulumi.get(self, "is_out_of_capacity_blocked")
 
     @is_out_of_capacity_blocked.setter
-    def is_out_of_capacity_blocked(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_out_of_capacity_blocked(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_out_of_capacity_blocked", value)
 
     @_builtins.property
     @pulumi.getter(name="isRevocationStatusTimeoutBlocked")
-    def is_revocation_status_timeout_blocked(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_revocation_status_timeout_blocked(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to block sessions if the revocation status check for server's certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
         """
         return pulumi.get(self, "is_revocation_status_timeout_blocked")
 
     @is_revocation_status_timeout_blocked.setter
-    def is_revocation_status_timeout_blocked(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_revocation_status_timeout_blocked(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_revocation_status_timeout_blocked", value)
 
     @_builtins.property
     @pulumi.getter(name="isUnknownRevocationStatusBlocked")
-    def is_unknown_revocation_status_blocked(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_unknown_revocation_status_blocked(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to block sessions if the revocation status check for server's certificate results in "unknown".
         """
         return pulumi.get(self, "is_unknown_revocation_status_blocked")
 
     @is_unknown_revocation_status_blocked.setter
-    def is_unknown_revocation_status_blocked(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_unknown_revocation_status_blocked(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_unknown_revocation_status_blocked", value)
 
     @_builtins.property
     @pulumi.getter(name="isUnsupportedCipherBlocked")
-    def is_unsupported_cipher_blocked(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_unsupported_cipher_blocked(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to block sessions if SSL cipher suite is not supported.
         """
         return pulumi.get(self, "is_unsupported_cipher_blocked")
 
     @is_unsupported_cipher_blocked.setter
-    def is_unsupported_cipher_blocked(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_unsupported_cipher_blocked(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_unsupported_cipher_blocked", value)
 
     @_builtins.property
     @pulumi.getter(name="isUnsupportedVersionBlocked")
-    def is_unsupported_version_blocked(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_unsupported_version_blocked(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to block sessions if SSL version is not supported.
         """
         return pulumi.get(self, "is_unsupported_version_blocked")
 
     @is_unsupported_version_blocked.setter
-    def is_unsupported_version_blocked(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_unsupported_version_blocked(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_unsupported_version_blocked", value)
 
     @_builtins.property
     @pulumi.getter(name="isUntrustedIssuerBlocked")
-    def is_untrusted_issuer_blocked(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_untrusted_issuer_blocked(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
         """
         return pulumi.get(self, "is_untrusted_issuer_blocked")
 
     @is_untrusted_issuer_blocked.setter
-    def is_untrusted_issuer_blocked(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_untrusted_issuer_blocked(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_untrusted_issuer_blocked", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the decryption profile.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
 class _NetworkFirewallPolicyDecryptionProfileState:
     def __init__(__self__, *,
-                 are_certificate_extensions_restricted: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_auto_include_alt_name: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_expired_certificate_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_out_of_capacity_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_revocation_status_timeout_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_unknown_revocation_status_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_unsupported_cipher_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_unsupported_version_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_untrusted_issuer_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 parent_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None):
+                 are_certificate_extensions_restricted: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_auto_include_alt_name: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_expired_certificate_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_out_of_capacity_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_revocation_status_timeout_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_unknown_revocation_status_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_unsupported_cipher_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_unsupported_version_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_untrusted_issuer_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicyDecryptionProfile resources.
 
@@ -309,139 +309,139 @@ class _NetworkFirewallPolicyDecryptionProfileState:
 
     @_builtins.property
     @pulumi.getter(name="areCertificateExtensionsRestricted")
-    def are_certificate_extensions_restricted(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def are_certificate_extensions_restricted(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
         """
         return pulumi.get(self, "are_certificate_extensions_restricted")
 
     @are_certificate_extensions_restricted.setter
-    def are_certificate_extensions_restricted(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def are_certificate_extensions_restricted(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "are_certificate_extensions_restricted", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The description of the decryption profile. This field can be used to add additional info.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="isAutoIncludeAltName")
-    def is_auto_include_alt_name(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_auto_include_alt_name(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
         """
         return pulumi.get(self, "is_auto_include_alt_name")
 
     @is_auto_include_alt_name.setter
-    def is_auto_include_alt_name(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_auto_include_alt_name(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_auto_include_alt_name", value)
 
     @_builtins.property
     @pulumi.getter(name="isExpiredCertificateBlocked")
-    def is_expired_certificate_blocked(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_expired_certificate_blocked(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to block sessions if server's certificate is expired.
         """
         return pulumi.get(self, "is_expired_certificate_blocked")
 
     @is_expired_certificate_blocked.setter
-    def is_expired_certificate_blocked(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_expired_certificate_blocked(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_expired_certificate_blocked", value)
 
     @_builtins.property
     @pulumi.getter(name="isOutOfCapacityBlocked")
-    def is_out_of_capacity_blocked(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_out_of_capacity_blocked(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to block sessions if the firewall is temporarily unable to decrypt their traffic.
         """
         return pulumi.get(self, "is_out_of_capacity_blocked")
 
     @is_out_of_capacity_blocked.setter
-    def is_out_of_capacity_blocked(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_out_of_capacity_blocked(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_out_of_capacity_blocked", value)
 
     @_builtins.property
     @pulumi.getter(name="isRevocationStatusTimeoutBlocked")
-    def is_revocation_status_timeout_blocked(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_revocation_status_timeout_blocked(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to block sessions if the revocation status check for server's certificate does not succeed within the maximum allowed time (defaulting to 5 seconds).
         """
         return pulumi.get(self, "is_revocation_status_timeout_blocked")
 
     @is_revocation_status_timeout_blocked.setter
-    def is_revocation_status_timeout_blocked(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_revocation_status_timeout_blocked(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_revocation_status_timeout_blocked", value)
 
     @_builtins.property
     @pulumi.getter(name="isUnknownRevocationStatusBlocked")
-    def is_unknown_revocation_status_blocked(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_unknown_revocation_status_blocked(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to block sessions if the revocation status check for server's certificate results in "unknown".
         """
         return pulumi.get(self, "is_unknown_revocation_status_blocked")
 
     @is_unknown_revocation_status_blocked.setter
-    def is_unknown_revocation_status_blocked(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_unknown_revocation_status_blocked(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_unknown_revocation_status_blocked", value)
 
     @_builtins.property
     @pulumi.getter(name="isUnsupportedCipherBlocked")
-    def is_unsupported_cipher_blocked(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_unsupported_cipher_blocked(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to block sessions if SSL cipher suite is not supported.
         """
         return pulumi.get(self, "is_unsupported_cipher_blocked")
 
     @is_unsupported_cipher_blocked.setter
-    def is_unsupported_cipher_blocked(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_unsupported_cipher_blocked(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_unsupported_cipher_blocked", value)
 
     @_builtins.property
     @pulumi.getter(name="isUnsupportedVersionBlocked")
-    def is_unsupported_version_blocked(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_unsupported_version_blocked(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to block sessions if SSL version is not supported.
         """
         return pulumi.get(self, "is_unsupported_version_blocked")
 
     @is_unsupported_version_blocked.setter
-    def is_unsupported_version_blocked(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_unsupported_version_blocked(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_unsupported_version_blocked", value)
 
     @_builtins.property
     @pulumi.getter(name="isUntrustedIssuerBlocked")
-    def is_untrusted_issuer_blocked(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_untrusted_issuer_blocked(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
         """
         return pulumi.get(self, "is_untrusted_issuer_blocked")
 
     @is_untrusted_issuer_blocked.setter
-    def is_untrusted_issuer_blocked(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_untrusted_issuer_blocked(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_untrusted_issuer_blocked", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the decryption profile.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="networkFirewallPolicyId")
-    def network_firewall_policy_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def network_firewall_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Network Firewall Policy identifier
 
@@ -452,31 +452,31 @@ class _NetworkFirewallPolicyDecryptionProfileState:
         return pulumi.get(self, "network_firewall_policy_id")
 
     @network_firewall_policy_id.setter
-    def network_firewall_policy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def network_firewall_policy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "network_firewall_policy_id", value)
 
     @_builtins.property
     @pulumi.getter(name="parentResourceId")
-    def parent_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def parent_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of the Network Firewall Policy this decryption profile belongs to.
         """
         return pulumi.get(self, "parent_resource_id")
 
     @parent_resource_id.setter
-    def parent_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def parent_resource_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "parent_resource_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Describes the type of decryption profile. The accepted values are - * SSL_FORWARD_PROXY * SSL_INBOUND_INSPECTION
         """
         return pulumi.get(self, "type")
 
     @type.setter
-    def type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "type", value)
 
 
@@ -486,19 +486,19 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 are_certificate_extensions_restricted: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_auto_include_alt_name: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_expired_certificate_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_out_of_capacity_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_revocation_status_timeout_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_unknown_revocation_status_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_unsupported_cipher_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_unsupported_version_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_untrusted_issuer_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 are_certificate_extensions_restricted: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_auto_include_alt_name: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_expired_certificate_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_out_of_capacity_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_revocation_status_timeout_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_unknown_revocation_status_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_unsupported_cipher_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_unsupported_version_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_untrusted_issuer_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Network Firewall Policy Decryption Profile resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -519,15 +519,15 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
             network_firewall_policy_id=test_network_firewall_policy["id"],
             type=network_firewall_policy_decryption_profile_type,
             description=network_firewall_policy_decryption_profile_description,
-            are_certificate_extensions_restricted=network_firewall_policy_decryption_profile_are_certificate_extensions_restricted,
-            is_auto_include_alt_name=network_firewall_policy_decryption_profile_is_auto_include_alt_name,
-            is_expired_certificate_blocked=network_firewall_policy_decryption_profile_is_expired_certificate_blocked,
-            is_out_of_capacity_blocked=network_firewall_policy_decryption_profile_is_out_of_capacity_blocked,
-            is_revocation_status_timeout_blocked=network_firewall_policy_decryption_profile_is_revocation_status_timeout_blocked,
-            is_unknown_revocation_status_blocked=network_firewall_policy_decryption_profile_is_unknown_revocation_status_blocked,
-            is_unsupported_cipher_blocked=network_firewall_policy_decryption_profile_is_unsupported_cipher_blocked,
-            is_unsupported_version_blocked=network_firewall_policy_decryption_profile_is_unsupported_version_blocked,
-            is_untrusted_issuer_blocked=network_firewall_policy_decryption_profile_is_untrusted_issuer_blocked)
+            are_certificate_extensions_restricted=network_firewall_policy_decryption_profile_are_certificate_extensions_restricted == "true",
+            is_auto_include_alt_name=network_firewall_policy_decryption_profile_is_auto_include_alt_name == "true",
+            is_expired_certificate_blocked=network_firewall_policy_decryption_profile_is_expired_certificate_blocked == "true",
+            is_out_of_capacity_blocked=network_firewall_policy_decryption_profile_is_out_of_capacity_blocked == "true",
+            is_revocation_status_timeout_blocked=network_firewall_policy_decryption_profile_is_revocation_status_timeout_blocked == "true",
+            is_unknown_revocation_status_blocked=network_firewall_policy_decryption_profile_is_unknown_revocation_status_blocked == "true",
+            is_unsupported_cipher_blocked=network_firewall_policy_decryption_profile_is_unsupported_cipher_blocked == "true",
+            is_unsupported_version_blocked=network_firewall_policy_decryption_profile_is_unsupported_version_blocked == "true",
+            is_untrusted_issuer_blocked=network_firewall_policy_decryption_profile_is_untrusted_issuer_blocked == "true")
         ```
 
         ## Import
@@ -584,15 +584,15 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
             network_firewall_policy_id=test_network_firewall_policy["id"],
             type=network_firewall_policy_decryption_profile_type,
             description=network_firewall_policy_decryption_profile_description,
-            are_certificate_extensions_restricted=network_firewall_policy_decryption_profile_are_certificate_extensions_restricted,
-            is_auto_include_alt_name=network_firewall_policy_decryption_profile_is_auto_include_alt_name,
-            is_expired_certificate_blocked=network_firewall_policy_decryption_profile_is_expired_certificate_blocked,
-            is_out_of_capacity_blocked=network_firewall_policy_decryption_profile_is_out_of_capacity_blocked,
-            is_revocation_status_timeout_blocked=network_firewall_policy_decryption_profile_is_revocation_status_timeout_blocked,
-            is_unknown_revocation_status_blocked=network_firewall_policy_decryption_profile_is_unknown_revocation_status_blocked,
-            is_unsupported_cipher_blocked=network_firewall_policy_decryption_profile_is_unsupported_cipher_blocked,
-            is_unsupported_version_blocked=network_firewall_policy_decryption_profile_is_unsupported_version_blocked,
-            is_untrusted_issuer_blocked=network_firewall_policy_decryption_profile_is_untrusted_issuer_blocked)
+            are_certificate_extensions_restricted=network_firewall_policy_decryption_profile_are_certificate_extensions_restricted == "true",
+            is_auto_include_alt_name=network_firewall_policy_decryption_profile_is_auto_include_alt_name == "true",
+            is_expired_certificate_blocked=network_firewall_policy_decryption_profile_is_expired_certificate_blocked == "true",
+            is_out_of_capacity_blocked=network_firewall_policy_decryption_profile_is_out_of_capacity_blocked == "true",
+            is_revocation_status_timeout_blocked=network_firewall_policy_decryption_profile_is_revocation_status_timeout_blocked == "true",
+            is_unknown_revocation_status_blocked=network_firewall_policy_decryption_profile_is_unknown_revocation_status_blocked == "true",
+            is_unsupported_cipher_blocked=network_firewall_policy_decryption_profile_is_unsupported_cipher_blocked == "true",
+            is_unsupported_version_blocked=network_firewall_policy_decryption_profile_is_unsupported_version_blocked == "true",
+            is_untrusted_issuer_blocked=network_firewall_policy_decryption_profile_is_untrusted_issuer_blocked == "true")
         ```
 
         ## Import
@@ -619,19 +619,19 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 are_certificate_extensions_restricted: Optional[pulumi.Input[_builtins.bool]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_auto_include_alt_name: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_expired_certificate_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_out_of_capacity_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_revocation_status_timeout_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_unknown_revocation_status_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_unsupported_cipher_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_unsupported_version_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_untrusted_issuer_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 type: Optional[pulumi.Input[_builtins.str]] = None,
+                 are_certificate_extensions_restricted: pulumi.Input[Optional[_builtins.bool]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_auto_include_alt_name: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_expired_certificate_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_out_of_capacity_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_revocation_status_timeout_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_unknown_revocation_status_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_unsupported_cipher_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_unsupported_version_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_untrusted_issuer_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -669,20 +669,20 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            are_certificate_extensions_restricted: Optional[pulumi.Input[_builtins.bool]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            is_auto_include_alt_name: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_expired_certificate_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_out_of_capacity_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_revocation_status_timeout_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_unknown_revocation_status_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_unsupported_cipher_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_unsupported_version_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_untrusted_issuer_blocked: Optional[pulumi.Input[_builtins.bool]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            network_firewall_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
-            parent_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
-            type: Optional[pulumi.Input[_builtins.str]] = None) -> 'NetworkFirewallPolicyDecryptionProfile':
+            are_certificate_extensions_restricted: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            is_auto_include_alt_name: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_expired_certificate_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_out_of_capacity_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_revocation_status_timeout_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_unknown_revocation_status_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_unsupported_cipher_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_unsupported_version_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_untrusted_issuer_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> 'NetworkFirewallPolicyDecryptionProfile':
         """
         Get an existing NetworkFirewallPolicyDecryptionProfile resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

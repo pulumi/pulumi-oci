@@ -147,11 +147,11 @@ export interface GetDbmulticloudOracleDbAzureBlobContainersOutputArgs {
     /**
      * A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Account name.
      */
-    azureStorageAccountName?: pulumi.Input<string>;
+    azureStorageAccountName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Storage name.
      */
-    azureStorageContainerName?: pulumi.Input<string>;
+    azureStorageContainerName?: pulumi.Input<string | undefined>;
     /**
      * The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -159,14 +159,14 @@ export interface GetDbmulticloudOracleDbAzureBlobContainersOutputArgs {
     /**
      * A filter to return Oracle DB Azure Blob Container resources that match the specified display name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDbmulticloudOracleDbAzureBlobContainersFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDbmulticloudOracleDbAzureBlobContainersFilterArgs>[] | undefined>;
     /**
      * A filter to return Oracle DB Azure Blob Container resource.
      */
-    oracleDbAzureBlobContainerId?: pulumi.Input<string>;
+    oracleDbAzureBlobContainerId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

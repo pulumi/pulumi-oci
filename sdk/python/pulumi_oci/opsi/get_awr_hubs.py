@@ -138,7 +138,7 @@ def get_awr_hubs(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hubs = oci.Opsi.get_awr_hubs(operations_insights_warehouse_id=test_operations_insights_warehouse["id"],
+    test_awr_hubs = oci.opsi.get_awr_hubs(operations_insights_warehouse_id=test_operations_insights_warehouse["id"],
         compartment_id=compartment_id,
         display_name=awr_hub_display_name,
         id=awr_hub_id,
@@ -170,12 +170,12 @@ def get_awr_hubs(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         operations_insights_warehouse_id=pulumi.get(__ret__, 'operations_insights_warehouse_id'),
         states=pulumi.get(__ret__, 'states'))
-def get_awr_hubs_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAwrHubsFilterArgs', 'GetAwrHubsFilterArgsDict']]]]] = None,
-                        id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        operations_insights_warehouse_id: Optional[pulumi.Input[_builtins.str]] = None,
-                        states: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+def get_awr_hubs_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAwrHubsFilterArgs', 'GetAwrHubsFilterArgsDict']]]]] = None,
+                        id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        operations_insights_warehouse_id: pulumi.Input[Optional[_builtins.str]] = None,
+                        states: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAwrHubsResult]:
     """
     This data source provides the list of Awr Hubs in Oracle Cloud Infrastructure Opsi service.
@@ -188,7 +188,7 @@ def get_awr_hubs_output(compartment_id: Optional[pulumi.Input[Optional[_builtins
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hubs = oci.Opsi.get_awr_hubs(operations_insights_warehouse_id=test_operations_insights_warehouse["id"],
+    test_awr_hubs = oci.opsi.get_awr_hubs(operations_insights_warehouse_id=test_operations_insights_warehouse["id"],
         compartment_id=compartment_id,
         display_name=awr_hub_display_name,
         id=awr_hub_id,

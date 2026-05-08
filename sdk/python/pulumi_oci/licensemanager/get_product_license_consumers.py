@@ -104,9 +104,9 @@ def get_product_license_consumers(compartment_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_product_license_consumers = oci.LicenseManager.get_product_license_consumers(compartment_id=compartment_id,
+    test_product_license_consumers = oci.licensemanager.get_product_license_consumers(compartment_id=compartment_id,
         product_license_id=test_product_license["id"],
-        is_compartment_id_in_subtree=product_license_consumer_is_compartment_id_in_subtree)
+        is_compartment_id_in_subtree=product_license_consumer_is_compartment_id_in_subtree == "true")
     ```
 
 
@@ -127,9 +127,9 @@ def get_product_license_consumers(compartment_id: Optional[_builtins.str] = None
         is_compartment_id_in_subtree=pulumi.get(__ret__, 'is_compartment_id_in_subtree'),
         items=pulumi.get(__ret__, 'items'),
         product_license_id=pulumi.get(__ret__, 'product_license_id'))
-def get_product_license_consumers_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         is_compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                         product_license_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_product_license_consumers_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         is_compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                         product_license_id: pulumi.Input[Optional[_builtins.str]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetProductLicenseConsumersResult]:
     """
     This data source provides the list of Product License Consumers in Oracle Cloud Infrastructure License Manager service.
@@ -142,9 +142,9 @@ def get_product_license_consumers_output(compartment_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_product_license_consumers = oci.LicenseManager.get_product_license_consumers(compartment_id=compartment_id,
+    test_product_license_consumers = oci.licensemanager.get_product_license_consumers(compartment_id=compartment_id,
         product_license_id=test_product_license["id"],
-        is_compartment_id_in_subtree=product_license_consumer_is_compartment_id_in_subtree)
+        is_compartment_id_in_subtree=product_license_consumer_is_compartment_id_in_subtree == "true")
     ```
 
 

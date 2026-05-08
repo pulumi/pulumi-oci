@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testByolAllocations = oci.Ocvp.getByolAllocations({
+ * const testByolAllocations = oci.ocvp.getByolAllocations({
  *     compartmentId: compartmentId,
  *     availableUnitsGreaterThanOrEqualTo: byolAllocationAvailableUnitsGreaterThanOrEqualTo,
  *     byolAllocationId: testByolAllocation.id,
@@ -130,7 +130,7 @@ export interface GetByolAllocationsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testByolAllocations = oci.Ocvp.getByolAllocations({
+ * const testByolAllocations = oci.ocvp.getByolAllocations({
  *     compartmentId: compartmentId,
  *     availableUnitsGreaterThanOrEqualTo: byolAllocationAvailableUnitsGreaterThanOrEqualTo,
  *     byolAllocationId: testByolAllocation.id,
@@ -162,15 +162,15 @@ export interface GetByolAllocationsOutputArgs {
     /**
      * A filter to return only resources whose availableUnits greater than or equal to the given value.
      */
-    availableUnitsGreaterThanOrEqualTo?: pulumi.Input<number>;
+    availableUnitsGreaterThanOrEqualTo?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL Allocation.
      */
-    byolAllocationId?: pulumi.Input<string>;
+    byolAllocationId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the BYOL.
      */
-    byolId?: pulumi.Input<string>;
+    byolId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -178,14 +178,14 @@ export interface GetByolAllocationsOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Ocvp.GetByolAllocationsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Ocvp.GetByolAllocationsFilterArgs>[] | undefined>;
     /**
      * A filter to return only resources whose softwareType matches the given value.
      */
-    softwareType?: pulumi.Input<string>;
+    softwareType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose lifecycle state matches the given value.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepository = oci.DevOps.getRepository({
+ * const testRepository = oci.devops.getRepository({
  *     repositoryId: testRepositoryOciDevopsRepository.id,
  *     fields: repositoryFields,
  * });
@@ -159,7 +159,7 @@ export interface GetRepositoryResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepository = oci.DevOps.getRepository({
+ * const testRepository = oci.devops.getRepository({
  *     repositoryId: testRepositoryOciDevopsRepository.id,
  *     fields: repositoryFields,
  * });
@@ -180,7 +180,7 @@ export interface GetRepositoryOutputArgs {
     /**
      * Fields parameter can contain multiple flags useful in deciding the API functionality.
      */
-    fields?: pulumi.Input<pulumi.Input<string>[]>;
+    fields?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Unique repository identifier.
      */

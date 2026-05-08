@@ -124,7 +124,7 @@ def get_assessment_assessors(assessment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_assessment_assessors = oci.DatabaseMigration.get_assessment_assessors(assessment_id=test_assessment["id"],
+    test_assessment_assessors = oci.databasemigration.get_assessment_assessors(assessment_id=test_assessment["id"],
         display_name=assessment_assessor_display_name,
         state=assessment_assessor_state)
     ```
@@ -149,10 +149,10 @@ def get_assessment_assessors(assessment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_assessment_assessors_output(assessment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                    display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAssessmentAssessorsFilterArgs', 'GetAssessmentAssessorsFilterArgsDict']]]]] = None,
-                                    state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_assessment_assessors_output(assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAssessmentAssessorsFilterArgs', 'GetAssessmentAssessorsFilterArgsDict']]]]] = None,
+                                    state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAssessmentAssessorsResult]:
     """
     This data source provides the list of Assessment Assessors in Oracle Cloud Infrastructure Database Migration service.
@@ -165,7 +165,7 @@ def get_assessment_assessors_output(assessment_id: Optional[pulumi.Input[_builti
     import pulumi
     import pulumi_oci as oci
 
-    test_assessment_assessors = oci.DatabaseMigration.get_assessment_assessors(assessment_id=test_assessment["id"],
+    test_assessment_assessors = oci.databasemigration.get_assessment_assessors(assessment_id=test_assessment["id"],
         display_name=assessment_assessor_display_name,
         state=assessment_assessor_state)
     ```

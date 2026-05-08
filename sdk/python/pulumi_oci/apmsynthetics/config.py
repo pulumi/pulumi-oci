@@ -26,22 +26,22 @@ class ConfigArgs:
                  monitor_type: pulumi.Input[_builtins.str],
                  repeat_interval_in_seconds: pulumi.Input[_builtins.int],
                  vantage_points: pulumi.Input[Sequence[pulumi.Input['ConfigVantagePointArgs']]],
-                 availability_configuration: Optional[pulumi.Input['ConfigAvailabilityConfigurationArgs']] = None,
-                 batch_interval_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 configuration: Optional[pulumi.Input['ConfigConfigurationArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_ipv6: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_run_now: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_run_once: Optional[pulumi.Input[_builtins.bool]] = None,
-                 maintenance_window_schedule: Optional[pulumi.Input['ConfigMaintenanceWindowScheduleArgs']] = None,
-                 scheduling_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 script_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 script_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 script_parameters: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigScriptParameterArgs']]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 target: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None):
+                 availability_configuration: pulumi.Input[Optional['ConfigAvailabilityConfigurationArgs']] = None,
+                 batch_interval_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 configuration: pulumi.Input[Optional['ConfigConfigurationArgs']] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_ipv6: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_run_now: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_run_once: pulumi.Input[Optional[_builtins.bool]] = None,
+                 maintenance_window_schedule: pulumi.Input[Optional['ConfigMaintenanceWindowScheduleArgs']] = None,
+                 scheduling_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 script_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 script_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 script_parameters: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigScriptParameterArgs']]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 target: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a Config resource.
 
@@ -175,227 +175,227 @@ class ConfigArgs:
 
     @_builtins.property
     @pulumi.getter(name="availabilityConfiguration")
-    def availability_configuration(self) -> Optional[pulumi.Input['ConfigAvailabilityConfigurationArgs']]:
+    def availability_configuration(self) -> pulumi.Input[Optional['ConfigAvailabilityConfigurationArgs']]:
         """
         (Updatable) Monitor availability configuration details.
         """
         return pulumi.get(self, "availability_configuration")
 
     @availability_configuration.setter
-    def availability_configuration(self, value: Optional[pulumi.Input['ConfigAvailabilityConfigurationArgs']]):
+    def availability_configuration(self, value: pulumi.Input[Optional['ConfigAvailabilityConfigurationArgs']]):
         pulumi.set(self, "availability_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="batchIntervalInSeconds")
-    def batch_interval_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def batch_interval_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
         """
         return pulumi.get(self, "batch_interval_in_seconds")
 
     @batch_interval_in_seconds.setter
-    def batch_interval_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def batch_interval_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "batch_interval_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter
-    def configuration(self) -> Optional[pulumi.Input['ConfigConfigurationArgs']]:
+    def configuration(self) -> pulumi.Input[Optional['ConfigConfigurationArgs']]:
         """
         (Updatable) Details of monitor configuration.
         """
         return pulumi.get(self, "configuration")
 
     @configuration.setter
-    def configuration(self, value: Optional[pulumi.Input['ConfigConfigurationArgs']]):
+    def configuration(self, value: pulumi.Input[Optional['ConfigConfigurationArgs']]):
         pulumi.set(self, "configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isIpv6")
-    def is_ipv6(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_ipv6(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If enabled, domain name will resolve to an IPv6 address.
         """
         return pulumi.get(self, "is_ipv6")
 
     @is_ipv6.setter
-    def is_ipv6(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_ipv6(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_ipv6", value)
 
     @_builtins.property
     @pulumi.getter(name="isRunNow")
-    def is_run_now(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_run_now(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         """
         return pulumi.get(self, "is_run_now")
 
     @is_run_now.setter
-    def is_run_now(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_run_now(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_run_now", value)
 
     @_builtins.property
     @pulumi.getter(name="isRunOnce")
-    def is_run_once(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_run_once(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If runOnce is enabled, then the monitor will run once.
         """
         return pulumi.get(self, "is_run_once")
 
     @is_run_once.setter
-    def is_run_once(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_run_once(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_run_once", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenanceWindowSchedule")
-    def maintenance_window_schedule(self) -> Optional[pulumi.Input['ConfigMaintenanceWindowScheduleArgs']]:
+    def maintenance_window_schedule(self) -> pulumi.Input[Optional['ConfigMaintenanceWindowScheduleArgs']]:
         """
         (Updatable) Details required to schedule maintenance window.
         """
         return pulumi.get(self, "maintenance_window_schedule")
 
     @maintenance_window_schedule.setter
-    def maintenance_window_schedule(self, value: Optional[pulumi.Input['ConfigMaintenanceWindowScheduleArgs']]):
+    def maintenance_window_schedule(self, value: pulumi.Input[Optional['ConfigMaintenanceWindowScheduleArgs']]):
         pulumi.set(self, "maintenance_window_schedule", value)
 
     @_builtins.property
     @pulumi.getter(name="schedulingPolicy")
-    def scheduling_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduling_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
         """
         return pulumi.get(self, "scheduling_policy")
 
     @scheduling_policy.setter
-    def scheduling_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduling_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduling_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="scriptId")
-    def script_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def script_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
         """
         return pulumi.get(self, "script_id")
 
     @script_id.setter
-    def script_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def script_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "script_id", value)
 
     @_builtins.property
     @pulumi.getter(name="scriptName")
-    def script_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def script_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the script.
         """
         return pulumi.get(self, "script_name")
 
     @script_name.setter
-    def script_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def script_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "script_name", value)
 
     @_builtins.property
     @pulumi.getter(name="scriptParameters")
-    def script_parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigScriptParameterArgs']]]]:
+    def script_parameters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConfigScriptParameterArgs']]]]:
         """
         (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
         """
         return pulumi.get(self, "script_parameters")
 
     @script_parameters.setter
-    def script_parameters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigScriptParameterArgs']]]]):
+    def script_parameters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigScriptParameterArgs']]]]):
         pulumi.set(self, "script_parameters", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Enables or disables the monitor.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def target(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
         """
         return pulumi.get(self, "target")
 
     @target.setter
-    def target(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target", value)
 
     @_builtins.property
     @pulumi.getter(name="timeoutInSeconds")
-    def timeout_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def timeout_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         """
         return pulumi.get(self, "timeout_in_seconds")
 
     @timeout_in_seconds.setter
-    def timeout_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def timeout_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "timeout_in_seconds", value)
 
 
 @pulumi.input_type
 class _ConfigState:
     def __init__(__self__, *,
-                 apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 availability_configuration: Optional[pulumi.Input['ConfigAvailabilityConfigurationArgs']] = None,
-                 batch_interval_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 configuration: Optional[pulumi.Input['ConfigConfigurationArgs']] = None,
-                 content_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 created_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_ipv6: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_run_now: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_run_once: Optional[pulumi.Input[_builtins.bool]] = None,
-                 last_updated_by: Optional[pulumi.Input[_builtins.str]] = None,
-                 maintenance_window_schedule: Optional[pulumi.Input['ConfigMaintenanceWindowScheduleArgs']] = None,
-                 monitor_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 repeat_interval_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 scheduling_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 script_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 script_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 script_parameters: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigScriptParameterArgs']]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 target: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 vantage_point_count: Optional[pulumi.Input[_builtins.int]] = None,
-                 vantage_points: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigVantagePointArgs']]]] = None):
+                 apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_configuration: pulumi.Input[Optional['ConfigAvailabilityConfigurationArgs']] = None,
+                 batch_interval_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 configuration: pulumi.Input[Optional['ConfigConfigurationArgs']] = None,
+                 content_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 created_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_ipv6: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_run_now: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_run_once: pulumi.Input[Optional[_builtins.bool]] = None,
+                 last_updated_by: pulumi.Input[Optional[_builtins.str]] = None,
+                 maintenance_window_schedule: pulumi.Input[Optional['ConfigMaintenanceWindowScheduleArgs']] = None,
+                 monitor_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 repeat_interval_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 scheduling_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 script_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 script_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 script_parameters: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigScriptParameterArgs']]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 target: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 vantage_point_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 vantage_points: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigVantagePointArgs']]]] = None):
         """
         Input properties used for looking up and filtering Config resources.
 
@@ -488,319 +488,319 @@ class _ConfigState:
 
     @_builtins.property
     @pulumi.getter(name="apmDomainId")
-    def apm_domain_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def apm_domain_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The APM domain ID the request is intended for.
         """
         return pulumi.get(self, "apm_domain_id")
 
     @apm_domain_id.setter
-    def apm_domain_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def apm_domain_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "apm_domain_id", value)
 
     @_builtins.property
     @pulumi.getter(name="availabilityConfiguration")
-    def availability_configuration(self) -> Optional[pulumi.Input['ConfigAvailabilityConfigurationArgs']]:
+    def availability_configuration(self) -> pulumi.Input[Optional['ConfigAvailabilityConfigurationArgs']]:
         """
         (Updatable) Monitor availability configuration details.
         """
         return pulumi.get(self, "availability_configuration")
 
     @availability_configuration.setter
-    def availability_configuration(self, value: Optional[pulumi.Input['ConfigAvailabilityConfigurationArgs']]):
+    def availability_configuration(self, value: pulumi.Input[Optional['ConfigAvailabilityConfigurationArgs']]):
         pulumi.set(self, "availability_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="batchIntervalInSeconds")
-    def batch_interval_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def batch_interval_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
         """
         return pulumi.get(self, "batch_interval_in_seconds")
 
     @batch_interval_in_seconds.setter
-    def batch_interval_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def batch_interval_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "batch_interval_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter
-    def configuration(self) -> Optional[pulumi.Input['ConfigConfigurationArgs']]:
+    def configuration(self) -> pulumi.Input[Optional['ConfigConfigurationArgs']]:
         """
         (Updatable) Details of monitor configuration.
         """
         return pulumi.get(self, "configuration")
 
     @configuration.setter
-    def configuration(self, value: Optional[pulumi.Input['ConfigConfigurationArgs']]):
+    def configuration(self, value: pulumi.Input[Optional['ConfigConfigurationArgs']]):
         pulumi.set(self, "configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="contentType")
-    def content_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def content_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Content type of the script.
         """
         return pulumi.get(self, "content_type")
 
     @content_type.setter
-    def content_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def content_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "content_type", value)
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
-    def created_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the user that created the monitor.
         """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
-    def created_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def created_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "created_by", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Unique name that can be edited. The name should not contain any confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isIpv6")
-    def is_ipv6(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_ipv6(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If enabled, domain name will resolve to an IPv6 address.
         """
         return pulumi.get(self, "is_ipv6")
 
     @is_ipv6.setter
-    def is_ipv6(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_ipv6(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_ipv6", value)
 
     @_builtins.property
     @pulumi.getter(name="isRunNow")
-    def is_run_now(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_run_now(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         """
         return pulumi.get(self, "is_run_now")
 
     @is_run_now.setter
-    def is_run_now(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_run_now(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_run_now", value)
 
     @_builtins.property
     @pulumi.getter(name="isRunOnce")
-    def is_run_once(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_run_once(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If runOnce is enabled, then the monitor will run once.
         """
         return pulumi.get(self, "is_run_once")
 
     @is_run_once.setter
-    def is_run_once(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_run_once(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_run_once", value)
 
     @_builtins.property
     @pulumi.getter(name="lastUpdatedBy")
-    def last_updated_by(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def last_updated_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the user that recently updated the monitor.
         """
         return pulumi.get(self, "last_updated_by")
 
     @last_updated_by.setter
-    def last_updated_by(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def last_updated_by(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_updated_by", value)
 
     @_builtins.property
     @pulumi.getter(name="maintenanceWindowSchedule")
-    def maintenance_window_schedule(self) -> Optional[pulumi.Input['ConfigMaintenanceWindowScheduleArgs']]:
+    def maintenance_window_schedule(self) -> pulumi.Input[Optional['ConfigMaintenanceWindowScheduleArgs']]:
         """
         (Updatable) Details required to schedule maintenance window.
         """
         return pulumi.get(self, "maintenance_window_schedule")
 
     @maintenance_window_schedule.setter
-    def maintenance_window_schedule(self, value: Optional[pulumi.Input['ConfigMaintenanceWindowScheduleArgs']]):
+    def maintenance_window_schedule(self, value: pulumi.Input[Optional['ConfigMaintenanceWindowScheduleArgs']]):
         pulumi.set(self, "maintenance_window_schedule", value)
 
     @_builtins.property
     @pulumi.getter(name="monitorType")
-    def monitor_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def monitor_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Type of monitor.
         """
         return pulumi.get(self, "monitor_type")
 
     @monitor_type.setter
-    def monitor_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def monitor_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "monitor_type", value)
 
     @_builtins.property
     @pulumi.getter(name="repeatIntervalInSeconds")
-    def repeat_interval_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def repeat_interval_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
         """
         return pulumi.get(self, "repeat_interval_in_seconds")
 
     @repeat_interval_in_seconds.setter
-    def repeat_interval_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def repeat_interval_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "repeat_interval_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="schedulingPolicy")
-    def scheduling_policy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def scheduling_policy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Scheduling policy to decide the distribution of monitor executions on vantage points.
         """
         return pulumi.get(self, "scheduling_policy")
 
     @scheduling_policy.setter
-    def scheduling_policy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def scheduling_policy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "scheduling_policy", value)
 
     @_builtins.property
     @pulumi.getter(name="scriptId")
-    def script_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def script_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
         """
         return pulumi.get(self, "script_id")
 
     @script_id.setter
-    def script_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def script_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "script_id", value)
 
     @_builtins.property
     @pulumi.getter(name="scriptName")
-    def script_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def script_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Name of the script.
         """
         return pulumi.get(self, "script_name")
 
     @script_name.setter
-    def script_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def script_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "script_name", value)
 
     @_builtins.property
     @pulumi.getter(name="scriptParameters")
-    def script_parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigScriptParameterArgs']]]]:
+    def script_parameters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConfigScriptParameterArgs']]]]:
         """
         (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
         """
         return pulumi.get(self, "script_parameters")
 
     @script_parameters.setter
-    def script_parameters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigScriptParameterArgs']]]]):
+    def script_parameters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigScriptParameterArgs']]]]):
         pulumi.set(self, "script_parameters", value)
 
     @_builtins.property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Enables or disables the monitor.
         """
         return pulumi.get(self, "status")
 
     @status.setter
-    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
 
     @_builtins.property
     @pulumi.getter
-    def target(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def target(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
         """
         return pulumi.get(self, "target")
 
     @target.setter
-    def target(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def target(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "target", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="timeoutInSeconds")
-    def timeout_in_seconds(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def timeout_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         """
         return pulumi.get(self, "timeout_in_seconds")
 
     @timeout_in_seconds.setter
-    def timeout_in_seconds(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def timeout_in_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "timeout_in_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="vantagePointCount")
-    def vantage_point_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def vantage_point_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Number of vantage points where monitor is running.
         """
         return pulumi.get(self, "vantage_point_count")
 
     @vantage_point_count.setter
-    def vantage_point_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def vantage_point_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "vantage_point_count", value)
 
     @_builtins.property
     @pulumi.getter(name="vantagePoints")
-    def vantage_points(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigVantagePointArgs']]]]:
+    def vantage_points(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ConfigVantagePointArgs']]]]:
         """
         (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
 
@@ -811,7 +811,7 @@ class _ConfigState:
         return pulumi.get(self, "vantage_points")
 
     @vantage_points.setter
-    def vantage_points(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigVantagePointArgs']]]]):
+    def vantage_points(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ConfigVantagePointArgs']]]]):
         pulumi.set(self, "vantage_points", value)
 
 
@@ -821,27 +821,27 @@ class Config(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 availability_configuration: Optional[pulumi.Input[Union['ConfigAvailabilityConfigurationArgs', 'ConfigAvailabilityConfigurationArgsDict']]] = None,
-                 batch_interval_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 configuration: Optional[pulumi.Input[Union['ConfigConfigurationArgs', 'ConfigConfigurationArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_ipv6: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_run_now: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_run_once: Optional[pulumi.Input[_builtins.bool]] = None,
-                 maintenance_window_schedule: Optional[pulumi.Input[Union['ConfigMaintenanceWindowScheduleArgs', 'ConfigMaintenanceWindowScheduleArgsDict']]] = None,
-                 monitor_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 repeat_interval_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 scheduling_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 script_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 script_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 script_parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigScriptParameterArgs', 'ConfigScriptParameterArgsDict']]]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 target: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 vantage_points: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigVantagePointArgs', 'ConfigVantagePointArgsDict']]]]] = None,
+                 apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_configuration: pulumi.Input[Optional[Union['ConfigAvailabilityConfigurationArgs', 'ConfigAvailabilityConfigurationArgsDict']]] = None,
+                 batch_interval_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 configuration: pulumi.Input[Optional[Union['ConfigConfigurationArgs', 'ConfigConfigurationArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_ipv6: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_run_now: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_run_once: pulumi.Input[Optional[_builtins.bool]] = None,
+                 maintenance_window_schedule: pulumi.Input[Optional[Union['ConfigMaintenanceWindowScheduleArgs', 'ConfigMaintenanceWindowScheduleArgsDict']]] = None,
+                 monitor_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 repeat_interval_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 scheduling_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 script_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 script_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 script_parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigScriptParameterArgs', 'ConfigScriptParameterArgsDict']]]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 target: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 vantage_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigVantagePointArgs', 'ConfigVantagePointArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -861,16 +861,16 @@ class Config(pulumi.CustomResource):
             apm_domain_id=test_apm_domain["id"],
             display_name=monitor_display_name,
             monitor_type=monitor_monitor_type,
-            repeat_interval_in_seconds=monitor_repeat_interval_in_seconds,
+            repeat_interval_in_seconds=int(monitor_repeat_interval_in_seconds),
             vantage_points=[{
                 "name": monitor_vantage_points_name,
                 "display_name": monitor_vantage_points_param_display_name,
             }],
             availability_configuration={
-                "max_allowed_failures_per_interval": monitor_availability_configuration_max_allowed_failures_per_interval,
-                "min_allowed_runs_per_interval": monitor_availability_configuration_min_allowed_runs_per_interval,
+                "max_allowed_failures_per_interval": int(monitor_availability_configuration_max_allowed_failures_per_interval),
+                "min_allowed_runs_per_interval": int(monitor_availability_configuration_min_allowed_runs_per_interval),
             },
-            batch_interval_in_seconds=monitor_batch_interval_in_seconds,
+            batch_interval_in_seconds=int(monitor_batch_interval_in_seconds),
             configuration={
                 "client_certificate_details": {
                     "client_certificate": {
@@ -900,10 +900,10 @@ class Config(pulumi.CustomResource):
                     "service_name": test_service["name"],
                 },
                 "dns_configuration": {
-                    "is_override_dns": monitor_configuration_dns_configuration_is_override_dns,
+                    "is_override_dns": monitor_configuration_dns_configuration_is_override_dns == "true",
                     "override_dns_ip": monitor_configuration_dns_configuration_override_dns_ip,
                 },
-                "download_size_limit_in_bytes": monitor_configuration_download_size_limit_in_bytes,
+                "download_size_limit_in_bytes": int(monitor_configuration_download_size_limit_in_bytes),
                 "ftp_basic_authentication_details": {
                     "password": {
                         "password": monitor_configuration_ftp_basic_authentication_details_password_password,
@@ -914,19 +914,19 @@ class Config(pulumi.CustomResource):
                 },
                 "ftp_protocol": monitor_configuration_ftp_protocol,
                 "ftp_request_type": monitor_configuration_ftp_request_type,
-                "is_active_mode": monitor_configuration_is_active_mode,
-                "is_certificate_validation_enabled": monitor_configuration_is_certificate_validation_enabled,
-                "is_default_snapshot_enabled": monitor_configuration_is_default_snapshot_enabled,
-                "is_failure_retried": monitor_configuration_is_failure_retried,
-                "is_query_recursive": monitor_configuration_is_query_recursive,
-                "is_redirection_enabled": monitor_configuration_is_redirection_enabled,
+                "is_active_mode": monitor_configuration_is_active_mode == "true",
+                "is_certificate_validation_enabled": monitor_configuration_is_certificate_validation_enabled == "true",
+                "is_default_snapshot_enabled": monitor_configuration_is_default_snapshot_enabled == "true",
+                "is_failure_retried": monitor_configuration_is_failure_retried == "true",
+                "is_query_recursive": monitor_configuration_is_query_recursive == "true",
+                "is_redirection_enabled": monitor_configuration_is_redirection_enabled == "true",
                 "name_server": monitor_configuration_name_server,
                 "network_configuration": {
-                    "number_of_hops": monitor_configuration_network_configuration_number_of_hops,
+                    "number_of_hops": int(monitor_configuration_network_configuration_number_of_hops),
                     "probe_mode": monitor_configuration_network_configuration_probe_mode,
-                    "probe_per_hop": monitor_configuration_network_configuration_probe_per_hop,
+                    "probe_per_hop": int(monitor_configuration_network_configuration_probe_per_hop),
                     "protocol": monitor_configuration_network_configuration_protocol,
-                    "transmission_rate": monitor_configuration_network_configuration_transmission_rate,
+                    "transmission_rate": int(monitor_configuration_network_configuration_transmission_rate),
                 },
                 "protocol": monitor_configuration_protocol,
                 "query": monitor_configuration_query,
@@ -955,7 +955,7 @@ class Config(pulumi.CustomResource):
                     "param_name": monitor_configuration_request_query_params_param_name,
                     "param_value": monitor_configuration_request_query_params_param_value,
                 }],
-                "upload_file_size_in_bytes": monitor_configuration_upload_file_size_in_bytes,
+                "upload_file_size_in_bytes": int(monitor_configuration_upload_file_size_in_bytes),
                 "verify_response_codes": monitor_configuration_verify_response_codes,
                 "verify_response_content": monitor_configuration_verify_response_content,
                 "verify_texts": [{
@@ -968,9 +968,9 @@ class Config(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_ipv6=monitor_is_ipv6,
-            is_run_now=monitor_is_run_now,
-            is_run_once=monitor_is_run_once,
+            is_ipv6=monitor_is_ipv6 == "true",
+            is_run_now=monitor_is_run_now == "true",
+            is_run_once=monitor_is_run_once == "true",
             maintenance_window_schedule={
                 "time_ended": monitor_maintenance_window_schedule_time_ended,
                 "time_started": monitor_maintenance_window_schedule_time_started,
@@ -983,7 +983,7 @@ class Config(pulumi.CustomResource):
             }],
             status=monitor_status,
             target=monitor_target,
-            timeout_in_seconds=monitor_timeout_in_seconds)
+            timeout_in_seconds=int(monitor_timeout_in_seconds))
         ```
 
         ## Import
@@ -1047,16 +1047,16 @@ class Config(pulumi.CustomResource):
             apm_domain_id=test_apm_domain["id"],
             display_name=monitor_display_name,
             monitor_type=monitor_monitor_type,
-            repeat_interval_in_seconds=monitor_repeat_interval_in_seconds,
+            repeat_interval_in_seconds=int(monitor_repeat_interval_in_seconds),
             vantage_points=[{
                 "name": monitor_vantage_points_name,
                 "display_name": monitor_vantage_points_param_display_name,
             }],
             availability_configuration={
-                "max_allowed_failures_per_interval": monitor_availability_configuration_max_allowed_failures_per_interval,
-                "min_allowed_runs_per_interval": monitor_availability_configuration_min_allowed_runs_per_interval,
+                "max_allowed_failures_per_interval": int(monitor_availability_configuration_max_allowed_failures_per_interval),
+                "min_allowed_runs_per_interval": int(monitor_availability_configuration_min_allowed_runs_per_interval),
             },
-            batch_interval_in_seconds=monitor_batch_interval_in_seconds,
+            batch_interval_in_seconds=int(monitor_batch_interval_in_seconds),
             configuration={
                 "client_certificate_details": {
                     "client_certificate": {
@@ -1086,10 +1086,10 @@ class Config(pulumi.CustomResource):
                     "service_name": test_service["name"],
                 },
                 "dns_configuration": {
-                    "is_override_dns": monitor_configuration_dns_configuration_is_override_dns,
+                    "is_override_dns": monitor_configuration_dns_configuration_is_override_dns == "true",
                     "override_dns_ip": monitor_configuration_dns_configuration_override_dns_ip,
                 },
-                "download_size_limit_in_bytes": monitor_configuration_download_size_limit_in_bytes,
+                "download_size_limit_in_bytes": int(monitor_configuration_download_size_limit_in_bytes),
                 "ftp_basic_authentication_details": {
                     "password": {
                         "password": monitor_configuration_ftp_basic_authentication_details_password_password,
@@ -1100,19 +1100,19 @@ class Config(pulumi.CustomResource):
                 },
                 "ftp_protocol": monitor_configuration_ftp_protocol,
                 "ftp_request_type": monitor_configuration_ftp_request_type,
-                "is_active_mode": monitor_configuration_is_active_mode,
-                "is_certificate_validation_enabled": monitor_configuration_is_certificate_validation_enabled,
-                "is_default_snapshot_enabled": monitor_configuration_is_default_snapshot_enabled,
-                "is_failure_retried": monitor_configuration_is_failure_retried,
-                "is_query_recursive": monitor_configuration_is_query_recursive,
-                "is_redirection_enabled": monitor_configuration_is_redirection_enabled,
+                "is_active_mode": monitor_configuration_is_active_mode == "true",
+                "is_certificate_validation_enabled": monitor_configuration_is_certificate_validation_enabled == "true",
+                "is_default_snapshot_enabled": monitor_configuration_is_default_snapshot_enabled == "true",
+                "is_failure_retried": monitor_configuration_is_failure_retried == "true",
+                "is_query_recursive": monitor_configuration_is_query_recursive == "true",
+                "is_redirection_enabled": monitor_configuration_is_redirection_enabled == "true",
                 "name_server": monitor_configuration_name_server,
                 "network_configuration": {
-                    "number_of_hops": monitor_configuration_network_configuration_number_of_hops,
+                    "number_of_hops": int(monitor_configuration_network_configuration_number_of_hops),
                     "probe_mode": monitor_configuration_network_configuration_probe_mode,
-                    "probe_per_hop": monitor_configuration_network_configuration_probe_per_hop,
+                    "probe_per_hop": int(monitor_configuration_network_configuration_probe_per_hop),
                     "protocol": monitor_configuration_network_configuration_protocol,
-                    "transmission_rate": monitor_configuration_network_configuration_transmission_rate,
+                    "transmission_rate": int(monitor_configuration_network_configuration_transmission_rate),
                 },
                 "protocol": monitor_configuration_protocol,
                 "query": monitor_configuration_query,
@@ -1141,7 +1141,7 @@ class Config(pulumi.CustomResource):
                     "param_name": monitor_configuration_request_query_params_param_name,
                     "param_value": monitor_configuration_request_query_params_param_value,
                 }],
-                "upload_file_size_in_bytes": monitor_configuration_upload_file_size_in_bytes,
+                "upload_file_size_in_bytes": int(monitor_configuration_upload_file_size_in_bytes),
                 "verify_response_codes": monitor_configuration_verify_response_codes,
                 "verify_response_content": monitor_configuration_verify_response_content,
                 "verify_texts": [{
@@ -1154,9 +1154,9 @@ class Config(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_ipv6=monitor_is_ipv6,
-            is_run_now=monitor_is_run_now,
-            is_run_once=monitor_is_run_once,
+            is_ipv6=monitor_is_ipv6 == "true",
+            is_run_now=monitor_is_run_now == "true",
+            is_run_once=monitor_is_run_once == "true",
             maintenance_window_schedule={
                 "time_ended": monitor_maintenance_window_schedule_time_ended,
                 "time_started": monitor_maintenance_window_schedule_time_started,
@@ -1169,7 +1169,7 @@ class Config(pulumi.CustomResource):
             }],
             status=monitor_status,
             target=monitor_target,
-            timeout_in_seconds=monitor_timeout_in_seconds)
+            timeout_in_seconds=int(monitor_timeout_in_seconds))
         ```
 
         ## Import
@@ -1196,27 +1196,27 @@ class Config(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 availability_configuration: Optional[pulumi.Input[Union['ConfigAvailabilityConfigurationArgs', 'ConfigAvailabilityConfigurationArgsDict']]] = None,
-                 batch_interval_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 configuration: Optional[pulumi.Input[Union['ConfigConfigurationArgs', 'ConfigConfigurationArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_ipv6: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_run_now: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_run_once: Optional[pulumi.Input[_builtins.bool]] = None,
-                 maintenance_window_schedule: Optional[pulumi.Input[Union['ConfigMaintenanceWindowScheduleArgs', 'ConfigMaintenanceWindowScheduleArgsDict']]] = None,
-                 monitor_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 repeat_interval_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 scheduling_policy: Optional[pulumi.Input[_builtins.str]] = None,
-                 script_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 script_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 script_parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigScriptParameterArgs', 'ConfigScriptParameterArgsDict']]]]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None,
-                 target: Optional[pulumi.Input[_builtins.str]] = None,
-                 timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-                 vantage_points: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigVantagePointArgs', 'ConfigVantagePointArgsDict']]]]] = None,
+                 apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 availability_configuration: pulumi.Input[Optional[Union['ConfigAvailabilityConfigurationArgs', 'ConfigAvailabilityConfigurationArgsDict']]] = None,
+                 batch_interval_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 configuration: pulumi.Input[Optional[Union['ConfigConfigurationArgs', 'ConfigConfigurationArgsDict']]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_ipv6: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_run_now: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_run_once: pulumi.Input[Optional[_builtins.bool]] = None,
+                 maintenance_window_schedule: pulumi.Input[Optional[Union['ConfigMaintenanceWindowScheduleArgs', 'ConfigMaintenanceWindowScheduleArgsDict']]] = None,
+                 monitor_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 repeat_interval_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 scheduling_policy: pulumi.Input[Optional[_builtins.str]] = None,
+                 script_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 script_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 script_parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigScriptParameterArgs', 'ConfigScriptParameterArgsDict']]]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 target: pulumi.Input[Optional[_builtins.str]] = None,
+                 timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 vantage_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigVantagePointArgs', 'ConfigVantagePointArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1273,33 +1273,33 @@ class Config(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
-            availability_configuration: Optional[pulumi.Input[Union['ConfigAvailabilityConfigurationArgs', 'ConfigAvailabilityConfigurationArgsDict']]] = None,
-            batch_interval_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-            configuration: Optional[pulumi.Input[Union['ConfigConfigurationArgs', 'ConfigConfigurationArgsDict']]] = None,
-            content_type: Optional[pulumi.Input[_builtins.str]] = None,
-            created_by: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_ipv6: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_run_now: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_run_once: Optional[pulumi.Input[_builtins.bool]] = None,
-            last_updated_by: Optional[pulumi.Input[_builtins.str]] = None,
-            maintenance_window_schedule: Optional[pulumi.Input[Union['ConfigMaintenanceWindowScheduleArgs', 'ConfigMaintenanceWindowScheduleArgsDict']]] = None,
-            monitor_type: Optional[pulumi.Input[_builtins.str]] = None,
-            repeat_interval_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-            scheduling_policy: Optional[pulumi.Input[_builtins.str]] = None,
-            script_id: Optional[pulumi.Input[_builtins.str]] = None,
-            script_name: Optional[pulumi.Input[_builtins.str]] = None,
-            script_parameters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigScriptParameterArgs', 'ConfigScriptParameterArgsDict']]]]] = None,
-            status: Optional[pulumi.Input[_builtins.str]] = None,
-            target: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            timeout_in_seconds: Optional[pulumi.Input[_builtins.int]] = None,
-            vantage_point_count: Optional[pulumi.Input[_builtins.int]] = None,
-            vantage_points: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigVantagePointArgs', 'ConfigVantagePointArgsDict']]]]] = None) -> 'Config':
+            apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            availability_configuration: pulumi.Input[Optional[Union['ConfigAvailabilityConfigurationArgs', 'ConfigAvailabilityConfigurationArgsDict']]] = None,
+            batch_interval_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            configuration: pulumi.Input[Optional[Union['ConfigConfigurationArgs', 'ConfigConfigurationArgsDict']]] = None,
+            content_type: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_ipv6: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_run_now: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_run_once: pulumi.Input[Optional[_builtins.bool]] = None,
+            last_updated_by: pulumi.Input[Optional[_builtins.str]] = None,
+            maintenance_window_schedule: pulumi.Input[Optional[Union['ConfigMaintenanceWindowScheduleArgs', 'ConfigMaintenanceWindowScheduleArgsDict']]] = None,
+            monitor_type: pulumi.Input[Optional[_builtins.str]] = None,
+            repeat_interval_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            scheduling_policy: pulumi.Input[Optional[_builtins.str]] = None,
+            script_id: pulumi.Input[Optional[_builtins.str]] = None,
+            script_name: pulumi.Input[Optional[_builtins.str]] = None,
+            script_parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigScriptParameterArgs', 'ConfigScriptParameterArgsDict']]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            target: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            vantage_point_count: pulumi.Input[Optional[_builtins.int]] = None,
+            vantage_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigVantagePointArgs', 'ConfigVantagePointArgsDict']]]]] = None) -> 'Config':
         """
         Get an existing Config resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

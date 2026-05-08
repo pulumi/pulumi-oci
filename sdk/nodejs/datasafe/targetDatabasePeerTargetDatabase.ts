@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  *         dbSystemId: testDbSystem.id,
  *         instanceId: testInstance.id,
  *         ipAddresses: targetDatabasePeerTargetDatabaseDatabaseDetailsIpAddresses,
- *         listenerPort: targetDatabasePeerTargetDatabaseDatabaseDetailsListenerPort,
+ *         listenerPort: Number(targetDatabasePeerTargetDatabaseDatabaseDetailsListenerPort),
  *         pluggableDatabaseId: testPluggableDatabase.id,
  *         serviceName: testService.name,
  *         vmClusterId: testVmCluster.id,
@@ -190,51 +190,51 @@ export interface TargetDatabasePeerTargetDatabaseState {
     /**
      * (Updatable) Details of the database for the registration in Data Safe.
      */
-    databaseDetails?: pulumi.Input<inputs.DataSafe.TargetDatabasePeerTargetDatabaseDatabaseDetails>;
+    databaseDetails?: pulumi.Input<inputs.DataSafe.TargetDatabasePeerTargetDatabaseDatabaseDetails | undefined>;
     /**
      * Unique name of the database associated to the peer target database.
      */
-    databaseUniqueName?: pulumi.Input<string>;
+    databaseUniqueName?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
      */
-    dataguardAssociationId?: pulumi.Input<string>;
+    dataguardAssociationId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The description of the peer target database in Data Safe.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The secondary key assigned for the peer target database in Data Safe.
      */
-    key?: pulumi.Input<number>;
+    key?: pulumi.Input<number | undefined>;
     /**
      * Details about the current state of the peer target database in Data Safe.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * Role of the database associated to the peer target database.
      */
-    role?: pulumi.Input<string>;
+    role?: pulumi.Input<string | undefined>;
     /**
      * The current state of the peer target database in Data Safe.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the Data Safe target database.
      */
-    targetDatabaseId?: pulumi.Input<string>;
+    targetDatabaseId?: pulumi.Input<string | undefined>;
     /**
      * The date and time of the peer target database registration in Data Safe.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The details required to establish a TLS enabled connection.
      */
-    tlsConfig?: pulumi.Input<inputs.DataSafe.TargetDatabasePeerTargetDatabaseTlsConfig>;
+    tlsConfig?: pulumi.Input<inputs.DataSafe.TargetDatabasePeerTargetDatabaseTlsConfig | undefined>;
 }
 
 /**
@@ -248,15 +248,15 @@ export interface TargetDatabasePeerTargetDatabaseArgs {
     /**
      * The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
      */
-    dataguardAssociationId?: pulumi.Input<string>;
+    dataguardAssociationId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The description of the peer target database in Data Safe.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the Data Safe target database.
      */
@@ -264,5 +264,5 @@ export interface TargetDatabasePeerTargetDatabaseArgs {
     /**
      * (Updatable) The details required to establish a TLS enabled connection.
      */
-    tlsConfig?: pulumi.Input<inputs.DataSafe.TargetDatabasePeerTargetDatabaseTlsConfig>;
+    tlsConfig?: pulumi.Input<inputs.DataSafe.TargetDatabasePeerTargetDatabaseTlsConfig | undefined>;
 }

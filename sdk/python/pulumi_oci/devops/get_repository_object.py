@@ -139,7 +139,7 @@ def get_repository_object(file_path: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_object = oci.DevOps.get_repository_object(repository_id=test_repository["id"],
+    test_repository_object = oci.devops.get_repository_object(repository_id=test_repository["id"],
         file_path=repository_object_file_path,
         ref_name=repository_object_ref_name)
     ```
@@ -165,9 +165,9 @@ def get_repository_object(file_path: Optional[_builtins.str] = None,
         sha=pulumi.get(__ret__, 'sha'),
         size_in_bytes=pulumi.get(__ret__, 'size_in_bytes'),
         type=pulumi.get(__ret__, 'type'))
-def get_repository_object_output(file_path: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 ref_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                 repository_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_repository_object_output(file_path: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 ref_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                 repository_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRepositoryObjectResult]:
     """
     This data source provides details about a specific Repository Object resource in Oracle Cloud Infrastructure Devops service.
@@ -180,7 +180,7 @@ def get_repository_object_output(file_path: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_object = oci.DevOps.get_repository_object(repository_id=test_repository["id"],
+    test_repository_object = oci.devops.get_repository_object(repository_id=test_repository["id"],
         file_path=repository_object_file_path,
         ref_name=repository_object_ref_name)
     ```

@@ -25,7 +25,7 @@ class ProcessorJobArgs:
                  input_location: pulumi.Input['ProcessorJobInputLocationArgs'],
                  output_location: pulumi.Input['ProcessorJobOutputLocationArgs'],
                  processor_config: pulumi.Input['ProcessorJobProcessorConfigArgs'],
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ProcessorJob resource.
 
@@ -92,31 +92,31 @@ class ProcessorJobArgs:
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The display name of the processor job.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
 
 @pulumi.input_type
 class _ProcessorJobState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 input_location: Optional[pulumi.Input['ProcessorJobInputLocationArgs']] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 output_location: Optional[pulumi.Input['ProcessorJobOutputLocationArgs']] = None,
-                 percent_complete: Optional[pulumi.Input[_builtins.float]] = None,
-                 processor_config: Optional[pulumi.Input['ProcessorJobProcessorConfigArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_accepted: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_finished: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_started: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 input_location: pulumi.Input[Optional['ProcessorJobInputLocationArgs']] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 output_location: pulumi.Input[Optional['ProcessorJobOutputLocationArgs']] = None,
+                 percent_complete: pulumi.Input[Optional[_builtins.float]] = None,
+                 processor_config: pulumi.Input[Optional['ProcessorJobProcessorConfigArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_accepted: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_finished: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_started: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ProcessorJob resources.
 
@@ -157,134 +157,134 @@ class _ProcessorJobState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The compartment identifier.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The display name of the processor job.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="inputLocation")
-    def input_location(self) -> Optional[pulumi.Input['ProcessorJobInputLocationArgs']]:
+    def input_location(self) -> pulumi.Input[Optional['ProcessorJobInputLocationArgs']]:
         """
         The location of the inputs.
         """
         return pulumi.get(self, "input_location")
 
     @input_location.setter
-    def input_location(self, value: Optional[pulumi.Input['ProcessorJobInputLocationArgs']]):
+    def input_location(self, value: pulumi.Input[Optional['ProcessorJobInputLocationArgs']]):
         pulumi.set(self, "input_location", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The detailed status of FAILED state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="outputLocation")
-    def output_location(self) -> Optional[pulumi.Input['ProcessorJobOutputLocationArgs']]:
+    def output_location(self) -> pulumi.Input[Optional['ProcessorJobOutputLocationArgs']]:
         """
         The object storage location where to store analysis results.
         """
         return pulumi.get(self, "output_location")
 
     @output_location.setter
-    def output_location(self, value: Optional[pulumi.Input['ProcessorJobOutputLocationArgs']]):
+    def output_location(self, value: pulumi.Input[Optional['ProcessorJobOutputLocationArgs']]):
         pulumi.set(self, "output_location", value)
 
     @_builtins.property
     @pulumi.getter(name="percentComplete")
-    def percent_complete(self) -> Optional[pulumi.Input[_builtins.float]]:
+    def percent_complete(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         How much progress the operation has made, compared to the total amount of work to be performed.
         """
         return pulumi.get(self, "percent_complete")
 
     @percent_complete.setter
-    def percent_complete(self, value: Optional[pulumi.Input[_builtins.float]]):
+    def percent_complete(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "percent_complete", value)
 
     @_builtins.property
     @pulumi.getter(name="processorConfig")
-    def processor_config(self) -> Optional[pulumi.Input['ProcessorJobProcessorConfigArgs']]:
+    def processor_config(self) -> pulumi.Input[Optional['ProcessorJobProcessorConfigArgs']]:
         """
         The configuration of a processor.
         """
         return pulumi.get(self, "processor_config")
 
     @processor_config.setter
-    def processor_config(self, value: Optional[pulumi.Input['ProcessorJobProcessorConfigArgs']]):
+    def processor_config(self, value: pulumi.Input[Optional['ProcessorJobProcessorConfigArgs']]):
         pulumi.set(self, "processor_config", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the processor job.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeAccepted")
-    def time_accepted(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_accepted(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The job acceptance time.
         """
         return pulumi.get(self, "time_accepted")
 
     @time_accepted.setter
-    def time_accepted(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_accepted(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_accepted", value)
 
     @_builtins.property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_finished(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The job finish time.
         """
         return pulumi.get(self, "time_finished")
 
     @time_finished.setter
-    def time_finished(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_finished(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_finished", value)
 
     @_builtins.property
     @pulumi.getter(name="timeStarted")
-    def time_started(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_started(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The job start time.
         """
         return pulumi.get(self, "time_started")
 
     @time_started.setter
-    def time_started(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_started(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_started", value)
 
 
@@ -294,11 +294,11 @@ class ProcessorJob(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 input_location: Optional[pulumi.Input[Union['ProcessorJobInputLocationArgs', 'ProcessorJobInputLocationArgsDict']]] = None,
-                 output_location: Optional[pulumi.Input[Union['ProcessorJobOutputLocationArgs', 'ProcessorJobOutputLocationArgsDict']]] = None,
-                 processor_config: Optional[pulumi.Input[Union['ProcessorJobProcessorConfigArgs', 'ProcessorJobProcessorConfigArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 input_location: pulumi.Input[Optional[Union['ProcessorJobInputLocationArgs', 'ProcessorJobInputLocationArgsDict']]] = None,
+                 output_location: pulumi.Input[Optional[Union['ProcessorJobOutputLocationArgs', 'ProcessorJobOutputLocationArgsDict']]] = None,
+                 processor_config: pulumi.Input[Optional[Union['ProcessorJobProcessorConfigArgs', 'ProcessorJobProcessorConfigArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Processor Job resource in Oracle Cloud Infrastructure Ai Document service.
@@ -337,13 +337,13 @@ class ProcessorJob(pulumi.CustomResource):
                 "document_type": processor_job_processor_config_document_type,
                 "features": [{
                     "feature_type": processor_job_processor_config_features_feature_type,
-                    "generate_searchable_pdf": processor_job_processor_config_features_generate_searchable_pdf,
-                    "max_results": processor_job_processor_config_features_max_results,
+                    "generate_searchable_pdf": processor_job_processor_config_features_generate_searchable_pdf == "true",
+                    "max_results": int(processor_job_processor_config_features_max_results),
                     "model_id": test_model["id"],
-                    "selection_mark_detection": processor_job_processor_config_features_selection_mark_detection,
+                    "selection_mark_detection": processor_job_processor_config_features_selection_mark_detection == "true",
                     "tenancy_id": test_tenancy["id"],
                 }],
-                "is_zip_output_enabled": processor_job_processor_config_is_zip_output_enabled,
+                "is_zip_output_enabled": processor_job_processor_config_is_zip_output_enabled == "true",
                 "language": processor_job_processor_config_language,
                 "model_id": test_model["id"],
                 "normalization_fields": [{
@@ -415,13 +415,13 @@ class ProcessorJob(pulumi.CustomResource):
                 "document_type": processor_job_processor_config_document_type,
                 "features": [{
                     "feature_type": processor_job_processor_config_features_feature_type,
-                    "generate_searchable_pdf": processor_job_processor_config_features_generate_searchable_pdf,
-                    "max_results": processor_job_processor_config_features_max_results,
+                    "generate_searchable_pdf": processor_job_processor_config_features_generate_searchable_pdf == "true",
+                    "max_results": int(processor_job_processor_config_features_max_results),
                     "model_id": test_model["id"],
-                    "selection_mark_detection": processor_job_processor_config_features_selection_mark_detection,
+                    "selection_mark_detection": processor_job_processor_config_features_selection_mark_detection == "true",
                     "tenancy_id": test_tenancy["id"],
                 }],
-                "is_zip_output_enabled": processor_job_processor_config_is_zip_output_enabled,
+                "is_zip_output_enabled": processor_job_processor_config_is_zip_output_enabled == "true",
                 "language": processor_job_processor_config_language,
                 "model_id": test_model["id"],
                 "normalization_fields": [{
@@ -457,11 +457,11 @@ class ProcessorJob(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 input_location: Optional[pulumi.Input[Union['ProcessorJobInputLocationArgs', 'ProcessorJobInputLocationArgsDict']]] = None,
-                 output_location: Optional[pulumi.Input[Union['ProcessorJobOutputLocationArgs', 'ProcessorJobOutputLocationArgsDict']]] = None,
-                 processor_config: Optional[pulumi.Input[Union['ProcessorJobProcessorConfigArgs', 'ProcessorJobProcessorConfigArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 input_location: pulumi.Input[Optional[Union['ProcessorJobInputLocationArgs', 'ProcessorJobInputLocationArgsDict']]] = None,
+                 output_location: pulumi.Input[Optional[Union['ProcessorJobOutputLocationArgs', 'ProcessorJobOutputLocationArgsDict']]] = None,
+                 processor_config: pulumi.Input[Optional[Union['ProcessorJobProcessorConfigArgs', 'ProcessorJobProcessorConfigArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -500,17 +500,17 @@ class ProcessorJob(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            input_location: Optional[pulumi.Input[Union['ProcessorJobInputLocationArgs', 'ProcessorJobInputLocationArgsDict']]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            output_location: Optional[pulumi.Input[Union['ProcessorJobOutputLocationArgs', 'ProcessorJobOutputLocationArgsDict']]] = None,
-            percent_complete: Optional[pulumi.Input[_builtins.float]] = None,
-            processor_config: Optional[pulumi.Input[Union['ProcessorJobProcessorConfigArgs', 'ProcessorJobProcessorConfigArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_accepted: Optional[pulumi.Input[_builtins.str]] = None,
-            time_finished: Optional[pulumi.Input[_builtins.str]] = None,
-            time_started: Optional[pulumi.Input[_builtins.str]] = None) -> 'ProcessorJob':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            input_location: pulumi.Input[Optional[Union['ProcessorJobInputLocationArgs', 'ProcessorJobInputLocationArgsDict']]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            output_location: pulumi.Input[Optional[Union['ProcessorJobOutputLocationArgs', 'ProcessorJobOutputLocationArgsDict']]] = None,
+            percent_complete: pulumi.Input[Optional[_builtins.float]] = None,
+            processor_config: pulumi.Input[Optional[Union['ProcessorJobProcessorConfigArgs', 'ProcessorJobProcessorConfigArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_accepted: pulumi.Input[Optional[_builtins.str]] = None,
+            time_finished: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started: pulumi.Input[Optional[_builtins.str]] = None) -> 'ProcessorJob':
         """
         Get an existing ProcessorJob resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

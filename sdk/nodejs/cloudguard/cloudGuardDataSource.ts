@@ -27,13 +27,13 @@ import * as utilities from "../utilities";
  *     displayName: dataSourceDisplayName,
  *     dataSourceDetails: {
  *         dataSourceFeedProvider: dataSourceDataSourceDetailsDataSourceFeedProvider,
- *         additionalEntitiesCount: dataSourceDataSourceDetailsAdditionalEntitiesCount,
+ *         additionalEntitiesCount: Number(dataSourceDataSourceDetailsAdditionalEntitiesCount),
  *         description: dataSourceDataSourceDetailsDescription,
- *         intervalInMinutes: dataSourceDataSourceDetailsIntervalInMinutes,
- *         intervalInSeconds: dataSourceDataSourceDetailsIntervalInSeconds,
+ *         intervalInMinutes: Number(dataSourceDataSourceDetailsIntervalInMinutes),
+ *         intervalInSeconds: Number(dataSourceDataSourceDetailsIntervalInSeconds),
  *         loggingQueryDetails: {
  *             loggingQueryType: dataSourceDataSourceDetailsLoggingQueryDetailsLoggingQueryType,
- *             keyEntitiesCount: dataSourceDataSourceDetailsLoggingQueryDetailsKeyEntitiesCount,
+ *             keyEntitiesCount: Number(dataSourceDataSourceDetailsLoggingQueryDetailsKeyEntitiesCount),
  *         },
  *         loggingQueryType: dataSourceDataSourceDetailsLoggingQueryType,
  *         operator: dataSourceDataSourceDetailsOperator,
@@ -48,7 +48,7 @@ import * as utilities from "../utilities";
  *             resourceIds: dataSourceDataSourceDetailsScheduledQueryScopeDetailsResourceIds,
  *             resourceType: dataSourceDataSourceDetailsScheduledQueryScopeDetailsResourceType,
  *         }],
- *         threshold: dataSourceDataSourceDetailsThreshold,
+ *         threshold: Number(dataSourceDataSourceDetailsThreshold),
  *     },
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
@@ -218,41 +218,41 @@ export interface CloudGuardDataSourceState {
     /**
      * (Updatable) Compartment OCID of the data source
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Details specific to the data source type.
      */
-    dataSourceDetails?: pulumi.Input<inputs.CloudGuard.CloudGuardDataSourceDataSourceDetails>;
+    dataSourceDetails?: pulumi.Input<inputs.CloudGuard.CloudGuardDataSourceDataSourceDetails | undefined>;
     /**
      * Information about the detector recipe and rule attached
      */
-    dataSourceDetectorMappingInfos?: pulumi.Input<pulumi.Input<inputs.CloudGuard.CloudGuardDataSourceDataSourceDetectorMappingInfo>[]>;
+    dataSourceDetectorMappingInfos?: pulumi.Input<pulumi.Input<inputs.CloudGuard.CloudGuardDataSourceDataSourceDetectorMappingInfo>[] | undefined>;
     /**
      * Type of data source feed provider (LoggingQuery)
      */
-    dataSourceFeedProvider?: pulumi.Input<string>;
+    dataSourceFeedProvider?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Data source display name
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      *
      * Avoid entering confidential information.
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Information about the region and status of query replication
      */
-    regionStatusDetails?: pulumi.Input<pulumi.Input<inputs.CloudGuard.CloudGuardDataSourceRegionStatusDetail>[]>;
+    regionStatusDetails?: pulumi.Input<pulumi.Input<inputs.CloudGuard.CloudGuardDataSourceRegionStatusDetail>[] | undefined>;
     /**
      * The current lifecycle state of the resource.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Enablement status of data source.
      *
@@ -260,19 +260,19 @@ export interface CloudGuardDataSourceState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the Data source was created. Format defined by RFC3339.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the data source was updated. Format defined by RFC3339.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -286,7 +286,7 @@ export interface CloudGuardDataSourceArgs {
     /**
      * (Updatable) Details specific to the data source type.
      */
-    dataSourceDetails?: pulumi.Input<inputs.CloudGuard.CloudGuardDataSourceDataSourceDetails>;
+    dataSourceDetails?: pulumi.Input<inputs.CloudGuard.CloudGuardDataSourceDataSourceDetails | undefined>;
     /**
      * Type of data source feed provider (LoggingQuery)
      */
@@ -294,7 +294,7 @@ export interface CloudGuardDataSourceArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Data source display name
      */
@@ -304,7 +304,7 @@ export interface CloudGuardDataSourceArgs {
      *
      * Avoid entering confidential information.
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Enablement status of data source.
      *
@@ -312,5 +312,5 @@ export interface CloudGuardDataSourceArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    status?: pulumi.Input<string>;
+    status?: pulumi.Input<string | undefined>;
 }

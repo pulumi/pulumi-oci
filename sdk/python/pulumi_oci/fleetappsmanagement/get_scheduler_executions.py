@@ -223,8 +223,8 @@ def get_scheduler_executions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduler_executions = oci.FleetAppsManagement.get_scheduler_executions(compartment_id=compartment_id,
-        compartment_id_in_subtree=scheduler_execution_compartment_id_in_subtree,
+    test_scheduler_executions = oci.fleetappsmanagement.get_scheduler_executions(compartment_id=compartment_id,
+        compartment_id_in_subtree=scheduler_execution_compartment_id_in_subtree == "true",
         display_name=scheduler_execution_display_name,
         lifecycle_operation=scheduler_execution_lifecycle_operation,
         resource_id=test_resource["id"],
@@ -284,19 +284,19 @@ def get_scheduler_executions(compartment_id: Optional[_builtins.str] = None,
         substate=pulumi.get(__ret__, 'substate'),
         time_scheduled_greater_than_or_equal_to=pulumi.get(__ret__, 'time_scheduled_greater_than_or_equal_to'),
         time_scheduled_less_than=pulumi.get(__ret__, 'time_scheduled_less_than'))
-def get_scheduler_executions_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                                    display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSchedulerExecutionsFilterArgs', 'GetSchedulerExecutionsFilterArgsDict']]]]] = None,
-                                    lifecycle_operation: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    runbook_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    runbook_version_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    scheduler_defintion_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    scheduler_job_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    substate: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    time_scheduled_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                    time_scheduled_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_scheduler_executions_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                    display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSchedulerExecutionsFilterArgs', 'GetSchedulerExecutionsFilterArgsDict']]]]] = None,
+                                    lifecycle_operation: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    runbook_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    runbook_version_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    scheduler_defintion_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    scheduler_job_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    substate: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    time_scheduled_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                    time_scheduled_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSchedulerExecutionsResult]:
     """
     This data source provides the list of Scheduler Executions in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -309,8 +309,8 @@ def get_scheduler_executions_output(compartment_id: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduler_executions = oci.FleetAppsManagement.get_scheduler_executions(compartment_id=compartment_id,
-        compartment_id_in_subtree=scheduler_execution_compartment_id_in_subtree,
+    test_scheduler_executions = oci.fleetappsmanagement.get_scheduler_executions(compartment_id=compartment_id,
+        compartment_id_in_subtree=scheduler_execution_compartment_id_in_subtree == "true",
         display_name=scheduler_execution_display_name,
         lifecycle_operation=scheduler_execution_lifecycle_operation,
         resource_id=test_resource["id"],

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAnnouncements = oci.Jms.getAnnouncements({
+ * const testAnnouncements = oci.jms.getAnnouncements({
  *     summaryContains: announcementSummaryContains,
  *     timeEnd: announcementTimeEnd,
  *     timeStart: announcementTimeStart,
@@ -82,7 +82,7 @@ export interface GetAnnouncementsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAnnouncements = oci.Jms.getAnnouncements({
+ * const testAnnouncements = oci.jms.getAnnouncements({
  *     summaryContains: announcementSummaryContains,
  *     timeEnd: announcementTimeEnd,
  *     timeStart: announcementTimeStart,
@@ -104,17 +104,17 @@ export function getAnnouncementsOutput(args?: GetAnnouncementsOutputArgs, opts?:
  * A collection of arguments for invoking getAnnouncements.
  */
 export interface GetAnnouncementsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetAnnouncementsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetAnnouncementsFilterArgs>[] | undefined>;
     /**
      * Filter the list with summary contains the given value.
      */
-    summaryContains?: pulumi.Input<string>;
+    summaryContains?: pulumi.Input<string | undefined>;
     /**
      * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeEnd?: pulumi.Input<string>;
+    timeEnd?: pulumi.Input<string | undefined>;
     /**
      * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
-    timeStart?: pulumi.Input<string>;
+    timeStart?: pulumi.Input<string | undefined>;
 }

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeGpuMemoryClusters = oci.Core.getComputeGpuMemoryClusters({
+ * const testComputeGpuMemoryClusters = oci.core.getComputeGpuMemoryClusters({
  *     compartmentId: compartmentId,
  *     availabilityDomain: computeGpuMemoryClusterAvailabilityDomain,
  *     computeClusterId: testComputeCluster.id,
@@ -107,7 +107,7 @@ export interface GetComputeGpuMemoryClustersResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testComputeGpuMemoryClusters = oci.Core.getComputeGpuMemoryClusters({
+ * const testComputeGpuMemoryClusters = oci.core.getComputeGpuMemoryClusters({
  *     compartmentId: compartmentId,
  *     availabilityDomain: computeGpuMemoryClusterAvailabilityDomain,
  *     computeClusterId: testComputeCluster.id,
@@ -135,7 +135,7 @@ export interface GetComputeGpuMemoryClustersOutputArgs {
     /**
      * The name of the availability domain.  Example: `Uocm:PHX-AD-1`
      */
-    availabilityDomain?: pulumi.Input<string>;
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -143,14 +143,14 @@ export interface GetComputeGpuMemoryClustersOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
      */
-    computeClusterId?: pulumi.Input<string>;
+    computeClusterId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the listings that matches the given GPU memory cluster id.
      */
-    computeGpuMemoryClusterId?: pulumi.Input<string>;
+    computeGpuMemoryClusterId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetComputeGpuMemoryClustersFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetComputeGpuMemoryClustersFilterArgs>[] | undefined>;
 }

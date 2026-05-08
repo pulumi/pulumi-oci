@@ -119,7 +119,7 @@ def get_service_catalog_association(service_catalog_association_id: Optional[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_service_catalog_association = oci.ServiceCatalog.get_service_catalog_association(service_catalog_association_id=test_service_catalog_association_oci_service_catalog_service_catalog_association["id"])
+    test_service_catalog_association = oci.servicecatalog.get_service_catalog_association(service_catalog_association_id=test_service_catalog_association_oci_service_catalog_service_catalog_association["id"])
     ```
 
 
@@ -137,7 +137,7 @@ def get_service_catalog_association(service_catalog_association_id: Optional[_bu
         service_catalog_association_id=pulumi.get(__ret__, 'service_catalog_association_id'),
         service_catalog_id=pulumi.get(__ret__, 'service_catalog_id'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_service_catalog_association_output(service_catalog_association_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_service_catalog_association_output(service_catalog_association_id: pulumi.Input[Optional[_builtins.str]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetServiceCatalogAssociationResult]:
     """
     This data source provides details about a specific Service Catalog Association resource in Oracle Cloud Infrastructure Service Catalog service.
@@ -150,7 +150,7 @@ def get_service_catalog_association_output(service_catalog_association_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_service_catalog_association = oci.ServiceCatalog.get_service_catalog_association(service_catalog_association_id=test_service_catalog_association_oci_service_catalog_service_catalog_association["id"])
+    test_service_catalog_association = oci.servicecatalog.get_service_catalog_association(service_catalog_association_id=test_service_catalog_association_oci_service_catalog_service_catalog_association["id"])
     ```
 
 

@@ -22,7 +22,7 @@ class DeploymentCertificateArgs:
                  certificate_content: pulumi.Input[_builtins.str],
                  deployment_id: pulumi.Input[_builtins.str],
                  key: pulumi.Input[_builtins.str],
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None):
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a DeploymentCertificate resource.
 
@@ -83,41 +83,41 @@ class DeploymentCertificateArgs:
 
     @_builtins.property
     @pulumi.getter(name="isLockOverride")
-    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_lock_override(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to override locks (if any exist).
         """
         return pulumi.get(self, "is_lock_override")
 
     @is_lock_override.setter
-    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_lock_override(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_lock_override", value)
 
 
 @pulumi.input_type
 class _DeploymentCertificateState:
     def __init__(__self__, *,
-                 authority_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 certificate_content: Optional[pulumi.Input[_builtins.str]] = None,
-                 deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_ca: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_self_signed: Optional[pulumi.Input[_builtins.bool]] = None,
-                 issuer: Optional[pulumi.Input[_builtins.str]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
-                 md5hash: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_key: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_key_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-                 public_key_size: Optional[pulumi.Input[_builtins.str]] = None,
-                 serial: Optional[pulumi.Input[_builtins.str]] = None,
-                 sha1hash: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 subject: Optional[pulumi.Input[_builtins.str]] = None,
-                 subject_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_valid_from: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_valid_to: Optional[pulumi.Input[_builtins.str]] = None,
-                 version: Optional[pulumi.Input[_builtins.str]] = None):
+                 authority_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate_content: pulumi.Input[Optional[_builtins.str]] = None,
+                 deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_ca: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_self_signed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 issuer: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 md5hash: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_key_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_key_size: pulumi.Input[Optional[_builtins.str]] = None,
+                 serial: pulumi.Input[Optional[_builtins.str]] = None,
+                 sha1hash: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 subject: pulumi.Input[Optional[_builtins.str]] = None,
+                 subject_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_valid_from: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_valid_to: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DeploymentCertificate resources.
 
@@ -192,91 +192,91 @@ class _DeploymentCertificateState:
 
     @_builtins.property
     @pulumi.getter(name="authorityKeyId")
-    def authority_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def authority_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Certificate authority key id.
         """
         return pulumi.get(self, "authority_key_id")
 
     @authority_key_id.setter
-    def authority_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def authority_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "authority_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="certificateContent")
-    def certificate_content(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def certificate_content(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The base64 encoded content of the PEM file containing the SSL certificate.
         """
         return pulumi.get(self, "certificate_content")
 
     @certificate_content.setter
-    def certificate_content(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def certificate_content(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "certificate_content", value)
 
     @_builtins.property
     @pulumi.getter(name="deploymentId")
-    def deployment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deployment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A unique Deployment identifier.
         """
         return pulumi.get(self, "deployment_id")
 
     @deployment_id.setter
-    def deployment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deployment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deployment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isCa")
-    def is_ca(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_ca(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the certificate is ca.
         """
         return pulumi.get(self, "is_ca")
 
     @is_ca.setter
-    def is_ca(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_ca(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_ca", value)
 
     @_builtins.property
     @pulumi.getter(name="isLockOverride")
-    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_lock_override(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Whether to override locks (if any exist).
         """
         return pulumi.get(self, "is_lock_override")
 
     @is_lock_override.setter
-    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_lock_override(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_lock_override", value)
 
     @_builtins.property
     @pulumi.getter(name="isSelfSigned")
-    def is_self_signed(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_self_signed(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates if the certificate is self signed.
         """
         return pulumi.get(self, "is_self_signed")
 
     @is_self_signed.setter
-    def is_self_signed(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_self_signed(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_self_signed", value)
 
     @_builtins.property
     @pulumi.getter
-    def issuer(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def issuer(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Certificate issuer.
         """
         return pulumi.get(self, "issuer")
 
     @issuer.setter
-    def issuer(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def issuer(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "issuer", value)
 
     @_builtins.property
     @pulumi.getter
-    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter. 
 
@@ -287,163 +287,163 @@ class _DeploymentCertificateState:
         return pulumi.get(self, "key")
 
     @key.setter
-    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key", value)
 
     @_builtins.property
     @pulumi.getter
-    def md5hash(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def md5hash(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Certificate md5Hash.
         """
         return pulumi.get(self, "md5hash")
 
     @md5hash.setter
-    def md5hash(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def md5hash(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "md5hash", value)
 
     @_builtins.property
     @pulumi.getter(name="publicKey")
-    def public_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Certificate public key.
         """
         return pulumi.get(self, "public_key")
 
     @public_key.setter
-    def public_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_key(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_key", value)
 
     @_builtins.property
     @pulumi.getter(name="publicKeyAlgorithm")
-    def public_key_algorithm(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_key_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Certificate public key algorithm.
         """
         return pulumi.get(self, "public_key_algorithm")
 
     @public_key_algorithm.setter
-    def public_key_algorithm(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_key_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_key_algorithm", value)
 
     @_builtins.property
     @pulumi.getter(name="publicKeySize")
-    def public_key_size(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def public_key_size(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Certificate public key size.
         """
         return pulumi.get(self, "public_key_size")
 
     @public_key_size.setter
-    def public_key_size(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def public_key_size(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "public_key_size", value)
 
     @_builtins.property
     @pulumi.getter
-    def serial(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def serial(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Certificate serial.
         """
         return pulumi.get(self, "serial")
 
     @serial.setter
-    def serial(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def serial(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "serial", value)
 
     @_builtins.property
     @pulumi.getter
-    def sha1hash(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def sha1hash(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Certificate sha1 hash.
         """
         return pulumi.get(self, "sha1hash")
 
     @sha1hash.setter
-    def sha1hash(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def sha1hash(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "sha1hash", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Possible certificate lifecycle states.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter
-    def subject(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subject(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Certificate subject.
         """
         return pulumi.get(self, "subject")
 
     @subject.setter
-    def subject(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subject(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subject", value)
 
     @_builtins.property
     @pulumi.getter(name="subjectKeyId")
-    def subject_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def subject_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Certificate subject key id.
         """
         return pulumi.get(self, "subject_key_id")
 
     @subject_key_id.setter
-    def subject_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def subject_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "subject_key_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeValidFrom")
-    def time_valid_from(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_valid_from(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the certificate is valid from. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_valid_from")
 
     @time_valid_from.setter
-    def time_valid_from(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_valid_from(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_valid_from", value)
 
     @_builtins.property
     @pulumi.getter(name="timeValidTo")
-    def time_valid_to(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_valid_to(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the certificate is valid to. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_valid_to")
 
     @time_valid_to.setter
-    def time_valid_to(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_valid_to(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_valid_to", value)
 
     @_builtins.property
     @pulumi.getter
-    def version(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Certificate version.
         """
         return pulumi.get(self, "version")
 
     @version.setter
-    def version(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "version", value)
 
 
@@ -453,10 +453,10 @@ class DeploymentCertificate(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 certificate_content: Optional[pulumi.Input[_builtins.str]] = None,
-                 deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
+                 certificate_content: pulumi.Input[Optional[_builtins.str]] = None,
+                 deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Deployment Certificate resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -476,7 +476,7 @@ class DeploymentCertificate(pulumi.CustomResource):
             certificate_content=deployment_certificate_certificate_content,
             deployment_id=test_deployment["id"],
             key=deployment_certificate_key,
-            is_lock_override=deployment_certificate_is_lock_override)
+            is_lock_override=deployment_certificate_is_lock_override == "true")
         ```
 
         ## Import
@@ -523,7 +523,7 @@ class DeploymentCertificate(pulumi.CustomResource):
             certificate_content=deployment_certificate_certificate_content,
             deployment_id=test_deployment["id"],
             key=deployment_certificate_key,
-            is_lock_override=deployment_certificate_is_lock_override)
+            is_lock_override=deployment_certificate_is_lock_override == "true")
         ```
 
         ## Import
@@ -550,10 +550,10 @@ class DeploymentCertificate(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 certificate_content: Optional[pulumi.Input[_builtins.str]] = None,
-                 deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-                 key: Optional[pulumi.Input[_builtins.str]] = None,
+                 certificate_content: pulumi.Input[Optional[_builtins.str]] = None,
+                 deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -600,27 +600,27 @@ class DeploymentCertificate(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            authority_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            certificate_content: Optional[pulumi.Input[_builtins.str]] = None,
-            deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_ca: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_self_signed: Optional[pulumi.Input[_builtins.bool]] = None,
-            issuer: Optional[pulumi.Input[_builtins.str]] = None,
-            key: Optional[pulumi.Input[_builtins.str]] = None,
-            md5hash: Optional[pulumi.Input[_builtins.str]] = None,
-            public_key: Optional[pulumi.Input[_builtins.str]] = None,
-            public_key_algorithm: Optional[pulumi.Input[_builtins.str]] = None,
-            public_key_size: Optional[pulumi.Input[_builtins.str]] = None,
-            serial: Optional[pulumi.Input[_builtins.str]] = None,
-            sha1hash: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            subject: Optional[pulumi.Input[_builtins.str]] = None,
-            subject_key_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_valid_from: Optional[pulumi.Input[_builtins.str]] = None,
-            time_valid_to: Optional[pulumi.Input[_builtins.str]] = None,
-            version: Optional[pulumi.Input[_builtins.str]] = None) -> 'DeploymentCertificate':
+            authority_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            certificate_content: pulumi.Input[Optional[_builtins.str]] = None,
+            deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_ca: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_self_signed: pulumi.Input[Optional[_builtins.bool]] = None,
+            issuer: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            md5hash: pulumi.Input[Optional[_builtins.str]] = None,
+            public_key: pulumi.Input[Optional[_builtins.str]] = None,
+            public_key_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+            public_key_size: pulumi.Input[Optional[_builtins.str]] = None,
+            serial: pulumi.Input[Optional[_builtins.str]] = None,
+            sha1hash: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subject: pulumi.Input[Optional[_builtins.str]] = None,
+            subject_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_valid_from: pulumi.Input[Optional[_builtins.str]] = None,
+            time_valid_to: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> 'DeploymentCertificate':
         """
         Get an existing DeploymentCertificate resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

@@ -285,7 +285,7 @@ def get_dedicated_vm_host(dedicated_vm_host_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vm_host = oci.Core.get_dedicated_vm_host(dedicated_vm_host_id=test_dedicated_vm_host_oci_core_dedicated_vm_host["id"])
+    test_dedicated_vm_host = oci.core.get_dedicated_vm_host(dedicated_vm_host_id=test_dedicated_vm_host_oci_core_dedicated_vm_host["id"])
     ```
 
 
@@ -317,7 +317,7 @@ def get_dedicated_vm_host(dedicated_vm_host_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         total_memory_in_gbs=pulumi.get(__ret__, 'total_memory_in_gbs'),
         total_ocpus=pulumi.get(__ret__, 'total_ocpus'))
-def get_dedicated_vm_host_output(dedicated_vm_host_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_dedicated_vm_host_output(dedicated_vm_host_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDedicatedVmHostResult]:
     """
     This data source provides details about a specific Dedicated Vm Host resource in Oracle Cloud Infrastructure Core service.
@@ -330,7 +330,7 @@ def get_dedicated_vm_host_output(dedicated_vm_host_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vm_host = oci.Core.get_dedicated_vm_host(dedicated_vm_host_id=test_dedicated_vm_host_oci_core_dedicated_vm_host["id"])
+    test_dedicated_vm_host = oci.core.get_dedicated_vm_host(dedicated_vm_host_id=test_dedicated_vm_host_oci_core_dedicated_vm_host["id"])
     ```
 
 

@@ -153,11 +153,11 @@ def get_managed_kafka_kafka_clusters(compartment_id: Optional[_builtins.str] = N
         id=pulumi.get(__ret__, 'id'),
         kafka_cluster_collections=pulumi.get(__ret__, 'kafka_cluster_collections'),
         state=pulumi.get(__ret__, 'state'))
-def get_managed_kafka_kafka_clusters_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedKafkaKafkaClustersFilterArgs', 'GetManagedKafkaKafkaClustersFilterArgsDict']]]]] = None,
-                                            id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_managed_kafka_kafka_clusters_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetManagedKafkaKafkaClustersFilterArgs', 'GetManagedKafkaKafkaClustersFilterArgsDict']]]]] = None,
+                                            id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedKafkaKafkaClustersResult]:
     """
     This data source provides the list of Kafka Clusters in Oracle Cloud Infrastructure Managed Kafka service.

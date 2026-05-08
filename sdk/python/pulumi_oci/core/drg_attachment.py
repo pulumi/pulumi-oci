@@ -22,15 +22,15 @@ __all__ = ['DrgAttachmentArgs', 'DrgAttachment']
 class DrgAttachmentArgs:
     def __init__(__self__, *,
                  drg_id: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 drg_route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 export_drg_route_distribution_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 network_details: Optional[pulumi.Input['DrgAttachmentNetworkDetailsArgs']] = None,
-                 remove_export_drg_route_distribution_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcn_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 drg_route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 export_drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 network_details: pulumi.Input[Optional['DrgAttachmentNetworkDetailsArgs']] = None,
+                 remove_export_drg_route_distribution_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcn_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a DrgAttachment resource.
 
@@ -90,31 +90,31 @@ class DrgAttachmentArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="drgRouteTableId")
-    def drg_route_table_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def drg_route_table_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
 
@@ -123,12 +123,12 @@ class DrgAttachmentArgs:
         return pulumi.get(self, "drg_route_table_id")
 
     @drg_route_table_id.setter
-    def drg_route_table_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def drg_route_table_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "drg_route_table_id", value)
 
     @_builtins.property
     @pulumi.getter(name="exportDrgRouteDistributionId")
-    def export_drg_route_distribution_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def export_drg_route_distribution_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
         This field cannot be set by the user while creating the resource and gets a default value on creation. This can be only be updated to its default value. If this fields needs to be set to null, remove_export_drg_route_distribution_trigger needs to be used.
@@ -136,36 +136,36 @@ class DrgAttachmentArgs:
         return pulumi.get(self, "export_drg_route_distribution_id")
 
     @export_drg_route_distribution_id.setter
-    def export_drg_route_distribution_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def export_drg_route_distribution_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "export_drg_route_distribution_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="networkDetails")
-    def network_details(self) -> Optional[pulumi.Input['DrgAttachmentNetworkDetailsArgs']]:
+    def network_details(self) -> pulumi.Input[Optional['DrgAttachmentNetworkDetailsArgs']]:
         """
         (Updatable)
         """
         return pulumi.get(self, "network_details")
 
     @network_details.setter
-    def network_details(self, value: Optional[pulumi.Input['DrgAttachmentNetworkDetailsArgs']]):
+    def network_details(self, value: pulumi.Input[Optional['DrgAttachmentNetworkDetailsArgs']]):
         pulumi.set(self, "network_details", value)
 
     @_builtins.property
     @pulumi.getter(name="removeExportDrgRouteDistributionTrigger")
-    def remove_export_drg_route_distribution_trigger(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def remove_export_drg_route_distribution_trigger(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
 
@@ -175,12 +175,12 @@ class DrgAttachmentArgs:
         return pulumi.get(self, "remove_export_drg_route_distribution_trigger")
 
     @remove_export_drg_route_distribution_trigger.setter
-    def remove_export_drg_route_distribution_trigger(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def remove_export_drg_route_distribution_trigger(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "remove_export_drg_route_distribution_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="routeTableId")
-    def route_table_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def route_table_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the DRG attachment.
 
@@ -192,39 +192,39 @@ class DrgAttachmentArgs:
         return pulumi.get(self, "route_table_id")
 
     @route_table_id.setter
-    def route_table_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def route_table_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "route_table_id", value)
 
     @_builtins.property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vcn_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN. This field is deprecated. Instead, use the `networkDetails` field to specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
         """
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
-    def vcn_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vcn_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vcn_id", value)
 
 
 @pulumi.input_type
 class _DrgAttachmentState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 drg_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 drg_route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 export_drg_route_distribution_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 is_cross_tenancy: Optional[pulumi.Input[_builtins.bool]] = None,
-                 network_details: Optional[pulumi.Input['DrgAttachmentNetworkDetailsArgs']] = None,
-                 remove_export_drg_route_distribution_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcn_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 drg_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 drg_route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 export_drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_cross_tenancy: pulumi.Input[Optional[_builtins.bool]] = None,
+                 network_details: pulumi.Input[Optional['DrgAttachmentNetworkDetailsArgs']] = None,
+                 remove_export_drg_route_distribution_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcn_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DrgAttachment resources.
 
@@ -285,55 +285,55 @@ class _DrgAttachmentState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the DRG attachment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="drgId")
-    def drg_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def drg_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
         """
         return pulumi.get(self, "drg_id")
 
     @drg_id.setter
-    def drg_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def drg_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "drg_id", value)
 
     @_builtins.property
     @pulumi.getter(name="drgRouteTableId")
-    def drg_route_table_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def drg_route_table_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table that is assigned to this attachment.
 
@@ -342,12 +342,12 @@ class _DrgAttachmentState:
         return pulumi.get(self, "drg_route_table_id")
 
     @drg_route_table_id.setter
-    def drg_route_table_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def drg_route_table_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "drg_route_table_id", value)
 
     @_builtins.property
     @pulumi.getter(name="exportDrgRouteDistributionId")
-    def export_drg_route_distribution_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def export_drg_route_distribution_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
         This field cannot be set by the user while creating the resource and gets a default value on creation. This can be only be updated to its default value. If this fields needs to be set to null, remove_export_drg_route_distribution_trigger needs to be used.
@@ -355,48 +355,48 @@ class _DrgAttachmentState:
         return pulumi.get(self, "export_drg_route_distribution_id")
 
     @export_drg_route_distribution_id.setter
-    def export_drg_route_distribution_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def export_drg_route_distribution_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "export_drg_route_distribution_id", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isCrossTenancy")
-    def is_cross_tenancy(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_cross_tenancy(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
         """
         return pulumi.get(self, "is_cross_tenancy")
 
     @is_cross_tenancy.setter
-    def is_cross_tenancy(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_cross_tenancy(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_cross_tenancy", value)
 
     @_builtins.property
     @pulumi.getter(name="networkDetails")
-    def network_details(self) -> Optional[pulumi.Input['DrgAttachmentNetworkDetailsArgs']]:
+    def network_details(self) -> pulumi.Input[Optional['DrgAttachmentNetworkDetailsArgs']]:
         """
         (Updatable)
         """
         return pulumi.get(self, "network_details")
 
     @network_details.setter
-    def network_details(self, value: Optional[pulumi.Input['DrgAttachmentNetworkDetailsArgs']]):
+    def network_details(self, value: pulumi.Input[Optional['DrgAttachmentNetworkDetailsArgs']]):
         pulumi.set(self, "network_details", value)
 
     @_builtins.property
     @pulumi.getter(name="removeExportDrgRouteDistributionTrigger")
-    def remove_export_drg_route_distribution_trigger(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def remove_export_drg_route_distribution_trigger(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
 
@@ -406,12 +406,12 @@ class _DrgAttachmentState:
         return pulumi.get(self, "remove_export_drg_route_distribution_trigger")
 
     @remove_export_drg_route_distribution_trigger.setter
-    def remove_export_drg_route_distribution_trigger(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def remove_export_drg_route_distribution_trigger(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "remove_export_drg_route_distribution_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="routeTableId")
-    def route_table_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def route_table_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table used by the DRG attachment.
 
@@ -423,43 +423,43 @@ class _DrgAttachmentState:
         return pulumi.get(self, "route_table_id")
 
     @route_table_id.setter
-    def route_table_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def route_table_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "route_table_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The DRG attachment's current state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time the DRG attachment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="vcnId")
-    def vcn_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def vcn_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN. This field is deprecated. Instead, use the `networkDetails` field to specify the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached resource.
         """
         return pulumi.get(self, "vcn_id")
 
     @vcn_id.setter
-    def vcn_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def vcn_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vcn_id", value)
 
 
@@ -469,16 +469,16 @@ class DrgAttachment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 drg_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 drg_route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 export_drg_route_distribution_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 network_details: Optional[pulumi.Input[Union['DrgAttachmentNetworkDetailsArgs', 'DrgAttachmentNetworkDetailsArgsDict']]] = None,
-                 remove_export_drg_route_distribution_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 drg_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 drg_route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 export_drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 network_details: pulumi.Input[Optional[Union['DrgAttachmentNetworkDetailsArgs', 'DrgAttachmentNetworkDetailsArgsDict']]] = None,
+                 remove_export_drg_route_distribution_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Drg Attachment resource in Oracle Cloud Infrastructure Core service.
@@ -579,16 +579,16 @@ class DrgAttachment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 drg_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 drg_route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 export_drg_route_distribution_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 network_details: Optional[pulumi.Input[Union['DrgAttachmentNetworkDetailsArgs', 'DrgAttachmentNetworkDetailsArgsDict']]] = None,
-                 remove_export_drg_route_distribution_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-                 route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 vcn_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 drg_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 drg_route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 export_drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 network_details: pulumi.Input[Optional[Union['DrgAttachmentNetworkDetailsArgs', 'DrgAttachmentNetworkDetailsArgsDict']]] = None,
+                 remove_export_drg_route_distribution_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+                 route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -624,20 +624,20 @@ class DrgAttachment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            drg_id: Optional[pulumi.Input[_builtins.str]] = None,
-            drg_route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-            export_drg_route_distribution_id: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            is_cross_tenancy: Optional[pulumi.Input[_builtins.bool]] = None,
-            network_details: Optional[pulumi.Input[Union['DrgAttachmentNetworkDetailsArgs', 'DrgAttachmentNetworkDetailsArgsDict']]] = None,
-            remove_export_drg_route_distribution_trigger: Optional[pulumi.Input[_builtins.bool]] = None,
-            route_table_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            vcn_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'DrgAttachment':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            drg_id: pulumi.Input[Optional[_builtins.str]] = None,
+            drg_route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+            export_drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_cross_tenancy: pulumi.Input[Optional[_builtins.bool]] = None,
+            network_details: pulumi.Input[Optional[Union['DrgAttachmentNetworkDetailsArgs', 'DrgAttachmentNetworkDetailsArgsDict']]] = None,
+            remove_export_drg_route_distribution_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+            route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            vcn_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'DrgAttachment':
         """
         Get an existing DrgAttachment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

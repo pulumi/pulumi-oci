@@ -119,7 +119,7 @@ def get_bucket_summaries(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_buckets = oci.ObjectStorage.get_bucket_summaries(compartment_id=compartment_id,
+    test_buckets = oci.objectstorage.get_bucket_summaries(compartment_id=compartment_id,
         namespace=bucket_namespace)
     ```
 
@@ -140,9 +140,9 @@ def get_bucket_summaries(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         namespace=pulumi.get(__ret__, 'namespace'))
-def get_bucket_summaries_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetBucketSummariesFilterArgs', 'GetBucketSummariesFilterArgsDict']]]]] = None,
-                                namespace: Optional[pulumi.Input[_builtins.str]] = None,
+def get_bucket_summaries_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBucketSummariesFilterArgs', 'GetBucketSummariesFilterArgsDict']]]]] = None,
+                                namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetBucketSummariesResult]:
     """
     This data source provides the list of Buckets in Oracle Cloud Infrastructure Object Storage service.
@@ -163,7 +163,7 @@ def get_bucket_summaries_output(compartment_id: Optional[pulumi.Input[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_buckets = oci.ObjectStorage.get_bucket_summaries(compartment_id=compartment_id,
+    test_buckets = oci.objectstorage.get_bucket_summaries(compartment_id=compartment_id,
         namespace=bucket_namespace)
     ```
 

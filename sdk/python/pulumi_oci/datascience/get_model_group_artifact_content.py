@@ -81,7 +81,7 @@ def get_model_group_artifact_content(model_group_id: Optional[_builtins.str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_model_group_artifact_content = oci.DataScience.get_model_group_artifact_content(model_group_id=test_model_group["id"],
+    test_model_group_artifact_content = oci.datascience.get_model_group_artifact_content(model_group_id=test_model_group["id"],
         range=model_group_artifact_content_range)
     ```
 
@@ -99,8 +99,8 @@ def get_model_group_artifact_content(model_group_id: Optional[_builtins.str] = N
         id=pulumi.get(__ret__, 'id'),
         model_group_id=pulumi.get(__ret__, 'model_group_id'),
         range=pulumi.get(__ret__, 'range'))
-def get_model_group_artifact_content_output(model_group_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                            range: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_model_group_artifact_content_output(model_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                            range: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetModelGroupArtifactContentResult]:
     """
     This data source provides details about a specific Model Group Artifact Content resource in Oracle Cloud Infrastructure Data Science service.
@@ -113,7 +113,7 @@ def get_model_group_artifact_content_output(model_group_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_model_group_artifact_content = oci.DataScience.get_model_group_artifact_content(model_group_id=test_model_group["id"],
+    test_model_group_artifact_content = oci.datascience.get_model_group_artifact_content(model_group_id=test_model_group["id"],
         range=model_group_artifact_content_range)
     ```
 

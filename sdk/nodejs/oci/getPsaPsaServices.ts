@@ -101,10 +101,10 @@ export interface GetPsaPsaServicesOutputArgs {
     /**
      * A filter to return only resources that match the given display name exactly.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetPsaPsaServicesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.oci.GetPsaPsaServicesFilterArgs>[] | undefined>;
     /**
      * The unique identifier of the Oracle Cloud Infrastructure service.
      */
-    serviceId?: pulumi.Input<string>;
+    serviceId?: pulumi.Input<string | undefined>;
 }

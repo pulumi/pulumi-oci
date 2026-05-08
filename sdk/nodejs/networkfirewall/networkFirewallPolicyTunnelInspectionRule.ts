@@ -35,7 +35,7 @@ import * as utilities from "../utilities";
  *         beforeRule: networkFirewallPolicyTunnelInspectionRulePositionBeforeRule,
  *     },
  *     profile: {
- *         mustReturnTrafficToSource: networkFirewallPolicyTunnelInspectionRuleProfileMustReturnTrafficToSource,
+ *         mustReturnTrafficToSource: networkFirewallPolicyTunnelInspectionRuleProfileMustReturnTrafficToSource === "true",
  *     },
  * });
  * ```
@@ -183,39 +183,39 @@ export interface NetworkFirewallPolicyTunnelInspectionRuleState {
      * * INSPECT - Inspect the traffic.
      * * INSPECT_AND_CAPTURE_LOG - Inspect and capture logs for the traffic.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Criteria to evaluate against incoming network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
      */
-    condition?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyTunnelInspectionRuleCondition>;
+    condition?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyTunnelInspectionRuleCondition | undefined>;
     /**
      * (Updatable) The description of the tunnel inspect rule. This field can be used to add additional info.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Name for the Tunnel Inspection Rule, must be unique within the policy.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */
-    networkFirewallPolicyId?: pulumi.Input<string>;
+    networkFirewallPolicyId?: pulumi.Input<string | undefined>;
     /**
      * OCID of the Network Firewall Policy this Tunnel Inspection Rule belongs to.
      */
-    parentResourceId?: pulumi.Input<string>;
+    parentResourceId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An object which defines the position of the rule.
      */
-    position?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyTunnelInspectionRulePosition>;
+    position?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyTunnelInspectionRulePosition | undefined>;
     /**
      * The priority order in which this rule should be evaluated
      */
-    priorityOrder?: pulumi.Input<string>;
+    priorityOrder?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Vxlan Inspect profile used in Vxlan Tunnel Inspection Rules.
      */
-    profile?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyTunnelInspectionRuleProfile>;
+    profile?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyTunnelInspectionRuleProfile | undefined>;
     /**
      * (Updatable) Types of Tunnel Inspection Protocol to be applied on the traffic.
      * * VXLAN - VXLAN Tunnel Inspection Protocol will be applied on the traffic.
@@ -224,7 +224,7 @@ export interface NetworkFirewallPolicyTunnelInspectionRuleState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    protocol?: pulumi.Input<string>;
+    protocol?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -236,7 +236,7 @@ export interface NetworkFirewallPolicyTunnelInspectionRuleArgs {
      * * INSPECT - Inspect the traffic.
      * * INSPECT_AND_CAPTURE_LOG - Inspect and capture logs for the traffic.
      */
-    action?: pulumi.Input<string>;
+    action?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Criteria to evaluate against incoming network traffic. A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
      */
@@ -244,11 +244,11 @@ export interface NetworkFirewallPolicyTunnelInspectionRuleArgs {
     /**
      * (Updatable) The description of the tunnel inspect rule. This field can be used to add additional info.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * Name for the Tunnel Inspection Rule, must be unique within the policy.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */
@@ -256,11 +256,11 @@ export interface NetworkFirewallPolicyTunnelInspectionRuleArgs {
     /**
      * (Updatable) An object which defines the position of the rule.
      */
-    position?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyTunnelInspectionRulePosition>;
+    position?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyTunnelInspectionRulePosition | undefined>;
     /**
      * (Updatable) Vxlan Inspect profile used in Vxlan Tunnel Inspection Rules.
      */
-    profile?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyTunnelInspectionRuleProfile>;
+    profile?: pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyTunnelInspectionRuleProfile | undefined>;
     /**
      * (Updatable) Types of Tunnel Inspection Protocol to be applied on the traffic.
      * * VXLAN - VXLAN Tunnel Inspection Protocol will be applied on the traffic.

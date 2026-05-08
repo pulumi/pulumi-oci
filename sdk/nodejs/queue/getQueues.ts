@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testQueues = oci.Queue.getQueues({
+ * const testQueues = oci.queue.getQueues({
  *     compartmentId: compartmentId,
  *     displayName: queueDisplayName,
  *     id: queueId,
@@ -97,7 +97,7 @@ export interface GetQueuesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testQueues = oci.Queue.getQueues({
+ * const testQueues = oci.queue.getQueues({
  *     compartmentId: compartmentId,
  *     displayName: queueDisplayName,
  *     id: queueId,
@@ -124,18 +124,18 @@ export interface GetQueuesOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Queue.GetQueuesFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Queue.GetQueuesFilterArgs>[] | undefined>;
     /**
      * The unique queue identifier.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources their lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

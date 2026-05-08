@@ -144,7 +144,7 @@ def get_publications(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_publications = oci.Marketplace.get_publications(compartment_id=compartment_id,
+    test_publications = oci.marketplace.get_publications(compartment_id=compartment_id,
         listing_type=publication_listing_type,
         names=publication_name,
         operating_systems=publication_operating_systems,
@@ -177,12 +177,12 @@ def get_publications(compartment_id: Optional[_builtins.str] = None,
         operating_systems=pulumi.get(__ret__, 'operating_systems'),
         publication_id=pulumi.get(__ret__, 'publication_id'),
         publications=pulumi.get(__ret__, 'publications'))
-def get_publications_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPublicationsFilterArgs', 'GetPublicationsFilterArgsDict']]]]] = None,
-                            listing_type: Optional[pulumi.Input[_builtins.str]] = None,
-                            names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                            operating_systems: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                            publication_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_publications_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetPublicationsFilterArgs', 'GetPublicationsFilterArgsDict']]]]] = None,
+                            listing_type: pulumi.Input[Optional[_builtins.str]] = None,
+                            names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                            operating_systems: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                            publication_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPublicationsResult]:
     """
     This data source provides the list of Publications in Oracle Cloud Infrastructure Marketplace service.
@@ -195,7 +195,7 @@ def get_publications_output(compartment_id: Optional[pulumi.Input[_builtins.str]
     import pulumi
     import pulumi_oci as oci
 
-    test_publications = oci.Marketplace.get_publications(compartment_id=compartment_id,
+    test_publications = oci.marketplace.get_publications(compartment_id=compartment_id,
         listing_type=publication_listing_type,
         names=publication_name,
         operating_systems=publication_operating_systems,

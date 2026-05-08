@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOnboardings = oci.FleetAppsManagement.getOnboardings({
+ * const testOnboardings = oci.fleetappsmanagement.getOnboardings({
  *     compartmentId: compartmentId,
  *     id: onboardingId,
  *     state: onboardingState,
@@ -89,7 +89,7 @@ export interface GetOnboardingsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOnboardings = oci.FleetAppsManagement.getOnboardings({
+ * const testOnboardings = oci.fleetappsmanagement.getOnboardings({
  *     compartmentId: compartmentId,
  *     id: onboardingId,
  *     state: onboardingState,
@@ -114,14 +114,14 @@ export interface GetOnboardingsOutputArgs {
     /**
      * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
-    compartmentId?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetOnboardingsFilterArgs>[]>;
+    compartmentId?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetOnboardingsFilterArgs>[] | undefined>;
     /**
      * Unique identifier or OCID for listing a single onboarding by id. Either compartmentId or id must be provided.
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose lifecycleState matches the given lifecycleState.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

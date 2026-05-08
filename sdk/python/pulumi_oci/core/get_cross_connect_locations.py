@@ -96,7 +96,7 @@ def get_cross_connect_locations(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connect_locations = oci.Core.get_cross_connect_locations(compartment_id=compartment_id)
+    test_cross_connect_locations = oci.core.get_cross_connect_locations(compartment_id=compartment_id)
     ```
 
 
@@ -113,8 +113,8 @@ def get_cross_connect_locations(compartment_id: Optional[_builtins.str] = None,
         cross_connect_locations=pulumi.get(__ret__, 'cross_connect_locations'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'))
-def get_cross_connect_locations_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCrossConnectLocationsFilterArgs', 'GetCrossConnectLocationsFilterArgsDict']]]]] = None,
+def get_cross_connect_locations_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCrossConnectLocationsFilterArgs', 'GetCrossConnectLocationsFilterArgsDict']]]]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCrossConnectLocationsResult]:
     """
     This data source provides the list of Cross Connect Locations in Oracle Cloud Infrastructure Core service.
@@ -128,7 +128,7 @@ def get_cross_connect_locations_output(compartment_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connect_locations = oci.Core.get_cross_connect_locations(compartment_id=compartment_id)
+    test_cross_connect_locations = oci.core.get_cross_connect_locations(compartment_id=compartment_id)
     ```
 
 

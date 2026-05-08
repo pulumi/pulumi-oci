@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVirtualCircuitPublicPrefixes = oci.Core.getVirtualCircuitPublicPrefixes({
+ * const testVirtualCircuitPublicPrefixes = oci.core.getVirtualCircuitPublicPrefixes({
  *     virtualCircuitId: testVirtualCircuit.id,
  *     verificationState: virtualCircuitPublicPrefixVerificationState,
  * });
@@ -81,7 +81,7 @@ export interface GetVirtualCircuitPublicPrefixesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVirtualCircuitPublicPrefixes = oci.Core.getVirtualCircuitPublicPrefixes({
+ * const testVirtualCircuitPublicPrefixes = oci.core.getVirtualCircuitPublicPrefixes({
  *     virtualCircuitId: testVirtualCircuit.id,
  *     verificationState: virtualCircuitPublicPrefixVerificationState,
  * });
@@ -100,13 +100,13 @@ export function getVirtualCircuitPublicPrefixesOutput(args: GetVirtualCircuitPub
  * A collection of arguments for invoking getVirtualCircuitPublicPrefixes.
  */
 export interface GetVirtualCircuitPublicPrefixesOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVirtualCircuitPublicPrefixesFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Core.GetVirtualCircuitPublicPrefixesFilterArgs>[] | undefined>;
     /**
      * A filter to only return resources that match the given verification state.
      *
      * The state value is case-insensitive.
      */
-    verificationState?: pulumi.Input<string>;
+    verificationState?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
      */

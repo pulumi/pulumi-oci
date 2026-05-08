@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUsagePlan = oci.ApiGateway.getUsagePlan({
+ * const testUsagePlan = oci.apigateway.getUsagePlan({
  *     usagePlanId: testUsagePlanOciApigatewayUsagePlan.id,
  * });
  * ```
@@ -105,7 +105,7 @@ export interface GetUsagePlanResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUsagePlan = oci.ApiGateway.getUsagePlan({
+ * const testUsagePlan = oci.apigateway.getUsagePlan({
  *     usagePlanId: testUsagePlanOciApigatewayUsagePlan.id,
  * });
  * ```

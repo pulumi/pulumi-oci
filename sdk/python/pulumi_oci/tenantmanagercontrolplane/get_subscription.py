@@ -372,7 +372,7 @@ def get_subscription(subscription_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription = oci.Tenantmanagercontrolplane.get_subscription(subscription_id=test_subscription_oci_tenantmanagercontrolplane_subscription["id"])
+    test_subscription = oci.tenantmanagercontrolplane.get_subscription(subscription_id=test_subscription_oci_tenantmanagercontrolplane_subscription["id"])
     ```
 
 
@@ -411,7 +411,7 @@ def get_subscription(subscription_id: Optional[_builtins.str] = None,
         subscription_tier=pulumi.get(__ret__, 'subscription_tier'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_subscription_output(subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_subscription_output(subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSubscriptionResult]:
     """
     This data source provides details about a specific Subscription resource in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
@@ -424,7 +424,7 @@ def get_subscription_output(subscription_id: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription = oci.Tenantmanagercontrolplane.get_subscription(subscription_id=test_subscription_oci_tenantmanagercontrolplane_subscription["id"])
+    test_subscription = oci.tenantmanagercontrolplane.get_subscription(subscription_id=test_subscription_oci_tenantmanagercontrolplane_subscription["id"])
     ```
 
 

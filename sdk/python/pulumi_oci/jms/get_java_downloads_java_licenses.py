@@ -111,7 +111,7 @@ def get_java_downloads_java_licenses(display_name: Optional[_builtins.str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_java_licenses = oci.Jms.get_java_downloads_java_licenses(display_name=java_license_display_name,
+    test_java_licenses = oci.jms.get_java_downloads_java_licenses(display_name=java_license_display_name,
         license_type=java_license_license_type)
     ```
 
@@ -132,9 +132,9 @@ def get_java_downloads_java_licenses(display_name: Optional[_builtins.str] = Non
         id=pulumi.get(__ret__, 'id'),
         java_license_collections=pulumi.get(__ret__, 'java_license_collections'),
         license_type=pulumi.get(__ret__, 'license_type'))
-def get_java_downloads_java_licenses_output(display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetJavaDownloadsJavaLicensesFilterArgs', 'GetJavaDownloadsJavaLicensesFilterArgsDict']]]]] = None,
-                                            license_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_java_downloads_java_licenses_output(display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetJavaDownloadsJavaLicensesFilterArgs', 'GetJavaDownloadsJavaLicensesFilterArgsDict']]]]] = None,
+                                            license_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetJavaDownloadsJavaLicensesResult]:
     """
     This data source provides the list of Java Licenses in Oracle Cloud Infrastructure Jms Java Downloads service.
@@ -147,7 +147,7 @@ def get_java_downloads_java_licenses_output(display_name: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_java_licenses = oci.Jms.get_java_downloads_java_licenses(display_name=java_license_display_name,
+    test_java_licenses = oci.jms.get_java_downloads_java_licenses(display_name=java_license_display_name,
         license_type=java_license_license_type)
     ```
 

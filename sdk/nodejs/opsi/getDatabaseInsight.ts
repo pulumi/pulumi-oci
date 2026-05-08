@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseInsight = oci.Opsi.getDatabaseInsight({
+ * const testDatabaseInsight = oci.opsi.getDatabaseInsight({
  *     databaseInsightId: testDatabaseInsightOciOpsiDatabaseInsight.id,
  * });
  * ```
@@ -211,7 +211,7 @@ export interface GetDatabaseInsightResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatabaseInsight = oci.Opsi.getDatabaseInsight({
+ * const testDatabaseInsight = oci.opsi.getDatabaseInsight({
  *     databaseInsightId: testDatabaseInsightOciOpsiDatabaseInsight.id,
  * });
  * ```

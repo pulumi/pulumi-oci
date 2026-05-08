@@ -26,9 +26,9 @@ class UnifiedAgentConfigurationArgs:
                  display_name: pulumi.Input[_builtins.str],
                  is_enabled: pulumi.Input[_builtins.bool],
                  service_configuration: pulumi.Input['UnifiedAgentConfigurationServiceConfigurationArgs'],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 group_association: Optional[pulumi.Input['UnifiedAgentConfigurationGroupAssociationArgs']] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 group_association: pulumi.Input[Optional['UnifiedAgentConfigurationGroupAssociationArgs']] = None):
         """
         The set of arguments for constructing a UnifiedAgentConfiguration resource.
 
@@ -115,56 +115,56 @@ class UnifiedAgentConfigurationArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="groupAssociation")
-    def group_association(self) -> Optional[pulumi.Input['UnifiedAgentConfigurationGroupAssociationArgs']]:
+    def group_association(self) -> pulumi.Input[Optional['UnifiedAgentConfigurationGroupAssociationArgs']]:
         """
         (Updatable) Groups using the configuration.
         """
         return pulumi.get(self, "group_association")
 
     @group_association.setter
-    def group_association(self, value: Optional[pulumi.Input['UnifiedAgentConfigurationGroupAssociationArgs']]):
+    def group_association(self, value: pulumi.Input[Optional['UnifiedAgentConfigurationGroupAssociationArgs']]):
         pulumi.set(self, "group_association", value)
 
 
 @pulumi.input_type
 class _UnifiedAgentConfigurationState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 configuration_state: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 group_association: Optional[pulumi.Input['UnifiedAgentConfigurationGroupAssociationArgs']] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 service_configuration: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_last_modified: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configuration_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 group_association: pulumi.Input[Optional['UnifiedAgentConfigurationGroupAssociationArgs']] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 service_configuration: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_last_modified: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UnifiedAgentConfiguration resources.
 
@@ -208,146 +208,146 @@ class _UnifiedAgentConfigurationState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The OCID of the compartment that the resource belongs to.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="configurationState")
-    def configuration_state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def configuration_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         State of unified agent service configuration.
         """
         return pulumi.get(self, "configuration_state")
 
     @configuration_state.setter
-    def configuration_state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def configuration_state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "configuration_state", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Description for this resource.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="groupAssociation")
-    def group_association(self) -> Optional[pulumi.Input['UnifiedAgentConfigurationGroupAssociationArgs']]:
+    def group_association(self) -> pulumi.Input[Optional['UnifiedAgentConfigurationGroupAssociationArgs']]:
         """
         (Updatable) Groups using the configuration.
         """
         return pulumi.get(self, "group_association")
 
     @group_association.setter
-    def group_association(self, value: Optional[pulumi.Input['UnifiedAgentConfigurationGroupAssociationArgs']]):
+    def group_association(self, value: pulumi.Input[Optional['UnifiedAgentConfigurationGroupAssociationArgs']]):
         pulumi.set(self, "group_association", value)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether or not this resource is currently enabled.
         """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
-    def is_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceConfiguration")
-    def service_configuration(self) -> Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationArgs']]:
+    def service_configuration(self) -> pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationArgs']]:
         """
         (Updatable) Top level Unified Agent service configuration object.
         """
         return pulumi.get(self, "service_configuration")
 
     @service_configuration.setter
-    def service_configuration(self, value: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationArgs']]):
+    def service_configuration(self, value: pulumi.Input[Optional['UnifiedAgentConfigurationServiceConfigurationArgs']]):
         pulumi.set(self, "service_configuration", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The pipeline state.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time the resource was created.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeLastModified")
-    def time_last_modified(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_last_modified(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time the resource was last modified.
         """
         return pulumi.get(self, "time_last_modified")
 
     @time_last_modified.setter
-    def time_last_modified(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_last_modified(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_modified", value)
 
 
@@ -357,14 +357,14 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 group_association: Optional[pulumi.Input[Union['UnifiedAgentConfigurationGroupAssociationArgs', 'UnifiedAgentConfigurationGroupAssociationArgsDict']]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 service_configuration: Optional[pulumi.Input[Union['UnifiedAgentConfigurationServiceConfigurationArgs', 'UnifiedAgentConfigurationServiceConfigurationArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 group_association: pulumi.Input[Optional[Union['UnifiedAgentConfigurationGroupAssociationArgs', 'UnifiedAgentConfigurationGroupAssociationArgsDict']]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 service_configuration: pulumi.Input[Optional[Union['UnifiedAgentConfigurationServiceConfigurationArgs', 'UnifiedAgentConfigurationServiceConfigurationArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Unified Agent Configuration resource in Oracle Cloud Infrastructure Logging service.
@@ -432,14 +432,14 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 group_association: Optional[pulumi.Input[Union['UnifiedAgentConfigurationGroupAssociationArgs', 'UnifiedAgentConfigurationGroupAssociationArgsDict']]] = None,
-                 is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 service_configuration: Optional[pulumi.Input[Union['UnifiedAgentConfigurationServiceConfigurationArgs', 'UnifiedAgentConfigurationServiceConfigurationArgsDict']]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 group_association: pulumi.Input[Optional[Union['UnifiedAgentConfigurationGroupAssociationArgs', 'UnifiedAgentConfigurationGroupAssociationArgsDict']]] = None,
+                 is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 service_configuration: pulumi.Input[Optional[Union['UnifiedAgentConfigurationServiceConfigurationArgs', 'UnifiedAgentConfigurationServiceConfigurationArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -481,18 +481,18 @@ class UnifiedAgentConfiguration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            configuration_state: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            group_association: Optional[pulumi.Input[Union['UnifiedAgentConfigurationGroupAssociationArgs', 'UnifiedAgentConfigurationGroupAssociationArgsDict']]] = None,
-            is_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-            service_configuration: Optional[pulumi.Input[Union['UnifiedAgentConfigurationServiceConfigurationArgs', 'UnifiedAgentConfigurationServiceConfigurationArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_last_modified: Optional[pulumi.Input[_builtins.str]] = None) -> 'UnifiedAgentConfiguration':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            configuration_state: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            group_association: pulumi.Input[Optional[Union['UnifiedAgentConfigurationGroupAssociationArgs', 'UnifiedAgentConfigurationGroupAssociationArgsDict']]] = None,
+            is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            service_configuration: pulumi.Input[Optional[Union['UnifiedAgentConfigurationServiceConfigurationArgs', 'UnifiedAgentConfigurationServiceConfigurationArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_modified: pulumi.Input[Optional[_builtins.str]] = None) -> 'UnifiedAgentConfiguration':
         """
         Get an existing UnifiedAgentConfiguration resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

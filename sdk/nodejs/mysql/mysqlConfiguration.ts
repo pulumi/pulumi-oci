@@ -40,124 +40,124 @@ import * as utilities from "../utilities";
  *     }],
  *     parentConfigurationId: testConfiguration.id,
  *     variables: {
- *         autoIncrementIncrement: mysqlConfigurationVariablesAutoIncrementIncrement,
- *         autoIncrementOffset: mysqlConfigurationVariablesAutoIncrementOffset,
- *         autocommit: mysqlConfigurationVariablesAutocommit,
- *         bigTables: mysqlConfigurationVariablesBigTables,
- *         binlogExpireLogsSeconds: mysqlConfigurationVariablesBinlogExpireLogsSeconds,
- *         binlogGroupCommitSyncDelay: mysqlConfigurationVariablesBinlogGroupCommitSyncDelay,
- *         binlogGroupCommitSyncNoDelayCount: mysqlConfigurationVariablesBinlogGroupCommitSyncNoDelayCount,
+ *         autoIncrementIncrement: Number(mysqlConfigurationVariablesAutoIncrementIncrement),
+ *         autoIncrementOffset: Number(mysqlConfigurationVariablesAutoIncrementOffset),
+ *         autocommit: mysqlConfigurationVariablesAutocommit === "true",
+ *         bigTables: mysqlConfigurationVariablesBigTables === "true",
+ *         binlogExpireLogsSeconds: Number(mysqlConfigurationVariablesBinlogExpireLogsSeconds),
+ *         binlogGroupCommitSyncDelay: Number(mysqlConfigurationVariablesBinlogGroupCommitSyncDelay),
+ *         binlogGroupCommitSyncNoDelayCount: Number(mysqlConfigurationVariablesBinlogGroupCommitSyncNoDelayCount),
  *         binlogRowMetadata: mysqlConfigurationVariablesBinlogRowMetadata,
  *         binlogRowValueOptions: mysqlConfigurationVariablesBinlogRowValueOptions,
- *         binlogTransactionCompression: mysqlConfigurationVariablesBinlogTransactionCompression,
+ *         binlogTransactionCompression: mysqlConfigurationVariablesBinlogTransactionCompression === "true",
  *         blockEncryptionMode: mysqlConfigurationVariablesBlockEncryptionMode,
  *         characterSetServer: mysqlConfigurationVariablesCharacterSetServer,
  *         collationServer: mysqlConfigurationVariablesCollationServer,
  *         completionType: mysqlConfigurationVariablesCompletionType,
- *         connectTimeout: mysqlConfigurationVariablesConnectTimeout,
- *         connectionMemoryChunkSize: mysqlConfigurationVariablesConnectionMemoryChunkSize,
+ *         connectTimeout: Number(mysqlConfigurationVariablesConnectTimeout),
+ *         connectionMemoryChunkSize: Number(mysqlConfigurationVariablesConnectionMemoryChunkSize),
  *         connectionMemoryLimit: mysqlConfigurationVariablesConnectionMemoryLimit,
  *         cteMaxRecursionDepth: mysqlConfigurationVariablesCteMaxRecursionDepth,
  *         defaultAuthenticationPlugin: mysqlConfigurationVariablesDefaultAuthenticationPlugin,
  *         explainFormat: mysqlConfigurationVariablesExplainFormat,
- *         explicitDefaultsForTimestamp: mysqlConfigurationVariablesExplicitDefaultsForTimestamp,
- *         foreignKeyChecks: mysqlConfigurationVariablesForeignKeyChecks,
- *         generatedRandomPasswordLength: mysqlConfigurationVariablesGeneratedRandomPasswordLength,
+ *         explicitDefaultsForTimestamp: mysqlConfigurationVariablesExplicitDefaultsForTimestamp === "true",
+ *         foreignKeyChecks: mysqlConfigurationVariablesForeignKeyChecks === "true",
+ *         generatedRandomPasswordLength: Number(mysqlConfigurationVariablesGeneratedRandomPasswordLength),
  *         globalConnectionMemoryLimit: mysqlConfigurationVariablesGlobalConnectionMemoryLimit,
- *         globalConnectionMemoryTracking: mysqlConfigurationVariablesGlobalConnectionMemoryTracking,
+ *         globalConnectionMemoryTracking: mysqlConfigurationVariablesGlobalConnectionMemoryTracking === "true",
  *         groupConcatMaxLen: mysqlConfigurationVariablesGroupConcatMaxLen,
  *         groupReplicationConsistency: mysqlConfigurationVariablesGroupReplicationConsistency,
- *         informationSchemaStatsExpiry: mysqlConfigurationVariablesInformationSchemaStatsExpiry,
- *         innodbAdaptiveHashIndex: mysqlConfigurationVariablesInnodbAdaptiveHashIndex,
- *         innodbAutoincLockMode: mysqlConfigurationVariablesInnodbAutoincLockMode,
- *         innodbBufferPoolDumpPct: mysqlConfigurationVariablesInnodbBufferPoolDumpPct,
- *         innodbBufferPoolInstances: mysqlConfigurationVariablesInnodbBufferPoolInstances,
+ *         informationSchemaStatsExpiry: Number(mysqlConfigurationVariablesInformationSchemaStatsExpiry),
+ *         innodbAdaptiveHashIndex: mysqlConfigurationVariablesInnodbAdaptiveHashIndex === "true",
+ *         innodbAutoincLockMode: Number(mysqlConfigurationVariablesInnodbAutoincLockMode),
+ *         innodbBufferPoolDumpPct: Number(mysqlConfigurationVariablesInnodbBufferPoolDumpPct),
+ *         innodbBufferPoolInstances: Number(mysqlConfigurationVariablesInnodbBufferPoolInstances),
  *         innodbBufferPoolSize: mysqlConfigurationVariablesInnodbBufferPoolSize,
  *         innodbChangeBuffering: mysqlConfigurationVariablesInnodbChangeBuffering,
  *         innodbDdlBufferSize: mysqlConfigurationVariablesInnodbDdlBufferSize,
- *         innodbDdlThreads: mysqlConfigurationVariablesInnodbDdlThreads,
- *         innodbFtEnableStopword: mysqlConfigurationVariablesInnodbFtEnableStopword,
- *         innodbFtMaxTokenSize: mysqlConfigurationVariablesInnodbFtMaxTokenSize,
- *         innodbFtMinTokenSize: mysqlConfigurationVariablesInnodbFtMinTokenSize,
- *         innodbFtNumWordOptimize: mysqlConfigurationVariablesInnodbFtNumWordOptimize,
+ *         innodbDdlThreads: Number(mysqlConfigurationVariablesInnodbDdlThreads),
+ *         innodbFtEnableStopword: mysqlConfigurationVariablesInnodbFtEnableStopword === "true",
+ *         innodbFtMaxTokenSize: Number(mysqlConfigurationVariablesInnodbFtMaxTokenSize),
+ *         innodbFtMinTokenSize: Number(mysqlConfigurationVariablesInnodbFtMinTokenSize),
+ *         innodbFtNumWordOptimize: Number(mysqlConfigurationVariablesInnodbFtNumWordOptimize),
  *         innodbFtResultCacheLimit: mysqlConfigurationVariablesInnodbFtResultCacheLimit,
  *         innodbFtServerStopwordTable: mysqlConfigurationVariablesInnodbFtServerStopwordTable,
- *         innodbLockWaitTimeout: mysqlConfigurationVariablesInnodbLockWaitTimeout,
- *         innodbLogWriterThreads: mysqlConfigurationVariablesInnodbLogWriterThreads,
+ *         innodbLockWaitTimeout: Number(mysqlConfigurationVariablesInnodbLockWaitTimeout),
+ *         innodbLogWriterThreads: mysqlConfigurationVariablesInnodbLogWriterThreads === "true",
  *         innodbMaxPurgeLag: mysqlConfigurationVariablesInnodbMaxPurgeLag,
- *         innodbMaxPurgeLagDelay: mysqlConfigurationVariablesInnodbMaxPurgeLagDelay,
- *         innodbNumaInterleave: mysqlConfigurationVariablesInnodbNumaInterleave,
+ *         innodbMaxPurgeLagDelay: Number(mysqlConfigurationVariablesInnodbMaxPurgeLagDelay),
+ *         innodbNumaInterleave: mysqlConfigurationVariablesInnodbNumaInterleave === "true",
  *         innodbOnlineAlterLogMaxSize: mysqlConfigurationVariablesInnodbOnlineAlterLogMaxSize,
  *         innodbRedoLogCapacity: mysqlConfigurationVariablesInnodbRedoLogCapacity,
- *         innodbRollbackOnTimeout: mysqlConfigurationVariablesInnodbRollbackOnTimeout,
- *         innodbSortBufferSize: mysqlConfigurationVariablesInnodbSortBufferSize,
+ *         innodbRollbackOnTimeout: mysqlConfigurationVariablesInnodbRollbackOnTimeout === "true",
+ *         innodbSortBufferSize: Number(mysqlConfigurationVariablesInnodbSortBufferSize),
  *         innodbStatsPersistentSamplePages: mysqlConfigurationVariablesInnodbStatsPersistentSamplePages,
  *         innodbStatsTransientSamplePages: mysqlConfigurationVariablesInnodbStatsTransientSamplePages,
- *         innodbStrictMode: mysqlConfigurationVariablesInnodbStrictMode,
- *         innodbUndoLogTruncate: mysqlConfigurationVariablesInnodbUndoLogTruncate,
- *         interactiveTimeout: mysqlConfigurationVariablesInteractiveTimeout,
+ *         innodbStrictMode: mysqlConfigurationVariablesInnodbStrictMode === "true",
+ *         innodbUndoLogTruncate: mysqlConfigurationVariablesInnodbUndoLogTruncate === "true",
+ *         interactiveTimeout: Number(mysqlConfigurationVariablesInteractiveTimeout),
  *         joinBufferSize: mysqlConfigurationVariablesJoinBufferSize,
- *         localInfile: mysqlConfigurationVariablesLocalInfile,
- *         longQueryTime: mysqlConfigurationVariablesLongQueryTime,
+ *         localInfile: mysqlConfigurationVariablesLocalInfile === "true",
+ *         longQueryTime: Number(mysqlConfigurationVariablesLongQueryTime),
  *         mandatoryRoles: mysqlConfigurationVariablesMandatoryRoles,
- *         maxAllowedPacket: mysqlConfigurationVariablesMaxAllowedPacket,
+ *         maxAllowedPacket: Number(mysqlConfigurationVariablesMaxAllowedPacket),
  *         maxBinlogCacheSize: mysqlConfigurationVariablesMaxBinlogCacheSize,
  *         maxConnectErrors: mysqlConfigurationVariablesMaxConnectErrors,
- *         maxConnections: mysqlConfigurationVariablesMaxConnections,
+ *         maxConnections: Number(mysqlConfigurationVariablesMaxConnections),
  *         maxExecutionTime: mysqlConfigurationVariablesMaxExecutionTime,
  *         maxHeapTableSize: mysqlConfigurationVariablesMaxHeapTableSize,
- *         maxPreparedStmtCount: mysqlConfigurationVariablesMaxPreparedStmtCount,
+ *         maxPreparedStmtCount: Number(mysqlConfigurationVariablesMaxPreparedStmtCount),
  *         maxSeeksForKey: mysqlConfigurationVariablesMaxSeeksForKey,
  *         maxUserConnections: mysqlConfigurationVariablesMaxUserConnections,
- *         mysqlFirewallMode: mysqlConfigurationVariablesMysqlFirewallMode,
- *         mysqlZstdDefaultCompressionLevel: mysqlConfigurationVariablesMysqlZstdDefaultCompressionLevel,
- *         mysqlxConnectTimeout: mysqlConfigurationVariablesMysqlxConnectTimeout,
- *         mysqlxDeflateDefaultCompressionLevel: mysqlConfigurationVariablesMysqlxDeflateDefaultCompressionLevel,
- *         mysqlxDeflateMaxClientCompressionLevel: mysqlConfigurationVariablesMysqlxDeflateMaxClientCompressionLevel,
- *         mysqlxDocumentIdUniquePrefix: mysqlConfigurationVariablesMysqlxDocumentIdUniquePrefix,
- *         mysqlxEnableHelloNotice: mysqlConfigurationVariablesMysqlxEnableHelloNotice,
- *         mysqlxIdleWorkerThreadTimeout: mysqlConfigurationVariablesMysqlxIdleWorkerThreadTimeout,
- *         mysqlxInteractiveTimeout: mysqlConfigurationVariablesMysqlxInteractiveTimeout,
- *         mysqlxLz4defaultCompressionLevel: mysqlConfigurationVariablesMysqlxLz4defaultCompressionLevel,
- *         mysqlxLz4maxClientCompressionLevel: mysqlConfigurationVariablesMysqlxLz4maxClientCompressionLevel,
- *         mysqlxMaxAllowedPacket: mysqlConfigurationVariablesMysqlxMaxAllowedPacket,
- *         mysqlxMinWorkerThreads: mysqlConfigurationVariablesMysqlxMinWorkerThreads,
- *         mysqlxReadTimeout: mysqlConfigurationVariablesMysqlxReadTimeout,
- *         mysqlxWaitTimeout: mysqlConfigurationVariablesMysqlxWaitTimeout,
- *         mysqlxWriteTimeout: mysqlConfigurationVariablesMysqlxWriteTimeout,
- *         mysqlxZstdDefaultCompressionLevel: mysqlConfigurationVariablesMysqlxZstdDefaultCompressionLevel,
- *         mysqlxZstdMaxClientCompressionLevel: mysqlConfigurationVariablesMysqlxZstdMaxClientCompressionLevel,
- *         netReadTimeout: mysqlConfigurationVariablesNetReadTimeout,
- *         netWriteTimeout: mysqlConfigurationVariablesNetWriteTimeout,
+ *         mysqlFirewallMode: mysqlConfigurationVariablesMysqlFirewallMode === "true",
+ *         mysqlZstdDefaultCompressionLevel: Number(mysqlConfigurationVariablesMysqlZstdDefaultCompressionLevel),
+ *         mysqlxConnectTimeout: Number(mysqlConfigurationVariablesMysqlxConnectTimeout),
+ *         mysqlxDeflateDefaultCompressionLevel: Number(mysqlConfigurationVariablesMysqlxDeflateDefaultCompressionLevel),
+ *         mysqlxDeflateMaxClientCompressionLevel: Number(mysqlConfigurationVariablesMysqlxDeflateMaxClientCompressionLevel),
+ *         mysqlxDocumentIdUniquePrefix: Number(mysqlConfigurationVariablesMysqlxDocumentIdUniquePrefix),
+ *         mysqlxEnableHelloNotice: mysqlConfigurationVariablesMysqlxEnableHelloNotice === "true",
+ *         mysqlxIdleWorkerThreadTimeout: Number(mysqlConfigurationVariablesMysqlxIdleWorkerThreadTimeout),
+ *         mysqlxInteractiveTimeout: Number(mysqlConfigurationVariablesMysqlxInteractiveTimeout),
+ *         mysqlxLz4defaultCompressionLevel: Number(mysqlConfigurationVariablesMysqlxLz4defaultCompressionLevel),
+ *         mysqlxLz4maxClientCompressionLevel: Number(mysqlConfigurationVariablesMysqlxLz4maxClientCompressionLevel),
+ *         mysqlxMaxAllowedPacket: Number(mysqlConfigurationVariablesMysqlxMaxAllowedPacket),
+ *         mysqlxMinWorkerThreads: Number(mysqlConfigurationVariablesMysqlxMinWorkerThreads),
+ *         mysqlxReadTimeout: Number(mysqlConfigurationVariablesMysqlxReadTimeout),
+ *         mysqlxWaitTimeout: Number(mysqlConfigurationVariablesMysqlxWaitTimeout),
+ *         mysqlxWriteTimeout: Number(mysqlConfigurationVariablesMysqlxWriteTimeout),
+ *         mysqlxZstdDefaultCompressionLevel: Number(mysqlConfigurationVariablesMysqlxZstdDefaultCompressionLevel),
+ *         mysqlxZstdMaxClientCompressionLevel: Number(mysqlConfigurationVariablesMysqlxZstdMaxClientCompressionLevel),
+ *         netReadTimeout: Number(mysqlConfigurationVariablesNetReadTimeout),
+ *         netWriteTimeout: Number(mysqlConfigurationVariablesNetWriteTimeout),
  *         optimizerSwitch: mysqlConfigurationVariablesOptimizerSwitch,
  *         parserMaxMemSize: mysqlConfigurationVariablesParserMaxMemSize,
  *         queryAllocBlockSize: mysqlConfigurationVariablesQueryAllocBlockSize,
  *         queryPreallocSize: mysqlConfigurationVariablesQueryPreallocSize,
  *         rangeOptimizerMaxMemSize: mysqlConfigurationVariablesRangeOptimizerMaxMemSize,
- *         regexpTimeLimit: mysqlConfigurationVariablesRegexpTimeLimit,
+ *         regexpTimeLimit: Number(mysqlConfigurationVariablesRegexpTimeLimit),
  *         relayLogSpaceLimit: mysqlConfigurationVariablesRelayLogSpaceLimit,
- *         replicaNetTimeout: mysqlConfigurationVariablesReplicaNetTimeout,
- *         replicaParallelWorkers: mysqlConfigurationVariablesReplicaParallelWorkers,
+ *         replicaNetTimeout: Number(mysqlConfigurationVariablesReplicaNetTimeout),
+ *         replicaParallelWorkers: Number(mysqlConfigurationVariablesReplicaParallelWorkers),
  *         replicaTypeConversions: mysqlConfigurationVariablesReplicaTypeConversions,
- *         requireSecureTransport: mysqlConfigurationVariablesRequireSecureTransport,
- *         skipNameResolve: mysqlConfigurationVariablesSkipNameResolve,
+ *         requireSecureTransport: mysqlConfigurationVariablesRequireSecureTransport === "true",
+ *         skipNameResolve: mysqlConfigurationVariablesSkipNameResolve === "true",
  *         sortBufferSize: mysqlConfigurationVariablesSortBufferSize,
- *         sqlGenerateInvisiblePrimaryKey: mysqlConfigurationVariablesSqlGenerateInvisiblePrimaryKey,
+ *         sqlGenerateInvisiblePrimaryKey: mysqlConfigurationVariablesSqlGenerateInvisiblePrimaryKey === "true",
  *         sqlMode: mysqlConfigurationVariablesSqlMode,
- *         sqlRequirePrimaryKey: mysqlConfigurationVariablesSqlRequirePrimaryKey,
- *         sqlWarnings: mysqlConfigurationVariablesSqlWarnings,
- *         tableDefinitionCache: mysqlConfigurationVariablesTableDefinitionCache,
- *         tableOpenCache: mysqlConfigurationVariablesTableOpenCache,
+ *         sqlRequirePrimaryKey: mysqlConfigurationVariablesSqlRequirePrimaryKey === "true",
+ *         sqlWarnings: mysqlConfigurationVariablesSqlWarnings === "true",
+ *         tableDefinitionCache: Number(mysqlConfigurationVariablesTableDefinitionCache),
+ *         tableOpenCache: Number(mysqlConfigurationVariablesTableOpenCache),
  *         temptableMaxRam: mysqlConfigurationVariablesTemptableMaxRam,
- *         threadPoolDedicatedListeners: mysqlConfigurationVariablesThreadPoolDedicatedListeners,
- *         threadPoolMaxTransactionsLimit: mysqlConfigurationVariablesThreadPoolMaxTransactionsLimit,
- *         threadPoolQueryThreadsPerGroup: mysqlConfigurationVariablesThreadPoolQueryThreadsPerGroup,
- *         threadPoolSize: mysqlConfigurationVariablesThreadPoolSize,
- *         threadPoolTransactionDelay: mysqlConfigurationVariablesThreadPoolTransactionDelay,
+ *         threadPoolDedicatedListeners: mysqlConfigurationVariablesThreadPoolDedicatedListeners === "true",
+ *         threadPoolMaxTransactionsLimit: Number(mysqlConfigurationVariablesThreadPoolMaxTransactionsLimit),
+ *         threadPoolQueryThreadsPerGroup: Number(mysqlConfigurationVariablesThreadPoolQueryThreadsPerGroup),
+ *         threadPoolSize: Number(mysqlConfigurationVariablesThreadPoolSize),
+ *         threadPoolTransactionDelay: Number(mysqlConfigurationVariablesThreadPoolTransactionDelay),
  *         timeZone: mysqlConfigurationVariablesTimeZone,
  *         tmpTableSize: mysqlConfigurationVariablesTmpTableSize,
  *         transactionIsolation: mysqlConfigurationVariablesTransactionIsolation,
- *         waitTimeout: mysqlConfigurationVariablesWaitTimeout,
+ *         waitTimeout: Number(mysqlConfigurationVariablesWaitTimeout),
  *     },
  * });
  * ```
@@ -327,67 +327,67 @@ export interface MysqlConfigurationState {
     /**
      * The OCID of the compartment.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) User-provided data about the Configuration.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the Configuration.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
      *
      * @deprecated The 'init_variables' field has been deprecated. Please use 'options' instead.
      */
-    initVariables?: pulumi.Input<inputs.Mysql.MysqlConfigurationInitVariables>;
+    initVariables?: pulumi.Input<inputs.Mysql.MysqlConfigurationInitVariables | undefined>;
     /**
      * The MySQL options defined in the Configuration.
      */
-    options?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlConfigurationOption>[]>;
+    options?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlConfigurationOption>[] | undefined>;
     /**
      * The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
      */
-    parentConfigurationId?: pulumi.Input<string>;
+    parentConfigurationId?: pulumi.Input<string | undefined>;
     /**
      * The name of the associated Shape.
      */
-    shapeName?: pulumi.Input<string>;
+    shapeName?: pulumi.Input<string | undefined>;
     /**
      * The current state of the Configuration.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The date and time the Configuration was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The date and time the Configuration was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The Configuration type, DEFAULT or CUSTOM.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
     /**
      * DEPRECATED -- please use the `options` field instead. User-defined service variables.
      *
      * @deprecated The 'variables' field has been deprecated. Please use 'options' instead.
      */
-    variables?: pulumi.Input<inputs.Mysql.MysqlConfigurationVariables>;
+    variables?: pulumi.Input<inputs.Mysql.MysqlConfigurationVariables | undefined>;
 }
 
 /**
@@ -401,33 +401,33 @@ export interface MysqlConfigurationArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) User-provided data about the Configuration.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The display name of the Configuration.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * DEPRECATED -- please use the `options` field instead. User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
      *
      * @deprecated The 'init_variables' field has been deprecated. Please use 'options' instead.
      */
-    initVariables?: pulumi.Input<inputs.Mysql.MysqlConfigurationInitVariables>;
+    initVariables?: pulumi.Input<inputs.Mysql.MysqlConfigurationInitVariables | undefined>;
     /**
      * The MySQL options defined in the Configuration.
      */
-    options?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlConfigurationOption>[]>;
+    options?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlConfigurationOption>[] | undefined>;
     /**
      * The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
      */
-    parentConfigurationId?: pulumi.Input<string>;
+    parentConfigurationId?: pulumi.Input<string | undefined>;
     /**
      * The name of the associated Shape.
      */
@@ -437,5 +437,5 @@ export interface MysqlConfigurationArgs {
      *
      * @deprecated The 'variables' field has been deprecated. Please use 'options' instead.
      */
-    variables?: pulumi.Input<inputs.Mysql.MysqlConfigurationVariables>;
+    variables?: pulumi.Input<inputs.Mysql.MysqlConfigurationVariables | undefined>;
 }

@@ -216,7 +216,7 @@ def get_wlms_managed_instance(managed_instance_id: Optional[_builtins.str] = Non
         server_count=pulumi.get(__ret__, 'server_count'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_wlms_managed_instance_output(managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_wlms_managed_instance_output(managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetWlmsManagedInstanceResult]:
     """
     This data source provides details about a specific Managed Instance resource in Oracle Cloud Infrastructure Wlms service.

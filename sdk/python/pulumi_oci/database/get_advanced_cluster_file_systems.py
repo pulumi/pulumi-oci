@@ -147,7 +147,7 @@ def get_advanced_cluster_file_systems(compartment_id: Optional[_builtins.str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_advanced_cluster_file_systems = oci.Database.get_advanced_cluster_file_systems(compartment_id=compartment_id,
+    test_advanced_cluster_file_systems = oci.database.get_advanced_cluster_file_systems(compartment_id=compartment_id,
         name=advanced_cluster_file_system_name,
         resource_id=test_resource["id"],
         state=advanced_cluster_file_system_state,
@@ -180,12 +180,12 @@ def get_advanced_cluster_file_systems(compartment_id: Optional[_builtins.str] = 
         resource_id=pulumi.get(__ret__, 'resource_id'),
         state=pulumi.get(__ret__, 'state'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
-def get_advanced_cluster_file_systems_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAdvancedClusterFileSystemsFilterArgs', 'GetAdvancedClusterFileSystemsFilterArgsDict']]]]] = None,
-                                             name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             resource_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                             vm_cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_advanced_cluster_file_systems_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAdvancedClusterFileSystemsFilterArgs', 'GetAdvancedClusterFileSystemsFilterArgsDict']]]]] = None,
+                                             name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             resource_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                             vm_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAdvancedClusterFileSystemsResult]:
     """
     This data source provides the list of Advanced Cluster File Systems in Oracle Cloud Infrastructure Database service.
@@ -198,7 +198,7 @@ def get_advanced_cluster_file_systems_output(compartment_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_advanced_cluster_file_systems = oci.Database.get_advanced_cluster_file_systems(compartment_id=compartment_id,
+    test_advanced_cluster_file_systems = oci.database.get_advanced_cluster_file_systems(compartment_id=compartment_id,
         name=advanced_cluster_file_system_name,
         resource_id=test_resource["id"],
         state=advanced_cluster_file_system_state,

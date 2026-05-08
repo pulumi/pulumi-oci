@@ -110,7 +110,7 @@ def get_managed_database_sql_tuning_set(managed_database_id: Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_set = oci.DatabaseManagement.get_managed_database_sql_tuning_set(managed_database_id=test_managed_database["id"],
+    test_managed_database_sql_tuning_set = oci.databasemanagement.get_managed_database_sql_tuning_set(managed_database_id=test_managed_database["id"],
         name_contains=managed_database_sql_tuning_set_name_contains,
         owner=managed_database_sql_tuning_set_owner)
     ```
@@ -133,9 +133,9 @@ def get_managed_database_sql_tuning_set(managed_database_id: Optional[_builtins.
         managed_database_id=pulumi.get(__ret__, 'managed_database_id'),
         name_contains=pulumi.get(__ret__, 'name_contains'),
         owner=pulumi.get(__ret__, 'owner'))
-def get_managed_database_sql_tuning_set_output(managed_database_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                               name_contains: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                               owner: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_managed_database_sql_tuning_set_output(managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                               name_contains: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                               owner: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedDatabaseSqlTuningSetResult]:
     """
     This data source provides details about a specific Managed Database Sql Tuning Set resource in Oracle Cloud Infrastructure Database Management service.
@@ -148,7 +148,7 @@ def get_managed_database_sql_tuning_set_output(managed_database_id: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_set = oci.DatabaseManagement.get_managed_database_sql_tuning_set(managed_database_id=test_managed_database["id"],
+    test_managed_database_sql_tuning_set = oci.databasemanagement.get_managed_database_sql_tuning_set(managed_database_id=test_managed_database["id"],
         name_contains=managed_database_sql_tuning_set_name_contains,
         owner=managed_database_sql_tuning_set_owner)
     ```

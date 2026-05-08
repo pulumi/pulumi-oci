@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHttpRedirects = oci.Waas.getHttpRedirects({
+ * const testHttpRedirects = oci.waas.getHttpRedirects({
  *     compartmentId: compartmentId,
  *     displayNames: httpRedirectDisplayNames,
  *     ids: httpRedirectIds,
@@ -105,7 +105,7 @@ export interface GetHttpRedirectsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHttpRedirects = oci.Waas.getHttpRedirects({
+ * const testHttpRedirects = oci.waas.getHttpRedirects({
  *     compartmentId: compartmentId,
  *     displayNames: httpRedirectDisplayNames,
  *     ids: httpRedirectIds,
@@ -139,22 +139,22 @@ export interface GetHttpRedirectsOutputArgs {
     /**
      * Filter redirects using a display name.
      */
-    displayNames?: pulumi.Input<pulumi.Input<string>[]>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Waas.GetHttpRedirectsFilterArgs>[]>;
+    displayNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Waas.GetHttpRedirectsFilterArgs>[] | undefined>;
     /**
      * Filter redirects using a list of redirect OCIDs.
      */
-    ids?: pulumi.Input<pulumi.Input<string>[]>;
+    ids?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Filter redirects using a list of lifecycle states.
      */
-    states?: pulumi.Input<pulumi.Input<string>[]>;
+    states?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * A filter that matches redirects created on or after the specified date and time.
      */
-    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    timeCreatedGreaterThanOrEqualTo?: pulumi.Input<string | undefined>;
     /**
      * A filter that matches redirects created before the specified date-time. Default to 1 day before now.
      */
-    timeCreatedLessThan?: pulumi.Input<string>;
+    timeCreatedLessThan?: pulumi.Input<string | undefined>;
 }

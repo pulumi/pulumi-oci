@@ -24,14 +24,14 @@ class UsageCarbonEmissionArgs:
                  tenant_id: pulumi.Input[_builtins.str],
                  time_usage_ended: pulumi.Input[_builtins.str],
                  time_usage_started: pulumi.Input[_builtins.str],
-                 compartment_depth: Optional[pulumi.Input[_builtins.int]] = None,
-                 emission_calculation_method: Optional[pulumi.Input[_builtins.str]] = None,
-                 emission_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 granularity: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input['UsageCarbonEmissionGroupByTagArgs']]]] = None,
-                 is_aggregate_by_time: Optional[pulumi.Input[_builtins.bool]] = None,
-                 usage_carbon_emission_filter: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_depth: pulumi.Input[Optional[_builtins.int]] = None,
+                 emission_calculation_method: pulumi.Input[Optional[_builtins.str]] = None,
+                 emission_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 granularity: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_bies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 group_by_tags: pulumi.Input[Optional[Sequence[pulumi.Input['UsageCarbonEmissionGroupByTagArgs']]]] = None,
+                 is_aggregate_by_time: pulumi.Input[Optional[_builtins.bool]] = None,
+                 usage_carbon_emission_filter: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a UsageCarbonEmission resource.
 
@@ -109,91 +109,91 @@ class UsageCarbonEmissionArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentDepth")
-    def compartment_depth(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def compartment_depth(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The compartment depth level.
         """
         return pulumi.get(self, "compartment_depth")
 
     @compartment_depth.setter
-    def compartment_depth(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def compartment_depth(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "compartment_depth", value)
 
     @_builtins.property
     @pulumi.getter(name="emissionCalculationMethod")
-    def emission_calculation_method(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def emission_calculation_method(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
         """
         return pulumi.get(self, "emission_calculation_method")
 
     @emission_calculation_method.setter
-    def emission_calculation_method(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def emission_calculation_method(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "emission_calculation_method", value)
 
     @_builtins.property
     @pulumi.getter(name="emissionType")
-    def emission_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def emission_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
         """
         return pulumi.get(self, "emission_type")
 
     @emission_type.setter
-    def emission_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def emission_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "emission_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def granularity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def granularity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
         """
         return pulumi.get(self, "granularity")
 
     @granularity.setter
-    def granularity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def granularity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "granularity", value)
 
     @_builtins.property
     @pulumi.getter(name="groupBies")
-    def group_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def group_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "resourceName", "tenantId", "tenantName", "subscriptionId"]`
         """
         return pulumi.get(self, "group_bies")
 
     @group_bies.setter
-    def group_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def group_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "group_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="groupByTags")
-    def group_by_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UsageCarbonEmissionGroupByTagArgs']]]]:
+    def group_by_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UsageCarbonEmissionGroupByTagArgs']]]]:
         """
         GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
         """
         return pulumi.get(self, "group_by_tags")
 
     @group_by_tags.setter
-    def group_by_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UsageCarbonEmissionGroupByTagArgs']]]]):
+    def group_by_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UsageCarbonEmissionGroupByTagArgs']]]]):
         pulumi.set(self, "group_by_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isAggregateByTime")
-    def is_aggregate_by_time(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_aggregate_by_time(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
         """
         return pulumi.get(self, "is_aggregate_by_time")
 
     @is_aggregate_by_time.setter
-    def is_aggregate_by_time(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_aggregate_by_time(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_aggregate_by_time", value)
 
     @_builtins.property
     @pulumi.getter(name="usageCarbonEmissionFilter")
-    def usage_carbon_emission_filter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def usage_carbon_emission_filter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The filter object for query usage.
 
@@ -204,25 +204,25 @@ class UsageCarbonEmissionArgs:
         return pulumi.get(self, "usage_carbon_emission_filter")
 
     @usage_carbon_emission_filter.setter
-    def usage_carbon_emission_filter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def usage_carbon_emission_filter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "usage_carbon_emission_filter", value)
 
 
 @pulumi.input_type
 class _UsageCarbonEmissionState:
     def __init__(__self__, *,
-                 compartment_depth: Optional[pulumi.Input[_builtins.int]] = None,
-                 emission_calculation_method: Optional[pulumi.Input[_builtins.str]] = None,
-                 emission_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 granularity: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input['UsageCarbonEmissionGroupByTagArgs']]]] = None,
-                 is_aggregate_by_time: Optional[pulumi.Input[_builtins.bool]] = None,
-                 items: Optional[pulumi.Input[Sequence[pulumi.Input['UsageCarbonEmissionItemArgs']]]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_usage_ended: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_usage_started: Optional[pulumi.Input[_builtins.str]] = None,
-                 usage_carbon_emission_filter: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_depth: pulumi.Input[Optional[_builtins.int]] = None,
+                 emission_calculation_method: pulumi.Input[Optional[_builtins.str]] = None,
+                 emission_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 granularity: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_bies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 group_by_tags: pulumi.Input[Optional[Sequence[pulumi.Input['UsageCarbonEmissionGroupByTagArgs']]]] = None,
+                 is_aggregate_by_time: pulumi.Input[Optional[_builtins.bool]] = None,
+                 items: pulumi.Input[Optional[Sequence[pulumi.Input['UsageCarbonEmissionItemArgs']]]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_usage_ended: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_usage_started: pulumi.Input[Optional[_builtins.str]] = None,
+                 usage_carbon_emission_filter: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering UsageCarbonEmission resources.
 
@@ -270,139 +270,139 @@ class _UsageCarbonEmissionState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentDepth")
-    def compartment_depth(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def compartment_depth(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The compartment depth level.
         """
         return pulumi.get(self, "compartment_depth")
 
     @compartment_depth.setter
-    def compartment_depth(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def compartment_depth(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "compartment_depth", value)
 
     @_builtins.property
     @pulumi.getter(name="emissionCalculationMethod")
-    def emission_calculation_method(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def emission_calculation_method(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the method used for emission calculation, such as POWER_BASED or SPEND_BASED
         """
         return pulumi.get(self, "emission_calculation_method")
 
     @emission_calculation_method.setter
-    def emission_calculation_method(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def emission_calculation_method(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "emission_calculation_method", value)
 
     @_builtins.property
     @pulumi.getter(name="emissionType")
-    def emission_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def emission_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the type of emission, such as MARKET_BASED or LOCATION_BASED.
         """
         return pulumi.get(self, "emission_type")
 
     @emission_type.setter
-    def emission_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def emission_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "emission_type", value)
 
     @_builtins.property
     @pulumi.getter
-    def granularity(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def granularity(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The carbon emission granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.
         """
         return pulumi.get(self, "granularity")
 
     @granularity.setter
-    def granularity(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def granularity(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "granularity", value)
 
     @_builtins.property
     @pulumi.getter(name="groupBies")
-    def group_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def group_bies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         Aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "resourceName", "tenantId", "tenantName", "subscriptionId"]`
         """
         return pulumi.get(self, "group_bies")
 
     @group_bies.setter
-    def group_bies(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def group_bies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "group_bies", value)
 
     @_builtins.property
     @pulumi.getter(name="groupByTags")
-    def group_by_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UsageCarbonEmissionGroupByTagArgs']]]]:
+    def group_by_tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UsageCarbonEmissionGroupByTagArgs']]]]:
         """
         GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
         """
         return pulumi.get(self, "group_by_tags")
 
     @group_by_tags.setter
-    def group_by_tags(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UsageCarbonEmissionGroupByTagArgs']]]]):
+    def group_by_tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UsageCarbonEmissionGroupByTagArgs']]]]):
         pulumi.set(self, "group_by_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isAggregateByTime")
-    def is_aggregate_by_time(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_aggregate_by_time(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Specifies whether aggregated by time. If isAggregateByTime is true, all carbon emissions usage over the query time period are summed.
         """
         return pulumi.get(self, "is_aggregate_by_time")
 
     @is_aggregate_by_time.setter
-    def is_aggregate_by_time(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_aggregate_by_time(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_aggregate_by_time", value)
 
     @_builtins.property
     @pulumi.getter
-    def items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UsageCarbonEmissionItemArgs']]]]:
+    def items(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UsageCarbonEmissionItemArgs']]]]:
         """
         A list of carbon emission usage items.
         """
         return pulumi.get(self, "items")
 
     @items.setter
-    def items(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UsageCarbonEmissionItemArgs']]]]):
+    def items(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UsageCarbonEmissionItemArgs']]]]):
         pulumi.set(self, "items", value)
 
     @_builtins.property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Tenant ID.
         """
         return pulumi.get(self, "tenant_id")
 
     @tenant_id.setter
-    def tenant_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUsageEnded")
-    def time_usage_ended(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_usage_ended(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The usage end time.
         """
         return pulumi.get(self, "time_usage_ended")
 
     @time_usage_ended.setter
-    def time_usage_ended(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_usage_ended(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_usage_ended", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUsageStarted")
-    def time_usage_started(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_usage_started(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The usage start time.
         """
         return pulumi.get(self, "time_usage_started")
 
     @time_usage_started.setter
-    def time_usage_started(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_usage_started(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_usage_started", value)
 
     @_builtins.property
     @pulumi.getter(name="usageCarbonEmissionFilter")
-    def usage_carbon_emission_filter(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def usage_carbon_emission_filter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The filter object for query usage.
 
@@ -413,7 +413,7 @@ class _UsageCarbonEmissionState:
         return pulumi.get(self, "usage_carbon_emission_filter")
 
     @usage_carbon_emission_filter.setter
-    def usage_carbon_emission_filter(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def usage_carbon_emission_filter(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "usage_carbon_emission_filter", value)
 
 
@@ -423,17 +423,17 @@ class UsageCarbonEmission(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_depth: Optional[pulumi.Input[_builtins.int]] = None,
-                 emission_calculation_method: Optional[pulumi.Input[_builtins.str]] = None,
-                 emission_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 granularity: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UsageCarbonEmissionGroupByTagArgs', 'UsageCarbonEmissionGroupByTagArgsDict']]]]] = None,
-                 is_aggregate_by_time: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_usage_ended: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_usage_started: Optional[pulumi.Input[_builtins.str]] = None,
-                 usage_carbon_emission_filter: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_depth: pulumi.Input[Optional[_builtins.int]] = None,
+                 emission_calculation_method: pulumi.Input[Optional[_builtins.str]] = None,
+                 emission_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 granularity: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_bies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 group_by_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageCarbonEmissionGroupByTagArgs', 'UsageCarbonEmissionGroupByTagArgsDict']]]]] = None,
+                 is_aggregate_by_time: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_usage_ended: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_usage_started: pulumi.Input[Optional[_builtins.str]] = None,
+                 usage_carbon_emission_filter: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Usage Carbon Emission resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -453,7 +453,7 @@ class UsageCarbonEmission(pulumi.CustomResource):
             tenant_id=test_tenant["id"],
             time_usage_ended=usage_carbon_emission_time_usage_ended,
             time_usage_started=usage_carbon_emission_time_usage_started,
-            compartment_depth=usage_carbon_emission_compartment_depth,
+            compartment_depth=int(usage_carbon_emission_compartment_depth),
             emission_calculation_method=usage_carbon_emission_emission_calculation_method,
             emission_type=usage_carbon_emission_emission_type,
             granularity=usage_carbon_emission_granularity,
@@ -463,7 +463,7 @@ class UsageCarbonEmission(pulumi.CustomResource):
                 "namespace": usage_carbon_emission_group_by_tag_namespace,
                 "value": usage_carbon_emission_group_by_tag_value,
             }],
-            is_aggregate_by_time=usage_carbon_emission_is_aggregate_by_time,
+            is_aggregate_by_time=usage_carbon_emission_is_aggregate_by_time == "true",
             usage_carbon_emission_filter=usage_carbon_emission_usage_carbon_emission_filter)
         ```
 
@@ -518,7 +518,7 @@ class UsageCarbonEmission(pulumi.CustomResource):
             tenant_id=test_tenant["id"],
             time_usage_ended=usage_carbon_emission_time_usage_ended,
             time_usage_started=usage_carbon_emission_time_usage_started,
-            compartment_depth=usage_carbon_emission_compartment_depth,
+            compartment_depth=int(usage_carbon_emission_compartment_depth),
             emission_calculation_method=usage_carbon_emission_emission_calculation_method,
             emission_type=usage_carbon_emission_emission_type,
             granularity=usage_carbon_emission_granularity,
@@ -528,7 +528,7 @@ class UsageCarbonEmission(pulumi.CustomResource):
                 "namespace": usage_carbon_emission_group_by_tag_namespace,
                 "value": usage_carbon_emission_group_by_tag_value,
             }],
-            is_aggregate_by_time=usage_carbon_emission_is_aggregate_by_time,
+            is_aggregate_by_time=usage_carbon_emission_is_aggregate_by_time == "true",
             usage_carbon_emission_filter=usage_carbon_emission_usage_carbon_emission_filter)
         ```
 
@@ -556,17 +556,17 @@ class UsageCarbonEmission(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_depth: Optional[pulumi.Input[_builtins.int]] = None,
-                 emission_calculation_method: Optional[pulumi.Input[_builtins.str]] = None,
-                 emission_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 granularity: Optional[pulumi.Input[_builtins.str]] = None,
-                 group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UsageCarbonEmissionGroupByTagArgs', 'UsageCarbonEmissionGroupByTagArgsDict']]]]] = None,
-                 is_aggregate_by_time: Optional[pulumi.Input[_builtins.bool]] = None,
-                 tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_usage_ended: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_usage_started: Optional[pulumi.Input[_builtins.str]] = None,
-                 usage_carbon_emission_filter: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_depth: pulumi.Input[Optional[_builtins.int]] = None,
+                 emission_calculation_method: pulumi.Input[Optional[_builtins.str]] = None,
+                 emission_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 granularity: pulumi.Input[Optional[_builtins.str]] = None,
+                 group_bies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 group_by_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageCarbonEmissionGroupByTagArgs', 'UsageCarbonEmissionGroupByTagArgsDict']]]]] = None,
+                 is_aggregate_by_time: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_usage_ended: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_usage_started: pulumi.Input[Optional[_builtins.str]] = None,
+                 usage_carbon_emission_filter: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -604,18 +604,18 @@ class UsageCarbonEmission(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_depth: Optional[pulumi.Input[_builtins.int]] = None,
-            emission_calculation_method: Optional[pulumi.Input[_builtins.str]] = None,
-            emission_type: Optional[pulumi.Input[_builtins.str]] = None,
-            granularity: Optional[pulumi.Input[_builtins.str]] = None,
-            group_bies: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            group_by_tags: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UsageCarbonEmissionGroupByTagArgs', 'UsageCarbonEmissionGroupByTagArgsDict']]]]] = None,
-            is_aggregate_by_time: Optional[pulumi.Input[_builtins.bool]] = None,
-            items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['UsageCarbonEmissionItemArgs', 'UsageCarbonEmissionItemArgsDict']]]]] = None,
-            tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
-            time_usage_ended: Optional[pulumi.Input[_builtins.str]] = None,
-            time_usage_started: Optional[pulumi.Input[_builtins.str]] = None,
-            usage_carbon_emission_filter: Optional[pulumi.Input[_builtins.str]] = None) -> 'UsageCarbonEmission':
+            compartment_depth: pulumi.Input[Optional[_builtins.int]] = None,
+            emission_calculation_method: pulumi.Input[Optional[_builtins.str]] = None,
+            emission_type: pulumi.Input[Optional[_builtins.str]] = None,
+            granularity: pulumi.Input[Optional[_builtins.str]] = None,
+            group_bies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            group_by_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageCarbonEmissionGroupByTagArgs', 'UsageCarbonEmissionGroupByTagArgsDict']]]]] = None,
+            is_aggregate_by_time: pulumi.Input[Optional[_builtins.bool]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageCarbonEmissionItemArgs', 'UsageCarbonEmissionItemArgsDict']]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_usage_ended: pulumi.Input[Optional[_builtins.str]] = None,
+            time_usage_started: pulumi.Input[Optional[_builtins.str]] = None,
+            usage_carbon_emission_filter: pulumi.Input[Optional[_builtins.str]] = None) -> 'UsageCarbonEmission':
         """
         Get an existing UsageCarbonEmission resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

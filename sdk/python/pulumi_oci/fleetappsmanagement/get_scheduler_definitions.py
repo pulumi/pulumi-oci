@@ -208,7 +208,7 @@ def get_scheduler_definitions(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduler_definitions = oci.FleetAppsManagement.get_scheduler_definitions(compartment_id=compartment_id,
+    test_scheduler_definitions = oci.fleetappsmanagement.get_scheduler_definitions(compartment_id=compartment_id,
         display_name=scheduler_definition_display_name,
         fleet_id=test_fleet["id"],
         id=scheduler_definition_id,
@@ -264,18 +264,18 @@ def get_scheduler_definitions(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         time_scheduled_greater_than_or_equal_to=pulumi.get(__ret__, 'time_scheduled_greater_than_or_equal_to'),
         time_scheduled_less_than=pulumi.get(__ret__, 'time_scheduled_less_than'))
-def get_scheduler_definitions_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSchedulerDefinitionsFilterArgs', 'GetSchedulerDefinitionsFilterArgsDict']]]]] = None,
-                                     fleet_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     maintenance_window_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     product: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     runbook_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     runbook_version_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     time_scheduled_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                     time_scheduled_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_scheduler_definitions_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSchedulerDefinitionsFilterArgs', 'GetSchedulerDefinitionsFilterArgsDict']]]]] = None,
+                                     fleet_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     maintenance_window_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     product: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     runbook_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     runbook_version_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     time_scheduled_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     time_scheduled_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSchedulerDefinitionsResult]:
     """
     This data source provides the list of Scheduler Definitions in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -289,7 +289,7 @@ def get_scheduler_definitions_output(compartment_id: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_scheduler_definitions = oci.FleetAppsManagement.get_scheduler_definitions(compartment_id=compartment_id,
+    test_scheduler_definitions = oci.fleetappsmanagement.get_scheduler_definitions(compartment_id=compartment_id,
         display_name=scheduler_definition_display_name,
         fleet_id=test_fleet["id"],
         id=scheduler_definition_id,

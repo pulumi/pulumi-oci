@@ -183,13 +183,13 @@ def get_catalog_items(catalog_listing_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog_items = oci.FleetAppsManagement.get_catalog_items(compartment_id=compartment_id,
+    test_catalog_items = oci.fleetappsmanagement.get_catalog_items(compartment_id=compartment_id,
         catalog_listing_id=test_listing["id"],
         catalog_listing_version_criteria=catalog_item_catalog_listing_version_criteria,
         config_source_type=catalog_item_config_source_type,
         display_name=catalog_item_display_name,
         package_type=catalog_item_package_type,
-        should_list_public_items=catalog_item_should_list_public_items,
+        should_list_public_items=catalog_item_should_list_public_items == "true",
         state=catalog_item_state)
     ```
 
@@ -228,15 +228,15 @@ def get_catalog_items(catalog_listing_id: Optional[_builtins.str] = None,
         package_type=pulumi.get(__ret__, 'package_type'),
         should_list_public_items=pulumi.get(__ret__, 'should_list_public_items'),
         state=pulumi.get(__ret__, 'state'))
-def get_catalog_items_output(catalog_listing_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             catalog_listing_version_criteria: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                             config_source_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCatalogItemsFilterArgs', 'GetCatalogItemsFilterArgsDict']]]]] = None,
-                             package_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                             should_list_public_items: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                             state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_catalog_items_output(catalog_listing_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             catalog_listing_version_criteria: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                             config_source_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             filters: pulumi.Input[Optional[Optional[Sequence[Union['GetCatalogItemsFilterArgs', 'GetCatalogItemsFilterArgsDict']]]]] = None,
+                             package_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                             should_list_public_items: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                             state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCatalogItemsResult]:
     """
     This data source provides the list of Catalog Items in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -249,13 +249,13 @@ def get_catalog_items_output(catalog_listing_id: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog_items = oci.FleetAppsManagement.get_catalog_items(compartment_id=compartment_id,
+    test_catalog_items = oci.fleetappsmanagement.get_catalog_items(compartment_id=compartment_id,
         catalog_listing_id=test_listing["id"],
         catalog_listing_version_criteria=catalog_item_catalog_listing_version_criteria,
         config_source_type=catalog_item_config_source_type,
         display_name=catalog_item_display_name,
         package_type=catalog_item_package_type,
-        should_list_public_items=catalog_item_should_list_public_items,
+        should_list_public_items=catalog_item_should_list_public_items == "true",
         state=catalog_item_state)
     ```
 

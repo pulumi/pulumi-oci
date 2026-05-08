@@ -34,7 +34,7 @@ import * as utilities from "../utilities";
  *     },
  *     parameters: [{
  *         paramName: scriptParametersParamName,
- *         isSecret: scriptParametersIsSecret,
+ *         isSecret: scriptParametersIsSecret === "true",
  *         paramValue: scriptParametersParamValue,
  *     }],
  * });
@@ -195,55 +195,55 @@ export interface ScriptState {
     /**
      * (Updatable) The APM domain ID the request is intended for.
      */
-    apmDomainId?: pulumi.Input<string>;
+    apmDomainId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format. If the content type is PLAYWRIGHT_TS, then the content should be in TypeScript format.
      */
-    content?: pulumi.Input<string>;
+    content?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) File name of uploaded script content.
      */
-    contentFileName?: pulumi.Input<string>;
+    contentFileName?: pulumi.Input<string | undefined>;
     /**
      * Size of the script content.
      */
-    contentSizeInBytes?: pulumi.Input<number>;
+    contentSizeInBytes?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Content type of script.
      */
-    contentType?: pulumi.Input<string>;
+    contentType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Unique name that can be edited. The name should not contain any confidential information.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
      */
-    monitorStatusCountMaps?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.ScriptMonitorStatusCountMap>[]>;
+    monitorStatusCountMaps?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.ScriptMonitorStatusCountMap>[] | undefined>;
     /**
      * (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
      */
-    parameters?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.ScriptParameter>[]>;
+    parameters?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.ScriptParameter>[] | undefined>;
     /**
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
     /**
      * The time the script was uploaded.
      */
-    timeUploaded?: pulumi.Input<string>;
+    timeUploaded?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -261,7 +261,7 @@ export interface ScriptArgs {
     /**
      * (Updatable) File name of uploaded script content.
      */
-    contentFileName?: pulumi.Input<string>;
+    contentFileName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Content type of script.
      */
@@ -269,7 +269,7 @@ export interface ScriptArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Unique name that can be edited. The name should not contain any confidential information.
      */
@@ -277,9 +277,9 @@ export interface ScriptArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
      */
-    parameters?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.ScriptParameter>[]>;
+    parameters?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.ScriptParameter>[] | undefined>;
 }

@@ -134,7 +134,7 @@ def get_sensitive_data_model_sensitive_objects(filters: Optional[Sequence[Union[
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_model_sensitive_objects = oci.DataSafe.get_sensitive_data_model_sensitive_objects(sensitive_data_model_id=test_sensitive_data_model["id"],
+    test_sensitive_data_model_sensitive_objects = oci.datasafe.get_sensitive_data_model_sensitive_objects(sensitive_data_model_id=test_sensitive_data_model["id"],
         objects=sensitive_data_model_sensitive_object_object,
         object_types=sensitive_data_model_sensitive_object_object_type,
         schema_names=sensitive_data_model_sensitive_object_schema_name)
@@ -163,11 +163,11 @@ def get_sensitive_data_model_sensitive_objects(filters: Optional[Sequence[Union[
         schema_names=pulumi.get(__ret__, 'schema_names'),
         sensitive_data_model_id=pulumi.get(__ret__, 'sensitive_data_model_id'),
         sensitive_object_collections=pulumi.get(__ret__, 'sensitive_object_collections'))
-def get_sensitive_data_model_sensitive_objects_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSensitiveDataModelSensitiveObjectsFilterArgs', 'GetSensitiveDataModelSensitiveObjectsFilterArgsDict']]]]] = None,
-                                                      object_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                      objects: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                      schema_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
-                                                      sensitive_data_model_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_sensitive_data_model_sensitive_objects_output(filters: pulumi.Input[Optional[Optional[Sequence[Union['GetSensitiveDataModelSensitiveObjectsFilterArgs', 'GetSensitiveDataModelSensitiveObjectsFilterArgsDict']]]]] = None,
+                                                      object_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                      objects: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                      schema_names: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                                      sensitive_data_model_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSensitiveDataModelSensitiveObjectsResult]:
     """
     This data source provides the list of Sensitive Data Model Sensitive Objects in Oracle Cloud Infrastructure Data Safe service.
@@ -180,7 +180,7 @@ def get_sensitive_data_model_sensitive_objects_output(filters: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_sensitive_data_model_sensitive_objects = oci.DataSafe.get_sensitive_data_model_sensitive_objects(sensitive_data_model_id=test_sensitive_data_model["id"],
+    test_sensitive_data_model_sensitive_objects = oci.datasafe.get_sensitive_data_model_sensitive_objects(sensitive_data_model_id=test_sensitive_data_model["id"],
         objects=sensitive_data_model_sensitive_object_object,
         object_types=sensitive_data_model_sensitive_object_object_type,
         schema_names=sensitive_data_model_sensitive_object_schema_name)

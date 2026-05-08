@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogs = oci.Logging.getLogs({
+ * const testLogs = oci.logging.getLogs({
  *     logGroupId: testLogGroup.id,
  *     displayName: logDisplayName,
  *     logType: logLogType,
@@ -114,7 +114,7 @@ export interface GetLogsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogs = oci.Logging.getLogs({
+ * const testLogs = oci.logging.getLogs({
  *     logGroupId: testLogGroup.id,
  *     displayName: logDisplayName,
  *     logType: logLogType,
@@ -144,8 +144,8 @@ export interface GetLogsOutputArgs {
     /**
      * Resource name.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.Logging.GetLogsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.Logging.GetLogsFilterArgs>[] | undefined>;
     /**
      * OCID of a log group to work with.
      */
@@ -153,17 +153,17 @@ export interface GetLogsOutputArgs {
     /**
      * The logType that the log object is for, whether custom or service.
      */
-    logType?: pulumi.Input<string>;
+    logType?: pulumi.Input<string | undefined>;
     /**
      * Log object resource, which is a field of LogSummary.Configuration.Source.
      */
-    sourceResource?: pulumi.Input<string>;
+    sourceResource?: pulumi.Input<string | undefined>;
     /**
      * Service that created the log object, which is a field of LogSummary.Configuration.Source.
      */
-    sourceService?: pulumi.Input<string>;
+    sourceService?: pulumi.Input<string | undefined>;
     /**
      * Lifecycle state of the log object
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

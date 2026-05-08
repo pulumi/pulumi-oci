@@ -73,8 +73,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -115,8 +115,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -157,8 +157,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -199,8 +199,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -241,8 +241,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -283,8 +283,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentAvailableHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -327,8 +327,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentAvailableHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -371,8 +371,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentAvailableHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -415,8 +415,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentAvailableHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -459,8 +459,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentAvailableHistoriesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -504,8 +504,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentCountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -550,8 +550,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentCountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -596,8 +596,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentCountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -642,8 +642,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentCountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -688,8 +688,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentCountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -733,8 +733,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentDataSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -776,8 +776,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentDataSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -819,8 +819,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentDataSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -862,8 +862,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentDataSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -905,8 +905,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentDataSourceArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -948,8 +948,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentDataSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -991,8 +991,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentDataSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1034,8 +1034,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentDataSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1077,8 +1077,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentDataSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1120,8 +1120,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentDataSourcesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1164,8 +1164,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentGetAutoUpgradableConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1207,8 +1207,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentGetAutoUpgradableConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1250,8 +1250,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentGetAutoUpgradableConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1293,8 +1293,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentGetAutoUpgradableConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1336,8 +1336,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentGetAutoUpgradableConfigArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1378,8 +1378,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1423,8 +1423,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1468,8 +1468,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1513,8 +1513,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1558,8 +1558,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentImagesArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1603,8 +1603,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentInstallKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1645,8 +1645,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentInstallKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1687,8 +1687,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentInstallKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1729,8 +1729,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentInstallKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1771,8 +1771,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentInstallKeyArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1813,8 +1813,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentInstallKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1859,8 +1859,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentInstallKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1905,8 +1905,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentInstallKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1951,8 +1951,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentInstallKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -1997,8 +1997,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentInstallKeysArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2043,8 +2043,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentNamedCredentialsMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2086,8 +2086,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentNamedCredentialsMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2129,8 +2129,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentNamedCredentialsMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2172,8 +2172,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentNamedCredentialsMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2215,8 +2215,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentNamedCredentialsMetadataArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2259,8 +2259,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPluginCountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2303,8 +2303,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPluginCountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2347,8 +2347,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPluginCountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2391,8 +2391,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPluginCountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2435,8 +2435,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPluginCountArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2478,8 +2478,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPluginsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2524,8 +2524,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPluginsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2570,8 +2570,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPluginsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2616,8 +2616,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPluginsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2662,8 +2662,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPluginsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2710,8 +2710,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2769,8 +2769,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2828,8 +2828,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2887,8 +2887,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -2946,8 +2946,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3003,8 +3003,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetNamedCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3045,8 +3045,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetNamedCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3087,8 +3087,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetNamedCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3129,8 +3129,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetNamedCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3171,8 +3171,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetNamedCredentialArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3213,8 +3213,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetNamedCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3259,8 +3259,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetNamedCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3305,8 +3305,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetNamedCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3351,8 +3351,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetNamedCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;
@@ -3397,8 +3397,8 @@ public final class ManagementAgentFunctions {
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
      * import com.pulumi.oci.ManagementAgent.inputs.GetNamedCredentialsArgs;
-     * import java.util.List;
      * import java.util.ArrayList;
+     * import java.util.Arrays;
      * import java.util.Map;
      * import java.io.File;
      * import java.nio.file.Files;

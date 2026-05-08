@@ -24,11 +24,11 @@ class SchedulerDefinitionArgs:
                  action_groups: pulumi.Input[Sequence[pulumi.Input['SchedulerDefinitionActionGroupArgs']]],
                  compartment_id: pulumi.Input[_builtins.str],
                  schedule: pulumi.Input['SchedulerDefinitionScheduleArgs'],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 run_books: Optional[pulumi.Input[Sequence[pulumi.Input['SchedulerDefinitionRunBookArgs']]]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 run_books: pulumi.Input[Optional[Sequence[pulumi.Input['SchedulerDefinitionRunBookArgs']]]] = None):
         """
         The set of arguments for constructing a SchedulerDefinition resource.
 
@@ -93,88 +93,88 @@ class SchedulerDefinitionArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="runBooks")
-    def run_books(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SchedulerDefinitionRunBookArgs']]]]:
+    def run_books(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SchedulerDefinitionRunBookArgs']]]]:
         """
         (Updatable) Runbooks.
         """
         return pulumi.get(self, "run_books")
 
     @run_books.setter
-    def run_books(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SchedulerDefinitionRunBookArgs']]]]):
+    def run_books(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SchedulerDefinitionRunBookArgs']]]]):
         pulumi.set(self, "run_books", value)
 
 
 @pulumi.input_type
 class _SchedulerDefinitionState:
     def __init__(__self__, *,
-                 action_groups: Optional[pulumi.Input[Sequence[pulumi.Input['SchedulerDefinitionActionGroupArgs']]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 count_of_affected_action_groups: Optional[pulumi.Input[_builtins.int]] = None,
-                 count_of_affected_resources: Optional[pulumi.Input[_builtins.int]] = None,
-                 count_of_affected_targets: Optional[pulumi.Input[_builtins.int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 lifecycle_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 products: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 resource_region: Optional[pulumi.Input[_builtins.str]] = None,
-                 run_books: Optional[pulumi.Input[Sequence[pulumi.Input['SchedulerDefinitionRunBookArgs']]]] = None,
-                 schedule: Optional[pulumi.Input['SchedulerDefinitionScheduleArgs']] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_next_run: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 action_groups: pulumi.Input[Optional[Sequence[pulumi.Input['SchedulerDefinitionActionGroupArgs']]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 count_of_affected_action_groups: pulumi.Input[Optional[_builtins.int]] = None,
+                 count_of_affected_resources: pulumi.Input[Optional[_builtins.int]] = None,
+                 count_of_affected_targets: pulumi.Input[Optional[_builtins.int]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 lifecycle_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 products: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 resource_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 run_books: pulumi.Input[Optional[Sequence[pulumi.Input['SchedulerDefinitionRunBookArgs']]]] = None,
+                 schedule: pulumi.Input[Optional['SchedulerDefinitionScheduleArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_next_run: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SchedulerDefinition resources.
 
@@ -242,242 +242,242 @@ class _SchedulerDefinitionState:
 
     @_builtins.property
     @pulumi.getter(name="actionGroups")
-    def action_groups(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SchedulerDefinitionActionGroupArgs']]]]:
+    def action_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SchedulerDefinitionActionGroupArgs']]]]:
         """
         (Updatable) Action Groups associated with the Schedule.
         """
         return pulumi.get(self, "action_groups")
 
     @action_groups.setter
-    def action_groups(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SchedulerDefinitionActionGroupArgs']]]]):
+    def action_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SchedulerDefinitionActionGroupArgs']]]]):
         pulumi.set(self, "action_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Compartment OCID
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="countOfAffectedActionGroups")
-    def count_of_affected_action_groups(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def count_of_affected_action_groups(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Count of Action Groups affected by the Schedule.
         """
         return pulumi.get(self, "count_of_affected_action_groups")
 
     @count_of_affected_action_groups.setter
-    def count_of_affected_action_groups(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def count_of_affected_action_groups(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "count_of_affected_action_groups", value)
 
     @_builtins.property
     @pulumi.getter(name="countOfAffectedResources")
-    def count_of_affected_resources(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def count_of_affected_resources(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Count of Resources affected by the Schedule.
         """
         return pulumi.get(self, "count_of_affected_resources")
 
     @count_of_affected_resources.setter
-    def count_of_affected_resources(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def count_of_affected_resources(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "count_of_affected_resources", value)
 
     @_builtins.property
     @pulumi.getter(name="countOfAffectedTargets")
-    def count_of_affected_targets(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def count_of_affected_targets(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Count of Targets affected by the Schedule.
         """
         return pulumi.get(self, "count_of_affected_targets")
 
     @count_of_affected_targets.setter
-    def count_of_affected_targets(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def count_of_affected_targets(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "count_of_affected_targets", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter
-    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly description. To provide some insight about the resource. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
     @description.setter
-    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleOperations")
-    def lifecycle_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def lifecycle_operations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         All LifeCycle Operations that are part of the schedule.
         """
         return pulumi.get(self, "lifecycle_operations")
 
     @lifecycle_operations.setter
-    def lifecycle_operations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def lifecycle_operations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "lifecycle_operations", value)
 
     @_builtins.property
     @pulumi.getter
-    def products(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def products(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         All products that are part of the schedule for PRODUCT ActionGroup Type.
         """
         return pulumi.get(self, "products")
 
     @products.setter
-    def products(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def products(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "products", value)
 
     @_builtins.property
     @pulumi.getter(name="resourceRegion")
-    def resource_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def resource_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Associated region
         """
         return pulumi.get(self, "resource_region")
 
     @resource_region.setter
-    def resource_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def resource_region(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "resource_region", value)
 
     @_builtins.property
     @pulumi.getter(name="runBooks")
-    def run_books(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SchedulerDefinitionRunBookArgs']]]]:
+    def run_books(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SchedulerDefinitionRunBookArgs']]]]:
         """
         (Updatable) Runbooks.
         """
         return pulumi.get(self, "run_books")
 
     @run_books.setter
-    def run_books(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SchedulerDefinitionRunBookArgs']]]]):
+    def run_books(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SchedulerDefinitionRunBookArgs']]]]):
         pulumi.set(self, "run_books", value)
 
     @_builtins.property
     @pulumi.getter
-    def schedule(self) -> Optional[pulumi.Input['SchedulerDefinitionScheduleArgs']]:
+    def schedule(self) -> pulumi.Input[Optional['SchedulerDefinitionScheduleArgs']]:
         """
         (Updatable) Schedule Information.
         """
         return pulumi.get(self, "schedule")
 
     @schedule.setter
-    def schedule(self, value: Optional[pulumi.Input['SchedulerDefinitionScheduleArgs']]):
+    def schedule(self, value: pulumi.Input[Optional['SchedulerDefinitionScheduleArgs']]):
         pulumi.set(self, "schedule", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the SchedulerDefinition.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time this resource was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfNextRun")
-    def time_of_next_run(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_next_run(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The scheduled date for the next run of the Job.
         """
         return pulumi.get(self, "time_of_next_run")
 
     @time_of_next_run.setter
-    def time_of_next_run(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_next_run(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_next_run", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time this resource was last updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -487,14 +487,14 @@ class SchedulerDefinition(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SchedulerDefinitionActionGroupArgs', 'SchedulerDefinitionActionGroupArgsDict']]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 run_books: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SchedulerDefinitionRunBookArgs', 'SchedulerDefinitionRunBookArgsDict']]]]] = None,
-                 schedule: Optional[pulumi.Input[Union['SchedulerDefinitionScheduleArgs', 'SchedulerDefinitionScheduleArgsDict']]] = None,
+                 action_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SchedulerDefinitionActionGroupArgs', 'SchedulerDefinitionActionGroupArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 run_books: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SchedulerDefinitionRunBookArgs', 'SchedulerDefinitionRunBookArgsDict']]]]] = None,
+                 schedule: pulumi.Input[Optional[Union['SchedulerDefinitionScheduleArgs', 'SchedulerDefinitionScheduleArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Scheduler Definition resource in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -517,7 +517,7 @@ class SchedulerDefinition(pulumi.CustomResource):
                 "runbook_id": test_runbook["id"],
                 "runbook_version_name": test_runbook_version["name"],
                 "display_name": scheduler_definition_action_groups_display_name,
-                "sequence": scheduler_definition_action_groups_sequence,
+                "sequence": int(scheduler_definition_action_groups_sequence),
             }],
             compartment_id=compartment_id,
             schedule={
@@ -603,7 +603,7 @@ class SchedulerDefinition(pulumi.CustomResource):
                 "runbook_id": test_runbook["id"],
                 "runbook_version_name": test_runbook_version["name"],
                 "display_name": scheduler_definition_action_groups_display_name,
-                "sequence": scheduler_definition_action_groups_sequence,
+                "sequence": int(scheduler_definition_action_groups_sequence),
             }],
             compartment_id=compartment_id,
             schedule={
@@ -666,14 +666,14 @@ class SchedulerDefinition(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SchedulerDefinitionActionGroupArgs', 'SchedulerDefinitionActionGroupArgsDict']]]]] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 description: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 run_books: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SchedulerDefinitionRunBookArgs', 'SchedulerDefinitionRunBookArgsDict']]]]] = None,
-                 schedule: Optional[pulumi.Input[Union['SchedulerDefinitionScheduleArgs', 'SchedulerDefinitionScheduleArgsDict']]] = None,
+                 action_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SchedulerDefinitionActionGroupArgs', 'SchedulerDefinitionActionGroupArgsDict']]]]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 run_books: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SchedulerDefinitionRunBookArgs', 'SchedulerDefinitionRunBookArgsDict']]]]] = None,
+                 schedule: pulumi.Input[Optional[Union['SchedulerDefinitionScheduleArgs', 'SchedulerDefinitionScheduleArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -719,26 +719,26 @@ class SchedulerDefinition(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action_groups: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SchedulerDefinitionActionGroupArgs', 'SchedulerDefinitionActionGroupArgsDict']]]]] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            count_of_affected_action_groups: Optional[pulumi.Input[_builtins.int]] = None,
-            count_of_affected_resources: Optional[pulumi.Input[_builtins.int]] = None,
-            count_of_affected_targets: Optional[pulumi.Input[_builtins.int]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            description: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            lifecycle_operations: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            products: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            resource_region: Optional[pulumi.Input[_builtins.str]] = None,
-            run_books: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SchedulerDefinitionRunBookArgs', 'SchedulerDefinitionRunBookArgsDict']]]]] = None,
-            schedule: Optional[pulumi.Input[Union['SchedulerDefinitionScheduleArgs', 'SchedulerDefinitionScheduleArgsDict']]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_of_next_run: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'SchedulerDefinition':
+            action_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SchedulerDefinitionActionGroupArgs', 'SchedulerDefinitionActionGroupArgsDict']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            count_of_affected_action_groups: pulumi.Input[Optional[_builtins.int]] = None,
+            count_of_affected_resources: pulumi.Input[Optional[_builtins.int]] = None,
+            count_of_affected_targets: pulumi.Input[Optional[_builtins.int]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            products: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            resource_region: pulumi.Input[Optional[_builtins.str]] = None,
+            run_books: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SchedulerDefinitionRunBookArgs', 'SchedulerDefinitionRunBookArgsDict']]]]] = None,
+            schedule: pulumi.Input[Optional[Union['SchedulerDefinitionScheduleArgs', 'SchedulerDefinitionScheduleArgsDict']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_next_run: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'SchedulerDefinition':
         """
         Get an existing SchedulerDefinition resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

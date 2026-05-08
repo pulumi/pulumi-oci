@@ -125,7 +125,7 @@ def get_tag_defaults(compartment_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tag_defaults = oci.Identity.get_tag_defaults(compartment_id=compartment_id,
+    test_tag_defaults = oci.identity.get_tag_defaults(compartment_id=compartment_id,
         id=tag_default_id,
         state=tag_default_state,
         tag_definition_id=test_tag_definition["id"])
@@ -153,11 +153,11 @@ def get_tag_defaults(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'),
         tag_defaults=pulumi.get(__ret__, 'tag_defaults'),
         tag_definition_id=pulumi.get(__ret__, 'tag_definition_id'))
-def get_tag_defaults_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetTagDefaultsFilterArgs', 'GetTagDefaultsFilterArgsDict']]]]] = None,
-                            id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            tag_definition_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_tag_defaults_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetTagDefaultsFilterArgs', 'GetTagDefaultsFilterArgsDict']]]]] = None,
+                            id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            tag_definition_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTagDefaultsResult]:
     """
     This data source provides the list of Tag Defaults in Oracle Cloud Infrastructure Identity service.
@@ -170,7 +170,7 @@ def get_tag_defaults_output(compartment_id: Optional[pulumi.Input[Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_tag_defaults = oci.Identity.get_tag_defaults(compartment_id=compartment_id,
+    test_tag_defaults = oci.identity.get_tag_defaults(compartment_id=compartment_id,
         id=tag_default_id,
         state=tag_default_state,
         tag_definition_id=test_tag_definition["id"])

@@ -160,7 +160,7 @@ def get_namespace_scheduled_tasks(compartment_id: Optional[_builtins.str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_scheduled_tasks = oci.LogAnalytics.get_namespace_scheduled_tasks(compartment_id=compartment_id,
+    test_namespace_scheduled_tasks = oci.loganalytics.get_namespace_scheduled_tasks(compartment_id=compartment_id,
         namespace=namespace_scheduled_task_namespace,
         display_name=namespace_scheduled_task_display_name,
         target_service=namespace_scheduled_task_target_service,
@@ -197,13 +197,13 @@ def get_namespace_scheduled_tasks(compartment_id: Optional[_builtins.str] = None
         target_service=pulumi.get(__ret__, 'target_service'),
         task_type=pulumi.get(__ret__, 'task_type'),
         template_id=pulumi.get(__ret__, 'template_id'))
-def get_namespace_scheduled_tasks_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                                         display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         filters: Optional[pulumi.Input[Optional[Sequence[Union['GetNamespaceScheduledTasksFilterArgs', 'GetNamespaceScheduledTasksFilterArgsDict']]]]] = None,
-                                         namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                                         target_service: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                                         task_type: Optional[pulumi.Input[_builtins.str]] = None,
-                                         template_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_namespace_scheduled_tasks_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                                         display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         filters: pulumi.Input[Optional[Optional[Sequence[Union['GetNamespaceScheduledTasksFilterArgs', 'GetNamespaceScheduledTasksFilterArgsDict']]]]] = None,
+                                         namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                                         target_service: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                         task_type: pulumi.Input[Optional[_builtins.str]] = None,
+                                         template_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceScheduledTasksResult]:
     """
     This data source provides the list of Namespace Scheduled Tasks in Oracle Cloud Infrastructure Log Analytics service.
@@ -216,7 +216,7 @@ def get_namespace_scheduled_tasks_output(compartment_id: Optional[pulumi.Input[_
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_scheduled_tasks = oci.LogAnalytics.get_namespace_scheduled_tasks(compartment_id=compartment_id,
+    test_namespace_scheduled_tasks = oci.loganalytics.get_namespace_scheduled_tasks(compartment_id=compartment_id,
         namespace=namespace_scheduled_task_namespace,
         display_name=namespace_scheduled_task_display_name,
         target_service=namespace_scheduled_task_target_service,

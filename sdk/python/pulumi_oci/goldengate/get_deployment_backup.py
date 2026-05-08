@@ -357,7 +357,7 @@ def get_deployment_backup(deployment_backup_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_backup = oci.GoldenGate.get_deployment_backup(deployment_backup_id=test_deployment_backup_oci_golden_gate_deployment_backup["id"])
+    test_deployment_backup = oci.goldengate.get_deployment_backup(deployment_backup_id=test_deployment_backup_oci_golden_gate_deployment_backup["id"])
     ```
 
 
@@ -395,7 +395,7 @@ def get_deployment_backup(deployment_backup_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_of_backup=pulumi.get(__ret__, 'time_of_backup'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
-def get_deployment_backup_output(deployment_backup_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_deployment_backup_output(deployment_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDeploymentBackupResult]:
     """
     This data source provides details about a specific Deployment Backup resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -408,7 +408,7 @@ def get_deployment_backup_output(deployment_backup_id: Optional[pulumi.Input[_bu
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_backup = oci.GoldenGate.get_deployment_backup(deployment_backup_id=test_deployment_backup_oci_golden_gate_deployment_backup["id"])
+    test_deployment_backup = oci.goldengate.get_deployment_backup(deployment_backup_id=test_deployment_backup_oci_golden_gate_deployment_backup["id"])
     ```
 
 

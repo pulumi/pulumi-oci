@@ -330,7 +330,7 @@ def get_dbmulticloud_oracle_db_azure_vault(oracle_db_azure_vault_id: Optional[_b
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
-def get_dbmulticloud_oracle_db_azure_vault_output(oracle_db_azure_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_dbmulticloud_oracle_db_azure_vault_output(oracle_db_azure_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbmulticloudOracleDbAzureVaultResult]:
     """
     This data source provides details about a specific Oracle Db Azure Vault resource in Oracle Cloud Infrastructure Dbmulticloud service.

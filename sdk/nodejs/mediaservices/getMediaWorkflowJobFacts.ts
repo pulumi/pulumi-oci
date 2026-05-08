@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMediaWorkflowJobFacts = oci.MediaServices.getMediaWorkflowJobFacts({
+ * const testMediaWorkflowJobFacts = oci.mediaservices.getMediaWorkflowJobFacts({
  *     mediaWorkflowJobId: testMediaWorkflowJob.id,
  *     key: mediaWorkflowJobFactKey,
  *     type: mediaWorkflowJobFactType,
@@ -92,7 +92,7 @@ export interface GetMediaWorkflowJobFactsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMediaWorkflowJobFacts = oci.MediaServices.getMediaWorkflowJobFacts({
+ * const testMediaWorkflowJobFacts = oci.mediaservices.getMediaWorkflowJobFacts({
  *     mediaWorkflowJobId: testMediaWorkflowJob.id,
  *     key: mediaWorkflowJobFactKey,
  *     type: mediaWorkflowJobFactType,
@@ -113,11 +113,11 @@ export function getMediaWorkflowJobFactsOutput(args: GetMediaWorkflowJobFactsOut
  * A collection of arguments for invoking getMediaWorkflowJobFacts.
  */
 export interface GetMediaWorkflowJobFactsOutputArgs {
-    filters?: pulumi.Input<pulumi.Input<inputs.MediaServices.GetMediaWorkflowJobFactsFilterArgs>[]>;
+    filters?: pulumi.Input<pulumi.Input<inputs.MediaServices.GetMediaWorkflowJobFactsFilterArgs>[] | undefined>;
     /**
      * Filter by MediaWorkflowJob ID and MediaWorkflowJobFact key.
      */
-    key?: pulumi.Input<string>;
+    key?: pulumi.Input<string | undefined>;
     /**
      * Unique MediaWorkflowJob identifier.
      */
@@ -125,5 +125,5 @@ export interface GetMediaWorkflowJobFactsOutputArgs {
     /**
      * Types of details to include.
      */
-    type?: pulumi.Input<string>;
+    type?: pulumi.Input<string | undefined>;
 }

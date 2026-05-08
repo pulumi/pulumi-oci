@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatasets = oci.DataLabellingService.getDatasets({
+ * const testDatasets = oci.datalabellingservice.getDatasets({
  *     compartmentId: compartmentId,
  *     annotationFormat: datasetAnnotationFormat,
  *     displayName: datasetDisplayName,
@@ -106,7 +106,7 @@ export interface GetDatasetsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDatasets = oci.DataLabellingService.getDatasets({
+ * const testDatasets = oci.datalabellingservice.getDatasets({
  *     compartmentId: compartmentId,
  *     annotationFormat: datasetAnnotationFormat,
  *     displayName: datasetDisplayName,
@@ -134,7 +134,7 @@ export interface GetDatasetsOutputArgs {
     /**
      * A filter to return only resources that match the entire annotation format given.
      */
-    annotationFormat?: pulumi.Input<string>;
+    annotationFormat?: pulumi.Input<string | undefined>;
     /**
      * The ID of the compartment in which to list resources.
      */
@@ -142,14 +142,14 @@ export interface GetDatasetsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.DataLabellingService.GetDatasetsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.DataLabellingService.GetDatasetsFilterArgs>[] | undefined>;
     /**
      * Unique Dataset OCID
      */
-    id?: pulumi.Input<string>;
+    id?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources whose lifecycleState matches this query param.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

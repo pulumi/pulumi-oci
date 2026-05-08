@@ -23,7 +23,7 @@ class FusionEnvironmentRefreshActivityArgs:
     def __init__(__self__, *,
                  fusion_environment_id: pulumi.Input[_builtins.str],
                  source_fusion_environment_id: pulumi.Input[_builtins.str],
-                 is_data_masking_opted: Optional[pulumi.Input[_builtins.bool]] = None):
+                 is_data_masking_opted: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a FusionEnvironmentRefreshActivity resource.
 
@@ -62,34 +62,34 @@ class FusionEnvironmentRefreshActivityArgs:
 
     @_builtins.property
     @pulumi.getter(name="isDataMaskingOpted")
-    def is_data_masking_opted(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_data_masking_opted(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Represents if the customer opted for Data Masking or not during refreshActivity.
         """
         return pulumi.get(self, "is_data_masking_opted")
 
     @is_data_masking_opted.setter
-    def is_data_masking_opted(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_data_masking_opted(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_data_masking_opted", value)
 
 
 @pulumi.input_type
 class _FusionEnvironmentRefreshActivityState:
     def __init__(__self__, *,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_data_masking_opted: Optional[pulumi.Input[_builtins.bool]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 refresh_activity_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 refresh_issue_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs']]]] = None,
-                 service_availability: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_accepted: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_expected_finish: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_finished: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_of_restoration_point: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_data_masking_opted: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 refresh_activity_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 refresh_issue_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs']]]] = None,
+                 service_availability: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_accepted: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_expected_finish: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_finished: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_of_restoration_point: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering FusionEnvironmentRefreshActivity resources.
 
@@ -138,167 +138,167 @@ class _FusionEnvironmentRefreshActivityState:
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A friendly name for the refresh activity. Can be changed later.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="fusionEnvironmentId")
-    def fusion_environment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def fusion_environment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         unique FusionEnvironment identifier
         """
         return pulumi.get(self, "fusion_environment_id")
 
     @fusion_environment_id.setter
-    def fusion_environment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def fusion_environment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fusion_environment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isDataMaskingOpted")
-    def is_data_masking_opted(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_data_masking_opted(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Represents if the customer opted for Data Masking or not during refreshActivity.
         """
         return pulumi.get(self, "is_data_masking_opted")
 
     @is_data_masking_opted.setter
-    def is_data_masking_opted(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_data_masking_opted(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_data_masking_opted", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="refreshActivityId")
-    def refresh_activity_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def refresh_activity_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         return pulumi.get(self, "refresh_activity_id")
 
     @refresh_activity_id.setter
-    def refresh_activity_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def refresh_activity_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "refresh_activity_id", value)
 
     @_builtins.property
     @pulumi.getter(name="refreshIssueDetailsLists")
-    def refresh_issue_details_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs']]]]:
+    def refresh_issue_details_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs']]]]:
         """
         Details of refresh investigation information, each item represents a different issue.
         """
         return pulumi.get(self, "refresh_issue_details_lists")
 
     @refresh_issue_details_lists.setter
-    def refresh_issue_details_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs']]]]):
+    def refresh_issue_details_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs']]]]):
         pulumi.set(self, "refresh_issue_details_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceAvailability")
-    def service_availability(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def service_availability(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Service availability / impact during refresh activity execution up down
         """
         return pulumi.get(self, "service_availability")
 
     @service_availability.setter
-    def service_availability(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def service_availability(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "service_availability", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceFusionEnvironmentId")
-    def source_fusion_environment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def source_fusion_environment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
         """
         return pulumi.get(self, "source_fusion_environment_id")
 
     @source_fusion_environment_id.setter
-    def source_fusion_environment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def source_fusion_environment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_fusion_environment_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the refreshActivity.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="timeAccepted")
-    def time_accepted(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_accepted(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the refresh activity record was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_accepted")
 
     @time_accepted.setter
-    def time_accepted(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_accepted(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_accepted", value)
 
     @_builtins.property
     @pulumi.getter(name="timeExpectedFinish")
-    def time_expected_finish(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_expected_finish(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_expected_finish")
 
     @time_expected_finish.setter
-    def time_expected_finish(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_expected_finish(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_expected_finish", value)
 
     @_builtins.property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_finished(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_finished")
 
     @time_finished.setter
-    def time_finished(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_finished(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_finished", value)
 
     @_builtins.property
     @pulumi.getter(name="timeOfRestorationPoint")
-    def time_of_restoration_point(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_of_restoration_point(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date and time of the most recent source environment backup used for the environment refresh.
         """
         return pulumi.get(self, "time_of_restoration_point")
 
     @time_of_restoration_point.setter
-    def time_of_restoration_point(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_of_restoration_point(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_of_restoration_point", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time the refresh activity record was updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
 
@@ -308,9 +308,9 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_data_masking_opted: Optional[pulumi.Input[_builtins.bool]] = None,
-                 source_fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_data_masking_opted: pulumi.Input[Optional[_builtins.bool]] = None,
+                 source_fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Fusion Environment Refresh Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -329,7 +329,7 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         test_fusion_environment_refresh_activity = oci.fusionapps.FusionEnvironmentRefreshActivity("test_fusion_environment_refresh_activity",
             fusion_environment_id=test_fusion_environment["id"],
             source_fusion_environment_id=test_fusion_environment["id"],
-            is_data_masking_opted=fusion_environment_refresh_activity_is_data_masking_opted,
+            is_data_masking_opted=fusion_environment_refresh_activity_is_data_masking_opted == "true",
             time_scheduled_start=fusion_environment_refresh_activity_time_scheduled_start)
         ```
 
@@ -371,7 +371,7 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         test_fusion_environment_refresh_activity = oci.fusionapps.FusionEnvironmentRefreshActivity("test_fusion_environment_refresh_activity",
             fusion_environment_id=test_fusion_environment["id"],
             source_fusion_environment_id=test_fusion_environment["id"],
-            is_data_masking_opted=fusion_environment_refresh_activity_is_data_masking_opted,
+            is_data_masking_opted=fusion_environment_refresh_activity_is_data_masking_opted == "true",
             time_scheduled_start=fusion_environment_refresh_activity_time_scheduled_start)
         ```
 
@@ -399,9 +399,9 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_data_masking_opted: Optional[pulumi.Input[_builtins.bool]] = None,
-                 source_fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_data_masking_opted: pulumi.Input[Optional[_builtins.bool]] = None,
+                 source_fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -439,20 +439,20 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            is_data_masking_opted: Optional[pulumi.Input[_builtins.bool]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            refresh_activity_id: Optional[pulumi.Input[_builtins.str]] = None,
-            refresh_issue_details_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs', 'FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgsDict']]]]] = None,
-            service_availability: Optional[pulumi.Input[_builtins.str]] = None,
-            source_fusion_environment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            time_accepted: Optional[pulumi.Input[_builtins.str]] = None,
-            time_expected_finish: Optional[pulumi.Input[_builtins.str]] = None,
-            time_finished: Optional[pulumi.Input[_builtins.str]] = None,
-            time_of_restoration_point: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'FusionEnvironmentRefreshActivity':
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_data_masking_opted: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            refresh_activity_id: pulumi.Input[Optional[_builtins.str]] = None,
+            refresh_issue_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs', 'FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgsDict']]]]] = None,
+            service_availability: pulumi.Input[Optional[_builtins.str]] = None,
+            source_fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_accepted: pulumi.Input[Optional[_builtins.str]] = None,
+            time_expected_finish: pulumi.Input[Optional[_builtins.str]] = None,
+            time_finished: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_restoration_point: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'FusionEnvironmentRefreshActivity':
         """
         Get an existing FusionEnvironmentRefreshActivity resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

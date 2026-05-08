@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isInheritanceAfterDeleteEnabled: securityZoneIsInheritanceAfterDeleteEnabled,
+ *     isInheritanceAfterDeleteEnabled: securityZoneIsInheritanceAfterDeleteEnabled === "true",
  * });
  * ```
  *
@@ -192,37 +192,37 @@ export interface SecurityZoneState {
     /**
      * (Updatable) The OCID of the compartment for the security zone
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The security zone's description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The security zone's display name
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      *
      * Avoid entering confidential information.
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * List of inherited compartments
      */
-    inheritedByCompartments?: pulumi.Input<pulumi.Input<string>[]>;
+    inheritedByCompartments?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
      */
-    isInheritanceAfterDeleteEnabled?: pulumi.Input<boolean>;
+    isInheritanceAfterDeleteEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
      */
-    lifecycleDetails?: pulumi.Input<string>;
+    lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
      *
@@ -230,23 +230,23 @@ export interface SecurityZoneState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    securityZoneRecipeId?: pulumi.Input<string>;
+    securityZoneRecipeId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the target associated with the security zone
      */
-    securityZoneTargetId?: pulumi.Input<string>;
+    securityZoneTargetId?: pulumi.Input<string | undefined>;
     /**
      * The current lifecycle state of the security zone
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
     /**
      * The time the security zone was created. An RFC3339 formatted datetime string.
      */
-    timeCreated?: pulumi.Input<string>;
+    timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time the security zone was last updated. An RFC3339 formatted datetime string.
      */
-    timeUpdated?: pulumi.Input<string>;
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -260,11 +260,11 @@ export interface SecurityZoneArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The security zone's description
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The security zone's display name
      */
@@ -274,11 +274,11 @@ export interface SecurityZoneArgs {
      *
      * Avoid entering confidential information.
      */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
      */
-    isInheritanceAfterDeleteEnabled?: pulumi.Input<boolean>;
+    isInheritanceAfterDeleteEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
      *

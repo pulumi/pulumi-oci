@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicyMappedSecrets = oci.NetworkFirewall.getNetworkFirewallPolicyMappedSecrets({
+ * const testNetworkFirewallPolicyMappedSecrets = oci.networkfirewall.getNetworkFirewallPolicyMappedSecrets({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     displayName: networkFirewallPolicyMappedSecretDisplayName,
  * });
@@ -71,7 +71,7 @@ export interface GetNetworkFirewallPolicyMappedSecretsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicyMappedSecrets = oci.NetworkFirewall.getNetworkFirewallPolicyMappedSecrets({
+ * const testNetworkFirewallPolicyMappedSecrets = oci.networkfirewall.getNetworkFirewallPolicyMappedSecrets({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     displayName: networkFirewallPolicyMappedSecretDisplayName,
  * });
@@ -92,7 +92,7 @@ export interface GetNetworkFirewallPolicyMappedSecretsOutputArgs {
     /**
      * A filter to return only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
+    displayName?: pulumi.Input<string | undefined>;
     /**
      * Unique Network Firewall Policy identifier
      */

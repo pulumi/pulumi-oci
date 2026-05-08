@@ -274,7 +274,7 @@ def get_namespace_template(namespace: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_template = oci.LogAnalytics.get_namespace_template(namespace=namespace_template_namespace,
+    test_namespace_template = oci.loganalytics.get_namespace_template(namespace=namespace_template_namespace,
         template_id=test_template["id"])
     ```
 
@@ -308,8 +308,8 @@ def get_namespace_template(namespace: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
-def get_namespace_template_output(namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                                  template_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_namespace_template_output(namespace: pulumi.Input[Optional[_builtins.str]] = None,
+                                  template_id: pulumi.Input[Optional[_builtins.str]] = None,
                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNamespaceTemplateResult]:
     """
     This data source provides details about a specific Namespace Template resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -322,7 +322,7 @@ def get_namespace_template_output(namespace: Optional[pulumi.Input[_builtins.str
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_template = oci.LogAnalytics.get_namespace_template(namespace=namespace_template_namespace,
+    test_namespace_template = oci.loganalytics.get_namespace_template(namespace=namespace_template_namespace,
         template_id=test_template["id"])
     ```
 

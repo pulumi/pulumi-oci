@@ -213,7 +213,7 @@ def get_filesystem_snapshot_policy(filesystem_snapshot_policy_id: Optional[_buil
     import pulumi
     import pulumi_oci as oci
 
-    test_filesystem_snapshot_policy = oci.FileStorage.get_filesystem_snapshot_policy(filesystem_snapshot_policy_id=test_filesystem_snapshot_policy_oci_file_storage_filesystem_snapshot_policy["id"])
+    test_filesystem_snapshot_policy = oci.filestorage.get_filesystem_snapshot_policy(filesystem_snapshot_policy_id=test_filesystem_snapshot_policy_oci_file_storage_filesystem_snapshot_policy["id"])
     ```
 
 
@@ -239,7 +239,7 @@ def get_filesystem_snapshot_policy(filesystem_snapshot_policy_id: Optional[_buil
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_filesystem_snapshot_policy_output(filesystem_snapshot_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_filesystem_snapshot_policy_output(filesystem_snapshot_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFilesystemSnapshotPolicyResult]:
     """
     This data source provides details about a specific Filesystem Snapshot Policy resource in Oracle Cloud Infrastructure File Storage service.
@@ -252,7 +252,7 @@ def get_filesystem_snapshot_policy_output(filesystem_snapshot_policy_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_filesystem_snapshot_policy = oci.FileStorage.get_filesystem_snapshot_policy(filesystem_snapshot_policy_id=test_filesystem_snapshot_policy_oci_file_storage_filesystem_snapshot_policy["id"])
+    test_filesystem_snapshot_policy = oci.filestorage.get_filesystem_snapshot_policy(filesystem_snapshot_policy_id=test_filesystem_snapshot_policy_oci_file_storage_filesystem_snapshot_policy["id"])
     ```
 
 

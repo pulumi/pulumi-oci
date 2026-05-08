@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPathAnalyzerTests = oci.VnMonitoring.GetPathAnalyzerTests({
+ * const testPathAnalyzerTests = oci.vnmonitoring.GetPathAnalyzerTests({
  *     compartmentId: compartmentId,
  *     displayName: pathAnalyzerTestDisplayName,
  *     state: pathAnalyzerTestState,
@@ -90,7 +90,7 @@ export interface GetPathAnalyzerTestsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPathAnalyzerTests = oci.VnMonitoring.GetPathAnalyzerTests({
+ * const testPathAnalyzerTests = oci.vnmonitoring.GetPathAnalyzerTests({
  *     compartmentId: compartmentId,
  *     displayName: pathAnalyzerTestDisplayName,
  *     state: pathAnalyzerTestState,
@@ -118,10 +118,10 @@ export interface GetPathAnalyzerTestsOutputArgs {
     /**
      * A filter that returns only resources that match the entire display name given.
      */
-    displayName?: pulumi.Input<string>;
-    filters?: pulumi.Input<pulumi.Input<inputs.VnMonitoring.GetPathAnalyzerTestsFilterArgs>[]>;
+    displayName?: pulumi.Input<string | undefined>;
+    filters?: pulumi.Input<pulumi.Input<inputs.VnMonitoring.GetPathAnalyzerTestsFilterArgs>[] | undefined>;
     /**
      * A filter that returns only resources whose `lifecycleState` matches the given `lifecycleState`.
      */
-    state?: pulumi.Input<string>;
+    state?: pulumi.Input<string | undefined>;
 }

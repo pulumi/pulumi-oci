@@ -199,14 +199,14 @@ def get_db_homes(backup_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
-def get_db_homes_output(backup_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                        db_system_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        db_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbHomesFilterArgs', 'GetDbHomesFilterArgsDict']]]]] = None,
-                        state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                        vm_cluster_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_db_homes_output(backup_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                        db_system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        db_version: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbHomesFilterArgs', 'GetDbHomesFilterArgsDict']]]]] = None,
+                        state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                        vm_cluster_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                         opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbHomesResult]:
     """
     This data source provides the list of Db Homes in Oracle Cloud Infrastructure Database service.

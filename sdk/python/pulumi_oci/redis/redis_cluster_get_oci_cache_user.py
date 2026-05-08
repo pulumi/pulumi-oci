@@ -22,8 +22,8 @@ __all__ = ['RedisClusterGetOciCacheUserArgs', 'RedisClusterGetOciCacheUser']
 class RedisClusterGetOciCacheUserArgs:
     def __init__(__self__, *,
                  redis_cluster_id: pulumi.Input[_builtins.str],
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a RedisClusterGetOciCacheUser resource.
 
@@ -59,36 +59,36 @@ class RedisClusterGetOciCacheUserArgs:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A filter to return only resources that match the entire display name given.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
 
 @pulumi.input_type
 class _RedisClusterGetOciCacheUserState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 oci_cache_users: Optional[pulumi.Input[Sequence[pulumi.Input['RedisClusterGetOciCacheUserOciCacheUserArgs']]]] = None,
-                 redis_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 oci_cache_users: pulumi.Input[Optional[Sequence[pulumi.Input['RedisClusterGetOciCacheUserOciCacheUserArgs']]]] = None,
+                 redis_cluster_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering RedisClusterGetOciCacheUser resources.
 
@@ -111,40 +111,40 @@ class _RedisClusterGetOciCacheUserState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The ID of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A filter to return only resources that match the entire display name given.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="ociCacheUsers")
-    def oci_cache_users(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['RedisClusterGetOciCacheUserOciCacheUserArgs']]]]:
+    def oci_cache_users(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RedisClusterGetOciCacheUserOciCacheUserArgs']]]]:
         return pulumi.get(self, "oci_cache_users")
 
     @oci_cache_users.setter
-    def oci_cache_users(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['RedisClusterGetOciCacheUserOciCacheUserArgs']]]]):
+    def oci_cache_users(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RedisClusterGetOciCacheUserOciCacheUserArgs']]]]):
         pulumi.set(self, "oci_cache_users", value)
 
     @_builtins.property
     @pulumi.getter(name="redisClusterId")
-    def redis_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def redis_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
 
@@ -155,7 +155,7 @@ class _RedisClusterGetOciCacheUserState:
         return pulumi.get(self, "redis_cluster_id")
 
     @redis_cluster_id.setter
-    def redis_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def redis_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "redis_cluster_id", value)
 
 
@@ -165,9 +165,9 @@ class RedisClusterGetOciCacheUser(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 redis_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 redis_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Redis Cluster Get Oci Cache User resource in Oracle Cloud Infrastructure Redis service.
@@ -250,9 +250,9 @@ class RedisClusterGetOciCacheUser(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 redis_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 redis_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -278,10 +278,10 @@ class RedisClusterGetOciCacheUser(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            oci_cache_users: Optional[pulumi.Input[Sequence[pulumi.Input[Union['RedisClusterGetOciCacheUserOciCacheUserArgs', 'RedisClusterGetOciCacheUserOciCacheUserArgsDict']]]]] = None,
-            redis_cluster_id: Optional[pulumi.Input[_builtins.str]] = None) -> 'RedisClusterGetOciCacheUser':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            oci_cache_users: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RedisClusterGetOciCacheUserOciCacheUserArgs', 'RedisClusterGetOciCacheUserOciCacheUserArgsDict']]]]] = None,
+            redis_cluster_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'RedisClusterGetOciCacheUser':
         """
         Get an existing RedisClusterGetOciCacheUser resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

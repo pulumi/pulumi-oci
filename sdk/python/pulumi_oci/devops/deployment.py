@@ -23,15 +23,15 @@ class DeploymentArgs:
     def __init__(__self__, *,
                  deploy_pipeline_id: pulumi.Input[_builtins.str],
                  deployment_type: pulumi.Input[_builtins.str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deploy_artifact_override_arguments: Optional[pulumi.Input['DeploymentDeployArtifactOverrideArgumentsArgs']] = None,
-                 deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 deploy_stage_override_arguments: Optional[pulumi.Input['DeploymentDeployStageOverrideArgumentsArgs']] = None,
-                 deployment_arguments: Optional[pulumi.Input['DeploymentDeploymentArgumentsArgs']] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 previous_deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 trigger_new_devops_deployment: Optional[pulumi.Input[_builtins.bool]] = None):
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deploy_artifact_override_arguments: pulumi.Input[Optional['DeploymentDeployArtifactOverrideArgumentsArgs']] = None,
+                 deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 deploy_stage_override_arguments: pulumi.Input[Optional['DeploymentDeployStageOverrideArgumentsArgs']] = None,
+                 deployment_arguments: pulumi.Input[Optional['DeploymentDeploymentArgumentsArgs']] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 previous_deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 trigger_new_devops_deployment: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a Deployment resource.
 
@@ -98,103 +98,103 @@ class DeploymentArgs:
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deployArtifactOverrideArguments")
-    def deploy_artifact_override_arguments(self) -> Optional[pulumi.Input['DeploymentDeployArtifactOverrideArgumentsArgs']]:
+    def deploy_artifact_override_arguments(self) -> pulumi.Input[Optional['DeploymentDeployArtifactOverrideArgumentsArgs']]:
         """
         Specifies the list of artifact override arguments at the time of deployment.
         """
         return pulumi.get(self, "deploy_artifact_override_arguments")
 
     @deploy_artifact_override_arguments.setter
-    def deploy_artifact_override_arguments(self, value: Optional[pulumi.Input['DeploymentDeployArtifactOverrideArgumentsArgs']]):
+    def deploy_artifact_override_arguments(self, value: pulumi.Input[Optional['DeploymentDeployArtifactOverrideArgumentsArgs']]):
         pulumi.set(self, "deploy_artifact_override_arguments", value)
 
     @_builtins.property
     @pulumi.getter(name="deployStageId")
-    def deploy_stage_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deploy_stage_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the OCID of the stage to be redeployed.
         """
         return pulumi.get(self, "deploy_stage_id")
 
     @deploy_stage_id.setter
-    def deploy_stage_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deploy_stage_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deploy_stage_id", value)
 
     @_builtins.property
     @pulumi.getter(name="deployStageOverrideArguments")
-    def deploy_stage_override_arguments(self) -> Optional[pulumi.Input['DeploymentDeployStageOverrideArgumentsArgs']]:
+    def deploy_stage_override_arguments(self) -> pulumi.Input[Optional['DeploymentDeployStageOverrideArgumentsArgs']]:
         """
         Specifies the list of arguments to be overriden per Stage at the time of deployment.
         """
         return pulumi.get(self, "deploy_stage_override_arguments")
 
     @deploy_stage_override_arguments.setter
-    def deploy_stage_override_arguments(self, value: Optional[pulumi.Input['DeploymentDeployStageOverrideArgumentsArgs']]):
+    def deploy_stage_override_arguments(self, value: pulumi.Input[Optional['DeploymentDeployStageOverrideArgumentsArgs']]):
         pulumi.set(self, "deploy_stage_override_arguments", value)
 
     @_builtins.property
     @pulumi.getter(name="deploymentArguments")
-    def deployment_arguments(self) -> Optional[pulumi.Input['DeploymentDeploymentArgumentsArgs']]:
+    def deployment_arguments(self) -> pulumi.Input[Optional['DeploymentDeploymentArgumentsArgs']]:
         """
         Specifies list of arguments passed along with the deployment.
         """
         return pulumi.get(self, "deployment_arguments")
 
     @deployment_arguments.setter
-    def deployment_arguments(self, value: Optional[pulumi.Input['DeploymentDeploymentArgumentsArgs']]):
+    def deployment_arguments(self, value: pulumi.Input[Optional['DeploymentDeploymentArgumentsArgs']]):
         pulumi.set(self, "deployment_arguments", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Deployment display name. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="previousDeploymentId")
-    def previous_deployment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def previous_deployment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the OCID of the previous deployment to be redeployed.
         """
         return pulumi.get(self, "previous_deployment_id")
 
     @previous_deployment_id.setter
-    def previous_deployment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def previous_deployment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "previous_deployment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="triggerNewDevopsDeployment")
-    def trigger_new_devops_deployment(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def trigger_new_devops_deployment(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block). 
 
@@ -205,34 +205,34 @@ class DeploymentArgs:
         return pulumi.get(self, "trigger_new_devops_deployment")
 
     @trigger_new_devops_deployment.setter
-    def trigger_new_devops_deployment(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def trigger_new_devops_deployment(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "trigger_new_devops_deployment", value)
 
 
 @pulumi.input_type
 class _DeploymentState:
     def __init__(__self__, *,
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deploy_artifact_override_arguments: Optional[pulumi.Input['DeploymentDeployArtifactOverrideArgumentsArgs']] = None,
-                 deploy_pipeline_artifacts: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployPipelineArtifactArgs']]]] = None,
-                 deploy_pipeline_environments: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployPipelineEnvironmentArgs']]]] = None,
-                 deploy_pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 deploy_stage_override_arguments: Optional[pulumi.Input['DeploymentDeployStageOverrideArgumentsArgs']] = None,
-                 deployment_arguments: Optional[pulumi.Input['DeploymentDeploymentArgumentsArgs']] = None,
-                 deployment_execution_progresses: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressArgs']]]] = None,
-                 deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 previous_deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 project_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 state: Optional[pulumi.Input[_builtins.str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-                 trigger_new_devops_deployment: Optional[pulumi.Input[_builtins.bool]] = None):
+                 compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deploy_artifact_override_arguments: pulumi.Input[Optional['DeploymentDeployArtifactOverrideArgumentsArgs']] = None,
+                 deploy_pipeline_artifacts: pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeployPipelineArtifactArgs']]]] = None,
+                 deploy_pipeline_environments: pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeployPipelineEnvironmentArgs']]]] = None,
+                 deploy_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 deploy_stage_override_arguments: pulumi.Input[Optional['DeploymentDeployStageOverrideArgumentsArgs']] = None,
+                 deployment_arguments: pulumi.Input[Optional['DeploymentDeploymentArgumentsArgs']] = None,
+                 deployment_execution_progresses: pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressArgs']]]] = None,
+                 deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 previous_deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 trigger_new_devops_deployment: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering Deployment resources.
 
@@ -307,247 +307,247 @@ class _DeploymentState:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of a compartment.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="deployArtifactOverrideArguments")
-    def deploy_artifact_override_arguments(self) -> Optional[pulumi.Input['DeploymentDeployArtifactOverrideArgumentsArgs']]:
+    def deploy_artifact_override_arguments(self) -> pulumi.Input[Optional['DeploymentDeployArtifactOverrideArgumentsArgs']]:
         """
         Specifies the list of artifact override arguments at the time of deployment.
         """
         return pulumi.get(self, "deploy_artifact_override_arguments")
 
     @deploy_artifact_override_arguments.setter
-    def deploy_artifact_override_arguments(self, value: Optional[pulumi.Input['DeploymentDeployArtifactOverrideArgumentsArgs']]):
+    def deploy_artifact_override_arguments(self, value: pulumi.Input[Optional['DeploymentDeployArtifactOverrideArgumentsArgs']]):
         pulumi.set(self, "deploy_artifact_override_arguments", value)
 
     @_builtins.property
     @pulumi.getter(name="deployPipelineArtifacts")
-    def deploy_pipeline_artifacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployPipelineArtifactArgs']]]]:
+    def deploy_pipeline_artifacts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeployPipelineArtifactArgs']]]]:
         """
         List of all artifacts used in the pipeline.
         """
         return pulumi.get(self, "deploy_pipeline_artifacts")
 
     @deploy_pipeline_artifacts.setter
-    def deploy_pipeline_artifacts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployPipelineArtifactArgs']]]]):
+    def deploy_pipeline_artifacts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeployPipelineArtifactArgs']]]]):
         pulumi.set(self, "deploy_pipeline_artifacts", value)
 
     @_builtins.property
     @pulumi.getter(name="deployPipelineEnvironments")
-    def deploy_pipeline_environments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployPipelineEnvironmentArgs']]]]:
+    def deploy_pipeline_environments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeployPipelineEnvironmentArgs']]]]:
         """
         List of all environments used in the pipeline.
         """
         return pulumi.get(self, "deploy_pipeline_environments")
 
     @deploy_pipeline_environments.setter
-    def deploy_pipeline_environments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployPipelineEnvironmentArgs']]]]):
+    def deploy_pipeline_environments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeployPipelineEnvironmentArgs']]]]):
         pulumi.set(self, "deploy_pipeline_environments", value)
 
     @_builtins.property
     @pulumi.getter(name="deployPipelineId")
-    def deploy_pipeline_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deploy_pipeline_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of a pipeline.
         """
         return pulumi.get(self, "deploy_pipeline_id")
 
     @deploy_pipeline_id.setter
-    def deploy_pipeline_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deploy_pipeline_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deploy_pipeline_id", value)
 
     @_builtins.property
     @pulumi.getter(name="deployStageId")
-    def deploy_stage_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deploy_stage_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the OCID of the stage to be redeployed.
         """
         return pulumi.get(self, "deploy_stage_id")
 
     @deploy_stage_id.setter
-    def deploy_stage_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deploy_stage_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deploy_stage_id", value)
 
     @_builtins.property
     @pulumi.getter(name="deployStageOverrideArguments")
-    def deploy_stage_override_arguments(self) -> Optional[pulumi.Input['DeploymentDeployStageOverrideArgumentsArgs']]:
+    def deploy_stage_override_arguments(self) -> pulumi.Input[Optional['DeploymentDeployStageOverrideArgumentsArgs']]:
         """
         Specifies the list of arguments to be overriden per Stage at the time of deployment.
         """
         return pulumi.get(self, "deploy_stage_override_arguments")
 
     @deploy_stage_override_arguments.setter
-    def deploy_stage_override_arguments(self, value: Optional[pulumi.Input['DeploymentDeployStageOverrideArgumentsArgs']]):
+    def deploy_stage_override_arguments(self, value: pulumi.Input[Optional['DeploymentDeployStageOverrideArgumentsArgs']]):
         pulumi.set(self, "deploy_stage_override_arguments", value)
 
     @_builtins.property
     @pulumi.getter(name="deploymentArguments")
-    def deployment_arguments(self) -> Optional[pulumi.Input['DeploymentDeploymentArgumentsArgs']]:
+    def deployment_arguments(self) -> pulumi.Input[Optional['DeploymentDeploymentArgumentsArgs']]:
         """
         Specifies list of arguments passed along with the deployment.
         """
         return pulumi.get(self, "deployment_arguments")
 
     @deployment_arguments.setter
-    def deployment_arguments(self, value: Optional[pulumi.Input['DeploymentDeploymentArgumentsArgs']]):
+    def deployment_arguments(self, value: pulumi.Input[Optional['DeploymentDeploymentArgumentsArgs']]):
         pulumi.set(self, "deployment_arguments", value)
 
     @_builtins.property
     @pulumi.getter(name="deploymentExecutionProgresses")
-    def deployment_execution_progresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressArgs']]]]:
+    def deployment_execution_progresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressArgs']]]]:
         """
         The execution progress details of a deployment.
         """
         return pulumi.get(self, "deployment_execution_progresses")
 
     @deployment_execution_progresses.setter
-    def deployment_execution_progresses(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressArgs']]]]):
+    def deployment_execution_progresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressArgs']]]]):
         pulumi.set(self, "deployment_execution_progresses", value)
 
     @_builtins.property
     @pulumi.getter(name="deploymentType")
-    def deployment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def deployment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies type for this deployment.
         """
         return pulumi.get(self, "deployment_type")
 
     @deployment_type.setter
-    def deployment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def deployment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deployment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Deployment display name. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
-    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
-    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def lifecycle_details(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
     @pulumi.getter(name="previousDeploymentId")
-    def previous_deployment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def previous_deployment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Specifies the OCID of the previous deployment to be redeployed.
         """
         return pulumi.get(self, "previous_deployment_id")
 
     @previous_deployment_id.setter
-    def previous_deployment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def previous_deployment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "previous_deployment_id", value)
 
     @_builtins.property
     @pulumi.getter(name="projectId")
-    def project_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def project_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of a project.
         """
         return pulumi.get(self, "project_id")
 
     @project_id.setter
-    def project_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def project_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "project_id", value)
 
     @_builtins.property
     @pulumi.getter
-    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The current state of the deployment.
         """
         return pulumi.get(self, "state")
 
     @state.setter
-    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
 
     @_builtins.property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time the deployment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
-    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 
     @time_updated.setter
-    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter(name="triggerNewDevopsDeployment")
-    def trigger_new_devops_deployment(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def trigger_new_devops_deployment(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block). 
 
@@ -558,7 +558,7 @@ class _DeploymentState:
         return pulumi.get(self, "trigger_new_devops_deployment")
 
     @trigger_new_devops_deployment.setter
-    def trigger_new_devops_deployment(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def trigger_new_devops_deployment(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "trigger_new_devops_deployment", value)
 
 
@@ -568,17 +568,17 @@ class Deployment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deploy_artifact_override_arguments: Optional[pulumi.Input[Union['DeploymentDeployArtifactOverrideArgumentsArgs', 'DeploymentDeployArtifactOverrideArgumentsArgsDict']]] = None,
-                 deploy_pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 deploy_stage_override_arguments: Optional[pulumi.Input[Union['DeploymentDeployStageOverrideArgumentsArgs', 'DeploymentDeployStageOverrideArgumentsArgsDict']]] = None,
-                 deployment_arguments: Optional[pulumi.Input[Union['DeploymentDeploymentArgumentsArgs', 'DeploymentDeploymentArgumentsArgsDict']]] = None,
-                 deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 previous_deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 trigger_new_devops_deployment: Optional[pulumi.Input[_builtins.bool]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deploy_artifact_override_arguments: pulumi.Input[Optional[Union['DeploymentDeployArtifactOverrideArgumentsArgs', 'DeploymentDeployArtifactOverrideArgumentsArgsDict']]] = None,
+                 deploy_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 deploy_stage_override_arguments: pulumi.Input[Optional[Union['DeploymentDeployStageOverrideArgumentsArgs', 'DeploymentDeployStageOverrideArgumentsArgsDict']]] = None,
+                 deployment_arguments: pulumi.Input[Optional[Union['DeploymentDeploymentArgumentsArgs', 'DeploymentDeploymentArgumentsArgsDict']]] = None,
+                 deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 previous_deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 trigger_new_devops_deployment: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         """
         This resource provides the Deployment resource in Oracle Cloud Infrastructure Devops service.
@@ -653,17 +653,17 @@ class Deployment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 deploy_artifact_override_arguments: Optional[pulumi.Input[Union['DeploymentDeployArtifactOverrideArgumentsArgs', 'DeploymentDeployArtifactOverrideArgumentsArgsDict']]] = None,
-                 deploy_pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 deploy_stage_override_arguments: Optional[pulumi.Input[Union['DeploymentDeployStageOverrideArgumentsArgs', 'DeploymentDeployStageOverrideArgumentsArgsDict']]] = None,
-                 deployment_arguments: Optional[pulumi.Input[Union['DeploymentDeploymentArgumentsArgs', 'DeploymentDeploymentArgumentsArgsDict']]] = None,
-                 deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 previous_deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-                 trigger_new_devops_deployment: Optional[pulumi.Input[_builtins.bool]] = None,
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deploy_artifact_override_arguments: pulumi.Input[Optional[Union['DeploymentDeployArtifactOverrideArgumentsArgs', 'DeploymentDeployArtifactOverrideArgumentsArgsDict']]] = None,
+                 deploy_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 deploy_stage_override_arguments: pulumi.Input[Optional[Union['DeploymentDeployStageOverrideArgumentsArgs', 'DeploymentDeployStageOverrideArgumentsArgsDict']]] = None,
+                 deployment_arguments: pulumi.Input[Optional[Union['DeploymentDeploymentArgumentsArgs', 'DeploymentDeploymentArgumentsArgsDict']]] = None,
+                 deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 previous_deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 trigger_new_devops_deployment: pulumi.Input[Optional[_builtins.bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -708,27 +708,27 @@ class Deployment(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            deploy_artifact_override_arguments: Optional[pulumi.Input[Union['DeploymentDeployArtifactOverrideArgumentsArgs', 'DeploymentDeployArtifactOverrideArgumentsArgsDict']]] = None,
-            deploy_pipeline_artifacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentDeployPipelineArtifactArgs', 'DeploymentDeployPipelineArtifactArgsDict']]]]] = None,
-            deploy_pipeline_environments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentDeployPipelineEnvironmentArgs', 'DeploymentDeployPipelineEnvironmentArgsDict']]]]] = None,
-            deploy_pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
-            deploy_stage_id: Optional[pulumi.Input[_builtins.str]] = None,
-            deploy_stage_override_arguments: Optional[pulumi.Input[Union['DeploymentDeployStageOverrideArgumentsArgs', 'DeploymentDeployStageOverrideArgumentsArgsDict']]] = None,
-            deployment_arguments: Optional[pulumi.Input[Union['DeploymentDeploymentArgumentsArgs', 'DeploymentDeploymentArgumentsArgsDict']]] = None,
-            deployment_execution_progresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentDeploymentExecutionProgressArgs', 'DeploymentDeploymentExecutionProgressArgsDict']]]]] = None,
-            deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
-            display_name: Optional[pulumi.Input[_builtins.str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            previous_deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
-            project_id: Optional[pulumi.Input[_builtins.str]] = None,
-            state: Optional[pulumi.Input[_builtins.str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-            time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
-            trigger_new_devops_deployment: Optional[pulumi.Input[_builtins.bool]] = None) -> 'Deployment':
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            deploy_artifact_override_arguments: pulumi.Input[Optional[Union['DeploymentDeployArtifactOverrideArgumentsArgs', 'DeploymentDeployArtifactOverrideArgumentsArgsDict']]] = None,
+            deploy_pipeline_artifacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentDeployPipelineArtifactArgs', 'DeploymentDeployPipelineArtifactArgsDict']]]]] = None,
+            deploy_pipeline_environments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentDeployPipelineEnvironmentArgs', 'DeploymentDeployPipelineEnvironmentArgsDict']]]]] = None,
+            deploy_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+            deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+            deploy_stage_override_arguments: pulumi.Input[Optional[Union['DeploymentDeployStageOverrideArgumentsArgs', 'DeploymentDeployStageOverrideArgumentsArgsDict']]] = None,
+            deployment_arguments: pulumi.Input[Optional[Union['DeploymentDeploymentArgumentsArgs', 'DeploymentDeploymentArgumentsArgsDict']]] = None,
+            deployment_execution_progresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentDeploymentExecutionProgressArgs', 'DeploymentDeploymentExecutionProgressArgsDict']]]]] = None,
+            deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            previous_deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            trigger_new_devops_deployment: pulumi.Input[Optional[_builtins.bool]] = None) -> 'Deployment':
         """
         Get an existing Deployment resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
